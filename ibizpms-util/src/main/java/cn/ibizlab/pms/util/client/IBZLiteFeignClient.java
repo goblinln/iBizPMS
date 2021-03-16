@@ -17,4 +17,11 @@ public interface IBZLiteFeignClient
 	@PostMapping("/lite/syncsysmodel")
 	Boolean syncSysModel(@RequestBody JSONObject system);
 
+	/**
+	 * 获取动态模型
+	 * @param systemId
+	 * @return
+	 */
+	@RequestMapping(method = RequestMethod.GET, value = "/lite/{systemid}/getdynamicmodel")
+	List<Map<String, Object>> getDynamicModel(@PathVariable("systemid") String systemId);
 }

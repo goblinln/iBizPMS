@@ -51,6 +51,7 @@ public interface ITestRunService extends IService<TestRun> {
     void removeByIbizcase(Long id);
     List<TestRun> selectByTask(Long id);
     void removeByTask(Long id);
+    TestRun dynamicCall(Long key, String action, TestRun et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

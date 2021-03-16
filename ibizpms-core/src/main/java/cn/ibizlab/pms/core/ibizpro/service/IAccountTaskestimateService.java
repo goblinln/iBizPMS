@@ -48,6 +48,7 @@ public interface IAccountTaskestimateService extends IService<AccountTaskestimat
     void saveBatch(List<AccountTaskestimate> list);
     Page<AccountTaskestimate> searchAllAccountEstimate(AccountTaskestimateSearchContext context);
     Page<AccountTaskestimate> searchDefault(AccountTaskestimateSearchContext context);
+    AccountTaskestimate dynamicCall(String key, String action, AccountTaskestimate et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

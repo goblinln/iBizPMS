@@ -47,6 +47,7 @@ public interface INotifyService extends IService<Notify> {
     boolean save(Notify et);
     void saveBatch(List<Notify> list);
     Page<Notify> searchDefault(NotifySearchContext context);
+    Notify dynamicCall(Long key, String action, Notify et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

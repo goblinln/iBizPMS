@@ -51,6 +51,7 @@ public interface ITestSuiteService extends IService<TestSuite> {
     Page<TestSuite> searchPublicTestSuite(TestSuiteSearchContext context);
     List<TestSuite> selectByProduct(Long id);
     void removeByProduct(Long id);
+    TestSuite dynamicCall(Long key, String action, TestSuite et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

@@ -271,6 +271,11 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     public IEmpLoyeeloadService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public EmpLoyeeload dynamicCall(Long key, String action, EmpLoyeeload et) {
+        return et;
+    }
 }
 
 

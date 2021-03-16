@@ -86,7 +86,7 @@ hide members
 | --------  | --------   | --------   | ----- |
 |BugModule|BugModule([MYSQL5](../../appendix/query_MYSQL5.md#Module_BugModule))|否|&nbsp;|
 |BugModuleCodeList|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#Module_BugModuleCodeList))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Module_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Module_Default))|是|&nbsp;|
 |DocModule|文档目录查询([MYSQL5](../../appendix/query_MYSQL5.md#Module_DocModule))|否|&nbsp;|
 |Line|产品线([MYSQL5](../../appendix/query_MYSQL5.md#Module_Line))|否|&nbsp;|
 |StoryModule|需求模块([MYSQL5](../../appendix/query_MYSQL5.md#Module_StoryModule))|否|&nbsp;|

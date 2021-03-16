@@ -47,6 +47,7 @@ public interface IIbzReportRoleConfigService extends IService<IbzReportRoleConfi
     boolean save(IbzReportRoleConfig et);
     void saveBatch(List<IbzReportRoleConfig> list);
     Page<IbzReportRoleConfig> searchDefault(IbzReportRoleConfigSearchContext context);
+    IbzReportRoleConfig dynamicCall(String key, String action, IbzReportRoleConfig et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

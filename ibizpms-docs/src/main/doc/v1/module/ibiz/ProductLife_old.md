@@ -67,7 +67,7 @@
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProductLife_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProductLife_Default))|是|&nbsp;|
 |GetRoadmap|获取产品路线([MYSQL5](../../appendix/query_MYSQL5.md#ProductLife_GetRoadmap))|否|&nbsp;|
 |GetRoadmapS|获取产品路线([MYSQL5](../../appendix/query_MYSQL5.md#ProductLife_GetRoadmapS))|否|&nbsp;|
 |RoadMapYear|获取路线图年份([MYSQL5](../../appendix/query_MYSQL5.md#ProductLife_RoadMapYear))|否|&nbsp;注意，前期因为禅道会将未设置的时间置为2030-01-01，所以针对大于等于2030年的均不作展示处理|

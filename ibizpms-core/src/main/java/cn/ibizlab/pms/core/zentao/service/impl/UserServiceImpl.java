@@ -303,6 +303,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     public IUserService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public User dynamicCall(Long key, String action, User et) {
+        return et;
+    }
 }
 
 

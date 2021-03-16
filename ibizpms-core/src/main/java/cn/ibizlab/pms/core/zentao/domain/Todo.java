@@ -262,6 +262,13 @@ public class Todo extends EntityMP implements Serializable {
     @JsonProperty("config_end")
     private Timestamp configEnd;
     /**
+     * 费用
+     */
+    @TableField(value = "`cost`")
+    @JSONField(name = "cost")
+    @JsonProperty("cost")
+    private Integer cost;
+    /**
      * 优先级
      */
     @DEField(defaultValue = "0")
@@ -300,13 +307,6 @@ public class Todo extends EntityMP implements Serializable {
     @JSONField(name = "config")
     @JsonProperty("config")
     private String config;
-    /**
-     * 费用
-     */
-    @TableField(value = "`cost`")
-    @JSONField(name = "cost")
-    @JsonProperty("cost")
-    private Integer cost;
 
 
 
@@ -461,6 +461,14 @@ public class Todo extends EntityMP implements Serializable {
         return sdf.format(assigneddate);
     }
     /**
+     * 设置 [费用]
+     */
+    public void setCost(Integer cost) {
+        this.cost = cost;
+        this.modify("cost", cost);
+    }
+
+    /**
      * 设置 [优先级]
      */
     public void setPri(Integer pri) {
@@ -500,14 +508,6 @@ public class Todo extends EntityMP implements Serializable {
     public void setConfig(String config) {
         this.config = config;
         this.modify("config", config);
-    }
-
-    /**
-     * 设置 [费用]
-     */
-    public void setCost(Integer cost) {
-        this.cost = cost;
-        this.modify("cost", cost);
     }
 
 

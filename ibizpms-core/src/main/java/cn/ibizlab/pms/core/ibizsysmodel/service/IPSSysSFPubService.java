@@ -50,6 +50,7 @@ public interface IPSSysSFPubService {
     List<PSSysSFPub> selectByPpssyssfpubid(String pssyssfpubid);
     List<PSSysSFPub> selectByPpssyssfpubid(Collection<String> ids);
     void removeByPpssyssfpubid(String pssyssfpubid);
+    PSSysSFPub dynamicCall(String key, String action, PSSysSFPub et);
 
     boolean create(String devSlnSysId , PSSysSFPub et) ;
     void createBatch(String devSlnSysId, List<PSSysSFPub> list);
@@ -67,6 +68,7 @@ public interface IPSSysSFPubService {
     Page<PSSysSFPub> searchDefault(String devSlnSysId, PSSysSFPubSearchContext context);
     List<PSSysSFPub> selectByPpssyssfpubid(String devSlnSysId, String pssyssfpubid);
     void removeByPpssyssfpubid(String devSlnSysId, String pssyssfpubid);
+    PSSysSFPub dynamicCall(String key, String action, PSSysSFPub et);
 
 }
 

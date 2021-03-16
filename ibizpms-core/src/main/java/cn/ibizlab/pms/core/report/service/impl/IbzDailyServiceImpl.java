@@ -396,6 +396,11 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
     public IIbzDailyService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzDaily dynamicCall(Long key, String action, IbzDaily et) {
+        return et;
+    }
 }
 
 

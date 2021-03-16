@@ -51,6 +51,16 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     private Integer estimatecnt;
 
     /**
+     * 属性 [COMMENT]
+     *
+     */
+    @JSONField(name = "comment")
+    @JsonProperty("comment")
+    @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
+    @ApiModelProperty("备注")
+    private String comment;
+
+    /**
      * 属性 [TITLE]
      *
      */
@@ -131,6 +141,16 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     private Timestamp end;
 
     /**
+     * 属性 [DELAY]
+     *
+     */
+    @JSONField(name = "delay")
+    @JsonProperty("delay")
+    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
+    @ApiModelProperty("延期")
+    private String delay;
+
+    /**
      * 属性 [DURATION]
      *
      */
@@ -149,6 +169,15 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("开始日期")
     private String beginstr;
+
+    /**
+     * 属性 [LEFTESTIMATE]
+     *
+     */
+    @JSONField(name = "leftestimate")
+    @JsonProperty("leftestimate")
+    @ApiModelProperty("剩余工时")
+    private Double leftestimate;
 
     /**
      * 属性 [PLANTEMPLET]
@@ -180,6 +209,16 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     private String endstr;
 
     /**
+     * 属性 [STATUS]
+     *
+     */
+    @JSONField(name = "status")
+    @JsonProperty("status")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("计划状态")
+    private String status;
+
+    /**
      * 属性 [ISEXPIRED]
      *
      */
@@ -200,6 +239,15 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     private String deleted;
 
     /**
+     * 属性 [CONSUMEDESTIMATE]
+     *
+     */
+    @JSONField(name = "consumedestimate")
+    @JsonProperty("consumedestimate")
+    @ApiModelProperty("消耗工时")
+    private Double consumedestimate;
+
+    /**
      * 属性 [ORDER]
      *
      */
@@ -208,6 +256,15 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("排序")
     private String order;
+
+    /**
+     * 属性 [ISLEAF]
+     *
+     */
+    @JSONField(name = "isleaf")
+    @JsonProperty("isleaf")
+    @ApiModelProperty("叶子节点")
+    private Integer isleaf;
 
     /**
      * 属性 [FUTURE]
@@ -296,63 +353,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @ApiModelProperty("产品")
     private Long product;
 
-    /**
-     * 属性 [STATUS]
-     *
-     */
-    @JSONField(name = "status")
-    @JsonProperty("status")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("计划状态")
-    private String status;
-
-    /**
-     * 属性 [DELAY]
-     *
-     */
-    @JSONField(name = "delay")
-    @JsonProperty("delay")
-    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
-    @ApiModelProperty("延期")
-    private String delay;
-
-    /**
-     * 属性 [COMMENT]
-     *
-     */
-    @JSONField(name = "comment")
-    @JsonProperty("comment")
-    @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
-    @ApiModelProperty("备注")
-    private String comment;
-
-    /**
-     * 属性 [LEFTESTIMATE]
-     *
-     */
-    @JSONField(name = "leftestimate")
-    @JsonProperty("leftestimate")
-    @ApiModelProperty("剩余工时")
-    private Double leftestimate;
-
-    /**
-     * 属性 [CONSUMEDESTIMATE]
-     *
-     */
-    @JSONField(name = "consumedestimate")
-    @JsonProperty("consumedestimate")
-    @ApiModelProperty("消耗工时")
-    private Double consumedestimate;
-
-    /**
-     * 属性 [ISLEAF]
-     *
-     */
-    @JSONField(name = "isleaf")
-    @JsonProperty("isleaf")
-    @ApiModelProperty("叶子节点")
-    private Integer isleaf;
-
 
     /**
      * 设置 [TITLE]
@@ -387,6 +387,14 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [STATUS]
+     */
+    public void setStatus(String  status){
+        this.status = status ;
+        this.modify("status",status);
+    }
+
+    /**
      * 设置 [ORDER]
      */
     public void setOrder(String  order){
@@ -416,14 +424,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     public void setProduct(Long  product){
         this.product = product ;
         this.modify("product",product);
-    }
-
-    /**
-     * 设置 [STATUS]
-     */
-    public void setStatus(String  status){
-        this.status = status ;
-        this.modify("status",status);
     }
 
 

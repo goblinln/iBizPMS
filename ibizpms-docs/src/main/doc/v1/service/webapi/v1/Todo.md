@@ -495,12 +495,12 @@ POST
 | 27 | name | String | 允许 | 待办名称 |
 | 28 | assigneddate | Timestamp | 允许 | 指派日期<br>时间格式：yyyy-MM-dd |
 | 29 | config_end | Timestamp | 允许 | 过期时间<br>时间格式：yyyy-MM-dd |
-| 30 | pri | Integer | 允许 | 优先级 |
-| 31 | date | Timestamp | 允许 | 日期<br>时间格式：yyyy-MM-dd |
-| 32 | story | String | 允许 | 待办名称 |
-| 33 | ibizprivate | String | 允许 | 私人事务 |
-| 34 | config | String | 允许 | config |
-| 35 | cost | Integer | 允许 | 费用 |
+| 30 | cost | Integer | 允许 | 费用 |
+| 31 | pri | Integer | 允许 | 优先级 |
+| 32 | date | Timestamp | 允许 | 日期<br>时间格式：yyyy-MM-dd |
+| 33 | story | String | 允许 | 待办名称 |
+| 34 | ibizprivate | String | 允许 | 私人事务 |
+| 35 | config | String | 允许 | config |
 | 36 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### TodoSearchContext

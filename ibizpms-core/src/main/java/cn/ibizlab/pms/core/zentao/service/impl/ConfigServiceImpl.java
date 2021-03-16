@@ -227,6 +227,11 @@ public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> impleme
     public IConfigService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Config dynamicCall(Long key, String action, Config et) {
+        return et;
+    }
 }
 
 

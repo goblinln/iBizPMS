@@ -47,7 +47,7 @@ public class PSSystemDBCfgResource {
     @Lazy
     public PSSystemDBCfgMapping pssystemdbcfgMapping;
 
-    @PreAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdto),'pms-PSSystemDBCfg-Create')")
+    @PreAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdto),'iBizPMS-PSSystemDBCfg-Create')")
     @ApiOperation(value = "新建系统数据库", tags = {"系统数据库" },  notes = "新建系统数据库")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs")
     public ResponseEntity<PSSystemDBCfgDTO> create(@Validated @RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
@@ -57,7 +57,7 @@ public class PSSystemDBCfgResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdtos),'pms-PSSystemDBCfg-Create')")
+    @PreAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdtos),'iBizPMS-PSSystemDBCfg-Create')")
     @ApiOperation(value = "批量新建系统数据库", tags = {"系统数据库" },  notes = "批量新建系统数据库")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<PSSystemDBCfgDTO> pssystemdbcfgdtos) {
@@ -66,7 +66,7 @@ public class PSSystemDBCfgResource {
     }
 
     @VersionCheck(entity = "pssystemdbcfg" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.pssystemdbcfgService.get(#pssystemdbcfg_id),'pms-PSSystemDBCfg-Update')")
+    @PreAuthorize("hasPermission(this.pssystemdbcfgService.get(#pssystemdbcfg_id),'iBizPMS-PSSystemDBCfg-Update')")
     @ApiOperation(value = "更新系统数据库", tags = {"系统数据库" },  notes = "更新系统数据库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
     public ResponseEntity<PSSystemDBCfgDTO> update(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id, @RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
@@ -77,7 +77,7 @@ public class PSSystemDBCfgResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.pssystemdbcfgService.getPssystemdbcfgByEntities(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdtos)),'pms-PSSystemDBCfg-Update')")
+    @PreAuthorize("hasPermission(this.pssystemdbcfgService.getPssystemdbcfgByEntities(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdtos)),'iBizPMS-PSSystemDBCfg-Update')")
     @ApiOperation(value = "批量更新系统数据库", tags = {"系统数据库" },  notes = "批量更新系统数据库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<PSSystemDBCfgDTO> pssystemdbcfgdtos) {
@@ -85,14 +85,14 @@ public class PSSystemDBCfgResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.pssystemdbcfgService.get(#pssystemdbcfg_id),'pms-PSSystemDBCfg-Remove')")
+    @PreAuthorize("hasPermission(this.pssystemdbcfgService.get(#pssystemdbcfg_id),'iBizPMS-PSSystemDBCfg-Remove')")
     @ApiOperation(value = "删除系统数据库", tags = {"系统数据库" },  notes = "删除系统数据库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id) {
          return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.remove(pssystemdbcfg_id));
     }
 
-    @PreAuthorize("hasPermission(this.pssystemdbcfgService.getPssystemdbcfgByIds(#ids),'pms-PSSystemDBCfg-Remove')")
+    @PreAuthorize("hasPermission(this.pssystemdbcfgService.getPssystemdbcfgByIds(#ids),'iBizPMS-PSSystemDBCfg-Remove')")
     @ApiOperation(value = "批量删除系统数据库", tags = {"系统数据库" },  notes = "批量删除系统数据库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +100,7 @@ public class PSSystemDBCfgResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(returnObject.body),'pms-PSSystemDBCfg-Get')")
+    @PostAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(returnObject.body),'iBizPMS-PSSystemDBCfg-Get')")
     @ApiOperation(value = "获取系统数据库", tags = {"系统数据库" },  notes = "获取系统数据库")
 	@RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
     public ResponseEntity<PSSystemDBCfgDTO> get(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id) {
@@ -122,14 +122,14 @@ public class PSSystemDBCfgResource {
         return  ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.checkKey(pssystemdbcfgMapping.toDomain(pssystemdbcfgdto)));
     }
 
-    @PreAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdto),'pms-PSSystemDBCfg-Save')")
+    @PreAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdto),'iBizPMS-PSSystemDBCfg-Save')")
     @ApiOperation(value = "保存系统数据库", tags = {"系统数据库" },  notes = "保存系统数据库")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/save")
     public ResponseEntity<Boolean> save(@RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
         return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.save(pssystemdbcfgMapping.toDomain(pssystemdbcfgdto)));
     }
 
-    @PreAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdtos),'pms-PSSystemDBCfg-Save')")
+    @PreAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdtos),'iBizPMS-PSSystemDBCfg-Save')")
     @ApiOperation(value = "批量保存系统数据库", tags = {"系统数据库" },  notes = "批量保存系统数据库")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<PSSystemDBCfgDTO> pssystemdbcfgdtos) {
@@ -137,7 +137,7 @@ public class PSSystemDBCfgResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-PSSystemDBCfg-searchBuild-all') and hasPermission(#context,'pms-PSSystemDBCfg-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PSSystemDBCfg-searchBuild-all') and hasPermission(#context,'iBizPMS-PSSystemDBCfg-Get')")
 	@ApiOperation(value = "获取版本", tags = {"系统数据库" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.GET , value="/pssystemdbcfgs/fetchbuild")
 	public ResponseEntity<List<PSSystemDBCfgDTO>> fetchBuild(PSSystemDBCfgSearchContext context) {
@@ -150,7 +150,7 @@ public class PSSystemDBCfgResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-PSSystemDBCfg-searchBuild-all') and hasPermission(#context,'pms-PSSystemDBCfg-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PSSystemDBCfg-searchBuild-all') and hasPermission(#context,'iBizPMS-PSSystemDBCfg-Get')")
 	@ApiOperation(value = "查询版本", tags = {"系统数据库" } ,notes = "查询版本")
     @RequestMapping(method= RequestMethod.POST , value="/pssystemdbcfgs/searchbuild")
 	public ResponseEntity<Page<PSSystemDBCfgDTO>> searchBuild(@RequestBody PSSystemDBCfgSearchContext context) {
@@ -159,7 +159,7 @@ public class PSSystemDBCfgResource {
                 .body(new PageImpl(pssystemdbcfgMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-PSSystemDBCfg-searchDefault-all') and hasPermission(#context,'pms-PSSystemDBCfg-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PSSystemDBCfg-searchDefault-all') and hasPermission(#context,'iBizPMS-PSSystemDBCfg-Get')")
 	@ApiOperation(value = "获取数据集", tags = {"系统数据库" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/pssystemdbcfgs/fetchdefault")
 	public ResponseEntity<List<PSSystemDBCfgDTO>> fetchDefault(PSSystemDBCfgSearchContext context) {
@@ -172,7 +172,7 @@ public class PSSystemDBCfgResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-PSSystemDBCfg-searchDefault-all') and hasPermission(#context,'pms-PSSystemDBCfg-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PSSystemDBCfg-searchDefault-all') and hasPermission(#context,'iBizPMS-PSSystemDBCfg-Get')")
 	@ApiOperation(value = "查询数据集", tags = {"系统数据库" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssystemdbcfgs/searchdefault")
 	public ResponseEntity<Page<PSSystemDBCfgDTO>> searchDefault(@RequestBody PSSystemDBCfgSearchContext context) {
@@ -182,6 +182,13 @@ public class PSSystemDBCfgResource {
 	}
 
 
+	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
+    @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/{pssystemdbcfg_id}/{action}")
+    public ResponseEntity<PSSystemDBCfgDTO> dynamicCall(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id , @PathVariable("action") String action , @RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
+        PSSystemDBCfg domain = pssystemdbcfgService.dynamicCall(pssystemdbcfg_id, action, pssystemdbcfgMapping.toDomain(pssystemdbcfgdto));
+        pssystemdbcfgdto = pssystemdbcfgMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgdto);
+    }
 
 }
 

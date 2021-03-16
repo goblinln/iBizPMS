@@ -389,6 +389,11 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
 
 
 
+    @Override
+    @Transactional
+    public CaseStep dynamicCall(Long key, String action, CaseStep et) {
+        return et;
+    }
 }
 
 

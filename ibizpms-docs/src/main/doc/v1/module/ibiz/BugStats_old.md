@@ -121,7 +121,7 @@ hide members
 |BugResolvedBy|Bug完成表([MYSQL5](../../appendix/query_MYSQL5.md#BugStats_BugResolvedBy))|否|&nbsp;|
 |BugResolvedGird|bug解决汇总表([MYSQL5](../../appendix/query_MYSQL5.md#BugStats_BugResolvedGird))|否|&nbsp;|
 |BugassignedTo|Bug指派表([MYSQL5](../../appendix/query_MYSQL5.md#BugStats_BugassignedTo))|否|&nbsp;|
-|DEFAULT|Bug创建表([MYSQL5](../../appendix/query_MYSQL5.md#BugStats_Default))|否|&nbsp;|
+|DEFAULT|Bug创建表([MYSQL5](../../appendix/query_MYSQL5.md#BugStats_Default))|是|&nbsp;|
 |ProductBugResolutionStats|产品Bug解决方案汇总([MYSQL5](../../appendix/query_MYSQL5.md#BugStats_ProductBugResolutionStats))|否|&nbsp;|
 |ProductBugStatusSum|产品Bug状态汇总([MYSQL5](../../appendix/query_MYSQL5.md#BugStats_ProductBugStatusSum))|否|&nbsp;|
 |ProductCreateBug|产品创建bug占比([MYSQL5](../../appendix/query_MYSQL5.md#BugStats_ProductCreateBug))|否|&nbsp;|

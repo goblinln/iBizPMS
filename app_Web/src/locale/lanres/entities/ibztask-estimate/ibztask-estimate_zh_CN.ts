@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(IBZTaskEstimate_zh_CN_Base(), IBZTaskEstimate_zh_CN_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

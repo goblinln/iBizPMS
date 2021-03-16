@@ -4,7 +4,7 @@
 应用服务
 
 ## 服务名
-pms-webapi
+ibizpms-webapi
 
 ## 当前版本
 1

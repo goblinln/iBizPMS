@@ -50,6 +50,7 @@ public interface IDeptService extends IService<Dept> {
     Page<Dept> searchRoot(DeptSearchContext context);
     List<Dept> selectByParent(Long id);
     void removeByParent(Long id);
+    Dept dynamicCall(Long key, String action, Dept et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

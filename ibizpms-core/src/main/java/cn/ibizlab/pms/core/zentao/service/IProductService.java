@@ -64,6 +64,7 @@ public interface IProductService extends IService<Product> {
     Page<Product> searchStoryCurProject(ProductSearchContext context);
     List<Product> selectByLine(Long id);
     void removeByLine(Long id);
+    Product dynamicCall(Long key, String action, Product et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

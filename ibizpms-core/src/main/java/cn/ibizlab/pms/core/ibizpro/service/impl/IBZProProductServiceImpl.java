@@ -233,6 +233,11 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
     public IIBZProProductService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IBZProProduct dynamicCall(Long key, String action, IBZProProduct et) {
+        return et;
+    }
 }
 
 

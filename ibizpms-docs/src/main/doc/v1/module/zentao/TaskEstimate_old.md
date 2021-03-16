@@ -107,7 +107,7 @@ hide members
 | --------  | --------   | --------   | ----- |
 |ActionMonth|日志月([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ActionMonth))|否|&nbsp;|
 |ActionYear|日志年([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ActionYear))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_Default))|是|&nbsp;|
 |DEFAULT1|DEFAULT1([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_Defaults))|否|&nbsp;|
 |ProjectActionMonth|日志月（项目）([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ProjectActionMonth))|否|&nbsp;|
 |ProjectActionYear|日志年（项目）([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ProjectActionYear))|否|&nbsp;|

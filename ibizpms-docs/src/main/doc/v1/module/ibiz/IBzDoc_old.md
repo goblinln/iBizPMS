@@ -70,7 +70,7 @@
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |AllDoc|产品下所有文档（用户）([MYSQL5](../../appendix/query_MYSQL5.md#IBzDoc_AllDoc))|否|&nbsp;用户所能查看的指定产品下所有的文档|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#IBzDoc_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#IBzDoc_Default))|是|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#IBzDoc_View))|否|&nbsp;|
 
 * **数据集合**

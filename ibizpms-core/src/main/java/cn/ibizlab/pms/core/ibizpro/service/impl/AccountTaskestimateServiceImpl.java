@@ -236,6 +236,11 @@ public class AccountTaskestimateServiceImpl extends ServiceImpl<AccountTaskestim
     public IAccountTaskestimateService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public AccountTaskestimate dynamicCall(String key, String action, AccountTaskestimate et) {
+        return et;
+    }
 }
 
 

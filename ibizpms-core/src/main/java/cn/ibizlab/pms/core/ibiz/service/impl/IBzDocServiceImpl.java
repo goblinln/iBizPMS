@@ -107,5 +107,10 @@ public class IBzDocServiceImpl implements IIBzDocService {
     }
 
 
+    @Override
+    @Transactional
+    public IBzDoc dynamicCall(String key, String action, IBzDoc et) {
+        return et;
+    }
 }
 

@@ -227,6 +227,11 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score> implements
     public IScoreService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Score dynamicCall(Long key, String action, Score et) {
+        return et;
+    }
 }
 
 

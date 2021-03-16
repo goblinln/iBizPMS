@@ -260,6 +260,11 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
     public IIBZProSysTplService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IBZProSysTpl dynamicCall(String key, String action, IBZProSysTpl et) {
+        return et;
+    }
 }
 
 

@@ -397,6 +397,11 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     public IDocLibService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public DocLib dynamicCall(Long key, String action, DocLib et) {
+        return et;
+    }
 }
 
 

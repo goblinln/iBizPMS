@@ -46,6 +46,7 @@ public interface IProductLineService {
     boolean save(ProductLine et);
     void saveBatch(List<ProductLine> list);
     Page<ProductLine> searchDefault(ProductLineSearchContext context);
+    ProductLine dynamicCall(String key, String action, ProductLine et);
 
 }
 

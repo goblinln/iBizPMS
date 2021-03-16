@@ -94,6 +94,7 @@ public interface IProductPlanService extends IService<ProductPlan> {
     void removeByProduct(Long id);
     List<ProductPlan> selectByParent(Long id);
     void removeByParent(Long id);
+    ProductPlan dynamicCall(Long key, String action, ProductPlan et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

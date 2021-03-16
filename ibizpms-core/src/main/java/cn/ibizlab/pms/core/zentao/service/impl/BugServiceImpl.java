@@ -1079,6 +1079,11 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     public IBugService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Bug dynamicCall(Long key, String action, Bug et) {
+        return et;
+    }
 }
 
 

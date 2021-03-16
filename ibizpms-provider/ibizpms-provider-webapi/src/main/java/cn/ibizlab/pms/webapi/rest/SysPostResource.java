@@ -47,7 +47,7 @@ public class SysPostResource {
     @Lazy
     public SysPostMapping syspostMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysPost-Create-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysPost-Create-all')")
     @ApiOperation(value = "新建岗位", tags = {"岗位" },  notes = "新建岗位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysposts")
     public ResponseEntity<SysPostDTO> create(@Validated @RequestBody SysPostDTO syspostdto) {
@@ -57,7 +57,7 @@ public class SysPostResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysPost-Create-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysPost-Create-all')")
     @ApiOperation(value = "批量新建岗位", tags = {"岗位" },  notes = "批量新建岗位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysposts/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<SysPostDTO> syspostdtos) {
@@ -65,7 +65,7 @@ public class SysPostResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysPost-Update-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysPost-Update-all')")
     @ApiOperation(value = "更新岗位", tags = {"岗位" },  notes = "更新岗位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysposts/{syspost_id}")
     public ResponseEntity<SysPostDTO> update(@PathVariable("syspost_id") String syspost_id, @RequestBody SysPostDTO syspostdto) {
@@ -76,7 +76,7 @@ public class SysPostResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysPost-Update-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysPost-Update-all')")
     @ApiOperation(value = "批量更新岗位", tags = {"岗位" },  notes = "批量更新岗位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysposts/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysPostDTO> syspostdtos) {
@@ -84,14 +84,14 @@ public class SysPostResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysPost-Remove-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysPost-Remove-all')")
     @ApiOperation(value = "删除岗位", tags = {"岗位" },  notes = "删除岗位")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/{syspost_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("syspost_id") String syspost_id) {
          return ResponseEntity.status(HttpStatus.OK).body(syspostService.remove(syspost_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysPost-Remove-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysPost-Remove-all')")
     @ApiOperation(value = "批量删除岗位", tags = {"岗位" },  notes = "批量删除岗位")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -99,7 +99,7 @@ public class SysPostResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysPost-Get-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysPost-Get-all')")
     @ApiOperation(value = "获取岗位", tags = {"岗位" },  notes = "获取岗位")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysposts/{syspost_id}")
     public ResponseEntity<SysPostDTO> get(@PathVariable("syspost_id") String syspost_id) {
@@ -121,14 +121,14 @@ public class SysPostResource {
         return  ResponseEntity.status(HttpStatus.OK).body(syspostService.checkKey(syspostMapping.toDomain(syspostdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysPost-Save-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysPost-Save-all')")
     @ApiOperation(value = "保存岗位", tags = {"岗位" },  notes = "保存岗位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysposts/save")
     public ResponseEntity<Boolean> save(@RequestBody SysPostDTO syspostdto) {
         return ResponseEntity.status(HttpStatus.OK).body(syspostService.save(syspostMapping.toDomain(syspostdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysPost-Save-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysPost-Save-all')")
     @ApiOperation(value = "批量保存岗位", tags = {"岗位" },  notes = "批量保存岗位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysposts/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysPostDTO> syspostdtos) {
@@ -136,7 +136,7 @@ public class SysPostResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysPost-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysPost-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"岗位" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysposts/fetchdefault")
 	public ResponseEntity<List<SysPostDTO>> fetchDefault(SysPostSearchContext context) {
@@ -149,7 +149,7 @@ public class SysPostResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysPost-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysPost-searchDefault-all')")
 	@ApiOperation(value = "查询数据集", tags = {"岗位" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysposts/searchdefault")
 	public ResponseEntity<Page<SysPostDTO>> searchDefault(@RequestBody SysPostSearchContext context) {
@@ -159,6 +159,13 @@ public class SysPostResource {
 	}
 
 
+	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
+    @RequestMapping(method = RequestMethod.POST, value = "/sysposts/{syspost_id}/{action}")
+    public ResponseEntity<SysPostDTO> dynamicCall(@PathVariable("syspost_id") String syspost_id , @PathVariable("action") String action , @RequestBody SysPostDTO syspostdto) {
+        SysPost domain = syspostService.dynamicCall(syspost_id, action, syspostMapping.toDomain(syspostdto));
+        syspostdto = syspostMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(syspostdto);
+    }
 
 }
 

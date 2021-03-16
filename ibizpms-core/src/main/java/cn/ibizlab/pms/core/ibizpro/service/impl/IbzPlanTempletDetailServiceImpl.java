@@ -294,6 +294,11 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
 
 
 
+    @Override
+    @Transactional
+    public IbzPlanTempletDetail dynamicCall(String key, String action, IbzPlanTempletDetail et) {
+        return et;
+    }
 }
 
 

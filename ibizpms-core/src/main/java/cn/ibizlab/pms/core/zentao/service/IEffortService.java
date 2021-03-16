@@ -47,6 +47,7 @@ public interface IEffortService extends IService<Effort> {
     boolean save(Effort et);
     void saveBatch(List<Effort> list);
     Page<Effort> searchDefault(EffortSearchContext context);
+    Effort dynamicCall(Long key, String action, Effort et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

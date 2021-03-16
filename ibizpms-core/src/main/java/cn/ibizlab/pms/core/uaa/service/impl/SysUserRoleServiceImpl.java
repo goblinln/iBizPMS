@@ -204,6 +204,11 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
 
 
 
+    @Override
+    @Transactional
+    public SysUserRole dynamicCall(String key, String action, SysUserRole et) {
+        return et;
+    }
 }
 
 

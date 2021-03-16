@@ -273,6 +273,11 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
     public IIbzCaseService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzCase dynamicCall(Long key, String action, IbzCase et) {
+        return et;
+    }
 }
 
 

@@ -227,6 +227,11 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
     public IRepoBranchService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public RepoBranch dynamicCall(String key, String action, RepoBranch et) {
+        return et;
+    }
 }
 
 

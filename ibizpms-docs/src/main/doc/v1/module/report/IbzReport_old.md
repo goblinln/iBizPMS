@@ -148,7 +148,7 @@ hide footbox
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |AllReport|汇报汇总([MYSQL5](../../appendix/query_MYSQL5.md#IbzReport_AllReport))|否|&nbsp;|
-|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzReport_Default))|否|&nbsp;|
+|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzReport_Default))|是|&nbsp;|
 |MyReAllReport|汇报汇总（我收到的）([MYSQL5](../../appendix/query_MYSQL5.md#IbzReport_MyReAllReport))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#IbzReport_View))|否|&nbsp;|
 

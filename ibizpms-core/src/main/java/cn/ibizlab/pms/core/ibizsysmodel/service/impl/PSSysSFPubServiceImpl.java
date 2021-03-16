@@ -314,6 +314,11 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
 
 
 
+    @Override
+    @Transactional
+    public PSSysSFPub dynamicCall(String key, String action, PSSysSFPub et) {
+        return et;
+    }
 }
 
 

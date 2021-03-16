@@ -314,6 +314,11 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
 
 
 
+    @Override
+    @Transactional
+    public PSSysApp dynamicCall(String key, String action, PSSysApp et) {
+        return et;
+    }
 }
 
 

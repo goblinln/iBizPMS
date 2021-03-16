@@ -212,7 +212,7 @@ hide footbox
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#IbzMyTerritory_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#IbzMyTerritory_Default))|是|&nbsp;|
 |MyWork|我的工作([MYSQL5](../../appendix/query_MYSQL5.md#IbzMyTerritory_MyWork))|否|&nbsp;|
 |MyWorkMob|我的工作([MYSQL5](../../appendix/query_MYSQL5.md#IbzMyTerritory_MyWorkMob))|否|&nbsp;|
 |MyWorkPm|我的工作（项目经理）([MYSQL5](../../appendix/query_MYSQL5.md#IbzMyTerritory_MyWorkPm))|否|&nbsp;|

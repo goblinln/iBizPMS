@@ -286,6 +286,11 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     public ISuiteCaseService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public SuiteCase dynamicCall(String key, String action, SuiteCase et) {
+        return et;
+    }
 }
 
 

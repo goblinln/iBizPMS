@@ -1,4 +1,5 @@
 import commonLogic from '@/locale/logic/common/common-logic';
+
 function getLocaleResourceBase(){
   const data:any = {
       ActionManner: {
@@ -99,6 +100,14 @@ function getLocaleResourceBase(){
           "2018": commonLogic.appcommonhandle("2018年",null),
           "2019": commonLogic.appcommonhandle("2019年",null),
           "2020": commonLogic.appcommonhandle("2020年",null),
+          "2021": commonLogic.appcommonhandle("2021年",null),
+          "2022": commonLogic.appcommonhandle("2022年",null),
+          "2023": commonLogic.appcommonhandle("2023年",null),
+          "2024": commonLogic.appcommonhandle("2024年",null),
+          "2025": commonLogic.appcommonhandle("2025年",null),
+          "2026": commonLogic.appcommonhandle("2026年",null),
+          "2027": commonLogic.appcommonhandle("2027年",null),
+          "2028": commonLogic.appcommonhandle("2028年",null),
           "empty": commonLogic.appcommonhandle("",null)
       },
       Project__status: {

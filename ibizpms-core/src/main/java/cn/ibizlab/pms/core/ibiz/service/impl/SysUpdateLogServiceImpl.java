@@ -268,6 +268,11 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
     public ISysUpdateLogService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public SysUpdateLog dynamicCall(String key, String action, SysUpdateLog et) {
+        return et;
+    }
 }
 
 

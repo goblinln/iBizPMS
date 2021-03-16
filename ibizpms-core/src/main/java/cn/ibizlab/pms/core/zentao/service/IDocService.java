@@ -77,6 +77,7 @@ public interface IDocService extends IService<Doc> {
     void removeByProduct(Long id);
     List<Doc> selectByProject(Long id);
     void removeByProject(Long id);
+    Doc dynamicCall(Long key, String action, Doc et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

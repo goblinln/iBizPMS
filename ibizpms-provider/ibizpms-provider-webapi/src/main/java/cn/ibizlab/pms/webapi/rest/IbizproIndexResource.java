@@ -47,7 +47,7 @@ public class IbizproIndexResource {
     @Lazy
     public IbizproIndexMapping ibizproindexMapping;
 
-    @PreAuthorize("hasPermission(this.ibizproindexMapping.toDomain(#ibizproindexdto),'pms-IbizproIndex-Create')")
+    @PreAuthorize("hasPermission(this.ibizproindexMapping.toDomain(#ibizproindexdto),'iBizPMS-IbizproIndex-Create')")
     @ApiOperation(value = "新建索引检索", tags = {"索引检索" },  notes = "新建索引检索")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices")
     public ResponseEntity<IbizproIndexDTO> create(@Validated @RequestBody IbizproIndexDTO ibizproindexdto) {
@@ -57,7 +57,7 @@ public class IbizproIndexResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproindexMapping.toDomain(#ibizproindexdtos),'pms-IbizproIndex-Create')")
+    @PreAuthorize("hasPermission(this.ibizproindexMapping.toDomain(#ibizproindexdtos),'iBizPMS-IbizproIndex-Create')")
     @ApiOperation(value = "批量新建索引检索", tags = {"索引检索" },  notes = "批量新建索引检索")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbizproIndexDTO> ibizproindexdtos) {
@@ -65,7 +65,7 @@ public class IbizproIndexResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproindexService.get(#ibizproindex_id),'pms-IbizproIndex-Update')")
+    @PreAuthorize("hasPermission(this.ibizproindexService.get(#ibizproindex_id),'iBizPMS-IbizproIndex-Update')")
     @ApiOperation(value = "更新索引检索", tags = {"索引检索" },  notes = "更新索引检索")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproindices/{ibizproindex_id}")
     public ResponseEntity<IbizproIndexDTO> update(@PathVariable("ibizproindex_id") Long ibizproindex_id, @RequestBody IbizproIndexDTO ibizproindexdto) {
@@ -76,7 +76,7 @@ public class IbizproIndexResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproindexService.getIbizproindexByEntities(this.ibizproindexMapping.toDomain(#ibizproindexdtos)),'pms-IbizproIndex-Update')")
+    @PreAuthorize("hasPermission(this.ibizproindexService.getIbizproindexByEntities(this.ibizproindexMapping.toDomain(#ibizproindexdtos)),'iBizPMS-IbizproIndex-Update')")
     @ApiOperation(value = "批量更新索引检索", tags = {"索引检索" },  notes = "批量更新索引检索")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproindices/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbizproIndexDTO> ibizproindexdtos) {
@@ -84,14 +84,14 @@ public class IbizproIndexResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproindexService.get(#ibizproindex_id),'pms-IbizproIndex-Remove')")
+    @PreAuthorize("hasPermission(this.ibizproindexService.get(#ibizproindex_id),'iBizPMS-IbizproIndex-Remove')")
     @ApiOperation(value = "删除索引检索", tags = {"索引检索" },  notes = "删除索引检索")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproindices/{ibizproindex_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizproindex_id") Long ibizproindex_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproindexService.remove(ibizproindex_id));
     }
 
-    @PreAuthorize("hasPermission(this.ibizproindexService.getIbizproindexByIds(#ids),'pms-IbizproIndex-Remove')")
+    @PreAuthorize("hasPermission(this.ibizproindexService.getIbizproindexByIds(#ids),'iBizPMS-IbizproIndex-Remove')")
     @ApiOperation(value = "批量删除索引检索", tags = {"索引检索" },  notes = "批量删除索引检索")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproindices/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class IbizproIndexResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.ibizproindexMapping.toDomain(returnObject.body),'pms-IbizproIndex-Get')")
+    @PostAuthorize("hasPermission(this.ibizproindexMapping.toDomain(returnObject.body),'iBizPMS-IbizproIndex-Get')")
     @ApiOperation(value = "获取索引检索", tags = {"索引检索" },  notes = "获取索引检索")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproindices/{ibizproindex_id}")
     public ResponseEntity<IbizproIndexDTO> get(@PathVariable("ibizproindex_id") Long ibizproindex_id) {
@@ -121,14 +121,14 @@ public class IbizproIndexResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizproindexService.checkKey(ibizproindexMapping.toDomain(ibizproindexdto)));
     }
 
-    @PreAuthorize("hasPermission(this.ibizproindexMapping.toDomain(#ibizproindexdto),'pms-IbizproIndex-Save')")
+    @PreAuthorize("hasPermission(this.ibizproindexMapping.toDomain(#ibizproindexdto),'iBizPMS-IbizproIndex-Save')")
     @ApiOperation(value = "保存索引检索", tags = {"索引检索" },  notes = "保存索引检索")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/save")
     public ResponseEntity<Boolean> save(@RequestBody IbizproIndexDTO ibizproindexdto) {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproindexService.save(ibizproindexMapping.toDomain(ibizproindexdto)));
     }
 
-    @PreAuthorize("hasPermission(this.ibizproindexMapping.toDomain(#ibizproindexdtos),'pms-IbizproIndex-Save')")
+    @PreAuthorize("hasPermission(this.ibizproindexMapping.toDomain(#ibizproindexdtos),'iBizPMS-IbizproIndex-Save')")
     @ApiOperation(value = "批量保存索引检索", tags = {"索引检索" },  notes = "批量保存索引检索")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbizproIndexDTO> ibizproindexdtos) {
@@ -136,7 +136,7 @@ public class IbizproIndexResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbizproIndex-searchDefault-all') and hasPermission(#context,'pms-IbizproIndex-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproIndex-searchDefault-all') and hasPermission(#context,'iBizPMS-IbizproIndex-Get')")
 	@ApiOperation(value = "获取数据集", tags = {"索引检索" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproindices/fetchdefault")
 	public ResponseEntity<List<IbizproIndexDTO>> fetchDefault(IbizproIndexSearchContext context) {
@@ -149,7 +149,7 @@ public class IbizproIndexResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbizproIndex-searchDefault-all') and hasPermission(#context,'pms-IbizproIndex-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproIndex-searchDefault-all') and hasPermission(#context,'iBizPMS-IbizproIndex-Get')")
 	@ApiOperation(value = "查询数据集", tags = {"索引检索" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/searchdefault")
 	public ResponseEntity<Page<IbizproIndexDTO>> searchDefault(@RequestBody IbizproIndexSearchContext context) {
@@ -158,7 +158,7 @@ public class IbizproIndexResource {
                 .body(new PageImpl(ibizproindexMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbizproIndex-searchESquery-all') and hasPermission(#context,'pms-IbizproIndex-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproIndex-searchESquery-all') and hasPermission(#context,'iBizPMS-IbizproIndex-Get')")
 	@ApiOperation(value = "获取全文检索", tags = {"索引检索" } ,notes = "获取全文检索")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproindices/fetchesquery")
 	public ResponseEntity<List<IbizproIndexDTO>> fetchESquery(IbizproIndexSearchContext context) {
@@ -171,7 +171,7 @@ public class IbizproIndexResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbizproIndex-searchESquery-all') and hasPermission(#context,'pms-IbizproIndex-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproIndex-searchESquery-all') and hasPermission(#context,'iBizPMS-IbizproIndex-Get')")
 	@ApiOperation(value = "查询全文检索", tags = {"索引检索" } ,notes = "查询全文检索")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/searchesquery")
 	public ResponseEntity<Page<IbizproIndexDTO>> searchESquery(@RequestBody IbizproIndexSearchContext context) {
@@ -180,7 +180,7 @@ public class IbizproIndexResource {
                 .body(new PageImpl(ibizproindexMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbizproIndex-searchIndexDER-all') and hasPermission(#context,'pms-IbizproIndex-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproIndex-searchIndexDER-all') and hasPermission(#context,'iBizPMS-IbizproIndex-Get')")
 	@ApiOperation(value = "获取数据集2", tags = {"索引检索" } ,notes = "获取数据集2")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproindices/fetchindexder")
 	public ResponseEntity<List<IbizproIndexDTO>> fetchIndexDER(IbizproIndexSearchContext context) {
@@ -193,7 +193,7 @@ public class IbizproIndexResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbizproIndex-searchIndexDER-all') and hasPermission(#context,'pms-IbizproIndex-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproIndex-searchIndexDER-all') and hasPermission(#context,'iBizPMS-IbizproIndex-Get')")
 	@ApiOperation(value = "查询数据集2", tags = {"索引检索" } ,notes = "查询数据集2")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/searchindexder")
 	public ResponseEntity<Page<IbizproIndexDTO>> searchIndexDER(@RequestBody IbizproIndexSearchContext context) {
@@ -203,6 +203,13 @@ public class IbizproIndexResource {
 	}
 
 
+	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
+    @RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/{ibizproindex_id}/{action}")
+    public ResponseEntity<IbizproIndexDTO> dynamicCall(@PathVariable("ibizproindex_id") Long ibizproindex_id , @PathVariable("action") String action , @RequestBody IbizproIndexDTO ibizproindexdto) {
+        IbizproIndex domain = ibizproindexService.dynamicCall(ibizproindex_id, action, ibizproindexMapping.toDomain(ibizproindexdto));
+        ibizproindexdto = ibizproindexMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibizproindexdto);
+    }
 
 }
 

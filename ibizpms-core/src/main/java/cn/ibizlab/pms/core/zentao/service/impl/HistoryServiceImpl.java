@@ -239,6 +239,11 @@ public class HistoryServiceImpl extends ServiceImpl<HistoryMapper, History> impl
     public IHistoryService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public History dynamicCall(Long key, String action, History et) {
+        return et;
+    }
 }
 
 

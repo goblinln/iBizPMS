@@ -48,6 +48,13 @@ public class IBzDocResource {
     public IBzDocMapping ibzdocMapping;
 
 
+	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
+    @RequestMapping(method = RequestMethod.POST, value = "/ibzdocs/{ibzdoc_id}/{action}")
+    public ResponseEntity<IBzDocDTO> dynamicCall(@PathVariable("ibzdoc_id") String ibzdoc_id , @PathVariable("action") String action , @RequestBody IBzDocDTO ibzdocdto) {
+        IBzDoc domain = ibzdocService.dynamicCall(ibzdoc_id, action, ibzdocMapping.toDomain(ibzdocdto));
+        ibzdocdto = ibzdocMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzdocdto);
+    }
 
 }
 

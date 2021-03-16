@@ -47,6 +47,7 @@ public interface ILogService extends IService<Log> {
     boolean save(Log et);
     void saveBatch(List<Log> list);
     Page<Log> searchDefault(LogSearchContext context);
+    Log dynamicCall(Long key, String action, Log et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

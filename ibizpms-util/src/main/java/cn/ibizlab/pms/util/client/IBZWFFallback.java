@@ -26,4 +26,9 @@ public class IBZWFFallback implements IBZWFFeignClient {
     public JSONObject wfstart(String system, String appname, String entity, String businessKey, JSONObject instance) {
         return null;
     }
+
+    @Override
+    public Map<String, Map<String, Object>> getDynaBusinesskeysByUserId(String system, String userId, String entity, String dynainstid) {
+        return null;
+    }
 }

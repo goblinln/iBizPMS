@@ -358,6 +358,11 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     public IBuildService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Build dynamicCall(Long key, String action, Build et) {
+        return et;
+    }
 }
 
 

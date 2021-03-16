@@ -55,6 +55,7 @@ public interface IIbzMyTerritoryService extends IService<IbzMyTerritory> {
     Page<IbzMyTerritory> searchMyWorkPm(IbzMyTerritorySearchContext context);
     Page<IbzMyTerritory> searchPersonInfo(IbzMyTerritorySearchContext context);
     Page<IbzMyTerritory> searchWelcome(IbzMyTerritorySearchContext context);
+    IbzMyTerritory dynamicCall(Long key, String action, IbzMyTerritory et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

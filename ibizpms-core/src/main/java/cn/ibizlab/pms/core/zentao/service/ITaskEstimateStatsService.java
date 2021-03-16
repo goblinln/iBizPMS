@@ -49,6 +49,7 @@ public interface ITaskEstimateStatsService extends IService<TaskEstimateStats> {
     Page<TaskEstimateStats> searchActionMonth(TaskEstimateStatsSearchContext context);
     Page<TaskEstimateStats> searchActionYear(TaskEstimateStatsSearchContext context);
     Page<TaskEstimateStats> searchDefault(TaskEstimateStatsSearchContext context);
+    TaskEstimateStats dynamicCall(Long key, String action, TaskEstimateStats et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

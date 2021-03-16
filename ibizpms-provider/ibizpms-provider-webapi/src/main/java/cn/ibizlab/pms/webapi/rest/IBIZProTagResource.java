@@ -47,7 +47,7 @@ public class IBIZProTagResource {
     @Lazy
     public IBIZProTagMapping ibizprotagMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProTag-Create-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-Create-all')")
     @ApiOperation(value = "新建标签", tags = {"标签" },  notes = "新建标签")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags")
     public ResponseEntity<IBIZProTagDTO> create(@Validated @RequestBody IBIZProTagDTO ibizprotagdto) {
@@ -57,7 +57,7 @@ public class IBIZProTagResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProTag-Create-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-Create-all')")
     @ApiOperation(value = "批量新建标签", tags = {"标签" },  notes = "批量新建标签")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IBIZProTagDTO> ibizprotagdtos) {
@@ -65,7 +65,7 @@ public class IBIZProTagResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProTag-Update-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-Update-all')")
     @ApiOperation(value = "更新标签", tags = {"标签" },  notes = "更新标签")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/{ibizprotag_id}")
     public ResponseEntity<IBIZProTagDTO> update(@PathVariable("ibizprotag_id") String ibizprotag_id, @RequestBody IBIZProTagDTO ibizprotagdto) {
@@ -76,7 +76,7 @@ public class IBIZProTagResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProTag-Update-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-Update-all')")
     @ApiOperation(value = "批量更新标签", tags = {"标签" },  notes = "批量更新标签")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBIZProTagDTO> ibizprotagdtos) {
@@ -84,14 +84,14 @@ public class IBIZProTagResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProTag-Remove-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-Remove-all')")
     @ApiOperation(value = "删除标签", tags = {"标签" },  notes = "删除标签")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprotags/{ibizprotag_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizprotag_id") String ibizprotag_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibizprotagService.remove(ibizprotag_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProTag-Remove-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-Remove-all')")
     @ApiOperation(value = "批量删除标签", tags = {"标签" },  notes = "批量删除标签")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprotags/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -99,7 +99,7 @@ public class IBIZProTagResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProTag-Get-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-Get-all')")
     @ApiOperation(value = "获取标签", tags = {"标签" },  notes = "获取标签")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/{ibizprotag_id}")
     public ResponseEntity<IBIZProTagDTO> get(@PathVariable("ibizprotag_id") String ibizprotag_id) {
@@ -121,14 +121,14 @@ public class IBIZProTagResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizprotagService.checkKey(ibizprotagMapping.toDomain(ibizprotagdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProTag-Save-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-Save-all')")
     @ApiOperation(value = "保存标签", tags = {"标签" },  notes = "保存标签")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/save")
     public ResponseEntity<Boolean> save(@RequestBody IBIZProTagDTO ibizprotagdto) {
         return ResponseEntity.status(HttpStatus.OK).body(ibizprotagService.save(ibizprotagMapping.toDomain(ibizprotagdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProTag-Save-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-Save-all')")
     @ApiOperation(value = "批量保存标签", tags = {"标签" },  notes = "批量保存标签")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBIZProTagDTO> ibizprotagdtos) {
@@ -136,7 +136,7 @@ public class IBIZProTagResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProTag-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"标签" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibizprotags/fetchdefault")
 	public ResponseEntity<List<IBIZProTagDTO>> fetchDefault(IBIZProTagSearchContext context) {
@@ -149,7 +149,7 @@ public class IBIZProTagResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProTag-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-searchDefault-all')")
 	@ApiOperation(value = "查询数据集", tags = {"标签" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizprotags/searchdefault")
 	public ResponseEntity<Page<IBIZProTagDTO>> searchDefault(@RequestBody IBIZProTagSearchContext context) {
@@ -159,6 +159,13 @@ public class IBIZProTagResource {
 	}
 
 
+	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
+    @RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/{ibizprotag_id}/{action}")
+    public ResponseEntity<IBIZProTagDTO> dynamicCall(@PathVariable("ibizprotag_id") String ibizprotag_id , @PathVariable("action") String action , @RequestBody IBIZProTagDTO ibizprotagdto) {
+        IBIZProTag domain = ibizprotagService.dynamicCall(ibizprotag_id, action, ibizprotagMapping.toDomain(ibizprotagdto));
+        ibizprotagdto = ibizprotagMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibizprotagdto);
+    }
 
 }
 

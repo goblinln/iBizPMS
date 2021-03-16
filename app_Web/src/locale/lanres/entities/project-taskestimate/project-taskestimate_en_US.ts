@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(ProjectTaskestimate_en_US_Base(), ProjectTaskestimate_en_US_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

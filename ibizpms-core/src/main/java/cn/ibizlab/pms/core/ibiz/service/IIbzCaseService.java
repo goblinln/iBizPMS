@@ -51,6 +51,7 @@ public interface IIbzCaseService extends IService<IbzCase> {
     void removeByModule(Long id);
     List<IbzCase> selectByLib(Long id);
     void removeByLib(Long id);
+    IbzCase dynamicCall(Long key, String action, IbzCase et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

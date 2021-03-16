@@ -49,6 +49,7 @@ public interface IRepoFilesService extends IService<RepoFiles> {
     Page<RepoFiles> searchDefault(RepoFilesSearchContext context);
     List<RepoFiles> selectByParent(Long id);
     void removeByParent(Long id);
+    RepoFiles dynamicCall(Long key, String action, RepoFiles et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

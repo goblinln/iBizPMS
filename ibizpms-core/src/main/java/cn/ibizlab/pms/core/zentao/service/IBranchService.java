@@ -52,6 +52,7 @@ public interface IBranchService extends IService<Branch> {
     Page<Branch> searchDefault(BranchSearchContext context);
     List<Branch> selectByProduct(Long id);
     void removeByProduct(Long id);
+    Branch dynamicCall(Long key, String action, Branch et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

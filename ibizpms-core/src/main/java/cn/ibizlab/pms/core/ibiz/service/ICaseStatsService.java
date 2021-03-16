@@ -52,6 +52,7 @@ public interface ICaseStatsService extends IService<CaseStats> {
     void removeByModule(Long id);
     List<CaseStats> selectByProduct(Long id);
     void removeByProduct(Long id);
+    CaseStats dynamicCall(Long key, String action, CaseStats et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

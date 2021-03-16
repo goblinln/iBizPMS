@@ -238,6 +238,11 @@ public class RepoFilesServiceImpl extends ServiceImpl<RepoFilesMapper, RepoFiles
     public IRepoFilesService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public RepoFiles dynamicCall(Long key, String action, RepoFiles et) {
+        return et;
+    }
 }
 
 

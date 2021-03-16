@@ -47,6 +47,7 @@ public interface ICompanyService extends IService<Company> {
     boolean save(Company et);
     void saveBatch(List<Company> list);
     Page<Company> searchDefault(CompanySearchContext context);
+    Company dynamicCall(Long key, String action, Company et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

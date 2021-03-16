@@ -227,6 +227,11 @@ public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> impleme
     public IEffortService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Effort dynamicCall(Long key, String action, Effort et) {
+        return et;
+    }
 }
 
 

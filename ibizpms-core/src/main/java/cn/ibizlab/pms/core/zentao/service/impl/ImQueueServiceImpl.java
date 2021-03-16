@@ -227,6 +227,11 @@ public class ImQueueServiceImpl extends ServiceImpl<ImQueueMapper, ImQueue> impl
     public IImQueueService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ImQueue dynamicCall(Long key, String action, ImQueue et) {
+        return et;
+    }
 }
 
 

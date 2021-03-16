@@ -248,6 +248,11 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
     public ITaskMsgRecordService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public TaskMsgRecord dynamicCall(String key, String action, TaskMsgRecord et) {
+        return et;
+    }
 }
 
 

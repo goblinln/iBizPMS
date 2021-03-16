@@ -227,6 +227,11 @@ public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements IL
     public ILangService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Lang dynamicCall(Long key, String action, Lang et) {
+        return et;
+    }
 }
 
 

@@ -51,6 +51,7 @@ public interface ISysUserRoleService {
     void removeByRoleid(String roleid);
     List<SysUserRole> selectByUserid(String userid);
     void removeByUserid(String userid);
+    SysUserRole dynamicCall(String key, String action, SysUserRole et);
 
 
 }

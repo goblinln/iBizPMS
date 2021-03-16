@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(IbzPlanTempletDetail_en_US_Base(), IbzPlanTempletDetail_en_US_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

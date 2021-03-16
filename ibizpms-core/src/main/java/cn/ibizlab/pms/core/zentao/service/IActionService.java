@@ -60,6 +60,7 @@ public interface IActionService extends IService<Action> {
     Page<Action> searchType(ActionSearchContext context);
     List<Action> selectByProject(Long id);
     void removeByProject(Long id);
+    Action dynamicCall(Long key, String action, Action et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

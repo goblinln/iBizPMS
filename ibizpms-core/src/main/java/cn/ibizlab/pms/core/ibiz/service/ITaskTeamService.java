@@ -50,6 +50,7 @@ public interface ITaskTeamService extends IService<TaskTeam> {
     List<TaskTeam> selectByRoot(Long id);
     void removeByRoot(Long id);
     void saveByRoot(Long id, List<TaskTeam> list) ;
+    TaskTeam dynamicCall(Long key, String action, TaskTeam et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

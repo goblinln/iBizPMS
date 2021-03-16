@@ -49,6 +49,7 @@ public interface IPSSysServiceAPIService {
     List<PSSysServiceAPI> selectByPsmoduleid(String psmoduleid);
     List<PSSysServiceAPI> selectByPsmoduleid(Collection<String> ids);
     void removeByPsmoduleid(String psmoduleid);
+    PSSysServiceAPI dynamicCall(String key, String action, PSSysServiceAPI et);
 
     boolean create(String devSlnSysId , PSSysServiceAPI et) ;
     void createBatch(String devSlnSysId, List<PSSysServiceAPI> list);
@@ -65,6 +66,7 @@ public interface IPSSysServiceAPIService {
     Page<PSSysServiceAPI> searchDefault(String devSlnSysId, PSSysServiceAPISearchContext context);
     List<PSSysServiceAPI> selectByPsmoduleid(String devSlnSysId, String psmoduleid);
     void removeByPsmoduleid(String devSlnSysId, String psmoduleid);
+    PSSysServiceAPI dynamicCall(String key, String action, PSSysServiceAPI et);
 
 }
 

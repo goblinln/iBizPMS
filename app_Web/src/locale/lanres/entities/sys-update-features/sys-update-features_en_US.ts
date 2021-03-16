@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(SysUpdateFeatures_en_US_Base(), SysUpdateFeatures_en_US_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

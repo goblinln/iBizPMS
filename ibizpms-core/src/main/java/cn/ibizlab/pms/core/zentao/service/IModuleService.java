@@ -59,6 +59,7 @@ public interface IModuleService extends IService<Module> {
     void removeByBranch(Long id);
     List<Module> selectByParent(Long id);
     void removeByParent(Long id);
+    Module dynamicCall(Long key, String action, Module et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

@@ -52,6 +52,7 @@ public interface IPSSysReqItemService {
     List<PSSysReqItem> selectByPssysreqmoduleid(String pssysreqmoduleid);
     List<PSSysReqItem> selectByPssysreqmoduleid(Collection<String> ids);
     void removeByPssysreqmoduleid(String pssysreqmoduleid);
+    PSSysReqItem dynamicCall(String key, String action, PSSysReqItem et);
 
     boolean create(String devSlnSysId , PSSysReqItem et) ;
     void createBatch(String devSlnSysId, List<PSSysReqItem> list);
@@ -70,6 +71,7 @@ public interface IPSSysReqItemService {
     void removeByPpssysreqitemid(String devSlnSysId, String pssysreqitemid);
     List<PSSysReqItem> selectByPssysreqmoduleid(String devSlnSysId, String pssysreqmoduleid);
     void removeByPssysreqmoduleid(String devSlnSysId, String pssysreqmoduleid);
+    PSSysReqItem dynamicCall(String key, String action, PSSysReqItem et);
 
 }
 

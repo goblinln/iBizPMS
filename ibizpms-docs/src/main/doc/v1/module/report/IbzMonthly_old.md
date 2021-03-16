@@ -100,7 +100,7 @@
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzMonthly_Default))|否|&nbsp;|
+|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzMonthly_Default))|是|&nbsp;|
 |MyMonthly|我的月报([MYSQL5](../../appendix/query_MYSQL5.md#IbzMonthly_MyMonthly))|否|&nbsp;|
 |MyMonthlyMob|我的月报（移动端）([MYSQL5](../../appendix/query_MYSQL5.md#IbzMonthly_MyMonthlyMob))|否|&nbsp;|
 |MyReceivedMonthly|我收到的月报([MYSQL5](../../appendix/query_MYSQL5.md#IbzMonthly_MyReceivedMonthly))|否|&nbsp;|

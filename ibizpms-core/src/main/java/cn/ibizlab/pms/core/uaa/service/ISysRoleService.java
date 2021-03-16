@@ -48,6 +48,7 @@ public interface ISysRoleService {
     Page<SysRole> searchDefault(SysRoleSearchContext context);
     List<SysRole> selectByProleid(String roleid);
     void removeByProleid(String roleid);
+    SysRole dynamicCall(String key, String action, SysRole et);
 
 
 }

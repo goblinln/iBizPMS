@@ -289,6 +289,11 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     public IIbizproIndexService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbizproIndex dynamicCall(Long key, String action, IbizproIndex et) {
+        return et;
+    }
 }
 
 

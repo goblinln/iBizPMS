@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(Action_en_US_Base(), Action_en_US_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

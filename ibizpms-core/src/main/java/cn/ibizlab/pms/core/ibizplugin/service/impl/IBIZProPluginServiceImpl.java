@@ -156,6 +156,11 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
 
 
 
+    @Override
+    @Transactional
+    public IBIZProPlugin dynamicCall(String key, String action, IBIZProPlugin et) {
+        return et;
+    }
 }
 
 

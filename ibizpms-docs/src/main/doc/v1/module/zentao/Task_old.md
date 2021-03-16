@@ -402,16 +402,16 @@ hide footbox
 {% plantuml %}
 hide footbox
 
-任务 -> 任务: 获取需求版本
 任务 -> 任务: 重置需求版本
+任务 -> 任务: 获取需求版本
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
 |0|开始 | 
-|1|获取需求版本 |
+|1|重置需求版本 |
 |1|开始 | 
-|2|重置需求版本 |
+|2|获取需求版本 |
 <center>更新需求版本</center>
 * 根据计划获取相关项目 (getProjectByPlan)
   
@@ -420,16 +420,16 @@ hide footbox
 {% plantuml %}
 hide footbox
 
-任务 -> 任务: 获取项目
 任务 -> 任务: 设置常规参数
+任务 -> 任务: 获取项目
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
 |0|开始 | 
-|1|获取项目 |
+|1|设置常规参数 |
 |1|开始 | 
-|2|设置常规参数 |
+|2|获取项目 |
 <center>根据计划获取相关项目</center>
 * 获取团队成员 (getUsernames)
   
@@ -1333,7 +1333,7 @@ hide footbox
 |ChildTask|子任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_ChildTask))|否|&nbsp;|
 |ChildTaskTree|子任务（树）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ChildTaskTree))|否|&nbsp;|
 |CurFinishTask|用户年度完成任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_CurFinishTask))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Task_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Task_Default))|是|&nbsp;|
 |DefaultRow|DefaultRow([MYSQL5](../../appendix/query_MYSQL5.md#Task_DefaultRow))|否|&nbsp;|
 |ESBulk|ES批量的导入([MYSQL5](../../appendix/query_MYSQL5.md#Task_ESBulk))|否|&nbsp;|
 |MyAgentTask|我代理的任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyAgentTask))|否|&nbsp;|

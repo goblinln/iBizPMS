@@ -315,6 +315,11 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
 
 
 
+    @Override
+    @Transactional
+    public PRODUCTTEAM dynamicCall(Long key, String action, PRODUCTTEAM et) {
+        return et;
+    }
 }
 
 

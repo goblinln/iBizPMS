@@ -227,6 +227,11 @@ public class IbzLibCaseStepServiceImpl extends ServiceImpl<IbzLibCaseStepMapper,
     public IIbzLibCaseStepService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzLibCaseStep dynamicCall(Long key, String action, IbzLibCaseStep et) {
+        return et;
+    }
 }
 
 

@@ -53,6 +53,7 @@ public interface ISuiteCaseService extends IService<SuiteCase> {
     void removeByProduct(Long id);
     List<SuiteCase> selectBySuite(Long id);
     void removeBySuite(Long id);
+    SuiteCase dynamicCall(String key, String action, SuiteCase et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

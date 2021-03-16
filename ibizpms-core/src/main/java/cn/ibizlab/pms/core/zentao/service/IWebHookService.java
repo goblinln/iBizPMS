@@ -47,6 +47,7 @@ public interface IWebHookService extends IService<WebHook> {
     boolean save(WebHook et);
     void saveBatch(List<WebHook> list);
     Page<WebHook> searchDefault(WebHookSearchContext context);
+    WebHook dynamicCall(Long key, String action, WebHook et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

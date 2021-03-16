@@ -67,6 +67,7 @@ public interface IDocLibModuleService extends IService<DocLibModule> {
     void removeByParent(Long id);
     List<DocLibModule> selectByRoot(Long id);
     void removeByRoot(Long id);
+    DocLibModule dynamicCall(Long key, String action, DocLibModule et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

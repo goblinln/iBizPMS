@@ -597,6 +597,11 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     public IProductPlanService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ProductPlan dynamicCall(Long key, String action, ProductPlan et) {
+        return et;
+    }
 }
 
 

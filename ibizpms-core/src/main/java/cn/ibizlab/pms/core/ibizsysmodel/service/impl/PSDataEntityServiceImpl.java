@@ -434,6 +434,11 @@ public class PSDataEntityServiceImpl implements IPSDataEntityService {
 
 
 
+    @Override
+    @Transactional
+    public PSDataEntity dynamicCall(String key, String action, PSDataEntity et) {
+        return et;
+    }
 }
 
 

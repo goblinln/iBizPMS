@@ -230,6 +230,11 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobS
     public IJobService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Job dynamicCall(Long key, String action, Job et) {
+        return et;
+    }
 }
 
 

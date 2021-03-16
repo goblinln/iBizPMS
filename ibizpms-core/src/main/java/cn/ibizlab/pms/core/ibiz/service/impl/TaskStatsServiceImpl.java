@@ -245,6 +245,11 @@ public class TaskStatsServiceImpl extends ServiceImpl<TaskStatsMapper, TaskStats
     public ITaskStatsService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public TaskStats dynamicCall(Long key, String action, TaskStats et) {
+        return et;
+    }
 }
 
 

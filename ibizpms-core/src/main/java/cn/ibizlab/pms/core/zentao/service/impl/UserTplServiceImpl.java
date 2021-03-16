@@ -231,6 +231,11 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
     public IUserTplService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public UserTpl dynamicCall(Long key, String action, UserTpl et) {
+        return et;
+    }
 }
 
 

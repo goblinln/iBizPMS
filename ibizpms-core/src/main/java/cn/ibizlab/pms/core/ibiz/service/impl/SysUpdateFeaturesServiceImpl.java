@@ -288,6 +288,11 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     public ISysUpdateFeaturesService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public SysUpdateFeatures dynamicCall(String key, String action, SysUpdateFeatures et) {
+        return et;
+    }
 }
 
 

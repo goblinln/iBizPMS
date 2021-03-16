@@ -50,6 +50,7 @@ public interface IIbzPlanTempletService extends IService<IbzPlanTemplet> {
     void saveBatch(List<IbzPlanTemplet> list);
     Page<IbzPlanTemplet> searchCurUserTemplet(IbzPlanTempletSearchContext context);
     Page<IbzPlanTemplet> searchDefault(IbzPlanTempletSearchContext context);
+    IbzPlanTemplet dynamicCall(String key, String action, IbzPlanTemplet et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

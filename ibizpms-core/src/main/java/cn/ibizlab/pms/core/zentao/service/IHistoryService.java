@@ -49,6 +49,7 @@ public interface IHistoryService extends IService<History> {
     Page<History> searchDefault(HistorySearchContext context);
     List<History> selectByAction(Long id);
     void removeByAction(Long id);
+    History dynamicCall(Long key, String action, History et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

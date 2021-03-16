@@ -372,6 +372,11 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
     public ITodoService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Todo dynamicCall(Long key, String action, Todo et) {
+        return et;
+    }
 }
 
 

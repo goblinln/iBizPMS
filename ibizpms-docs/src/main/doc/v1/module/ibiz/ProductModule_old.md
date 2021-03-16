@@ -116,7 +116,7 @@ hide footbox
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |BYPATH|BYPATH([MYSQL5](../../appendix/query_MYSQL5.md#ProductModule_ByPath))|否|&nbsp;通过模块路径包含查询|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProductModule_Default))|否|&nbsp;需求|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProductModule_Default))|是|&nbsp;需求|
 |ParentModule|父模块([MYSQL5](../../appendix/query_MYSQL5.md#ProductModule_ParentModule))|否|&nbsp;|
 |ROOT|根模块([MYSQL5](../../appendix/query_MYSQL5.md#ProductModule_Root))|否|&nbsp;需求|
 |Root_NoBranch|根模块_无分支([MYSQL5](../../appendix/query_MYSQL5.md#ProductModule_Root_NoBranch))|否|&nbsp;需求|

@@ -173,6 +173,11 @@ public class SysUserServiceImpl implements ISysUserService {
 
 
 
+    @Override
+    @Transactional
+    public SysUser dynamicCall(String key, String action, SysUser et) {
+        return et;
+    }
 }
 
 

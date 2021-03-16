@@ -91,6 +91,7 @@ public interface IProjectService extends IService<Project> {
     Page<Project> searchUnDoneProject(ProjectSearchContext context);
     List<Project> selectByParent(Long id);
     void removeByParent(Long id);
+    Project dynamicCall(Long key, String action, Project et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

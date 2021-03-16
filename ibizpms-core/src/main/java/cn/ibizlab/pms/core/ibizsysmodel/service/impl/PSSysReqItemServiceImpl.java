@@ -342,6 +342,11 @@ public class PSSysReqItemServiceImpl implements IPSSysReqItemService {
 
 
 
+    @Override
+    @Transactional
+    public PSSysReqItem dynamicCall(String key, String action, PSSysReqItem et) {
+        return et;
+    }
 }
 
 

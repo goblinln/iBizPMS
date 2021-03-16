@@ -47,6 +47,7 @@ public interface IScoreService extends IService<Score> {
     boolean save(Score et);
     void saveBatch(List<Score> list);
     Page<Score> searchDefault(ScoreSearchContext context);
+    Score dynamicCall(Long key, String action, Score et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

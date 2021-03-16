@@ -24,4 +24,7 @@ public interface IBZWFFeignClient
 	JSONObject wfstart(@PathVariable("system") String system, @PathVariable("appname") String appname,
 					   @PathVariable("entity") String entity,
 					   @PathVariable("businessKey") String businessKey, @RequestBody JSONObject instance);
+	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{dynainstid}/{entity}/tasks")
+	Map<String,Map<String,Object>> getDynaBusinesskeysByUserId(@PathVariable("system") String system,@PathVariable("userId") String userId,
+										 @PathVariable("entity") String entity,@PathVariable("dynainstid") String dynainstid);
 }

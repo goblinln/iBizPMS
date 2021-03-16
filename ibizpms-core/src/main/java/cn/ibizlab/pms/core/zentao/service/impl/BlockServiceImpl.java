@@ -227,6 +227,11 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
     public IBlockService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Block dynamicCall(Long key, String action, Block et) {
+        return et;
+    }
 }
 
 

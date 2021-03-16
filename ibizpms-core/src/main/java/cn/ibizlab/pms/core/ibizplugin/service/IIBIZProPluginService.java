@@ -46,6 +46,7 @@ public interface IIBIZProPluginService {
     boolean save(IBIZProPlugin et);
     void saveBatch(List<IBIZProPlugin> list);
     Page<IBIZProPlugin> searchDefault(IBIZProPluginSearchContext context);
+    IBIZProPlugin dynamicCall(String key, String action, IBIZProPlugin et);
 
 
 }

@@ -50,6 +50,7 @@ public interface IStorySpecService extends IService<StorySpec> {
     Page<StorySpec> searchVersion(StorySpecSearchContext context);
     List<StorySpec> selectByStory(Long id);
     void removeByStory(Long id);
+    StorySpec dynamicCall(String key, String action, StorySpec et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

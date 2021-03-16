@@ -298,6 +298,11 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
     public IIbizproProjectWeeklyService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbizproProjectWeekly dynamicCall(String key, String action, IbizproProjectWeekly et) {
+        return et;
+    }
 }
 
 

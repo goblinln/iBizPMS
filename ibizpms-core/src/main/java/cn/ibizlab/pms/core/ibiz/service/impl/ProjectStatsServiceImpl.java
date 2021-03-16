@@ -323,6 +323,11 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
     public IProjectStatsService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ProjectStats dynamicCall(Long key, String action, ProjectStats et) {
+        return et;
+    }
 }
 
 

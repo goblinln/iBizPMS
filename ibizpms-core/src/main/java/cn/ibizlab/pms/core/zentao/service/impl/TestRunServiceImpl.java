@@ -277,6 +277,11 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
     public ITestRunService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public TestRun dynamicCall(Long key, String action, TestRun et) {
+        return et;
+    }
 }
 
 

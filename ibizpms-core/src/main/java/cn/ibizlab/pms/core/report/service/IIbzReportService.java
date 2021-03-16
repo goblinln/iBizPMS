@@ -51,6 +51,7 @@ public interface IIbzReportService extends IService<IbzReport> {
     Page<IbzReport> searchAllReport(IbzReportSearchContext context);
     Page<IbzReport> searchDefault(IbzReportSearchContext context);
     Page<IbzReport> searchMyReAllReport(IbzReportSearchContext context);
+    IbzReport dynamicCall(Long key, String action, IbzReport et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

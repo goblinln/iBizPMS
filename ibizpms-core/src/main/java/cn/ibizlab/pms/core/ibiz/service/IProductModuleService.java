@@ -60,6 +60,7 @@ public interface IProductModuleService extends IService<ProductModule> {
     void removeByParent(Long id);
     List<ProductModule> selectByRoot(Long id);
     void removeByRoot(Long id);
+    ProductModule dynamicCall(Long key, String action, ProductModule et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

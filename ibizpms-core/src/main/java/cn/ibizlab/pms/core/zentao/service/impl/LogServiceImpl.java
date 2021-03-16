@@ -227,6 +227,11 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
     public ILogService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Log dynamicCall(Long key, String action, Log et) {
+        return et;
+    }
 }
 
 

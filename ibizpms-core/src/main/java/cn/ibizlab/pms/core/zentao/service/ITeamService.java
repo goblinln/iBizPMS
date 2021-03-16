@@ -51,6 +51,7 @@ public interface ITeamService extends IService<Team> {
     Team unlinkPorjectMember(Team et);
     boolean unlinkPorjectMemberBatch(List<Team> etList);
     Page<Team> searchDefault(TeamSearchContext context);
+    Team dynamicCall(Long key, String action, Team et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

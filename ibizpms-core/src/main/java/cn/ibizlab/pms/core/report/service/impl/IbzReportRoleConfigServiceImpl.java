@@ -248,6 +248,11 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
     public IIbzReportRoleConfigService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzReportRoleConfig dynamicCall(String key, String action, IbzReportRoleConfig et) {
+        return et;
+    }
 }
 
 

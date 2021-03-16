@@ -343,8 +343,6 @@
 
 
 * [数据结构](db/db_index.md)
-  * [MYSQL5](db/MYSQL5.md) 
-
 
 * [系统流程](workflow/workflow_index.md)
 
@@ -456,8 +454,6 @@
   * [数据字典](appendix/DataDictionary.md)
 
   * [查询模型]()
-
-    * [MYSQL5](appendix/query_MYSQL5.md) 
 
   * [应用视图](appendix/View.md)
 

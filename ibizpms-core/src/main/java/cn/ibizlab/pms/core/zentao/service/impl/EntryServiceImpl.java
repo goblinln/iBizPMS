@@ -230,6 +230,11 @@ public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements
     public IEntryService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Entry dynamicCall(Long key, String action, Entry et) {
+        return et;
+    }
 }
 
 

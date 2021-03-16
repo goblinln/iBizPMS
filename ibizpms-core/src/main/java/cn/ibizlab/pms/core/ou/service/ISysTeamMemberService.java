@@ -52,6 +52,7 @@ public interface ISysTeamMemberService {
     void removeByPostid(String postid);
     List<SysTeamMember> selectByTeamid(String teamid);
     void removeByTeamid(String teamid);
+    SysTeamMember dynamicCall(String key, String action, SysTeamMember et);
 
 
 }

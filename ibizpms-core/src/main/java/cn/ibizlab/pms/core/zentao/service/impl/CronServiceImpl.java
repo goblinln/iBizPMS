@@ -227,6 +227,11 @@ public class CronServiceImpl extends ServiceImpl<CronMapper, Cron> implements IC
     public ICronService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Cron dynamicCall(Long key, String action, Cron et) {
+        return et;
+    }
 }
 
 

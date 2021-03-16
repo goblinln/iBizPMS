@@ -1,4 +1,4 @@
-import Vue, { VNode, CreateElement } from 'vue';
+import Vue, { VNode, CreateElement } from "vue";
 
 /**
  * 代码表
@@ -15,17 +15,7 @@ export declare interface CodeList {
      * @returns
      * @memberof CodeList
      */
-    render({
-        srfkey,
-        value,
-        emtpytext,
-        codelistType,
-    }: {
-        srfkey: string;
-        value: string;
-        emtpytext: string;
-        codelistType: any;
-    }): VNode;
+    render({ srfkey, value, emtpytext, codelistType }: { srfkey: string; value: string; emtpytext: string; codelistType: any; }): VNode;
     /**
      * 数字或处理
      *
@@ -34,19 +24,7 @@ export declare interface CodeList {
      * @returns
      * @memberof CodeList
      */
-    renderNumOr({
-        srfkey,
-        value,
-        emtpytext,
-        textSeparator,
-        codelistType,
-    }: {
-        srfkey: string;
-        value: string;
-        emtpytext: string;
-        textSeparator: string;
-        codelistType: any;
-    }): VNode;
+    renderNumOr({ srfkey, value, emtpytext, textSeparator, codelistType }: { srfkey: string; value: string; emtpytext: string; textSeparator: string; codelistType: any; }): VNode;
     /**
      * 文本或处理
      *
@@ -55,24 +33,10 @@ export declare interface CodeList {
      * @returns
      * @memberof CodeList
      */
-    renderStrOr({
-        srfkey,
-        value,
-        emtpytext,
-        textSeparator,
-        valueSeparator,
-        codelistType,
-    }: {
-        srfkey: string;
-        value: any;
-        emtpytext: any;
-        textSeparator: any;
-        valueSeparator: any;
-        codelistType: any;
-    }): VNode;
+    renderStrOr({ srfkey, value, emtpytext, textSeparator, valueSeparator, codelistType }: { srfkey: string; value: any; emtpytext: any; textSeparator: any; valueSeparator: any; codelistType: any; }): VNode;
 }
 
-declare module 'vue/types/vue' {
+declare module "vue/types/vue" {
     interface Vue {
         /**
          * 代码表绘制对象

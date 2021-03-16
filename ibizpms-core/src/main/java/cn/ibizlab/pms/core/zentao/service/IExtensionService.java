@@ -47,6 +47,7 @@ public interface IExtensionService extends IService<Extension> {
     boolean save(Extension et);
     void saveBatch(List<Extension> list);
     Page<Extension> searchDefault(ExtensionSearchContext context);
+    Extension dynamicCall(Long key, String action, Extension et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

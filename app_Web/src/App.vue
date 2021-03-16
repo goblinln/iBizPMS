@@ -1,5 +1,6 @@
 <template>
   <div id='app'>
+    <app-debug-actions />
     <router-view v-if="isRouterAlive"/>
   </div>
 </template>
@@ -29,6 +30,12 @@ export default class App extends Vue  {
    */
   public created(){
     this.loadAppData();
+    setTimeout(() => {
+        const el = document.getElementById('app-loading-x');
+        if (el) {
+            el.style.display = 'none';
+        }
+    }, 300);
   }
 
   /**
@@ -57,3 +64,7 @@ export default class App extends Vue  {
  
 }
 </script>
+<style lang='less'>
+@import './styles/default.less';
+</style>
+

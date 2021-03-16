@@ -302,6 +302,11 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
     public IUserYearWorkStatsService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public UserYearWorkStats dynamicCall(Long key, String action, UserYearWorkStats et) {
+        return et;
+    }
 }
 
 

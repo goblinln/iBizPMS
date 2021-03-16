@@ -47,6 +47,7 @@ public interface IIbzLibCaseStepService extends IService<IbzLibCaseStep> {
     boolean save(IbzLibCaseStep et);
     void saveBatch(List<IbzLibCaseStep> list);
     Page<IbzLibCaseStep> searchDefault(IbzLibCaseStepSearchContext context);
+    IbzLibCaseStep dynamicCall(Long key, String action, IbzLibCaseStep et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

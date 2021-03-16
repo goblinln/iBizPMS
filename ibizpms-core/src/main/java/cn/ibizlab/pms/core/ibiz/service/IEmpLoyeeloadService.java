@@ -50,6 +50,7 @@ public interface IEmpLoyeeloadService extends IService<EmpLoyeeload> {
     Page<EmpLoyeeload> searchGETWOERKLOAD(EmpLoyeeloadSearchContext context);
     List<EmpLoyeeload> selectByProject(Long id);
     void removeByProject(Long id);
+    EmpLoyeeload dynamicCall(Long key, String action, EmpLoyeeload et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

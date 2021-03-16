@@ -50,6 +50,7 @@ public interface IProductLifeService extends IService<ProductLife> {
     Page<ProductLife> searchGetRoadmap(ProductLifeSearchContext context);
     Page<ProductLife> searchGetRoadmapS(ProductLifeSearchContext context);
     Page<ProductLife> searchRoadMapYear(ProductLifeSearchContext context);
+    ProductLife dynamicCall(String key, String action, ProductLife et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

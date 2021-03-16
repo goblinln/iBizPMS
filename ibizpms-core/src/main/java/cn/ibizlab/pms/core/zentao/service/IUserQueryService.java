@@ -47,6 +47,7 @@ public interface IUserQueryService extends IService<UserQuery> {
     boolean save(UserQuery et);
     void saveBatch(List<UserQuery> list);
     Page<UserQuery> searchDefault(UserQuerySearchContext context);
+    UserQuery dynamicCall(Long key, String action, UserQuery et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

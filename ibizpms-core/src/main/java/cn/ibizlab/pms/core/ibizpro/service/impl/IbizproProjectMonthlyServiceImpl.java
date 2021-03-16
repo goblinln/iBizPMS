@@ -314,6 +314,11 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     public IIbizproProjectMonthlyService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbizproProjectMonthly dynamicCall(String key, String action, IbizproProjectMonthly et) {
+        return et;
+    }
 }
 
 

@@ -56,6 +56,7 @@ public interface ITestResultService extends IService<TestResult> {
     void removeByJob(Long id);
     List<TestResult> selectByRun(Long id);
     void removeByRun(Long id);
+    TestResult dynamicCall(Long key, String action, TestResult et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

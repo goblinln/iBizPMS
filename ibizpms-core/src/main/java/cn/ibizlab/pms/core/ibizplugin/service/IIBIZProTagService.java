@@ -46,6 +46,7 @@ public interface IIBIZProTagService {
     boolean save(IBIZProTag et);
     void saveBatch(List<IBIZProTag> list);
     Page<IBIZProTag> searchDefault(IBIZProTagSearchContext context);
+    IBIZProTag dynamicCall(String key, String action, IBIZProTag et);
 
 
 }

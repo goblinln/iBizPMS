@@ -346,6 +346,11 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     public IBugStatsService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public BugStats dynamicCall(Long key, String action, BugStats et) {
+        return et;
+    }
 }
 
 

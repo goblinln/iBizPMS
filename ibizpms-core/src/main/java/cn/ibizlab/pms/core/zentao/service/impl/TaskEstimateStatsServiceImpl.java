@@ -245,6 +245,11 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
     public ITaskEstimateStatsService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public TaskEstimateStats dynamicCall(Long key, String action, TaskEstimateStats et) {
+        return et;
+    }
 }
 
 

@@ -47,6 +47,7 @@ public interface IUserGroupService extends IService<UserGroup> {
     boolean save(UserGroup et);
     void saveBatch(List<UserGroup> list);
     Page<UserGroup> searchDefault(UserGroupSearchContext context);
+    UserGroup dynamicCall(String key, String action, UserGroup et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

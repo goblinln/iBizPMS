@@ -522,6 +522,11 @@ public class PSDEFieldServiceImpl implements IPSDEFieldService {
 
 
 
+    @Override
+    @Transactional
+    public PSDEField dynamicCall(String key, String action, PSDEField et) {
+        return et;
+    }
 }
 
 

@@ -65,6 +65,7 @@ public interface IIbzMonthlyService extends IService<IbzMonthly> {
     Page<IbzMonthly> searchMySubmitMonthly(IbzMonthlySearchContext context);
     Page<IbzMonthly> searchProductMonthly(IbzMonthlySearchContext context);
     Page<IbzMonthly> searchProjectMonthly(IbzMonthlySearchContext context);
+    IbzMonthly dynamicCall(Long key, String action, IbzMonthly et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

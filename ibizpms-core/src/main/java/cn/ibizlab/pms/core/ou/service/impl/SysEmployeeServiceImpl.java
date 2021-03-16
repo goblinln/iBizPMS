@@ -336,6 +336,11 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
 
 
 
+    @Override
+    @Transactional
+    public SysEmployee dynamicCall(String key, String action, SysEmployee et) {
+        return et;
+    }
 }
 
 

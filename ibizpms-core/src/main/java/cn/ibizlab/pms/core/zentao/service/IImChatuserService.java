@@ -47,6 +47,7 @@ public interface IImChatuserService extends IService<ImChatuser> {
     boolean save(ImChatuser et);
     void saveBatch(List<ImChatuser> list);
     Page<ImChatuser> searchDefault(ImChatuserSearchContext context);
+    ImChatuser dynamicCall(Long key, String action, ImChatuser et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

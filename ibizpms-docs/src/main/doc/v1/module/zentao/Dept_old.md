@@ -65,7 +65,7 @@ hide members
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Dept_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Dept_Default))|是|&nbsp;|
 |ROOT|根部门([MYSQL5](../../appendix/query_MYSQL5.md#Dept_Root))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#Dept_View))|否|&nbsp;|
 

@@ -149,6 +149,13 @@ public class ProductLineResource {
 	}
 
 
+	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
+    @RequestMapping(method = RequestMethod.POST, value = "/productlines/{productline_id}/{action}")
+    public ResponseEntity<ProductLineDTO> dynamicCall(@PathVariable("productline_id") String productline_id , @PathVariable("action") String action , @RequestBody ProductLineDTO productlinedto) {
+        ProductLine domain = productlineService.dynamicCall(productline_id, action, productlineMapping.toDomain(productlinedto));
+        productlinedto = productlineMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productlinedto);
+    }
 
 }
 

@@ -47,6 +47,7 @@ public interface IImClientService extends IService<ImClient> {
     boolean save(ImClient et);
     void saveBatch(List<ImClient> list);
     Page<ImClient> searchDefault(ImClientSearchContext context);
+    ImClient dynamicCall(Long key, String action, ImClient et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

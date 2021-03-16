@@ -1,4 +1,4 @@
-import Vue, { VNode, CreateElement } from 'vue';
+import Vue, { VNode, CreateElement } from "vue";
 
 /**
  * 导航标签组件
@@ -66,7 +66,7 @@ export declare interface TabPageExp {
     moveToView(to: any): void;
 }
 
-declare module 'vue/types/vue' {
+declare module "vue/types/vue" {
     interface Vue {
         /**
          * 代码表绘制对象

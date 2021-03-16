@@ -617,6 +617,11 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
 
 
 
+    @Override
+    @Transactional
+    public TestTask dynamicCall(Long key, String action, TestTask et) {
+        return et;
+    }
 }
 
 

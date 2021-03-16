@@ -317,6 +317,11 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
     public ITestReportService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public TestReport dynamicCall(Long key, String action, TestReport et) {
+        return et;
+    }
 }
 
 

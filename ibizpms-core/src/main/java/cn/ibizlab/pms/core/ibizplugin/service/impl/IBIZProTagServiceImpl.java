@@ -156,6 +156,11 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
 
 
 
+    @Override
+    @Transactional
+    public IBIZProTag dynamicCall(String key, String action, IBIZProTag et) {
+        return et;
+    }
 }
 
 

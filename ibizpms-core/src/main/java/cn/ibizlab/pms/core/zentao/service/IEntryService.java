@@ -47,6 +47,7 @@ public interface IEntryService extends IService<Entry> {
     boolean save(Entry et);
     void saveBatch(List<Entry> list);
     Page<Entry> searchDefault(EntrySearchContext context);
+    Entry dynamicCall(Long key, String action, Entry et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

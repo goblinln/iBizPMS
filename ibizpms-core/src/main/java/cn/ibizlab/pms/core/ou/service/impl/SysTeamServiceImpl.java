@@ -156,6 +156,11 @@ public class SysTeamServiceImpl implements ISysTeamService {
 
 
 
+    @Override
+    @Transactional
+    public SysTeam dynamicCall(String key, String action, SysTeam et) {
+        return et;
+    }
 }
 
 

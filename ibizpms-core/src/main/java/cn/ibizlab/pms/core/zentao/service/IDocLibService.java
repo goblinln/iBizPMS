@@ -63,6 +63,7 @@ public interface IDocLibService extends IService<DocLib> {
     void removeByProduct(Long id);
     List<DocLib> selectByProject(Long id);
     void removeByProject(Long id);
+    DocLib dynamicCall(Long key, String action, DocLib et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

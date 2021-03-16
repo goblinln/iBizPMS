@@ -227,6 +227,11 @@ public class JenkinsServiceImpl extends ServiceImpl<JenkinsMapper, Jenkins> impl
     public IJenkinsService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Jenkins dynamicCall(Long key, String action, Jenkins et) {
+        return et;
+    }
 }
 
 

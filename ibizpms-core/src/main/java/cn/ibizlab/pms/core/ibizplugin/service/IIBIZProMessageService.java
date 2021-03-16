@@ -54,6 +54,7 @@ public interface IIBIZProMessageService {
     Page<IBIZProMessage> searchDefault(IBIZProMessageSearchContext context);
     Page<IBIZProMessage> searchUserAllMessages(IBIZProMessageSearchContext context);
     Page<IBIZProMessage> searchUserUnreadMessages(IBIZProMessageSearchContext context);
+    IBIZProMessage dynamicCall(String key, String action, IBIZProMessage et);
 
 
 }

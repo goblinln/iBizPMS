@@ -147,6 +147,7 @@ public interface IBugService extends IService<Bug> {
     void removeByTotask(Long id);
     List<Bug> selectByTesttask(Long id);
     void removeByTesttask(Long id);
+    Bug dynamicCall(Long key, String action, Bug et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

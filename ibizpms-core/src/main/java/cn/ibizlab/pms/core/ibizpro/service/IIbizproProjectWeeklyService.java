@@ -51,6 +51,7 @@ public interface IIbizproProjectWeeklyService extends IService<IbizproProjectWee
     Page<IbizproProjectWeekly> searchDefault(IbizproProjectWeeklySearchContext context);
     List<IbizproProjectWeekly> selectByProject(Long id);
     void removeByProject(Long id);
+    IbizproProjectWeekly dynamicCall(String key, String action, IbizproProjectWeekly et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

@@ -49,6 +49,7 @@ public interface IIbizproIndexService extends IService<IbizproIndex> {
     Page<IbizproIndex> searchDefault(IbizproIndexSearchContext context);
     Page<IbizproIndex> searchESquery(IbizproIndexSearchContext context);
     Page<IbizproIndex> searchIndexDER(IbizproIndexSearchContext context);
+    IbizproIndex dynamicCall(Long key, String action, IbizproIndex et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

@@ -47,6 +47,7 @@ public interface IImConferenceactionService extends IService<ImConferenceaction>
     boolean save(ImConferenceaction et);
     void saveBatch(List<ImConferenceaction> list);
     Page<ImConferenceaction> searchDefault(ImConferenceactionSearchContext context);
+    ImConferenceaction dynamicCall(Long key, String action, ImConferenceaction et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

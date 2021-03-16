@@ -49,6 +49,7 @@ public interface IPSSubSysSADEService {
     List<PSSubSysSADE> selectByPssubsysserviceapiid(String pssubsysserviceapiid);
     List<PSSubSysSADE> selectByPssubsysserviceapiid(Collection<String> ids);
     void removeByPssubsysserviceapiid(String pssubsysserviceapiid);
+    PSSubSysSADE dynamicCall(String key, String action, PSSubSysSADE et);
 
     boolean create(String devSlnSysId , PSSubSysSADE et) ;
     void createBatch(String devSlnSysId, List<PSSubSysSADE> list);
@@ -65,6 +66,7 @@ public interface IPSSubSysSADEService {
     Page<PSSubSysSADE> searchDefault(String devSlnSysId, PSSubSysSADESearchContext context);
     List<PSSubSysSADE> selectByPssubsysserviceapiid(String devSlnSysId, String pssubsysserviceapiid);
     void removeByPssubsysserviceapiid(String devSlnSysId, String pssubsysserviceapiid);
+    PSSubSysSADE dynamicCall(String key, String action, PSSubSysSADE et);
 
 }
 

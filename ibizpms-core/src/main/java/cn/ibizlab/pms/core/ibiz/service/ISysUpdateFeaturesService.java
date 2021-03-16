@@ -50,6 +50,7 @@ public interface ISysUpdateFeaturesService extends IService<SysUpdateFeatures> {
     List<SysUpdateFeatures> selectBySysupdatelogid(String sysupdatelogid);
     void removeBySysupdatelogid(Collection<String> ids);
     void removeBySysupdatelogid(String sysupdatelogid);
+    SysUpdateFeatures dynamicCall(String key, String action, SysUpdateFeatures et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

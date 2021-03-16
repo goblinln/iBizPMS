@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(IbzLibCasesteps_en_US_Base(), IbzLibCasesteps_en_US_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

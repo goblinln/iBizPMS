@@ -227,6 +227,11 @@ public class WebHookServiceImpl extends ServiceImpl<WebHookMapper, WebHook> impl
     public IWebHookService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public WebHook dynamicCall(Long key, String action, WebHook et) {
+        return et;
+    }
 }
 
 

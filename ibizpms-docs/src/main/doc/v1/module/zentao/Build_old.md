@@ -118,7 +118,7 @@ hide footbox
 | --------  | --------   | --------   | ----- |
 |BugProductBuild|Bug产品版本([MYSQL5](../../appendix/query_MYSQL5.md#Build_BugProductBuild))|否|&nbsp;|
 |CurProduct|产品版本([MYSQL5](../../appendix/query_MYSQL5.md#Build_CurProduct))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Build_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Build_Default))|是|&nbsp;|
 |TestBuild|测试版本([MYSQL5](../../appendix/query_MYSQL5.md#Build_TestBuild))|否|&nbsp;|
 |TestRounds|测试轮次([MYSQL5](../../appendix/query_MYSQL5.md#Build_TestRounds))|否|&nbsp;|
 |UpdateLog|更新日志([MYSQL5](../../appendix/query_MYSQL5.md#Build_UpdateLog))|否|&nbsp;|

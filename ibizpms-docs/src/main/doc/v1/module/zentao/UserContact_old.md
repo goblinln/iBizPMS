@@ -48,7 +48,7 @@
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |CurUSERCONTACT|抄送联系人([MYSQL5](../../appendix/query_MYSQL5.md#UserContact_CurUSERCONTACT))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#UserContact_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#UserContact_Default))|是|&nbsp;|
 |MyUSERCONTACT|我的联系人([MYSQL5](../../appendix/query_MYSQL5.md#UserContact_MyUSERCONTACT))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#UserContact_View))|否|&nbsp;|
 

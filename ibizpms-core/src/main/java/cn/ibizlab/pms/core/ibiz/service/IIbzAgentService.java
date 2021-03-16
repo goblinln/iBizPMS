@@ -47,6 +47,7 @@ public interface IIbzAgentService extends IService<IbzAgent> {
     boolean save(IbzAgent et);
     void saveBatch(List<IbzAgent> list);
     Page<IbzAgent> searchDefault(IbzAgentSearchContext context);
+    IbzAgent dynamicCall(Long key, String action, IbzAgent et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

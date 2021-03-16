@@ -87,7 +87,7 @@
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#TaskStats_Default))|否|&nbsp;|
+|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#TaskStats_Default))|是|&nbsp;|
 |TaskFinishHuiZong|任务完成汇总表([MYSQL5](../../appendix/query_MYSQL5.md#TaskStats_TaskFinishHuiZong))|否|&nbsp;|
 |UserFinishTaskSum|用户完成任务统计([MYSQL5](../../appendix/query_MYSQL5.md#TaskStats_UserFinishTaskSum))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#TaskStats_View))|否|&nbsp;|

@@ -47,6 +47,7 @@ public interface IPSSystemDBCfgService {
     void saveBatch(List<PSSystemDBCfg> list);
     Page<PSSystemDBCfg> searchBuild(PSSystemDBCfgSearchContext context);
     Page<PSSystemDBCfg> searchDefault(PSSystemDBCfgSearchContext context);
+    PSSystemDBCfg dynamicCall(String key, String action, PSSystemDBCfg et);
 
     boolean create(String devSlnSysId , PSSystemDBCfg et) ;
     void createBatch(String devSlnSysId, List<PSSystemDBCfg> list);
@@ -62,6 +63,7 @@ public interface IPSSystemDBCfgService {
     void saveBatch(String devSlnSysId, List<PSSystemDBCfg> list);
     Page<PSSystemDBCfg> searchBuild(String devSlnSysId, PSSystemDBCfgSearchContext context);
     Page<PSSystemDBCfg> searchDefault(String devSlnSysId, PSSystemDBCfgSearchContext context);
+    PSSystemDBCfg dynamicCall(String key, String action, PSSystemDBCfg et);
 
 }
 

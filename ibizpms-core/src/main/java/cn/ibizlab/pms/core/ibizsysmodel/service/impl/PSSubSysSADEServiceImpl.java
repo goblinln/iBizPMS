@@ -299,6 +299,11 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
 
 
 
+    @Override
+    @Transactional
+    public PSSubSysSADE dynamicCall(String key, String action, PSSubSysSADE et) {
+        return et;
+    }
 }
 
 

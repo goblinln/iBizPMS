@@ -227,6 +227,11 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, Group> implements
     public IGroupService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Group dynamicCall(Long key, String action, Group et) {
+        return et;
+    }
 }
 
 

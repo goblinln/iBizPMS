@@ -66,6 +66,7 @@ public interface ISysEmployeeService {
     void resetByOrgid(String orgid);
     void resetByOrgid(Collection<String> ids);
     void removeByOrgid(String orgid);
+    SysEmployee dynamicCall(String key, String action, SysEmployee et);
 
 
 }

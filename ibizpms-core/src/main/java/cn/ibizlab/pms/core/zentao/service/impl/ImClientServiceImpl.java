@@ -227,6 +227,11 @@ public class ImClientServiceImpl extends ServiceImpl<ImClientMapper, ImClient> i
     public IImClientService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ImClient dynamicCall(Long key, String action, ImClient et) {
+        return et;
+    }
 }
 
 

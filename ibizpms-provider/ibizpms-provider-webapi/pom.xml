@@ -45,7 +45,7 @@
                         <configuration>
                             <finalName>ibizpms-provider-webapi</finalName>
                             <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
-                            <mainClass>cn.ibizlab.pms.webapi.pmsWebApiApplication</mainClass>
+                            <mainClass>cn.ibizlab.pms.webapi.iBizPMSWebApiApplication</mainClass>
                             <outputDirectory>../../</outputDirectory>
                         </configuration>
                         <executions>

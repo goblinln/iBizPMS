@@ -58,6 +58,13 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JsonProperty("estimatecnt")
     private Integer estimatecnt;
     /**
+     * 备注
+     */
+    @TableField(exist = false)
+    @JSONField(name = "comment")
+    @JsonProperty("comment")
+    private String comment;
+    /**
      * 名称
      */
     @TableField(value = "`title`")
@@ -118,6 +125,13 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JsonProperty("end")
     private Timestamp end;
     /**
+     * 延期
+     */
+    @TableField(exist = false)
+    @JSONField(name = "delay")
+    @JsonProperty("delay")
+    private String delay;
+    /**
      * 持续时间
      */
     @TableField(exist = false)
@@ -131,6 +145,13 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JSONField(name = "beginstr")
     @JsonProperty("beginstr")
     private String beginstr;
+    /**
+     * 剩余工时
+     */
+    @TableField(exist = false)
+    @JSONField(name = "leftestimate")
+    @JsonProperty("leftestimate")
+    private Double leftestimate;
     /**
      * 计划模板
      */
@@ -153,6 +174,14 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JsonProperty("endstr")
     private String endstr;
     /**
+     * 计划状态
+     */
+    @DEField(defaultValue = "wait")
+    @TableField(value = "`status`")
+    @JSONField(name = "status")
+    @JsonProperty("status")
+    private String status;
+    /**
      * 是否过期
      */
     @TableField(exist = false)
@@ -169,6 +198,13 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JsonProperty("deleted")
     private String deleted;
     /**
+     * 消耗工时
+     */
+    @TableField(exist = false)
+    @JSONField(name = "consumedestimate")
+    @JsonProperty("consumedestimate")
+    private Double consumedestimate;
+    /**
      * 排序
      */
     @DEField(defaultValue = "#EMPTY")
@@ -176,6 +212,13 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JSONField(name = "order")
     @JsonProperty("order")
     private String order;
+    /**
+     * 叶子节点
+     */
+    @TableField(exist = false)
+    @JSONField(name = "isleaf")
+    @JsonProperty("isleaf")
+    private Integer isleaf;
     /**
      * 待定
      */
@@ -242,49 +285,6 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JSONField(name = "product")
     @JsonProperty("product")
     private Long product;
-    /**
-     * 计划状态
-     */
-    @DEField(defaultValue = "wait")
-    @TableField(value = "`status`")
-    @JSONField(name = "status")
-    @JsonProperty("status")
-    private String status;
-    /**
-     * 延期
-     */
-    @TableField(exist = false)
-    @JSONField(name = "delay")
-    @JsonProperty("delay")
-    private String delay;
-    /**
-     * 备注
-     */
-    @TableField(exist = false)
-    @JSONField(name = "comment")
-    @JsonProperty("comment")
-    private String comment;
-    /**
-     * 剩余工时
-     */
-    @TableField(exist = false)
-    @JSONField(name = "leftestimate")
-    @JsonProperty("leftestimate")
-    private Double leftestimate;
-    /**
-     * 消耗工时
-     */
-    @TableField(exist = false)
-    @JSONField(name = "consumedestimate")
-    @JsonProperty("consumedestimate")
-    private Double consumedestimate;
-    /**
-     * 叶子节点
-     */
-    @TableField(exist = false)
-    @JSONField(name = "isleaf")
-    @JsonProperty("isleaf")
-    private Integer isleaf;
 
     /**
      * 
@@ -365,6 +365,14 @@ public class ProductPlan extends EntityMP implements Serializable {
         return sdf.format(end);
     }
     /**
+     * 设置 [计划状态]
+     */
+    public void setStatus(String status) {
+        this.status = status;
+        this.modify("status", status);
+    }
+
+    /**
      * 设置 [排序]
      */
     public void setOrder(String order) {
@@ -394,14 +402,6 @@ public class ProductPlan extends EntityMP implements Serializable {
     public void setProduct(Long product) {
         this.product = product;
         this.modify("product", product);
-    }
-
-    /**
-     * 设置 [计划状态]
-     */
-    public void setStatus(String status) {
-        this.status = status;
-        this.modify("status", status);
     }
 
 

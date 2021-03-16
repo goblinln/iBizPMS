@@ -50,6 +50,7 @@ public interface IIbzPlanTempletDetailService extends IService<IbzPlanTempletDet
     List<IbzPlanTempletDetail> selectByPlantempletid(String ibzplantempletid);
     void removeByPlantempletid(String ibzplantempletid);
     void saveByPlantempletid(String ibzplantempletid, List<IbzPlanTempletDetail> list) ;
+    IbzPlanTempletDetail dynamicCall(String key, String action, IbzPlanTempletDetail et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

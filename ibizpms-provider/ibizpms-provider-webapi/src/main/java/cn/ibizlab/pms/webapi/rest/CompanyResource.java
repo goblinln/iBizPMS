@@ -47,7 +47,7 @@ public class CompanyResource {
     @Lazy
     public CompanyMapping companyMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Company-Create-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Create-all')")
     @ApiOperation(value = "新建公司", tags = {"公司" },  notes = "新建公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies")
     public ResponseEntity<CompanyDTO> create(@Validated @RequestBody CompanyDTO companydto) {
@@ -57,7 +57,7 @@ public class CompanyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Company-Create-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Create-all')")
     @ApiOperation(value = "批量新建公司", tags = {"公司" },  notes = "批量新建公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<CompanyDTO> companydtos) {
@@ -65,7 +65,7 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Company-Update-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Update-all')")
     @ApiOperation(value = "更新公司", tags = {"公司" },  notes = "更新公司")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companies/{company_id}")
     public ResponseEntity<CompanyDTO> update(@PathVariable("company_id") Long company_id, @RequestBody CompanyDTO companydto) {
@@ -76,7 +76,7 @@ public class CompanyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Company-Update-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Update-all')")
     @ApiOperation(value = "批量更新公司", tags = {"公司" },  notes = "批量更新公司")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companies/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<CompanyDTO> companydtos) {
@@ -84,14 +84,14 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Company-Remove-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Remove-all')")
     @ApiOperation(value = "删除公司", tags = {"公司" },  notes = "删除公司")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/{company_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("company_id") Long company_id) {
          return ResponseEntity.status(HttpStatus.OK).body(companyService.remove(company_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Company-Remove-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Remove-all')")
     @ApiOperation(value = "批量删除公司", tags = {"公司" },  notes = "批量删除公司")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Company-Get-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Get-all')")
     @ApiOperation(value = "获取公司", tags = {"公司" },  notes = "获取公司")
 	@RequestMapping(method = RequestMethod.GET, value = "/companies/{company_id}")
     public ResponseEntity<CompanyDTO> get(@PathVariable("company_id") Long company_id) {
@@ -121,14 +121,14 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(companyService.checkKey(companyMapping.toDomain(companydto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Company-Save-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Save-all')")
     @ApiOperation(value = "保存公司", tags = {"公司" },  notes = "保存公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies/save")
     public ResponseEntity<Boolean> save(@RequestBody CompanyDTO companydto) {
         return ResponseEntity.status(HttpStatus.OK).body(companyService.save(companyMapping.toDomain(companydto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Company-Save-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Save-all')")
     @ApiOperation(value = "批量保存公司", tags = {"公司" },  notes = "批量保存公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<CompanyDTO> companydtos) {
@@ -136,7 +136,7 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Company-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-searchDefault-all')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"公司" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/companies/fetchdefault")
 	public ResponseEntity<List<CompanyDTO>> fetchDefault(CompanySearchContext context) {
@@ -149,7 +149,7 @@ public class CompanyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Company-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-searchDefault-all')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"公司" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/companies/searchdefault")
 	public ResponseEntity<Page<CompanyDTO>> searchDefault(@RequestBody CompanySearchContext context) {
@@ -159,6 +159,13 @@ public class CompanyResource {
 	}
 
 
+	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
+    @RequestMapping(method = RequestMethod.POST, value = "/companies/{company_id}/{action}")
+    public ResponseEntity<CompanyDTO> dynamicCall(@PathVariable("company_id") Long company_id , @PathVariable("action") String action , @RequestBody CompanyDTO companydto) {
+        Company domain = companyService.dynamicCall(company_id, action, companyMapping.toDomain(companydto));
+        companydto = companyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(companydto);
+    }
 
 }
 

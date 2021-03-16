@@ -49,6 +49,7 @@ public interface IIbzproConfigService extends IService<IbzproConfig> {
     boolean save(IbzproConfig et);
     void saveBatch(List<IbzproConfig> list);
     Page<IbzproConfig> searchDefault(IbzproConfigSearchContext context);
+    IbzproConfig dynamicCall(String key, String action, IbzproConfig et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

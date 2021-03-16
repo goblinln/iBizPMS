@@ -1,4 +1,4 @@
-import Vue, { VNode, CreateElement } from 'vue';
+import Vue, { VNode, CreateElement } from "vue";
 
 /**
  * 导航标签组件
@@ -8,7 +8,7 @@ import Vue, { VNode, CreateElement } from 'vue';
  */
 export declare interface TabPageExp {
     /**
-     *
+     * 
      *
      * @param {*} path
      * @param {*} [keys]
@@ -19,7 +19,7 @@ export declare interface TabPageExp {
     pathToRegexp(path: any, keys?: any, options?: any): any;
 }
 
-declare module 'vue/types/vue' {
+declare module "vue/types/vue" {
     interface Vue {
         /**
          * 代码表绘制对象

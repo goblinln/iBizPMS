@@ -222,6 +222,11 @@ public class IbzLibServiceImpl extends ServiceImpl<IbzLibMapper, IbzLib> impleme
     public IIbzLibService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzLib dynamicCall(Long key, String action, IbzLib et) {
+        return et;
+    }
 }
 
 

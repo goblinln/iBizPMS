@@ -47,6 +47,7 @@ public interface IIbzProjectMemberService extends IService<IbzProjectMember> {
     boolean save(IbzProjectMember et);
     void saveBatch(List<IbzProjectMember> list);
     Page<IbzProjectMember> searchDefault(IbzProjectMemberSearchContext context);
+    IbzProjectMember dynamicCall(Long key, String action, IbzProjectMember et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

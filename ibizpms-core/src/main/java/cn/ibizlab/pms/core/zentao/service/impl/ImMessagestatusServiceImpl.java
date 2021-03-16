@@ -227,6 +227,11 @@ public class ImMessagestatusServiceImpl extends ServiceImpl<ImMessagestatusMappe
     public IImMessagestatusService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ImMessagestatus dynamicCall(String key, String action, ImMessagestatus et) {
+        return et;
+    }
 }
 
 

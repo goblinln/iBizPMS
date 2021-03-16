@@ -227,6 +227,11 @@ public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> i
     public IUserViewService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public UserView dynamicCall(String key, String action, UserView et) {
+        return et;
+    }
 }
 
 

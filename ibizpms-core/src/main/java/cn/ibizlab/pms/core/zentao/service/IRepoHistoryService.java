@@ -47,6 +47,7 @@ public interface IRepoHistoryService extends IService<RepoHistory> {
     boolean save(RepoHistory et);
     void saveBatch(List<RepoHistory> list);
     Page<RepoHistory> searchDefault(RepoHistorySearchContext context);
+    RepoHistory dynamicCall(Long key, String action, RepoHistory et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

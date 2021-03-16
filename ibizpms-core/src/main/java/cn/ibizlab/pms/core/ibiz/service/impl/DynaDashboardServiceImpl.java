@@ -248,6 +248,11 @@ public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, D
     public IDynaDashboardService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public DynaDashboard dynamicCall(String key, String action, DynaDashboard et) {
+        return et;
+    }
 }
 
 

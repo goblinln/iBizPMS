@@ -47,7 +47,7 @@ public class SysUpdateLogResource {
     @Lazy
     public SysUpdateLogMapping sysupdatelogMapping;
 
-    @PreAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(#sysupdatelogdto),'pms-SysUpdateLog-Create')")
+    @PreAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(#sysupdatelogdto),'iBizPMS-SysUpdateLog-Create')")
     @ApiOperation(value = "新建更新日志", tags = {"更新日志" },  notes = "新建更新日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs")
     public ResponseEntity<SysUpdateLogDTO> create(@Validated @RequestBody SysUpdateLogDTO sysupdatelogdto) {
@@ -57,7 +57,7 @@ public class SysUpdateLogResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(#sysupdatelogdtos),'pms-SysUpdateLog-Create')")
+    @PreAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(#sysupdatelogdtos),'iBizPMS-SysUpdateLog-Create')")
     @ApiOperation(value = "批量新建更新日志", tags = {"更新日志" },  notes = "批量新建更新日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<SysUpdateLogDTO> sysupdatelogdtos) {
@@ -66,7 +66,7 @@ public class SysUpdateLogResource {
     }
 
     @VersionCheck(entity = "sysupdatelog" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.sysupdatelogService.get(#sysupdatelog_id),'pms-SysUpdateLog-Update')")
+    @PreAuthorize("hasPermission(this.sysupdatelogService.get(#sysupdatelog_id),'iBizPMS-SysUpdateLog-Update')")
     @ApiOperation(value = "更新更新日志", tags = {"更新日志" },  notes = "更新更新日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/{sysupdatelog_id}")
     public ResponseEntity<SysUpdateLogDTO> update(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody SysUpdateLogDTO sysupdatelogdto) {
@@ -77,7 +77,7 @@ public class SysUpdateLogResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatelogService.getSysupdatelogByEntities(this.sysupdatelogMapping.toDomain(#sysupdatelogdtos)),'pms-SysUpdateLog-Update')")
+    @PreAuthorize("hasPermission(this.sysupdatelogService.getSysupdatelogByEntities(this.sysupdatelogMapping.toDomain(#sysupdatelogdtos)),'iBizPMS-SysUpdateLog-Update')")
     @ApiOperation(value = "批量更新更新日志", tags = {"更新日志" },  notes = "批量更新更新日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysUpdateLogDTO> sysupdatelogdtos) {
@@ -85,14 +85,14 @@ public class SysUpdateLogResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatelogService.get(#sysupdatelog_id),'pms-SysUpdateLog-Remove')")
+    @PreAuthorize("hasPermission(this.sysupdatelogService.get(#sysupdatelog_id),'iBizPMS-SysUpdateLog-Remove')")
     @ApiOperation(value = "删除更新日志", tags = {"更新日志" },  notes = "删除更新日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/{sysupdatelog_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysupdatelog_id") String sysupdatelog_id) {
          return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.remove(sysupdatelog_id));
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatelogService.getSysupdatelogByIds(#ids),'pms-SysUpdateLog-Remove')")
+    @PreAuthorize("hasPermission(this.sysupdatelogService.getSysupdatelogByIds(#ids),'iBizPMS-SysUpdateLog-Remove')")
     @ApiOperation(value = "批量删除更新日志", tags = {"更新日志" },  notes = "批量删除更新日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +100,7 @@ public class SysUpdateLogResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(returnObject.body),'pms-SysUpdateLog-Get')")
+    @PostAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(returnObject.body),'iBizPMS-SysUpdateLog-Get')")
     @ApiOperation(value = "获取更新日志", tags = {"更新日志" },  notes = "获取更新日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/{sysupdatelog_id}")
     public ResponseEntity<SysUpdateLogDTO> get(@PathVariable("sysupdatelog_id") String sysupdatelog_id) {
@@ -122,7 +122,7 @@ public class SysUpdateLogResource {
         return  ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.checkKey(sysupdatelogMapping.toDomain(sysupdatelogdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysUpdateLog-GetLastUpdateInfo-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysUpdateLog-GetLastUpdateInfo-all')")
     @ApiOperation(value = "获取最新更新信息", tags = {"更新日志" },  notes = "获取最新更新信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/{sysupdatelog_id}/getlastupdateinfo")
     public ResponseEntity<SysUpdateLogDTO> getLastUpdateInfo(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody SysUpdateLogDTO sysupdatelogdto) {
@@ -132,7 +132,7 @@ public class SysUpdateLogResource {
         sysupdatelogdto = sysupdatelogMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysUpdateLog-GetLastUpdateInfo-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysUpdateLog-GetLastUpdateInfo-all')")
     @ApiOperation(value = "批量处理[获取最新更新信息]", tags = {"更新日志" },  notes = "批量处理[获取最新更新信息]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/getlastupdateinfobatch")
     public ResponseEntity<Boolean> getLastUpdateInfoBatch(@RequestBody List<SysUpdateLogDTO> sysupdatelogdtos) {
@@ -141,14 +141,14 @@ public class SysUpdateLogResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(#sysupdatelogdto),'pms-SysUpdateLog-Save')")
+    @PreAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(#sysupdatelogdto),'iBizPMS-SysUpdateLog-Save')")
     @ApiOperation(value = "保存更新日志", tags = {"更新日志" },  notes = "保存更新日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/save")
     public ResponseEntity<Boolean> save(@RequestBody SysUpdateLogDTO sysupdatelogdto) {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.save(sysupdatelogMapping.toDomain(sysupdatelogdto)));
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(#sysupdatelogdtos),'pms-SysUpdateLog-Save')")
+    @PreAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(#sysupdatelogdtos),'iBizPMS-SysUpdateLog-Save')")
     @ApiOperation(value = "批量保存更新日志", tags = {"更新日志" },  notes = "批量保存更新日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysUpdateLogDTO> sysupdatelogdtos) {
@@ -156,7 +156,7 @@ public class SysUpdateLogResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysUpdateLog-searchDefault-all') and hasPermission(#context,'pms-SysUpdateLog-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysUpdateLog-searchDefault-all') and hasPermission(#context,'iBizPMS-SysUpdateLog-Get')")
 	@ApiOperation(value = "获取数据集", tags = {"更新日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysupdatelogs/fetchdefault")
 	public ResponseEntity<List<SysUpdateLogDTO>> fetchDefault(SysUpdateLogSearchContext context) {
@@ -169,7 +169,7 @@ public class SysUpdateLogResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysUpdateLog-searchDefault-all') and hasPermission(#context,'pms-SysUpdateLog-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysUpdateLog-searchDefault-all') and hasPermission(#context,'iBizPMS-SysUpdateLog-Get')")
 	@ApiOperation(value = "查询数据集", tags = {"更新日志" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/searchdefault")
 	public ResponseEntity<Page<SysUpdateLogDTO>> searchDefault(@RequestBody SysUpdateLogSearchContext context) {
@@ -179,6 +179,13 @@ public class SysUpdateLogResource {
 	}
 
 
+	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
+    @RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/{action}")
+    public ResponseEntity<SysUpdateLogDTO> dynamicCall(@PathVariable("sysupdatelog_id") String sysupdatelog_id , @PathVariable("action") String action , @RequestBody SysUpdateLogDTO sysupdatelogdto) {
+        SysUpdateLog domain = sysupdatelogService.dynamicCall(sysupdatelog_id, action, sysupdatelogMapping.toDomain(sysupdatelogdto));
+        sysupdatelogdto = sysupdatelogMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogdto);
+    }
 
 }
 

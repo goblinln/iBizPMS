@@ -65,7 +65,7 @@
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzproProjectUserTask_Default))|否|&nbsp;|
+|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzproProjectUserTask_Default))|是|&nbsp;|
 |ProjectDailyTask|项目日报任务([MYSQL5](../../appendix/query_MYSQL5.md#IbzproProjectUserTask_ProjectDailyTask))|否|&nbsp;|
 |ProjectMonthlyTask|项目月报任务([MYSQL5](../../appendix/query_MYSQL5.md#IbzproProjectUserTask_ProjectMonthlyTask))|否|&nbsp;|
 |ProjectWeeklyTask|项目周报任务([MYSQL5](../../appendix/query_MYSQL5.md#IbzproProjectUserTask_ProjectWeeklyTask))|否|&nbsp;|

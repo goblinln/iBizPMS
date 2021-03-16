@@ -47,6 +47,7 @@ public interface IIbzTopService extends IService<IbzTop> {
     boolean save(IbzTop et);
     void saveBatch(List<IbzTop> list);
     Page<IbzTop> searchDefault(IbzTopSearchContext context);
+    IbzTop dynamicCall(String key, String action, IbzTop et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

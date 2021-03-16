@@ -1,0 +1,44 @@
+import { AuthService } from '../auth-service';
+
+/**
+ * 用户角色关系权限服务对象基类
+ *
+ * @export
+ * @class SysUserRoleAuthServiceBase
+ * @extends {AuthService}
+ */
+export class SysUserRoleAuthServiceBase extends AuthService {
+
+    /**
+     * Creates an instance of  SysUserRoleAuthServiceBase.
+     * 
+     * @param {*} [opts={}]
+     * @memberof  SysUserRoleAuthServiceBase
+     */
+    constructor(opts: any = {}) {
+        super(opts);
+    }
+
+    /**
+     * 根据当前数据获取实体操作标识
+     *
+     * @param {*} mainSateOPPrivs 传入数据操作标识
+     * @returns {any}
+     * @memberof SysUserRoleAuthServiceBase
+     */
+    public getOPPrivs(mainSateOPPrivs:any):any{
+        let curDefaultOPPrivs:any = this.getSysOPPrivs();
+        let copyDefaultOPPrivs:any = JSON.parse(JSON.stringify(curDefaultOPPrivs));
+        if(mainSateOPPrivs){
+            Object.assign(curDefaultOPPrivs,mainSateOPPrivs);
+        }
+        // 统一资源优先
+        Object.keys(curDefaultOPPrivs).forEach((name:string) => {
+            if(this.sysOPPrivsMap.get(name) && copyDefaultOPPrivs[name] === 0){
+                curDefaultOPPrivs[name] = copyDefaultOPPrivs[name];
+            }
+        });
+        return curDefaultOPPrivs;
+    }
+
+}

@@ -1,158 +1,80 @@
 .ibiz-page-tag {
     position: relative;
-    box-sizing: border-box;
-    height: 34px;
-    padding: 0 60px 0 30px;
-    background: var(--app-left-sidebar-background-color);
-
-    .tags-body {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-
-        .tags-container {
-            position: absolute;
-            overflow: visible;
-            white-space: nowrap;
-            transition: left 0.3s ease;
-
-            .ivu-tag {
-                margin: 0;
-                height: 34px;
-                line-height: 34px;
-                border: 0;
-                border-radius: 0;
-                border-right: 1px solid var(--view-background-color);
-                background: var(--view-dividing-line-color-tint);
-                font-size: 14px;
-
-                .ivu-tag-text {
-                    color: var(--view-font-color);
-
-                    > i::before {
-                        vertical-align: initial;
-                    }
-                }
-
-                .text-icon {
-                    height: 16px;
-                    margin-bottom: -3px;
-                }
-
-                .ivu-icon-ios-close {
-                    visibility: hidden;
-                }
-
-                .tag-text {
-                    cursor: pointer;
-                    display: table-cell;
-
-                    .ivu-tooltip {
-                        display: block;
-
-                        .ivu-tooltip-rel {
-                            display: block;
-                            max-width: 200px;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-                    }
-
-                    .tag-caption-content {
-                        max-width: 250px;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        overflow: hidden;
-                    }
+    margin: 8px 0;
+    .left{
+        .el-tabs__header{
+            padding-right:120px;
+        }
+    }
+    .right{
+        position: absolute;
+        right:0px;
+        top:0px;
+        width:120px;
+        margin:5px 0px;
+        display: flex;
+        justify-content: center;
+        .el-dropdown{
+          button{
+            color: var(--app-color-primary-contrast);
+            background-color: var(--item-background-color-active);
+            border-color: var(--item-background-color-active);
+            &:hover{
+              opacity: 0.8;
+            }
+          }
+        }
+    }
+    >.tag-tabs{
+        background-color: var(--app-background-color);
+        .el-tabs{
+            .el-tabs__nav{
+                padding:0px 10px;
+                border:none;
+            }
+            .el-tabs__active-bar{
+                background-color: transparent !important;
+            }
+            .el-tabs__item{
+                height: 32px;
+                line-height: 32px;
+                border: 1px solid var(--ctrl-border-color-tint);
+                color: var(--ctrl-font-color-tint)!important;
+                background: var(--ctrl-background-color-bright);
+                padding: 0 12px;
+                display: inline-block;
+                margin: 4px 4px 4px 0;
+                border-radius: 3px;
+                font-size: 12px;
+                vertical-align: middle;
+                opacity: 1;
+                overflow: hidden;
+                .ivu-tag-dot-inner{
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 8px;
+                    border-radius: 50%;
+                    background: var(--ctrl-background-color-tint);
+                    position: relative;
+                    top: 1px;
                 }
             }
-
-            .ivu-tag.tag-is-active {
-                background: var(--view-background-color);
-
-                .ivu-tag-text {
-                    color: var(--view-font-color-bright);
-                }
-
-                .ivu-icon {
-                    color: var(--view-font-color-bright);
-                }
+            .el-tabs__item:hover{
+                color:var(--ctrl-font-color-hover);
             }
-
-            .ivu-tag:hover,
-            .ivu-tag.tag-is-active {
-                .ivu-icon-ios-close {
-                    visibility: initial;
+            .is-active{
+                color:var(--ctrl-font-color-active);
+                .ivu-tag-dot-inner{
+                    background-color:var(--ctrl-font-color-active) !important;
                 }
-
-                .ivu-icon {
-                    color: var(--view-font-color-bright);
-                }
+                border-bottom:2px solid transparent !important; 
             }
-
-            span {
-                .ivu-tag:last-child {
-                    border-right: none;
-                }
+            .el-tabs__header{
+                margin:0;
+                border-bottom: none;
             }
         }
     }
-
-    .move-btn {
-        font-size: 18px;
-        width: 30px;
-        height: 34px;
-        line-height: 34px;
-        background-color: var(--app-left-sidebar-background-color);
-        border-left: var(1px solid --view-dividing-line-color-bright);
-        border-right: var(1px solid --view-dividing-line-color-bright);
-        text-align: center;
-        cursor: pointer;
-    }
-
-    // .move-btn:hover {
-    //     background: #efefef;
-    // }
-    .move-left,
-    .move-right,
-    .ivu-dropdown {
-        position: absolute;
-        top: 0;
-        color: var(--app-left-sidebar-font-color);
-    }
-
-    .move-left {
-        left: 0;
-    }
-
-    .move-right {
-        right: 30px;
-    }
-
-    .ivu-dropdown {
-        right: 0;
-    }
-}
-
-.app-page-more {
-    background: var(--app-suspension-windows-background-color);
-
-    .ivu-dropdown-item {
-        color: var(--app-suspension-windows-color);
-    }
-
-    .ivu-dropdown-item:hover {
-        background: var(--app-suspension-windows-background-color-active);
-        color: var(--app-suspension-windows-font-color-active);
-    }
-}
-
-.tags-transition-move {
-    transition: transform 0.3s;
-}
-
-.tags-transition-enter,
-.tags-transition-leave-to {
-    opacity: 0;
+   
 }

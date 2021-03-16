@@ -242,6 +242,11 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
     public IIbzAgentService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzAgent dynamicCall(Long key, String action, IbzAgent et) {
+        return et;
+    }
 }
 
 

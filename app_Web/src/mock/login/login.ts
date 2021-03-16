@@ -1,7 +1,7 @@
 import { MockAdapter } from '../mock-adapter';
 const mock = MockAdapter.getInstance();
 
-import Mock from 'mockjs';
+import Mock from 'mockjs'
 const Random = Mock.Random;
 
 //  登录
@@ -20,11 +20,9 @@ mock.onPost('v7/login').reply((config: any) => {
     if (status !== 200) {
         return [status, null];
     }
-    return [
-        status,
-        {
-            token: Random.string(128),
-            user: Object.assign({}, user),
-        },
-    ];
+    return [status, {
+        token: Random.string(128),
+        user: Object.assign({}, user),
+    }];
 });
+

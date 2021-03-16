@@ -421,7 +421,7 @@ hide footbox
 |BuildStories|获取版本相关需求([MYSQL5](../../appendix/query_MYSQL5.md#Story_BuildStories))|否|&nbsp;获取指定版本中相关需求|
 |ByModule|通过模块查询([MYSQL5](../../appendix/query_MYSQL5.md#Story_ByModule))|否|&nbsp;|
 |CaseStory|相关用例需求([MYSQL5](../../appendix/query_MYSQL5.md#Story_CaseStory))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Story_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Story_Default))|是|&nbsp;|
 |ESBulk|ES批量的导入([MYSQL5](../../appendix/query_MYSQL5.md#Story_ESBulk))|否|&nbsp;|
 |GetProductStories|获取产品需求([MYSQL5](../../appendix/query_MYSQL5.md#Story_GetProductStories))|否|&nbsp;获取指定产品（含分支）中当前用户的相关需求|
 |MyAgentStory|我代理的需求([MYSQL5](../../appendix/query_MYSQL5.md#Story_MyAgentStory))|否|&nbsp;|

@@ -248,6 +248,11 @@ public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> impleme
     public IIbzTopService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzTop dynamicCall(String key, String action, IbzTop et) {
+        return et;
+    }
 }
 
 

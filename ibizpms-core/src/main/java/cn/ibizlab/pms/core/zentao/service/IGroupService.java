@@ -47,6 +47,7 @@ public interface IGroupService extends IService<Group> {
     boolean save(Group et);
     void saveBatch(List<Group> list);
     Page<Group> searchDefault(GroupSearchContext context);
+    Group dynamicCall(Long key, String action, Group et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

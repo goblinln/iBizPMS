@@ -282,6 +282,11 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     public IFileService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public File dynamicCall(Long key, String action, File et) {
+        return et;
+    }
 }
 
 

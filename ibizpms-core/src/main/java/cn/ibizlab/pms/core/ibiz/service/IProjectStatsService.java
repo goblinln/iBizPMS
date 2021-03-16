@@ -58,6 +58,7 @@ public interface IProjectStatsService extends IService<ProjectStats> {
     Page<ProjectStats> searchProjectTaskCountByTaskStatus(ProjectStatsSearchContext context);
     Page<ProjectStats> searchProjectTaskCountByType(ProjectStatsSearchContext context);
     Page<ProjectStats> searchTaskTime(ProjectStatsSearchContext context);
+    ProjectStats dynamicCall(Long key, String action, ProjectStats et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

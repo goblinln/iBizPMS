@@ -245,6 +245,11 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
     public IUserContactService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public UserContact dynamicCall(Long key, String action, UserContact et) {
+        return et;
+    }
 }
 
 

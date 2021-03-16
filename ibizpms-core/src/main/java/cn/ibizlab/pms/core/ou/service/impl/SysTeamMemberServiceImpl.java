@@ -222,6 +222,11 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
 
 
 
+    @Override
+    @Transactional
+    public SysTeamMember dynamicCall(String key, String action, SysTeamMember et) {
+        return et;
+    }
 }
 
 

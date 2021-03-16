@@ -49,6 +49,7 @@ public interface ISysOrganizationService {
     List<SysOrganization> selectByParentorgid(String orgid);
     List<SysOrganization> selectByParentorgid(Collection<String> ids);
     void removeByParentorgid(String orgid);
+    SysOrganization dynamicCall(String key, String action, SysOrganization et);
 
 
 }

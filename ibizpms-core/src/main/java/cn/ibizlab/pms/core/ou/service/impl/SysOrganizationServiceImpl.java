@@ -184,6 +184,11 @@ public class SysOrganizationServiceImpl implements ISysOrganizationService {
 
 
 
+    @Override
+    @Transactional
+    public SysOrganization dynamicCall(String key, String action, SysOrganization et) {
+        return et;
+    }
 }
 
 

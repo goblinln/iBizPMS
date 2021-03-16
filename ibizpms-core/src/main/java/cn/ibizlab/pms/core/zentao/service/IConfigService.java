@@ -47,6 +47,7 @@ public interface IConfigService extends IService<Config> {
     boolean save(Config et);
     void saveBatch(List<Config> list);
     Page<Config> searchDefault(ConfigSearchContext context);
+    Config dynamicCall(Long key, String action, Config et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

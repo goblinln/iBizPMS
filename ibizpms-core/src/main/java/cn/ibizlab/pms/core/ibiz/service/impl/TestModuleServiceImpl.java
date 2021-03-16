@@ -340,6 +340,11 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     public ITestModuleService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public TestModule dynamicCall(Long key, String action, TestModule et) {
+        return et;
+    }
 }
 
 

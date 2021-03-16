@@ -54,6 +54,7 @@ public interface IIbizproProductDailyService extends IService<IbizproProductDail
     Page<IbizproProductDaily> searchProductDaily(IbizproProductDailySearchContext context);
     List<IbizproProductDaily> selectByProduct(Long id);
     void removeByProduct(Long id);
+    IbizproProductDaily dynamicCall(Long key, String action, IbizproProductDaily et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

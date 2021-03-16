@@ -47,6 +47,7 @@ public interface IJobService extends IService<Job> {
     boolean save(Job et);
     void saveBatch(List<Job> list);
     Page<Job> searchDefault(JobSearchContext context);
+    Job dynamicCall(Long key, String action, Job et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

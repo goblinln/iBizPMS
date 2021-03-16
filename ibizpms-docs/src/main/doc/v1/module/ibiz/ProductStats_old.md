@@ -128,7 +128,7 @@ hide footbox
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProductStats_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProductStats_Default))|是|&nbsp;|
 |NoOpenProduct|未关闭产品([MYSQL5](../../appendix/query_MYSQL5.md#ProductStats_NoOpenProduct))|否|&nbsp;|
 |ProdctQuantiGird|产品质量表([MYSQL5](../../appendix/query_MYSQL5.md#ProductStats_ProdctQuantiGird))|否|&nbsp;|
 |ProductInputTable|产品投入表([MYSQL5](../../appendix/query_MYSQL5.md#ProductStats_ProductInputTable))|否|&nbsp;|

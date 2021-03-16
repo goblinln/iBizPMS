@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(UserContact_zh_CN_Base(), UserContact_zh_CN_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

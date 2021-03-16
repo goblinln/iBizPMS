@@ -108,7 +108,7 @@
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |Build|版本([MYSQL5](../../appendix/query_MYSQL5.md#PSSystemDBCfg_Build))|否|&nbsp;|
-|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#PSSystemDBCfg_Default))|否|&nbsp;|
+|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#PSSystemDBCfg_Default))|是|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#PSSystemDBCfg_View))|否|&nbsp;|
 
 * **数据集合**

@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(IbzproConfig_zh_CN_Base(), IbzproConfig_zh_CN_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

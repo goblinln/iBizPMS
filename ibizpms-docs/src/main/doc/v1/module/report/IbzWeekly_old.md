@@ -142,7 +142,7 @@ hide footbox
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzWeekly_Default))|否|&nbsp;|
+|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzWeekly_Default))|是|&nbsp;|
 |MyNotSubmit|我的周报([MYSQL5](../../appendix/query_MYSQL5.md#IbzWeekly_MyNotSubmit))|否|&nbsp;|
 |MyWeekly|我收到的周报([MYSQL5](../../appendix/query_MYSQL5.md#IbzWeekly_MyWeekly))|否|&nbsp;|
 |ProductTeamMemberWeekly|产品团队成员周报([MYSQL5](../../appendix/query_MYSQL5.md#IbzWeekly_ProductTeamMemberWeekly))|否|&nbsp;|

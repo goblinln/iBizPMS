@@ -56,6 +56,7 @@ public interface IProjectProductService extends IService<ProjectProduct> {
     void removeByProduct(Long id);
     List<ProjectProduct> selectByProject(Long id);
     void removeByProject(Long id);
+    ProjectProduct dynamicCall(String key, String action, ProjectProduct et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

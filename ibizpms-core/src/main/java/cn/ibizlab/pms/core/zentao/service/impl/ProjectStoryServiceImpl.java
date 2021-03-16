@@ -286,6 +286,11 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     public IProjectStoryService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ProjectStory dynamicCall(String key, String action, ProjectStory et) {
+        return et;
+    }
 }
 
 

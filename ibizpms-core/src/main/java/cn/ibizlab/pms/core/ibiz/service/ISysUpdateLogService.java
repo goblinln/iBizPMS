@@ -49,6 +49,7 @@ public interface ISysUpdateLogService extends IService<SysUpdateLog> {
     boolean save(SysUpdateLog et);
     void saveBatch(List<SysUpdateLog> list);
     Page<SysUpdateLog> searchDefault(SysUpdateLogSearchContext context);
+    SysUpdateLog dynamicCall(String key, String action, SysUpdateLog et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

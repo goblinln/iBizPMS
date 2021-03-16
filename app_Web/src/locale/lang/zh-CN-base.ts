@@ -1,5 +1,3 @@
-import { Util } from '@/utils/util/util';
-import zhCNUser from '../user/zh-CN.user';
 import productplan_zh_CN from '@locale/lanres/entities/product-plan/product-plan_zh_CN';
 import ibzreportroleconfig_zh_CN from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_zh_CN';
 import case_zh_CN from '@locale/lanres/entities/case/case_zh_CN';
@@ -118,23 +116,8 @@ import userCustom_zh_CN from '@locale/lanres/userCustom/userCustom_zh_CN';
 import commonLogic from '@/locale/logic/common/common-logic';
 
 function getAppLocale(){
-    const data: any = {
+    const data:any = {
         app: {
-            directoryTree:{
-                loading: "数据加载中",
-                placeholder: "文件名",
-                noData: "暂无数据"
-            },
-            fullTextSearch:{
-                placeholder: "全文检索",
-                pathError: "请配置全文检索路由",
-                noticeTitle: "全文检索",
-                noticeDesc: "关键字不能少于1个",
-                multiFormDEField: "未配置多表单属性",
-                redirectService: "重定向服务不存在！",
-                findRedirectView: "未找到该重定向视图",
-                redirectConfiguration: "未配置该重定向视图",
-            },
             commonWords:{
                 error: "失败",
                 success: "成功",
@@ -149,19 +132,14 @@ function getAppLocale(){
                 rulesException: "值规则校验异常",
                 saveSuccess: "保存成功",
                 saveFailed: "保存失败",
-                deleteSuccess: "删除成功！",
-                deleteError: "删除失败！",
+                deleteSuccess: "删除成功",
+                deleteError: "删除失败",
                 delDataFail: "删除数据失败",
                 noData: "暂无数据",
                 startsuccess:"启动成功",
-                createFailed: '无法创建',
-                isExist: '已存在',
-                valueNotEmpty: '值不能为空',
-                required: '必须填写',
-                valueMustBe: '值必须为',
-                number: '数值',
-                string: '字符串',
-                type: '类型'
+                loadmore:"加载更多",
+                nomore:"没有更多了",
+                other:"其他"
             },
             local:{
                 new: "新建",
@@ -173,8 +151,9 @@ function getAppLocale(){
                 show: "显示",
                 records: "条",
                 totle: "共",
-                noData: "无数据",
                 valueVail: "值不能为空",
+                group:"分组",
+                other:"其他",
                 notConfig: {
                     fetchAction: "视图表格fetchAction参数未配置",
                     removeAction: "视图表格removeAction参数未配置",
@@ -228,7 +207,6 @@ function getAppLocale(){
             },
             fileUpload: {
                 caption: "上传",
-                uploading: "上传中...",
             },
             searchButton: {
                 search: "搜索",
@@ -347,8 +325,6 @@ function getAppLocale(){
                 },
                 delete1: "确认要删除 ",
                 delete2: "删除操作将不可恢复？",
-                fold: "折叠",
-                unfold: "展开",
             },
             dashBoard: {
                 handleClick: {
@@ -396,12 +372,6 @@ function getAppLocale(){
                     login: "登录",
                 },
             },
-        },
-        form: {
-            group: {
-                show_more: "显示更多",
-                hidden_more: "隐藏更多"
-            }
         },
         entities: {
             productplan: productplan_zh_CN(),
@@ -517,14 +487,10 @@ function getAppLocale(){
             module: module_zh_CN(),
             projecttaskestimate: projecttaskestimate_zh_CN(),
         },
-        components: components_zh_CN,
+        components: components_zh_CN(),
         codelist: codelist_zh_CN(),
         userCustom: userCustom_zh_CN(),
     };
-    // 合并用户自定义多语言
-    Util.mergeDeepObject(data, zhCNUser);
     return data;
 }
-
-// 默认导出
 export default getAppLocale;

@@ -54,6 +54,7 @@ public interface IIbzReportlyService extends IService<IbzReportly> {
     Page<IbzReportly> searchMyAllReportly(IbzReportlySearchContext context);
     Page<IbzReportly> searchMyReceived(IbzReportlySearchContext context);
     Page<IbzReportly> searchMyReportlyMob(IbzReportlySearchContext context);
+    IbzReportly dynamicCall(Long key, String action, IbzReportly et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

@@ -448,6 +448,11 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     public IReleaseService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Release dynamicCall(Long key, String action, Release et) {
+        return et;
+    }
 }
 
 

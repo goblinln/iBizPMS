@@ -272,6 +272,11 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     public IStorySpecService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public StorySpec dynamicCall(String key, String action, StorySpec et) {
+        return et;
+    }
 }
 
 

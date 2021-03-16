@@ -649,6 +649,11 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     public IProjectService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Project dynamicCall(Long key, String action, Project et) {
+        return et;
+    }
 }
 
 

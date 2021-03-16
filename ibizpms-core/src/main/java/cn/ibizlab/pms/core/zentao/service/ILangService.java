@@ -47,6 +47,7 @@ public interface ILangService extends IService<Lang> {
     boolean save(Lang et);
     void saveBatch(List<Lang> list);
     Page<Lang> searchDefault(LangSearchContext context);
+    Lang dynamicCall(Long key, String action, Lang et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

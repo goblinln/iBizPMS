@@ -49,6 +49,7 @@ public interface IUserContactService extends IService<UserContact> {
     Page<UserContact> searchCurUSERCONTACT(UserContactSearchContext context);
     Page<UserContact> searchDefault(UserContactSearchContext context);
     Page<UserContact> searchMyUSERCONTACT(UserContactSearchContext context);
+    UserContact dynamicCall(Long key, String action, UserContact et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

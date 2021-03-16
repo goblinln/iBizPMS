@@ -47,7 +47,7 @@ public class IBIZProKeywordResource {
     @Lazy
     public IBIZProKeywordMapping ibizprokeywordMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProKeyword-Create-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-Create-all')")
     @ApiOperation(value = "新建关键字", tags = {"关键字" },  notes = "新建关键字")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords")
     public ResponseEntity<IBIZProKeywordDTO> create(@Validated @RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
@@ -57,7 +57,7 @@ public class IBIZProKeywordResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProKeyword-Create-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-Create-all')")
     @ApiOperation(value = "批量新建关键字", tags = {"关键字" },  notes = "批量新建关键字")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IBIZProKeywordDTO> ibizprokeyworddtos) {
@@ -65,7 +65,7 @@ public class IBIZProKeywordResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProKeyword-Update-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-Update-all')")
     @ApiOperation(value = "更新关键字", tags = {"关键字" },  notes = "更新关键字")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/{ibizprokeyword_id}")
     public ResponseEntity<IBIZProKeywordDTO> update(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id, @RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
@@ -76,7 +76,7 @@ public class IBIZProKeywordResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProKeyword-Update-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-Update-all')")
     @ApiOperation(value = "批量更新关键字", tags = {"关键字" },  notes = "批量更新关键字")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBIZProKeywordDTO> ibizprokeyworddtos) {
@@ -84,14 +84,14 @@ public class IBIZProKeywordResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProKeyword-Remove-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-Remove-all')")
     @ApiOperation(value = "删除关键字", tags = {"关键字" },  notes = "删除关键字")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprokeywords/{ibizprokeyword_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordService.remove(ibizprokeyword_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProKeyword-Remove-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-Remove-all')")
     @ApiOperation(value = "批量删除关键字", tags = {"关键字" },  notes = "批量删除关键字")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprokeywords/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -99,7 +99,7 @@ public class IBIZProKeywordResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProKeyword-Get-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-Get-all')")
     @ApiOperation(value = "获取关键字", tags = {"关键字" },  notes = "获取关键字")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/{ibizprokeyword_id}")
     public ResponseEntity<IBIZProKeywordDTO> get(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id) {
@@ -121,14 +121,14 @@ public class IBIZProKeywordResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordService.checkKey(ibizprokeywordMapping.toDomain(ibizprokeyworddto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProKeyword-Save-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-Save-all')")
     @ApiOperation(value = "保存关键字", tags = {"关键字" },  notes = "保存关键字")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/save")
     public ResponseEntity<Boolean> save(@RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
         return ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordService.save(ibizprokeywordMapping.toDomain(ibizprokeyworddto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProKeyword-Save-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-Save-all')")
     @ApiOperation(value = "批量保存关键字", tags = {"关键字" },  notes = "批量保存关键字")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBIZProKeywordDTO> ibizprokeyworddtos) {
@@ -136,7 +136,7 @@ public class IBIZProKeywordResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProKeyword-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"关键字" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibizprokeywords/fetchdefault")
 	public ResponseEntity<List<IBIZProKeywordDTO>> fetchDefault(IBIZProKeywordSearchContext context) {
@@ -149,7 +149,7 @@ public class IBIZProKeywordResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProKeyword-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-searchDefault-all')")
 	@ApiOperation(value = "查询数据集", tags = {"关键字" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizprokeywords/searchdefault")
 	public ResponseEntity<Page<IBIZProKeywordDTO>> searchDefault(@RequestBody IBIZProKeywordSearchContext context) {
@@ -159,6 +159,13 @@ public class IBIZProKeywordResource {
 	}
 
 
+	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
+    @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/{ibizprokeyword_id}/{action}")
+    public ResponseEntity<IBIZProKeywordDTO> dynamicCall(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id , @PathVariable("action") String action , @RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
+        IBIZProKeyword domain = ibizprokeywordService.dynamicCall(ibizprokeyword_id, action, ibizprokeywordMapping.toDomain(ibizprokeyworddto));
+        ibizprokeyworddto = ibizprokeywordMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibizprokeyworddto);
+    }
 
 }
 

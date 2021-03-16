@@ -47,6 +47,7 @@ public interface IBlockService extends IService<Block> {
     boolean save(Block et);
     void saveBatch(List<Block> list);
     Page<Block> searchDefault(BlockSearchContext context);
+    Block dynamicCall(Long key, String action, Block et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

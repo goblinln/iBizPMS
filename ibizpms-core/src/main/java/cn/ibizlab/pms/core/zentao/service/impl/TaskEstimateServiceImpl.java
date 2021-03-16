@@ -363,6 +363,11 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
 
 
 
+    @Override
+    @Transactional
+    public TaskEstimate dynamicCall(Long key, String action, TaskEstimate et) {
+        return et;
+    }
 }
 
 

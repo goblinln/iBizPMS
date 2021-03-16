@@ -227,6 +227,11 @@ public class ExtensionServiceImpl extends ServiceImpl<ExtensionMapper, Extension
     public IExtensionService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Extension dynamicCall(Long key, String action, Extension et) {
+        return et;
+    }
 }
 
 

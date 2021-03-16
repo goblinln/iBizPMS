@@ -1,0 +1,1 @@
+{"codeListType":"STATIC","getPSCodeItems":[{"value":"assign","text":"已指派","default":true},{"value":"noassign","text":"未指派"}],"codeName":"IsAssigned","emptyText":"未定义","enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/IsAssigned.json","name":"是否指派"}

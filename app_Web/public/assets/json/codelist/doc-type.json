@@ -1,0 +1,1 @@
+{"getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"},"codeListType":"STATIC","getPSCodeItems":[{"value":"text","text":"文档"},{"value":"url","text":"链接"}],"codeName":"Doc__type","emptyText":"未定义","enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/Doc__type.json","name":"文档类型"}

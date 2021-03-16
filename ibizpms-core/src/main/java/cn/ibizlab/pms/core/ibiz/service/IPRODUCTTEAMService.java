@@ -55,6 +55,7 @@ public interface IPRODUCTTEAMService extends IService<PRODUCTTEAM> {
     List<PRODUCTTEAM> selectByRoot(Long id);
     void removeByRoot(Long id);
     void saveByRoot(Long id, List<PRODUCTTEAM> list) ;
+    PRODUCTTEAM dynamicCall(Long key, String action, PRODUCTTEAM et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

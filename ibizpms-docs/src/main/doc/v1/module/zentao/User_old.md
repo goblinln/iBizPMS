@@ -110,7 +110,7 @@
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |BugUser|Bug用户([MYSQL5](../../appendix/query_MYSQL5.md#User_BugUser))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#User_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#User_Default))|是|&nbsp;|
 |getByLogin|账户获取登录名([MYSQL5](../../appendix/query_MYSQL5.md#User_GetByLogin))|否|&nbsp;根据ZT账户标识（account、邮箱、手机号、源代码账户）获取登录名，用于关联UAA登录与ZT登录|
 |ProjectTeamM|项目团队管理([MYSQL5](../../appendix/query_MYSQL5.md#User_ProjectTeamM))|否|&nbsp;排除当前项目已经选择的用户|
 |ProjectTeamUser|项目团队成员([MYSQL5](../../appendix/query_MYSQL5.md#User_ProjectTeamUser))|否|&nbsp;|

@@ -236,6 +236,11 @@ public class ProjectTaskestimateServiceImpl extends ServiceImpl<ProjectTaskestim
     public IProjectTaskestimateService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ProjectTaskestimate dynamicCall(String key, String action, ProjectTaskestimate et) {
+        return et;
+    }
 }
 
 

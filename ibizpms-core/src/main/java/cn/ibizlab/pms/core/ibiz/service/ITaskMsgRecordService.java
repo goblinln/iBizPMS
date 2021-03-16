@@ -47,6 +47,7 @@ public interface ITaskMsgRecordService extends IService<TaskMsgRecord> {
     boolean save(TaskMsgRecord et);
     void saveBatch(List<TaskMsgRecord> list);
     Page<TaskMsgRecord> searchDefault(TaskMsgRecordSearchContext context);
+    TaskMsgRecord dynamicCall(String key, String action, TaskMsgRecord et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

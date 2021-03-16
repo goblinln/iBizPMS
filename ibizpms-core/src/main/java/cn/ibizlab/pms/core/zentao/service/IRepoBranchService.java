@@ -47,6 +47,7 @@ public interface IRepoBranchService extends IService<RepoBranch> {
     boolean save(RepoBranch et);
     void saveBatch(List<RepoBranch> list);
     Page<RepoBranch> searchDefault(RepoBranchSearchContext context);
+    RepoBranch dynamicCall(String key, String action, RepoBranch et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

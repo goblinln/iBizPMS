@@ -38,12 +38,12 @@
 |待办名称|NAME|TEXT|&nbsp;|
 |指派日期|ASSIGNEDDATE|DATE|&nbsp;|
 |过期时间|CONFIG_END|DATE|&nbsp;|
+|费用|COST|INT|&nbsp;|
 |优先级|PRI|INT|&nbsp;|
 |日期|DATE|DATE|&nbsp;|
 |待办名称|STORY|TEXT|&nbsp;|
 |私人事务|PRIVATE|SMCODELIST|&nbsp;|
 |config|CONFIG|TEXT|&nbsp;|
-|费用|COST|INT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -77,12 +77,12 @@
 |待办名称|默认规则|内容长度必须小于等于[150]|
 |指派日期|默认规则|默认规则|
 |过期时间|默认规则|默认规则|
+|费用|默认规则|默认规则|
 |优先级|默认规则|默认规则|
 |日期|默认规则|默认规则|
 |待办名称|默认规则|内容长度必须小于等于[100]|
 |私人事务|默认规则|内容长度必须小于等于[4000]|
 |config|默认规则|内容长度必须小于等于[255]|
-|费用|默认规则|默认规则|
 
 ## 状态控制
 
@@ -158,7 +158,7 @@ hide footbox
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Todo_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Todo_Default))|是|&nbsp;|
 |MyTodo|我的待办([MYSQL5](../../appendix/query_MYSQL5.md#Todo_MyTodo))|否|&nbsp;|
 |MyTodoPc|我的待办([MYSQL5](../../appendix/query_MYSQL5.md#Todo_MyTodoPc))|否|&nbsp;|
 |MyUpcoming|MyUpcoming([MYSQL5](../../appendix/query_MYSQL5.md#Todo_MyUpcoming))|否|&nbsp;|

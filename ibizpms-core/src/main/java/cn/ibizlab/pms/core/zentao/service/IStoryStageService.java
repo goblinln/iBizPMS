@@ -51,6 +51,7 @@ public interface IStoryStageService extends IService<StoryStage> {
     void removeByBranch(Long id);
     List<StoryStage> selectByStory(Long id);
     void removeByStory(Long id);
+    StoryStage dynamicCall(String key, String action, StoryStage et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

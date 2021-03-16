@@ -227,6 +227,11 @@ public class NotifyServiceImpl extends ServiceImpl<NotifyMapper, Notify> impleme
     public INotifyService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Notify dynamicCall(Long key, String action, Notify et) {
+        return et;
+    }
 }
 
 

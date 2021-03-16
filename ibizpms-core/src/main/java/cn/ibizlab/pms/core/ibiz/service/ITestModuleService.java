@@ -58,6 +58,7 @@ public interface ITestModuleService extends IService<TestModule> {
     void removeByParent(Long id);
     List<TestModule> selectByRoot(Long id);
     void removeByRoot(Long id);
+    TestModule dynamicCall(Long key, String action, TestModule et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

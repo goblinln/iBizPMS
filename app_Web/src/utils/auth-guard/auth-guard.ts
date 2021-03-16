@@ -1,5 +1,7 @@
-import { Http } from '../http/http';
-import { AppService } from '@/studio-core/service/app-service/AppService';
+import { Environment } from '@/environments/environment';
+import i18n from '@/locale';
+import { AppServiceBase, DynamicService, Http, IBizAppModel } from 'ibiz-core';
+import { AppCenterService, AppNavHistory } from 'ibiz-vue';
 
 /**
  * AuthGuard net 对象
@@ -8,6 +10,7 @@ import { AppService } from '@/studio-core/service/app-service/AppService';
  * @class Http
  */
 export class AuthGuard {
+
     /**
      * 获取 Auth 单例对象
      *
@@ -35,70 +38,73 @@ export class AuthGuard {
     /**
      * Creates an instance of AuthGuard.
      * 私有构造，拒绝通过 new 创建对象
-     *
+     * 
      * @memberof AuthGuard
      */
-    private constructor() {}
+    private constructor() { }
 
     /**
-     * post请求
+     * 获取应用数据
      *
      * @param {string} url url 请求路径
      * @param {*} [params={}] 请求参数
+     * @param {*} [router] 路由对象
      * @returns {Promise<any>} 请求相响应对象
      * @memberof AuthGuard
      */
-    public async authGuard(url: string, params: any = {}, router: any): Promise<boolean> {
-        try {
-            let appContext = {};
-            const response = await Http.getInstance().get(url, params);
-            if (response?.status === 200) {
-                let { data }: { data: any } = response;
-                if (data) {
-                    // token认证把用户信息放入应用级数据
-                    if (localStorage.getItem('user')) {
-                        let user: any = JSON.parse(localStorage.getItem('user') as string);
-                        let localAppData: any = {};
-                        if (user.sessionParams) {
-                            localAppData = { context: user.sessionParams };
-                            Object.assign(localAppData, data);
+    public authGuard(url: string, params: any = {}, router: any): Promise<boolean> {
+        return new Promise((resolve: any, reject: any) => {
+            const get: Promise<any> = Http.getInstance().get(url);
+            get.then((response: any) => {
+                if (response && response.status === 200) {
+                    let { data }: { data: any } = response;
+                    if (data) {
+                        // token认证把用户信息放入应用级数据
+                        if (localStorage.getItem('user')) {
+                            let user: any = JSON.parse(localStorage.getItem('user') as string);
+                            let localAppData: any = {};
+                            if (user.sessionParams) {
+                                localAppData = { context: user.sessionParams };
+                                Object.assign(localAppData, data);
+                            }
+                            data = JSON.parse(JSON.stringify(localAppData));
                         }
-                        data = JSON.parse(JSON.stringify(localAppData));
+                        if (localStorage.getItem('localdata')) {
+                            router.app.$store.commit('addLocalData', JSON.parse(localStorage.getItem('localdata') as string));
+                        }
+                        router.app.$store.commit('addAppData', data);
+                        // 提交统一资源数据
+                        router.app.$store.dispatch('authresource/commitAuthData', data);
                     }
-                    this.formatAppData(data);
-                    if (data.context) {
-                        appContext = data.context;
-                    }
-                    router.app.$store.commit('addAppData', data);
-                    // 提交统一资源数据
-                    router.app.$store.dispatch('authresource/commitAuthData', data);
                 }
-                new AppService().contextStore.appContext = appContext;
-                return true;
-            } else if (response.status === 404) {
-                return true;
-            }
-            return false;
-        } catch (err) {
-            console.warn('应用数据获取异常:', err);
-            return false;
-        }
+                this.initAppService(router).then(() => {
+                    resolve(true);
+                })
+            }).catch((error: any) => {
+                this.initAppService(router).then(() => {
+                    resolve(true);
+                    console.error("获取应用数据出现异常");
+                })
+            });
+        });
     }
 
     /**
-     * 初始化应用数据
+     * 初始化应用服务
      *
-     * @protected
-     * @param {*} data
+     * @param {*} [router] 路由对象
+     * 
      * @memberof AuthGuard
      */
-    protected formatAppData(data: any): void {
-        Object.defineProperty(data.context, 'srfcurdate', {
-            get: function () {
-                return new Date().toLocaleString(undefined, { hour12: false });
-            },
-            enumerable: true,
-            configurable: true,
-        });
+    public async initAppService(router: any) {
+        const appContext: any = router.app.$store.getters.getAppData().context;
+        AppServiceBase.getInstance().setAppEnvironment(Environment);
+        AppServiceBase.getInstance().setAppStore(router.app.$store);
+        AppServiceBase.getInstance().setI18n(i18n);
+        const appModelData: any = await DynamicService.getInstance(appContext).getAppMpdeJsonData(Environment.appDynaModelFilePath);
+        AppServiceBase.getInstance().setAppModelDataObject(new IBizAppModel(appModelData));
+        // AppServiceBase.getInstance().setAppNavDataService(new AppNavHistory());
+        AppCenterService.getInstance(router.app.$store);
     }
+
 }

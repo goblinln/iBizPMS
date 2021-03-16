@@ -63,7 +63,7 @@
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzproProductUserTask_Default))|否|&nbsp;|
+|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzproProductUserTask_Default))|是|&nbsp;|
 |ProductDailyUserTaskStats|产品日报用户任务统计([MYSQL5](../../appendix/query_MYSQL5.md#IbzproProductUserTask_ProductDailyUserTaskStats))|否|&nbsp;|
 |ProductMonthlyUserTaskStats|产品月报用户任务统计([MYSQL5](../../appendix/query_MYSQL5.md#IbzproProductUserTask_ProductMonthlyUserTaskStats))|否|&nbsp;|
 |ProductWeeklyUserTaskStats|产品周报用户任务统计([MYSQL5](../../appendix/query_MYSQL5.md#IbzproProductUserTask_ProductWeeklyUserTaskStats))|否|&nbsp;|

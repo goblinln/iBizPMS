@@ -275,6 +275,11 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     public IStoryStageService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public StoryStage dynamicCall(String key, String action, StoryStage et) {
+        return et;
+    }
 }
 
 

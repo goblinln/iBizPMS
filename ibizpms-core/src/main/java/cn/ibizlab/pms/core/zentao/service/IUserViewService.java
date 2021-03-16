@@ -47,6 +47,7 @@ public interface IUserViewService extends IService<UserView> {
     boolean save(UserView et);
     void saveBatch(List<UserView> list);
     Page<UserView> searchDefault(UserViewSearchContext context);
+    UserView dynamicCall(String key, String action, UserView et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

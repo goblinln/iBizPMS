@@ -17,19 +17,19 @@
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskgetprojectbyplanprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="设置常规参数"/>
      <endEvent id="prepareparam1_end" name="end"/>
      <sequenceFlow id="prepareparam1_end_line" sourceRef="prepareparam1" targetRef="prepareparam1_end"/>
-     <sequenceFlow id="gateway-begin_rawsqlcall2" sourceRef="gateway-begin" targetRef="rawsqlcall2">
-            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
-            $taskgetprojectbyplandefault:Task();
-            eval($taskgetprojectbyplandefault==taskgetprojectbyplandefault);
-                eval((RuleUtils.test($taskgetprojectbyplandefault.get("plan"),"ISNOTNULL","")))
-                ]]>
-            </conditionExpression>
-     </sequenceFlow>
      <sequenceFlow id="gateway-begin_prepareparam1" sourceRef="gateway-begin" targetRef="prepareparam1">
             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
             $taskgetprojectbyplandefault:Task();
             eval($taskgetprojectbyplandefault==taskgetprojectbyplandefault);
                 eval((RuleUtils.test($taskgetprojectbyplandefault.get("plan"),"ISNULL","")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-begin_rawsqlcall2" sourceRef="gateway-begin" targetRef="rawsqlcall2">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $taskgetprojectbyplandefault:Task();
+            eval($taskgetprojectbyplandefault==taskgetprojectbyplandefault);
+                eval((RuleUtils.test($taskgetprojectbyplandefault.get("plan"),"ISNOTNULL","")))
                 ]]>
             </conditionExpression>
      </sequenceFlow>

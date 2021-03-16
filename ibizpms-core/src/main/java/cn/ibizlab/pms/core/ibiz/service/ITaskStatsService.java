@@ -49,6 +49,7 @@ public interface ITaskStatsService extends IService<TaskStats> {
     Page<TaskStats> searchDefault(TaskStatsSearchContext context);
     Page<TaskStats> searchTaskFinishHuiZong(TaskStatsSearchContext context);
     Page<TaskStats> searchUserFinishTaskSum(TaskStatsSearchContext context);
+    TaskStats dynamicCall(Long key, String action, TaskStats et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

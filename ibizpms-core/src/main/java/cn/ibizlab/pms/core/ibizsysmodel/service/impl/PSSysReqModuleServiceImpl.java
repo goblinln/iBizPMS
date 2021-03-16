@@ -344,6 +344,11 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
 
 
 
+    @Override
+    @Transactional
+    public PSSysReqModule dynamicCall(String key, String action, PSSysReqModule et) {
+        return et;
+    }
 }
 
 

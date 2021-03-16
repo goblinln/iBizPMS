@@ -107,5 +107,10 @@ public class ProductLineServiceImpl implements IProductLineService {
     }
 
 
+    @Override
+    @Transactional
+    public ProductLine dynamicCall(String key, String action, ProductLine et) {
+        return et;
+    }
 }
 

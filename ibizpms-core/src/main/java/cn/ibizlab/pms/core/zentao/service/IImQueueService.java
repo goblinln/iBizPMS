@@ -47,6 +47,7 @@ public interface IImQueueService extends IService<ImQueue> {
     boolean save(ImQueue et);
     void saveBatch(List<ImQueue> list);
     Page<ImQueue> searchDefault(ImQueueSearchContext context);
+    ImQueue dynamicCall(Long key, String action, ImQueue et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

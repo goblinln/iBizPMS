@@ -56,6 +56,7 @@ public interface IUserService extends IService<User> {
     Page<User> searchProjectTeamUser(UserSearchContext context);
     Page<User> searchProjectTeamUserTask(UserSearchContext context);
     Page<User> searchTaskTeam(UserSearchContext context);
+    User dynamicCall(Long key, String action, User et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

@@ -50,6 +50,7 @@ public interface IIbzproProductUserTaskService extends IService<IbzproProductUse
     Page<IbzproProductUserTask> searchProductDailyUserTaskStats(IbzproProductUserTaskSearchContext context);
     Page<IbzproProductUserTask> searchProductMonthlyUserTaskStats(IbzproProductUserTaskSearchContext context);
     Page<IbzproProductUserTask> searchProductWeeklyUserTaskStats(IbzproProductUserTaskSearchContext context);
+    IbzproProductUserTask dynamicCall(Long key, String action, IbzproProductUserTask et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

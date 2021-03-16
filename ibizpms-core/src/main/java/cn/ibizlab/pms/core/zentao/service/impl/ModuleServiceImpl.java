@@ -371,6 +371,11 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     public IModuleService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Module dynamicCall(Long key, String action, Module et) {
+        return et;
+    }
 }
 
 

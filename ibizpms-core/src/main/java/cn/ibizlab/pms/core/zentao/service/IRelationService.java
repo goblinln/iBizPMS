@@ -47,6 +47,7 @@ public interface IRelationService extends IService<Relation> {
     boolean save(Relation et);
     void saveBatch(List<Relation> list);
     Page<Relation> searchDefault(RelationSearchContext context);
+    Relation dynamicCall(Long key, String action, Relation et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

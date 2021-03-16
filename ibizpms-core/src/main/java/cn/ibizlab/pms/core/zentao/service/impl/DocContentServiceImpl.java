@@ -248,6 +248,11 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
     public IDocContentService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public DocContent dynamicCall(Long key, String action, DocContent et) {
+        return et;
+    }
 }
 
 

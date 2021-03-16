@@ -175,7 +175,7 @@ hide footbox
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Release_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Release_Default))|是|&nbsp;|
 |GetList|获取产品发布([MYSQL5](../../appendix/query_MYSQL5.md#Release_GetList))|否|&nbsp;获取相关产品发布列表（根据产品指定）|
 |ReportRelease|测试报告关联发布([MYSQL5](../../appendix/query_MYSQL5.md#Release_ReportRelease))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#Release_View))|否|&nbsp;|

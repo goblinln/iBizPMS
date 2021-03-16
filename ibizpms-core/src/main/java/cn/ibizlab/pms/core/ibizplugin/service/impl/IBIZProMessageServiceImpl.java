@@ -227,6 +227,11 @@ public class IBIZProMessageServiceImpl implements IIBIZProMessageService {
 
 
 
+    @Override
+    @Transactional
+    public IBIZProMessage dynamicCall(String key, String action, IBIZProMessage et) {
+        return et;
+    }
 }
 
 

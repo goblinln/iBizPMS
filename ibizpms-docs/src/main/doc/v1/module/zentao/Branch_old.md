@@ -63,7 +63,7 @@ hide members
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |CurProduct|CurProduct([MYSQL5](../../appendix/query_MYSQL5.md#Branch_CurProduct))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Branch_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Branch_Default))|是|&nbsp;|
 |DefaultBranch|DefaultBranch([MYSQL5](../../appendix/query_MYSQL5.md#Branch_DefaultBranch))|否|&nbsp;所有平台，id为0|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#Branch_View))|否|&nbsp;|
 

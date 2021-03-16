@@ -49,6 +49,7 @@ public interface IIBZProSysTplService extends IService<IBZProSysTpl> {
     Page<IBZProSysTpl> searchDefault(IBZProSysTplSearchContext context);
     List<IBZProSysTpl> selectByFile(Long id);
     void removeByFile(Long id);
+    IBZProSysTpl dynamicCall(String key, String action, IBZProSysTpl et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

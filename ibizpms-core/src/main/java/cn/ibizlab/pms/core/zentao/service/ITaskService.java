@@ -141,6 +141,7 @@ public interface ITaskService extends IService<Task> {
     void removeByStory(Long id);
     List<Task> selectByParent(Long id);
     void removeByParent(Long id);
+    Task dynamicCall(Long key, String action, Task et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

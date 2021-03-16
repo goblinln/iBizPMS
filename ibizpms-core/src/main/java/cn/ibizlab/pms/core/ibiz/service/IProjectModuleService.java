@@ -59,6 +59,7 @@ public interface IProjectModuleService extends IService<ProjectModule> {
     void removeByParent(Long id);
     List<ProjectModule> selectByRoot(Long id);
     void removeByRoot(Long id);
+    ProjectModule dynamicCall(Long key, String action, ProjectModule et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

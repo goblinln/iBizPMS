@@ -320,6 +320,11 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     public IActionService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Action dynamicCall(Long key, String action, Action et) {
+        return et;
+    }
 }
 
 

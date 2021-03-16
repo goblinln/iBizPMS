@@ -178,6 +178,11 @@ public class SysRoleServiceImpl implements ISysRoleService {
 
 
 
+    @Override
+    @Transactional
+    public SysRole dynamicCall(String key, String action, SysRole et) {
+        return et;
+    }
 }
 
 

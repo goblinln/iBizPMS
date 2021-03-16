@@ -300,6 +300,11 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     public IBurnService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Burn dynamicCall(String key, String action, Burn et) {
+        return et;
+    }
 }
 
 

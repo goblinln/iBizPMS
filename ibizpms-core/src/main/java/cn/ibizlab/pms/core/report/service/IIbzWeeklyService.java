@@ -65,6 +65,7 @@ public interface IIbzWeeklyService extends IService<IbzWeekly> {
     Page<IbzWeekly> searchMyWeekly(IbzWeeklySearchContext context);
     Page<IbzWeekly> searchProductTeamMemberWeekly(IbzWeeklySearchContext context);
     Page<IbzWeekly> searchProjectWeekly(IbzWeeklySearchContext context);
+    IbzWeekly dynamicCall(Long key, String action, IbzWeekly et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

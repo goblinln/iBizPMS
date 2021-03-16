@@ -69,7 +69,7 @@
 | --------  | --------   | --------   | ----- |
 |ActionMonth|日志月([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimateStats_ActionMonth))|否|&nbsp;|
 |ActionYear|日志年([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimateStats_ActionYear))|否|&nbsp;|
-|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimateStats_Default))|否|&nbsp;|
+|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimateStats_Default))|是|&nbsp;|
 |TaskEstimateStatsSum|任务工时统计([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimateStats_TaskEstimateStatsSum))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimateStats_View))|否|&nbsp;|
 

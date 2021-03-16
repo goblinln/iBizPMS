@@ -254,6 +254,11 @@ public class PSModuleServiceImpl implements IPSModuleService {
 
 
 
+    @Override
+    @Transactional
+    public PSModule dynamicCall(String key, String action, PSModule et) {
+        return et;
+    }
 }
 
 

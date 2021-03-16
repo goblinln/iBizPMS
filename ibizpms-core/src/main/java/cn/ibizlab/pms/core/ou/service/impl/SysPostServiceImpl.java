@@ -156,6 +156,11 @@ public class SysPostServiceImpl implements ISysPostService {
 
 
 
+    @Override
+    @Transactional
+    public SysPost dynamicCall(String key, String action, SysPost et) {
+        return et;
+    }
 }
 
 

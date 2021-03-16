@@ -248,6 +248,11 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
     public IIbzFavoritesService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzFavorites dynamicCall(String key, String action, IbzFavorites et) {
+        return et;
+    }
 }
 
 

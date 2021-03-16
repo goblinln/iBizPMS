@@ -762,6 +762,11 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     public ICaseService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Case dynamicCall(Long key, String action, Case et) {
+        return et;
+    }
 }
 
 

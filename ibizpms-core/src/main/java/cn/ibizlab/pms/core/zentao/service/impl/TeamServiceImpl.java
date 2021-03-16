@@ -257,6 +257,11 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements IT
     public ITeamService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Team dynamicCall(Long key, String action, Team et) {
+        return et;
+    }
 }
 
 

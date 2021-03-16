@@ -283,6 +283,11 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
     public ICaseStatsService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public CaseStats dynamicCall(Long key, String action, CaseStats et) {
+        return et;
+    }
 }
 
 

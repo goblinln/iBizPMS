@@ -48,6 +48,7 @@ public interface IProjectTaskestimateService extends IService<ProjectTaskestimat
     void saveBatch(List<ProjectTaskestimate> list);
     Page<ProjectTaskestimate> searchAccountDetail(ProjectTaskestimateSearchContext context);
     Page<ProjectTaskestimate> searchDefault(ProjectTaskestimateSearchContext context);
+    ProjectTaskestimate dynamicCall(String key, String action, ProjectTaskestimate et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

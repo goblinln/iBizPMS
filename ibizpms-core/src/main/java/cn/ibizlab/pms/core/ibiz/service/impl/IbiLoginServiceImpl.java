@@ -126,6 +126,11 @@ public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> i
     public IIbiLoginService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbiLogin dynamicCall(Long key, String action, IbiLogin et) {
+        return et;
+    }
 }
 
 

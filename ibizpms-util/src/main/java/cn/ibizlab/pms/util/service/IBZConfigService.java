@@ -20,7 +20,7 @@ import org.springframework.util.StringUtils;
 @Service
 public class IBZConfigService extends ServiceImpl<IBZConfigMapper, IBZConfig> implements IService<IBZConfig> {
 
-    @Value("${ibiz.systemid:pms}")
+    @Value("${ibiz.systemid:iBizPMS}")
 	private String systemId;
 
     @Value("${ibiz.admin.userid:0100}")

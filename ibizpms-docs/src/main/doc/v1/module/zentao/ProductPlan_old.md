@@ -20,6 +20,7 @@ hide members
 | --------   |------------| -----   |  -------- | 
 |总任务数|TASKSCNT|INT|&nbsp;|
 |工时数|ESTIMATECNT|INT|&nbsp;|
+|备注|COMMENT|HTMLTEXT|&nbsp;|
 |名称|TITLE|TEXT|&nbsp;|
 |延迟任务数|DELAYTASKSCNT|INT|&nbsp;|
 |上一次计划名称|OLDTITLE|TEXT|&nbsp;|
@@ -28,14 +29,19 @@ hide members
 |状态|STATUSS|TEXT|&nbsp;|
 |描述|DESC|LONGTEXT|&nbsp;|
 |结束日期|END|DATE|&nbsp;|
+|延期|DELAY|TEXT|&nbsp;|
 |持续时间|DURATION|TEXT|&nbsp;|
 |开始日期|BEGINSTR|TEXT|&nbsp;|
+|剩余工时|LEFTESTIMATE|FLOAT|&nbsp;|
 |计划模板|PLANTEMPLET|SSCODELIST|&nbsp;|
 |未完成任务数|UNFINISHEDTASKSCNT|INT|&nbsp;|
 |结束日期|ENDSTR|TEXT|&nbsp;|
+|计划状态|STATUS|TEXT|&nbsp;|
 |是否过期|ISEXPIRED|YESNO|&nbsp;|
 |已删除|DELETED|TEXT|&nbsp;|
+|消耗工时|CONSUMEDESTIMATE|FLOAT|&nbsp;|
 |排序|ORDER|LONGTEXT|&nbsp;|
+|叶子节点|ISLEAF|TRUEFALSE|&nbsp;|
 |待定|FUTURE|SSCODELIST|&nbsp;|
 |需求数|STORYCNT|INT|&nbsp;|
 |周期|DELTA|SSCODELIST|&nbsp;|
@@ -45,18 +51,13 @@ hide members
 |平台/分支|BRANCH|PICKUP|&nbsp;|
 |父计划|PARENT|PICKUP|&nbsp;|
 |产品|PRODUCT|PICKUP|&nbsp;|
-|计划状态|STATUS|TEXT|&nbsp;|
-|延期|DELAY|TEXT|&nbsp;|
-|备注|COMMENT|HTMLTEXT|&nbsp;|
-|剩余工时|LEFTESTIMATE|FLOAT|&nbsp;|
-|消耗工时|CONSUMEDESTIMATE|FLOAT|&nbsp;|
-|叶子节点|ISLEAF|TRUEFALSE|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
 | --------   |------------| ----- | 
 |总任务数|默认规则|默认规则|
 |工时数|默认规则|默认规则|
+|备注|默认规则|内容长度必须小于等于[1048576]|
 |名称|默认规则|内容长度必须小于等于[90]|
 |延迟任务数|默认规则|默认规则|
 |上一次计划名称|默认规则|内容长度必须小于等于[100]|
@@ -65,14 +66,19 @@ hide members
 |状态|默认规则|内容长度必须小于等于[200]|
 |描述|默认规则|内容长度必须小于等于[65535]|
 |结束日期|默认规则|默认规则|
+|延期|默认规则|内容长度必须小于等于[200]|
 |持续时间|默认规则|内容长度必须小于等于[200]|
 |开始日期|默认规则|内容长度必须小于等于[200]|
+|剩余工时|默认规则|默认规则|
 |计划模板|默认规则|内容长度必须小于等于[200]|
 |未完成任务数|默认规则|默认规则|
 |结束日期|默认规则|内容长度必须小于等于[200]|
+|计划状态|默认规则|内容长度必须小于等于[100]|
 |是否过期|默认规则|内容长度必须小于等于[200]|
 |已删除|默认规则|内容长度必须小于等于[1]|
+|消耗工时|默认规则|默认规则|
 |排序|默认规则|内容长度必须小于等于[65535]|
+|叶子节点|默认规则|默认规则|
 |待定|默认规则|内容长度必须小于等于[200]|
 |需求数|默认规则|默认规则|
 |周期|默认规则|内容长度必须小于等于[200]|
@@ -82,12 +88,6 @@ hide members
 |平台/分支|默认规则|默认规则|
 |父计划|默认规则|默认规则|
 |产品|默认规则|默认规则|
-|计划状态|默认规则|内容长度必须小于等于[100]|
-|延期|默认规则|内容长度必须小于等于[200]|
-|备注|默认规则|内容长度必须小于等于[1048576]|
-|剩余工时|默认规则|默认规则|
-|消耗工时|默认规则|默认规则|
-|叶子节点|默认规则|默认规则|
 
 ## 状态控制
 
@@ -185,7 +185,7 @@ hide footbox
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |ChildPlan|子计划([MYSQL5](../../appendix/query_MYSQL5.md#ProductPlan_ChildPlan))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProductPlan_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProductPlan_Default))|是|&nbsp;|
 |DefaultParent|默认查询([MYSQL5](../../appendix/query_MYSQL5.md#ProductPlan_DefaultParent))|否|&nbsp;|
 |GetList|获取产品计划列表([MYSQL5](../../appendix/query_MYSQL5.md#ProductPlan_GetList))|否|&nbsp;获取当前用户的相关产品（分支）的计划|
 |PlanCodeList|计划（代码表）([MYSQL5](../../appendix/query_MYSQL5.md#ProductPlan_PlanCodeList))|否|&nbsp;|

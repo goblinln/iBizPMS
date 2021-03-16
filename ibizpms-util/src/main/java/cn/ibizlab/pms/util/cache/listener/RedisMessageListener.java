@@ -42,6 +42,11 @@ public class RedisMessageListener extends MessageListenerAdapter {
         log.debug("redis消息订阅者接收到频道【{}】发布的消息。消息内容：{}", channelTopic.getChannelTopicStr(), result.toString());
         String cacheName = (String) map.get("cacheName");
         Cache cache = cacheManager.getCache(cacheName);// 根据缓存名称获取多级缓存
+        if (channelTopic.equals(RedisChannelTopic.REDIS_CACHE_DYNAMICMODEL_TOPIC)) {
+            //DynamicModelService dynamicModelService = SpringContextHolder.getBean(DynamicModelService.class);
+            //dynamicModelService.syncModel();
+            return;
+        }
         if (cache != null && cache instanceof LayeringCache) { // 判断缓存是否是多级缓存
             switch (channelTopic) {
                 case REDIS_CACHE_DELETE_TOPIC: // 获取一级缓存，并删除一级缓存数据

@@ -13,4 +13,8 @@ public class IBZLiteFallback implements IBZLiteFeignClient {
 		return null;
 	}
 
+	@Override
+	public List<Map<String, Object>> getDynamicModel(String systemId) {
+		return null;
+	}
 }

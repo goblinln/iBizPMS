@@ -101,7 +101,7 @@
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzDaily_Default))|否|&nbsp;|
+|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#IbzDaily_Default))|是|&nbsp;|
 |MyAllDaily|我的日报（已提交和未提交）([MYSQL5](../../appendix/query_MYSQL5.md#IbzDaily_MyAllDaily))|否|&nbsp;|
 |MyDaily|我收到的日报([MYSQL5](../../appendix/query_MYSQL5.md#IbzDaily_MyDaily))|否|&nbsp;|
 |MyNotSubmit|我的日报([MYSQL5](../../appendix/query_MYSQL5.md#IbzDaily_MyNotSubmit))|否|&nbsp;|

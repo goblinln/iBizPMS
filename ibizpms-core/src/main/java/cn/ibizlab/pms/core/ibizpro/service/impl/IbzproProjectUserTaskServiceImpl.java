@@ -254,6 +254,11 @@ public class IbzproProjectUserTaskServiceImpl extends ServiceImpl<IbzproProjectU
     public IIbzproProjectUserTaskService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzproProjectUserTask dynamicCall(Long key, String action, IbzproProjectUserTask et) {
+        return et;
+    }
 }
 
 

@@ -53,6 +53,7 @@ public interface ISysDepartmentService {
     List<SysDepartment> selectByOrgid(Collection<String> ids);
     void removeByOrgid(String orgid);
     void saveByOrgid(String orgid, List<SysDepartment> list) ;
+    SysDepartment dynamicCall(String key, String action, SysDepartment et);
 
 
 }

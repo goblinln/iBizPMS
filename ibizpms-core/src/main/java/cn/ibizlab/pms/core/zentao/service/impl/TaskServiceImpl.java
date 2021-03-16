@@ -1048,6 +1048,11 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     public ITaskService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Task dynamicCall(Long key, String action, Task et) {
+        return et;
+    }
 }
 
 

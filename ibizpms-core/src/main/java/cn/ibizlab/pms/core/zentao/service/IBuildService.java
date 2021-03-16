@@ -63,6 +63,7 @@ public interface IBuildService extends IService<Build> {
     void removeByProduct(Long id);
     List<Build> selectByProject(Long id);
     void removeByProject(Long id);
+    Build dynamicCall(Long key, String action, Build et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

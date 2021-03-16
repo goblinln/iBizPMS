@@ -1,0 +1,1 @@
+{"getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"},"codeListType":"STATIC","getPSCodeItems":[{"value":"day","text":"天"},{"value":"week","text":"周"},{"value":"month","text":"月度"}],"codeName":"CycleType","emptyText":"未定义","enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/CycleType.json","name":"周期类型"}

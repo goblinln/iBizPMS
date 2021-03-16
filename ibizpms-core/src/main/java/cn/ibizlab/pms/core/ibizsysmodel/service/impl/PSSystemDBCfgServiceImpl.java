@@ -269,6 +269,11 @@ public class PSSystemDBCfgServiceImpl implements IPSSystemDBCfgService {
 
 
 
+    @Override
+    @Transactional
+    public PSSystemDBCfg dynamicCall(String key, String action, PSSystemDBCfg et) {
+        return et;
+    }
 }
 
 

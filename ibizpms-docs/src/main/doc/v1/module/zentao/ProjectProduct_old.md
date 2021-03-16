@@ -61,7 +61,7 @@ hide members
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProjectProduct_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProjectProduct_Default))|是|&nbsp;|
 |RelationPlan|关联计划([MYSQL5](../../appendix/query_MYSQL5.md#ProjectProduct_RelationPlan))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#ProjectProduct_View))|否|&nbsp;|
 

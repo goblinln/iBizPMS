@@ -405,7 +405,7 @@ hide footbox
 |BuildProduceBugStatus_Project|Build产生的Bug-状态分布(项目)([MYSQL5](../../appendix/query_MYSQL5.md#Bug_BuildProduceBugStatus_Project))|否|&nbsp;|
 |BuildProduceBugType_Project|Build产生的Bug-类型分布(项目)([MYSQL5](../../appendix/query_MYSQL5.md#Bug_BuildProduceBugType_Project))|否|&nbsp;|
 |CurUserResolve|当前用户解决的Bug([MYSQL5](../../appendix/query_MYSQL5.md#Bug_CurUserResolve))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Bug_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Bug_Default))|是|&nbsp;|
 |ESBulk|ES批量的导入([MYSQL5](../../appendix/query_MYSQL5.md#Bug_ESBulk))|否|&nbsp;|
 |MyAgentBug|我代理的Bug([MYSQL5](../../appendix/query_MYSQL5.md#Bug_MyAgentBug))|否|&nbsp;|
 |MyCurOpenedBug|累计创建的Bug数([MYSQL5](../../appendix/query_MYSQL5.md#Bug_MyCurOpenedBug))|否|&nbsp;|

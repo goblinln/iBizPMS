@@ -344,6 +344,11 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
 
 
 
+    @Override
+    @Transactional
+    public IbzLibCaseSteps dynamicCall(Long key, String action, IbzLibCaseSteps et) {
+        return et;
+    }
 }
 
 

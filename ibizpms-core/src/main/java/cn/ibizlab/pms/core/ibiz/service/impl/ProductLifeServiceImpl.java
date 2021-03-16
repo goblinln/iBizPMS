@@ -275,6 +275,11 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
     public IProductLifeService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ProductLife dynamicCall(String key, String action, ProductLife et) {
+        return et;
+    }
 }
 
 

@@ -53,6 +53,7 @@ public interface IIbzLibCaseStepsService extends IService<IbzLibCaseSteps> {
     List<IbzLibCaseSteps> selectByParent(Long id);
     void removeByParent(Long id);
     void saveByParent(Long id, List<IbzLibCaseSteps> list) ;
+    IbzLibCaseSteps dynamicCall(Long key, String action, IbzLibCaseSteps et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

@@ -1,0 +1,1 @@
+{"getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"},"codeListType":"STATIC","getPSCodeItems":[{"value":"step","text":"步骤"},{"value":"group","text":"分组"},{"value":"item","text":"分组步骤"}],"codeName":"Casestep__type","emptyText":"未定义","enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/Casestep__type.json","name":"用例步骤类型"}

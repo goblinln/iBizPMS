@@ -47,6 +47,7 @@ public interface IIBZProSystemService extends IService<IBZProSystem> {
     boolean save(IBZProSystem et);
     void saveBatch(List<IBZProSystem> list);
     Page<IBZProSystem> searchDefault(IBZProSystemSearchContext context);
+    IBZProSystem dynamicCall(String key, String action, IBZProSystem et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

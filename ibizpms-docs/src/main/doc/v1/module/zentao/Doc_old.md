@@ -163,7 +163,7 @@ hide footbox
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |ChildDocLibDoc|文档库文档（子库）([MYSQL5](../../appendix/query_MYSQL5.md#Doc_ChildDocLibDoc))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Doc_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Doc_Default))|是|&nbsp;|
 |DocLibAndDoc|文档库文档([MYSQL5](../../appendix/query_MYSQL5.md#Doc_DocLibAndDoc))|否|&nbsp;|
 |DocLibDoc|文档库文档([MYSQL5](../../appendix/query_MYSQL5.md#Doc_DocLibDoc))|否|&nbsp;|
 |DocModuleDoc|文档库分类文档([MYSQL5](../../appendix/query_MYSQL5.md#Doc_DocModuleDoc))|否|&nbsp;|

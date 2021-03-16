@@ -47,6 +47,7 @@ public interface ICronService extends IService<Cron> {
     boolean save(Cron et);
     void saveBatch(List<Cron> list);
     Page<Cron> searchDefault(CronSearchContext context);
+    Cron dynamicCall(Long key, String action, Cron et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

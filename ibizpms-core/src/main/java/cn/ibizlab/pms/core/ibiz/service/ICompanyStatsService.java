@@ -48,6 +48,7 @@ public interface ICompanyStatsService extends IService<CompanyStats> {
     void saveBatch(List<CompanyStats> list);
     Page<CompanyStats> searchCompanyDynamicStats(CompanyStatsSearchContext context);
     Page<CompanyStats> searchDefault(CompanyStatsSearchContext context);
+    CompanyStats dynamicCall(Long key, String action, CompanyStats et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

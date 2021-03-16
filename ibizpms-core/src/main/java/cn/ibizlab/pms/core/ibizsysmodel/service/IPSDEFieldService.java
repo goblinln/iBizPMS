@@ -64,6 +64,7 @@ public interface IPSDEFieldService {
     List<PSDEField> selectByValuepsdefid(String psdefieldid);
     List<PSDEField> selectByValuepsdefid(Collection<String> ids);
     void removeByValuepsdefid(String psdefieldid);
+    PSDEField dynamicCall(String key, String action, PSDEField et);
 
     boolean create(String devSlnSysId , PSDEField et) ;
     void createBatch(String devSlnSysId, List<PSDEField> list);
@@ -90,6 +91,7 @@ public interface IPSDEFieldService {
     void removeByNo3dupchkpsdefid(String devSlnSysId, String psdefieldid);
     List<PSDEField> selectByValuepsdefid(String devSlnSysId, String psdefieldid);
     void removeByValuepsdefid(String devSlnSysId, String psdefieldid);
+    PSDEField dynamicCall(String key, String action, PSDEField et);
 
 }
 

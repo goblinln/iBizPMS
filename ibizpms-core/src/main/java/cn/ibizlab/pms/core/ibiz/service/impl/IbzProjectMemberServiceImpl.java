@@ -227,6 +227,11 @@ public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMap
     public IIbzProjectMemberService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzProjectMember dynamicCall(Long key, String action, IbzProjectMember et) {
+        return et;
+    }
 }
 
 

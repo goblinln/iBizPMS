@@ -54,6 +54,7 @@ public interface IBurnService extends IService<Burn> {
     void removeByProject(Long id);
     List<Burn> selectByTask(Long id);
     void removeByTask(Long id);
+    Burn dynamicCall(String key, String action, Burn et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

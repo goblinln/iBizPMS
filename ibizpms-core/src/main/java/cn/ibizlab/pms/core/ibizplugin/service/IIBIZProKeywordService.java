@@ -46,6 +46,7 @@ public interface IIBIZProKeywordService {
     boolean save(IBIZProKeyword et);
     void saveBatch(List<IBIZProKeyword> list);
     Page<IBIZProKeyword> searchDefault(IBIZProKeywordSearchContext context);
+    IBIZProKeyword dynamicCall(String key, String action, IBIZProKeyword et);
 
 
 }

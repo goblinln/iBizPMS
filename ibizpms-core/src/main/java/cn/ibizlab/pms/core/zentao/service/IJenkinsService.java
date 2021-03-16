@@ -47,6 +47,7 @@ public interface IJenkinsService extends IService<Jenkins> {
     boolean save(Jenkins et);
     void saveBatch(List<Jenkins> list);
     Page<Jenkins> searchDefault(JenkinsSearchContext context);
+    Jenkins dynamicCall(Long key, String action, Jenkins et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

@@ -270,6 +270,11 @@ public class ProductStatsServiceImpl extends ServiceImpl<ProductStatsMapper, Pro
     public IProductStatsService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ProductStats dynamicCall(Long key, String action, ProductStats et) {
+        return et;
+    }
 }
 
 

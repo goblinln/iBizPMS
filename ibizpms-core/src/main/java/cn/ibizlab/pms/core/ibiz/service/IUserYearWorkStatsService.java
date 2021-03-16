@@ -57,6 +57,7 @@ public interface IUserYearWorkStatsService extends IService<UserYearWorkStats> {
     Page<UserYearWorkStats> searchMonthFinishTaskAndBug(UserYearWorkStatsSearchContext context);
     Page<UserYearWorkStats> searchMonthOpenedBugAndCase(UserYearWorkStatsSearchContext context);
     Page<UserYearWorkStats> searchMonthOpenedStory(UserYearWorkStatsSearchContext context);
+    UserYearWorkStats dynamicCall(Long key, String action, UserYearWorkStats et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

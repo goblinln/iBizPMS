@@ -58,6 +58,7 @@ public interface ITaskEstimateService extends IService<TaskEstimate> {
     List<TaskEstimate> selectByTask(Long id);
     void removeByTask(Long id);
     void saveByTask(Long id, List<TaskEstimate> list) ;
+    TaskEstimate dynamicCall(Long key, String action, TaskEstimate et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

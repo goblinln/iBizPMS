@@ -1,5 +1,3 @@
-import enUSUser from '../user/en-US.user';
-import { Util } from '@/utils/util/util';
 import productplan_en_US from '@locale/lanres/entities/product-plan/product-plan_en_US';
 import ibzreportroleconfig_en_US from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_en_US';
 import case_en_US from '@locale/lanres/entities/case/case_en_US';
@@ -118,23 +116,8 @@ import userCustom_en_US from '@locale/lanres/userCustom/userCustom_en_US';
 import commonLogic from '@/locale/logic/common/common-logic';
 
 function getAppLocale(){
-    const data: any = {
+    const data:any = {
         app: {
-            directoryTree:{
-                loading: "Data loading",
-                placeholder: "Filename",
-                noData: "No Data"
-            },
-            fullTextSearch:{
-                placeholder: "The full text retrieval",
-                pathError: "Configure the full-text retrieval route",
-                noticeTitle: "The full text retrieval",
-                noticeDesc: "The keyword cannot be less than 1",
-                multiFormDEField: "Multiple form properties are not configured",
-                redirectService: "The redirect service does not exist!",
-                findRedirectView: "The redirect view was not found",
-                redirectConfiguration: "The redirect view is not configured",
-            },
             commonWords:{
                 error: "Error",
                 success: "Success",
@@ -154,14 +137,9 @@ function getAppLocale(){
                 delDataFail: "Failed to delete data",
                 noData: "No data",
                 startsuccess:"Start successful",
-                createFailed: 'Unable to create',
-                isExist: 'existed',
-                valueNotEmpty: 'value is not empty',
-                required: 'is Required',
-                valueMustBe: 'value must be',
-                number: 'Number',
-                string: 'String',
-                type: 'Type'
+                loadmore:"Load more",
+                nomore:"No more",
+                other:"other"
             },
             local:{
                 new: "New",
@@ -173,8 +151,9 @@ function getAppLocale(){
                 show: "Show",
                 records: "records",
                 totle: "totle",
-                noData: "No data",
                 valueVail: "Value cannot be empty",
+                group:"Group",
+                other:"Other",
                 notConfig: {
                     fetchAction: "The view table fetchaction parameter is not configured",
                     removeAction: "The view table removeaction parameter is not configured",
@@ -228,7 +207,6 @@ function getAppLocale(){
             },
             fileUpload: {
                 caption: "Upload",
-                uploading: "Uploading...",
             },
             searchButton: {
                 search: "Search",
@@ -348,8 +326,6 @@ function getAppLocale(){
                 },
                 delete1: "Confirm to delete ",
                 delete2: "the delete operation will be unrecoverable!",
-                fold: "fold",
-                unfold: "upfold",
             },
             dashBoard: {
                 handleClick: {
@@ -397,12 +373,6 @@ function getAppLocale(){
                     login: "Login",
                 },
             },
-        },
-        form: {
-            group: {
-                show_more: "Show More",
-                hidden_more: "Hide More"
-            }
         },
         entities: {
             productplan: productplan_en_US(),
@@ -518,14 +488,10 @@ function getAppLocale(){
             module: module_en_US(),
             projecttaskestimate: projecttaskestimate_en_US(),
         },
-        components: components_en_US,
+        components: components_en_US(),
         codelist: codelist_en_US(),
         userCustom: userCustom_en_US(),
     };
-    // 合并用户自定义多语言
-    Util.mergeDeepObject(data, enUSUser); 
-    return data;   
+    return data;
 }
-
-// 默认导出
 export default getAppLocale;

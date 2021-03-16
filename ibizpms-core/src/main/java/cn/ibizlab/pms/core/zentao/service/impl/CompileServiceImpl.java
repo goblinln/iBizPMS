@@ -230,6 +230,11 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
     public ICompileService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Compile dynamicCall(Long key, String action, Compile et) {
+        return et;
+    }
 }
 
 

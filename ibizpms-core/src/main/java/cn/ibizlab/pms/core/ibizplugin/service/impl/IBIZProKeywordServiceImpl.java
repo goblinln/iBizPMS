@@ -156,6 +156,11 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
 
 
 
+    @Override
+    @Transactional
+    public IBIZProKeyword dynamicCall(String key, String action, IBIZProKeyword et) {
+        return et;
+    }
 }
 
 

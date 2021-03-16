@@ -1,0 +1,1 @@
+{"codeListType":"STATIC","getPSCodeItems":[{"value":"1","text":"允许"},{"value":"0","text":"不允许"}],"codeName":"Company__guest","emptyText":"未定义","enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/Company__guest.json","name":"ZT_COMPANY__GUEST"}

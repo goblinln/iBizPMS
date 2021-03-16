@@ -47,6 +47,7 @@ public interface ICompileService extends IService<Compile> {
     boolean save(Compile et);
     void saveBatch(List<Compile> list);
     Page<Compile> searchDefault(CompileSearchContext context);
+    Compile dynamicCall(Long key, String action, Compile et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

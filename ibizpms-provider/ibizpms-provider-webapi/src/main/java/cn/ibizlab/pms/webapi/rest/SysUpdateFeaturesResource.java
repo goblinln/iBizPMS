@@ -47,7 +47,7 @@ public class SysUpdateFeaturesResource {
     @Lazy
     public SysUpdateFeaturesMapping sysupdatefeaturesMapping;
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdto),'pms-SysUpdateFeatures-Create')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdto),'iBizPMS-SysUpdateFeatures-Create')")
     @ApiOperation(value = "新建系统更新功能", tags = {"系统更新功能" },  notes = "新建系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures")
     public ResponseEntity<SysUpdateFeaturesDTO> create(@Validated @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
@@ -57,7 +57,7 @@ public class SysUpdateFeaturesResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos),'pms-SysUpdateFeatures-Create')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos),'iBizPMS-SysUpdateFeatures-Create')")
     @ApiOperation(value = "批量新建系统更新功能", tags = {"系统更新功能" },  notes = "批量新建系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<SysUpdateFeaturesDTO> sysupdatefeaturesdtos) {
@@ -66,7 +66,7 @@ public class SysUpdateFeaturesResource {
     }
 
     @VersionCheck(entity = "sysupdatefeatures" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.get(#sysupdatefeatures_id),'pms-SysUpdateFeatures-Update')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.get(#sysupdatefeatures_id),'iBizPMS-SysUpdateFeatures-Update')")
     @ApiOperation(value = "更新系统更新功能", tags = {"系统更新功能" },  notes = "更新系统更新功能")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<SysUpdateFeaturesDTO> update(@PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id, @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
@@ -77,7 +77,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.getSysupdatefeaturesByEntities(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos)),'pms-SysUpdateFeatures-Update')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.getSysupdatefeaturesByEntities(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos)),'iBizPMS-SysUpdateFeatures-Update')")
     @ApiOperation(value = "批量更新系统更新功能", tags = {"系统更新功能" },  notes = "批量更新系统更新功能")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatefeatures/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysUpdateFeaturesDTO> sysupdatefeaturesdtos) {
@@ -85,14 +85,14 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.get(#sysupdatefeatures_id),'pms-SysUpdateFeatures-Remove')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.get(#sysupdatefeatures_id),'iBizPMS-SysUpdateFeatures-Remove')")
     @ApiOperation(value = "删除系统更新功能", tags = {"系统更新功能" },  notes = "删除系统更新功能")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
          return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.remove(sysupdatefeatures_id));
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.getSysupdatefeaturesByIds(#ids),'pms-SysUpdateFeatures-Remove')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.getSysupdatefeaturesByIds(#ids),'iBizPMS-SysUpdateFeatures-Remove')")
     @ApiOperation(value = "批量删除系统更新功能", tags = {"系统更新功能" },  notes = "批量删除系统更新功能")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatefeatures/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +100,7 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(returnObject.body),'pms-SysUpdateFeatures-Get')")
+    @PostAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(returnObject.body),'iBizPMS-SysUpdateFeatures-Get')")
     @ApiOperation(value = "获取系统更新功能", tags = {"系统更新功能" },  notes = "获取系统更新功能")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<SysUpdateFeaturesDTO> get(@PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
@@ -122,14 +122,14 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.checkKey(sysupdatefeaturesMapping.toDomain(sysupdatefeaturesdto)));
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdto),'pms-SysUpdateFeatures-Save')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdto),'iBizPMS-SysUpdateFeatures-Save')")
     @ApiOperation(value = "保存系统更新功能", tags = {"系统更新功能" },  notes = "保存系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures/save")
     public ResponseEntity<Boolean> save(@RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.save(sysupdatefeaturesMapping.toDomain(sysupdatefeaturesdto)));
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos),'pms-SysUpdateFeatures-Save')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos),'iBizPMS-SysUpdateFeatures-Save')")
     @ApiOperation(value = "批量保存系统更新功能", tags = {"系统更新功能" },  notes = "批量保存系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysUpdateFeaturesDTO> sysupdatefeaturesdtos) {
@@ -137,7 +137,7 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysUpdateFeatures-searchDefault-all') and hasPermission(#context,'pms-SysUpdateFeatures-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysUpdateFeatures-searchDefault-all') and hasPermission(#context,'iBizPMS-SysUpdateFeatures-Get')")
 	@ApiOperation(value = "获取数据集", tags = {"系统更新功能" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysupdatefeatures/fetchdefault")
 	public ResponseEntity<List<SysUpdateFeaturesDTO>> fetchDefault(SysUpdateFeaturesSearchContext context) {
@@ -150,7 +150,7 @@ public class SysUpdateFeaturesResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysUpdateFeatures-searchDefault-all') and hasPermission(#context,'pms-SysUpdateFeatures-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysUpdateFeatures-searchDefault-all') and hasPermission(#context,'iBizPMS-SysUpdateFeatures-Get')")
 	@ApiOperation(value = "查询数据集", tags = {"系统更新功能" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatefeatures/searchdefault")
 	public ResponseEntity<Page<SysUpdateFeaturesDTO>> searchDefault(@RequestBody SysUpdateFeaturesSearchContext context) {
@@ -160,8 +160,15 @@ public class SysUpdateFeaturesResource {
 	}
 
 
+	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
+    @RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures/{sysupdatefeatures_id}/{action}")
+    public ResponseEntity<SysUpdateFeaturesDTO> dynamicCall(@PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id , @PathVariable("action") String action , @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
+        SysUpdateFeatures domain = sysupdatefeaturesService.dynamicCall(sysupdatefeatures_id, action, sysupdatefeaturesMapping.toDomain(sysupdatefeaturesdto));
+        sysupdatefeaturesdto = sysupdatefeaturesMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesdto);
+    }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdto),'pms-SysUpdateFeatures-Create')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdto),'iBizPMS-SysUpdateFeatures-Create')")
     @ApiOperation(value = "根据更新日志建立系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志建立系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures")
     public ResponseEntity<SysUpdateFeaturesDTO> createBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
@@ -172,7 +179,7 @@ public class SysUpdateFeaturesResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos),'pms-SysUpdateFeatures-Create')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos),'iBizPMS-SysUpdateFeatures-Create')")
     @ApiOperation(value = "根据更新日志批量建立系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志批量建立系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/batch")
     public ResponseEntity<Boolean> createBatchBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody List<SysUpdateFeaturesDTO> sysupdatefeaturesdtos) {
@@ -185,7 +192,7 @@ public class SysUpdateFeaturesResource {
     }
 
     @VersionCheck(entity = "sysupdatefeatures" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.get(#sysupdatefeatures_id),'pms-SysUpdateFeatures-Update')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.get(#sysupdatefeatures_id),'iBizPMS-SysUpdateFeatures-Update')")
     @ApiOperation(value = "根据更新日志更新系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志更新系统更新功能")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<SysUpdateFeaturesDTO> updateBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id, @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
@@ -197,7 +204,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.getSysupdatefeaturesByEntities(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos)),'pms-SysUpdateFeatures-Update')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.getSysupdatefeaturesByEntities(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos)),'iBizPMS-SysUpdateFeatures-Update')")
     @ApiOperation(value = "根据更新日志批量更新系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志批量更新系统更新功能")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/batch")
     public ResponseEntity<Boolean> updateBatchBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody List<SysUpdateFeaturesDTO> sysupdatefeaturesdtos) {
@@ -209,14 +216,14 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.get(#sysupdatefeatures_id),'pms-SysUpdateFeatures-Remove')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.get(#sysupdatefeatures_id),'iBizPMS-SysUpdateFeatures-Remove')")
     @ApiOperation(value = "根据更新日志删除系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志删除系统更新功能")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<Boolean> removeBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.remove(sysupdatefeatures_id));
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.getSysupdatefeaturesByIds(#ids),'pms-SysUpdateFeatures-Remove')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesService.getSysupdatefeaturesByIds(#ids),'iBizPMS-SysUpdateFeatures-Remove')")
     @ApiOperation(value = "根据更新日志批量删除系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志批量删除系统更新功能")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/batch")
     public ResponseEntity<Boolean> removeBatchBySysUpdateLog(@RequestBody List<String> ids) {
@@ -224,7 +231,7 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(returnObject.body),'pms-SysUpdateFeatures-Get')")
+    @PostAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(returnObject.body),'iBizPMS-SysUpdateFeatures-Get')")
     @ApiOperation(value = "根据更新日志获取系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志获取系统更新功能")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<SysUpdateFeaturesDTO> getBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
@@ -247,7 +254,7 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.checkKey(sysupdatefeaturesMapping.toDomain(sysupdatefeaturesdto)));
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdto),'pms-SysUpdateFeatures-Save')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdto),'iBizPMS-SysUpdateFeatures-Save')")
     @ApiOperation(value = "根据更新日志保存系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志保存系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/save")
     public ResponseEntity<Boolean> saveBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
@@ -256,7 +263,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.save(domain));
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos),'pms-SysUpdateFeatures-Save')")
+    @PreAuthorize("hasPermission(this.sysupdatefeaturesMapping.toDomain(#sysupdatefeaturesdtos),'iBizPMS-SysUpdateFeatures-Save')")
     @ApiOperation(value = "根据更新日志批量保存系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志批量保存系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/savebatch")
     public ResponseEntity<Boolean> saveBatchBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody List<SysUpdateFeaturesDTO> sysupdatefeaturesdtos) {
@@ -268,7 +275,7 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysUpdateFeatures-searchDefault-all') and hasPermission(#context,'pms-SysUpdateFeatures-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysUpdateFeatures-searchDefault-all') and hasPermission(#context,'iBizPMS-SysUpdateFeatures-Get')")
 	@ApiOperation(value = "根据更新日志获取数据集", tags = {"系统更新功能" } ,notes = "根据更新日志获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/fetchdefault")
 	public ResponseEntity<List<SysUpdateFeaturesDTO>> fetchSysUpdateFeaturesDefaultBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id,SysUpdateFeaturesSearchContext context) {
@@ -282,7 +289,7 @@ public class SysUpdateFeaturesResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysUpdateFeatures-searchDefault-all') and hasPermission(#context,'pms-SysUpdateFeatures-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysUpdateFeatures-searchDefault-all') and hasPermission(#context,'iBizPMS-SysUpdateFeatures-Get')")
 	@ApiOperation(value = "根据更新日志查询数据集", tags = {"系统更新功能" } ,notes = "根据更新日志查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/searchdefault")
 	public ResponseEntity<Page<SysUpdateFeaturesDTO>> searchSysUpdateFeaturesDefaultBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody SysUpdateFeaturesSearchContext context) {

@@ -495,6 +495,11 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     public IDocService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Doc dynamicCall(Long key, String action, Doc et) {
+        return et;
+    }
 }
 
 

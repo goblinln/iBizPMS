@@ -47,6 +47,7 @@ public interface IDynaDashboardService extends IService<DynaDashboard> {
     boolean save(DynaDashboard et);
     void saveBatch(List<DynaDashboard> list);
     Page<DynaDashboard> searchDefault(DynaDashboardSearchContext context);
+    DynaDashboard dynamicCall(String key, String action, DynaDashboard et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

@@ -1,1 +1,1 @@
-declare module '@/utils/print';
+declare module "@/utils/print"

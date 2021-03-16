@@ -1177,6 +1177,11 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     public IStoryService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Story dynamicCall(Long key, String action, Story et) {
+        return et;
+    }
 }
 
 

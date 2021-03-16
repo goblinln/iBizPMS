@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(IbizproProductDaily_en_US_Base(), IbizproProductDaily_en_US_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

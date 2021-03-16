@@ -162,7 +162,7 @@ hide footbox
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#TestTask_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#TestTask_Default))|是|&nbsp;|
 |MyTestTaskPc|我的测试单([MYSQL5](../../appendix/query_MYSQL5.md#TestTask_MyTestTaskPc))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#TestTask_View))|否|&nbsp;|
 
@@ -194,7 +194,7 @@ hide footbox
 ## 导入模式
 * 数据导入
 
-|名称|版本|项目|备注|版本|所属产品|auto|report|当前状态|产品|优先级|结束日期|描述|子状态|编号|所属项目|抄送给|负责人|已删除|开始日期|
+|抄送给|备注|版本|负责人|所属产品|已删除|report|产品|auto|当前状态|优先级|开始日期|子状态|名称|结束日期|版本|描述|所属项目|编号|项目|
 | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
 | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
 

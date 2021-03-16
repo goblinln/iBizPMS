@@ -47,6 +47,7 @@ public interface IGroupPrivService extends IService<GroupPriv> {
     boolean save(GroupPriv et);
     void saveBatch(List<GroupPriv> list);
     Page<GroupPriv> searchDefault(GroupPrivSearchContext context);
+    GroupPriv dynamicCall(String key, String action, GroupPriv et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

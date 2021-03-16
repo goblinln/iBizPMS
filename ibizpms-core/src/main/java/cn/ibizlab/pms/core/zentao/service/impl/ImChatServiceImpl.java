@@ -227,6 +227,11 @@ public class ImChatServiceImpl extends ServiceImpl<ImChatMapper, ImChat> impleme
     public IImChatService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ImChat dynamicCall(Long key, String action, ImChat et) {
+        return et;
+    }
 }
 
 

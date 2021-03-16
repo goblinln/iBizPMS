@@ -58,6 +58,7 @@ public interface ICaseStepService extends IService<CaseStep> {
     List<CaseStep> selectByParent(Long id);
     void removeByParent(Long id);
     void saveByParent(Long id, List<CaseStep> list) ;
+    CaseStep dynamicCall(Long key, String action, CaseStep et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

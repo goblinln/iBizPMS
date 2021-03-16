@@ -47,6 +47,7 @@ public interface IImMessageService extends IService<ImMessage> {
     boolean save(ImMessage et);
     void saveBatch(List<ImMessage> list);
     Page<ImMessage> searchDefault(ImMessageSearchContext context);
+    ImMessage dynamicCall(Long key, String action, ImMessage et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

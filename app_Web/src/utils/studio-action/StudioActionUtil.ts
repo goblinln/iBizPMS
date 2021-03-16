@@ -1,7 +1,6 @@
 import Vue from 'vue';
-import { Http } from '@/utils';
+import { on,Http } from 'ibiz-core';
 import { Environment } from '@/environments/environment';
-import { on } from '@/utils/dom/dom';
 
 /**
  * Studio Debug工具类
@@ -92,7 +91,7 @@ export class StudioActionUtil {
         const config: any = await this.getConfig(viewName);
         if (config) {
             const context: string = `视图模块：${config.viewmodule}\n视图标识：${config.viewname}\n视图类型：${config.viewtype}\n`;
-            window.open(`${Environment.ProjectUrl}/issues/`, '_blank');
+            window.open(`${Environment.ProjectUrl}/issues/new?issue[title]=${encodeURIComponent('问题')}&issue[description]=${encodeURIComponent(context)}`, '_blank');
         }
     }
 
@@ -107,34 +106,24 @@ export class StudioActionUtil {
         const config: any = await this.getConfig(viewName);
         if (config) {
             const params: any = {
-                appType: 'APPSTUDIO',
-                appKey: Environment.AppId,
-                dataType: 'AppDesign_PSAppViewDesignRedirectView',
-                srfkey: config.viewtag,
+                "appType": "APPSTUDIO",
+                "appKey": Environment.AppId,
+                "dataType": "AppDesign_PSAppViewDesignRedirectView",
+                "srfkey": config.viewtag
             };
             if (this.studioWin && this.studioWin.closed === false) {
-                this.studioWin.postMessage(
-                    {
-                        type: 'OpenView',
-                        params,
-                    },
-                    '*'
-                );
+                this.studioWin.postMessage({
+                    type: 'OpenView',
+                    params
+                }, '*');
                 Vue.prototype.$message.warning('请在已打开的配置平台查看!');
             } else {
-                console.log(
-                    `${Environment.StudioUrl}?ov=${JSON.stringify(params)}#/common_slnindex/srfkeys=${
-                        Environment.SlnId
-                    }/sysdesign_psdevslnsysmodeltreeexpview/srfkey=${Environment.SysId}`
-                );
-                this.studioWin = window.open(
-                    `${Environment.StudioUrl}?ov=${encodeURIComponent(
-                        JSON.stringify(params)
-                    )}#/common_slnindex/srfkeys=${Environment.SlnId}/sysdesign_psdevslnsysmodeltreeexpview/srfkey=${
-                        Environment.SysId
-                    }`,
-                    '_blank'
-                );
+                if(Environment.debugOpenMode === 'sln'){
+                    console.log("打开sln未支持");
+                    // this.studioWin = window.open(`${Environment.StudioUrl}?ov=${encodeURIComponent(JSON.stringify(params))}#/common_slnindex/srfkeys=${Environment.SlnId}/sysdesign_psdevslnsysmodeltreeexpview/srfkey=${Environment.SysId}`, '_blank');
+                }else{
+                    this.studioWin = window.open(`${Environment.StudioUrl}?ov=${encodeURIComponent(JSON.stringify(params))}#/common_mosindex/srfkeys=${Environment.SysId}`, '_blank');
+                }
             }
         }
     }
@@ -164,7 +153,7 @@ export class StudioActionUtil {
     protected async loadConfig(): Promise<void> {
         const response: any = await this.http.get('./assets/json/view-config.json');
         if (response && response.status === 200 && response.data) {
-            this.config = response.data;
+            this.config = response.data
         } else {
             console.warn('Studio操作控制器，视图参数信息加载失败!');
         }
@@ -189,4 +178,5 @@ export class StudioActionUtil {
     public static getInstance(): StudioActionUtil {
         return this.instance;
     }
+
 }

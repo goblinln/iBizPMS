@@ -53,6 +53,7 @@ public interface IIbizproProjectMonthlyService extends IService<IbizproProjectMo
     Page<IbizproProjectMonthly> searchDefault(IbizproProjectMonthlySearchContext context);
     List<IbizproProjectMonthly> selectByProject(Long id);
     void removeByProject(Long id);
+    IbizproProjectMonthly dynamicCall(String key, String action, IbizproProjectMonthly et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

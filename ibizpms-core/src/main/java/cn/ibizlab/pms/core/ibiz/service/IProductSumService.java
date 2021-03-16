@@ -53,6 +53,7 @@ public interface IProductSumService extends IService<ProductSum> {
     Page<ProductSum> searchProductStorySum(ProductSumSearchContext context);
     Page<ProductSum> searchProductStorycntAndPlancnt(ProductSumSearchContext context);
     Page<ProductSum> searchProductSumBugType(ProductSumSearchContext context);
+    ProductSum dynamicCall(Long key, String action, ProductSum et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

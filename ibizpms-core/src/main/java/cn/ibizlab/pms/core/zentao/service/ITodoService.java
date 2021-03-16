@@ -64,6 +64,7 @@ public interface ITodoService extends IService<Todo> {
     Page<Todo> searchMyTodo(TodoSearchContext context);
     Page<Todo> searchMyTodoPc(TodoSearchContext context);
     Page<Todo> searchMyUpcoming(TodoSearchContext context);
+    Todo dynamicCall(Long key, String action, Todo et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

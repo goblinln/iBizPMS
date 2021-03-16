@@ -46,6 +46,7 @@ public interface IIBzDocService {
     boolean save(IBzDoc et);
     void saveBatch(List<IBzDoc> list);
     Page<IBzDoc> searchDefault(IBzDocSearchContext context);
+    IBzDoc dynamicCall(String key, String action, IBzDoc et);
 
 }
 

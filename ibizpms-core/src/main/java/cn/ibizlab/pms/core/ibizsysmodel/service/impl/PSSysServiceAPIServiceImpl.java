@@ -299,6 +299,11 @@ public class PSSysServiceAPIServiceImpl implements IPSSysServiceAPIService {
 
 
 
+    @Override
+    @Transactional
+    public PSSysServiceAPI dynamicCall(String key, String action, PSSysServiceAPI et) {
+        return et;
+    }
 }
 
 

@@ -40,6 +40,7 @@ public interface IIbiLoginService extends IService<IbiLogin> {
     IbiLogin ztlogin(IbiLogin et);
     boolean ztloginBatch(List<IbiLogin> etList);
     Page<IbiLogin> searchDefault(IbiLoginSearchContext context);
+    IbiLogin dynamicCall(Long key, String action, IbiLogin et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

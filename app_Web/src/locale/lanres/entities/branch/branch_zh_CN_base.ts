@@ -1,114 +1,114 @@
 import commonLogic from '@/locale/logic/common/common-logic';
+
 function getLocaleResourceBase(){
 	const data:any = {
-		appdename: commonLogic.appcommonhandle("产品的分支和平台信息", null),
-		fields: {
-			name: commonLogic.appcommonhandle("名称",null),
-			deleted: commonLogic.appcommonhandle("已删除",null),
-			id: commonLogic.appcommonhandle("编号",null),
-			order: commonLogic.appcommonhandle("排序",null),
-			product: commonLogic.appcommonhandle("所属产品",null),
+	fields: {
+		name: commonLogic.appcommonhandle("名称",null),
+		deleted: commonLogic.appcommonhandle("已删除",null),
+		id: commonLogic.appcommonhandle("编号",null),
+		order: commonLogic.appcommonhandle("排序",null),
+		product: commonLogic.appcommonhandle("所属产品",null),
+	},
+		views: {
+			pmgridview: {
+				caption: commonLogic.appcommonhandle("平台管理",null),
+				title: commonLogic.appcommonhandle("平台管理",null),
+			},
+			pminfoeditview: {
+				caption: commonLogic.appcommonhandle("产品的分支和平台信息",null),
+				title: commonLogic.appcommonhandle("平台管理",null),
+			},
+			pickupview: {
+				caption: commonLogic.appcommonhandle("产品的分支和平台信息",null),
+				title: commonLogic.appcommonhandle("平台数据选择视图",null),
+			},
+			pmeditview: {
+				caption: commonLogic.appcommonhandle("产品的分支和平台信息",null),
+				title: commonLogic.appcommonhandle("平台管理",null),
+			},
+			pickupgridview: {
+				caption: commonLogic.appcommonhandle("产品的分支和平台信息",null),
+				title: commonLogic.appcommonhandle("平台选择表格视图",null),
+			},
 		},
-			views: {
-				pmgridview: {
-					caption: commonLogic.appcommonhandle("平台管理",null),
-					title: commonLogic.appcommonhandle("平台管理",null),
-				},
-				pminfoeditview: {
-					caption: commonLogic.appcommonhandle("产品的分支和平台信息",null),
-					title: commonLogic.appcommonhandle("平台管理",null),
-				},
-				pickupview: {
-					caption: commonLogic.appcommonhandle("产品的分支和平台信息",null),
-					title: commonLogic.appcommonhandle("平台数据选择视图",null),
-				},
-				pmeditview: {
-					caption: commonLogic.appcommonhandle("产品的分支和平台信息",null),
-					title: commonLogic.appcommonhandle("平台管理",null),
-				},
-				pickupgridview: {
-					caption: commonLogic.appcommonhandle("产品的分支和平台信息",null),
-					title: commonLogic.appcommonhandle("平台选择表格视图",null),
-				},
+		platformmanagement_form: {
+			details: {
+				group1: commonLogic.appcommonhandle("产品的分支和平台信息基本信息",null), 
+				formpage1: commonLogic.appcommonhandle("基本信息",null), 
+				srforikey: commonLogic.appcommonhandle("",null), 
+				srfkey: commonLogic.appcommonhandle("编号",null), 
+				srfmajortext: commonLogic.appcommonhandle("名称",null), 
+				srftempmode: commonLogic.appcommonhandle("",null), 
+				srfuf: commonLogic.appcommonhandle("",null), 
+				srfdeid: commonLogic.appcommonhandle("",null), 
+				srfsourcekey: commonLogic.appcommonhandle("",null), 
+				name: commonLogic.appcommonhandle("名称",null), 
+				order: commonLogic.appcommonhandle("排序",null), 
+				id: commonLogic.appcommonhandle("编号",null), 
 			},
-			platformmanagement_form: {
-				details: {
-					group1: commonLogic.appcommonhandle("产品的分支和平台信息基本信息",null), 
-					formpage1: commonLogic.appcommonhandle("基本信息",null), 
-					srforikey: commonLogic.appcommonhandle("",null), 
-					srfkey: commonLogic.appcommonhandle("编号",null), 
-					srfmajortext: commonLogic.appcommonhandle("名称",null), 
-					srftempmode: commonLogic.appcommonhandle("",null), 
-					srfuf: commonLogic.appcommonhandle("",null), 
-					srfdeid: commonLogic.appcommonhandle("",null), 
-					srfsourcekey: commonLogic.appcommonhandle("",null), 
-					name: commonLogic.appcommonhandle("名称",null), 
-					order: commonLogic.appcommonhandle("排序",null), 
-					id: commonLogic.appcommonhandle("编号",null), 
-				},
-				uiactions: {
-				},
+			uiactions: {
 			},
-			platformmanagement_grid: {
-				columns: {
-					id: commonLogic.appcommonhandle("编号",null),
-					name: commonLogic.appcommonhandle("名称",null),
-					order: commonLogic.appcommonhandle("排序",null),
-					uagridcolumn1: commonLogic.appcommonhandle("操作",null),
-				},
-				nodata:commonLogic.appcommonhandle("",null),
-			exportColumns: {
-					id: commonLogic.appcommonhandle("编号",null),
-					name: commonLogic.appcommonhandle("名称",null),
-					order: commonLogic.appcommonhandle("排序",null),
+		},
+		platformmanagement_grid: {
+			columns: {
+				id: commonLogic.appcommonhandle("编号",null),
+				name: commonLogic.appcommonhandle("名称",null),
+				order: commonLogic.appcommonhandle("排序",null),
+				uagridcolumn1: commonLogic.appcommonhandle("操作",null),
 			},
-				uiactions: {
-					branch_edit: commonLogic.appcommonhandle("编辑",null),
-					branch_delete: commonLogic.appcommonhandle("删除",null),
-				},
+			nodata:commonLogic.appcommonhandle("",null),
+		exportColumns: {
+				id: commonLogic.appcommonhandle("编号",null),
+				name: commonLogic.appcommonhandle("名称",null),
+				order: commonLogic.appcommonhandle("排序",null),
+		},
+			uiactions: {
+				branch_edit: commonLogic.appcommonhandle("编辑",null),
+				branch_delete: commonLogic.appcommonhandle("删除",null),
 			},
-			main_grid: {
-				columns: {
-					name: commonLogic.appcommonhandle("名称",null),
-				},
-				nodata:commonLogic.appcommonhandle("",null),
-				uiactions: {
-				},
+		},
+		main_grid: {
+			columns: {
+				name: commonLogic.appcommonhandle("名称",null),
 			},
-			default_searchform: {
-				details: {
-					formpage1: commonLogic.appcommonhandle("常规条件",null), 
-				},
-				uiactions: {
-				},
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
 			},
-			pmeditviewtoolbar_toolbar: {
-				deuiaction1: {
-					caption: commonLogic.appcommonhandle("保存并关闭",null),
-					tip: commonLogic.appcommonhandle("保存并关闭",null),
-				},
+		},
+		default_searchform: {
+			details: {
+				formpage1: commonLogic.appcommonhandle("常规条件",null), 
 			},
-			pmgridviewtoolbar_toolbar: {
-				deuiaction3_create: {
-					caption: commonLogic.appcommonhandle("新建",null),
-					tip: commonLogic.appcommonhandle("新建",null),
-				},
-				deuiaction2: {
-					caption: commonLogic.appcommonhandle("刷新",null),
-					tip: commonLogic.appcommonhandle("刷新",null),
-				},
-				deuiaction1: {
-					caption: commonLogic.appcommonhandle("导出",null),
-					tip: commonLogic.appcommonhandle("导出",null),
-				},
-				deuiaction4: {
-					caption: commonLogic.appcommonhandle("过滤",null),
-					tip: commonLogic.appcommonhandle("过滤",null),
-				},
+			uiactions: {
 			},
-			pminfoeditviewtoolbar_toolbar: {
+		},
+		pmeditviewtoolbar_toolbar: {
+			deuiaction1: {
+				caption: commonLogic.appcommonhandle("保存并关闭",null),
+				tip: commonLogic.appcommonhandle("保存并关闭",null),
 			},
-		};
-		return data;
+		},
+		pmgridviewtoolbar_toolbar: {
+			deuiaction3_create: {
+				caption: commonLogic.appcommonhandle("新建",null),
+				tip: commonLogic.appcommonhandle("新建",null),
+			},
+			deuiaction2: {
+				caption: commonLogic.appcommonhandle("刷新",null),
+				tip: commonLogic.appcommonhandle("刷新",null),
+			},
+			deuiaction1: {
+				caption: commonLogic.appcommonhandle("导出",null),
+				tip: commonLogic.appcommonhandle("导出",null),
+			},
+			deuiaction4: {
+				caption: commonLogic.appcommonhandle("过滤",null),
+				tip: commonLogic.appcommonhandle("过滤",null),
+			},
+		},
+		pminfoeditviewtoolbar_toolbar: {
+		},
+	};
+	return data;
 }
 export default getLocaleResourceBase;

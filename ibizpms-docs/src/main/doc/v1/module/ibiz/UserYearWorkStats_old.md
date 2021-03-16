@@ -166,8 +166,8 @@ hide footbox
 
 用户年度工作内容统计 -> 用户年度工作内容统计: 获取用户信息
 用户年度工作内容统计 -> 用户年度工作内容统计: 获取测试用户信息
-用户年度工作内容统计 -> 用户年度工作内容统计: 获取研发用户信息
 用户年度工作内容统计 -> 用户年度工作内容统计: 获取产品经理信息
+用户年度工作内容统计 -> 用户年度工作内容统计: 获取研发用户信息
 {% endplantuml %}
 
 | 步骤       | 操作        |
@@ -175,8 +175,8 @@ hide footbox
 |0|开始 | 
 |1|获取用户信息 |
 |2|获取测试用户信息 |
-|3|获取研发用户信息 |
-|4|获取产品经理信息 |
+|3|获取产品经理信息 |
+|4|获取研发用户信息 |
 <center>获取相关信息</center>
 * 获取产品经理相关数据 (GetPOInfomation)
   
@@ -227,16 +227,16 @@ hide footbox
 {% plantuml %}
 hide footbox
 
-用户年度工作内容统计 -> 用户年度工作内容统计: 获取测试用户信息
 用户年度工作内容统计 -> 用户年度工作内容统计: 获取研发用户信息
+用户年度工作内容统计 -> 用户年度工作内容统计: 获取测试用户信息
 用户年度工作内容统计 -> 用户年度工作内容统计: 获取产品经理信息
 用户年度工作内容统计 -> 用户年度工作内容统计: 获取标题
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
-|1|获取测试用户信息 |
-|2|获取研发用户信息 |
+|1|获取研发用户信息 |
+|2|获取测试用户信息 |
 |3|获取产品经理信息 |
 |3|开始 | 
 |4|获取标题 |
@@ -248,7 +248,7 @@ hide footbox
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#UserYearWorkStats_Default))|否|&nbsp;|
+|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#UserYearWorkStats_Default))|是|&nbsp;|
 |MonthFinishTaskAndBug|月完成任务数及累计工时和解决Bug数([MYSQL5](../../appendix/query_MYSQL5.md#UserYearWorkStats_MonthFinishTaskAndBug))|否|&nbsp;|
 |MonthOpenedBugAndCase|月创建Bug数和创建用例数([MYSQL5](../../appendix/query_MYSQL5.md#UserYearWorkStats_MonthOpenedBugAndCase))|否|&nbsp;|
 |MonthOpenedStory|月创建需求数([MYSQL5](../../appendix/query_MYSQL5.md#UserYearWorkStats_MonthOpenedStory))|否|&nbsp;|

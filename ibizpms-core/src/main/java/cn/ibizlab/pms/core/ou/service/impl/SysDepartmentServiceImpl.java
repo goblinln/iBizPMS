@@ -250,6 +250,11 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
 
 
 
+    @Override
+    @Transactional
+    public SysDepartment dynamicCall(String key, String action, SysDepartment et) {
+        return et;
+    }
 }
 
 

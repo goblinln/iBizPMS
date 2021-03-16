@@ -125,7 +125,7 @@
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#ProductSum_Default))|否|&nbsp;|
+|DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#ProductSum_Default))|是|&nbsp;|
 |ProductBugcnt_QA|产品创建bug数_测试人员([MYSQL5](../../appendix/query_MYSQL5.md#ProductSum_ProductBugcnt_QA))|否|&nbsp;|
 |ProductCreateStory|产品创建需求占比([MYSQL5](../../appendix/query_MYSQL5.md#ProductSum_ProductCreateStory))|否|&nbsp;|
 |ProductPlancntAndStorycnt_PO|产品计划数和需求数_产品经理([MYSQL5](../../appendix/query_MYSQL5.md#ProductSum_ProductPlancntAndStorycnt_PO))|否|&nbsp;|

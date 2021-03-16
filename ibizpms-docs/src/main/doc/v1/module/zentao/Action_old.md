@@ -109,7 +109,7 @@ hide footbox
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |BianGengLineHistory|项目立项变更线路操作历史记录([MYSQL5](../../appendix/query_MYSQL5.md#Action_BianGengLineHistory))|否|&nbsp;|
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Action_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Action_Default))|是|&nbsp;|
 |MobType|动态(根据类型过滤)([MYSQL5](../../appendix/query_MYSQL5.md#Action_MobType))|否|&nbsp;|
 |MyTrends|项目动态(我的)([MYSQL5](../../appendix/query_MYSQL5.md#Action_MyTrends))|否|&nbsp;|
 |ProductTrends|产品动态(产品相关所有)([MYSQL5](../../appendix/query_MYSQL5.md#Action_ProductTrends))|否|&nbsp;|

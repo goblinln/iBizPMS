@@ -227,6 +227,11 @@ public class ImConferenceServiceImpl extends ServiceImpl<ImConferenceMapper, ImC
     public IImConferenceService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ImConference dynamicCall(Long key, String action, ImConference et) {
+        return et;
+    }
 }
 
 

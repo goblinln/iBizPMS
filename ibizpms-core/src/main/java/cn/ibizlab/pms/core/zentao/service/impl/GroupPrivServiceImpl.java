@@ -227,6 +227,11 @@ public class GroupPrivServiceImpl extends ServiceImpl<GroupPrivMapper, GroupPriv
     public IGroupPrivService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public GroupPriv dynamicCall(String key, String action, GroupPriv et) {
+        return et;
+    }
 }
 
 

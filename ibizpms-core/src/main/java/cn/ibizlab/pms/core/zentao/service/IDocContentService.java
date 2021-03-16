@@ -50,6 +50,7 @@ public interface IDocContentService extends IService<DocContent> {
     Page<DocContent> searchDefault(DocContentSearchContext context);
     List<DocContent> selectByDoc(Long id);
     void removeByDoc(Long id);
+    DocContent dynamicCall(Long key, String action, DocContent et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

@@ -227,6 +227,11 @@ public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> i
     public IRelationService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Relation dynamicCall(Long key, String action, Relation et) {
+        return et;
+    }
 }
 
 

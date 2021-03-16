@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(SysUserRole_zh_CN_Base(), SysUserRole_zh_CN_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

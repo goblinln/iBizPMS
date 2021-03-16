@@ -59,6 +59,7 @@ public interface ITestReportService extends IService<TestReport> {
     void removeByProduct(Long id);
     List<TestReport> selectByProject(Long id);
     void removeByProject(Long id);
+    TestReport dynamicCall(Long key, String action, TestReport et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

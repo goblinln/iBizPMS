@@ -227,6 +227,11 @@ public class RepoHistoryServiceImpl extends ServiceImpl<RepoHistoryMapper, RepoH
     public IRepoHistoryService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public RepoHistory dynamicCall(Long key, String action, RepoHistory et) {
+        return et;
+    }
 }
 
 

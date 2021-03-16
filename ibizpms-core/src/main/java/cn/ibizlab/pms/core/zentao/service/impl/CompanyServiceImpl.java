@@ -227,6 +227,11 @@ public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> impl
     public ICompanyService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Company dynamicCall(Long key, String action, Company et) {
+        return et;
+    }
 }
 
 

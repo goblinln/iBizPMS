@@ -47,6 +47,7 @@ public interface IIbzFavoritesService extends IService<IbzFavorites> {
     boolean save(IbzFavorites et);
     void saveBatch(List<IbzFavorites> list);
     Page<IbzFavorites> searchDefault(IbzFavoritesSearchContext context);
+    IbzFavorites dynamicCall(String key, String action, IbzFavorites et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

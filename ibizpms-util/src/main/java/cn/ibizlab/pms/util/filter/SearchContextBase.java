@@ -73,6 +73,21 @@ public class SearchContextBase implements ISearchContext{
      */
     public BoolQueryBuilder esCond=new BoolQueryBuilder();
     /**
+     * 动态实例标识
+     */
+    @JsonProperty("srfdynainstid")
+    public String srfDynaInstId;
+
+    public String getSrfDynaInstId() {
+        if(StringUtils.isEmpty(srfDynaInstId)){
+            Object dynainstid=params.get("srfdynainstid");
+            return StringUtils.isEmpty(dynainstid)?null:String.valueOf(dynainstid);
+        }
+        else{
+            return srfDynaInstId;
+        }
+    }
+    /**
      * 获取工作流步骤标识
      */
     public String getUserTaskId() {

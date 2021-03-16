@@ -212,7 +212,7 @@ hide footbox
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProjectStats_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProjectStats_Default))|是|&nbsp;|
 |NOOpenProduct|未关闭产品([MYSQL5](../../appendix/query_MYSQL5.md#ProjectStats_NoOpenProduct))|否|&nbsp;|
 |ProjectBugType|项目bug类型([MYSQL5](../../appendix/query_MYSQL5.md#ProjectStats_ProjectBugType))|否|&nbsp;|
 |ProjectInputStats|项目投入统计([MYSQL5](../../appendix/query_MYSQL5.md#ProjectStats_ProjectInputStats))|否|&nbsp;|

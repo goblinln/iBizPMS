@@ -339,6 +339,11 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
 
 
 
+    @Override
+    @Transactional
+    public ProjectTeam dynamicCall(Long key, String action, ProjectTeam et) {
+        return et;
+    }
 }
 
 

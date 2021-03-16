@@ -71,6 +71,7 @@ public interface ITestTaskService extends IService<TestTask> {
 
     @Async("asyncExecutor")
     void asyncImportData(List<TestTask> entities, int batchSize, boolean isIgnoreError);
+    TestTask dynamicCall(Long key, String action, TestTask et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

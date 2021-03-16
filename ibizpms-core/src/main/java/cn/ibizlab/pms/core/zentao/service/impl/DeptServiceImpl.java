@@ -270,6 +270,11 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     public IDeptService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Dept dynamicCall(Long key, String action, Dept et) {
+        return et;
+    }
 }
 
 

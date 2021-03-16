@@ -53,6 +53,7 @@ public interface IProjectStoryService extends IService<ProjectStory> {
     void removeByProject(Long id);
     List<ProjectStory> selectByStory(Long id);
     void removeByStory(Long id);
+    ProjectStory dynamicCall(String key, String action, ProjectStory et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

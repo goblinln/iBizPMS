@@ -227,6 +227,11 @@ public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage
     public IImMessageService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ImMessage dynamicCall(Long key, String action, ImMessage et) {
+        return et;
+    }
 }
 
 

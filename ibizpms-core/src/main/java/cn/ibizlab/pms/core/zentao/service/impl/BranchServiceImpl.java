@@ -291,6 +291,11 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
     public IBranchService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public Branch dynamicCall(Long key, String action, Branch et) {
+        return et;
+    }
 }
 
 

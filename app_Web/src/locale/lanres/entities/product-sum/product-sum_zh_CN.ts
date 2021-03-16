@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(ProductSum_zh_CN_Base(), ProductSum_zh_CN_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

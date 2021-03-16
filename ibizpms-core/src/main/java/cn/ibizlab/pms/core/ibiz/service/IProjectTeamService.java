@@ -55,6 +55,7 @@ public interface IProjectTeamService extends IService<ProjectTeam> {
     List<ProjectTeam> selectByRoot(Long id);
     void removeByRoot(Long id);
     void saveByRoot(Long id, List<ProjectTeam> list) ;
+    ProjectTeam dynamicCall(Long key, String action, ProjectTeam et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

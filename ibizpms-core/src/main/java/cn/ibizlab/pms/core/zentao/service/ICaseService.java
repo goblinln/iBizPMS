@@ -110,6 +110,7 @@ public interface ICaseService extends IService<Case> {
     void removeByStory(Long id);
     List<Case> selectByLib(Long id);
     void removeByLib(Long id);
+    Case dynamicCall(Long key, String action, Case et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

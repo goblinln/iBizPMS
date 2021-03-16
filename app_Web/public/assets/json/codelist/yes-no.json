@@ -1,0 +1,1 @@
+{"codeListType":"STATIC","getPSCodeItems":[{"value":"1","text":"是"},{"value":"0","text":"否"}],"codeName":"YesNo","emptyText":"未定义","enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/YesNo.json","name":"是否"}

@@ -5,6 +5,7 @@
  * @class exportExcel
  */
 export class exportExcel {
+
     /**
      * 获取 exportExcel 单例对象
      *
@@ -14,7 +15,7 @@ export class exportExcel {
      */
     public static getInstance(): exportExcel {
         if (!exportExcel.exportExcel) {
-            exportExcel.exportExcel = new exportExcel();
+          exportExcel.exportExcel = new exportExcel();
         }
         return this.exportExcel;
     }
@@ -31,11 +32,12 @@ export class exportExcel {
 
     /**
      * 获取导出excel核心包
-     *
+     * 
      * @memberof exportExcel
      */
-    public async exportExcel() {
-        let excel: any = await import('@/utils/export2Excel/Export2Excel');
+    public async exportExcel(){
+        let excel:any =  await import("@/utils/export2Excel/Export2Excel");
         return excel;
     }
+
 }

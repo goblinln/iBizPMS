@@ -47,6 +47,7 @@ public interface IIbzLibService extends IService<IbzLib> {
     boolean save(IbzLib et);
     void saveBatch(List<IbzLib> list);
     Page<IbzLib> searchDefault(IbzLibSearchContext context);
+    IbzLib dynamicCall(Long key, String action, IbzLib et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

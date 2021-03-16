@@ -279,6 +279,11 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
     public IIbzPlanTempletService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzPlanTemplet dynamicCall(String key, String action, IbzPlanTemplet et) {
+        return et;
+    }
 }
 
 

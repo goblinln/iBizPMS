@@ -227,6 +227,11 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup
     public IUserGroupService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public UserGroup dynamicCall(String key, String action, UserGroup et) {
+        return et;
+    }
 }
 
 

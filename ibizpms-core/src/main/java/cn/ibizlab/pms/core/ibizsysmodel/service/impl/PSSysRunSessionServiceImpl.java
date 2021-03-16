@@ -371,6 +371,11 @@ public class PSSysRunSessionServiceImpl implements IPSSysRunSessionService {
 
 
 
+    @Override
+    @Transactional
+    public PSSysRunSession dynamicCall(String key, String action, PSSysRunSession et) {
+        return et;
+    }
 }
 
 

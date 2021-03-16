@@ -52,6 +52,7 @@ public interface IIbzLibModuleService extends IService<IbzLibModule> {
     void removeByParent(Long id);
     List<IbzLibModule> selectByRoot(Long id);
     void removeByRoot(Long id);
+    IbzLibModule dynamicCall(Long key, String action, IbzLibModule et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

@@ -46,6 +46,7 @@ public interface ISysPostService {
     boolean save(SysPost et);
     void saveBatch(List<SysPost> list);
     Page<SysPost> searchDefault(SysPostSearchContext context);
+    SysPost dynamicCall(String key, String action, SysPost et);
 
 
 }

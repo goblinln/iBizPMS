@@ -67,6 +67,7 @@ public interface IIbzDailyService extends IService<IbzDaily> {
     Page<IbzDaily> searchMySubmitDaily(IbzDailySearchContext context);
     Page<IbzDaily> searchProductDaily(IbzDailySearchContext context);
     Page<IbzDaily> searchProjectDaily(IbzDailySearchContext context);
+    IbzDaily dynamicCall(Long key, String action, IbzDaily et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

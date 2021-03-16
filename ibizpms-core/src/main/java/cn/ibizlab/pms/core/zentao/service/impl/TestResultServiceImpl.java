@@ -313,6 +313,11 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     public ITestResultService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public TestResult dynamicCall(Long key, String action, TestResult et) {
+        return et;
+    }
 }
 
 

@@ -273,6 +273,11 @@ public class TaskTeamServiceImpl extends ServiceImpl<TaskTeamMapper, TaskTeam> i
 
 
 
+    @Override
+    @Transactional
+    public TaskTeam dynamicCall(Long key, String action, TaskTeam et) {
+        return et;
+    }
 }
 
 

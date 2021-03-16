@@ -378,6 +378,11 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     public IIbzWeeklyService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzWeekly dynamicCall(Long key, String action, IbzWeekly et) {
+        return et;
+    }
 }
 
 

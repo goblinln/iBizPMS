@@ -227,6 +227,11 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
     public IUserQueryService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public UserQuery dynamicCall(Long key, String action, UserQuery et) {
+        return et;
+    }
 }
 
 

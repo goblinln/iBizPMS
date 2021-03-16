@@ -47,7 +47,7 @@ public class CompanyStatsResource {
     @Lazy
     public CompanyStatsMapping companystatsMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-Create-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-Create-all')")
     @ApiOperation(value = "新建公司动态汇总", tags = {"公司动态汇总" },  notes = "新建公司动态汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/companystats")
     public ResponseEntity<CompanyStatsDTO> create(@Validated @RequestBody CompanyStatsDTO companystatsdto) {
@@ -57,7 +57,7 @@ public class CompanyStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-Create-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-Create-all')")
     @ApiOperation(value = "批量新建公司动态汇总", tags = {"公司动态汇总" },  notes = "批量新建公司动态汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/companystats/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<CompanyStatsDTO> companystatsdtos) {
@@ -65,7 +65,7 @@ public class CompanyStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-Update-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-Update-all')")
     @ApiOperation(value = "更新公司动态汇总", tags = {"公司动态汇总" },  notes = "更新公司动态汇总")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companystats/{companystats_id}")
     public ResponseEntity<CompanyStatsDTO> update(@PathVariable("companystats_id") Long companystats_id, @RequestBody CompanyStatsDTO companystatsdto) {
@@ -76,7 +76,7 @@ public class CompanyStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-Update-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-Update-all')")
     @ApiOperation(value = "批量更新公司动态汇总", tags = {"公司动态汇总" },  notes = "批量更新公司动态汇总")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companystats/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<CompanyStatsDTO> companystatsdtos) {
@@ -84,14 +84,14 @@ public class CompanyStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-Remove-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-Remove-all')")
     @ApiOperation(value = "删除公司动态汇总", tags = {"公司动态汇总" },  notes = "删除公司动态汇总")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/companystats/{companystats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("companystats_id") Long companystats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(companystatsService.remove(companystats_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-Remove-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-Remove-all')")
     @ApiOperation(value = "批量删除公司动态汇总", tags = {"公司动态汇总" },  notes = "批量删除公司动态汇总")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/companystats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class CompanyStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-Get-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-Get-all')")
     @ApiOperation(value = "获取公司动态汇总", tags = {"公司动态汇总" },  notes = "获取公司动态汇总")
 	@RequestMapping(method = RequestMethod.GET, value = "/companystats/{companystats_id}")
     public ResponseEntity<CompanyStatsDTO> get(@PathVariable("companystats_id") Long companystats_id) {
@@ -121,14 +121,14 @@ public class CompanyStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(companystatsService.checkKey(companystatsMapping.toDomain(companystatsdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-Save-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-Save-all')")
     @ApiOperation(value = "保存公司动态汇总", tags = {"公司动态汇总" },  notes = "保存公司动态汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/companystats/save")
     public ResponseEntity<Boolean> save(@RequestBody CompanyStatsDTO companystatsdto) {
         return ResponseEntity.status(HttpStatus.OK).body(companystatsService.save(companystatsMapping.toDomain(companystatsdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-Save-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-Save-all')")
     @ApiOperation(value = "批量保存公司动态汇总", tags = {"公司动态汇总" },  notes = "批量保存公司动态汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/companystats/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<CompanyStatsDTO> companystatsdtos) {
@@ -136,7 +136,7 @@ public class CompanyStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-searchCompanyDynamicStats-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-searchCompanyDynamicStats-all')")
 	@ApiOperation(value = "获取公司动态统计", tags = {"公司动态汇总" } ,notes = "获取公司动态统计")
     @RequestMapping(method= RequestMethod.GET , value="/companystats/fetchcompanydynamicstats")
 	public ResponseEntity<List<CompanyStatsDTO>> fetchCompanyDynamicStats(CompanyStatsSearchContext context) {
@@ -149,7 +149,7 @@ public class CompanyStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-searchCompanyDynamicStats-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-searchCompanyDynamicStats-all')")
 	@ApiOperation(value = "查询公司动态统计", tags = {"公司动态汇总" } ,notes = "查询公司动态统计")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/searchcompanydynamicstats")
 	public ResponseEntity<Page<CompanyStatsDTO>> searchCompanyDynamicStats(@RequestBody CompanyStatsSearchContext context) {
@@ -158,7 +158,7 @@ public class CompanyStatsResource {
                 .body(new PageImpl(companystatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"公司动态汇总" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/companystats/fetchdefault")
 	public ResponseEntity<List<CompanyStatsDTO>> fetchDefault(CompanyStatsSearchContext context) {
@@ -171,7 +171,7 @@ public class CompanyStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CompanyStats-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-searchDefault-all')")
 	@ApiOperation(value = "查询数据集", tags = {"公司动态汇总" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/searchdefault")
 	public ResponseEntity<Page<CompanyStatsDTO>> searchDefault(@RequestBody CompanyStatsSearchContext context) {
@@ -181,6 +181,13 @@ public class CompanyStatsResource {
 	}
 
 
+	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
+    @RequestMapping(method = RequestMethod.POST, value = "/companystats/{companystats_id}/{action}")
+    public ResponseEntity<CompanyStatsDTO> dynamicCall(@PathVariable("companystats_id") Long companystats_id , @PathVariable("action") String action , @RequestBody CompanyStatsDTO companystatsdto) {
+        CompanyStats domain = companystatsService.dynamicCall(companystats_id, action, companystatsMapping.toDomain(companystatsdto));
+        companystatsdto = companystatsMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(companystatsdto);
+    }
 
 }
 

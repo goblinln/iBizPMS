@@ -293,6 +293,11 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
     public IIbzReportlyService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbzReportly dynamicCall(Long key, String action, IbzReportly et) {
+        return et;
+    }
 }
 
 

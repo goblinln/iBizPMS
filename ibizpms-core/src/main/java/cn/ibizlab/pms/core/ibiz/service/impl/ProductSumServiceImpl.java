@@ -281,6 +281,11 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
     public IProductSumService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public ProductSum dynamicCall(Long key, String action, ProductSum et) {
+        return et;
+    }
 }
 
 

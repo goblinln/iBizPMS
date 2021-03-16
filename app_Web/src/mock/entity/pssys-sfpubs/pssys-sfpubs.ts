@@ -8,7 +8,7 @@ const mockDatas: Array<any> = [
 
 
 //getwflink
-mock.onGet(new RegExp(/^\/wfcore\/pms-app-web\/pssyssfpubs\/[a-zA-Z0-9\-\;]+\/usertasks\/[a-zA-Z0-9\-\;]+\/ways$/)).reply((config: any) => {
+mock.onGet(new RegExp(/^\/wfcore\/ibizpms-app-web\/pssyssfpubs\/[a-zA-Z0-9\-\;]+\/usertasks\/[a-zA-Z0-9\-\;]+\/ways$/)).reply((config: any) => {
     console.groupCollapsed("实体:pssyssfpub 方法: getwflink");
     console.table({url:config.url, method: config.method, data:config.data});
     console.groupEnd();
@@ -27,7 +27,7 @@ mock.onGet(new RegExp(/^\/wfcore\/pms-app-web\/pssyssfpubs\/[a-zA-Z0-9\-\;]+\/us
 });
 
 // getwfstep
-mock.onGet(new RegExp(/^\/wfcore\/pms-app-web\/pssyssfpubs\/process-definitions-nodes$/)).reply((config: any) => {
+mock.onGet(new RegExp(/^\/wfcore\/ibizpms-app-web\/pssyssfpubs\/process-definitions-nodes$/)).reply((config: any) => {
     console.groupCollapsed("实体:pssyssfpub 方法: getwfstep");
     console.table({url:config.url, method: config.method, data:config.data});
     console.groupEnd();

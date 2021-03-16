@@ -51,6 +51,7 @@ public interface IIbizproProjectDailyService extends IService<IbizproProjectDail
     Page<IbizproProjectDaily> searchDefault(IbizproProjectDailySearchContext context);
     List<IbizproProjectDaily> selectByProject(Long id);
     void removeByProject(Long id);
+    IbizproProjectDaily dynamicCall(String key, String action, IbizproProjectDaily et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

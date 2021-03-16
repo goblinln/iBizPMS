@@ -7,8 +7,11 @@ import cn.ibizlab.pms.util.domain.EntityBase;
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 import org.apache.commons.io.FileUtils;
+import java.io.IOException;
 import org.apache.commons.io.IOUtils;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.flowable.bpmn.converter.BpmnXMLConverter;
@@ -22,6 +25,7 @@ import org.kie.api.builder.Results;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.kie.internal.io.ResourceFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
@@ -36,7 +40,6 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -45,6 +48,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 实体处理逻辑切面（前后附加逻辑、实体行为调用处理逻辑）
@@ -57,7 +62,20 @@ public class DELogicAspect {
     private static BpmnXMLConverter bpmnXMLConverter = new BpmnXMLConverter();
     private final ExpressionParser parser = new SpelExpressionParser();
     private ConcurrentMap<String, DELogic> deLogicMap = new ConcurrentHashMap<>();
+    private final String DEFAULT_MODULE_PACKAGE = "[\\w+\\.]\\.core.(\\w+)\\.domain";
     private static Map<String, Object> validLogic = new HashMap<>();
+    @Value("${ibiz.dynamic.path:/app/file/dynamicmodel/}")
+    private String dynamicPath;
+    @Value("${ibiz.systemid:iBizPMS}")
+    private String systemId;
+    @Value("${ibiz.dynainstid:ibizpms}")
+    private String dynamicId;
+
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.*.*(..))  || execution(* cn.ibizlab.pms.core.uaa.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizplugin.service.*.*(..))  || execution(* cn.ibizlab.pms.core.zentao.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizsysmodel.service.*.*(..))  || execution(* cn.ibizlab.pms.core.report.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ou.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizpro.service.*.*(..)) ")
+    public Object executeRemoteLogic(ProceedingJoinPoint point) throws Throwable {
+        return executeLogic(point, true);
+    }
+
 
     /**
      * 执行实体行为附加逻辑、实体行为调用处理逻辑
@@ -66,8 +84,7 @@ public class DELogicAspect {
      * @return
      * @throws Throwable
      */
-    @Around("execution(* cn.ibizlab.pms.core.*.service.*.*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.*(..))")
-    public Object executeLogic(ProceedingJoinPoint point) throws Throwable {
+    public Object executeLogic(ProceedingJoinPoint point, boolean isDyna) throws Throwable {
         Object args[] = point.getArgs();
         if (ObjectUtils.isEmpty(args) || args.length == 0) {
             return point.proceed();
@@ -90,13 +107,10 @@ public class DELogicAspect {
             entity = (EntityBase) arg;
         }
         if (entity != null) {
-            executeBeforeLogic(entity, action);
+            executeBeforeLogic(entity, action, isDyna);
             Object result = point.proceed();
-            if("get".equalsIgnoreCase(action) && result instanceof EntityBase){
-                entity = (EntityBase) result;
-            }
-            executeLogic(entity, action);
-            executeAfterLogic(entity, action);
+            executeLogic(entity, action, isDyna);
+            executeAfterLogic(entity, action, isDyna);
             return result;
         }
         return point.proceed();
@@ -108,10 +122,18 @@ public class DELogicAspect {
      * @param entity
      * @param action
      */
-    private void executeBeforeLogic(EntityBase entity, String action) {
-        File bpmnFile = getLocalModel(entity.getClass().getSimpleName(), action, LogicExecMode.BEFORE);
+    private void executeBeforeLogic(EntityBase entity, String action, boolean isDyna) {
+        File bpmnFile;
+        if (isDyna) {
+            bpmnFile = getRemoteModel(getDEModule(entity), entity.getClass().getSimpleName(), action, LogicExecMode.BEFORE);
+            if (bpmnFile != null && bpmnFile.exists()) {
+                executeLogic(bpmnFile, entity, action, LogicMode.REMOTE);
+                return;
+            }
+        }
+        bpmnFile = getLocalModel(entity.getClass().getSimpleName(), action, LogicExecMode.BEFORE);
         if (bpmnFile != null && bpmnFile.exists() && isValid(bpmnFile, entity, action)) {
-            executeLogic(bpmnFile, entity, action);
+            executeLogic(bpmnFile, entity, action, LogicMode.LOCAL);
         }
     }
 
@@ -121,10 +143,18 @@ public class DELogicAspect {
      * @param entity
      * @param action
      */
-    private void executeAfterLogic(EntityBase entity, String action) {
-        File bpmnFile = getLocalModel(entity.getClass().getSimpleName(), action, LogicExecMode.AFTER);
+    private void executeAfterLogic(EntityBase entity, String action, boolean isDyna) {
+        File bpmnFile;
+        if (isDyna) {
+            bpmnFile = getRemoteModel(getDEModule(entity), entity.getClass().getSimpleName(), action, LogicExecMode.AFTER);
+            if (bpmnFile != null && bpmnFile.exists()) {
+                executeLogic(bpmnFile, entity, action, LogicMode.REMOTE);
+                return;
+            }
+        }
+        bpmnFile = getLocalModel(entity.getClass().getSimpleName(), action, LogicExecMode.AFTER);
         if (bpmnFile != null && bpmnFile.exists() && isValid(bpmnFile, entity, action)) {
-            executeLogic(bpmnFile, entity, action);
+            executeLogic(bpmnFile, entity, action, LogicMode.LOCAL);
         }
     }
 
@@ -134,10 +164,18 @@ public class DELogicAspect {
      * @param entity
      * @param action
      */
-    private void executeLogic(EntityBase entity, String action) {
-        File bpmnFile = getLocalModel(entity.getClass().getSimpleName(), action, LogicExecMode.EXEC);
+    private void executeLogic(EntityBase entity, String action, boolean isDyna) {
+        File bpmnFile;
+        if (isDyna) {
+            bpmnFile = getRemoteModel(getDEModule(entity), entity.getClass().getSimpleName(), action, LogicExecMode.EXEC);
+            if (bpmnFile != null && bpmnFile.exists()) {
+                executeLogic(bpmnFile, entity, action, LogicMode.REMOTE);
+                return;
+            }
+        }
+        bpmnFile = getLocalModel(entity.getClass().getSimpleName(), action, LogicExecMode.EXEC);
         if (bpmnFile != null && bpmnFile.exists() && isValid(bpmnFile, entity, action)) {
-            executeLogic(bpmnFile, entity, action);
+            executeLogic(bpmnFile, entity, action, LogicMode.LOCAL);
         }
     }
 
@@ -147,10 +185,10 @@ public class DELogicAspect {
      * @param bpmnFile
      * @param entity
      */
-    private void executeLogic(File bpmnFile, Object entity, String action) {
-        log.debug("开始执行实体处理逻辑[{}:{}:{}:本地模式]", entity.getClass().getSimpleName(), action, bpmnFile.getName());
+    private void executeLogic(File bpmnFile, Object entity, String action, LogicMode logicMode) {
+        log.debug("开始执行实体处理逻辑[{}:{}:{}:{}]", entity.getClass().getSimpleName(), action, bpmnFile.getName(), logicMode.text);
         String bpmnId = DigestUtils.md5DigestAsHex(bpmnFile.getPath().getBytes());
-        DELogic logic = getDELogic(bpmnFile);
+        DELogic logic = getDELogic(bpmnFile, entity, logicMode);
         if (logic == null) {
             return;
         }
@@ -172,7 +210,7 @@ public class DELogicAspect {
             }
         }
         kieSession.startProcess(mainProcess.getId());
-        log.debug("实体处理逻辑[{}:{}:{}:本地模式]执行结束", entity.getClass().getSimpleName(), action, bpmnFile.getName());
+        log.debug("实体处理逻辑[{}:{}:{}:{}]执行结束", entity.getClass().getSimpleName(), action, bpmnFile.getName(), logicMode.text);
     }
 
     /**
@@ -237,10 +275,11 @@ public class DELogicAspect {
      * 获取逻辑配置
      *
      * @param bpmnFile
+     * @param entity
      * @return
      */
     @SneakyThrows
-    private DELogic getDELogic(File bpmnFile) {
+    private DELogic getDELogic(File bpmnFile, Object entity, LogicMode logicMode) {
         DELogic logic = null;
         XMLStreamReader reader = null;
         InputStream bpmn = null;
@@ -269,11 +308,11 @@ public class DELogicAspect {
                             CallActivity subBpmn = (CallActivity) item;
                             String bpmnFileName = subBpmn.getName();
                             log.debug("正在加载   BPMN:{}", bpmnFileName);
-                            File subBpmnFile = getSubBpmn(bpmnFileName);
+                            File subBpmnFile = getSubBpmn(getDEModule(entity), entity.getClass().getSimpleName(), bpmnFileName, logicMode);
                             if (ObjectUtils.isEmpty(subBpmnFile)) {
                                 log.debug("BPMN:{},缺少文件:{} ", bpmnFileName, subBpmnFile);
                             }
-                            DELogic refLogic = getDELogic(subBpmnFile);
+                            DELogic refLogic = getDELogic(subBpmnFile, entity, logicMode);
                             if (refLogic != null) {
                                 refLogics.add(refLogic);
                                 if (!ObjectUtils.isEmpty(refLogic.getRefRuleFiles())) {
@@ -370,7 +409,7 @@ public class DELogicAspect {
         }
     }
 
-   /**
+    /**
      * 本地逻辑
      *
      * @param entity
@@ -385,14 +424,35 @@ public class DELogicAspect {
     }
 
     /**
+     * 远程逻辑
+     *
+     * @param module
+     * @param entity
+     * @param action
+     * @param logicExecMode
+     * @return
+     */
+    private File getRemoteModel(String module, String entity, String action, LogicExecMode logicExecMode) {
+        String logicName = String.format("psdeaction.json.%s.bpmn", logicExecMode.text);
+        return getBpmnFile(dynamicPath + File.separator + (systemId + File.separator + dynamicId + File.separator + "psmodules" + File.separator + module + File.separator + "psdataentities" + File.separator + entity + File.separator + "psdeactions" + File.separator + action + File.separator + logicName).toLowerCase());
+    }
+
+    /**
      * 处理逻辑 bpmn
      *
+     * @param module
+     * @param entity
      * @param logicName
      * @return
      */
-    private File getSubBpmn(String logicName) {
-        String filePath = String.format("/rules/%s", logicName);
-        return getBpmnFile(filePath);
+    private File getSubBpmn(String module, String entity, String logicName, LogicMode logicMode) {
+        if (LogicMode.REMOTE.equals(logicMode)) {
+            return getBpmnFile(dynamicPath + File.separator + (systemId + File.separator + dynamicId + File.separator + "psmodules" + File.separator + module + File.separator + "psdataentities" + File.separator + entity + File.separator + "psdelogics" + File.separator + logicName + File.separator + "psdelogic.json.bpmn").toLowerCase());
+        } else {
+            String filePath = String.format("/rules/%s", logicName);
+            return getBpmnFile(filePath);
+        }
+
     }
 
     /**
@@ -436,6 +496,55 @@ public class DELogicAspect {
             }
         }
         return bpmn;
+    }
+
+    /**
+     * 获取实体模块
+     *
+     * @param entity
+     * @return
+     */
+    private String getDEModule(Object entity) {
+        String strModule = null;
+        String packageName = entity.getClass().getPackage().getName();
+        Pattern p = Pattern.compile(DEFAULT_MODULE_PACKAGE);
+        Matcher m = p.matcher(packageName);
+        while (m.find()) {
+            strModule = m.group(1);
+        }
+        if (StringUtils.isEmpty(strModule)) {
+            throw new BadRequestAlertException(String.format("无法获取实体[%s]所属模块信息", entity.getClass().getSimpleName()), "LogicAspect", "getDEModule");
+        }
+        return strModule;
+    }
+
+    /**
+     * 执行动态行为
+     *
+     * @param point
+     */
+    @AfterReturning(value = "execution(* cn.ibizlab.pms.core.*.service.*.dynamicCall(..))")
+    public void dynamicCall(JoinPoint point) {
+        Object args[] = point.getArgs();
+        if (!ObjectUtils.isEmpty(args) || args.length == 3) {
+            Object id = args[0];
+            String action = String.valueOf(args[1]);
+            Object entity = args[2];
+            if (entity instanceof EntityBase) {
+                log.debug("开始执行实体动态行为[{}:{}]", entity.getClass().getSimpleName(), action);
+                EvaluationContext context = new StandardEvaluationContext();
+                context.setVariable("service", point.getTarget());
+                context.setVariable("action", action);
+                if ("remove".equalsIgnoreCase(action) || "get".equalsIgnoreCase(action)) {
+                    context.setVariable("args", id);
+                } else {
+                    context.setVariable("args", entity);
+                }
+                Expression oldExp = parser.parseExpression(String.format("#service.%s(#args)", action));
+                oldExp.getValue(context);
+                log.debug("实体动态行为[{}:{}]执行结束", entity.getClass().getSimpleName(), action);
+            }
+        }
     }
 
     /**
@@ -557,7 +666,26 @@ public class DELogicAspect {
         validLogic.put("useryearworkstatsupdatetitlebyyearafter.bpmn", 1);
     }
 
-     public enum LogicExecMode {
+    public enum LogicMode {
+        /**
+         * 本地
+         */
+        LOCAL("0", "本地模式"),
+        /**
+         * 远程
+         */
+        REMOTE("1", "远程模式");
+
+        LogicMode(String value, String text) {
+            this.value = value;
+            this.text = text;
+        }
+
+        private String value;
+        private String text;
+    }
+
+    public enum LogicExecMode {
         /**
          * 前附加逻辑
          */

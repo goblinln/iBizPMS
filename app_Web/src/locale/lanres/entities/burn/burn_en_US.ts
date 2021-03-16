@@ -5,4 +5,5 @@ function getLocaleResource(){
     const targetData = Object.assign(Burn_en_US_Base(), Burn_en_US_OwnData);
     return targetData;
 }
+
 export default getLocaleResource;

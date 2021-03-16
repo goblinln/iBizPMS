@@ -160,6 +160,7 @@ public interface IStoryService extends IService<Story> {
     void removeByDuplicatestory(Long id);
     List<Story> selectByParent(Long id);
     void removeByParent(Long id);
+    Story dynamicCall(Long key, String action, Story et);
     /**
      * 自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

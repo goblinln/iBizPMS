@@ -322,6 +322,11 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     public IIbizproProductDailyService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
+    @Override
+    @Transactional
+    public IbizproProductDaily dynamicCall(Long key, String action, IbizproProductDaily et) {
+        return et;
+    }
 }
 
 

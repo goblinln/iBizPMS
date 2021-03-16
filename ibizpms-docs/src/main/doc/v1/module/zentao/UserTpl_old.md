@@ -51,7 +51,7 @@
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
-|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#UserTpl_Default))|否|&nbsp;|
+|DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#UserTpl_Default))|是|&nbsp;|
 |MyUserTpl|我的模板([MYSQL5](../../appendix/query_MYSQL5.md#UserTpl_MyUserTpl))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#UserTpl_View))|否|&nbsp;|
 

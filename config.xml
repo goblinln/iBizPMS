@@ -1,7 +1,7 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>pms</description>
+  <description>iBizPMS</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <hudson.model.ParametersDefinitionProperty>
@@ -33,10 +33,10 @@
       <command>
       BUILD_ID=DONTKILLME
       source /etc/profile
-      rm -rf pms
-	  git clone -b dev $para2 pms/
+      rm -rf ibizpms
+	  git clone -b devx $para2 ibizpms/
       export NODE_OPTIONS=--max-old-space-size=4096
-      cd pms/
+      cd ibizpms/
       </command>
     </hudson.tasks.Shell>
   </builders>
