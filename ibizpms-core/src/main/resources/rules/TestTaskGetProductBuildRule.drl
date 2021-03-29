@@ -1,0 +1,58 @@
+package cn.ibizlab.pms.zentao.logic.testtasklogic.getproductbuild;
+import java.util.Map;
+import java.util.HashMap;
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+global cn.ibizlab.pms.core.zentao.domain.TestTask testtaskgetproductbuilddefault;
+global cn.ibizlab.pms.core.zentao.service.ITestTaskService iBzSysTesttaskDefaultService;
+global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+no-loop
+
+//逻辑处理节点[获取版本]
+rule "rawsqlcall2"
+ruleflow-group "testtaskgetproductbuildrawsqlcall2"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",testtaskgetproductbuilddefault.get("project"));
+    param.put("param1",testtaskgetproductbuilddefault.get("product"));
+    String strSql="select t.id as build,case when (select t1.`name` from zt_release t1 where t1.build = t.id and t1.deleted = '0' ORDER BY t1.date desc LIMIT 0,1) is null then t.`name` else (select t1.`name` from zt_release t1 where t1.build = t.id and t1.deleted = '0' ORDER BY t1.date desc LIMIT 0,1) end as buildname from zt_build t where t.project = #{et.param0} and t.product = #{et.param1} and t.deleted = '0' LIMIT 0,1";
+    java.util.List<JSONObject> entities=iBzSysTesttaskDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            testtaskgetproductbuilddefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(testtaskgetproductbuilddefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[开始]
+rule "begin"
+ruleflow-group "testtaskgetproductbuildbegin"
+    when
+    then
+    end
+
+//逻辑处理节点[获取产品]
+rule "rawsqlcall1"
+ruleflow-group "testtaskgetproductbuildrawsqlcall1"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",testtaskgetproductbuilddefault.get("project"));
+    String strSql="select t.product,t1.`name` as productname from zt_projectproduct t left join zt_product t1 on t1.id = t.product where t.project = #{et.param0} LIMIT 0,1";
+    java.util.List<JSONObject> entities=iBzSysTesttaskDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            testtaskgetproductbuilddefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(testtaskgetproductbuilddefault);//更新fact中变量值
+    end
+

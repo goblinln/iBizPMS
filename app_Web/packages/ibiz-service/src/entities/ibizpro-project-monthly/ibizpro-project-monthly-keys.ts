@@ -1,0 +1,15 @@
+export default [
+    'ibizproprojectmonthlyname',
+    'createdate',
+    'yearmonth',
+    'totalestimates',
+    'updateman',
+    'tasks',
+    'date',
+    'ibizproprojectmonthlyid',
+    'updatedate',
+    'createman',
+    'pm',
+    'projectname',
+    'project',
+];

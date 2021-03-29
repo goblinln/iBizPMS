@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.CompanyStatsMapper">
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="CompanyStatsResultMap" databaseId="mysql">
+        <![CDATA[select t1.* from (SELECT 0 AS `CLOSEDSTORYCNT`, t1.`COMMENT`, t1.`DATE`, 0 AS `DYNAMICCNT`, 0 AS `FINISHEDTASKCNT`, t1.`ID`, 0 AS `LOGHOURS`, 0 AS `LOGINCNT`, 0 AS `OPENEDBUGCNT`, 0 AS `OPENEDSTORYCNT`, 0 AS `OPENEDTASKCNT`, 0 AS `RESOLVEDBUGCNT` FROM `zt_action` t1  ) t1 where id=#{id}]]>
+    </select>
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="CompanyStatsResultMap" type="cn.ibizlab.pms.core.ibiz.domain.CompanyStats" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+
+
+    </resultMap>
+
+
+    <!--数据集合[CompanyDynamicStats]-->
+	 <select id="searchCompanyDynamicStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CompanyStatsSearchContext"  resultMap="CompanyStatsResultMap">
+         select t1.* from (
+                <include refid="CompanyDynamicStats" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CompanyStatsSearchContext"  resultMap="CompanyStatsResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据查询[CompanyDynamicStats]-->
+    <sql id="CompanyDynamicStats" databaseId="mysql">
+		<![CDATA[ select  DATE_FORMAT(t1.date, '%Y-%m-%d') as `ZTDATE`,  t1.date,  sum(case when t1.objecttype = 'user' and t1.action = 'login' then 1 else 0 end) as `LoginCNT`, IFNULL((select sum(t2.consumed) from zt_taskestimate t2 where t2.date = DATE_FORMAT(t1.date, '%Y-%m-%d')), 0) as `LogHours`,  sum(case when t1.objecttype = 'story' and t1.action = 'opened' then 1 else 0 end) as `OpenedStoryCNT`,  sum(case when t1.objecttype = 'story' and t1.action = 'closed' then 1 else 0 end) as `ClosedStoryCNT`,  sum(case when t1.objecttype = 'task' and t1.action = 'opened' then 1 else 0 end) as `OpenedTaskCNT`,  sum(case when t1.objecttype = 'task' and t1.action = 'finished' then 1 else 0 end) as `FinishedTaskCNT`,  sum(case when t1.objecttype = 'bug' and t1.action = 'opened' then 1 else 0 end) as `OpenedBugCNT`,  sum(case when t1.objecttype = 'bug' and t1.action = 'resolved' then 1 else 0 end) as `ResolvedBugCNT`,  count(1) as `DynamicCNT`  from zt_action t1  where (DATE_FORMAT(t1.date, '%Y-%m-%d') >= #{srf.datacontext.begin} or #{srf.datacontext.begin} is null) and (DATE_FORMAT(t1.date, '%Y-%m-%d') <= #{srf.datacontext.end} or #{srf.datacontext.end} is null) group by DATE_FORMAT(t1.date, '%Y-%m-%d')
+			]]>
+    </sql>
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT 0 AS `CLOSEDSTORYCNT`, t1.`DATE`, 0 AS `DYNAMICCNT`, 0 AS `FINISHEDTASKCNT`, t1.`ID`, 0 AS `LOGHOURS`, 0 AS `LOGINCNT`, 0 AS `OPENEDBUGCNT`, 0 AS `OPENEDSTORYCNT`, 0 AS `OPENEDTASKCNT`, 0 AS `RESOLVEDBUGCNT` FROM `zt_action` t1  
+			]]>
+    </sql>
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT 0 AS `CLOSEDSTORYCNT`, t1.`COMMENT`, t1.`DATE`, 0 AS `DYNAMICCNT`, 0 AS `FINISHEDTASKCNT`, t1.`ID`, 0 AS `LOGHOURS`, 0 AS `LOGINCNT`, 0 AS `OPENEDBUGCNT`, 0 AS `OPENEDSTORYCNT`, 0 AS `OPENEDTASKCNT`, 0 AS `RESOLVEDBUGCNT` FROM `zt_action` t1  
+			]]>
+    </sql>
+</mapper>
+

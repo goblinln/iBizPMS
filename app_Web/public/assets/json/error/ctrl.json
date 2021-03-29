@@ -1,0 +1,19 @@
+{
+    "codeName": "ERROR",
+    "hideHeader": false,
+    "forceFit": false,
+    "enableRowEdit": false,
+    "controlType": "ERROR",
+    "singleSelect": false,
+    "enableColFilter": false,
+    "enableRowEditOrder": false,
+    "hasWFDataItems": false,
+    "columnEnableLink": 2,
+    "enablePagingBar": true,
+    "dynaModelFilePath": "error.widget.json",
+    "logicName": "错误",
+    "getPSAppDataEntity": {
+        "modelref": true,
+        "path": "error.entity.json"
+    },
+}

@@ -1,0 +1,116 @@
+package cn.ibizlab.pms.report.logic.ibzreportlogic.myreportinotsubmit;
+import java.util.Map;
+import java.util.HashMap;
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+global cn.ibizlab.pms.core.report.domain.IbzReport ibzreportmyreportinotsubmitdefault;
+global cn.ibizlab.pms.core.report.service.IIbzReportService iBzSysIbzreportDefaultService;
+global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+no-loop
+
+//逻辑处理节点[统计我未提交的汇报数]
+rule "rawsqlcall4"
+ruleflow-group "ibzreportmyreportinotsubmitrawsqlcall4"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",curuser.getSessionParams().get("srfloginname"));
+    String strSql="select count(1) as reportlycnt from `t_ibz_reportly` t1 where t1.issubmit = '0' and t1.account = #{et.param0}";
+    java.util.List<JSONObject> entities=iBzSysIbzreportDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            ibzreportmyreportinotsubmitdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(ibzreportmyreportinotsubmitdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[统计我未提交的周报]
+rule "rawsqlcall2"
+ruleflow-group "ibzreportmyreportinotsubmitrawsqlcall2"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",curuser.getSessionParams().get("srfloginname"));
+    String strSql="select count(1) as weeklycnt from `t_ibz_weekly` t1 where t1.issubmit = '0' and t1.account = #{et.param0}";
+    java.util.List<JSONObject> entities=iBzSysIbzreportDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            ibzreportmyreportinotsubmitdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(ibzreportmyreportinotsubmitdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[统计我收到的（未读）]
+rule "myunreadcnt"
+ruleflow-group "ibzreportmyreportinotsubmitmyunreadcnt"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",curuser.getSessionParams().get("srfloginname"));
+    param.put("param1",curuser.getSessionParams().get("srfloginname"));
+    param.put("param2",curuser.getSessionParams().get("srfloginname"));
+    param.put("param3",curuser.getSessionParams().get("srfloginname"));
+    param.put("param4",curuser.getSessionParams().get("srfloginname"));
+    param.put("param5",curuser.getSessionParams().get("srfloginname"));
+    String strSql="SELECT COUNT(1)  as myunreadreportcnt from ( SELECT 	t1.`ACCOUNT`, 	t1.`CREATEDATE`, 	t1.`CREATEMAN`, 	t1.`CREATEMANNAME`, 	DATE_FORMAT( t1.DATE, '%Y-%m-%d' ) AS `DATE`, 	t1.`IBZ_DAILYID`, 	t1.`IBZ_DAILYNAME`, 	t1.`ISSUBMIT`, 	t1.`MAILTO`, 	( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`, 	t1.`REPORTTO`, 	DATE_FORMAT( t1.SUBMITTIME, '%H:%i' ) AS `SUBMITTIME`, 	t1.`TODAYTASK`, 	t1.`TOMORROWPLANSTASK`, 	t1.`UPDATEDATE`, 	t1.`UPDATEMAN`, 	t1.`UPDATEMANNAME`, 	CONCAT_WS( '', '今日工作：', CASE WHEN t1.WORKTODAY IS NULL THEN '无' ELSE t1.WORKTODAY END ) AS WORKTODAY, 	t1.`COMMENT`, 	CONCAT_WS( '', '明日计划：', CASE WHEN t1.PLANSTOMORROW IS NULL THEN '无' ELSE t1.PLANSTOMORROW END ) AS PLANSTOMORROW, 	'daily' AS type  FROM 	`T_IBZ_DAILY` t1 	LEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_DAILYID  	AND t11.objectType = 'daily'  	AND t11.action = 'read'  	AND t11.actor = #{et.param0}  WHERE 	t1.ISSUBMIT = '1'   UNION SELECT 	t1.`ACCOUNT`, 	t1.`CREATEDATE`, 	t1.`CREATEMAN`, 	t1.`CREATEMANNAME`, 	DATE_FORMAT( t1.DATE, '%Y-%m-%d' ) AS `DATE`, 	t1.`IBZ_WEEKLYID` AS IBZ_DAILYID, 	t1.`IBZ_WEEKLYNAME` AS IBZ_DAILYNAME, 	t1.`ISSUBMIT`, 	t1.`MAILTO`, 	( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`, 	t1.`REPORTTO`, 	DATE_FORMAT( t1.SUBMITTIME, '%H:%i' ) AS `SUBMITTIME`, 	t1.`THISWEEKTASK` AS TODAYTASK, 	t1.`NEXTWEEKTASK` AS TOMORROWPLANSTASK, 	t1.`UPDATEDATE`, 	t1.`UPDATEMAN`, 	t1.`UPDATEMANNAME`, 	CONCAT_WS( '', '本周工作：', CASE WHEN t1.WORKTHISWEEK IS NULL THEN '无' ELSE t1.WORKTHISWEEK END ) AS WORKTODAY, 	t1.`COMMENT`, 	CONCAT_WS( '', '下周计划：', CASE WHEN t1.PLANNEXTWEEK IS NULL THEN '无' ELSE t1.PLANNEXTWEEK END ) AS PLANSTOMORROW, 	'weekly' AS type  FROM 	`T_IBZ_WEEKLY` t1 	LEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_WEEKLYID  	AND t11.objectType = 'weekly'  	AND t11.action = 'read'  	AND t11.actor = #{et.param1}  WHERE 	t1.ISSUBMIT = '1'   UNION SELECT 	t1.`ACCOUNT`, 	t1.`CREATEDATE`, 	t1.`CREATEMAN`, 	t1.`CREATEMANNAME`, 	DATE_FORMAT( t1.DATE, '%Y-%m-%d' ) AS `DATE`, 	t1.`IBZ_MONTHLYID` AS IBZ_DAILYID, 	t1.`IBZ_MONTHLYNAME` AS IBZ_DAILYNAME, 	t1.`ISSUBMIT`, 	t1.`MAILTO`, 	( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`, 	t1.`REPORTTO`, 	DATE_FORMAT( t1.SUBMITTIME, '%H:%i' ) AS `SUBMITTIME`, 	t1.`THISMONTHTASK` AS TODAYTASK, 	t1.`NEXTMONTHPLANSTASK` AS TOMORROWPLANSTASK, 	t1.`UPDATEDATE`, 	t1.`UPDATEMAN`, 	t1.`UPDATEMANNAME`, 	CONCAT_WS( '', '本月工作：', CASE WHEN t1.WORKTHISMONTH IS NULL THEN '无' ELSE t1.WORKTHISMONTH END ) AS WORKTODAY, 	t1.`COMMENT`, 	CONCAT_WS( '', '下月计划：', CASE WHEN t1.PLANSNEXTMONTH IS NULL THEN '无' ELSE t1.PLANSNEXTMONTH END ) AS PLANSTOMORROW, 	'monthly' AS type  FROM 	`T_IBZ_MONTHLY` t1 	LEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_MONTHLYID  	AND t11.objectType = 'monthly'  	AND t11.action = 'read'  	AND t11.actor =#{et.param2}  WHERE 	t1.ISSUBMIT = '1'  UNION SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, null as `CREATEMANNAME`, DATE_FORMAT(t1.DATE,'%Y-%m-%d') as `DATE`, t1.`IBZ_REPORTLYID` as IBZ_DAILYID, t1.`IBZ_REPORTLYNAME` as IBZ_DAILYNAME, t1.`ISSUBMIT`, t1.`MAILTO`, (case when t11.id is not null then '1' else '0' end ) as `REPORTSTATUS`, t1.`REPORTTO`, DATE_FORMAT(t1.SUBMITTIME,'%H:%i') as `SUBMITTIME`, null as TODAYTASK, null as TOMORROWPLANSTASK, t1.`UPDATEDATE`, t1.`UPDATEMAN`, null as `UPDATEMANNAME`, CONCAT_WS('','工作内容：',case when t1.CONTENT is null then '无' else t1.CONTENT end) as WORKTODAY, null as `COMMENT`, null as PLANSTOMORROW, 'reportly' as type  FROM `T_IBZ_REPORTLY` t1  left join zt_action t11 on t11.objectID = t1.IBZ_REPORTLYID and t11.objectType = 'reportly' and t11.action = 'read' and t11.actor = #{et.param3} where t1.ISSUBMIT = '1' 	) t1 WHERE         t1.REPORTSTATUS='0' AND  (FIND_IN_SET( #{et.param4} , t1.MAILTO) or t1.REPORTTO=#{et.param5})";
+    java.util.List<JSONObject> entities=iBzSysIbzreportDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            ibzreportmyreportinotsubmitdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(ibzreportmyreportinotsubmitdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[统计我未提交的月报]
+rule "rawsqlcall3"
+ruleflow-group "ibzreportmyreportinotsubmitrawsqlcall3"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",curuser.getSessionParams().get("srfloginname"));
+    String strSql="select count(1) as monthlycnt from `t_ibz_monthly` t1 where t1.issubmit = '0' and t1.account = #{et.param0}";
+    java.util.List<JSONObject> entities=iBzSysIbzreportDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            ibzreportmyreportinotsubmitdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(ibzreportmyreportinotsubmitdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[统计我未提交的日报数]
+rule "rawsqlcall1"
+ruleflow-group "ibzreportmyreportinotsubmitrawsqlcall1"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",curuser.getSessionParams().get("srfloginname"));
+    String strSql="SELECT COUNT(1) as dailycnt FROM `t_ibz_daily` t1 where (t1.ACCOUNT = #{et.param0} ) and t1.ISSUBMIT = '0'";
+    java.util.List<JSONObject> entities=iBzSysIbzreportDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            ibzreportmyreportinotsubmitdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(ibzreportmyreportinotsubmitdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[开始]
+rule "begin"
+ruleflow-group "ibzreportmyreportinotsubmitbegin"
+    when
+    then
+    end
+

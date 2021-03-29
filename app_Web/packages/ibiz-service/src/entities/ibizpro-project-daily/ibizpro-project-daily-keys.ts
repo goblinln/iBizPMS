@@ -1,0 +1,16 @@
+export default [
+    'ibizproprojectdailyname',
+    'tasks',
+    'begin',
+    'createdate',
+    'end',
+    'createman',
+    'date',
+    'totalestimates',
+    'updateman',
+    'pm',
+    'updatedate',
+    'ibizproprojectdailyid',
+    'projectname',
+    'project',
+];

@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.StoryMapper">
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="StoryResultMap" databaseId="mysql">
+        <![CDATA[select t1.* from (SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`IBIZ_ID`, t1.`IBIZ_SOURCEID`, t1.`IBIZ_SOURCENAME`, t1.`IBIZ_SOURCEOBJECT`, t1.`ID`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS `ISCHILD`, '0' AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCEID`, t1.`SOURCENAME`, t1.`SOURCENOTE`, t1.`SOURCEOBJECT`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`STORYPOINTS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC` FROM `zt_story` t1  LEFT JOIN `zt_module` t11 ON t1.`MODULE` = t11.`ID`  LEFT JOIN `zt_story` t21 ON t1.`PARENT` = t21.`ID`  LEFT JOIN `zt_product` t31 ON t1.`PRODUCT` = t31.`ID`  LEFT JOIN `zt_branch` t41 ON t1.`BRANCH` = t41.`ID`  ) t1 where id=#{id}]]>
+    </select>
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="StoryResultMap" type="cn.ibizlab.pms.core.zentao.domain.Story" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+		<result property="ibizId" column="ibiz_id" />
+		<result property="ibizSourceobject" column="ibiz_sourceobject" />
+		<result property="ibizSourcename" column="ibiz_sourcename" />
+		<result property="ibizSourceid" column="ibiz_sourceid" />
+		<result property="productname" column="prodoctname" />
+		<result property="frombug" column="frombug" />
+		<result property="parent" column="parent" />
+		<result property="module" column="module" />
+		<result property="product" column="product" />
+		<result property="duplicatestory" column="duplicatestory" />
+		<result property="branch" column="branch" />
+		<result property="tobug" column="tobug" />
+
+
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ibzproductmodule" javaType="cn.ibizlab.pms.core.ibiz.domain.ProductModule" column="module" select="cn.ibizlab.pms.core.ibiz.mapper.ProductModuleMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztbranch" javaType="cn.ibizlab.pms.core.zentao.domain.Branch" column="branch" select="cn.ibizlab.pms.core.zentao.mapper.BranchMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztfrombug" javaType="cn.ibizlab.pms.core.zentao.domain.Bug" column="frombug" select="cn.ibizlab.pms.core.zentao.mapper.BugMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="zttobug" javaType="cn.ibizlab.pms.core.zentao.domain.Bug" column="tobug" select="cn.ibizlab.pms.core.zentao.mapper.BugMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztproduct" javaType="cn.ibizlab.pms.core.zentao.domain.Product" column="product" select="cn.ibizlab.pms.core.zentao.mapper.ProductMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztstoryduplicatestory" javaType="cn.ibizlab.pms.core.zentao.domain.Story" column="duplicatestory" select="cn.ibizlab.pms.core.zentao.mapper.StoryMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztparent" javaType="cn.ibizlab.pms.core.zentao.domain.Story" column="parent" select="cn.ibizlab.pms.core.zentao.mapper.StoryMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORY_IBZ_PRODUCTMODULE_MODULE] -->
+	 <select id="selectByModule" resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  module=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORY_ZT_BRANCH_BRANCH] -->
+	 <select id="selectByBranch" resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  branch=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORY_ZT_BUG_FROMBUGID] -->
+	 <select id="selectByFrombug" resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  frombug=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORY_ZT_BUG_TOBUGID] -->
+	 <select id="selectByTobug" resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  tobug=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT] -->
+	 <select id="selectByProduct" resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  product=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORY_ZT_STORY_DUPLICATESTORY] -->
+	 <select id="selectByDuplicatestory" resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  duplicatestory=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N__ZT_STORY__ZT_STORY__PARENT] -->
+	 <select id="selectByParent" resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  parent=#{id}
+     </select>
+
+    <!--数据集合[AssignedToMyStory]-->
+	 <select id="searchAssignedToMyStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="AssignedToMyStory" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[AssignedToMyStoryCalendar]-->
+	 <select id="searchAssignedToMyStoryCalendar"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="AssignedToMyStoryCalendar" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[BugStory]-->
+	 <select id="searchBugStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="BugStory" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+		 )t1
+		 order by `id`  desc  
+     </select>
+
+    <!--数据集合[BuildLinkCompletedStories]-->
+	 <select id="searchBuildLinkCompletedStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="BuildLinkCompletedStories" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[BuildLinkableStories]-->
+	 <select id="searchBuildLinkableStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="BuildLinkableStories" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[BuildStories]-->
+	 <select id="searchBuildStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="BuildStories" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+		 )t1
+		 order by `id`  desc  
+     </select>
+
+    <!--数据集合[ByModule]-->
+	 <select id="searchByModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="ByModule" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[CaseStory]-->
+	 <select id="searchCaseStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="CaseStory" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+		 )t1
+		 order by `id`  desc  
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[ESBulk]-->
+	 <select id="searchESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="ESBulk" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[GetProductStories]-->
+	 <select id="searchGetProductStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="GetProductStories" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[MyAgentStory]-->
+	 <select id="searchMyAgentStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="MyAgentStory" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[MyCurOpenedStory]-->
+	 <select id="searchMyCurOpenedStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="MyCurOpenedStory" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[MyFavorites]-->
+	 <select id="searchMyFavorites"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="MyFavorites" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[NotCurPlanLinkStory]-->
+	 <select id="searchNotCurPlanLinkStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="NotCurPlanLinkStory" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+		 )t1
+		 order by `id`  desc  
+     </select>
+
+    <!--数据集合[ParentDefault]-->
+	 <select id="searchParentDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="ParentDefault" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[ParentDefaultQ]-->
+	 <select id="searchParentDefaultQ"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="ParentDefaultQ" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[ProjectLinkStory]-->
+	 <select id="searchProjectLinkStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="ProjectLinkStory" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[ProjectStories]-->
+	 <select id="searchProjectStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="ProjectStories" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+		 )t1
+		 order by `id`  desc  
+     </select>
+
+    <!--数据集合[ReleaseLinkableStories]-->
+	 <select id="searchReleaseLinkableStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="ReleaseLinkableStories" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+		 )t1
+		 order by `id`  desc  
+     </select>
+
+    <!--数据集合[ReleaseStories]-->
+	 <select id="searchReleaseStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="ReleaseStories" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+		 )t1
+		 order by `id`  desc  
+     </select>
+
+    <!--数据集合[ReportStories]-->
+	 <select id="searchReportStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="ReportStories" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[StoryChild]-->
+	 <select id="searchStoryChild"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="StoryChild" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+		 )t1
+		 order by `id`  desc  
+     </select>
+
+    <!--数据集合[StoryRelated]-->
+	 <select id="searchStoryRelated"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="StoryRelated" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+		 )t1
+		 order by `id`  desc  
+     </select>
+
+    <!--数据集合[SubStory]-->
+	 <select id="searchSubStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="SubStory" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[TaskRelatedStory]-->
+	 <select id="searchTaskRelatedStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="TaskRelatedStory" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+		 )t1
+		 order by `id`  desc  
+     </select>
+
+    <!--数据集合[View]-->
+	 <select id="searchView"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="View" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据查询[AssignedToMyStory]-->
+    <sql id="AssignedToMyStory" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root ) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID
+					 WHERE 	t1.DELETED = '0'
+						 AND ( t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} )
+			]]>
+    </sql>
+    <!--数据查询[AssignedToMyStoryCalendar]-->
+    <sql id="AssignedToMyStoryCalendar" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root ) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID
+					 WHERE 	t1.DELETED = '0'
+						 AND ( t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} )
+						 AND t1.assignedDate <> '0000-00-00 00:00:00' and t1.assignedDate is not null
+			]]>
+    </sql>
+    <!--数据查询[BugStory]-->
+    <sql id="BugStory" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname}  and t.OBJECTID = t1.id) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, CONCAT(t1.id,':',t1.title,'(优先级:',t1.pri,',预计工时:',t1.estimate,')') AS `TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID
+					 WHERE 	t1.DELETED = '0'
+						 AND ( ( EXISTS ( SELECT 1 FROM zt_projectstory t51 WHERE t1.ID = t51.STORY AND ( t51.`PROJECT` = #{srf.datacontext.n_project_eq}) )  OR  #{srf.datacontext.n_project_eq} is null ) )
+			]]>
+    </sql>
+    <!--数据查询[BuildLinkCompletedStories]-->
+    <sql id="BuildLinkCompletedStories" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`,  0 AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID   WHERE  t1.DELETED = '0'  AND 	t1.id IN ( SELECT tt.story FROM zt_projectstory tt WHERE tt.project = (select ttt.project from zt_build ttt where ttt.id = #{srf.datacontext.build}) )  	AND t1.product = ( SELECT t2.product FROM zt_build t2 WHERE t2.id = #{srf.datacontext.build} ) 	and t1.id not in (select t3.id from zt_story t3, zt_build t4 where t4.id = #{srf.datacontext.build} and FIND_IN_SET(t3.id,t4.stories))
+			]]>
+    </sql>
+    <!--数据查询[BuildLinkableStories]-->
+    <sql id="BuildLinkableStories" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID  
+					 WHERE 	t1.`product` in ( select t2.`product` from zt_projectproduct t2 where t2.project = #{srf.datacontext.project}  )
+						 AND t1.`STATUS` = 'active'
+						 AND t1.DELETED = '0'
+			]]>
+    </sql>
+    <!--数据查询[BuildStories]-->
+    <sql id="BuildStories" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, (select spec from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `SPEC`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, (select verify from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `VERIFY`, t1.`VERSION`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  WHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT STORIES FROM ZT_BUILD WHERE ID = #{srf.datacontext.srfparentkey}))
+			]]>
+    </sql>
+    <!--数据查询[ByModule]-->
+    <sql id="ByModule" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, (case when t1.`PLAN` = '0' then '' else t1.plan end ) as `PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, (select spec from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `SPEC`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, (select verify from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `VERIFY`, t1.`VERSION`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  
+					 WHERE 	t1.DELETED = '0'
+						 AND FIND_IN_SET (#{srf.datacontext.srfparentkey}, t11.`PATH`)
+			]]>
+    </sql>
+    <!--数据查询[CaseStory]-->
+    <sql id="CaseStory" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname}  and t.OBJECTID = t1.id) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, CONCAT(t1.id,':',t1.title,'(优先级:',t1.pri,',预计工时:',t1.estimate,')') AS `TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID
+			]]>
+    </sql>
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root ) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, (case when t1.`PLAN` = '0' then '' else t1.plan end ) as `PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID
+					 WHERE 	t1.DELETED = '0'
+			]]>
+    </sql>
+    <!--数据查询[ESBulk]-->
+    <sql id="ESBulk" databaseId="mysql">
+		<![CDATA[ SELECT 	t1.`ID`, 	t1.`TITLE`, 	t11.orgid, 	t11.MDEPTID, 	t1.deleted, 	t21.spec, 	t1.color, 	t11.acl, 	CONCAT_WS( ',', t11.CREATEDBY, t11.qd, t11.po, t11.rd ) AS acllist, 	t1.product FROM 	`zt_story` t1 	LEFT JOIN zt_product t11 ON t11.id = t1.product 	LEFT JOIN zt_storyspec t21 ON t21.story = t1.id  	AND t1.version = t21.version
+			]]>
+    </sql>
+    <!--数据查询[GetProductStories]-->
+    <sql id="GetProductStories" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`IBIZ_ID`, t1.`IBIZ_SOURCEID`, t1.`IBIZ_SOURCENAME`, t1.`IBIZ_SOURCEOBJECT`, t1.`ID`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS `ISCHILD`, '0' AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCEID`, t1.`SOURCENAME`, t1.`SOURCENOTE`, t1.`SOURCEOBJECT`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`STORYPOINTS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC` FROM `zt_story` t1  LEFT JOIN `zt_module` t11 ON t1.`MODULE` = t11.`ID`  LEFT JOIN `zt_story` t21 ON t1.`PARENT` = t21.`ID`  LEFT JOIN `zt_product` t31 ON t1.`PRODUCT` = t31.`ID`  LEFT JOIN `zt_branch` t41 ON t1.`BRANCH` = t41.`ID`   ]]>
+					 WHERE 	t1.DELETED = '0'
+						 AND ( t1.`PRODUCT` = #{srf.datacontext.product}  AND  <choose><when test="srf.datacontext.branch != null"> <![CDATA[ t1.`BRANCH` =   #{srf.datacontext.branch}  ]]> </when><otherwise>1=1</otherwise></choose>  AND  <choose><when test="srf.datacontext.nodeid != null"> <![CDATA[ t1.`MODULE` =   #{srf.datacontext.nodeid}  ]]> </when><otherwise>1=1</otherwise></choose> )
+    </sql>
+    <!--数据查询[MyAgentStory]-->
+    <sql id="MyAgentStory" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, case when t51.`AGENTUSER` = #{srf.sessioncontext.srfloginname} then t51.`AGENTUSER` else t1.`ASSIGNEDTO` end as `ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root ) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, (case when t1.`PLAN` = '0' then '' else t1.plan end ) as `PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID LEFT JOIN t_ibz_agent t51 ON t1.assignedTo = t51.CREATEMANNAME and DATE_FORMAT(now(), '%Y-%m-%d') >= t51.AGENTBEGIN and DATE_FORMAT(now(), '%Y-%m-%d') <= t51.AGENTEND
+					 WHERE 	t1.deleted = '0'
+			]]>
+    </sql>
+    <!--数据查询[MyCurOpenedStory]-->
+    <sql id="MyCurOpenedStory" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`IBIZ_ID`, t1.`IBIZ_SOURCEID`, t1.`IBIZ_SOURCENAME`, t1.`IBIZ_SOURCEOBJECT`, t1.`ID`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS `ISCHILD`, '0' AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCEID`, t1.`SOURCENAME`, t1.`SOURCENOTE`, t1.`SOURCEOBJECT`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`STORYPOINTS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC` FROM `zt_story` t1  LEFT JOIN `zt_module` t11 ON t1.`MODULE` = t11.`ID`  LEFT JOIN `zt_story` t21 ON t1.`PARENT` = t21.`ID`  LEFT JOIN `zt_product` t31 ON t1.`PRODUCT` = t31.`ID`  LEFT JOIN `zt_branch` t41 ON t1.`BRANCH` = t41.`ID`  
+					 WHERE 	t1.DELETED = '0'
+						 AND ( DATE_FORMAT( t1.openedDate, '%Y' ) = DATE_FORMAT(now(), '%Y' )  AND  t1.`OPENEDBY` =  #{srf.sessioncontext.srfloginname} )
+			]]>
+    </sql>
+    <!--数据查询[MyFavorites]-->
+    <sql id="MyFavorites" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, 1 AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root ) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID
+					 WHERE 	t1.DELETED = '0'
+						 AND t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'story' and t.account = #{srf.sessioncontext.srfloginname})
+			]]>
+    </sql>
+    <!--数据查询[NotCurPlanLinkStory]-->
+    <sql id="NotCurPlanLinkStory" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS `ISCHILD`, 0 AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC` FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID  
+					 WHERE 	t1.DELETED = '0'
+						 AND t1.plan <> #{srf.webcontext.plan}
+						 AND t1.product =  #{srf.webcontext.product}
+						 AND t1.`status` <> 'closed'
+						 AND t1.parent <> '-1'
+			]]>
+    </sql>
+    <!--数据查询[ParentDefault]-->
+    <sql id="ParentDefault" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root ) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, (case when t1.`PLAN` = '0' then '' else t1.plan end ) as `PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID
+					 WHERE 	t1.DELETED = '0'
+						 AND ( ( t1.`PARENT` = -1  OR  t1.`PARENT` = 0 ) )
+			]]>
+    </sql>
+    <!--数据查询[ParentDefaultQ]-->
+    <sql id="ParentDefaultQ" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root ) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, (case when t1.`PLAN` = '0' then '' else t1.plan end ) as `PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID
+					 WHERE 	t1.DELETED = '0'
+						 AND ( ( t1.`PARENT` = -1  OR  t1.`PARENT` = 0 ) )
+						 AND t1.`status` = 'active' and t1.stage = 'wait'
+			]]>
+    </sql>
+    <!--数据查询[ProjectLinkStory]-->
+    <sql id="ProjectLinkStory" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`IBIZ_ID`, t1.`IBIZ_SOURCEID`, t1.`IBIZ_SOURCENAME`, t1.`IBIZ_SOURCEOBJECT`, t1.`ID`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS `ISCHILD`, '0' AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCEID`, t1.`SOURCENAME`, t1.`SOURCENOTE`, t1.`SOURCEOBJECT`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`STORYPOINTS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC` FROM `zt_story` t1  LEFT JOIN `zt_module` t11 ON t1.`MODULE` = t11.`ID`  LEFT JOIN `zt_story` t21 ON t1.`PARENT` = t21.`ID`  LEFT JOIN `zt_product` t31 ON t1.`PRODUCT` = t31.`ID`  LEFT JOIN `zt_branch` t41 ON t1.`BRANCH` = t41.`ID`  RIGHT JOIN `zt_product` t51 ON t1.`PRODUCT` = t51.`ID`  LEFT OUTER JOIN `zt_projectproduct` t61 ON t51.`ID` = t61.`PRODUCT`  
+					 WHERE 	( t61.`PROJECT` = #{srf.webcontext.project}  AND  (t61.plan = 0 or t1.plan = t61.plan or t1.plan in (select t.id from zt_productplan t where t.parent = t61.plan)) )
+						 AND NOT(EXISTS(SELECT * FROM `zt_projectstory` t71   WHERE   t1.`ID` = t71.`STORY`  AND  ( t71.`PROJECT` = #{srf.webcontext.project} ) ))
+						 AND t1.DELETED = '0'
+						 AND ( t1.`STATUS` NOT  IN ('draft','closed') )
+			]]>
+    </sql>
+    <!--数据查询[ProjectStories]-->
+    <sql id="ProjectStories" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`IBIZ_ID`, t1.`IBIZ_SOURCEID`, t1.`IBIZ_SOURCENAME`, t1.`IBIZ_SOURCEOBJECT`, t1.`ID`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS `ISCHILD`, '0' AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCEID`, t1.`SOURCENAME`, t1.`SOURCENOTE`, t1.`SOURCEOBJECT`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`STORYPOINTS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC`, #{srf.datacontext.srfparentkey} as project FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID  
+					 WHERE 	EXISTS(SELECT * FROM zt_projectstory t51   WHERE   t1.ID = t51.STORY  AND  ( t51.`PROJECT` = #{srf.datacontext.srfparentkey} ) )
+						 AND t1.DELETED = '0'
+			]]>
+    </sql>
+    <!--数据查询[ReleaseLinkableStories]-->
+    <sql id="ReleaseLinkableStories" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, 0 AS `ISFAVORITES`, FALSE AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC`, '0' AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID
+					 WHERE 	t1.DELETED = '0'
+						 AND (t1.id IN ( select tt3.story from zt_release  tt1  LEFT JOIN zt_build tt2 on tt1.build = tt2.id   LEFT JOIN zt_projectstory tt3 on tt3.project = tt2.project where tt1.id =  #{srf.datacontext.release} )  or (select tt2.project from zt_release  tt1  LEFT JOIN zt_build tt2 on tt1.build = tt2.id where tt1.id =  #{srf.datacontext.release} ) = 0) 	AND t1.product =  #{srf.datacontext.product} 	AND not FIND_IN_SET ( t1.ID,(SELECT STORIES FROM ZT_RELEASE WHERE ID =  #{srf.datacontext.release} ))
+			]]>
+    </sql>
+    <!--数据查询[ReleaseStories]-->
+    <sql id="ReleaseStories" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, (select spec from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `SPEC`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, (select verify from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `VERIFY`, t1.`VERSION`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  WHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT STORIES FROM ZT_RELEASE WHERE ID = #{srf.datacontext.srfparentkey}))
+			]]>
+    </sql>
+    <!--数据查询[ReportStories]-->
+    <sql id="ReportStories" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, (select spec from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `SPEC`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, (select verify from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `VERIFY`, t1.`VERSION`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  WHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT STORIES FROM ZT_TESTREPORT WHERE ID= #{srf.datacontext.srfparentkey}))
+			]]>
+    </sql>
+    <!--数据查询[StoryChild]-->
+    <sql id="StoryChild" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`,t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, (select spec from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `SPEC`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, (select verify from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `VERIFY`, t1.`VERSION` , (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1 LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID WHERE  FIND_IN_SET ( t1.ID, (select tt.childStories from zt_story tt where tt.id = #{srf.datacontext.srfparentkey}))
+			]]>
+    </sql>
+    <!--数据查询[StoryRelated]-->
+    <sql id="StoryRelated" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`,t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, (select spec from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `SPEC`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, (select verify from zt_storyspec where story = t1.`ID` and version= t1.`VERSION`) AS `VERIFY`, t1.`VERSION` , (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1 LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID WHERE  FIND_IN_SET ( t1.ID, (select tt.linkStories from zt_story tt where tt.id = #{srf.datacontext.srfparentkey}))
+			]]>
+    </sql>
+    <!--数据查询[SubStory]-->
+    <sql id="SubStory" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`IBIZ_ID`, t1.`IBIZ_SOURCEID`, t1.`IBIZ_SOURCENAME`, t1.`IBIZ_SOURCEOBJECT`, t1.`ID`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS `ISCHILD`, '0' AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCEID`, t1.`SOURCENAME`, t1.`SOURCENOTE`, t1.`SOURCEOBJECT`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`STORYPOINTS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC` FROM `zt_story` t1  LEFT JOIN `zt_module` t11 ON t1.`MODULE` = t11.`ID`  LEFT JOIN `zt_story` t21 ON t1.`PARENT` = t21.`ID`  LEFT JOIN `zt_product` t31 ON t1.`PRODUCT` = t31.`ID`  LEFT JOIN `zt_branch` t41 ON t1.`BRANCH` = t41.`ID`  
+					 WHERE 	t1.DELETED = '0'
+						 AND ( 1<>1 )
+			]]>
+    </sql>
+    <!--数据查询[TaskRelatedStory]-->
+    <sql id="TaskRelatedStory" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`ID`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'story' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCENOTE`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`SUBSTATUS`, CONCAT(t1.id,':',t1.title,'(优先级:',t1.pri,',预计工时:',t1.estimate,')') AS `TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS isChild FROM `zt_story` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID
+					 WHERE 	t1.DELETED = '0'
+						 AND (t1.`id` in (select tt.`story` from zt_projectstory tt where tt.`project` = #{srf.datacontext.project}) or #{srf.datacontext.project} is null)
+						 AND (t1.module = #{srf.datacontext.module} or #{srf.datacontext.module}  = '0' or #{srf.datacontext.module} is null)
+			]]>
+    </sql>
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`IBIZ_ID`, t1.`IBIZ_SOURCEID`, t1.`IBIZ_SOURCENAME`, t1.`IBIZ_SOURCEOBJECT`, t1.`ID`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS `ISCHILD`, '0' AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`NAME` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCEID`, t1.`SOURCENAME`, t1.`SOURCENOTE`, t1.`SOURCEOBJECT`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`STORYPOINTS`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC` FROM `zt_story` t1  LEFT JOIN `zt_module` t11 ON t1.`MODULE` = t11.`ID`  LEFT JOIN `zt_story` t21 ON t1.`PARENT` = t21.`ID`  LEFT JOIN `zt_product` t31 ON t1.`PRODUCT` = t31.`ID`  LEFT JOIN `zt_branch` t41 ON t1.`BRANCH` = t41.`ID`  
+					 WHERE 	t1.DELETED = '0'
+			]]>
+    </sql>
+</mapper>
+

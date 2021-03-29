@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.SuiteCaseMapper">
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="SuiteCaseResultMap" databaseId="mysql">
+        <![CDATA[select t1.* from (SELECT t1.`CASE`, concat(t1.`SUITE`,'__',t1.`CASE`) AS `ID`, t1.`PRODUCT`, t1.`SUITE`, t1.`VERSION` FROM `zt_suitecase` t1  ) t1 where id=#{id}]]>
+    </select>
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="SuiteCaseResultMap" type="cn.ibizlab.pms.core.zentao.domain.SuiteCase" autoMapping="true">
+		<result property="suite" column="suite" />
+		<result property="ibizcase" column="case" />
+		<result property="product" column="product" />
+
+
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztcase" javaType="cn.ibizlab.pms.core.zentao.domain.Case" column="case" select="cn.ibizlab.pms.core.zentao.mapper.CaseMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztproduct" javaType="cn.ibizlab.pms.core.zentao.domain.Product" column="product" select="cn.ibizlab.pms.core.zentao.mapper.ProductMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="zttestsuite" javaType="cn.ibizlab.pms.core.zentao.domain.TestSuite" column="suite" select="cn.ibizlab.pms.core.zentao.mapper.TestSuiteMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_SUITECASE_ZT_CASE_CASE] -->
+	 <select id="selectByIbizcase" resultMap="SuiteCaseResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  case=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_SUITECASE_ZT_PRODUCT_PRODUCT] -->
+	 <select id="selectByProduct" resultMap="SuiteCaseResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  product=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_SUITECASE_ZT_TESTSUITE_SUITE] -->
+	 <select id="selectBySuite" resultMap="SuiteCaseResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  suite=#{id}
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.SuiteCaseSearchContext"  resultMap="SuiteCaseResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CASE`, concat(t1.`SUITE`,'__',t1.`CASE`) AS `ID`, t1.`PRODUCT`, t1.`SUITE`, t1.`VERSION` FROM `zt_suitecase` t1  
+			]]>
+    </sql>
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CASE`, concat(t1.`SUITE`,'__',t1.`CASE`) AS `ID`, t1.`PRODUCT`, t1.`SUITE`, t1.`VERSION` FROM `zt_suitecase` t1  
+			]]>
+    </sql>
+</mapper>
+

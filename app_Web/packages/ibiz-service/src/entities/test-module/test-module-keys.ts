@@ -1,0 +1,18 @@
+export default [
+    'type',
+    'path',
+    'owner',
+    'order',
+    'deleted',
+    'branch',
+    'collector',
+    'id',
+    'isleaf',
+    'name',
+    'ibizshort',
+    'grade',
+    'parentname',
+    'rootname',
+    'root',
+    'parent',
+];
