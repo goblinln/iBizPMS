@@ -1,0 +1,51 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ibizpms-app-mob
+  labels:
+    app: ibizpms-app-mob
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ibizpms-app-mob
+  template:
+    metadata:
+      labels:
+        app: ibizpms-app-mob
+    spec:
+      imagePullSecrets:
+      - name: aly-shanghai
+      containers:
+      - name: ibizpms-app-mob
+        image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-app-mob:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: data
+          mountPath: /app/file
+      volumes:      
+      - name: data
+        persistentVolumeClaim:
+          claimName: demo-date-pvc-nfs
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ibizpms-app-mob
+  labels:
+    app: ibizpms-app-mob
+spec:
+  type: NodePort
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+    nodePort: 8080
+    protocol: TCP
+  selector:
+    app: ibizpms-app-mob
+

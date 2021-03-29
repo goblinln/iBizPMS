@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.SysUpdateFeaturesMapper">
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="SysUpdateFeaturesResultMap" databaseId="mysql">
+        <![CDATA[select t1.* from (SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DISPLAYORDER`, t1.`FEATURESDESC`, t1.`SYS_UPDATE_FEATURESID`, t1.`SYS_UPDATE_FEATURESNAME`, t1.`SYS_UPDATE_LOGID`, t11.`SYS_UPDATE_LOGNAME`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPFEATURES` FROM `T_SYS_UPDATE_FEATURES` t1  LEFT JOIN `T_SYS_UPDATE_LOG` t11 ON t1.`SYS_UPDATE_LOGID` = t11.`SYS_UPDATE_LOGID`  ) t1 where sys_update_featuresid=#{id}]]>
+    </select>
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="SysUpdateFeaturesResultMap" type="cn.ibizlab.pms.core.ibiz.domain.SysUpdateFeatures" autoMapping="true">
+		<id property="sysupdatefeaturesid" column="sys_update_featuresid" /><!--主键字段映射-->
+		<result property="sysupdatefeaturesname" column="sys_update_featuresname" />
+		<result property="sysupdatelogname" column="sys_update_logname" />
+		<result property="sysupdatelogid" column="sys_update_logid" />
+
+
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="sysupdatelog" javaType="cn.ibizlab.pms.core.ibiz.domain.SysUpdateLog" column="sys_update_logid" select="cn.ibizlab.pms.core.ibiz.mapper.SysUpdateLogMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_SYS_UPDATE_FEATURES_SYS_UPDATE_LOG_SYS_UPDATE_LOGID] -->
+	 <select id="selectBySysupdatelogid" resultMap="SysUpdateFeaturesResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  sys_update_logid=#{sysupdatelogid}
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.SysUpdateFeaturesSearchContext"  resultMap="SysUpdateFeaturesResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DISPLAYORDER`, t1.`SYS_UPDATE_FEATURESID`, t1.`SYS_UPDATE_FEATURESNAME`, t1.`SYS_UPDATE_LOGID`, t11.`SYS_UPDATE_LOGNAME`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPFEATURES`, t1.FEATURESDESC FROM `T_SYS_UPDATE_FEATURES` t1  LEFT JOIN T_SYS_UPDATE_LOG t11 ON t1.SYS_UPDATE_LOGID = t11.SYS_UPDATE_LOGID  
+			]]>
+    </sql>
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DISPLAYORDER`, t1.`FEATURESDESC`, t1.`SYS_UPDATE_FEATURESID`, t1.`SYS_UPDATE_FEATURESNAME`, t1.`SYS_UPDATE_LOGID`, t11.`SYS_UPDATE_LOGNAME`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPFEATURES` FROM `T_SYS_UPDATE_FEATURES` t1  LEFT JOIN `T_SYS_UPDATE_LOG` t11 ON t1.`SYS_UPDATE_LOGID` = t11.`SYS_UPDATE_LOGID`  
+			]]>
+    </sql>
+</mapper>
+

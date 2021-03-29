@@ -1,0 +1,1 @@
+export { IBizEntityModel } from './ibiz-entity-model';

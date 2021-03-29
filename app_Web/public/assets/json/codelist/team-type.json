@@ -1,0 +1,1 @@
+{"getPSCodeItems":[{"codeName":"Project","text":"项目团队","default":true,"value":"project"},{"codeName":"Task","text":"任务团队","value":"task"},{"codeName":"Product","text":"产品团队","value":"product"}],"codeListType":"STATIC","codeName":"Team__type","emptyText":"未定义","enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/Team__type.json","name":"团队类型"}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.TestResultMapper">
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="TestResultResultMap" databaseId="mysql">
+        <![CDATA[select t1.* from (SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`DATE`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t11.`PRECONDITION`, t11.`PRODUCT`, t1.`RUN`, t1.`STEPRESULTS`, t11.`STORY`, t1.`VERSION`, t1.`XML` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`  ) t1 where id=#{id}]]>
+    </select>
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="TestResultResultMap" type="cn.ibizlab.pms.core.zentao.domain.TestResult" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+		<result property="job" column="job" />
+		<result property="ibizcase" column="case" />
+		<result property="run" column="run" />
+		<result property="compile" column="compile" />
+
+
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztcase" javaType="cn.ibizlab.pms.core.zentao.domain.Case" column="case" select="cn.ibizlab.pms.core.zentao.mapper.CaseMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztcompile" javaType="cn.ibizlab.pms.core.zentao.domain.Compile" column="compile" select="cn.ibizlab.pms.core.zentao.mapper.CompileMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztjob" javaType="cn.ibizlab.pms.core.zentao.domain.Job" column="job" select="cn.ibizlab.pms.core.zentao.mapper.JobMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="zttestrun" javaType="cn.ibizlab.pms.core.zentao.domain.TestRun" column="run" select="cn.ibizlab.pms.core.zentao.mapper.TestRunMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_TESTRESULT_ZT_CASE_CASE] -->
+	 <select id="selectByIbizcase" resultMap="TestResultResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  case=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_TESTRESULT_ZT_COMPILE_COMPILE] -->
+	 <select id="selectByCompile" resultMap="TestResultResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  compile=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_TESTRESULT_ZT_JOB_JOB] -->
+	 <select id="selectByJob" resultMap="TestResultResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  job=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_TESTRESULT_ZT_TESTRUN_RUN] -->
+	 <select id="selectByRun" resultMap="TestResultResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  run=#{id}
+     </select>
+
+    <!--数据集合[CurTestRun]-->
+	 <select id="searchCurTestRun"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestResultSearchContext"  resultMap="TestResultResultMap">
+         select t1.* from (
+                <include refid="CurTestRun" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestResultSearchContext"  resultMap="TestResultResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据查询[CurTestRun]-->
+    <sql id="CurTestRun" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`DATE`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t11.`PRODUCT`, t1.`RUN`, t11.`STORY`, t1.`VERSION` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`  RIGHT JOIN `zt_testrun` t31 ON t1.`RUN` = t31.`ID`  
+					 WHERE 	( t31.`TASK` = #{srf.webcontext.task} )
+			]]>
+    </sql>
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`DATE`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t11.`PRODUCT`, t1.`RUN`, t11.`STORY`, t1.`VERSION` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`  
+			]]>
+    </sql>
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`DATE`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t11.`PRECONDITION`, t11.`PRODUCT`, t1.`RUN`, t1.`STEPRESULTS`, t11.`STORY`, t1.`VERSION`, t1.`XML` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`  
+			]]>
+    </sql>
+</mapper>
+

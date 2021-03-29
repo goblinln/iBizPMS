@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.UserYearWorkStatsMapper">
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="UserYearWorkStatsResultMap" databaseId="mysql">
+        <![CDATA[select t1.* from (SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, '一月' AS `CURMONTH`, (DATE_FORMAT(now(),'%Y')) AS `CURYEAR`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, (case when t1.role in ('dev','td','pm') then 'dev' when t1.role in ('qd','qa') then 'qa' else 'po' end) AS `JUDGEROLE`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, 0 AS `MONTESTIMATE`, 0 AS `MONTHFINISHTASK`, 0 AS `MONTRESOLVEDBUG`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`,  CONCAT_WS('',(DATE_FORMAT(now(),'%Y')),'年工作内容统计一览表 —— ',t1.realname) AS `TITLE`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, 0 AS `YEARACTIONCNT`, 0 AS `YEARBUGCNT`, 0 AS `YEARCASECNT`, 0 AS `YEARESTIMATECNT`, 0 AS `YEARLOGCNT`, 0 AS `YEARPLANCNT`, 0 AS `YEARPRODUCTCNT`, 0 AS `YEARSTORYCNT`, (select count(1) from zt_action t where t.actor = t1.account and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = DATE_FORMAT(now(),'%Y')) AS `YEARVISITS`, t1.`ZIPCODE` FROM `zt_user` t1  ) t1 where id=#{id}]]>
+    </select>
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="UserYearWorkStatsResultMap" type="cn.ibizlab.pms.core.ibiz.domain.UserYearWorkStats" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+
+
+    </resultMap>
+
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.UserYearWorkStatsSearchContext"  resultMap="UserYearWorkStatsResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[MonthFinishTaskAndBug]-->
+	 <select id="searchMonthFinishTaskAndBug"  parameterType="cn.ibizlab.pms.core.ibiz.filter.UserYearWorkStatsSearchContext"  resultMap="UserYearWorkStatsResultMap">
+         select t1.* from (
+                <include refid="MonthFinishTaskAndBug" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[MonthOpenedBugAndCase]-->
+	 <select id="searchMonthOpenedBugAndCase"  parameterType="cn.ibizlab.pms.core.ibiz.filter.UserYearWorkStatsSearchContext"  resultMap="UserYearWorkStatsResultMap">
+         select t1.* from (
+                <include refid="MonthOpenedBugAndCase" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[MonthOpenedStory]-->
+	 <select id="searchMonthOpenedStory"  parameterType="cn.ibizlab.pms.core.ibiz.filter.UserYearWorkStatsSearchContext"  resultMap="UserYearWorkStatsResultMap">
+         select t1.* from (
+                <include refid="MonthOpenedStory" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, '一月' AS `CURMONTH`, (DATE_FORMAT(now(),'%Y')) AS `CURYEAR`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, (case when t1.role in ('dev','td','pm') then 'dev' when t1.role in ('qd','qa') then 'qa' else 'po' end) AS `JUDGEROLE`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, 0 AS `MONTESTIMATE`, 0 AS `MONTHFINISHTASK`, 0 AS `MONTRESOLVEDBUG`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`,  CONCAT_WS('',(DATE_FORMAT(now(),'%Y')),'年工作内容统计一览表 —— ',t1.realname) AS `TITLE`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, 0 AS `YEARACTIONCNT`, 0 AS `YEARBUGCNT`, 0 AS `YEARCASECNT`, 0 AS `YEARESTIMATECNT`, 0 AS `YEARLOGCNT`, 0 AS `YEARPLANCNT`, 0 AS `YEARPRODUCTCNT`, 0 AS `YEARSTORYCNT`, (select count(1) from zt_action t where t.actor = t1.account and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = DATE_FORMAT(now(),'%Y')) AS `YEARVISITS`, t1.`ZIPCODE` FROM `zt_user` t1  
+			]]>
+    </sql>
+    <!--数据查询[MonthFinishTaskAndBug]-->
+    <sql id="MonthFinishTaskAndBug" databaseId="mysql">
+		<![CDATA[ select t1.account,CONCAT_WS('',CASE  	WHEN t21.`YEAR` is NULL THEN 		#{srf.webcontext.curyear} 	ELSE 		t21.`YEAR` END ,'-',t1.CURMONTH,'-01 00:00:00') as CURMONTH,case when t11.consumed is null then 0 else t11.consumed end as MONTESTIMATE,case when t11.MONTHFINISHTASK is null then 0 else t11.MONTHFINISHTASK end as MONTHFINISHTASK,case when t21.ss is null then 0 else t21.ss end as MONTRESOLVEDBUG   from ( select * from (select DISTINCT t1.actor as account,'01' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'02' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'03' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'04' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'05' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'06' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'07' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'08' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'09' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'10' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'11' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'12' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t) t1 left join ( SELECT 	t11.account, 	t11.date, 	sum( t11.`consumed` ) AS `consumed`, 	COUNT( t11.task ) AS MONTHFINISHTASK  FROM 	( SELECT   DATE_FORMAT( t11.date, '%Y' ) AS `YEAR`, 	DATE_FORMAT( t11.date, '%m' ) AS date, 	t11.account, 	t11.`consumed`, 	t11.task  FROM 	zt_taskestimate t11  	) t11  WHERE 	t11.date NOT IN ( '00', '' ) and t11.`YEAR` = #{srf.webcontext.curyear} GROUP BY 	t11.account, 	t11.date ) t11 on t11.account = t1.account and t11.date = t1.curmonth 	left join ( SELECT 	tt.`YEAR`, 	tt.resolvedBy, 	tt.resolvedDate, 	COUNT( 1 ) AS ss  FROM 	( SELECT DATE_FORMAT( t.resolvedDate, '%Y' ) as `YEAR`,DATE_FORMAT( t.resolvedDate, '%m' ) AS resolvedDate, t.resolvedBy FROM zt_bug t WHERE t.resolvedBy <> '' ) tt  WHERE 	tt.resolvedDate <> '00'  and tt.`YEAR` =   #{srf.webcontext.curyear} GROUP BY 	tt.resolvedBy, 	tt.resolvedDate ) t21 on t1.account = t21.resolvedBy AND t21.resolvedDate = t1.CURMONTH
+					 WHERE 	t1.account = #{srf.sessioncontext.srfloginname}
+			]]>
+    </sql>
+    <!--数据查询[MonthOpenedBugAndCase]-->
+    <sql id="MonthOpenedBugAndCase" databaseId="mysql">
+		<![CDATA[  select t1.account,CONCAT_WS('',case when t11.`year` is not null then t11.`YEAR` when t21.`year` is not null then t21.`year` else DATE_FORMAT( now(), '%Y' ) end  ,'-',t1.CURMONTH,'-01 00:00:00') as CURMONTH,case when t11.MONTRESOLVEDBUG is null then 0 else t11.MONTRESOLVEDBUG end as MONTRESOLVEDBUG,case when t21.YEARCASECNT is null then 0 else t21.YEARCASECNT end as YEARCASECNT  from ( select * from (select DISTINCT t1.actor as account,'01' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'02' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'03' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'04' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'05' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'06' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'07' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'08' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'09' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'10' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'11' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'12' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t) t1 left join (select t11.openedBy,t11.openedDate,COUNT(1) as MONTRESOLVEDBUG,t11.`year` from (select t11.openedBy, DATE_FORMAT( t11.openedDate, '%Y' ) AS `YEAR`, 	DATE_FORMAT( t11.openedDate, '%m' ) AS openedDate from zt_bug t11  where t11.deleted = '0') t11 where t11.`YEAR` = #{srf.webcontext.curyear} 					 GROUP BY t11.openedBy,t11.openedDate ) t11 on t11.openedBy = t1.account and t11.openedDate = t1.curmonth 	left join (select t11.openedBy,t11.openedDate,COUNT(1) as YEARCASECNT,t11.`year` from (select t11.openedBy, DATE_FORMAT( t11.openedDate, '%Y' ) AS `YEAR`, 	DATE_FORMAT( t11.openedDate, '%m' ) AS openedDate from zt_case t11  where t11.deleted = '0') t11 where t11.`YEAR` =#{srf.webcontext.curyear}  					 GROUP BY t11.openedBy,t11.openedDate ) t21 on t21.openedBy = t1.account and t21.openedDate = t1.curmonth
+					 WHERE 	t1.account = #{srf.sessioncontext.srfloginname}
+			]]>
+    </sql>
+    <!--数据查询[MonthOpenedStory]-->
+    <sql id="MonthOpenedStory" databaseId="mysql">
+		<![CDATA[ select t1.account,CONCAT_WS('',CASE  	WHEN t11.`YEAR` is NULL THEN 		 #{srf.webcontext.curyear} 	ELSE 		t11.`YEAR` END ,'-',t1.CURMONTH,'-01 00:00:00') as CURMONTH,case when t11.YEARSTORYCNT is null then 0 else t11.YEARSTORYCNT end as YEARSTORYCNT  from ( select * from (select DISTINCT t1.actor as account,'01' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'02' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'03' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'04' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'05' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'06' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'07' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'08' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'09' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'10' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'11' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t UNION select * from (select DISTINCT t1.actor as account,'12' as curmonth from zt_action t1 where t1.actor <> '' and t1.actor is not null) t) t1 left join (select t11.openedBy,t11.`year`,t11.openedDate,COUNT(1) as YEARSTORYCNT from (select t11.openedBy, DATE_FORMAT( t11.openedDate, '%Y' ) AS `YEAR`, 	DATE_FORMAT( t11.openedDate, '%m' ) AS openedDate from zt_story t11  where t11.deleted = '0') t11 where t11.`YEAR` =  #{srf.webcontext.curyear} 	GROUP BY t11.openedBy,t11.openedDate ) t11 on t11.openedBy = t1.account and t11.openedDate = t1.curmonth
+					 WHERE 	t1.account = #{srf.sessioncontext.srfloginname}
+			]]>
+    </sql>
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, '一月' AS `CURMONTH`, (DATE_FORMAT(now(),'%Y')) AS `CURYEAR`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, (case when t1.role in ('dev','td','pm') then 'dev' when t1.role in ('qd','qa') then 'qa' else 'po' end) AS `JUDGEROLE`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, 0 AS `MONTESTIMATE`, 0 AS `MONTHFINISHTASK`, 0 AS `MONTRESOLVEDBUG`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`,  CONCAT_WS('',(DATE_FORMAT(now(),'%Y')),'年工作内容统计一览表 —— ',t1.realname) AS `TITLE`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, 0 AS `YEARACTIONCNT`, 0 AS `YEARBUGCNT`, 0 AS `YEARCASECNT`, 0 AS `YEARESTIMATECNT`, 0 AS `YEARLOGCNT`, 0 AS `YEARPLANCNT`, 0 AS `YEARPRODUCTCNT`, 0 AS `YEARSTORYCNT`, (select count(1) from zt_action t where t.actor = t1.account and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = DATE_FORMAT(now(),'%Y')) AS `YEARVISITS`, t1.`ZIPCODE` FROM `zt_user` t1  
+			]]>
+    </sql>
+</mapper>
+

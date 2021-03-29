@@ -1,0 +1,16 @@
+export default [
+    'po',
+    'ibizpro_productweeklyid',
+    'updatedate',
+    'tasks',
+    'updateman',
+    'date',
+    'createman',
+    'createdate',
+    'ibizproproductweeklyname',
+    'begindatestats',
+    'totalestimates',
+    'enddatestats',
+    'productname',
+    'product',
+];

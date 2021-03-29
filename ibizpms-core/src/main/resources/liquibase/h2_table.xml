@@ -1,0 +1,568 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+
+
+    <!--输出实体[ACCOUNTTASKESTIMATE]数据结构 -->
+
+
+    <!--输出实体[ZT_ACTION]数据结构 -->
+
+
+    <!--输出实体[ZT_BLOCK]数据结构 -->
+
+
+    <!--输出实体[ZT_BRANCH]数据结构 -->
+
+
+    <!--输出实体[ZT_BUG]数据结构 -->
+
+
+    <!--输出实体[IBZ_BUGSTATS]数据结构 -->
+
+
+    <!--输出实体[ZT_BUILD]数据结构 -->
+
+
+    <!--输出实体[ZT_BURN]数据结构 -->
+
+
+    <!--输出实体[ZT_CASE]数据结构 -->
+
+
+    <!--输出实体[IBZ_CASESTATS]数据结构 -->
+
+
+    <!--输出实体[ZT_CASESTEP]数据结构 -->
+
+
+    <!--输出实体[ZT_COMPANY]数据结构 -->
+
+
+    <!--输出实体[IBZ_COMPANYSTATS]数据结构 -->
+
+
+    <!--输出实体[ZT_COMPILE]数据结构 -->
+
+
+    <!--输出实体[ZT_CONFIG]数据结构 -->
+
+
+    <!--输出实体[ZT_CRON]数据结构 -->
+
+
+    <!--输出实体[ZT_DEPT]数据结构 -->
+
+
+    <!--输出实体[ZT_DOC]数据结构 -->
+
+
+    <!--输出实体[ZT_DOCCONTENT]数据结构 -->
+
+
+    <!--输出实体[ZT_DOCLIB]数据结构 -->
+
+
+    <!--输出实体[IBZ_DOCLIBMODULE]数据结构 -->
+
+
+    <!--输出实体[DYNADASHBOARD]数据结构 -->
+
+
+    <!--输出实体[ZT_EFFORT]数据结构 -->
+
+
+    <!--输出实体[IBZ_EMPLOYEELOAD]数据结构 -->
+
+
+    <!--输出实体[ZT_ENTRY]数据结构 -->
+
+
+    <!--输出实体[ZT_EXTENSION]数据结构 -->
+
+
+    <!--输出实体[ZT_FILE]数据结构 -->
+
+
+    <!--输出实体[ZT_GROUP]数据结构 -->
+
+
+    <!--输出实体[ZT_GROUPPRIV]数据结构 -->
+
+
+    <!--输出实体[ZT_HISTORY]数据结构 -->
+
+
+
+
+
+
+
+
+
+
+    <!--输出实体[IBZPRO_PRODUCT]数据结构 -->
+
+
+    <!--输出实体[IBZPRO_STORY]数据结构 -->
+
+
+    <!--输出实体[IBZPRO_STORYMODULE]数据结构 -->
+
+
+    <!--输出实体[IBZPRO_SYSTPL]数据结构 -->
+
+
+    <!--输出实体[IBZPRO_SYSTEM]数据结构 -->
+
+
+
+
+    <!--输出实体[IBZ_LOGIN]数据结构 -->
+
+
+    <!--输出实体[IBIZPRO_INDEX]数据结构 -->
+
+
+    <!--输出实体[IBIZPRO_PRODUCTDAILY]数据结构 -->
+
+
+    <!--输出实体[IBIZPRO_PRODUCTMONTHLY]数据结构 -->
+
+
+    <!--输出实体[IBIZPRO_PRODUCTWEEKLY]数据结构 -->
+
+
+    <!--输出实体[IBIZPRO_PROJECTDAILY]数据结构 -->
+
+
+    <!--输出实体[IBIZPRO_PROJECTMONTHLY]数据结构 -->
+
+
+    <!--输出实体[IBZPRO_PROJECTWEEKLY]数据结构 -->
+
+
+    <!--输出实体[IBZ_AGENT]数据结构 -->
+
+
+    <!--输出实体[IBZ_CASE]数据结构 -->
+
+
+    <!--输出实体[IBZ_DAILY]数据结构 -->
+
+
+    <!--输出实体[IBZ_FAVORITES]数据结构 -->
+
+
+    <!--输出实体[IBZ_LIB]数据结构 -->
+
+
+    <!--输出实体[IBZ_CASESTEP]数据结构 -->
+
+
+    <!--输出实体[IBZ_LIBCASESTEPS]数据结构 -->
+
+
+    <!--输出实体[IBZ_LIBMODULE]数据结构 -->
+
+
+    <!--输出实体[IBZ_MONTHLY]数据结构 -->
+
+
+    <!--输出实体[IBZ_MYTERRITORY]数据结构 -->
+
+
+    <!--输出实体[IBZ_PLANTEMPLET]数据结构 -->
+
+
+    <!--输出实体[IBZ_PLANTEMPLETDETAIL]数据结构 -->
+
+
+    <!--输出实体[IBZ_PROJECTMEMBER]数据结构 -->
+
+
+    <!--输出实体[IBZ_REPORT]数据结构 -->
+
+
+    <!--输出实体[IBZ_REPORT_ROLE_CONFIG]数据结构 -->
+
+
+    <!--输出实体[IBZ_REPORTLY]数据结构 -->
+
+
+    <!--输出实体[IBZ_TOP]数据结构 -->
+
+
+    <!--输出实体[IBZ_WEEKLY]数据结构 -->
+
+
+    <!--输出实体[IBZPRO_CONFIG]数据结构 -->
+
+
+    <!--输出实体[IBIZPRO_PRODUCTUSERTASK]数据结构 -->
+
+
+    <!--输出实体[IBIZPRO_PROJECTUSERTASK]数据结构 -->
+
+
+    <!--输出实体[ZT_IM_CHAT]数据结构 -->
+
+
+    <!--输出实体[ZT_IM_CHATUSER]数据结构 -->
+
+
+    <!--输出实体[ZT_IM_CLIENT]数据结构 -->
+
+
+    <!--输出实体[ZT_IM_CONFERENCE]数据结构 -->
+
+
+    <!--输出实体[ZT_IM_CONFERENCEACTION]数据结构 -->
+
+
+    <!--输出实体[ZT_IM_MESSAGE]数据结构 -->
+
+
+    <!--输出实体[ZT_IM_MESSAGESTATUS]数据结构 -->
+
+
+    <!--输出实体[ZT_IM_QUEUE]数据结构 -->
+
+
+    <!--输出实体[ZT_JENKINS]数据结构 -->
+
+
+    <!--输出实体[ZT_JOB]数据结构 -->
+
+
+    <!--输出实体[ZT_LANG]数据结构 -->
+
+
+    <!--输出实体[ZT_LOG]数据结构 -->
+
+
+    <!--输出实体[ZT_MODULE]数据结构 -->
+
+
+    <!--输出实体[ZT_NOTIFY]数据结构 -->
+
+
+    <!--输出实体[IBZ_PRODUCTTEAM]数据结构 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--输出实体[ZT_PRODUCT]数据结构 -->
+
+
+    <!--输出实体[IBZ_PRODUCTLIFE]数据结构 -->
+
+
+
+
+    <!--输出实体[IBZ_PRODUCTMODULE]数据结构 -->
+
+
+    <!--输出实体[ZT_PRODUCTPLAN]数据结构 -->
+
+
+    <!--输出实体[IBZ_PRODUCTSTATS]数据结构 -->
+
+
+    <!--输出实体[IBZ_PRODUCTSUM]数据结构 -->
+
+
+    <!--输出实体[ZT_PROJECT]数据结构 -->
+
+
+    <!--输出实体[IBZ_PROJECTMODULE]数据结构 -->
+
+
+    <!--输出实体[ZT_PROJECTPRODUCT]数据结构 -->
+
+
+    <!--输出实体[IBZ_PROJECTSTATS]数据结构 -->
+
+
+    <!--输出实体[ZT_PROJECTSTORY]数据结构 -->
+
+
+    <!--输出实体[PROJECTTASKESTIMATE]数据结构 -->
+
+
+    <!--输出实体[IBZ_PROJECTTEAM]数据结构 -->
+
+
+    <!--输出实体[ZT_RELATION]数据结构 -->
+
+
+    <!--输出实体[ZT_RELEASE]数据结构 -->
+
+
+    <!--输出实体[ZT_REPO]数据结构 -->
+
+
+    <!--输出实体[ZT_REPOBRANCH]数据结构 -->
+
+
+    <!--输出实体[ZT_REPOFILES]数据结构 -->
+
+
+    <!--输出实体[ZT_REPOHISTORY]数据结构 -->
+
+
+    <!--输出实体[ZT_SCORE]数据结构 -->
+
+
+    <!--输出实体[ZT_STORY]数据结构 -->
+
+
+    <!--输出实体[ZT_STORYSPEC]数据结构 -->
+
+
+    <!--输出实体[ZT_STORYSTAGE]数据结构 -->
+
+
+    <!--输出实体[ZT_SUITECASE]数据结构 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--输出实体[SYS_UPDATE_FEATURES]数据结构 -->
+
+
+    <!--输出实体[SYS_UPDATE_LOG]数据结构 -->
+
+
+
+
+
+
+    <!--输出实体[ZT_TASK]数据结构 -->
+
+
+    <!--输出实体[ZT_TASKESTIMATE]数据结构 -->
+
+
+    <!--输出实体[TASKESTIMATESTATS]数据结构 -->
+
+
+    <!--输出实体[TASKMSGRECORD]数据结构 -->
+
+
+    <!--输出实体[IBZ_TASKSTATS]数据结构 -->
+
+
+    <!--输出实体[IBZ_TASKTEAM]数据结构 -->
+
+
+    <!--输出实体[ZT_TEAM]数据结构 -->
+
+
+    <!--输出实体[IBZ_TESTMODULE]数据结构 -->
+
+
+    <!--输出实体[ZT_TESTREPORT]数据结构 -->
+
+
+    <!--输出实体[ZT_TESTRESULT]数据结构 -->
+
+
+    <!--输出实体[ZT_TESTRUN]数据结构 -->
+
+
+    <!--输出实体[ZT_TESTSUITE]数据结构 -->
+
+
+    <!--输出实体[ZT_TESTTASK]数据结构 -->
+
+
+    <!--输出实体[ZT_TODO]数据结构 -->
+
+
+    <!--输出实体[ZT_USER]数据结构 -->
+
+
+    <!--输出实体[ZT_USERCONTACT]数据结构 -->
+
+
+    <!--输出实体[ZT_USERGROUP]数据结构 -->
+
+
+    <!--输出实体[ZT_USERQUERY]数据结构 -->
+
+
+    <!--输出实体[ZT_USERTPL]数据结构 -->
+
+
+    <!--输出实体[ZT_USERVIEW]数据结构 -->
+
+
+    <!--输出实体[IBZ_USERYEARWORKSTATS]数据结构 -->
+
+
+    <!--输出实体[ZT_WEBHOOK]数据结构 -->
+
+        <!--输出实体[ACCOUNTTASKESTIMATE]外键关系 -->
+        <!--输出实体[ZT_ACTION]外键关系 -->
+        <!--输出实体[ZT_BLOCK]外键关系 -->
+        <!--输出实体[ZT_BRANCH]外键关系 -->
+        <!--输出实体[ZT_BUG]外键关系 -->
+        <!--输出实体[IBZ_BUGSTATS]外键关系 -->
+        <!--输出实体[ZT_BUILD]外键关系 -->
+        <!--输出实体[ZT_BURN]外键关系 -->
+        <!--输出实体[ZT_CASE]外键关系 -->
+        <!--输出实体[IBZ_CASESTATS]外键关系 -->
+        <!--输出实体[ZT_CASESTEP]外键关系 -->
+        <!--输出实体[ZT_COMPANY]外键关系 -->
+        <!--输出实体[IBZ_COMPANYSTATS]外键关系 -->
+        <!--输出实体[ZT_COMPILE]外键关系 -->
+        <!--输出实体[ZT_CONFIG]外键关系 -->
+        <!--输出实体[ZT_CRON]外键关系 -->
+        <!--输出实体[ZT_DEPT]外键关系 -->
+        <!--输出实体[ZT_DOC]外键关系 -->
+        <!--输出实体[ZT_DOCCONTENT]外键关系 -->
+        <!--输出实体[ZT_DOCLIB]外键关系 -->
+        <!--输出实体[IBZ_DOCLIBMODULE]外键关系 -->
+        <!--输出实体[DYNADASHBOARD]外键关系 -->
+        <!--输出实体[ZT_EFFORT]外键关系 -->
+        <!--输出实体[IBZ_EMPLOYEELOAD]外键关系 -->
+        <!--输出实体[ZT_ENTRY]外键关系 -->
+        <!--输出实体[ZT_EXTENSION]外键关系 -->
+        <!--输出实体[ZT_FILE]外键关系 -->
+        <!--输出实体[ZT_GROUP]外键关系 -->
+        <!--输出实体[ZT_GROUPPRIV]外键关系 -->
+        <!--输出实体[ZT_HISTORY]外键关系 -->
+        <!--输出实体[IBZPRO_PRODUCT]外键关系 -->
+        <!--输出实体[IBZPRO_STORY]外键关系 -->
+        <!--输出实体[IBZPRO_STORYMODULE]外键关系 -->
+        <!--输出实体[IBZPRO_SYSTPL]外键关系 -->
+        <!--输出实体[IBZPRO_SYSTEM]外键关系 -->
+        <!--输出实体[IBZ_LOGIN]外键关系 -->
+        <!--输出实体[IBIZPRO_INDEX]外键关系 -->
+        <!--输出实体[IBIZPRO_PRODUCTDAILY]外键关系 -->
+        <!--输出实体[IBIZPRO_PRODUCTMONTHLY]外键关系 -->
+        <!--输出实体[IBIZPRO_PRODUCTWEEKLY]外键关系 -->
+        <!--输出实体[IBIZPRO_PROJECTDAILY]外键关系 -->
+        <!--输出实体[IBIZPRO_PROJECTMONTHLY]外键关系 -->
+        <!--输出实体[IBZPRO_PROJECTWEEKLY]外键关系 -->
+        <!--输出实体[IBZ_AGENT]外键关系 -->
+        <!--输出实体[IBZ_CASE]外键关系 -->
+        <!--输出实体[IBZ_DAILY]外键关系 -->
+        <!--输出实体[IBZ_FAVORITES]外键关系 -->
+        <!--输出实体[IBZ_LIB]外键关系 -->
+        <!--输出实体[IBZ_CASESTEP]外键关系 -->
+        <!--输出实体[IBZ_LIBCASESTEPS]外键关系 -->
+        <!--输出实体[IBZ_LIBMODULE]外键关系 -->
+        <!--输出实体[IBZ_MONTHLY]外键关系 -->
+        <!--输出实体[IBZ_MYTERRITORY]外键关系 -->
+        <!--输出实体[IBZ_PLANTEMPLET]外键关系 -->
+        <!--输出实体[IBZ_PLANTEMPLETDETAIL]外键关系 -->
+        <!--输出实体[IBZ_PROJECTMEMBER]外键关系 -->
+        <!--输出实体[IBZ_REPORT]外键关系 -->
+        <!--输出实体[IBZ_REPORT_ROLE_CONFIG]外键关系 -->
+        <!--输出实体[IBZ_REPORTLY]外键关系 -->
+        <!--输出实体[IBZ_TOP]外键关系 -->
+        <!--输出实体[IBZ_WEEKLY]外键关系 -->
+        <!--输出实体[IBZPRO_CONFIG]外键关系 -->
+        <!--输出实体[IBIZPRO_PRODUCTUSERTASK]外键关系 -->
+        <!--输出实体[IBIZPRO_PROJECTUSERTASK]外键关系 -->
+        <!--输出实体[ZT_IM_CHAT]外键关系 -->
+        <!--输出实体[ZT_IM_CHATUSER]外键关系 -->
+        <!--输出实体[ZT_IM_CLIENT]外键关系 -->
+        <!--输出实体[ZT_IM_CONFERENCE]外键关系 -->
+        <!--输出实体[ZT_IM_CONFERENCEACTION]外键关系 -->
+        <!--输出实体[ZT_IM_MESSAGE]外键关系 -->
+        <!--输出实体[ZT_IM_MESSAGESTATUS]外键关系 -->
+        <!--输出实体[ZT_IM_QUEUE]外键关系 -->
+        <!--输出实体[ZT_JENKINS]外键关系 -->
+        <!--输出实体[ZT_JOB]外键关系 -->
+        <!--输出实体[ZT_LANG]外键关系 -->
+        <!--输出实体[ZT_LOG]外键关系 -->
+        <!--输出实体[ZT_MODULE]外键关系 -->
+        <!--输出实体[ZT_NOTIFY]外键关系 -->
+        <!--输出实体[IBZ_PRODUCTTEAM]外键关系 -->
+        <!--输出实体[ZT_PRODUCT]外键关系 -->
+        <!--输出实体[IBZ_PRODUCTLIFE]外键关系 -->
+        <!--输出实体[IBZ_PRODUCTMODULE]外键关系 -->
+        <!--输出实体[ZT_PRODUCTPLAN]外键关系 -->
+        <!--输出实体[IBZ_PRODUCTSTATS]外键关系 -->
+        <!--输出实体[IBZ_PRODUCTSUM]外键关系 -->
+        <!--输出实体[ZT_PROJECT]外键关系 -->
+        <!--输出实体[IBZ_PROJECTMODULE]外键关系 -->
+        <!--输出实体[ZT_PROJECTPRODUCT]外键关系 -->
+        <!--输出实体[IBZ_PROJECTSTATS]外键关系 -->
+        <!--输出实体[ZT_PROJECTSTORY]外键关系 -->
+        <!--输出实体[PROJECTTASKESTIMATE]外键关系 -->
+        <!--输出实体[IBZ_PROJECTTEAM]外键关系 -->
+        <!--输出实体[ZT_RELATION]外键关系 -->
+        <!--输出实体[ZT_RELEASE]外键关系 -->
+        <!--输出实体[ZT_REPO]外键关系 -->
+        <!--输出实体[ZT_REPOBRANCH]外键关系 -->
+        <!--输出实体[ZT_REPOFILES]外键关系 -->
+        <!--输出实体[ZT_REPOHISTORY]外键关系 -->
+        <!--输出实体[ZT_SCORE]外键关系 -->
+        <!--输出实体[ZT_STORY]外键关系 -->
+        <!--输出实体[ZT_STORYSPEC]外键关系 -->
+        <!--输出实体[ZT_STORYSTAGE]外键关系 -->
+        <!--输出实体[ZT_SUITECASE]外键关系 -->
+        <!--输出实体[SYS_UPDATE_FEATURES]外键关系 -->
+        <!--输出实体[SYS_UPDATE_LOG]外键关系 -->
+        <!--输出实体[ZT_TASK]外键关系 -->
+        <!--输出实体[ZT_TASKESTIMATE]外键关系 -->
+        <!--输出实体[TASKESTIMATESTATS]外键关系 -->
+        <!--输出实体[TASKMSGRECORD]外键关系 -->
+        <!--输出实体[IBZ_TASKSTATS]外键关系 -->
+        <!--输出实体[IBZ_TASKTEAM]外键关系 -->
+        <!--输出实体[ZT_TEAM]外键关系 -->
+        <!--输出实体[IBZ_TESTMODULE]外键关系 -->
+        <!--输出实体[ZT_TESTREPORT]外键关系 -->
+        <!--输出实体[ZT_TESTRESULT]外键关系 -->
+        <!--输出实体[ZT_TESTRUN]外键关系 -->
+        <!--输出实体[ZT_TESTSUITE]外键关系 -->
+        <!--输出实体[ZT_TESTTASK]外键关系 -->
+        <!--输出实体[ZT_TODO]外键关系 -->
+        <!--输出实体[ZT_USER]外键关系 -->
+        <!--输出实体[ZT_USERCONTACT]外键关系 -->
+        <!--输出实体[ZT_USERGROUP]外键关系 -->
+        <!--输出实体[ZT_USERQUERY]外键关系 -->
+        <!--输出实体[ZT_USERTPL]外键关系 -->
+        <!--输出实体[ZT_USERVIEW]外键关系 -->
+        <!--输出实体[IBZ_USERYEARWORKSTATS]外键关系 -->
+        <!--输出实体[ZT_WEBHOOK]外键关系 -->
+
+</databaseChangeLog>

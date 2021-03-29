@@ -1,0 +1,15 @@
+export default [
+    'secondmember',
+    'rd',
+    'qd',
+    'teamembers',
+    'thirdmember',
+    'id',
+    'fristmember',
+    'po',
+    'fourthmember',
+    'pm',
+    'fifthmember',
+    'sixthmember',
+    'name',
+];

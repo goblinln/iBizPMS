@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.StoryStageMapper">
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="StoryStageResultMap" databaseId="mysql">
+        <![CDATA[select t1.* from (SELECT t1.`BRANCH`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY` FROM `zt_storystage` t1  ) t1 where id=#{id}]]>
+    </select>
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="StoryStageResultMap" type="cn.ibizlab.pms.core.zentao.domain.StoryStage" autoMapping="true">
+		<result property="story" column="story" />
+		<result property="branch" column="branch" />
+
+
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztbranch" javaType="cn.ibizlab.pms.core.zentao.domain.Branch" column="branch" select="cn.ibizlab.pms.core.zentao.mapper.BranchMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztstory" javaType="cn.ibizlab.pms.core.zentao.domain.Story" column="story" select="cn.ibizlab.pms.core.zentao.mapper.StoryMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORYSTAGE_ZT_BRANCH_BRANCH] -->
+	 <select id="selectByBranch" resultMap="StoryStageResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  branch=#{id}
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORYSTAGE_ZT_STORY_STORY] -->
+	 <select id="selectByStory" resultMap="StoryStageResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  story=#{id}
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StoryStageSearchContext"  resultMap="StoryStageResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY` FROM `zt_storystage` t1  
+			]]>
+    </sql>
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY` FROM `zt_storystage` t1  
+			]]>
+    </sql>
+</mapper>
+

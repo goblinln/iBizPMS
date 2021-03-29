@@ -1,0 +1,194 @@
+package cn.ibizlab.pms.core.ou.service.impl;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.Map;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Collection;
+import java.util.Objects;
+import java.util.Optional;
+import java.math.BigInteger;
+
+import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.beans.BeanCopier;
+import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import org.springframework.util.ObjectUtils;
+import org.springframework.beans.factory.annotation.Value;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.context.annotation.Lazy;
+import cn.ibizlab.pms.core.ou.domain.SysOrganization;
+import cn.ibizlab.pms.core.ou.filter.SysOrganizationSearchContext;
+import cn.ibizlab.pms.core.ou.service.ISysOrganizationService;
+
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
+import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
+
+
+import cn.ibizlab.pms.core.ou.client.SysOrganizationFeignClient;
+import cn.ibizlab.pms.util.security.SpringContextHolder;
+import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
+import org.apache.commons.lang3.StringUtils;
+
+/**
+ * 实体[单位] 服务对象接口实现
+ */
+@Slf4j
+@Service
+public class SysOrganizationServiceImpl implements ISysOrganizationService {
+
+    @Autowired
+    SysOrganizationFeignClient sysOrganizationFeignClient;
+
+
+
+    @Override
+    public boolean create(SysOrganization et) {
+        SysOrganization rt = sysOrganizationFeignClient.create(et);
+        if (rt == null) {
+            return false;
+        }
+        CachedBeanCopier.copy(rt, et);
+        return true;
+    }
+
+
+    public void createBatch(List<SysOrganization> list){
+        sysOrganizationFeignClient.createBatch(list);
+    }
+
+
+    @Override
+    public boolean update(SysOrganization et) {
+        SysOrganization rt = sysOrganizationFeignClient.update(et.getOrgid(), et);
+        if (rt == null) {
+            return false;
+        }
+        CachedBeanCopier.copy(rt, et);
+        return true;
+
+    }
+
+
+    public void updateBatch(List<SysOrganization> list) {
+        sysOrganizationFeignClient.updateBatch(list);
+    }
+
+
+    @Override
+    public boolean remove(String orgid) {
+        boolean result=sysOrganizationFeignClient.remove(orgid);
+        return result;
+    }
+
+
+    public void removeBatch(Collection<String> idList){
+        sysOrganizationFeignClient.removeBatch(idList);
+    }
+
+
+    @Override
+    public SysOrganization get(String orgid) {
+        SysOrganization et = sysOrganizationFeignClient.get(orgid);
+        if (et == null) {
+            et = new SysOrganization();
+            et.setOrgid(orgid);
+        }
+        else {
+        }
+        return  et;
+    }
+
+
+    @Override
+    public SysOrganization getDraft(SysOrganization et) {
+        et=sysOrganizationFeignClient.getDraft(et);
+        return et;
+    }
+
+
+    @Override
+    public boolean checkKey(SysOrganization et) {
+        return sysOrganizationFeignClient.checkKey(et);
+    }
+
+
+    @Override
+    @Transactional
+    public boolean save(SysOrganization et) {
+        if (et.getOrgid() == null) {
+            et.setOrgid((String)et.getDefaultKey(true));
+        }
+        if (!sysOrganizationFeignClient.save(et)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    @Override
+    public void saveBatch(List<SysOrganization> list) {
+        sysOrganizationFeignClient.saveBatch(list);
+    }
+
+
+
+
+    @Override
+    public List<SysOrganization> selectByParentorgid(String orgid) {
+        SysOrganizationSearchContext context=new SysOrganizationSearchContext();
+        context.setSize(Integer.MAX_VALUE);
+        context.setN_porgid_eq(orgid);
+        return sysOrganizationFeignClient.searchDefault(context).getContent();
+    }
+
+
+    @Override
+    public List<SysOrganization> selectByParentorgid(Collection<String> ids) {
+        //暂未支持
+        return null;
+    }
+
+
+    @Override
+    public void removeByParentorgid(String orgid) {
+        Set<String> delIds=new HashSet<String>();
+        for (SysOrganization before:selectByParentorgid(orgid)) {
+            delIds.add(before.getOrgid());
+        }
+        if (delIds.size() > 0) {
+            this.removeBatch(delIds);
+        }
+    }
+
+
+
+
+    /**
+     * 查询集合 数据集
+     */
+    @Override
+    public Page<SysOrganization> searchDefault(SysOrganizationSearchContext context) {
+        Page<SysOrganization> sysOrganizations=sysOrganizationFeignClient.searchDefault(context);
+        return sysOrganizations;
+    }
+
+
+
+
+    @Override
+    @Transactional
+    public SysOrganization dynamicCall(String key, String action, SysOrganization et) {
+        return et;
+    }
+}
+
+
