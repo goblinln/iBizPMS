@@ -1,0 +1,15 @@
+export default [
+    'indexid',
+    'acl',
+    'docid',
+    'indexname',
+    'color',
+    'deleted',
+    'acllist',
+    'indexdesc',
+    'product',
+    'indextype',
+    'mdeptid',
+    'project',
+    'orgid',
+];

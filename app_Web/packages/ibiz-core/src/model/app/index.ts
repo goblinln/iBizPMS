@@ -1,0 +1,1 @@
+export { IBizAppModel } from './app-model';

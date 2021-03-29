@@ -1,0 +1,16 @@
+export default [
+    'pathname',
+    'objectid',
+    'strsize',
+    'doclibtype',
+    'deleted',
+    'extension',
+    'objecttype',
+    'addedby',
+    'title',
+    'addeddate',
+    'downloads',
+    'size',
+    'id',
+    'extra',
+];
