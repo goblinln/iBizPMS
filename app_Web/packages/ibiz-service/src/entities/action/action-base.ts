@@ -114,7 +114,7 @@ export abstract class ActionBase extends EntityBase implements IAction {
     /**
      * 前端键值
      */
-    srfkey?: any;
+    // srfkey?: any;
     /**
      * 操作方式
      *

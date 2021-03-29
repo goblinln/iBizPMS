@@ -1,7 +1,8 @@
+import { Http, IHttpResponse } from 'ibiz-core';
 import { ProductBaseService } from './product-base.service';
 
 /**
- * 产品服务
+ * 实体服务对象基类
  *
  * @export
  * @class ProductService
@@ -34,5 +35,32 @@ export class ProductService extends ProductBaseService {
         }
         return ___ibz___.sc.get('ProductService');
     }
+
+    /**
+     * CancelProductTop
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<IHttpResponse>}
+     * @memberof ProductService
+     */
+    async CancelProductTop(_context: any = {}, _data: any = {}): Promise<IHttpResponse> {
+        let res:any = Http.getInstance().post(`/products/${_context.product}/cancelproducttop`,_data);
+        return res;
+    }
+
+    /**
+     * ProductTop
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<IHttpResponse>}
+     * @memberof ProductService
+     */
+    async ProductTop(_context: any = {}, _data: any = {}): Promise<IHttpResponse> {
+        let res:any = Http.getInstance().post(`/products/${_context.product}/producttop`,_data);
+        return res;
+    }
+
 }
 export default ProductService;

@@ -89,7 +89,7 @@ export abstract class EntityBase implements IEntityBase {
      * @param {*} [data={}]
      * @memberof EntityBase
      */
-    assign(data: any = {}): void {
+    _assign(data: any = {}): void {
         this.setData(data);
     }
 
