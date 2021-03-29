@@ -260,6 +260,29 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     }
 
 
+    @Autowired
+    @Lazy
+    cn.ibizlab.pms.core.es.service.IIbizproIndexESService esService;
+
+    @Autowired
+    @Lazy
+    cn.ibizlab.pms.core.ibizpro.mapping.IbizproIndexESMapping esMapping;
+
+    /**
+     * 获取es service
+     * @return
+     */
+    public cn.ibizlab.pms.core.es.service.IIbizproIndexESService getESService(){
+        return esService;
+    }
+
+    /**
+     * 获取es mapping
+     * @return
+     */
+    public cn.ibizlab.pms.core.ibizpro.mapping.IbizproIndexESMapping getESMapping(){
+        return esMapping;
+    }
     public IIbizproIndexService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
