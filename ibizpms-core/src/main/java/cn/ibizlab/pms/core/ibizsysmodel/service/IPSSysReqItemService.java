@@ -71,7 +71,6 @@ public interface IPSSysReqItemService {
     void removeByPpssysreqitemid(String devSlnSysId, String pssysreqitemid);
     List<PSSysReqItem> selectByPssysreqmoduleid(String devSlnSysId, String pssysreqmoduleid);
     void removeByPssysreqmoduleid(String devSlnSysId, String pssysreqmoduleid);
-    PSSysReqItem dynamicCall(String key, String action, PSSysReqItem et);
 
 }
 

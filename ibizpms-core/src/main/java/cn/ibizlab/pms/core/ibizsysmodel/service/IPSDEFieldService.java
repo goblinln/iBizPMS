@@ -91,7 +91,6 @@ public interface IPSDEFieldService {
     void removeByNo3dupchkpsdefid(String devSlnSysId, String psdefieldid);
     List<PSDEField> selectByValuepsdefid(String devSlnSysId, String psdefieldid);
     void removeByValuepsdefid(String devSlnSysId, String psdefieldid);
-    PSDEField dynamicCall(String key, String action, PSDEField et);
 
 }
 

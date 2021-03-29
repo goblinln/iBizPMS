@@ -68,7 +68,6 @@ public interface IPSSysAppService {
     Page<PSSysApp> searchDefault(String devSlnSysId, PSSysAppSearchContext context);
     List<PSSysApp> selectByPssysserviceapiid(String devSlnSysId, String pssysserviceapiid);
     void removeByPssysserviceapiid(String devSlnSysId, String pssysserviceapiid);
-    PSSysApp dynamicCall(String key, String action, PSSysApp et);
 
 }
 

@@ -66,7 +66,6 @@ public interface IPSSysServiceAPIService {
     Page<PSSysServiceAPI> searchDefault(String devSlnSysId, PSSysServiceAPISearchContext context);
     List<PSSysServiceAPI> selectByPsmoduleid(String devSlnSysId, String psmoduleid);
     void removeByPsmoduleid(String devSlnSysId, String psmoduleid);
-    PSSysServiceAPI dynamicCall(String key, String action, PSSysServiceAPI et);
 
 }
 

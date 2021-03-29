@@ -68,7 +68,6 @@ public interface IPSSysSFPubService {
     Page<PSSysSFPub> searchDefault(String devSlnSysId, PSSysSFPubSearchContext context);
     List<PSSysSFPub> selectByPpssyssfpubid(String devSlnSysId, String pssyssfpubid);
     void removeByPpssyssfpubid(String devSlnSysId, String pssyssfpubid);
-    PSSysSFPub dynamicCall(String key, String action, PSSysSFPub et);
 
 }
 

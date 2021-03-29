@@ -61,7 +61,6 @@ public interface IPSModuleService {
     boolean save(String devSlnSysId, PSModule et);
     void saveBatch(String devSlnSysId, List<PSModule> list);
     Page<PSModule> searchDefault(String devSlnSysId, PSModuleSearchContext context);
-    PSModule dynamicCall(String key, String action, PSModule et);
 
 }
 

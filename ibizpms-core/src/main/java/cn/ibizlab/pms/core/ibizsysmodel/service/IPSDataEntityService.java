@@ -81,7 +81,6 @@ public interface IPSDataEntityService {
     void removeByPssubsysserviceapiid(String devSlnSysId, String pssubsysserviceapiid);
     List<PSDataEntity> selectByPssysreqitemid(String devSlnSysId, String pssysreqitemid);
     void removeByPssysreqitemid(String devSlnSysId, String pssysreqitemid);
-    PSDataEntity dynamicCall(String key, String action, PSDataEntity et);
 
 }
 

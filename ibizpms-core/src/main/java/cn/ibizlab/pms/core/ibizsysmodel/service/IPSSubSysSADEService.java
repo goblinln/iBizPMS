@@ -66,7 +66,6 @@ public interface IPSSubSysSADEService {
     Page<PSSubSysSADE> searchDefault(String devSlnSysId, PSSubSysSADESearchContext context);
     List<PSSubSysSADE> selectByPssubsysserviceapiid(String devSlnSysId, String pssubsysserviceapiid);
     void removeByPssubsysserviceapiid(String devSlnSysId, String pssubsysserviceapiid);
-    PSSubSysSADE dynamicCall(String key, String action, PSSubSysSADE et);
 
 }
 

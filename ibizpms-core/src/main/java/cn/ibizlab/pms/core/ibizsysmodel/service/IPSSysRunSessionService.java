@@ -73,7 +73,6 @@ public interface IPSSysRunSessionService {
     void removeByPssysappid2(String devSlnSysId, String pssysappid);
     List<PSSysRunSession> selectByPssysserviceapiid(String devSlnSysId, String pssysserviceapiid);
     void removeByPssysserviceapiid(String devSlnSysId, String pssysserviceapiid);
-    PSSysRunSession dynamicCall(String key, String action, PSSysRunSession et);
 
 }
 

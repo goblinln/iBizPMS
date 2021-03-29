@@ -63,7 +63,6 @@ public interface IPSSystemDBCfgService {
     void saveBatch(String devSlnSysId, List<PSSystemDBCfg> list);
     Page<PSSystemDBCfg> searchBuild(String devSlnSysId, PSSystemDBCfgSearchContext context);
     Page<PSSystemDBCfg> searchDefault(String devSlnSysId, PSSystemDBCfgSearchContext context);
-    PSSystemDBCfg dynamicCall(String key, String action, PSSystemDBCfg et);
 
 }
 

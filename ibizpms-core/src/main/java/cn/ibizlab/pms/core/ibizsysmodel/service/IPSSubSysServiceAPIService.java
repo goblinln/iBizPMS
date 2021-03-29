@@ -71,7 +71,6 @@ public interface IPSSubSysServiceAPIService {
     void removeByPsmoduleid(String devSlnSysId, String psmoduleid);
     List<PSSubSysServiceAPI> selectByPssysserviceapiid(String devSlnSysId, String pssysserviceapiid);
     void removeByPssysserviceapiid(String devSlnSysId, String pssysserviceapiid);
-    PSSubSysServiceAPI dynamicCall(String key, String action, PSSubSysServiceAPI et);
 
 }
 
