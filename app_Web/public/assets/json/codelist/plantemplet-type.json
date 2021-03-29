@@ -1,1 +1,0 @@
-{"getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"},"codeListType":"STATIC","getPSCodeItems":[{"value":"step","text":"计划"},{"value":"group","text":"父计划"},{"value":"item","text":"子计划"}],"codeName":"PlantempletType","emptyText":"未定义","enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/PlantempletType.json","name":"计划模板类型"}

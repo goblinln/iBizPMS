@@ -1,8 +1,0 @@
-<div :class="{'app-list': true, 'app-list-empty': this.items.length <= 0}">
-    <div v-if="items.length > 0">
-        <action-history :items="items" :load="loadChildren.bind(_self)" :dynaModel="dynaModel" @edit-data="handleDblClick($event)"/>
-    </div>
-    <div v-else>
-        暂无数据
-    </div>
-</div>

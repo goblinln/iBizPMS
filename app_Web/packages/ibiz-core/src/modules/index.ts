@@ -1,1 +1,0 @@
-export { acc, AppCommunicationsCenter } from './message-center/app-communications-center';

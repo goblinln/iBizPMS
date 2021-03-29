@@ -1,1 +1,0 @@
-{"getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"},"codeListType":"STATIC","getPSCodeItems":[{"value":"on","text":"待定"}],"codeName":"Date_disable","emptyText":"未定义","enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/Date_disable.json","name":"日期_待定"}

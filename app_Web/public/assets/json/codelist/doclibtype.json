@@ -1,1 +1,0 @@
-{"getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"},"codeListType":"STATIC","getPSCodeItems":[{"value":"doc","text":"文档"},{"value":"file","text":"附件"}],"codeName":"DOCLIBTYPE","emptyText":"未定义","enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/DOCLIBTYPE.json","name":"文件库类型"}

@@ -1,6 +1,0 @@
-<div :class="['app-list', this.items.length > 0 ? '' : 'app-list-empty' ]">
-    <div v-for = "item in items" :key="item.srfkey"  :class="['app-list-item', {'isSelect': item.isselected === true ? true : false}]" @click="handleClick(item)"  @dblclick="handleDblClick(item)">
-     <a :href="'../ibizutilpms/ztdownload/' + item.srfkey" target="_blank">{{item.srfmajortext}}</a>&nbsp;<icon type="md-close" @click="remove([item])"/>
-</div>
-
-</div>

@@ -1,7 +1,0 @@
-<div :class="{ 'grid': true, 'show-paging-bar': isEnablePagingBar, 'hidden-paging-bar': !isEnablePagingBar }">
-        <i-form>
-        <div :style="{ height: isEnablePagingBar && items.length > 0 ? 'calc(100% - 50px)' : '100%', overflow: 'auto' }">
-            <app-vue-pivottable :datas="items" :allColumns="allColumns"></app-vue-pivottable>
-        </div>
-    </i-form>
-</div>
