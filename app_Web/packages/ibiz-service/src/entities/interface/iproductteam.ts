@@ -9,6 +9,10 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IPRODUCTTEAM extends IEntityBase {
     /**
+     * 成员状态
+     */
+    teamstatus?: any;
+    /**
      * 用户
      */
     account?: any;
@@ -24,6 +28,10 @@ export interface IPRODUCTTEAM extends IEntityBase {
      * 总计可用
      */
     total?: any;
+    /**
+     * 结束时间
+     */
+    end?: any;
     /**
      * 用户
      */
@@ -58,6 +66,10 @@ export interface IPRODUCTTEAM extends IEntityBase {
      * 编号
      */
     id?: any;
+    /**
+     * 当前负责人
+     */
+    leadingcadre?: any;
     /**
      * 受限用户
      *

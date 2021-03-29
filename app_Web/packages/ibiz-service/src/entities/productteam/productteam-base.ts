@@ -34,6 +34,10 @@ export abstract class PRODUCTTEAMBase extends EntityBase implements IPRODUCTTEAM
         this.account = val;
     }
     /**
+     * 成员状态
+     */
+    teamstatus?: any;
+    /**
      * 用户
      */
     account?: any;
@@ -49,6 +53,10 @@ export abstract class PRODUCTTEAMBase extends EntityBase implements IPRODUCTTEAM
      * 总计可用
      */
     total?: any;
+    /**
+     * 结束时间
+     */
+    end?: any;
     /**
      * 用户
      */
@@ -83,6 +91,10 @@ export abstract class PRODUCTTEAMBase extends EntityBase implements IPRODUCTTEAM
      * 编号
      */
     id?: any;
+    /**
+     * 当前负责人
+     */
+    leadingcadre?: any;
     /**
      * 受限用户
      *

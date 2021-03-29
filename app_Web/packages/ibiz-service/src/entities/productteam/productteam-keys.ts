@@ -1,8 +1,10 @@
 export default [
+    'teamstatus',
     'account',
     'join',
     'left',
     'total',
+    'end',
     'username',
     'estimate',
     'hours',
@@ -11,6 +13,7 @@ export default [
     'consumed',
     'days',
     'id',
+    'leadingcadre',
     'limited',
     'order',
     'role',

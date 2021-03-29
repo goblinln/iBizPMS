@@ -33,6 +33,16 @@ public class PRODUCTTEAMDTO extends DTOBase implements Serializable {
 	private static final long serialVersionUID = 1L;
 
     /**
+     * 属性 [TEAMSTATUS]
+     *
+     */
+    @JSONField(name = "teamstatus")
+    @JsonProperty("teamstatus")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("成员状态")
+    private String teamstatus;
+
+    /**
      * 属性 [ACCOUNT]
      *
      */
@@ -69,6 +79,16 @@ public class PRODUCTTEAMDTO extends DTOBase implements Serializable {
     @JsonProperty("total")
     @ApiModelProperty("总计可用")
     private Integer total;
+
+    /**
+     * 属性 [END]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "end" , format="yyyy-MM-dd")
+    @JsonProperty("end")
+    @ApiModelProperty("结束时间")
+    private Timestamp end;
 
     /**
      * 属性 [USERNAME]
@@ -146,6 +166,16 @@ public class PRODUCTTEAMDTO extends DTOBase implements Serializable {
     private Long id;
 
     /**
+     * 属性 [LEADINGCADRE]
+     *
+     */
+    @JSONField(name = "leadingcadre")
+    @JsonProperty("leadingcadre")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("当前负责人")
+    private String leadingcadre;
+
+    /**
      * 属性 [LIMITED]
      *
      */
@@ -186,6 +216,14 @@ public class PRODUCTTEAMDTO extends DTOBase implements Serializable {
 
 
     /**
+     * 设置 [TEAMSTATUS]
+     */
+    public void setTeamstatus(String  teamstatus){
+        this.teamstatus = teamstatus ;
+        this.modify("teamstatus",teamstatus);
+    }
+
+    /**
      * 设置 [ACCOUNT]
      */
     public void setAccount(String  account){
@@ -207,6 +245,14 @@ public class PRODUCTTEAMDTO extends DTOBase implements Serializable {
     public void setLeft(Double  left){
         this.left = left ;
         this.modify("left",left);
+    }
+
+    /**
+     * 设置 [END]
+     */
+    public void setEnd(Timestamp  end){
+        this.end = end ;
+        this.modify("end",end);
     }
 
     /**
@@ -247,6 +293,14 @@ public class PRODUCTTEAMDTO extends DTOBase implements Serializable {
     public void setDays(Integer  days){
         this.days = days ;
         this.modify("days",days);
+    }
+
+    /**
+     * 设置 [LEADINGCADRE]
+     */
+    public void setLeadingcadre(String  leadingcadre){
+        this.leadingcadre = leadingcadre ;
+        this.modify("leadingcadre",leadingcadre);
     }
 
     /**

@@ -47,6 +47,15 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
+     * 成员状态
+     */
+    @DEField(defaultValue = "10")
+    @TableField(value = "`teamstatus`")
+    @JSONField(name = "teamstatus")
+    @JsonProperty("teamstatus")
+    @ApiModelProperty("成员状态")
+    private String teamstatus;
+    /**
      * 用户
      */
     @TableField(value = "`account`")
@@ -81,6 +90,15 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @JsonProperty("total")
     @ApiModelProperty("总计可用")
     private Integer total;
+    /**
+     * 结束时间
+     */
+    @TableField(value = "`end`")
+    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "end", format = "yyyy-MM-dd")
+    @JsonProperty("end")
+    @ApiModelProperty("结束时间")
+    private Timestamp end;
     /**
      * 用户
      */
@@ -152,6 +170,14 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @ApiModelProperty("编号")
     private Long id;
     /**
+     * 当前负责人
+     */
+    @TableField(value = "`leadingcadre`")
+    @JSONField(name = "leadingcadre")
+    @JsonProperty("leadingcadre")
+    @ApiModelProperty("当前负责人")
+    private String leadingcadre;
+    /**
      * 受限用户
      */
     @DEField(defaultValue = "no")
@@ -197,6 +223,14 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
 
 
     /**
+     * 设置 [成员状态]
+     */
+    public void setTeamstatus(String teamstatus) {
+        this.teamstatus = teamstatus;
+        this.modify("teamstatus", teamstatus);
+    }
+
+    /**
      * 设置 [用户]
      */
     public void setAccount(String account) {
@@ -230,6 +264,24 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
         this.modify("left", left);
     }
 
+    /**
+     * 设置 [结束时间]
+     */
+    public void setEnd(Timestamp end) {
+        this.end = end;
+        this.modify("end", end);
+    }
+
+    /**
+     * 格式化日期 [结束时间]
+     */
+    public String formatEnd() {
+        if (this.end == null) {
+            return null;
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(end);
+    }
     /**
      * 设置 [最初预计]
      */
@@ -268,6 +320,14 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     public void setDays(Integer days) {
         this.days = days;
         this.modify("days", days);
+    }
+
+    /**
+     * 设置 [当前负责人]
+     */
+    public void setLeadingcadre(String leadingcadre) {
+        this.leadingcadre = leadingcadre;
+        this.modify("leadingcadre", leadingcadre);
     }
 
     /**

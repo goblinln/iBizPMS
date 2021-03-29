@@ -3,10 +3,12 @@ import commonLogic from '@/locale/logic/common/common-logic';
 function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
+		'teamstatus': commonLogic.appcommonhandle("成员状态",null),
 		'account': commonLogic.appcommonhandle("用户",null),
 		'join': commonLogic.appcommonhandle("加盟日",null),
 		'left': commonLogic.appcommonhandle("预计剩余",null),
 		'total': commonLogic.appcommonhandle("总计可用",null),
+		'end': commonLogic.appcommonhandle("结束时间",null),
 		'username': commonLogic.appcommonhandle("用户",null),
 		'estimate': commonLogic.appcommonhandle("最初预计",null),
 		'hours': commonLogic.appcommonhandle("可用工时/天",null),
@@ -15,6 +17,7 @@ function getLocaleResourceBase(){
 		'consumed': commonLogic.appcommonhandle("总计消耗",null),
 		'days': commonLogic.appcommonhandle("可用工日",null),
 		'id': commonLogic.appcommonhandle("编号",null),
+		'leadingcadre': commonLogic.appcommonhandle("当前负责人",null),
 		'limited': commonLogic.appcommonhandle("受限用户",null),
 		'order': commonLogic.appcommonhandle("排序",null),
 		'role': commonLogic.appcommonhandle("角色",null),
