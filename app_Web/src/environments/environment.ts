@@ -50,7 +50,7 @@ export const Environment = {
     // 应用动态路径
     appDynaModelFilePath: "PSSYSAPPS/Web/PSSYSAPP.json",
     // 远端动态基础路径
-    remoteDynaPath: "",
+    remoteDynaPath: "http://172.16.240.51/dynamic_demo/1688344C-3A57-44BD-B135-249E24FCE4F6/",
     // 预览动态基础路径
     previewDynaPath: "http://172.16.170.145",
     // 实例配置地址
