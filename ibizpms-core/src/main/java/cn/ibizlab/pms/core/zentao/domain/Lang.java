@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_lang", resultMap = "LangResultMap")
+@ApiModel("lang")
 public class Lang extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class Lang extends EntityMP implements Serializable {
     @TableField(value = "`module`")
     @JSONField(name = "module")
     @JsonProperty("module")
+    @ApiModelProperty("module")
     private String module;
     /**
      * id
@@ -57,6 +61,7 @@ public class Lang extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * key
@@ -64,6 +69,7 @@ public class Lang extends EntityMP implements Serializable {
     @TableField(value = "`key`")
     @JSONField(name = "key")
     @JsonProperty("key")
+    @ApiModelProperty("key")
     private String key;
     /**
      * section
@@ -71,6 +77,7 @@ public class Lang extends EntityMP implements Serializable {
     @TableField(value = "`section`")
     @JSONField(name = "section")
     @JsonProperty("section")
+    @ApiModelProperty("section")
     private String section;
     /**
      * lang
@@ -78,6 +85,7 @@ public class Lang extends EntityMP implements Serializable {
     @TableField(value = "`lang`")
     @JSONField(name = "lang")
     @JsonProperty("lang")
+    @ApiModelProperty("lang")
     private String lang;
     /**
      * system
@@ -85,6 +93,7 @@ public class Lang extends EntityMP implements Serializable {
     @TableField(value = "`system`")
     @JSONField(name = "system")
     @JsonProperty("system")
+    @ApiModelProperty("system")
     private String system;
     /**
      * value
@@ -92,6 +101,7 @@ public class Lang extends EntityMP implements Serializable {
     @TableField(value = "`value`")
     @JSONField(name = "value")
     @JsonProperty("value")
+    @ApiModelProperty("value")
     private String value;
 
 

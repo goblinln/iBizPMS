@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_project", resultMap = "IbzProjectMemberResultMap")
+@ApiModel("项目相关成员")
 public class IbzProjectMember extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "secondmember")
     @JsonProperty("secondmember")
+    @ApiModelProperty("团队成员（二）")
     private String secondmember;
     /**
      * 发布负责人
@@ -56,6 +60,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "rd")
     @JsonProperty("rd")
+    @ApiModelProperty("发布负责人")
     private String rd;
     /**
      * 测试负责人
@@ -63,6 +68,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "qd")
     @JsonProperty("qd")
+    @ApiModelProperty("测试负责人")
     private String qd;
     /**
      * 全部成员
@@ -70,6 +76,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "teamembers")
     @JsonProperty("teamembers")
+    @ApiModelProperty("全部成员")
     private String teamembers;
     /**
      * 团队成员（三）
@@ -77,6 +84,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "thirdmember")
     @JsonProperty("thirdmember")
+    @ApiModelProperty("团队成员（三）")
     private String thirdmember;
     /**
      * 编号
@@ -85,6 +93,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 团队成员（一）
@@ -92,6 +101,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "fristmember")
     @JsonProperty("fristmember")
+    @ApiModelProperty("团队成员（一）")
     private String fristmember;
     /**
      * 产品负责人
@@ -99,6 +109,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "po")
     @JsonProperty("po")
+    @ApiModelProperty("产品负责人")
     private String po;
     /**
      * 团队成员（四）
@@ -106,6 +117,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "fourthmember")
     @JsonProperty("fourthmember")
+    @ApiModelProperty("团队成员（四）")
     private String fourthmember;
     /**
      * 项目负责人
@@ -113,6 +125,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "pm")
     @JsonProperty("pm")
+    @ApiModelProperty("项目负责人")
     private String pm;
     /**
      * 团队成员（五）
@@ -120,6 +133,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "fifthmember")
     @JsonProperty("fifthmember")
+    @ApiModelProperty("团队成员（五）")
     private String fifthmember;
     /**
      * 团队成员（六）
@@ -127,6 +141,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "sixthmember")
     @JsonProperty("sixthmember")
+    @ApiModelProperty("团队成员（六）")
     private String sixthmember;
     /**
      * 项目名称
@@ -134,6 +149,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("项目名称")
     private String name;
 
 

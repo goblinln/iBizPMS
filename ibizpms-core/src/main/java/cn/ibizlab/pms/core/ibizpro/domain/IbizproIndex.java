@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "", resultMap = "IbizproIndexResultMap")
+@ApiModel("索引检索")
 public class IbizproIndex extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "indexid")
     @JsonProperty("indexid")
+    @ApiModelProperty("主键")
     private Long indexid;
     /**
      * 权限
@@ -57,6 +61,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "acl")
     @JsonProperty("acl")
+    @ApiModelProperty("权限")
     private String acl;
     /**
      * docid
@@ -64,6 +69,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "docid")
     @JsonProperty("docid")
+    @ApiModelProperty("docid")
     private String docid;
     /**
      * 标题[需求、任务等]
@@ -71,6 +77,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "indexname")
     @JsonProperty("indexname")
+    @ApiModelProperty("标题[需求、任务等]")
     private String indexname;
     /**
      * 颜色
@@ -78,6 +85,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "color")
     @JsonProperty("color")
+    @ApiModelProperty("颜色")
     private String color;
     /**
      * 逻辑标识
@@ -85,6 +93,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("逻辑标识")
     private String deleted;
     /**
      * 权限列表
@@ -92,6 +101,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "acllist")
     @JsonProperty("acllist")
+    @ApiModelProperty("权限列表")
     private String acllist;
     /**
      * 内容[需求、任务等]
@@ -99,6 +109,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "indexdesc")
     @JsonProperty("indexdesc")
+    @ApiModelProperty("内容[需求、任务等]")
     private String indexdesc;
     /**
      * 产品
@@ -106,6 +117,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "product")
     @JsonProperty("product")
+    @ApiModelProperty("产品")
     private Long product;
     /**
      * 类型
@@ -113,6 +125,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "indextype")
     @JsonProperty("indextype")
+    @ApiModelProperty("类型")
     private String indextype;
     /**
      * 部门标识
@@ -120,6 +133,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "mdeptid")
     @JsonProperty("mdeptid")
+    @ApiModelProperty("部门标识")
     private String mdeptid;
     /**
      * 项目
@@ -127,6 +141,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "project")
     @JsonProperty("project")
+    @ApiModelProperty("项目")
     private Long project;
     /**
      * 组织标识
@@ -134,6 +149,7 @@ public class IbizproIndex extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
+    @ApiModelProperty("组织标识")
     private String orgid;
 
 

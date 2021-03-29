@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [单位] 对象
  */
 @Data
+@ApiModel("单位")
 public class SysOrganization extends EntityClient implements Serializable {
 
     /**
@@ -39,6 +42,7 @@ public class SysOrganization extends EntityClient implements Serializable {
     @DEField(defaultValue = "orgcode", defaultValueType = DEFieldDefaultValueType.PARAM , isKeyField = true)
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
+    @ApiModelProperty("单位标识")
     private String orgid;
 
     /**
@@ -46,6 +50,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     @JSONField(name = "orgcode")
     @JsonProperty("orgcode")
+    @ApiModelProperty("单位代码")
     private String orgcode;
 
     /**
@@ -54,6 +59,7 @@ public class SysOrganization extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.ORGNAME)
     @JSONField(name = "orgname")
     @JsonProperty("orgname")
+    @ApiModelProperty("名称")
     private String orgname;
 
     /**
@@ -62,6 +68,7 @@ public class SysOrganization extends EntityClient implements Serializable {
     @DEField(name = "porgid")
     @JSONField(name = "parentorgid")
     @JsonProperty("parentorgid")
+    @ApiModelProperty("上级单位")
     private String parentorgid;
 
     /**
@@ -69,6 +76,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     @JSONField(name = "shortname")
     @JsonProperty("shortname")
+    @ApiModelProperty("单位简称")
     private String shortname;
 
     /**
@@ -76,6 +84,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     @JSONField(name = "orglevel")
     @JsonProperty("orglevel")
+    @ApiModelProperty("单位级别")
     private Integer orglevel;
 
     /**
@@ -83,6 +92,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     @JSONField(name = "showorder")
     @JsonProperty("showorder")
+    @ApiModelProperty("排序")
     private Integer showorder;
 
     /**
@@ -90,6 +100,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     @JSONField(name = "parentorgname")
     @JsonProperty("parentorgname")
+    @ApiModelProperty("上级单位")
     private String parentorgname;
 
     /**
@@ -97,6 +108,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     @JSONField(name = "domains")
     @JsonProperty("domains")
+    @ApiModelProperty("区属")
     private String domains;
 
     /**
@@ -105,6 +117,7 @@ public class SysOrganization extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.LOGICVALID, logicval = "1" , logicdelval = "0")
     @JSONField(name = "enable")
     @JsonProperty("enable")
+    @ApiModelProperty("逻辑有效")
     private Integer enable;
 
     /**
@@ -114,6 +127,7 @@ public class SysOrganization extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("创建时间")
     private Timestamp createdate;
 
     /**
@@ -123,6 +137,7 @@ public class SysOrganization extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("最后修改时间")
     private Timestamp updatedate;
 
 
@@ -148,7 +163,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     public void setOrgcode(String orgcode) {
         this.orgcode = orgcode ;
-        this.modify("orgcode", orgcode);
+        this.modify("orgcode",orgcode);
     }
 
     /**
@@ -156,7 +171,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     public void setParentorgid(String parentorgid) {
         this.parentorgid = parentorgid ;
-        this.modify("porgid", parentorgid);
+        this.modify("porgid",parentorgid);
     }
 
     /**
@@ -164,7 +179,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     public void setShortname(String shortname) {
         this.shortname = shortname ;
-        this.modify("shortname", shortname);
+        this.modify("shortname",shortname);
     }
 
     /**
@@ -172,7 +187,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     public void setOrglevel(Integer orglevel) {
         this.orglevel = orglevel ;
-        this.modify("orglevel", orglevel);
+        this.modify("orglevel",orglevel);
     }
 
     /**
@@ -180,7 +195,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     public void setShoworder(Integer showorder) {
         this.showorder = showorder ;
-        this.modify("showorder", showorder);
+        this.modify("showorder",showorder);
     }
 
     /**
@@ -188,7 +203,7 @@ public class SysOrganization extends EntityClient implements Serializable {
      */
     public void setDomains(String domains) {
         this.domains = domains ;
-        this.modify("domains", domains);
+        this.modify("domains",domains);
     }
 
     /**
@@ -201,7 +216,7 @@ public class SysOrganization extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("orgid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

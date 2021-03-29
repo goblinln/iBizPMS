@@ -50,16 +50,16 @@ public interface IProjectTaskestimateService extends IService<ProjectTaskestimat
     Page<ProjectTaskestimate> searchDefault(ProjectTaskestimateSearchContext context);
     ProjectTaskestimate dynamicCall(String key, String action, ProjectTaskestimate et);
     /**
-     * 自定义查询SQL
+     *自定义查询SQL
      * @param sql  select * from table where id =#{et.param}
-     * @param param 参数列表  param.put("param", "1");
+     * @param param 参数列表  param.put("param","1");
      * @return select * from table where id = '1'
      */
     List<JSONObject> select(String sql, Map param);
     /**
-     * 自定义SQL
+     *自定义SQL
      * @param sql  update table  set name ='test' where id =#{et.param}
-     * @param param 参数列表  param.put("param", "1");
+     * @param param 参数列表  param.put("param","1");
      * @return     update table  set name ='test' where id = '1'
      */
     boolean execute(String sql, Map param);

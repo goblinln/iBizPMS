@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_entry", resultMap = "EntryResultMap")
+@ApiModel("entry")
 public class Entry extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -51,6 +54,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("逻辑删除标志")
     private String deleted;
     /**
      * code
@@ -58,6 +62,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableField(value = "`code`")
     @JSONField(name = "code")
     @JsonProperty("code")
+    @ApiModelProperty("code")
     private String code;
     /**
      * id
@@ -66,6 +71,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * editedDate
@@ -74,6 +80,7 @@ public class Entry extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "editeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("editeddate")
+    @ApiModelProperty("editedDate")
     private Timestamp editeddate;
     /**
      * createdDate
@@ -82,6 +89,7 @@ public class Entry extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
+    @ApiModelProperty("createdDate")
     private Timestamp createddate;
     /**
      * freePasswd
@@ -89,6 +97,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableField(value = "`freepasswd`")
     @JSONField(name = "freepasswd")
     @JsonProperty("freepasswd")
+    @ApiModelProperty("freePasswd")
     private String freepasswd;
     /**
      * createdBy
@@ -96,6 +105,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableField(value = "`createdby`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
+    @ApiModelProperty("createdBy")
     private String createdby;
     /**
      * account
@@ -103,6 +113,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("account")
     private String account;
     /**
      * calledTime
@@ -111,6 +122,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableField(value = "`calledtime`")
     @JSONField(name = "calledtime")
     @JsonProperty("calledtime")
+    @ApiModelProperty("calledTime")
     private Integer calledtime;
     /**
      * key
@@ -118,6 +130,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableField(value = "`key`")
     @JSONField(name = "key")
     @JsonProperty("key")
+    @ApiModelProperty("key")
     private String key;
     /**
      * editedBy
@@ -125,6 +138,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableField(value = "`editedby`")
     @JSONField(name = "editedby")
     @JsonProperty("editedby")
+    @ApiModelProperty("editedBy")
     private String editedby;
     /**
      * ip
@@ -132,6 +146,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableField(value = "`ip`")
     @JSONField(name = "ip")
     @JsonProperty("ip")
+    @ApiModelProperty("ip")
     private String ip;
     /**
      * desc
@@ -139,6 +154,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("desc")
     private String desc;
     /**
      * name
@@ -146,6 +162,7 @@ public class Entry extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("name")
     private String name;
 
 

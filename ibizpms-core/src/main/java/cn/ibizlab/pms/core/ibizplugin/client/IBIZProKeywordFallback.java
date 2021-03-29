@@ -66,6 +66,9 @@ public class IBIZProKeywordFallback implements IBIZProKeywordFeignClient {
     }
 
 
+    public Object saveEntity(IBIZProKeyword et) {
+        return null;
+    }
     public Boolean save(IBIZProKeyword et) {
         return false;
     }

@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_group", resultMap = "GroupResultMap")
+@ApiModel("群组")
 public class Group extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class Group extends EntityMP implements Serializable {
     @TableField(value = "`acl`")
     @JSONField(name = "acl")
     @JsonProperty("acl")
+    @ApiModelProperty("acl")
     private String acl;
     /**
      * 分组描述
@@ -56,6 +60,7 @@ public class Group extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("分组描述")
     private String desc;
     /**
      * ID
@@ -64,6 +69,7 @@ public class Group extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("ID")
     private Long id;
     /**
      * 分组名称
@@ -71,6 +77,7 @@ public class Group extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("分组名称")
     private String name;
     /**
      * role
@@ -78,6 +85,7 @@ public class Group extends EntityMP implements Serializable {
     @TableField(value = "`role`")
     @JSONField(name = "role")
     @JsonProperty("role")
+    @ApiModelProperty("role")
     private String role;
 
 

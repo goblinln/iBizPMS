@@ -58,7 +58,7 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Transactional
     public boolean create(IbizproProductWeekly et) {
         fillParentData(et);
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbizproProductweeklyid()), et);
@@ -76,7 +76,7 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Transactional
     public boolean update(IbizproProductWeekly et) {
         fillParentData(et);
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_productweeklyid", et.getIbizproProductweeklyid()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_productweeklyid", et.getIbizproProductweeklyid()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbizproProductweeklyid()), et);
@@ -94,7 +94,7 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -107,7 +107,7 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Transactional
     public IbizproProductWeekly get(Long key) {
         IbizproProductWeekly et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IbizproProductWeekly();
             et.setIbizproProductweeklyid(key);
         }
@@ -129,7 +129,7 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     @Transactional
     public boolean save(IbizproProductWeekly et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -170,7 +170,7 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     @Transactional
     public void saveBatch(List<IbizproProductWeekly> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<IbizproProductWeekly> create = new ArrayList<>();
         List<IbizproProductWeekly> update = new ArrayList<>();
         for (IbizproProductWeekly et : list) {
@@ -194,7 +194,8 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean sumProductWeeklyBatch(List<IbizproProductWeekly> etList) {
         for(IbizproProductWeekly et : etList) {
@@ -204,13 +205,13 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     }
 
 
-    @Override
+	@Override
     public List<IbizproProductWeekly> selectByProduct(Long id) {
         return baseMapper.selectByProduct(id);
     }
     @Override
     public void removeByProduct(Long id) {
-        this.remove(new QueryWrapper<IbizproProductWeekly>().eq("product", id));
+        this.remove(new QueryWrapper<IbizproProductWeekly>().eq("product",id));
     }
 
 
@@ -219,7 +220,7 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
      */
     @Override
     public Page<IbizproProductWeekly> searchDefault(IbizproProductWeeklySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproProductWeekly> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproProductWeekly> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbizproProductWeekly>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -231,12 +232,12 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
      */
     private void fillParentData(IbizproProductWeekly et){
         //实体关系[DER1N_IBIZPRO_PRODUCTWEEKLY_ZT_PRODUCT_PRODUCT]
-        if (!ObjectUtils.isEmpty(et.getProduct())) {
+        if(!ObjectUtils.isEmpty(et.getProduct())){
             cn.ibizlab.pms.core.zentao.domain.Product productweekly=et.getProductweekly();
-            if (ObjectUtils.isEmpty(productweekly)) {
+            if(ObjectUtils.isEmpty(productweekly)){
                 cn.ibizlab.pms.core.zentao.domain.Product majorEntity=productService.get(et.getProduct());
                 et.setProductweekly(majorEntity);
-                productweekly = majorEntity;
+                productweekly=majorEntity;
             }
             et.setProductname(productweekly.getName());
         }
@@ -246,24 +247,24 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -279,20 +280,17 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
         List ids =new ArrayList();
         for(IbizproProductWeekly entity : entities){
             Serializable id=entity.getIbizproProductweeklyid();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     public IIbizproProductWeeklyService getProxyService() {

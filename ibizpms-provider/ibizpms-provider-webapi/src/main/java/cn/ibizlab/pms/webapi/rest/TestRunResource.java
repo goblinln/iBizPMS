@@ -72,7 +72,7 @@ public class TestRunResource {
 		TestRun domain  = testrunMapping.toDomain(testrundto);
         domain .setId(testrun_id);
 		testrunService.update(domain );
-		TestRunDTO dto = testrunMapping.toDto(domain );
+		TestRunDTO dto = testrunMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class TestRunResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestRun-Save-all')")
     @ApiOperation(value = "保存测试运行", tags = {"测试运行" },  notes = "保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/testruns/save")
-    public ResponseEntity<Boolean> save(@RequestBody TestRunDTO testrundto) {
-        return ResponseEntity.status(HttpStatus.OK).body(testrunService.save(testrunMapping.toDomain(testrundto)));
+    public ResponseEntity<TestRunDTO> save(@RequestBody TestRunDTO testrundto) {
+        TestRun domain = testrunMapping.toDomain(testrundto);
+        testrunService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestRun-Save-all')")
@@ -255,10 +257,11 @@ public class TestRunResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestRun-Save-all')")
     @ApiOperation(value = "根据测试版本保存测试运行", tags = {"测试运行" },  notes = "根据测试版本保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns/save")
-    public ResponseEntity<Boolean> saveByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
+    public ResponseEntity<TestRunDTO> saveByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
         domain.setTask(testtask_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testrunService.save(domain));
+        testrunService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestRun-Save-all')")
@@ -384,10 +387,11 @@ public class TestRunResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestRun-Save-all')")
     @ApiOperation(value = "根据产品测试版本保存测试运行", tags = {"测试运行" },  notes = "根据产品测试版本保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/save")
-    public ResponseEntity<Boolean> saveByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
+    public ResponseEntity<TestRunDTO> saveByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
         domain.setTask(testtask_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testrunService.save(domain));
+        testrunService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestRun-Save-all')")
@@ -513,10 +517,11 @@ public class TestRunResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestRun-Save-all')")
     @ApiOperation(value = "根据项目测试版本保存测试运行", tags = {"测试运行" },  notes = "根据项目测试版本保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/save")
-    public ResponseEntity<Boolean> saveByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
+    public ResponseEntity<TestRunDTO> saveByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
         domain.setTask(testtask_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testrunService.save(domain));
+        testrunService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestRun-Save-all')")

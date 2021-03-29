@@ -66,6 +66,9 @@ public class SysOrganizationFallback implements SysOrganizationFeignClient {
     }
 
 
+    public Object saveEntity(SysOrganization et) {
+        return null;
+    }
     public Boolean save(SysOrganization et) {
         return false;
     }

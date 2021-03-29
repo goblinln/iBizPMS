@@ -72,7 +72,7 @@ public class CompanyStatsResource {
 		CompanyStats domain  = companystatsMapping.toDomain(companystatsdto);
         domain .setId(companystats_id);
 		companystatsService.update(domain );
-		CompanyStatsDTO dto = companystatsMapping.toDto(domain );
+		CompanyStatsDTO dto = companystatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class CompanyStatsResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-Save-all')")
     @ApiOperation(value = "保存公司动态汇总", tags = {"公司动态汇总" },  notes = "保存公司动态汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/companystats/save")
-    public ResponseEntity<Boolean> save(@RequestBody CompanyStatsDTO companystatsdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(companystatsService.save(companystatsMapping.toDomain(companystatsdto)));
+    public ResponseEntity<CompanyStatsDTO> save(@RequestBody CompanyStatsDTO companystatsdto) {
+        CompanyStats domain = companystatsMapping.toDomain(companystatsdto);
+        companystatsService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(companystatsMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CompanyStats-Save-all')")

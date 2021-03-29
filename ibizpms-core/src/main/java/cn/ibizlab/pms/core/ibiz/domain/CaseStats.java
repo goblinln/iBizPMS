@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_case", resultMap = "CaseStatsResultMap")
+@ApiModel("测试用例统计")
 public class CaseStats extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class CaseStats extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "passcase")
     @JsonProperty("passcase")
+    @ApiModelProperty("通过用例数")
     private Integer passcase;
     /**
      * 阻塞用例数
@@ -56,6 +60,7 @@ public class CaseStats extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "blockedcase")
     @JsonProperty("blockedcase")
+    @ApiModelProperty("阻塞用例数")
     private Integer blockedcase;
     /**
      * 总执行数
@@ -63,6 +68,7 @@ public class CaseStats extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "totalruncase")
     @JsonProperty("totalruncase")
+    @ApiModelProperty("总执行数")
     private Integer totalruncase;
     /**
      * 失败用例数
@@ -70,6 +76,7 @@ public class CaseStats extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "failcase")
     @JsonProperty("failcase")
+    @ApiModelProperty("失败用例数")
     private Integer failcase;
     /**
      * 用例标题
@@ -77,6 +84,7 @@ public class CaseStats extends EntityMP implements Serializable {
     @TableField(value = "`title`")
     @JSONField(name = "title")
     @JsonProperty("title")
+    @ApiModelProperty("用例标题")
     private String title;
     /**
      * 总用例数
@@ -84,6 +92,7 @@ public class CaseStats extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "totalcase")
     @JsonProperty("totalcase")
+    @ApiModelProperty("总用例数")
     private Integer totalcase;
     /**
      * 用例通过率
@@ -91,6 +100,7 @@ public class CaseStats extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "passrate")
     @JsonProperty("passrate")
+    @ApiModelProperty("用例通过率")
     private String passrate;
     /**
      * 用例编号
@@ -99,6 +109,7 @@ public class CaseStats extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("用例编号")
     private Long id;
     /**
      * 模块名称
@@ -106,6 +117,7 @@ public class CaseStats extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "modulename")
     @JsonProperty("modulename")
+    @ApiModelProperty("模块名称")
     private String modulename;
     /**
      * 产品
@@ -113,6 +125,7 @@ public class CaseStats extends EntityMP implements Serializable {
     @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
+    @ApiModelProperty("产品")
     private Long product;
     /**
      * 模块
@@ -120,6 +133,7 @@ public class CaseStats extends EntityMP implements Serializable {
     @TableField(value = "`module`")
     @JSONField(name = "module")
     @JsonProperty("module")
+    @ApiModelProperty("模块")
     private Long module;
 
     /**

@@ -54,7 +54,7 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
     @Override
     @Transactional
     public boolean create(IbzReportRoleConfig et) {
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbzreportroleconfigid()), et);
@@ -70,7 +70,7 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
     @Override
     @Transactional
     public boolean update(IbzReportRoleConfig et) {
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_report_role_configid", et.getIbzreportroleconfigid()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_report_role_configid", et.getIbzreportroleconfigid()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbzreportroleconfigid()), et);
@@ -87,7 +87,7 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
     @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -100,7 +100,7 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
     @Transactional
     public IbzReportRoleConfig get(String key) {
         IbzReportRoleConfig et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IbzReportRoleConfig();
             et.setIbzreportroleconfigid(key);
         }
@@ -121,7 +121,7 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
     @Override
     @Transactional
     public boolean save(IbzReportRoleConfig et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -185,7 +185,7 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
      */
     @Override
     public Page<IbzReportRoleConfig> searchDefault(IbzReportRoleConfigSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReportRoleConfig> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReportRoleConfig> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzReportRoleConfig>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -196,24 +196,24 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -229,20 +229,17 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
         List ids =new ArrayList();
         for(IbzReportRoleConfig entity : entities){
             Serializable id=entity.getIbzreportroleconfigid();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     public IIbzReportRoleConfigService getProxyService() {

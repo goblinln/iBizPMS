@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_config", resultMap = "ConfigResultMap")
+@ApiModel("配置")
 public class Config extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class Config extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * 模块
@@ -57,6 +61,7 @@ public class Config extends EntityMP implements Serializable {
     @TableField(value = "`module`")
     @JSONField(name = "module")
     @JsonProperty("module")
+    @ApiModelProperty("模块")
     private String module;
     /**
      * 附加部分
@@ -64,6 +69,7 @@ public class Config extends EntityMP implements Serializable {
     @TableField(value = "`section`")
     @JSONField(name = "section")
     @JsonProperty("section")
+    @ApiModelProperty("附加部分")
     private String section;
     /**
      * 值
@@ -71,6 +77,7 @@ public class Config extends EntityMP implements Serializable {
     @TableField(value = "`value`")
     @JSONField(name = "value")
     @JsonProperty("value")
+    @ApiModelProperty("值")
     private String value;
     /**
      * 键
@@ -78,6 +85,7 @@ public class Config extends EntityMP implements Serializable {
     @TableField(value = "`key`")
     @JSONField(name = "key")
     @JsonProperty("key")
+    @ApiModelProperty("键")
     private String key;
     /**
      * 所有者
@@ -85,6 +93,7 @@ public class Config extends EntityMP implements Serializable {
     @TableField(value = "`owner`")
     @JSONField(name = "owner")
     @JsonProperty("owner")
+    @ApiModelProperty("所有者")
     private String owner;
 
 

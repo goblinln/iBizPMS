@@ -72,7 +72,7 @@ public class GroupResource {
 		Group domain  = groupMapping.toDomain(groupdto);
         domain .setId(group_id);
 		groupService.update(domain );
-		GroupDTO dto = groupMapping.toDto(domain );
+		GroupDTO dto = groupMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class GroupResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-Save-all')")
     @ApiOperation(value = "保存群组", tags = {"群组" },  notes = "保存群组")
 	@RequestMapping(method = RequestMethod.POST, value = "/groups/save")
-    public ResponseEntity<Boolean> save(@RequestBody GroupDTO groupdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(groupService.save(groupMapping.toDomain(groupdto)));
+    public ResponseEntity<GroupDTO> save(@RequestBody GroupDTO groupdto) {
+        Group domain = groupMapping.toDomain(groupdto);
+        groupService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(groupMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-Save-all')")

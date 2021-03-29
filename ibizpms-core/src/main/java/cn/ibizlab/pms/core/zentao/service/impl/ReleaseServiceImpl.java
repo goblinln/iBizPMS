@@ -98,7 +98,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Transactional
     public Release get(Long key) {
         Release et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new Release();
             et.setId(key);
         }
@@ -225,7 +225,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public Release mobReleaseCounter(Release et) {
-         return et;
+         return et ;
     }
 
     @Override
@@ -234,7 +234,8 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean oneClickReleaseBatch(List<Release> etList) {
         for(Release et : etList) {
@@ -246,7 +247,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public boolean save(Release et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -287,7 +288,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public void saveBatch(List<Release> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<Release> create = new ArrayList<>();
         List<Release> update = new ArrayList<>();
         for (Release et : list) {
@@ -336,31 +337,31 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     }
 
 
-    @Override
+	@Override
     public List<Release> selectByBranch(Long id) {
         return baseMapper.selectByBranch(id);
     }
     @Override
     public void removeByBranch(Long id) {
-        this.remove(new QueryWrapper<Release>().eq("branch", id));
+        this.remove(new QueryWrapper<Release>().eq("branch",id));
     }
 
-    @Override
+	@Override
     public List<Release> selectByBuild(Long id) {
         return baseMapper.selectByBuild(id);
     }
     @Override
     public void removeByBuild(Long id) {
-        this.remove(new QueryWrapper<Release>().eq("build", id));
+        this.remove(new QueryWrapper<Release>().eq("build",id));
     }
 
-    @Override
+	@Override
     public List<Release> selectByProduct(Long id) {
         return baseMapper.selectByProduct(id);
     }
     @Override
     public void removeByProduct(Long id) {
-        this.remove(new QueryWrapper<Release>().eq("product", id));
+        this.remove(new QueryWrapper<Release>().eq("product",id));
     }
 
 
@@ -369,7 +370,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
      */
     @Override
     public Page<Release> searchDefault(ReleaseSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Release> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Release> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Release>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -378,7 +379,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
      */
     @Override
     public Page<Release> searchReportRelease(ReleaseSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Release> pages=baseMapper.searchReportRelease(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Release> pages=baseMapper.searchReportRelease(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Release>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -390,24 +391,24 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
      */
     private void fillParentData(Release et){
         //实体关系[DER1N_ZT_RELEASE_ZT_BUILD_BUILD]
-        if (!ObjectUtils.isEmpty(et.getBuild())) {
+        if(!ObjectUtils.isEmpty(et.getBuild())){
             cn.ibizlab.pms.core.zentao.domain.Build ztbuild=et.getZtbuild();
-            if (ObjectUtils.isEmpty(ztbuild)) {
+            if(ObjectUtils.isEmpty(ztbuild)){
                 cn.ibizlab.pms.core.zentao.domain.Build majorEntity=buildService.get(et.getBuild());
                 et.setZtbuild(majorEntity);
-                ztbuild = majorEntity;
+                ztbuild=majorEntity;
             }
             et.setBuilder(ztbuild.getBuilder());
             et.setBuildname(ztbuild.getName());
             et.setBuilddate(ztbuild.getDate());
         }
         //实体关系[DER1N_ZT_RELEASE_ZT_PRODUCT_PRODUCT]
-        if (!ObjectUtils.isEmpty(et.getProduct())) {
+        if(!ObjectUtils.isEmpty(et.getProduct())){
             cn.ibizlab.pms.core.zentao.domain.Product ztproduct=et.getZtproduct();
-            if (ObjectUtils.isEmpty(ztproduct)) {
+            if(ObjectUtils.isEmpty(ztproduct)){
                 cn.ibizlab.pms.core.zentao.domain.Product majorEntity=productService.get(et.getProduct());
                 et.setZtproduct(majorEntity);
-                ztproduct = majorEntity;
+                ztproduct=majorEntity;
             }
             et.setProductname(ztproduct.getName());
         }
@@ -417,31 +418,28 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

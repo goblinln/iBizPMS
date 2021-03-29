@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_product", resultMap = "IBZProProductResultMap")
+@ApiModel("平台产品")
 public class IBZProProduct extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class IBZProProduct extends EntityMP implements Serializable {
     @TableField(value = "`ibiz_id`")
     @JSONField(name = "ibizid")
     @JsonProperty("ibizid")
+    @ApiModelProperty("IBIZ标识")
     private String ibizid;
     /**
      * 产品代号
@@ -57,6 +61,7 @@ public class IBZProProduct extends EntityMP implements Serializable {
     @TableField(value = "`code`")
     @JSONField(name = "code")
     @JsonProperty("code")
+    @ApiModelProperty("产品代号")
     private String code;
     /**
      * 产品名称
@@ -64,6 +69,7 @@ public class IBZProProduct extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("产品名称")
     private String name;
     /**
      * 编号
@@ -72,6 +78,7 @@ public class IBZProProduct extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
 
 

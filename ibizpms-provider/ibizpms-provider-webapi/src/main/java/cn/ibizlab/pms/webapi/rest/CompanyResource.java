@@ -72,7 +72,7 @@ public class CompanyResource {
 		Company domain  = companyMapping.toDomain(companydto);
         domain .setId(company_id);
 		companyService.update(domain );
-		CompanyDTO dto = companyMapping.toDto(domain );
+		CompanyDTO dto = companyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class CompanyResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Save-all')")
     @ApiOperation(value = "保存公司", tags = {"公司" },  notes = "保存公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies/save")
-    public ResponseEntity<Boolean> save(@RequestBody CompanyDTO companydto) {
-        return ResponseEntity.status(HttpStatus.OK).body(companyService.save(companyMapping.toDomain(companydto)));
+    public ResponseEntity<CompanyDTO> save(@RequestBody CompanyDTO companydto) {
+        Company domain = companyMapping.toDomain(companydto);
+        companyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(companyMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Save-all')")

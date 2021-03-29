@@ -74,6 +74,9 @@ public class IBIZProMessageFallback implements IBIZProMessageFeignClient {
         return null;
     }
 
+    public Object saveEntity(IBIZProMessage et) {
+        return null;
+    }
     public Boolean save(IBIZProMessage et) {
         return false;
     }

@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ou.client.SysTeamMemberFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[组成员] 服务对象接口实现
@@ -53,39 +54,37 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
     @Override
     public boolean create(SysTeamMember et) {
         SysTeamMember rt = sysTeamMemberFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<SysTeamMember> list){
-        sysTeamMemberFeignClient.createBatch(list);
+        sysTeamMemberFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(SysTeamMember et) {
-        SysTeamMember rt = sysTeamMemberFeignClient.update(et.getTeammemberid(), et);
-        if (rt == null) {
+        SysTeamMember rt = sysTeamMemberFeignClient.update(et.getTeammemberid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<SysTeamMember> list) {
-        sysTeamMemberFeignClient.updateBatch(list);
+    public void updateBatch(List<SysTeamMember> list){
+        sysTeamMemberFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String teammemberid) {
-        boolean result=sysTeamMemberFeignClient.remove(teammemberid);
+        boolean result=sysTeamMemberFeignClient.remove(teammemberid) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
 
     @Override
     public SysTeamMember get(String teammemberid) {
-        SysTeamMember et = sysTeamMemberFeignClient.get(teammemberid);
-        if (et == null) {
-            et = new SysTeamMember();
+		SysTeamMember et=sysTeamMemberFeignClient.get(teammemberid);
+        if(et==null){
+            et=new SysTeamMember();
             et.setTeammemberid(teammemberid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -124,25 +123,36 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
     @Override
     @Transactional
     public boolean save(SysTeamMember et) {
-        if (et.getTeammemberid() == null) {
-            et.setTeammemberid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = sysTeamMemberFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), SysTeamMember.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!sysTeamMemberFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<SysTeamMember> list) {
-        sysTeamMemberFeignClient.saveBatch(list);
+        sysTeamMemberFeignClient.saveBatch(list) ;
     }
 
 
 
 
-    @Override
+	@Override
     public List<SysTeamMember> selectByUserid(String userid) {
         SysTeamMemberSearchContext context=new SysTeamMemberSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -155,16 +165,15 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
     @Override
     public void removeByUserid(String userid) {
         Set<String> delIds=new HashSet<String>();
-        for (SysTeamMember before:selectByUserid(userid)) {
+        for(SysTeamMember before:selectByUserid(userid)){
             delIds.add(before.getTeammemberid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
 
-    @Override
+	@Override
     public List<SysTeamMember> selectByPostid(String postid) {
         SysTeamMemberSearchContext context=new SysTeamMemberSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -177,16 +186,15 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
     @Override
     public void removeByPostid(String postid) {
         Set<String> delIds=new HashSet<String>();
-        for (SysTeamMember before:selectByPostid(postid)) {
+        for(SysTeamMember before:selectByPostid(postid)){
             delIds.add(before.getTeammemberid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
 
-    @Override
+	@Override
     public List<SysTeamMember> selectByTeamid(String teamid) {
         SysTeamMemberSearchContext context=new SysTeamMemberSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -199,12 +207,11 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
     @Override
     public void removeByTeamid(String teamid) {
         Set<String> delIds=new HashSet<String>();
-        for (SysTeamMember before:selectByTeamid(teamid)) {
+        for(SysTeamMember before:selectByTeamid(teamid)){
             delIds.add(before.getTeammemberid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
 
@@ -218,8 +225,6 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
         Page<SysTeamMember> sysTeamMembers=sysTeamMemberFeignClient.searchDefault(context);
         return sysTeamMembers;
     }
-
-
 
 
     @Override

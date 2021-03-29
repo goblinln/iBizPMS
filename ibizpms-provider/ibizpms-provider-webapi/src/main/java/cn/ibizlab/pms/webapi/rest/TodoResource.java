@@ -72,7 +72,7 @@ public class TodoResource {
 		Todo domain  = todoMapping.toDomain(tododto);
         domain .setId(todo_id);
 		todoService.update(domain );
-		TodoDTO dto = todoMapping.toDto(domain );
+		TodoDTO dto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -219,8 +219,10 @@ public class TodoResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Todo-Save-all')")
     @ApiOperation(value = "保存待办", tags = {"待办" },  notes = "保存待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/save")
-    public ResponseEntity<Boolean> save(@RequestBody TodoDTO tododto) {
-        return ResponseEntity.status(HttpStatus.OK).body(todoService.save(todoMapping.toDomain(tododto)));
+    public ResponseEntity<TodoDTO> save(@RequestBody TodoDTO tododto) {
+        Todo domain = todoMapping.toDomain(tododto);
+        todoService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Todo-Save-all')")

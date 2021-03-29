@@ -72,7 +72,7 @@ public class BuildResource {
 		Build domain  = buildMapping.toDomain(builddto);
         domain .setId(build_id);
 		buildService.update(domain );
-		BuildDTO dto = buildMapping.toDto(domain );
+		BuildDTO dto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -173,8 +173,10 @@ public class BuildResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Build-Save-all')")
     @ApiOperation(value = "保存版本", tags = {"版本" },  notes = "保存版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/save")
-    public ResponseEntity<Boolean> save(@RequestBody BuildDTO builddto) {
-        return ResponseEntity.status(HttpStatus.OK).body(buildService.save(buildMapping.toDomain(builddto)));
+    public ResponseEntity<BuildDTO> save(@RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        buildService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Build-Save-all')")
@@ -458,10 +460,11 @@ public class BuildResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Build-Save-all')")
     @ApiOperation(value = "根据产品保存版本", tags = {"版本" },  notes = "根据产品保存版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/save")
-    public ResponseEntity<Boolean> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
+    public ResponseEntity<BuildDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(buildService.save(domain));
+        buildService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Build-Save-all')")
@@ -746,10 +749,11 @@ public class BuildResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Build-Save-all')")
     @ApiOperation(value = "根据项目保存版本", tags = {"版本" },  notes = "根据项目保存版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/save")
-    public ResponseEntity<Boolean> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildDTO builddto) {
+    public ResponseEntity<BuildDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(buildService.save(domain));
+        buildService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Build-Save-all')")

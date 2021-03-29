@@ -73,7 +73,7 @@ public class SubStoryResource {
 		Story domain  = substoryMapping.toDomain(substorydto);
         domain .setId(substory_id);
 		storyService.update(domain );
-		SubStoryDTO dto = substoryMapping.toDto(domain );
+		SubStoryDTO dto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -728,8 +728,10 @@ public class SubStoryResource {
     @PreAuthorize("hasPermission(this.substoryMapping.toDomain(#substorydto),'iBizPMS-Story-Save')")
     @ApiOperation(value = "保存需求", tags = {"需求" },  notes = "保存需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/save")
-    public ResponseEntity<Boolean> save(@RequestBody SubStoryDTO substorydto) {
-        return ResponseEntity.status(HttpStatus.OK).body(storyService.save(substoryMapping.toDomain(substorydto)));
+    public ResponseEntity<SubStoryDTO> save(@RequestBody SubStoryDTO substorydto) {
+        Story domain = substoryMapping.toDomain(substorydto);
+        storyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.substoryMapping.toDomain(#substorydtos),'iBizPMS-Story-Save')")
@@ -1436,7 +1438,7 @@ public class SubStoryResource {
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/{action}")
     public ResponseEntity<SubStoryDTO> dynamicCall(@PathVariable("substory_id") Long substory_id , @PathVariable("action") String action , @RequestBody SubStoryDTO substorydto) {
-        SubStory domain = storyService.dynamicCall(substory_id, action, substoryMapping.toDomain(substorydto));
+        Story domain = storyService.dynamicCall(substory_id, action, substoryMapping.toDomain(substorydto));
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -2070,10 +2072,11 @@ public class SubStoryResource {
     @PreAuthorize("hasPermission(this.substoryMapping.toDomain(#substorydto),'iBizPMS-Story-Save')")
     @ApiOperation(value = "根据需求保存需求", tags = {"需求" },  notes = "根据需求保存需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/save")
-    public ResponseEntity<Boolean> saveByStory(@PathVariable("story_id") Long story_id, @RequestBody SubStoryDTO substorydto) {
+    public ResponseEntity<SubStoryDTO> saveByStory(@PathVariable("story_id") Long story_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(storyService.save(domain));
+        storyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.substoryMapping.toDomain(#substorydtos),'iBizPMS-Story-Save')")
@@ -3426,10 +3429,11 @@ public class SubStoryResource {
     @PreAuthorize("hasPermission(this.substoryMapping.toDomain(#substorydto),'iBizPMS-Story-Save')")
     @ApiOperation(value = "根据产品需求保存需求", tags = {"需求" },  notes = "根据产品需求保存需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/save")
-    public ResponseEntity<Boolean> saveByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody SubStoryDTO substorydto) {
+    public ResponseEntity<SubStoryDTO> saveByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(storyService.save(domain));
+        storyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.substoryMapping.toDomain(#substorydtos),'iBizPMS-Story-Save')")

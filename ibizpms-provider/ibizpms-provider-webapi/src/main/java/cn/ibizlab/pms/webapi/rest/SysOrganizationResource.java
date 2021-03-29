@@ -73,7 +73,7 @@ public class SysOrganizationResource {
 		SysOrganization domain  = sysorganizationMapping.toDomain(sysorganizationdto);
         domain .setOrgid(sysorganization_id);
 		sysorganizationService.update(domain );
-		SysOrganizationDTO dto = sysorganizationMapping.toDto(domain );
+		SysOrganizationDTO dto = sysorganizationMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class SysOrganizationResource {
     @PreAuthorize("hasPermission(this.sysorganizationMapping.toDomain(#sysorganizationdto),'iBizPMS-SysOrganization-Save')")
     @ApiOperation(value = "保存单位", tags = {"单位" },  notes = "保存单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/save")
-    public ResponseEntity<Boolean> save(@RequestBody SysOrganizationDTO sysorganizationdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(sysorganizationService.save(sysorganizationMapping.toDomain(sysorganizationdto)));
+    public ResponseEntity<SysOrganizationDTO> save(@RequestBody SysOrganizationDTO sysorganizationdto) {
+        SysOrganization domain = sysorganizationMapping.toDomain(sysorganizationdto);
+        sysorganizationService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(sysorganizationMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.sysorganizationMapping.toDomain(#sysorganizationdtos),'iBizPMS-SysOrganization-Save')")

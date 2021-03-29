@@ -60,7 +60,9 @@ public interface PSSysAppFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/save")
-    Boolean save(@RequestBody PSSysApp et);
+    Object saveEntity(@RequestBody PSSysApp et);
+
+    default Boolean save(@RequestBody PSSysApp et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/savebatch")
     Boolean saveBatch(@RequestBody List<PSSysApp> pssysapps);

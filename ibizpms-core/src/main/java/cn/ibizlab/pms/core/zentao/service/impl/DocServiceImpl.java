@@ -90,7 +90,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -103,7 +103,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Transactional
     public Doc get(Long key) {
         Doc et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new Doc();
             et.setId(key);
         }
@@ -124,7 +124,8 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean byVersionUpdateContextBatch(List<Doc> etList) {
         for(Doc et : etList) {
@@ -143,7 +144,8 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean collectBatch(List<Doc> etList) {
         for(Doc et : etList) {
@@ -158,7 +160,8 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean getDocStatusBatch(List<Doc> etList) {
         for(Doc et : etList) {
@@ -173,7 +176,8 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean onlyCollectDocBatch(List<Doc> etList) {
         for(Doc et : etList) {
@@ -188,7 +192,8 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean onlyUnCollectDocBatch(List<Doc> etList) {
         for(Doc et : etList) {
@@ -200,7 +205,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public boolean save(Doc et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -241,7 +246,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public void saveBatch(List<Doc> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<Doc> create = new ArrayList<>();
         List<Doc> update = new ArrayList<>();
         for (Doc et : list) {
@@ -265,7 +270,8 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean unCollectBatch(List<Doc> etList) {
         for(Doc et : etList) {
@@ -275,40 +281,40 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     }
 
 
-    @Override
+	@Override
     public List<Doc> selectByLib(Long id) {
         return baseMapper.selectByLib(id);
     }
     @Override
     public void removeByLib(Long id) {
-        this.remove(new QueryWrapper<Doc>().eq("lib", id));
+        this.remove(new QueryWrapper<Doc>().eq("lib",id));
     }
 
-    @Override
+	@Override
     public List<Doc> selectByModule(Long id) {
         return baseMapper.selectByModule(id);
     }
     @Override
     public void removeByModule(Long id) {
-        this.remove(new QueryWrapper<Doc>().eq("module", id));
+        this.remove(new QueryWrapper<Doc>().eq("module",id));
     }
 
-    @Override
+	@Override
     public List<Doc> selectByProduct(Long id) {
         return baseMapper.selectByProduct(id);
     }
     @Override
     public void removeByProduct(Long id) {
-        this.remove(new QueryWrapper<Doc>().eq("product", id));
+        this.remove(new QueryWrapper<Doc>().eq("product",id));
     }
 
-    @Override
+	@Override
     public List<Doc> selectByProject(Long id) {
         return baseMapper.selectByProject(id);
     }
     @Override
     public void removeByProject(Long id) {
-        this.remove(new QueryWrapper<Doc>().eq("project", id));
+        this.remove(new QueryWrapper<Doc>().eq("project",id));
     }
 
 
@@ -317,7 +323,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     @Override
     public Page<Doc> searchChildDocLibDoc(DocSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchChildDocLibDoc(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchChildDocLibDoc(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -326,7 +332,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     @Override
     public Page<Doc> searchDefault(DocSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -335,7 +341,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     @Override
     public Page<Doc> searchDocLibAndDoc(DocSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchDocLibAndDoc(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchDocLibAndDoc(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -344,7 +350,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     @Override
     public Page<Doc> searchDocLibDoc(DocSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchDocLibDoc(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchDocLibDoc(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -353,7 +359,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     @Override
     public Page<Doc> searchDocModuleDoc(DocSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchDocModuleDoc(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchDocModuleDoc(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -362,7 +368,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     @Override
     public Page<Doc> searchDocStatus(DocSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchDocStatus(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchDocStatus(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -371,7 +377,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     @Override
     public Page<Doc> searchModuleDocChild(DocSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchModuleDocChild(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchModuleDocChild(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -380,7 +386,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     @Override
     public Page<Doc> searchMyFavourite(DocSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchMyFavourite(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchMyFavourite(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -389,7 +395,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     @Override
     public Page<Doc> searchMyFavouritesOnlyDoc(DocSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchMyFavouritesOnlyDoc(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchMyFavouritesOnlyDoc(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -398,7 +404,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     @Override
     public Page<Doc> searchNotRootDoc(DocSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchNotRootDoc(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchNotRootDoc(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -407,7 +413,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     @Override
     public Page<Doc> searchRootDoc(DocSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchRootDoc(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchRootDoc(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -419,42 +425,42 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
      */
     private void fillParentData(Doc et){
         //实体关系[DER1N_ZT_DOC_ZT_DOCLIB_LIB]
-        if (!ObjectUtils.isEmpty(et.getLib())) {
+        if(!ObjectUtils.isEmpty(et.getLib())){
             cn.ibizlab.pms.core.zentao.domain.DocLib ztDoclib=et.getZtDoclib();
-            if (ObjectUtils.isEmpty(ztDoclib)) {
+            if(ObjectUtils.isEmpty(ztDoclib)){
                 cn.ibizlab.pms.core.zentao.domain.DocLib majorEntity=doclibService.get(et.getLib());
                 et.setZtDoclib(majorEntity);
-                ztDoclib = majorEntity;
+                ztDoclib=majorEntity;
             }
             et.setLibname(ztDoclib.getName());
         }
         //实体关系[DER1N_ZT_DOC_ZT_MODULE_MODULE]
-        if (!ObjectUtils.isEmpty(et.getModule())) {
+        if(!ObjectUtils.isEmpty(et.getModule())){
             cn.ibizlab.pms.core.zentao.domain.Module ztModule=et.getZtModule();
-            if (ObjectUtils.isEmpty(ztModule)) {
+            if(ObjectUtils.isEmpty(ztModule)){
                 cn.ibizlab.pms.core.zentao.domain.Module majorEntity=moduleService.get(et.getModule());
                 et.setZtModule(majorEntity);
-                ztModule = majorEntity;
+                ztModule=majorEntity;
             }
             et.setModulename(ztModule.getName());
         }
         //实体关系[DER1N_ZT_DOC_ZT_PRODUCT_PRODUCT]
-        if (!ObjectUtils.isEmpty(et.getProduct())) {
+        if(!ObjectUtils.isEmpty(et.getProduct())){
             cn.ibizlab.pms.core.zentao.domain.Product ztProduct=et.getZtProduct();
-            if (ObjectUtils.isEmpty(ztProduct)) {
+            if(ObjectUtils.isEmpty(ztProduct)){
                 cn.ibizlab.pms.core.zentao.domain.Product majorEntity=productService.get(et.getProduct());
                 et.setZtProduct(majorEntity);
-                ztProduct = majorEntity;
+                ztProduct=majorEntity;
             }
             et.setProductname(ztProduct.getName());
         }
         //实体关系[DER1N_ZT_DOC_ZT_PROJECT_PROJECT]
-        if (!ObjectUtils.isEmpty(et.getProject())) {
+        if(!ObjectUtils.isEmpty(et.getProject())){
             cn.ibizlab.pms.core.zentao.domain.Project ztProject=et.getZtProject();
-            if (ObjectUtils.isEmpty(ztProject)) {
+            if(ObjectUtils.isEmpty(ztProject)){
                 cn.ibizlab.pms.core.zentao.domain.Project majorEntity=projectService.get(et.getProject());
                 et.setZtProject(majorEntity);
-                ztProject = majorEntity;
+                ztProject=majorEntity;
             }
             et.setProjectname(ztProject.getName());
         }
@@ -464,31 +470,28 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

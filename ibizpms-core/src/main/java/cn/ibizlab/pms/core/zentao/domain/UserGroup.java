@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_usergroup", resultMap = "UserGroupResultMap")
+@ApiModel("用户组")
 public class UserGroup extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class UserGroup extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("account")
     private String account;
     /**
      * group
@@ -57,6 +61,7 @@ public class UserGroup extends EntityMP implements Serializable {
     @TableField(value = "`group`")
     @JSONField(name = "group")
     @JsonProperty("group")
+    @ApiModelProperty("group")
     private Integer group;
     /**
      * 虚拟主键
@@ -65,6 +70,7 @@ public class UserGroup extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("虚拟主键")
     private String id;
 
 

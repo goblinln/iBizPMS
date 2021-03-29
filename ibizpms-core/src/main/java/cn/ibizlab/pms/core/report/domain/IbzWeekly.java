@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "T_IBZ_WEEKLY", resultMap = "IbzWeeklyResultMap")
+@ApiModel("周报")
 public class IbzWeekly extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`issubmit`")
     @JSONField(name = "issubmit")
     @JsonProperty("issubmit")
+    @ApiModelProperty("是否提交")
     private String issubmit;
     /**
      * 下周计划
@@ -56,6 +60,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`plannextweek`")
     @JSONField(name = "plannextweek")
     @JsonProperty("plannextweek")
+    @ApiModelProperty("下周计划")
     private String plannextweek;
     /**
      * 周报名称
@@ -64,6 +69,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`ibz_weeklyname`")
     @JSONField(name = "ibzweeklyname")
     @JsonProperty("ibzweeklyname")
+    @ApiModelProperty("周报名称")
     private String ibzweeklyname;
     /**
      * 抄送给
@@ -71,6 +77,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`mailto`")
     @JSONField(name = "mailto")
     @JsonProperty("mailto")
+    @ApiModelProperty("抄送给")
     private String mailto;
     /**
      * 汇报给(选择)
@@ -78,6 +85,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "reporttopk")
     @JsonProperty("reporttopk")
+    @ApiModelProperty("汇报给(选择)")
     private String reporttopk;
     /**
      * 下周计划任务
@@ -85,6 +93,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`nextweektask`")
     @JSONField(name = "nextweektask")
     @JsonProperty("nextweektask")
+    @ApiModelProperty("下周计划任务")
     private String nextweektask;
     /**
      * 周报标识
@@ -93,6 +102,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableId(value = "ibz_weeklyid", type = IdType.AUTO)
     @JSONField(name = "ibzweeklyid")
     @JsonProperty("ibzweeklyid")
+    @ApiModelProperty("周报标识")
     private Long ibzweeklyid;
     /**
      * 提交时间
@@ -101,6 +111,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @JsonFormat(pattern = "HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "submittime", format = "HH:mm:ss")
     @JsonProperty("submittime")
+    @ApiModelProperty("提交时间")
     private Timestamp submittime;
     /**
      * 抄送给(选择)
@@ -108,6 +119,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "mailtopk")
     @JsonProperty("mailtopk")
+    @ApiModelProperty("抄送给(选择)")
     private String mailtopk;
     /**
      * 建立人
@@ -116,6 +128,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`createman`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
     /**
      * 状态
@@ -124,6 +137,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`reportstatus`")
     @JSONField(name = "reportstatus")
     @JsonProperty("reportstatus")
+    @ApiModelProperty("状态")
     private String reportstatus;
     /**
      * 附件
@@ -131,6 +145,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "files")
     @JsonProperty("files")
+    @ApiModelProperty("附件")
     private String files;
     /**
      * 本周工作
@@ -138,6 +153,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`workthisweek`")
     @JSONField(name = "workthisweek")
     @JsonProperty("workthisweek")
+    @ApiModelProperty("本周工作")
     private String workthisweek;
     /**
      * 汇报给
@@ -145,6 +161,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`reportto`")
     @JSONField(name = "reportto")
     @JsonProperty("reportto")
+    @ApiModelProperty("汇报给")
     private String reportto;
     /**
      * 更新人名称
@@ -153,6 +170,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`updatemanname`")
     @JSONField(name = "updatemanname")
     @JsonProperty("updatemanname")
+    @ApiModelProperty("更新人名称")
     private String updatemanname;
     /**
      * 用户
@@ -160,6 +178,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("用户")
     private String account;
     /**
      * 本周完成任务
@@ -167,6 +186,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`thisweektask`")
     @JSONField(name = "thisweektask")
     @JsonProperty("thisweektask")
+    @ApiModelProperty("本周完成任务")
     private String thisweektask;
     /**
      * 其他事项
@@ -174,6 +194,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`comment`")
     @JSONField(name = "comment")
     @JsonProperty("comment")
+    @ApiModelProperty("其他事项")
     private String comment;
     /**
      * 日期
@@ -182,6 +203,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
+    @ApiModelProperty("日期")
     private Timestamp date;
     /**
      * 更新人
@@ -190,6 +212,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`updateman`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
     /**
      * 建立人名称
@@ -198,6 +221,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @TableField(value = "`createmanname`")
     @JSONField(name = "createmanname")
     @JsonProperty("createmanname")
+    @ApiModelProperty("建立人名称")
     private String createmanname;
     /**
      * 建立时间
@@ -207,6 +231,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
     /**
      * 更新时间
@@ -216,6 +241,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
 
 

@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_casestep", resultMap = "CaseStepResultMap")
+@ApiModel("用例步骤")
 public class CaseStep extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "casestepid")
     @JsonProperty("casestepid")
+    @ApiModelProperty("用例步骤编号")
     private Long casestepid;
     /**
      * 实际情况
@@ -56,6 +60,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "reals")
     @JsonProperty("reals")
+    @ApiModelProperty("实际情况")
     private String reals;
     /**
      * 测试结果
@@ -63,6 +68,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "steps")
     @JsonProperty("steps")
+    @ApiModelProperty("测试结果")
     private String steps;
     /**
      * 用例步骤类型
@@ -71,6 +77,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("用例步骤类型")
     private String type;
     /**
      * 编号
@@ -79,6 +86,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 步骤
@@ -87,6 +95,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("步骤")
     private String desc;
     /**
      * 预期
@@ -95,6 +104,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableField(value = "`expect`")
     @JSONField(name = "expect")
     @JsonProperty("expect")
+    @ApiModelProperty("预期")
     private String expect;
     /**
      * 附件
@@ -102,6 +112,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "files")
     @JsonProperty("files")
+    @ApiModelProperty("附件")
     private String files;
     /**
      * 执行编号
@@ -109,6 +120,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "runid")
     @JsonProperty("runid")
+    @ApiModelProperty("执行编号")
     private Integer runid;
     /**
      * 用例版本
@@ -117,6 +129,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableField(value = "`version`")
     @JSONField(name = "version")
     @JsonProperty("version")
+    @ApiModelProperty("用例版本")
     private Integer version;
     /**
      * 用例
@@ -125,6 +138,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableField(value = "`case`")
     @JSONField(name = "ibizcase")
     @JsonProperty("ibizcase")
+    @ApiModelProperty("用例")
     private Long ibizcase;
     /**
      * 分组用例步骤的组编号
@@ -133,6 +147,7 @@ public class CaseStep extends EntityMP implements Serializable {
     @TableField(value = "`parent`")
     @JSONField(name = "parent")
     @JsonProperty("parent")
+    @ApiModelProperty("分组用例步骤的组编号")
     private Long parent;
 
     /**

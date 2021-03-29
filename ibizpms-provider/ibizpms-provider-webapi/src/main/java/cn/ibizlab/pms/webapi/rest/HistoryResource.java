@@ -72,7 +72,7 @@ public class HistoryResource {
 		History domain  = historyMapping.toDomain(historydto);
         domain .setId(history_id);
 		historyService.update(domain );
-		HistoryDTO dto = historyMapping.toDto(domain );
+		HistoryDTO dto = historyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class HistoryResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-History-Save-all')")
     @ApiOperation(value = "保存操作历史", tags = {"操作历史" },  notes = "保存操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/histories/save")
-    public ResponseEntity<Boolean> save(@RequestBody HistoryDTO historydto) {
-        return ResponseEntity.status(HttpStatus.OK).body(historyService.save(historyMapping.toDomain(historydto)));
+    public ResponseEntity<HistoryDTO> save(@RequestBody HistoryDTO historydto) {
+        History domain = historyMapping.toDomain(historydto);
+        historyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-History-Save-all')")
@@ -255,10 +257,11 @@ public class HistoryResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-History-Save-all')")
     @ApiOperation(value = "根据系统日志保存操作历史", tags = {"操作历史" },  notes = "根据系统日志保存操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/histories/save")
-    public ResponseEntity<Boolean> saveByAction(@PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {
+    public ResponseEntity<HistoryDTO> saveByAction(@PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
         domain.setAction(action_id);
-        return ResponseEntity.status(HttpStatus.OK).body(historyService.save(domain));
+        historyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-History-Save-all')")

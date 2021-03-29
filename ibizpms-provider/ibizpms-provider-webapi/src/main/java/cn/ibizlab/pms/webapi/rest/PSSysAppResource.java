@@ -73,7 +73,7 @@ public class PSSysAppResource {
 		PSSysApp domain  = pssysappMapping.toDomain(pssysappdto);
         domain .setPssysappid(pssysapp_id);
 		pssysappService.update(domain );
-		PSSysAppDTO dto = pssysappMapping.toDto(domain );
+		PSSysAppDTO dto = pssysappMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class PSSysAppResource {
     @PreAuthorize("hasPermission(this.pssysappMapping.toDomain(#pssysappdto),'iBizPMS-PSSysApp-Save')")
     @ApiOperation(value = "保存系统应用", tags = {"系统应用" },  notes = "保存系统应用")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps/save")
-    public ResponseEntity<Boolean> save(@RequestBody PSSysAppDTO pssysappdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(pssysappService.save(pssysappMapping.toDomain(pssysappdto)));
+    public ResponseEntity<PSSysAppDTO> save(@RequestBody PSSysAppDTO pssysappdto) {
+        PSSysApp domain = pssysappMapping.toDomain(pssysappdto);
+        pssysappService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(pssysappMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.pssysappMapping.toDomain(#pssysappdtos),'iBizPMS-PSSysApp-Save')")

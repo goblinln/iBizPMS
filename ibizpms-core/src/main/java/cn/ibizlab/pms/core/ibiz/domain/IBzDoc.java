@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 /**
@@ -34,6 +36,7 @@ import cn.ibizlab.pms.util.annotation.Audit;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ApiModel("文档")
 public class IBzDoc extends EntityBase implements Serializable {
 
     /**
@@ -42,6 +45,7 @@ public class IBzDoc extends EntityBase implements Serializable {
     @DEField(name = "ibz_docid", isKeyField = true)
     @JSONField(name = "iBzDocId")
     @JsonProperty("iBzDocId")
+    @ApiModelProperty("文档标识")
     private String ibzdocid;
 
     /**
@@ -49,6 +53,7 @@ public class IBzDoc extends EntityBase implements Serializable {
      */
     @JSONField(name = "addedBy")
     @JsonProperty("addedBy")
+    @ApiModelProperty("由谁添加")
     private String addedby;
 
     /**
@@ -56,6 +61,7 @@ public class IBzDoc extends EntityBase implements Serializable {
      */
     @JSONField(name = "editedBy")
     @JsonProperty("editedBy")
+    @ApiModelProperty("由谁更新")
     private String editedby;
 
     /**
@@ -63,6 +69,7 @@ public class IBzDoc extends EntityBase implements Serializable {
      */
     @JSONField(name = "addedDate")
     @JsonProperty("addedDate")
+    @ApiModelProperty("添加时间")
     private String addeddate;
 
     /**
@@ -70,6 +77,7 @@ public class IBzDoc extends EntityBase implements Serializable {
      */
     @JSONField(name = "size")
     @JsonProperty("size")
+    @ApiModelProperty("大小")
     private String size;
 
     /**
@@ -77,6 +85,7 @@ public class IBzDoc extends EntityBase implements Serializable {
      */
     @JSONField(name = "lib")
     @JsonProperty("lib")
+    @ApiModelProperty("所属文档库")
     private String lib;
 
     /**
@@ -86,6 +95,7 @@ public class IBzDoc extends EntityBase implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createDate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createDate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
 
     /**
@@ -94,6 +104,7 @@ public class IBzDoc extends EntityBase implements Serializable {
     @DEField(name = "ibz_docname")
     @JSONField(name = "iBzDocName")
     @JsonProperty("iBzDocName")
+    @ApiModelProperty("文档名称")
     private String ibzdocname;
 
     /**
@@ -101,6 +112,7 @@ public class IBzDoc extends EntityBase implements Serializable {
      */
     @JSONField(name = "order")
     @JsonProperty("order")
+    @ApiModelProperty("排序")
     private String order;
 
     /**
@@ -108,6 +120,7 @@ public class IBzDoc extends EntityBase implements Serializable {
      */
     @JSONField(name = "isCollect")
     @JsonProperty("isCollect")
+    @ApiModelProperty("是否已收藏")
     private Integer iscollect;
 
     /**
@@ -116,6 +129,7 @@ public class IBzDoc extends EntityBase implements Serializable {
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
     @JSONField(name = "createMan")
     @JsonProperty("createMan")
+    @ApiModelProperty("建立人")
     private String createman;
 
     /**
@@ -125,6 +139,7 @@ public class IBzDoc extends EntityBase implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updateDate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updateDate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
 
     /**
@@ -132,6 +147,7 @@ public class IBzDoc extends EntityBase implements Serializable {
      */
     @JSONField(name = "editedDate")
     @JsonProperty("editedDate")
+    @ApiModelProperty("更新时间")
     private String editeddate;
 
     /**
@@ -139,6 +155,7 @@ public class IBzDoc extends EntityBase implements Serializable {
      */
     @JSONField(name = "objectType")
     @JsonProperty("objectType")
+    @ApiModelProperty("对象类型")
     private String objecttype;
 
     /**
@@ -147,6 +164,7 @@ public class IBzDoc extends EntityBase implements Serializable {
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
     @JSONField(name = "updateMan")
     @JsonProperty("updateMan")
+    @ApiModelProperty("更新人")
     private String updateman;
 
 

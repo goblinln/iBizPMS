@@ -63,7 +63,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Transactional
     public boolean create(ProductModule et) {
         fillParentData(et);
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -81,7 +81,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Transactional
     public boolean update(ProductModule et) {
         fillParentData(et);
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -99,7 +99,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -112,7 +112,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Transactional
     public ProductModule get(Long key) {
         ProductModule et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new ProductModule();
             et.setId(key);
         }
@@ -134,19 +134,19 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Override
     @Transactional
     public ProductModule fix(ProductModule et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public ProductModule removeModule(ProductModule et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public boolean save(ProductModule et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -187,7 +187,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Override
     @Transactional
     public void saveBatch(List<ProductModule> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<ProductModule> create = new ArrayList<>();
         List<ProductModule> update = new ArrayList<>();
         for (ProductModule et : list) {
@@ -211,7 +211,8 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean syncFromIBIZBatch(List<ProductModule> etList) {
         for(ProductModule et : etList) {
@@ -221,22 +222,22 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     }
 
 
-    @Override
+	@Override
     public List<ProductModule> selectByParent(Long id) {
         return baseMapper.selectByParent(id);
     }
     @Override
     public void removeByParent(Long id) {
-        this.remove(new QueryWrapper<ProductModule>().eq("parent", id));
+        this.remove(new QueryWrapper<ProductModule>().eq("parent",id));
     }
 
-    @Override
+	@Override
     public List<ProductModule> selectByRoot(Long id) {
         return baseMapper.selectByRoot(id);
     }
     @Override
     public void removeByRoot(Long id) {
-        this.remove(new QueryWrapper<ProductModule>().eq("root", id));
+        this.remove(new QueryWrapper<ProductModule>().eq("root",id));
     }
 
 
@@ -245,7 +246,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
      */
     @Override
     public Page<ProductModule> searchByPath(ProductModuleSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchByPath(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchByPath(context.getPages(),context,context.getSelectCond());
         return new PageImpl<ProductModule>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -254,7 +255,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
      */
     @Override
     public Page<ProductModule> searchDefault(ProductModuleSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<ProductModule>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -263,7 +264,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
      */
     @Override
     public Page<ProductModule> searchParentModule(ProductModuleSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchParentModule(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchParentModule(context.getPages(),context,context.getSelectCond());
         return new PageImpl<ProductModule>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -272,7 +273,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
      */
     @Override
     public Page<ProductModule> searchRoot(ProductModuleSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchRoot(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchRoot(context.getPages(),context,context.getSelectCond());
         return new PageImpl<ProductModule>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -281,7 +282,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
      */
     @Override
     public Page<ProductModule> searchRoot_NoBranch(ProductModuleSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchRoot_NoBranch(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchRoot_NoBranch(context.getPages(),context,context.getSelectCond());
         return new PageImpl<ProductModule>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -290,7 +291,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
      */
     @Override
     public Page<ProductModule> searchStoryModule(ProductModuleSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchStoryModule(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductModule> pages=baseMapper.searchStoryModule(context.getPages(),context,context.getSelectCond());
         return new PageImpl<ProductModule>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -302,22 +303,22 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
      */
     private void fillParentData(ProductModule et){
         //实体关系[DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT]
-        if (!ObjectUtils.isEmpty(et.getParent())) {
+        if(!ObjectUtils.isEmpty(et.getParent())){
             cn.ibizlab.pms.core.ibiz.domain.ProductModule parentmodule=et.getParentmodule();
-            if (ObjectUtils.isEmpty(parentmodule)) {
+            if(ObjectUtils.isEmpty(parentmodule)){
                 cn.ibizlab.pms.core.ibiz.domain.ProductModule majorEntity=productmoduleService.get(et.getParent());
                 et.setParentmodule(majorEntity);
-                parentmodule = majorEntity;
+                parentmodule=majorEntity;
             }
             et.setParentname(parentmodule.getName());
         }
         //实体关系[DER1N_IBZ_PRODUCTMODULE_ZT_PRODUCT_ROOT]
-        if (!ObjectUtils.isEmpty(et.getRoot())) {
+        if(!ObjectUtils.isEmpty(et.getRoot())){
             cn.ibizlab.pms.core.zentao.domain.Product ztproduct=et.getZtproduct();
-            if (ObjectUtils.isEmpty(ztproduct)) {
+            if(ObjectUtils.isEmpty(ztproduct)){
                 cn.ibizlab.pms.core.zentao.domain.Product majorEntity=productService.get(et.getRoot());
                 et.setZtproduct(majorEntity);
-                ztproduct = majorEntity;
+                ztproduct=majorEntity;
             }
             et.setRootname(ztproduct.getName());
         }
@@ -327,31 +328,28 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

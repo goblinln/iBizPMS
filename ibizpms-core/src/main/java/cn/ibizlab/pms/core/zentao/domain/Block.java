@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_block", resultMap = "BlockResultMap")
+@ApiModel("block")
 public class Block extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class Block extends EntityMP implements Serializable {
     @TableField(value = "`height`")
     @JSONField(name = "height")
     @JsonProperty("height")
+    @ApiModelProperty("高度")
     private Integer height;
     /**
      * params
@@ -57,6 +61,7 @@ public class Block extends EntityMP implements Serializable {
     @TableField(value = "`params`")
     @JSONField(name = "params")
     @JsonProperty("params")
+    @ApiModelProperty("params")
     private String params;
     /**
      * 区块名称
@@ -64,6 +69,7 @@ public class Block extends EntityMP implements Serializable {
     @TableField(value = "`title`")
     @JSONField(name = "title")
     @JsonProperty("title")
+    @ApiModelProperty("区块名称")
     private String title;
     /**
      * 排序
@@ -72,6 +78,7 @@ public class Block extends EntityMP implements Serializable {
     @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
+    @ApiModelProperty("排序")
     private Integer order;
     /**
      * 来源区块
@@ -79,6 +86,7 @@ public class Block extends EntityMP implements Serializable {
     @TableField(value = "`block`")
     @JSONField(name = "block")
     @JsonProperty("block")
+    @ApiModelProperty("来源区块")
     private String block;
     /**
      * 所属用户
@@ -86,6 +94,7 @@ public class Block extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("所属用户")
     private String account;
     /**
      * 位置
@@ -94,6 +103,7 @@ public class Block extends EntityMP implements Serializable {
     @TableField(value = "`grid`")
     @JSONField(name = "grid")
     @JsonProperty("grid")
+    @ApiModelProperty("位置")
     private Integer grid;
     /**
      * 所属模块
@@ -101,6 +111,7 @@ public class Block extends EntityMP implements Serializable {
     @TableField(value = "`module`")
     @JSONField(name = "module")
     @JsonProperty("module")
+    @ApiModelProperty("所属模块")
     private String module;
     /**
      * 隐藏
@@ -109,6 +120,7 @@ public class Block extends EntityMP implements Serializable {
     @TableField(value = "`hidden`")
     @JSONField(name = "hidden")
     @JsonProperty("hidden")
+    @ApiModelProperty("隐藏")
     private Integer hidden;
     /**
      * 来源模块
@@ -116,6 +128,7 @@ public class Block extends EntityMP implements Serializable {
     @TableField(value = "`source`")
     @JSONField(name = "source")
     @JsonProperty("source")
+    @ApiModelProperty("来源模块")
     private String source;
     /**
      * id
@@ -124,6 +137,7 @@ public class Block extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
 
 

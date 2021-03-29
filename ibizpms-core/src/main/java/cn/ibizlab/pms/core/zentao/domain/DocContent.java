@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_doccontent", resultMap = "DocContentResultMap")
+@ApiModel("文档内容")
 public class DocContent extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class DocContent extends EntityMP implements Serializable {
     @TableField(value = "`files`")
     @JSONField(name = "files")
     @JsonProperty("files")
+    @ApiModelProperty("附件")
     private String files;
     /**
      * 编号
@@ -57,6 +61,7 @@ public class DocContent extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 文档正文
@@ -64,6 +69,7 @@ public class DocContent extends EntityMP implements Serializable {
     @TableField(value = "`content`")
     @JSONField(name = "content")
     @JsonProperty("content")
+    @ApiModelProperty("文档正文")
     private String content;
     /**
      * 文档类型
@@ -71,6 +77,7 @@ public class DocContent extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("文档类型")
     private String type;
     /**
      * 文档标题
@@ -78,6 +85,7 @@ public class DocContent extends EntityMP implements Serializable {
     @TableField(value = "`title`")
     @JSONField(name = "title")
     @JsonProperty("title")
+    @ApiModelProperty("文档标题")
     private String title;
     /**
      * 版本号
@@ -86,6 +94,7 @@ public class DocContent extends EntityMP implements Serializable {
     @TableField(value = "`version`")
     @JSONField(name = "version")
     @JsonProperty("version")
+    @ApiModelProperty("版本号")
     private Integer version;
     /**
      * 文档摘要
@@ -93,6 +102,7 @@ public class DocContent extends EntityMP implements Serializable {
     @TableField(value = "`digest`")
     @JSONField(name = "digest")
     @JsonProperty("digest")
+    @ApiModelProperty("文档摘要")
     private String digest;
     /**
      * 文档
@@ -100,6 +110,7 @@ public class DocContent extends EntityMP implements Serializable {
     @TableField(value = "`doc`")
     @JSONField(name = "doc")
     @JsonProperty("doc")
+    @ApiModelProperty("文档")
     private Long doc;
 
     /**

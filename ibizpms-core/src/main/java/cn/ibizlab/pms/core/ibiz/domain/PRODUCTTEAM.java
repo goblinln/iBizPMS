@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_team", resultMap = "PRODUCTTEAMResultMap")
+@ApiModel("产品团队")
 public class PRODUCTTEAM extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("用户")
     private String account;
     /**
      * 加盟日
@@ -58,6 +62,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "join", format = "yyyy-MM-dd")
     @JsonProperty("join")
+    @ApiModelProperty("加盟日")
     private Timestamp join;
     /**
      * 预计剩余
@@ -66,6 +71,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(value = "`left`")
     @JSONField(name = "left")
     @JsonProperty("left")
+    @ApiModelProperty("预计剩余")
     private Double left;
     /**
      * 总计可用
@@ -73,6 +79,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "total")
     @JsonProperty("total")
+    @ApiModelProperty("总计可用")
     private Integer total;
     /**
      * 用户
@@ -80,6 +87,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "username")
     @JsonProperty("username")
+    @ApiModelProperty("用户")
     private String username;
     /**
      * 最初预计
@@ -88,6 +96,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(value = "`estimate`")
     @JSONField(name = "estimate")
     @JsonProperty("estimate")
+    @ApiModelProperty("最初预计")
     private Double estimate;
     /**
      * 可用工时/天
@@ -96,6 +105,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(value = "`hours`")
     @JSONField(name = "hours")
     @JsonProperty("hours")
+    @ApiModelProperty("可用工时/天")
     private Double hours;
     /**
      * 任务数
@@ -103,6 +113,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "taskcnt")
     @JsonProperty("taskcnt")
+    @ApiModelProperty("任务数")
     private Integer taskcnt;
     /**
      * 团队类型
@@ -111,6 +122,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("团队类型")
     private String type;
     /**
      * 总计消耗
@@ -119,6 +131,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(value = "`consumed`")
     @JSONField(name = "consumed")
     @JsonProperty("consumed")
+    @ApiModelProperty("总计消耗")
     private Double consumed;
     /**
      * 可用工日
@@ -127,6 +140,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(value = "`days`")
     @JSONField(name = "days")
     @JsonProperty("days")
+    @ApiModelProperty("可用工日")
     private Integer days;
     /**
      * 编号
@@ -135,6 +149,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 受限用户
@@ -143,6 +158,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(value = "`limited`")
     @JSONField(name = "limited")
     @JsonProperty("limited")
+    @ApiModelProperty("受限用户")
     private String limited;
     /**
      * 排序
@@ -151,6 +167,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
+    @ApiModelProperty("排序")
     private Integer order;
     /**
      * 角色
@@ -158,6 +175,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(value = "`role`")
     @JSONField(name = "role")
     @JsonProperty("role")
+    @ApiModelProperty("角色")
     private String role;
     /**
      * 产品编号
@@ -165,6 +183,7 @@ public class PRODUCTTEAM extends EntityMP implements Serializable {
     @TableField(value = "`root`")
     @JSONField(name = "root")
     @JsonProperty("root")
+    @ApiModelProperty("产品编号")
     private Long root;
 
     /**

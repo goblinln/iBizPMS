@@ -58,7 +58,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Transactional
     public boolean create(StorySpec et) {
         fillParentData(et);
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -76,7 +76,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Transactional
     public boolean update(StorySpec et) {
         fillParentData(et);
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -94,7 +94,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -107,7 +107,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Transactional
     public StorySpec get(String key) {
         StorySpec et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new StorySpec();
             et.setId(key);
         }
@@ -129,7 +129,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Override
     @Transactional
     public boolean save(StorySpec et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -170,7 +170,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Override
     @Transactional
     public void saveBatch(List<StorySpec> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<StorySpec> create = new ArrayList<>();
         List<StorySpec> update = new ArrayList<>();
         for (StorySpec et : list) {
@@ -189,13 +189,13 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     }
 
 
-    @Override
+	@Override
     public List<StorySpec> selectByStory(Long id) {
         return baseMapper.selectByStory(id);
     }
     @Override
     public void removeByStory(Long id) {
-        this.remove(new QueryWrapper<StorySpec>().eq("story", id));
+        this.remove(new QueryWrapper<StorySpec>().eq("story",id));
     }
 
 
@@ -204,7 +204,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
      */
     @Override
     public Page<StorySpec> searchDefault(StorySpecSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<StorySpec> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<StorySpec> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<StorySpec>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -213,7 +213,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
      */
     @Override
     public Page<StorySpec> searchVersion(StorySpecSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<StorySpec> pages=baseMapper.searchVersion(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<StorySpec> pages=baseMapper.searchVersion(context.getPages(),context,context.getSelectCond());
         return new PageImpl<StorySpec>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -225,12 +225,12 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
      */
     private void fillParentData(StorySpec et){
         //实体关系[DER1N_ZT_STORYSPEC_ZT_STORY_STORY]
-        if (!ObjectUtils.isEmpty(et.getStory())) {
+        if(!ObjectUtils.isEmpty(et.getStory())){
             cn.ibizlab.pms.core.zentao.domain.Story ztstory=et.getZtstory();
-            if (ObjectUtils.isEmpty(ztstory)) {
+            if(ObjectUtils.isEmpty(ztstory)){
                 cn.ibizlab.pms.core.zentao.domain.Story majorEntity=storyService.get(et.getStory());
                 et.setZtstory(majorEntity);
-                ztstory = majorEntity;
+                ztstory=majorEntity;
             }
             et.setTitle(ztstory.getTitle());
             et.setVersion(ztstory.getVersion());
@@ -241,31 +241,28 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

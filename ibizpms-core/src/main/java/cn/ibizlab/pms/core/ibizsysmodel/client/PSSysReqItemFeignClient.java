@@ -60,7 +60,9 @@ public interface PSSysReqItemFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysreqitems/save")
-    Boolean save(@RequestBody PSSysReqItem et);
+    Object saveEntity(@RequestBody PSSysReqItem et);
+
+    default Boolean save(@RequestBody PSSysReqItem et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysreqitems/savebatch")
     Boolean saveBatch(@RequestBody List<PSSysReqItem> pssysreqitems);

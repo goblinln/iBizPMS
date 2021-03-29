@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 /**
@@ -34,6 +36,7 @@ import cn.ibizlab.pms.util.annotation.Audit;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ApiModel("产品线")
 public class ProductLine extends EntityBase implements Serializable {
 
     /**
@@ -42,6 +45,7 @@ public class ProductLine extends EntityBase implements Serializable {
     @DEField(name = "ibz_productlinename")
     @JSONField(name = "productLineName")
     @JsonProperty("productLineName")
+    @ApiModelProperty("产品线名称")
     private String productlinename;
 
     /**
@@ -50,6 +54,7 @@ public class ProductLine extends EntityBase implements Serializable {
     @DEField(name = "ibz_productlineid", isKeyField = true)
     @JSONField(name = "productLineId")
     @JsonProperty("productLineId")
+    @ApiModelProperty("产品线标识")
     private String productlineid;
 
     /**
@@ -58,6 +63,7 @@ public class ProductLine extends EntityBase implements Serializable {
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
     @JSONField(name = "updateMan")
     @JsonProperty("updateMan")
+    @ApiModelProperty("更新人")
     private String updateman;
 
     /**
@@ -67,6 +73,7 @@ public class ProductLine extends EntityBase implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updateDate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updateDate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
 
     /**
@@ -76,6 +83,7 @@ public class ProductLine extends EntityBase implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createDate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createDate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
 
     /**
@@ -84,6 +92,7 @@ public class ProductLine extends EntityBase implements Serializable {
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
     @JSONField(name = "createMan")
     @JsonProperty("createMan")
+    @ApiModelProperty("建立人")
     private String createman;
 
 

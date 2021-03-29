@@ -72,7 +72,7 @@ public class ModuleResource {
 		Module domain  = moduleMapping.toDomain(moduledto);
         domain .setId(module_id);
 		moduleService.update(domain );
-		ModuleDTO dto = moduleMapping.toDto(domain );
+		ModuleDTO dto = moduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -143,8 +143,10 @@ public class ModuleResource {
     @PreAuthorize("hasPermission(this.moduleMapping.toDomain(#moduledto),'iBizPMS-Module-Save')")
     @ApiOperation(value = "保存模块", tags = {"模块" },  notes = "保存模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/save")
-    public ResponseEntity<Boolean> save(@RequestBody ModuleDTO moduledto) {
-        return ResponseEntity.status(HttpStatus.OK).body(moduleService.save(moduleMapping.toDomain(moduledto)));
+    public ResponseEntity<ModuleDTO> save(@RequestBody ModuleDTO moduledto) {
+        Module domain = moduleMapping.toDomain(moduledto);
+        moduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(moduleMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.moduleMapping.toDomain(#moduledtos),'iBizPMS-Module-Save')")

@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_module", resultMap = "TestModuleResultMap")
+@ApiModel("测试模块")
 public class TestModule extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("类型（story）")
     private String type;
     /**
      * path
@@ -58,6 +62,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`path`")
     @JSONField(name = "path")
     @JsonProperty("path")
+    @ApiModelProperty("path")
     private String path;
     /**
      * owner
@@ -66,6 +71,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`owner`")
     @JSONField(name = "owner")
     @JsonProperty("owner")
+    @ApiModelProperty("owner")
     private String owner;
     /**
      * 排序值
@@ -74,6 +80,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
+    @ApiModelProperty("排序值")
     private Integer order;
     /**
      * 逻辑删除标志
@@ -83,6 +90,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("逻辑删除标志")
     private String deleted;
     /**
      * branch
@@ -91,6 +99,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`branch`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
+    @ApiModelProperty("branch")
     private Integer branch;
     /**
      * collector
@@ -99,6 +108,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`collector`")
     @JSONField(name = "collector")
     @JsonProperty("collector")
+    @ApiModelProperty("collector")
     private String collector;
     /**
      * id
@@ -107,6 +117,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * 叶子模块
@@ -114,6 +125,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "isleaf")
     @JsonProperty("isleaf")
+    @ApiModelProperty("叶子模块")
     private String isleaf;
     /**
      * 名称
@@ -121,6 +133,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("名称")
     private String name;
     /**
      * 简称
@@ -129,6 +142,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`short`")
     @JSONField(name = "ibizshort")
     @JsonProperty("ibizshort")
+    @ApiModelProperty("简称")
     private String ibizshort;
     /**
      * grade
@@ -137,6 +151,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`grade`")
     @JSONField(name = "grade")
     @JsonProperty("grade")
+    @ApiModelProperty("grade")
     private Integer grade;
     /**
      * 上级模块
@@ -144,6 +159,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "parentname")
     @JsonProperty("parentname")
+    @ApiModelProperty("上级模块")
     private String parentname;
     /**
      * 测试
@@ -151,6 +167,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "rootname")
     @JsonProperty("rootname")
+    @ApiModelProperty("测试")
     private String rootname;
     /**
      * 编号
@@ -159,6 +176,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`root`")
     @JSONField(name = "root")
     @JsonProperty("root")
+    @ApiModelProperty("编号")
     private Long root;
     /**
      * id
@@ -167,6 +185,7 @@ public class TestModule extends EntityMP implements Serializable {
     @TableField(value = "`parent`")
     @JSONField(name = "parent")
     @JsonProperty("parent")
+    @ApiModelProperty("id")
     private Long parent;
 
     /**

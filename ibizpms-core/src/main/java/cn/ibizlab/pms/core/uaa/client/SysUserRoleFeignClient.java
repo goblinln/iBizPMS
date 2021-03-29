@@ -60,7 +60,9 @@ public interface SysUserRoleFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/save")
-    Boolean save(@RequestBody SysUserRole et);
+    Object saveEntity(@RequestBody SysUserRole et);
+
+    default Boolean save(@RequestBody SysUserRole et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/savebatch")
     Boolean saveBatch(@RequestBody List<SysUserRole> sysuserroles);

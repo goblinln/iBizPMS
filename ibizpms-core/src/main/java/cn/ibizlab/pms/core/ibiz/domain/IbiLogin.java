@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_user", resultMap = "IbiLoginResultMap")
+@ApiModel("实体")
 public class IbiLogin extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class IbiLogin extends EntityMP implements Serializable {
     @TableField(value = "`realname`")
     @JSONField(name = "realname")
     @JsonProperty("realname")
+    @ApiModelProperty("真实姓名")
     private String realname;
     /**
      * ID
@@ -57,6 +61,7 @@ public class IbiLogin extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("ID")
     private Long id;
     /**
      * 账户
@@ -64,6 +69,7 @@ public class IbiLogin extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("账户")
     private String account;
     /**
      * token
@@ -71,6 +77,7 @@ public class IbiLogin extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "token")
     @JsonProperty("token")
+    @ApiModelProperty("token")
     private String token;
     /**
      * 源代码账户
@@ -78,6 +85,7 @@ public class IbiLogin extends EntityMP implements Serializable {
     @TableField(value = "`commiter`")
     @JSONField(name = "commiter")
     @JsonProperty("commiter")
+    @ApiModelProperty("源代码账户")
     private String commiter;
 
 

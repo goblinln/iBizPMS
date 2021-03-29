@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_taskestimate", resultMap = "TaskEstimateStatsResultMap")
+@ApiModel("任务工时统计")
 public class TaskEstimateStats extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     @TableField(value = "`date`")
     @JSONField(name = "date")
     @JsonProperty("date")
+    @ApiModelProperty("日期")
     private String date;
     /**
      * 消耗的工时
@@ -56,6 +60,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "consumed")
     @JsonProperty("consumed")
+    @ApiModelProperty("消耗的工时")
     private Double consumed;
     /**
      * 用户
@@ -63,6 +68,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("用户")
     private String account;
     /**
      * 编号
@@ -71,6 +77,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 项目名称
@@ -78,6 +85,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("项目名称")
     private String name;
     /**
      * 任务数
@@ -85,6 +93,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "taskcnt")
     @JsonProperty("taskcnt")
+    @ApiModelProperty("任务数")
     private Integer taskcnt;
 
 

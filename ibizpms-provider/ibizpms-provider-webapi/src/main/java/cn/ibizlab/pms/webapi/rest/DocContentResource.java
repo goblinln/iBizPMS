@@ -72,7 +72,7 @@ public class DocContentResource {
 		DocContent domain  = doccontentMapping.toDomain(doccontentdto);
         domain .setId(doccontent_id);
 		doccontentService.update(domain );
-		DocContentDTO dto = doccontentMapping.toDto(domain );
+		DocContentDTO dto = doccontentMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class DocContentResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Save-all')")
     @ApiOperation(value = "保存文档内容", tags = {"文档内容" },  notes = "保存文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/doccontents/save")
-    public ResponseEntity<Boolean> save(@RequestBody DocContentDTO doccontentdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(doccontentService.save(doccontentMapping.toDomain(doccontentdto)));
+    public ResponseEntity<DocContentDTO> save(@RequestBody DocContentDTO doccontentdto) {
+        DocContent domain = doccontentMapping.toDomain(doccontentdto);
+        doccontentService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(doccontentMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Save-all')")
@@ -277,10 +279,11 @@ public class DocContentResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Save-all')")
     @ApiOperation(value = "根据文档保存文档内容", tags = {"文档内容" },  notes = "根据文档保存文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/doccontents/save")
-    public ResponseEntity<Boolean> saveByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentDTO doccontentdto) {
+    public ResponseEntity<DocContentDTO> saveByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentDTO doccontentdto) {
         DocContent domain = doccontentMapping.toDomain(doccontentdto);
         domain.setDoc(doc_id);
-        return ResponseEntity.status(HttpStatus.OK).body(doccontentService.save(domain));
+        doccontentService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(doccontentMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Save-all')")

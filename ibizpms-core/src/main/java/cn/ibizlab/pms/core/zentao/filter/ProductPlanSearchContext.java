@@ -34,8 +34,8 @@ public class ProductPlanSearchContext extends QueryWrapperContext<ProductPlan> {
             this.getSearchCond().like("`title`", n_title_like);
         }
     }
-    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Timestamp n_begin_gtandeq;//[开始日期]
 	public void setN_begin_gtandeq(Timestamp n_begin_gtandeq) {
         this.n_begin_gtandeq = n_begin_gtandeq;
@@ -43,8 +43,8 @@ public class ProductPlanSearchContext extends QueryWrapperContext<ProductPlan> {
             this.getSearchCond().ge("`begin`", n_begin_gtandeq);
         }
     }
-    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Timestamp n_end_ltandeq;//[结束日期]
 	public void setN_end_ltandeq(Timestamp n_end_ltandeq) {
         this.n_end_ltandeq = n_end_ltandeq;

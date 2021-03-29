@@ -78,7 +78,7 @@ public class IbzCaseResource {
 		IbzCase domain  = ibzcaseMapping.toDomain(ibzcasedto);
         domain .setId(ibzcase_id);
 		ibzcaseService.update(domain );
-		IbzCaseDTO dto = ibzcaseMapping.toDto(domain );
+		IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -130,8 +130,10 @@ public class IbzCaseResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzCase-Save-all')")
     @ApiOperation(value = "保存测试用例", tags = {"测试用例" },  notes = "保存测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzCaseDTO ibzcasedto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.save(ibzcaseMapping.toDomain(ibzcasedto)));
+    public ResponseEntity<IbzCaseDTO> save(@RequestBody IbzCaseDTO ibzcasedto) {
+        IbzCase domain = ibzcaseMapping.toDomain(ibzcasedto);
+        ibzcaseService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcaseMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzCase-Save-all')")
@@ -261,10 +263,11 @@ public class IbzCaseResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzCase-Save-all')")
     @ApiOperation(value = "根据用例库保存测试用例", tags = {"测试用例" },  notes = "根据用例库保存测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/save")
-    public ResponseEntity<Boolean> saveByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzCaseDTO ibzcasedto) {
+    public ResponseEntity<IbzCaseDTO> saveByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzCaseDTO ibzcasedto) {
         IbzCase domain = ibzcaseMapping.toDomain(ibzcasedto);
         domain.setLib(ibzlib_id);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.save(domain));
+        ibzcaseService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcaseMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzCase-Save-all')")

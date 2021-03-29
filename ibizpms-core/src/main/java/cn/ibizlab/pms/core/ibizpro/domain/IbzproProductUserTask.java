@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_taskestimate", resultMap = "IbzproProductUserTaskResultMap")
+@ApiModel("产品汇报用户任务")
 public class IbzproProductUserTask extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "tasktype")
     @JsonProperty("tasktype")
+    @ApiModelProperty("任务类型")
     private String tasktype;
     /**
      * 用户
@@ -57,6 +61,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("用户")
     private String account;
     /**
      * 总计消耗
@@ -65,6 +70,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @TableField(value = "`consumed`")
     @JSONField(name = "consumed")
     @JsonProperty("consumed")
+    @ApiModelProperty("总计消耗")
     private Double consumed;
     /**
      * 编号
@@ -73,6 +79,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 任务名称
@@ -80,6 +87,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "taskname")
     @JsonProperty("taskname")
+    @ApiModelProperty("任务名称")
     private String taskname;
     /**
      * 进度
@@ -87,6 +95,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "progressrate")
     @JsonProperty("progressrate")
+    @ApiModelProperty("进度")
     private String progressrate;
     /**
      * 预计开始
@@ -95,6 +104,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "eststarted", format = "yyyy-MM-dd")
     @JsonProperty("eststarted")
+    @ApiModelProperty("预计开始")
     private Timestamp eststarted;
     /**
      * 日期
@@ -103,6 +113,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
+    @ApiModelProperty("日期")
     private Timestamp date;
     /**
      * 延期天数
@@ -110,6 +121,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "delaydays")
     @JsonProperty("delaydays")
+    @ApiModelProperty("延期天数")
     private String delaydays;
     /**
      * 任务
@@ -117,6 +129,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @TableField(value = "`task`")
     @JSONField(name = "task")
     @JsonProperty("task")
+    @ApiModelProperty("任务")
     private Long task;
     /**
      * 预计剩余
@@ -125,6 +138,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @TableField(value = "`left`")
     @JSONField(name = "left")
     @JsonProperty("left")
+    @ApiModelProperty("预计剩余")
     private Double left;
     /**
      * 截止日期
@@ -133,6 +147,7 @@ public class IbzproProductUserTask extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "deadline", format = "yyyy-MM-dd")
     @JsonProperty("deadline")
+    @ApiModelProperty("截止日期")
     private Timestamp deadline;
 
 

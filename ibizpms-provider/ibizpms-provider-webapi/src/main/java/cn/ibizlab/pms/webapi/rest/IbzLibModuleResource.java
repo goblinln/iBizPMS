@@ -72,7 +72,7 @@ public class IbzLibModuleResource {
 		IbzLibModule domain  = ibzlibmoduleMapping.toDomain(ibzlibmoduledto);
         domain .setId(ibzlibmodule_id);
 		ibzlibmoduleService.update(domain );
-		IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain );
+		IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class IbzLibModuleResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Save-all')")
     @ApiOperation(value = "保存用例库模块", tags = {"用例库模块" },  notes = "保存用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibmodules/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzLibModuleDTO ibzlibmoduledto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.save(ibzlibmoduleMapping.toDomain(ibzlibmoduledto)));
+    public ResponseEntity<IbzLibModuleDTO> save(@RequestBody IbzLibModuleDTO ibzlibmoduledto) {
+        IbzLibModule domain = ibzlibmoduleMapping.toDomain(ibzlibmoduledto);
+        ibzlibmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Save-all')")
@@ -277,10 +279,11 @@ public class IbzLibModuleResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Save-all')")
     @ApiOperation(value = "根据用例库保存用例库模块", tags = {"用例库模块" },  notes = "根据用例库保存用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/save")
-    public ResponseEntity<Boolean> saveByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
+    public ResponseEntity<IbzLibModuleDTO> saveByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
         IbzLibModule domain = ibzlibmoduleMapping.toDomain(ibzlibmoduledto);
         domain.setRoot(ibzlib_id);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.save(domain));
+        ibzlibmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Save-all')")

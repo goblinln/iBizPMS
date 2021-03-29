@@ -60,7 +60,9 @@ public interface PSSystemDBCfgFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/save")
-    Boolean save(@RequestBody PSSystemDBCfg et);
+    Object saveEntity(@RequestBody PSSystemDBCfg et);
+
+    default Boolean save(@RequestBody PSSystemDBCfg et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/savebatch")
     Boolean saveBatch(@RequestBody List<PSSystemDBCfg> pssystemdbcfgs);

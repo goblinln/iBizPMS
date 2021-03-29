@@ -72,7 +72,7 @@ public class IbizproIndexResource {
 		IbizproIndex domain  = ibizproindexMapping.toDomain(ibizproindexdto);
         domain .setIndexid(ibizproindex_id);
 		ibizproindexService.update(domain );
-		IbizproIndexDTO dto = ibizproindexMapping.toDto(domain );
+		IbizproIndexDTO dto = ibizproindexMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class IbizproIndexResource {
     @PreAuthorize("hasPermission(this.ibizproindexMapping.toDomain(#ibizproindexdto),'iBizPMS-IbizproIndex-Save')")
     @ApiOperation(value = "保存索引检索", tags = {"索引检索" },  notes = "保存索引检索")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbizproIndexDTO ibizproindexdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproindexService.save(ibizproindexMapping.toDomain(ibizproindexdto)));
+    public ResponseEntity<IbizproIndexDTO> save(@RequestBody IbizproIndexDTO ibizproindexdto) {
+        IbizproIndex domain = ibizproindexMapping.toDomain(ibizproindexdto);
+        ibizproindexService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibizproindexMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibizproindexMapping.toDomain(#ibizproindexdtos),'iBizPMS-IbizproIndex-Save')")

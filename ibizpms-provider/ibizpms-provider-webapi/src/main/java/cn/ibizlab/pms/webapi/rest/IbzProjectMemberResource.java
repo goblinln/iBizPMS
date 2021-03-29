@@ -72,7 +72,7 @@ public class IbzProjectMemberResource {
 		IbzProjectMember domain  = ibzprojectmemberMapping.toDomain(ibzprojectmemberdto);
         domain .setId(ibzprojectmember_id);
 		ibzprojectmemberService.update(domain );
-		IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain );
+		IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class IbzProjectMemberResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-Save-all')")
     @ApiOperation(value = "保存项目相关成员", tags = {"项目相关成员" },  notes = "保存项目相关成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzProjectMemberDTO ibzprojectmemberdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberService.save(ibzprojectmemberMapping.toDomain(ibzprojectmemberdto)));
+    public ResponseEntity<IbzProjectMemberDTO> save(@RequestBody IbzProjectMemberDTO ibzprojectmemberdto) {
+        IbzProjectMember domain = ibzprojectmemberMapping.toDomain(ibzprojectmemberdto);
+        ibzprojectmemberService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-Save-all')")

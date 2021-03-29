@@ -73,7 +73,7 @@ public class DynaDashboardResource {
 		DynaDashboard domain  = dynadashboardMapping.toDomain(dynadashboarddto);
         domain .setDynadashboardid(dynadashboard_id);
 		dynadashboardService.update(domain );
-		DynaDashboardDTO dto = dynadashboardMapping.toDto(domain );
+		DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class DynaDashboardResource {
     @PreAuthorize("hasPermission(this.dynadashboardMapping.toDomain(#dynadashboarddto),'iBizPMS-DynaDashboard-Save')")
     @ApiOperation(value = "保存动态数据看板", tags = {"动态数据看板" },  notes = "保存动态数据看板")
 	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/save")
-    public ResponseEntity<Boolean> save(@RequestBody DynaDashboardDTO dynadashboarddto) {
-        return ResponseEntity.status(HttpStatus.OK).body(dynadashboardService.save(dynadashboardMapping.toDomain(dynadashboarddto)));
+    public ResponseEntity<DynaDashboardDTO> save(@RequestBody DynaDashboardDTO dynadashboarddto) {
+        DynaDashboard domain = dynadashboardMapping.toDomain(dynadashboarddto);
+        dynadashboardService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dynadashboardMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.dynadashboardMapping.toDomain(#dynadashboarddtos),'iBizPMS-DynaDashboard-Save')")

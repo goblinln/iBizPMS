@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ou.client.SysPostFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[岗位] 服务对象接口实现
@@ -53,39 +54,37 @@ public class SysPostServiceImpl implements ISysPostService {
     @Override
     public boolean create(SysPost et) {
         SysPost rt = sysPostFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<SysPost> list){
-        sysPostFeignClient.createBatch(list);
+        sysPostFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(SysPost et) {
-        SysPost rt = sysPostFeignClient.update(et.getPostid(), et);
-        if (rt == null) {
+        SysPost rt = sysPostFeignClient.update(et.getPostid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<SysPost> list) {
-        sysPostFeignClient.updateBatch(list);
+    public void updateBatch(List<SysPost> list){
+        sysPostFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String postid) {
-        boolean result=sysPostFeignClient.remove(postid);
+        boolean result=sysPostFeignClient.remove(postid) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class SysPostServiceImpl implements ISysPostService {
 
     @Override
     public SysPost get(String postid) {
-        SysPost et = sysPostFeignClient.get(postid);
-        if (et == null) {
-            et = new SysPost();
+		SysPost et=sysPostFeignClient.get(postid);
+        if(et==null){
+            et=new SysPost();
             et.setPostid(postid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -124,19 +123,30 @@ public class SysPostServiceImpl implements ISysPostService {
     @Override
     @Transactional
     public boolean save(SysPost et) {
-        if (et.getPostid() == null) {
-            et.setPostid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = sysPostFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), SysPost.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!sysPostFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<SysPost> list) {
-        sysPostFeignClient.saveBatch(list);
+        sysPostFeignClient.saveBatch(list) ;
     }
 
 
@@ -152,8 +162,6 @@ public class SysPostServiceImpl implements ISysPostService {
         Page<SysPost> sysPosts=sysPostFeignClient.searchDefault(context);
         return sysPosts;
     }
-
-
 
 
     @Override

@@ -66,6 +66,9 @@ public class SysEmployeeFallback implements SysEmployeeFeignClient {
     }
 
 
+    public Object saveEntity(SysEmployee et) {
+        return null;
+    }
     public Boolean save(SysEmployee et) {
         return false;
     }

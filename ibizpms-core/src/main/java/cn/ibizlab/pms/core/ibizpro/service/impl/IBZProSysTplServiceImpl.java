@@ -57,7 +57,7 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
     @Override
     @Transactional
     public boolean create(IBZProSysTpl et) {
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbzprosystplid()), et);
@@ -73,7 +73,7 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
     @Override
     @Transactional
     public boolean update(IBZProSysTpl et) {
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibzpro_systplid", et.getIbzprosystplid()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibzpro_systplid", et.getIbzprosystplid()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbzprosystplid()), et);
@@ -90,7 +90,7 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
     @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -103,7 +103,7 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
     @Transactional
     public IBZProSysTpl get(String key) {
         IBZProSysTpl et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IBZProSysTpl();
             et.setIbzprosystplid(key);
         }
@@ -124,7 +124,7 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
     @Override
     @Transactional
     public boolean save(IBZProSysTpl et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -182,13 +182,13 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
     }
 
 
-    @Override
+	@Override
     public List<IBZProSysTpl> selectByFile(Long id) {
         return baseMapper.selectByFile(id);
     }
     @Override
     public void removeByFile(Long id) {
-        this.remove(new QueryWrapper<IBZProSysTpl>().eq("file", id));
+        this.remove(new QueryWrapper<IBZProSysTpl>().eq("file",id));
     }
 
 
@@ -197,7 +197,7 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
      */
     @Override
     public Page<IBZProSysTpl> searchDefault(IBZProSysTplSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProSysTpl> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProSysTpl> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IBZProSysTpl>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -208,24 +208,24 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -241,20 +241,17 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
         List ids =new ArrayList();
         for(IBZProSysTpl entity : entities){
             Serializable id=entity.getIbzprosystplid();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     public IIBZProSysTplService getProxyService() {

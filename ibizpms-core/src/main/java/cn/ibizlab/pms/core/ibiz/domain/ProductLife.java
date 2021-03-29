@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "T_IBZ_PRODUCTLIFE", resultMap = "ProductLifeResultMap")
+@ApiModel("产品生命周期")
 public class ProductLife extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @TableField(value = "`branch`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
+    @ApiModelProperty("平台/分支")
     private String branch;
     /**
      * 建立人
@@ -57,6 +61,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @TableField(value = "`createman`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
     /**
      * 更新时间
@@ -66,6 +71,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
     /**
      * 产品生命周期名称
@@ -74,6 +80,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @TableField(value = "`ibz_productlifename`")
     @JSONField(name = "productlifename")
     @JsonProperty("productlifename")
+    @ApiModelProperty("产品生命周期名称")
     private String productlifename;
     /**
      * 产品
@@ -81,6 +88,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
+    @ApiModelProperty("产品")
     private Integer product;
     /**
      * 建立时间
@@ -90,6 +98,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
     /**
      * 父对象
@@ -97,6 +106,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @TableField(value = "`parent`")
     @JSONField(name = "parent")
     @JsonProperty("parent")
+    @ApiModelProperty("父对象")
     private String parent;
     /**
      * 年
@@ -104,6 +114,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @TableField(value = "`year`")
     @JSONField(name = "year")
     @JsonProperty("year")
+    @ApiModelProperty("年")
     private String year;
     /**
      * 更新人
@@ -112,6 +123,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @TableField(value = "`updateman`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
     /**
      * 属性
@@ -119,6 +131,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("属性")
     private String type;
     /**
      * 里程碑
@@ -126,6 +139,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @TableField(value = "`marker`")
     @JSONField(name = "marker")
     @JsonProperty("marker")
+    @ApiModelProperty("里程碑")
     private Integer marker;
     /**
      * 开始日期
@@ -134,6 +148,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "begin", format = "yyyy-MM-dd")
     @JsonProperty("begin")
+    @ApiModelProperty("开始日期")
     private Timestamp begin;
     /**
      * 产品生命周期标识
@@ -142,6 +157,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @TableId(value = "ibz_productlifeid", type = IdType.ASSIGN_UUID)
     @JSONField(name = "productlifeid")
     @JsonProperty("productlifeid")
+    @ApiModelProperty("产品生命周期标识")
     private String productlifeid;
     /**
      * 结束日期
@@ -150,6 +166,7 @@ public class ProductLife extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "end", format = "yyyy-MM-dd")
     @JsonProperty("end")
+    @ApiModelProperty("结束日期")
     private Timestamp end;
 
 

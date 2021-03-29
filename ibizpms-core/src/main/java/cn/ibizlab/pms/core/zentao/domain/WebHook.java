@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_webhook", resultMap = "WebHookResultMap")
+@ApiModel("网页钩子")
 public class WebHook extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`secret`")
     @JSONField(name = "secret")
     @JsonProperty("secret")
+    @ApiModelProperty("secret")
     private String secret;
     /**
      * createdDate
@@ -57,6 +61,7 @@ public class WebHook extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
+    @ApiModelProperty("createdDate")
     private Timestamp createddate;
     /**
      * actions
@@ -64,6 +69,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`actions`")
     @JSONField(name = "actions")
     @JsonProperty("actions")
+    @ApiModelProperty("actions")
     private String actions;
     /**
      * desc
@@ -71,6 +77,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("desc")
     private String desc;
     /**
      * contentType
@@ -79,6 +86,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`contenttype`")
     @JSONField(name = "contenttype")
     @JsonProperty("contenttype")
+    @ApiModelProperty("contentType")
     private String contenttype;
     /**
      * type
@@ -87,6 +95,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("type")
     private String type;
     /**
      * id
@@ -95,6 +104,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * editedBy
@@ -102,6 +112,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`editedby`")
     @JSONField(name = "editedby")
     @JsonProperty("editedby")
+    @ApiModelProperty("editedBy")
     private String editedby;
     /**
      * 逻辑删除标志
@@ -111,6 +122,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("逻辑删除标志")
     private String deleted;
     /**
      * name
@@ -118,6 +130,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("name")
     private String name;
     /**
      * url
@@ -125,6 +138,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`url`")
     @JSONField(name = "url")
     @JsonProperty("url")
+    @ApiModelProperty("url")
     private String url;
     /**
      * domain
@@ -132,6 +146,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`domain`")
     @JSONField(name = "domain")
     @JsonProperty("domain")
+    @ApiModelProperty("domain")
     private String domain;
     /**
      * createdBy
@@ -139,6 +154,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`createdby`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
+    @ApiModelProperty("createdBy")
     private String createdby;
     /**
      * params
@@ -146,6 +162,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`params`")
     @JSONField(name = "params")
     @JsonProperty("params")
+    @ApiModelProperty("params")
     private String params;
     /**
      * sendType
@@ -153,6 +170,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`sendtype`")
     @JSONField(name = "sendtype")
     @JsonProperty("sendtype")
+    @ApiModelProperty("sendType")
     private String sendtype;
     /**
      * products
@@ -160,6 +178,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`products`")
     @JSONField(name = "products")
     @JsonProperty("products")
+    @ApiModelProperty("products")
     private String products;
     /**
      * editedDate
@@ -168,6 +187,7 @@ public class WebHook extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "editeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("editeddate")
+    @ApiModelProperty("editedDate")
     private Timestamp editeddate;
     /**
      * projects
@@ -175,6 +195,7 @@ public class WebHook extends EntityMP implements Serializable {
     @TableField(value = "`projects`")
     @JSONField(name = "projects")
     @JsonProperty("projects")
+    @ApiModelProperty("projects")
     private String projects;
 
 

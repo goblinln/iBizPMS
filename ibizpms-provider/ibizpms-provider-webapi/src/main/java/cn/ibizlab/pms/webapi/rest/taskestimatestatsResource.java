@@ -72,7 +72,7 @@ public class taskestimatestatsResource {
 		TaskEstimateStats domain  = taskestimatestatsMapping.toDomain(taskestimatestatsdto);
         domain .setId(taskestimatestats_id);
 		taskestimatestatsService.update(domain );
-		taskestimatestatsDTO dto = taskestimatestatsMapping.toDto(domain );
+		taskestimatestatsDTO dto = taskestimatestatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class taskestimatestatsResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Save-all')")
     @ApiOperation(value = "保存任务工时统计", tags = {"任务工时统计" },  notes = "保存任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/save")
-    public ResponseEntity<Boolean> save(@RequestBody taskestimatestatsDTO taskestimatestatsdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsService.save(taskestimatestatsMapping.toDomain(taskestimatestatsdto)));
+    public ResponseEntity<taskestimatestatsDTO> save(@RequestBody taskestimatestatsDTO taskestimatestatsdto) {
+        TaskEstimateStats domain = taskestimatestatsMapping.toDomain(taskestimatestatsdto);
+        taskestimatestatsService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Save-all')")
@@ -206,7 +208,7 @@ public class taskestimatestatsResource {
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/{taskestimatestats_id}/{action}")
     public ResponseEntity<taskestimatestatsDTO> dynamicCall(@PathVariable("taskestimatestats_id") Long taskestimatestats_id , @PathVariable("action") String action , @RequestBody taskestimatestatsDTO taskestimatestatsdto) {
-        taskestimatestats domain = taskestimatestatsService.dynamicCall(taskestimatestats_id, action, taskestimatestatsMapping.toDomain(taskestimatestatsdto));
+        TaskEstimateStats domain = taskestimatestatsService.dynamicCall(taskestimatestats_id, action, taskestimatestatsMapping.toDomain(taskestimatestatsdto));
         taskestimatestatsdto = taskestimatestatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsdto);
     }

@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ibizplugin.client.IBIZProPluginFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[系统插件] 服务对象接口实现
@@ -53,39 +54,37 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
     @Override
     public boolean create(IBIZProPlugin et) {
         IBIZProPlugin rt = iBIZProPluginFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<IBIZProPlugin> list){
-        iBIZProPluginFeignClient.createBatch(list);
+        iBIZProPluginFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(IBIZProPlugin et) {
-        IBIZProPlugin rt = iBIZProPluginFeignClient.update(et.getIbizpropluginid(), et);
-        if (rt == null) {
+        IBIZProPlugin rt = iBIZProPluginFeignClient.update(et.getIbizpropluginid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<IBIZProPlugin> list) {
-        iBIZProPluginFeignClient.updateBatch(list);
+    public void updateBatch(List<IBIZProPlugin> list){
+        iBIZProPluginFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String ibizpropluginid) {
-        boolean result=iBIZProPluginFeignClient.remove(ibizpropluginid);
+        boolean result=iBIZProPluginFeignClient.remove(ibizpropluginid) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
 
     @Override
     public IBIZProPlugin get(String ibizpropluginid) {
-        IBIZProPlugin et = iBIZProPluginFeignClient.get(ibizpropluginid);
-        if (et == null) {
-            et = new IBIZProPlugin();
+		IBIZProPlugin et=iBIZProPluginFeignClient.get(ibizpropluginid);
+        if(et==null){
+            et=new IBIZProPlugin();
             et.setIbizpropluginid(ibizpropluginid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -124,19 +123,30 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
     @Override
     @Transactional
     public boolean save(IBIZProPlugin et) {
-        if (et.getIbizpropluginid() == null) {
-            et.setIbizpropluginid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = iBIZProPluginFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), IBIZProPlugin.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!iBIZProPluginFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<IBIZProPlugin> list) {
-        iBIZProPluginFeignClient.saveBatch(list);
+        iBIZProPluginFeignClient.saveBatch(list) ;
     }
 
 
@@ -152,8 +162,6 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
         Page<IBIZProPlugin> iBIZProPlugins=iBIZProPluginFeignClient.searchDefault(context);
         return iBIZProPlugins;
     }
-
-
 
 
     @Override

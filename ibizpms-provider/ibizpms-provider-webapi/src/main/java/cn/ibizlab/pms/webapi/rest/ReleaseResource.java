@@ -72,7 +72,7 @@ public class ReleaseResource {
 		Release domain  = releaseMapping.toDomain(releasedto);
         domain .setId(release_id);
 		releaseService.update(domain );
-		ReleaseDTO dto = releaseMapping.toDto(domain );
+		ReleaseDTO dto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -287,8 +287,10 @@ public class ReleaseResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Save-all')")
     @ApiOperation(value = "保存发布", tags = {"发布" },  notes = "保存发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/save")
-    public ResponseEntity<Boolean> save(@RequestBody ReleaseDTO releasedto) {
-        return ResponseEntity.status(HttpStatus.OK).body(releaseService.save(releaseMapping.toDomain(releasedto)));
+    public ResponseEntity<ReleaseDTO> save(@RequestBody ReleaseDTO releasedto) {
+        Release domain = releaseMapping.toDomain(releasedto);
+        releaseService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Save-all')")
@@ -624,10 +626,11 @@ public class ReleaseResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Save-all')")
     @ApiOperation(value = "根据产品保存发布", tags = {"发布" },  notes = "根据产品保存发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/save")
-    public ResponseEntity<Boolean> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ReleaseDTO releasedto) {
+    public ResponseEntity<ReleaseDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(releaseService.save(domain));
+        releaseService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Save-all')")

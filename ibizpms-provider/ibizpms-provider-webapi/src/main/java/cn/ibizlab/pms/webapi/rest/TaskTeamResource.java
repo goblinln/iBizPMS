@@ -135,10 +135,11 @@ public class TaskTeamResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
     @ApiOperation(value = "根据任务保存任务团队", tags = {"任务团队" },  notes = "根据任务保存任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskteams/save")
-    public ResponseEntity<Boolean> saveByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
+    public ResponseEntity<TaskTeamDTO> saveByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
         domain.setRoot(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskteamService.save(domain));
+        taskteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
@@ -264,10 +265,11 @@ public class TaskTeamResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
     @ApiOperation(value = "根据任务模块任务保存任务团队", tags = {"任务团队" },  notes = "根据任务模块任务保存任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskteams/save")
-    public ResponseEntity<Boolean> saveByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
+    public ResponseEntity<TaskTeamDTO> saveByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
         domain.setRoot(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskteamService.save(domain));
+        taskteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
@@ -393,10 +395,11 @@ public class TaskTeamResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
     @ApiOperation(value = "根据产品计划任务保存任务团队", tags = {"任务团队" },  notes = "根据产品计划任务保存任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/taskteams/save")
-    public ResponseEntity<Boolean> saveByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
+    public ResponseEntity<TaskTeamDTO> saveByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
         domain.setRoot(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskteamService.save(domain));
+        taskteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
@@ -522,10 +525,11 @@ public class TaskTeamResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
     @ApiOperation(value = "根据需求任务保存任务团队", tags = {"任务团队" },  notes = "根据需求任务保存任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/taskteams/save")
-    public ResponseEntity<Boolean> saveByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
+    public ResponseEntity<TaskTeamDTO> saveByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
         domain.setRoot(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskteamService.save(domain));
+        taskteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
@@ -651,10 +655,11 @@ public class TaskTeamResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
     @ApiOperation(value = "根据项目任务保存任务团队", tags = {"任务团队" },  notes = "根据项目任务保存任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskteams/save")
-    public ResponseEntity<Boolean> saveByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
+    public ResponseEntity<TaskTeamDTO> saveByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
         domain.setRoot(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskteamService.save(domain));
+        taskteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
@@ -780,10 +785,11 @@ public class TaskTeamResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
     @ApiOperation(value = "根据产品产品计划任务保存任务团队", tags = {"任务团队" },  notes = "根据产品产品计划任务保存任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskteams/save")
-    public ResponseEntity<Boolean> saveByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
+    public ResponseEntity<TaskTeamDTO> saveByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
         domain.setRoot(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskteamService.save(domain));
+        taskteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
@@ -909,10 +915,11 @@ public class TaskTeamResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
     @ApiOperation(value = "根据产品需求任务保存任务团队", tags = {"任务团队" },  notes = "根据产品需求任务保存任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskteams/save")
-    public ResponseEntity<Boolean> saveByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
+    public ResponseEntity<TaskTeamDTO> saveByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
         domain.setRoot(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskteamService.save(domain));
+        taskteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
@@ -1038,10 +1045,11 @@ public class TaskTeamResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")
     @ApiOperation(value = "根据项目任务模块任务保存任务团队", tags = {"任务团队" },  notes = "根据项目任务模块任务保存任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskteams/save")
-    public ResponseEntity<Boolean> saveByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
+    public ResponseEntity<TaskTeamDTO> saveByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
         domain.setRoot(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskteamService.save(domain));
+        taskteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskTeam-Save-all')")

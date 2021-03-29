@@ -73,7 +73,7 @@ public class IbzReportlyResource {
 		IbzReportly domain  = ibzreportlyMapping.toDomain(ibzreportlydto);
         domain .setIbzreportlyid(ibzreportly_id);
 		ibzreportlyService.update(domain );
-		IbzReportlyDTO dto = ibzreportlyMapping.toDto(domain );
+		IbzReportlyDTO dto = ibzreportlyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -144,8 +144,10 @@ public class IbzReportlyResource {
     @PreAuthorize("hasPermission(this.ibzreportlyMapping.toDomain(#ibzreportlydto),'iBizPMS-IbzReportly-Save')")
     @ApiOperation(value = "保存汇报", tags = {"汇报" },  notes = "保存汇报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzReportlyDTO ibzreportlydto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzreportlyService.save(ibzreportlyMapping.toDomain(ibzreportlydto)));
+    public ResponseEntity<IbzReportlyDTO> save(@RequestBody IbzReportlyDTO ibzreportlydto) {
+        IbzReportly domain = ibzreportlyMapping.toDomain(ibzreportlydto);
+        ibzreportlyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzreportlyMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibzreportlyMapping.toDomain(#ibzreportlydtos),'iBizPMS-IbzReportly-Save')")

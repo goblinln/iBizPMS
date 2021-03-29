@@ -73,7 +73,7 @@ public class SysDepartmentResource {
 		SysDepartment domain  = sysdepartmentMapping.toDomain(sysdepartmentdto);
         domain .setDeptid(sysdepartment_id);
 		sysdepartmentService.update(domain );
-		SysDepartmentDTO dto = sysdepartmentMapping.toDto(domain );
+		SysDepartmentDTO dto = sysdepartmentMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class SysDepartmentResource {
     @PreAuthorize("hasPermission(this.sysdepartmentMapping.toDomain(#sysdepartmentdto),'iBizPMS-SysDepartment-Save')")
     @ApiOperation(value = "保存部门", tags = {"部门" },  notes = "保存部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/save")
-    public ResponseEntity<Boolean> save(@RequestBody SysDepartmentDTO sysdepartmentdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(sysdepartmentService.save(sysdepartmentMapping.toDomain(sysdepartmentdto)));
+    public ResponseEntity<SysDepartmentDTO> save(@RequestBody SysDepartmentDTO sysdepartmentdto) {
+        SysDepartment domain = sysdepartmentMapping.toDomain(sysdepartmentdto);
+        sysdepartmentService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(sysdepartmentMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.sysdepartmentMapping.toDomain(#sysdepartmentdtos),'iBizPMS-SysDepartment-Save')")

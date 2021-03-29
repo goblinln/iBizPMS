@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_company", resultMap = "CompanyResultMap")
+@ApiModel("公司")
 public class Company extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class Company extends EntityMP implements Serializable {
     @TableField(value = "`admins`")
     @JSONField(name = "admins")
     @JsonProperty("admins")
+    @ApiModelProperty("admins")
     private String admins;
     /**
      * 传真
@@ -56,6 +60,7 @@ public class Company extends EntityMP implements Serializable {
     @TableField(value = "`fax`")
     @JSONField(name = "fax")
     @JsonProperty("fax")
+    @ApiModelProperty("传真")
     private String fax;
     /**
      * 逻辑删除标志
@@ -65,6 +70,7 @@ public class Company extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("逻辑删除标志")
     private String deleted;
     /**
      * 官网
@@ -72,6 +78,7 @@ public class Company extends EntityMP implements Serializable {
     @TableField(value = "`website`")
     @JSONField(name = "website")
     @JsonProperty("website")
+    @ApiModelProperty("官网")
     private String website;
     /**
      * id
@@ -80,6 +87,7 @@ public class Company extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * 邮政编码
@@ -87,6 +95,7 @@ public class Company extends EntityMP implements Serializable {
     @TableField(value = "`zipcode`")
     @JSONField(name = "zipcode")
     @JsonProperty("zipcode")
+    @ApiModelProperty("邮政编码")
     private String zipcode;
     /**
      * 通讯地址
@@ -94,6 +103,7 @@ public class Company extends EntityMP implements Serializable {
     @TableField(value = "`address`")
     @JSONField(name = "address")
     @JsonProperty("address")
+    @ApiModelProperty("通讯地址")
     private String address;
     /**
      * 内网
@@ -101,6 +111,7 @@ public class Company extends EntityMP implements Serializable {
     @TableField(value = "`backyard`")
     @JSONField(name = "backyard")
     @JsonProperty("backyard")
+    @ApiModelProperty("内网")
     private String backyard;
     /**
      * 公司名称
@@ -108,6 +119,7 @@ public class Company extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("公司名称")
     private String name;
     /**
      * 匿名登陆
@@ -115,6 +127,7 @@ public class Company extends EntityMP implements Serializable {
     @TableField(value = "`guest`")
     @JSONField(name = "guest")
     @JsonProperty("guest")
+    @ApiModelProperty("匿名登陆")
     private String guest;
     /**
      * 联系电话
@@ -122,6 +135,7 @@ public class Company extends EntityMP implements Serializable {
     @TableField(value = "`phone`")
     @JSONField(name = "phone")
     @JsonProperty("phone")
+    @ApiModelProperty("联系电话")
     private String phone;
 
 

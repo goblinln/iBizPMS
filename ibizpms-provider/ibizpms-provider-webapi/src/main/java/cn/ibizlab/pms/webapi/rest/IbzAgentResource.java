@@ -73,7 +73,7 @@ public class IbzAgentResource {
 		IbzAgent domain  = ibzagentMapping.toDomain(ibzagentdto);
         domain .setIbzagentid(ibzagent_id);
 		ibzagentService.update(domain );
-		IbzAgentDTO dto = ibzagentMapping.toDto(domain );
+		IbzAgentDTO dto = ibzagentMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class IbzAgentResource {
     @PreAuthorize("hasPermission(this.ibzagentMapping.toDomain(#ibzagentdto),'iBizPMS-IbzAgent-Save')")
     @ApiOperation(value = "保存代理", tags = {"代理" },  notes = "保存代理")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzagents/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzAgentDTO ibzagentdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzagentService.save(ibzagentMapping.toDomain(ibzagentdto)));
+    public ResponseEntity<IbzAgentDTO> save(@RequestBody IbzAgentDTO ibzagentdto) {
+        IbzAgent domain = ibzagentMapping.toDomain(ibzagentdto);
+        ibzagentService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzagentMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibzagentMapping.toDomain(#ibzagentdtos),'iBizPMS-IbzAgent-Save')")

@@ -73,7 +73,7 @@ public class IbzproConfigResource {
 		IbzproConfig domain  = ibzproconfigMapping.toDomain(ibzproconfigdto);
         domain .setIbzproconfigid(ibzproconfig_id);
 		ibzproconfigService.update(domain );
-		IbzproConfigDTO dto = ibzproconfigMapping.toDto(domain );
+		IbzproConfigDTO dto = ibzproconfigMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -144,8 +144,10 @@ public class IbzproConfigResource {
     @PreAuthorize("hasPermission(this.ibzproconfigMapping.toDomain(#ibzproconfigdto),'iBizPMS-IbzproConfig-Save')")
     @ApiOperation(value = "保存系统配置表", tags = {"系统配置表" },  notes = "保存系统配置表")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzproConfigDTO ibzproconfigdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigService.save(ibzproconfigMapping.toDomain(ibzproconfigdto)));
+    public ResponseEntity<IbzproConfigDTO> save(@RequestBody IbzproConfigDTO ibzproconfigdto) {
+        IbzproConfig domain = ibzproconfigMapping.toDomain(ibzproconfigdto);
+        ibzproconfigService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibzproconfigMapping.toDomain(#ibzproconfigdtos),'iBizPMS-IbzproConfig-Save')")

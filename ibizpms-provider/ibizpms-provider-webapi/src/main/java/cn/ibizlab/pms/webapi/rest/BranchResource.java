@@ -72,7 +72,7 @@ public class BranchResource {
 		Branch domain  = branchMapping.toDomain(branchdto);
         domain .setId(branch_id);
 		branchService.update(domain );
-		BranchDTO dto = branchMapping.toDto(domain );
+		BranchDTO dto = branchMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class BranchResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Branch-Save-all')")
     @ApiOperation(value = "保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "保存产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/branches/save")
-    public ResponseEntity<Boolean> save(@RequestBody BranchDTO branchdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(branchService.save(branchMapping.toDomain(branchdto)));
+    public ResponseEntity<BranchDTO> save(@RequestBody BranchDTO branchdto) {
+        Branch domain = branchMapping.toDomain(branchdto);
+        branchService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Branch-Save-all')")
@@ -296,10 +298,11 @@ public class BranchResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Branch-Save-all')")
     @ApiOperation(value = "根据产品保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品保存产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/save")
-    public ResponseEntity<Boolean> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchDTO branchdto) {
+    public ResponseEntity<BranchDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchDTO branchdto) {
         Branch domain = branchMapping.toDomain(branchdto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(branchService.save(domain));
+        branchService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Branch-Save-all')")

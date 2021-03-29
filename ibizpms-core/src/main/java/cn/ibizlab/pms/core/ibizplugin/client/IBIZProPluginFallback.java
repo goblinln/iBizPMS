@@ -66,6 +66,9 @@ public class IBIZProPluginFallback implements IBIZProPluginFeignClient {
     }
 
 
+    public Object saveEntity(IBIZProPlugin et) {
+        return null;
+    }
     public Boolean save(IBIZProPlugin et) {
         return false;
     }

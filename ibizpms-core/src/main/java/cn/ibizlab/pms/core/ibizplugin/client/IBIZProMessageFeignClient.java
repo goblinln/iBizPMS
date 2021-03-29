@@ -68,7 +68,9 @@ public interface IBIZProMessageFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/save")
-    Boolean save(@RequestBody IBIZProMessage et);
+    Object saveEntity(@RequestBody IBIZProMessage et);
+
+    default Boolean save(@RequestBody IBIZProMessage et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/savebatch")
     Boolean saveBatch(@RequestBody List<IBIZProMessage> ibizpromessages);

@@ -66,6 +66,9 @@ public class PSSysReqModuleFallback implements PSSysReqModuleFeignClient {
     }
 
 
+    public Object saveEntity(PSSysReqModule et) {
+        return null;
+    }
     public Boolean save(PSSysReqModule et) {
         return false;
     }

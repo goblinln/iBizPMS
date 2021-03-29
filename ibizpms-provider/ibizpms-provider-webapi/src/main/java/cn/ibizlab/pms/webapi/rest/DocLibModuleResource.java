@@ -72,7 +72,7 @@ public class DocLibModuleResource {
 		DocLibModule domain  = doclibmoduleMapping.toDomain(doclibmoduledto);
         domain .setId(doclibmodule_id);
 		doclibmoduleService.update(domain );
-		DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain );
+		DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -176,8 +176,10 @@ public class DocLibModuleResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLibModule-Save-all')")
     @ApiOperation(value = "保存文档库分类", tags = {"文档库分类" },  notes = "保存文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/save")
-    public ResponseEntity<Boolean> save(@RequestBody DocLibModuleDTO doclibmoduledto) {
-        return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.save(doclibmoduleMapping.toDomain(doclibmoduledto)));
+    public ResponseEntity<DocLibModuleDTO> save(@RequestBody DocLibModuleDTO doclibmoduledto) {
+        DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
+        doclibmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLibModule-Save-all')")

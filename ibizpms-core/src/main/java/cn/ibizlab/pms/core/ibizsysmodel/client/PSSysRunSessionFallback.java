@@ -66,6 +66,9 @@ public class PSSysRunSessionFallback implements PSSysRunSessionFeignClient {
     }
 
 
+    public Object saveEntity(PSSysRunSession et) {
+        return null;
+    }
     public Boolean save(PSSysRunSession et) {
         return false;
     }

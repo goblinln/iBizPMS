@@ -60,7 +60,9 @@ public interface PSDataEntityFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdataentities/save")
-    Boolean save(@RequestBody PSDataEntity et);
+    Object saveEntity(@RequestBody PSDataEntity et);
+
+    default Boolean save(@RequestBody PSDataEntity et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdataentities/savebatch")
     Boolean saveBatch(@RequestBody List<PSDataEntity> psdataentities);

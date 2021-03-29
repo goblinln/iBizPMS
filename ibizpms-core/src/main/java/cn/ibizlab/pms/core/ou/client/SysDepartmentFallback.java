@@ -66,6 +66,9 @@ public class SysDepartmentFallback implements SysDepartmentFeignClient {
     }
 
 
+    public Object saveEntity(SysDepartment et) {
+        return null;
+    }
     public Boolean save(SysDepartment et) {
         return false;
     }

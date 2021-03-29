@@ -72,7 +72,7 @@ public class BurnResource {
 		Burn domain  = burnMapping.toDomain(burndto);
         domain .setId(burn_id);
 		burnService.update(domain );
-		BurnDTO dto = burnMapping.toDto(domain );
+		BurnDTO dto = burnMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -143,8 +143,10 @@ public class BurnResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Burn-Save-all')")
     @ApiOperation(value = "保存burn", tags = {"burn" },  notes = "保存burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/burns/save")
-    public ResponseEntity<Boolean> save(@RequestBody BurnDTO burndto) {
-        return ResponseEntity.status(HttpStatus.OK).body(burnService.save(burnMapping.toDomain(burndto)));
+    public ResponseEntity<BurnDTO> save(@RequestBody BurnDTO burndto) {
+        Burn domain = burnMapping.toDomain(burndto);
+        burnService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Burn-Save-all')")
@@ -313,10 +315,11 @@ public class BurnResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Burn-Save-all')")
     @ApiOperation(value = "根据项目保存burn", tags = {"burn" },  notes = "根据项目保存burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns/save")
-    public ResponseEntity<Boolean> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody BurnDTO burndto) {
+    public ResponseEntity<BurnDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody BurnDTO burndto) {
         Burn domain = burnMapping.toDomain(burndto);
         domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(burnService.save(domain));
+        burnService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Burn-Save-all')")

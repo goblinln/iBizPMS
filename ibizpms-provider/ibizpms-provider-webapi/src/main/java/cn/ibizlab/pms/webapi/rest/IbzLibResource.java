@@ -73,7 +73,7 @@ public class IbzLibResource {
 		IbzLib domain  = ibzlibMapping.toDomain(ibzlibdto);
         domain .setId(ibzlib_id);
 		ibzlibService.update(domain );
-		IbzLibDTO dto = ibzlibMapping.toDto(domain );
+		IbzLibDTO dto = ibzlibMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class IbzLibResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-Save-all')")
     @ApiOperation(value = "保存用例库", tags = {"用例库" },  notes = "保存用例库")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzLibDTO ibzlibdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzlibService.save(ibzlibMapping.toDomain(ibzlibdto)));
+    public ResponseEntity<IbzLibDTO> save(@RequestBody IbzLibDTO ibzlibdto) {
+        IbzLib domain = ibzlibMapping.toDomain(ibzlibdto);
+        ibzlibService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzlibMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-Save-all')")

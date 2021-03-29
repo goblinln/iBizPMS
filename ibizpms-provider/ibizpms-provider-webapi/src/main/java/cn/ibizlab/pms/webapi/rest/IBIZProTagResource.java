@@ -72,7 +72,7 @@ public class IBIZProTagResource {
 		IBIZProTag domain  = ibizprotagMapping.toDomain(ibizprotagdto);
         domain .setId(ibizprotag_id);
 		ibizprotagService.update(domain );
-		IBIZProTagDTO dto = ibizprotagMapping.toDto(domain );
+		IBIZProTagDTO dto = ibizprotagMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class IBIZProTagResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-Save-all')")
     @ApiOperation(value = "保存标签", tags = {"标签" },  notes = "保存标签")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/save")
-    public ResponseEntity<Boolean> save(@RequestBody IBIZProTagDTO ibizprotagdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibizprotagService.save(ibizprotagMapping.toDomain(ibizprotagdto)));
+    public ResponseEntity<IBIZProTagDTO> save(@RequestBody IBIZProTagDTO ibizprotagdto) {
+        IBIZProTag domain = ibizprotagMapping.toDomain(ibizprotagdto);
+        ibizprotagService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibizprotagMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProTag-Save-all')")

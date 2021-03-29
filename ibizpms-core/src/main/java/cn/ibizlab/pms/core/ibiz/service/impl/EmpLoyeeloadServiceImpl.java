@@ -58,7 +58,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Transactional
     public boolean create(EmpLoyeeload et) {
         fillParentData(et);
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -76,7 +76,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Transactional
     public boolean update(EmpLoyeeload et) {
         fillParentData(et);
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -94,7 +94,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -107,7 +107,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Transactional
     public EmpLoyeeload get(Long key) {
         EmpLoyeeload et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new EmpLoyeeload();
             et.setId(key);
         }
@@ -129,7 +129,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public boolean save(EmpLoyeeload et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -170,7 +170,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public void saveBatch(List<EmpLoyeeload> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<EmpLoyeeload> create = new ArrayList<>();
         List<EmpLoyeeload> update = new ArrayList<>();
         for (EmpLoyeeload et : list) {
@@ -189,13 +189,13 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     }
 
 
-    @Override
+	@Override
     public List<EmpLoyeeload> selectByProject(Long id) {
         return baseMapper.selectByProject(id);
     }
     @Override
     public void removeByProject(Long id) {
-        this.remove(new QueryWrapper<EmpLoyeeload>().eq("project", id));
+        this.remove(new QueryWrapper<EmpLoyeeload>().eq("project",id));
     }
 
 
@@ -204,7 +204,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
      */
     @Override
     public Page<EmpLoyeeload> searchDefault(EmpLoyeeloadSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<EmpLoyeeload> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<EmpLoyeeload> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<EmpLoyeeload>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -213,7 +213,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
      */
     @Override
     public Page<EmpLoyeeload> searchGETWOERKLOAD(EmpLoyeeloadSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<EmpLoyeeload> pages=baseMapper.searchGETWOERKLOAD(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<EmpLoyeeload> pages=baseMapper.searchGETWOERKLOAD(context.getPages(),context,context.getSelectCond());
         return new PageImpl<EmpLoyeeload>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -225,12 +225,12 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
      */
     private void fillParentData(EmpLoyeeload et){
         //实体关系[DER1N_IBZ_EMPLOYEELOAD_ZT_PROJECT_PROJECT]
-        if (!ObjectUtils.isEmpty(et.getProject())) {
+        if(!ObjectUtils.isEmpty(et.getProject())){
             cn.ibizlab.pms.core.zentao.domain.Project ztproject=et.getZtproject();
-            if (ObjectUtils.isEmpty(ztproject)) {
+            if(ObjectUtils.isEmpty(ztproject)){
                 cn.ibizlab.pms.core.zentao.domain.Project majorEntity=projectService.get(et.getProject());
                 et.setZtproject(majorEntity);
-                ztproject = majorEntity;
+                ztproject=majorEntity;
             }
             et.setProjectname(ztproject.getName());
         }
@@ -240,31 +240,28 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

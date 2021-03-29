@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_module", resultMap = "ProjectModuleResultMap")
+@ApiModel("任务模块")
 public class ProjectModule extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`short`")
     @JSONField(name = "ibizshort")
     @JsonProperty("ibizshort")
+    @ApiModelProperty("简称")
     private String ibizshort;
     /**
      * 叶子模块
@@ -57,6 +61,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "isleaf")
     @JsonProperty("isleaf")
+    @ApiModelProperty("叶子模块")
     private String isleaf;
     /**
      * 类型（task）
@@ -65,6 +70,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("类型（task）")
     private String type;
     /**
      * 数据选择排序
@@ -72,6 +78,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "orderpk")
     @JsonProperty("orderpk")
+    @ApiModelProperty("数据选择排序")
     private String orderpk;
     /**
      * 模块名称
@@ -79,6 +86,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("模块名称")
     private String name;
     /**
      * 排序值
@@ -87,6 +95,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
+    @ApiModelProperty("排序值")
     private Integer order;
     /**
      * collector
@@ -95,6 +104,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`collector`")
     @JSONField(name = "collector")
     @JsonProperty("collector")
+    @ApiModelProperty("collector")
     private String collector;
     /**
      * grade
@@ -103,6 +113,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`grade`")
     @JSONField(name = "grade")
     @JsonProperty("grade")
+    @ApiModelProperty("grade")
     private Integer grade;
     /**
      * branch
@@ -111,6 +122,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`branch`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
+    @ApiModelProperty("branch")
     private Integer branch;
     /**
      * path
@@ -119,6 +131,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`path`")
     @JSONField(name = "path")
     @JsonProperty("path")
+    @ApiModelProperty("path")
     private String path;
     /**
      * id
@@ -127,6 +140,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * owner
@@ -135,6 +149,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`owner`")
     @JSONField(name = "owner")
     @JsonProperty("owner")
+    @ApiModelProperty("owner")
     private String owner;
     /**
      * 逻辑删除标志
@@ -144,6 +159,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("逻辑删除标志")
     private String deleted;
     /**
      * 所属项目
@@ -151,6 +167,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "rootname")
     @JsonProperty("rootname")
+    @ApiModelProperty("所属项目")
     private String rootname;
     /**
      * 上级模块
@@ -158,6 +175,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "parentname")
     @JsonProperty("parentname")
+    @ApiModelProperty("上级模块")
     private String parentname;
     /**
      * 项目
@@ -165,6 +183,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`root`")
     @JSONField(name = "root")
     @JsonProperty("root")
+    @ApiModelProperty("项目")
     private Long root;
     /**
      * id
@@ -172,6 +191,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     @TableField(value = "`parent`")
     @JSONField(name = "parent")
     @JsonProperty("parent")
+    @ApiModelProperty("id")
     private Long parent;
 
     /**

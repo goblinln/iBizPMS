@@ -64,7 +64,7 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
     @Override
     @Transactional
     public boolean update(IbzAgent et) {
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_agentid", et.getIbzagentid()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_agentid", et.getIbzagentid()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbzagentid()), et);
@@ -81,7 +81,7 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -94,7 +94,7 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
     @Transactional
     public IbzAgent get(Long key) {
         IbzAgent et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IbzAgent();
             et.setIbzagentid(key);
         }
@@ -115,7 +115,7 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
     @Override
     @Transactional
     public boolean save(IbzAgent et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -179,7 +179,7 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
      */
     @Override
     public Page<IbzAgent> searchDefault(IbzAgentSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzAgent> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzAgent> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzAgent>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -190,24 +190,24 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -223,20 +223,17 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
         List ids =new ArrayList();
         for(IbzAgent entity : entities){
             Serializable id=entity.getIbzagentid();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     public IIbzAgentService getProxyService() {

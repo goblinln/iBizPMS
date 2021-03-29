@@ -72,7 +72,7 @@ public class DocResource {
 		Doc domain  = docMapping.toDomain(docdto);
         domain .setId(doc_id);
 		docService.update(domain );
-		DocDTO dto = docMapping.toDto(domain );
+		DocDTO dto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -219,8 +219,10 @@ public class DocResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Doc-Save-all')")
     @ApiOperation(value = "保存文档", tags = {"文档" },  notes = "保存文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/save")
-    public ResponseEntity<Boolean> save(@RequestBody DocDTO docdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(docService.save(docMapping.toDomain(docdto)));
+    public ResponseEntity<DocDTO> save(@RequestBody DocDTO docdto) {
+        Doc domain = docMapping.toDomain(docdto);
+        docService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Doc-Save-all')")

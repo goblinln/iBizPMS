@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_testsuite", resultMap = "IbzLibResultMap")
+@ApiModel("用例库")
 public class IbzLib extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class IbzLib extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("描述")
     private String desc;
     /**
      * 产品
@@ -57,6 +61,7 @@ public class IbzLib extends EntityMP implements Serializable {
     @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
+    @ApiModelProperty("产品")
     private Long product;
     /**
      * 创建时间
@@ -66,6 +71,7 @@ public class IbzLib extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "addeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("addeddate")
+    @ApiModelProperty("创建时间")
     private Timestamp addeddate;
     /**
      * 编号
@@ -74,6 +80,7 @@ public class IbzLib extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 最后编辑时间
@@ -83,6 +90,7 @@ public class IbzLib extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastediteddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastediteddate")
+    @ApiModelProperty("最后编辑时间")
     private Timestamp lastediteddate;
     /**
      * 由谁创建
@@ -91,6 +99,7 @@ public class IbzLib extends EntityMP implements Serializable {
     @TableField(value = "`addedby`")
     @JSONField(name = "addedby")
     @JsonProperty("addedby")
+    @ApiModelProperty("由谁创建")
     private String addedby;
     /**
      * 已删除
@@ -99,6 +108,7 @@ public class IbzLib extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("已删除")
     private String deleted;
     /**
      * 名称
@@ -106,6 +116,7 @@ public class IbzLib extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("名称")
     private String name;
     /**
      * 类型
@@ -114,6 +125,7 @@ public class IbzLib extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("类型")
     private String type;
     /**
      * 最后编辑人
@@ -122,6 +134,7 @@ public class IbzLib extends EntityMP implements Serializable {
     @TableField(value = "`lasteditedby`")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
+    @ApiModelProperty("最后编辑人")
     private String lasteditedby;
 
 

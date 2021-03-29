@@ -72,7 +72,7 @@ public class CaseStepResource {
 		CaseStep domain  = casestepMapping.toDomain(casestepdto);
         domain .setId(casestep_id);
 		casestepService.update(domain );
-		CaseStepDTO dto = casestepMapping.toDto(domain );
+		CaseStepDTO dto = casestepMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class CaseStepResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStep-Save-all')")
     @ApiOperation(value = "保存用例步骤", tags = {"用例步骤" },  notes = "保存用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/casesteps/save")
-    public ResponseEntity<Boolean> save(@RequestBody CaseStepDTO casestepdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(casestepService.save(casestepMapping.toDomain(casestepdto)));
+    public ResponseEntity<CaseStepDTO> save(@RequestBody CaseStepDTO casestepdto) {
+        CaseStep domain = casestepMapping.toDomain(casestepdto);
+        casestepService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStep-Save-all')")
@@ -365,10 +367,11 @@ public class CaseStepResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStep-Save-all')")
     @ApiOperation(value = "根据测试用例保存用例步骤", tags = {"用例步骤" },  notes = "根据测试用例保存用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/casesteps/save")
-    public ResponseEntity<Boolean> saveByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
+    public ResponseEntity<CaseStepDTO> saveByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
         domain.setIbizcase(case_id);
-        return ResponseEntity.status(HttpStatus.OK).body(casestepService.save(domain));
+        casestepService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStep-Save-all')")
@@ -609,10 +612,11 @@ public class CaseStepResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStep-Save-all')")
     @ApiOperation(value = "根据产品测试用例保存用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例保存用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/casesteps/save")
-    public ResponseEntity<Boolean> saveByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
+    public ResponseEntity<CaseStepDTO> saveByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
         domain.setIbizcase(case_id);
-        return ResponseEntity.status(HttpStatus.OK).body(casestepService.save(domain));
+        casestepService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStep-Save-all')")
@@ -853,10 +857,11 @@ public class CaseStepResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStep-Save-all')")
     @ApiOperation(value = "根据需求测试用例保存用例步骤", tags = {"用例步骤" },  notes = "根据需求测试用例保存用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/cases/{case_id}/casesteps/save")
-    public ResponseEntity<Boolean> saveByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
+    public ResponseEntity<CaseStepDTO> saveByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
         domain.setIbizcase(case_id);
-        return ResponseEntity.status(HttpStatus.OK).body(casestepService.save(domain));
+        casestepService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStep-Save-all')")
@@ -1097,10 +1102,11 @@ public class CaseStepResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStep-Save-all')")
     @ApiOperation(value = "根据产品需求测试用例保存用例步骤", tags = {"用例步骤" },  notes = "根据产品需求测试用例保存用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/save")
-    public ResponseEntity<Boolean> saveByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
+    public ResponseEntity<CaseStepDTO> saveByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
         domain.setIbizcase(case_id);
-        return ResponseEntity.status(HttpStatus.OK).body(casestepService.save(domain));
+        casestepService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStep-Save-all')")

@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ibizsysmodel.client.PSSysSFPubFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[后台服务架构] 服务对象接口实现
@@ -74,9 +75,8 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
     @Override
     public boolean create(PSSysSFPub et) {
         PSSysSFPub rt = pSSysSFPubFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
@@ -92,7 +92,7 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
     }
 
     public void createBatch(List<PSSysSFPub> list){
-        pSSysSFPubFeignClient.createBatch(list);
+        pSSysSFPubFeignClient.createBatch(list) ;
     }
 
     public void createBatch(String devSlnSysId, List<PSSysSFPub> list){
@@ -101,10 +101,9 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
 
     @Override
     public boolean update(PSSysSFPub et) {
-        PSSysSFPub rt = pSSysSFPubFeignClient.update(et.getPssyssfpubid(), et);
-        if (rt == null) {
+        PSSysSFPub rt = pSSysSFPubFeignClient.update(et.getPssyssfpubid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
@@ -120,8 +119,8 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
         return true;
     }
 
-    public void updateBatch(List<PSSysSFPub> list) {
-        pSSysSFPubFeignClient.updateBatch(list);
+    public void updateBatch(List<PSSysSFPub> list){
+        pSSysSFPubFeignClient.updateBatch(list) ;
     }
 
     public void updateBatch(String devSlnSysId, List<PSSysSFPub> list){
@@ -130,7 +129,7 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
 
     @Override
     public boolean remove(String pssyssfpubid) {
-        boolean result=pSSysSFPubFeignClient.remove(pssyssfpubid);
+        boolean result=pSSysSFPubFeignClient.remove(pssyssfpubid) ;
         return result;
     }
 
@@ -150,12 +149,12 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
 
     @Override
     public PSSysSFPub get(String pssyssfpubid) {
-        PSSysSFPub et = pSSysSFPubFeignClient.get(pssyssfpubid);
-        if (et == null) {
-            et = new PSSysSFPub();
+		PSSysSFPub et=pSSysSFPubFeignClient.get(pssyssfpubid);
+        if(et==null){
+            et=new PSSysSFPub();
             et.setPssyssfpubid(pssyssfpubid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -202,14 +201,25 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
     @Override
     @Transactional
     public boolean save(PSSysSFPub et) {
-        if (et.getPssyssfpubid() == null) {
-            et.setPssyssfpubid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = pSSysSFPubFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), PSSysSFPub.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!pSSysSFPubFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
     @Override
     @Transactional
@@ -225,7 +235,7 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
 
     @Override
     public void saveBatch(List<PSSysSFPub> list) {
-        pSSysSFPubFeignClient.saveBatch(list);
+        pSSysSFPubFeignClient.saveBatch(list) ;
     }
 
     @Override
@@ -235,7 +245,7 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
 
 
 
-    @Override
+	@Override
     public List<PSSysSFPub> selectByPpssyssfpubid(String pssyssfpubid) {
         PSSysSFPubSearchContext context=new PSSysSFPubSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -261,12 +271,11 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
     @Override
     public void removeByPpssyssfpubid(String pssyssfpubid) {
         Set<String> delIds=new HashSet<String>();
-        for (PSSysSFPub before:selectByPpssyssfpubid(pssyssfpubid)) {
+        for(PSSysSFPub before:selectByPpssyssfpubid(pssyssfpubid)){
             delIds.add(before.getPssyssfpubid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
     @Override
@@ -311,8 +320,6 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
         Page<PSSysSFPub> pSSysSFPubs=getPSSysSFPubFeignClient(devSlnSysId).searchDefault(context);
         return pSSysSFPubs;
     }
-
-
 
     @Override
     @Transactional

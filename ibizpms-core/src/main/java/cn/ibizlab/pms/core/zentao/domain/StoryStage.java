@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_storystage", resultMap = "StoryStageResultMap")
+@ApiModel("需求阶段")
 public class StoryStage extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class StoryStage extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("虚拟主键")
     private String id;
     /**
      * 设置阶段者
@@ -57,6 +61,7 @@ public class StoryStage extends EntityMP implements Serializable {
     @TableField(value = "`stagedby`")
     @JSONField(name = "stagedby")
     @JsonProperty("stagedby")
+    @ApiModelProperty("设置阶段者")
     private String stagedby;
     /**
      * 所处阶段
@@ -64,6 +69,7 @@ public class StoryStage extends EntityMP implements Serializable {
     @TableField(value = "`stage`")
     @JSONField(name = "stage")
     @JsonProperty("stage")
+    @ApiModelProperty("所处阶段")
     private String stage;
     /**
      * 需求
@@ -71,6 +77,7 @@ public class StoryStage extends EntityMP implements Serializable {
     @TableField(value = "`story`")
     @JSONField(name = "story")
     @JsonProperty("story")
+    @ApiModelProperty("需求")
     private Long story;
     /**
      * 平台/分支
@@ -78,6 +85,7 @@ public class StoryStage extends EntityMP implements Serializable {
     @TableField(value = "`branch`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
+    @ApiModelProperty("平台/分支")
     private Long branch;
 
     /**

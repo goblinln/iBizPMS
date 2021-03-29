@@ -72,7 +72,7 @@ public class PRODUCTTEAMResource {
 		PRODUCTTEAM domain  = productteamMapping.toDomain(productteamdto);
         domain .setId(productteam_id);
 		productteamService.update(domain );
-		PRODUCTTEAMDTO dto = productteamMapping.toDto(domain );
+		PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -143,8 +143,10 @@ public class PRODUCTTEAMResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PRODUCTTEAM-Save-all')")
     @ApiOperation(value = "保存产品团队", tags = {"产品团队" },  notes = "保存产品团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/productteams/save")
-    public ResponseEntity<Boolean> save(@RequestBody PRODUCTTEAMDTO productteamdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(productteamService.save(productteamMapping.toDomain(productteamdto)));
+    public ResponseEntity<PRODUCTTEAMDTO> save(@RequestBody PRODUCTTEAMDTO productteamdto) {
+        PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
+        productteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PRODUCTTEAM-Save-all')")
@@ -357,10 +359,11 @@ public class PRODUCTTEAMResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PRODUCTTEAM-Save-all')")
     @ApiOperation(value = "根据产品保存产品团队", tags = {"产品团队" },  notes = "根据产品保存产品团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams/save")
-    public ResponseEntity<Boolean> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody PRODUCTTEAMDTO productteamdto) {
+    public ResponseEntity<PRODUCTTEAMDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody PRODUCTTEAMDTO productteamdto) {
         PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
         domain.setRoot(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productteamService.save(domain));
+        productteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PRODUCTTEAM-Save-all')")

@@ -66,6 +66,9 @@ public class PSDEFieldFallback implements PSDEFieldFeignClient {
     }
 
 
+    public Object saveEntity(PSDEField et) {
+        return null;
+    }
     public Boolean save(PSDEField et) {
         return false;
     }

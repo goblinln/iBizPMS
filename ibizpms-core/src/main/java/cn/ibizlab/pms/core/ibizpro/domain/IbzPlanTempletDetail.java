@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "T_IBZ_PLANTEMPLETDETAIL", resultMap = "IbzPlanTempletDetailResultMap")
+@ApiModel("计划模板详情")
 public class IbzPlanTempletDetail extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("类型")
     private String type;
     /**
      * 计划编号
@@ -56,6 +60,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @TableField(value = "`plancode`")
     @JSONField(name = "plancode")
     @JsonProperty("plancode")
+    @ApiModelProperty("计划编号")
     private String plancode;
     /**
      * 计划名称
@@ -63,6 +68,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("计划名称")
     private String desc;
     /**
      * 排序
@@ -71,6 +77,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
+    @ApiModelProperty("排序")
     private Integer order;
     /**
      * 计划模板详情标识
@@ -79,6 +86,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @TableId(value = "ibz_plantempletdetailid", type = IdType.ASSIGN_UUID)
     @JSONField(name = "ibzplantempletdetailid")
     @JsonProperty("ibzplantempletdetailid")
+    @ApiModelProperty("计划模板详情标识")
     private String ibzplantempletdetailid;
     /**
      * 计划模板详情名称
@@ -87,6 +95,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @TableField(value = "`ibz_plantempletdetailname`")
     @JSONField(name = "ibzplantempletdetailname")
     @JsonProperty("ibzplantempletdetailname")
+    @ApiModelProperty("计划模板详情名称")
     private String ibzplantempletdetailname;
     /**
      * 建立人
@@ -95,6 +104,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @TableField(value = "`createman`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
     /**
      * 建立时间
@@ -104,6 +114,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
     /**
      * 更新人
@@ -112,6 +123,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @TableField(value = "`updateman`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
     /**
      * 描述
@@ -119,6 +131,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @TableField(value = "`expect`")
     @JSONField(name = "expect")
     @JsonProperty("expect")
+    @ApiModelProperty("描述")
     private String expect;
     /**
      * 更新时间
@@ -128,6 +141,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
     /**
      * 产品计划模板标识
@@ -135,6 +149,7 @@ public class IbzPlanTempletDetail extends EntityMP implements Serializable {
     @TableField(value = "`plantempletid`")
     @JSONField(name = "plantempletid")
     @JsonProperty("plantempletid")
+    @ApiModelProperty("产品计划模板标识")
     private String plantempletid;
 
     /**

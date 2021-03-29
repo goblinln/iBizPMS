@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "T_IBZ_REPORTLY", resultMap = "IbzReportlyResultMap")
+@ApiModel("汇报")
 public class IbzReportly extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "files")
     @JsonProperty("files")
+    @ApiModelProperty("附件")
     private String files;
     /**
      * 用户
@@ -56,6 +60,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("用户")
     private String account;
     /**
      * 更新人
@@ -64,6 +69,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(value = "`updateman`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
     /**
      * 建立时间
@@ -73,6 +79,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
     /**
      * 抄送给
@@ -80,6 +87,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(value = "`mailto`")
     @JSONField(name = "mailto")
     @JsonProperty("mailto")
+    @ApiModelProperty("抄送给")
     private String mailto;
     /**
      * 汇报标识
@@ -88,6 +96,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableId(value = "ibz_reportlyid", type = IdType.AUTO)
     @JSONField(name = "ibzreportlyid")
     @JsonProperty("ibzreportlyid")
+    @ApiModelProperty("汇报标识")
     private Long ibzreportlyid;
     /**
      * 汇报名称
@@ -96,6 +105,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(value = "`ibz_reportlyname`")
     @JSONField(name = "ibzreportlyname")
     @JsonProperty("ibzreportlyname")
+    @ApiModelProperty("汇报名称")
     private String ibzreportlyname;
     /**
      * 状态
@@ -104,6 +114,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(value = "`reportstatus`")
     @JSONField(name = "reportstatus")
     @JsonProperty("reportstatus")
+    @ApiModelProperty("状态")
     private String reportstatus;
     /**
      * 提交时间
@@ -112,6 +123,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @JsonFormat(pattern = "HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "submittime", format = "HH:mm:ss")
     @JsonProperty("submittime")
+    @ApiModelProperty("提交时间")
     private Timestamp submittime;
     /**
      * 汇报给（选择）
@@ -119,6 +131,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "reporttopk")
     @JsonProperty("reporttopk")
+    @ApiModelProperty("汇报给（选择）")
     private String reporttopk;
     /**
      * 汇报给
@@ -126,6 +139,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(value = "`reportto`")
     @JSONField(name = "reportto")
     @JsonProperty("reportto")
+    @ApiModelProperty("汇报给")
     private String reportto;
     /**
      * 建立人
@@ -134,6 +148,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(value = "`createman`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
     /**
      * 是否提交
@@ -142,6 +157,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(value = "`issubmit`")
     @JSONField(name = "issubmit")
     @JsonProperty("issubmit")
+    @ApiModelProperty("是否提交")
     private String issubmit;
     /**
      * 更新时间
@@ -151,6 +167,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
     /**
      * 工作内容
@@ -158,6 +175,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(value = "`content`")
     @JSONField(name = "content")
     @JsonProperty("content")
+    @ApiModelProperty("工作内容")
     private String content;
     /**
      * 汇报日期
@@ -166,6 +184,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
+    @ApiModelProperty("汇报日期")
     private Timestamp date;
     /**
      * 抄送给（选择）
@@ -173,6 +192,7 @@ public class IbzReportly extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "mailtopk")
     @JsonProperty("mailtopk")
+    @ApiModelProperty("抄送给（选择）")
     private String mailtopk;
 
 

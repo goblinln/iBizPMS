@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.uaa.client.SysUserFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[系统用户] 服务对象接口实现
@@ -53,39 +54,37 @@ public class SysUserServiceImpl implements ISysUserService {
     @Override
     public boolean create(SysUser et) {
         SysUser rt = sysUserFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<SysUser> list){
-        sysUserFeignClient.createBatch(list);
+        sysUserFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(SysUser et) {
-        SysUser rt = sysUserFeignClient.update(et.getUserid(), et);
-        if (rt == null) {
+        SysUser rt = sysUserFeignClient.update(et.getUserid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<SysUser> list) {
-        sysUserFeignClient.updateBatch(list);
+    public void updateBatch(List<SysUser> list){
+        sysUserFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String userid) {
-        boolean result=sysUserFeignClient.remove(userid);
+        boolean result=sysUserFeignClient.remove(userid) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class SysUserServiceImpl implements ISysUserService {
 
     @Override
     public SysUser get(String userid) {
-        SysUser et = sysUserFeignClient.get(userid);
-        if (et == null) {
-            et = new SysUser();
+		SysUser et=sysUserFeignClient.get(userid);
+        if(et==null){
+            et=new SysUser();
             et.setUserid(userid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -121,7 +120,8 @@ public class SysUserServiceImpl implements ISysUserService {
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean changePwdBatch(List<SysUser> etList) {
         for(SysUser et : etList) {
@@ -141,19 +141,30 @@ public class SysUserServiceImpl implements ISysUserService {
     @Override
     @Transactional
     public boolean save(SysUser et) {
-        if (et.getUserid() == null) {
-            et.setUserid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = sysUserFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), SysUser.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!sysUserFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<SysUser> list) {
-        sysUserFeignClient.saveBatch(list);
+        sysUserFeignClient.saveBatch(list) ;
     }
 
 
@@ -169,8 +180,6 @@ public class SysUserServiceImpl implements ISysUserService {
         Page<SysUser> sysUsers=sysUserFeignClient.searchDefault(context);
         return sysUsers;
     }
-
-
 
 
     @Override

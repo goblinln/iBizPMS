@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_repobranch", resultMap = "RepoBranchResultMap")
+@ApiModel("repobranch")
 public class RepoBranch extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class RepoBranch extends EntityMP implements Serializable {
     @TableField(value = "`revision`")
     @JSONField(name = "revision")
     @JsonProperty("revision")
+    @ApiModelProperty("revision")
     private Integer revision;
     /**
      * 虚拟主键
@@ -57,6 +61,7 @@ public class RepoBranch extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("虚拟主键")
     private String id;
     /**
      * repo
@@ -64,6 +69,7 @@ public class RepoBranch extends EntityMP implements Serializable {
     @TableField(value = "`repo`")
     @JSONField(name = "repo")
     @JsonProperty("repo")
+    @ApiModelProperty("repo")
     private Integer repo;
     /**
      * branch
@@ -71,6 +77,7 @@ public class RepoBranch extends EntityMP implements Serializable {
     @TableField(value = "`branch`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
+    @ApiModelProperty("branch")
     private String branch;
 
 

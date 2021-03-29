@@ -72,7 +72,7 @@ public class UserContactResource {
 		UserContact domain  = usercontactMapping.toDomain(usercontactdto);
         domain .setId(usercontact_id);
 		usercontactService.update(domain );
-		UserContactDTO dto = usercontactMapping.toDto(domain );
+		UserContactDTO dto = usercontactMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class UserContactResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserContact-Save-all')")
     @ApiOperation(value = "保存用户联系方式", tags = {"用户联系方式" },  notes = "保存用户联系方式")
 	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/save")
-    public ResponseEntity<Boolean> save(@RequestBody UserContactDTO usercontactdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(usercontactService.save(usercontactMapping.toDomain(usercontactdto)));
+    public ResponseEntity<UserContactDTO> save(@RequestBody UserContactDTO usercontactdto) {
+        UserContact domain = usercontactMapping.toDomain(usercontactdto);
+        usercontactService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserContact-Save-all')")

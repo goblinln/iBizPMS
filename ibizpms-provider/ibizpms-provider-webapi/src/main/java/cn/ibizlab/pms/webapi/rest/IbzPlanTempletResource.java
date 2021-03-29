@@ -79,7 +79,7 @@ public class IbzPlanTempletResource {
 		IbzPlanTemplet domain  = ibzplantempletMapping.toDomain(ibzplantempletdto);
         domain .setIbzplantempletid(ibzplantemplet_id);
 		ibzplantempletService.update(domain );
-		IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain );
+		IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -150,8 +150,10 @@ public class IbzPlanTempletResource {
     @PreAuthorize("hasPermission(this.ibzplantempletMapping.toDomain(#ibzplantempletdto),'iBizPMS-IbzPlanTemplet-Save')")
     @ApiOperation(value = "保存计划模板", tags = {"计划模板" },  notes = "保存计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzPlanTempletDTO ibzplantempletdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.save(ibzplantempletMapping.toDomain(ibzplantempletdto)));
+    public ResponseEntity<IbzPlanTempletDTO> save(@RequestBody IbzPlanTempletDTO ibzplantempletdto) {
+        IbzPlanTemplet domain = ibzplantempletMapping.toDomain(ibzplantempletdto);
+        ibzplantempletService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibzplantempletMapping.toDomain(#ibzplantempletdtos),'iBizPMS-IbzPlanTemplet-Save')")

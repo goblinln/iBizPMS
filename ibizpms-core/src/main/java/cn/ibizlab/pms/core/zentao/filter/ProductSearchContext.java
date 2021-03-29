@@ -87,7 +87,7 @@ public class ProductSearchContext extends QueryWrapperContext<Product> {
 	public void setN_status_isnotnull(String n_status_isnotnull) {
         this.n_status_isnotnull = n_status_isnotnull;
         if(!ObjectUtils.isEmpty(this.n_status_isnotnull)){
-			if(this.n_status_isnotnull.toString().equals("1")){
+			if(this.n_status_isnotnull.equals("1")){
 				this.getSearchCond().isNotNull("`status`");
 			}
         }

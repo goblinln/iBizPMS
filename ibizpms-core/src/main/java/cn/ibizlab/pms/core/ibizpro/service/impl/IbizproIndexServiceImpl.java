@@ -54,7 +54,7 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     @Override
     @Transactional
     public boolean create(IbizproIndex et) {
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIndexid()), et);
@@ -70,7 +70,7 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     @Override
     @Transactional
     public boolean update(IbizproIndex et) {
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("indexid", et.getIndexid()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("indexid", et.getIndexid()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIndexid()), et);
@@ -87,7 +87,7 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -100,7 +100,7 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     @Transactional
     public IbizproIndex get(Long key) {
         IbizproIndex et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IbizproIndex();
             et.setIndexid(key);
         }
@@ -121,7 +121,7 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     @Override
     @Transactional
     public boolean save(IbizproIndex et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -185,7 +185,7 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
      */
     @Override
     public Page<IbizproIndex> searchDefault(IbizproIndexSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproIndex> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproIndex> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbizproIndex>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -194,7 +194,7 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
      */
     @Override
     public Page<IbizproIndex> searchESquery(IbizproIndexSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproIndex> pages=baseMapper.searchESquery(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproIndex> pages=baseMapper.searchESquery(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbizproIndex>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -203,7 +203,7 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
      */
     @Override
     public Page<IbizproIndex> searchIndexDER(IbizproIndexSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproIndex> pages=baseMapper.searchIndexDER(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproIndex> pages=baseMapper.searchIndexDER(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbizproIndex>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -214,24 +214,24 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -247,20 +247,17 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
         List ids =new ArrayList();
         for(IbizproIndex entity : entities){
             Serializable id=entity.getIndexid();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     public IIbizproIndexService getProxyService() {

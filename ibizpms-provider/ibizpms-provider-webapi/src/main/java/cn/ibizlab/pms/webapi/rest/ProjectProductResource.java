@@ -72,7 +72,7 @@ public class ProjectProductResource {
 		ProjectProduct domain  = projectproductMapping.toDomain(projectproductdto);
         domain .setId(projectproduct_id);
 		projectproductService.update(domain );
-		ProjectProductDTO dto = projectproductMapping.toDto(domain );
+		ProjectProductDTO dto = projectproductMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class ProjectProductResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectProduct-Save-all')")
     @ApiOperation(value = "保存项目产品", tags = {"项目产品" },  notes = "保存项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectproducts/save")
-    public ResponseEntity<Boolean> save(@RequestBody ProjectProductDTO projectproductdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(projectproductService.save(projectproductMapping.toDomain(projectproductdto)));
+    public ResponseEntity<ProjectProductDTO> save(@RequestBody ProjectProductDTO projectproductdto) {
+        ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);
+        projectproductService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectProduct-Save-all')")
@@ -277,10 +279,11 @@ public class ProjectProductResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectProduct-Save-all')")
     @ApiOperation(value = "根据产品保存项目产品", tags = {"项目产品" },  notes = "根据产品保存项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projectproducts/save")
-    public ResponseEntity<Boolean> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProjectProductDTO projectproductdto) {
+    public ResponseEntity<ProjectProductDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProjectProductDTO projectproductdto) {
         ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projectproductService.save(domain));
+        projectproductService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectProduct-Save-all')")
@@ -429,10 +432,11 @@ public class ProjectProductResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectProduct-Save-all')")
     @ApiOperation(value = "根据项目保存项目产品", tags = {"项目产品" },  notes = "根据项目保存项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectproducts/save")
-    public ResponseEntity<Boolean> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectProductDTO projectproductdto) {
+    public ResponseEntity<ProjectProductDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectProductDTO projectproductdto) {
         ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);
         domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projectproductService.save(domain));
+        projectproductService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectProduct-Save-all')")

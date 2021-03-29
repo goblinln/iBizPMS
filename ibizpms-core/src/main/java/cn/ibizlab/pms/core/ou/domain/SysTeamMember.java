@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [组成员] 对象
  */
 @Data
+@ApiModel("组成员")
 public class SysTeamMember extends EntityClient implements Serializable {
 
     /**
@@ -39,6 +42,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
     @DEField(isKeyField = true)
     @JSONField(name = "teammemberid")
     @JsonProperty("teammemberid")
+    @ApiModelProperty("组成员标识")
     private String teammemberid;
 
     /**
@@ -46,6 +50,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     @JSONField(name = "teamname")
     @JsonProperty("teamname")
+    @ApiModelProperty("组名称")
     private String teamname;
 
     /**
@@ -53,6 +58,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     @JSONField(name = "postname")
     @JsonProperty("postname")
+    @ApiModelProperty("岗位")
     private String postname;
 
     /**
@@ -60,6 +66,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     @JSONField(name = "domains")
     @JsonProperty("domains")
+    @ApiModelProperty("区属")
     private String domains;
 
     /**
@@ -67,6 +74,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     @JSONField(name = "usericon")
     @JsonProperty("usericon")
+    @ApiModelProperty("头像")
     private String usericon;
 
     /**
@@ -74,6 +82,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     @JSONField(name = "personname")
     @JsonProperty("personname")
+    @ApiModelProperty("姓名")
     private String personname;
 
     /**
@@ -81,6 +90,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     @JSONField(name = "username")
     @JsonProperty("username")
+    @ApiModelProperty("账号")
     private String username;
 
     /**
@@ -88,6 +98,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     @JSONField(name = "postid")
     @JsonProperty("postid")
+    @ApiModelProperty("岗位标识")
     private String postid;
 
     /**
@@ -95,6 +106,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     @JSONField(name = "teamid")
     @JsonProperty("teamid")
+    @ApiModelProperty("组标识")
     private String teamid;
 
     /**
@@ -102,6 +114,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     @JSONField(name = "userid")
     @JsonProperty("userid")
+    @ApiModelProperty("用户标识")
     private String userid;
 
 
@@ -134,7 +147,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     public void setDomains(String domains) {
         this.domains = domains ;
-        this.modify("domains", domains);
+        this.modify("domains",domains);
     }
 
     /**
@@ -142,7 +155,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     public void setPostid(String postid) {
         this.postid = postid ;
-        this.modify("postid", postid);
+        this.modify("postid",postid);
     }
 
     /**
@@ -150,7 +163,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     public void setTeamid(String teamid) {
         this.teamid = teamid ;
-        this.modify("teamid", teamid);
+        this.modify("teamid",teamid);
     }
 
     /**
@@ -158,7 +171,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
      */
     public void setUserid(String userid) {
         this.userid = userid ;
-        this.modify("userid", userid);
+        this.modify("userid",userid);
     }
 
     /**
@@ -171,7 +184,7 @@ public class SysTeamMember extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("teammemberid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

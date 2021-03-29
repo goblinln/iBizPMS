@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_file", resultMap = "FileResultMap")
+@ApiModel("附件")
 public class File extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(value = "`pathname`")
     @JSONField(name = "pathname")
     @JsonProperty("pathname")
+    @ApiModelProperty("路径")
     private String pathname;
     /**
      * 对象ID
@@ -56,6 +60,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(value = "`objectid`")
     @JSONField(name = "objectid")
     @JsonProperty("objectid")
+    @ApiModelProperty("对象ID")
     private Long objectid;
     /**
      * 显示大小
@@ -63,6 +68,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "strsize")
     @JsonProperty("strsize")
+    @ApiModelProperty("显示大小")
     private String strsize;
     /**
      * 文档类型
@@ -70,6 +76,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "doclibtype")
     @JsonProperty("doclibtype")
+    @ApiModelProperty("文档类型")
     private String doclibtype;
     /**
      * 已删除
@@ -79,6 +86,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("已删除")
     private String deleted;
     /**
      * 文件类型
@@ -86,6 +94,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(value = "`extension`")
     @JSONField(name = "extension")
     @JsonProperty("extension")
+    @ApiModelProperty("文件类型")
     private String extension;
     /**
      * 对象类型
@@ -93,6 +102,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(value = "`objecttype`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
+    @ApiModelProperty("对象类型")
     private String objecttype;
     /**
      * 由谁添加
@@ -101,6 +111,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(value = "`addedby`")
     @JSONField(name = "addedby")
     @JsonProperty("addedby")
+    @ApiModelProperty("由谁添加")
     private String addedby;
     /**
      * 标题
@@ -108,6 +119,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(value = "`title`")
     @JSONField(name = "title")
     @JsonProperty("title")
+    @ApiModelProperty("标题")
     private String title;
     /**
      * 添加时间
@@ -117,6 +129,7 @@ public class File extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "addeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("addeddate")
+    @ApiModelProperty("添加时间")
     private Timestamp addeddate;
     /**
      * 下载次数
@@ -125,6 +138,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(value = "`downloads`")
     @JSONField(name = "downloads")
     @JsonProperty("downloads")
+    @ApiModelProperty("下载次数")
     private Integer downloads;
     /**
      * 大小
@@ -133,6 +147,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(value = "`size`")
     @JSONField(name = "size")
     @JsonProperty("size")
+    @ApiModelProperty("大小")
     private Integer size;
     /**
      * id
@@ -141,6 +156,7 @@ public class File extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * 备注
@@ -148,6 +164,7 @@ public class File extends EntityMP implements Serializable {
     @TableField(value = "`extra`")
     @JSONField(name = "extra")
     @JsonProperty("extra")
+    @ApiModelProperty("备注")
     private String extra;
 
 

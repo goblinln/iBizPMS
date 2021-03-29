@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_usercontact", resultMap = "UserContactResultMap")
+@ApiModel("用户联系方式")
 public class UserContact extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class UserContact extends EntityMP implements Serializable {
     @TableField(value = "`userlist`")
     @JSONField(name = "userlist")
     @JsonProperty("userlist")
+    @ApiModelProperty("userList")
     private String userlist;
     /**
      * 标题
@@ -56,6 +60,7 @@ public class UserContact extends EntityMP implements Serializable {
     @TableField(value = "`listname`")
     @JSONField(name = "listname")
     @JsonProperty("listname")
+    @ApiModelProperty("标题")
     private String listname;
     /**
      * id
@@ -64,6 +69,7 @@ public class UserContact extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * account
@@ -72,6 +78,7 @@ public class UserContact extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("account")
     private String account;
 
 

@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_projectproduct", resultMap = "ProjectProductResultMap")
+@ApiModel("项目产品")
 public class ProjectProduct extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("虚拟主键")
     private String id;
     /**
      * 产品
@@ -57,6 +61,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "productname")
     @JsonProperty("productname")
+    @ApiModelProperty("产品")
     private String productname;
     /**
      * 项目
@@ -64,6 +69,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "projectname")
     @JsonProperty("projectname")
+    @ApiModelProperty("项目")
     private String projectname;
     /**
      * 计划名称
@@ -71,6 +77,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "planname")
     @JsonProperty("planname")
+    @ApiModelProperty("计划名称")
     private String planname;
     /**
      * 产品
@@ -78,6 +85,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
+    @ApiModelProperty("产品")
     private Long product;
     /**
      * 产品计划
@@ -85,6 +93,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @TableField(value = "`plan`")
     @JSONField(name = "plan")
     @JsonProperty("plan")
+    @ApiModelProperty("产品计划")
     private Long plan;
     /**
      * 平台/分支
@@ -92,6 +101,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @TableField(value = "`branch`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
+    @ApiModelProperty("平台/分支")
     private Long branch;
     /**
      * 项目
@@ -99,6 +109,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @TableField(value = "`project`")
     @JSONField(name = "project")
     @JsonProperty("project")
+    @ApiModelProperty("项目")
     private Long project;
 
     /**

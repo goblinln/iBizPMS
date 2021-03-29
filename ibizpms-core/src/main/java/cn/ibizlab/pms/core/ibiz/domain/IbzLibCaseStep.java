@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "ZT_CASESTEP", resultMap = "IbzLibCaseStepResultMap")
+@ApiModel("用例库用例步骤")
 public class IbzLibCaseStep extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class IbzLibCaseStep extends EntityMP implements Serializable {
     @TableField(value = "`expect`")
     @JSONField(name = "expect")
     @JsonProperty("expect")
+    @ApiModelProperty("预期")
     private String expect;
     /**
      * 类型
@@ -56,6 +60,7 @@ public class IbzLibCaseStep extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("类型")
     private String type;
     /**
      * 附件
@@ -63,6 +68,7 @@ public class IbzLibCaseStep extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "files")
     @JsonProperty("files")
+    @ApiModelProperty("附件")
     private String files;
     /**
      * 编号
@@ -71,6 +77,7 @@ public class IbzLibCaseStep extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 步骤
@@ -78,6 +85,7 @@ public class IbzLibCaseStep extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("步骤")
     private String desc;
     /**
      * 实际情况
@@ -85,6 +93,7 @@ public class IbzLibCaseStep extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "reals")
     @JsonProperty("reals")
+    @ApiModelProperty("实际情况")
     private String reals;
 
 

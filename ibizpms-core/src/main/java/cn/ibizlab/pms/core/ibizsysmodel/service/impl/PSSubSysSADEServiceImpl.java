@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ibizsysmodel.client.PSSubSysSADEFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[外部接口实体] 服务对象接口实现
@@ -74,9 +75,8 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
     @Override
     public boolean create(PSSubSysSADE et) {
         PSSubSysSADE rt = pSSubSysSADEFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
@@ -92,7 +92,7 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
     }
 
     public void createBatch(List<PSSubSysSADE> list){
-        pSSubSysSADEFeignClient.createBatch(list);
+        pSSubSysSADEFeignClient.createBatch(list) ;
     }
 
     public void createBatch(String devSlnSysId, List<PSSubSysSADE> list){
@@ -101,10 +101,9 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
 
     @Override
     public boolean update(PSSubSysSADE et) {
-        PSSubSysSADE rt = pSSubSysSADEFeignClient.update(et.getPssubsyssadeid(), et);
-        if (rt == null) {
+        PSSubSysSADE rt = pSSubSysSADEFeignClient.update(et.getPssubsyssadeid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
@@ -120,8 +119,8 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
         return true;
     }
 
-    public void updateBatch(List<PSSubSysSADE> list) {
-        pSSubSysSADEFeignClient.updateBatch(list);
+    public void updateBatch(List<PSSubSysSADE> list){
+        pSSubSysSADEFeignClient.updateBatch(list) ;
     }
 
     public void updateBatch(String devSlnSysId, List<PSSubSysSADE> list){
@@ -130,7 +129,7 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
 
     @Override
     public boolean remove(String pssubsyssadeid) {
-        boolean result=pSSubSysSADEFeignClient.remove(pssubsyssadeid);
+        boolean result=pSSubSysSADEFeignClient.remove(pssubsyssadeid) ;
         return result;
     }
 
@@ -150,12 +149,12 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
 
     @Override
     public PSSubSysSADE get(String pssubsyssadeid) {
-        PSSubSysSADE et = pSSubSysSADEFeignClient.get(pssubsyssadeid);
-        if (et == null) {
-            et = new PSSubSysSADE();
+		PSSubSysSADE et=pSSubSysSADEFeignClient.get(pssubsyssadeid);
+        if(et==null){
+            et=new PSSubSysSADE();
             et.setPssubsyssadeid(pssubsyssadeid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -202,14 +201,25 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
     @Override
     @Transactional
     public boolean save(PSSubSysSADE et) {
-        if (et.getPssubsyssadeid() == null) {
-            et.setPssubsyssadeid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = pSSubSysSADEFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), PSSubSysSADE.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!pSSubSysSADEFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
     @Override
     @Transactional
@@ -225,7 +235,7 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
 
     @Override
     public void saveBatch(List<PSSubSysSADE> list) {
-        pSSubSysSADEFeignClient.saveBatch(list);
+        pSSubSysSADEFeignClient.saveBatch(list) ;
     }
 
     @Override
@@ -235,7 +245,7 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
 
 
 
-    @Override
+	@Override
     public List<PSSubSysSADE> selectByPssubsysserviceapiid(String pssubsysserviceapiid) {
         PSSubSysSADESearchContext context=new PSSubSysSADESearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -261,12 +271,11 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
     @Override
     public void removeByPssubsysserviceapiid(String pssubsysserviceapiid) {
         Set<String> delIds=new HashSet<String>();
-        for (PSSubSysSADE before:selectByPssubsysserviceapiid(pssubsysserviceapiid)) {
+        for(PSSubSysSADE before:selectByPssubsysserviceapiid(pssubsysserviceapiid)){
             delIds.add(before.getPssubsyssadeid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
     @Override
@@ -296,8 +305,6 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
         Page<PSSubSysSADE> pSSubSysSADEs=getPSSubSysSADEFeignClient(devSlnSysId).searchDefault(context);
         return pSSubSysSADEs;
     }
-
-
 
     @Override
     @Transactional

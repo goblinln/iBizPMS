@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_im_chat", resultMap = "ImChatResultMap")
+@ApiModel("ImChat")
 public class ImChat extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class ImChat extends EntityMP implements Serializable {
     @TableField(value = "`admins`")
     @JSONField(name = "admins")
     @JsonProperty("admins")
+    @ApiModelProperty("admins")
     private String admins;
     /**
      * createdBy
@@ -56,6 +60,7 @@ public class ImChat extends EntityMP implements Serializable {
     @TableField(value = "`createdby`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
+    @ApiModelProperty("createdBy")
     private String createdby;
     /**
      * editedDate
@@ -65,6 +70,7 @@ public class ImChat extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "editeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("editeddate")
+    @ApiModelProperty("editedDate")
     private Timestamp editeddate;
     /**
      * dismissDate
@@ -74,6 +80,7 @@ public class ImChat extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "dismissdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("dismissdate")
+    @ApiModelProperty("dismissDate")
     private Timestamp dismissdate;
     /**
      * createdDate
@@ -83,6 +90,7 @@ public class ImChat extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
+    @ApiModelProperty("createdDate")
     private Timestamp createddate;
     /**
      * committers
@@ -90,6 +98,7 @@ public class ImChat extends EntityMP implements Serializable {
     @TableField(value = "`committers`")
     @JSONField(name = "committers")
     @JsonProperty("committers")
+    @ApiModelProperty("committers")
     private String committers;
     /**
      * public
@@ -98,6 +107,7 @@ public class ImChat extends EntityMP implements Serializable {
     @TableField(value = "`public`")
     @JSONField(name = "ibizpublic")
     @JsonProperty("ibizpublic")
+    @ApiModelProperty("public")
     private String ibizpublic;
     /**
      * id
@@ -106,6 +116,7 @@ public class ImChat extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * name
@@ -113,6 +124,7 @@ public class ImChat extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("name")
     private String name;
     /**
      * type
@@ -121,6 +133,7 @@ public class ImChat extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("type")
     private String type;
     /**
      * editedBy
@@ -128,6 +141,7 @@ public class ImChat extends EntityMP implements Serializable {
     @TableField(value = "`editedby`")
     @JSONField(name = "editedby")
     @JsonProperty("editedby")
+    @ApiModelProperty("editedBy")
     private String editedby;
     /**
      * subject
@@ -136,6 +150,7 @@ public class ImChat extends EntityMP implements Serializable {
     @TableField(value = "`subject`")
     @JSONField(name = "subject")
     @JsonProperty("subject")
+    @ApiModelProperty("subject")
     private Integer subject;
     /**
      * lastActiveTime
@@ -145,6 +160,7 @@ public class ImChat extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastactivetime", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastactivetime")
+    @ApiModelProperty("lastActiveTime")
     private Timestamp lastactivetime;
     /**
      * gid
@@ -152,6 +168,7 @@ public class ImChat extends EntityMP implements Serializable {
     @TableField(value = "`gid`")
     @JSONField(name = "gid")
     @JsonProperty("gid")
+    @ApiModelProperty("gid")
     private String gid;
 
 

@@ -73,7 +73,7 @@ public class IBIZProPluginResource {
 		IBIZProPlugin domain  = ibizpropluginMapping.toDomain(ibizproplugindto);
         domain .setIbizpropluginid(ibizproplugin_id);
 		ibizpropluginService.update(domain );
-		IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain );
+		IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class IBIZProPluginResource {
     @PreAuthorize("hasPermission(this.ibizpropluginMapping.toDomain(#ibizproplugindto),'iBizPMS-IBIZProPlugin-Save')")
     @ApiOperation(value = "保存系统插件", tags = {"系统插件" },  notes = "保存系统插件")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/save")
-    public ResponseEntity<Boolean> save(@RequestBody IBIZProPluginDTO ibizproplugindto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibizpropluginService.save(ibizpropluginMapping.toDomain(ibizproplugindto)));
+    public ResponseEntity<IBIZProPluginDTO> save(@RequestBody IBIZProPluginDTO ibizproplugindto) {
+        IBIZProPlugin domain = ibizpropluginMapping.toDomain(ibizproplugindto);
+        ibizpropluginService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibizpropluginMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibizpropluginMapping.toDomain(#ibizproplugindtos),'iBizPMS-IBIZProPlugin-Save')")

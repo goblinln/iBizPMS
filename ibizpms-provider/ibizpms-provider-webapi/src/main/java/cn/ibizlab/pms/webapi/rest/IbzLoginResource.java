@@ -89,7 +89,7 @@ public class IbzLoginResource {
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzlogins/{ibzlogin_id}/{action}")
     public ResponseEntity<IbzLoginDTO> dynamicCall(@PathVariable("ibzlogin_id") Long ibzlogin_id , @PathVariable("action") String action , @RequestBody IbzLoginDTO ibzlogindto) {
-        IbzLogin domain = ibiloginService.dynamicCall(ibzlogin_id, action, ibzloginMapping.toDomain(ibzlogindto));
+        IbiLogin domain = ibiloginService.dynamicCall(ibzlogin_id, action, ibzloginMapping.toDomain(ibzlogindto));
         ibzlogindto = ibzloginMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
     }

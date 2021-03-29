@@ -60,7 +60,9 @@ public interface IBIZProKeywordFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/save")
-    Boolean save(@RequestBody IBIZProKeyword et);
+    Object saveEntity(@RequestBody IBIZProKeyword et);
+
+    default Boolean save(@RequestBody IBIZProKeyword et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/savebatch")
     Boolean saveBatch(@RequestBody List<IBIZProKeyword> ibizprokeywords);

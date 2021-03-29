@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_notify", resultMap = "NotifyResultMap")
+@ApiModel("通知")
 public class Notify extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class Notify extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
+    @ApiModelProperty("createdDate")
     private Timestamp createddate;
     /**
      * ccList
@@ -57,6 +61,7 @@ public class Notify extends EntityMP implements Serializable {
     @TableField(value = "`cclist`")
     @JSONField(name = "cclist")
     @JsonProperty("cclist")
+    @ApiModelProperty("ccList")
     private String cclist;
     /**
      * failReason
@@ -64,6 +69,7 @@ public class Notify extends EntityMP implements Serializable {
     @TableField(value = "`failreason`")
     @JSONField(name = "failreason")
     @JsonProperty("failreason")
+    @ApiModelProperty("failReason")
     private String failreason;
     /**
      * action
@@ -71,6 +77,7 @@ public class Notify extends EntityMP implements Serializable {
     @TableField(value = "`action`")
     @JSONField(name = "action")
     @JsonProperty("action")
+    @ApiModelProperty("action")
     private Integer action;
     /**
      * id
@@ -79,6 +86,7 @@ public class Notify extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * createdBy
@@ -86,6 +94,7 @@ public class Notify extends EntityMP implements Serializable {
     @TableField(value = "`createdby`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
+    @ApiModelProperty("createdBy")
     private String createdby;
     /**
      * status
@@ -94,6 +103,7 @@ public class Notify extends EntityMP implements Serializable {
     @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
+    @ApiModelProperty("status")
     private String status;
     /**
      * subject
@@ -101,6 +111,7 @@ public class Notify extends EntityMP implements Serializable {
     @TableField(value = "`subject`")
     @JSONField(name = "subject")
     @JsonProperty("subject")
+    @ApiModelProperty("subject")
     private String subject;
     /**
      * objectID
@@ -108,6 +119,7 @@ public class Notify extends EntityMP implements Serializable {
     @TableField(value = "`objectid`")
     @JSONField(name = "objectid")
     @JsonProperty("objectid")
+    @ApiModelProperty("objectID")
     private Integer objectid;
     /**
      * data
@@ -115,6 +127,7 @@ public class Notify extends EntityMP implements Serializable {
     @TableField(value = "`data`")
     @JSONField(name = "data")
     @JsonProperty("data")
+    @ApiModelProperty("data")
     private String data;
     /**
      * toList
@@ -122,6 +135,7 @@ public class Notify extends EntityMP implements Serializable {
     @TableField(value = "`tolist`")
     @JSONField(name = "tolist")
     @JsonProperty("tolist")
+    @ApiModelProperty("toList")
     private String tolist;
     /**
      * sendTime
@@ -130,6 +144,7 @@ public class Notify extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "sendtime", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("sendtime")
+    @ApiModelProperty("sendTime")
     private Timestamp sendtime;
     /**
      * objectType
@@ -137,6 +152,7 @@ public class Notify extends EntityMP implements Serializable {
     @TableField(value = "`objecttype`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
+    @ApiModelProperty("objectType")
     private String objecttype;
 
 

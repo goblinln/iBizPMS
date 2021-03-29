@@ -72,7 +72,7 @@ public class ActionResource {
 		Action domain  = actionMapping.toDomain(actiondto);
         domain .setId(action_id);
 		actionService.update(domain );
-		ActionDTO dto = actionMapping.toDto(domain );
+		ActionDTO dto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -173,8 +173,10 @@ public class ActionResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Action-Save-all')")
     @ApiOperation(value = "保存系统日志", tags = {"系统日志" },  notes = "保存系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/save")
-    public ResponseEntity<Boolean> save(@RequestBody ActionDTO actiondto) {
-        return ResponseEntity.status(HttpStatus.OK).body(actionService.save(actionMapping.toDomain(actiondto)));
+    public ResponseEntity<ActionDTO> save(@RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        actionService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Action-Save-all')")

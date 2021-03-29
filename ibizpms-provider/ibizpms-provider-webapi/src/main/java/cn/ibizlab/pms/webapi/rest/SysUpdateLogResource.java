@@ -73,7 +73,7 @@ public class SysUpdateLogResource {
 		SysUpdateLog domain  = sysupdatelogMapping.toDomain(sysupdatelogdto);
         domain .setSysupdatelogid(sysupdatelog_id);
 		sysupdatelogService.update(domain );
-		SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain );
+		SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -144,8 +144,10 @@ public class SysUpdateLogResource {
     @PreAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(#sysupdatelogdto),'iBizPMS-SysUpdateLog-Save')")
     @ApiOperation(value = "保存更新日志", tags = {"更新日志" },  notes = "保存更新日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/save")
-    public ResponseEntity<Boolean> save(@RequestBody SysUpdateLogDTO sysupdatelogdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.save(sysupdatelogMapping.toDomain(sysupdatelogdto)));
+    public ResponseEntity<SysUpdateLogDTO> save(@RequestBody SysUpdateLogDTO sysupdatelogdto) {
+        SysUpdateLog domain = sysupdatelogMapping.toDomain(sysupdatelogdto);
+        sysupdatelogService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(#sysupdatelogdtos),'iBizPMS-SysUpdateLog-Save')")

@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_im_client", resultMap = "ImClientResultMap")
+@ApiModel("ImClient")
 public class ImClient extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class ImClient extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "editeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("editeddate")
+    @ApiModelProperty("editedDate")
     private Timestamp editeddate;
     /**
      * strategy
@@ -57,6 +61,7 @@ public class ImClient extends EntityMP implements Serializable {
     @TableField(value = "`strategy`")
     @JSONField(name = "strategy")
     @JsonProperty("strategy")
+    @ApiModelProperty("strategy")
     private String strategy;
     /**
      * createdDate
@@ -65,6 +70,7 @@ public class ImClient extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
+    @ApiModelProperty("createdDate")
     private Timestamp createddate;
     /**
      * changeLog
@@ -72,6 +78,7 @@ public class ImClient extends EntityMP implements Serializable {
     @TableField(value = "`changelog`")
     @JSONField(name = "changelog")
     @JsonProperty("changelog")
+    @ApiModelProperty("changeLog")
     private String changelog;
     /**
      * version
@@ -79,6 +86,7 @@ public class ImClient extends EntityMP implements Serializable {
     @TableField(value = "`version`")
     @JSONField(name = "version")
     @JsonProperty("version")
+    @ApiModelProperty("version")
     private String version;
     /**
      * downloads
@@ -86,6 +94,7 @@ public class ImClient extends EntityMP implements Serializable {
     @TableField(value = "`downloads`")
     @JSONField(name = "downloads")
     @JsonProperty("downloads")
+    @ApiModelProperty("downloads")
     private String downloads;
     /**
      * status
@@ -93,6 +102,7 @@ public class ImClient extends EntityMP implements Serializable {
     @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
+    @ApiModelProperty("status")
     private String status;
     /**
      * desc
@@ -100,6 +110,7 @@ public class ImClient extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("desc")
     private String desc;
     /**
      * id
@@ -108,6 +119,7 @@ public class ImClient extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * createdBy
@@ -115,6 +127,7 @@ public class ImClient extends EntityMP implements Serializable {
     @TableField(value = "`createdby`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
+    @ApiModelProperty("createdBy")
     private String createdby;
     /**
      * editedBy
@@ -122,6 +135,7 @@ public class ImClient extends EntityMP implements Serializable {
     @TableField(value = "`editedby`")
     @JSONField(name = "editedby")
     @JsonProperty("editedby")
+    @ApiModelProperty("editedBy")
     private String editedby;
 
 

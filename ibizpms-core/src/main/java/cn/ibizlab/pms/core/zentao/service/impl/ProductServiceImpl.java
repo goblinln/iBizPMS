@@ -161,7 +161,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Transactional
     public Product get(Long key) {
         Product et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new Product();
             et.setId(key);
         }
@@ -180,7 +180,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Override
     @Transactional
     public Product cancelProductTop(Product et) {
-         return et;
+         return et ;
     }
 
     @Override
@@ -205,25 +205,25 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Override
     @Transactional
     public Product mobProductCounter(Product et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public Product mobProductTestCounter(Product et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public Product productTop(Product et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public boolean save(Product et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -264,7 +264,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Override
     @Transactional
     public void saveBatch(List<Product> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<Product> create = new ArrayList<>();
         List<Product> update = new ArrayList<>();
         for (Product et : list) {
@@ -283,13 +283,13 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
 
-    @Override
+	@Override
     public List<Product> selectByLine(Long id) {
         return baseMapper.selectByLine(id);
     }
     @Override
     public void removeByLine(Long id) {
-        this.remove(new QueryWrapper<Product>().eq("line", id));
+        this.remove(new QueryWrapper<Product>().eq("line",id));
     }
 
 
@@ -298,7 +298,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      */
     @Override
     public Page<Product> searchAllList(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchAllList(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchAllList(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -307,7 +307,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      */
     @Override
     public Page<Product> searchAllProduct(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchAllProduct(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchAllProduct(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -316,7 +316,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      */
     @Override
     public Page<Product> searchCheckNameOrCode(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchCheckNameOrCode(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchCheckNameOrCode(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -325,7 +325,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      */
     @Override
     public Page<Product> searchCurProject(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchCurProject(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchCurProject(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -334,7 +334,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      */
     @Override
     public Page<Product> searchCurUer(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchCurUer(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchCurUer(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -343,7 +343,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      */
     @Override
     public Page<Product> searchDefault(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -352,7 +352,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      */
     @Override
     public Page<Product> searchESBulk(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchESBulk(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchESBulk(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -361,7 +361,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      */
     @Override
     public Page<Product> searchProductPM(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchProductPM(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchProductPM(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -370,7 +370,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      */
     @Override
     public Page<Product> searchProductTeam(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchProductTeam(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchProductTeam(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -379,7 +379,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      */
     @Override
     public Page<Product> searchStoryCurProject(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchStoryCurProject(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchStoryCurProject(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -391,12 +391,12 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      */
     private void fillParentData(Product et){
         //实体关系[DER1N_ZT_PRODUCT_ZT_MODULE_LINE]
-        if (!ObjectUtils.isEmpty(et.getLine())) {
+        if(!ObjectUtils.isEmpty(et.getLine())){
             cn.ibizlab.pms.core.zentao.domain.Module moduleline=et.getModuleline();
-            if (ObjectUtils.isEmpty(moduleline)) {
+            if(ObjectUtils.isEmpty(moduleline)){
                 cn.ibizlab.pms.core.zentao.domain.Module majorEntity=moduleService.get(et.getLine());
                 et.setModuleline(majorEntity);
-                moduleline = majorEntity;
+                moduleline=majorEntity;
             }
             et.setLinename(moduleline.getName());
         }
@@ -406,24 +406,24 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -439,20 +439,17 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         List ids =new ArrayList();
         for(Product entity : entities){
             Serializable id=entity.getId();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     public IProductService getProxyService() {

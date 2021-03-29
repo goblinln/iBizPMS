@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_im_messagestatus", resultMap = "ImMessagestatusResultMap")
+@ApiModel("ImMessagestatus")
 public class ImMessagestatus extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class ImMessagestatus extends EntityMP implements Serializable {
     @TableField(value = "`message`")
     @JSONField(name = "message")
     @JsonProperty("message")
+    @ApiModelProperty("message")
     private Integer message;
     /**
      * status
@@ -56,6 +60,7 @@ public class ImMessagestatus extends EntityMP implements Serializable {
     @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
+    @ApiModelProperty("status")
     private String status;
     /**
      * user
@@ -64,6 +69,7 @@ public class ImMessagestatus extends EntityMP implements Serializable {
     @TableField(value = "`user`")
     @JSONField(name = "user")
     @JsonProperty("user")
+    @ApiModelProperty("user")
     private Integer user;
     /**
      * 虚拟主键
@@ -72,6 +78,7 @@ public class ImMessagestatus extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("虚拟主键")
     private String id;
 
 

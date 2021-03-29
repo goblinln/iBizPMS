@@ -73,7 +73,7 @@ public class StoryResource {
 		Story domain  = storyMapping.toDomain(storydto);
         domain .setId(story_id);
 		storyService.update(domain );
-		StoryDTO dto = storyMapping.toDto(domain );
+		StoryDTO dto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -728,8 +728,10 @@ public class StoryResource {
     @PreAuthorize("hasPermission(this.storyMapping.toDomain(#storydto),'iBizPMS-Story-Save')")
     @ApiOperation(value = "保存需求", tags = {"需求" },  notes = "保存需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/save")
-    public ResponseEntity<Boolean> save(@RequestBody StoryDTO storydto) {
-        return ResponseEntity.status(HttpStatus.OK).body(storyService.save(storyMapping.toDomain(storydto)));
+    public ResponseEntity<StoryDTO> save(@RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        storyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.storyMapping.toDomain(#storydtos),'iBizPMS-Story-Save')")
@@ -2070,10 +2072,11 @@ public class StoryResource {
     @PreAuthorize("hasPermission(this.storyMapping.toDomain(#storydto),'iBizPMS-Story-Save')")
     @ApiOperation(value = "根据产品保存需求", tags = {"需求" },  notes = "根据产品保存需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/save")
-    public ResponseEntity<Boolean> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody StoryDTO storydto) {
+    public ResponseEntity<StoryDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(storyService.save(domain));
+        storyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.storyMapping.toDomain(#storydtos),'iBizPMS-Story-Save')")

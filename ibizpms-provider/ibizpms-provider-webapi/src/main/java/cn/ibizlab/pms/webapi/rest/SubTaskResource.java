@@ -73,7 +73,7 @@ public class SubTaskResource {
 		Task domain  = subtaskMapping.toDomain(subtaskdto);
         domain .setId(subtask_id);
 		taskService.update(domain );
-		SubTaskDTO dto = subtaskMapping.toDto(domain );
+		SubTaskDTO dto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -459,8 +459,10 @@ public class SubTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
     @ApiOperation(value = "保存任务", tags = {"任务" },  notes = "保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/subtasks/save")
-    public ResponseEntity<Boolean> save(@RequestBody SubTaskDTO subtaskdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(taskService.save(subtaskMapping.toDomain(subtaskdto)));
+    public ResponseEntity<SubTaskDTO> save(@RequestBody SubTaskDTO subtaskdto) {
+        Task domain = subtaskMapping.toDomain(subtaskdto);
+        taskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
@@ -1392,7 +1394,7 @@ public class SubTaskResource {
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/subtasks/{subtask_id}/{action}")
     public ResponseEntity<SubTaskDTO> dynamicCall(@PathVariable("subtask_id") Long subtask_id , @PathVariable("action") String action , @RequestBody SubTaskDTO subtaskdto) {
-        SubTask domain = taskService.dynamicCall(subtask_id, action, subtaskMapping.toDomain(subtaskdto));
+        Task domain = taskService.dynamicCall(subtask_id, action, subtaskMapping.toDomain(subtaskdto));
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
@@ -1785,10 +1787,11 @@ public class SubTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
     @ApiOperation(value = "根据任务保存任务", tags = {"任务" },  notes = "根据任务保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/subtasks/save")
-    public ResponseEntity<Boolean> saveByTask(@PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
+    public ResponseEntity<SubTaskDTO> saveByTask(@PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskService.save(domain));
+        taskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
@@ -3134,10 +3137,11 @@ public class SubTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
     @ApiOperation(value = "根据任务模块任务保存任务", tags = {"任务" },  notes = "根据任务模块任务保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/save")
-    public ResponseEntity<Boolean> saveByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
+    public ResponseEntity<SubTaskDTO> saveByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskService.save(domain));
+        taskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
@@ -4483,10 +4487,11 @@ public class SubTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
     @ApiOperation(value = "根据产品计划任务保存任务", tags = {"任务" },  notes = "根据产品计划任务保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/subtasks/save")
-    public ResponseEntity<Boolean> saveByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
+    public ResponseEntity<SubTaskDTO> saveByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskService.save(domain));
+        taskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
@@ -5832,10 +5837,11 @@ public class SubTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
     @ApiOperation(value = "根据需求任务保存任务", tags = {"任务" },  notes = "根据需求任务保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/subtasks/save")
-    public ResponseEntity<Boolean> saveByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
+    public ResponseEntity<SubTaskDTO> saveByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskService.save(domain));
+        taskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
@@ -7181,10 +7187,11 @@ public class SubTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
     @ApiOperation(value = "根据项目任务保存任务", tags = {"任务" },  notes = "根据项目任务保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/subtasks/save")
-    public ResponseEntity<Boolean> saveByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
+    public ResponseEntity<SubTaskDTO> saveByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskService.save(domain));
+        taskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
@@ -8530,10 +8537,11 @@ public class SubTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
     @ApiOperation(value = "根据产品产品计划任务保存任务", tags = {"任务" },  notes = "根据产品产品计划任务保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/save")
-    public ResponseEntity<Boolean> saveByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
+    public ResponseEntity<SubTaskDTO> saveByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskService.save(domain));
+        taskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
@@ -9879,10 +9887,11 @@ public class SubTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
     @ApiOperation(value = "根据产品需求任务保存任务", tags = {"任务" },  notes = "根据产品需求任务保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/save")
-    public ResponseEntity<Boolean> saveByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
+    public ResponseEntity<SubTaskDTO> saveByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskService.save(domain));
+        taskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
@@ -11228,10 +11237,11 @@ public class SubTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")
     @ApiOperation(value = "根据项目任务模块任务保存任务", tags = {"任务" },  notes = "根据项目任务模块任务保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/save")
-    public ResponseEntity<Boolean> saveByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
+    public ResponseEntity<SubTaskDTO> saveByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskService.save(domain));
+        taskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Task-Save-all')")

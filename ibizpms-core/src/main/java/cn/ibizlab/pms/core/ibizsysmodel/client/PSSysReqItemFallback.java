@@ -66,6 +66,9 @@ public class PSSysReqItemFallback implements PSSysReqItemFeignClient {
     }
 
 
+    public Object saveEntity(PSSysReqItem et) {
+        return null;
+    }
     public Boolean save(PSSysReqItem et) {
         return false;
     }

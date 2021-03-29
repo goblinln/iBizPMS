@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_testrun", resultMap = "TestRunResultMap")
+@ApiModel("测试运行")
 public class TestRun extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class TestRun extends EntityMP implements Serializable {
     @TableField(value = "`lastrunresult`")
     @JSONField(name = "lastrunresult")
     @JsonProperty("lastrunresult")
+    @ApiModelProperty("结果")
     private String lastrunresult;
     /**
      * 最后执行时间
@@ -58,6 +62,7 @@ public class TestRun extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastrundate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastrundate")
+    @ApiModelProperty("最后执行时间")
     private Timestamp lastrundate;
     /**
      * 指派给
@@ -66,6 +71,7 @@ public class TestRun extends EntityMP implements Serializable {
     @TableField(value = "`assignedto`")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
+    @ApiModelProperty("指派给")
     private String assignedto;
     /**
      * 最后执行人
@@ -74,6 +80,7 @@ public class TestRun extends EntityMP implements Serializable {
     @TableField(value = "`lastrunner`")
     @JSONField(name = "lastrunner")
     @JsonProperty("lastrunner")
+    @ApiModelProperty("最后执行人")
     private String lastrunner;
     /**
      * 当前状态
@@ -82,6 +89,7 @@ public class TestRun extends EntityMP implements Serializable {
     @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
+    @ApiModelProperty("当前状态")
     private String status;
     /**
      * 编号
@@ -90,6 +98,7 @@ public class TestRun extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 用例版本
@@ -98,6 +107,7 @@ public class TestRun extends EntityMP implements Serializable {
     @TableField(value = "`version`")
     @JSONField(name = "version")
     @JsonProperty("version")
+    @ApiModelProperty("用例版本")
     private Integer version;
     /**
      * 测试用例
@@ -106,6 +116,7 @@ public class TestRun extends EntityMP implements Serializable {
     @TableField(value = "`case`")
     @JSONField(name = "ibizcase")
     @JsonProperty("ibizcase")
+    @ApiModelProperty("测试用例")
     private Long ibizcase;
     /**
      * 测试单
@@ -114,6 +125,7 @@ public class TestRun extends EntityMP implements Serializable {
     @TableField(value = "`task`")
     @JSONField(name = "task")
     @JsonProperty("task")
+    @ApiModelProperty("测试单")
     private Long task;
 
     /**

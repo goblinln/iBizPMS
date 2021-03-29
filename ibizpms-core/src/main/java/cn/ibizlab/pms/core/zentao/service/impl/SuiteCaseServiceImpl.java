@@ -64,7 +64,7 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Transactional
     public boolean create(SuiteCase et) {
         fillParentData(et);
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -82,7 +82,7 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Transactional
     public boolean update(SuiteCase et) {
         fillParentData(et);
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -100,7 +100,7 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -113,7 +113,7 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Transactional
     public SuiteCase get(String key) {
         SuiteCase et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new SuiteCase();
             et.setId(key);
         }
@@ -135,7 +135,7 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public boolean save(SuiteCase et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -176,7 +176,7 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public void saveBatch(List<SuiteCase> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<SuiteCase> create = new ArrayList<>();
         List<SuiteCase> update = new ArrayList<>();
         for (SuiteCase et : list) {
@@ -195,31 +195,31 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     }
 
 
-    @Override
+	@Override
     public List<SuiteCase> selectByIbizcase(Long id) {
         return baseMapper.selectByIbizcase(id);
     }
     @Override
     public void removeByIbizcase(Long id) {
-        this.remove(new QueryWrapper<SuiteCase>().eq("case", id));
+        this.remove(new QueryWrapper<SuiteCase>().eq("case",id));
     }
 
-    @Override
+	@Override
     public List<SuiteCase> selectByProduct(Long id) {
         return baseMapper.selectByProduct(id);
     }
     @Override
     public void removeByProduct(Long id) {
-        this.remove(new QueryWrapper<SuiteCase>().eq("product", id));
+        this.remove(new QueryWrapper<SuiteCase>().eq("product",id));
     }
 
-    @Override
+	@Override
     public List<SuiteCase> selectBySuite(Long id) {
         return baseMapper.selectBySuite(id);
     }
     @Override
     public void removeBySuite(Long id) {
-        this.remove(new QueryWrapper<SuiteCase>().eq("suite", id));
+        this.remove(new QueryWrapper<SuiteCase>().eq("suite",id));
     }
 
 
@@ -228,7 +228,7 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
      */
     @Override
     public Page<SuiteCase> searchDefault(SuiteCaseSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<SuiteCase> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<SuiteCase> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<SuiteCase>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -240,12 +240,12 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
      */
     private void fillParentData(SuiteCase et){
         //实体关系[DER1N_ZT_SUITECASE_ZT_CASE_CASE]
-        if (!ObjectUtils.isEmpty(et.getIbizcase())) {
+        if(!ObjectUtils.isEmpty(et.getIbizcase())){
             cn.ibizlab.pms.core.zentao.domain.Case ztcase=et.getZtcase();
-            if (ObjectUtils.isEmpty(ztcase)) {
+            if(ObjectUtils.isEmpty(ztcase)){
                 cn.ibizlab.pms.core.zentao.domain.Case majorEntity=caseService.get(et.getIbizcase());
                 et.setZtcase(majorEntity);
-                ztcase = majorEntity;
+                ztcase=majorEntity;
             }
             et.setVersion(ztcase.getVersion());
         }
@@ -255,31 +255,28 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

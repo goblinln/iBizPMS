@@ -72,7 +72,7 @@ public class CaseStatsResource {
 		CaseStats domain  = casestatsMapping.toDomain(casestatsdto);
         domain .setId(casestats_id);
 		casestatsService.update(domain );
-		CaseStatsDTO dto = casestatsMapping.toDto(domain );
+		CaseStatsDTO dto = casestatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class CaseStatsResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Save-all')")
     @ApiOperation(value = "保存测试用例统计", tags = {"测试用例统计" },  notes = "保存测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/save")
-    public ResponseEntity<Boolean> save(@RequestBody CaseStatsDTO casestatsdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(casestatsService.save(casestatsMapping.toDomain(casestatsdto)));
+    public ResponseEntity<CaseStatsDTO> save(@RequestBody CaseStatsDTO casestatsdto) {
+        CaseStats domain = casestatsMapping.toDomain(casestatsdto);
+        casestatsService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(casestatsMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Save-all')")

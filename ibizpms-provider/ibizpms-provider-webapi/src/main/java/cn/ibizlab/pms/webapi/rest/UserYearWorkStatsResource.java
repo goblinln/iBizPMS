@@ -72,7 +72,7 @@ public class UserYearWorkStatsResource {
 		UserYearWorkStats domain  = useryearworkstatsMapping.toDomain(useryearworkstatsdto);
         domain .setId(useryearworkstats_id);
 		useryearworkstatsService.update(domain );
-		UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain );
+		UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -176,8 +176,10 @@ public class UserYearWorkStatsResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserYearWorkStats-Save-all')")
     @ApiOperation(value = "保存用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "保存用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats/save")
-    public ResponseEntity<Boolean> save(@RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsService.save(useryearworkstatsMapping.toDomain(useryearworkstatsdto)));
+    public ResponseEntity<UserYearWorkStatsDTO> save(@RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
+        UserYearWorkStats domain = useryearworkstatsMapping.toDomain(useryearworkstatsdto);
+        useryearworkstatsService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserYearWorkStats-Save-all')")

@@ -63,7 +63,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Transactional
     public boolean create(IBZProStoryModule et) {
         fillParentData(et);
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -81,7 +81,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Transactional
     public boolean update(IBZProStoryModule et) {
         fillParentData(et);
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -99,7 +99,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -112,7 +112,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Transactional
     public IBZProStoryModule get(Long key) {
         IBZProStoryModule et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IBZProStoryModule();
             et.setId(key);
         }
@@ -134,7 +134,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public boolean save(IBZProStoryModule et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -175,7 +175,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public void saveBatch(List<IBZProStoryModule> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<IBZProStoryModule> create = new ArrayList<>();
         List<IBZProStoryModule> update = new ArrayList<>();
         for (IBZProStoryModule et : list) {
@@ -199,7 +199,8 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean syncFromIBIZBatch(List<IBZProStoryModule> etList) {
         for(IBZProStoryModule et : etList) {
@@ -209,22 +210,22 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     }
 
 
-    @Override
+	@Override
     public List<IBZProStoryModule> selectByRoot(Long id) {
         return baseMapper.selectByRoot(id);
     }
     @Override
     public void removeByRoot(Long id) {
-        this.remove(new QueryWrapper<IBZProStoryModule>().eq("root", id));
+        this.remove(new QueryWrapper<IBZProStoryModule>().eq("root",id));
     }
 
-    @Override
+	@Override
     public List<IBZProStoryModule> selectByParent(Long id) {
         return baseMapper.selectByParent(id);
     }
     @Override
     public void removeByParent(Long id) {
-        this.remove(new QueryWrapper<IBZProStoryModule>().eq("parent", id));
+        this.remove(new QueryWrapper<IBZProStoryModule>().eq("parent",id));
     }
 
 
@@ -233,7 +234,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
      */
     @Override
     public Page<IBZProStoryModule> searchDefault(IBZProStoryModuleSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProStoryModule> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProStoryModule> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IBZProStoryModule>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -245,12 +246,12 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
      */
     private void fillParentData(IBZProStoryModule et){
         //实体关系[DER1N_IBZPRO_STORYMODULE_IBZPRO_PRODUCT_ROOT]
-        if (!ObjectUtils.isEmpty(et.getRoot())) {
+        if(!ObjectUtils.isEmpty(et.getRoot())){
             cn.ibizlab.pms.core.ibizpro.domain.IBZProProduct ibzproproduct=et.getIbzproproduct();
-            if (ObjectUtils.isEmpty(ibzproproduct)) {
+            if(ObjectUtils.isEmpty(ibzproproduct)){
                 cn.ibizlab.pms.core.ibizpro.domain.IBZProProduct majorEntity=ibzproproductService.get(et.getRoot());
                 et.setIbzproproduct(majorEntity);
-                ibzproproduct = majorEntity;
+                ibzproproduct=majorEntity;
             }
             et.setProductname(ibzproproduct.getName());
         }
@@ -260,31 +261,28 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

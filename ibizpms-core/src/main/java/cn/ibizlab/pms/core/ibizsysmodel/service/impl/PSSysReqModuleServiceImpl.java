@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ibizsysmodel.client.PSSysReqModuleFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[系统需求模块] 服务对象接口实现
@@ -74,9 +75,8 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
     @Override
     public boolean create(PSSysReqModule et) {
         PSSysReqModule rt = pSSysReqModuleFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
@@ -92,7 +92,7 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
     }
 
     public void createBatch(List<PSSysReqModule> list){
-        pSSysReqModuleFeignClient.createBatch(list);
+        pSSysReqModuleFeignClient.createBatch(list) ;
     }
 
     public void createBatch(String devSlnSysId, List<PSSysReqModule> list){
@@ -101,10 +101,9 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
 
     @Override
     public boolean update(PSSysReqModule et) {
-        PSSysReqModule rt = pSSysReqModuleFeignClient.update(et.getPssysreqmoduleid(), et);
-        if (rt == null) {
+        PSSysReqModule rt = pSSysReqModuleFeignClient.update(et.getPssysreqmoduleid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
@@ -120,8 +119,8 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
         return true;
     }
 
-    public void updateBatch(List<PSSysReqModule> list) {
-        pSSysReqModuleFeignClient.updateBatch(list);
+    public void updateBatch(List<PSSysReqModule> list){
+        pSSysReqModuleFeignClient.updateBatch(list) ;
     }
 
     public void updateBatch(String devSlnSysId, List<PSSysReqModule> list){
@@ -130,7 +129,7 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
 
     @Override
     public boolean remove(String pssysreqmoduleid) {
-        boolean result=pSSysReqModuleFeignClient.remove(pssysreqmoduleid);
+        boolean result=pSSysReqModuleFeignClient.remove(pssysreqmoduleid) ;
         return result;
     }
 
@@ -150,12 +149,12 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
 
     @Override
     public PSSysReqModule get(String pssysreqmoduleid) {
-        PSSysReqModule et = pSSysReqModuleFeignClient.get(pssysreqmoduleid);
-        if (et == null) {
-            et = new PSSysReqModule();
+		PSSysReqModule et=pSSysReqModuleFeignClient.get(pssysreqmoduleid);
+        if(et==null){
+            et=new PSSysReqModule();
             et.setPssysreqmoduleid(pssysreqmoduleid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -202,14 +201,25 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
     @Override
     @Transactional
     public boolean save(PSSysReqModule et) {
-        if (et.getPssysreqmoduleid() == null) {
-            et.setPssysreqmoduleid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = pSSysReqModuleFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), PSSysReqModule.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!pSSysReqModuleFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
     @Override
     @Transactional
@@ -225,7 +235,7 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
 
     @Override
     public void saveBatch(List<PSSysReqModule> list) {
-        pSSysReqModuleFeignClient.saveBatch(list);
+        pSSysReqModuleFeignClient.saveBatch(list) ;
     }
 
     @Override
@@ -235,7 +245,7 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
 
 
 
-    @Override
+	@Override
     public List<PSSysReqModule> selectByPsmoduleid(String psmoduleid) {
         PSSysReqModuleSearchContext context=new PSSysReqModuleSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -261,12 +271,11 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
     @Override
     public void removeByPsmoduleid(String psmoduleid) {
         Set<String> delIds=new HashSet<String>();
-        for (PSSysReqModule before:selectByPsmoduleid(psmoduleid)) {
+        for(PSSysReqModule before:selectByPsmoduleid(psmoduleid)){
             delIds.add(before.getPssysreqmoduleid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
     @Override
@@ -280,7 +289,7 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
         }
     }
 
-    @Override
+	@Override
     public List<PSSysReqModule> selectByPpssysreqmoduleid(String pssysreqmoduleid) {
         PSSysReqModuleSearchContext context=new PSSysReqModuleSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -306,12 +315,11 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
     @Override
     public void removeByPpssysreqmoduleid(String pssysreqmoduleid) {
         Set<String> delIds=new HashSet<String>();
-        for (PSSysReqModule before:selectByPpssysreqmoduleid(pssysreqmoduleid)) {
+        for(PSSysReqModule before:selectByPpssysreqmoduleid(pssysreqmoduleid)){
             delIds.add(before.getPssysreqmoduleid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
     @Override
@@ -341,8 +349,6 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
         Page<PSSysReqModule> pSSysReqModules=getPSSysReqModuleFeignClient(devSlnSysId).searchDefault(context);
         return pSSysReqModules;
     }
-
-
 
     @Override
     @Transactional

@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_im_conference", resultMap = "ImConferenceResultMap")
+@ApiModel("ImConference")
 public class ImConference extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class ImConference extends EntityMP implements Serializable {
     @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
+    @ApiModelProperty("status")
     private String status;
     /**
      * cgid
@@ -56,6 +60,7 @@ public class ImConference extends EntityMP implements Serializable {
     @TableField(value = "`cgid`")
     @JSONField(name = "cgid")
     @JsonProperty("cgid")
+    @ApiModelProperty("cgid")
     private String cgid;
     /**
      * openedBy
@@ -64,6 +69,7 @@ public class ImConference extends EntityMP implements Serializable {
     @TableField(value = "`openedby`")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
+    @ApiModelProperty("openedBy")
     private Integer openedby;
     /**
      * openedDate
@@ -73,6 +79,7 @@ public class ImConference extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "openeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("openeddate")
+    @ApiModelProperty("openedDate")
     private Timestamp openeddate;
     /**
      * id
@@ -81,6 +88,7 @@ public class ImConference extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * rid
@@ -88,6 +96,7 @@ public class ImConference extends EntityMP implements Serializable {
     @TableField(value = "`rid`")
     @JSONField(name = "rid")
     @JsonProperty("rid")
+    @ApiModelProperty("rid")
     private String rid;
     /**
      * participants
@@ -95,6 +104,7 @@ public class ImConference extends EntityMP implements Serializable {
     @TableField(value = "`participants`")
     @JSONField(name = "participants")
     @JsonProperty("participants")
+    @ApiModelProperty("participants")
     private String participants;
 
 

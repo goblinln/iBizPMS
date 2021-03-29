@@ -72,7 +72,7 @@ public class IBIZProMessageResource {
 		IBIZProMessage domain  = ibizpromessageMapping.toDomain(ibizpromessagedto);
         domain .setIbizpromessageid(ibizpromessage_id);
 		ibizpromessageService.update(domain );
-		IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain );
+		IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -162,8 +162,10 @@ public class IBIZProMessageResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProMessage-Save-all')")
     @ApiOperation(value = "保存消息", tags = {"消息" },  notes = "保存消息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/save")
-    public ResponseEntity<Boolean> save(@RequestBody IBIZProMessageDTO ibizpromessagedto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibizpromessageService.save(ibizpromessageMapping.toDomain(ibizpromessagedto)));
+    public ResponseEntity<IBIZProMessageDTO> save(@RequestBody IBIZProMessageDTO ibizpromessagedto) {
+        IBIZProMessage domain = ibizpromessageMapping.toDomain(ibizpromessagedto);
+        ibizpromessageService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibizpromessageMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProMessage-Save-all')")

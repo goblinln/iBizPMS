@@ -72,7 +72,7 @@ public class ProductResource {
 		Product domain  = productMapping.toDomain(productdto);
         domain .setId(product_id);
 		productService.update(domain );
-		ProductDTO dto = productMapping.toDto(domain );
+		ProductDTO dto = productMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -187,8 +187,10 @@ public class ProductResource {
     @PreAuthorize("hasPermission(this.productMapping.toDomain(#productdto),'iBizPMS-Product-Save')")
     @ApiOperation(value = "保存产品", tags = {"产品" },  notes = "保存产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/save")
-    public ResponseEntity<Boolean> save(@RequestBody ProductDTO productdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(productService.save(productMapping.toDomain(productdto)));
+    public ResponseEntity<ProductDTO> save(@RequestBody ProductDTO productdto) {
+        Product domain = productMapping.toDomain(productdto);
+        productService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.productMapping.toDomain(#productdtos),'iBizPMS-Product-Save')")

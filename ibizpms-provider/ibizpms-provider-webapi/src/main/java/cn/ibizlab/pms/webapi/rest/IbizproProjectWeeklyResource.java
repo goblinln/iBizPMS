@@ -73,7 +73,7 @@ public class IbizproProjectWeeklyResource {
 		IbizproProjectWeekly domain  = ibizproprojectweeklyMapping.toDomain(ibizproprojectweeklydto);
         domain .setProjectweeklyid(ibizproprojectweekly_id);
 		ibizproprojectweeklyService.update(domain );
-		IbizproProjectWeeklyDTO dto = ibizproprojectweeklyMapping.toDto(domain );
+		IbizproProjectWeeklyDTO dto = ibizproprojectweeklyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -144,8 +144,10 @@ public class IbizproProjectWeeklyResource {
     @PreAuthorize("hasPermission(this.ibizproprojectweeklyMapping.toDomain(#ibizproprojectweeklydto),'iBizPMS-IbizproProjectWeekly-Save')")
     @ApiOperation(value = "保存项目周报", tags = {"项目周报" },  notes = "保存项目周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectweeklies/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyService.save(ibizproprojectweeklyMapping.toDomain(ibizproprojectweeklydto)));
+    public ResponseEntity<IbizproProjectWeeklyDTO> save(@RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {
+        IbizproProjectWeekly domain = ibizproprojectweeklyMapping.toDomain(ibizproprojectweeklydto);
+        ibizproprojectweeklyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibizproprojectweeklyMapping.toDomain(#ibizproprojectweeklydtos),'iBizPMS-IbizproProjectWeekly-Save')")

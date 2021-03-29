@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ibizplugin.client.IBIZProKeywordFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[关键字] 服务对象接口实现
@@ -53,39 +54,37 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
     @Override
     public boolean create(IBIZProKeyword et) {
         IBIZProKeyword rt = iBIZProKeywordFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<IBIZProKeyword> list){
-        iBIZProKeywordFeignClient.createBatch(list);
+        iBIZProKeywordFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(IBIZProKeyword et) {
-        IBIZProKeyword rt = iBIZProKeywordFeignClient.update(et.getId(), et);
-        if (rt == null) {
+        IBIZProKeyword rt = iBIZProKeywordFeignClient.update(et.getId(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<IBIZProKeyword> list) {
-        iBIZProKeywordFeignClient.updateBatch(list);
+    public void updateBatch(List<IBIZProKeyword> list){
+        iBIZProKeywordFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String id) {
-        boolean result=iBIZProKeywordFeignClient.remove(id);
+        boolean result=iBIZProKeywordFeignClient.remove(id) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
 
     @Override
     public IBIZProKeyword get(String id) {
-        IBIZProKeyword et = iBIZProKeywordFeignClient.get(id);
-        if (et == null) {
-            et = new IBIZProKeyword();
+		IBIZProKeyword et=iBIZProKeywordFeignClient.get(id);
+        if(et==null){
+            et=new IBIZProKeyword();
             et.setId(id);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -124,19 +123,30 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
     @Override
     @Transactional
     public boolean save(IBIZProKeyword et) {
-        if (et.getId() == null) {
-            et.setId((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = iBIZProKeywordFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), IBIZProKeyword.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!iBIZProKeywordFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<IBIZProKeyword> list) {
-        iBIZProKeywordFeignClient.saveBatch(list);
+        iBIZProKeywordFeignClient.saveBatch(list) ;
     }
 
 
@@ -152,8 +162,6 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
         Page<IBIZProKeyword> iBIZProKeywords=iBIZProKeywordFeignClient.searchDefault(context);
         return iBIZProKeywords;
     }
-
-
 
 
     @Override

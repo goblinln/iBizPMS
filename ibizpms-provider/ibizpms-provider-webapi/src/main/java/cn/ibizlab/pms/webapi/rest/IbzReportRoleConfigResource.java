@@ -73,7 +73,7 @@ public class IbzReportRoleConfigResource {
 		IbzReportRoleConfig domain  = ibzreportroleconfigMapping.toDomain(ibzreportroleconfigdto);
         domain .setIbzreportroleconfigid(ibzreportroleconfig_id);
 		ibzreportroleconfigService.update(domain );
-		IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain );
+		IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class IbzReportRoleConfigResource {
     @PreAuthorize("hasPermission(this.ibzreportroleconfigMapping.toDomain(#ibzreportroleconfigdto),'iBizPMS-IbzReportRoleConfig-Save')")
     @ApiOperation(value = "保存汇报角色配置", tags = {"汇报角色配置" },  notes = "保存汇报角色配置")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigService.save(ibzreportroleconfigMapping.toDomain(ibzreportroleconfigdto)));
+    public ResponseEntity<IbzReportRoleConfigDTO> save(@RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {
+        IbzReportRoleConfig domain = ibzreportroleconfigMapping.toDomain(ibzreportroleconfigdto);
+        ibzreportroleconfigService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibzreportroleconfigMapping.toDomain(#ibzreportroleconfigdtos),'iBizPMS-IbzReportRoleConfig-Save')")

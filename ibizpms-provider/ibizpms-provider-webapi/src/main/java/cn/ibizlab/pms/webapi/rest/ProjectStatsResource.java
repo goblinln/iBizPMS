@@ -72,7 +72,7 @@ public class ProjectStatsResource {
 		ProjectStats domain  = projectstatsMapping.toDomain(projectstatsdto);
         domain .setId(projectstats_id);
 		projectstatsService.update(domain );
-		ProjectStatsDTO dto = projectstatsMapping.toDto(domain );
+		ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -135,8 +135,10 @@ public class ProjectStatsResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-Save-all')")
     @ApiOperation(value = "保存项目统计", tags = {"项目统计" },  notes = "保存项目统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/save")
-    public ResponseEntity<Boolean> save(@RequestBody ProjectStatsDTO projectstatsdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(projectstatsService.save(projectstatsMapping.toDomain(projectstatsdto)));
+    public ResponseEntity<ProjectStatsDTO> save(@RequestBody ProjectStatsDTO projectstatsdto) {
+        ProjectStats domain = projectstatsMapping.toDomain(projectstatsdto);
+        projectstatsService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectstatsMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-Save-all')")

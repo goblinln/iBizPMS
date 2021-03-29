@@ -66,6 +66,9 @@ public class PSSubSysSADEFallback implements PSSubSysSADEFeignClient {
     }
 
 
+    public Object saveEntity(PSSubSysSADE et) {
+        return null;
+    }
     public Boolean save(PSSubSysSADE et) {
         return false;
     }

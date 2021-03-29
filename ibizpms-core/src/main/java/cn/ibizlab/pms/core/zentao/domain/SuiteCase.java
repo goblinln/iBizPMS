@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_suitecase", resultMap = "SuiteCaseResultMap")
+@ApiModel("套件用例")
 public class SuiteCase extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class SuiteCase extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("虚拟主键")
     private String id;
     /**
      * 用例版本
@@ -57,6 +61,7 @@ public class SuiteCase extends EntityMP implements Serializable {
     @TableField(value = "`version`")
     @JSONField(name = "version")
     @JsonProperty("version")
+    @ApiModelProperty("用例版本")
     private Integer version;
     /**
      * 测试套件
@@ -65,6 +70,7 @@ public class SuiteCase extends EntityMP implements Serializable {
     @TableField(value = "`suite`")
     @JSONField(name = "suite")
     @JsonProperty("suite")
+    @ApiModelProperty("测试套件")
     private Long suite;
     /**
      * 用例
@@ -73,6 +79,7 @@ public class SuiteCase extends EntityMP implements Serializable {
     @TableField(value = "`case`")
     @JSONField(name = "ibizcase")
     @JsonProperty("ibizcase")
+    @ApiModelProperty("用例")
     private Long ibizcase;
     /**
      * 所属产品
@@ -81,6 +88,7 @@ public class SuiteCase extends EntityMP implements Serializable {
     @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
+    @ApiModelProperty("所属产品")
     private Long product;
 
     /**

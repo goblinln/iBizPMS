@@ -73,7 +73,7 @@ public class BugResource {
 		Bug domain  = bugMapping.toDomain(bugdto);
         domain .setId(bug_id);
 		bugService.update(domain );
-		BugDTO dto = bugMapping.toDto(domain );
+		BugDTO dto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -432,8 +432,10 @@ public class BugResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Bug-Save-all')")
     @ApiOperation(value = "保存Bug", tags = {"Bug" },  notes = "保存Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/save")
-    public ResponseEntity<Boolean> save(@RequestBody BugDTO bugdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(bugService.save(bugMapping.toDomain(bugdto)));
+    public ResponseEntity<BugDTO> save(@RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        bugService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Bug-Save-all')")
@@ -1608,10 +1610,11 @@ public class BugResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Bug-Save-all')")
     @ApiOperation(value = "根据产品保存Bug", tags = {"Bug" },  notes = "根据产品保存Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/save")
-    public ResponseEntity<Boolean> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugDTO bugdto) {
+    public ResponseEntity<BugDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(bugService.save(domain));
+        bugService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Bug-Save-all')")
@@ -2804,10 +2807,11 @@ public class BugResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Bug-Save-all')")
     @ApiOperation(value = "根据需求保存Bug", tags = {"Bug" },  notes = "根据需求保存Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/save")
-    public ResponseEntity<Boolean> saveByStory(@PathVariable("story_id") Long story_id, @RequestBody BugDTO bugdto) {
+    public ResponseEntity<BugDTO> saveByStory(@PathVariable("story_id") Long story_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(bugService.save(domain));
+        bugService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Bug-Save-all')")
@@ -4000,10 +4004,11 @@ public class BugResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Bug-Save-all')")
     @ApiOperation(value = "根据项目保存Bug", tags = {"Bug" },  notes = "根据项目保存Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/save")
-    public ResponseEntity<Boolean> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody BugDTO bugdto) {
+    public ResponseEntity<BugDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(bugService.save(domain));
+        bugService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Bug-Save-all')")
@@ -5196,10 +5201,11 @@ public class BugResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Bug-Save-all')")
     @ApiOperation(value = "根据产品需求保存Bug", tags = {"Bug" },  notes = "根据产品需求保存Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/save")
-    public ResponseEntity<Boolean> saveByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody BugDTO bugdto) {
+    public ResponseEntity<BugDTO> saveByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(bugService.save(domain));
+        bugService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Bug-Save-all')")

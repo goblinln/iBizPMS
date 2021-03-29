@@ -60,7 +60,9 @@ public interface PSDEFieldFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdefields/save")
-    Boolean save(@RequestBody PSDEField et);
+    Object saveEntity(@RequestBody PSDEField et);
+
+    default Boolean save(@RequestBody PSDEField et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdefields/savebatch")
     Boolean saveBatch(@RequestBody List<PSDEField> psdefields);

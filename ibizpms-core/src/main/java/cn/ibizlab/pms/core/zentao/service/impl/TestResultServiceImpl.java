@@ -67,7 +67,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Transactional
     public boolean create(TestResult et) {
         fillParentData(et);
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -85,7 +85,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Transactional
     public boolean update(TestResult et) {
         fillParentData(et);
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -103,7 +103,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -116,7 +116,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Transactional
     public TestResult get(Long key) {
         TestResult et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new TestResult();
             et.setId(key);
         }
@@ -138,7 +138,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Override
     @Transactional
     public boolean save(TestResult et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -179,7 +179,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Override
     @Transactional
     public void saveBatch(List<TestResult> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<TestResult> create = new ArrayList<>();
         List<TestResult> update = new ArrayList<>();
         for (TestResult et : list) {
@@ -198,40 +198,40 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     }
 
 
-    @Override
+	@Override
     public List<TestResult> selectByIbizcase(Long id) {
         return baseMapper.selectByIbizcase(id);
     }
     @Override
     public void removeByIbizcase(Long id) {
-        this.remove(new QueryWrapper<TestResult>().eq("case", id));
+        this.remove(new QueryWrapper<TestResult>().eq("case",id));
     }
 
-    @Override
+	@Override
     public List<TestResult> selectByCompile(Long id) {
         return baseMapper.selectByCompile(id);
     }
     @Override
     public void removeByCompile(Long id) {
-        this.remove(new QueryWrapper<TestResult>().eq("compile", id));
+        this.remove(new QueryWrapper<TestResult>().eq("compile",id));
     }
 
-    @Override
+	@Override
     public List<TestResult> selectByJob(Long id) {
         return baseMapper.selectByJob(id);
     }
     @Override
     public void removeByJob(Long id) {
-        this.remove(new QueryWrapper<TestResult>().eq("job", id));
+        this.remove(new QueryWrapper<TestResult>().eq("job",id));
     }
 
-    @Override
+	@Override
     public List<TestResult> selectByRun(Long id) {
         return baseMapper.selectByRun(id);
     }
     @Override
     public void removeByRun(Long id) {
-        this.remove(new QueryWrapper<TestResult>().eq("run", id));
+        this.remove(new QueryWrapper<TestResult>().eq("run",id));
     }
 
 
@@ -240,7 +240,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
      */
     @Override
     public Page<TestResult> searchCurTestRun(TestResultSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestResult> pages=baseMapper.searchCurTestRun(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestResult> pages=baseMapper.searchCurTestRun(context.getPages(),context,context.getSelectCond());
         return new PageImpl<TestResult>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -249,7 +249,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
      */
     @Override
     public Page<TestResult> searchDefault(TestResultSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestResult> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestResult> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<TestResult>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -261,12 +261,12 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
      */
     private void fillParentData(TestResult et){
         //实体关系[DER1N_ZT_TESTRESULT_ZT_CASE_CASE]
-        if (!ObjectUtils.isEmpty(et.getIbizcase())) {
+        if(!ObjectUtils.isEmpty(et.getIbizcase())){
             cn.ibizlab.pms.core.zentao.domain.Case ztcase=et.getZtcase();
-            if (ObjectUtils.isEmpty(ztcase)) {
+            if(ObjectUtils.isEmpty(ztcase)){
                 cn.ibizlab.pms.core.zentao.domain.Case majorEntity=caseService.get(et.getIbizcase());
                 et.setZtcase(majorEntity);
-                ztcase = majorEntity;
+                ztcase=majorEntity;
             }
             et.setVersion(ztcase.getVersion());
             et.setStory(ztcase.getStory());
@@ -282,31 +282,28 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

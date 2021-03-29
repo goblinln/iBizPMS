@@ -54,7 +54,7 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
     @Override
     @Transactional
     public boolean create(TaskEstimateStats et) {
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -70,7 +70,7 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
     @Override
     @Transactional
     public boolean update(TaskEstimateStats et) {
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -87,7 +87,7 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -100,7 +100,7 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
     @Transactional
     public TaskEstimateStats get(Long key) {
         TaskEstimateStats et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new TaskEstimateStats();
             et.setId(key);
         }
@@ -121,7 +121,7 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
     @Override
     @Transactional
     public boolean save(TaskEstimateStats et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -185,7 +185,7 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
      */
     @Override
     public Page<TaskEstimateStats> searchActionMonth(TaskEstimateStatsSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TaskEstimateStats> pages=baseMapper.searchActionMonth(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TaskEstimateStats> pages=baseMapper.searchActionMonth(context.getPages(),context,context.getSelectCond());
         return new PageImpl<TaskEstimateStats>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -194,7 +194,7 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
      */
     @Override
     public Page<TaskEstimateStats> searchActionYear(TaskEstimateStatsSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TaskEstimateStats> pages=baseMapper.searchActionYear(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TaskEstimateStats> pages=baseMapper.searchActionYear(context.getPages(),context,context.getSelectCond());
         return new PageImpl<TaskEstimateStats>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -203,7 +203,7 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
      */
     @Override
     public Page<TaskEstimateStats> searchDefault(TaskEstimateStatsSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TaskEstimateStats> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TaskEstimateStats> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<TaskEstimateStats>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -214,31 +214,28 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

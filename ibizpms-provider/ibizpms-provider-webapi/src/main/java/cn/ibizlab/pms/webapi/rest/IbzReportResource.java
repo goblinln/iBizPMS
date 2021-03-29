@@ -73,7 +73,7 @@ public class IbzReportResource {
 		IbzReport domain  = ibzreportMapping.toDomain(ibzreportdto);
         domain .setIbzdailyid(ibzreport_id);
 		ibzreportService.update(domain );
-		IbzReportDTO dto = ibzreportMapping.toDto(domain );
+		IbzReportDTO dto = ibzreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -147,8 +147,10 @@ public class IbzReportResource {
     @PreAuthorize("hasPermission(this.ibzreportMapping.toDomain(#ibzreportdto),'iBizPMS-IbzReport-Save')")
     @ApiOperation(value = "保存汇报汇总", tags = {"汇报汇总" },  notes = "保存汇报汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreports/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzReportDTO ibzreportdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzreportService.save(ibzreportMapping.toDomain(ibzreportdto)));
+    public ResponseEntity<IbzReportDTO> save(@RequestBody IbzReportDTO ibzreportdto) {
+        IbzReport domain = ibzreportMapping.toDomain(ibzreportdto);
+        ibzreportService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzreportMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibzreportMapping.toDomain(#ibzreportdtos),'iBizPMS-IbzReport-Save')")

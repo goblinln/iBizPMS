@@ -72,7 +72,7 @@ public class EmpLoyeeloadResource {
 		EmpLoyeeload domain  = employeeloadMapping.toDomain(employeeloaddto);
         domain .setId(employeeload_id);
 		employeeloadService.update(domain );
-		EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain );
+		EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class EmpLoyeeloadResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-Save-all')")
     @ApiOperation(value = "保存员工负载表", tags = {"员工负载表" },  notes = "保存员工负载表")
 	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/save")
-    public ResponseEntity<Boolean> save(@RequestBody EmpLoyeeloadDTO employeeloaddto) {
-        return ResponseEntity.status(HttpStatus.OK).body(employeeloadService.save(employeeloadMapping.toDomain(employeeloaddto)));
+    public ResponseEntity<EmpLoyeeloadDTO> save(@RequestBody EmpLoyeeloadDTO employeeloaddto) {
+        EmpLoyeeload domain = employeeloadMapping.toDomain(employeeloaddto);
+        employeeloadService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(employeeloadMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-Save-all')")

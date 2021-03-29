@@ -78,7 +78,7 @@ public class ProjectResource {
 		Project domain  = projectMapping.toDomain(projectdto);
         domain .setId(project_id);
 		projectService.update(domain );
-		ProjectDTO dto = projectMapping.toDto(domain );
+		ProjectDTO dto = projectMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -326,8 +326,10 @@ public class ProjectResource {
     @PreAuthorize("hasPermission(this.projectMapping.toDomain(#projectdto),'iBizPMS-Project-Save')")
     @ApiOperation(value = "保存项目", tags = {"项目" },  notes = "保存项目")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/save")
-    public ResponseEntity<Boolean> save(@RequestBody ProjectDTO projectdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(projectService.save(projectMapping.toDomain(projectdto)));
+    public ResponseEntity<ProjectDTO> save(@RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        projectService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.projectMapping.toDomain(#projectdtos),'iBizPMS-Project-Save')")

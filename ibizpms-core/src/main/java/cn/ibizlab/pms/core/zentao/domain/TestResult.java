@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_testresult", resultMap = "TestResultResultMap")
+@ApiModel("测试结果")
 public class TestResult extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(value = "`lastrunner`")
     @JSONField(name = "lastrunner")
     @JsonProperty("lastrunner")
+    @ApiModelProperty("最后执行人")
     private String lastrunner;
     /**
      * 步骤结果
@@ -57,6 +61,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(value = "`stepresults`")
     @JSONField(name = "stepresults")
     @JsonProperty("stepresults")
+    @ApiModelProperty("步骤结果")
     private String stepresults;
     /**
      * 测试结果
@@ -65,6 +70,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(value = "`caseresult`")
     @JSONField(name = "caseresult")
     @JsonProperty("caseresult")
+    @ApiModelProperty("测试结果")
     private String caseresult;
     /**
      * 结果文件
@@ -73,6 +79,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(value = "`xml`")
     @JSONField(name = "xml")
     @JsonProperty("xml")
+    @ApiModelProperty("结果文件")
     private String xml;
     /**
      * 属性
@@ -80,6 +87,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "task")
     @JsonProperty("task")
+    @ApiModelProperty("属性")
     private String task;
     /**
      * 持续时间
@@ -88,6 +96,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(value = "`duration`")
     @JSONField(name = "duration")
     @JsonProperty("duration")
+    @ApiModelProperty("持续时间")
     private Double duration;
     /**
      * 测试时间
@@ -96,6 +105,7 @@ public class TestResult extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("date")
+    @ApiModelProperty("测试时间")
     private Timestamp date;
     /**
      * 编号
@@ -104,6 +114,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 用例版本
@@ -111,6 +122,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(value = "`version`")
     @JSONField(name = "version")
     @JsonProperty("version")
+    @ApiModelProperty("用例版本")
     private Integer version;
     /**
      * 相关需求
@@ -118,6 +130,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "story")
     @JsonProperty("story")
+    @ApiModelProperty("相关需求")
     private Long story;
     /**
      * 用例名称
@@ -125,6 +138,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "title")
     @JsonProperty("title")
+    @ApiModelProperty("用例名称")
     private String title;
     /**
      * 所属模块
@@ -132,6 +146,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "modulename")
     @JsonProperty("modulename")
+    @ApiModelProperty("所属模块")
     private String modulename;
     /**
      * 所属模块
@@ -139,6 +154,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "module")
     @JsonProperty("module")
+    @ApiModelProperty("所属模块")
     private Long module;
     /**
      * 前置条件
@@ -146,6 +162,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "precondition")
     @JsonProperty("precondition")
+    @ApiModelProperty("前置条件")
     private String precondition;
     /**
      * 所属产品
@@ -153,6 +170,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "product")
     @JsonProperty("product")
+    @ApiModelProperty("所属产品")
     private Long product;
     /**
      * 构建任务
@@ -161,6 +179,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(value = "`job`")
     @JSONField(name = "job")
     @JsonProperty("job")
+    @ApiModelProperty("构建任务")
     private Long job;
     /**
      * 用例
@@ -169,6 +188,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(value = "`case`")
     @JSONField(name = "ibizcase")
     @JsonProperty("ibizcase")
+    @ApiModelProperty("用例")
     private Long ibizcase;
     /**
      * 测试执行
@@ -177,6 +197,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(value = "`run`")
     @JSONField(name = "run")
     @JsonProperty("run")
+    @ApiModelProperty("测试执行")
     private Long run;
     /**
      * 代码编译
@@ -185,6 +206,7 @@ public class TestResult extends EntityMP implements Serializable {
     @TableField(value = "`compile`")
     @JSONField(name = "compile")
     @JsonProperty("compile")
+    @ApiModelProperty("代码编译")
     private Long compile;
 
     /**

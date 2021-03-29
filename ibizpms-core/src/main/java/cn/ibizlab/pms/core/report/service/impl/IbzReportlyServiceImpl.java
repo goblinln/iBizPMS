@@ -75,7 +75,7 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -88,7 +88,7 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
     @Transactional
     public IbzReportly get(Long key) {
         IbzReportly et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IbzReportly();
             et.setIbzreportlyid(key);
         }
@@ -124,7 +124,7 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
     @Override
     @Transactional
     public boolean save(IbzReportly et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -203,7 +203,7 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
      */
     @Override
     public Page<IbzReportly> searchDefault(IbzReportlySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReportly> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReportly> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzReportly>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -212,7 +212,7 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
      */
     @Override
     public Page<IbzReportly> searchMyAllReportly(IbzReportlySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReportly> pages=baseMapper.searchMyAllReportly(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReportly> pages=baseMapper.searchMyAllReportly(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzReportly>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -221,7 +221,7 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
      */
     @Override
     public Page<IbzReportly> searchMyReceived(IbzReportlySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReportly> pages=baseMapper.searchMyReceived(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReportly> pages=baseMapper.searchMyReceived(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzReportly>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -230,7 +230,7 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
      */
     @Override
     public Page<IbzReportly> searchMyReportlyMob(IbzReportlySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReportly> pages=baseMapper.searchMyReportlyMob(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReportly> pages=baseMapper.searchMyReportlyMob(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzReportly>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -241,24 +241,24 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -274,20 +274,17 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
         List ids =new ArrayList();
         for(IbzReportly entity : entities){
             Serializable id=entity.getIbzreportlyid();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     public IIbzReportlyService getProxyService() {

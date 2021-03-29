@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ibizplugin.client.IBIZProMessageFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[消息] 服务对象接口实现
@@ -53,39 +54,37 @@ public class IBIZProMessageServiceImpl implements IIBIZProMessageService {
     @Override
     public boolean create(IBIZProMessage et) {
         IBIZProMessage rt = iBIZProMessageFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<IBIZProMessage> list){
-        iBIZProMessageFeignClient.createBatch(list);
+        iBIZProMessageFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(IBIZProMessage et) {
-        IBIZProMessage rt = iBIZProMessageFeignClient.update(et.getIbizpromessageid(), et);
-        if (rt == null) {
+        IBIZProMessage rt = iBIZProMessageFeignClient.update(et.getIbizpromessageid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<IBIZProMessage> list) {
-        iBIZProMessageFeignClient.updateBatch(list);
+    public void updateBatch(List<IBIZProMessage> list){
+        iBIZProMessageFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String ibizpromessageid) {
-        boolean result=iBIZProMessageFeignClient.remove(ibizpromessageid);
+        boolean result=iBIZProMessageFeignClient.remove(ibizpromessageid) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class IBIZProMessageServiceImpl implements IIBIZProMessageService {
 
     @Override
     public IBIZProMessage get(String ibizpromessageid) {
-        IBIZProMessage et = iBIZProMessageFeignClient.get(ibizpromessageid);
-        if (et == null) {
-            et = new IBIZProMessage();
+		IBIZProMessage et=iBIZProMessageFeignClient.get(ibizpromessageid);
+        if(et==null){
+            et=new IBIZProMessage();
             et.setIbizpromessageid(ibizpromessageid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -127,7 +126,8 @@ public class IBIZProMessageServiceImpl implements IIBIZProMessageService {
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean markDoneBatch(List<IBIZProMessage> etList) {
         for(IBIZProMessage et : etList) {
@@ -144,7 +144,8 @@ public class IBIZProMessageServiceImpl implements IIBIZProMessageService {
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean markReadBatch(List<IBIZProMessage> etList) {
         for(IBIZProMessage et : etList) {
@@ -158,19 +159,30 @@ public class IBIZProMessageServiceImpl implements IIBIZProMessageService {
     @Override
     @Transactional
     public boolean save(IBIZProMessage et) {
-        if (et.getIbizpromessageid() == null) {
-            et.setIbizpromessageid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = iBIZProMessageFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), IBIZProMessage.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!iBIZProMessageFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<IBIZProMessage> list) {
-        iBIZProMessageFeignClient.saveBatch(list);
+        iBIZProMessageFeignClient.saveBatch(list) ;
     }
 
 
@@ -180,7 +192,8 @@ public class IBIZProMessageServiceImpl implements IIBIZProMessageService {
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean sendBatch(List<IBIZProMessage> etList) {
         for(IBIZProMessage et : etList) {
@@ -223,8 +236,6 @@ public class IBIZProMessageServiceImpl implements IIBIZProMessageService {
         Page<IBIZProMessage> iBIZProMessages=iBIZProMessageFeignClient.searchUserUnreadMessages(context);
         return iBIZProMessages;
     }
-
-
 
 
     @Override

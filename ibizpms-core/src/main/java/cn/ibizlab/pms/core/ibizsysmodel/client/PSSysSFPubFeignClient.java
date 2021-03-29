@@ -60,7 +60,9 @@ public interface PSSysSFPubFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/save")
-    Boolean save(@RequestBody PSSysSFPub et);
+    Object saveEntity(@RequestBody PSSysSFPub et);
+
+    default Boolean save(@RequestBody PSSysSFPub et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/savebatch")
     Boolean saveBatch(@RequestBody List<PSSysSFPub> pssyssfpubs);

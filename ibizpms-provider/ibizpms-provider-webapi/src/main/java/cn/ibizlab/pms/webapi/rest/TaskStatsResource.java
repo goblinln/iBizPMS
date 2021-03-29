@@ -72,7 +72,7 @@ public class TaskStatsResource {
 		TaskStats domain  = taskstatsMapping.toDomain(taskstatsdto);
         domain .setId(taskstats_id);
 		taskstatsService.update(domain );
-		TaskStatsDTO dto = taskstatsMapping.toDto(domain );
+		TaskStatsDTO dto = taskstatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class TaskStatsResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-Save-all')")
     @ApiOperation(value = "保存任务统计", tags = {"任务统计" },  notes = "保存任务统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/save")
-    public ResponseEntity<Boolean> save(@RequestBody TaskStatsDTO taskstatsdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(taskstatsService.save(taskstatsMapping.toDomain(taskstatsdto)));
+    public ResponseEntity<TaskStatsDTO> save(@RequestBody TaskStatsDTO taskstatsdto) {
+        TaskStats domain = taskstatsMapping.toDomain(taskstatsdto);
+        taskstatsService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskstatsMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-Save-all')")

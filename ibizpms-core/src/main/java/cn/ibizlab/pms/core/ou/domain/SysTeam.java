@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [组] 对象
  */
 @Data
+@ApiModel("组")
 public class SysTeam extends EntityClient implements Serializable {
 
     /**
@@ -39,6 +42,7 @@ public class SysTeam extends EntityClient implements Serializable {
     @DEField(isKeyField = true)
     @JSONField(name = "teamid")
     @JsonProperty("teamid")
+    @ApiModelProperty("组标识")
     private String teamid;
 
     /**
@@ -46,6 +50,7 @@ public class SysTeam extends EntityClient implements Serializable {
      */
     @JSONField(name = "teamname")
     @JsonProperty("teamname")
+    @ApiModelProperty("组名称")
     private String teamname;
 
     /**
@@ -53,6 +58,7 @@ public class SysTeam extends EntityClient implements Serializable {
      */
     @JSONField(name = "memo")
     @JsonProperty("memo")
+    @ApiModelProperty("备注")
     private String memo;
 
     /**
@@ -60,6 +66,7 @@ public class SysTeam extends EntityClient implements Serializable {
      */
     @JSONField(name = "domains")
     @JsonProperty("domains")
+    @ApiModelProperty("区属")
     private String domains;
 
 
@@ -71,7 +78,7 @@ public class SysTeam extends EntityClient implements Serializable {
      */
     public void setTeamname(String teamname) {
         this.teamname = teamname ;
-        this.modify("teamname", teamname);
+        this.modify("teamname",teamname);
     }
 
     /**
@@ -79,7 +86,7 @@ public class SysTeam extends EntityClient implements Serializable {
      */
     public void setMemo(String memo) {
         this.memo = memo ;
-        this.modify("memo", memo);
+        this.modify("memo",memo);
     }
 
     /**
@@ -87,7 +94,7 @@ public class SysTeam extends EntityClient implements Serializable {
      */
     public void setDomains(String domains) {
         this.domains = domains ;
-        this.modify("domains", domains);
+        this.modify("domains",domains);
     }
 
     /**
@@ -100,7 +107,7 @@ public class SysTeam extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("teamid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

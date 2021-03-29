@@ -66,6 +66,9 @@ public class PSModuleFallback implements PSModuleFeignClient {
     }
 
 
+    public Object saveEntity(PSModule et) {
+        return null;
+    }
     public Boolean save(PSModule et) {
         return false;
     }

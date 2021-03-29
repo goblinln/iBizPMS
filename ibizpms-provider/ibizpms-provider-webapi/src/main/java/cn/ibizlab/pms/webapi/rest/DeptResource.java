@@ -72,7 +72,7 @@ public class DeptResource {
 		Dept domain  = deptMapping.toDomain(deptdto);
         domain .setId(dept_id);
 		deptService.update(domain );
-		DeptDTO dto = deptMapping.toDto(domain );
+		DeptDTO dto = deptMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class DeptResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Dept-Save-all')")
     @ApiOperation(value = "保存部门", tags = {"部门" },  notes = "保存部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/depts/save")
-    public ResponseEntity<Boolean> save(@RequestBody DeptDTO deptdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(deptService.save(deptMapping.toDomain(deptdto)));
+    public ResponseEntity<DeptDTO> save(@RequestBody DeptDTO deptdto) {
+        Dept domain = deptMapping.toDomain(deptdto);
+        deptService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(deptMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Dept-Save-all')")

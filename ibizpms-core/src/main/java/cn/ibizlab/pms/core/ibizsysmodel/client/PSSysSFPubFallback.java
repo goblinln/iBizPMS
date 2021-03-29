@@ -66,6 +66,9 @@ public class PSSysSFPubFallback implements PSSysSFPubFeignClient {
     }
 
 
+    public Object saveEntity(PSSysSFPub et) {
+        return null;
+    }
     public Boolean save(PSSysSFPub et) {
         return false;
     }

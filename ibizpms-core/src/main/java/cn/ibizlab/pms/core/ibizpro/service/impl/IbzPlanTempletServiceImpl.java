@@ -57,7 +57,7 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
     @Override
     @Transactional
     public boolean create(IbzPlanTemplet et) {
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         ibzplantempletdetailService.saveByPlantempletid(et.getIbzplantempletid(), et.getIbzplantempletdetail());
@@ -74,7 +74,7 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
     @Override
     @Transactional
     public boolean update(IbzPlanTemplet et) {
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_plantempletid", et.getIbzplantempletid()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_plantempletid", et.getIbzplantempletid()))) {
             return false;
         }
         ibzplantempletdetailService.saveByPlantempletid(et.getIbzplantempletid(), et.getIbzplantempletdetail());
@@ -91,9 +91,9 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
     @Override
     @Transactional
     public boolean remove(String key) {
-        ibzplantempletdetailService.removeByPlantempletid(key);
+        ibzplantempletdetailService.removeByPlantempletid(key) ;
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -106,7 +106,7 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
     @Transactional
     public IbzPlanTemplet get(String key) {
         IbzPlanTemplet et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IbzPlanTemplet();
             et.setIbzplantempletid(key);
         }
@@ -131,7 +131,8 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean getPlanBatch(List<IbzPlanTemplet> etList) {
         for(IbzPlanTemplet et : etList) {
@@ -143,7 +144,7 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
     @Override
     @Transactional
     public boolean save(IbzPlanTemplet et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -207,7 +208,7 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
      */
     @Override
     public Page<IbzPlanTemplet> searchCurUserTemplet(IbzPlanTempletSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzPlanTemplet> pages=baseMapper.searchCurUserTemplet(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzPlanTemplet> pages=baseMapper.searchCurUserTemplet(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzPlanTemplet>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -216,7 +217,7 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
      */
     @Override
     public Page<IbzPlanTemplet> searchDefault(IbzPlanTempletSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzPlanTemplet> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzPlanTemplet> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzPlanTemplet>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -227,24 +228,24 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -260,20 +261,17 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
         List ids =new ArrayList();
         for(IbzPlanTemplet entity : entities){
             Serializable id=entity.getIbzplantempletid();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     public IIbzPlanTempletService getProxyService() {

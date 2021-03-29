@@ -72,7 +72,7 @@ public class ProjectModuleResource {
 		ProjectModule domain  = projectmoduleMapping.toDomain(projectmoduledto);
         domain .setId(projectmodule_id);
 		projectmoduleService.update(domain );
-		ProjectModuleDTO dto = projectmoduleMapping.toDto(domain );
+		ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -146,8 +146,10 @@ public class ProjectModuleResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectModule-Save-all')")
     @ApiOperation(value = "保存任务模块", tags = {"任务模块" },  notes = "保存任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/save")
-    public ResponseEntity<Boolean> save(@RequestBody ProjectModuleDTO projectmoduledto) {
-        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.save(projectmoduleMapping.toDomain(projectmoduledto)));
+    public ResponseEntity<ProjectModuleDTO> save(@RequestBody ProjectModuleDTO projectmoduledto) {
+        ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
+        projectmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectModule-Save-all')")
@@ -429,10 +431,11 @@ public class ProjectModuleResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectModule-Save-all')")
     @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
-    public ResponseEntity<Boolean> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
+    public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
         domain.setRoot(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.save(domain));
+        projectmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectModule-Save-all')")

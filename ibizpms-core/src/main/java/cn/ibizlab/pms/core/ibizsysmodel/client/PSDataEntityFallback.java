@@ -66,6 +66,9 @@ public class PSDataEntityFallback implements PSDataEntityFeignClient {
     }
 
 
+    public Object saveEntity(PSDataEntity et) {
+        return null;
+    }
     public Boolean save(PSDataEntity et) {
         return false;
     }

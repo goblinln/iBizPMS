@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_repo", resultMap = "RepoResultMap")
+@ApiModel("repo")
 public class Repo extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`scm`")
     @JSONField(name = "scm")
     @JsonProperty("scm")
+    @ApiModelProperty("SCM")
     private String scm;
     /**
      * prefix
@@ -56,6 +60,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`prefix`")
     @JSONField(name = "prefix")
     @JsonProperty("prefix")
+    @ApiModelProperty("prefix")
     private String prefix;
     /**
      * password
@@ -63,6 +68,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`password`")
     @JSONField(name = "password")
     @JsonProperty("password")
+    @ApiModelProperty("password")
     private String password;
     /**
      * id
@@ -71,6 +77,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * encoding
@@ -78,6 +85,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`encoding`")
     @JSONField(name = "encoding")
     @JsonProperty("encoding")
+    @ApiModelProperty("encoding")
     private String encoding;
     /**
      * commits
@@ -85,6 +93,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`commits`")
     @JSONField(name = "commits")
     @JsonProperty("commits")
+    @ApiModelProperty("commits")
     private Integer commits;
     /**
      * synced
@@ -93,6 +102,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`synced`")
     @JSONField(name = "synced")
     @JsonProperty("synced")
+    @ApiModelProperty("synced")
     private Integer synced;
     /**
      * lastSync
@@ -101,6 +111,7 @@ public class Repo extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastsync", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastsync")
+    @ApiModelProperty("lastSync")
     private Timestamp lastsync;
     /**
      * client
@@ -108,6 +119,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`client`")
     @JSONField(name = "client")
     @JsonProperty("client")
+    @ApiModelProperty("client")
     private String client;
     /**
      * acl
@@ -115,6 +127,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`acl`")
     @JSONField(name = "acl")
     @JsonProperty("acl")
+    @ApiModelProperty("acl")
     private String acl;
     /**
      * encrypt
@@ -123,6 +136,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`encrypt`")
     @JSONField(name = "encrypt")
     @JsonProperty("encrypt")
+    @ApiModelProperty("encrypt")
     private String encrypt;
     /**
      * account
@@ -130,6 +144,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("account")
     private String account;
     /**
      * desc
@@ -137,6 +152,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("desc")
     private String desc;
     /**
      * name
@@ -144,6 +160,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("name")
     private String name;
     /**
      * 逻辑删除标志
@@ -153,6 +170,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("逻辑删除标志")
     private String deleted;
     /**
      * path
@@ -160,6 +178,7 @@ public class Repo extends EntityMP implements Serializable {
     @TableField(value = "`path`")
     @JSONField(name = "path")
     @JsonProperty("path")
+    @ApiModelProperty("path")
     private String path;
 
 

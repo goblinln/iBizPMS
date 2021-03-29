@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [部门] 对象
  */
 @Data
+@ApiModel("部门")
 public class SysDepartment extends EntityClient implements Serializable {
 
     /**
@@ -39,6 +42,7 @@ public class SysDepartment extends EntityClient implements Serializable {
     @DEField(isKeyField = true)
     @JSONField(name = "deptid")
     @JsonProperty("deptid")
+    @ApiModelProperty("部门标识")
     private String deptid;
 
     /**
@@ -46,6 +50,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     @JSONField(name = "deptcode")
     @JsonProperty("deptcode")
+    @ApiModelProperty("部门代码")
     private String deptcode;
 
     /**
@@ -53,6 +58,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     @JSONField(name = "deptname")
     @JsonProperty("deptname")
+    @ApiModelProperty("部门名称")
     private String deptname;
 
     /**
@@ -61,6 +67,7 @@ public class SysDepartment extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.ORGID)
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
+    @ApiModelProperty("单位")
     private String orgid;
 
     /**
@@ -69,6 +76,7 @@ public class SysDepartment extends EntityClient implements Serializable {
     @DEField(name = "pdeptid")
     @JSONField(name = "parentdeptid")
     @JsonProperty("parentdeptid")
+    @ApiModelProperty("上级部门")
     private String parentdeptid;
 
     /**
@@ -76,6 +84,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     @JSONField(name = "shortname")
     @JsonProperty("shortname")
+    @ApiModelProperty("部门简称")
     private String shortname;
 
     /**
@@ -83,6 +92,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     @JSONField(name = "deptlevel")
     @JsonProperty("deptlevel")
+    @ApiModelProperty("部门级别")
     private Integer deptlevel;
 
     /**
@@ -90,6 +100,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     @JSONField(name = "domains")
     @JsonProperty("domains")
+    @ApiModelProperty("区属")
     private String domains;
 
     /**
@@ -97,6 +108,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     @JSONField(name = "showorder")
     @JsonProperty("showorder")
+    @ApiModelProperty("排序")
     private Integer showorder;
 
     /**
@@ -104,6 +116,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     @JSONField(name = "bcode")
     @JsonProperty("bcode")
+    @ApiModelProperty("业务编码")
     private String bcode;
 
     /**
@@ -111,6 +124,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     @JSONField(name = "leaderid")
     @JsonProperty("leaderid")
+    @ApiModelProperty("分管领导标识")
     private String leaderid;
 
     /**
@@ -118,6 +132,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     @JSONField(name = "leadername")
     @JsonProperty("leadername")
+    @ApiModelProperty("分管领导")
     private String leadername;
 
     /**
@@ -125,6 +140,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     @JSONField(name = "orgname")
     @JsonProperty("orgname")
+    @ApiModelProperty("单位")
     private String orgname;
 
     /**
@@ -132,6 +148,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     @JSONField(name = "parentdeptname")
     @JsonProperty("parentdeptname")
+    @ApiModelProperty("上级部门")
     private String parentdeptname;
 
     /**
@@ -141,6 +158,7 @@ public class SysDepartment extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
 
     /**
@@ -149,6 +167,7 @@ public class SysDepartment extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.LOGICVALID, logicval = "1" , logicdelval = "0")
     @JSONField(name = "enable")
     @JsonProperty("enable")
+    @ApiModelProperty("逻辑有效标志")
     private Integer enable;
 
     /**
@@ -157,6 +176,7 @@ public class SysDepartment extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
 
     /**
@@ -166,6 +186,7 @@ public class SysDepartment extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
 
     /**
@@ -174,6 +195,7 @@ public class SysDepartment extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
 
 
@@ -199,7 +221,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     public void setDeptcode(String deptcode) {
         this.deptcode = deptcode ;
-        this.modify("deptcode", deptcode);
+        this.modify("deptcode",deptcode);
     }
 
     /**
@@ -207,7 +229,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     public void setDeptname(String deptname) {
         this.deptname = deptname ;
-        this.modify("deptname", deptname);
+        this.modify("deptname",deptname);
     }
 
     /**
@@ -215,7 +237,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     public void setParentdeptid(String parentdeptid) {
         this.parentdeptid = parentdeptid ;
-        this.modify("pdeptid", parentdeptid);
+        this.modify("pdeptid",parentdeptid);
     }
 
     /**
@@ -223,7 +245,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     public void setShortname(String shortname) {
         this.shortname = shortname ;
-        this.modify("shortname", shortname);
+        this.modify("shortname",shortname);
     }
 
     /**
@@ -231,7 +253,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     public void setDeptlevel(Integer deptlevel) {
         this.deptlevel = deptlevel ;
-        this.modify("deptlevel", deptlevel);
+        this.modify("deptlevel",deptlevel);
     }
 
     /**
@@ -239,7 +261,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     public void setDomains(String domains) {
         this.domains = domains ;
-        this.modify("domains", domains);
+        this.modify("domains",domains);
     }
 
     /**
@@ -247,7 +269,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     public void setShoworder(Integer showorder) {
         this.showorder = showorder ;
-        this.modify("showorder", showorder);
+        this.modify("showorder",showorder);
     }
 
     /**
@@ -255,7 +277,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     public void setBcode(String bcode) {
         this.bcode = bcode ;
-        this.modify("bcode", bcode);
+        this.modify("bcode",bcode);
     }
 
     /**
@@ -263,7 +285,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     public void setLeaderid(String leaderid) {
         this.leaderid = leaderid ;
-        this.modify("leaderid", leaderid);
+        this.modify("leaderid",leaderid);
     }
 
     /**
@@ -271,7 +293,7 @@ public class SysDepartment extends EntityClient implements Serializable {
      */
     public void setLeadername(String leadername) {
         this.leadername = leadername ;
-        this.modify("leadername", leadername);
+        this.modify("leadername",leadername);
     }
 
     /**
@@ -284,7 +306,7 @@ public class SysDepartment extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("deptid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

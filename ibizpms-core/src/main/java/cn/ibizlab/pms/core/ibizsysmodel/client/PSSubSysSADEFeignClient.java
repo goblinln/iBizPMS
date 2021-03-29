@@ -60,7 +60,9 @@ public interface PSSubSysSADEFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/save")
-    Boolean save(@RequestBody PSSubSysSADE et);
+    Object saveEntity(@RequestBody PSSubSysSADE et);
+
+    default Boolean save(@RequestBody PSSubSysSADE et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/savebatch")
     Boolean saveBatch(@RequestBody List<PSSubSysSADE> pssubsyssades);

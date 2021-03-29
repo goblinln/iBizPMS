@@ -66,6 +66,9 @@ public class IBIZProTagFallback implements IBIZProTagFeignClient {
     }
 
 
+    public Object saveEntity(IBIZProTag et) {
+        return null;
+    }
     public Boolean save(IBIZProTag et) {
         return false;
     }

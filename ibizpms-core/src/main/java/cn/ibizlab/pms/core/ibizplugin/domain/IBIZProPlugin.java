@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [系统插件] 对象
  */
 @Data
+@ApiModel("系统插件")
 public class IBIZProPlugin extends EntityClient implements Serializable {
 
     /**
@@ -39,6 +42,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
     @DEField(defaultValue = "1")
     @JSONField(name = "version")
     @JsonProperty("version")
+    @ApiModelProperty("版本")
     private Integer version;
 
     /**
@@ -46,6 +50,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("类型")
     private String type;
 
     /**
@@ -54,6 +59,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
 
     /**
@@ -61,6 +67,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     @JSONField(name = "downloadcount")
     @JsonProperty("downloadcount")
+    @ApiModelProperty("总下载量")
     private Integer downloadcount;
 
     /**
@@ -70,6 +77,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
 
     /**
@@ -77,6 +85,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     @JSONField(name = "downloadurl")
     @JsonProperty("downloadurl")
+    @ApiModelProperty("最新版本下载地址")
     private String downloadurl;
 
     /**
@@ -86,6 +95,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
 
     /**
@@ -93,6 +103,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     @JSONField(name = "tag")
     @JsonProperty("tag")
+    @ApiModelProperty("标签")
     private String tag;
 
     /**
@@ -100,6 +111,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     @JSONField(name = "score")
     @JsonProperty("score")
+    @ApiModelProperty("总评分")
     private Integer score;
 
     /**
@@ -108,6 +120,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
     @DEField(name = "ibizpro_pluginname")
     @JSONField(name = "ibizpropluginname")
     @JsonProperty("ibizpropluginname")
+    @ApiModelProperty("系统插件名称")
     private String ibizpropluginname;
 
     /**
@@ -116,6 +129,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
     @DEField(name = "ibizpro_pluginid" , isKeyField = true)
     @JSONField(name = "ibizpropluginid")
     @JsonProperty("ibizpropluginid")
+    @ApiModelProperty("系统插件标识")
     private String ibizpropluginid;
 
     /**
@@ -123,6 +137,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     @JSONField(name = "keyword")
     @JsonProperty("keyword")
+    @ApiModelProperty("关键字")
     private String keyword;
 
     /**
@@ -131,6 +146,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
 
     /**
@@ -138,6 +154,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     @JSONField(name = "commentcount")
     @JsonProperty("commentcount")
+    @ApiModelProperty("总评论数")
     private Integer commentcount;
 
 
@@ -149,7 +166,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     public void setVersion(Integer version) {
         this.version = version ;
-        this.modify("version", version);
+        this.modify("version",version);
     }
 
     /**
@@ -157,7 +174,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     public void setType(String type) {
         this.type = type ;
-        this.modify("type", type);
+        this.modify("type",type);
     }
 
     /**
@@ -165,7 +182,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     public void setDownloadurl(String downloadurl) {
         this.downloadurl = downloadurl ;
-        this.modify("downloadurl", downloadurl);
+        this.modify("downloadurl",downloadurl);
     }
 
     /**
@@ -173,7 +190,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     public void setTag(String tag) {
         this.tag = tag ;
-        this.modify("tag", tag);
+        this.modify("tag",tag);
     }
 
     /**
@@ -181,7 +198,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     public void setIbizpropluginname(String ibizpropluginname) {
         this.ibizpropluginname = ibizpropluginname ;
-        this.modify("ibizpro_pluginname", ibizpropluginname);
+        this.modify("ibizpro_pluginname",ibizpropluginname);
     }
 
     /**
@@ -189,7 +206,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
      */
     public void setKeyword(String keyword) {
         this.keyword = keyword ;
-        this.modify("keyword", keyword);
+        this.modify("keyword",keyword);
     }
 
     /**
@@ -202,7 +219,7 @@ public class IBIZProPlugin extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("ibizpro_pluginid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

@@ -60,7 +60,9 @@ public interface PSSubSysServiceAPIFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsysserviceapis/save")
-    Boolean save(@RequestBody PSSubSysServiceAPI et);
+    Object saveEntity(@RequestBody PSSubSysServiceAPI et);
+
+    default Boolean save(@RequestBody PSSubSysServiceAPI et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsysserviceapis/savebatch")
     Boolean saveBatch(@RequestBody List<PSSubSysServiceAPI> pssubsysserviceapis);

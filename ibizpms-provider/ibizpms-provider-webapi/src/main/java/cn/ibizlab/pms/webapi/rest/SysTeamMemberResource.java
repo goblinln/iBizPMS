@@ -72,7 +72,7 @@ public class SysTeamMemberResource {
 		SysTeamMember domain  = systeammemberMapping.toDomain(systeammemberdto);
         domain .setTeammemberid(systeammember_id);
 		systeammemberService.update(domain );
-		SysTeamMemberDTO dto = systeammemberMapping.toDto(domain );
+		SysTeamMemberDTO dto = systeammemberMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class SysTeamMemberResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeamMember-Save-all')")
     @ApiOperation(value = "保存组成员", tags = {"组成员" },  notes = "保存组成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/systeammembers/save")
-    public ResponseEntity<Boolean> save(@RequestBody SysTeamMemberDTO systeammemberdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(systeammemberService.save(systeammemberMapping.toDomain(systeammemberdto)));
+    public ResponseEntity<SysTeamMemberDTO> save(@RequestBody SysTeamMemberDTO systeammemberdto) {
+        SysTeamMember domain = systeammemberMapping.toDomain(systeammemberdto);
+        systeammemberService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(systeammemberMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeamMember-Save-all')")

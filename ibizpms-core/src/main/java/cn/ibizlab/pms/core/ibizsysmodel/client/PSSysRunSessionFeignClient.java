@@ -60,7 +60,9 @@ public interface PSSysRunSessionFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/save")
-    Boolean save(@RequestBody PSSysRunSession et);
+    Object saveEntity(@RequestBody PSSysRunSession et);
+
+    default Boolean save(@RequestBody PSSysRunSession et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/savebatch")
     Boolean saveBatch(@RequestBody List<PSSysRunSession> pssysrunsessions);

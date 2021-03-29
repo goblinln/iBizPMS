@@ -91,7 +91,7 @@ public class ProjectTeamResource {
 		ProjectTeam domain  = projectteamMapping.toDomain(projectteamdto);
         domain .setId(projectteam_id);
 		projectteamService.update(domain );
-		ProjectTeamDTO dto = projectteamMapping.toDto(domain );
+		ProjectTeamDTO dto = projectteamMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -143,8 +143,10 @@ public class ProjectTeamResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Save-all')")
     @ApiOperation(value = "保存项目团队", tags = {"项目团队" },  notes = "保存项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/save")
-    public ResponseEntity<Boolean> save(@RequestBody ProjectTeamDTO projectteamdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(projectteamService.save(projectteamMapping.toDomain(projectteamdto)));
+    public ResponseEntity<ProjectTeamDTO> save(@RequestBody ProjectTeamDTO projectteamdto) {
+        ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);
+        projectteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Save-all')")
@@ -357,10 +359,11 @@ public class ProjectTeamResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Save-all')")
     @ApiOperation(value = "根据项目保存项目团队", tags = {"项目团队" },  notes = "根据项目保存项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/save")
-    public ResponseEntity<Boolean> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamDTO projectteamdto) {
+    public ResponseEntity<ProjectTeamDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamDTO projectteamdto) {
         ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);
         domain.setRoot(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projectteamService.save(domain));
+        projectteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Save-all')")

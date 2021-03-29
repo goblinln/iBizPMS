@@ -73,7 +73,7 @@ public class IbizproProductDailyResource {
 		IbizproProductDaily domain  = ibizproproductdailyMapping.toDomain(ibizproproductdailydto);
         domain .setIbizproproductdailyid(ibizproproductdaily_id);
 		ibizproproductdailyService.update(domain );
-		IbizproProductDailyDTO dto = ibizproproductdailyMapping.toDto(domain );
+		IbizproProductDailyDTO dto = ibizproproductdailyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -144,8 +144,10 @@ public class IbizproProductDailyResource {
     @PreAuthorize("hasPermission(this.ibizproproductdailyMapping.toDomain(#ibizproproductdailydto),'iBizPMS-IbizproProductDaily-Save')")
     @ApiOperation(value = "保存产品日报", tags = {"产品日报" },  notes = "保存产品日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductdailies/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbizproProductDailyDTO ibizproproductdailydto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailyService.save(ibizproproductdailyMapping.toDomain(ibizproproductdailydto)));
+    public ResponseEntity<IbizproProductDailyDTO> save(@RequestBody IbizproProductDailyDTO ibizproproductdailydto) {
+        IbizproProductDaily domain = ibizproproductdailyMapping.toDomain(ibizproproductdailydto);
+        ibizproproductdailyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailyMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibizproproductdailyMapping.toDomain(#ibizproproductdailydtos),'iBizPMS-IbizproProductDaily-Save')")

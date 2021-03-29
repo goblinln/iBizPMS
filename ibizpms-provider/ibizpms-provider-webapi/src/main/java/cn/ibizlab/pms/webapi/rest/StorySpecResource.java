@@ -72,7 +72,7 @@ public class StorySpecResource {
 		StorySpec domain  = storyspecMapping.toDomain(storyspecdto);
         domain .setId(storyspec_id);
 		storyspecService.update(domain );
-		StorySpecDTO dto = storyspecMapping.toDto(domain );
+		StorySpecDTO dto = storyspecMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class StorySpecResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-StorySpec-Save-all')")
     @ApiOperation(value = "保存需求描述", tags = {"需求描述" },  notes = "保存需求描述")
 	@RequestMapping(method = RequestMethod.POST, value = "/storyspecs/save")
-    public ResponseEntity<Boolean> save(@RequestBody StorySpecDTO storyspecdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(storyspecService.save(storyspecMapping.toDomain(storyspecdto)));
+    public ResponseEntity<StorySpecDTO> save(@RequestBody StorySpecDTO storyspecdto) {
+        StorySpec domain = storyspecMapping.toDomain(storyspecdto);
+        storyspecService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storyspecMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-StorySpec-Save-all')")
@@ -277,10 +279,11 @@ public class StorySpecResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-StorySpec-Save-all')")
     @ApiOperation(value = "根据需求保存需求描述", tags = {"需求描述" },  notes = "根据需求保存需求描述")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/storyspecs/save")
-    public ResponseEntity<Boolean> saveByStory(@PathVariable("story_id") Long story_id, @RequestBody StorySpecDTO storyspecdto) {
+    public ResponseEntity<StorySpecDTO> saveByStory(@PathVariable("story_id") Long story_id, @RequestBody StorySpecDTO storyspecdto) {
         StorySpec domain = storyspecMapping.toDomain(storyspecdto);
         domain.setStory(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(storyspecService.save(domain));
+        storyspecService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storyspecMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-StorySpec-Save-all')")
@@ -429,10 +432,11 @@ public class StorySpecResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-StorySpec-Save-all')")
     @ApiOperation(value = "根据产品需求保存需求描述", tags = {"需求描述" },  notes = "根据产品需求保存需求描述")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/storyspecs/save")
-    public ResponseEntity<Boolean> saveByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StorySpecDTO storyspecdto) {
+    public ResponseEntity<StorySpecDTO> saveByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StorySpecDTO storyspecdto) {
         StorySpec domain = storyspecMapping.toDomain(storyspecdto);
         domain.setStory(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(storyspecService.save(domain));
+        storyspecService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storyspecMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-StorySpec-Save-all')")

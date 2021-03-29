@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [系统运行会话] 对象
  */
 @Data
+@ApiModel("系统运行会话")
 public class PSSysRunSession extends EntityClient implements Serializable {
     @Override
     public void modify(String field, Object val) {
@@ -43,6 +46,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "runparam4")
     @JsonProperty("runparam4")
+    @ApiModelProperty("运行参数4")
     private String runparam4;
 
     /**
@@ -50,6 +54,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssysrunsessionname")
     @JsonProperty("pssysrunsessionname")
+    @ApiModelProperty("系统运行会话名称")
     private String pssysrunsessionname;
 
     /**
@@ -59,6 +64,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
 
     /**
@@ -68,6 +74,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
 
     /**
@@ -76,6 +83,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
     @DEField(isKeyField = true)
     @JSONField(name = "pssysrunsessionid")
     @JsonProperty("pssysrunsessionid")
+    @ApiModelProperty("系统运行会话标识")
     private String pssysrunsessionid;
 
     /**
@@ -83,6 +91,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssyssfpubid")
     @JsonProperty("pssyssfpubid")
+    @ApiModelProperty("服务体系")
     private String pssyssfpubid;
 
     /**
@@ -90,6 +99,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "packmode")
     @JsonProperty("packmode")
+    @ApiModelProperty("打包模式")
     private String packmode;
 
     /**
@@ -97,6 +107,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssystemdbcfgname")
     @JsonProperty("pssystemdbcfgname")
+    @ApiModelProperty("运行数据库")
     private String pssystemdbcfgname;
 
     /**
@@ -104,6 +115,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssystemid")
     @JsonProperty("pssystemid")
+    @ApiModelProperty("系统")
     private String pssystemid;
 
     /**
@@ -111,6 +123,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "runparam5")
     @JsonProperty("runparam5")
+    @ApiModelProperty("运行参数5")
     private Integer runparam5;
 
     /**
@@ -119,6 +132,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "starttime" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("starttime")
+    @ApiModelProperty("开始时间")
     private Timestamp starttime;
 
     /**
@@ -126,6 +140,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssystemdbcfgid")
     @JsonProperty("pssystemdbcfgid")
+    @ApiModelProperty("运行数据库")
     private String pssystemdbcfgid;
 
     /**
@@ -133,6 +148,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "runmode")
     @JsonProperty("runmode")
+    @ApiModelProperty("运行模式")
     private String runmode;
 
     /**
@@ -140,6 +156,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "stopwhentemplerror")
     @JsonProperty("stopwhentemplerror")
+    @ApiModelProperty("模板出错时终止")
     private Integer stopwhentemplerror;
 
     /**
@@ -147,6 +164,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "runparam")
     @JsonProperty("runparam")
+    @ApiModelProperty("运行参数")
     private String runparam;
 
     /**
@@ -155,6 +173,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
     @DEField(defaultValue = "10")
     @JSONField(name = "runstate")
     @JsonProperty("runstate")
+    @ApiModelProperty("运行状态")
     private Integer runstate;
 
     /**
@@ -163,6 +182,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "debugmode")
     @JsonProperty("debugmode")
+    @ApiModelProperty("输出调试信息")
     private Integer debugmode;
 
     /**
@@ -171,6 +191,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "endtime" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("endtime")
+    @ApiModelProperty("结束时间")
     private Timestamp endtime;
 
     /**
@@ -178,6 +199,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "runparam6")
     @JsonProperty("runparam6")
+    @ApiModelProperty("运行参数6")
     private Integer runparam6;
 
     /**
@@ -185,6 +207,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssyssfpubname")
     @JsonProperty("pssyssfpubname")
+    @ApiModelProperty("服务体系")
     private String pssyssfpubname;
 
     /**
@@ -192,6 +215,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "memo")
     @JsonProperty("memo")
+    @ApiModelProperty("备注")
     private String memo;
 
     /**
@@ -200,6 +224,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
 
     /**
@@ -207,6 +232,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "fixdbmodel")
     @JsonProperty("fixdbmodel")
+    @ApiModelProperty("修复数据结构")
     private Integer fixdbmodel;
 
     /**
@@ -214,6 +240,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "rebuildmode")
     @JsonProperty("rebuildmode")
+    @ApiModelProperty("重新构建")
     private Integer rebuildmode;
 
     /**
@@ -221,6 +248,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssystemname")
     @JsonProperty("pssystemname")
+    @ApiModelProperty("系统")
     private String pssystemname;
 
     /**
@@ -228,6 +256,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "runparam3")
     @JsonProperty("runparam3")
+    @ApiModelProperty("运行参数3")
     private String runparam3;
 
     /**
@@ -236,6 +265,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
 
     /**
@@ -243,6 +273,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "psdsconsoleid")
     @JsonProperty("psdsconsoleid")
+    @ApiModelProperty("控制台标识")
     private String psdsconsoleid;
 
     /**
@@ -250,6 +281,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "enablevc")
     @JsonProperty("enablevc")
+    @ApiModelProperty("签入版本库")
     private Integer enablevc;
 
     /**
@@ -257,6 +289,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "runparam2")
     @JsonProperty("runparam2")
+    @ApiModelProperty("运行参数2")
     private String runparam2;
 
     /**
@@ -264,6 +297,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssysappname2")
     @JsonProperty("pssysappname2")
+    @ApiModelProperty("系统应用2")
     private String pssysappname2;
 
     /**
@@ -271,6 +305,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssysserviceapiname")
     @JsonProperty("pssysserviceapiname")
+    @ApiModelProperty("系统服务接口")
     private String pssysserviceapiname;
 
     /**
@@ -278,6 +313,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssysappname")
     @JsonProperty("pssysappname")
+    @ApiModelProperty("系统应用")
     private String pssysappname;
 
     /**
@@ -285,6 +321,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssysappid2")
     @JsonProperty("pssysappid2")
+    @ApiModelProperty("系统应用2")
     private String pssysappid2;
 
     /**
@@ -292,6 +329,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssysserviceapiid")
     @JsonProperty("pssysserviceapiid")
+    @ApiModelProperty("系统服务接口")
     private String pssysserviceapiid;
 
     /**
@@ -299,6 +337,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssysappid")
     @JsonProperty("pssysappid")
+    @ApiModelProperty("系统应用")
     private String pssysappid;
 
 
@@ -331,7 +370,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setRunparam4(String runparam4) {
         this.runparam4 = runparam4 ;
-        this.modify("runparam4", runparam4);
+        this.modify("runparam4",runparam4);
     }
 
     /**
@@ -339,7 +378,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssysrunsessionname(String pssysrunsessionname) {
         this.pssysrunsessionname = pssysrunsessionname ;
-        this.modify("pssysrunsessionname", pssysrunsessionname);
+        this.modify("pssysrunsessionname",pssysrunsessionname);
     }
 
     /**
@@ -347,7 +386,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssyssfpubid(String pssyssfpubid) {
         this.pssyssfpubid = pssyssfpubid ;
-        this.modify("pssyssfpubid", pssyssfpubid);
+        this.modify("pssyssfpubid",pssyssfpubid);
     }
 
     /**
@@ -355,7 +394,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPackmode(String packmode) {
         this.packmode = packmode ;
-        this.modify("packmode", packmode);
+        this.modify("packmode",packmode);
     }
 
     /**
@@ -363,7 +402,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssystemdbcfgname(String pssystemdbcfgname) {
         this.pssystemdbcfgname = pssystemdbcfgname ;
-        this.modify("pssystemdbcfgname", pssystemdbcfgname);
+        this.modify("pssystemdbcfgname",pssystemdbcfgname);
     }
 
     /**
@@ -371,7 +410,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssystemid(String pssystemid) {
         this.pssystemid = pssystemid ;
-        this.modify("pssystemid", pssystemid);
+        this.modify("pssystemid",pssystemid);
     }
 
     /**
@@ -379,7 +418,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setRunparam5(Integer runparam5) {
         this.runparam5 = runparam5 ;
-        this.modify("runparam5", runparam5);
+        this.modify("runparam5",runparam5);
     }
 
     /**
@@ -387,7 +426,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setStarttime(Timestamp starttime) {
         this.starttime = starttime ;
-        this.modify("starttime", starttime);
+        this.modify("starttime",starttime);
     }
 
     /**
@@ -405,7 +444,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssystemdbcfgid(String pssystemdbcfgid) {
         this.pssystemdbcfgid = pssystemdbcfgid ;
-        this.modify("pssystemdbcfgid", pssystemdbcfgid);
+        this.modify("pssystemdbcfgid",pssystemdbcfgid);
     }
 
     /**
@@ -413,7 +452,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setRunmode(String runmode) {
         this.runmode = runmode ;
-        this.modify("runmode", runmode);
+        this.modify("runmode",runmode);
     }
 
     /**
@@ -421,7 +460,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setStopwhentemplerror(Integer stopwhentemplerror) {
         this.stopwhentemplerror = stopwhentemplerror ;
-        this.modify("stopwhentemplerror", stopwhentemplerror);
+        this.modify("stopwhentemplerror",stopwhentemplerror);
     }
 
     /**
@@ -429,7 +468,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setRunparam(String runparam) {
         this.runparam = runparam ;
-        this.modify("runparam", runparam);
+        this.modify("runparam",runparam);
     }
 
     /**
@@ -437,7 +476,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setRunstate(Integer runstate) {
         this.runstate = runstate ;
-        this.modify("runstate", runstate);
+        this.modify("runstate",runstate);
     }
 
     /**
@@ -445,7 +484,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setDebugmode(Integer debugmode) {
         this.debugmode = debugmode ;
-        this.modify("debugmode", debugmode);
+        this.modify("debugmode",debugmode);
     }
 
     /**
@@ -453,7 +492,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setEndtime(Timestamp endtime) {
         this.endtime = endtime ;
-        this.modify("endtime", endtime);
+        this.modify("endtime",endtime);
     }
 
     /**
@@ -471,7 +510,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setRunparam6(Integer runparam6) {
         this.runparam6 = runparam6 ;
-        this.modify("runparam6", runparam6);
+        this.modify("runparam6",runparam6);
     }
 
     /**
@@ -479,7 +518,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssyssfpubname(String pssyssfpubname) {
         this.pssyssfpubname = pssyssfpubname ;
-        this.modify("pssyssfpubname", pssyssfpubname);
+        this.modify("pssyssfpubname",pssyssfpubname);
     }
 
     /**
@@ -487,7 +526,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setMemo(String memo) {
         this.memo = memo ;
-        this.modify("memo", memo);
+        this.modify("memo",memo);
     }
 
     /**
@@ -495,7 +534,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setFixdbmodel(Integer fixdbmodel) {
         this.fixdbmodel = fixdbmodel ;
-        this.modify("fixdbmodel", fixdbmodel);
+        this.modify("fixdbmodel",fixdbmodel);
     }
 
     /**
@@ -503,7 +542,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setRebuildmode(Integer rebuildmode) {
         this.rebuildmode = rebuildmode ;
-        this.modify("rebuildmode", rebuildmode);
+        this.modify("rebuildmode",rebuildmode);
     }
 
     /**
@@ -511,7 +550,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssystemname(String pssystemname) {
         this.pssystemname = pssystemname ;
-        this.modify("pssystemname", pssystemname);
+        this.modify("pssystemname",pssystemname);
     }
 
     /**
@@ -519,7 +558,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setRunparam3(String runparam3) {
         this.runparam3 = runparam3 ;
-        this.modify("runparam3", runparam3);
+        this.modify("runparam3",runparam3);
     }
 
     /**
@@ -527,7 +566,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPsdsconsoleid(String psdsconsoleid) {
         this.psdsconsoleid = psdsconsoleid ;
-        this.modify("psdsconsoleid", psdsconsoleid);
+        this.modify("psdsconsoleid",psdsconsoleid);
     }
 
     /**
@@ -535,7 +574,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setEnablevc(Integer enablevc) {
         this.enablevc = enablevc ;
-        this.modify("enablevc", enablevc);
+        this.modify("enablevc",enablevc);
     }
 
     /**
@@ -543,7 +582,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setRunparam2(String runparam2) {
         this.runparam2 = runparam2 ;
-        this.modify("runparam2", runparam2);
+        this.modify("runparam2",runparam2);
     }
 
     /**
@@ -551,7 +590,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssysappname2(String pssysappname2) {
         this.pssysappname2 = pssysappname2 ;
-        this.modify("pssysappname2", pssysappname2);
+        this.modify("pssysappname2",pssysappname2);
     }
 
     /**
@@ -559,7 +598,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssysserviceapiname(String pssysserviceapiname) {
         this.pssysserviceapiname = pssysserviceapiname ;
-        this.modify("pssysserviceapiname", pssysserviceapiname);
+        this.modify("pssysserviceapiname",pssysserviceapiname);
     }
 
     /**
@@ -567,7 +606,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssysappname(String pssysappname) {
         this.pssysappname = pssysappname ;
-        this.modify("pssysappname", pssysappname);
+        this.modify("pssysappname",pssysappname);
     }
 
     /**
@@ -575,7 +614,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssysappid2(String pssysappid2) {
         this.pssysappid2 = pssysappid2 ;
-        this.modify("pssysappid2", pssysappid2);
+        this.modify("pssysappid2",pssysappid2);
     }
 
     /**
@@ -583,7 +622,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssysserviceapiid(String pssysserviceapiid) {
         this.pssysserviceapiid = pssysserviceapiid ;
-        this.modify("pssysserviceapiid", pssysserviceapiid);
+        this.modify("pssysserviceapiid",pssysserviceapiid);
     }
 
     /**
@@ -591,7 +630,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
      */
     public void setPssysappid(String pssysappid) {
         this.pssysappid = pssysappid ;
-        this.modify("pssysappid", pssysappid);
+        this.modify("pssysappid",pssysappid);
     }
 
     /**
@@ -604,7 +643,7 @@ public class PSSysRunSession extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("pssysrunsessionid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

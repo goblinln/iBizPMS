@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_effort", resultMap = "EffortResultMap")
+@ApiModel("effort")
 public class Effort extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class Effort extends EntityMP implements Serializable {
     @TableField(value = "`user`")
     @JSONField(name = "user")
     @JsonProperty("user")
+    @ApiModelProperty("user")
     private String user;
     /**
      * idvalue
@@ -57,6 +61,7 @@ public class Effort extends EntityMP implements Serializable {
     @TableField(value = "`idvalue`")
     @JSONField(name = "idvalue")
     @JsonProperty("idvalue")
+    @ApiModelProperty("idvalue")
     private Integer idvalue;
     /**
      * status
@@ -64,6 +69,7 @@ public class Effort extends EntityMP implements Serializable {
     @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
+    @ApiModelProperty("status")
     private String status;
     /**
      * end
@@ -73,6 +79,7 @@ public class Effort extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "end", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("end")
+    @ApiModelProperty("end")
     private Timestamp end;
     /**
      * date
@@ -81,6 +88,7 @@ public class Effort extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
+    @ApiModelProperty("date")
     private Timestamp date;
     /**
      * name
@@ -88,6 +96,7 @@ public class Effort extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("name")
     private String name;
     /**
      * desc
@@ -95,6 +104,7 @@ public class Effort extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("desc")
     private String desc;
     /**
      * todo
@@ -102,6 +112,7 @@ public class Effort extends EntityMP implements Serializable {
     @TableField(value = "`todo`")
     @JSONField(name = "todo")
     @JsonProperty("todo")
+    @ApiModelProperty("todo")
     private String todo;
     /**
      * type
@@ -109,6 +120,7 @@ public class Effort extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("type")
     private String type;
     /**
      * id
@@ -117,6 +129,7 @@ public class Effort extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * begin
@@ -126,6 +139,7 @@ public class Effort extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "begin", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("begin")
+    @ApiModelProperty("begin")
     private Timestamp begin;
 
 

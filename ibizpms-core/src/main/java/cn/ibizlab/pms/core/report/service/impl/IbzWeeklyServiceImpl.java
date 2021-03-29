@@ -89,7 +89,7 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     @Transactional
     public IbzWeekly get(Long key) {
         IbzWeekly et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IbzWeekly();
             et.setIbzweeklyid(key);
         }
@@ -128,7 +128,8 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean createGetLastWeekPlanAndWorkBatch(List<IbzWeekly> etList) {
         for(IbzWeekly et : etList) {
@@ -143,7 +144,8 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean editGetLastWeekTaskAndComTaskBatch(List<IbzWeekly> etList) {
         for(IbzWeekly et : etList) {
@@ -173,7 +175,8 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean jugThisWeekCreateWeeklyBatch(List<IbzWeekly> etList) {
         for(IbzWeekly et : etList) {
@@ -200,7 +203,7 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     @Override
     @Transactional
     public boolean save(IbzWeekly et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -279,7 +282,7 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
      */
     @Override
     public Page<IbzWeekly> searchDefault(IbzWeeklySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzWeekly> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzWeekly> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzWeekly>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -288,7 +291,7 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
      */
     @Override
     public Page<IbzWeekly> searchMyNotSubmit(IbzWeeklySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzWeekly> pages=baseMapper.searchMyNotSubmit(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzWeekly> pages=baseMapper.searchMyNotSubmit(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzWeekly>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -297,7 +300,7 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
      */
     @Override
     public Page<IbzWeekly> searchMyWeekly(IbzWeeklySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzWeekly> pages=baseMapper.searchMyWeekly(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzWeekly> pages=baseMapper.searchMyWeekly(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzWeekly>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -306,7 +309,7 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
      */
     @Override
     public Page<IbzWeekly> searchProductTeamMemberWeekly(IbzWeeklySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzWeekly> pages=baseMapper.searchProductTeamMemberWeekly(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzWeekly> pages=baseMapper.searchProductTeamMemberWeekly(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzWeekly>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -315,7 +318,7 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
      */
     @Override
     public Page<IbzWeekly> searchProjectWeekly(IbzWeeklySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzWeekly> pages=baseMapper.searchProjectWeekly(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzWeekly> pages=baseMapper.searchProjectWeekly(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzWeekly>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -326,24 +329,24 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -359,20 +362,17 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         List ids =new ArrayList();
         for(IbzWeekly entity : entities){
             Serializable id=entity.getIbzweeklyid();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     public IIbzWeeklyService getProxyService() {

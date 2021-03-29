@@ -73,7 +73,7 @@ public class IbzDailyResource {
 		IbzDaily domain  = ibzdailyMapping.toDomain(ibzdailydto);
         domain .setIbzdailyid(ibzdaily_id);
 		ibzdailyService.update(domain );
-		IbzDailyDTO dto = ibzdailyMapping.toDto(domain );
+		IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -239,8 +239,10 @@ public class IbzDailyResource {
     @PreAuthorize("hasPermission(this.ibzdailyMapping.toDomain(#ibzdailydto),'iBizPMS-IbzDaily-Save')")
     @ApiOperation(value = "保存日报", tags = {"日报" },  notes = "保存日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzDailyDTO ibzdailydto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzdailyService.save(ibzdailyMapping.toDomain(ibzdailydto)));
+    public ResponseEntity<IbzDailyDTO> save(@RequestBody IbzDailyDTO ibzdailydto) {
+        IbzDaily domain = ibzdailyMapping.toDomain(ibzdailydto);
+        ibzdailyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzdailyMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibzdailyMapping.toDomain(#ibzdailydtos),'iBizPMS-IbzDaily-Save')")

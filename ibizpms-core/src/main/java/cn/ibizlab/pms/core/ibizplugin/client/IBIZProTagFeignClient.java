@@ -60,7 +60,9 @@ public interface IBIZProTagFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/save")
-    Boolean save(@RequestBody IBIZProTag et);
+    Object saveEntity(@RequestBody IBIZProTag et);
+
+    default Boolean save(@RequestBody IBIZProTag et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/savebatch")
     Boolean saveBatch(@RequestBody List<IBIZProTag> ibizprotags);

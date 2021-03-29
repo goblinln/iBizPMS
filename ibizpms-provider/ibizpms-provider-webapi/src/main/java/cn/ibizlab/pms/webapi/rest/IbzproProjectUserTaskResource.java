@@ -72,7 +72,7 @@ public class IbzproProjectUserTaskResource {
 		IbzproProjectUserTask domain  = ibzproprojectusertaskMapping.toDomain(ibzproprojectusertaskdto);
         domain .setId(ibzproprojectusertask_id);
 		ibzproprojectusertaskService.update(domain );
-		IbzproProjectUserTaskDTO dto = ibzproprojectusertaskMapping.toDto(domain );
+		IbzproProjectUserTaskDTO dto = ibzproprojectusertaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class IbzproProjectUserTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-Save-all')")
     @ApiOperation(value = "保存项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "保存项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskService.save(ibzproprojectusertaskMapping.toDomain(ibzproprojectusertaskdto)));
+    public ResponseEntity<IbzproProjectUserTaskDTO> save(@RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {
+        IbzproProjectUserTask domain = ibzproprojectusertaskMapping.toDomain(ibzproprojectusertaskdto);
+        ibzproprojectusertaskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-Save-all')")

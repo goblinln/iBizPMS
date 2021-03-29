@@ -60,7 +60,9 @@ public interface IBIZProPluginFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/save")
-    Boolean save(@RequestBody IBIZProPlugin et);
+    Object saveEntity(@RequestBody IBIZProPlugin et);
+
+    default Boolean save(@RequestBody IBIZProPlugin et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/savebatch")
     Boolean saveBatch(@RequestBody List<IBIZProPlugin> ibizproplugins);

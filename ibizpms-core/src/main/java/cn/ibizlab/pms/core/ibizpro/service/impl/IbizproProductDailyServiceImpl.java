@@ -58,7 +58,7 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Transactional
     public boolean create(IbizproProductDaily et) {
         fillParentData(et);
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbizproproductdailyid()), et);
@@ -76,7 +76,7 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Transactional
     public boolean update(IbizproProductDaily et) {
         fillParentData(et);
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_productdailyid", et.getIbizproproductdailyid()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_productdailyid", et.getIbizproproductdailyid()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbizproproductdailyid()), et);
@@ -94,7 +94,7 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -107,7 +107,7 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Transactional
     public IbizproProductDaily get(Long key) {
         IbizproProductDaily et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IbizproProductDaily();
             et.setIbizproproductdailyid(key);
         }
@@ -132,7 +132,8 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean manualCreateDailyBatch(List<IbizproProductDaily> etList) {
         for(IbizproProductDaily et : etList) {
@@ -144,7 +145,7 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Override
     @Transactional
     public boolean save(IbizproProductDaily et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -185,7 +186,7 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Override
     @Transactional
     public void saveBatch(List<IbizproProductDaily> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<IbizproProductDaily> create = new ArrayList<>();
         List<IbizproProductDaily> update = new ArrayList<>();
         for (IbizproProductDaily et : list) {
@@ -209,7 +210,8 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean statsProductDailyBatch(List<IbizproProductDaily> etList) {
         for(IbizproProductDaily et : etList) {
@@ -219,13 +221,13 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     }
 
 
-    @Override
+	@Override
     public List<IbizproProductDaily> selectByProduct(Long id) {
         return baseMapper.selectByProduct(id);
     }
     @Override
     public void removeByProduct(Long id) {
-        this.remove(new QueryWrapper<IbizproProductDaily>().eq("product", id));
+        this.remove(new QueryWrapper<IbizproProductDaily>().eq("product",id));
     }
 
 
@@ -234,7 +236,7 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
      */
     @Override
     public Page<IbizproProductDaily> searchDefault(IbizproProductDailySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproProductDaily> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproProductDaily> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbizproProductDaily>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -243,7 +245,7 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
      */
     @Override
     public Page<IbizproProductDaily> searchProductDaily(IbizproProductDailySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproProductDaily> pages=baseMapper.searchProductDaily(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproProductDaily> pages=baseMapper.searchProductDaily(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbizproProductDaily>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -255,12 +257,12 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
      */
     private void fillParentData(IbizproProductDaily et){
         //实体关系[DER1N_IBIZPRO_PRODUCTDAILY_ZT_PRODUCT_PRODUCT]
-        if (!ObjectUtils.isEmpty(et.getProduct())) {
+        if(!ObjectUtils.isEmpty(et.getProduct())){
             cn.ibizlab.pms.core.zentao.domain.Product ztproduct=et.getZtproduct();
-            if (ObjectUtils.isEmpty(ztproduct)) {
+            if(ObjectUtils.isEmpty(ztproduct)){
                 cn.ibizlab.pms.core.zentao.domain.Product majorEntity=productService.get(et.getProduct());
                 et.setZtproduct(majorEntity);
-                ztproduct = majorEntity;
+                ztproduct=majorEntity;
             }
             et.setProductname(ztproduct.getName());
         }
@@ -270,24 +272,24 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -303,20 +305,17 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         List ids =new ArrayList();
         for(IbizproProductDaily entity : entities){
             Serializable id=entity.getIbizproproductdailyid();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     public IIbizproProductDailyService getProxyService() {

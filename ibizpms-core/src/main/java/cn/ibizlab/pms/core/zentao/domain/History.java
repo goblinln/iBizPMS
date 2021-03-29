@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_history", resultMap = "HistoryResultMap")
+@ApiModel("操作历史")
 public class History extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class History extends EntityMP implements Serializable {
     @TableField(value = "`diff`")
     @JSONField(name = "diff")
     @JsonProperty("diff")
+    @ApiModelProperty("不同")
     private String diff;
     /**
      * 字段
@@ -58,6 +62,7 @@ public class History extends EntityMP implements Serializable {
     @TableField(value = "`field`")
     @JSONField(name = "field")
     @JsonProperty("field")
+    @ApiModelProperty("字段")
     private String field;
     /**
      * 新值
@@ -66,6 +71,7 @@ public class History extends EntityMP implements Serializable {
     @TableField(value = "`new`")
     @JSONField(name = "ibiznew")
     @JsonProperty("ibiznew")
+    @ApiModelProperty("新值")
     private String ibiznew;
     /**
      * 旧值
@@ -74,6 +80,7 @@ public class History extends EntityMP implements Serializable {
     @TableField(value = "`old`")
     @JSONField(name = "old")
     @JsonProperty("old")
+    @ApiModelProperty("旧值")
     private String old;
     /**
      * id
@@ -82,6 +89,7 @@ public class History extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * 关联日志
@@ -90,6 +98,7 @@ public class History extends EntityMP implements Serializable {
     @TableField(value = "`action`")
     @JSONField(name = "action")
     @JsonProperty("action")
+    @ApiModelProperty("关联日志")
     private Long action;
 
     /**

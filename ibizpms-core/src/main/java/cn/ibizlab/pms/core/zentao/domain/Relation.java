@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_relation", resultMap = "RelationResultMap")
+@ApiModel("relation")
 public class Relation extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableField(value = "`bid`")
     @JSONField(name = "bid")
     @JsonProperty("bid")
+    @ApiModelProperty("BID")
     private Integer bid;
     /**
      * AVersion
@@ -56,6 +60,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableField(value = "`aversion`")
     @JSONField(name = "aversion")
     @JsonProperty("aversion")
+    @ApiModelProperty("AVersion")
     private String aversion;
     /**
      * BType
@@ -63,6 +68,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableField(value = "`btype`")
     @JSONField(name = "btype")
     @JsonProperty("btype")
+    @ApiModelProperty("BType")
     private String btype;
     /**
      * project
@@ -70,6 +76,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableField(value = "`project`")
     @JSONField(name = "project")
     @JsonProperty("project")
+    @ApiModelProperty("project")
     private Integer project;
     /**
      * extra
@@ -77,6 +84,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableField(value = "`extra`")
     @JSONField(name = "extra")
     @JsonProperty("extra")
+    @ApiModelProperty("extra")
     private String extra;
     /**
      * relation
@@ -84,6 +92,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableField(value = "`relation`")
     @JSONField(name = "relation")
     @JsonProperty("relation")
+    @ApiModelProperty("relation")
     private String relation;
     /**
      * id
@@ -92,6 +101,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * program
@@ -99,6 +109,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableField(value = "`program`")
     @JSONField(name = "program")
     @JsonProperty("program")
+    @ApiModelProperty("program")
     private Integer program;
     /**
      * BVersion
@@ -106,6 +117,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableField(value = "`bversion`")
     @JSONField(name = "bversion")
     @JsonProperty("bversion")
+    @ApiModelProperty("BVersion")
     private String bversion;
     /**
      * AType
@@ -113,6 +125,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableField(value = "`atype`")
     @JSONField(name = "atype")
     @JsonProperty("atype")
+    @ApiModelProperty("AType")
     private String atype;
     /**
      * product
@@ -120,6 +133,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
+    @ApiModelProperty("product")
     private Integer product;
     /**
      * AID
@@ -127,6 +141,7 @@ public class Relation extends EntityMP implements Serializable {
     @TableField(value = "`aid`")
     @JSONField(name = "aid")
     @JsonProperty("aid")
+    @ApiModelProperty("AID")
     private Integer aid;
 
 

@@ -57,7 +57,7 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
     @Override
     @Transactional
     public boolean create(IbzPlanTempletDetail et) {
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbzplantempletdetailid()), et);
@@ -73,7 +73,7 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
     @Override
     @Transactional
     public boolean update(IbzPlanTempletDetail et) {
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_plantempletdetailid", et.getIbzplantempletdetailid()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_plantempletdetailid", et.getIbzplantempletdetailid()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbzplantempletdetailid()), et);
@@ -90,7 +90,7 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
     @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -103,7 +103,7 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
     @Transactional
     public IbzPlanTempletDetail get(String key) {
         IbzPlanTempletDetail et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IbzPlanTempletDetail();
             et.setIbzplantempletdetailid(key);
         }
@@ -124,7 +124,7 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
     @Override
     @Transactional
     public boolean save(IbzPlanTempletDetail et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -182,51 +182,46 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
     }
 
 
-    @Override
+	@Override
     public List<IbzPlanTempletDetail> selectByPlantempletid(String ibzplantempletid) {
         return baseMapper.selectByPlantempletid(ibzplantempletid);
     }
     @Override
     public void removeByPlantempletid(String ibzplantempletid) {
-        this.remove(new QueryWrapper<IbzPlanTempletDetail>().eq("plantempletid", ibzplantempletid));
+        this.remove(new QueryWrapper<IbzPlanTempletDetail>().eq("plantempletid",ibzplantempletid));
     }
 
     public IIbzPlanTempletDetailService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
-    @Override
-    public void saveByPlantempletid(String ibzplantempletid, List<IbzPlanTempletDetail> list) {
-        if (list == null) {
+	@Override
+    public void saveByPlantempletid(String ibzplantempletid,List<IbzPlanTempletDetail> list) {
+        if(list==null)
             return;
-        }
         Set<String> delIds=new HashSet<String>();
         List<IbzPlanTempletDetail> _update=new ArrayList<IbzPlanTempletDetail>();
         List<IbzPlanTempletDetail> _create=new ArrayList<IbzPlanTempletDetail>();
-        for (IbzPlanTempletDetail before:selectByPlantempletid(ibzplantempletid)){
+        for(IbzPlanTempletDetail before:selectByPlantempletid(ibzplantempletid)){
             delIds.add(before.getIbzplantempletdetailid());
         }
-        for (IbzPlanTempletDetail sub : list) {
+        for(IbzPlanTempletDetail sub:list) {
             sub.setPlantempletid(ibzplantempletid);
-            if (ObjectUtils.isEmpty(sub.getIbzplantempletdetailid()))
+            if(ObjectUtils.isEmpty(sub.getIbzplantempletdetailid()))
                 sub.setIbzplantempletdetailid((String)sub.getDefaultKey(true));
-            if (delIds.contains(sub.getIbzplantempletdetailid())) {
+            if(delIds.contains(sub.getIbzplantempletdetailid())) {
                 delIds.remove(sub.getIbzplantempletdetailid());
                 _update.add(sub);
             }
-            else {
+            else
                 _create.add(sub);
-            }
         }
-        if (_update.size() > 0) {
+        if(_update.size()>0)
             getProxyService().updateBatch(_update);
-        }
-        if (_create.size() > 0) {
+        if(_create.size()>0)
             getProxyService().createBatch(_create);
-        }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             getProxyService().removeBatch(delIds);
-        }
-    }
+	}
 
 
     /**
@@ -234,7 +229,7 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
      */
     @Override
     public Page<IbzPlanTempletDetail> searchDefault(IbzPlanTempletDetailSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzPlanTempletDetail> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzPlanTempletDetail> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzPlanTempletDetail>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -245,24 +240,24 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -278,20 +273,17 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
         List ids =new ArrayList();
         for(IbzPlanTempletDetail entity : entities){
             Serializable id=entity.getIbzplantempletdetailid();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     @Override

@@ -69,8 +69,8 @@ public class BuildSearchContext extends QueryWrapperContext<Build> {
             this.getSearchCond().eq("`frontapplication`", n_frontapplication_eq);
         }
     }
-    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Timestamp n_date_ltandeq;//[打包日期]
 	public void setN_date_ltandeq(Timestamp n_date_ltandeq) {
         this.n_date_ltandeq = n_date_ltandeq;

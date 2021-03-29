@@ -73,7 +73,7 @@ public class IbzWeeklyResource {
 		IbzWeekly domain  = ibzweeklyMapping.toDomain(ibzweeklydto);
         domain .setIbzweeklyid(ibzweekly_id);
 		ibzweeklyService.update(domain );
-		IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain );
+		IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -239,8 +239,10 @@ public class IbzWeeklyResource {
     @PreAuthorize("hasPermission(this.ibzweeklyMapping.toDomain(#ibzweeklydto),'iBizPMS-IbzWeekly-Save')")
     @ApiOperation(value = "保存周报", tags = {"周报" },  notes = "保存周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzWeeklyDTO ibzweeklydto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyService.save(ibzweeklyMapping.toDomain(ibzweeklydto)));
+    public ResponseEntity<IbzWeeklyDTO> save(@RequestBody IbzWeeklyDTO ibzweeklydto) {
+        IbzWeekly domain = ibzweeklyMapping.toDomain(ibzweeklydto);
+        ibzweeklyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibzweeklyMapping.toDomain(#ibzweeklydtos),'iBizPMS-IbzWeekly-Save')")

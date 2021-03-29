@@ -124,7 +124,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Transactional
     public Bug get(Long key) {
         Bug et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new Bug();
             et.setId(key);
         }
@@ -187,13 +187,13 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public Bug bugFavorites(Bug et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public Bug bugNFavorites(Bug et) {
-         return et;
+         return et ;
     }
 
        @Override
@@ -383,7 +383,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public boolean save(Bug et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -424,7 +424,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public void saveBatch(List<Bug> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<Bug> create = new ArrayList<>();
         List<Bug> update = new ArrayList<>();
         for (Bug et : list) {
@@ -529,134 +529,134 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public Bug updateStoryVersion(Bug et) {
-         return et;
+         return et ;
     }
 
 
-    @Override
+	@Override
     public List<Bug> selectByBranch(Long id) {
         return baseMapper.selectByBranch(id);
     }
     @Override
     public void removeByBranch(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("branch", id));
+        this.remove(new QueryWrapper<Bug>().eq("branch",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByDuplicatebug(Long id) {
         return baseMapper.selectByDuplicatebug(id);
     }
     @Override
     public void removeByDuplicatebug(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("duplicatebug", id));
+        this.remove(new QueryWrapper<Bug>().eq("duplicatebug",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByIbizcase(Long id) {
         return baseMapper.selectByIbizcase(id);
     }
     @Override
     public void removeByIbizcase(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("case", id));
+        this.remove(new QueryWrapper<Bug>().eq("case",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByEntry(Long id) {
         return baseMapper.selectByEntry(id);
     }
     @Override
     public void removeByEntry(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("entry", id));
+        this.remove(new QueryWrapper<Bug>().eq("entry",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByModule(Long id) {
         return baseMapper.selectByModule(id);
     }
     @Override
     public void removeByModule(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("module", id));
+        this.remove(new QueryWrapper<Bug>().eq("module",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByPlan(Long id) {
         return baseMapper.selectByPlan(id);
     }
     @Override
     public void removeByPlan(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("plan", id));
+        this.remove(new QueryWrapper<Bug>().eq("plan",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByProduct(Long id) {
         return baseMapper.selectByProduct(id);
     }
     @Override
     public void removeByProduct(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("product", id));
+        this.remove(new QueryWrapper<Bug>().eq("product",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByProject(Long id) {
         return baseMapper.selectByProject(id);
     }
     @Override
     public void removeByProject(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("project", id));
+        this.remove(new QueryWrapper<Bug>().eq("project",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByRepo(Long id) {
         return baseMapper.selectByRepo(id);
     }
     @Override
     public void removeByRepo(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("repo", id));
+        this.remove(new QueryWrapper<Bug>().eq("repo",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByStory(Long id) {
         return baseMapper.selectByStory(id);
     }
     @Override
     public void removeByStory(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("story", id));
+        this.remove(new QueryWrapper<Bug>().eq("story",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByTostory(Long id) {
         return baseMapper.selectByTostory(id);
     }
     @Override
     public void removeByTostory(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("tostory", id));
+        this.remove(new QueryWrapper<Bug>().eq("tostory",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByTask(Long id) {
         return baseMapper.selectByTask(id);
     }
     @Override
     public void removeByTask(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("task", id));
+        this.remove(new QueryWrapper<Bug>().eq("task",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByTotask(Long id) {
         return baseMapper.selectByTotask(id);
     }
     @Override
     public void removeByTotask(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("totask", id));
+        this.remove(new QueryWrapper<Bug>().eq("totask",id));
     }
 
-    @Override
+	@Override
     public List<Bug> selectByTesttask(Long id) {
         return baseMapper.selectByTesttask(id);
     }
     @Override
     public void removeByTesttask(Long id) {
-        this.remove(new QueryWrapper<Bug>().eq("testtask", id));
+        this.remove(new QueryWrapper<Bug>().eq("testtask",id));
     }
 
 
@@ -665,7 +665,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchAssignedToMyBug(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchAssignedToMyBug(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchAssignedToMyBug(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -674,7 +674,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchAssignedToMyBugPc(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchAssignedToMyBugPc(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchAssignedToMyBugPc(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -683,7 +683,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBugsByBuild(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBugsByBuild(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBugsByBuild(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -692,7 +692,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildBugs(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildBugs(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildBugs(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -701,7 +701,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildLinkResolvedBugs(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildLinkResolvedBugs(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildLinkResolvedBugs(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -710,7 +710,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildOpenBugs(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildOpenBugs(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildOpenBugs(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -719,7 +719,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBug(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBug(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBug(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -728,7 +728,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBugModule(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugModule(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugModule(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -737,7 +737,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBugModule_Project(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugModule_Project(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugModule_Project(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -746,7 +746,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBugOpenedBy(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugOpenedBy(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugOpenedBy(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -755,7 +755,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBugOpenedBy_Project(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugOpenedBy_Project(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugOpenedBy_Project(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -764,7 +764,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBugRES(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugRES(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugRES(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -773,7 +773,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBugRESOLVEDBY(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugRESOLVEDBY(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugRESOLVEDBY(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -782,7 +782,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBugRESOLVEDBY_Project(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugRESOLVEDBY_Project(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugRESOLVEDBY_Project(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -791,7 +791,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBugResolution_Project(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugResolution_Project(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugResolution_Project(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -800,7 +800,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBugSeverity_Project(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugSeverity_Project(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugSeverity_Project(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -809,7 +809,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBugStatus_Project(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugStatus_Project(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugStatus_Project(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -818,7 +818,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchBuildProduceBugType_Project(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugType_Project(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchBuildProduceBugType_Project(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -827,7 +827,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchCurUserResolve(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchCurUserResolve(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchCurUserResolve(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -836,7 +836,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchDefault(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -845,7 +845,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchESBulk(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchESBulk(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchESBulk(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -854,7 +854,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchMyAgentBug(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchMyAgentBug(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchMyAgentBug(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -863,7 +863,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchMyCurOpenedBug(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchMyCurOpenedBug(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchMyCurOpenedBug(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -872,7 +872,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchMyFavorites(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchMyFavorites(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchMyFavorites(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -881,7 +881,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchNotCurPlanLinkBug(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchNotCurPlanLinkBug(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchNotCurPlanLinkBug(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -890,7 +890,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchProjectBugs(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchProjectBugs(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchProjectBugs(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -899,7 +899,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchReleaseBugs(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchReleaseBugs(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchReleaseBugs(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -908,7 +908,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchReleaseLeftBugs(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchReleaseLeftBugs(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchReleaseLeftBugs(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -917,7 +917,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchReleaseLinkableLeftBug(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchReleaseLinkableLeftBug(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchReleaseLinkableLeftBug(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -926,7 +926,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchReleaseLinkableResolvedBug(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchReleaseLinkableResolvedBug(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchReleaseLinkableResolvedBug(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -935,7 +935,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchReportBugs(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchReportBugs(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchReportBugs(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -944,7 +944,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     @Override
     public Page<Bug> searchTaskRelatedBug(BugSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchTaskRelatedBug(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchTaskRelatedBug(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -956,73 +956,73 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
      */
     private void fillParentData(Bug et){
         //实体关系[DER1N_ZT_BUG_ZT_BRANCH_BRANCH]
-        if (!ObjectUtils.isEmpty(et.getBranch())) {
+        if(!ObjectUtils.isEmpty(et.getBranch())){
             cn.ibizlab.pms.core.zentao.domain.Branch ztrranch=et.getZtrranch();
-            if (ObjectUtils.isEmpty(ztrranch)) {
+            if(ObjectUtils.isEmpty(ztrranch)){
                 cn.ibizlab.pms.core.zentao.domain.Branch majorEntity=branchService.get(et.getBranch());
                 et.setZtrranch(majorEntity);
-                ztrranch = majorEntity;
+                ztrranch=majorEntity;
             }
             et.setBranchname(ztrranch.getName());
         }
         //实体关系[DER1N_ZT_BUG_ZT_CASE_CASEID]
-        if (!ObjectUtils.isEmpty(et.getIbizcase())) {
+        if(!ObjectUtils.isEmpty(et.getIbizcase())){
             cn.ibizlab.pms.core.zentao.domain.Case ztcase=et.getZtcase();
-            if (ObjectUtils.isEmpty(ztcase)) {
+            if(ObjectUtils.isEmpty(ztcase)){
                 cn.ibizlab.pms.core.zentao.domain.Case majorEntity=caseService.get(et.getIbizcase());
                 et.setZtcase(majorEntity);
-                ztcase = majorEntity;
+                ztcase=majorEntity;
             }
             et.setCasename(ztcase.getTitle());
             et.setCaseversion(ztcase.getVersion());
         }
         //实体关系[DER1N_ZT_BUG_ZT_MODULE_MODULE]
-        if (!ObjectUtils.isEmpty(et.getModule())) {
+        if(!ObjectUtils.isEmpty(et.getModule())){
             cn.ibizlab.pms.core.zentao.domain.Module ztmodule=et.getZtmodule();
-            if (ObjectUtils.isEmpty(ztmodule)) {
+            if(ObjectUtils.isEmpty(ztmodule)){
                 cn.ibizlab.pms.core.zentao.domain.Module majorEntity=moduleService.get(et.getModule());
                 et.setZtmodule(majorEntity);
-                ztmodule = majorEntity;
+                ztmodule=majorEntity;
             }
             et.setModulename(ztmodule.getName());
         }
         //实体关系[DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT]
-        if (!ObjectUtils.isEmpty(et.getProduct())) {
+        if(!ObjectUtils.isEmpty(et.getProduct())){
             cn.ibizlab.pms.core.zentao.domain.Product ztproduct=et.getZtproduct();
-            if (ObjectUtils.isEmpty(ztproduct)) {
+            if(ObjectUtils.isEmpty(ztproduct)){
                 cn.ibizlab.pms.core.zentao.domain.Product majorEntity=productService.get(et.getProduct());
                 et.setZtproduct(majorEntity);
-                ztproduct = majorEntity;
+                ztproduct=majorEntity;
             }
             et.setProductname(ztproduct.getName());
         }
         //实体关系[DER1N_ZT_BUG_ZT_PROJECT_PROJECT]
-        if (!ObjectUtils.isEmpty(et.getProject())) {
+        if(!ObjectUtils.isEmpty(et.getProject())){
             cn.ibizlab.pms.core.zentao.domain.Project ztproject=et.getZtproject();
-            if (ObjectUtils.isEmpty(ztproject)) {
+            if(ObjectUtils.isEmpty(ztproject)){
                 cn.ibizlab.pms.core.zentao.domain.Project majorEntity=projectService.get(et.getProject());
                 et.setZtproject(majorEntity);
-                ztproject = majorEntity;
+                ztproject=majorEntity;
             }
             et.setProjectname(ztproject.getName());
         }
         //实体关系[DER1N_ZT_BUG_ZT_REPO_REPO]
-        if (!ObjectUtils.isEmpty(et.getRepo())) {
+        if(!ObjectUtils.isEmpty(et.getRepo())){
             cn.ibizlab.pms.core.zentao.domain.Repo ztrepo=et.getZtrepo();
-            if (ObjectUtils.isEmpty(ztrepo)) {
+            if(ObjectUtils.isEmpty(ztrepo)){
                 cn.ibizlab.pms.core.zentao.domain.Repo majorEntity=repoService.get(et.getRepo());
                 et.setZtrepo(majorEntity);
-                ztrepo = majorEntity;
+                ztrepo=majorEntity;
             }
             et.setRepotype(ztrepo.getScm());
         }
         //实体关系[DER1N_ZT_BUG_ZT_STORY_STORY]
-        if (!ObjectUtils.isEmpty(et.getStory())) {
+        if(!ObjectUtils.isEmpty(et.getStory())){
             cn.ibizlab.pms.core.zentao.domain.Story ztstory=et.getZtstory();
-            if (ObjectUtils.isEmpty(ztstory)) {
+            if(ObjectUtils.isEmpty(ztstory)){
                 cn.ibizlab.pms.core.zentao.domain.Story majorEntity=storyService.get(et.getStory());
                 et.setZtstory(majorEntity);
-                ztstory = majorEntity;
+                ztstory=majorEntity;
             }
             et.setStoryname(ztstory.getTitle());
             // 父关系等价
@@ -1030,12 +1030,12 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
             et.setProductname(ztstory.getProductname());
         }
         //实体关系[DER1N_ZT_BUG_ZT_TASK_TASK]
-        if (!ObjectUtils.isEmpty(et.getTask())) {
+        if(!ObjectUtils.isEmpty(et.getTask())){
             cn.ibizlab.pms.core.zentao.domain.Task zttask=et.getZttask();
-            if (ObjectUtils.isEmpty(zttask)) {
+            if(ObjectUtils.isEmpty(zttask)){
                 cn.ibizlab.pms.core.zentao.domain.Task majorEntity=taskService.get(et.getTask());
                 et.setZttask(majorEntity);
-                zttask = majorEntity;
+                zttask=majorEntity;
             }
             et.setTaskname(zttask.getName());
             // 父关系等价
@@ -1048,31 +1048,28 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

@@ -72,7 +72,7 @@ public class DocLibResource {
 		DocLib domain  = doclibMapping.toDomain(doclibdto);
         domain .setId(doclib_id);
 		doclibService.update(domain );
-		DocLibDTO dto = doclibMapping.toDto(domain );
+		DocLibDTO dto = doclibMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -143,8 +143,10 @@ public class DocLibResource {
     @PreAuthorize("hasPermission(this.doclibMapping.toDomain(#doclibdto),'iBizPMS-DocLib-Save')")
     @ApiOperation(value = "保存文档库", tags = {"文档库" },  notes = "保存文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/save")
-    public ResponseEntity<Boolean> save(@RequestBody DocLibDTO doclibdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(doclibService.save(doclibMapping.toDomain(doclibdto)));
+    public ResponseEntity<DocLibDTO> save(@RequestBody DocLibDTO doclibdto) {
+        DocLib domain = doclibMapping.toDomain(doclibdto);
+        doclibService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(doclibMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.doclibMapping.toDomain(#doclibdtos),'iBizPMS-DocLib-Save')")

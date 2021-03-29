@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_im_message", resultMap = "ImMessageResultMap")
+@ApiModel("ImMessage")
 public class ImMessage extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class ImMessage extends EntityMP implements Serializable {
     @TableField(value = "`user`")
     @JSONField(name = "user")
     @JsonProperty("user")
+    @ApiModelProperty("user")
     private String user;
     /**
      * gid
@@ -56,6 +60,7 @@ public class ImMessage extends EntityMP implements Serializable {
     @TableField(value = "`gid`")
     @JSONField(name = "gid")
     @JsonProperty("gid")
+    @ApiModelProperty("gid")
     private String gid;
     /**
      * id
@@ -64,6 +69,7 @@ public class ImMessage extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * date
@@ -73,6 +79,7 @@ public class ImMessage extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("date")
+    @ApiModelProperty("date")
     private Timestamp date;
     /**
      * 逻辑删除标志
@@ -82,6 +89,7 @@ public class ImMessage extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("逻辑删除标志")
     private String deleted;
     /**
      * data
@@ -89,6 +97,7 @@ public class ImMessage extends EntityMP implements Serializable {
     @TableField(value = "`data`")
     @JSONField(name = "data")
     @JsonProperty("data")
+    @ApiModelProperty("data")
     private String data;
     /**
      * type
@@ -96,6 +105,7 @@ public class ImMessage extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("type")
     private String type;
     /**
      * content
@@ -103,6 +113,7 @@ public class ImMessage extends EntityMP implements Serializable {
     @TableField(value = "`content`")
     @JSONField(name = "content")
     @JsonProperty("content")
+    @ApiModelProperty("content")
     private String content;
     /**
      * cgid
@@ -110,6 +121,7 @@ public class ImMessage extends EntityMP implements Serializable {
     @TableField(value = "`cgid`")
     @JSONField(name = "cgid")
     @JsonProperty("cgid")
+    @ApiModelProperty("cgid")
     private String cgid;
     /**
      * order
@@ -117,6 +129,7 @@ public class ImMessage extends EntityMP implements Serializable {
     @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
+    @ApiModelProperty("order")
     private Long order;
     /**
      * contentType
@@ -124,6 +137,7 @@ public class ImMessage extends EntityMP implements Serializable {
     @TableField(value = "`contenttype`")
     @JSONField(name = "contenttype")
     @JsonProperty("contenttype")
+    @ApiModelProperty("contentType")
     private String contenttype;
 
 

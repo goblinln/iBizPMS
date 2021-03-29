@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_burn", resultMap = "BurnResultMap")
+@ApiModel("burn")
 public class Burn extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class Burn extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "isweekend")
     @JsonProperty("isweekend")
+    @ApiModelProperty("周末")
     private String isweekend;
     /**
      * 日期
@@ -57,6 +61,7 @@ public class Burn extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
+    @ApiModelProperty("日期")
     private Timestamp date;
     /**
      * 虚拟主键
@@ -65,6 +70,7 @@ public class Burn extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("虚拟主键")
     private String id;
     /**
      * 总计消耗
@@ -72,6 +78,7 @@ public class Burn extends EntityMP implements Serializable {
     @TableField(value = "`consumed`")
     @JSONField(name = "consumed")
     @JsonProperty("consumed")
+    @ApiModelProperty("总计消耗")
     private Double consumed;
     /**
      * 预计剩余
@@ -79,6 +86,7 @@ public class Burn extends EntityMP implements Serializable {
     @TableField(value = "`left`")
     @JSONField(name = "left")
     @JsonProperty("left")
+    @ApiModelProperty("预计剩余")
     private Double left;
     /**
      * 最初预计
@@ -86,6 +94,7 @@ public class Burn extends EntityMP implements Serializable {
     @TableField(value = "`estimate`")
     @JSONField(name = "estimate")
     @JsonProperty("estimate")
+    @ApiModelProperty("最初预计")
     private Double estimate;
     /**
      * 所属项目
@@ -93,6 +102,7 @@ public class Burn extends EntityMP implements Serializable {
     @TableField(value = "`project`")
     @JSONField(name = "project")
     @JsonProperty("project")
+    @ApiModelProperty("所属项目")
     private Long project;
     /**
      * 任务
@@ -100,6 +110,7 @@ public class Burn extends EntityMP implements Serializable {
     @TableField(value = "`task`")
     @JSONField(name = "task")
     @JsonProperty("task")
+    @ApiModelProperty("任务")
     private Long task;
 
     /**

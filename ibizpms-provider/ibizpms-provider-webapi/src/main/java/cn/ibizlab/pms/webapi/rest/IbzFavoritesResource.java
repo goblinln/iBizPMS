@@ -73,7 +73,7 @@ public class IbzFavoritesResource {
 		IbzFavorites domain  = ibzfavoritesMapping.toDomain(ibzfavoritesdto);
         domain .setIbzfavoritesid(ibzfavorites_id);
 		ibzfavoritesService.update(domain );
-		IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain );
+		IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class IbzFavoritesResource {
     @PreAuthorize("hasPermission(this.ibzfavoritesMapping.toDomain(#ibzfavoritesdto),'iBizPMS-IbzFavorites-Save')")
     @ApiOperation(value = "保存收藏", tags = {"收藏" },  notes = "保存收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzFavoritesDTO ibzfavoritesdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesService.save(ibzfavoritesMapping.toDomain(ibzfavoritesdto)));
+    public ResponseEntity<IbzFavoritesDTO> save(@RequestBody IbzFavoritesDTO ibzfavoritesdto) {
+        IbzFavorites domain = ibzfavoritesMapping.toDomain(ibzfavoritesdto);
+        ibzfavoritesService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibzfavoritesMapping.toDomain(#ibzfavoritesdtos),'iBizPMS-IbzFavorites-Save')")

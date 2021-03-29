@@ -73,7 +73,7 @@ public class PSSystemDBCfgResource {
 		PSSystemDBCfg domain  = pssystemdbcfgMapping.toDomain(pssystemdbcfgdto);
         domain .setPssystemdbcfgid(pssystemdbcfg_id);
 		pssystemdbcfgService.update(domain );
-		PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain );
+		PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class PSSystemDBCfgResource {
     @PreAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdto),'iBizPMS-PSSystemDBCfg-Save')")
     @ApiOperation(value = "保存系统数据库", tags = {"系统数据库" },  notes = "保存系统数据库")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/save")
-    public ResponseEntity<Boolean> save(@RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.save(pssystemdbcfgMapping.toDomain(pssystemdbcfgdto)));
+    public ResponseEntity<PSSystemDBCfgDTO> save(@RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
+        PSSystemDBCfg domain = pssystemdbcfgMapping.toDomain(pssystemdbcfgdto);
+        pssystemdbcfgService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdtos),'iBizPMS-PSSystemDBCfg-Save')")

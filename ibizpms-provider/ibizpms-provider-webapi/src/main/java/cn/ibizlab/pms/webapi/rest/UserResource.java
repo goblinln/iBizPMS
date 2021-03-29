@@ -72,7 +72,7 @@ public class UserResource {
 		User domain  = userMapping.toDomain(userdto);
         domain .setId(user_id);
 		userService.update(domain );
-		UserDTO dto = userMapping.toDto(domain );
+		UserDTO dto = userMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -135,8 +135,10 @@ public class UserResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-Save-all')")
     @ApiOperation(value = "保存用户", tags = {"用户" },  notes = "保存用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/save")
-    public ResponseEntity<Boolean> save(@RequestBody UserDTO userdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(userService.save(userMapping.toDomain(userdto)));
+    public ResponseEntity<UserDTO> save(@RequestBody UserDTO userdto) {
+        User domain = userMapping.toDomain(userdto);
+        userService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(userMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-Save-all')")

@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ou.client.SysTeamFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[组] 服务对象接口实现
@@ -53,39 +54,37 @@ public class SysTeamServiceImpl implements ISysTeamService {
     @Override
     public boolean create(SysTeam et) {
         SysTeam rt = sysTeamFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<SysTeam> list){
-        sysTeamFeignClient.createBatch(list);
+        sysTeamFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(SysTeam et) {
-        SysTeam rt = sysTeamFeignClient.update(et.getTeamid(), et);
-        if (rt == null) {
+        SysTeam rt = sysTeamFeignClient.update(et.getTeamid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<SysTeam> list) {
-        sysTeamFeignClient.updateBatch(list);
+    public void updateBatch(List<SysTeam> list){
+        sysTeamFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String teamid) {
-        boolean result=sysTeamFeignClient.remove(teamid);
+        boolean result=sysTeamFeignClient.remove(teamid) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class SysTeamServiceImpl implements ISysTeamService {
 
     @Override
     public SysTeam get(String teamid) {
-        SysTeam et = sysTeamFeignClient.get(teamid);
-        if (et == null) {
-            et = new SysTeam();
+		SysTeam et=sysTeamFeignClient.get(teamid);
+        if(et==null){
+            et=new SysTeam();
             et.setTeamid(teamid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -124,19 +123,30 @@ public class SysTeamServiceImpl implements ISysTeamService {
     @Override
     @Transactional
     public boolean save(SysTeam et) {
-        if (et.getTeamid() == null) {
-            et.setTeamid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = sysTeamFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), SysTeam.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!sysTeamFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<SysTeam> list) {
-        sysTeamFeignClient.saveBatch(list);
+        sysTeamFeignClient.saveBatch(list) ;
     }
 
 
@@ -152,8 +162,6 @@ public class SysTeamServiceImpl implements ISysTeamService {
         Page<SysTeam> sysTeams=sysTeamFeignClient.searchDefault(context);
         return sysTeams;
     }
-
-
 
 
     @Override

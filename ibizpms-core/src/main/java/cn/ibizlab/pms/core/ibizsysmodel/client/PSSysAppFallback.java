@@ -66,6 +66,9 @@ public class PSSysAppFallback implements PSSysAppFeignClient {
     }
 
 
+    public Object saveEntity(PSSysApp et) {
+        return null;
+    }
     public Boolean save(PSSysApp et) {
         return false;
     }

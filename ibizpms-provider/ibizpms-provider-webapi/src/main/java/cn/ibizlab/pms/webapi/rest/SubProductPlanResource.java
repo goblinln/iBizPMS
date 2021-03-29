@@ -376,10 +376,11 @@ public class SubProductPlanResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-Save-all')")
     @ApiOperation(value = "根据产品计划保存产品计划", tags = {"产品计划" },  notes = "根据产品计划保存产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/save")
-    public ResponseEntity<Boolean> saveByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
+    public ResponseEntity<SubProductPlanDTO> saveByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productplanService.save(domain));
+        productplanService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-Save-all')")
@@ -987,10 +988,11 @@ public class SubProductPlanResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-Save-all')")
     @ApiOperation(value = "根据产品产品计划保存产品计划", tags = {"产品计划" },  notes = "根据产品产品计划保存产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/save")
-    public ResponseEntity<Boolean> saveByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
+    public ResponseEntity<SubProductPlanDTO> saveByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productplanService.save(domain));
+        productplanService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-Save-all')")

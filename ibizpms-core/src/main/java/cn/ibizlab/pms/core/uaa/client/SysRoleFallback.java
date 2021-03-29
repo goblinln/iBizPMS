@@ -66,6 +66,9 @@ public class SysRoleFallback implements SysRoleFeignClient {
     }
 
 
+    public Object saveEntity(SysRole et) {
+        return null;
+    }
     public Boolean save(SysRole et) {
         return false;
     }

@@ -72,7 +72,7 @@ public class IBZProStoryModuleResource {
 		IBZProStoryModule domain  = ibzprostorymoduleMapping.toDomain(ibzprostorymoduledto);
         domain .setId(ibzprostorymodule_id);
 		ibzprostorymoduleService.update(domain );
-		IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain );
+		IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class IBZProStoryModuleResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-Save-all')")
     @ApiOperation(value = "保存需求模块", tags = {"需求模块" },  notes = "保存需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/save")
-    public ResponseEntity<Boolean> save(@RequestBody IBZProStoryModuleDTO ibzprostorymoduledto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduleService.save(ibzprostorymoduleMapping.toDomain(ibzprostorymoduledto)));
+    public ResponseEntity<IBZProStoryModuleDTO> save(@RequestBody IBZProStoryModuleDTO ibzprostorymoduledto) {
+        IBZProStoryModule domain = ibzprostorymoduleMapping.toDomain(ibzprostorymoduledto);
+        ibzprostorymoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduleMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-Save-all')")

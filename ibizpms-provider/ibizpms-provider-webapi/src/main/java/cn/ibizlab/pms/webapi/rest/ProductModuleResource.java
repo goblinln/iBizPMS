@@ -72,7 +72,7 @@ public class ProductModuleResource {
 		ProductModule domain  = productmoduleMapping.toDomain(productmoduledto);
         domain .setId(productmodule_id);
 		productmoduleService.update(domain );
-		ProductModuleDTO dto = productmoduleMapping.toDto(domain );
+		ProductModuleDTO dto = productmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -146,8 +146,10 @@ public class ProductModuleResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductModule-Save-all')")
     @ApiOperation(value = "保存需求模块", tags = {"需求模块" },  notes = "保存需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/productmodules/save")
-    public ResponseEntity<Boolean> save(@RequestBody ProductModuleDTO productmoduledto) {
-        return ResponseEntity.status(HttpStatus.OK).body(productmoduleService.save(productmoduleMapping.toDomain(productmoduledto)));
+    public ResponseEntity<ProductModuleDTO> save(@RequestBody ProductModuleDTO productmoduledto) {
+        ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
+        productmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductModule-Save-all')")
@@ -426,10 +428,11 @@ public class ProductModuleResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductModule-Save-all')")
     @ApiOperation(value = "根据产品保存需求模块", tags = {"需求模块" },  notes = "根据产品保存需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules/save")
-    public ResponseEntity<Boolean> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleDTO productmoduledto) {
+    public ResponseEntity<ProductModuleDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleDTO productmoduledto) {
         ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
         domain.setRoot(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productmoduleService.save(domain));
+        productmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductModule-Save-all')")

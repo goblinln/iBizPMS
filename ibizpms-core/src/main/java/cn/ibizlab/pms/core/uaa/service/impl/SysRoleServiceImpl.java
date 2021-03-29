@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.uaa.client.SysRoleFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[系统角色] 服务对象接口实现
@@ -53,39 +54,37 @@ public class SysRoleServiceImpl implements ISysRoleService {
     @Override
     public boolean create(SysRole et) {
         SysRole rt = sysRoleFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<SysRole> list){
-        sysRoleFeignClient.createBatch(list);
+        sysRoleFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(SysRole et) {
-        SysRole rt = sysRoleFeignClient.update(et.getRoleid(), et);
-        if (rt == null) {
+        SysRole rt = sysRoleFeignClient.update(et.getRoleid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<SysRole> list) {
-        sysRoleFeignClient.updateBatch(list);
+    public void updateBatch(List<SysRole> list){
+        sysRoleFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String roleid) {
-        boolean result=sysRoleFeignClient.remove(roleid);
+        boolean result=sysRoleFeignClient.remove(roleid) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class SysRoleServiceImpl implements ISysRoleService {
 
     @Override
     public SysRole get(String roleid) {
-        SysRole et = sysRoleFeignClient.get(roleid);
-        if (et == null) {
-            et = new SysRole();
+		SysRole et=sysRoleFeignClient.get(roleid);
+        if(et==null){
+            et=new SysRole();
             et.setRoleid(roleid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -124,25 +123,36 @@ public class SysRoleServiceImpl implements ISysRoleService {
     @Override
     @Transactional
     public boolean save(SysRole et) {
-        if (et.getRoleid() == null) {
-            et.setRoleid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = sysRoleFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), SysRole.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!sysRoleFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<SysRole> list) {
-        sysRoleFeignClient.saveBatch(list);
+        sysRoleFeignClient.saveBatch(list) ;
     }
 
 
 
 
-    @Override
+	@Override
     public List<SysRole> selectByProleid(String roleid) {
         SysRoleSearchContext context=new SysRoleSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -155,12 +165,11 @@ public class SysRoleServiceImpl implements ISysRoleService {
     @Override
     public void removeByProleid(String roleid) {
         Set<String> delIds=new HashSet<String>();
-        for (SysRole before:selectByProleid(roleid)) {
+        for(SysRole before:selectByProleid(roleid)){
             delIds.add(before.getRoleid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
 
@@ -174,8 +183,6 @@ public class SysRoleServiceImpl implements ISysRoleService {
         Page<SysRole> sysRoles=sysRoleFeignClient.searchDefault(context);
         return sysRoles;
     }
-
-
 
 
     @Override

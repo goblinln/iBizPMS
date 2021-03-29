@@ -72,7 +72,7 @@ public class BugStatsResource {
 		BugStats domain  = bugstatsMapping.toDomain(bugstatsdto);
         domain .setId(bugstats_id);
 		bugstatsService.update(domain );
-		BugStatsDTO dto = bugstatsMapping.toDto(domain );
+		BugStatsDTO dto = bugstatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class BugStatsResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-Save-all')")
     @ApiOperation(value = "保存Bug统计", tags = {"Bug统计" },  notes = "保存Bug统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/save")
-    public ResponseEntity<Boolean> save(@RequestBody BugStatsDTO bugstatsdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(bugstatsService.save(bugstatsMapping.toDomain(bugstatsdto)));
+    public ResponseEntity<BugStatsDTO> save(@RequestBody BugStatsDTO bugstatsdto) {
+        BugStats domain = bugstatsMapping.toDomain(bugstatsdto);
+        bugstatsService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(bugstatsMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-Save-all')")

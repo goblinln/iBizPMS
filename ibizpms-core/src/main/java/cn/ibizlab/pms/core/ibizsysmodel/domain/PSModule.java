@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [系统模块] 对象
  */
 @Data
+@ApiModel("系统模块")
 public class PSModule extends EntityClient implements Serializable {
     @Override
     public void modify(String field, Object val) {
@@ -43,6 +46,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "pkgcodename")
     @JsonProperty("pkgcodename")
+    @ApiModelProperty("代码包名")
     private String pkgcodename;
 
     /**
@@ -51,6 +55,7 @@ public class PSModule extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "subsysmodule")
     @JsonProperty("subsysmodule")
+    @ApiModelProperty("子系统模块")
     private Integer subsysmodule;
 
     /**
@@ -58,6 +63,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "modtag4")
     @JsonProperty("modtag4")
+    @ApiModelProperty("模块标记4")
     private String modtag4;
 
     /**
@@ -65,6 +71,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "modtag3")
     @JsonProperty("modtag3")
+    @ApiModelProperty("模块标记3")
     private String modtag3;
 
     /**
@@ -72,6 +79,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "lockflag")
     @JsonProperty("lockflag")
+    @ApiModelProperty("模型锁模式")
     private Integer lockflag;
 
     /**
@@ -79,6 +87,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "color")
     @JsonProperty("color")
+    @ApiModelProperty("显示颜色")
     private String color;
 
     /**
@@ -86,6 +95,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "modulesn")
     @JsonProperty("modulesn")
+    @ApiModelProperty("模块编号")
     private String modulesn;
 
     /**
@@ -93,6 +103,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "psmodulename")
     @JsonProperty("psmodulename")
+    @ApiModelProperty("系统模块名称")
     private String psmodulename;
 
     /**
@@ -100,6 +111,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssystemname")
     @JsonProperty("pssystemname")
+    @ApiModelProperty("系统")
     private String pssystemname;
 
     /**
@@ -107,6 +119,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "memo")
     @JsonProperty("memo")
+    @ApiModelProperty("备注")
     private String memo;
 
     /**
@@ -114,6 +127,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag2")
     @JsonProperty("usertag2")
+    @ApiModelProperty("用户标记2")
     private String usertag2;
 
     /**
@@ -121,6 +135,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "defaultflag")
     @JsonProperty("defaultflag")
+    @ApiModelProperty("默认模块")
     private Integer defaultflag;
 
     /**
@@ -128,6 +143,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "usercat")
     @JsonProperty("usercat")
+    @ApiModelProperty("用户分类")
     private String usercat;
 
     /**
@@ -135,6 +151,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "clspkgparams")
     @JsonProperty("clspkgparams")
+    @ApiModelProperty("类包参数")
     private String clspkgparams;
 
     /**
@@ -142,6 +159,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag")
     @JsonProperty("usertag")
+    @ApiModelProperty("用户标记")
     private String usertag;
 
     /**
@@ -149,6 +167,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "codename")
     @JsonProperty("codename")
+    @ApiModelProperty("代码名称")
     private String codename;
 
     /**
@@ -156,6 +175,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "userparams")
     @JsonProperty("userparams")
+    @ApiModelProperty("自定义参数")
     private String userparams;
 
     /**
@@ -163,6 +183,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "modtag2")
     @JsonProperty("modtag2")
+    @ApiModelProperty("模块标记2")
     private String modtag2;
 
     /**
@@ -171,6 +192,7 @@ public class PSModule extends EntityClient implements Serializable {
     @DEField(isKeyField = true)
     @JSONField(name = "psmoduleid")
     @JsonProperty("psmoduleid")
+    @ApiModelProperty("系统模块标识")
     private String psmoduleid;
 
     /**
@@ -178,6 +200,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "modtag")
     @JsonProperty("modtag")
+    @ApiModelProperty("模块标记")
     private String modtag;
 
     /**
@@ -187,6 +210,7 @@ public class PSModule extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
 
     /**
@@ -194,6 +218,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "serviceapiflag")
     @JsonProperty("serviceapiflag")
+    @ApiModelProperty("服务API模式")
     private Integer serviceapiflag;
 
     /**
@@ -202,6 +227,7 @@ public class PSModule extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
 
     /**
@@ -210,6 +236,7 @@ public class PSModule extends EntityClient implements Serializable {
     @DEField(defaultValue = "1000", preType = DEPredefinedFieldType.ORDERVALUE)
     @JSONField(name = "ordervalue")
     @JsonProperty("ordervalue")
+    @ApiModelProperty("排序值")
     private Integer ordervalue;
 
     /**
@@ -217,6 +244,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag3")
     @JsonProperty("usertag3")
+    @ApiModelProperty("用户标记3")
     private String usertag3;
 
     /**
@@ -224,6 +252,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "noviewmode")
     @JsonProperty("noviewmode")
+    @ApiModelProperty("无视图模式")
     private Integer noviewmode;
 
     /**
@@ -232,6 +261,7 @@ public class PSModule extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
 
     /**
@@ -239,6 +269,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssystemid")
     @JsonProperty("pssystemid")
+    @ApiModelProperty("系统")
     private String pssystemid;
 
     /**
@@ -246,6 +277,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag4")
     @JsonProperty("usertag4")
+    @ApiModelProperty("用户标记4")
     private String usertag4;
 
     /**
@@ -253,6 +285,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     @JSONField(name = "sysreftype")
     @JsonProperty("sysreftype")
+    @ApiModelProperty("子系统类型")
     private String sysreftype;
 
     /**
@@ -262,6 +295,7 @@ public class PSModule extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
 
 
@@ -273,7 +307,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setPkgcodename(String pkgcodename) {
         this.pkgcodename = pkgcodename ;
-        this.modify("pkgcodename", pkgcodename);
+        this.modify("pkgcodename",pkgcodename);
     }
 
     /**
@@ -281,7 +315,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setSubsysmodule(Integer subsysmodule) {
         this.subsysmodule = subsysmodule ;
-        this.modify("subsysmodule", subsysmodule);
+        this.modify("subsysmodule",subsysmodule);
     }
 
     /**
@@ -289,7 +323,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setModtag4(String modtag4) {
         this.modtag4 = modtag4 ;
-        this.modify("modtag4", modtag4);
+        this.modify("modtag4",modtag4);
     }
 
     /**
@@ -297,7 +331,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setModtag3(String modtag3) {
         this.modtag3 = modtag3 ;
-        this.modify("modtag3", modtag3);
+        this.modify("modtag3",modtag3);
     }
 
     /**
@@ -305,7 +339,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setLockflag(Integer lockflag) {
         this.lockflag = lockflag ;
-        this.modify("lockflag", lockflag);
+        this.modify("lockflag",lockflag);
     }
 
     /**
@@ -313,7 +347,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setColor(String color) {
         this.color = color ;
-        this.modify("color", color);
+        this.modify("color",color);
     }
 
     /**
@@ -321,7 +355,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setModulesn(String modulesn) {
         this.modulesn = modulesn ;
-        this.modify("modulesn", modulesn);
+        this.modify("modulesn",modulesn);
     }
 
     /**
@@ -329,7 +363,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setPsmodulename(String psmodulename) {
         this.psmodulename = psmodulename ;
-        this.modify("psmodulename", psmodulename);
+        this.modify("psmodulename",psmodulename);
     }
 
     /**
@@ -337,7 +371,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setPssystemname(String pssystemname) {
         this.pssystemname = pssystemname ;
-        this.modify("pssystemname", pssystemname);
+        this.modify("pssystemname",pssystemname);
     }
 
     /**
@@ -345,7 +379,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setMemo(String memo) {
         this.memo = memo ;
-        this.modify("memo", memo);
+        this.modify("memo",memo);
     }
 
     /**
@@ -353,7 +387,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setUsertag2(String usertag2) {
         this.usertag2 = usertag2 ;
-        this.modify("usertag2", usertag2);
+        this.modify("usertag2",usertag2);
     }
 
     /**
@@ -361,7 +395,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setDefaultflag(Integer defaultflag) {
         this.defaultflag = defaultflag ;
-        this.modify("defaultflag", defaultflag);
+        this.modify("defaultflag",defaultflag);
     }
 
     /**
@@ -369,7 +403,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setUsercat(String usercat) {
         this.usercat = usercat ;
-        this.modify("usercat", usercat);
+        this.modify("usercat",usercat);
     }
 
     /**
@@ -377,7 +411,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setClspkgparams(String clspkgparams) {
         this.clspkgparams = clspkgparams ;
-        this.modify("clspkgparams", clspkgparams);
+        this.modify("clspkgparams",clspkgparams);
     }
 
     /**
@@ -385,7 +419,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setUsertag(String usertag) {
         this.usertag = usertag ;
-        this.modify("usertag", usertag);
+        this.modify("usertag",usertag);
     }
 
     /**
@@ -393,7 +427,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setCodename(String codename) {
         this.codename = codename ;
-        this.modify("codename", codename);
+        this.modify("codename",codename);
     }
 
     /**
@@ -401,7 +435,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setUserparams(String userparams) {
         this.userparams = userparams ;
-        this.modify("userparams", userparams);
+        this.modify("userparams",userparams);
     }
 
     /**
@@ -409,7 +443,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setModtag2(String modtag2) {
         this.modtag2 = modtag2 ;
-        this.modify("modtag2", modtag2);
+        this.modify("modtag2",modtag2);
     }
 
     /**
@@ -417,7 +451,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setModtag(String modtag) {
         this.modtag = modtag ;
-        this.modify("modtag", modtag);
+        this.modify("modtag",modtag);
     }
 
     /**
@@ -425,7 +459,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setServiceapiflag(Integer serviceapiflag) {
         this.serviceapiflag = serviceapiflag ;
-        this.modify("serviceapiflag", serviceapiflag);
+        this.modify("serviceapiflag",serviceapiflag);
     }
 
     /**
@@ -433,7 +467,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setUsertag3(String usertag3) {
         this.usertag3 = usertag3 ;
-        this.modify("usertag3", usertag3);
+        this.modify("usertag3",usertag3);
     }
 
     /**
@@ -441,7 +475,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setNoviewmode(Integer noviewmode) {
         this.noviewmode = noviewmode ;
-        this.modify("noviewmode", noviewmode);
+        this.modify("noviewmode",noviewmode);
     }
 
     /**
@@ -449,7 +483,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setPssystemid(String pssystemid) {
         this.pssystemid = pssystemid ;
-        this.modify("pssystemid", pssystemid);
+        this.modify("pssystemid",pssystemid);
     }
 
     /**
@@ -457,7 +491,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setUsertag4(String usertag4) {
         this.usertag4 = usertag4 ;
-        this.modify("usertag4", usertag4);
+        this.modify("usertag4",usertag4);
     }
 
     /**
@@ -465,7 +499,7 @@ public class PSModule extends EntityClient implements Serializable {
      */
     public void setSysreftype(String sysreftype) {
         this.sysreftype = sysreftype ;
-        this.modify("sysreftype", sysreftype);
+        this.modify("sysreftype",sysreftype);
     }
 
     /**
@@ -478,7 +512,7 @@ public class PSModule extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("psmoduleid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

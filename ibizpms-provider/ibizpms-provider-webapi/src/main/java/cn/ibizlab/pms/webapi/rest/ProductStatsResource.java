@@ -72,7 +72,7 @@ public class ProductStatsResource {
 		ProductStats domain  = productstatsMapping.toDomain(productstatsdto);
         domain .setId(productstats_id);
 		productstatsService.update(domain );
-		ProductStatsDTO dto = productstatsMapping.toDto(domain );
+		ProductStatsDTO dto = productstatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -135,8 +135,10 @@ public class ProductStatsResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductStats-Save-all')")
     @ApiOperation(value = "保存产品统计", tags = {"产品统计" },  notes = "保存产品统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productstats/save")
-    public ResponseEntity<Boolean> save(@RequestBody ProductStatsDTO productstatsdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(productstatsService.save(productstatsMapping.toDomain(productstatsdto)));
+    public ResponseEntity<ProductStatsDTO> save(@RequestBody ProductStatsDTO productstatsdto) {
+        ProductStats domain = productstatsMapping.toDomain(productstatsdto);
+        productstatsService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productstatsMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductStats-Save-all')")

@@ -66,6 +66,9 @@ public class PSSysServiceAPIFallback implements PSSysServiceAPIFeignClient {
     }
 
 
+    public Object saveEntity(PSSysServiceAPI et) {
+        return null;
+    }
     public Boolean save(PSSysServiceAPI et) {
         return false;
     }

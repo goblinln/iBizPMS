@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_im_chatuser", resultMap = "ImChatuserResultMap")
+@ApiModel("ImChatuser")
 public class ImChatuser extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * order
@@ -58,6 +62,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
+    @ApiModelProperty("order")
     private Integer order;
     /**
      * freeze
@@ -65,6 +70,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     @TableField(value = "`freeze`")
     @JSONField(name = "freeze")
     @JsonProperty("freeze")
+    @ApiModelProperty("freeze")
     private String freeze;
     /**
      * star
@@ -72,6 +78,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     @TableField(value = "`star`")
     @JSONField(name = "star")
     @JsonProperty("star")
+    @ApiModelProperty("star")
     private String star;
     /**
      * hide
@@ -79,6 +86,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     @TableField(value = "`hide`")
     @JSONField(name = "hide")
     @JsonProperty("hide")
+    @ApiModelProperty("hide")
     private String hide;
     /**
      * join
@@ -88,6 +96,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "join", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("join")
+    @ApiModelProperty("join")
     private Timestamp join;
     /**
      * user
@@ -96,6 +105,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     @TableField(value = "`user`")
     @JSONField(name = "user")
     @JsonProperty("user")
+    @ApiModelProperty("user")
     private Integer user;
     /**
      * mute
@@ -103,6 +113,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     @TableField(value = "`mute`")
     @JSONField(name = "mute")
     @JsonProperty("mute")
+    @ApiModelProperty("mute")
     private String mute;
     /**
      * cgid
@@ -110,6 +121,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     @TableField(value = "`cgid`")
     @JSONField(name = "cgid")
     @JsonProperty("cgid")
+    @ApiModelProperty("cgid")
     private String cgid;
     /**
      * quit
@@ -119,6 +131,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "quit", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("quit")
+    @ApiModelProperty("quit")
     private Timestamp quit;
     /**
      * category
@@ -126,6 +139,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     @TableField(value = "`category`")
     @JSONField(name = "category")
     @JsonProperty("category")
+    @ApiModelProperty("category")
     private String category;
 
 

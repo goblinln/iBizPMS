@@ -73,7 +73,7 @@ public class IbzTopResource {
 		IbzTop domain  = ibztopMapping.toDomain(ibztopdto);
         domain .setIbztopid(ibztop_id);
 		ibztopService.update(domain );
-		IbzTopDTO dto = ibztopMapping.toDto(domain );
+		IbzTopDTO dto = ibztopMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class IbzTopResource {
     @PreAuthorize("hasPermission(this.ibztopMapping.toDomain(#ibztopdto),'iBizPMS-IbzTop-Save')")
     @ApiOperation(value = "保存置顶", tags = {"置顶" },  notes = "保存置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzTopDTO ibztopdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibztopService.save(ibztopMapping.toDomain(ibztopdto)));
+    public ResponseEntity<IbzTopDTO> save(@RequestBody IbzTopDTO ibztopdto) {
+        IbzTop domain = ibztopMapping.toDomain(ibztopdto);
+        ibztopService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibztopMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibztopMapping.toDomain(#ibztopdtos),'iBizPMS-IbzTop-Save')")

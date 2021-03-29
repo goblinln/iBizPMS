@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_compile", resultMap = "CompileResultMap")
+@ApiModel("compile")
 public class Compile extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class Compile extends EntityMP implements Serializable {
     @TableField(value = "`queue`")
     @JSONField(name = "queue")
     @JsonProperty("queue")
+    @ApiModelProperty("queue")
     private Integer queue;
     /**
      * createdDate
@@ -57,6 +61,7 @@ public class Compile extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
+    @ApiModelProperty("createdDate")
     private Timestamp createddate;
     /**
      * atTime
@@ -64,6 +69,7 @@ public class Compile extends EntityMP implements Serializable {
     @TableField(value = "`attime`")
     @JSONField(name = "attime")
     @JsonProperty("attime")
+    @ApiModelProperty("atTime")
     private String attime;
     /**
      * updateDate
@@ -73,6 +79,7 @@ public class Compile extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("updateDate")
     private Timestamp updatedate;
     /**
      * id
@@ -81,6 +88,7 @@ public class Compile extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * tag
@@ -88,6 +96,7 @@ public class Compile extends EntityMP implements Serializable {
     @TableField(value = "`tag`")
     @JSONField(name = "tag")
     @JsonProperty("tag")
+    @ApiModelProperty("tag")
     private String tag;
     /**
      * testtask
@@ -95,6 +104,7 @@ public class Compile extends EntityMP implements Serializable {
     @TableField(value = "`testtask`")
     @JSONField(name = "testtask")
     @JsonProperty("testtask")
+    @ApiModelProperty("testtask")
     private Integer testtask;
     /**
      * job
@@ -102,6 +112,7 @@ public class Compile extends EntityMP implements Serializable {
     @TableField(value = "`job`")
     @JSONField(name = "job")
     @JsonProperty("job")
+    @ApiModelProperty("job")
     private Integer job;
     /**
      * name
@@ -109,6 +120,7 @@ public class Compile extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("name")
     private String name;
     /**
      * logs
@@ -116,6 +128,7 @@ public class Compile extends EntityMP implements Serializable {
     @TableField(value = "`logs`")
     @JSONField(name = "logs")
     @JsonProperty("logs")
+    @ApiModelProperty("logs")
     private String logs;
     /**
      * status
@@ -123,6 +136,7 @@ public class Compile extends EntityMP implements Serializable {
     @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
+    @ApiModelProperty("status")
     private String status;
     /**
      * 逻辑删除标志
@@ -132,6 +146,7 @@ public class Compile extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("逻辑删除标志")
     private String deleted;
     /**
      * createdBy
@@ -139,6 +154,7 @@ public class Compile extends EntityMP implements Serializable {
     @TableField(value = "`createdby`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
+    @ApiModelProperty("createdBy")
     private String createdby;
 
 

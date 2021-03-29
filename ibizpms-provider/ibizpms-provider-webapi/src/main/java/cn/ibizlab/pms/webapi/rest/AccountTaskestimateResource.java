@@ -72,7 +72,7 @@ public class AccountTaskestimateResource {
 		AccountTaskestimate domain  = accounttaskestimateMapping.toDomain(accounttaskestimatedto);
         domain .setId(accounttaskestimate_id);
 		accounttaskestimateService.update(domain );
-		AccountTaskestimateDTO dto = accounttaskestimateMapping.toDto(domain );
+		AccountTaskestimateDTO dto = accounttaskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class AccountTaskestimateResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-Save-all')")
     @ApiOperation(value = "保存用户工时统计", tags = {"用户工时统计" },  notes = "保存用户工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounttaskestimates/save")
-    public ResponseEntity<Boolean> save(@RequestBody AccountTaskestimateDTO accounttaskestimatedto) {
-        return ResponseEntity.status(HttpStatus.OK).body(accounttaskestimateService.save(accounttaskestimateMapping.toDomain(accounttaskestimatedto)));
+    public ResponseEntity<AccountTaskestimateDTO> save(@RequestBody AccountTaskestimateDTO accounttaskestimatedto) {
+        AccountTaskestimate domain = accounttaskestimateMapping.toDomain(accounttaskestimatedto);
+        accounttaskestimateService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(accounttaskestimateMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-Save-all')")

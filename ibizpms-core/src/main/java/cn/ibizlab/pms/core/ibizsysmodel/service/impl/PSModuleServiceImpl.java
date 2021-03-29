@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ibizsysmodel.client.PSModuleFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[系统模块] 服务对象接口实现
@@ -74,9 +75,8 @@ public class PSModuleServiceImpl implements IPSModuleService {
     @Override
     public boolean create(PSModule et) {
         PSModule rt = pSModuleFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
@@ -92,7 +92,7 @@ public class PSModuleServiceImpl implements IPSModuleService {
     }
 
     public void createBatch(List<PSModule> list){
-        pSModuleFeignClient.createBatch(list);
+        pSModuleFeignClient.createBatch(list) ;
     }
 
     public void createBatch(String devSlnSysId, List<PSModule> list){
@@ -101,10 +101,9 @@ public class PSModuleServiceImpl implements IPSModuleService {
 
     @Override
     public boolean update(PSModule et) {
-        PSModule rt = pSModuleFeignClient.update(et.getPsmoduleid(), et);
-        if (rt == null) {
+        PSModule rt = pSModuleFeignClient.update(et.getPsmoduleid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
@@ -120,8 +119,8 @@ public class PSModuleServiceImpl implements IPSModuleService {
         return true;
     }
 
-    public void updateBatch(List<PSModule> list) {
-        pSModuleFeignClient.updateBatch(list);
+    public void updateBatch(List<PSModule> list){
+        pSModuleFeignClient.updateBatch(list) ;
     }
 
     public void updateBatch(String devSlnSysId, List<PSModule> list){
@@ -130,7 +129,7 @@ public class PSModuleServiceImpl implements IPSModuleService {
 
     @Override
     public boolean remove(String psmoduleid) {
-        boolean result=pSModuleFeignClient.remove(psmoduleid);
+        boolean result=pSModuleFeignClient.remove(psmoduleid) ;
         return result;
     }
 
@@ -150,12 +149,12 @@ public class PSModuleServiceImpl implements IPSModuleService {
 
     @Override
     public PSModule get(String psmoduleid) {
-        PSModule et = pSModuleFeignClient.get(psmoduleid);
-        if (et == null) {
-            et = new PSModule();
+		PSModule et=pSModuleFeignClient.get(psmoduleid);
+        if(et==null){
+            et=new PSModule();
             et.setPsmoduleid(psmoduleid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -202,14 +201,25 @@ public class PSModuleServiceImpl implements IPSModuleService {
     @Override
     @Transactional
     public boolean save(PSModule et) {
-        if (et.getPsmoduleid() == null) {
-            et.setPsmoduleid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = pSModuleFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), PSModule.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!pSModuleFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
     @Override
     @Transactional
@@ -225,7 +235,7 @@ public class PSModuleServiceImpl implements IPSModuleService {
 
     @Override
     public void saveBatch(List<PSModule> list) {
-        pSModuleFeignClient.saveBatch(list);
+        pSModuleFeignClient.saveBatch(list) ;
     }
 
     @Override
@@ -251,8 +261,6 @@ public class PSModuleServiceImpl implements IPSModuleService {
         Page<PSModule> pSModules=getPSModuleFeignClient(devSlnSysId).searchDefault(context);
         return pSModules;
     }
-
-
 
     @Override
     @Transactional

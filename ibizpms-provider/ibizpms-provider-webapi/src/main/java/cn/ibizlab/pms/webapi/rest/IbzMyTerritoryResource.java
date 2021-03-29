@@ -72,7 +72,7 @@ public class IbzMyTerritoryResource {
 		IbzMyTerritory domain  = ibzmyterritoryMapping.toDomain(ibzmyterritorydto);
         domain .setId(ibzmyterritory_id);
 		ibzmyterritoryService.update(domain );
-		IbzMyTerritoryDTO dto = ibzmyterritoryMapping.toDto(domain );
+		IbzMyTerritoryDTO dto = ibzmyterritoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -154,8 +154,10 @@ public class IbzMyTerritoryResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzMyTerritory-Save-all')")
     @ApiOperation(value = "保存我的地盘", tags = {"我的地盘" },  notes = "保存我的地盘")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbzMyTerritoryDTO ibzmyterritorydto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritoryService.save(ibzmyterritoryMapping.toDomain(ibzmyterritorydto)));
+    public ResponseEntity<IbzMyTerritoryDTO> save(@RequestBody IbzMyTerritoryDTO ibzmyterritorydto) {
+        IbzMyTerritory domain = ibzmyterritoryMapping.toDomain(ibzmyterritorydto);
+        ibzmyterritoryService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritoryMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzMyTerritory-Save-all')")

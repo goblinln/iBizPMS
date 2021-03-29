@@ -58,7 +58,7 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Transactional
     public boolean create(IbizproProductMonthly et) {
         fillParentData(et);
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbizproproductmonthlyid()), et);
@@ -76,7 +76,7 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Transactional
     public boolean update(IbizproProductMonthly et) {
         fillParentData(et);
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_productmonthlyid", et.getIbizproproductmonthlyid()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_productmonthlyid", et.getIbizproproductmonthlyid()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getIbizproproductmonthlyid()), et);
@@ -94,7 +94,7 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
-        return result;
+        return result ;
     }
 
     @Override
@@ -107,7 +107,7 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Transactional
     public IbizproProductMonthly get(Long key) {
         IbizproProductMonthly et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new IbizproProductMonthly();
             et.setIbizproproductmonthlyid(key);
         }
@@ -132,7 +132,8 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean manualCreateMonthlyBatch(List<IbizproProductMonthly> etList) {
         for(IbizproProductMonthly et : etList) {
@@ -144,7 +145,7 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Override
     @Transactional
     public boolean save(IbizproProductMonthly et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -185,7 +186,7 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Override
     @Transactional
     public void saveBatch(List<IbizproProductMonthly> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<IbizproProductMonthly> create = new ArrayList<>();
         List<IbizproProductMonthly> update = new ArrayList<>();
         for (IbizproProductMonthly et : list) {
@@ -209,7 +210,8 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
         //自定义代码
         return et;
     }
-   @Override
+
+    @Override
     @Transactional
     public boolean statsProductMonthlyBatch(List<IbizproProductMonthly> etList) {
         for(IbizproProductMonthly et : etList) {
@@ -219,13 +221,13 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     }
 
 
-    @Override
+	@Override
     public List<IbizproProductMonthly> selectByProduct(Long id) {
         return baseMapper.selectByProduct(id);
     }
     @Override
     public void removeByProduct(Long id) {
-        this.remove(new QueryWrapper<IbizproProductMonthly>().eq("product", id));
+        this.remove(new QueryWrapper<IbizproProductMonthly>().eq("product",id));
     }
 
 
@@ -234,7 +236,7 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
      */
     @Override
     public Page<IbizproProductMonthly> searchDefault(IbizproProductMonthlySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproProductMonthly> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproProductMonthly> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbizproProductMonthly>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -246,12 +248,12 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
      */
     private void fillParentData(IbizproProductMonthly et){
         //实体关系[DER1N_IBIZPRO_PRODUCTMONTHLY_ZT_PRODUCT_PRODUCT]
-        if (!ObjectUtils.isEmpty(et.getProduct())) {
+        if(!ObjectUtils.isEmpty(et.getProduct())){
             cn.ibizlab.pms.core.zentao.domain.Product ztproduct=et.getZtproduct();
-            if (ObjectUtils.isEmpty(ztproduct)) {
+            if(ObjectUtils.isEmpty(ztproduct)){
                 cn.ibizlab.pms.core.zentao.domain.Product majorEntity=productService.get(et.getProduct());
                 et.setZtproduct(majorEntity);
-                ztproduct = majorEntity;
+                ztproduct=majorEntity;
             }
             et.setPo(ztproduct.getPo());
             et.setProductname(ztproduct.getName());
@@ -262,24 +264,24 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
@@ -295,20 +297,17 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
         List ids =new ArrayList();
         for(IbizproProductMonthly entity : entities){
             Serializable id=entity.getIbizproproductmonthlyid();
-            if (!ObjectUtils.isEmpty(id)) {
+            if(!ObjectUtils.isEmpty(id)){
                 ids.add(id);
             }
         }
-        if (ids.size() > 0) {
+        if(ids.size()>0) {
             return this.listByIds(ids);
         }
         else {
             return entities;
         }
     }
-
-
-
 
 
     public IIbizproProductMonthlyService getProxyService() {

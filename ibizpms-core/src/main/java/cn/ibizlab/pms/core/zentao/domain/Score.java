@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_score", resultMap = "ScoreResultMap")
+@ApiModel("score")
 public class Score extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class Score extends EntityMP implements Serializable {
     @TableField(value = "`method`")
     @JSONField(name = "method")
     @JsonProperty("method")
+    @ApiModelProperty("method")
     private String method;
     /**
      * score
@@ -57,6 +61,7 @@ public class Score extends EntityMP implements Serializable {
     @TableField(value = "`score`")
     @JSONField(name = "score")
     @JsonProperty("score")
+    @ApiModelProperty("score")
     private Integer score;
     /**
      * time
@@ -65,6 +70,7 @@ public class Score extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "time", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("time")
+    @ApiModelProperty("time")
     private Timestamp time;
     /**
      * account
@@ -72,6 +78,7 @@ public class Score extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("account")
     private String account;
     /**
      * before
@@ -80,6 +87,7 @@ public class Score extends EntityMP implements Serializable {
     @TableField(value = "`before`")
     @JSONField(name = "before")
     @JsonProperty("before")
+    @ApiModelProperty("before")
     private Integer before;
     /**
      * desc
@@ -87,6 +95,7 @@ public class Score extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("desc")
     private String desc;
     /**
      * id
@@ -95,6 +104,7 @@ public class Score extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * after
@@ -103,6 +113,7 @@ public class Score extends EntityMP implements Serializable {
     @TableField(value = "`after`")
     @JSONField(name = "after")
     @JsonProperty("after")
+    @ApiModelProperty("after")
     private Integer after;
     /**
      * module
@@ -110,6 +121,7 @@ public class Score extends EntityMP implements Serializable {
     @TableField(value = "`module`")
     @JSONField(name = "module")
     @JsonProperty("module")
+    @ApiModelProperty("module")
     private String module;
 
 

@@ -72,7 +72,7 @@ public class IBIZProKeywordResource {
 		IBIZProKeyword domain  = ibizprokeywordMapping.toDomain(ibizprokeyworddto);
         domain .setId(ibizprokeyword_id);
 		ibizprokeywordService.update(domain );
-		IBIZProKeywordDTO dto = ibizprokeywordMapping.toDto(domain );
+		IBIZProKeywordDTO dto = ibizprokeywordMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class IBIZProKeywordResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-Save-all')")
     @ApiOperation(value = "保存关键字", tags = {"关键字" },  notes = "保存关键字")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/save")
-    public ResponseEntity<Boolean> save(@RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordService.save(ibizprokeywordMapping.toDomain(ibizprokeyworddto)));
+    public ResponseEntity<IBIZProKeywordDTO> save(@RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
+        IBIZProKeyword domain = ibizprokeywordMapping.toDomain(ibizprokeyworddto);
+        ibizprokeywordService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBIZProKeyword-Save-all')")

@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_product", resultMap = "ProductResultMap")
+@ApiModel("产品")
 public class Product extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`orgid`")
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
+    @ApiModelProperty("组织标识")
     private String orgid;
     /**
      * 是否置顶
@@ -57,6 +61,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "istop")
     @JsonProperty("istop")
+    @ApiModelProperty("是否置顶")
     private Integer istop;
     /**
      * 备注
@@ -64,6 +69,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "comment")
     @JsonProperty("comment")
+    @ApiModelProperty("备注")
     private String comment;
     /**
      * 测试负责人
@@ -72,6 +78,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`qd`")
     @JSONField(name = "qd")
     @JsonProperty("qd")
+    @ApiModelProperty("测试负责人")
     private String qd;
     /**
      * 产品分类
@@ -79,6 +86,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`productclass`")
     @JSONField(name = "productclass")
     @JsonProperty("productclass")
+    @ApiModelProperty("产品分类")
     private String productclass;
     /**
      * 未确认Bug数
@@ -86,6 +94,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "unconfirmbugcnt")
     @JsonProperty("unconfirmbugcnt")
+    @ApiModelProperty("未确认Bug数")
     private Integer unconfirmbugcnt;
     /**
      * 访问控制
@@ -94,6 +103,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`acl`")
     @JSONField(name = "acl")
     @JsonProperty("acl")
+    @ApiModelProperty("访问控制")
     private String acl;
     /**
      * 产品名称
@@ -101,6 +111,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("产品名称")
     private String name;
     /**
      * 移动端图片
@@ -108,6 +119,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "mobimage")
     @JsonProperty("mobimage")
+    @ApiModelProperty("移动端图片")
     private String mobimage;
     /**
      * 测试单数
@@ -115,6 +127,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "testtaskcnt")
     @JsonProperty("testtaskcnt")
+    @ApiModelProperty("测试单数")
     private Integer testtaskcnt;
     /**
      * 套件数
@@ -122,6 +135,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "testsuitecnt")
     @JsonProperty("testsuitecnt")
+    @ApiModelProperty("套件数")
     private Integer testsuitecnt;
     /**
      * 计划总数
@@ -129,6 +143,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "productplancnt")
     @JsonProperty("productplancnt")
+    @ApiModelProperty("计划总数")
     private Integer productplancnt;
     /**
      * 编号
@@ -137,6 +152,7 @@ public class Product extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 已删除
@@ -146,6 +162,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("已删除")
     private String deleted;
     /**
      * 已关闭需求
@@ -153,6 +170,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "closedstorycnt")
     @JsonProperty("closedstorycnt")
+    @ApiModelProperty("已关闭需求")
     private Integer closedstorycnt;
     /**
      * 相关Bug数
@@ -160,6 +178,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "relatedbugcnt")
     @JsonProperty("relatedbugcnt")
+    @ApiModelProperty("相关Bug数")
     private Integer relatedbugcnt;
     /**
      * 分组白名单
@@ -168,6 +187,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`whitelist`")
     @JSONField(name = "whitelist")
     @JsonProperty("whitelist")
+    @ApiModelProperty("分组白名单")
     private String whitelist;
     /**
      * 部门标识
@@ -176,6 +196,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`mdeptid`")
     @JSONField(name = "mdeptid")
     @JsonProperty("mdeptid")
+    @ApiModelProperty("部门标识")
     private String mdeptid;
     /**
      * 发布总数
@@ -183,6 +204,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "releasecnt")
     @JsonProperty("releasecnt")
+    @ApiModelProperty("发布总数")
     private Integer releasecnt;
     /**
      * 发布负责人
@@ -191,6 +213,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`rd`")
     @JSONField(name = "rd")
     @JsonProperty("rd")
+    @ApiModelProperty("发布负责人")
     private String rd;
     /**
      * 产品负责人（选择）
@@ -198,6 +221,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "popk")
     @JsonProperty("popk")
+    @ApiModelProperty("产品负责人（选择）")
     private String popk;
     /**
      * 未关闭Bug数
@@ -205,6 +229,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "notclosedbugcnt")
     @JsonProperty("notclosedbugcnt")
+    @ApiModelProperty("未关闭Bug数")
     private Integer notclosedbugcnt;
     /**
      * 支持产品汇报
@@ -212,6 +237,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`supproreport`")
     @JSONField(name = "supproreport")
     @JsonProperty("supproreport")
+    @ApiModelProperty("支持产品汇报")
     private String supproreport;
     /**
      * 排序
@@ -220,6 +246,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
+    @ApiModelProperty("排序")
     private Integer order;
     /**
      * 产品类型
@@ -228,6 +255,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("产品类型")
     private String type;
     /**
      * 产品负责人
@@ -236,6 +264,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`po`")
     @JSONField(name = "po")
     @JsonProperty("po")
+    @ApiModelProperty("产品负责人")
     private String po;
     /**
      * 测试负责人（选择）
@@ -243,6 +272,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "qdpk")
     @JsonProperty("qdpk")
+    @ApiModelProperty("测试负责人（选择）")
     private String qdpk;
     /**
      * 产品描述	
@@ -251,6 +281,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
+    @ApiModelProperty("产品描述	")
     private String desc;
     /**
      * 状态
@@ -259,6 +290,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
+    @ApiModelProperty("状态")
     private String status;
     /**
      * 已变更需求
@@ -266,6 +298,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "changedstorycnt")
     @JsonProperty("changedstorycnt")
+    @ApiModelProperty("已变更需求")
     private Integer changedstorycnt;
     /**
      * 未解决Bug数
@@ -273,6 +306,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "activebugcnt")
     @JsonProperty("activebugcnt")
+    @ApiModelProperty("未解决Bug数")
     private Integer activebugcnt;
     /**
      * 由谁创建
@@ -281,6 +315,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`createdby`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
+    @ApiModelProperty("由谁创建")
     private String createdby;
     /**
      * 发布负责人（选择）
@@ -288,6 +323,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "rdpk")
     @JsonProperty("rdpk")
+    @ApiModelProperty("发布负责人（选择）")
     private String rdpk;
     /**
      * 当前系统版本
@@ -296,6 +332,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`createdversion`")
     @JSONField(name = "createdversion")
     @JsonProperty("createdversion")
+    @ApiModelProperty("当前系统版本")
     private String createdversion;
     /**
      * 草稿需求
@@ -303,6 +340,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "draftstorycnt")
     @JsonProperty("draftstorycnt")
+    @ApiModelProperty("草稿需求")
     private Integer draftstorycnt;
     /**
      * 文档数
@@ -310,6 +348,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "doccnt")
     @JsonProperty("doccnt")
+    @ApiModelProperty("文档数")
     private Integer doccnt;
     /**
      * 用例数
@@ -317,6 +356,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "casecnt")
     @JsonProperty("casecnt")
+    @ApiModelProperty("用例数")
     private Integer casecnt;
     /**
      * 关联项目数
@@ -324,6 +364,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "relatedprojects")
     @JsonProperty("relatedprojects")
+    @ApiModelProperty("关联项目数")
     private Integer relatedprojects;
     /**
      * IBIZ标识
@@ -332,6 +373,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`ibiz_id`")
     @JSONField(name = "ibiz_id")
     @JsonProperty("ibiz_id")
+    @ApiModelProperty("IBIZ标识")
     private String ibizId;
     /**
      * 子状态
@@ -339,6 +381,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`substatus`")
     @JSONField(name = "substatus")
     @JsonProperty("substatus")
+    @ApiModelProperty("子状态")
     private String substatus;
     /**
      * 产品代号
@@ -346,6 +389,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`code`")
     @JSONField(name = "code")
     @JsonProperty("code")
+    @ApiModelProperty("产品代号")
     private String code;
     /**
      * 属性
@@ -353,6 +397,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "srfcount")
     @JsonProperty("srfcount")
+    @ApiModelProperty("属性")
     private Integer srfcount;
     /**
      * 排序
@@ -360,6 +405,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "order1")
     @JsonProperty("order1")
+    @ApiModelProperty("排序")
     private Integer order1;
     /**
      * BUILD数
@@ -367,6 +413,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "buildcnt")
     @JsonProperty("buildcnt")
+    @ApiModelProperty("BUILD数")
     private Integer buildcnt;
     /**
      * 创建日期
@@ -376,6 +423,7 @@ public class Product extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
+    @ApiModelProperty("创建日期")
     private Timestamp createddate;
     /**
      * 消息通知用户
@@ -383,6 +431,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "noticeusers")
     @JsonProperty("noticeusers")
+    @ApiModelProperty("消息通知用户")
     private String noticeusers;
     /**
      * 激活需求数
@@ -390,6 +439,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "activestorycnt")
     @JsonProperty("activestorycnt")
+    @ApiModelProperty("激活需求数")
     private Integer activestorycnt;
     /**
      * 产品线
@@ -397,6 +447,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "linename")
     @JsonProperty("linename")
+    @ApiModelProperty("产品线")
     private String linename;
     /**
      * 产品线
@@ -405,6 +456,7 @@ public class Product extends EntityMP implements Serializable {
     @TableField(value = "`line`")
     @JSONField(name = "line")
     @JsonProperty("line")
+    @ApiModelProperty("产品线")
     private Long line;
 
     /**

@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ibizplugin.client.IBIZProTagFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[标签] 服务对象接口实现
@@ -53,39 +54,37 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
     @Override
     public boolean create(IBIZProTag et) {
         IBIZProTag rt = iBIZProTagFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<IBIZProTag> list){
-        iBIZProTagFeignClient.createBatch(list);
+        iBIZProTagFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(IBIZProTag et) {
-        IBIZProTag rt = iBIZProTagFeignClient.update(et.getId(), et);
-        if (rt == null) {
+        IBIZProTag rt = iBIZProTagFeignClient.update(et.getId(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<IBIZProTag> list) {
-        iBIZProTagFeignClient.updateBatch(list);
+    public void updateBatch(List<IBIZProTag> list){
+        iBIZProTagFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String id) {
-        boolean result=iBIZProTagFeignClient.remove(id);
+        boolean result=iBIZProTagFeignClient.remove(id) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
 
     @Override
     public IBIZProTag get(String id) {
-        IBIZProTag et = iBIZProTagFeignClient.get(id);
-        if (et == null) {
-            et = new IBIZProTag();
+		IBIZProTag et=iBIZProTagFeignClient.get(id);
+        if(et==null){
+            et=new IBIZProTag();
             et.setId(id);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -124,19 +123,30 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
     @Override
     @Transactional
     public boolean save(IBIZProTag et) {
-        if (et.getId() == null) {
-            et.setId((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = iBIZProTagFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), IBIZProTag.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!iBIZProTagFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<IBIZProTag> list) {
-        iBIZProTagFeignClient.saveBatch(list);
+        iBIZProTagFeignClient.saveBatch(list) ;
     }
 
 
@@ -152,8 +162,6 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
         Page<IBIZProTag> iBIZProTags=iBIZProTagFeignClient.searchDefault(context);
         return iBIZProTags;
     }
-
-
 
 
     @Override

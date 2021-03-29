@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_jenkins", resultMap = "JenkinsResultMap")
+@ApiModel("jenkins")
 public class Jenkins extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class Jenkins extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("name")
     private String name;
     /**
      * password
@@ -56,6 +60,7 @@ public class Jenkins extends EntityMP implements Serializable {
     @TableField(value = "`password`")
     @JSONField(name = "password")
     @JsonProperty("password")
+    @ApiModelProperty("password")
     private String password;
     /**
      * 逻辑删除标志
@@ -65,6 +70,7 @@ public class Jenkins extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("逻辑删除标志")
     private String deleted;
     /**
      * account
@@ -72,6 +78,7 @@ public class Jenkins extends EntityMP implements Serializable {
     @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
+    @ApiModelProperty("account")
     private String account;
     /**
      * url
@@ -79,6 +86,7 @@ public class Jenkins extends EntityMP implements Serializable {
     @TableField(value = "`url`")
     @JSONField(name = "url")
     @JsonProperty("url")
+    @ApiModelProperty("url")
     private String url;
     /**
      * editedDate
@@ -87,6 +95,7 @@ public class Jenkins extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "editeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("editeddate")
+    @ApiModelProperty("editedDate")
     private Timestamp editeddate;
     /**
      * token
@@ -94,6 +103,7 @@ public class Jenkins extends EntityMP implements Serializable {
     @TableField(value = "`token`")
     @JSONField(name = "token")
     @JsonProperty("token")
+    @ApiModelProperty("token")
     private String token;
     /**
      * createdBy
@@ -101,6 +111,7 @@ public class Jenkins extends EntityMP implements Serializable {
     @TableField(value = "`createdby`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
+    @ApiModelProperty("createdBy")
     private String createdby;
     /**
      * editedBy
@@ -108,6 +119,7 @@ public class Jenkins extends EntityMP implements Serializable {
     @TableField(value = "`editedby`")
     @JSONField(name = "editedby")
     @JsonProperty("editedby")
+    @ApiModelProperty("editedBy")
     private String editedby;
     /**
      * createdDate
@@ -116,6 +128,7 @@ public class Jenkins extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
+    @ApiModelProperty("createdDate")
     private Timestamp createddate;
     /**
      * id
@@ -124,6 +137,7 @@ public class Jenkins extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
 
 

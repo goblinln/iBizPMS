@@ -95,7 +95,7 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
     @Transactional
     public TestReport get(Long key) {
         TestReport et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new TestReport();
             et.setId(key);
         }
@@ -117,55 +117,55 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
     @Override
     @Transactional
     public TestReport getInfoTaskOvByTime(TestReport et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public TestReport getInfoTestTask(TestReport et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public TestReport getInfoTestTaskOvProject(TestReport et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public TestReport getInfoTestTaskProject(TestReport et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public TestReport getInfoTestTaskR(TestReport et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public TestReport getInfoTestTaskS(TestReport et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public TestReport getTestReportBasicInfo(TestReport et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public TestReport getTestReportProject(TestReport et) {
-         return et;
+         return et ;
     }
 
     @Override
     @Transactional
     public boolean save(TestReport et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -206,7 +206,7 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
     @Override
     @Transactional
     public void saveBatch(List<TestReport> list) {
-        list.forEach(item -> fillParentData(item));
+        list.forEach(item->fillParentData(item));
         List<TestReport> create = new ArrayList<>();
         List<TestReport> update = new ArrayList<>();
         for (TestReport et : list) {
@@ -225,22 +225,22 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
     }
 
 
-    @Override
+	@Override
     public List<TestReport> selectByProduct(Long id) {
         return baseMapper.selectByProduct(id);
     }
     @Override
     public void removeByProduct(Long id) {
-        this.remove(new QueryWrapper<TestReport>().eq("product", id));
+        this.remove(new QueryWrapper<TestReport>().eq("product",id));
     }
 
-    @Override
+	@Override
     public List<TestReport> selectByProject(Long id) {
         return baseMapper.selectByProject(id);
     }
     @Override
     public void removeByProject(Long id) {
-        this.remove(new QueryWrapper<TestReport>().eq("project", id));
+        this.remove(new QueryWrapper<TestReport>().eq("project",id));
     }
 
 
@@ -249,7 +249,7 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
      */
     @Override
     public Page<TestReport> searchDefault(TestReportSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestReport> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestReport> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<TestReport>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -261,22 +261,22 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
      */
     private void fillParentData(TestReport et){
         //实体关系[DER1N_ZT_TESTREPORT_ZT_PRODUCT_PRODUCT]
-        if (!ObjectUtils.isEmpty(et.getProduct())) {
+        if(!ObjectUtils.isEmpty(et.getProduct())){
             cn.ibizlab.pms.core.zentao.domain.Product ztproduct=et.getZtproduct();
-            if (ObjectUtils.isEmpty(ztproduct)) {
+            if(ObjectUtils.isEmpty(ztproduct)){
                 cn.ibizlab.pms.core.zentao.domain.Product majorEntity=productService.get(et.getProduct());
                 et.setZtproduct(majorEntity);
-                ztproduct = majorEntity;
+                ztproduct=majorEntity;
             }
             et.setProductname(ztproduct.getName());
         }
         //实体关系[DER1N_ZT_TESTREPORT_ZT_PROJECT_PROJECT]
-        if (!ObjectUtils.isEmpty(et.getProject())) {
+        if(!ObjectUtils.isEmpty(et.getProject())){
             cn.ibizlab.pms.core.zentao.domain.Project ztproject=et.getZtproject();
-            if (ObjectUtils.isEmpty(ztproject)) {
+            if(ObjectUtils.isEmpty(ztproject)){
                 cn.ibizlab.pms.core.zentao.domain.Project majorEntity=projectService.get(et.getProject());
                 et.setZtproject(majorEntity);
-                ztproject = majorEntity;
+                ztproject=majorEntity;
             }
             et.setProjectname(ztproject.getName());
         }
@@ -286,31 +286,28 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [系统数据库] 对象
  */
 @Data
+@ApiModel("系统数据库")
 public class PSSystemDBCfg extends EntityClient implements Serializable {
     @Override
     public void modify(String field, Object val) {
@@ -43,6 +46,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "tabspace2")
     @JsonProperty("tabspace2")
+    @ApiModelProperty("表空间2名称")
     private String tabspace2;
 
     /**
@@ -50,6 +54,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "resstate")
     @JsonProperty("resstate")
+    @ApiModelProperty("资源状态")
     private Integer resstate;
 
     /**
@@ -57,6 +62,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "nullvalorder")
     @JsonProperty("nullvalorder")
+    @ApiModelProperty("空值排序")
     private String nullvalorder;
 
     /**
@@ -64,6 +70,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag3")
     @JsonProperty("usertag3")
+    @ApiModelProperty("用户标记3")
     private String usertag3;
 
     /**
@@ -71,6 +78,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "tabspace")
     @JsonProperty("tabspace")
+    @ApiModelProperty("默认表空间名称")
     private String tabspace;
 
     /**
@@ -79,6 +87,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "defaultflag")
     @JsonProperty("defaultflag")
+    @ApiModelProperty("默认数据源")
     private Integer defaultflag;
 
     /**
@@ -86,6 +95,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "memo")
     @JsonProperty("memo")
+    @ApiModelProperty("备注")
     private String memo;
 
     /**
@@ -93,6 +103,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "nodbinstmode")
     @JsonProperty("nodbinstmode")
+    @ApiModelProperty("无数据库模式")
     private Integer nodbinstmode;
 
     /**
@@ -100,6 +111,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag4")
     @JsonProperty("usertag4")
+    @ApiModelProperty("用户标记4")
     private String usertag4;
 
     /**
@@ -107,6 +119,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssystemdbcfgname")
     @JsonProperty("pssystemdbcfgname")
+    @ApiModelProperty("系统数据库名称")
     private String pssystemdbcfgname;
 
     /**
@@ -114,6 +127,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssystemname")
     @JsonProperty("pssystemname")
+    @ApiModelProperty("系统")
     private String pssystemname;
 
     /**
@@ -121,6 +135,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "resinfo")
     @JsonProperty("resinfo")
+    @ApiModelProperty("资源信息")
     private String resinfo;
 
     /**
@@ -128,6 +143,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag")
     @JsonProperty("usertag")
+    @ApiModelProperty("用户标记")
     private String usertag;
 
     /**
@@ -135,6 +151,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "userparams")
     @JsonProperty("userparams")
+    @ApiModelProperty("自定义参数")
     private String userparams;
 
     /**
@@ -143,6 +160,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "resreadytime" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("resreadytime")
+    @ApiModelProperty("资源就绪时间")
     private Timestamp resreadytime;
 
     /**
@@ -150,6 +168,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "pubfkeyflag")
     @JsonProperty("pubfkeyflag")
+    @ApiModelProperty("发布外键")
     private Integer pubfkeyflag;
 
     /**
@@ -158,6 +177,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
     @DEField(isKeyField = true)
     @JSONField(name = "pssystemdbcfgid")
     @JsonProperty("pssystemdbcfgid")
+    @ApiModelProperty("系统数据库标识")
     private String pssystemdbcfgid;
 
     /**
@@ -165,6 +185,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag2")
     @JsonProperty("usertag2")
+    @ApiModelProperty("用户标记2")
     private String usertag2;
 
     /**
@@ -173,6 +194,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
 
     /**
@@ -180,6 +202,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "pubcommentflag")
     @JsonProperty("pubcommentflag")
+    @ApiModelProperty("发布模型注释")
     private Integer pubcommentflag;
 
     /**
@@ -189,6 +212,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
 
     /**
@@ -196,6 +220,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "tabspace3")
     @JsonProperty("tabspace3")
+    @ApiModelProperty("表空间3名称")
     private String tabspace3;
 
     /**
@@ -204,6 +229,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "enablewebtool")
     @JsonProperty("enablewebtool")
+    @ApiModelProperty("支持Web管理")
     private Integer enablewebtool;
 
     /**
@@ -211,6 +237,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "pubdbmodelflag")
     @JsonProperty("pubdbmodelflag")
+    @ApiModelProperty("发布数据库模型")
     private Integer pubdbmodelflag;
 
     /**
@@ -218,6 +245,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "objnamecase")
     @JsonProperty("objnamecase")
+    @ApiModelProperty("对象名称转换")
     private String objnamecase;
 
     /**
@@ -225,6 +253,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "pubindexflag")
     @JsonProperty("pubindexflag")
+    @ApiModelProperty("发布索引")
     private Integer pubindexflag;
 
     /**
@@ -232,6 +261,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "appendschema")
     @JsonProperty("appendschema")
+    @ApiModelProperty("附加模式名称")
     private Integer appendschema;
 
     /**
@@ -239,6 +269,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssystemid")
     @JsonProperty("pssystemid")
+    @ApiModelProperty("系统")
     private String pssystemid;
 
     /**
@@ -246,6 +277,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "dbschemaname")
     @JsonProperty("dbschemaname")
+    @ApiModelProperty("数据库模式名称")
     private String dbschemaname;
 
     /**
@@ -253,6 +285,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "tabspace4")
     @JsonProperty("tabspace4")
+    @ApiModelProperty("表空间4名称")
     private String tabspace4;
 
     /**
@@ -260,6 +293,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "usercat")
     @JsonProperty("usercat")
+    @ApiModelProperty("用户分类")
     private String usercat;
 
     /**
@@ -268,6 +302,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
 
     /**
@@ -277,6 +312,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
 
     /**
@@ -284,6 +320,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     @JSONField(name = "pubviewflag")
     @JsonProperty("pubviewflag")
+    @ApiModelProperty("发布视图")
     private Integer pubviewflag;
 
 
@@ -295,7 +332,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setTabspace2(String tabspace2) {
         this.tabspace2 = tabspace2 ;
-        this.modify("tabspace2", tabspace2);
+        this.modify("tabspace2",tabspace2);
     }
 
     /**
@@ -303,7 +340,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setResstate(Integer resstate) {
         this.resstate = resstate ;
-        this.modify("resstate", resstate);
+        this.modify("resstate",resstate);
     }
 
     /**
@@ -311,7 +348,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setNullvalorder(String nullvalorder) {
         this.nullvalorder = nullvalorder ;
-        this.modify("nullvalorder", nullvalorder);
+        this.modify("nullvalorder",nullvalorder);
     }
 
     /**
@@ -319,7 +356,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setUsertag3(String usertag3) {
         this.usertag3 = usertag3 ;
-        this.modify("usertag3", usertag3);
+        this.modify("usertag3",usertag3);
     }
 
     /**
@@ -327,7 +364,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setTabspace(String tabspace) {
         this.tabspace = tabspace ;
-        this.modify("tabspace", tabspace);
+        this.modify("tabspace",tabspace);
     }
 
     /**
@@ -335,7 +372,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setDefaultflag(Integer defaultflag) {
         this.defaultflag = defaultflag ;
-        this.modify("defaultflag", defaultflag);
+        this.modify("defaultflag",defaultflag);
     }
 
     /**
@@ -343,7 +380,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setMemo(String memo) {
         this.memo = memo ;
-        this.modify("memo", memo);
+        this.modify("memo",memo);
     }
 
     /**
@@ -351,7 +388,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setNodbinstmode(Integer nodbinstmode) {
         this.nodbinstmode = nodbinstmode ;
-        this.modify("nodbinstmode", nodbinstmode);
+        this.modify("nodbinstmode",nodbinstmode);
     }
 
     /**
@@ -359,7 +396,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setUsertag4(String usertag4) {
         this.usertag4 = usertag4 ;
-        this.modify("usertag4", usertag4);
+        this.modify("usertag4",usertag4);
     }
 
     /**
@@ -367,7 +404,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setPssystemdbcfgname(String pssystemdbcfgname) {
         this.pssystemdbcfgname = pssystemdbcfgname ;
-        this.modify("pssystemdbcfgname", pssystemdbcfgname);
+        this.modify("pssystemdbcfgname",pssystemdbcfgname);
     }
 
     /**
@@ -375,7 +412,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setPssystemname(String pssystemname) {
         this.pssystemname = pssystemname ;
-        this.modify("pssystemname", pssystemname);
+        this.modify("pssystemname",pssystemname);
     }
 
     /**
@@ -383,7 +420,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setResinfo(String resinfo) {
         this.resinfo = resinfo ;
-        this.modify("resinfo", resinfo);
+        this.modify("resinfo",resinfo);
     }
 
     /**
@@ -391,7 +428,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setUsertag(String usertag) {
         this.usertag = usertag ;
-        this.modify("usertag", usertag);
+        this.modify("usertag",usertag);
     }
 
     /**
@@ -399,7 +436,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setUserparams(String userparams) {
         this.userparams = userparams ;
-        this.modify("userparams", userparams);
+        this.modify("userparams",userparams);
     }
 
     /**
@@ -407,7 +444,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setResreadytime(Timestamp resreadytime) {
         this.resreadytime = resreadytime ;
-        this.modify("resreadytime", resreadytime);
+        this.modify("resreadytime",resreadytime);
     }
 
     /**
@@ -425,7 +462,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setPubfkeyflag(Integer pubfkeyflag) {
         this.pubfkeyflag = pubfkeyflag ;
-        this.modify("pubfkeyflag", pubfkeyflag);
+        this.modify("pubfkeyflag",pubfkeyflag);
     }
 
     /**
@@ -433,7 +470,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setUsertag2(String usertag2) {
         this.usertag2 = usertag2 ;
-        this.modify("usertag2", usertag2);
+        this.modify("usertag2",usertag2);
     }
 
     /**
@@ -441,7 +478,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setPubcommentflag(Integer pubcommentflag) {
         this.pubcommentflag = pubcommentflag ;
-        this.modify("pubcommentflag", pubcommentflag);
+        this.modify("pubcommentflag",pubcommentflag);
     }
 
     /**
@@ -449,7 +486,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setTabspace3(String tabspace3) {
         this.tabspace3 = tabspace3 ;
-        this.modify("tabspace3", tabspace3);
+        this.modify("tabspace3",tabspace3);
     }
 
     /**
@@ -457,7 +494,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setEnablewebtool(Integer enablewebtool) {
         this.enablewebtool = enablewebtool ;
-        this.modify("enablewebtool", enablewebtool);
+        this.modify("enablewebtool",enablewebtool);
     }
 
     /**
@@ -465,7 +502,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setPubdbmodelflag(Integer pubdbmodelflag) {
         this.pubdbmodelflag = pubdbmodelflag ;
-        this.modify("pubdbmodelflag", pubdbmodelflag);
+        this.modify("pubdbmodelflag",pubdbmodelflag);
     }
 
     /**
@@ -473,7 +510,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setObjnamecase(String objnamecase) {
         this.objnamecase = objnamecase ;
-        this.modify("objnamecase", objnamecase);
+        this.modify("objnamecase",objnamecase);
     }
 
     /**
@@ -481,7 +518,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setPubindexflag(Integer pubindexflag) {
         this.pubindexflag = pubindexflag ;
-        this.modify("pubindexflag", pubindexflag);
+        this.modify("pubindexflag",pubindexflag);
     }
 
     /**
@@ -489,7 +526,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setAppendschema(Integer appendschema) {
         this.appendschema = appendschema ;
-        this.modify("appendschema", appendschema);
+        this.modify("appendschema",appendschema);
     }
 
     /**
@@ -497,7 +534,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setPssystemid(String pssystemid) {
         this.pssystemid = pssystemid ;
-        this.modify("pssystemid", pssystemid);
+        this.modify("pssystemid",pssystemid);
     }
 
     /**
@@ -505,7 +542,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setDbschemaname(String dbschemaname) {
         this.dbschemaname = dbschemaname ;
-        this.modify("dbschemaname", dbschemaname);
+        this.modify("dbschemaname",dbschemaname);
     }
 
     /**
@@ -513,7 +550,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setTabspace4(String tabspace4) {
         this.tabspace4 = tabspace4 ;
-        this.modify("tabspace4", tabspace4);
+        this.modify("tabspace4",tabspace4);
     }
 
     /**
@@ -521,7 +558,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setUsercat(String usercat) {
         this.usercat = usercat ;
-        this.modify("usercat", usercat);
+        this.modify("usercat",usercat);
     }
 
     /**
@@ -529,7 +566,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
      */
     public void setPubviewflag(Integer pubviewflag) {
         this.pubviewflag = pubviewflag ;
-        this.modify("pubviewflag", pubviewflag);
+        this.modify("pubviewflag",pubviewflag);
     }
 
     /**
@@ -542,7 +579,7 @@ public class PSSystemDBCfg extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("pssystemdbcfgid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

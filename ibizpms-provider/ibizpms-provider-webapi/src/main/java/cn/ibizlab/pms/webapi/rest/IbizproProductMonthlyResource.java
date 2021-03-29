@@ -73,7 +73,7 @@ public class IbizproProductMonthlyResource {
 		IbizproProductMonthly domain  = ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydto);
         domain .setIbizproproductmonthlyid(ibizproproductmonthly_id);
 		ibizproproductmonthlyService.update(domain );
-		IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain );
+		IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -144,8 +144,10 @@ public class IbizproProductMonthlyResource {
     @PreAuthorize("hasPermission(this.ibizproproductmonthlyMapping.toDomain(#ibizproproductmonthlydto),'iBizPMS-IbizproProductMonthly-Save')")
     @ApiOperation(value = "保存产品月报", tags = {"产品月报" },  notes = "保存产品月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/save")
-    public ResponseEntity<Boolean> save(@RequestBody IbizproProductMonthlyDTO ibizproproductmonthlydto) {
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyService.save(ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydto)));
+    public ResponseEntity<IbizproProductMonthlyDTO> save(@RequestBody IbizproProductMonthlyDTO ibizproproductmonthlydto) {
+        IbizproProductMonthly domain = ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydto);
+        ibizproproductmonthlyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.ibizproproductmonthlyMapping.toDomain(#ibizproproductmonthlydtos),'iBizPMS-IbizproProductMonthly-Save')")

@@ -72,7 +72,7 @@ public class FileResource {
 		File domain  = fileMapping.toDomain(filedto);
         domain .setId(file_id);
 		fileService.update(domain );
-		FileDTO dto = fileMapping.toDto(domain );
+		FileDTO dto = fileMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class FileResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-Save-all')")
     @ApiOperation(value = "保存附件", tags = {"附件" },  notes = "保存附件")
 	@RequestMapping(method = RequestMethod.POST, value = "/files/save")
-    public ResponseEntity<Boolean> save(@RequestBody FileDTO filedto) {
-        return ResponseEntity.status(HttpStatus.OK).body(fileService.save(fileMapping.toDomain(filedto)));
+    public ResponseEntity<FileDTO> save(@RequestBody FileDTO filedto) {
+        File domain = fileMapping.toDomain(filedto);
+        fileService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(fileMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-Save-all')")

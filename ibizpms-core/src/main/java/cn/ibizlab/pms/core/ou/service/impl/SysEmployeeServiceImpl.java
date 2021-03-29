@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ou.client.SysEmployeeFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[人员] 服务对象接口实现
@@ -53,39 +54,37 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
     @Override
     public boolean create(SysEmployee et) {
         SysEmployee rt = sysEmployeeFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<SysEmployee> list){
-        sysEmployeeFeignClient.createBatch(list);
+        sysEmployeeFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(SysEmployee et) {
-        SysEmployee rt = sysEmployeeFeignClient.update(et.getUserid(), et);
-        if (rt == null) {
+        SysEmployee rt = sysEmployeeFeignClient.update(et.getUserid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<SysEmployee> list) {
-        sysEmployeeFeignClient.updateBatch(list);
+    public void updateBatch(List<SysEmployee> list){
+        sysEmployeeFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String userid) {
-        boolean result=sysEmployeeFeignClient.remove(userid);
+        boolean result=sysEmployeeFeignClient.remove(userid) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
 
     @Override
     public SysEmployee get(String userid) {
-        SysEmployee et = sysEmployeeFeignClient.get(userid);
-        if (et == null) {
-            et = new SysEmployee();
+		SysEmployee et=sysEmployeeFeignClient.get(userid);
+        if(et==null){
+            et=new SysEmployee();
             et.setUserid(userid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -124,25 +123,36 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
     @Override
     @Transactional
     public boolean save(SysEmployee et) {
-        if (et.getUserid() == null) {
-            et.setUserid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = sysEmployeeFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), SysEmployee.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!sysEmployeeFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<SysEmployee> list) {
-        sysEmployeeFeignClient.saveBatch(list);
+        sysEmployeeFeignClient.saveBatch(list) ;
     }
 
 
 
 
-    @Override
+	@Override
     public List<SysEmployee> selectByMdeptid(String deptid) {
         SysEmployeeSearchContext context=new SysEmployeeSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -163,16 +173,15 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
     @Override
     public void removeByMdeptid(String deptid) {
         Set<String> delIds=new HashSet<String>();
-        for (SysEmployee before:selectByMdeptid(deptid)) {
+        for(SysEmployee before:selectByMdeptid(deptid)){
             delIds.add(before.getUserid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
 
-    @Override
+	@Override
     public List<SysEmployee> selectByOrgid(String orgid) {
         SysEmployeeSearchContext context=new SysEmployeeSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -193,12 +202,11 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
     @Override
     public void removeByOrgid(String orgid) {
         Set<String> delIds=new HashSet<String>();
-        for (SysEmployee before:selectByOrgid(orgid)) {
+        for(SysEmployee before:selectByOrgid(orgid)){
             delIds.add(before.getUserid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
 
@@ -332,8 +340,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         Page<SysEmployee> sysEmployees=sysEmployeeFeignClient.searchTaskTeam(context);
         return sysEmployees;
     }
-
-
 
 
     @Override

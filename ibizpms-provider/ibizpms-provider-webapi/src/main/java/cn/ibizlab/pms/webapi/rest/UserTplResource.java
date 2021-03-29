@@ -72,7 +72,7 @@ public class UserTplResource {
 		UserTpl domain  = usertplMapping.toDomain(usertpldto);
         domain .setId(usertpl_id);
 		usertplService.update(domain );
-		UserTplDTO dto = usertplMapping.toDto(domain );
+		UserTplDTO dto = usertplMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -124,8 +124,10 @@ public class UserTplResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserTpl-Save-all')")
     @ApiOperation(value = "保存用户模板", tags = {"用户模板" },  notes = "保存用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/save")
-    public ResponseEntity<Boolean> save(@RequestBody UserTplDTO usertpldto) {
-        return ResponseEntity.status(HttpStatus.OK).body(usertplService.save(usertplMapping.toDomain(usertpldto)));
+    public ResponseEntity<UserTplDTO> save(@RequestBody UserTplDTO usertpldto) {
+        UserTpl domain = usertplMapping.toDomain(usertpldto);
+        usertplService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserTpl-Save-all')")

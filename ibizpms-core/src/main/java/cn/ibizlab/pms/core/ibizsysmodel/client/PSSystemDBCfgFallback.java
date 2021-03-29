@@ -66,6 +66,9 @@ public class PSSystemDBCfgFallback implements PSSystemDBCfgFeignClient {
     }
 
 
+    public Object saveEntity(PSSystemDBCfg et) {
+        return null;
+    }
     public Boolean save(PSSystemDBCfg et) {
         return false;
     }

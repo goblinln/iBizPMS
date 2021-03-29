@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "ZT_TASK", resultMap = "EmpLoyeeloadResultMap")
+@ApiModel("员工负载表")
 public class EmpLoyeeload extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("任务名")
     private String name;
     /**
      * 任务数
@@ -56,6 +60,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "taskcnt")
     @JsonProperty("taskcnt")
+    @ApiModelProperty("任务数")
     private Integer taskcnt;
     /**
      * 部门
@@ -63,6 +68,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "dept")
     @JsonProperty("dept")
+    @ApiModelProperty("部门")
     private String dept;
     /**
      * 主键
@@ -71,6 +77,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("主键")
     private Long id;
     /**
      * 工作日天数
@@ -78,6 +85,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "workday")
     @JsonProperty("workday")
+    @ApiModelProperty("工作日天数")
     private Integer workday;
     /**
      * 总任务数
@@ -85,6 +93,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "totaltaskcnt")
     @JsonProperty("totaltaskcnt")
+    @ApiModelProperty("总任务数")
     private Integer totaltaskcnt;
     /**
      * 指派给
@@ -92,6 +101,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(value = "`assignedto`")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
+    @ApiModelProperty("指派给")
     private String assignedto;
     /**
      * 剩余工时
@@ -99,6 +109,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "left")
     @JsonProperty("left")
+    @ApiModelProperty("剩余工时")
     private Integer left;
     /**
      * 是否指派
@@ -106,6 +117,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(value = "`assign`")
     @JSONField(name = "assign")
     @JsonProperty("assign")
+    @ApiModelProperty("是否指派")
     private String assign;
     /**
      * 属性
@@ -114,6 +126,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "begin", format = "yyyy-MM-dd")
     @JsonProperty("begin")
+    @ApiModelProperty("属性")
     private Timestamp begin;
     /**
      * 总工时
@@ -121,6 +134,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "totalleft")
     @JsonProperty("totalleft")
+    @ApiModelProperty("总工时")
     private Integer totalleft;
     /**
      * 工作负载
@@ -128,6 +142,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "workload")
     @JsonProperty("workload")
+    @ApiModelProperty("工作负载")
     private String workload;
     /**
      * 结束
@@ -136,6 +151,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "end", format = "yyyy-MM-dd")
     @JsonProperty("end")
+    @ApiModelProperty("结束")
     private Timestamp end;
     /**
      * 项目
@@ -143,6 +159,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "projectname")
     @JsonProperty("projectname")
+    @ApiModelProperty("项目")
     private String projectname;
     /**
      * 项目编号
@@ -150,6 +167,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     @TableField(value = "`project`")
     @JSONField(name = "project")
     @JsonProperty("project")
+    @ApiModelProperty("项目编号")
     private Long project;
 
     /**

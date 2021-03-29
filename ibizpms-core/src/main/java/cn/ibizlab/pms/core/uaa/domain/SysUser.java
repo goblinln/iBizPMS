@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [系统用户] 对象
  */
 @Data
+@ApiModel("系统用户")
 public class SysUser extends EntityClient implements Serializable {
 
     /**
@@ -39,6 +42,7 @@ public class SysUser extends EntityClient implements Serializable {
     @DEField(isKeyField = true)
     @JSONField(name = "userid")
     @JsonProperty("userid")
+    @ApiModelProperty("用户标识")
     private String userid;
 
     /**
@@ -46,6 +50,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "username")
     @JsonProperty("username")
+    @ApiModelProperty("用户全局名")
     private String username;
 
     /**
@@ -53,6 +58,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "personname")
     @JsonProperty("personname")
+    @ApiModelProperty("用户姓名")
     private String personname;
 
     /**
@@ -60,6 +66,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "usercode")
     @JsonProperty("usercode")
+    @ApiModelProperty("用户工号")
     private String usercode;
 
     /**
@@ -67,6 +74,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "password")
     @JsonProperty("password")
+    @ApiModelProperty("密码")
     private String password;
 
     /**
@@ -74,6 +82,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "loginname")
     @JsonProperty("loginname")
+    @ApiModelProperty("登录名")
     private String loginname;
 
     /**
@@ -81,6 +90,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "domains")
     @JsonProperty("domains")
+    @ApiModelProperty("区属")
     private String domains;
 
     /**
@@ -88,6 +98,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "mdeptid")
     @JsonProperty("mdeptid")
+    @ApiModelProperty("主部门")
     private String mdeptid;
 
     /**
@@ -95,6 +106,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "mdeptcode")
     @JsonProperty("mdeptcode")
+    @ApiModelProperty("主部门代码")
     private String mdeptcode;
 
     /**
@@ -102,6 +114,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "mdeptname")
     @JsonProperty("mdeptname")
+    @ApiModelProperty("主部门名称")
     private String mdeptname;
 
     /**
@@ -109,6 +122,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "bcode")
     @JsonProperty("bcode")
+    @ApiModelProperty("业务编码")
     private String bcode;
 
     /**
@@ -116,6 +130,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "postid")
     @JsonProperty("postid")
+    @ApiModelProperty("岗位标识")
     private String postid;
 
     /**
@@ -123,6 +138,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "postcode")
     @JsonProperty("postcode")
+    @ApiModelProperty("岗位代码")
     private String postcode;
 
     /**
@@ -130,6 +146,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "postname")
     @JsonProperty("postname")
+    @ApiModelProperty("岗位名称")
     private String postname;
 
     /**
@@ -138,6 +155,7 @@ public class SysUser extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.ORGID)
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
+    @ApiModelProperty("单位")
     private String orgid;
 
     /**
@@ -145,6 +163,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "orgcode")
     @JsonProperty("orgcode")
+    @ApiModelProperty("单位代码")
     private String orgcode;
 
     /**
@@ -153,6 +172,7 @@ public class SysUser extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.ORGNAME)
     @JSONField(name = "orgname")
     @JsonProperty("orgname")
+    @ApiModelProperty("单位名称")
     private String orgname;
 
     /**
@@ -160,6 +180,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "nickname")
     @JsonProperty("nickname")
+    @ApiModelProperty("昵称别名")
     private String nickname;
 
     /**
@@ -167,6 +188,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "sex")
     @JsonProperty("sex")
+    @ApiModelProperty("性别")
     private String sex;
 
     /**
@@ -175,6 +197,7 @@ public class SysUser extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "birthday" , format = "yyyy-MM-dd")
     @JsonProperty("birthday")
+    @ApiModelProperty("出生日期")
     private Timestamp birthday;
 
     /**
@@ -182,6 +205,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "certcode")
     @JsonProperty("certcode")
+    @ApiModelProperty("证件号码")
     private String certcode;
 
     /**
@@ -189,6 +213,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "phone")
     @JsonProperty("phone")
+    @ApiModelProperty("联系方式")
     private String phone;
 
     /**
@@ -196,6 +221,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "email")
     @JsonProperty("email")
+    @ApiModelProperty("邮件")
     private String email;
 
     /**
@@ -203,6 +229,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "avatar")
     @JsonProperty("avatar")
+    @ApiModelProperty("社交账号")
     private String avatar;
 
     /**
@@ -210,6 +237,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "addr")
     @JsonProperty("addr")
+    @ApiModelProperty("地址")
     private String addr;
 
     /**
@@ -217,6 +245,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "usericon")
     @JsonProperty("usericon")
+    @ApiModelProperty("照片")
     private String usericon;
 
     /**
@@ -224,6 +253,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "theme")
     @JsonProperty("theme")
+    @ApiModelProperty("样式")
     private String theme;
 
     /**
@@ -231,6 +261,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "lang")
     @JsonProperty("lang")
+    @ApiModelProperty("语言")
     private String lang;
 
     /**
@@ -238,6 +269,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "fontsize")
     @JsonProperty("fontsize")
+    @ApiModelProperty("字号")
     private String fontsize;
 
     /**
@@ -245,6 +277,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "memo")
     @JsonProperty("memo")
+    @ApiModelProperty("备注")
     private String memo;
 
     /**
@@ -252,6 +285,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "reserver")
     @JsonProperty("reserver")
+    @ApiModelProperty("保留")
     private String reserver;
 
     /**
@@ -260,6 +294,7 @@ public class SysUser extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "superuser")
     @JsonProperty("superuser")
+    @ApiModelProperty("超级管理员")
     private Integer superuser;
 
     /**
@@ -267,6 +302,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "originalpassword")
     @JsonProperty("originalpassword")
+    @ApiModelProperty("原密码")
     private String originalpassword;
 
     /**
@@ -274,6 +310,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "newpassword")
     @JsonProperty("newpassword")
+    @ApiModelProperty("新密码")
     private String newpassword;
 
     /**
@@ -281,6 +318,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     @JSONField(name = "repeatpassword")
     @JsonProperty("repeatpassword")
+    @ApiModelProperty("重复密码")
     private String repeatpassword;
 
 
@@ -292,7 +330,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setUsername(String username) {
         this.username = username ;
-        this.modify("username", username);
+        this.modify("username",username);
     }
 
     /**
@@ -300,7 +338,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setPersonname(String personname) {
         this.personname = personname ;
-        this.modify("personname", personname);
+        this.modify("personname",personname);
     }
 
     /**
@@ -308,7 +346,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setUsercode(String usercode) {
         this.usercode = usercode ;
-        this.modify("usercode", usercode);
+        this.modify("usercode",usercode);
     }
 
     /**
@@ -316,7 +354,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setPassword(String password) {
         this.password = password ;
-        this.modify("password", password);
+        this.modify("password",password);
     }
 
     /**
@@ -324,7 +362,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setLoginname(String loginname) {
         this.loginname = loginname ;
-        this.modify("loginname", loginname);
+        this.modify("loginname",loginname);
     }
 
     /**
@@ -332,7 +370,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setDomains(String domains) {
         this.domains = domains ;
-        this.modify("domains", domains);
+        this.modify("domains",domains);
     }
 
     /**
@@ -340,7 +378,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setMdeptid(String mdeptid) {
         this.mdeptid = mdeptid ;
-        this.modify("mdeptid", mdeptid);
+        this.modify("mdeptid",mdeptid);
     }
 
     /**
@@ -348,7 +386,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setMdeptcode(String mdeptcode) {
         this.mdeptcode = mdeptcode ;
-        this.modify("mdeptcode", mdeptcode);
+        this.modify("mdeptcode",mdeptcode);
     }
 
     /**
@@ -356,7 +394,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setMdeptname(String mdeptname) {
         this.mdeptname = mdeptname ;
-        this.modify("mdeptname", mdeptname);
+        this.modify("mdeptname",mdeptname);
     }
 
     /**
@@ -364,7 +402,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setBcode(String bcode) {
         this.bcode = bcode ;
-        this.modify("bcode", bcode);
+        this.modify("bcode",bcode);
     }
 
     /**
@@ -372,7 +410,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setPostid(String postid) {
         this.postid = postid ;
-        this.modify("postid", postid);
+        this.modify("postid",postid);
     }
 
     /**
@@ -380,7 +418,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setPostcode(String postcode) {
         this.postcode = postcode ;
-        this.modify("postcode", postcode);
+        this.modify("postcode",postcode);
     }
 
     /**
@@ -388,7 +426,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setPostname(String postname) {
         this.postname = postname ;
-        this.modify("postname", postname);
+        this.modify("postname",postname);
     }
 
     /**
@@ -396,7 +434,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setOrgcode(String orgcode) {
         this.orgcode = orgcode ;
-        this.modify("orgcode", orgcode);
+        this.modify("orgcode",orgcode);
     }
 
     /**
@@ -404,7 +442,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setNickname(String nickname) {
         this.nickname = nickname ;
-        this.modify("nickname", nickname);
+        this.modify("nickname",nickname);
     }
 
     /**
@@ -412,7 +450,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setSex(String sex) {
         this.sex = sex ;
-        this.modify("sex", sex);
+        this.modify("sex",sex);
     }
 
     /**
@@ -420,7 +458,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setBirthday(Timestamp birthday) {
         this.birthday = birthday ;
-        this.modify("birthday", birthday);
+        this.modify("birthday",birthday);
     }
 
     /**
@@ -438,7 +476,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setCertcode(String certcode) {
         this.certcode = certcode ;
-        this.modify("certcode", certcode);
+        this.modify("certcode",certcode);
     }
 
     /**
@@ -446,7 +484,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setPhone(String phone) {
         this.phone = phone ;
-        this.modify("phone", phone);
+        this.modify("phone",phone);
     }
 
     /**
@@ -454,7 +492,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setEmail(String email) {
         this.email = email ;
-        this.modify("email", email);
+        this.modify("email",email);
     }
 
     /**
@@ -462,7 +500,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setAvatar(String avatar) {
         this.avatar = avatar ;
-        this.modify("avatar", avatar);
+        this.modify("avatar",avatar);
     }
 
     /**
@@ -470,7 +508,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setAddr(String addr) {
         this.addr = addr ;
-        this.modify("addr", addr);
+        this.modify("addr",addr);
     }
 
     /**
@@ -478,7 +516,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setUsericon(String usericon) {
         this.usericon = usericon ;
-        this.modify("usericon", usericon);
+        this.modify("usericon",usericon);
     }
 
     /**
@@ -486,7 +524,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setTheme(String theme) {
         this.theme = theme ;
-        this.modify("theme", theme);
+        this.modify("theme",theme);
     }
 
     /**
@@ -494,7 +532,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setLang(String lang) {
         this.lang = lang ;
-        this.modify("lang", lang);
+        this.modify("lang",lang);
     }
 
     /**
@@ -502,7 +540,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setFontsize(String fontsize) {
         this.fontsize = fontsize ;
-        this.modify("fontsize", fontsize);
+        this.modify("fontsize",fontsize);
     }
 
     /**
@@ -510,7 +548,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setMemo(String memo) {
         this.memo = memo ;
-        this.modify("memo", memo);
+        this.modify("memo",memo);
     }
 
     /**
@@ -518,7 +556,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setReserver(String reserver) {
         this.reserver = reserver ;
-        this.modify("reserver", reserver);
+        this.modify("reserver",reserver);
     }
 
     /**
@@ -526,7 +564,7 @@ public class SysUser extends EntityClient implements Serializable {
      */
     public void setSuperuser(Integer superuser) {
         this.superuser = superuser ;
-        this.modify("superuser", superuser);
+        this.modify("superuser",superuser);
     }
 
     /**
@@ -539,7 +577,7 @@ public class SysUser extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("userid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

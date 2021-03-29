@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [标签] 对象
  */
 @Data
+@ApiModel("标签")
 public class IBIZProTag extends EntityClient implements Serializable {
 
     /**
@@ -39,6 +42,7 @@ public class IBIZProTag extends EntityClient implements Serializable {
     @DEField(isKeyField = true)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("ID")
     private String id;
 
 
@@ -55,7 +59,7 @@ public class IBIZProTag extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("id");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

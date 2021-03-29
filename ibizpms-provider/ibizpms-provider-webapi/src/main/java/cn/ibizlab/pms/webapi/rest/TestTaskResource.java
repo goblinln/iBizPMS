@@ -72,7 +72,7 @@ public class TestTaskResource {
 		TestTask domain  = testtaskMapping.toDomain(testtaskdto);
         domain .setId(testtask_id);
 		testtaskService.update(domain );
-		TestTaskDTO dto = testtaskMapping.toDto(domain );
+		TestTaskDTO dto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -211,8 +211,10 @@ public class TestTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")
     @ApiOperation(value = "保存测试版本", tags = {"测试版本" },  notes = "保存测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/save")
-    public ResponseEntity<Boolean> save(@RequestBody TestTaskDTO testtaskdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskService.save(testtaskMapping.toDomain(testtaskdto)));
+    public ResponseEntity<TestTaskDTO> save(@RequestBody TestTaskDTO testtaskdto) {
+        TestTask domain = testtaskMapping.toDomain(testtaskdto);
+        testtaskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")
@@ -480,10 +482,11 @@ public class TestTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")
     @ApiOperation(value = "根据产品保存测试版本", tags = {"测试版本" },  notes = "根据产品保存测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/save")
-    public ResponseEntity<Boolean> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskDTO testtaskdto) {
+    public ResponseEntity<TestTaskDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskService.save(domain));
+        testtaskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")
@@ -744,10 +747,11 @@ public class TestTaskResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")
     @ApiOperation(value = "根据项目保存测试版本", tags = {"测试版本" },  notes = "根据项目保存测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/save")
-    public ResponseEntity<Boolean> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskDTO testtaskdto) {
+    public ResponseEntity<TestTaskDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskService.save(domain));
+        testtaskService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")

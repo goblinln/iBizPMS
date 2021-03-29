@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.uaa.client.SysUserRoleFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[用户角色关系] 服务对象接口实现
@@ -53,39 +54,37 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
     @Override
     public boolean create(SysUserRole et) {
         SysUserRole rt = sysUserRoleFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<SysUserRole> list){
-        sysUserRoleFeignClient.createBatch(list);
+        sysUserRoleFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(SysUserRole et) {
-        SysUserRole rt = sysUserRoleFeignClient.update(et.getUserroleid(), et);
-        if (rt == null) {
+        SysUserRole rt = sysUserRoleFeignClient.update(et.getUserroleid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<SysUserRole> list) {
-        sysUserRoleFeignClient.updateBatch(list);
+    public void updateBatch(List<SysUserRole> list){
+        sysUserRoleFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String userroleid) {
-        boolean result=sysUserRoleFeignClient.remove(userroleid);
+        boolean result=sysUserRoleFeignClient.remove(userroleid) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
 
     @Override
     public SysUserRole get(String userroleid) {
-        SysUserRole et = sysUserRoleFeignClient.get(userroleid);
-        if (et == null) {
-            et = new SysUserRole();
+		SysUserRole et=sysUserRoleFeignClient.get(userroleid);
+        if(et==null){
+            et=new SysUserRole();
             et.setUserroleid(userroleid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -124,25 +123,36 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
     @Override
     @Transactional
     public boolean save(SysUserRole et) {
-        if (et.getUserroleid() == null) {
-            et.setUserroleid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = sysUserRoleFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), SysUserRole.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!sysUserRoleFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<SysUserRole> list) {
-        sysUserRoleFeignClient.saveBatch(list);
+        sysUserRoleFeignClient.saveBatch(list) ;
     }
 
 
 
 
-    @Override
+	@Override
     public List<SysUserRole> selectByRoleid(String roleid) {
         SysUserRoleSearchContext context=new SysUserRoleSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -159,16 +169,15 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
     @Override
     public void removeByRoleid(String roleid) {
         Set<String> delIds=new HashSet<String>();
-        for (SysUserRole before:selectByRoleid(roleid)) {
+        for(SysUserRole before:selectByRoleid(roleid)){
             delIds.add(before.getUserroleid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
 
-    @Override
+	@Override
     public List<SysUserRole> selectByUserid(String userid) {
         SysUserRoleSearchContext context=new SysUserRoleSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -181,12 +190,11 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
     @Override
     public void removeByUserid(String userid) {
         Set<String> delIds=new HashSet<String>();
-        for (SysUserRole before:selectByUserid(userid)) {
+        for(SysUserRole before:selectByUserid(userid)){
             delIds.add(before.getUserroleid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
 
@@ -200,8 +208,6 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
         Page<SysUserRole> sysUserRoles=sysUserRoleFeignClient.searchDefault(context);
         return sysUserRoles;
     }
-
-
 
 
     @Override

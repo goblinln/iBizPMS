@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_log", resultMap = "LogResultMap")
+@ApiModel("log")
 public class Log extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class Log extends EntityMP implements Serializable {
     @TableField(value = "`url`")
     @JSONField(name = "url")
     @JsonProperty("url")
+    @ApiModelProperty("url")
     private String url;
     /**
      * action
@@ -56,6 +60,7 @@ public class Log extends EntityMP implements Serializable {
     @TableField(value = "`action`")
     @JSONField(name = "action")
     @JsonProperty("action")
+    @ApiModelProperty("action")
     private Integer action;
     /**
      * contentType
@@ -63,6 +68,7 @@ public class Log extends EntityMP implements Serializable {
     @TableField(value = "`contenttype`")
     @JSONField(name = "contenttype")
     @JsonProperty("contenttype")
+    @ApiModelProperty("contentType")
     private String contenttype;
     /**
      * objectID
@@ -70,6 +76,7 @@ public class Log extends EntityMP implements Serializable {
     @TableField(value = "`objectid`")
     @JSONField(name = "objectid")
     @JsonProperty("objectid")
+    @ApiModelProperty("objectID")
     private Integer objectid;
     /**
      * date
@@ -78,6 +85,7 @@ public class Log extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("date")
+    @ApiModelProperty("date")
     private Timestamp date;
     /**
      * result
@@ -85,6 +93,7 @@ public class Log extends EntityMP implements Serializable {
     @TableField(value = "`result`")
     @JSONField(name = "result")
     @JsonProperty("result")
+    @ApiModelProperty("result")
     private String result;
     /**
      * objectType
@@ -92,6 +101,7 @@ public class Log extends EntityMP implements Serializable {
     @TableField(value = "`objecttype`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
+    @ApiModelProperty("objectType")
     private String objecttype;
     /**
      * id
@@ -100,6 +110,7 @@ public class Log extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * data
@@ -107,6 +118,7 @@ public class Log extends EntityMP implements Serializable {
     @TableField(value = "`data`")
     @JSONField(name = "data")
     @JsonProperty("data")
+    @ApiModelProperty("data")
     private String data;
 
 

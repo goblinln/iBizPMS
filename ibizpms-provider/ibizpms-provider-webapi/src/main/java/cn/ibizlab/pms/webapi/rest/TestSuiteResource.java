@@ -73,7 +73,7 @@ public class TestSuiteResource {
 		TestSuite domain  = testsuiteMapping.toDomain(testsuitedto);
         domain .setId(testsuite_id);
 		testsuiteService.update(domain );
-		TestSuiteDTO dto = testsuiteMapping.toDto(domain );
+		TestSuiteDTO dto = testsuiteMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -136,8 +136,10 @@ public class TestSuiteResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-Save-all')")
     @ApiOperation(value = "保存测试套件", tags = {"测试套件" },  notes = "保存测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/save")
-    public ResponseEntity<Boolean> save(@RequestBody TestSuiteDTO testsuitedto) {
-        return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.save(testsuiteMapping.toDomain(testsuitedto)));
+    public ResponseEntity<TestSuiteDTO> save(@RequestBody TestSuiteDTO testsuitedto) {
+        TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
+        testsuiteService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-Save-all')")
@@ -300,10 +302,11 @@ public class TestSuiteResource {
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-Save-all')")
     @ApiOperation(value = "根据产品保存测试套件", tags = {"测试套件" },  notes = "根据产品保存测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/save")
-    public ResponseEntity<Boolean> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {
+    public ResponseEntity<TestSuiteDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.save(domain));
+        testsuiteService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(domain));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-Save-all')")

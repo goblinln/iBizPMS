@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "T_TASKMSGRECORD", resultMap = "TaskMsgRecordResultMap")
+@ApiModel("待办消息记录")
 public class TaskMsgRecord extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @TableField(value = "`apptaskid`")
     @JSONField(name = "apptaskid")
     @JsonProperty("apptaskid")
+    @ApiModelProperty("第三方应用待办标识")
     private String apptaskid;
     /**
      * 数据标识
@@ -56,6 +60,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @TableField(value = "`dataid`")
     @JSONField(name = "dataid")
     @JsonProperty("dataid")
+    @ApiModelProperty("数据标识")
     private String dataid;
     /**
      * 更新时间
@@ -65,6 +70,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
     /**
      * 标题
@@ -72,6 +78,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @TableField(value = "`title`")
     @JSONField(name = "title")
     @JsonProperty("title")
+    @ApiModelProperty("标题")
     private String title;
     /**
      * 备注
@@ -79,6 +86,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @TableField(value = "`memo`")
     @JSONField(name = "memo")
     @JsonProperty("memo")
+    @ApiModelProperty("备注")
     private String memo;
     /**
      * 建立人
@@ -87,6 +95,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @TableField(value = "`createman`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
     /**
      * 待办人标识
@@ -94,6 +103,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @TableField(value = "`taskuserid`")
     @JSONField(name = "taskuserid")
     @JsonProperty("taskuserid")
+    @ApiModelProperty("待办人标识")
     private String taskuserid;
     /**
      * 待办类型
@@ -101,6 +111,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @TableField(value = "`tasktype`")
     @JSONField(name = "tasktype")
     @JsonProperty("tasktype")
+    @ApiModelProperty("待办类型")
     private String tasktype;
     /**
      * 更新人
@@ -109,6 +120,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @TableField(value = "`updateman`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
     /**
      * 待办消息记录名称
@@ -116,6 +128,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @TableField(value = "`taskmsgrecordname`")
     @JSONField(name = "taskmsgrecordname")
     @JsonProperty("taskmsgrecordname")
+    @ApiModelProperty("待办消息记录名称")
     private String taskmsgrecordname;
     /**
      * 建立时间
@@ -125,6 +138,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
     /**
      * 待办消息记录标识
@@ -133,6 +147,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @TableId(value = "taskmsgrecordid", type = IdType.ASSIGN_UUID)
     @JSONField(name = "taskmsgrecordid")
     @JsonProperty("taskmsgrecordid")
+    @ApiModelProperty("待办消息记录标识")
     private String taskmsgrecordid;
     /**
      * 逻辑有效标志
@@ -142,6 +157,7 @@ public class TaskMsgRecord extends EntityMP implements Serializable {
     @TableField(value = "`enable`")
     @JSONField(name = "enable")
     @JsonProperty("enable")
+    @ApiModelProperty("逻辑有效标志")
     private Integer enable;
 
 

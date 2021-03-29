@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "T_IBZPRO_SYSTPL", resultMap = "IBZProSysTplResultMap")
+@ApiModel("系统模板")
 public class IBZProSysTpl extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     @TableField(value = "`content`")
     @JSONField(name = "content")
     @JsonProperty("content")
+    @ApiModelProperty("模板内容")
     private String content;
     /**
      * 建立人
@@ -57,6 +61,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     @TableField(value = "`createman`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
     /**
      * 系统模板标识
@@ -65,6 +70,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     @TableId(value = "ibzpro_systplid", type = IdType.ASSIGN_UUID)
     @JSONField(name = "ibzprosystplid")
     @JsonProperty("ibzprosystplid")
+    @ApiModelProperty("系统模板标识")
     private String ibzprosystplid;
     /**
      * 建立时间
@@ -74,6 +80,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
     /**
      * 是否公开
@@ -82,6 +89,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     @TableField(value = "`public`")
     @JSONField(name = "ibizpublic")
     @JsonProperty("ibizpublic")
+    @ApiModelProperty("是否公开")
     private String ibizpublic;
     /**
      * 更新人
@@ -90,6 +98,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     @TableField(value = "`updateman`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
     /**
      * 更新时间
@@ -99,6 +108,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
     /**
      * 系统模板名称
@@ -107,6 +117,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     @TableField(value = "`ibzpro_systplname`")
     @JSONField(name = "ibzprosystplname")
     @JsonProperty("ibzprosystplname")
+    @ApiModelProperty("系统模板名称")
     private String ibzprosystplname;
     /**
      * IBIZ模板类型
@@ -115,6 +126,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     @TableField(value = "`tpltype`")
     @JSONField(name = "tpltype")
     @JsonProperty("tpltype")
+    @ApiModelProperty("IBIZ模板类型")
     private String tpltype;
     /**
      * 来源对象
@@ -123,6 +135,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     @TableField(value = "`ibiz_sourceobject`")
     @JSONField(name = "ibiz_sourceobject")
     @JsonProperty("ibiz_sourceobject")
+    @ApiModelProperty("来源对象")
     private String ibizSourceobject;
     /**
      * id
@@ -130,6 +143,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     @TableField(value = "`file`")
     @JSONField(name = "file")
     @JsonProperty("file")
+    @ApiModelProperty("id")
     private Long file;
 
     /**

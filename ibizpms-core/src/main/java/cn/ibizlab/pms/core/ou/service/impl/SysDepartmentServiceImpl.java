@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ou.client.SysDepartmentFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[部门] 服务对象接口实现
@@ -53,39 +54,37 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
     @Override
     public boolean create(SysDepartment et) {
         SysDepartment rt = sysDepartmentFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
 
 
     public void createBatch(List<SysDepartment> list){
-        sysDepartmentFeignClient.createBatch(list);
+        sysDepartmentFeignClient.createBatch(list) ;
     }
 
 
     @Override
     public boolean update(SysDepartment et) {
-        SysDepartment rt = sysDepartmentFeignClient.update(et.getDeptid(), et);
-        if (rt == null) {
+        SysDepartment rt = sysDepartmentFeignClient.update(et.getDeptid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
     }
 
 
-    public void updateBatch(List<SysDepartment> list) {
-        sysDepartmentFeignClient.updateBatch(list);
+    public void updateBatch(List<SysDepartment> list){
+        sysDepartmentFeignClient.updateBatch(list) ;
     }
 
 
     @Override
     public boolean remove(String deptid) {
-        boolean result=sysDepartmentFeignClient.remove(deptid);
+        boolean result=sysDepartmentFeignClient.remove(deptid) ;
         return result;
     }
 
@@ -97,12 +96,12 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
 
     @Override
     public SysDepartment get(String deptid) {
-        SysDepartment et = sysDepartmentFeignClient.get(deptid);
-        if (et == null) {
-            et = new SysDepartment();
+		SysDepartment et=sysDepartmentFeignClient.get(deptid);
+        if(et==null){
+            et=new SysDepartment();
             et.setDeptid(deptid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -124,25 +123,36 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
     @Override
     @Transactional
     public boolean save(SysDepartment et) {
-        if (et.getDeptid() == null) {
-            et.setDeptid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = sysDepartmentFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), SysDepartment.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!sysDepartmentFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
 
     @Override
     public void saveBatch(List<SysDepartment> list) {
-        sysDepartmentFeignClient.saveBatch(list);
+        sysDepartmentFeignClient.saveBatch(list) ;
     }
 
 
 
 
-    @Override
+	@Override
     public List<SysDepartment> selectByParentdeptid(String deptid) {
         SysDepartmentSearchContext context=new SysDepartmentSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -161,16 +171,15 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
     @Override
     public void removeByParentdeptid(String deptid) {
         Set<String> delIds=new HashSet<String>();
-        for (SysDepartment before:selectByParentdeptid(deptid)) {
+        for(SysDepartment before:selectByParentdeptid(deptid)){
             delIds.add(before.getDeptid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
 
-    @Override
+	@Override
     public List<SysDepartment> selectByOrgid(String orgid) {
         SysDepartmentSearchContext context=new SysDepartmentSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -189,23 +198,21 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
     @Override
     public void removeByOrgid(String orgid) {
         Set<String> delIds=new HashSet<String>();
-        for (SysDepartment before:selectByOrgid(orgid)) {
+        for(SysDepartment before:selectByOrgid(orgid)){
             delIds.add(before.getDeptid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
 
     public ISysDepartmentService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
-    @Override
-    public void saveByOrgid(String orgid, List<SysDepartment> list) {
-        if (list == null) {
+	@Override
+    public void saveByOrgid(String orgid,List<SysDepartment> list) {
+        if(list==null)
             return;
-        }
         Set<String> delIds=new HashSet<String>();
         List<SysDepartment> _update=new ArrayList<SysDepartment>();
         List<SysDepartment> _create=new ArrayList<SysDepartment>();
@@ -214,26 +221,22 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
         }
         for(SysDepartment sub:list) {
             sub.setOrgid(orgid);
-            if (ObjectUtils.isEmpty(sub.getDeptid())) {
+            if(ObjectUtils.isEmpty(sub.getDeptid()))
                 sub.setDeptid((String)sub.getDefaultKey(true));
-            }
-            if (delIds.contains(sub.getDeptid())) {
+            if(delIds.contains(sub.getDeptid())) {
                 delIds.remove(sub.getDeptid());
                 _update.add(sub);
-            } else {
-                _create.add(sub);
             }
+            else
+                _create.add(sub);
         }
-        if (_update.size() > 0) {
+        if(_update.size()>0)
             getProxyService().updateBatch(_update);
-        }
-        if (_create.size() > 0) {
+        if(_create.size()>0)
             getProxyService().createBatch(_create);
-        }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             getProxyService().removeBatch(delIds);
-        }
-    }
+	}
 
 
 
@@ -246,8 +249,6 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
         Page<SysDepartment> sysDepartments=sysDepartmentFeignClient.searchDefault(context);
         return sysDepartments;
     }
-
-
 
 
     @Override

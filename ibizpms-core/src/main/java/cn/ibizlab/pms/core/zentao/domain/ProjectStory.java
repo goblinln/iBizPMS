@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_projectstory", resultMap = "ProjectStoryResultMap")
+@ApiModel("项目中需要做的需求")
 public class ProjectStory extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class ProjectStory extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("虚拟主键")
     private String id;
     /**
      * 排序
@@ -57,6 +61,7 @@ public class ProjectStory extends EntityMP implements Serializable {
     @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
+    @ApiModelProperty("排序")
     private Integer order;
     /**
      * 需求版本
@@ -65,6 +70,7 @@ public class ProjectStory extends EntityMP implements Serializable {
     @TableField(value = "`version`")
     @JSONField(name = "version")
     @JsonProperty("version")
+    @ApiModelProperty("需求版本")
     private Integer version;
     /**
      * 需求
@@ -72,6 +78,7 @@ public class ProjectStory extends EntityMP implements Serializable {
     @TableField(value = "`story`")
     @JSONField(name = "story")
     @JsonProperty("story")
+    @ApiModelProperty("需求")
     private Long story;
     /**
      * 项目
@@ -79,6 +86,7 @@ public class ProjectStory extends EntityMP implements Serializable {
     @TableField(value = "`project`")
     @JSONField(name = "project")
     @JsonProperty("project")
+    @ApiModelProperty("项目")
     private Long project;
     /**
      * 所属产品
@@ -86,6 +94,7 @@ public class ProjectStory extends EntityMP implements Serializable {
     @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
+    @ApiModelProperty("所属产品")
     private Long product;
 
     /**

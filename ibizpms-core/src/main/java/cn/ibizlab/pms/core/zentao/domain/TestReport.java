@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_testreport", resultMap = "TestReportResultMap")
+@ApiModel("测试报告")
 public class TestReport extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,6 +52,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "productcnt")
     @JsonProperty("productcnt")
+    @ApiModelProperty("项目报告产品数")
     private Integer productcnt;
     /**
      * 概况
@@ -56,6 +60,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "overviews")
     @JsonProperty("overviews")
+    @ApiModelProperty("概况")
     private String overviews;
     /**
      * 所属对象
@@ -64,6 +69,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`objectid`")
     @JSONField(name = "objectid")
     @JsonProperty("objectid")
+    @ApiModelProperty("所属对象")
     private Integer objectid;
     /**
      * 用例
@@ -72,6 +78,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`cases`")
     @JSONField(name = "cases")
     @JsonProperty("cases")
+    @ApiModelProperty("用例")
     private String cases;
     /**
      * 参与人员
@@ -80,6 +87,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`members`")
     @JSONField(name = "members")
     @JsonProperty("members")
+    @ApiModelProperty("参与人员")
     private String members;
     /**
      * 测试的Bug
@@ -88,6 +96,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`bugs`")
     @JSONField(name = "bugs")
     @JsonProperty("bugs")
+    @ApiModelProperty("测试的Bug")
     private String bugs;
     /**
      * 由谁创建
@@ -96,6 +105,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`createdby`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
+    @ApiModelProperty("由谁创建")
     private String createdby;
     /**
      * 测试的需求
@@ -104,6 +114,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`stories`")
     @JSONField(name = "stories")
     @JsonProperty("stories")
+    @ApiModelProperty("测试的需求")
     private String stories;
     /**
      * 附件
@@ -111,6 +122,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "files")
     @JsonProperty("files")
+    @ApiModelProperty("附件")
     private String files;
     /**
      * 备注
@@ -118,6 +130,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "comment")
     @JsonProperty("comment")
+    @ApiModelProperty("备注")
     private String comment;
     /**
      * 测试单
@@ -126,6 +139,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`tasks`")
     @JSONField(name = "tasks")
     @JsonProperty("tasks")
+    @ApiModelProperty("测试单")
     private String tasks;
     /**
      * 标题
@@ -133,6 +147,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`title`")
     @JSONField(name = "title")
     @JsonProperty("title")
+    @ApiModelProperty("标题")
     private String title;
     /**
      * 开始时间
@@ -141,6 +156,7 @@ public class TestReport extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "begin", format = "yyyy-MM-dd")
     @JsonProperty("begin")
+    @ApiModelProperty("开始时间")
     private Timestamp begin;
     /**
      * 对象类型
@@ -149,6 +165,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`objecttype`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
+    @ApiModelProperty("对象类型")
     private String objecttype;
     /**
      * 结束时间
@@ -157,6 +174,7 @@ public class TestReport extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "end", format = "yyyy-MM-dd")
     @JsonProperty("end")
+    @ApiModelProperty("结束时间")
     private Timestamp end;
     /**
      * 版本信息
@@ -165,6 +183,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`builds`")
     @JSONField(name = "builds")
     @JsonProperty("builds")
+    @ApiModelProperty("版本信息")
     private String builds;
     /**
      * 创建时间
@@ -174,6 +193,7 @@ public class TestReport extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
+    @ApiModelProperty("创建时间")
     private Timestamp createddate;
     /**
      * 总结
@@ -182,6 +202,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`report`")
     @JSONField(name = "report")
     @JsonProperty("report")
+    @ApiModelProperty("总结")
     private String report;
     /**
      * 编号
@@ -190,6 +211,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("编号")
     private Long id;
     /**
      * 负责人
@@ -198,6 +220,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`owner`")
     @JSONField(name = "owner")
     @JsonProperty("owner")
+    @ApiModelProperty("负责人")
     private String owner;
     /**
      * 已删除
@@ -207,6 +230,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("已删除")
     private String deleted;
     /**
      * 所属项目
@@ -214,6 +238,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "projectname")
     @JsonProperty("projectname")
+    @ApiModelProperty("所属项目")
     private String projectname;
     /**
      * 所属产品
@@ -221,6 +246,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "productname")
     @JsonProperty("productname")
+    @ApiModelProperty("所属产品")
     private String productname;
     /**
      * 所属产品
@@ -229,6 +255,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
+    @ApiModelProperty("所属产品")
     private Long product;
     /**
      * 所属项目
@@ -237,6 +264,7 @@ public class TestReport extends EntityMP implements Serializable {
     @TableField(value = "`project`")
     @JSONField(name = "project")
     @JsonProperty("project")
+    @ApiModelProperty("所属项目")
     private Long project;
 
     /**

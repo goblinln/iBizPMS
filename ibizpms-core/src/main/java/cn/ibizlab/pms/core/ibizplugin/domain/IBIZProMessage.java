@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [消息] 对象
  */
 @Data
+@ApiModel("消息")
 public class IBIZProMessage extends EntityClient implements Serializable {
 
     /**
@@ -38,6 +41,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "sendproxyid")
     @JsonProperty("sendproxyid")
+    @ApiModelProperty("发送代理标识")
     private String sendproxyid;
 
     /**
@@ -46,6 +50,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
     @DEField(name = "ibizpro_messagename")
     @JSONField(name = "ibizpromessagename")
     @JsonProperty("ibizpromessagename")
+    @ApiModelProperty("消息名称")
     private String ibizpromessagename;
 
     /**
@@ -53,6 +58,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "islink")
     @JsonProperty("islink")
+    @ApiModelProperty("是否是链接消息")
     private Integer islink;
 
     /**
@@ -60,6 +66,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "subject")
     @JsonProperty("subject")
+    @ApiModelProperty("标题")
     private String subject;
 
     /**
@@ -67,6 +74,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "retryintervaltime")
     @JsonProperty("retryintervaltime")
+    @ApiModelProperty("重发间隔时间")
     private Integer retryintervaltime;
 
     /**
@@ -74,6 +82,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "bcc")
     @JsonProperty("bcc")
+    @ApiModelProperty("密件抄送方")
     private String bcc;
 
     /**
@@ -81,6 +90,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "isdone")
     @JsonProperty("isdone")
+    @ApiModelProperty("是否完成")
     private Integer isdone;
 
     /**
@@ -88,6 +98,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "param")
     @JsonProperty("param")
+    @ApiModelProperty("消息参数")
     private String param;
 
     /**
@@ -96,6 +107,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
     @DEField(name = "ibizpro_messageid" , isKeyField = true)
     @JSONField(name = "ibizpromessageid")
     @JsonProperty("ibizpromessageid")
+    @ApiModelProperty("消息标识")
     private String ibizpromessageid;
 
     /**
@@ -103,6 +115,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "retrytimes")
     @JsonProperty("retrytimes")
+    @ApiModelProperty("重发次数")
     private Integer retrytimes;
 
     /**
@@ -110,6 +123,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "issync")
     @JsonProperty("issync")
+    @ApiModelProperty("是否同步")
     private Integer issync;
 
     /**
@@ -117,6 +131,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "from")
     @JsonProperty("from")
+    @ApiModelProperty("发送方")
     private String from;
 
     /**
@@ -124,6 +139,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "cc")
     @JsonProperty("cc")
+    @ApiModelProperty("抄送方")
     private String cc;
 
     /**
@@ -132,6 +148,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "sendtime" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("sendtime")
+    @ApiModelProperty("发送时间")
     private Timestamp sendtime;
 
     /**
@@ -139,6 +156,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "content")
     @JsonProperty("content")
+    @ApiModelProperty("内容")
     private String content;
 
     /**
@@ -146,6 +164,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "linkurl")
     @JsonProperty("linkurl")
+    @ApiModelProperty("链接地址")
     private String linkurl;
 
     /**
@@ -153,6 +172,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "isread")
     @JsonProperty("isread")
+    @ApiModelProperty("是否已读")
     private Integer isread;
 
     /**
@@ -160,6 +180,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "isretry")
     @JsonProperty("isretry")
+    @ApiModelProperty("是否重发")
     private Integer isretry;
 
     /**
@@ -167,6 +188,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("消息类型")
     private String type;
 
     /**
@@ -174,6 +196,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     @JSONField(name = "to")
     @JsonProperty("to")
+    @ApiModelProperty("接收方")
     private String to;
 
 
@@ -185,7 +208,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setIbizpromessagename(String ibizpromessagename) {
         this.ibizpromessagename = ibizpromessagename ;
-        this.modify("ibizpro_messagename", ibizpromessagename);
+        this.modify("ibizpro_messagename",ibizpromessagename);
     }
 
     /**
@@ -193,7 +216,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setIslink(Integer islink) {
         this.islink = islink ;
-        this.modify("islink", islink);
+        this.modify("islink",islink);
     }
 
     /**
@@ -201,7 +224,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setSubject(String subject) {
         this.subject = subject ;
-        this.modify("subject", subject);
+        this.modify("subject",subject);
     }
 
     /**
@@ -209,7 +232,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setRetryintervaltime(Integer retryintervaltime) {
         this.retryintervaltime = retryintervaltime ;
-        this.modify("retryintervaltime", retryintervaltime);
+        this.modify("retryintervaltime",retryintervaltime);
     }
 
     /**
@@ -217,7 +240,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setBcc(String bcc) {
         this.bcc = bcc ;
-        this.modify("bcc", bcc);
+        this.modify("bcc",bcc);
     }
 
     /**
@@ -225,7 +248,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setParam(String param) {
         this.param = param ;
-        this.modify("param", param);
+        this.modify("param",param);
     }
 
     /**
@@ -233,7 +256,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setRetrytimes(Integer retrytimes) {
         this.retrytimes = retrytimes ;
-        this.modify("retrytimes", retrytimes);
+        this.modify("retrytimes",retrytimes);
     }
 
     /**
@@ -241,7 +264,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setIssync(Integer issync) {
         this.issync = issync ;
-        this.modify("issync", issync);
+        this.modify("issync",issync);
     }
 
     /**
@@ -249,7 +272,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setFrom(String from) {
         this.from = from ;
-        this.modify("from", from);
+        this.modify("from",from);
     }
 
     /**
@@ -257,7 +280,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setCc(String cc) {
         this.cc = cc ;
-        this.modify("cc", cc);
+        this.modify("cc",cc);
     }
 
     /**
@@ -265,7 +288,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setContent(String content) {
         this.content = content ;
-        this.modify("content", content);
+        this.modify("content",content);
     }
 
     /**
@@ -273,7 +296,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setLinkurl(String linkurl) {
         this.linkurl = linkurl ;
-        this.modify("linkurl", linkurl);
+        this.modify("linkurl",linkurl);
     }
 
     /**
@@ -281,7 +304,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setIsretry(Integer isretry) {
         this.isretry = isretry ;
-        this.modify("isretry", isretry);
+        this.modify("isretry",isretry);
     }
 
     /**
@@ -289,7 +312,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setType(String type) {
         this.type = type ;
-        this.modify("type", type);
+        this.modify("type",type);
     }
 
     /**
@@ -297,7 +320,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
      */
     public void setTo(String to) {
         this.to = to ;
-        this.modify("to", to);
+        this.modify("to",to);
     }
 
     /**
@@ -310,7 +333,7 @@ public class IBIZProMessage extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("ibizpro_messageid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

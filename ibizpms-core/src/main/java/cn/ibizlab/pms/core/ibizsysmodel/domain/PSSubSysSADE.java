@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [外部接口实体] 对象
  */
 @Data
+@ApiModel("外部接口实体")
 public class PSSubSysSADE extends EntityClient implements Serializable {
     @Override
     public void modify(String field, Object val) {
@@ -44,6 +47,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "syncmodelmode")
     @JsonProperty("syncmodelmode")
+    @ApiModelProperty("同步模型模式")
     private String syncmodelmode;
 
     /**
@@ -51,6 +55,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "codename2")
     @JsonProperty("codename2")
+    @ApiModelProperty("代码名称2")
     private String codename2;
 
     /**
@@ -59,6 +64,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
 
     /**
@@ -67,6 +73,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
     @DEField(isKeyField = true)
     @JSONField(name = "pssubsyssadeid")
     @JsonProperty("pssubsyssadeid")
+    @ApiModelProperty("外部接口实体标识")
     private String pssubsyssadeid;
 
     /**
@@ -74,6 +81,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag")
     @JsonProperty("usertag")
+    @ApiModelProperty("用户标记")
     private String usertag;
 
     /**
@@ -82,6 +90,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
 
     /**
@@ -89,6 +98,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "memo")
     @JsonProperty("memo")
+    @ApiModelProperty("备注")
     private String memo;
 
     /**
@@ -97,6 +107,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
     @DEField(defaultValue = "1")
     @JSONField(name = "majorflag")
     @JsonProperty("majorflag")
+    @ApiModelProperty("接口模式")
     private Integer majorflag;
 
     /**
@@ -104,6 +115,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "detag")
     @JsonProperty("detag")
+    @ApiModelProperty("实体标记")
     private String detag;
 
     /**
@@ -111,6 +123,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag4")
     @JsonProperty("usertag4")
+    @ApiModelProperty("用户标记4")
     private String usertag4;
 
     /**
@@ -118,6 +131,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag2")
     @JsonProperty("usertag2")
+    @ApiModelProperty("用户标记2")
     private String usertag2;
 
     /**
@@ -125,6 +139,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "usercat")
     @JsonProperty("usercat")
+    @ApiModelProperty("用户分类")
     private String usercat;
 
     /**
@@ -133,6 +148,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
     @DEField(defaultValue = "1")
     @JSONField(name = "validflag")
     @JsonProperty("validflag")
+    @ApiModelProperty("是否启用")
     private Integer validflag;
 
     /**
@@ -140,6 +156,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssubsyssadename")
     @JsonProperty("pssubsyssadename")
+    @ApiModelProperty("外部接口实体名称")
     private String pssubsyssadename;
 
     /**
@@ -147,6 +164,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag3")
     @JsonProperty("usertag3")
+    @ApiModelProperty("用户标记3")
     private String usertag3;
 
     /**
@@ -154,6 +172,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "detag2")
     @JsonProperty("detag2")
+    @ApiModelProperty("实体标记2")
     private String detag2;
 
     /**
@@ -161,6 +180,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "logicname")
     @JsonProperty("logicname")
+    @ApiModelProperty("逻辑名称")
     private String logicname;
 
     /**
@@ -170,6 +190,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
 
     /**
@@ -177,6 +198,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "codename")
     @JsonProperty("codename")
+    @ApiModelProperty("代码名称")
     private String codename;
 
     /**
@@ -186,6 +208,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
 
     /**
@@ -193,6 +216,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssubsysserviceapiname")
     @JsonProperty("pssubsysserviceapiname")
+    @ApiModelProperty("子系统接口")
     private String pssubsysserviceapiname;
 
     /**
@@ -200,6 +224,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssubsysserviceapiid")
     @JsonProperty("pssubsysserviceapiid")
+    @ApiModelProperty("子系统接口")
     private String pssubsysserviceapiid;
 
 
@@ -218,7 +243,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setSyncmodelmode(String syncmodelmode) {
         this.syncmodelmode = syncmodelmode ;
-        this.modify("syncmodelmode", syncmodelmode);
+        this.modify("syncmodelmode",syncmodelmode);
     }
 
     /**
@@ -226,7 +251,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setCodename2(String codename2) {
         this.codename2 = codename2 ;
-        this.modify("codename2", codename2);
+        this.modify("codename2",codename2);
     }
 
     /**
@@ -234,7 +259,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setUsertag(String usertag) {
         this.usertag = usertag ;
-        this.modify("usertag", usertag);
+        this.modify("usertag",usertag);
     }
 
     /**
@@ -242,7 +267,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setMemo(String memo) {
         this.memo = memo ;
-        this.modify("memo", memo);
+        this.modify("memo",memo);
     }
 
     /**
@@ -250,7 +275,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setMajorflag(Integer majorflag) {
         this.majorflag = majorflag ;
-        this.modify("majorflag", majorflag);
+        this.modify("majorflag",majorflag);
     }
 
     /**
@@ -258,7 +283,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setDetag(String detag) {
         this.detag = detag ;
-        this.modify("detag", detag);
+        this.modify("detag",detag);
     }
 
     /**
@@ -266,7 +291,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setUsertag4(String usertag4) {
         this.usertag4 = usertag4 ;
-        this.modify("usertag4", usertag4);
+        this.modify("usertag4",usertag4);
     }
 
     /**
@@ -274,7 +299,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setUsertag2(String usertag2) {
         this.usertag2 = usertag2 ;
-        this.modify("usertag2", usertag2);
+        this.modify("usertag2",usertag2);
     }
 
     /**
@@ -282,7 +307,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setUsercat(String usercat) {
         this.usercat = usercat ;
-        this.modify("usercat", usercat);
+        this.modify("usercat",usercat);
     }
 
     /**
@@ -290,7 +315,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setValidflag(Integer validflag) {
         this.validflag = validflag ;
-        this.modify("validflag", validflag);
+        this.modify("validflag",validflag);
     }
 
     /**
@@ -298,7 +323,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setPssubsyssadename(String pssubsyssadename) {
         this.pssubsyssadename = pssubsyssadename ;
-        this.modify("pssubsyssadename", pssubsyssadename);
+        this.modify("pssubsyssadename",pssubsyssadename);
     }
 
     /**
@@ -306,7 +331,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setUsertag3(String usertag3) {
         this.usertag3 = usertag3 ;
-        this.modify("usertag3", usertag3);
+        this.modify("usertag3",usertag3);
     }
 
     /**
@@ -314,7 +339,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setDetag2(String detag2) {
         this.detag2 = detag2 ;
-        this.modify("detag2", detag2);
+        this.modify("detag2",detag2);
     }
 
     /**
@@ -322,7 +347,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setLogicname(String logicname) {
         this.logicname = logicname ;
-        this.modify("logicname", logicname);
+        this.modify("logicname",logicname);
     }
 
     /**
@@ -330,7 +355,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setCodename(String codename) {
         this.codename = codename ;
-        this.modify("codename", codename);
+        this.modify("codename",codename);
     }
 
     /**
@@ -338,7 +363,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
      */
     public void setPssubsysserviceapiid(String pssubsysserviceapiid) {
         this.pssubsysserviceapiid = pssubsysserviceapiid ;
-        this.modify("pssubsysserviceapiid", pssubsysserviceapiid);
+        this.modify("pssubsysserviceapiid",pssubsysserviceapiid);
     }
 
     /**
@@ -351,7 +376,7 @@ public class PSSubSysSADE extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("pssubsyssadeid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

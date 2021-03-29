@@ -73,7 +73,7 @@ public class PSSysSFPubResource {
 		PSSysSFPub domain  = pssyssfpubMapping.toDomain(pssyssfpubdto);
         domain .setPssyssfpubid(pssyssfpub_id);
 		pssyssfpubService.update(domain );
-		PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain );
+		PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -125,8 +125,10 @@ public class PSSysSFPubResource {
     @PreAuthorize("hasPermission(this.pssyssfpubMapping.toDomain(#pssyssfpubdto),'iBizPMS-PSSysSFPub-Save')")
     @ApiOperation(value = "保存后台服务架构", tags = {"后台服务架构" },  notes = "保存后台服务架构")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/save")
-    public ResponseEntity<Boolean> save(@RequestBody PSSysSFPubDTO pssyssfpubdto) {
-        return ResponseEntity.status(HttpStatus.OK).body(pssyssfpubService.save(pssyssfpubMapping.toDomain(pssyssfpubdto)));
+    public ResponseEntity<PSSysSFPubDTO> save(@RequestBody PSSysSFPubDTO pssyssfpubdto) {
+        PSSysSFPub domain = pssyssfpubMapping.toDomain(pssyssfpubdto);
+        pssyssfpubService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(pssyssfpubMapping.toDto(domain));
     }
 
     @PreAuthorize("hasPermission(this.pssyssfpubMapping.toDomain(#pssyssfpubdtos),'iBizPMS-PSSysSFPub-Save')")

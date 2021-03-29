@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import cn.ibizlab.pms.util.domain.EntityClient;
 
@@ -31,6 +33,7 @@ import cn.ibizlab.pms.util.domain.EntityClient;
  * ServiceApi [实体] 对象
  */
 @Data
+@ApiModel("实体")
 public class PSDataEntity extends EntityClient implements Serializable {
     @Override
     public void modify(String field, Object val) {
@@ -43,6 +46,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "modelimpexpflag")
     @JsonProperty("modelimpexpflag")
+    @ApiModelProperty("模型导入导出能力")
     private Integer modelimpexpflag;
 
     /**
@@ -50,6 +54,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "accctrlarch")
     @JsonProperty("accctrlarch")
+    @ApiModelProperty("访问控制体系")
     private Integer accctrlarch;
 
     /**
@@ -57,6 +62,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "userparams")
     @JsonProperty("userparams")
+    @ApiModelProperty("自定义参数")
     private String userparams;
 
     /**
@@ -64,6 +70,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "delockflag")
     @JsonProperty("delockflag")
+    @ApiModelProperty("全局禁止子系统导入")
     private Integer delockflag;
 
     /**
@@ -71,6 +78,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "lockflag")
     @JsonProperty("lockflag")
+    @ApiModelProperty("模型锁模式")
     private Integer lockflag;
 
     /**
@@ -78,6 +86,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "viewname3")
     @JsonProperty("viewname3")
+    @ApiModelProperty("级别3视图名称")
     private String viewname3;
 
     /**
@@ -85,6 +94,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "detag2")
     @JsonProperty("detag2")
+    @ApiModelProperty("实体标记2")
     private String detag2;
 
     /**
@@ -92,6 +102,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag3")
     @JsonProperty("usertag3")
+    @ApiModelProperty("用户标记3")
     private String usertag3;
 
     /**
@@ -99,6 +110,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "serviceapiflag")
     @JsonProperty("serviceapiflag")
+    @ApiModelProperty("服务API模式")
     private Integer serviceapiflag;
 
     /**
@@ -106,6 +118,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "memo")
     @JsonProperty("memo")
+    @ApiModelProperty("备注")
     private String memo;
 
     /**
@@ -113,6 +126,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enabledataver")
     @JsonProperty("enabledataver")
+    @ApiModelProperty("启用数据版本")
     private Integer enabledataver;
 
     /**
@@ -120,6 +134,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enamultiform")
     @JsonProperty("enamultiform")
+    @ApiModelProperty("启用多表单")
     private Integer enamultiform;
 
     /**
@@ -127,6 +142,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "viewname2")
     @JsonProperty("viewname2")
+    @ApiModelProperty("级别2视图名称")
     private String viewname2;
 
     /**
@@ -134,6 +150,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "testcaseflag")
     @JsonProperty("testcaseflag")
+    @ApiModelProperty("默认测试单元")
     private Integer testcaseflag;
 
     /**
@@ -141,6 +158,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "desn")
     @JsonProperty("desn")
+    @ApiModelProperty("实体编号")
     private String desn;
 
     /**
@@ -148,6 +166,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "dataimpexpflag")
     @JsonProperty("dataimpexpflag")
+    @ApiModelProperty("数据导入导出能力")
     private Integer dataimpexpflag;
 
     /**
@@ -155,6 +174,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "maxentitycachecnt")
     @JsonProperty("maxentitycachecnt")
+    @ApiModelProperty("最大缓存数据对象数")
     private Integer maxentitycachecnt;
 
     /**
@@ -162,6 +182,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "datachglogmode")
     @JsonProperty("datachglogmode")
+    @ApiModelProperty("数据变更日志类型")
     private Integer datachglogmode;
 
     /**
@@ -169,6 +190,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag2")
     @JsonProperty("usertag2")
+    @ApiModelProperty("用户标记2")
     private String usertag2;
 
     /**
@@ -177,6 +199,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "systemflag")
     @JsonProperty("systemflag")
+    @ApiModelProperty("系统实体")
     private Integer systemflag;
 
     /**
@@ -184,6 +207,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssystemid")
     @JsonProperty("pssystemid")
+    @ApiModelProperty("系统")
     private String pssystemid;
 
     /**
@@ -191,6 +215,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enableopnamemodel")
     @JsonProperty("enableopnamemodel")
+    @ApiModelProperty("启用操作者名称模型")
     private Integer enableopnamemodel;
 
     /**
@@ -198,6 +223,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "dynamicmode")
     @JsonProperty("dynamicmode")
+    @ApiModelProperty("扩展模式")
     private Integer dynamicmode;
 
     /**
@@ -205,6 +231,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enablemultids")
     @JsonProperty("enablemultids")
+    @ApiModelProperty("支持多数据源")
     private Integer enablemultids;
 
     /**
@@ -212,6 +239,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "indexdetype")
     @JsonProperty("indexdetype")
+    @ApiModelProperty("索引类型")
     private String indexdetype;
 
     /**
@@ -220,6 +248,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
 
     /**
@@ -228,6 +257,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(defaultValue = "1")
     @JSONField(name = "validflag")
     @JsonProperty("validflag")
+    @ApiModelProperty("是否启用")
     private Integer validflag;
 
     /**
@@ -235,6 +265,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "todotask")
     @JsonProperty("todotask")
+    @ApiModelProperty("TODO")
     private String todotask;
 
     /**
@@ -242,6 +273,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enablemob")
     @JsonProperty("enablemob")
+    @ApiModelProperty("支持移动端")
     private Integer enablemob;
 
     /**
@@ -249,6 +281,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enablededataset")
     @JsonProperty("enablededataset")
+    @ApiModelProperty("支持获取结果集")
     private Integer enablededataset;
 
     /**
@@ -256,6 +289,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enableentitycache")
     @JsonProperty("enableentitycache")
+    @ApiModelProperty("启用数据对象缓存")
     private Integer enableentitycache;
 
     /**
@@ -263,6 +297,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "storagemode")
     @JsonProperty("storagemode")
+    @ApiModelProperty("存储模式")
     private Integer storagemode;
 
     /**
@@ -271,6 +306,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "logicvalid")
     @JsonProperty("logicvalid")
+    @ApiModelProperty("启用逻辑有效")
     private Integer logicvalid;
 
     /**
@@ -278,6 +314,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enablewfmodel")
     @JsonProperty("enablewfmodel")
+    @ApiModelProperty("启用工作流模型")
     private Integer enablewfmodel;
 
     /**
@@ -286,6 +323,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(defaultValue = "1")
     @JSONField(name = "detype")
     @JsonProperty("detype")
+    @ApiModelProperty("实体类型")
     private Integer detype;
 
     /**
@@ -293,6 +331,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "saasmode")
     @JsonProperty("saasmode")
+    @ApiModelProperty("SaaS构型")
     private Integer saasmode;
 
     /**
@@ -300,6 +339,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "psdataentityname")
     @JsonProperty("psdataentityname")
+    @ApiModelProperty("实体名称")
     private String psdataentityname;
 
     /**
@@ -307,6 +347,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "viewname")
     @JsonProperty("viewname")
+    @ApiModelProperty("视图名称")
     private String viewname;
 
     /**
@@ -315,6 +356,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(isKeyField = true)
     @JSONField(name = "psdataentityid")
     @JsonProperty("psdataentityid")
+    @ApiModelProperty("实体标识")
     private String psdataentityid;
 
     /**
@@ -322,6 +364,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "biztag")
     @JsonProperty("biztag")
+    @ApiModelProperty("预置业务功能模式")
     private String biztag;
 
     /**
@@ -329,6 +372,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "dbtabspace")
     @JsonProperty("dbtabspace")
+    @ApiModelProperty("数据库表空间")
     private String dbtabspace;
 
     /**
@@ -336,6 +380,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "keyrule")
     @JsonProperty("keyrule")
+    @ApiModelProperty("主键规则")
     private String keyrule;
 
     /**
@@ -343,6 +388,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "useraction")
     @JsonProperty("useraction")
+    @ApiModelProperty("默认用户界面行为")
     private Integer useraction;
 
     /**
@@ -350,6 +396,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "subsysde")
     @JsonProperty("subsysde")
+    @ApiModelProperty("子系统实体")
     private Integer subsysde;
 
     /**
@@ -357,6 +404,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "servicecodename")
     @JsonProperty("servicecodename")
+    @ApiModelProperty("服务代码名称")
     private String servicecodename;
 
     /**
@@ -365,6 +413,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "svrpubmode")
     @JsonProperty("svrpubmode")
+    @ApiModelProperty("默认发布行为服务")
     private Integer svrpubmode;
 
     /**
@@ -372,6 +421,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "noviewmode")
     @JsonProperty("noviewmode")
+    @ApiModelProperty("无视图模式")
     private Integer noviewmode;
 
     /**
@@ -379,6 +429,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enableaudit")
     @JsonProperty("enableaudit")
+    @ApiModelProperty("启用数据审计")
     private Integer enableaudit;
 
     /**
@@ -386,6 +437,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "dslink")
     @JsonProperty("dslink")
+    @ApiModelProperty("默认数据源")
     private String dslink;
 
     /**
@@ -393,6 +445,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssystemname")
     @JsonProperty("pssystemname")
+    @ApiModelProperty("系统")
     private String pssystemname;
 
     /**
@@ -400,6 +453,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "viewlevel")
     @JsonProperty("viewlevel")
+    @ApiModelProperty("多视图级别")
     private Integer viewlevel;
 
     /**
@@ -408,6 +462,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "virtualflag")
     @JsonProperty("virtualflag")
+    @ApiModelProperty("虚拟实体")
     private Integer virtualflag;
 
     /**
@@ -417,6 +472,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
 
     /**
@@ -425,6 +481,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "enatempdata")
     @JsonProperty("enatempdata")
+    @ApiModelProperty("启用临时数据")
     private Integer enatempdata;
 
     /**
@@ -432,6 +489,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "logicinvalidvalue")
     @JsonProperty("logicinvalidvalue")
+    @ApiModelProperty("逻辑无效值")
     private String logicinvalidvalue;
 
     /**
@@ -439,6 +497,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "usercat")
     @JsonProperty("usercat")
+    @ApiModelProperty("用户分类")
     private String usercat;
 
     /**
@@ -446,6 +505,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "vkeyseparator")
     @JsonProperty("vkeyseparator")
+    @ApiModelProperty("虚拟主键分隔符")
     private String vkeyseparator;
 
     /**
@@ -453,6 +513,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "logicvalidvalue")
     @JsonProperty("logicvalidvalue")
+    @ApiModelProperty("逻辑有效值")
     private String logicvalidvalue;
 
     /**
@@ -460,6 +521,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "removeflag")
     @JsonProperty("removeflag")
+    @ApiModelProperty("删除模式")
     private Integer removeflag;
 
     /**
@@ -467,6 +529,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "detag")
     @JsonProperty("detag")
+    @ApiModelProperty("实体标记")
     private String detag;
 
     /**
@@ -474,6 +537,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "codename")
     @JsonProperty("codename")
+    @ApiModelProperty("代码名称")
     private String codename;
 
     /**
@@ -481,6 +545,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enabledalog")
     @JsonProperty("enabledalog")
+    @ApiModelProperty("启用DA日志")
     private Integer enabledalog;
 
     /**
@@ -489,6 +554,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "dynamodelflag")
     @JsonProperty("dynamodelflag")
+    @ApiModelProperty("动态模型类型")
     private Integer dynamodelflag;
 
     /**
@@ -496,6 +562,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "entitycachetimeout")
     @JsonProperty("entitycachetimeout")
+    @ApiModelProperty("数据对象缓存时长")
     private Integer entitycachetimeout;
 
     /**
@@ -505,6 +572,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
 
     /**
@@ -512,6 +580,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enabledeaction")
     @JsonProperty("enabledeaction")
+    @ApiModelProperty("支持实体行为")
     private Integer enabledeaction;
 
     /**
@@ -519,6 +588,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enableselect")
     @JsonProperty("enableselect")
+    @ApiModelProperty("支持简单查询")
     private Integer enableselect;
 
     /**
@@ -527,6 +597,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(defaultValue = "DEFAULT")
     @JSONField(name = "decat")
     @JsonProperty("decat")
+    @ApiModelProperty("实体类别")
     private String decat;
 
     /**
@@ -534,6 +605,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag")
     @JsonProperty("usertag")
+    @ApiModelProperty("用户标记")
     private String usertag;
 
     /**
@@ -541,6 +613,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "enableorgmodel")
     @JsonProperty("enableorgmodel")
+    @ApiModelProperty("启用组织模型")
     private Integer enableorgmodel;
 
     /**
@@ -549,6 +622,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "existingmodel")
     @JsonProperty("existingmodel")
+    @ApiModelProperty("现有数据结构")
     private Integer existingmodel;
 
     /**
@@ -557,6 +631,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(defaultValue = "0")
     @JSONField(name = "modelstate")
     @JsonProperty("modelstate")
+    @ApiModelProperty("模型状态")
     private Integer modelstate;
 
     /**
@@ -564,6 +639,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "color")
     @JsonProperty("color")
+    @ApiModelProperty("显示颜色")
     private String color;
 
     /**
@@ -571,6 +647,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "usertag4")
     @JsonProperty("usertag4")
+    @ApiModelProperty("用户标记4")
     private String usertag4;
 
     /**
@@ -578,6 +655,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "auditmode")
     @JsonProperty("auditmode")
+    @ApiModelProperty("审计模式")
     private Integer auditmode;
 
     /**
@@ -585,6 +663,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "tablename")
     @JsonProperty("tablename")
+    @ApiModelProperty("主表名称")
     private String tablename;
 
     /**
@@ -592,6 +671,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "extablename")
     @JsonProperty("extablename")
+    @ApiModelProperty("用户表")
     private String extablename;
 
     /**
@@ -599,6 +679,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "viewname4")
     @JsonProperty("viewname4")
+    @ApiModelProperty("级别4视图名称")
     private String viewname4;
 
     /**
@@ -606,6 +687,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "baseclsparams")
     @JsonProperty("baseclsparams")
+    @ApiModelProperty("基类参数")
     private String baseclsparams;
 
     /**
@@ -613,6 +695,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "dataaccmode")
     @JsonProperty("dataaccmode")
+    @ApiModelProperty("数据访问控制方式")
     private Integer dataaccmode;
 
     /**
@@ -621,6 +704,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
 
     /**
@@ -628,6 +712,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "logicname")
     @JsonProperty("logicname")
+    @ApiModelProperty("中文名称")
     private String logicname;
 
     /**
@@ -635,6 +720,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssubsysserviceapiname")
     @JsonProperty("pssubsysserviceapiname")
+    @ApiModelProperty("子系统服务接口")
     private String pssubsysserviceapiname;
 
     /**
@@ -642,6 +728,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "modcolor")
     @JsonProperty("modcolor")
+    @ApiModelProperty("模块颜色")
     private String modcolor;
 
     /**
@@ -649,6 +736,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssubsyssadename")
     @JsonProperty("pssubsyssadename")
+    @ApiModelProperty("子系统接口实体")
     private String pssubsyssadename;
 
     /**
@@ -656,6 +744,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "psmodulename")
     @JsonProperty("psmodulename")
+    @ApiModelProperty("系统模块")
     private String psmodulename;
 
     /**
@@ -663,6 +752,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "subsysmodule")
     @JsonProperty("subsysmodule")
+    @ApiModelProperty("子系统实体")
     private Integer subsysmodule;
 
     /**
@@ -670,6 +760,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssysreqitemname")
     @JsonProperty("pssysreqitemname")
+    @ApiModelProperty("系统设计需求")
     private String pssysreqitemname;
 
     /**
@@ -677,6 +768,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssysreqitemid")
     @JsonProperty("pssysreqitemid")
+    @ApiModelProperty("系统设计需求")
     private String pssysreqitemid;
 
     /**
@@ -684,6 +776,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssubsysserviceapiid")
     @JsonProperty("pssubsysserviceapiid")
+    @ApiModelProperty("子系统服务接口")
     private String pssubsysserviceapiid;
 
     /**
@@ -691,6 +784,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "psmoduleid")
     @JsonProperty("psmoduleid")
+    @ApiModelProperty("系统模块")
     private String psmoduleid;
 
     /**
@@ -698,6 +792,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     @JSONField(name = "pssubsyssadeid")
     @JsonProperty("pssubsyssadeid")
+    @ApiModelProperty("子系统接口实体")
     private String pssubsyssadeid;
 
 
@@ -737,7 +832,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setModelimpexpflag(Integer modelimpexpflag) {
         this.modelimpexpflag = modelimpexpflag ;
-        this.modify("modelimpexpflag", modelimpexpflag);
+        this.modify("modelimpexpflag",modelimpexpflag);
     }
 
     /**
@@ -745,7 +840,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setAccctrlarch(Integer accctrlarch) {
         this.accctrlarch = accctrlarch ;
-        this.modify("accctrlarch", accctrlarch);
+        this.modify("accctrlarch",accctrlarch);
     }
 
     /**
@@ -753,7 +848,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setUserparams(String userparams) {
         this.userparams = userparams ;
-        this.modify("userparams", userparams);
+        this.modify("userparams",userparams);
     }
 
     /**
@@ -761,7 +856,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDelockflag(Integer delockflag) {
         this.delockflag = delockflag ;
-        this.modify("delockflag", delockflag);
+        this.modify("delockflag",delockflag);
     }
 
     /**
@@ -769,7 +864,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setLockflag(Integer lockflag) {
         this.lockflag = lockflag ;
-        this.modify("lockflag", lockflag);
+        this.modify("lockflag",lockflag);
     }
 
     /**
@@ -777,7 +872,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setViewname3(String viewname3) {
         this.viewname3 = viewname3 ;
-        this.modify("viewname3", viewname3);
+        this.modify("viewname3",viewname3);
     }
 
     /**
@@ -785,7 +880,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDetag2(String detag2) {
         this.detag2 = detag2 ;
-        this.modify("detag2", detag2);
+        this.modify("detag2",detag2);
     }
 
     /**
@@ -793,7 +888,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setUsertag3(String usertag3) {
         this.usertag3 = usertag3 ;
-        this.modify("usertag3", usertag3);
+        this.modify("usertag3",usertag3);
     }
 
     /**
@@ -801,7 +896,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setServiceapiflag(Integer serviceapiflag) {
         this.serviceapiflag = serviceapiflag ;
-        this.modify("serviceapiflag", serviceapiflag);
+        this.modify("serviceapiflag",serviceapiflag);
     }
 
     /**
@@ -809,7 +904,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setMemo(String memo) {
         this.memo = memo ;
-        this.modify("memo", memo);
+        this.modify("memo",memo);
     }
 
     /**
@@ -817,7 +912,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnabledataver(Integer enabledataver) {
         this.enabledataver = enabledataver ;
-        this.modify("enabledataver", enabledataver);
+        this.modify("enabledataver",enabledataver);
     }
 
     /**
@@ -825,7 +920,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnamultiform(Integer enamultiform) {
         this.enamultiform = enamultiform ;
-        this.modify("enamultiform", enamultiform);
+        this.modify("enamultiform",enamultiform);
     }
 
     /**
@@ -833,7 +928,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setViewname2(String viewname2) {
         this.viewname2 = viewname2 ;
-        this.modify("viewname2", viewname2);
+        this.modify("viewname2",viewname2);
     }
 
     /**
@@ -841,7 +936,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setTestcaseflag(Integer testcaseflag) {
         this.testcaseflag = testcaseflag ;
-        this.modify("testcaseflag", testcaseflag);
+        this.modify("testcaseflag",testcaseflag);
     }
 
     /**
@@ -849,7 +944,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDesn(String desn) {
         this.desn = desn ;
-        this.modify("desn", desn);
+        this.modify("desn",desn);
     }
 
     /**
@@ -857,7 +952,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDataimpexpflag(Integer dataimpexpflag) {
         this.dataimpexpflag = dataimpexpflag ;
-        this.modify("dataimpexpflag", dataimpexpflag);
+        this.modify("dataimpexpflag",dataimpexpflag);
     }
 
     /**
@@ -865,7 +960,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setMaxentitycachecnt(Integer maxentitycachecnt) {
         this.maxentitycachecnt = maxentitycachecnt ;
-        this.modify("maxentitycachecnt", maxentitycachecnt);
+        this.modify("maxentitycachecnt",maxentitycachecnt);
     }
 
     /**
@@ -873,7 +968,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDatachglogmode(Integer datachglogmode) {
         this.datachglogmode = datachglogmode ;
-        this.modify("datachglogmode", datachglogmode);
+        this.modify("datachglogmode",datachglogmode);
     }
 
     /**
@@ -881,7 +976,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setUsertag2(String usertag2) {
         this.usertag2 = usertag2 ;
-        this.modify("usertag2", usertag2);
+        this.modify("usertag2",usertag2);
     }
 
     /**
@@ -889,7 +984,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setSystemflag(Integer systemflag) {
         this.systemflag = systemflag ;
-        this.modify("systemflag", systemflag);
+        this.modify("systemflag",systemflag);
     }
 
     /**
@@ -897,7 +992,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setPssystemid(String pssystemid) {
         this.pssystemid = pssystemid ;
-        this.modify("pssystemid", pssystemid);
+        this.modify("pssystemid",pssystemid);
     }
 
     /**
@@ -905,7 +1000,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnableopnamemodel(Integer enableopnamemodel) {
         this.enableopnamemodel = enableopnamemodel ;
-        this.modify("enableopnamemodel", enableopnamemodel);
+        this.modify("enableopnamemodel",enableopnamemodel);
     }
 
     /**
@@ -913,7 +1008,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDynamicmode(Integer dynamicmode) {
         this.dynamicmode = dynamicmode ;
-        this.modify("dynamicmode", dynamicmode);
+        this.modify("dynamicmode",dynamicmode);
     }
 
     /**
@@ -921,7 +1016,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnablemultids(Integer enablemultids) {
         this.enablemultids = enablemultids ;
-        this.modify("enablemultids", enablemultids);
+        this.modify("enablemultids",enablemultids);
     }
 
     /**
@@ -929,7 +1024,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setIndexdetype(String indexdetype) {
         this.indexdetype = indexdetype ;
-        this.modify("indexdetype", indexdetype);
+        this.modify("indexdetype",indexdetype);
     }
 
     /**
@@ -937,7 +1032,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setValidflag(Integer validflag) {
         this.validflag = validflag ;
-        this.modify("validflag", validflag);
+        this.modify("validflag",validflag);
     }
 
     /**
@@ -945,7 +1040,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setTodotask(String todotask) {
         this.todotask = todotask ;
-        this.modify("todotask", todotask);
+        this.modify("todotask",todotask);
     }
 
     /**
@@ -953,7 +1048,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnablemob(Integer enablemob) {
         this.enablemob = enablemob ;
-        this.modify("enablemob", enablemob);
+        this.modify("enablemob",enablemob);
     }
 
     /**
@@ -961,7 +1056,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnablededataset(Integer enablededataset) {
         this.enablededataset = enablededataset ;
-        this.modify("enablededataset", enablededataset);
+        this.modify("enablededataset",enablededataset);
     }
 
     /**
@@ -969,7 +1064,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnableentitycache(Integer enableentitycache) {
         this.enableentitycache = enableentitycache ;
-        this.modify("enableentitycache", enableentitycache);
+        this.modify("enableentitycache",enableentitycache);
     }
 
     /**
@@ -977,7 +1072,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setStoragemode(Integer storagemode) {
         this.storagemode = storagemode ;
-        this.modify("storagemode", storagemode);
+        this.modify("storagemode",storagemode);
     }
 
     /**
@@ -985,7 +1080,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setLogicvalid(Integer logicvalid) {
         this.logicvalid = logicvalid ;
-        this.modify("logicvalid", logicvalid);
+        this.modify("logicvalid",logicvalid);
     }
 
     /**
@@ -993,7 +1088,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnablewfmodel(Integer enablewfmodel) {
         this.enablewfmodel = enablewfmodel ;
-        this.modify("enablewfmodel", enablewfmodel);
+        this.modify("enablewfmodel",enablewfmodel);
     }
 
     /**
@@ -1001,7 +1096,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDetype(Integer detype) {
         this.detype = detype ;
-        this.modify("detype", detype);
+        this.modify("detype",detype);
     }
 
     /**
@@ -1009,7 +1104,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setSaasmode(Integer saasmode) {
         this.saasmode = saasmode ;
-        this.modify("saasmode", saasmode);
+        this.modify("saasmode",saasmode);
     }
 
     /**
@@ -1017,7 +1112,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setPsdataentityname(String psdataentityname) {
         this.psdataentityname = psdataentityname ;
-        this.modify("psdataentityname", psdataentityname);
+        this.modify("psdataentityname",psdataentityname);
     }
 
     /**
@@ -1025,7 +1120,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setViewname(String viewname) {
         this.viewname = viewname ;
-        this.modify("viewname", viewname);
+        this.modify("viewname",viewname);
     }
 
     /**
@@ -1033,7 +1128,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setBiztag(String biztag) {
         this.biztag = biztag ;
-        this.modify("biztag", biztag);
+        this.modify("biztag",biztag);
     }
 
     /**
@@ -1041,7 +1136,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDbtabspace(String dbtabspace) {
         this.dbtabspace = dbtabspace ;
-        this.modify("dbtabspace", dbtabspace);
+        this.modify("dbtabspace",dbtabspace);
     }
 
     /**
@@ -1049,7 +1144,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setKeyrule(String keyrule) {
         this.keyrule = keyrule ;
-        this.modify("keyrule", keyrule);
+        this.modify("keyrule",keyrule);
     }
 
     /**
@@ -1057,7 +1152,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setUseraction(Integer useraction) {
         this.useraction = useraction ;
-        this.modify("useraction", useraction);
+        this.modify("useraction",useraction);
     }
 
     /**
@@ -1065,7 +1160,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setSubsysde(Integer subsysde) {
         this.subsysde = subsysde ;
-        this.modify("subsysde", subsysde);
+        this.modify("subsysde",subsysde);
     }
 
     /**
@@ -1073,7 +1168,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setServicecodename(String servicecodename) {
         this.servicecodename = servicecodename ;
-        this.modify("servicecodename", servicecodename);
+        this.modify("servicecodename",servicecodename);
     }
 
     /**
@@ -1081,7 +1176,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setSvrpubmode(Integer svrpubmode) {
         this.svrpubmode = svrpubmode ;
-        this.modify("svrpubmode", svrpubmode);
+        this.modify("svrpubmode",svrpubmode);
     }
 
     /**
@@ -1089,7 +1184,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setNoviewmode(Integer noviewmode) {
         this.noviewmode = noviewmode ;
-        this.modify("noviewmode", noviewmode);
+        this.modify("noviewmode",noviewmode);
     }
 
     /**
@@ -1097,7 +1192,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnableaudit(Integer enableaudit) {
         this.enableaudit = enableaudit ;
-        this.modify("enableaudit", enableaudit);
+        this.modify("enableaudit",enableaudit);
     }
 
     /**
@@ -1105,7 +1200,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDslink(String dslink) {
         this.dslink = dslink ;
-        this.modify("dslink", dslink);
+        this.modify("dslink",dslink);
     }
 
     /**
@@ -1113,7 +1208,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setPssystemname(String pssystemname) {
         this.pssystemname = pssystemname ;
-        this.modify("pssystemname", pssystemname);
+        this.modify("pssystemname",pssystemname);
     }
 
     /**
@@ -1121,7 +1216,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setViewlevel(Integer viewlevel) {
         this.viewlevel = viewlevel ;
-        this.modify("viewlevel", viewlevel);
+        this.modify("viewlevel",viewlevel);
     }
 
     /**
@@ -1129,7 +1224,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setVirtualflag(Integer virtualflag) {
         this.virtualflag = virtualflag ;
-        this.modify("virtualflag", virtualflag);
+        this.modify("virtualflag",virtualflag);
     }
 
     /**
@@ -1137,7 +1232,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnatempdata(Integer enatempdata) {
         this.enatempdata = enatempdata ;
-        this.modify("enatempdata", enatempdata);
+        this.modify("enatempdata",enatempdata);
     }
 
     /**
@@ -1145,7 +1240,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setLogicinvalidvalue(String logicinvalidvalue) {
         this.logicinvalidvalue = logicinvalidvalue ;
-        this.modify("logicinvalidvalue", logicinvalidvalue);
+        this.modify("logicinvalidvalue",logicinvalidvalue);
     }
 
     /**
@@ -1153,7 +1248,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setUsercat(String usercat) {
         this.usercat = usercat ;
-        this.modify("usercat", usercat);
+        this.modify("usercat",usercat);
     }
 
     /**
@@ -1161,7 +1256,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setVkeyseparator(String vkeyseparator) {
         this.vkeyseparator = vkeyseparator ;
-        this.modify("vkeyseparator", vkeyseparator);
+        this.modify("vkeyseparator",vkeyseparator);
     }
 
     /**
@@ -1169,7 +1264,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setLogicvalidvalue(String logicvalidvalue) {
         this.logicvalidvalue = logicvalidvalue ;
-        this.modify("logicvalidvalue", logicvalidvalue);
+        this.modify("logicvalidvalue",logicvalidvalue);
     }
 
     /**
@@ -1177,7 +1272,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setRemoveflag(Integer removeflag) {
         this.removeflag = removeflag ;
-        this.modify("removeflag", removeflag);
+        this.modify("removeflag",removeflag);
     }
 
     /**
@@ -1185,7 +1280,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDetag(String detag) {
         this.detag = detag ;
-        this.modify("detag", detag);
+        this.modify("detag",detag);
     }
 
     /**
@@ -1193,7 +1288,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setCodename(String codename) {
         this.codename = codename ;
-        this.modify("codename", codename);
+        this.modify("codename",codename);
     }
 
     /**
@@ -1201,7 +1296,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnabledalog(Integer enabledalog) {
         this.enabledalog = enabledalog ;
-        this.modify("enabledalog", enabledalog);
+        this.modify("enabledalog",enabledalog);
     }
 
     /**
@@ -1209,7 +1304,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDynamodelflag(Integer dynamodelflag) {
         this.dynamodelflag = dynamodelflag ;
-        this.modify("dynamodelflag", dynamodelflag);
+        this.modify("dynamodelflag",dynamodelflag);
     }
 
     /**
@@ -1217,7 +1312,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEntitycachetimeout(Integer entitycachetimeout) {
         this.entitycachetimeout = entitycachetimeout ;
-        this.modify("entitycachetimeout", entitycachetimeout);
+        this.modify("entitycachetimeout",entitycachetimeout);
     }
 
     /**
@@ -1225,7 +1320,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnabledeaction(Integer enabledeaction) {
         this.enabledeaction = enabledeaction ;
-        this.modify("enabledeaction", enabledeaction);
+        this.modify("enabledeaction",enabledeaction);
     }
 
     /**
@@ -1233,7 +1328,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnableselect(Integer enableselect) {
         this.enableselect = enableselect ;
-        this.modify("enableselect", enableselect);
+        this.modify("enableselect",enableselect);
     }
 
     /**
@@ -1241,7 +1336,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDecat(String decat) {
         this.decat = decat ;
-        this.modify("decat", decat);
+        this.modify("decat",decat);
     }
 
     /**
@@ -1249,7 +1344,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setUsertag(String usertag) {
         this.usertag = usertag ;
-        this.modify("usertag", usertag);
+        this.modify("usertag",usertag);
     }
 
     /**
@@ -1257,7 +1352,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setEnableorgmodel(Integer enableorgmodel) {
         this.enableorgmodel = enableorgmodel ;
-        this.modify("enableorgmodel", enableorgmodel);
+        this.modify("enableorgmodel",enableorgmodel);
     }
 
     /**
@@ -1265,7 +1360,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setExistingmodel(Integer existingmodel) {
         this.existingmodel = existingmodel ;
-        this.modify("existingmodel", existingmodel);
+        this.modify("existingmodel",existingmodel);
     }
 
     /**
@@ -1273,7 +1368,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setModelstate(Integer modelstate) {
         this.modelstate = modelstate ;
-        this.modify("modelstate", modelstate);
+        this.modify("modelstate",modelstate);
     }
 
     /**
@@ -1281,7 +1376,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setColor(String color) {
         this.color = color ;
-        this.modify("color", color);
+        this.modify("color",color);
     }
 
     /**
@@ -1289,7 +1384,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setUsertag4(String usertag4) {
         this.usertag4 = usertag4 ;
-        this.modify("usertag4", usertag4);
+        this.modify("usertag4",usertag4);
     }
 
     /**
@@ -1297,7 +1392,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setAuditmode(Integer auditmode) {
         this.auditmode = auditmode ;
-        this.modify("auditmode", auditmode);
+        this.modify("auditmode",auditmode);
     }
 
     /**
@@ -1305,7 +1400,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setTablename(String tablename) {
         this.tablename = tablename ;
-        this.modify("tablename", tablename);
+        this.modify("tablename",tablename);
     }
 
     /**
@@ -1313,7 +1408,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setExtablename(String extablename) {
         this.extablename = extablename ;
-        this.modify("extablename", extablename);
+        this.modify("extablename",extablename);
     }
 
     /**
@@ -1321,7 +1416,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setViewname4(String viewname4) {
         this.viewname4 = viewname4 ;
-        this.modify("viewname4", viewname4);
+        this.modify("viewname4",viewname4);
     }
 
     /**
@@ -1329,7 +1424,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setBaseclsparams(String baseclsparams) {
         this.baseclsparams = baseclsparams ;
-        this.modify("baseclsparams", baseclsparams);
+        this.modify("baseclsparams",baseclsparams);
     }
 
     /**
@@ -1337,7 +1432,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setDataaccmode(Integer dataaccmode) {
         this.dataaccmode = dataaccmode ;
-        this.modify("dataaccmode", dataaccmode);
+        this.modify("dataaccmode",dataaccmode);
     }
 
     /**
@@ -1345,7 +1440,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setLogicname(String logicname) {
         this.logicname = logicname ;
-        this.modify("logicname", logicname);
+        this.modify("logicname",logicname);
     }
 
     /**
@@ -1353,7 +1448,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setPssysreqitemid(String pssysreqitemid) {
         this.pssysreqitemid = pssysreqitemid ;
-        this.modify("pssysreqitemid", pssysreqitemid);
+        this.modify("pssysreqitemid",pssysreqitemid);
     }
 
     /**
@@ -1361,7 +1456,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setPssubsysserviceapiid(String pssubsysserviceapiid) {
         this.pssubsysserviceapiid = pssubsysserviceapiid ;
-        this.modify("pssubsysserviceapiid", pssubsysserviceapiid);
+        this.modify("pssubsysserviceapiid",pssubsysserviceapiid);
     }
 
     /**
@@ -1369,7 +1464,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setPsmoduleid(String psmoduleid) {
         this.psmoduleid = psmoduleid ;
-        this.modify("psmoduleid", psmoduleid);
+        this.modify("psmoduleid",psmoduleid);
     }
 
     /**
@@ -1377,7 +1472,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
      */
     public void setPssubsyssadeid(String pssubsyssadeid) {
         this.pssubsyssadeid = pssubsyssadeid ;
-        this.modify("pssubsyssadeid", pssubsyssadeid);
+        this.modify("pssubsyssadeid",pssubsyssadeid);
     }
 
     /**
@@ -1390,7 +1485,7 @@ public class PSDataEntity extends EntityClient implements Serializable {
     @Override
     public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
         this.reset("psdataentityid");
-        return super.copyTo(targetEntity, bIncEmpty);
+        return super.copyTo(targetEntity,bIncEmpty);
     }
 }
 

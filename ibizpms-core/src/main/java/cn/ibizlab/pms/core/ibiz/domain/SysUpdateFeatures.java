@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "T_SYS_UPDATE_FEATURES", resultMap = "SysUpdateFeaturesResultMap")
+@ApiModel("系统更新功能")
 public class SysUpdateFeatures extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @TableField(value = "`sys_update_featuresname`")
     @JSONField(name = "sysupdatefeaturesname")
     @JsonProperty("sysupdatefeaturesname")
+    @ApiModelProperty("系统更新功能名称")
     private String sysupdatefeaturesname;
     /**
      * 更新时间
@@ -59,6 +63,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
     private Timestamp updatedate;
     /**
      * 建立人
@@ -67,6 +72,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @TableField(value = "`createman`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
+    @ApiModelProperty("建立人")
     private String createman;
     /**
      * 更新人
@@ -75,6 +81,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @TableField(value = "`updateman`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
     private String updateman;
     /**
      * 更新类型
@@ -82,6 +89,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("更新类型")
     private String type;
     /**
      * 建立时间
@@ -91,6 +99,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
     private Timestamp createdate;
     /**
      * 更新功能
@@ -98,6 +107,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @TableField(value = "`upfeatures`")
     @JSONField(name = "upfeatures")
     @JsonProperty("upfeatures")
+    @ApiModelProperty("更新功能")
     private String upfeatures;
     /**
      * 系统更新功能标识
@@ -106,6 +116,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @TableId(value = "sys_update_featuresid", type = IdType.ASSIGN_UUID)
     @JSONField(name = "sysupdatefeaturesid")
     @JsonProperty("sysupdatefeaturesid")
+    @ApiModelProperty("系统更新功能标识")
     private String sysupdatefeaturesid;
     /**
      * 展示顺序
@@ -113,6 +124,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @TableField(value = "`displayorder`")
     @JSONField(name = "displayorder")
     @JsonProperty("displayorder")
+    @ApiModelProperty("展示顺序")
     private Integer displayorder;
     /**
      * 功能描述
@@ -120,6 +132,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @TableField(value = "`featuresdesc`")
     @JSONField(name = "featuresdesc")
     @JsonProperty("featuresdesc")
+    @ApiModelProperty("功能描述")
     private String featuresdesc;
     /**
      * 所属更新
@@ -127,6 +140,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "sysupdatelogname")
     @JsonProperty("sysupdatelogname")
+    @ApiModelProperty("所属更新")
     private String sysupdatelogname;
     /**
      * 系统更新日志标识
@@ -135,6 +149,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     @TableField(value = "`sys_update_logid`")
     @JSONField(name = "sysupdatelogid")
     @JsonProperty("sysupdatelogid")
+    @ApiModelProperty("系统更新日志标识")
     private String sysupdatelogid;
 
     /**

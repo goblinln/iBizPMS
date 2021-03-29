@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_storyspec", resultMap = "StorySpecResultMap")
+@ApiModel("需求描述")
 public class StorySpec extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class StorySpec extends EntityMP implements Serializable {
     @TableField(value = "`spec`")
     @JSONField(name = "spec")
     @JsonProperty("spec")
+    @ApiModelProperty("需求描述	")
     private String spec;
     /**
      * 验收标准
@@ -58,6 +62,7 @@ public class StorySpec extends EntityMP implements Serializable {
     @TableField(value = "`verify`")
     @JSONField(name = "verify")
     @JsonProperty("verify")
+    @ApiModelProperty("验收标准")
     private String verify;
     /**
      * 虚拟主键
@@ -66,6 +71,7 @@ public class StorySpec extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("虚拟主键")
     private String id;
     /**
      * 需求名称
@@ -73,6 +79,7 @@ public class StorySpec extends EntityMP implements Serializable {
     @TableField(value = "`title`")
     @JSONField(name = "title")
     @JsonProperty("title")
+    @ApiModelProperty("需求名称")
     private String title;
     /**
      * 版本号
@@ -80,6 +87,7 @@ public class StorySpec extends EntityMP implements Serializable {
     @TableField(value = "`version`")
     @JSONField(name = "version")
     @JsonProperty("version")
+    @ApiModelProperty("版本号")
     private Integer version;
     /**
      * 需求
@@ -87,6 +95,7 @@ public class StorySpec extends EntityMP implements Serializable {
     @TableField(value = "`story`")
     @JSONField(name = "story")
     @JsonProperty("story")
+    @ApiModelProperty("需求")
     private Long story;
 
     /**

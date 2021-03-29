@@ -37,6 +37,7 @@ import cn.ibizlab.pms.core.ibizsysmodel.client.PSSysAppFeignClient;
 import cn.ibizlab.pms.util.security.SpringContextHolder;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 实体[系统应用] 服务对象接口实现
@@ -74,9 +75,8 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
     @Override
     public boolean create(PSSysApp et) {
         PSSysApp rt = pSSysAppFeignClient.create(et);
-        if (rt == null) {
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
     }
@@ -92,7 +92,7 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
     }
 
     public void createBatch(List<PSSysApp> list){
-        pSSysAppFeignClient.createBatch(list);
+        pSSysAppFeignClient.createBatch(list) ;
     }
 
     public void createBatch(String devSlnSysId, List<PSSysApp> list){
@@ -101,10 +101,9 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
 
     @Override
     public boolean update(PSSysApp et) {
-        PSSysApp rt = pSSysAppFeignClient.update(et.getPssysappid(), et);
-        if (rt == null) {
+        PSSysApp rt = pSSysAppFeignClient.update(et.getPssysappid(),et);
+        if(rt==null)
             return false;
-        }
         CachedBeanCopier.copy(rt, et);
         return true;
 
@@ -120,8 +119,8 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
         return true;
     }
 
-    public void updateBatch(List<PSSysApp> list) {
-        pSSysAppFeignClient.updateBatch(list);
+    public void updateBatch(List<PSSysApp> list){
+        pSSysAppFeignClient.updateBatch(list) ;
     }
 
     public void updateBatch(String devSlnSysId, List<PSSysApp> list){
@@ -130,7 +129,7 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
 
     @Override
     public boolean remove(String pssysappid) {
-        boolean result=pSSysAppFeignClient.remove(pssysappid);
+        boolean result=pSSysAppFeignClient.remove(pssysappid) ;
         return result;
     }
 
@@ -150,12 +149,12 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
 
     @Override
     public PSSysApp get(String pssysappid) {
-        PSSysApp et = pSSysAppFeignClient.get(pssysappid);
-        if (et == null) {
-            et = new PSSysApp();
+		PSSysApp et=pSSysAppFeignClient.get(pssysappid);
+        if(et==null){
+            et=new PSSysApp();
             et.setPssysappid(pssysappid);
         }
-        else {
+        else{
         }
         return  et;
     }
@@ -202,14 +201,25 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
     @Override
     @Transactional
     public boolean save(PSSysApp et) {
-        if (et.getPssysappid() == null) {
-            et.setPssysappid((String)et.getDefaultKey(true));
+        boolean result = true;
+        Object rt = pSSysAppFeignClient.saveEntity(et);
+        if(rt == null)
+          return false;
+        try {
+            if (rt instanceof Map) {
+                ObjectMapper mapper = new ObjectMapper();
+                rt = mapper.readValue(mapper.writeValueAsString(rt), PSSysApp.class);
+                if (rt != null) {
+                    CachedBeanCopier.copy(rt, et);
+                }
+            } else if (rt instanceof Boolean) {
+                result = (boolean) rt;
+            }
+        } catch (Exception e) {
         }
-        if (!pSSysAppFeignClient.save(et)) {
-            return false;
-        }
-        return true;
+            return result;
     }
+
 
     @Override
     @Transactional
@@ -225,7 +235,7 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
 
     @Override
     public void saveBatch(List<PSSysApp> list) {
-        pSSysAppFeignClient.saveBatch(list);
+        pSSysAppFeignClient.saveBatch(list) ;
     }
 
     @Override
@@ -235,7 +245,7 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
 
 
 
-    @Override
+	@Override
     public List<PSSysApp> selectByPssysserviceapiid(String pssysserviceapiid) {
         PSSysAppSearchContext context=new PSSysAppSearchContext();
         context.setSize(Integer.MAX_VALUE);
@@ -261,12 +271,11 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
     @Override
     public void removeByPssysserviceapiid(String pssysserviceapiid) {
         Set<String> delIds=new HashSet<String>();
-        for (PSSysApp before:selectByPssysserviceapiid(pssysserviceapiid)) {
+        for(PSSysApp before:selectByPssysserviceapiid(pssysserviceapiid)){
             delIds.add(before.getPssysappid());
         }
-        if (delIds.size() > 0) {
+        if(delIds.size()>0)
             this.removeBatch(delIds);
-        }
     }
 
     @Override
@@ -311,8 +320,6 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
         Page<PSSysApp> pSSysApps=getPSSysAppFeignClient(devSlnSysId).searchDefault(context);
         return pSSysApps;
     }
-
-
 
     @Override
     @Transactional

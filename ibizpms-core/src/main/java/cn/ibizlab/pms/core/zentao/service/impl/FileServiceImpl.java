@@ -57,7 +57,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     @Override
     @Transactional
     public boolean create(File et) {
-        if (!this.retBool(this.baseMapper.insert(et))) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -73,7 +73,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     @Override
     @Transactional
     public boolean update(File et) {
-        if (!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
         CachedBeanCopier.copy(get(et.getId()), et);
@@ -104,7 +104,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     @Transactional
     public File get(Long key) {
         File et = getById(key);
-        if (et == null) {
+        if(et == null){
             et = new File();
             et.setId(key);
         }
@@ -125,7 +125,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     @Override
     @Transactional
     public boolean save(File et) {
-        if (!saveOrUpdate(et)) {
+        if(!saveOrUpdate(et)) {
             return false;
         }
         return true;
@@ -204,7 +204,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
      */
     @Override
     public Page<File> searchDefault(FileSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchDefault(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
         return new PageImpl<File>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -213,7 +213,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
      */
     @Override
     public Page<File> searchDocLibFile(FileSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchDocLibFile(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchDocLibFile(context.getPages(),context,context.getSelectCond());
         return new PageImpl<File>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -222,7 +222,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
      */
     @Override
     public Page<File> searchProductDocLibFile(FileSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchProductDocLibFile(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchProductDocLibFile(context.getPages(),context,context.getSelectCond());
         return new PageImpl<File>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -231,7 +231,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
      */
     @Override
     public Page<File> searchType(FileSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchType(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
         return new PageImpl<File>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -240,7 +240,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
      */
     @Override
     public Page<File> searchTypeNotBySrfparentkey(FileSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchTypeNotBySrfparentkey(context.getPages(), context, context.getSelectCond());
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchTypeNotBySrfparentkey(context.getPages(),context,context.getSelectCond());
         return new PageImpl<File>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
@@ -251,31 +251,28 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
 
 
     @Override
-    public List<JSONObject> select(String sql, Map param) {
-        return this.baseMapper.selectBySQL(sql, param);
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
     }
 
     @Override
     @Transactional
-    public boolean execute(String sql, Map param) {
+    public boolean execute(String sql , Map param){
         if (sql == null || sql.isEmpty()) {
             return false;
         }
         if (sql.toLowerCase().trim().startsWith("insert")) {
-            return this.baseMapper.insertBySQL(sql, param);
+            return this.baseMapper.insertBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("update")) {
-            return this.baseMapper.updateBySQL(sql, param);
+            return this.baseMapper.updateBySQL(sql,param);
         }
         if (sql.toLowerCase().trim().startsWith("delete")) {
-            return this.baseMapper.deleteBySQL(sql, param);
+            return this.baseMapper.deleteBySQL(sql,param);
         }
         log.warn("暂未支持的SQL语法");
         return true;
     }
-
-
-
 
 
 

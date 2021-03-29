@@ -24,6 +24,8 @@ import java.io.Serializable;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import cn.ibizlab.pms.util.annotation.Audit;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -39,6 +41,7 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_module", resultMap = "IBZProStoryModuleResultMap")
+@ApiModel("需求模块")
 public class IBZProStoryModule extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,6 +53,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`grade`")
     @JSONField(name = "grade")
     @JsonProperty("grade")
+    @ApiModelProperty("级别")
     private Integer grade;
     /**
      * collector
@@ -58,6 +62,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`collector`")
     @JSONField(name = "collector")
     @JsonProperty("collector")
+    @ApiModelProperty("collector")
     private String collector;
     /**
      * owner
@@ -66,6 +71,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`owner`")
     @JSONField(name = "owner")
     @JsonProperty("owner")
+    @ApiModelProperty("owner")
     private String owner;
     /**
      * 需求模块类型
@@ -74,6 +80,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`ibiz_storytype`")
     @JSONField(name = "ibiz_storytype")
     @JsonProperty("ibiz_storytype")
+    @ApiModelProperty("需求模块类型")
     private String ibizStorytype;
     /**
      * id
@@ -82,6 +89,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
+    @ApiModelProperty("id")
     private Long id;
     /**
      * 类型
@@ -90,6 +98,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
+    @ApiModelProperty("类型")
     private String type;
     /**
      * 简称
@@ -98,6 +107,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`short`")
     @JSONField(name = "ibizshort")
     @JsonProperty("ibizshort")
+    @ApiModelProperty("简称")
     private String ibizshort;
     /**
      * 名称
@@ -105,6 +115,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
+    @ApiModelProperty("名称")
     private String name;
     /**
      * 已删除
@@ -113,6 +124,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @ApiModelProperty("已删除")
     private String deleted;
     /**
      * 路径
@@ -121,6 +133,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`path`")
     @JSONField(name = "path")
     @JsonProperty("path")
+    @ApiModelProperty("路径")
     private String path;
     /**
      * IBIZ标识
@@ -129,6 +142,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`ibiz_id`")
     @JSONField(name = "ibizid")
     @JsonProperty("ibizid")
+    @ApiModelProperty("IBIZ标识")
     private String ibizid;
     /**
      * 产品
@@ -136,6 +150,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(exist = false)
     @JSONField(name = "productname")
     @JsonProperty("productname")
+    @ApiModelProperty("产品")
     private String productname;
     /**
      * 编号
@@ -143,6 +158,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`root`")
     @JSONField(name = "root")
     @JsonProperty("root")
+    @ApiModelProperty("编号")
     private Long root;
     /**
      * id
@@ -150,6 +166,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     @TableField(value = "`parent`")
     @JSONField(name = "parent")
     @JsonProperty("parent")
+    @ApiModelProperty("id")
     private Long parent;
 
     /**
