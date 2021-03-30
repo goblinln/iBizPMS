@@ -22,12 +22,12 @@ spec:
         image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-app-mob:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 22150
+        - containerPort: 22120
         env:
         - name: SPRING_CLOUD_NACOS_DISCOVERY_IP
           value: "172.16.240.110"      
         - name: SERVER_PORT
-          value: "22150"
+          value: "22120"
         - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR
           value: "172.16.240.110:8848"
         - name: SPRING_REDIS_HOST
@@ -77,9 +77,9 @@ spec:
   type: NodePort
   ports:
   - name: http
-    port: 22150
-    targetPort: 22150
-    nodePort: 22150
+    port: 22120
+    targetPort: 22120
+    nodePort: 22120
     protocol: TCP
   selector:
     app: ibizpms-app-mob
