@@ -97,6 +97,7 @@ hide members
 |对象类型(OBJECTTYPE)|EQ|
 |标题(TITLE)|LIKE|
 |备注(EXTRA)|EQ|
+|备注(EXTRA)|NOTEQ|
 
 ## 导入模式
 无

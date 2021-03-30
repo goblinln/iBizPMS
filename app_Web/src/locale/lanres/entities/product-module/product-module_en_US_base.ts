@@ -6,7 +6,7 @@ function getLocaleResourceBase(){
 		'path': commonLogic.appcommonhandle("path",null),
 		'orderpk': commonLogic.appcommonhandle("数据选择排序",null),
 		'deleted': commonLogic.appcommonhandle("逻辑删除标志",null),
-		'name': commonLogic.appcommonhandle("模块名称",null),
+		'name': commonLogic.appcommonhandle("名称",null),
 		'branch': commonLogic.appcommonhandle("branch",null),
 		'ibizshort': commonLogic.appcommonhandle("简称",null),
 		'order': commonLogic.appcommonhandle("排序值",null),
@@ -26,10 +26,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("需求模块",null),
 				title: commonLogic.appcommonhandle("产品模块表格视图",null),
 			},
-			'casetreeexpview': {
-				caption: commonLogic.appcommonhandle("需求模块",null),
-				title: commonLogic.appcommonhandle("产品需求导航视图",null),
-			},
 			'gridview': {
 				caption: commonLogic.appcommonhandle("需求模块",null),
 				title: commonLogic.appcommonhandle("产品模块表格视图",null),
@@ -46,14 +42,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("需求模块",null),
 				title: commonLogic.appcommonhandle("产品模块编辑视图",null),
 			},
-			'storytreeexpview': {
-				caption: commonLogic.appcommonhandle("需求模块",null),
-				title: commonLogic.appcommonhandle("产品需求导航视图",null),
-			},
-			'bugtreeexpview': {
-				caption: commonLogic.appcommonhandle("需求模块",null),
-				title: commonLogic.appcommonhandle("产品需求导航视图",null),
-			},
 		},
 		main_form: {
 			details: {
@@ -61,7 +49,7 @@ function getLocaleResourceBase(){
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("id",null), 
-				'srfmajortext': commonLogic.appcommonhandle("模块名称",null), 
+				'srfmajortext': commonLogic.appcommonhandle("名称",null), 
 				'srftempmode': commonLogic.appcommonhandle("",null), 
 				'srfuf': commonLogic.appcommonhandle("",null), 
 				'srfdeid': commonLogic.appcommonhandle("",null), 
@@ -69,7 +57,7 @@ function getLocaleResourceBase(){
 				'rootname': commonLogic.appcommonhandle("所属产品",null), 
 				'branch': commonLogic.appcommonhandle("平台",null), 
 				'parentname': commonLogic.appcommonhandle("上级模块",null), 
-				'name': commonLogic.appcommonhandle("模块名称",null), 
+				'name': commonLogic.appcommonhandle("名称",null), 
 				'short': commonLogic.appcommonhandle("简称",null), 
 				'order': commonLogic.appcommonhandle("排序值",null), 
 				'root': commonLogic.appcommonhandle("产品",null), 
@@ -81,7 +69,7 @@ function getLocaleResourceBase(){
 		},
 		mainbranch_grid: {
 			columns: {
-				'name': commonLogic.appcommonhandle("模块名称",null),
+				'name': commonLogic.appcommonhandle("名称",null),
 				'branch': commonLogic.appcommonhandle("平台",null),
 				'short': commonLogic.appcommonhandle("简称",null),
 				'order': commonLogic.appcommonhandle("排序值",null),
@@ -94,7 +82,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'name': commonLogic.appcommonhandle("模块名称",null),
+				'name': commonLogic.appcommonhandle("名称",null),
 				'branch': commonLogic.appcommonhandle("平台",null),
 				'short': commonLogic.appcommonhandle("简称",null),
 				'order': commonLogic.appcommonhandle("排序值",null),

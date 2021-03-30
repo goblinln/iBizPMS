@@ -81,6 +81,16 @@ public class ProjectTeamDTO extends DTOBase implements Serializable {
     private Integer days;
 
     /**
+     * 属性 [EXITDATE]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "exitdate" , format="yyyy-MM-dd")
+    @JsonProperty("exitdate")
+    @ApiModelProperty("退场时间")
+    private Timestamp exitdate;
+
+    /**
      * 属性 [TYPE]
      *
      */
@@ -173,6 +183,26 @@ public class ProjectTeamDTO extends DTOBase implements Serializable {
     @JsonProperty("left")
     @ApiModelProperty("预计剩余")
     private Double left;
+
+    /**
+     * 属性 [PM]
+     *
+     */
+    @JSONField(name = "pm")
+    @JsonProperty("pm")
+    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
+    @ApiModelProperty("项目经理")
+    private String pm;
+
+    /**
+     * 属性 [PROJECTNAME]
+     *
+     */
+    @JSONField(name = "projectname")
+    @JsonProperty("projectname")
+    @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
+    @ApiModelProperty("所属项目")
+    private String projectname;
 
     /**
      * 属性 [ROOT]

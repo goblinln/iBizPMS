@@ -300,6 +300,10 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("删除",null),
 			},
 		},
+		productbugresolutiongridviewtoolbar_toolbar: {
+		},
+		productbugstatusgridviewtoolbar_toolbar: {
+		},
 		bugresolvedbygridviewzuzhitoolbar_toolbar: {
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("导出",null),

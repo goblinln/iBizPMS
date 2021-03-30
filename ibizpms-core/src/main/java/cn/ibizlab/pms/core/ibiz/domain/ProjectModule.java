@@ -81,12 +81,12 @@ public class ProjectModule extends EntityMP implements Serializable {
     @ApiModelProperty("数据选择排序")
     private String orderpk;
     /**
-     * 模块名称
+     * 名称
      */
     @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
-    @ApiModelProperty("模块名称")
+    @ApiModelProperty("名称")
     private String name;
     /**
      * 排序值
@@ -229,7 +229,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [模块名称]
+     * 设置 [名称]
      */
     public void setName(String name) {
         this.name = name;

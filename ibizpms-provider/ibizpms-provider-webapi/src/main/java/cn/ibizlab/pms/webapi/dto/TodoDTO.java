@@ -318,6 +318,15 @@ public class TodoDTO extends DTOBase implements Serializable {
     private Timestamp configEnd;
 
     /**
+     * 属性 [COST]
+     *
+     */
+    @JSONField(name = "cost")
+    @JsonProperty("cost")
+    @ApiModelProperty("费用")
+    private Integer cost;
+
+    /**
      * 属性 [PRI]
      *
      */
@@ -485,6 +494,14 @@ public class TodoDTO extends DTOBase implements Serializable {
     public void setAssigneddate(Timestamp  assigneddate){
         this.assigneddate = assigneddate ;
         this.modify("assigneddate",assigneddate);
+    }
+
+    /**
+     * 设置 [COST]
+     */
+    public void setCost(Integer  cost){
+        this.cost = cost ;
+        this.modify("cost",cost);
     }
 
     /**

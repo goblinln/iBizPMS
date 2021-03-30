@@ -46,7 +46,7 @@ export abstract class ProductModuleBase extends EntityBase implements IProductMo
      */
     deleted?: any;
     /**
-     * 模块名称
+     * 名称
      */
     name?: any;
     /**

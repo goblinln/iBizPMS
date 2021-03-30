@@ -58,7 +58,6 @@
         "@interactjs/actions": "^1.9.4",
         "@interactjs/modifiers": "^1.9.4",
         "@interactjs/dev-tools": "^1.9.4",
-        "ibiz-studio-components-vue": "^0.0.1-alpha.9",
         "xlsx": "^0.16.9"
     },
     "devDependencies": {
@@ -78,7 +77,6 @@
         "mockjs": "^1.1.0",
         "script-loader": "^0.7.2",
         "typescript": "^4.1.3",
-        
         "vue-template-compiler": "^2.6.12"
     }
 }

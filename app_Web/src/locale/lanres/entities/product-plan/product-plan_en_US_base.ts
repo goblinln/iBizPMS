@@ -89,7 +89,6 @@ function getLocaleResourceBase(){
 				'end': commonLogic.appcommonhandle("结束日期",null), 
 				'delta': commonLogic.appcommonhandle("",null), 
 				'desc': commonLogic.appcommonhandle("描述",null), 
-				'parent': commonLogic.appcommonhandle("父计划",null), 
 				'id': commonLogic.appcommonhandle("编号",null), 
 			},
 			uiactions: {

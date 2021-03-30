@@ -78,14 +78,14 @@ function getLocaleResourceBase(){
 				'srfsourcekey': commonLogic.appcommonhandle("",null), 
 				'ibz_weeklyname': commonLogic.appcommonhandle("周报名称",null), 
 				'date': commonLogic.appcommonhandle("日期",null), 
+				'reportto': commonLogic.appcommonhandle("汇报给",null), 
+				'mailto': commonLogic.appcommonhandle("抄送给",null), 
 				'thisweektask': commonLogic.appcommonhandle("本周完成任务",null), 
 				'workthisweek': commonLogic.appcommonhandle("本周工作",null), 
 				'nextweektask': commonLogic.appcommonhandle("下周计划任务",null), 
 				'plannextweek': commonLogic.appcommonhandle("下周计划",null), 
 				'comment': commonLogic.appcommonhandle("其他事项",null), 
 				'files': commonLogic.appcommonhandle("附件",null), 
-				'reportto': commonLogic.appcommonhandle("汇报给",null), 
-				'mailto': commonLogic.appcommonhandle("抄送给",null), 
 				'ibz_weeklyid': commonLogic.appcommonhandle("周报标识",null), 
 				'account': commonLogic.appcommonhandle("用户",null), 
 				'issubmit': commonLogic.appcommonhandle("是否提交",null), 
@@ -192,6 +192,8 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("保存并关闭",null),
 				tip: commonLogic.appcommonhandle("保存并关闭",null),
 			},
+		},
+		usr2editviewtoolbar_toolbar: {
 		},
 		usr2gridviewtoolbar_toolbar: {
 			'deuiaction1_createeveryweekreport': {

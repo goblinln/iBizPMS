@@ -1676,6 +1676,8 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("过滤",null),
 			},
 		},
+		todoeditviewtoolbar_toolbar: {
+		},
 		mainmygridviewtoolbar_toolbar: {
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("过滤",null),

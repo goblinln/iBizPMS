@@ -165,7 +165,6 @@
 |-|项目选择表格视图|DEPICKUPGRIDVIEW|&nbsp;|
 |-|用户编辑视图|DEEDITVIEW|&nbsp;|
 |-|项目多表单编辑视图（需求相关）|DEMEDITVIEW9|&nbsp;|
-|-|产品需求导航视图|DETREEEXPVIEW|&nbsp;|
 |-|相关Bug|DEGRIDVIEW9|&nbsp;|
 |-|测试模块编辑视图|DEEDITVIEW|&nbsp;|
 |-|task表格视图|DEGRIDVIEW|&nbsp;|
@@ -307,7 +306,6 @@ SRFNAVPARAM.project=%project%|
 |-|功能测试|DEEDITVIEW|&nbsp;|
 |-|测试单编辑视图|DEEDITVIEW|&nbsp;|
 |-|bug表格视图|DEGRIDVIEW|&nbsp;|
-|-|任务模块树导航视图|DETREEEXPVIEW|&nbsp;|
 |-|需求分页导航视图|DETABEXPVIEW|&nbsp;|
 |-|测试版本编辑视图|DEEDITVIEW9|&nbsp;|
 |-|文档库分类编辑视图|DEEDITVIEW|&nbsp;|
@@ -481,7 +479,6 @@ SRFNAVPARAM.project=%project%|
 |-|任务主数据看板视图|DEPORTALVIEW|&nbsp;|
 |-|用例库用例编辑视图（编辑）|DEEDITVIEW|&nbsp;|
 |-|项目汇报用户任务表格视图|DEGRIDVIEW|&nbsp;|
-|-|产品需求导航视图|DETREEEXPVIEW|&nbsp;|
 |-|测试运行编辑视图|DEEDITVIEW9|&nbsp;|
 |-|产品列表导航视图|DELISTEXPVIEW|&nbsp;|
 |-|项目月报编辑视图|DEEDITVIEW|&nbsp;|
@@ -589,7 +586,6 @@ SRFNAVPARAM.project=%project%|
 |-|组织权限|DETABEXPVIEW|&nbsp;|
 |-|项目产品列表视图|DELISTVIEW9|&nbsp;|
 |-|file编辑视图|DEEDITVIEW|&nbsp;|
-|-|产品需求导航视图|DETREEEXPVIEW|&nbsp;|
 |-|平台数据选择视图|DEPICKUPVIEW|&nbsp;|
 |-|团队|DEGRIDVIEW9|&nbsp;|
 |-|路线图|DELISTVIEW9|&nbsp;视图参数转换|
@@ -973,7 +969,6 @@ SRFNAVPARAM.project=%project%|
 |-|Bug移动端多数据视图|DEMOBMDVIEW|&nbsp;|
 |-|版本移动端多数据视图|DEMOBMDVIEW|&nbsp;|
 |-|日报移动端编辑视图(日报描述)|DEMOBEDITVIEW|&nbsp;|
-|-|需求移动端编辑视图（新建）|DEMOBEDITVIEW|&nbsp;|
 |-|需求移动端多数据视图|DEMOBMDVIEW|&nbsp;|
 |-|需求模块移动端选择多数据视图|DEMOBPICKUPMDVIEW|&nbsp;|
 |-|发布移动端编辑视图|DEMOBEDITVIEW|&nbsp;|

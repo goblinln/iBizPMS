@@ -25,7 +25,7 @@ export interface IProjectModule extends IEntityBase {
      */
     orderpk?: any;
     /**
-     * 模块名称
+     * 名称
      */
     name?: any;
     /**

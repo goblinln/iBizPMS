@@ -5,7 +5,6 @@ import { Gridmilepost } from './plugin/grid-colrender/gridmilepost';
 import { GirdCounmColor } from './plugin/grid-colrender/gird-counm-color';
 import { TASKASSPlugin } from './plugin/grid-colrender/taskassplugin';
 import { Associatedform } from './plugin/custom/associatedform';
-import { MeditCollapseArrow } from './plugin/editform-render/medit-collapse-arrow';
 import { Listicon } from './plugin/list-itemrender/listicon';
 import { GridProgress } from './plugin/grid-colrender/grid-progress';
 import { GridIcon } from './plugin/grid-colrender/grid-icon';
@@ -91,7 +90,6 @@ export class AppPluginService {
         this.controlItemMap.set('girdCounmColor',new GirdCounmColor());
         this.controlItemMap.set('TASKASSPlugin',new TASKASSPlugin());
         this.controlItemMap.set('Associatedform',new Associatedform());
-        this.controlItemMap.set('meditCollapseArrow',new MeditCollapseArrow());
         this.controlItemMap.set('listicon',new Listicon());
         this.controlItemMap.set('gridProgress',new GridProgress());
         this.controlItemMap.set('gridIcon',new GridIcon());
@@ -107,9 +105,6 @@ export class AppPluginService {
      * @memberof AppPluginService
      */
     private registerUIActionPlugin(){
-        this.UIActionMap.set('downloadall',() => import('./plugin/deuiaction/downloadall'));
-        this.UIActionMap.set('fileibzdownload',() => import('./plugin/deuiaction/fileibzdownload'));
-        this.UIActionMap.set('downloadselect',() => import('./plugin/deuiaction/downloadselect'));
     }
     
 }

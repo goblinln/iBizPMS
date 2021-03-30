@@ -1070,18 +1070,21 @@ POST
 | 3 | total | Integer | 允许 | 总计可用 |
 | 4 | username | String | 允许 | 用户 |
 | 5 | days | Integer | 允许 | 可用工日 |
-| 6 | type | String | 允许 | 团队类型 |
-| 7 | order | Integer | 允许 | 排序 |
-| 8 | id | Long | 不可 | 编号 |
-| 9 | consumed | Double | 允许 | 总计消耗 |
-| 10 | account | String | 允许 | 用户 |
-| 11 | estimate | Double | 允许 | 最初预计 |
-| 12 | join | Timestamp | 允许 | 加盟日<br>时间格式：yyyy-MM-dd |
-| 13 | hours | Double | 允许 | 可用工时/天 |
-| 14 | taskcnt | Integer | 允许 | 任务数 |
-| 15 | left | Double | 允许 | 预计剩余 |
-| 16 | root | Long | 允许 | 项目编号 |
-| 17 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 6 | exitdate | Timestamp | 允许 | 退场时间<br>时间格式：yyyy-MM-dd |
+| 7 | type | String | 允许 | 团队类型 |
+| 8 | order | Integer | 允许 | 排序 |
+| 9 | id | Long | 不可 | 编号 |
+| 10 | consumed | Double | 允许 | 总计消耗 |
+| 11 | account | String | 允许 | 用户 |
+| 12 | estimate | Double | 允许 | 最初预计 |
+| 13 | join | Timestamp | 允许 | 加盟日<br>时间格式：yyyy-MM-dd |
+| 14 | hours | Double | 允许 | 可用工时/天 |
+| 15 | taskcnt | Integer | 允许 | 任务数 |
+| 16 | left | Double | 允许 | 预计剩余 |
+| 17 | pm | String | 允许 | 项目经理 |
+| 18 | projectname | String | 允许 | 所属项目 |
+| 19 | root | Long | 允许 | 项目编号 |
+| 20 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### ProjectSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

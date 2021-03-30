@@ -97,6 +97,8 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Remove And Close Window",null),
 			},
 		},
+		usr2gridviewtoolbar_toolbar: {
+		},
 		gridviewtoolbar_toolbar: {
 			'tbitem3': {
 				caption: commonLogic.appcommonhandle("New",null),

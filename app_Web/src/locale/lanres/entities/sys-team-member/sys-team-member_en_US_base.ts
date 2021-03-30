@@ -89,6 +89,10 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
+		usr2gridviewtoolbar_toolbar: {
+		},
+		usr2gridviewpostmemberstoolbar_toolbar: {
+		},
 		gridviewtoolbar_toolbar: {
 			'tbitem3': {
 				caption: commonLogic.appcommonhandle("New",null),

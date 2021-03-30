@@ -13,7 +13,7 @@ export default class CodeList25 {
      * @type boolean
      * @memberof CodeList25
      */
-    public isEnableCache:boolean = true;
+    public isEnableCache:boolean = false;
 
     /**
      * 过期时间

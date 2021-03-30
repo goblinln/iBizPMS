@@ -30,19 +30,19 @@
                 ]]>
             </conditionExpression>
      </sequenceFlow>
-     <sequenceFlow id="gateway-rawsqlcall1_deaction4" sourceRef="gateway-rawsqlcall1" targetRef="deaction4">
-            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
-            $useryearworkstatsupdateinfodefault:UserYearWorkStats();
-            eval($useryearworkstatsupdateinfodefault==useryearworkstatsupdateinfodefault);
-                eval((RuleUtils.test($useryearworkstatsupdateinfodefault.get("judgerole"),"EQ","po")))
-                ]]>
-            </conditionExpression>
-     </sequenceFlow>
      <sequenceFlow id="gateway-rawsqlcall1_deaction2" sourceRef="gateway-rawsqlcall1" targetRef="deaction2">
             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
             $useryearworkstatsupdateinfodefault:UserYearWorkStats();
             eval($useryearworkstatsupdateinfodefault==useryearworkstatsupdateinfodefault);
                 eval((RuleUtils.test($useryearworkstatsupdateinfodefault.get("judgerole"),"EQ","dev")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-rawsqlcall1_deaction4" sourceRef="gateway-rawsqlcall1" targetRef="deaction4">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $useryearworkstatsupdateinfodefault:UserYearWorkStats();
+            eval($useryearworkstatsupdateinfodefault==useryearworkstatsupdateinfodefault);
+                eval((RuleUtils.test($useryearworkstatsupdateinfodefault.get("judgerole"),"EQ","po")))
                 ]]>
             </conditionExpression>
      </sequenceFlow>

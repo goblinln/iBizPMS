@@ -402,18 +402,18 @@ hide footbox
 {% plantuml %}
 hide footbox
 
-任务 -> 任务: 获取需求版本
 任务 -> 任务: 重置需求版本
+任务 -> 任务: 获取需求版本
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
 |0|开始 | 
-|1|获取需求版本 |
+|1|重置需求版本 |
 |1|开始 | 
-|2|重置需求版本 |
+|2|获取需求版本 |
 <center>更新需求版本</center>
-* 根据计划或需求获取相关项目 (getProjectByPlan)
+* 根据计划获取相关项目 (getProjectByPlan)
   
    
 
@@ -421,7 +421,6 @@ hide footbox
 hide footbox
 
 任务 -> 任务: 设置常规参数
-任务 -> 任务: 根据需求获取项目
 任务 -> 任务: 获取项目
 {% endplantuml %}
 
@@ -430,10 +429,8 @@ hide footbox
 |0|开始 | 
 |1|设置常规参数 |
 |1|开始 | 
-|2|根据需求获取项目 |
-|2|开始 | 
-|3|获取项目 |
-<center>根据计划或需求获取相关项目</center>
+|2|获取项目 |
+<center>根据计划获取相关项目</center>
 * 获取团队成员 (getUsernames)
   
    
@@ -441,16 +438,16 @@ hide footbox
 {% plantuml %}
 hide footbox
 
-任务 -> 任务: 项目团队
 任务 -> 任务: 任务团队
+任务 -> 任务: 项目团队
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
 |0|开始 | 
-|1|项目团队 |
+|1|任务团队 |
 |1|开始 | 
-|2|任务团队 |
+|2|项目团队 |
 <center>获取团队成员</center>
 * 获取团队成员（草稿） (getUsernamesDraft)
   

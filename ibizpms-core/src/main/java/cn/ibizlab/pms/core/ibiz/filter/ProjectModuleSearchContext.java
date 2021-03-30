@@ -34,7 +34,7 @@ public class ProjectModuleSearchContext extends QueryWrapperContext<ProjectModul
             this.getSearchCond().eq("`type`", n_type_eq);
         }
     }
-	private String n_name_like;//[模块名称]
+	private String n_name_like;//[名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
         if(!ObjectUtils.isEmpty(this.n_name_like)){

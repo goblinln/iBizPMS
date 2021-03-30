@@ -97,6 +97,8 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("删除",null),
 			},
 		},
+		usr2gridviewtoolbar_toolbar: {
+		},
 		gridviewtoolbar_toolbar: {
 			'tbitem3': {
 				caption: commonLogic.appcommonhandle("新建",null),

@@ -110,14 +110,16 @@ function getLocaleResourceBase(){
 			},
 		},
 		editviewtoolbar_toolbar: {
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("保存并关闭",null),
-				tip: commonLogic.appcommonhandle("保存并关闭",null),
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("保存",null),
+				tip: commonLogic.appcommonhandle("保存",null),
 			},
-			'deuiaction3': {
+			'deuiaction2': {
 				caption: commonLogic.appcommonhandle("删除",null),
 				tip: commonLogic.appcommonhandle("删除",null),
 			},
+		},
+		usr2gridviewtoolbar_toolbar: {
 		},
 		concatlist_treeview: {
 			nodata:commonLogic.appcommonhandle("",null),

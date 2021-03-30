@@ -7,7 +7,7 @@ function getLocaleResourceBase(){
 		'isleaf': commonLogic.appcommonhandle("叶子模块",null),
 		'type': commonLogic.appcommonhandle("类型（task）",null),
 		'orderpk': commonLogic.appcommonhandle("数据选择排序",null),
-		'name': commonLogic.appcommonhandle("模块名称",null),
+		'name': commonLogic.appcommonhandle("名称",null),
 		'order': commonLogic.appcommonhandle("排序值",null),
 		'collector': commonLogic.appcommonhandle("collector",null),
 		'grade': commonLogic.appcommonhandle("grade",null),
@@ -26,10 +26,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("任务模块",null),
 				title: commonLogic.appcommonhandle("任务模块树导航视图",null),
 			},
-			'tasktreeexpview': {
-				caption: commonLogic.appcommonhandle("任务模块",null),
-				title: commonLogic.appcommonhandle("任务模块树导航视图",null),
-			},
 			'maingridview': {
 				caption: commonLogic.appcommonhandle("任务模块",null),
 				title: commonLogic.appcommonhandle("实体表格视图",null),
@@ -45,7 +41,7 @@ function getLocaleResourceBase(){
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("id",null), 
-				'srfmajortext': commonLogic.appcommonhandle("模块名称",null), 
+				'srfmajortext': commonLogic.appcommonhandle("名称",null), 
 				'srftempmode': commonLogic.appcommonhandle("",null), 
 				'srfuf': commonLogic.appcommonhandle("",null), 
 				'srfdeid': commonLogic.appcommonhandle("",null), 
@@ -54,7 +50,7 @@ function getLocaleResourceBase(){
 				'parent': commonLogic.appcommonhandle("上级模块",null), 
 				'rootname': commonLogic.appcommonhandle("所属项目",null), 
 				'parentname': commonLogic.appcommonhandle("上级模块",null), 
-				'name': commonLogic.appcommonhandle("模块名称",null), 
+				'name': commonLogic.appcommonhandle("名称",null), 
 				'short': commonLogic.appcommonhandle("简称",null), 
 				'order': commonLogic.appcommonhandle("排序值",null), 
 				'id': commonLogic.appcommonhandle("id",null), 
@@ -64,7 +60,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'name': commonLogic.appcommonhandle("模块名称",null),
+				'name': commonLogic.appcommonhandle("名称",null),
 				'short': commonLogic.appcommonhandle("简称",null),
 				'order': commonLogic.appcommonhandle("排序值",null),
 				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),

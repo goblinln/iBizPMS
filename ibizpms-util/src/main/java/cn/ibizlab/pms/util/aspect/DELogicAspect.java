@@ -76,15 +76,11 @@ public class DELogicAspect {
     @Value("${ibiz.dynainstid:ibizpms}")
     private String defaultDynaInstId;
 
-    @Around("execution(* cn.ibizlab.pms.core.uaa.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizplugin.service.*.*(..))  || execution(* cn.ibizlab.pms.core.zentao.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizsysmodel.service.*.*(..))  || execution(* cn.ibizlab.pms.core.report.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ou.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizpro.service.*.*(..)) ")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.*.*(..))  || execution(* cn.ibizlab.pms.core.uaa.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizplugin.service.*.*(..))  || execution(* cn.ibizlab.pms.core.zentao.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizsysmodel.service.*.*(..))  || execution(* cn.ibizlab.pms.core.report.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ou.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizpro.service.*.*(..)) ")
     public Object executeRemoteLogic(ProceedingJoinPoint point) throws Throwable {
         return executeLogic(point, true);
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.*.*(..)) ")
-    public Object executeLocalLogic(ProceedingJoinPoint point) throws Throwable {
-        return executeLogic(point, false);
-    }
 
     /**
      * 执行实体行为附加逻辑、实体行为调用处理逻辑

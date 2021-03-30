@@ -508,6 +508,7 @@ function getLocaleResourceBase(){
 				'srfdeid': commonLogic.appcommonhandle("",null), 
 				'srfsourcekey': commonLogic.appcommonhandle("",null), 
 				'assignedto': commonLogic.appcommonhandle("指派给",null), 
+				'product': commonLogic.appcommonhandle("所属产品",null), 
 				'comment': commonLogic.appcommonhandle("备注",null), 
 				'id': commonLogic.appcommonhandle("编号",null), 
 			},
@@ -591,6 +592,8 @@ function getLocaleResourceBase(){
 				'openeddate': commonLogic.appcommonhandle("于",null), 
 				'assignedto': commonLogic.appcommonhandle("指派给",null), 
 				'assigneddate': commonLogic.appcommonhandle("于",null), 
+				'version': commonLogic.appcommonhandle("版本号",null), 
+				'versionc': commonLogic.appcommonhandle("版本号",null), 
 				'linkstories': commonLogic.appcommonhandle("相关需求",null), 
 				'module': commonLogic.appcommonhandle("所属模块",null), 
 			},
@@ -1333,6 +1336,8 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("Save And Close",null),
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
+		},
+		editview9toolbar_toolbar: {
 		},
 		planeditviewtoolbar_toolbar: {
 			'deuiaction1': {

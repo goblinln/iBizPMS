@@ -50,7 +50,7 @@ export abstract class ProjectModuleBase extends EntityBase implements IProjectMo
      */
     orderpk?: any;
     /**
-     * 模块名称
+     * 名称
      */
     name?: any;
     /**

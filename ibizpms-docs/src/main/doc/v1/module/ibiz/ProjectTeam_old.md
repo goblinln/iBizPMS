@@ -17,6 +17,7 @@ hide members
 |总计可用|TOTAL|INT|&nbsp;|
 |用户|USERNAME|TEXT|&nbsp;|
 |可用工日|DAYS|INT|&nbsp;|
+|退场时间|EXITDATE|DATE|&nbsp;|
 |团队类型|TYPE|SSCODELIST|&nbsp;|
 |排序|ORDER|INT|&nbsp;task需要排序处理人顺序,project使用id排序|
 |编号|ID|ACID|&nbsp;|
@@ -27,6 +28,8 @@ hide members
 |可用工时/天|HOURS|FLOAT|&nbsp;|
 |任务数|TASKCNT|INT|&nbsp;|
 |预计剩余|LEFT|FLOAT|&nbsp;|
+|项目经理|PM|PICKUPDATA|&nbsp;|
+|所属项目|PROJECTNAME|PICKUPTEXT|&nbsp;|
 |项目编号|ROOT|PICKUP|&nbsp;|
 
 ## 值规则
@@ -37,6 +40,7 @@ hide members
 |总计可用|默认规则|默认规则|
 |用户|默认规则|内容长度必须小于等于[200]|
 |可用工日|默认规则|默认规则|
+|退场时间|默认规则|默认规则|
 |团队类型|默认规则|内容长度必须小于等于[7]|
 |排序|默认规则|默认规则|
 |编号|默认规则|默认规则|
@@ -48,6 +52,8 @@ hide members
 |可用工时/天|默认规则|默认规则|
 |任务数|默认规则|默认规则|
 |预计剩余|默认规则|默认规则|
+|项目经理|默认规则|内容长度必须小于等于[30]|
+|所属项目|默认规则|内容长度必须小于等于[90]|
 |项目编号|默认规则|默认规则|
 
 ## 状态控制
@@ -141,6 +147,8 @@ hide footbox
 |团队类型(TYPE)|EQ|
 |用户(ACCOUNT)|EQ|
 |用户(ACCOUNT)|LIKE|
+|所属项目(PROJECTNAME)|EQ|
+|所属项目(PROJECTNAME)|LIKE|
 |项目编号(ROOT)|EQ|
 
 ## 导入模式

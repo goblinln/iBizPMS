@@ -56,6 +56,10 @@ export abstract class ProjectTeamBase extends EntityBase implements IProjectTeam
      */
     days?: any;
     /**
+     * 退场时间
+     */
+    exitdate?: any;
+    /**
      * 团队类型
      *
      * @type {('project' | 'task' | 'product')} project: 项目团队, task: 任务团队, product: 产品团队
@@ -97,6 +101,14 @@ export abstract class ProjectTeamBase extends EntityBase implements IProjectTeam
      * 预计剩余
      */
     left?: any;
+    /**
+     * 项目经理
+     */
+    pm?: any;
+    /**
+     * 所属项目
+     */
+    projectname?: any;
     /**
      * 项目编号
      */

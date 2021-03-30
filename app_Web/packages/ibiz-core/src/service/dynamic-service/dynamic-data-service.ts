@@ -384,7 +384,6 @@ export class DynamicDataService {
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectPickupGridView.json","./assets/json/view/zentao/project-pickup-grid-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/UserINFOEditView.json","./assets/json/view/zentao/user-infoedit-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStoryMEditView9.json","./assets/json/view/zentao/project-story-medit-view9.json");
-        this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleCaseTreeExpView.json","./assets/json/view/zentao/product-module-case-tree-exp-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView9_TaskRelated.json","./assets/json/view/zentao/bug-grid-view9-task-related.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleEditView.json","./assets/json/view/ibiz/test-module-edit-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMyFavoriteGridView.json","./assets/json/view/ibiz/task-my-favorite-grid-view.json");
@@ -525,7 +524,6 @@ export class DynamicDataService {
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json","./assets/json/view/zentao/case-main-new-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskProjectNewEditView.json","./assets/json/view/zentao/test-task-project-new-edit-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/BugTestReportSubGridView.json","./assets/json/view/zentao/bug-test-report-sub-grid-view.json");
-        this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectModuleTaskTreeExpView.json","./assets/json/view/zentao/project-module-task-tree-exp-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/StoryTabExpView.json","./assets/json/view/zentao/story-tab-exp-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView9_Info.json","./assets/json/view/zentao/test-task-edit-view9-info.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleEditView.json","./assets/json/view/zentao/doc-lib-module-edit-view.json");
@@ -699,7 +697,6 @@ export class DynamicDataService {
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/Taskmaindashboardview_link.json","./assets/json/view/zentao/taskmaindashboardview-link.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/IbzCaseEditEditView.json","./assets/json/view/ibiz/ibz-case-edit-edit-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskGridView.json","./assets/json/view/ibizpro/ibzpro-project-user-task-grid-view.json");
-        this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleStoryTreeExpView.json","./assets/json/view/zentao/product-module-story-tree-exp-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/TestRunEditView9.json","./assets/json/view/zentao/test-run-edit-view9.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/ProductListExpView.json","./assets/json/view/zentao/product-list-exp-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProjectMonthlyEditView.json","./assets/json/view/ibizpro/ibizpro-project-monthly-edit-view.json");
@@ -807,7 +804,6 @@ export class DynamicDataService {
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/CompanyMainTabExpView.json","./assets/json/view/zentao/company-main-tab-exp-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectProductListView9.json","./assets/json/view/zentao/project-product-list-view9.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/FileEditView.json","./assets/json/view/zentao/file-edit-view.json");
-        this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleBugTreeExpView.json","./assets/json/view/zentao/product-module-bug-tree-exp-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/BranchPickupView.json","./assets/json/view/zentao/branch-pickup-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9.json","./assets/json/view/ibiz/task-team-grid-view9.json");
         this.appViewMappingMap.set("PSSYSAPPS/Web/PSAPPDEVIEWS/ProductLifeRoadMapSListView9.json","./assets/json/view/ibiz/product-life-road-map-slist-view9.json");
@@ -1251,8 +1247,6 @@ export class DynamicDataService {
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSSEARCHFORMS/Default.json","./assets/json/widgets/project/default-searchform.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/User/PSFORMS/INFO.json","./assets/json/widgets/user/info-form.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSMULTIEDITVIEWPANELS/Main.json","./assets/json/widgets/project/main-multieditviewpanel.json");
-        this.appCtrlMappingMap.set("CaseTreeExpViewtreeexpbar","./assets/json/widgets/product-module/case-tree-exp-viewtreeexpbar-treeexpbar.json");
-        this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule/PSTREEVIEWS/CaseExp.json","./assets/json/widgets/product-module/case-exp-treeview.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSGRIDS/TaskRelated.json","./assets/json/widgets/bug/task-related-grid.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule/PSFORMS/Main.json","./assets/json/widgets/test-module/main-form.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSGRIDS/MyFavoriteMain.json","./assets/json/widgets/task/my-favorite-main-grid.json");
@@ -1547,8 +1541,6 @@ export class DynamicDataService {
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask/PSFORMS/ProjectNew.json","./assets/json/widgets/test-task/project-new-form.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSGRIDS/Main_ReportSub.json","./assets/json/widgets/bug/main-report-sub-grid.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSSEARCHBARS/Custom.json","./assets/json/widgets/bug/custom-searchbar.json");
-        this.appCtrlMappingMap.set("TaskTreeExpViewtreeexpbar","./assets/json/widgets/project-module/task-tree-exp-viewtreeexpbar-treeexpbar.json");
-        this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule/PSTREEVIEWS/TaskModuleExp.json","./assets/json/widgets/project-module/task-module-exp-treeview.json");
         this.appCtrlMappingMap.set("TabExpViewtabviewpanel","./assets/json/widgets/story/tab-exp-viewtabviewpanel-tabviewpanel.json");
         this.appCtrlMappingMap.set("TabExpViewtabviewpanel2","./assets/json/widgets/story/tab-exp-viewtabviewpanel2-tabviewpanel.json");
         this.appCtrlMappingMap.set("TabExpViewtabviewpanel3","./assets/json/widgets/story/tab-exp-viewtabviewpanel3-tabviewpanel.json");
@@ -1880,8 +1872,6 @@ export class DynamicDataService {
         this.appCtrlMappingMap.set("MainDetail","./assets/json/widgets/task/main-detail-portlet.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase/PSFORMS/InfoEdit.json","./assets/json/widgets/ibz-case/info-edit-form.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProjectUserTask/PSGRIDS/Main.json","./assets/json/widgets/ibzpro-project-user-task/main-grid.json");
-        this.appCtrlMappingMap.set("StoryTreeExpViewtreeexpbar","./assets/json/widgets/product-module/story-tree-exp-viewtreeexpbar-treeexpbar.json");
-        this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule/PSTREEVIEWS/Exp.json","./assets/json/widgets/product-module/exp-treeview.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/TestRun/PSFORMS/Main.json","./assets/json/widgets/test-run/main-form.json");
         this.appCtrlMappingMap.set("ListExpViewlistexpbar","./assets/json/widgets/product/list-exp-viewlistexpbar-listexpbar.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSLISTS/Exp.json","./assets/json/widgets/product/exp-list.json");
@@ -2120,8 +2110,6 @@ export class DynamicDataService {
         this.appCtrlMappingMap.set("MainTabExpViewtabexppanel","./assets/json/widgets/company/main-tab-exp-viewtabexppanel-tabexppanel.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectProduct/PSLISTS/DEFAULT.json","./assets/json/widgets/project-product/default-list.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/File/PSFORMS/Main.json","./assets/json/widgets/file/main-form.json");
-        this.appCtrlMappingMap.set("BugTreeExpViewtreeexpbar","./assets/json/widgets/product-module/bug-tree-exp-viewtreeexpbar-treeexpbar.json");
-        this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule/PSTREEVIEWS/BugExp.json","./assets/json/widgets/product-module/bug-exp-treeview.json");
         this.appCtrlMappingMap.set("PickupViewpickupviewpanel","./assets/json/widgets/branch/pickup-viewpickupviewpanel-pickupviewpanel.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam/PSGRIDS/MainEditRow.json","./assets/json/widgets/ibztask-team/main-edit-row-grid.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife/PSLISTS/GetRoadmapS.json","./assets/json/widgets/product-life/get-roadmap-s-list.json");

@@ -33,9 +33,17 @@ export abstract class TaskestimatestatsBase extends EntityBase implements ITaske
      */
     date?: any;
     /**
+     * 年
+     */
+    year?: any;
+    /**
      * 消耗的工时
      */
     consumed?: any;
+    /**
+     * 评估状态
+     */
+    evaluationstatus?: any;
     /**
      * 用户
      */
@@ -45,9 +53,33 @@ export abstract class TaskestimatestatsBase extends EntityBase implements ITaske
      */
     id?: any;
     /**
+     * 月（显示）
+     */
+    monthname?: any;
+    /**
      * 项目名称
      */
     name?: any;
+    /**
+     * 年（显示）
+     */
+    yearname?: any;
+    /**
+     * 评估工时
+     */
+    evaluationtime?: any;
+    /**
+     * 评估成本
+     */
+    evaluationcost?: any;
+    /**
+     * 投入成本
+     */
+    inputcost?: any;
+    /**
+     * 月
+     */
+    month?: any;
     /**
      * 任务数
      */

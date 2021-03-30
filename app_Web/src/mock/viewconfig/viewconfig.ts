@@ -1287,14 +1287,6 @@ mock.onGet('./assets/json/view-config.json').reply((config: any) => {
             "viewname": "ProjectStoryMEditView9",
             "viewtag": "3cecaa21816a751af38ce2ff1aac25ba"
         },
-        "productmodulecasetreeexpview": {
-            "title": "产品需求导航视图",
-            "caption": "需求模块",
-            "viewtype": "DETREEEXPVIEW",
-            "viewmodule": "zentao",
-            "viewname": "ProductModuleCaseTreeExpView",
-            "viewtag": "3d3f0ec2f9f6d83909d43f0df3bfa591"
-        },
         "buggridview9_taskrelated": {
             "title": "相关Bug",
             "caption": "相关Bug",
@@ -2414,14 +2406,6 @@ mock.onGet('./assets/json/view-config.json').reply((config: any) => {
             "viewmodule": "zentao",
             "viewname": "BugTestReportSubGridView",
             "viewtag": "6f90a9ed63f9dcec5758480a76e2680c"
-        },
-        "projectmoduletasktreeexpview": {
-            "title": "任务模块树导航视图",
-            "caption": "任务模块",
-            "viewtype": "DETREEEXPVIEW",
-            "viewmodule": "zentao",
-            "viewname": "ProjectModuleTaskTreeExpView",
-            "viewtag": "701b979a14d76cdf36138f0620206759"
         },
         "storytabexpview": {
             "title": "需求分页导航视图",
@@ -3807,14 +3791,6 @@ mock.onGet('./assets/json/view-config.json').reply((config: any) => {
             "viewname": "IbzproProjectUserTaskGridView",
             "viewtag": "a719a6f3bc54e86c42f44c2350b6227d"
         },
-        "productmodulestorytreeexpview": {
-            "title": "产品需求导航视图",
-            "caption": "需求模块",
-            "viewtype": "DETREEEXPVIEW",
-            "viewmodule": "zentao",
-            "viewname": "ProductModuleStoryTreeExpView",
-            "viewtag": "a7593cebf91dea4479722bdbe87c3b7c"
-        },
         "testruneditview9": {
             "title": "测试运行编辑视图",
             "caption": "测试运行",
@@ -4670,14 +4646,6 @@ mock.onGet('./assets/json/view-config.json').reply((config: any) => {
             "viewmodule": "zentao",
             "viewname": "FileEditView",
             "viewtag": "d05d51fbbdb75506a5d0b36ab527d47a"
-        },
-        "productmodulebugtreeexpview": {
-            "title": "产品需求导航视图",
-            "caption": "需求模块",
-            "viewtype": "DETREEEXPVIEW",
-            "viewmodule": "zentao",
-            "viewname": "ProductModuleBugTreeExpView",
-            "viewtag": "d07608627ca0385bf5e818e65dfe221c"
         },
         "branchpickupview": {
             "title": "平台数据选择视图",

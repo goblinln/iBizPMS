@@ -28,6 +28,7 @@ export default [
     'name',
     'assigneddate',
     'config_end',
+    'cost',
     'pri',
     'date',
     'story',

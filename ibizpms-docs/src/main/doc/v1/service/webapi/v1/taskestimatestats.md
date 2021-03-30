@@ -298,12 +298,20 @@ POST
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |
 | ---- | ---- | ---- | ---- | ---- |
 | 1 | date | String | 允许 | 日期 |
-| 2 | consumed | Double | 允许 | 消耗的工时 |
-| 3 | account | String | 允许 | 用户 |
-| 4 | id | Long | 允许 | 编号 |
-| 5 | name | String | 允许 | 项目名称 |
-| 6 | taskcnt | Integer | 允许 | 任务数 |
-| 7 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 2 | year | String | 允许 | 年 |
+| 3 | consumed | Double | 允许 | 消耗的工时 |
+| 4 | evaluationstatus | String | 允许 | 评估状态 |
+| 5 | account | String | 允许 | 用户 |
+| 6 | id | Long | 允许 | 编号 |
+| 7 | monthname | String | 允许 | 月（显示） |
+| 8 | name | String | 允许 | 项目名称 |
+| 9 | yearname | String | 允许 | 年（显示） |
+| 10 | evaluationtime | Double | 允许 | 评估工时 |
+| 11 | evaluationcost | Double | 允许 | 评估成本 |
+| 12 | inputcost | Double | 允许 | 投入成本 |
+| 13 | month | String | 允许 | 月 |
+| 14 | taskcnt | Integer | 允许 | 任务数 |
+| 15 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### TaskEstimateStatsSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

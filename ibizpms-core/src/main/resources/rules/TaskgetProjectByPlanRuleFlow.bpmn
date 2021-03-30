@@ -11,9 +11,6 @@
         <tns:global identifier="taskgetprojectbyplandefault" type="cn.ibizlab.pms.core.zentao.domain.Task" />
         </extensionElements>
      <startEvent id="begin" isInterrupting="true"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskgetprojectbyplanrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="根据需求获取项目"/>
-     <endEvent id="rawsqlcall1_end" name="end"/>
-     <sequenceFlow id="rawsqlcall1_end_line" sourceRef="rawsqlcall1" targetRef="rawsqlcall1_end"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskgetprojectbyplanrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取项目"/>
      <endEvent id="rawsqlcall2_end" name="end"/>
      <sequenceFlow id="rawsqlcall2_end_line" sourceRef="rawsqlcall2" targetRef="rawsqlcall2_end"/>
@@ -24,15 +21,7 @@
             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
             $taskgetprojectbyplandefault:Task();
             eval($taskgetprojectbyplandefault==taskgetprojectbyplandefault);
-                eval((RuleUtils.test($taskgetprojectbyplandefault.get("plan"),"ISNULL",""))&&(RuleUtils.test($taskgetprojectbyplandefault.get("story"),"ISNULL","")))
-                ]]>
-            </conditionExpression>
-     </sequenceFlow>
-     <sequenceFlow id="gateway-begin_rawsqlcall1" sourceRef="gateway-begin" targetRef="rawsqlcall1">
-            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
-            $taskgetprojectbyplandefault:Task();
-            eval($taskgetprojectbyplandefault==taskgetprojectbyplandefault);
-                eval((RuleUtils.test($taskgetprojectbyplandefault.get("story"),"ISNOTNULL","")))
+                eval((RuleUtils.test($taskgetprojectbyplandefault.get("plan"),"ISNULL","")))
                 ]]>
             </conditionExpression>
      </sequenceFlow>

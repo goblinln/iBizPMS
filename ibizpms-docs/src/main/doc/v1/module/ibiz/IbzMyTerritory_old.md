@@ -33,11 +33,14 @@
 |源代码账户|COMMITER|TEXT|&nbsp;用于关联UAA账号|
 |手机|MOBILE|TEXT|&nbsp;|
 |locked|LOCKED|DATETIME|&nbsp;|
+|项目成员|PROJECTTEAMCNT|INT|&nbsp;|
 |通讯地址|ADDRESS|TEXT|&nbsp;|
 |我的任务|MYTASKS|INT|&nbsp;|
 |scoreLevel|SCORELEVEL|INT|&nbsp;|
 |密码|PASSWORD|TEXT|&nbsp;|
+|剩余里程碑（今日到期）|LEFTLCBJZCNT|TEXT|&nbsp;|
 |ranzhi|RANZHI|TEXT|&nbsp;|
+|今日截止待办|MYTODOCNTJZ|TEXT|&nbsp;|
 |未关闭项目数|PROJECTS|INT|&nbsp;|
 |slack|SLACK|TEXT|&nbsp;|
 |未关闭产品数|PRODUCTS|INT|&nbsp;|
@@ -57,6 +60,8 @@
 |钉钉|DINGDING|TEXT|&nbsp;|
 |avatar|AVATAR|TEXT|&nbsp;|
 |ID|ID|ACID|&nbsp;|
+|剩余里程碑|LEFTLCBCNT|INT|&nbsp;|
+|项目成员（今日截止）|PROJECTTEAMJZCNT|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -85,11 +90,14 @@
 |源代码账户|默认规则|内容长度必须小于等于[100]|
 |手机|默认规则|内容长度必须小于等于[11]|
 |locked|默认规则|默认规则|
+|项目成员|默认规则|默认规则|
 |通讯地址|默认规则|内容长度必须小于等于[120]|
 |我的任务|默认规则|默认规则|
 |scoreLevel|默认规则|默认规则|
 |密码|默认规则|内容长度必须小于等于[32]|
+|剩余里程碑（今日到期）|默认规则|内容长度必须小于等于[100]|
 |ranzhi|默认规则|内容长度必须小于等于[30]|
+|今日截止待办|默认规则|内容长度必须小于等于[100]|
 |未关闭项目数|默认规则|默认规则|
 |slack|默认规则|内容长度必须小于等于[90]|
 |未关闭产品数|默认规则|默认规则|
@@ -109,6 +117,8 @@
 |钉钉|默认规则|内容长度必须小于等于[90]|
 |avatar|默认规则|内容长度必须小于等于[30]|
 |ID|默认规则|默认规则|
+|剩余里程碑|默认规则|默认规则|
+|项目成员（今日截止）|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 

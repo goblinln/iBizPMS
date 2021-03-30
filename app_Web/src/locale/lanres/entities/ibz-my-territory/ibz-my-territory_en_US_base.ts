@@ -27,11 +27,14 @@ function getLocaleResourceBase(){
 		'commiter': commonLogic.appcommonhandle("源代码账户",null),
 		'mobile': commonLogic.appcommonhandle("手机",null),
 		'locked': commonLogic.appcommonhandle("locked",null),
+		'projectteamcnt': commonLogic.appcommonhandle("项目成员",null),
 		'address': commonLogic.appcommonhandle("通讯地址",null),
 		'mytasks': commonLogic.appcommonhandle("我的任务",null),
 		'scorelevel': commonLogic.appcommonhandle("scoreLevel",null),
 		'password': commonLogic.appcommonhandle("密码",null),
+		'leftlcbjzcnt': commonLogic.appcommonhandle("剩余里程碑（今日到期）",null),
 		'ranzhi': commonLogic.appcommonhandle("ranzhi",null),
+		'mytodocntjz': commonLogic.appcommonhandle("今日截止待办",null),
 		'projects': commonLogic.appcommonhandle("未关闭项目数",null),
 		'slack': commonLogic.appcommonhandle("slack",null),
 		'products': commonLogic.appcommonhandle("未关闭产品数",null),
@@ -51,6 +54,8 @@ function getLocaleResourceBase(){
 		'dingding': commonLogic.appcommonhandle("钉钉",null),
 		'avatar': commonLogic.appcommonhandle("avatar",null),
 		'id': commonLogic.appcommonhandle("ID",null),
+		'leftlcbcnt': commonLogic.appcommonhandle("剩余里程碑",null),
+		'projectteamjzcnt': commonLogic.appcommonhandle("项目成员（今日截止）",null),
 	},
 		views: {
 			'listview9personinfo': {

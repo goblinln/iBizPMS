@@ -4,6 +4,7 @@ export default [
     'total',
     'username',
     'days',
+    'exitdate',
     'type',
     'order',
     'id',
@@ -14,5 +15,7 @@ export default [
     'hours',
     'taskcnt',
     'left',
+    'pm',
+    'projectname',
     'root',
 ];

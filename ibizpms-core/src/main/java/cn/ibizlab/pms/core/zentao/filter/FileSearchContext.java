@@ -55,6 +55,13 @@ public class FileSearchContext extends QueryWrapperContext<File> {
             this.getSearchCond().eq("`extra`", n_extra_eq);
         }
     }
+	private String n_extra_noteq;//[备注]
+	public void setN_extra_noteq(String n_extra_noteq) {
+        this.n_extra_noteq = n_extra_noteq;
+        if(!ObjectUtils.isEmpty(this.n_extra_noteq)){
+            this.getSearchCond().ne("`extra`", n_extra_noteq);
+        }
+    }
 
     /**
 	 * 启用快速搜索

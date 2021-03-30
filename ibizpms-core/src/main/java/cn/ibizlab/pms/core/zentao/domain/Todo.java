@@ -294,6 +294,14 @@ public class Todo extends EntityMP implements Serializable {
     @ApiModelProperty("过期时间")
     private Timestamp configEnd;
     /**
+     * 费用
+     */
+    @TableField(value = "`cost`")
+    @JSONField(name = "cost")
+    @JsonProperty("cost")
+    @ApiModelProperty("费用")
+    private Integer cost;
+    /**
      * 优先级
      */
     @DEField(defaultValue = "0")
@@ -490,6 +498,14 @@ public class Todo extends EntityMP implements Serializable {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(assigneddate);
     }
+    /**
+     * 设置 [费用]
+     */
+    public void setCost(Integer cost) {
+        this.cost = cost;
+        this.modify("cost", cost);
+    }
+
     /**
      * 设置 [优先级]
      */

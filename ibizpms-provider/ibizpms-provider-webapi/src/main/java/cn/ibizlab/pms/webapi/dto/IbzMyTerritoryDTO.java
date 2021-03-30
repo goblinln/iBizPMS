@@ -262,6 +262,15 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     private Timestamp locked;
 
     /**
+     * 属性 [PROJECTTEAMCNT]
+     *
+     */
+    @JSONField(name = "projectteamcnt")
+    @JsonProperty("projectteamcnt")
+    @ApiModelProperty("项目成员")
+    private Integer projectteamcnt;
+
+    /**
      * 属性 [ADDRESS]
      *
      */
@@ -300,6 +309,16 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     private String password;
 
     /**
+     * 属性 [LEFTLCBJZCNT]
+     *
+     */
+    @JSONField(name = "leftlcbjzcnt")
+    @JsonProperty("leftlcbjzcnt")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("剩余里程碑（今日到期）")
+    private String leftlcbjzcnt;
+
+    /**
      * 属性 [RANZHI]
      *
      */
@@ -308,6 +327,16 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("ranzhi")
     private String ranzhi;
+
+    /**
+     * 属性 [MYTODOCNTJZ]
+     *
+     */
+    @JSONField(name = "mytodocntjz")
+    @JsonProperty("mytodocntjz")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("今日截止待办")
+    private String mytodocntjz;
 
     /**
      * 属性 [PROJECTS]
@@ -494,6 +523,25 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("ID")
     private Long id;
+
+    /**
+     * 属性 [LEFTLCBCNT]
+     *
+     */
+    @JSONField(name = "leftlcbcnt")
+    @JsonProperty("leftlcbcnt")
+    @ApiModelProperty("剩余里程碑")
+    private Integer leftlcbcnt;
+
+    /**
+     * 属性 [PROJECTTEAMJZCNT]
+     *
+     */
+    @JSONField(name = "projectteamjzcnt")
+    @JsonProperty("projectteamjzcnt")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("项目成员（今日截止）")
+    private String projectteamjzcnt;
 
 
     /**

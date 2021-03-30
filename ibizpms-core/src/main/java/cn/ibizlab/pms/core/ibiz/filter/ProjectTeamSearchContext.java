@@ -55,6 +55,20 @@ public class ProjectTeamSearchContext extends QueryWrapperContext<ProjectTeam> {
             this.getSearchCond().like("`account`", n_account_like);
         }
     }
+	private String n_projectname_eq;//[所属项目]
+	public void setN_projectname_eq(String n_projectname_eq) {
+        this.n_projectname_eq = n_projectname_eq;
+        if(!ObjectUtils.isEmpty(this.n_projectname_eq)){
+            this.getSearchCond().eq("`projectname`", n_projectname_eq);
+        }
+    }
+	private String n_projectname_like;//[所属项目]
+	public void setN_projectname_like(String n_projectname_like) {
+        this.n_projectname_like = n_projectname_like;
+        if(!ObjectUtils.isEmpty(this.n_projectname_like)){
+            this.getSearchCond().like("`projectname`", n_projectname_like);
+        }
+    }
 	private Long n_root_eq;//[项目编号]
 	public void setN_root_eq(Long n_root_eq) {
         this.n_root_eq = n_root_eq;

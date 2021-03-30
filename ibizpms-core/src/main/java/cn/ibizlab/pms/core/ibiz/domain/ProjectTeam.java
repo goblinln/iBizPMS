@@ -89,6 +89,15 @@ public class ProjectTeam extends EntityMP implements Serializable {
     @ApiModelProperty("可用工日")
     private Integer days;
     /**
+     * 退场时间
+     */
+    @TableField(exist = false)
+    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "exitdate", format = "yyyy-MM-dd")
+    @JsonProperty("exitdate")
+    @ApiModelProperty("退场时间")
+    private Timestamp exitdate;
+    /**
      * 团队类型
      */
     @DEField(defaultValue = "project")
@@ -177,6 +186,22 @@ public class ProjectTeam extends EntityMP implements Serializable {
     @JsonProperty("left")
     @ApiModelProperty("预计剩余")
     private Double left;
+    /**
+     * 项目经理
+     */
+    @TableField(exist = false)
+    @JSONField(name = "pm")
+    @JsonProperty("pm")
+    @ApiModelProperty("项目经理")
+    private String pm;
+    /**
+     * 所属项目
+     */
+    @TableField(exist = false)
+    @JSONField(name = "projectname")
+    @JsonProperty("projectname")
+    @ApiModelProperty("所属项目")
+    private String projectname;
     /**
      * 项目编号
      */

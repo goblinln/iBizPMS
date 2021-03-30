@@ -130,6 +130,10 @@ export abstract class IbzMyTerritoryBase extends EntityBase implements IIbzMyTer
      */
     locked?: any;
     /**
+     * 项目成员
+     */
+    projectteamcnt?: any;
+    /**
      * 通讯地址
      */
     address?: any;
@@ -146,9 +150,17 @@ export abstract class IbzMyTerritoryBase extends EntityBase implements IIbzMyTer
      */
     password?: any;
     /**
+     * 剩余里程碑（今日到期）
+     */
+    leftlcbjzcnt?: any;
+    /**
      * ranzhi
      */
     ranzhi?: any;
+    /**
+     * 今日截止待办
+     */
+    mytodocntjz?: any;
     /**
      * 未关闭项目数
      */
@@ -227,6 +239,14 @@ export abstract class IbzMyTerritoryBase extends EntityBase implements IIbzMyTer
      * ID
      */
     id?: any;
+    /**
+     * 剩余里程碑
+     */
+    leftlcbcnt?: any;
+    /**
+     * 项目成员（今日截止）
+     */
+    projectteamjzcnt?: any;
 
     /**
      * 重置实体数据

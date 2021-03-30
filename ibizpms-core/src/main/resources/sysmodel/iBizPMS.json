@@ -1493,6 +1493,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m') then '1' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -1507,6 +1508,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 DAY),'%Y-%m-%d') then '1' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -1549,6 +1551,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 MONTH),'%Y-%m') then '1' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -1562,6 +1565,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"BIGINT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -1576,6 +1580,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when YEARWEEK(now()) = YEARWEEK(t1.date) then '1' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -1590,6 +1595,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(now(),'%Y-%m-%d') then '1' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -1604,6 +1610,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"DATE_FORMAT(t1.date,'%m月%d日 %H:%i')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -1732,6 +1739,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.`comment`",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -1745,6 +1753,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"BIGINT",
+    "expression":"t1.id",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -1760,6 +1769,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -1774,6 +1784,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when YEARWEEK(DATE_ADD(now(),INTERVAL -1 WEEK)) = YEARWEEK(t1.date) then '1' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -2257,6 +2268,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(case when t1.DEADLINE = '0000-00-00' then 0 else datediff(t1.deadline, now() ) end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -2370,6 +2382,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -2384,6 +2397,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' )  FROM zt_module tt WHERE FIND_IN_SET( tt.id, t71.path ) AND tt.type = 'story'  GROUP BY tt.root limit 0,1) end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -2682,6 +2696,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"( CASE WHEN t1.deadline IS NULL  OR t1.deadline = '0000-00-00'  OR t1.deadline = '1970-01-01' THEN ''  WHEN t1.`status` = 'resolved'  AND t1.deadline < DATE_FORMAT( t1.resolvedDate, '%y-%m-%d' ) THEN CONCAT_WS( '', '延期', TIMESTAMPDIFF( DAY, t1.deadline, t1.resolvedDate ), '天' ) ELSE ''  END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -2710,6 +2725,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":65535,
+    "expression":"''",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -2810,6 +2826,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.deadline is null or t1.deadline = '0000-00-00' or t1.deadline = '1970-01-01' then '' when t1.`status` ='active' and t1.deadline <DATE_FORMAT(now(),'%y-%m-%d')  then CONCAT_WS('','延期',TIMESTAMPDIFF(DAY, t1.deadline, now()),'天') else '' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3508,6 +3525,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3566,6 +3584,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3637,6 +3656,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3716,6 +3736,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3743,6 +3764,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3770,6 +3792,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3796,6 +3819,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3837,6 +3861,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3877,6 +3902,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3906,6 +3932,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"0%",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3919,6 +3946,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -3946,6 +3974,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -4130,6 +4159,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.BUILDER",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -4446,6 +4476,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"1",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -4473,6 +4504,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"concat(%1$s,'__',%2$s,'__',%3$s)",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -4689,6 +4721,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' )  FROM zt_module tt WHERE FIND_IN_SET( tt.id, t31.path ) AND tt.type = 'story'  GROUP BY tt.root limit 0,1) end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -4772,6 +4805,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM zt_testresult WHERE `case` = %1$s )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -4860,6 +4894,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM zt_testresult WHERE `case` = %1$s  and caseResult in('fail','blocked') )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -4917,6 +4952,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -5004,6 +5040,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM zt_bug WHERE `case` = %1$s )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -5105,6 +5142,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.storyVersion < t21.version and t21.`status` <> 'changed' then 'storychange'  else t1.`status` end )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -5176,6 +5214,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.`LASTRUNRESULT` = '' or t1.`LASTRUNRESULT` is null then 'no' else t1.`LASTRUNRESULT` end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -5189,6 +5228,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM zt_casestep WHERE `case` = %1$s AND version = %2$s )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -5594,6 +5634,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -5607,6 +5648,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -5620,6 +5662,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -5633,6 +5676,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -5660,6 +5704,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -5783,6 +5828,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"BIGINT",
+    "expression":"t1.id",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -6171,6 +6217,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -6184,6 +6231,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -6223,6 +6271,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -6236,6 +6285,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -6249,6 +6299,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -6262,6 +6313,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -6275,6 +6327,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -6288,6 +6341,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -6315,6 +6369,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -6858,6 +6913,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(CASE WHEN EXISTS (SELECT 1 FROM ZT_DEPT WHERE  PARENT = %1$s) THEN FALSE ELSE TRUE  END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -7059,6 +7115,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"'doc'",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -7334,6 +7391,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -7750,6 +7808,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"'doc'",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -7764,6 +7823,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -7948,6 +8008,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -7961,6 +8022,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"DATETIME",
+    "expression":"(select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8102,6 +8164,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8212,6 +8275,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = %1$s) THEN FALSE ELSE TRUE  END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8253,6 +8317,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(select count(1) from zt_doc t where t.deleted = '0' and t.module = t1.id) + (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.root = t1.root and t.parent = t1.id)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8762,6 +8827,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"０",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8817,6 +8883,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"０",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8845,6 +8912,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"０",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8885,6 +8953,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"０",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8899,6 +8968,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"０",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -9454,6 +9524,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -9760,6 +9831,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"concat(%1$s,'__',%2$s,'__',%3$s)",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -10283,6 +10355,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -10354,6 +10427,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -10425,6 +10499,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -12083,6 +12158,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"BIGINT",
+    "expression":"null",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -12097,6 +12173,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"null",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -12125,6 +12202,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"null",
     "key_field":0,
     "show_order":1000,
     "major_field":1
@@ -12139,6 +12217,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"null",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -12153,6 +12232,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"'0'",
     "predefined":"LOGICVALID",
     "key_field":0,
     "show_order":1000,
@@ -12168,6 +12248,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"null",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -12182,6 +12263,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"null",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -12210,6 +12292,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"null",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -12224,6 +12307,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"null",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -12237,6 +12321,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"BIGINT",
+    "expression":"null",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -12251,6 +12336,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"null",
     "predefined":"ORGID",
     "key_field":0,
     "show_order":1000,
@@ -14504,6 +14590,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.MAILTO",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -14621,6 +14708,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.REPORTTO",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -15324,6 +15412,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = %1$s) THEN FALSE ELSE TRUE  END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -15603,6 +15692,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.REPORTTO",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -15632,6 +15722,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.MAILTO",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -16210,6 +16301,19 @@
     "major_field":0
     },
     {
+    "fieldname":"PROJECTTEAMCNT" ,
+    "codename":"Projectteamcnt",
+    "field_logic_name":"项目成员",
+    "entity_name":"IBZ_MYTERRITORY",
+    "field_type":"INT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"INT",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
     "fieldname":"ADDRESS" ,
     "codename":"Address",
     "field_logic_name":"通讯地址",
@@ -16264,6 +16368,20 @@
     "major_field":0
     },
     {
+    "fieldname":"LEFTLCBJZCNT" ,
+    "codename":"Leftlcbjzcnt",
+    "field_logic_name":"剩余里程碑（今日到期）",
+    "entity_name":"IBZ_MYTERRITORY",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
     "fieldname":"RANZHI" ,
     "codename":"Ranzhi",
     "field_logic_name":"ranzhi",
@@ -16273,6 +16391,20 @@
     "physical_field":1,
     "data_type":"VARCHAR",
     "data_length":30,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"MYTODOCNTJZ" ,
+    "codename":"Mytodocntjz",
+    "field_logic_name":"今日截止待办",
+    "entity_name":"IBZ_MYTERRITORY",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"VARCHAR",
+    "data_length":100,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -16537,6 +16669,33 @@
     "data_type":"BIGINT",
     "data_length":20,
     "key_field":1,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"LEFTLCBCNT" ,
+    "codename":"Leftlcbcnt",
+    "field_logic_name":"剩余里程碑",
+    "entity_name":"IBZ_MYTERRITORY",
+    "field_type":"INT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"INT",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"PROJECTTEAMJZCNT" ,
+    "codename":"Projectteamjzcnt",
+    "field_logic_name":"项目成员（今日截止）",
+    "entity_name":"IBZ_MYTERRITORY",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "key_field":0,
     "show_order":1000,
     "major_field":0
     }
@@ -16954,6 +17113,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -16969,6 +17129,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.RD",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -16984,6 +17145,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.QD",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -16999,6 +17161,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -17014,6 +17177,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -17043,6 +17207,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -17058,6 +17223,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.PO",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -17073,6 +17239,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -17088,6 +17255,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.PM",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -17103,6 +17271,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -17118,6 +17287,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -17810,6 +17980,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.reportto",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -17912,6 +18083,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.mailto",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -18164,6 +18336,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.reportto",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -18220,6 +18393,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.mailto",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -19976,6 +20150,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"concat(%1$s,'__',%2$s)",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -21403,6 +21578,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(%1$s * %2$s)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -21430,6 +21606,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(select t.realname from zt_user t where t.account = t1.account)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29498,6 +29675,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"'0'",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29554,6 +29732,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `CONFIRMED` = 0 AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29636,6 +29815,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29678,6 +29858,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='closed' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29691,6 +29872,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29733,6 +29915,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29762,6 +29945,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.PO",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29775,6 +29959,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `STATUS` <> 'closed' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29847,6 +30032,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.QD",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29889,6 +30075,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='changed' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29902,6 +30089,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `STATUS` = 'active' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29932,6 +30120,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.RD",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29959,6 +30148,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='draft' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29972,6 +30162,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29985,6 +30176,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(select count(1) from zt_case t where t.product = t1.id and t.deleted = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -29998,6 +30190,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -30066,6 +30259,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"t1.`order`",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -30079,6 +30273,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(select count(1) from zt_build t where t.product = t1.id and t.deleted = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -30120,6 +30315,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='active' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -30697,7 +30893,7 @@
     {
     "fieldname":"NAME" ,
     "codename":"Name",
-    "field_logic_name":"模块名称",
+    "field_logic_name":"名称",
     "entity_name":"IBZ_PRODUCTMODULE",
     "field_type":"TEXT",
     "nullable":0,
@@ -30800,6 +30996,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = %1$s) THEN FALSE ELSE TRUE  END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -30967,6 +31164,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31063,6 +31261,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31104,6 +31303,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31118,6 +31318,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(to_Days(%1$s) - to_Days(%2$s))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31132,6 +31333,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31188,6 +31390,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31217,6 +31420,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.`end` > now() then '0' else '1' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31288,6 +31492,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31301,6 +31506,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31342,6 +31548,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31527,6 +31734,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND STAGE = 'released' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31554,6 +31762,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_PROJECT LEFT JOIN ZT_PROJECTPRODUCT ON  ZT_PROJECT.ID = ZT_PROJECTPRODUCT.project WHERE PRODUCT = %1$s AND `STATUS` <> 'closed' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31567,6 +31776,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"1",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31608,6 +31818,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_PROJECT LEFT JOIN ZT_PROJECTPRODUCT ON  ZT_PROJECT.ID = ZT_PROJECTPRODUCT.project WHERE PRODUCT = %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31621,6 +31832,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31662,6 +31874,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND STAGE = 'wait' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31688,6 +31901,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31728,6 +31942,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID`  AND DELETED = '0' and resolvedDate BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31756,6 +31971,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'closed' AND DELETED = '0' and CLOSEDDATE BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31769,6 +31985,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND STAGE = 'developing' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31782,6 +31999,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='active' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31795,6 +32013,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `STATUS` <> 'closed' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31808,6 +32027,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= %1$s AND  `STATUS`= 'normal' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31822,6 +32042,7 @@
     "physical_field":0,
     "data_type":"INT",
     "data_length":8,
+    "expression":"t1.`order`",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31836,6 +32057,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(SELECT t.name FROM zt_project t,zt_projectproduct t2 WHERE t.id=t2.project and t2.product = t1.id limit 1)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31849,6 +32071,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND STAGE = 'testing' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31862,6 +32085,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31875,6 +32099,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31888,6 +32113,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"5",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31901,6 +32127,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_PROJECT t2 LEFT JOIN ZT_PROJECTPRODUCT t ON t2.ID = t.project WHERE t.PRODUCT = t1.id AND t2.DELETED = '0' and t2.`status` in( 'wait','doing') and t2.`END` < now() )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31914,6 +32141,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= %1$s  AND `END` > CURDATE() AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31940,6 +32168,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND STAGE = 'planned' AND DELETED ='0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31953,6 +32182,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `CONFIRMED` = 0 AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31966,6 +32196,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `STATUS` = 'active' AND DELETED ='0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32009,6 +32240,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32022,6 +32254,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32035,6 +32268,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32127,6 +32361,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32140,6 +32375,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32153,6 +32389,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32166,6 +32403,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32194,6 +32432,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32207,6 +32446,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32220,6 +32460,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32233,6 +32474,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32260,6 +32502,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32273,6 +32516,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32286,6 +32530,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32299,6 +32544,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32312,6 +32558,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32325,6 +32572,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32338,6 +32586,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32351,6 +32600,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32364,6 +32614,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32392,6 +32643,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"BIGINT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32405,6 +32657,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32418,6 +32671,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32445,6 +32699,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32471,6 +32726,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32510,6 +32766,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32523,6 +32780,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32549,6 +32807,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32663,6 +32922,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"FLOAT",
+    "expression":"(SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = %1$s AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32772,6 +33032,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"'0'",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32911,6 +33172,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32994,6 +33256,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause')) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -33021,6 +33284,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"DECIMAL",
+    "expression":"(select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -33102,6 +33366,7 @@
     "physical_field":0,
     "data_type":"FLOAT",
     "data_preci":2,
+    "expression":"(SELECT round(SUM(ESTIMATE),0) FROM ZT_TASK WHERE PROJECT = %1$s AND DELETED =  '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -33130,6 +33395,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"FLOAT",
+    "expression":"(SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -33312,6 +33578,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -33508,6 +33775,7 @@
     "physical_field":0,
     "data_type":"INT",
     "data_length":8,
+    "expression":"t1.`order`",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -33632,6 +33900,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -33854,6 +34123,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = %1$s) THEN FALSE ELSE TRUE  END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -33889,7 +34159,7 @@
     {
     "fieldname":"NAME" ,
     "codename":"Name",
-    "field_logic_name":"模块名称",
+    "field_logic_name":"名称",
     "entity_name":"IBZ_PROJECTMODULE",
     "field_type":"TEXT",
     "nullable":0,
@@ -34134,6 +34404,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"concat(%1$s,'__',%2$s)",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -34341,6 +34612,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34354,6 +34626,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34380,6 +34653,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34448,6 +34722,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"null",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34474,6 +34749,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = %1$s AND `STATUS` NOT IN ('done','cancel','closed') AND DELETED =  '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34513,6 +34789,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) ) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) ))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34526,6 +34803,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE `STATUS` <>  'closed' AND PROJECT = %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34578,6 +34856,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34591,6 +34870,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34604,6 +34884,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34671,6 +34952,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34684,6 +34966,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34723,6 +35006,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34736,6 +35020,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34763,6 +35048,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34776,6 +35062,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"FLOAT",
+    "expression":"(SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = %1$s AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34803,6 +35090,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34817,6 +35105,7 @@
     "physical_field":0,
     "data_type":"INT",
     "data_length":8,
+    "expression":"t1.`order`",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34830,6 +35119,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = %1$s AND `STATUS` = 'active' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34882,6 +35172,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34896,6 +35187,7 @@
     "physical_field":0,
     "data_type":"FLOAT",
     "data_preci":2,
+    "expression":"(SELECT round(SUM(ESTIMATE),0) FROM ZT_TASK WHERE PROJECT = %1$s AND DELETED =  '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34909,6 +35201,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34988,6 +35281,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = %1$s AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35001,6 +35295,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = %1$s AND `STATUS` <> 'closed' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35014,6 +35309,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(select COUNT(1) from zt_task t where t.deleted = '0' and t.project = t1.id and t.`status` = 'closed' and t.closedDate BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59') )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35053,6 +35349,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = %1$s AND `CONFIRMED` = 0 AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35066,6 +35363,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35079,6 +35377,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35092,6 +35391,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = %1$s AND `STATUS` IN ('done','cancel','closed') AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35118,6 +35418,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"FLOAT",
+    "expression":"(SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = %1$s AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35144,6 +35445,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"FLOAT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35183,6 +35485,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35209,6 +35512,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE stage = 'released' AND PROJECT = t1.id AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35261,6 +35565,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE `STATUS` =  'closed' AND FIND_IN_SET (PRODUCT, (SELECT GROUP_CONCAT(PRODUCT) FROM ZT_PROJECTPRODUCT WHERE PROJECT= %1$s)) AND DELETED = '0' )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35274,6 +35579,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = %1$s AND `STATUS` <> 'active' AND DELETED = '0')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35287,6 +35593,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35313,6 +35620,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35340,6 +35648,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` = 'resolved' AND DELETED = '0' and RESOLVEDDATE BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35371,6 +35680,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"concat(%1$s,'__',%2$s)",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -37032,6 +37342,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(%1$s * %2$s)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -37046,6 +37357,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(select t.realname from zt_user t where t.account = t1.account)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -37060,6 +37372,20 @@
     "physical_field":1,
     "data_type":"INT",
     "data_length":5,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"EXITDATE" ,
+    "codename":"Exitdate",
+    "field_logic_name":"退场时间",
+    "entity_name":"IBZ_PROJECTTEAM",
+    "field_type":"DATE",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"DATETIME",
+    "expression":"DATE_ADD(t1.`join`, INTERVAL t1.days day)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -37196,6 +37522,43 @@
     "nullable":1,
     "physical_field":1,
     "data_type":"FLOAT",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"PM" ,
+    "codename":"PM",
+    "field_logic_name":"项目经理",
+    "entity_name":"IBZ_PROJECTTEAM",
+    "ref_de":"ZT_PROJECT",
+    "ref_field_name":"PM",
+    "relation_name":"DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT",
+    "relation_codename":"ProjectTeam",
+    "field_type":"PICKUPDATA",
+    "dict":"UserRealName",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"VARCHAR",
+    "data_length":30,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"PROJECTNAME" ,
+    "codename":"ProjectName",
+    "field_logic_name":"所属项目",
+    "entity_name":"IBZ_PROJECTTEAM",
+    "ref_de":"ZT_PROJECT",
+    "ref_field_name":"NAME",
+    "relation_name":"DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT",
+    "relation_codename":"ProjectTeam",
+    "field_type":"PICKUPTEXT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"VARCHAR",
+    "data_length":90,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -38106,6 +38469,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"concat(%1$s,'__',%2$s,'__',%3$s)",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -38556,6 +38920,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -38697,6 +39062,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -38785,6 +39151,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":65535,
+    "expression":"''",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -38881,6 +39248,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.`VERSION`",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -39040,6 +39408,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -39114,6 +39483,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"'0'",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -39256,6 +39626,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.ASSIGNEDTO",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -39803,6 +40174,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"concat(%1$s,'__',%2$s)",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -39894,6 +40266,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"concat(%1$s,'__',%2$s)",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -40011,6 +40384,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"concat(%1$s,'__',%2$s)",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -42895,6 +43269,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43021,6 +43396,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"''",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43049,6 +43425,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.module = '0' then '/' else (SELECT case when tt.type = 'task' then GROUP_CONCAT( tt.NAME SEPARATOR '>' ) else CONCAT_WS('',t2.`name`,'>',GROUP_CONCAT( tt.NAME SEPARATOR '>' )) end as `name` FROM zt_module tt left join zt_product t2 on tt.root = t2.id WHERE FIND_IN_SET( tt.id, t11.path ) GROUP BY tt.root limit 0,1) end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43063,6 +43440,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43091,6 +43469,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.storyVersion < t21.version and t21.`status` <> 'changed' then 'storychange'  else t1.`status` end )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43130,6 +43509,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"DATETIME",
+    "expression":"DATE_FORMAT(t1.lastediteddate,'%Y-%m-%d')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43344,6 +43724,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"( SELECT case when count( t.`id` ) > 0 then 1 else 0 end FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id` )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43456,6 +43837,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.deadline is null or t1.deadline = '0000-00-00' or t1.deadline = '1970-01-01' then '' when t1.`status` in ('wait','doing') and t1.deadline <DATE_FORMAT(now(),'%y-%m-%d')  then CONCAT_WS('','延期',TIMESTAMPDIFF(DAY, t1.deadline, now()),'天') else '' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43509,6 +43891,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"case when t1.`status` = 'wait' then 10 when t1.`status` = 'doing' then 20 when  t1.`status` = 'done' then 30 when  t1.`status` = 'closed' then 40 when  t1.`status` = 'cancel' then 50  else 60 end",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43680,6 +44063,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(To_Days(%1$s)-To_Days(%2$s))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43722,6 +44106,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"FLOAT",
+    "expression":"t1.CONSUMED",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43751,6 +44136,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"( CASE WHEN ( SELECT CASE	 WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_team` t  WHERE t.`type` = 'task'  AND t.`root` = t1.`id`  ) = 1 THEN '10'  WHEN t1.parent = - 1 THEN'20'   WHEN t1.parent = 0 THEN '30' ELSE '40' END)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -43806,6 +44192,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"CONCAT_WS('',case when t1.consumed = 0 or t1.consumed is null then '0' when t1.`left` = 0 or t1.`left` is null then '100' else ROUND((ROUND(t1.`consumed`/(t1.`left` + t1.consumed),2)) * 100) end ,'%')",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -44377,6 +44764,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"DATETIME",
+    "expression":"t1.`date`",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -44589,6 +44977,20 @@
     "major_field":0
     },
     {
+    "fieldname":"YEAR" ,
+    "codename":"Year",
+    "field_logic_name":"年",
+    "entity_name":"TASKESTIMATESTATS",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
     "fieldname":"CONSUMED" ,
     "codename":"Consumed",
     "field_logic_name":"消耗的工时",
@@ -44598,6 +45000,20 @@
     "physical_field":0,
     "data_type":"FLOAT",
     "data_preci":2,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"EVALUATIONSTATUS" ,
+    "codename":"Evaluationstatus",
+    "field_logic_name":"评估状态",
+    "entity_name":"TASKESTIMATESTATS",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -44631,9 +45047,93 @@
     "major_field":0
     },
     {
+    "fieldname":"MONTHNAME" ,
+    "codename":"Monthname",
+    "field_logic_name":"月（显示）",
+    "entity_name":"TASKESTIMATESTATS",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
     "fieldname":"NAME" ,
     "codename":"Name",
     "field_logic_name":"项目名称",
+    "entity_name":"TASKESTIMATESTATS",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"YEARNAME" ,
+    "codename":"Yearname",
+    "field_logic_name":"年（显示）",
+    "entity_name":"TASKESTIMATESTATS",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"EVALUATIONTIME" ,
+    "codename":"Evaluationtime",
+    "field_logic_name":"评估工时",
+    "entity_name":"TASKESTIMATESTATS",
+    "field_type":"FLOAT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"FLOAT",
+    "data_length":2,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"EVALUATIONCOST" ,
+    "codename":"Evaluationcost",
+    "field_logic_name":"评估成本",
+    "entity_name":"TASKESTIMATESTATS",
+    "field_type":"FLOAT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"FLOAT",
+    "data_length":2,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"INPUTCOST" ,
+    "codename":"Inputcost",
+    "field_logic_name":"投入成本",
+    "entity_name":"TASKESTIMATESTATS",
+    "field_type":"FLOAT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"FLOAT",
+    "data_length":2,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"MONTH" ,
+    "codename":"Month",
+    "field_logic_name":"月",
     "entity_name":"TASKESTIMATESTATS",
     "field_type":"TEXT",
     "nullable":1,
@@ -44929,6 +45429,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -44981,6 +45482,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -45020,6 +45522,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -45033,6 +45536,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -45243,6 +45747,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.account",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -45394,6 +45899,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(%1$s * %2$s)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -45772,6 +46278,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = %1$s) THEN FALSE ELSE TRUE  END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -46973,6 +47480,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -47080,6 +47588,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.OWNER",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -47108,6 +47617,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -47122,6 +47632,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":65535,
+    "expression":"''",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -47505,6 +48016,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"t1.ASSIGNEDTO",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -47519,6 +48031,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -47859,6 +48372,19 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"DATETIME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"COST" ,
+    "codename":"Cost",
+    "field_logic_name":"费用",
+    "entity_name":"ZT_TODO",
+    "field_type":"INT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"INT",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -48548,6 +49074,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"concat(%1$s,'__',%2$s)",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -48798,6 +49325,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"concat(%1$s)",
     "key_field":1,
     "show_order":1000,
     "major_field":0
@@ -48884,6 +49412,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -48897,6 +49426,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -48924,6 +49454,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49007,6 +49538,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49046,6 +49578,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49059,6 +49592,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49100,6 +49634,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49169,6 +49704,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49196,6 +49732,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49279,6 +49816,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"(DATE_FORMAT(now(),'%Y'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49293,6 +49831,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":100,
+    "expression":"(case when t1.role in ('dev','td','pm') then 'dev' when t1.role in ('qd','qa') then 'qa' else 'po' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49347,6 +49886,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"(select count(1) from zt_action t where t.actor = t1.account and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = DATE_FORMAT(now(),'%Y'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49417,6 +49957,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":" CONCAT_WS('',(DATE_FORMAT(now(),'%Y')),'年工作内容统计一览表 —— ',t1.realname)",
     "key_field":0,
     "show_order":1000,
     "major_field":1
@@ -49431,6 +49972,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
+    "expression":"'一月'",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49444,6 +49986,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -49497,6 +50040,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
+    "expression":"0",
     "key_field":0,
     "show_order":1000,
     "major_field":0

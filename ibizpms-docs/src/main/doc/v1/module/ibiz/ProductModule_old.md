@@ -18,7 +18,7 @@ hide members
 |path|PATH|TEXT|&nbsp;|
 |数据选择排序|ORDERPK|TEXT|&nbsp;|
 |逻辑删除标志|DELETED|TEXT|&nbsp;|
-|模块名称|NAME|TEXT|&nbsp;|
+|名称|NAME|TEXT|&nbsp;|
 |branch|BRANCH|INT|&nbsp;|
 |简称|SHORT|TEXT|&nbsp;|
 |排序值|ORDER|INT|&nbsp;|
@@ -39,7 +39,7 @@ hide members
 |path|默认规则|内容长度必须小于等于[255]|
 |数据选择排序|默认规则|内容长度必须小于等于[100]|
 |逻辑删除标志|默认规则|内容长度必须小于等于[1]|
-|模块名称|默认规则|内容长度必须小于等于[60]|
+|名称|默认规则|内容长度必须小于等于[60]|
 |branch|默认规则|默认规则|
 |简称|默认规则|内容长度必须小于等于[30]|
 |排序值|默认规则|默认规则|
@@ -51,7 +51,6 @@ hide members
 |collector|默认规则|内容长度必须小于等于[65535]|
 |所属产品|默认规则|内容长度必须小于等于[90]|
 |上级模块|默认规则|内容长度必须小于等于[60]|
-|产品|值规则测试|((内容长度必须大于[20]且小于[10]) 并且 数值必须)|
 |产品|默认规则|默认规则|
 |id|默认规则|默认规则|
 
@@ -138,7 +137,7 @@ hide footbox
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
-|模块名称(NAME)|LIKE|
+|名称(NAME)|LIKE|
 |branch(BRANCH)|EQ|
 |branch(BRANCH)|NOTEQ|
 |类型（story）(TYPE)|EQ|

@@ -944,7 +944,7 @@ POST
 | 1 | path | String | 允许 | path |
 | 2 | orderpk | String | 允许 | 数据选择排序 |
 | 3 | deleted | String | 允许 | 逻辑删除标志 |
-| 4 | name | String | 不可 | 模块名称 |
+| 4 | name | String | 不可 | 名称 |
 | 5 | branch | Integer | 允许 | branch |
 | 6 | ibizshort | String | 允许 | 简称 |
 | 7 | order | Integer | 允许 | 排序值 |

@@ -84,6 +84,14 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
     }
 
     protected getDefaultCond() {
+        if (!this.condCache.has('default')) {
+            const strCond: any[] = ['AND', ['EQ', 'TYPE','product']];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('default', cond);
+            }
+        }
         return this.condCache.get('default');
     }
 

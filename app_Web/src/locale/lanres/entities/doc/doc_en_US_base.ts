@@ -437,6 +437,7 @@ function getLocaleResourceBase(){
 			doc_delete: commonLogic.appcommonhandle("删除",null),
 			doc_onlycollectdoc: commonLogic.appcommonhandle("收藏",null),
 			doc_onlyuncollectdoc: commonLogic.appcommonhandle("取消收藏",null),
+			doc_docinfo: commonLogic.appcommonhandle("查看文档详情",null),
 			},
 		},
 		moremydoctree_treeview: {
@@ -449,6 +450,7 @@ function getLocaleResourceBase(){
 			doc_delete: commonLogic.appcommonhandle("删除",null),
 			doc_onlycollectdoc: commonLogic.appcommonhandle("收藏",null),
 			doc_onlyuncollectdoc: commonLogic.appcommonhandle("取消收藏",null),
+			doc_docinfo: commonLogic.appcommonhandle("查看文档详情",null),
 			},
 		},
 		moremyfavouritestree_treeview: {
@@ -461,6 +463,7 @@ function getLocaleResourceBase(){
 			doc_delete: commonLogic.appcommonhandle("删除",null),
 			doc_onlycollectdoc: commonLogic.appcommonhandle("收藏",null),
 			doc_onlyuncollectdoc: commonLogic.appcommonhandle("取消收藏",null),
+			doc_docinfo: commonLogic.appcommonhandle("查看文档详情",null),
 			doclibmodule_edit: commonLogic.appcommonhandle("编辑",null),
 			doclibmodule_weihufenlei: commonLogic.appcommonhandle("维护分类",null),
 			doclibmodule_favorite: commonLogic.appcommonhandle("收藏",null),

@@ -76,6 +76,8 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Remove And Close Window",null),
 			},
 		},
+		usr2gridviewtoolbar_toolbar: {
+		},
 	};
 	return data;
 }

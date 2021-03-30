@@ -980,7 +980,7 @@ POST
 | 2 | isleaf | String | 允许 | 叶子模块 |
 | 3 | type | String | 允许 | 类型（task） |
 | 4 | orderpk | String | 允许 | 数据选择排序 |
-| 5 | name | String | 不可 | 模块名称 |
+| 5 | name | String | 不可 | 名称 |
 | 6 | order | Integer | 允许 | 排序值 |
 | 7 | collector | String | 允许 | collector |
 | 8 | grade | Integer | 允许 | grade |

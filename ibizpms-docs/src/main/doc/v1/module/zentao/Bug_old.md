@@ -344,16 +344,16 @@ Bug -> Bug: 获取产品
 {% plantuml %}
 hide footbox
 
-Bug -> Bug: 重置需求版本
 Bug -> Bug: 获取需求版本
+Bug -> Bug: 重置需求版本
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
 |0|开始 | 
-|1|重置需求版本 |
+|1|获取需求版本 |
 |1|开始 | 
-|2|获取需求版本 |
+|2|重置需求版本 |
 <center>更新需求版本</center>
 * 发送通知 (sendNotice)
   
@@ -492,8 +492,6 @@ hide footbox
 |平台/分支(BRANCHNAME)|LIKE|
 |相关任务(TASKNAME)|EQ|
 |相关任务(TASKNAME)|LIKE|
-|相关用例(CASENAME)|EQ|
-|相关用例(CASENAME)|LIKE|
 |项目(PROJECTNAME)|EQ|
 |项目(PROJECTNAME)|LIKE|
 |相关需求(STORYNAME)|EQ|

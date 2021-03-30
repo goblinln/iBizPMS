@@ -2,7 +2,6 @@ import { CodeListService } from '../app/codelist-service';
 import { EntityBaseService, IContext, HttpResponse } from 'ibiz-core';
 import { ICase, Case } from '../../entities';
 import keys from '../../entities/case/case-keys';
-import { clone, mergeDeepLeft } from 'ramda';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
 import { GetCaseStepByIdVersionLogic } from '../../logic/entity/case/get-case-step-by-id-version/get-case-step-by-id-version-logic';
@@ -89,27 +88,6 @@ export class CaseBaseService extends EntityBaseService<ICase> {
         return new Case(entity);
     }
 
-    protected async fillMinor(_context: IContext, _data: ICase): Promise<any> {
-        if (_data.ibzcasesteps) {
-            await this.setMinorLocal('IBZCaseStep', _context, _data.ibzcasesteps);
-            delete _data.ibzcasesteps;
-        }
-        this.addLocal(_context, _data);
-        return _data;
-    }
-
-    protected async obtainMinor(_context: IContext, _data: ICase = new Case()): Promise<ICase> {
-        const res = await this.GetTemp(_context, _data);
-        if (res.ok) {
-            _data = mergeDeepLeft(_data, this.filterEntityData(res.data)) as any;
-        }
-        const ibzcasestepsList = await this.getMinorLocal('IBZCaseStep', _context, { ibizcase: _data.id });
-        if (ibzcasestepsList?.length > 0) {
-            _data.ibzcasesteps = ibzcasestepsList;
-        }
-        return _data;
-    }
-
     /**
      * 深度拷贝「默认支持」
      *
@@ -120,26 +98,9 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async DeepCopyTemp(context: any = {}, data: any = {}): Promise<HttpResponse> {
         let entity: any;
-        const oldData = clone(data);
         const result = await this.CopyTemp(context, data);
         if (result.ok) {
             entity = result.data;
-            {
-                let items: any[] = [];
-                const s = await ___ibz___.gs.getIBZCaseStepService();
-                items = await s.selectLocal(context, { ibizcase: oldData.id });
-                if (items) {
-                    for (let i = 0; i < items.length; i++) {
-                        const item = items[i];
-                        const res = await s.DeepCopyTemp({ ...context, case: entity.srfkey }, item);
-                        if (!res.ok) {
-                            throw new Error(
-                                `「Case(${oldData.srfkey})」关联实体「IBZCaseStep(${item.srfkey})」拷贝失败。`,
-                            );
-                        }
-                    }
-                }
-            }
         }
         return new HttpResponse(entity);
     }

@@ -32,6 +32,7 @@ function getLocaleResourceBase(){
 		'name': commonLogic.appcommonhandle("待办名称",null),
 		'assigneddate': commonLogic.appcommonhandle("指派日期",null),
 		'config_end': commonLogic.appcommonhandle("过期时间",null),
+		'cost': commonLogic.appcommonhandle("费用",null),
 		'pri': commonLogic.appcommonhandle("优先级",null),
 		'date': commonLogic.appcommonhandle("日期",null),
 		'story': commonLogic.appcommonhandle("待办名称",null),

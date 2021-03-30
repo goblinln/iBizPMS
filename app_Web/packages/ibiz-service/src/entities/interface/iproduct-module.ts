@@ -21,7 +21,7 @@ export interface IProductModule extends IEntityBase {
      */
     deleted?: any;
     /**
-     * 模块名称
+     * 名称
      */
     name?: any;
     /**

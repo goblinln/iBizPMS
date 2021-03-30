@@ -19,7 +19,7 @@ hide members
 |叶子模块|ISLEAF|TEXT|&nbsp;|
 |类型（task）|TYPE|TEXT|&nbsp;|
 |数据选择排序|ORDERPK|TEXT|&nbsp;|
-|模块名称|NAME|TEXT|&nbsp;|
+|名称|NAME|TEXT|&nbsp;|
 |排序值|ORDER|INT|&nbsp;|
 |collector|COLLECTOR|LONGTEXT|&nbsp;|
 |grade|GRADE|INT|&nbsp;|
@@ -40,7 +40,7 @@ hide members
 |叶子模块|默认规则|内容长度必须小于等于[200]|
 |类型（task）|默认规则|内容长度必须小于等于[30]|
 |数据选择排序|默认规则|内容长度必须小于等于[100]|
-|模块名称|默认规则|内容长度必须小于等于[60]|
+|名称|默认规则|内容长度必须小于等于[60]|
 |排序值|默认规则|默认规则|
 |collector|默认规则|内容长度必须小于等于[65535]|
 |grade|默认规则|默认规则|
@@ -139,7 +139,7 @@ hide footbox
 | 属性      |    搜索模式     |
 | --------   |------------|
 |类型（task）(TYPE)|EQ|
-|模块名称(NAME)|LIKE|
+|名称(NAME)|LIKE|
 |所属项目(ROOTNAME)|EQ|
 |所属项目(ROOTNAME)|LIKE|
 |上级模块(PARENTNAME)|EQ|

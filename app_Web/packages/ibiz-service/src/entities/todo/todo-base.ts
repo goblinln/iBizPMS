@@ -164,6 +164,10 @@ export abstract class TodoBase extends EntityBase implements ITodo {
      */
     config_end?: any;
     /**
+     * 费用
+     */
+    cost?: any;
+    /**
      * 优先级
      *
      * @type {(1 | 2 | 3 | 4)} 1: 一般, 2: 最高, 3: 较高, 4: 最低

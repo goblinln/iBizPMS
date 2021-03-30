@@ -248,6 +248,14 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     @ApiModelProperty("locked")
     private Timestamp locked;
     /**
+     * 项目成员
+     */
+    @TableField(exist = false)
+    @JSONField(name = "projectteamcnt")
+    @JsonProperty("projectteamcnt")
+    @ApiModelProperty("项目成员")
+    private Integer projectteamcnt;
+    /**
      * 通讯地址
      */
     @TableField(value = "`address`")
@@ -281,6 +289,14 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     @ApiModelProperty("密码")
     private String password;
     /**
+     * 剩余里程碑（今日到期）
+     */
+    @TableField(exist = false)
+    @JSONField(name = "leftlcbjzcnt")
+    @JsonProperty("leftlcbjzcnt")
+    @ApiModelProperty("剩余里程碑（今日到期）")
+    private String leftlcbjzcnt;
+    /**
      * ranzhi
      */
     @TableField(value = "`ranzhi`")
@@ -288,6 +304,14 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     @JsonProperty("ranzhi")
     @ApiModelProperty("ranzhi")
     private String ranzhi;
+    /**
+     * 今日截止待办
+     */
+    @TableField(exist = false)
+    @JSONField(name = "mytodocntjz")
+    @JsonProperty("mytodocntjz")
+    @ApiModelProperty("今日截止待办")
+    private String mytodocntjz;
     /**
      * 未关闭项目数
      */
@@ -445,6 +469,22 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     @JsonProperty("id")
     @ApiModelProperty("ID")
     private Long id;
+    /**
+     * 剩余里程碑
+     */
+    @TableField(exist = false)
+    @JSONField(name = "leftlcbcnt")
+    @JsonProperty("leftlcbcnt")
+    @ApiModelProperty("剩余里程碑")
+    private Integer leftlcbcnt;
+    /**
+     * 项目成员（今日截止）
+     */
+    @TableField(exist = false)
+    @JSONField(name = "projectteamjzcnt")
+    @JsonProperty("projectteamjzcnt")
+    @ApiModelProperty("项目成员（今日截止）")
+    private String projectteamjzcnt;
 
 
 

@@ -110,14 +110,16 @@ function getLocaleResourceBase(){
 			},
 		},
 		editviewtoolbar_toolbar: {
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("Save And Close",null),
-				tip: commonLogic.appcommonhandle("Save And Close Window",null),
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("Save",null),
+				tip: commonLogic.appcommonhandle("Save",null),
 			},
-			'deuiaction3': {
+			'deuiaction2': {
 				caption: commonLogic.appcommonhandle("Remove And Close",null),
 				tip: commonLogic.appcommonhandle("Remove And Close Window",null),
 			},
+		},
+		usr2gridviewtoolbar_toolbar: {
 		},
 		concatlist_treeview: {
 			nodata:commonLogic.appcommonhandle("",null),

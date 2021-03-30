@@ -977,10 +977,10 @@ function getLocaleResourceBase(){
 				'openeddate': commonLogic.appcommonhandle("创建日期",null),
 				'assignedto': commonLogic.appcommonhandle("指派给",null),
 				'resolution': commonLogic.appcommonhandle("方案",null),
+				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
 				'lastediteddate': commonLogic.appcommonhandle("修改日期",null),
 				'activateddate': commonLogic.appcommonhandle("激活日期",null),
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
-				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
@@ -1191,10 +1191,10 @@ function getLocaleResourceBase(){
 				'openeddate': commonLogic.appcommonhandle("创建日期",null),
 				'assignedto': commonLogic.appcommonhandle("指派给",null),
 				'resolution': commonLogic.appcommonhandle("方案",null),
+				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
 				'lastediteddate': commonLogic.appcommonhandle("修改日期",null),
 				'activateddate': commonLogic.appcommonhandle("激活日期",null),
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
-				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
@@ -1313,8 +1313,8 @@ function getLocaleResourceBase(){
 				'openeddate': commonLogic.appcommonhandle("创建日期",null),
 				'assignedto': commonLogic.appcommonhandle("指派给",null),
 				'resolution': commonLogic.appcommonhandle("方案",null),
-				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
+				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
@@ -1606,6 +1606,8 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("Filter",null),
 				tip: commonLogic.appcommonhandle("Filter",null),
 			},
+		},
+		todoeditviewtoolbar_toolbar: {
 		},
 		mainmygridviewtoolbar_toolbar: {
 			'deuiaction1': {

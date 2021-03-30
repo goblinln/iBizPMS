@@ -23,7 +23,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
     protected APPDENAMEPLURAL = 'Bugs';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
-    protected quickSearchFields = ['title',];
+    protected quickSearchFields = ['id','title',];
     protected selectContextParam = {
         product: 'product',
         story: 'story',

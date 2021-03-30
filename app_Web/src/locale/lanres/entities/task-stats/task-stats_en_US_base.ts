@@ -97,6 +97,8 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Export {0} Data To Excel",null),
 			},
 		},
+		userfinishtasksumgridviewtoolbar_toolbar: {
+		},
 	};
 	return data;
 }
