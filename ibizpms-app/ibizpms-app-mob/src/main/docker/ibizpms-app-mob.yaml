@@ -3,12 +3,12 @@ services:
   ibizpms-app-mob:
     image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-app-mob:latest
     ports:
-      - "22120:22120"
+      - "22140:22140"
     networks:
       - agent_network
     environment:
       - SPRING_CLOUD_NACOS_DISCOVERY_IP=172.16.240.110
-      - SERVER_PORT=22120
+      - SERVER_PORT=22140
       - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=172.16.240.110:8849
       - SPRING_REDIS_HOST=172.16.240.110
       - SPRING_REDIS_PORT=6380
