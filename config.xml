@@ -41,7 +41,7 @@
       cd ibizpms-app/ibizpms-app-web
       mvn -Pweb docker:build
       mvn -Pweb docker:push
-      docker -H $para1 stack deploy --compose-file=src/main/docker/ibizpms-app-web.yaml ibizEEPMS --with-registry-auth
+      docker -H $para1 stack deploy --compose-file=src/main/docker/ibizpms-app-web.yaml iBizEE --with-registry-auth
       </command>
     </hudson.tasks.Shell>
   </builders>

@@ -22,18 +22,18 @@ spec:
         image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-app-mob:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 22140
+        - containerPort: 22150
         env:
         - name: SPRING_CLOUD_NACOS_DISCOVERY_IP
           value: "172.16.240.110"      
         - name: SERVER_PORT
-          value: "22140"
+          value: "22150"
         - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR
-          value: "172.16.240.110:8849"
+          value: "172.16.240.110:8848"
         - name: SPRING_REDIS_HOST
           value: "172.16.240.110"
         - name: SPRING_REDIS_PORT
-          value: "6380"
+          value: "6379"
         - name: SPRING_REDIS_DATABASE
           value: "0"
         - name: SPRING_DATASOURCE_USERNAME
@@ -46,26 +46,18 @@ spec:
           value: "com.mysql.jdbc.Driver"
         - name: SPRING_DATASOURCE_DEFAULTSCHEMA
           value: "zentao"
-        - name: IBIZ_AUTH_LADP
-          value: "true"      
-        - name: JOBS_ADMINNAME
-          value: "admin"      
-        - name: JOBS_ADMIN-ADDRESS
-          value: "http://172.16.240.110:10001"      
-        - name: NACOS
-          value: "172.16.240.110:8849"      
-        - name: JOBS_ADMINPASSWORD
-          value: "123456"      
-        - name: JOBS_APP-NAME
-          value: "ibzpms"      
-        - name: ZUUL_ROUTES_IBZEMP_SERVICEID
-          value: "pms-webapi"      
-        - name: JOBS_APP-PORT
-          value: "9998"      
-        - name: JOBS_APP-IP
-          value: "172.16.240.110"      
+        - name: REMOTEDYNAPATH
+          value: "http://172.16.240.51/dynamic_demo/1688344C-3A57-44BD-B135-249E24FCE4F6/"      
         - name: CAS
           value: "https://passport.ibizlab.cn"      
+        - name: NACOS
+          value: "172.16.240.110:8848"      
+        - name: BDYNAMIC
+          value: "false"      
+        - name: SEATA_REGISTRY_NACOS_SERVER-ADDR
+          value: "172.16.240.110:8848"      
+        - name: SEATA_ENABLED
+          value: "true"      
         volumeMounts:
         - name: data
           mountPath: /app/file
@@ -85,9 +77,9 @@ spec:
   type: NodePort
   ports:
   - name: http
-    port: 22140
-    targetPort: 22140
-    nodePort: 22140
+    port: 22150
+    targetPort: 22150
+    nodePort: 22150
     protocol: TCP
   selector:
     app: ibizpms-app-mob
