@@ -34,9 +34,9 @@ export class PROGRESSCIRCLE extends EditorBase {
      * @memberof PROGRESSCIRCLE
      */         
     public initEditor(){
-      let formItems:any = this.editorInstance.parentItem.formItems;
-      this.total = formItems[0]?.id;
-      this.progress = formItems[1]?.id;
+      let formItems:any = this.editorInstance.parentItem?.formItems;
+      this.total = formItems[0]?.codeName;
+      this.progress = formItems[1]?.codeName;
     }
 
     /**
