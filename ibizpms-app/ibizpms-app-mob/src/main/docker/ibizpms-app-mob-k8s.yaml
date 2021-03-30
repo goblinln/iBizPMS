@@ -22,7 +22,50 @@ spec:
         image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-app-mob:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 22120
+        env:
+        - name: SPRING_CLOUD_NACOS_DISCOVERY_IP
+          value: "172.16.240.110"      
+        - name: SERVER_PORT
+          value: "22120"
+        - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR
+          value: "172.16.240.110:8849"
+        - name: SPRING_REDIS_HOST
+          value: "172.16.240.110"
+        - name: SPRING_REDIS_PORT
+          value: "6380"
+        - name: SPRING_REDIS_DATABASE
+          value: "0"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "zentao"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "123456"
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://172.16.180.217:3306/zentao?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true"
+        - name: SPRING_DATASOURCE_DRIVER-CLASS-NAME
+          value: "com.mysql.jdbc.Driver"
+        - name: SPRING_DATASOURCE_DEFAULTSCHEMA
+          value: "zentao"
+        - name: IBIZ_AUTH_LADP
+          value: "true"      
+        - name: JOBS_ADMINNAME
+          value: "admin"      
+        - name: JOBS_ADMIN-ADDRESS
+          value: "http://172.16.240.110:10001"      
+        - name: NACOS
+          value: "172.16.240.110:8849"      
+        - name: JOBS_ADMINPASSWORD
+          value: "123456"      
+        - name: JOBS_APP-NAME
+          value: "ibzpms"      
+        - name: ZUUL_ROUTES_IBZEMP_SERVICEID
+          value: "pms-webapi"      
+        - name: JOBS_APP-PORT
+          value: "9998"      
+        - name: JOBS_APP-IP
+          value: "172.16.240.110"      
+        - name: CAS
+          value: "https://passport.ibizlab.cn"      
         volumeMounts:
         - name: data
           mountPath: /app/file
@@ -42,9 +85,9 @@ spec:
   type: NodePort
   ports:
   - name: http
-    port: 8080
-    targetPort: 8080
-    nodePort: 8080
+    port: 22120
+    targetPort: 22120
+    nodePort: 22120
     protocol: TCP
   selector:
     app: ibizpms-app-mob
