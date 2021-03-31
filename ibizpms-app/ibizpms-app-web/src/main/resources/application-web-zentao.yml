@@ -52,7 +52,7 @@ ibiz:
   permitall: true
   ref:
     service:
-      ibizpms-webapi: ibizpms-webapi
+      ibizpms-webapi: pms-webapi
       uaa: ibzuaa-api
       ou: ibzou-api
   auth:
