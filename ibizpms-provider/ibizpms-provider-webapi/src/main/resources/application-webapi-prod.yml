@@ -1,5 +1,5 @@
 server:
-  port: 22110
+  port: 22150
 #Log配置
 logging:
   level:
