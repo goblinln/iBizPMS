@@ -54,8 +54,6 @@ spec:
           value: "http://172.16.240.110:10001"      
         - name: NACOS
           value: "172.16.240.110:8849"      
-        - name: SPRING_CLOUD_NACOS_DISCOVERY_IP
-          value: "172.16.240.110"      
         - name: IBIZ_REF_SERVICE_IBIZPMS-WEBAPI
           value: "pms-webapi"      
         - name: JOBS_ADMINPASSWORD
