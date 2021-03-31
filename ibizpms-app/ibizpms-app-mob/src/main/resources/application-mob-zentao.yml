@@ -2,11 +2,11 @@ zuul:
   routes:
     common:
       path:
-      serviceId: ${ibiz.ref.service.pms-webapi:pms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
 #    v7:
 #      path: /appdata
-#      serviceId: ${ibiz.ref.service.pms-webapi:pms-webapi}
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
 #      stripPrefix: false
     ibizutil:
       path: /ibizutil/**
@@ -14,23 +14,23 @@ zuul:
       stripPrefix: false
     ibizutilpms:
       path: /ibizutilpms/**
-      serviceId: ${ibiz.ref.service.pms-webapi:pms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     dingtalktoken:
       path: /uaa/open/dingtalk/access_token
-      serviceId: ${ibiz.ref.service.pms-webapi:pms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     dingtalkjsapisign:
       path: /uaa/dingtalk/jsapi/sign
-      serviceId: ${ibiz.ref.service.pms-webapi:pms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     dingtalkauth:
       path: /uaa/open/dingtalk/auth/**
-      serviceId: ${ibiz.ref.service.pms-webapi:pms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     guest:
       path: /login/guest
-      serviceId: ${ibiz.ref.service.pms-webapi:pms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
 environment:
   - TZ=Asia/Shanghai
@@ -39,7 +39,7 @@ ibiz:
   permitall: true
   ref:
     service:
-      pms-webapi: pms-webapi
+      ibizpms-webapi: ibizpms-webapi
       uaa: ibzuaa-api
       ou: ibzou-api
   auth:
