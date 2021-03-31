@@ -75,10 +75,12 @@ public class DELogicAspect {
     private String systemId;
     @Value("${ibiz.dynainstid:ibizpms}")
     private String defaultDynaInstId;
+    @Value("${ibiz.isDyna:false}")
+    private boolean isDyna;
 
     @Around("execution(* cn.ibizlab.pms.core.ibiz.service.*.*(..))  || execution(* cn.ibizlab.pms.core.uaa.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizplugin.service.*.*(..))  || execution(* cn.ibizlab.pms.core.zentao.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizsysmodel.service.*.*(..))  || execution(* cn.ibizlab.pms.core.report.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ou.service.*.*(..))  || execution(* cn.ibizlab.pms.core.ibizpro.service.*.*(..)) ")
     public Object executeRemoteLogic(ProceedingJoinPoint point) throws Throwable {
-        return executeLogic(point, true);
+        return executeLogic(point, isDyna && true);
     }
 
 
@@ -111,12 +113,12 @@ public class DELogicAspect {
         } else if (arg instanceof EntityBase) {
             entity = (EntityBase) arg;
         }
-        String dynaInstId = null;
-        if (isDyna) {
-            dynaInstId = getDynaInstId(entity);
-            dynaInstId = ObjectUtils.isEmpty(dynaInstId) ? defaultDynaInstId : dynaInstId;
-        }
         if (entity != null) {
+            String dynaInstId = null;
+            if (isDyna) {
+                dynaInstId = getDynaInstId(entity);
+                dynaInstId = ObjectUtils.isEmpty(dynaInstId) ? defaultDynaInstId : dynaInstId;
+            }
             executeBeforeLogic(entity, action, isDyna, dynaInstId);
             Object result = point.proceed();
             if("get".equalsIgnoreCase(action) && result instanceof EntityBase){
