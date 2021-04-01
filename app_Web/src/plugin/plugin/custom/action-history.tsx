@@ -2,7 +2,7 @@
 import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import { AppListBase } from 'ibiz-vue/src/components/control/app-common-control/app-list-base';
-import { AppListService } from 'ibiz-vue';
+import { AppListService, AppCenterService } from 'ibiz-vue';
 import '../plugin-style.less';
 
 /**
