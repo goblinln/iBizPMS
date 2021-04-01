@@ -500,10 +500,8 @@ export class CalendarControlBase extends MDControlBase{
         }else{
             this.searchArgCache = arg;
         }
-        this.ctrlBeginLoading()
         const post: Promise<any> = this.service.search(this.loadAction, JSON.parse(JSON.stringify(this.context?this.context:'')), arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
             if (!response || response.status !== 200) {
                 if (response.errorMessage) {
                     this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.errorMessage });
@@ -514,7 +512,6 @@ export class CalendarControlBase extends MDControlBase{
             this.events = response.data;
             handleEvents();
         }, (response: any) => {
-            this.ctrlEndLoading();
             if (response && response.status === 401) {
                 return;
             }

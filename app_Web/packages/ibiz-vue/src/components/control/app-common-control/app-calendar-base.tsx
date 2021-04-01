@@ -93,14 +93,6 @@ export class AppCalendarBase extends CalendarControlBase{
         }
     }
 
-    public eventAfterRender() {
-        console.log("12322222222123");
-    }
-
-    public eventAfterAllRender() {
-        console.log('123124124124')
-    }
-
     /**
      * 绘制日历内容
      * 
@@ -125,9 +117,6 @@ export class AppCalendarBase extends CalendarControlBase{
                 validRange={this.validRange}
                 defaultDate={this.defaultDate}
                 eventRender={this.eventRender}
-                eventAfterRender={this.eventAfterRender}
-                loading={this.eventAfterAllRender}
-                eventAfterAllRender={this.eventAfterAllRender}
                 navLinks={this.quickToolbarItems?.length>0 ? true : false}
                 navLinkDayClick={this.onDayClick}
                 on-dateClick={this.onDateClick}
