@@ -48,6 +48,25 @@ export class ActionHistory extends AppListBase {
     ];
 
     /**
+     * 列表部件挂载
+     * 
+     * @memberof ActionHistory
+     */
+    public ctrlMounted() {
+        if (AppCenterService.getMessageCenter()) {
+            const _this: any = this;
+            _this.appStateEvent = AppCenterService.getMessageCenter().subscribe(({ name, action, data }: { name: string, action: string, data: any }) => {
+                if (name && this.context && this.context.objecttype && Object.is(this.context.objecttype.toLowerCase(), name.toLowerCase())) {
+                    if (Object.is(action, 'appRefresh')) {
+                        _this.refresh(data);
+                    }
+                }
+            })
+        }
+        super.ctrlMounted();
+    }
+
+    /**
      * 列表数据加载 根据Action加载对应History
      *
      * @public
