@@ -6,6 +6,33 @@
         z-index: 2;
         right: 2px;
         top: 3px;
+        >.ivu-dropdown{
+            >.ivu-select-dropdown{
+                left: -28px !important;
+                min-width: 169px;
+                >.ivu-dropdown-menu{
+                    .ivu-tabs-nav-wrap{
+                        margin-bottom: 0px;
+                        .ivu-tabs-nav{
+                            width: 100%;
+                            display: flex;
+                            .ivu-tabs-tab{
+                                width: 50%;
+                                text-align: center;
+                                font-weight: 400;
+                            }
+                            .ivu-tabs-tab:hover{
+                                color: #57a3f3 !important;
+                            }
+                            .ivu-tabs-tab-active {
+                                color: #2d8cf0 !important;
+                                border-bottom: 2px solid #2d8cf0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     .appTemplate {
         background: transparent;
@@ -32,7 +59,7 @@
         }
     }
     .ivu-tabs-no-animation{
-        height: 47px !important;
+        height: 37px !important;
         
     } 
     .keyOperation:hover{
@@ -66,34 +93,33 @@
             transform: translateX(200%);
         }
     }
-}
-
-.tox-menu {
-    min-width: 300px !important;
-}
-
-.select-person{
-    width: 120px;
-    max-height: 150px;
-    position: absolute;
-    padding: 10px;
-    border: 1px solid #c1c6cc;
-    background-color: #fff;
-    z-index: 10000;
-    overflow: auto;
-    border-radius: 4px;
-    .person-wrap{
-        padding: 0;
-        margin: 0;
-        .row{
-            line-height: 24px;
-            list-style: none;
-        }
-        .row:hover{
-            background: #eee;
-        }
-        .row.selectRow{
-            background: #C9DBF2;
+    .tox-menu {
+        min-width: 300px !important;
+    }
+    
+    .select-person{
+        width: 120px;
+        max-height: 150px;
+        position: absolute;
+        padding: 10px;
+        border: 1px solid #c1c6cc;
+        background-color: #fff;
+        z-index: 10000;
+        overflow: auto;
+        border-radius: 4px;
+        .person-wrap{
+            padding: 0;
+            margin: 0;
+            .row{
+                line-height: 24px;
+                list-style: none;
+            }
+            .row:hover{
+                background: #eee;
+            }
+            .row.selectRow{
+                background: #C9DBF2;
+            }
         }
     }
 }
