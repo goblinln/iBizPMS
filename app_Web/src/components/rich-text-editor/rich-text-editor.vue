@@ -297,7 +297,7 @@ export default class RichTextEditor extends Vue {
      * @type {string}
      * @memberof RichTextEditor
      */
-    @Prop() public templParams: any;
+    @Prop() public localParam: any;
 
     /**
      * 注入实体服务
@@ -916,8 +916,8 @@ export default class RichTextEditor extends Vue {
         let data: any = {};
         let _param = this.viewparams ? JSON.parse(JSON.stringify(this.viewparams)) : {};
         let _context = this.context ? JSON.parse(JSON.stringify(this.context)) : {};
-        if (this.templParams && Object.keys(this.templParams).length >0){
-            data = this.$util.computedNavData({}, _context, _param, this.templParams);
+        if (this.localParam && Object.keys(this.localParam).length >0){
+            data = this.$util.computedNavData({}, _context, _param, this.localParam);
         }
         return data;
     }
