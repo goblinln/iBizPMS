@@ -100,8 +100,9 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
     @Transactional
     public IbzFavorites get(String key) {
         IbzFavorites et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new IbzFavorites();
+            et.setIbzfavoritesid(key);
         }
         else {
         }
@@ -250,6 +251,5 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
         return et;
     }
 }
-
 
 

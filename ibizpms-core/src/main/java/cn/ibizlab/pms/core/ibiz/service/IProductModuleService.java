@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IProductModuleService extends IService<ProductModule> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "需求模块";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "productmodules";
+
     boolean create(ProductModule et);
     void createBatch(List<ProductModule> list);
     boolean update(ProductModule et);
@@ -35,9 +45,7 @@ public interface IProductModuleService extends IService<ProductModule> {
     ProductModule getDraft(ProductModule et);
     boolean checkKey(ProductModule et);
     ProductModule fix(ProductModule et);
-    boolean fixBatch(List<ProductModule> etList);
     ProductModule removeModule(ProductModule et);
-    boolean removeModuleBatch(List<ProductModule> etList);
     boolean save(ProductModule et);
     void saveBatch(List<ProductModule> list);
     ProductModule syncFromIBIZ(ProductModule et);

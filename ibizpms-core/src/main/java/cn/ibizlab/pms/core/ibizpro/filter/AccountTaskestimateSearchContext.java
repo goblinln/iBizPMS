@@ -30,24 +30,39 @@ public class AccountTaskestimateSearchContext extends QueryWrapperContext<Accoun
 	private String n_month_eq;//[月]
 	public void setN_month_eq(String n_month_eq) {
         this.n_month_eq = n_month_eq;
+        if(!ObjectUtils.isEmpty(this.n_month_eq)){
+            this.getSearchCond().eq("`month`", n_month_eq);
+        }
     }
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
     @JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Timestamp n_date_eq;//[日期]
 	public void setN_date_eq(Timestamp n_date_eq) {
         this.n_date_eq = n_date_eq;
+        if(!ObjectUtils.isEmpty(this.n_date_eq)){
+            this.getSearchCond().eq("`date`", n_date_eq);
+        }
     }
 	private String n_year_eq;//[年]
 	public void setN_year_eq(String n_year_eq) {
         this.n_year_eq = n_year_eq;
+        if(!ObjectUtils.isEmpty(this.n_year_eq)){
+            this.getSearchCond().eq("`year`", n_year_eq);
+        }
     }
 	private String n_project_in;//[项目标识]
 	public void setN_project_in(String n_project_in) {
         this.n_project_in = n_project_in;
+        if(!ObjectUtils.isEmpty(this.n_project_in)){
+			this.getSearchCond().in("`project`",this.n_project_in.split(";"));
+        }
     }
 	private String n_account_eq;//[用户]
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;
+        if(!ObjectUtils.isEmpty(this.n_account_eq)){
+            this.getSearchCond().eq("`account`", n_account_eq);
+        }
     }
 
     /**

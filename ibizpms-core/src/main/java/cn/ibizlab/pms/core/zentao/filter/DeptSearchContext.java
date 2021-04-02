@@ -30,18 +30,30 @@ public class DeptSearchContext extends QueryWrapperContext<Dept> {
 	private String n_name_like;//[部门名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
+        if(!ObjectUtils.isEmpty(this.n_name_like)){
+            this.getSearchCond().like("`name`", n_name_like);
+        }
     }
 	private String n_parentname_eq;//[上级部门]
 	public void setN_parentname_eq(String n_parentname_eq) {
         this.n_parentname_eq = n_parentname_eq;
+        if(!ObjectUtils.isEmpty(this.n_parentname_eq)){
+            this.getSearchCond().eq("`parentname`", n_parentname_eq);
+        }
     }
 	private String n_parentname_like;//[上级部门]
 	public void setN_parentname_like(String n_parentname_like) {
         this.n_parentname_like = n_parentname_like;
+        if(!ObjectUtils.isEmpty(this.n_parentname_like)){
+            this.getSearchCond().like("`parentname`", n_parentname_like);
+        }
     }
 	private Long n_parent_eq;//[parent]
 	public void setN_parent_eq(Long n_parent_eq) {
         this.n_parent_eq = n_parent_eq;
+        if(!ObjectUtils.isEmpty(this.n_parent_eq)){
+            this.getSearchCond().eq("`parent`", n_parent_eq);
+        }
     }
 
     /**
@@ -53,7 +65,7 @@ public class DeptSearchContext extends QueryWrapperContext<Dept> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("name", query)
+                     wrapper.like("`name`", query)
             );
 		 }
 	}

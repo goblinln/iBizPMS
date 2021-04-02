@@ -89,8 +89,9 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
     @Transactional
     public IbzMonthly get(Long key) {
         IbzMonthly et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new IbzMonthly();
+            et.setIbzmonthlyid(key);
         }
         else {
         }
@@ -385,6 +386,5 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         return et;
     }
 }
-
 
 

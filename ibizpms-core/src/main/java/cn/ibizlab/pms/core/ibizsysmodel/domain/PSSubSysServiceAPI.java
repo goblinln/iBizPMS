@@ -35,6 +35,11 @@ import cn.ibizlab.pms.util.domain.EntityClient;
 @Data
 @ApiModel("外部服务接口")
 public class PSSubSysServiceAPI extends EntityClient implements Serializable {
+    @Override
+    public void modify(String field, Object val) {
+        getExtensionparams().put("dirtyflagenable", true);
+        super.modify(field, val);
+    }
 
     /**
      * 外部服务接口名称

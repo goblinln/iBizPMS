@@ -110,8 +110,9 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Transactional
     public Burn get(String key) {
         Burn et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new Burn();
+            et.setId(key);
         }
         else {
         }
@@ -303,6 +304,5 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
         return et;
     }
 }
-
 
 

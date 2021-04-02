@@ -106,8 +106,9 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Transactional
     public ProductPlan get(Long key) {
         ProductPlan et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new ProductPlan();
+            et.setId(key);
         }
         else {
         }
@@ -267,15 +268,6 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
 
     @Override
     @Transactional
-    public boolean getOldPlanNameBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            getOldPlanName(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public ProductPlan importPlanTemplet(ProductPlan et) {
         //自定义代码
         return et;
@@ -339,15 +331,6 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Transactional
     public ProductPlan mobProductPlanCounter(ProductPlan et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean mobProductPlanCounterBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            mobProductPlanCounter(et);
-        }
-        return true;
     }
 
     @Override
@@ -618,6 +601,5 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         return et;
     }
 }
-
 
 

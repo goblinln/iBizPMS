@@ -16,7 +16,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[PSSysSFPub] 服务对象接口
  */
-@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysSFPub", fallback = PSSysSFPubFallback.class)
+//@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysSFPub", fallback = PSSysSFPubFallback.class)
 public interface PSSysSFPubFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/select")
@@ -24,14 +24,14 @@ public interface PSSysSFPubFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs")
-    PSSysSFPub create(@RequestBody PSSysSFPub pssyssfpub);
+    PSSysSFPub create(@RequestBody PSSysSFPub et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/batch")
     Boolean createBatch(@RequestBody List<PSSysSFPub> pssyssfpubs);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/{pssyssfpubid}")
-    PSSysSFPub update(@PathVariable("pssyssfpubid") String pssyssfpubid,@RequestBody PSSysSFPub pssyssfpub);
+    PSSysSFPub update(@PathVariable("pssyssfpubid") String pssyssfpubid, @RequestBody PSSysSFPub et);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/batch")
     Boolean updateBatch(@RequestBody List<PSSysSFPub> pssyssfpubs);
@@ -47,19 +47,22 @@ public interface PSSysSFPubFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/{pssyssfpubid}")
     PSSysSFPub get(@PathVariable("pssyssfpubid") String pssyssfpubid);
 
+    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/getbycodename/{pssyssfpubid}")
+    String getByCodeName(@PathVariable("pssyssfpubid") String codeName);
+
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/getdraft")
     PSSysSFPub getDraft(PSSysSFPub entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/checkkey")
-    Boolean checkKey(@RequestBody PSSysSFPub pssyssfpub);
+    Boolean checkKey(@RequestBody PSSysSFPub et);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/save")
-    Object saveEntity(@RequestBody PSSysSFPub pssyssfpub);
+    Object saveEntity(@RequestBody PSSysSFPub et);
 
-    default Boolean save(@RequestBody PSSysSFPub pssyssfpub) { return saveEntity(pssyssfpub)!=null; }
+    default Boolean save(@RequestBody PSSysSFPub et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/savebatch")
     Boolean saveBatch(@RequestBody List<PSSysSFPub> pssyssfpubs);

@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ICronService extends IService<Cron> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "cron";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "crons";
+
     boolean create(Cron et);
     void createBatch(List<Cron> list);
     boolean update(Cron et);

@@ -30,6 +30,9 @@ public class DynaDashboardSearchContext extends QueryWrapperContext<DynaDashboar
 	private String n_dynadashboardname_like;//[动态数据看板名称]
 	public void setN_dynadashboardname_like(String n_dynadashboardname_like) {
         this.n_dynadashboardname_like = n_dynadashboardname_like;
+        if(!ObjectUtils.isEmpty(this.n_dynadashboardname_like)){
+            this.getSearchCond().like("`dynadashboardname`", n_dynadashboardname_like);
+        }
     }
 
     /**
@@ -41,7 +44,7 @@ public class DynaDashboardSearchContext extends QueryWrapperContext<DynaDashboar
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("dynadashboardname", query)
+                     wrapper.like("`dynadashboardname`", query)
             );
 		 }
 	}

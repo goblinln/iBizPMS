@@ -43,11 +43,11 @@ public class EmpLoyeeloadResource {
     @Autowired
     public IEmpLoyeeloadService employeeloadService;
 
-
     @Autowired
     @Lazy
     public EmpLoyeeloadMapping employeeloadMapping;
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-Create-all')")
     @ApiOperation(value = "新建员工负载表", tags = {"员工负载表" },  notes = "新建员工负载表")
 	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads")
     public ResponseEntity<EmpLoyeeloadDTO> create(@Validated @RequestBody EmpLoyeeloadDTO employeeloaddto) {
@@ -57,6 +57,7 @@ public class EmpLoyeeloadResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-Create-all')")
     @ApiOperation(value = "批量新建员工负载表", tags = {"员工负载表" },  notes = "批量新建员工负载表")
 	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<EmpLoyeeloadDTO> employeeloaddtos) {
@@ -64,6 +65,7 @@ public class EmpLoyeeloadResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-Update-all')")
     @ApiOperation(value = "更新员工负载表", tags = {"员工负载表" },  notes = "更新员工负载表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/employeeloads/{employeeload_id}")
     public ResponseEntity<EmpLoyeeloadDTO> update(@PathVariable("employeeload_id") Long employeeload_id, @RequestBody EmpLoyeeloadDTO employeeloaddto) {
@@ -74,6 +76,7 @@ public class EmpLoyeeloadResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-Update-all')")
     @ApiOperation(value = "批量更新员工负载表", tags = {"员工负载表" },  notes = "批量更新员工负载表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/employeeloads/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<EmpLoyeeloadDTO> employeeloaddtos) {
@@ -81,12 +84,14 @@ public class EmpLoyeeloadResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-Remove-all')")
     @ApiOperation(value = "删除员工负载表", tags = {"员工负载表" },  notes = "删除员工负载表")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/{employeeload_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("employeeload_id") Long employeeload_id) {
          return ResponseEntity.status(HttpStatus.OK).body(employeeloadService.remove(employeeload_id));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-Remove-all')")
     @ApiOperation(value = "批量删除员工负载表", tags = {"员工负载表" },  notes = "批量删除员工负载表")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -94,6 +99,7 @@ public class EmpLoyeeloadResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-Get-all')")
     @ApiOperation(value = "获取员工负载表", tags = {"员工负载表" },  notes = "获取员工负载表")
 	@RequestMapping(method = RequestMethod.GET, value = "/employeeloads/{employeeload_id}")
     public ResponseEntity<EmpLoyeeloadDTO> get(@PathVariable("employeeload_id") Long employeeload_id) {
@@ -115,6 +121,7 @@ public class EmpLoyeeloadResource {
         return  ResponseEntity.status(HttpStatus.OK).body(employeeloadService.checkKey(employeeloadMapping.toDomain(employeeloaddto)));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-Save-all')")
     @ApiOperation(value = "保存员工负载表", tags = {"员工负载表" },  notes = "保存员工负载表")
 	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/save")
     public ResponseEntity<EmpLoyeeloadDTO> save(@RequestBody EmpLoyeeloadDTO employeeloaddto) {
@@ -123,6 +130,7 @@ public class EmpLoyeeloadResource {
         return ResponseEntity.status(HttpStatus.OK).body(employeeloadMapping.toDto(domain));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-Save-all')")
     @ApiOperation(value = "批量保存员工负载表", tags = {"员工负载表" },  notes = "批量保存员工负载表")
 	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<EmpLoyeeloadDTO> employeeloaddtos) {
@@ -130,6 +138,7 @@ public class EmpLoyeeloadResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"员工负载表" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/employeeloads/fetchdefault")
 	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchDefault(EmpLoyeeloadSearchContext context) {
@@ -142,6 +151,7 @@ public class EmpLoyeeloadResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-searchDefault-all')")
 	@ApiOperation(value = "查询数据集", tags = {"员工负载表" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/searchdefault")
 	public ResponseEntity<Page<EmpLoyeeloadDTO>> searchDefault(@RequestBody EmpLoyeeloadSearchContext context) {
@@ -150,6 +160,7 @@ public class EmpLoyeeloadResource {
                 .body(new PageImpl(employeeloadMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-searchGETWOERKLOAD-all')")
 	@ApiOperation(value = "获取获取员工负载表", tags = {"员工负载表" } ,notes = "获取获取员工负载表")
     @RequestMapping(method= RequestMethod.GET , value="/employeeloads/fetchgetwoerkload")
 	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchGETWOERKLOAD(EmpLoyeeloadSearchContext context) {
@@ -162,6 +173,7 @@ public class EmpLoyeeloadResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-EmpLoyeeload-searchGETWOERKLOAD-all')")
 	@ApiOperation(value = "查询获取员工负载表", tags = {"员工负载表" } ,notes = "查询获取员工负载表")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/searchgetwoerkload")
 	public ResponseEntity<Page<EmpLoyeeloadDTO>> searchGETWOERKLOAD(@RequestBody EmpLoyeeloadSearchContext context) {

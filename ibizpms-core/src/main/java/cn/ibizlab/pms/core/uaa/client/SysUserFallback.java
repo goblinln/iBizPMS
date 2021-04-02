@@ -23,14 +23,14 @@ public class SysUserFallback implements SysUserFeignClient {
         return null;
     }
 
-    public SysUser create(SysUser sysuser) {
+    public SysUser create(SysUser et) {
         return null;
     }
     public Boolean createBatch(List<SysUser> sysusers) {
         return false;
     }
 
-    public SysUser update(String userid, SysUser sysuser) {
+    public SysUser update(String userid, SysUser et) {
         return null;
     }
     public Boolean updateBatch(List<SysUser> sysusers) {
@@ -50,26 +50,30 @@ public class SysUserFallback implements SysUserFeignClient {
     }
 
 
+    public String getByCodeName(String codeName) {
+            return null;
+    }
+
+
     public SysUser getDraft(SysUser entity){
         return null;
     }
 
 
 
-    public SysUser changePwd( String userid, SysUser sysuser) {
+    public SysUser changePwd( String userid, SysUser et) {
         return null;
     }
 
-    public Boolean checkKey(SysUser sysuser) {
+    public Boolean checkKey(SysUser et) {
         return false;
     }
 
 
-    public Object saveEntity(SysUser sysuser) {
+    public Object saveEntity(SysUser et) {
         return null;
     }
-
-    public Boolean save(SysUser sysuser) {
+    public Boolean save(SysUser et) {
         return false;
     }
     public Boolean saveBatch(List<SysUser> sysusers) {

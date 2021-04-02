@@ -30,10 +30,16 @@ public class UserYearWorkStatsSearchContext extends QueryWrapperContext<UserYear
 	private String n_realname_like;//[真实用户名]
 	public void setN_realname_like(String n_realname_like) {
         this.n_realname_like = n_realname_like;
+        if(!ObjectUtils.isEmpty(this.n_realname_like)){
+            this.getSearchCond().like("`realname`", n_realname_like);
+        }
     }
 	private String n_dept_eq;//[部门编号]
 	public void setN_dept_eq(String n_dept_eq) {
         this.n_dept_eq = n_dept_eq;
+        if(!ObjectUtils.isEmpty(this.n_dept_eq)){
+            this.getSearchCond().eq("`dept`", n_dept_eq);
+        }
     }
 
     /**
@@ -45,7 +51,7 @@ public class UserYearWorkStatsSearchContext extends QueryWrapperContext<UserYear
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("title", query)
+                     wrapper.like("`title`", query)
             );
 		 }
 	}

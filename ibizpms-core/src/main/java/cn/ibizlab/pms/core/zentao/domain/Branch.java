@@ -49,7 +49,7 @@ public class Branch extends EntityMP implements Serializable {
     /**
      * 名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("名称")
@@ -59,7 +59,7 @@ public class Branch extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -77,7 +77,7 @@ public class Branch extends EntityMP implements Serializable {
      * 排序
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "order")
+    @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序")
@@ -86,7 +86,7 @@ public class Branch extends EntityMP implements Serializable {
      * 所属产品
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "product")
+    @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("所属产品")

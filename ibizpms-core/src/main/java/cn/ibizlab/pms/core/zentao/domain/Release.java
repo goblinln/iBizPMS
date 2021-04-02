@@ -50,7 +50,7 @@ public class Release extends EntityMP implements Serializable {
      * 完成的需求
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "stories")
+    @TableField(value = "`stories`")
     @JSONField(name = "stories")
     @JsonProperty("stories")
     @ApiModelProperty("完成的需求")
@@ -59,7 +59,7 @@ public class Release extends EntityMP implements Serializable {
      * 里程碑
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "marker")
+    @TableField(value = "`marker`")
     @JSONField(name = "marker")
     @JsonProperty("marker")
     @ApiModelProperty("里程碑")
@@ -85,7 +85,7 @@ public class Release extends EntityMP implements Serializable {
      * 遗留的Bug
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "leftbugs")
+    @TableField(value = "`leftbugs`")
     @JSONField(name = "leftbugs")
     @JsonProperty("leftbugs")
     @ApiModelProperty("遗留的Bug")
@@ -94,7 +94,7 @@ public class Release extends EntityMP implements Serializable {
      * 解决的Bug
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "bugs")
+    @TableField(value = "`bugs`")
     @JSONField(name = "bugs")
     @JsonProperty("bugs")
     @ApiModelProperty("解决的Bug")
@@ -104,7 +104,7 @@ public class Release extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -128,7 +128,7 @@ public class Release extends EntityMP implements Serializable {
     /**
      * 发布名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("发布名称")
@@ -136,7 +136,7 @@ public class Release extends EntityMP implements Serializable {
     /**
      * 发布日期
      */
-    @TableField(value = "date")
+    @TableField(value = "`date`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -146,7 +146,7 @@ public class Release extends EntityMP implements Serializable {
      * 状态
      */
     @DEField(defaultValue = "normal")
-    @TableField(value = "status")
+    @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("状态")
@@ -163,7 +163,7 @@ public class Release extends EntityMP implements Serializable {
      * 子状态
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "substatus")
+    @TableField(value = "`substatus`")
     @JSONField(name = "substatus")
     @JsonProperty("substatus")
     @ApiModelProperty("子状态")
@@ -180,7 +180,7 @@ public class Release extends EntityMP implements Serializable {
      * 描述
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "desc")
+    @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("描述")
@@ -238,7 +238,7 @@ public class Release extends EntityMP implements Serializable {
      * 产品
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "product")
+    @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("产品")
@@ -247,7 +247,7 @@ public class Release extends EntityMP implements Serializable {
      * 版本
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "build")
+    @TableField(value = "`build`")
     @JSONField(name = "build")
     @JsonProperty("build")
     @ApiModelProperty("版本")
@@ -256,7 +256,7 @@ public class Release extends EntityMP implements Serializable {
      * 平台/分支
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "branch")
+    @TableField(value = "`branch`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")

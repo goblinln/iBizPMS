@@ -103,8 +103,9 @@ public class RepoServiceImpl extends ServiceImpl<RepoMapper, Repo> implements IR
     @Transactional
     public Repo get(Long key) {
         Repo et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Repo();
+            et.setId(key);
         }
         else {
         }
@@ -232,6 +233,5 @@ public class RepoServiceImpl extends ServiceImpl<RepoMapper, Repo> implements IR
         return et;
     }
 }
-
 
 

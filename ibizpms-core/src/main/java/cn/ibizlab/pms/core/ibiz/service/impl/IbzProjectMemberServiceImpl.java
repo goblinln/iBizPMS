@@ -100,8 +100,9 @@ public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMap
     @Transactional
     public IbzProjectMember get(Long key) {
         IbzProjectMember et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new IbzProjectMember();
+            et.setId(key);
         }
         else {
         }
@@ -229,6 +230,5 @@ public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMap
         return et;
     }
 }
-
 
 

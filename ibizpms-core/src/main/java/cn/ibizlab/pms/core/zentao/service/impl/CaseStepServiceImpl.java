@@ -111,8 +111,9 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Transactional
     public CaseStep get(Long key) {
         CaseStep et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new CaseStep();
+            et.setId(key);
         }
         else {
             et.setCasestep(casestepService.selectByParent(key));
@@ -381,6 +382,5 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
         return et;
     }
 }
-
 
 

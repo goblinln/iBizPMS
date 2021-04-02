@@ -34,6 +34,9 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.ibizsysmodel.client.PSSysAppFeignClient;
+import cn.ibizlab.pms.util.security.SpringContextHolder;
+import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
+import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -43,8 +46,30 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Service
 public class PSSysAppServiceImpl implements IPSSysAppService {
 
-    @Autowired
+//    @Autowired
     PSSysAppFeignClient pSSysAppFeignClient;
+
+    @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.serviceid:}")
+    private String serviceName;
+
+    @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.serviceurl:}")
+    private String serviceUrl;
+
+    @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.loginname:loginname}")
+    private String loginname;
+
+    @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.password:password}")
+    private String password;
+
+    public PSSysAppFeignClient getPSSysAppFeignClient(String devSlnSysId) {
+        if (StringUtils.isNotBlank(serviceName)) {
+            return OutsideAccessorUtils.buildAccessor(SpringContextHolder.getApplicationContext(), PSSysAppFeignClient.class, serviceName, false, serviceName, false, loginname, password, devSlnSysId);
+        } else if (StringUtils.isNotBlank(serviceUrl)) {
+            return OutsideAccessorUtils.buildAccessorByUrl(SpringContextHolder.getApplicationContext(), PSSysAppFeignClient.class, serviceUrl, false, serviceUrl, false, loginname, password, devSlnSysId);
+        } else {
+            throw new RuntimeException("缺少平台服务配置信息。");
+        }
+    }
 
 
     @Override
@@ -56,8 +81,22 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
         return true;
     }
 
+    @Override
+    public boolean create(String devSlnSysId, PSSysApp et) {
+        PSSysApp rt = getPSSysAppFeignClient(devSlnSysId).create(et);
+        if (rt == null) {
+            return false;
+        }
+        CachedBeanCopier.copy(rt, et);
+        return true;
+    }
+
     public void createBatch(List<PSSysApp> list){
         pSSysAppFeignClient.createBatch(list) ;
+    }
+
+    public void createBatch(String devSlnSysId, List<PSSysApp> list){
+        getPSSysAppFeignClient(devSlnSysId).createBatch(list);
     }
 
     @Override
@@ -70,8 +109,22 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
 
     }
 
+    @Override
+    public boolean update(String devSlnSysId, PSSysApp et) {
+        PSSysApp rt = getPSSysAppFeignClient(devSlnSysId).update(et.getPssysappid(), et);
+        if (rt == null) {
+            return false;
+        }
+        CachedBeanCopier.copy(rt, et);
+        return true;
+    }
+
     public void updateBatch(List<PSSysApp> list){
         pSSysAppFeignClient.updateBatch(list) ;
+    }
+
+    public void updateBatch(String devSlnSysId, List<PSSysApp> list){
+        getPSSysAppFeignClient(devSlnSysId).updateBatch(list);
     }
 
     @Override
@@ -80,19 +133,47 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
         return result;
     }
 
+    @Override
+    public boolean remove(String devSlnSysId, String pssysappid) {
+        boolean result = getPSSysAppFeignClient(devSlnSysId).remove(pssysappid);
+        return result;
+    }
+
     public void removeBatch(Collection<String> idList){
         pSSysAppFeignClient.removeBatch(idList);
+    }
+
+    public void removeBatch(String devSlnSysId, Collection<String> idList) {
+        getPSSysAppFeignClient(devSlnSysId).removeBatch(idList);
     }
 
     @Override
     public PSSysApp get(String pssysappid) {
 		PSSysApp et=pSSysAppFeignClient.get(pssysappid);
         if(et==null){
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), pssysappid);
+            et=new PSSysApp();
+            et.setPssysappid(pssysappid);
         }
         else{
         }
         return  et;
+    }
+
+    @Override
+    public PSSysApp get(String devSlnSysId, String pssysappid) {
+        PSSysApp et = getPSSysAppFeignClient(devSlnSysId).get(pssysappid);
+        if (et == null) {
+            et = new PSSysApp();
+            et.setPssysappid(pssysappid);
+        }
+        else {
+        }
+        return et;
+    }
+
+    @Override
+    public String getByCodeName(String devSlnSysId, String codeName) {
+        return getPSSysAppFeignClient(devSlnSysId).getByCodeName(codeName);
     }
 
     @Override
@@ -102,9 +183,21 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
     }
 
     @Override
+    public PSSysApp getDraft(String devSlnSysId, PSSysApp et) {
+        et = getPSSysAppFeignClient(devSlnSysId).getDraft(et);
+        return et;
+    }
+
+    @Override
     public boolean checkKey(PSSysApp et) {
         return pSSysAppFeignClient.checkKey(et);
     }
+
+    @Override
+    public boolean checkKey(String devSlnSysId, PSSysApp et) {
+        return getPSSysAppFeignClient(devSlnSysId).checkKey(et);
+    }
+
     @Override
     @Transactional
     public boolean save(PSSysApp et) {
@@ -127,9 +220,27 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
             return result;
     }
 
+
+    @Override
+    @Transactional
+    public boolean save(String devSlnSysId, PSSysApp et) {
+        if (et.getPssysappid() == null) {
+            et.setPssysappid((String)et.getDefaultKey(true));
+        }
+        if (!getPSSysAppFeignClient(devSlnSysId).save(et)) {
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public void saveBatch(List<PSSysApp> list) {
         pSSysAppFeignClient.saveBatch(list) ;
+    }
+
+    @Override
+    public void saveBatch(String devSlnSysId, List<PSSysApp> list) {
+        getPSSysAppFeignClient(devSlnSysId).saveBatch(list);
     }
 
 
@@ -141,6 +252,15 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
         context.setN_pssysserviceapiid_eq(pssysserviceapiid);
         return pSSysAppFeignClient.searchDefault(context).getContent();
     }
+
+    @Override
+    public List<PSSysApp> selectByPssysserviceapiid(String devSlnSysId, String pssysserviceapiid) {
+        PSSysAppSearchContext context = new PSSysAppSearchContext();
+        context.setSize(Integer.MAX_VALUE);
+        context.setN_pssysserviceapiid_eq(pssysserviceapiid);
+        return getPSSysAppFeignClient(devSlnSysId).searchDefault(context).getContent();
+    }
+
     @Override
     public List<PSSysApp> selectByPssysserviceapiid(Collection<String> ids) {
         //暂未支持
@@ -158,6 +278,17 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
             this.removeBatch(delIds);
     }
 
+    @Override
+    public void removeByPssysserviceapiid(String devSlnSysId, String pssysserviceapiid) {
+        Set<String> delIds = new HashSet<String>();
+        for(PSSysApp before:selectByPssysserviceapiid(devSlnSysId, pssysserviceapiid)){
+            delIds.add(before.getPssysappid());
+        }
+        if (delIds.size() > 0) {
+            this.removeBatch(delIds);
+        }
+    }
+
 
 
     /**
@@ -166,6 +297,12 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
     @Override
     public Page<PSSysApp> searchBuild(PSSysAppSearchContext context) {
         Page<PSSysApp> pSSysApps=pSSysAppFeignClient.searchBuild(context);
+        return pSSysApps;
+    }
+
+    @Override
+    public Page<PSSysApp> searchBuild(String devSlnSysId, PSSysAppSearchContext context) {
+        Page<PSSysApp> pSSysApps=getPSSysAppFeignClient(devSlnSysId).searchBuild(context);
         return pSSysApps;
     }
 
@@ -179,11 +316,16 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
     }
 
     @Override
+    public Page<PSSysApp> searchDefault(String devSlnSysId, PSSysAppSearchContext context) {
+        Page<PSSysApp> pSSysApps=getPSSysAppFeignClient(devSlnSysId).searchDefault(context);
+        return pSSysApps;
+    }
+
+    @Override
     @Transactional
     public PSSysApp dynamicCall(String key, String action, PSSysApp et) {
         return et;
     }
 }
-
 
 

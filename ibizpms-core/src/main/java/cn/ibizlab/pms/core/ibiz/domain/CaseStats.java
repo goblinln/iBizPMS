@@ -81,7 +81,7 @@ public class CaseStats extends EntityMP implements Serializable {
     /**
      * 用例标题
      */
-    @TableField(value = "title")
+    @TableField(value = "`title`")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("用例标题")
@@ -122,7 +122,7 @@ public class CaseStats extends EntityMP implements Serializable {
     /**
      * 产品
      */
-    @TableField(value = "product")
+    @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("产品")
@@ -130,7 +130,7 @@ public class CaseStats extends EntityMP implements Serializable {
     /**
      * 模块
      */
-    @TableField(value = "module")
+    @TableField(value = "`module`")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("模块")

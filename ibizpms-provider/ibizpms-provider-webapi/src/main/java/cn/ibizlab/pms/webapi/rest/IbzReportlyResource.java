@@ -43,11 +43,11 @@ public class IbzReportlyResource {
     @Autowired
     public IIbzReportlyService ibzreportlyService;
 
-
     @Autowired
     @Lazy
     public IbzReportlyMapping ibzreportlyMapping;
 
+    @PreAuthorize("hasPermission(this.ibzreportlyMapping.toDomain(#ibzreportlydto),'iBizPMS-IbzReportly-Create')")
     @ApiOperation(value = "新建汇报", tags = {"汇报" },  notes = "新建汇报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies")
     public ResponseEntity<IbzReportlyDTO> create(@Validated @RequestBody IbzReportlyDTO ibzreportlydto) {
@@ -57,6 +57,7 @@ public class IbzReportlyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasPermission(this.ibzreportlyMapping.toDomain(#ibzreportlydtos),'iBizPMS-IbzReportly-Create')")
     @ApiOperation(value = "批量新建汇报", tags = {"汇报" },  notes = "批量新建汇报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
@@ -65,6 +66,7 @@ public class IbzReportlyResource {
     }
 
     @VersionCheck(entity = "ibzreportly" , versionfield = "updatedate")
+    @PreAuthorize("hasPermission(this.ibzreportlyService.get(#ibzreportly_id),'iBizPMS-IbzReportly-Update')")
     @ApiOperation(value = "更新汇报", tags = {"汇报" },  notes = "更新汇报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/{ibzreportly_id}")
     public ResponseEntity<IbzReportlyDTO> update(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody IbzReportlyDTO ibzreportlydto) {
@@ -75,6 +77,7 @@ public class IbzReportlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasPermission(this.ibzreportlyService.getIbzreportlyByEntities(this.ibzreportlyMapping.toDomain(#ibzreportlydtos)),'iBizPMS-IbzReportly-Update')")
     @ApiOperation(value = "批量更新汇报", tags = {"汇报" },  notes = "批量更新汇报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
@@ -82,12 +85,14 @@ public class IbzReportlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasPermission(this.ibzreportlyService.get(#ibzreportly_id),'iBizPMS-IbzReportly-Remove')")
     @ApiOperation(value = "删除汇报", tags = {"汇报" },  notes = "删除汇报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportlies/{ibzreportly_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzreportly_id") Long ibzreportly_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzreportlyService.remove(ibzreportly_id));
     }
 
+    @PreAuthorize("hasPermission(this.ibzreportlyService.getIbzreportlyByIds(#ids),'iBizPMS-IbzReportly-Remove')")
     @ApiOperation(value = "批量删除汇报", tags = {"汇报" },  notes = "批量删除汇报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportlies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -95,6 +100,7 @@ public class IbzReportlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibzreportlyMapping.toDomain(returnObject.body),'iBizPMS-IbzReportly-Get')")
     @ApiOperation(value = "获取汇报", tags = {"汇报" },  notes = "获取汇报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreportlies/{ibzreportly_id}")
     public ResponseEntity<IbzReportlyDTO> get(@PathVariable("ibzreportly_id") Long ibzreportly_id) {
@@ -116,6 +122,7 @@ public class IbzReportlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzreportlyService.checkKey(ibzreportlyMapping.toDomain(ibzreportlydto)));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-HaveRead-all')")
     @ApiOperation(value = "已读", tags = {"汇报" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/{ibzreportly_id}/haveread")
     public ResponseEntity<IbzReportlyDTO> haveRead(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody IbzReportlyDTO ibzreportlydto) {
@@ -125,6 +132,7 @@ public class IbzReportlyResource {
         ibzreportlydto = ibzreportlyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportlydto);
     }
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-HaveRead-all')")
     @ApiOperation(value = "批量处理[已读]", tags = {"汇报" },  notes = "批量处理[已读]")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/havereadbatch")
     public ResponseEntity<Boolean> haveReadBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
@@ -133,6 +141,7 @@ public class IbzReportlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("hasPermission(this.ibzreportlyMapping.toDomain(#ibzreportlydto),'iBizPMS-IbzReportly-Save')")
     @ApiOperation(value = "保存汇报", tags = {"汇报" },  notes = "保存汇报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/save")
     public ResponseEntity<IbzReportlyDTO> save(@RequestBody IbzReportlyDTO ibzreportlydto) {
@@ -141,6 +150,7 @@ public class IbzReportlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportlyMapping.toDto(domain));
     }
 
+    @PreAuthorize("hasPermission(this.ibzreportlyMapping.toDomain(#ibzreportlydtos),'iBizPMS-IbzReportly-Save')")
     @ApiOperation(value = "批量保存汇报", tags = {"汇报" },  notes = "批量保存汇报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
@@ -148,6 +158,7 @@ public class IbzReportlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-Submit-all')")
     @ApiOperation(value = "提交", tags = {"汇报" },  notes = "提交")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/{ibzreportly_id}/submit")
     public ResponseEntity<IbzReportlyDTO> submit(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody IbzReportlyDTO ibzreportlydto) {
@@ -157,6 +168,7 @@ public class IbzReportlyResource {
         ibzreportlydto = ibzreportlyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportlydto);
     }
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-Submit-all')")
     @ApiOperation(value = "批量处理[提交]", tags = {"汇报" },  notes = "批量处理[提交]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/submitbatch")
     public ResponseEntity<Boolean> submitBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
@@ -165,6 +177,7 @@ public class IbzReportlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzReportly-Get')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchdefault")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchDefault(IbzReportlySearchContext context) {
@@ -177,6 +190,7 @@ public class IbzReportlyResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzReportly-Get')")
 	@ApiOperation(value = "查询数据集", tags = {"汇报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchdefault")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchDefault(@RequestBody IbzReportlySearchContext context) {
@@ -185,6 +199,7 @@ public class IbzReportlyResource {
                 .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-searchMyAllReportly-all') and hasPermission(#context,'iBizPMS-IbzReportly-Get')")
 	@ApiOperation(value = "获取我所有的汇报", tags = {"汇报" } ,notes = "获取我所有的汇报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchmyallreportly")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchMyAllReportly(IbzReportlySearchContext context) {
@@ -197,6 +212,7 @@ public class IbzReportlyResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-searchMyAllReportly-all') and hasPermission(#context,'iBizPMS-IbzReportly-Get')")
 	@ApiOperation(value = "查询我所有的汇报", tags = {"汇报" } ,notes = "查询我所有的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyallreportly")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchMyAllReportly(@RequestBody IbzReportlySearchContext context) {
@@ -205,6 +221,7 @@ public class IbzReportlyResource {
                 .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-searchMyReceived-all') and hasPermission(#context,'iBizPMS-IbzReportly-Get')")
 	@ApiOperation(value = "获取我收到的汇报", tags = {"汇报" } ,notes = "获取我收到的汇报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchmyreceived")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReceived(IbzReportlySearchContext context) {
@@ -217,6 +234,7 @@ public class IbzReportlyResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-searchMyReceived-all') and hasPermission(#context,'iBizPMS-IbzReportly-Get')")
 	@ApiOperation(value = "查询我收到的汇报", tags = {"汇报" } ,notes = "查询我收到的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyreceived")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchMyReceived(@RequestBody IbzReportlySearchContext context) {
@@ -225,6 +243,7 @@ public class IbzReportlyResource {
                 .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-searchMyReportlyMob-all') and hasPermission(#context,'iBizPMS-IbzReportly-Get')")
 	@ApiOperation(value = "获取我的未提交汇报", tags = {"汇报" } ,notes = "获取我的未提交汇报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchmyreportlymob")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReportlyMob(IbzReportlySearchContext context) {
@@ -237,6 +256,7 @@ public class IbzReportlyResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportly-searchMyReportlyMob-all') and hasPermission(#context,'iBizPMS-IbzReportly-Get')")
 	@ApiOperation(value = "查询我的未提交汇报", tags = {"汇报" } ,notes = "查询我的未提交汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyreportlymob")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchMyReportlyMob(@RequestBody IbzReportlySearchContext context) {

@@ -30,6 +30,9 @@ public class IbiLoginSearchContext extends QueryWrapperContext<IbiLogin> {
 	private String n_realname_like;//[真实姓名]
 	public void setN_realname_like(String n_realname_like) {
         this.n_realname_like = n_realname_like;
+        if(!ObjectUtils.isEmpty(this.n_realname_like)){
+            this.getSearchCond().like("`realname`", n_realname_like);
+        }
     }
 
     /**
@@ -41,7 +44,7 @@ public class IbiLoginSearchContext extends QueryWrapperContext<IbiLogin> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("realname", query)
+                     wrapper.like("`realname`", query)
             );
 		 }
 	}

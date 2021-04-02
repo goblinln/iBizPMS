@@ -100,8 +100,9 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
     @Transactional
     public Log get(Long key) {
         Log et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Log();
+            et.setId(key);
         }
         else {
         }
@@ -229,6 +230,5 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
         return et;
     }
 }
-
 
 

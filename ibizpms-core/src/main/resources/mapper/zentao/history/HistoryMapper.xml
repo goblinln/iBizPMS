@@ -2,54 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.HistoryMapper">
-	
-	<!-- 无视图模式 -->
-	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`ACTION`, t1.`DIFF`, t1.`FIELD`, t1.`ID`, t1.`NEW`, t1.`OLD` FROM `zt_history` t1   ]]>
-    </sql>
-
-	
-	<!-- 搜索条件 -->
-	<sql id="searchMode" databaseId="mysql">
-		<if test="srf.n_field_leftlike != null ">
-            <bind name="bind_n_field_leftlike" value="'%' + srf.n_field_leftlike" />
-            <![CDATA[ AND  t1.`FIELD` like #{bind_n_field_leftlike,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_action_eq != null ">
-			<![CDATA[ AND  t1.`ACTION` = #{srf.n_action_eq,jdbcType=BIGINT} ]]>
-        </if>
-		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
-		AND ${ew.sqlSegment}
-		</if>
-	</sql>
-
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="HistoryResultMap" databaseId="mysql">
-        <include refid="select" />
-		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.ID = #{id} ]]>
-		</trim>
+        <![CDATA[select t1.* from (SELECT t1.`ACTION`, t1.`DIFF`, t1.`FIELD`, t1.`ID`, t1.`NEW`, t1.`OLD` FROM `zt_history` t1  ) t1 where id=#{id}]]>
     </select>
-
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="HistoryResultMap" type="cn.ibizlab.pms.core.zentao.domain.History" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="ibiznew" column="new" />
 		<result property="action" column="action" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztAction" javaType="cn.ibizlab.pms.core.zentao.domain.Action" column="action" select="cn.ibizlab.pms.core.zentao.mapper.ActionMapper.selectById" fetchType="lazy"></association>
     </resultMap>
 
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_HISTORY_ZT_ACTION_ACTION] -->
-	 <select id="selectByAction" resultMap="HistoryResultMap"  databaseId="mysql">
-        <include refid="select" />
-		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.ACTION=#{id} ]]>
-		</trim>
+	 <select id="selectByAction" resultMap="HistoryResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  action=#{id}
      </select>
 
     <!--数据集合[Default]-->
@@ -57,26 +32,20 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACTION`, t1.`DIFF`, t1.`FIELD`, t1.`ID`, t1.`NEW`, t1.`OLD` FROM `zt_history` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<if test="true">
-			<![CDATA[ AND ( (t1.`FIELD` NOT LIKE '%cnt')  AND  (t1.`FIELD` NOT LIKE '%pk') ) ]]>
-			</if>
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT t1.`ACTION`, t1.`DIFF`, t1.`FIELD`, t1.`ID`, t1.`NEW`, t1.`OLD` FROM `zt_history` t1  
+					 WHERE 	( (t1.`FIELD` NOT LIKE '%cnt')  AND  (t1.`FIELD` NOT LIKE '%pk') )
+			]]>
     </sql>
-
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACTION`, t1.`DIFF`, t1.`FIELD`, t1.`ID`, t1.`NEW`, t1.`OLD` FROM `zt_history` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT t1.`ACTION`, t1.`DIFF`, t1.`FIELD`, t1.`ID`, t1.`NEW`, t1.`OLD` FROM `zt_history` t1  
+			]]>
     </sql>
-
 </mapper>
 

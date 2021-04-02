@@ -104,8 +104,9 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     @Transactional
     public File get(Long key) {
         File et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new File();
+            et.setId(key);
         }
         else {
         }
@@ -284,6 +285,5 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         return et;
     }
 }
-
 
 

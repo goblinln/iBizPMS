@@ -98,8 +98,9 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
     @Transactional
     public IbzCase get(Long key) {
         IbzCase et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new IbzCase();
+            et.setId(key);
         }
         else {
             et.setIbzlibcasesteps(ibzlibcasestepsService.selectByIbizcase(key));
@@ -275,6 +276,5 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
         return et;
     }
 }
-
 
 

@@ -43,11 +43,11 @@ public class DocContentResource {
     @Autowired
     public IDocContentService doccontentService;
 
-
     @Autowired
     @Lazy
     public DocContentMapping doccontentMapping;
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Create-all')")
     @ApiOperation(value = "新建文档内容", tags = {"文档内容" },  notes = "新建文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/doccontents")
     public ResponseEntity<DocContentDTO> create(@Validated @RequestBody DocContentDTO doccontentdto) {
@@ -57,6 +57,7 @@ public class DocContentResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Create-all')")
     @ApiOperation(value = "批量新建文档内容", tags = {"文档内容" },  notes = "批量新建文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/doccontents/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<DocContentDTO> doccontentdtos) {
@@ -64,6 +65,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Update-all')")
     @ApiOperation(value = "更新文档内容", tags = {"文档内容" },  notes = "更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> update(@PathVariable("doccontent_id") Long doccontent_id, @RequestBody DocContentDTO doccontentdto) {
@@ -74,6 +76,7 @@ public class DocContentResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Update-all')")
     @ApiOperation(value = "批量更新文档内容", tags = {"文档内容" },  notes = "批量更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doccontents/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<DocContentDTO> doccontentdtos) {
@@ -81,12 +84,14 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Remove-all')")
     @ApiOperation(value = "删除文档内容", tags = {"文档内容" },  notes = "删除文档内容")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doccontents/{doccontent_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("doccontent_id") Long doccontent_id) {
          return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Remove-all')")
     @ApiOperation(value = "批量删除文档内容", tags = {"文档内容" },  notes = "批量删除文档内容")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doccontents/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -94,6 +99,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Get-all')")
     @ApiOperation(value = "获取文档内容", tags = {"文档内容" },  notes = "获取文档内容")
 	@RequestMapping(method = RequestMethod.GET, value = "/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> get(@PathVariable("doccontent_id") Long doccontent_id) {
@@ -115,6 +121,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doccontentService.checkKey(doccontentMapping.toDomain(doccontentdto)));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Save-all')")
     @ApiOperation(value = "保存文档内容", tags = {"文档内容" },  notes = "保存文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/doccontents/save")
     public ResponseEntity<DocContentDTO> save(@RequestBody DocContentDTO doccontentdto) {
@@ -123,6 +130,7 @@ public class DocContentResource {
         return ResponseEntity.status(HttpStatus.OK).body(doccontentMapping.toDto(domain));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Save-all')")
     @ApiOperation(value = "批量保存文档内容", tags = {"文档内容" },  notes = "批量保存文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/doccontents/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<DocContentDTO> doccontentdtos) {
@@ -130,6 +138,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-searchCurVersion-all')")
 	@ApiOperation(value = "获取当前版本", tags = {"文档内容" } ,notes = "获取当前版本")
     @RequestMapping(method= RequestMethod.GET , value="/doccontents/fetchcurversion")
 	public ResponseEntity<List<DocContentDTO>> fetchCurVersion(DocContentSearchContext context) {
@@ -142,6 +151,7 @@ public class DocContentResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-searchCurVersion-all')")
 	@ApiOperation(value = "查询当前版本", tags = {"文档内容" } ,notes = "查询当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/doccontents/searchcurversion")
 	public ResponseEntity<Page<DocContentDTO>> searchCurVersion(@RequestBody DocContentSearchContext context) {
@@ -150,6 +160,7 @@ public class DocContentResource {
                 .body(new PageImpl(doccontentMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-searchDefault-all')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"文档内容" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/doccontents/fetchdefault")
 	public ResponseEntity<List<DocContentDTO>> fetchDefault(DocContentSearchContext context) {
@@ -162,6 +173,7 @@ public class DocContentResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-searchDefault-all')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"文档内容" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doccontents/searchdefault")
 	public ResponseEntity<Page<DocContentDTO>> searchDefault(@RequestBody DocContentSearchContext context) {
@@ -179,6 +191,7 @@ public class DocContentResource {
         return ResponseEntity.status(HttpStatus.OK).body(doccontentdto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Create-all')")
     @ApiOperation(value = "根据文档建立文档内容", tags = {"文档内容" },  notes = "根据文档建立文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/doccontents")
     public ResponseEntity<DocContentDTO> createByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentDTO doccontentdto) {
@@ -189,6 +202,7 @@ public class DocContentResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Create-all')")
     @ApiOperation(value = "根据文档批量建立文档内容", tags = {"文档内容" },  notes = "根据文档批量建立文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/doccontents/batch")
     public ResponseEntity<Boolean> createBatchByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody List<DocContentDTO> doccontentdtos) {
@@ -200,6 +214,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Update-all')")
     @ApiOperation(value = "根据文档更新文档内容", tags = {"文档内容" },  notes = "根据文档更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> updateByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id, @RequestBody DocContentDTO doccontentdto) {
@@ -211,6 +226,7 @@ public class DocContentResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Update-all')")
     @ApiOperation(value = "根据文档批量更新文档内容", tags = {"文档内容" },  notes = "根据文档批量更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}/doccontents/batch")
     public ResponseEntity<Boolean> updateBatchByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody List<DocContentDTO> doccontentdtos) {
@@ -222,12 +238,14 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Remove-all')")
     @ApiOperation(value = "根据文档删除文档内容", tags = {"文档内容" },  notes = "根据文档删除文档内容")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<Boolean> removeByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Remove-all')")
     @ApiOperation(value = "根据文档批量删除文档内容", tags = {"文档内容" },  notes = "根据文档批量删除文档内容")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}/doccontents/batch")
     public ResponseEntity<Boolean> removeBatchByDoc(@RequestBody List<Long> ids) {
@@ -235,6 +253,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Get-all')")
     @ApiOperation(value = "根据文档获取文档内容", tags = {"文档内容" },  notes = "根据文档获取文档内容")
 	@RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> getByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
@@ -257,6 +276,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doccontentService.checkKey(doccontentMapping.toDomain(doccontentdto)));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Save-all')")
     @ApiOperation(value = "根据文档保存文档内容", tags = {"文档内容" },  notes = "根据文档保存文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/doccontents/save")
     public ResponseEntity<DocContentDTO> saveByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentDTO doccontentdto) {
@@ -266,6 +286,7 @@ public class DocContentResource {
         return ResponseEntity.status(HttpStatus.OK).body(doccontentMapping.toDto(domain));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-Save-all')")
     @ApiOperation(value = "根据文档批量保存文档内容", tags = {"文档内容" },  notes = "根据文档批量保存文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/doccontents/savebatch")
     public ResponseEntity<Boolean> saveBatchByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody List<DocContentDTO> doccontentdtos) {
@@ -277,6 +298,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-searchCurVersion-all')")
 	@ApiOperation(value = "根据文档获取当前版本", tags = {"文档内容" } ,notes = "根据文档获取当前版本")
     @RequestMapping(method= RequestMethod.GET , value="/docs/{doc_id}/doccontents/fetchcurversion")
 	public ResponseEntity<List<DocContentDTO>> fetchDocContentCurVersionByDoc(@PathVariable("doc_id") Long doc_id,DocContentSearchContext context) {
@@ -290,6 +312,7 @@ public class DocContentResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-searchCurVersion-all')")
 	@ApiOperation(value = "根据文档查询当前版本", tags = {"文档内容" } ,notes = "根据文档查询当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/doccontents/searchcurversion")
 	public ResponseEntity<Page<DocContentDTO>> searchDocContentCurVersionByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentSearchContext context) {
@@ -298,6 +321,7 @@ public class DocContentResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doccontentMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-searchDefault-all')")
 	@ApiOperation(value = "根据文档获取DEFAULT", tags = {"文档内容" } ,notes = "根据文档获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/docs/{doc_id}/doccontents/fetchdefault")
 	public ResponseEntity<List<DocContentDTO>> fetchDocContentDefaultByDoc(@PathVariable("doc_id") Long doc_id,DocContentSearchContext context) {
@@ -311,6 +335,7 @@ public class DocContentResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocContent-searchDefault-all')")
 	@ApiOperation(value = "根据文档查询DEFAULT", tags = {"文档内容" } ,notes = "根据文档查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/doccontents/searchdefault")
 	public ResponseEntity<Page<DocContentDTO>> searchDocContentDefaultByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentSearchContext context) {

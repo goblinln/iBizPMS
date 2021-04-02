@@ -37,7 +37,7 @@ public class UserContactSearchContext extends QueryWrapperContext<UserContact> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("listname", query)
+                     wrapper.like("`listname`", query)
             );
 		 }
 	}

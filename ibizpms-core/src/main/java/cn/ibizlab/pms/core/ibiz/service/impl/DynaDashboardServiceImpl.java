@@ -100,8 +100,9 @@ public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, D
     @Transactional
     public DynaDashboard get(String key) {
         DynaDashboard et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new DynaDashboard();
+            et.setDynadashboardid(key);
         }
         else {
         }
@@ -250,6 +251,5 @@ public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, D
         return et;
     }
 }
-
 
 

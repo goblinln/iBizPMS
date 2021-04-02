@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IDynaDashboardService extends IService<DynaDashboard> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "动态数据看板";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "dynadashboards";
+
     boolean create(DynaDashboard et);
     void createBatch(List<DynaDashboard> list);
     boolean update(DynaDashboard et);

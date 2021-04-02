@@ -88,8 +88,9 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
     @Transactional
     public IbzReportly get(Long key) {
         IbzReportly et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new IbzReportly();
+            et.setIbzreportlyid(key);
         }
         else {
         }
@@ -295,6 +296,5 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
         return et;
     }
 }
-
 
 

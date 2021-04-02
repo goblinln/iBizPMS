@@ -106,8 +106,9 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Transactional
     public Dept get(Long key) {
         Dept et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Dept();
+            et.setId(key);
         }
         else {
         }
@@ -272,6 +273,5 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         return et;
     }
 }
-
 
 

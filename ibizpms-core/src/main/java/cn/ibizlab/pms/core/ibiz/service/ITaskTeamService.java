@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITaskTeamService extends IService<TaskTeam> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "任务团队";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "taskteams";
+
     boolean create(TaskTeam et);
     void createBatch(List<TaskTeam> list);
     boolean update(TaskTeam et);

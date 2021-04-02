@@ -16,7 +16,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[PSDataEntity] 服务对象接口
  */
-@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSDataEntity", fallback = PSDataEntityFallback.class)
+//@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSDataEntity", fallback = PSDataEntityFallback.class)
 public interface PSDataEntityFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/psdataentities/select")
@@ -24,14 +24,14 @@ public interface PSDataEntityFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdataentities")
-    PSDataEntity create(@RequestBody PSDataEntity psdataentity);
+    PSDataEntity create(@RequestBody PSDataEntity et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdataentities/batch")
     Boolean createBatch(@RequestBody List<PSDataEntity> psdataentities);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/psdataentities/{psdataentityid}")
-    PSDataEntity update(@PathVariable("psdataentityid") String psdataentityid,@RequestBody PSDataEntity psdataentity);
+    PSDataEntity update(@PathVariable("psdataentityid") String psdataentityid, @RequestBody PSDataEntity et);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/psdataentities/batch")
     Boolean updateBatch(@RequestBody List<PSDataEntity> psdataentities);
@@ -47,19 +47,22 @@ public interface PSDataEntityFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/psdataentities/{psdataentityid}")
     PSDataEntity get(@PathVariable("psdataentityid") String psdataentityid);
 
+    @RequestMapping(method = RequestMethod.GET, value = "/psdataentities/getbycodename/{psdataentityid}")
+    String getByCodeName(@PathVariable("psdataentityid") String codeName);
+
 
     @RequestMapping(method = RequestMethod.GET, value = "/psdataentities/getdraft")
     PSDataEntity getDraft(PSDataEntity entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdataentities/checkkey")
-    Boolean checkKey(@RequestBody PSDataEntity psdataentity);
+    Boolean checkKey(@RequestBody PSDataEntity et);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdataentities/save")
-    Object saveEntity(@RequestBody PSDataEntity psdataentity);
+    Object saveEntity(@RequestBody PSDataEntity et);
 
-    default Boolean save(@RequestBody PSDataEntity psdataentity) { return saveEntity(psdataentity)!=null; }
+    default Boolean save(@RequestBody PSDataEntity et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdataentities/savebatch")
     Boolean saveBatch(@RequestBody List<PSDataEntity> psdataentities);

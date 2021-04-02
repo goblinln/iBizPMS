@@ -49,7 +49,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
     /**
      * 产品负责人
      */
-    @TableField(value = "po")
+    @TableField(value = "`po`")
     @JSONField(name = "po")
     @JsonProperty("po")
     @ApiModelProperty("产品负责人")
@@ -67,7 +67,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "updatedate")
+    @TableField(value = "`updatedate`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -76,7 +76,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
     /**
      * 任务
      */
-    @TableField(value = "tasks")
+    @TableField(value = "`tasks`")
     @JSONField(name = "tasks")
     @JsonProperty("tasks")
     @ApiModelProperty("任务")
@@ -85,7 +85,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "updateman")
+    @TableField(value = "`updateman`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -93,7 +93,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
     /**
      * 日期
      */
-    @TableField(value = "date")
+    @TableField(value = "`date`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -103,7 +103,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "createman", fill = FieldFill.INSERT)
+    @TableField(value = "`createman`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -112,7 +112,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "createdate", fill = FieldFill.INSERT)
+    @TableField(value = "`createdate`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -122,7 +122,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
      * 产品周报名称
      */
     @DEField(name = "ibizpro_productdailyname")
-    @TableField(value = "ibizpro_productdailyname")
+    @TableField(value = "`ibizpro_productdailyname`")
     @JSONField(name = "ibizproproductweeklyname")
     @JsonProperty("ibizproproductweeklyname")
     @ApiModelProperty("产品周报名称")
@@ -130,7 +130,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
     /**
      * 开始统计
      */
-    @TableField(value = "begindatestats")
+    @TableField(value = "`begindatestats`")
     @JSONField(name = "begindatestats")
     @JsonProperty("begindatestats")
     @ApiModelProperty("开始统计")
@@ -138,7 +138,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
     /**
      * 总工时
      */
-    @TableField(value = "totalestimates")
+    @TableField(value = "`totalestimates`")
     @JSONField(name = "totalestimates")
     @JsonProperty("totalestimates")
     @ApiModelProperty("总工时")
@@ -146,7 +146,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
     /**
      * 结束统计
      */
-    @TableField(value = "enddatestats")
+    @TableField(value = "`enddatestats`")
     @JSONField(name = "enddatestats")
     @JsonProperty("enddatestats")
     @ApiModelProperty("结束统计")
@@ -162,7 +162,7 @@ public class IbizproProductWeekly extends EntityMP implements Serializable {
     /**
      * 编号
      */
-    @TableField(value = "product")
+    @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("编号")

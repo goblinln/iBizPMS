@@ -43,11 +43,11 @@ public class CaseStatsResource {
     @Autowired
     public ICaseStatsService casestatsService;
 
-
     @Autowired
     @Lazy
     public CaseStatsMapping casestatsMapping;
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Create-all')")
     @ApiOperation(value = "新建测试用例统计", tags = {"测试用例统计" },  notes = "新建测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats")
     public ResponseEntity<CaseStatsDTO> create(@Validated @RequestBody CaseStatsDTO casestatsdto) {
@@ -57,6 +57,7 @@ public class CaseStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Create-all')")
     @ApiOperation(value = "批量新建测试用例统计", tags = {"测试用例统计" },  notes = "批量新建测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<CaseStatsDTO> casestatsdtos) {
@@ -64,6 +65,7 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Update-all')")
     @ApiOperation(value = "更新测试用例统计", tags = {"测试用例统计" },  notes = "更新测试用例统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casestats/{casestats_id}")
     public ResponseEntity<CaseStatsDTO> update(@PathVariable("casestats_id") Long casestats_id, @RequestBody CaseStatsDTO casestatsdto) {
@@ -74,6 +76,7 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Update-all')")
     @ApiOperation(value = "批量更新测试用例统计", tags = {"测试用例统计" },  notes = "批量更新测试用例统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casestats/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<CaseStatsDTO> casestatsdtos) {
@@ -81,12 +84,14 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Remove-all')")
     @ApiOperation(value = "删除测试用例统计", tags = {"测试用例统计" },  notes = "删除测试用例统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/{casestats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("casestats_id") Long casestats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(casestatsService.remove(casestats_id));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Remove-all')")
     @ApiOperation(value = "批量删除测试用例统计", tags = {"测试用例统计" },  notes = "批量删除测试用例统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -94,6 +99,7 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Get-all')")
     @ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" },  notes = "获取测试用例统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/casestats/{casestats_id}")
     public ResponseEntity<CaseStatsDTO> get(@PathVariable("casestats_id") Long casestats_id) {
@@ -115,6 +121,7 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(casestatsService.checkKey(casestatsMapping.toDomain(casestatsdto)));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Save-all')")
     @ApiOperation(value = "保存测试用例统计", tags = {"测试用例统计" },  notes = "保存测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/save")
     public ResponseEntity<CaseStatsDTO> save(@RequestBody CaseStatsDTO casestatsdto) {
@@ -123,6 +130,7 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestatsMapping.toDto(domain));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Save-all')")
     @ApiOperation(value = "批量保存测试用例统计", tags = {"测试用例统计" },  notes = "批量保存测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<CaseStatsDTO> casestatsdtos) {
@@ -130,6 +138,7 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"测试用例统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/casestats/fetchdefault")
 	public ResponseEntity<List<CaseStatsDTO>> fetchDefault(CaseStatsSearchContext context) {
@@ -142,6 +151,7 @@ public class CaseStatsResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-searchDefault-all')")
 	@ApiOperation(value = "查询数据集", tags = {"测试用例统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/searchdefault")
 	public ResponseEntity<Page<CaseStatsDTO>> searchDefault(@RequestBody CaseStatsSearchContext context) {
@@ -150,6 +160,7 @@ public class CaseStatsResource {
                 .body(new PageImpl(casestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-searchTestCaseStats-all')")
 	@ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" } ,notes = "获取测试用例统计")
     @RequestMapping(method= RequestMethod.GET , value="/casestats/fetchtestcasestats")
 	public ResponseEntity<List<CaseStatsDTO>> fetchTestCaseStats(CaseStatsSearchContext context) {
@@ -162,6 +173,7 @@ public class CaseStatsResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-searchTestCaseStats-all')")
 	@ApiOperation(value = "查询测试用例统计", tags = {"测试用例统计" } ,notes = "查询测试用例统计")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/searchtestcasestats")
 	public ResponseEntity<Page<CaseStatsDTO>> searchTestCaseStats(@RequestBody CaseStatsSearchContext context) {

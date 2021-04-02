@@ -100,8 +100,9 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
     @Transactional
     public Block get(Long key) {
         Block et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Block();
+            et.setId(key);
         }
         else {
         }
@@ -229,6 +230,5 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
         return et;
     }
 }
-
 
 

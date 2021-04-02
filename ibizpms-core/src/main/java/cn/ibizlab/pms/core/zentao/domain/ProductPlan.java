@@ -73,7 +73,7 @@ public class ProductPlan extends EntityMP implements Serializable {
     /**
      * 名称
      */
-    @TableField(value = "title")
+    @TableField(value = "`title`")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("名称")
@@ -106,7 +106,7 @@ public class ProductPlan extends EntityMP implements Serializable {
     /**
      * 开始日期
      */
-    @TableField(value = "begin")
+    @TableField(value = "`begin`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "begin", format = "yyyy-MM-dd")
     @JsonProperty("begin")
@@ -124,7 +124,7 @@ public class ProductPlan extends EntityMP implements Serializable {
      * 描述
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "desc")
+    @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("描述")
@@ -132,7 +132,7 @@ public class ProductPlan extends EntityMP implements Serializable {
     /**
      * 结束日期
      */
-    @TableField(value = "end")
+    @TableField(value = "`end`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "end", format = "yyyy-MM-dd")
     @JsonProperty("end")
@@ -198,7 +198,7 @@ public class ProductPlan extends EntityMP implements Serializable {
      * 计划状态
      */
     @DEField(defaultValue = "wait")
-    @TableField(value = "status")
+    @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("计划状态")
@@ -216,7 +216,7 @@ public class ProductPlan extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -233,7 +233,7 @@ public class ProductPlan extends EntityMP implements Serializable {
      * 排序
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "order")
+    @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序")
@@ -298,7 +298,7 @@ public class ProductPlan extends EntityMP implements Serializable {
      * 平台/分支
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "branch")
+    @TableField(value = "`branch`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")
@@ -307,7 +307,7 @@ public class ProductPlan extends EntityMP implements Serializable {
      * 父计划
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "parent")
+    @TableField(value = "`parent`")
     @JSONField(name = "parent")
     @JsonProperty("parent")
     @ApiModelProperty("父计划")
@@ -316,7 +316,7 @@ public class ProductPlan extends EntityMP implements Serializable {
      * 产品
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "product")
+    @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("产品")

@@ -2,49 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.IbzFavoritesMapper">
-	
-	<!-- 无视图模式 -->
-	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_FAVORITESID`, t1.`IBZ_FAVORITESNAME`, t1.`OBJECTID`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_FAVORITES` t1   ]]>
-    </sql>
-
-	
-	<!-- 搜索条件 -->
-	<sql id="searchMode" databaseId="mysql">
-		<if test="srf.n_type_eq != null ">
-			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_objectid_eq != null ">
-			<![CDATA[ AND  t1.`OBJECTID` = #{srf.n_objectid_eq,jdbcType=BIGINT} ]]>
-        </if>
-		<if test="srf.n_account_eq != null ">
-			<![CDATA[ AND  t1.`ACCOUNT` = #{srf.n_account_eq,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_ibz_favoritesname_like != null ">
-            <bind name="bind_n_ibz_favoritesname_like" value="'%' + srf.n_ibz_favoritesname_like + '%'" />
-            <![CDATA[ AND  t1.`IBZ_FAVORITESNAME` like #{bind_n_ibz_favoritesname_like,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
-		AND ${ew.sqlSegment}
-		</if>
-	</sql>
-
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="IbzFavoritesResultMap" databaseId="mysql">
-        <include refid="select" />
-		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.IBZ_FAVORITESID = #{id} ]]>
-		</trim>
+        <![CDATA[select t1.* from (SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_FAVORITESID`, t1.`IBZ_FAVORITESNAME`, t1.`OBJECTID`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_FAVORITES` t1  ) t1 where ibz_favoritesid=#{id}]]>
     </select>
-
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="IbzFavoritesResultMap" type="cn.ibizlab.pms.core.ibiz.domain.IbzFavorites" autoMapping="true">
 		<id property="ibzfavoritesid" column="ibz_favoritesid" /><!--主键字段映射-->
 		<result property="ibzfavoritesname" column="ibz_favoritesname" />
-            
-		
+
+
     </resultMap>
 
 
@@ -53,23 +22,19 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_FAVORITESID`, t1.`IBZ_FAVORITESNAME`, t1.`OBJECTID`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_FAVORITES` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_FAVORITESID`, t1.`IBZ_FAVORITESNAME`, t1.`OBJECTID`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_FAVORITES` t1  
+			]]>
     </sql>
-
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_FAVORITESID`, t1.`IBZ_FAVORITESNAME`, t1.`OBJECTID`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_FAVORITES` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_FAVORITESID`, t1.`IBZ_FAVORITESNAME`, t1.`OBJECTID`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_FAVORITES` t1  
+			]]>
     </sql>
-
 </mapper>
 

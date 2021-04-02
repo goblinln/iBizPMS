@@ -116,8 +116,9 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
     @Transactional
     public ProjectProduct get(String key) {
         ProjectProduct et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new ProjectProduct();
+            et.setId(key);
         }
         else {
         }
@@ -329,6 +330,5 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
         return et;
     }
 }
-
 
 

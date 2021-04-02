@@ -100,8 +100,9 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     @Transactional
     public DocLib get(Long key) {
         DocLib et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new DocLib();
+            et.setId(key);
         }
         else {
         }
@@ -401,6 +402,5 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
         return et;
     }
 }
-
 
 

@@ -30,14 +30,23 @@ public class TestSuiteSearchContext extends QueryWrapperContext<TestSuite> {
 	private String n_name_like;//[名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
+        if(!ObjectUtils.isEmpty(this.n_name_like)){
+            this.getSearchCond().like("`name`", n_name_like);
+        }
     }
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
+        if(!ObjectUtils.isEmpty(this.n_type_eq)){
+            this.getSearchCond().eq("`type`", n_type_eq);
+        }
     }
 	private Long n_product_eq;//[所属产品]
 	public void setN_product_eq(Long n_product_eq) {
         this.n_product_eq = n_product_eq;
+        if(!ObjectUtils.isEmpty(this.n_product_eq)){
+            this.getSearchCond().eq("`product`", n_product_eq);
+        }
     }
 
     /**
@@ -49,7 +58,7 @@ public class TestSuiteSearchContext extends QueryWrapperContext<TestSuite> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("name", query)
+                     wrapper.like("`name`", query)
             );
 		 }
 	}

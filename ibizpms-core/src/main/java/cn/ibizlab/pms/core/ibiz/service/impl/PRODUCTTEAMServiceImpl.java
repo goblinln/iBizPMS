@@ -103,8 +103,9 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
     @Transactional
     public PRODUCTTEAM get(Long key) {
         PRODUCTTEAM et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new PRODUCTTEAM();
+            et.setId(key);
         }
         else {
         }
@@ -313,6 +314,5 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
         return et;
     }
 }
-
 
 

@@ -100,8 +100,9 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
     @Transactional
     public TaskEstimate get(Long key) {
         TaskEstimate et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new TaskEstimate();
+            et.setId(key);
         }
         else {
         }
@@ -361,6 +362,5 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
         return et;
     }
 }
-
 
 

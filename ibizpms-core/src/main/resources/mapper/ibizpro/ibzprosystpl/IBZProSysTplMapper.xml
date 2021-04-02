@@ -2,45 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.ibizpro.mapper.IBZProSysTplMapper">
-	
-	<!-- 无视图模式 -->
-	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`CONTENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`FILE`, t1.`IBIZ_SOURCEOBJECT`, t1.`IBZPRO_SYSTPLID`, t1.`IBZPRO_SYSTPLNAME`, t1.`PUBLIC`, t1.`TPLTYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTPL` t1   ]]>
-    </sql>
-
-	
-	<!-- 搜索条件 -->
-	<sql id="searchMode" databaseId="mysql">
-		<if test="srf.n_public_eq != null ">
-			<![CDATA[ AND  t1.`PUBLIC` = #{srf.n_public_eq,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_ibzpro_systplname_like != null ">
-            <bind name="bind_n_ibzpro_systplname_like" value="'%' + srf.n_ibzpro_systplname_like + '%'" />
-            <![CDATA[ AND  t1.`IBZPRO_SYSTPLNAME` like #{bind_n_ibzpro_systplname_like,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_tpltype_eq != null ">
-			<![CDATA[ AND  t1.`TPLTYPE` = #{srf.n_tpltype_eq,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_ibiz_sourceobject_eq != null ">
-			<![CDATA[ AND  t1.`IBIZ_SOURCEOBJECT` = #{srf.n_ibiz_sourceobject_eq,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_file_eq != null ">
-			<![CDATA[ AND  t1.`FILE` = #{srf.n_file_eq,jdbcType=BIGINT} ]]>
-        </if>
-		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
-		AND ${ew.sqlSegment}
-		</if>
-	</sql>
-
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="IBZProSysTplResultMap" databaseId="mysql">
-        <include refid="select" />
-		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.IBZPRO_SYSTPLID = #{id} ]]>
-		</trim>
+        <![CDATA[select t1.* from (SELECT t1.`CONTENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`FILE`, t1.`IBIZ_SOURCEOBJECT`, t1.`IBZPRO_SYSTPLID`, t1.`IBZPRO_SYSTPLNAME`, t1.`PUBLIC`, t1.`TPLTYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTPL` t1  ) t1 where ibzpro_systplid=#{id}]]>
     </select>
-
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="IBZProSysTplResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.IBZProSysTpl" autoMapping="true">
@@ -49,18 +15,18 @@
 		<result property="ibzprosystplname" column="ibzpro_systplname" />
 		<result property="ibizSourceobject" column="ibiz_sourceobject" />
 		<result property="file" column="file" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztFile" javaType="cn.ibizlab.pms.core.zentao.domain.File" column="file" select="cn.ibizlab.pms.core.zentao.mapper.FileMapper.selectById" fetchType="lazy"></association>
     </resultMap>
 
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZPRO_SYSTPL_ZT_FILE_FILE] -->
-	 <select id="selectByFile" resultMap="IBZProSysTplResultMap"  databaseId="mysql">
-        <include refid="select" />
-		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.FILE=#{id} ]]>
-		</trim>
+	 <select id="selectByFile" resultMap="IBZProSysTplResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  file=#{id}
      </select>
 
     <!--数据集合[Default]-->
@@ -68,23 +34,19 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`FILE`, t1.`IBIZ_SOURCEOBJECT`, t1.`IBZPRO_SYSTPLID`, t1.`IBZPRO_SYSTPLNAME`, t1.`PUBLIC`, t1.`TPLTYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTPL` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`FILE`, t1.`IBIZ_SOURCEOBJECT`, t1.`IBZPRO_SYSTPLID`, t1.`IBZPRO_SYSTPLNAME`, t1.`PUBLIC`, t1.`TPLTYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTPL` t1  
+			]]>
     </sql>
-
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CONTENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`FILE`, t1.`IBIZ_SOURCEOBJECT`, t1.`IBZPRO_SYSTPLID`, t1.`IBZPRO_SYSTPLNAME`, t1.`PUBLIC`, t1.`TPLTYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTPL` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT t1.`CONTENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`FILE`, t1.`IBIZ_SOURCEOBJECT`, t1.`IBZPRO_SYSTPLID`, t1.`IBZPRO_SYSTPLNAME`, t1.`PUBLIC`, t1.`TPLTYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTPL` t1  
+			]]>
     </sql>
-
 </mapper>
 

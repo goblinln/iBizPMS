@@ -71,9 +71,7 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Transactional
     public void createBatch(List<TestModule> list) {
         list.forEach(item->fillParentData(item));
-        for (TestModule et : list) {
-            getProxyService().save(et);
-        }
+        this.saveBatch(list, batchSize);
     }
 
     @Override
@@ -91,9 +89,7 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Transactional
     public void updateBatch(List<TestModule> list) {
         list.forEach(item->fillParentData(item));
-        for (TestModule et : list) {
-            getProxyService().update(et);
-        }
+        updateBatchById(list, batchSize);
     }
 
     @Override
@@ -113,8 +109,9 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Transactional
     public TestModule get(Long key) {
         TestModule et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new TestModule();
+            et.setId(key);
         }
         else {
         }
@@ -139,26 +136,8 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
 
     @Override
     @Transactional
-    public boolean fixBatch(List<TestModule> etList) {
-        for(TestModule et : etList) {
-            fix(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public TestModule removeModule(TestModule et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean removeModuleBatch(List<TestModule> etList) {
-        for(TestModule et : etList) {
-            removeModule(et);
-        }
-        return true;
     }
 
     @Override
@@ -364,6 +343,5 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
         return et;
     }
 }
-
 
 

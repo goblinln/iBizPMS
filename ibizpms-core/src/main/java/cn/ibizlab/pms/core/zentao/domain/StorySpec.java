@@ -50,7 +50,7 @@ public class StorySpec extends EntityMP implements Serializable {
      * 需求描述	
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "spec")
+    @TableField(value = "`spec`")
     @JSONField(name = "spec")
     @JsonProperty("spec")
     @ApiModelProperty("需求描述	")
@@ -59,7 +59,7 @@ public class StorySpec extends EntityMP implements Serializable {
      * 验收标准
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "verify")
+    @TableField(value = "`verify`")
     @JSONField(name = "verify")
     @JsonProperty("verify")
     @ApiModelProperty("验收标准")
@@ -76,7 +76,7 @@ public class StorySpec extends EntityMP implements Serializable {
     /**
      * 需求名称
      */
-    @TableField(value = "title")
+    @TableField(value = "`title`")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("需求名称")
@@ -84,7 +84,7 @@ public class StorySpec extends EntityMP implements Serializable {
     /**
      * 版本号
      */
-    @TableField(value = "version")
+    @TableField(value = "`version`")
     @JSONField(name = "version")
     @JsonProperty("version")
     @ApiModelProperty("版本号")
@@ -92,7 +92,7 @@ public class StorySpec extends EntityMP implements Serializable {
     /**
      * 需求
      */
-    @TableField(value = "story")
+    @TableField(value = "`story`")
     @JSONField(name = "story")
     @JsonProperty("story")
     @ApiModelProperty("需求")

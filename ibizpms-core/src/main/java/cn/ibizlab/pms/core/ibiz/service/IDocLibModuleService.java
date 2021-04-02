@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IDocLibModuleService extends IService<DocLibModule> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "文档库分类";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "doclibmodules";
+
     boolean create(DocLibModule et);
     void createBatch(List<DocLibModule> list);
     boolean update(DocLibModule et);
@@ -37,11 +47,8 @@ public interface IDocLibModuleService extends IService<DocLibModule> {
     DocLibModule collect(DocLibModule et);
     boolean collectBatch(List<DocLibModule> etList);
     DocLibModule docLibModuleNFavorite(DocLibModule et);
-    boolean docLibModuleNFavoriteBatch(List<DocLibModule> etList);
     DocLibModule doclibModuleFavorite(DocLibModule et);
-    boolean doclibModuleFavoriteBatch(List<DocLibModule> etList);
     DocLibModule fix(DocLibModule et);
-    boolean fixBatch(List<DocLibModule> etList);
     boolean save(DocLibModule et);
     void saveBatch(List<DocLibModule> list);
     DocLibModule unCollect(DocLibModule et);

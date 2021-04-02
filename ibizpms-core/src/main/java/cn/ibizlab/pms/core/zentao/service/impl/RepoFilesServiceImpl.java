@@ -102,8 +102,9 @@ public class RepoFilesServiceImpl extends ServiceImpl<RepoFilesMapper, RepoFiles
     @Transactional
     public RepoFiles get(Long key) {
         RepoFiles et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new RepoFiles();
+            et.setId(key);
         }
         else {
         }
@@ -240,6 +241,5 @@ public class RepoFilesServiceImpl extends ServiceImpl<RepoFilesMapper, RepoFiles
         return et;
     }
 }
-
 
 

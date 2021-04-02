@@ -103,8 +103,9 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobS
     @Transactional
     public Job get(Long key) {
         Job et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Job();
+            et.setId(key);
         }
         else {
         }
@@ -232,6 +233,5 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobS
         return et;
     }
 }
-
 
 

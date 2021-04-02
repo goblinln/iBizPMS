@@ -74,9 +74,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Transactional
     public void createBatch(List<ProductModule> list) {
         list.forEach(item->fillParentData(item));
-        for (ProductModule et : list) {
-            getProxyService().save(et);
-        }
+        this.saveBatch(list, batchSize);
     }
 
     @Override
@@ -94,9 +92,7 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Transactional
     public void updateBatch(List<ProductModule> list) {
         list.forEach(item->fillParentData(item));
-        for (ProductModule et : list) {
-            getProxyService().update(et);
-        }
+        updateBatchById(list, batchSize);
     }
 
     @Override
@@ -116,8 +112,9 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Transactional
     public ProductModule get(Long key) {
         ProductModule et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new ProductModule();
+            et.setId(key);
         }
         else {
         }
@@ -142,26 +139,8 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
 
     @Override
     @Transactional
-    public boolean fixBatch(List<ProductModule> etList) {
-        for(ProductModule et : etList) {
-            fix(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public ProductModule removeModule(ProductModule et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean removeModuleBatch(List<ProductModule> etList) {
-        for(ProductModule et : etList) {
-            removeModule(et);
-        }
-        return true;
     }
 
     @Override
@@ -383,6 +362,5 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
         return et;
     }
 }
-
 
 

@@ -100,8 +100,9 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
     @Transactional
     public TaskMsgRecord get(String key) {
         TaskMsgRecord et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new TaskMsgRecord();
+            et.setTaskmsgrecordid(key);
         }
         else {
         }
@@ -250,6 +251,5 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
         return et;
     }
 }
-
 
 

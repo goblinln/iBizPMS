@@ -43,11 +43,11 @@ public class IbzLibModuleResource {
     @Autowired
     public IIbzLibModuleService ibzlibmoduleService;
 
-
     @Autowired
     @Lazy
     public IbzLibModuleMapping ibzlibmoduleMapping;
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Create-all')")
     @ApiOperation(value = "新建用例库模块", tags = {"用例库模块" },  notes = "新建用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibmodules")
     public ResponseEntity<IbzLibModuleDTO> create(@Validated @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
@@ -57,6 +57,7 @@ public class IbzLibModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Create-all')")
     @ApiOperation(value = "批量新建用例库模块", tags = {"用例库模块" },  notes = "批量新建用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibmodules/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzLibModuleDTO> ibzlibmoduledtos) {
@@ -64,6 +65,7 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Update-all')")
     @ApiOperation(value = "更新用例库模块", tags = {"用例库模块" },  notes = "更新用例库模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<IbzLibModuleDTO> update(@PathVariable("ibzlibmodule_id") Long ibzlibmodule_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
@@ -74,6 +76,7 @@ public class IbzLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Update-all')")
     @ApiOperation(value = "批量更新用例库模块", tags = {"用例库模块" },  notes = "批量更新用例库模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibmodules/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzLibModuleDTO> ibzlibmoduledtos) {
@@ -81,12 +84,14 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Remove-all')")
     @ApiOperation(value = "删除用例库模块", tags = {"用例库模块" },  notes = "删除用例库模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.remove(ibzlibmodule_id));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Remove-all')")
     @ApiOperation(value = "批量删除用例库模块", tags = {"用例库模块" },  notes = "批量删除用例库模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibmodules/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -94,6 +99,7 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Get-all')")
     @ApiOperation(value = "获取用例库模块", tags = {"用例库模块" },  notes = "获取用例库模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<IbzLibModuleDTO> get(@PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
@@ -115,6 +121,7 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.checkKey(ibzlibmoduleMapping.toDomain(ibzlibmoduledto)));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Save-all')")
     @ApiOperation(value = "保存用例库模块", tags = {"用例库模块" },  notes = "保存用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibmodules/save")
     public ResponseEntity<IbzLibModuleDTO> save(@RequestBody IbzLibModuleDTO ibzlibmoduledto) {
@@ -123,6 +130,7 @@ public class IbzLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleMapping.toDto(domain));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Save-all')")
     @ApiOperation(value = "批量保存用例库模块", tags = {"用例库模块" },  notes = "批量保存用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibmodules/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzLibModuleDTO> ibzlibmoduledtos) {
@@ -130,6 +138,7 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-searchDefault-all')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例库模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/ibzlibmodules/fetchdefault")
 	public ResponseEntity<List<IbzLibModuleDTO>> fetchDefault(IbzLibModuleSearchContext context) {
@@ -142,6 +151,7 @@ public class IbzLibModuleResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-searchDefault-all')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"用例库模块" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibmodules/searchdefault")
 	public ResponseEntity<Page<IbzLibModuleDTO>> searchDefault(@RequestBody IbzLibModuleSearchContext context) {
@@ -150,6 +160,7 @@ public class IbzLibModuleResource {
                 .body(new PageImpl(ibzlibmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-searchRoot_NoBranch-all')")
 	@ApiOperation(value = "获取无枝叶", tags = {"用例库模块" } ,notes = "获取无枝叶")
     @RequestMapping(method= RequestMethod.GET , value="/ibzlibmodules/fetchroot_nobranch")
 	public ResponseEntity<List<IbzLibModuleDTO>> fetchRoot_NoBranch(IbzLibModuleSearchContext context) {
@@ -162,6 +173,7 @@ public class IbzLibModuleResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-searchRoot_NoBranch-all')")
 	@ApiOperation(value = "查询无枝叶", tags = {"用例库模块" } ,notes = "查询无枝叶")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibmodules/searchroot_nobranch")
 	public ResponseEntity<Page<IbzLibModuleDTO>> searchRoot_NoBranch(@RequestBody IbzLibModuleSearchContext context) {
@@ -179,6 +191,7 @@ public class IbzLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduledto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Create-all')")
     @ApiOperation(value = "根据用例库建立用例库模块", tags = {"用例库模块" },  notes = "根据用例库建立用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules")
     public ResponseEntity<IbzLibModuleDTO> createByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
@@ -189,6 +202,7 @@ public class IbzLibModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Create-all')")
     @ApiOperation(value = "根据用例库批量建立用例库模块", tags = {"用例库模块" },  notes = "根据用例库批量建立用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/batch")
     public ResponseEntity<Boolean> createBatchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody List<IbzLibModuleDTO> ibzlibmoduledtos) {
@@ -200,6 +214,7 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Update-all')")
     @ApiOperation(value = "根据用例库更新用例库模块", tags = {"用例库模块" },  notes = "根据用例库更新用例库模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<IbzLibModuleDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibmodule_id") Long ibzlibmodule_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
@@ -211,6 +226,7 @@ public class IbzLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Update-all')")
     @ApiOperation(value = "根据用例库批量更新用例库模块", tags = {"用例库模块" },  notes = "根据用例库批量更新用例库模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/batch")
     public ResponseEntity<Boolean> updateBatchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody List<IbzLibModuleDTO> ibzlibmoduledtos) {
@@ -222,12 +238,14 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Remove-all')")
     @ApiOperation(value = "根据用例库删除用例库模块", tags = {"用例库模块" },  notes = "根据用例库删除用例库模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.remove(ibzlibmodule_id));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Remove-all')")
     @ApiOperation(value = "根据用例库批量删除用例库模块", tags = {"用例库模块" },  notes = "根据用例库批量删除用例库模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/batch")
     public ResponseEntity<Boolean> removeBatchByIbzLib(@RequestBody List<Long> ids) {
@@ -235,6 +253,7 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Get-all')")
     @ApiOperation(value = "根据用例库获取用例库模块", tags = {"用例库模块" },  notes = "根据用例库获取用例库模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<IbzLibModuleDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
@@ -257,6 +276,7 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.checkKey(ibzlibmoduleMapping.toDomain(ibzlibmoduledto)));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Save-all')")
     @ApiOperation(value = "根据用例库保存用例库模块", tags = {"用例库模块" },  notes = "根据用例库保存用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/save")
     public ResponseEntity<IbzLibModuleDTO> saveByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
@@ -266,6 +286,7 @@ public class IbzLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleMapping.toDto(domain));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-Save-all')")
     @ApiOperation(value = "根据用例库批量保存用例库模块", tags = {"用例库模块" },  notes = "根据用例库批量保存用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/savebatch")
     public ResponseEntity<Boolean> saveBatchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody List<IbzLibModuleDTO> ibzlibmoduledtos) {
@@ -277,6 +298,7 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-searchDefault-all')")
 	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"用例库模块" } ,notes = "根据用例库获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/fetchdefault")
 	public ResponseEntity<List<IbzLibModuleDTO>> fetchIbzLibModuleDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,IbzLibModuleSearchContext context) {
@@ -290,6 +312,7 @@ public class IbzLibModuleResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-searchDefault-all')")
 	@ApiOperation(value = "根据用例库查询DEFAULT", tags = {"用例库模块" } ,notes = "根据用例库查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/searchdefault")
 	public ResponseEntity<Page<IbzLibModuleDTO>> searchIbzLibModuleDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleSearchContext context) {
@@ -298,6 +321,7 @@ public class IbzLibModuleResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzlibmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-searchRoot_NoBranch-all')")
 	@ApiOperation(value = "根据用例库获取无枝叶", tags = {"用例库模块" } ,notes = "根据用例库获取无枝叶")
     @RequestMapping(method= RequestMethod.GET , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/fetchroot_nobranch")
 	public ResponseEntity<List<IbzLibModuleDTO>> fetchIbzLibModuleRoot_NoBranchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,IbzLibModuleSearchContext context) {
@@ -311,6 +335,7 @@ public class IbzLibModuleResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibModule-searchRoot_NoBranch-all')")
 	@ApiOperation(value = "根据用例库查询无枝叶", tags = {"用例库模块" } ,notes = "根据用例库查询无枝叶")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/searchroot_nobranch")
 	public ResponseEntity<Page<IbzLibModuleDTO>> searchIbzLibModuleRoot_NoBranchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleSearchContext context) {

@@ -34,6 +34,9 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.ou.client.SysOrganizationFeignClient;
+import cn.ibizlab.pms.util.security.SpringContextHolder;
+import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
+import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -47,6 +50,7 @@ public class SysOrganizationServiceImpl implements ISysOrganizationService {
     SysOrganizationFeignClient sysOrganizationFeignClient;
 
 
+
     @Override
     public boolean create(SysOrganization et) {
         SysOrganization rt = sysOrganizationFeignClient.create(et);
@@ -56,9 +60,11 @@ public class SysOrganizationServiceImpl implements ISysOrganizationService {
         return true;
     }
 
+
     public void createBatch(List<SysOrganization> list){
         sysOrganizationFeignClient.createBatch(list) ;
     }
+
 
     @Override
     public boolean update(SysOrganization et) {
@@ -70,9 +76,11 @@ public class SysOrganizationServiceImpl implements ISysOrganizationService {
 
     }
 
+
     public void updateBatch(List<SysOrganization> list){
         sysOrganizationFeignClient.updateBatch(list) ;
     }
+
 
     @Override
     public boolean remove(String orgid) {
@@ -80,20 +88,24 @@ public class SysOrganizationServiceImpl implements ISysOrganizationService {
         return result;
     }
 
+
     public void removeBatch(Collection<String> idList){
         sysOrganizationFeignClient.removeBatch(idList);
     }
+
 
     @Override
     public SysOrganization get(String orgid) {
 		SysOrganization et=sysOrganizationFeignClient.get(orgid);
         if(et==null){
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), orgid);
+            et=new SysOrganization();
+            et.setOrgid(orgid);
         }
         else{
         }
         return  et;
     }
+
 
     @Override
     public SysOrganization getDraft(SysOrganization et) {
@@ -101,10 +113,13 @@ public class SysOrganizationServiceImpl implements ISysOrganizationService {
         return et;
     }
 
+
     @Override
     public boolean checkKey(SysOrganization et) {
         return sysOrganizationFeignClient.checkKey(et);
     }
+
+
     @Override
     @Transactional
     public boolean save(SysOrganization et) {
@@ -127,10 +142,13 @@ public class SysOrganizationServiceImpl implements ISysOrganizationService {
             return result;
     }
 
+
+
     @Override
     public void saveBatch(List<SysOrganization> list) {
         sysOrganizationFeignClient.saveBatch(list) ;
     }
+
 
 
 
@@ -141,6 +159,8 @@ public class SysOrganizationServiceImpl implements ISysOrganizationService {
         context.setN_porgid_eq(orgid);
         return sysOrganizationFeignClient.searchDefault(context).getContent();
     }
+
+
     @Override
     public List<SysOrganization> selectByParentorgid(Collection<String> ids) {
         //暂未支持
@@ -160,6 +180,7 @@ public class SysOrganizationServiceImpl implements ISysOrganizationService {
 
 
 
+
     /**
      * 查询集合 数据集
      */
@@ -169,12 +190,12 @@ public class SysOrganizationServiceImpl implements ISysOrganizationService {
         return sysOrganizations;
     }
 
+
     @Override
     @Transactional
     public SysOrganization dynamicCall(String key, String action, SysOrganization et) {
         return et;
     }
 }
-
 
 

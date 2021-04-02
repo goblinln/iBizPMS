@@ -35,6 +35,11 @@ import cn.ibizlab.pms.util.domain.EntityClient;
 @Data
 @ApiModel("系统模块")
 public class PSModule extends EntityClient implements Serializable {
+    @Override
+    public void modify(String field, Object val) {
+        getExtensionparams().put("dirtyflagenable", true);
+        super.modify(field, val);
+    }
 
     /**
      * 代码包名

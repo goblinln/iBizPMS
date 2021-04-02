@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIBZProSystemService extends IService<IBZProSystem> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "运行生产系统";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "ibzprosystems";
+
     boolean create(IBZProSystem et);
     void createBatch(List<IBZProSystem> list);
     boolean update(IBZProSystem et);

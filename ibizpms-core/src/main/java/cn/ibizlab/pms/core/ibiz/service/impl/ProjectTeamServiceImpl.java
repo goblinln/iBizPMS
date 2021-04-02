@@ -107,8 +107,9 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     @Transactional
     public ProjectTeam get(Long key) {
         ProjectTeam et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new ProjectTeam();
+            et.setId(key);
         }
         else {
         }
@@ -337,6 +338,5 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
         return et;
     }
 }
-
 
 

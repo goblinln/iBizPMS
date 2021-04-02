@@ -104,8 +104,9 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
     @Transactional
     public TestTask get(Long key) {
         TestTask et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new TestTask();
+            et.setId(key);
         }
         else {
         }
@@ -186,15 +187,6 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
     @Transactional
     public TestTask mobTestTaskCounter(TestTask et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean mobTestTaskCounterBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            mobTestTaskCounter(et);
-        }
-        return true;
     }
 
     @Override
@@ -608,58 +600,13 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         if(rs.getInteger("rst")==1 && !isIgnoreError) {
             return rs;
         }
-        List<TestTask> tempDEList=new ArrayList<>();
-        Set tempIds=new HashSet<>();
-
         for(int i = 0;i < entities.size();i++) {
             TestTask entity = entities.get(i);
-            tempDEList.add(entity);
-            Object id=entity.getId();
-            if(!ObjectUtils.isEmpty(id)) {
-                tempIds.add(id);
-            }
-            if(tempDEList.size()>=batchSize || (tempDEList.size()<batchSize && i==entities.size()-1)){
-                commit(tempDEList,tempIds);
-                tempDEList.clear();
-                tempIds.clear();
-                }
-            }
+            getProxyService().save(entity);
+        }
         rs.put("rst", 0);
         rs.put("data",entities);
         return rs;
-    }
-
-    /**
-     * 批量提交
-     * @param entities 数据
-     * @param ids 要提交数据的id
-     */
-    @Transactional
-    public void commit(List<TestTask> entities, Set ids){
-        List<TestTask> _create=new ArrayList<>();
-        List<TestTask> _update=new ArrayList<>();
-        Set oldIds=new HashSet<>();
-        if(ids.size()>0){
-            List<TestTask> oldEntities=this.listByIds(ids);
-            for(TestTask entity:oldEntities){
-                oldIds.add(entity.getId());
-            }
-        }
-        for(TestTask entity:entities){
-            Object id=entity.getId();
-            if(oldIds.contains(id)) {
-                _update.add(entity);
-            }
-            else {
-                _create.add(entity);
-            }
-        }
-        if(_update.size()>0) {
-            getProxyService().updateBatch(_update);
-        }
-        if(_create.size()>0) {
-            getProxyService().createBatch(_create);
-        }
     }
 
     @Override
@@ -668,6 +615,5 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         return et;
     }
 }
-
 
 

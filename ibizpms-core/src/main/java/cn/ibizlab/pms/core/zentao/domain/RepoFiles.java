@@ -49,7 +49,7 @@ public class RepoFiles extends EntityMP implements Serializable {
     /**
      * path
      */
-    @TableField(value = "path")
+    @TableField(value = "`path`")
     @JSONField(name = "path")
     @JsonProperty("path")
     @ApiModelProperty("path")
@@ -57,7 +57,7 @@ public class RepoFiles extends EntityMP implements Serializable {
     /**
      * type
      */
-    @TableField(value = "type")
+    @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("type")
@@ -65,7 +65,7 @@ public class RepoFiles extends EntityMP implements Serializable {
     /**
      * revision
      */
-    @TableField(value = "revision")
+    @TableField(value = "`revision`")
     @JSONField(name = "revision")
     @JsonProperty("revision")
     @ApiModelProperty("revision")
@@ -73,7 +73,7 @@ public class RepoFiles extends EntityMP implements Serializable {
     /**
      * action
      */
-    @TableField(value = "action")
+    @TableField(value = "`action`")
     @JSONField(name = "action")
     @JsonProperty("action")
     @ApiModelProperty("action")
@@ -81,7 +81,7 @@ public class RepoFiles extends EntityMP implements Serializable {
     /**
      * repo
      */
-    @TableField(value = "repo")
+    @TableField(value = "`repo`")
     @JSONField(name = "repo")
     @JsonProperty("repo")
     @ApiModelProperty("repo")
@@ -98,7 +98,7 @@ public class RepoFiles extends EntityMP implements Serializable {
     /**
      * parent
      */
-    @TableField(value = "parent")
+    @TableField(value = "`parent`")
     @JSONField(name = "parent")
     @JsonProperty("parent")
     @ApiModelProperty("parent")

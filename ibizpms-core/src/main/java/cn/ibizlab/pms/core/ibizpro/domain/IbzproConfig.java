@@ -50,7 +50,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "updateman")
+    @TableField(value = "`updateman`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -59,7 +59,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
      * 系统配置表名称
      */
     @DEField(name = "ibzpro_configname")
-    @TableField(value = "ibzpro_configname")
+    @TableField(value = "`ibzpro_configname`")
     @JSONField(name = "ibzproconfigname")
     @JsonProperty("ibzproconfigname")
     @ApiModelProperty("系统配置表名称")
@@ -67,7 +67,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
     /**
      * 描述
      */
-    @TableField(value = "memo")
+    @TableField(value = "`memo`")
     @JSONField(name = "memo")
     @JsonProperty("memo")
     @ApiModelProperty("描述")
@@ -76,7 +76,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "updatedate")
+    @TableField(value = "`updatedate`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -86,7 +86,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "createdate", fill = FieldFill.INSERT)
+    @TableField(value = "`createdate`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -104,7 +104,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
     /**
      * 范围
      */
-    @TableField(value = "scope")
+    @TableField(value = "`scope`")
     @JSONField(name = "scope")
     @JsonProperty("scope")
     @ApiModelProperty("范围")
@@ -112,7 +112,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
     /**
      * 类型
      */
-    @TableField(value = "type")
+    @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("类型")
@@ -120,7 +120,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
     /**
      * 管理现状
      */
-    @TableField(value = "managementstatus")
+    @TableField(value = "`managementstatus`")
     @JSONField(name = "managementstatus")
     @JsonProperty("managementstatus")
     @ApiModelProperty("管理现状")
@@ -128,7 +128,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
     /**
      * 是否启用
      */
-    @TableField(value = "vaild")
+    @TableField(value = "`vaild`")
     @JSONField(name = "vaild")
     @JsonProperty("vaild")
     @ApiModelProperty("是否启用")
@@ -137,7 +137,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "createman", fill = FieldFill.INSERT)
+    @TableField(value = "`createman`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")

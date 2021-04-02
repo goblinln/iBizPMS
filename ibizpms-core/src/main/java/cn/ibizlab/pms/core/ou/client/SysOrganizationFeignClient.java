@@ -24,14 +24,14 @@ public interface SysOrganizationFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations")
-    SysOrganization create(@RequestBody SysOrganization sysorganization);
+    SysOrganization create(@RequestBody SysOrganization et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/batch")
     Boolean createBatch(@RequestBody List<SysOrganization> sysorganizations);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/{orgid}")
-    SysOrganization update(@PathVariable("orgid") String orgid,@RequestBody SysOrganization sysorganization);
+    SysOrganization update(@PathVariable("orgid") String orgid, @RequestBody SysOrganization et);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/batch")
     Boolean updateBatch(@RequestBody List<SysOrganization> sysorganizations);
@@ -47,19 +47,22 @@ public interface SysOrganizationFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/{orgid}")
     SysOrganization get(@PathVariable("orgid") String orgid);
 
+    @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/getbycodename/{orgid}")
+    String getByCodeName(@PathVariable("orgid") String codeName);
+
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/getdraft")
     SysOrganization getDraft(SysOrganization entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/checkkey")
-    Boolean checkKey(@RequestBody SysOrganization sysorganization);
+    Boolean checkKey(@RequestBody SysOrganization et);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/save")
-    Object saveEntity(@RequestBody SysOrganization sysorganization);
+    Object saveEntity(@RequestBody SysOrganization et);
 
-    default Boolean save(@RequestBody SysOrganization sysorganization) { return saveEntity(sysorganization)!=null; }
+    default Boolean save(@RequestBody SysOrganization et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/savebatch")
     Boolean saveBatch(@RequestBody List<SysOrganization> sysorganizations);

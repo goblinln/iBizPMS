@@ -2,49 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.ibizpro.mapper.IbzproConfigMapper">
-	
-	<!-- 无视图模式 -->
-	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_CONFIGID`, t1.`IBZPRO_CONFIGNAME`, t1.`MANAGEMENTSTATUS`, t1.`MEMO`, t1.`SCOPE`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VAILD` FROM `T_IBZPRO_CONFIG` t1   ]]>
-    </sql>
-
-	
-	<!-- 搜索条件 -->
-	<sql id="searchMode" databaseId="mysql">
-		<if test="srf.n_ibzpro_configname_like != null ">
-            <bind name="bind_n_ibzpro_configname_like" value="'%' + srf.n_ibzpro_configname_like + '%'" />
-            <![CDATA[ AND  t1.`IBZPRO_CONFIGNAME` like #{bind_n_ibzpro_configname_like,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_type_eq != null ">
-			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_managementstatus_eq != null ">
-			<![CDATA[ AND  t1.`MANAGEMENTSTATUS` = #{srf.n_managementstatus_eq,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_vaild_eq != null ">
-			<![CDATA[ AND  t1.`VAILD` = #{srf.n_vaild_eq,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
-		AND ${ew.sqlSegment}
-		</if>
-	</sql>
-
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="IbzproConfigResultMap" databaseId="mysql">
-        <include refid="select" />
-		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.IBZPRO_CONFIGID = #{id} ]]>
-		</trim>
+        <![CDATA[select t1.* from (SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_CONFIGID`, t1.`IBZPRO_CONFIGNAME`, t1.`MANAGEMENTSTATUS`, t1.`MEMO`, t1.`SCOPE`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VAILD` FROM `T_IBZPRO_CONFIG` t1  ) t1 where ibzpro_configid=#{id}]]>
     </select>
-
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="IbzproConfigResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.IbzproConfig" autoMapping="true">
 		<id property="ibzproconfigid" column="ibzpro_configid" /><!--主键字段映射-->
 		<result property="ibzproconfigname" column="ibzpro_configname" />
-            
-		
+
+
     </resultMap>
 
 
@@ -53,23 +22,19 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_CONFIGID`, t1.`IBZPRO_CONFIGNAME`, t1.`MANAGEMENTSTATUS`, t1.`MEMO`, t1.`SCOPE`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VAILD` FROM `T_IBZPRO_CONFIG` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_CONFIGID`, t1.`IBZPRO_CONFIGNAME`, t1.`MANAGEMENTSTATUS`, t1.`MEMO`, t1.`SCOPE`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VAILD` FROM `T_IBZPRO_CONFIG` t1  
+			]]>
     </sql>
-
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_CONFIGID`, t1.`IBZPRO_CONFIGNAME`, t1.`MANAGEMENTSTATUS`, t1.`MEMO`, t1.`SCOPE`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VAILD` FROM `T_IBZPRO_CONFIG` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_CONFIGID`, t1.`IBZPRO_CONFIGNAME`, t1.`MANAGEMENTSTATUS`, t1.`MEMO`, t1.`SCOPE`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VAILD` FROM `T_IBZPRO_CONFIG` t1  
+			]]>
     </sql>
-
 </mapper>
 

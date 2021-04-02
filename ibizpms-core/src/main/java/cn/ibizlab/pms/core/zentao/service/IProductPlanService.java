@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IProductPlanService extends IService<ProductPlan> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "产品计划";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "productplans";
+
     boolean create(ProductPlan et);
     void createBatch(List<ProductPlan> list);
     boolean update(ProductPlan et);
@@ -53,7 +63,6 @@ public interface IProductPlanService extends IService<ProductPlan> {
     ProductPlan eeStartPlan(ProductPlan et);
     boolean eeStartPlanBatch(List<ProductPlan> etList);
     ProductPlan getOldPlanName(ProductPlan et);
-    boolean getOldPlanNameBatch(List<ProductPlan> etList);
     ProductPlan importPlanTemplet(ProductPlan et);
     boolean importPlanTempletBatch(List<ProductPlan> etList);
     ProductPlan linkBug(ProductPlan et);
@@ -63,7 +72,6 @@ public interface IProductPlanService extends IService<ProductPlan> {
     ProductPlan linkTask(ProductPlan et);
     boolean linkTaskBatch(List<ProductPlan> etList);
     ProductPlan mobProductPlanCounter(ProductPlan et);
-    boolean mobProductPlanCounterBatch(List<ProductPlan> etList);
     boolean save(ProductPlan et);
     void saveBatch(List<ProductPlan> list);
     ProductPlan unlinkBug(ProductPlan et);

@@ -65,7 +65,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 附加值
      */
-    @TableField(value = "extra")
+    @TableField(value = "`extra`")
     @JSONField(name = "extra")
     @JsonProperty("extra")
     @ApiModelProperty("附加值")
@@ -121,7 +121,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 对象类型
      */
-    @TableField(value = "objecttype")
+    @TableField(value = "`objecttype`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
     @ApiModelProperty("对象类型")
@@ -146,7 +146,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 备注
      */
-    @TableField(value = "comment")
+    @TableField(value = "`comment`")
     @JSONField(name = "comment")
     @JsonProperty("comment")
     @ApiModelProperty("备注")
@@ -155,7 +155,7 @@ public class Action extends EntityMP implements Serializable {
      * 已读
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "read")
+    @TableField(value = "`read`")
     @JSONField(name = "read")
     @JsonProperty("read")
     @ApiModelProperty("已读")
@@ -163,7 +163,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 动作
      */
-    @TableField(value = "action")
+    @TableField(value = "`action`")
     @JSONField(name = "action")
     @JsonProperty("action")
     @ApiModelProperty("动作")
@@ -172,7 +172,7 @@ public class Action extends EntityMP implements Serializable {
      * 日期
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "date", fill = FieldFill.INSERT)
+    @TableField(value = "`date`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("date")
@@ -181,7 +181,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 产品
      */
-    @TableField(value = "product")
+    @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("产品")
@@ -222,7 +222,7 @@ public class Action extends EntityMP implements Serializable {
      * 对象ID
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "objectid")
+    @TableField(value = "`objectid`")
     @JSONField(name = "objectid")
     @JsonProperty("objectid")
     @ApiModelProperty("对象ID")
@@ -230,7 +230,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 操作者
      */
-    @TableField(value = "actor")
+    @TableField(value = "`actor`")
     @JSONField(name = "actor")
     @JsonProperty("actor")
     @ApiModelProperty("操作者")
@@ -238,7 +238,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 项目
      */
-    @TableField(value = "project")
+    @TableField(value = "`project`")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("项目")

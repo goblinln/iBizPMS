@@ -35,6 +35,11 @@ import cn.ibizlab.pms.util.domain.EntityClient;
 @Data
 @ApiModel("系统数据库")
 public class PSSystemDBCfg extends EntityClient implements Serializable {
+    @Override
+    public void modify(String field, Object val) {
+        getExtensionparams().put("dirtyflagenable", true);
+        super.modify(field, val);
+    }
 
     /**
      * 表空间2名称

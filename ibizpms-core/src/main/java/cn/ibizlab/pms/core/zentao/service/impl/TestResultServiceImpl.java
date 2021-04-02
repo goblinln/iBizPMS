@@ -116,8 +116,9 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Transactional
     public TestResult get(Long key) {
         TestResult et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new TestResult();
+            et.setId(key);
         }
         else {
         }
@@ -315,6 +316,5 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
         return et;
     }
 }
-
 
 

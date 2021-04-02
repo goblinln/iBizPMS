@@ -107,8 +107,9 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Transactional
     public IbizproProductMonthly get(Long key) {
         IbizproProductMonthly et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new IbizproProductMonthly();
+            et.setIbizproproductmonthlyid(key);
         }
         else {
         }
@@ -318,6 +319,5 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
         return et;
     }
 }
-
 
 

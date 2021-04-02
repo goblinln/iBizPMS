@@ -100,8 +100,9 @@ public class AccountTaskestimateServiceImpl extends ServiceImpl<AccountTaskestim
     @Transactional
     public AccountTaskestimate get(String key) {
         AccountTaskestimate et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new AccountTaskestimate();
+            et.setId(key);
         }
         else {
         }
@@ -238,6 +239,5 @@ public class AccountTaskestimateServiceImpl extends ServiceImpl<AccountTaskestim
         return et;
     }
 }
-
 
 

@@ -67,9 +67,7 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
     @Override
     @Transactional
     public void createBatch(List<SysUpdateLog> list) {
-        for (SysUpdateLog et : list) {
-            getProxyService().save(et);
-        }
+        this.saveBatch(list, batchSize);
     }
 
     @Override
@@ -107,8 +105,9 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
     @Transactional
     public SysUpdateLog get(String key) {
         SysUpdateLog et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new SysUpdateLog();
+            et.setSysupdatelogid(key);
         }
         else {
         }
@@ -273,6 +272,5 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
         return et;
     }
 }
-
 
 

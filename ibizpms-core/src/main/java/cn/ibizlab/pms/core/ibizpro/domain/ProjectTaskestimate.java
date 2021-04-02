@@ -105,7 +105,7 @@ public class ProjectTaskestimate extends EntityMP implements Serializable {
     /**
      * 评估成本
      */
-    @TableField(value = "evaluationcost")
+    @TableField(value = "`evaluationcost`")
     @JSONField(name = "evaluationcost")
     @JsonProperty("evaluationcost")
     @ApiModelProperty("评估成本")
@@ -609,7 +609,7 @@ public class ProjectTaskestimate extends EntityMP implements Serializable {
     /**
      * 日期
      */
-    @TableField(value = "date")
+    @TableField(value = "`date`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -891,7 +891,7 @@ public class ProjectTaskestimate extends EntityMP implements Serializable {
     /**
      * 投入成本
      */
-    @TableField(value = "inputcost")
+    @TableField(value = "`inputcost`")
     @JSONField(name = "inputcost")
     @JsonProperty("inputcost")
     @ApiModelProperty("投入成本")

@@ -95,8 +95,9 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
     @Transactional
     public UserTpl get(Long key) {
         UserTpl et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new UserTpl();
+            et.setId(key);
         }
         else {
         }
@@ -233,6 +234,5 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
         return et;
     }
 }
-
 
 

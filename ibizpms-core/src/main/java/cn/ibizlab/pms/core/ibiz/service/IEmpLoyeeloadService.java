@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IEmpLoyeeloadService extends IService<EmpLoyeeload> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "员工负载表";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "employeeloads";
+
     boolean create(EmpLoyeeload et);
     void createBatch(List<EmpLoyeeload> list);
     boolean update(EmpLoyeeload et);

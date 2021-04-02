@@ -118,8 +118,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Transactional
     public Story get(Long key) {
         Story et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Story();
+            et.setId(key);
         }
         else {
         }
@@ -372,15 +373,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
          return et ;
     }
 
-    @Override
-    @Transactional
-    public boolean buildUnlinkStorysBatch(List<Story> etList) {
-        for(Story et : etList) {
-            buildUnlinkStorys(et);
-        }
-        return true;
-    }
-
        @Override
     @Transactional
     public Story change(Story et) {
@@ -451,15 +443,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Transactional
     public Story getStorySpecs(Story et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean getStorySpecsBatch(List<Story> etList) {
-        for(Story et : etList) {
-            getStorySpecs(et);
-        }
-        return true;
     }
 
        @Override
@@ -541,15 +524,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Transactional
     public Story projectUnlinkStorys(Story et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean projectUnlinkStorysBatch(List<Story> etList) {
-        for(Story et : etList) {
-            projectUnlinkStorys(et);
-        }
-        return true;
     }
 
     @Override
@@ -768,26 +742,8 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
 
     @Override
     @Transactional
-    public boolean storyFavoritesBatch(List<Story> etList) {
-        for(Story et : etList) {
-            storyFavorites(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Story storyNFavorites(Story et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean storyNFavoritesBatch(List<Story> etList) {
-        for(Story et : etList) {
-            storyNFavorites(et);
-        }
-        return true;
     }
 
     @Override
@@ -1238,6 +1194,5 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return et;
     }
 }
-
 
 

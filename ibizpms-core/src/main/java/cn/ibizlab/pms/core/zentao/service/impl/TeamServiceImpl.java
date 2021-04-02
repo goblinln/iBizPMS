@@ -100,8 +100,9 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements IT
     @Transactional
     public Team get(Long key) {
         Team et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Team();
+            et.setId(key);
         }
         else {
         }
@@ -259,6 +260,5 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements IT
         return et;
     }
 }
-
 
 

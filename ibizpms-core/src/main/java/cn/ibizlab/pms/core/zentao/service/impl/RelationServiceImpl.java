@@ -100,8 +100,9 @@ public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> i
     @Transactional
     public Relation get(Long key) {
         Relation et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Relation();
+            et.setId(key);
         }
         else {
         }
@@ -229,6 +230,5 @@ public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> i
         return et;
     }
 }
-
 
 

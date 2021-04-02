@@ -30,34 +30,58 @@ public class TestModuleSearchContext extends QueryWrapperContext<TestModule> {
 	private Integer n_branch_eq;//[branch]
 	public void setN_branch_eq(Integer n_branch_eq) {
         this.n_branch_eq = n_branch_eq;
+        if(!ObjectUtils.isEmpty(this.n_branch_eq)){
+            this.getSearchCond().eq("`branch`", n_branch_eq);
+        }
     }
 	private String n_name_like;//[名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
+        if(!ObjectUtils.isEmpty(this.n_name_like)){
+            this.getSearchCond().like("`name`", n_name_like);
+        }
     }
 	private String n_parentname_eq;//[上级模块]
 	public void setN_parentname_eq(String n_parentname_eq) {
         this.n_parentname_eq = n_parentname_eq;
+        if(!ObjectUtils.isEmpty(this.n_parentname_eq)){
+            this.getSearchCond().eq("`parentname`", n_parentname_eq);
+        }
     }
 	private String n_parentname_like;//[上级模块]
 	public void setN_parentname_like(String n_parentname_like) {
         this.n_parentname_like = n_parentname_like;
+        if(!ObjectUtils.isEmpty(this.n_parentname_like)){
+            this.getSearchCond().like("`parentname`", n_parentname_like);
+        }
     }
 	private String n_rootname_eq;//[测试]
 	public void setN_rootname_eq(String n_rootname_eq) {
         this.n_rootname_eq = n_rootname_eq;
+        if(!ObjectUtils.isEmpty(this.n_rootname_eq)){
+            this.getSearchCond().eq("`rootname`", n_rootname_eq);
+        }
     }
 	private String n_rootname_like;//[测试]
 	public void setN_rootname_like(String n_rootname_like) {
         this.n_rootname_like = n_rootname_like;
+        if(!ObjectUtils.isEmpty(this.n_rootname_like)){
+            this.getSearchCond().like("`rootname`", n_rootname_like);
+        }
     }
 	private Long n_root_eq;//[编号]
 	public void setN_root_eq(Long n_root_eq) {
         this.n_root_eq = n_root_eq;
+        if(!ObjectUtils.isEmpty(this.n_root_eq)){
+            this.getSearchCond().eq("`root`", n_root_eq);
+        }
     }
 	private Long n_parent_eq;//[id]
 	public void setN_parent_eq(Long n_parent_eq) {
         this.n_parent_eq = n_parent_eq;
+        if(!ObjectUtils.isEmpty(this.n_parent_eq)){
+            this.getSearchCond().eq("`parent`", n_parent_eq);
+        }
     }
 
     /**
@@ -69,7 +93,7 @@ public class TestModuleSearchContext extends QueryWrapperContext<TestModule> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("name", query)
+                     wrapper.like("`name`", query)
             );
 		 }
 	}

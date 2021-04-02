@@ -100,8 +100,9 @@ public class ImQueueServiceImpl extends ServiceImpl<ImQueueMapper, ImQueue> impl
     @Transactional
     public ImQueue get(Long key) {
         ImQueue et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new ImQueue();
+            et.setId(key);
         }
         else {
         }
@@ -229,6 +230,5 @@ public class ImQueueServiceImpl extends ServiceImpl<ImQueueMapper, ImQueue> impl
         return et;
     }
 }
-
 
 

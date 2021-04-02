@@ -43,11 +43,11 @@ public class IbzproConfigResource {
     @Autowired
     public IIbzproConfigService ibzproconfigService;
 
-
     @Autowired
     @Lazy
     public IbzproConfigMapping ibzproconfigMapping;
 
+    @PreAuthorize("hasPermission(this.ibzproconfigMapping.toDomain(#ibzproconfigdto),'iBizPMS-IbzproConfig-Create')")
     @ApiOperation(value = "新建系统配置表", tags = {"系统配置表" },  notes = "新建系统配置表")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs")
     public ResponseEntity<IbzproConfigDTO> create(@Validated @RequestBody IbzproConfigDTO ibzproconfigdto) {
@@ -57,6 +57,7 @@ public class IbzproConfigResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasPermission(this.ibzproconfigMapping.toDomain(#ibzproconfigdtos),'iBizPMS-IbzproConfig-Create')")
     @ApiOperation(value = "批量新建系统配置表", tags = {"系统配置表" },  notes = "批量新建系统配置表")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzproConfigDTO> ibzproconfigdtos) {
@@ -65,6 +66,7 @@ public class IbzproConfigResource {
     }
 
     @VersionCheck(entity = "ibzproconfig" , versionfield = "updatedate")
+    @PreAuthorize("hasPermission(this.ibzproconfigService.get(#ibzproconfig_id),'iBizPMS-IbzproConfig-Update')")
     @ApiOperation(value = "更新系统配置表", tags = {"系统配置表" },  notes = "更新系统配置表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproconfigs/{ibzproconfig_id}")
     public ResponseEntity<IbzproConfigDTO> update(@PathVariable("ibzproconfig_id") String ibzproconfig_id, @RequestBody IbzproConfigDTO ibzproconfigdto) {
@@ -75,6 +77,7 @@ public class IbzproConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasPermission(this.ibzproconfigService.getIbzproconfigByEntities(this.ibzproconfigMapping.toDomain(#ibzproconfigdtos)),'iBizPMS-IbzproConfig-Update')")
     @ApiOperation(value = "批量更新系统配置表", tags = {"系统配置表" },  notes = "批量更新系统配置表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproconfigs/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzproConfigDTO> ibzproconfigdtos) {
@@ -82,12 +85,14 @@ public class IbzproConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasPermission(this.ibzproconfigService.get(#ibzproconfig_id),'iBizPMS-IbzproConfig-Remove')")
     @ApiOperation(value = "删除系统配置表", tags = {"系统配置表" },  notes = "删除系统配置表")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproconfigs/{ibzproconfig_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproconfig_id") String ibzproconfig_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigService.remove(ibzproconfig_id));
     }
 
+    @PreAuthorize("hasPermission(this.ibzproconfigService.getIbzproconfigByIds(#ids),'iBizPMS-IbzproConfig-Remove')")
     @ApiOperation(value = "批量删除系统配置表", tags = {"系统配置表" },  notes = "批量删除系统配置表")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproconfigs/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -95,6 +100,7 @@ public class IbzproConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibzproconfigMapping.toDomain(returnObject.body),'iBizPMS-IbzproConfig-Get')")
     @ApiOperation(value = "获取系统配置表", tags = {"系统配置表" },  notes = "获取系统配置表")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproconfigs/{ibzproconfig_id}")
     public ResponseEntity<IbzproConfigDTO> get(@PathVariable("ibzproconfig_id") String ibzproconfig_id) {
@@ -116,6 +122,7 @@ public class IbzproConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproconfigService.checkKey(ibzproconfigMapping.toDomain(ibzproconfigdto)));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproConfig-GetSystemConfig-all')")
     @ApiOperation(value = "获取系统配置", tags = {"系统配置表" },  notes = "获取系统配置")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproconfigs/{ibzproconfig_id}/getsystemconfig")
     public ResponseEntity<IbzproConfigDTO> getSystemConfig(@PathVariable("ibzproconfig_id") String ibzproconfig_id, @RequestBody IbzproConfigDTO ibzproconfigdto) {
@@ -125,6 +132,7 @@ public class IbzproConfigResource {
         ibzproconfigdto = ibzproconfigMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigdto);
     }
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproConfig-GetSystemConfig-all')")
     @ApiOperation(value = "批量处理[获取系统配置]", tags = {"系统配置表" },  notes = "批量处理[获取系统配置]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproconfigs/getsystemconfigbatch")
     public ResponseEntity<Boolean> getSystemConfigBatch(@RequestBody List<IbzproConfigDTO> ibzproconfigdtos) {
@@ -133,6 +141,7 @@ public class IbzproConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("hasPermission(this.ibzproconfigMapping.toDomain(#ibzproconfigdto),'iBizPMS-IbzproConfig-Save')")
     @ApiOperation(value = "保存系统配置表", tags = {"系统配置表" },  notes = "保存系统配置表")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/save")
     public ResponseEntity<IbzproConfigDTO> save(@RequestBody IbzproConfigDTO ibzproconfigdto) {
@@ -141,6 +150,7 @@ public class IbzproConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigMapping.toDto(domain));
     }
 
+    @PreAuthorize("hasPermission(this.ibzproconfigMapping.toDomain(#ibzproconfigdtos),'iBizPMS-IbzproConfig-Save')")
     @ApiOperation(value = "批量保存系统配置表", tags = {"系统配置表" },  notes = "批量保存系统配置表")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzproConfigDTO> ibzproconfigdtos) {
@@ -148,6 +158,7 @@ public class IbzproConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproConfig-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzproConfig-Get')")
 	@ApiOperation(value = "获取数据集", tags = {"系统配置表" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproconfigs/fetchdefault")
 	public ResponseEntity<List<IbzproConfigDTO>> fetchDefault(IbzproConfigSearchContext context) {
@@ -160,6 +171,7 @@ public class IbzproConfigResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproConfig-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzproConfig-Get')")
 	@ApiOperation(value = "查询数据集", tags = {"系统配置表" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproconfigs/searchdefault")
 	public ResponseEntity<Page<IbzproConfigDTO>> searchDefault(@RequestBody IbzproConfigSearchContext context) {

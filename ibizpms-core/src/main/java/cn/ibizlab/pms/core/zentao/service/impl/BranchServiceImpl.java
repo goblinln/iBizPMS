@@ -131,8 +131,9 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
     @Transactional
     public Branch get(Long key) {
         Branch et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Branch();
+            et.setId(key);
         }
         else {
         }
@@ -293,6 +294,5 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
         return et;
     }
 }
-
 
 

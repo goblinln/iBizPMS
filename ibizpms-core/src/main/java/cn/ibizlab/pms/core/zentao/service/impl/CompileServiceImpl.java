@@ -103,8 +103,9 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
     @Transactional
     public Compile get(Long key) {
         Compile et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Compile();
+            et.setId(key);
         }
         else {
         }
@@ -232,6 +233,5 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
         return et;
     }
 }
-
 
 

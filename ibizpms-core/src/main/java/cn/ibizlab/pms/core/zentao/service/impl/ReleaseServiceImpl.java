@@ -98,8 +98,9 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Transactional
     public Release get(Long key) {
         Release et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Release();
+            et.setId(key);
         }
         else {
         }
@@ -225,15 +226,6 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Transactional
     public Release mobReleaseCounter(Release et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean mobReleaseCounterBatch(List<Release> etList) {
-        for(Release et : etList) {
-            mobReleaseCounter(et);
-        }
-        return true;
     }
 
     @Override
@@ -460,6 +452,5 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         return et;
     }
 }
-
 
 

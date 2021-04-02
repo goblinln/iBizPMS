@@ -2,58 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.StorySpecMapper">
-	
-	<!-- 无视图模式 -->
-	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1   ]]>
-    </sql>
-
-	
-	<!-- 搜索条件 -->
-	<sql id="searchMode" databaseId="mysql">
-		<if test="srf.n_title_like != null ">
-            <bind name="bind_n_title_like" value="'%' + srf.n_title_like + '%'" />
-            <![CDATA[ AND  t1.`TITLE` like #{bind_n_title_like,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_version_eq != null ">
-			<![CDATA[ AND  t1.`VERSION` = #{srf.n_version_eq,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_version_noteq != null ">
-			<![CDATA[ AND  t1.`VERSION` <> #{srf.n_version_noteq,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_story_eq != null ">
-			<![CDATA[ AND  t1.`STORY` = #{srf.n_story_eq,jdbcType=BIGINT} ]]>
-        </if>
-		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
-		AND ${ew.sqlSegment}
-		</if>
-	</sql>
-
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="StorySpecResultMap" databaseId="mysql">
-        <include refid="select" />
-		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.ID = #{id} ]]>
-		</trim>
+        <![CDATA[select t1.* from (SELECT concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1  ) t1 where id=#{id}]]>
     </select>
-
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="StorySpecResultMap" type="cn.ibizlab.pms.core.zentao.domain.StorySpec" autoMapping="true">
 		<result property="story" column="story" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztstory" javaType="cn.ibizlab.pms.core.zentao.domain.Story" column="story" select="cn.ibizlab.pms.core.zentao.mapper.StoryMapper.selectById" fetchType="lazy"></association>
     </resultMap>
 
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORYSPEC_ZT_STORY_STORY] -->
-	 <select id="selectByStory" resultMap="StorySpecResultMap"  databaseId="mysql">
-        <include refid="select" />
-		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.STORY=#{id} ]]>
-		</trim>
+	 <select id="selectByStory" resultMap="StorySpecResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  story=#{id}
      </select>
 
     <!--数据集合[Default]-->
@@ -61,6 +30,8 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[Version]-->
@@ -68,31 +39,24 @@
          select t1.* from (
                 <include refid="Version" />
          )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1  
+			]]>
     </sql>
-
     <!--数据查询[Version]-->
     <sql id="Version" databaseId="mysql">
-		<![CDATA[ SELECT concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`STORY`, t1.`VERSION`, CONCAT('#',t1.`version`) as `TITLE` FROM `zt_storyspec` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`STORY`, t1.`VERSION`, CONCAT('#',t1.`version`) as `TITLE` FROM `zt_storyspec` t1  
+			]]>
     </sql>
-
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1  
+			]]>
     </sql>
-
 </mapper>
 

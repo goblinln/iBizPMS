@@ -100,8 +100,9 @@ public class CompanyStatsServiceImpl extends ServiceImpl<CompanyStatsMapper, Com
     @Transactional
     public CompanyStats get(Long key) {
         CompanyStats et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new CompanyStats();
+            et.setId(key);
         }
         else {
         }
@@ -238,6 +239,5 @@ public class CompanyStatsServiceImpl extends ServiceImpl<CompanyStatsMapper, Com
         return et;
     }
 }
-
 
 

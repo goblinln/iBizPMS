@@ -23,14 +23,14 @@ public class PSSysServiceAPIFallback implements PSSysServiceAPIFeignClient {
         return null;
     }
 
-    public PSSysServiceAPI create(PSSysServiceAPI pssysserviceapi) {
+    public PSSysServiceAPI create(PSSysServiceAPI et) {
         return null;
     }
     public Boolean createBatch(List<PSSysServiceAPI> pssysserviceapis) {
         return false;
     }
 
-    public PSSysServiceAPI update(String pssysserviceapiid, PSSysServiceAPI pssysserviceapi) {
+    public PSSysServiceAPI update(String pssysserviceapiid, PSSysServiceAPI et) {
         return null;
     }
     public Boolean updateBatch(List<PSSysServiceAPI> pssysserviceapis) {
@@ -50,22 +50,26 @@ public class PSSysServiceAPIFallback implements PSSysServiceAPIFeignClient {
     }
 
 
+    public String getByCodeName(String codeName) {
+            return null;
+    }
+
+
     public PSSysServiceAPI getDraft(PSSysServiceAPI entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(PSSysServiceAPI pssysserviceapi) {
+    public Boolean checkKey(PSSysServiceAPI et) {
         return false;
     }
 
 
-    public Object saveEntity(PSSysServiceAPI pssysserviceapi) {
+    public Object saveEntity(PSSysServiceAPI et) {
         return null;
     }
-
-    public Boolean save(PSSysServiceAPI pssysserviceapi) {
+    public Boolean save(PSSysServiceAPI et) {
         return false;
     }
     public Boolean saveBatch(List<PSSysServiceAPI> pssysserviceapis) {

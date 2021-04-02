@@ -24,6 +24,16 @@ import cn.ibizlab.pms.core.uaa.filter.SysRoleSearchContext;
  */
 public interface ISysRoleService {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "系统角色";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "sysroles";
+
     boolean create(SysRole et);
     void createBatch(List<SysRole> list);
     boolean update(SysRole et);
@@ -39,6 +49,7 @@ public interface ISysRoleService {
     List<SysRole> selectByProleid(String roleid);
     void removeByProleid(String roleid);
     SysRole dynamicCall(String key, String action, SysRole et);
+
 
 }
 

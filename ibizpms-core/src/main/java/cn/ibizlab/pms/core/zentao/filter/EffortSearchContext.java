@@ -30,18 +30,30 @@ public class EffortSearchContext extends QueryWrapperContext<Effort> {
 	private String n_status_eq;//[status]
 	public void setN_status_eq(String n_status_eq) {
         this.n_status_eq = n_status_eq;
+        if(!ObjectUtils.isEmpty(this.n_status_eq)){
+            this.getSearchCond().eq("`status`", n_status_eq);
+        }
     }
 	private String n_name_like;//[name]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
+        if(!ObjectUtils.isEmpty(this.n_name_like)){
+            this.getSearchCond().like("`name`", n_name_like);
+        }
     }
 	private String n_todo_eq;//[todo]
 	public void setN_todo_eq(String n_todo_eq) {
         this.n_todo_eq = n_todo_eq;
+        if(!ObjectUtils.isEmpty(this.n_todo_eq)){
+            this.getSearchCond().eq("`todo`", n_todo_eq);
+        }
     }
 	private String n_type_eq;//[type]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
+        if(!ObjectUtils.isEmpty(this.n_type_eq)){
+            this.getSearchCond().eq("`type`", n_type_eq);
+        }
     }
 
     /**
@@ -53,7 +65,7 @@ public class EffortSearchContext extends QueryWrapperContext<Effort> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("name", query)
+                     wrapper.like("`name`", query)
             );
 		 }
 	}

@@ -100,8 +100,9 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
     @Transactional
     public UserYearWorkStats get(Long key) {
         UserYearWorkStats et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new UserYearWorkStats();
+            et.setId(key);
         }
         else {
         }
@@ -125,41 +126,14 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
 
     @Override
     @Transactional
-    public boolean getDevInfomationBatch(List<UserYearWorkStats> etList) {
-        for(UserYearWorkStats et : etList) {
-            getDevInfomation(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public UserYearWorkStats getPoInfomation(UserYearWorkStats et) {
          return et ;
     }
 
     @Override
     @Transactional
-    public boolean getPoInfomationBatch(List<UserYearWorkStats> etList) {
-        for(UserYearWorkStats et : etList) {
-            getPoInfomation(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public UserYearWorkStats getQaInfomation(UserYearWorkStats et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean getQaInfomationBatch(List<UserYearWorkStats> etList) {
-        for(UserYearWorkStats et : etList) {
-            getQaInfomation(et);
-        }
-        return true;
     }
 
     @Override
@@ -333,6 +307,5 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
         return et;
     }
 }
-
 
 

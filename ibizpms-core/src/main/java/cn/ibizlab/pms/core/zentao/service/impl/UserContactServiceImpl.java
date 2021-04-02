@@ -100,8 +100,9 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
     @Transactional
     public UserContact get(Long key) {
         UserContact et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new UserContact();
+            et.setId(key);
         }
         else {
         }
@@ -247,6 +248,5 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
         return et;
     }
 }
-
 
 

@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IProjectService extends IService<Project> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "项目";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "projects";
+
     boolean create(Project et);
     void createBatch(List<Project> list);
     boolean update(Project et);
@@ -38,7 +48,6 @@ public interface IProjectService extends IService<Project> {
     Project batchUnlinkStory(Project et);
     boolean batchUnlinkStoryBatch(List<Project> etList);
     Project cancelProjectTop(Project et);
-    boolean cancelProjectTopBatch(List<Project> etList);
     boolean checkKey(Project et);
     Project close(Project et);
     boolean closeBatch(List<Project> etList);
@@ -47,15 +56,12 @@ public interface IProjectService extends IService<Project> {
     Project manageMembers(Project et);
     boolean manageMembersBatch(List<Project> etList);
     Project mobProjectCount(Project et);
-    boolean mobProjectCountBatch(List<Project> etList);
     Project pmsEeProjectAllTaskCount(Project et);
     boolean pmsEeProjectAllTaskCountBatch(List<Project> etList);
     Project pmsEeProjectTodoTaskCount(Project et);
     boolean pmsEeProjectTodoTaskCountBatch(List<Project> etList);
     Project projectTaskQCnt(Project et);
-    boolean projectTaskQCntBatch(List<Project> etList);
     Project projectTop(Project et);
-    boolean projectTopBatch(List<Project> etList);
     Project putoff(Project et);
     boolean putoffBatch(List<Project> etList);
     boolean save(Project et);

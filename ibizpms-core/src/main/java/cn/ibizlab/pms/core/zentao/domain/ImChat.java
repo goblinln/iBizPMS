@@ -49,7 +49,7 @@ public class ImChat extends EntityMP implements Serializable {
     /**
      * admins
      */
-    @TableField(value = "admins")
+    @TableField(value = "`admins`")
     @JSONField(name = "admins")
     @JsonProperty("admins")
     @ApiModelProperty("admins")
@@ -57,7 +57,7 @@ public class ImChat extends EntityMP implements Serializable {
     /**
      * createdBy
      */
-    @TableField(value = "createdby")
+    @TableField(value = "`createdby`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
     @ApiModelProperty("createdBy")
@@ -66,7 +66,7 @@ public class ImChat extends EntityMP implements Serializable {
      * editedDate
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "editeddate")
+    @TableField(value = "`editeddate`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "editeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("editeddate")
@@ -76,7 +76,7 @@ public class ImChat extends EntityMP implements Serializable {
      * dismissDate
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "dismissdate")
+    @TableField(value = "`dismissdate`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "dismissdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("dismissdate")
@@ -86,7 +86,7 @@ public class ImChat extends EntityMP implements Serializable {
      * createdDate
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "createddate")
+    @TableField(value = "`createddate`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
@@ -95,7 +95,7 @@ public class ImChat extends EntityMP implements Serializable {
     /**
      * committers
      */
-    @TableField(value = "committers")
+    @TableField(value = "`committers`")
     @JSONField(name = "committers")
     @JsonProperty("committers")
     @ApiModelProperty("committers")
@@ -104,7 +104,7 @@ public class ImChat extends EntityMP implements Serializable {
      * public
      */
     @DEField(name = "public")
-    @TableField(value = "public")
+    @TableField(value = "`public`")
     @JSONField(name = "ibizpublic")
     @JsonProperty("ibizpublic")
     @ApiModelProperty("public")
@@ -121,7 +121,7 @@ public class ImChat extends EntityMP implements Serializable {
     /**
      * name
      */
-    @TableField(value = "name")
+    @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("name")
@@ -130,7 +130,7 @@ public class ImChat extends EntityMP implements Serializable {
      * type
      */
     @DEField(defaultValue = "group")
-    @TableField(value = "type")
+    @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("type")
@@ -138,7 +138,7 @@ public class ImChat extends EntityMP implements Serializable {
     /**
      * editedBy
      */
-    @TableField(value = "editedby")
+    @TableField(value = "`editedby`")
     @JSONField(name = "editedby")
     @JsonProperty("editedby")
     @ApiModelProperty("editedBy")
@@ -147,7 +147,7 @@ public class ImChat extends EntityMP implements Serializable {
      * subject
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "subject")
+    @TableField(value = "`subject`")
     @JSONField(name = "subject")
     @JsonProperty("subject")
     @ApiModelProperty("subject")
@@ -156,7 +156,7 @@ public class ImChat extends EntityMP implements Serializable {
      * lastActiveTime
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "lastactivetime")
+    @TableField(value = "`lastactivetime`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastactivetime", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastactivetime")
@@ -165,7 +165,7 @@ public class ImChat extends EntityMP implements Serializable {
     /**
      * gid
      */
-    @TableField(value = "gid")
+    @TableField(value = "`gid`")
     @JSONField(name = "gid")
     @JsonProperty("gid")
     @ApiModelProperty("gid")

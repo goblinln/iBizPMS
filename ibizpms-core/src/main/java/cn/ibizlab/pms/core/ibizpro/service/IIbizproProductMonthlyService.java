@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbizproProductMonthlyService extends IService<IbizproProductMonthly> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "产品月报";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "ibizproproductmonthlies";
+
     boolean create(IbizproProductMonthly et);
     void createBatch(List<IbizproProductMonthly> list);
     boolean update(IbizproProductMonthly et);

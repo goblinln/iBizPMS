@@ -34,6 +34,9 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.uaa.client.SysUserRoleFeignClient;
+import cn.ibizlab.pms.util.security.SpringContextHolder;
+import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
+import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -47,6 +50,7 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
     SysUserRoleFeignClient sysUserRoleFeignClient;
 
 
+
     @Override
     public boolean create(SysUserRole et) {
         SysUserRole rt = sysUserRoleFeignClient.create(et);
@@ -56,9 +60,11 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
         return true;
     }
 
+
     public void createBatch(List<SysUserRole> list){
         sysUserRoleFeignClient.createBatch(list) ;
     }
+
 
     @Override
     public boolean update(SysUserRole et) {
@@ -70,9 +76,11 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
 
     }
 
+
     public void updateBatch(List<SysUserRole> list){
         sysUserRoleFeignClient.updateBatch(list) ;
     }
+
 
     @Override
     public boolean remove(String userroleid) {
@@ -80,20 +88,24 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
         return result;
     }
 
+
     public void removeBatch(Collection<String> idList){
         sysUserRoleFeignClient.removeBatch(idList);
     }
+
 
     @Override
     public SysUserRole get(String userroleid) {
 		SysUserRole et=sysUserRoleFeignClient.get(userroleid);
         if(et==null){
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), userroleid);
+            et=new SysUserRole();
+            et.setUserroleid(userroleid);
         }
         else{
         }
         return  et;
     }
+
 
     @Override
     public SysUserRole getDraft(SysUserRole et) {
@@ -101,10 +113,13 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
         return et;
     }
 
+
     @Override
     public boolean checkKey(SysUserRole et) {
         return sysUserRoleFeignClient.checkKey(et);
     }
+
+
     @Override
     @Transactional
     public boolean save(SysUserRole et) {
@@ -127,10 +142,13 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
             return result;
     }
 
+
+
     @Override
     public void saveBatch(List<SysUserRole> list) {
         sysUserRoleFeignClient.saveBatch(list) ;
     }
+
 
 
 
@@ -141,6 +159,8 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
         context.setN_sys_roleid_eq(roleid);
         return sysUserRoleFeignClient.searchDefault(context).getContent();
     }
+
+
     @Override
     public void removeByRoleid(Collection<String> ids) {
     }
@@ -156,6 +176,7 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
             this.removeBatch(delIds);
     }
 
+
 	@Override
     public List<SysUserRole> selectByUserid(String userid) {
         SysUserRoleSearchContext context=new SysUserRoleSearchContext();
@@ -163,6 +184,8 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
         context.setN_sys_userid_eq(userid);
         return sysUserRoleFeignClient.searchDefault(context).getContent();
     }
+
+
 
     @Override
     public void removeByUserid(String userid) {
@@ -176,6 +199,7 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
 
 
 
+
     /**
      * 查询集合 数据集
      */
@@ -185,12 +209,12 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
         return sysUserRoles;
     }
 
+
     @Override
     @Transactional
     public SysUserRole dynamicCall(String key, String action, SysUserRole et) {
         return et;
     }
 }
-
 
 

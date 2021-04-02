@@ -111,8 +111,9 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Transactional
     public IbzLibCaseSteps get(Long key) {
         IbzLibCaseSteps et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new IbzLibCaseSteps();
+            et.setId(key);
         }
         else {
             et.setIbzlibcasesteps(ibzlibcasestepsService.selectByParent(key));
@@ -336,6 +337,5 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
         return et;
     }
 }
-
 
 

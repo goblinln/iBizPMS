@@ -49,7 +49,7 @@ public class UserTpl extends EntityMP implements Serializable {
     /**
      * 模板标题
      */
-    @TableField(value = "title")
+    @TableField(value = "`title`")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("模板标题")
@@ -66,7 +66,7 @@ public class UserTpl extends EntityMP implements Serializable {
     /**
      * content
      */
-    @TableField(value = "content")
+    @TableField(value = "`content`")
     @JSONField(name = "content")
     @JsonProperty("content")
     @ApiModelProperty("content")
@@ -74,7 +74,7 @@ public class UserTpl extends EntityMP implements Serializable {
     /**
      * type
      */
-    @TableField(value = "type")
+    @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("type")
@@ -83,7 +83,7 @@ public class UserTpl extends EntityMP implements Serializable {
      * account
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "account")
+    @TableField(value = "`account`")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("account")
@@ -92,7 +92,7 @@ public class UserTpl extends EntityMP implements Serializable {
      * 公开
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "public")
+    @TableField(value = "`public`")
     @JSONField(name = "ibizpublic")
     @JsonProperty("ibizpublic")
     @ApiModelProperty("公开")

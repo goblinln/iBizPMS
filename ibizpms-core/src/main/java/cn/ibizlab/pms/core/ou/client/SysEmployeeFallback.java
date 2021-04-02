@@ -23,14 +23,14 @@ public class SysEmployeeFallback implements SysEmployeeFeignClient {
         return null;
     }
 
-    public SysEmployee create(SysEmployee sysemployee) {
+    public SysEmployee create(SysEmployee et) {
         return null;
     }
     public Boolean createBatch(List<SysEmployee> sysemployees) {
         return false;
     }
 
-    public SysEmployee update(String userid, SysEmployee sysemployee) {
+    public SysEmployee update(String userid, SysEmployee et) {
         return null;
     }
     public Boolean updateBatch(List<SysEmployee> sysemployees) {
@@ -50,22 +50,26 @@ public class SysEmployeeFallback implements SysEmployeeFeignClient {
     }
 
 
+    public String getByCodeName(String codeName) {
+            return null;
+    }
+
+
     public SysEmployee getDraft(SysEmployee entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(SysEmployee sysemployee) {
+    public Boolean checkKey(SysEmployee et) {
         return false;
     }
 
 
-    public Object saveEntity(SysEmployee sysemployee) {
+    public Object saveEntity(SysEmployee et) {
         return null;
     }
-
-    public Boolean save(SysEmployee sysemployee) {
+    public Boolean save(SysEmployee et) {
         return false;
     }
     public Boolean saveBatch(List<SysEmployee> sysemployees) {

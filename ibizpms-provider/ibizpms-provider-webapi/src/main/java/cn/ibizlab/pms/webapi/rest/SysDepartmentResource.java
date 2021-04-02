@@ -43,11 +43,11 @@ public class SysDepartmentResource {
     @Autowired
     public ISysDepartmentService sysdepartmentService;
 
-
     @Autowired
     @Lazy
     public SysDepartmentMapping sysdepartmentMapping;
 
+    @PreAuthorize("hasPermission(this.sysdepartmentMapping.toDomain(#sysdepartmentdto),'iBizPMS-SysDepartment-Create')")
     @ApiOperation(value = "新建部门", tags = {"部门" },  notes = "新建部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments")
     public ResponseEntity<SysDepartmentDTO> create(@Validated @RequestBody SysDepartmentDTO sysdepartmentdto) {
@@ -57,6 +57,7 @@ public class SysDepartmentResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasPermission(this.sysdepartmentMapping.toDomain(#sysdepartmentdtos),'iBizPMS-SysDepartment-Create')")
     @ApiOperation(value = "批量新建部门", tags = {"部门" },  notes = "批量新建部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<SysDepartmentDTO> sysdepartmentdtos) {
@@ -65,6 +66,7 @@ public class SysDepartmentResource {
     }
 
     @VersionCheck(entity = "sysdepartment" , versionfield = "updatedate")
+    @PreAuthorize("hasPermission(this.sysdepartmentService.get(#sysdepartment_id),'iBizPMS-SysDepartment-Update')")
     @ApiOperation(value = "更新部门", tags = {"部门" },  notes = "更新部门")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/{sysdepartment_id}")
     public ResponseEntity<SysDepartmentDTO> update(@PathVariable("sysdepartment_id") String sysdepartment_id, @RequestBody SysDepartmentDTO sysdepartmentdto) {
@@ -75,6 +77,7 @@ public class SysDepartmentResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasPermission(this.sysdepartmentService.getSysdepartmentByEntities(this.sysdepartmentMapping.toDomain(#sysdepartmentdtos)),'iBizPMS-SysDepartment-Update')")
     @ApiOperation(value = "批量更新部门", tags = {"部门" },  notes = "批量更新部门")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysDepartmentDTO> sysdepartmentdtos) {
@@ -82,12 +85,14 @@ public class SysDepartmentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasPermission(this.sysdepartmentService.get(#sysdepartment_id),'iBizPMS-SysDepartment-Remove')")
     @ApiOperation(value = "删除部门", tags = {"部门" },  notes = "删除部门")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysdepartments/{sysdepartment_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysdepartment_id") String sysdepartment_id) {
          return ResponseEntity.status(HttpStatus.OK).body(sysdepartmentService.remove(sysdepartment_id));
     }
 
+    @PreAuthorize("hasPermission(this.sysdepartmentService.getSysdepartmentByIds(#ids),'iBizPMS-SysDepartment-Remove')")
     @ApiOperation(value = "批量删除部门", tags = {"部门" },  notes = "批量删除部门")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysdepartments/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -95,6 +100,7 @@ public class SysDepartmentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.sysdepartmentMapping.toDomain(returnObject.body),'iBizPMS-SysDepartment-Get')")
     @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/{sysdepartment_id}")
     public ResponseEntity<SysDepartmentDTO> get(@PathVariable("sysdepartment_id") String sysdepartment_id) {
@@ -116,6 +122,7 @@ public class SysDepartmentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(sysdepartmentService.checkKey(sysdepartmentMapping.toDomain(sysdepartmentdto)));
     }
 
+    @PreAuthorize("hasPermission(this.sysdepartmentMapping.toDomain(#sysdepartmentdto),'iBizPMS-SysDepartment-Save')")
     @ApiOperation(value = "保存部门", tags = {"部门" },  notes = "保存部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/save")
     public ResponseEntity<SysDepartmentDTO> save(@RequestBody SysDepartmentDTO sysdepartmentdto) {
@@ -124,6 +131,7 @@ public class SysDepartmentResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysdepartmentMapping.toDto(domain));
     }
 
+    @PreAuthorize("hasPermission(this.sysdepartmentMapping.toDomain(#sysdepartmentdtos),'iBizPMS-SysDepartment-Save')")
     @ApiOperation(value = "批量保存部门", tags = {"部门" },  notes = "批量保存部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysDepartmentDTO> sysdepartmentdtos) {
@@ -131,6 +139,7 @@ public class SysDepartmentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysDepartment-searchDefault-all') and hasPermission(#context,'iBizPMS-SysDepartment-Get')")
 	@ApiOperation(value = "获取数据集", tags = {"部门" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysdepartments/fetchdefault")
 	public ResponseEntity<List<SysDepartmentDTO>> fetchDefault(SysDepartmentSearchContext context) {
@@ -143,6 +152,7 @@ public class SysDepartmentResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysDepartment-searchDefault-all') and hasPermission(#context,'iBizPMS-SysDepartment-Get')")
 	@ApiOperation(value = "查询数据集", tags = {"部门" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysdepartments/searchdefault")
 	public ResponseEntity<Page<SysDepartmentDTO>> searchDefault(@RequestBody SysDepartmentSearchContext context) {

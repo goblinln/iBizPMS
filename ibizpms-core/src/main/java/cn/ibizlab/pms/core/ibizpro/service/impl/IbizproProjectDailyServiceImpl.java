@@ -107,8 +107,9 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
     @Transactional
     public IbizproProjectDaily get(String key) {
         IbizproProjectDaily et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new IbizproProjectDaily();
+            et.setIbizproprojectdailyid(key);
         }
         else {
         }
@@ -301,6 +302,5 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
         return et;
     }
 }
-
 
 

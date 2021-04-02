@@ -100,8 +100,9 @@ public class RepoHistoryServiceImpl extends ServiceImpl<RepoHistoryMapper, RepoH
     @Transactional
     public RepoHistory get(Long key) {
         RepoHistory et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new RepoHistory();
+            et.setId(key);
         }
         else {
         }
@@ -229,6 +230,5 @@ public class RepoHistoryServiceImpl extends ServiceImpl<RepoHistoryMapper, RepoH
         return et;
     }
 }
-
 
 

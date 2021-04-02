@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IImConferenceactionService extends IService<ImConferenceaction> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "ImConferenceaction";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "imconferenceactions";
+
     boolean create(ImConferenceaction et);
     void createBatch(List<ImConferenceaction> list);
     boolean update(ImConferenceaction et);

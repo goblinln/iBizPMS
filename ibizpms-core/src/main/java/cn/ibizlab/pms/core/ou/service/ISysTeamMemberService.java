@@ -24,6 +24,16 @@ import cn.ibizlab.pms.core.ou.filter.SysTeamMemberSearchContext;
  */
 public interface ISysTeamMemberService {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "组成员";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "systeammembers";
+
     boolean create(SysTeamMember et);
     void createBatch(List<SysTeamMember> list);
     boolean update(SysTeamMember et);
@@ -43,6 +53,7 @@ public interface ISysTeamMemberService {
     List<SysTeamMember> selectByTeamid(String teamid);
     void removeByTeamid(String teamid);
     SysTeamMember dynamicCall(String key, String action, SysTeamMember et);
+
 
 }
 

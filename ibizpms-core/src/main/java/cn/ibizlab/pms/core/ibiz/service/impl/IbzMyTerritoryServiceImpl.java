@@ -100,8 +100,9 @@ public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper,
     @Transactional
     public IbzMyTerritory get(Long key) {
         IbzMyTerritory et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new IbzMyTerritory();
+            et.setId(key);
         }
         else {
         }
@@ -125,41 +126,14 @@ public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper,
 
     @Override
     @Transactional
-    public boolean mobMenuCountBatch(List<IbzMyTerritory> etList) {
-        for(IbzMyTerritory et : etList) {
-            mobMenuCount(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public IbzMyTerritory myFavoriteCount(IbzMyTerritory et) {
          return et ;
     }
 
     @Override
     @Transactional
-    public boolean myFavoriteCountBatch(List<IbzMyTerritory> etList) {
-        for(IbzMyTerritory et : etList) {
-            myFavoriteCount(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public IbzMyTerritory myTerritoryCount(IbzMyTerritory et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean myTerritoryCountBatch(List<IbzMyTerritory> etList) {
-        for(IbzMyTerritory et : etList) {
-            myTerritoryCount(et);
-        }
-        return true;
     }
 
     @Override
@@ -319,6 +293,5 @@ public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper,
         return et;
     }
 }
-
 
 

@@ -100,8 +100,9 @@ public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements IL
     @Transactional
     public Lang get(Long key) {
         Lang et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Lang();
+            et.setId(key);
         }
         else {
         }
@@ -229,6 +230,5 @@ public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements IL
         return et;
     }
 }
-
 
 

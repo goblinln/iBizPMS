@@ -2,42 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.StoryStageMapper">
-	
-	<!-- 无视图模式 -->
-	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`BRANCH`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY` FROM `zt_storystage` t1   ]]>
-    </sql>
-
-	
-	<!-- 搜索条件 -->
-	<sql id="searchMode" databaseId="mysql">
-		<if test="srf.n_story_eq != null ">
-			<![CDATA[ AND  t1.`STORY` = #{srf.n_story_eq,jdbcType=BIGINT} ]]>
-        </if>
-		<if test="srf.n_branch_eq != null ">
-			<![CDATA[ AND  t1.`BRANCH` = #{srf.n_branch_eq,jdbcType=BIGINT} ]]>
-        </if>
-		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
-		AND ${ew.sqlSegment}
-		</if>
-	</sql>
-
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="StoryStageResultMap" databaseId="mysql">
-        <include refid="select" />
-		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.ID = #{id} ]]>
-		</trim>
+        <![CDATA[select t1.* from (SELECT t1.`BRANCH`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY` FROM `zt_storystage` t1  ) t1 where id=#{id}]]>
     </select>
-
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="StoryStageResultMap" type="cn.ibizlab.pms.core.zentao.domain.StoryStage" autoMapping="true">
 		<result property="story" column="story" />
 		<result property="branch" column="branch" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztbranch" javaType="cn.ibizlab.pms.core.zentao.domain.Branch" column="branch" select="cn.ibizlab.pms.core.zentao.mapper.BranchMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
@@ -45,18 +21,18 @@
     </resultMap>
 
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORYSTAGE_ZT_BRANCH_BRANCH] -->
-	 <select id="selectByBranch" resultMap="StoryStageResultMap"  databaseId="mysql">
-        <include refid="select" />
-		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.BRANCH=#{id} ]]>
-		</trim>
+	 <select id="selectByBranch" resultMap="StoryStageResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  branch=#{id}
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORYSTAGE_ZT_STORY_STORY] -->
-	 <select id="selectByStory" resultMap="StoryStageResultMap"  databaseId="mysql">
-        <include refid="select" />
-		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.STORY=#{id} ]]>
-		</trim>
+	 <select id="selectByStory" resultMap="StoryStageResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  story=#{id}
      </select>
 
     <!--数据集合[Default]-->
@@ -64,23 +40,19 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY` FROM `zt_storystage` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT t1.`BRANCH`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY` FROM `zt_storystage` t1  
+			]]>
     </sql>
-
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY` FROM `zt_storystage` t1   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<include refid="searchMode" />
-		</trim>
+		<![CDATA[ SELECT t1.`BRANCH`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY` FROM `zt_storystage` t1  
+			]]>
     </sql>
-
 </mapper>
 

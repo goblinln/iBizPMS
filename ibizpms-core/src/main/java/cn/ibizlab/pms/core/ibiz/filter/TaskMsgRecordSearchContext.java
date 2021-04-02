@@ -30,6 +30,9 @@ public class TaskMsgRecordSearchContext extends QueryWrapperContext<TaskMsgRecor
 	private String n_taskmsgrecordname_like;//[待办消息记录名称]
 	public void setN_taskmsgrecordname_like(String n_taskmsgrecordname_like) {
         this.n_taskmsgrecordname_like = n_taskmsgrecordname_like;
+        if(!ObjectUtils.isEmpty(this.n_taskmsgrecordname_like)){
+            this.getSearchCond().like("`taskmsgrecordname`", n_taskmsgrecordname_like);
+        }
     }
 
     /**
@@ -41,7 +44,7 @@ public class TaskMsgRecordSearchContext extends QueryWrapperContext<TaskMsgRecor
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("taskmsgrecordname", query)
+                     wrapper.like("`taskmsgrecordname`", query)
             );
 		 }
 	}

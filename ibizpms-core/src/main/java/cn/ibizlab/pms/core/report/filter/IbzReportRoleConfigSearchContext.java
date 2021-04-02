@@ -30,10 +30,16 @@ public class IbzReportRoleConfigSearchContext extends QueryWrapperContext<IbzRep
 	private String n_ibz_report_role_configname_like;//[汇报角色配置名称]
 	public void setN_ibz_report_role_configname_like(String n_ibz_report_role_configname_like) {
         this.n_ibz_report_role_configname_like = n_ibz_report_role_configname_like;
+        if(!ObjectUtils.isEmpty(this.n_ibz_report_role_configname_like)){
+            this.getSearchCond().like("`ibz_report_role_configname`", n_ibz_report_role_configname_like);
+        }
     }
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
+        if(!ObjectUtils.isEmpty(this.n_type_eq)){
+            this.getSearchCond().eq("`type`", n_type_eq);
+        }
     }
 
     /**
@@ -45,7 +51,7 @@ public class IbzReportRoleConfigSearchContext extends QueryWrapperContext<IbzRep
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("ibz_report_role_configname", query)
+                     wrapper.like("`ibz_report_role_configname`", query)
             );
 		 }
 	}

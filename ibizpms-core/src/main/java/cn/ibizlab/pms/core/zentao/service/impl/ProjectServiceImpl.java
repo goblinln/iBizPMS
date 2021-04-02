@@ -145,8 +145,9 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     @Transactional
     public Project get(Long key) {
         Project et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Project();
+            et.setId(key);
         }
         else {
             et.setProjectteam(projectteamService.selectByRoot(key));
@@ -194,15 +195,6 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     @Transactional
     public Project cancelProjectTop(Project et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean cancelProjectTopBatch(List<Project> etList) {
-        for(Project et : etList) {
-            cancelProjectTop(et);
-        }
-        return true;
     }
 
     @Override
@@ -260,15 +252,6 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
          return et ;
     }
 
-    @Override
-    @Transactional
-    public boolean mobProjectCountBatch(List<Project> etList) {
-        for(Project et : etList) {
-            mobProjectCount(et);
-        }
-        return true;
-    }
-
        @Override
     @Transactional
     public Project pmsEeProjectAllTaskCount(Project et) {
@@ -307,26 +290,8 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
 
     @Override
     @Transactional
-    public boolean projectTaskQCntBatch(List<Project> etList) {
-        for(Project et : etList) {
-            projectTaskQCnt(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Project projectTop(Project et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean projectTopBatch(List<Project> etList) {
-        for(Project et : etList) {
-            projectTop(et);
-        }
-        return true;
     }
 
        @Override
@@ -687,6 +652,5 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         return et;
     }
 }
-
 
 

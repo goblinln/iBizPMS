@@ -30,10 +30,16 @@ public class EntrySearchContext extends QueryWrapperContext<Entry> {
 	private String n_freepasswd_eq;//[freePasswd]
 	public void setN_freepasswd_eq(String n_freepasswd_eq) {
         this.n_freepasswd_eq = n_freepasswd_eq;
+        if(!ObjectUtils.isEmpty(this.n_freepasswd_eq)){
+            this.getSearchCond().eq("`freepasswd`", n_freepasswd_eq);
+        }
     }
 	private String n_name_like;//[name]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
+        if(!ObjectUtils.isEmpty(this.n_name_like)){
+            this.getSearchCond().like("`name`", n_name_like);
+        }
     }
 
     /**
@@ -45,7 +51,7 @@ public class EntrySearchContext extends QueryWrapperContext<Entry> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("name", query)
+                     wrapper.like("`name`", query)
             );
 		 }
 	}

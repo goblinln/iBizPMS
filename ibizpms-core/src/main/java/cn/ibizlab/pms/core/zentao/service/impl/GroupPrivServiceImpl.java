@@ -100,8 +100,9 @@ public class GroupPrivServiceImpl extends ServiceImpl<GroupPrivMapper, GroupPriv
     @Transactional
     public GroupPriv get(String key) {
         GroupPriv et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new GroupPriv();
+            et.setId(key);
         }
         else {
         }
@@ -229,6 +230,5 @@ public class GroupPrivServiceImpl extends ServiceImpl<GroupPrivMapper, GroupPriv
         return et;
     }
 }
-
 
 

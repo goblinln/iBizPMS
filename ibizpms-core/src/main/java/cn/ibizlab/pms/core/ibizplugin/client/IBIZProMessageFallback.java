@@ -23,14 +23,14 @@ public class IBIZProMessageFallback implements IBIZProMessageFeignClient {
         return null;
     }
 
-    public IBIZProMessage create(IBIZProMessage ibizpromessage) {
+    public IBIZProMessage create(IBIZProMessage et) {
         return null;
     }
     public Boolean createBatch(List<IBIZProMessage> ibizpromessages) {
         return false;
     }
 
-    public IBIZProMessage update(String ibizpromessageid, IBIZProMessage ibizpromessage) {
+    public IBIZProMessage update(String ibizpromessageid, IBIZProMessage et) {
         return null;
     }
     public Boolean updateBatch(List<IBIZProMessage> ibizpromessages) {
@@ -50,37 +50,41 @@ public class IBIZProMessageFallback implements IBIZProMessageFeignClient {
     }
 
 
+    public String getByCodeName(String codeName) {
+            return null;
+    }
+
+
     public IBIZProMessage getDraft(IBIZProMessage entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(IBIZProMessage ibizpromessage) {
+    public Boolean checkKey(IBIZProMessage et) {
         return false;
     }
 
 
-    public IBIZProMessage markDone( String ibizpromessageid, IBIZProMessage ibizpromessage) {
+    public IBIZProMessage markDone( String ibizpromessageid, IBIZProMessage et) {
         return null;
     }
 
-    public IBIZProMessage markRead( String ibizpromessageid, IBIZProMessage ibizpromessage) {
+    public IBIZProMessage markRead( String ibizpromessageid, IBIZProMessage et) {
         return null;
     }
 
-    public Object saveEntity(IBIZProMessage ibizpromessage) {
+    public Object saveEntity(IBIZProMessage et) {
         return null;
     }
-
-    public Boolean save(IBIZProMessage ibizpromessage) {
+    public Boolean save(IBIZProMessage et) {
         return false;
     }
     public Boolean saveBatch(List<IBIZProMessage> ibizpromessages) {
         return false;
     }
 
-    public IBIZProMessage send( String ibizpromessageid, IBIZProMessage ibizpromessage) {
+    public IBIZProMessage send( String ibizpromessageid, IBIZProMessage et) {
         return null;
     }
 

@@ -50,7 +50,7 @@ public class Project extends EntityMP implements Serializable {
      * 当前系统版本
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "openedversion")
+    @TableField(value = "`openedversion`")
     @JSONField(name = "openedversion")
     @JsonProperty("openedversion")
     @ApiModelProperty("当前系统版本")
@@ -58,7 +58,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 开始时间
      */
-    @TableField(value = "begin")
+    @TableField(value = "`begin`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "begin", format = "yyyy-MM-dd")
     @JsonProperty("begin")
@@ -75,7 +75,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 项目立项信息
      */
-    @TableField(value = "pmseeprojectinfo")
+    @TableField(value = "`pmseeprojectinfo`")
     @JSONField(name = "pmseeprojectinfo")
     @JsonProperty("pmseeprojectinfo")
     @ApiModelProperty("项目立项信息")
@@ -84,7 +84,7 @@ public class Project extends EntityMP implements Serializable {
      * 访问控制
      */
     @DEField(defaultValue = "open")
-    @TableField(value = "acl")
+    @TableField(value = "`acl`")
     @JSONField(name = "acl")
     @JsonProperty("acl")
     @ApiModelProperty("访问控制")
@@ -94,7 +94,7 @@ public class Project extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -135,7 +135,7 @@ public class Project extends EntityMP implements Serializable {
      * 项目描述
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "desc")
+    @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("项目描述")
@@ -192,7 +192,7 @@ public class Project extends EntityMP implements Serializable {
      * 项目负责人
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "pm")
+    @TableField(value = "`pm`")
     @JSONField(name = "pm")
     @JsonProperty("pm")
     @ApiModelProperty("项目负责人")
@@ -218,7 +218,7 @@ public class Project extends EntityMP implements Serializable {
      * 项目名称
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "name")
+    @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("项目名称")
@@ -227,7 +227,7 @@ public class Project extends EntityMP implements Serializable {
      * 子状态
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "substatus")
+    @TableField(value = "`substatus`")
     @JSONField(name = "substatus")
     @JsonProperty("substatus")
     @ApiModelProperty("子状态")
@@ -244,7 +244,7 @@ public class Project extends EntityMP implements Serializable {
      * 项目排序
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "order")
+    @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("项目排序")
@@ -261,7 +261,7 @@ public class Project extends EntityMP implements Serializable {
      * 发布负责人
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "rd")
+    @TableField(value = "`rd`")
     @JSONField(name = "rd")
     @JsonProperty("rd")
     @ApiModelProperty("发布负责人")
@@ -286,7 +286,7 @@ public class Project extends EntityMP implements Serializable {
      * 分组白名单
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "whitelist")
+    @TableField(value = "`whitelist`")
     @JSONField(name = "whitelist")
     @JsonProperty("whitelist")
     @ApiModelProperty("分组白名单")
@@ -319,7 +319,7 @@ public class Project extends EntityMP implements Serializable {
      * 优先级
      */
     @DEField(defaultValue = "1")
-    @TableField(value = "pri")
+    @TableField(value = "`pri`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
     @ApiModelProperty("优先级")
@@ -327,7 +327,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 结束日期
      */
-    @TableField(value = "end")
+    @TableField(value = "`end`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "end", format = "yyyy-MM-dd")
     @JsonProperty("end")
@@ -336,7 +336,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 取消日期
      */
-    @TableField(value = "canceleddate")
+    @TableField(value = "`canceleddate`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "canceleddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("canceleddate")
@@ -371,7 +371,7 @@ public class Project extends EntityMP implements Serializable {
      * 部门标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "mdeptid")
+    @TableField(value = "`mdeptid`")
     @JSONField(name = "mdeptid")
     @JsonProperty("mdeptid")
     @ApiModelProperty("部门标识")
@@ -396,7 +396,7 @@ public class Project extends EntityMP implements Serializable {
      * 项目代号
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "code")
+    @TableField(value = "`code`")
     @JSONField(name = "code")
     @JsonProperty("code")
     @ApiModelProperty("项目代号")
@@ -429,7 +429,7 @@ public class Project extends EntityMP implements Serializable {
      * catID
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "catid")
+    @TableField(value = "`catid`")
     @JSONField(name = "catid")
     @JsonProperty("catid")
     @ApiModelProperty("catID")
@@ -438,7 +438,7 @@ public class Project extends EntityMP implements Serializable {
      * 组织标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "orgid")
+    @TableField(value = "`orgid`")
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
     @ApiModelProperty("组织标识")
@@ -471,7 +471,7 @@ public class Project extends EntityMP implements Serializable {
      * statge
      */
     @DEField(defaultValue = "1")
-    @TableField(value = "statge")
+    @TableField(value = "`statge`")
     @JSONField(name = "statge")
     @JsonProperty("statge")
     @ApiModelProperty("statge")
@@ -504,7 +504,7 @@ public class Project extends EntityMP implements Serializable {
      * 支持项目汇报
      */
     @DEField(defaultValue = "1")
-    @TableField(value = "supproreport")
+    @TableField(value = "`supproreport`")
     @JSONField(name = "supproreport")
     @JsonProperty("supproreport")
     @ApiModelProperty("支持项目汇报")
@@ -513,7 +513,7 @@ public class Project extends EntityMP implements Serializable {
      * 由谁取消
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "canceledby")
+    @TableField(value = "`canceledby`")
     @JSONField(name = "canceledby")
     @JsonProperty("canceledby")
     @ApiModelProperty("由谁取消")
@@ -522,7 +522,7 @@ public class Project extends EntityMP implements Serializable {
      * isCat
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "iscat")
+    @TableField(value = "`iscat`")
     @JSONField(name = "iscat")
     @JsonProperty("iscat")
     @ApiModelProperty("isCat")
@@ -531,7 +531,7 @@ public class Project extends EntityMP implements Serializable {
      * 创建日期
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "openeddate", fill = FieldFill.INSERT)
+    @TableField(value = "`openeddate`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "openeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("openeddate")
@@ -557,7 +557,7 @@ public class Project extends EntityMP implements Serializable {
      * 由谁关闭
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "closedby")
+    @TableField(value = "`closedby`")
     @JSONField(name = "closedby")
     @JsonProperty("closedby")
     @ApiModelProperty("由谁关闭")
@@ -566,7 +566,7 @@ public class Project extends EntityMP implements Serializable {
      * 项目类型
      */
     @DEField(defaultValue = "sprint")
-    @TableField(value = "type")
+    @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("项目类型")
@@ -591,7 +591,7 @@ public class Project extends EntityMP implements Serializable {
      * 产品负责人
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "po")
+    @TableField(value = "`po`")
     @JSONField(name = "po")
     @JsonProperty("po")
     @ApiModelProperty("产品负责人")
@@ -616,7 +616,7 @@ public class Project extends EntityMP implements Serializable {
      * 项目状态
      */
     @DEField(defaultValue = "wait")
-    @TableField(value = "status")
+    @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("项目状态")
@@ -633,7 +633,7 @@ public class Project extends EntityMP implements Serializable {
      * 可用工作日
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "days")
+    @TableField(value = "`days`")
     @JSONField(name = "days")
     @JsonProperty("days")
     @ApiModelProperty("可用工作日")
@@ -650,7 +650,7 @@ public class Project extends EntityMP implements Serializable {
      * 团队名称
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "team")
+    @TableField(value = "`team`")
     @JSONField(name = "team")
     @JsonProperty("team")
     @ApiModelProperty("团队名称")
@@ -658,7 +658,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 关闭日期
      */
-    @TableField(value = "closeddate")
+    @TableField(value = "`closeddate`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "closeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("closeddate")
@@ -676,7 +676,7 @@ public class Project extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "openedby")
+    @TableField(value = "`openedby`")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
     @ApiModelProperty("由谁创建")
@@ -693,7 +693,7 @@ public class Project extends EntityMP implements Serializable {
      * 测试负责人
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "qd")
+    @TableField(value = "`qd`")
     @JSONField(name = "qd")
     @JsonProperty("qd")
     @ApiModelProperty("测试负责人")
@@ -710,7 +710,7 @@ public class Project extends EntityMP implements Serializable {
      * 父项目
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "parent")
+    @TableField(value = "`parent`")
     @JSONField(name = "parent")
     @JsonProperty("parent")
     @ApiModelProperty("父项目")

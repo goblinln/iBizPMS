@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzReportService extends IService<IbzReport> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "汇报汇总";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "ibzreports";
+
     boolean create(IbzReport et);
     void createBatch(List<IbzReport> list);
     boolean update(IbzReport et);
@@ -35,9 +45,7 @@ public interface IIbzReportService extends IService<IbzReport> {
     IbzReport getDraft(IbzReport et);
     boolean checkKey(IbzReport et);
     IbzReport myReportINotSubmit(IbzReport et);
-    boolean myReportINotSubmitBatch(List<IbzReport> etList);
     IbzReport reportIReceived(IbzReport et);
-    boolean reportIReceivedBatch(List<IbzReport> etList);
     boolean save(IbzReport et);
     void saveBatch(List<IbzReport> list);
     Page<IbzReport> searchAllReport(IbzReportSearchContext context);

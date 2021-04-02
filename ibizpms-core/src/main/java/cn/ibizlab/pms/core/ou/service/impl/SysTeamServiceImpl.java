@@ -34,6 +34,9 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.ou.client.SysTeamFeignClient;
+import cn.ibizlab.pms.util.security.SpringContextHolder;
+import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
+import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -47,6 +50,7 @@ public class SysTeamServiceImpl implements ISysTeamService {
     SysTeamFeignClient sysTeamFeignClient;
 
 
+
     @Override
     public boolean create(SysTeam et) {
         SysTeam rt = sysTeamFeignClient.create(et);
@@ -56,9 +60,11 @@ public class SysTeamServiceImpl implements ISysTeamService {
         return true;
     }
 
+
     public void createBatch(List<SysTeam> list){
         sysTeamFeignClient.createBatch(list) ;
     }
+
 
     @Override
     public boolean update(SysTeam et) {
@@ -70,9 +76,11 @@ public class SysTeamServiceImpl implements ISysTeamService {
 
     }
 
+
     public void updateBatch(List<SysTeam> list){
         sysTeamFeignClient.updateBatch(list) ;
     }
+
 
     @Override
     public boolean remove(String teamid) {
@@ -80,20 +88,24 @@ public class SysTeamServiceImpl implements ISysTeamService {
         return result;
     }
 
+
     public void removeBatch(Collection<String> idList){
         sysTeamFeignClient.removeBatch(idList);
     }
+
 
     @Override
     public SysTeam get(String teamid) {
 		SysTeam et=sysTeamFeignClient.get(teamid);
         if(et==null){
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), teamid);
+            et=new SysTeam();
+            et.setTeamid(teamid);
         }
         else{
         }
         return  et;
     }
+
 
     @Override
     public SysTeam getDraft(SysTeam et) {
@@ -101,10 +113,13 @@ public class SysTeamServiceImpl implements ISysTeamService {
         return et;
     }
 
+
     @Override
     public boolean checkKey(SysTeam et) {
         return sysTeamFeignClient.checkKey(et);
     }
+
+
     @Override
     @Transactional
     public boolean save(SysTeam et) {
@@ -127,10 +142,13 @@ public class SysTeamServiceImpl implements ISysTeamService {
             return result;
     }
 
+
+
     @Override
     public void saveBatch(List<SysTeam> list) {
         sysTeamFeignClient.saveBatch(list) ;
     }
+
 
 
 
@@ -145,12 +163,12 @@ public class SysTeamServiceImpl implements ISysTeamService {
         return sysTeams;
     }
 
+
     @Override
     @Transactional
     public SysTeam dynamicCall(String key, String action, SysTeam et) {
         return et;
     }
 }
-
 
 

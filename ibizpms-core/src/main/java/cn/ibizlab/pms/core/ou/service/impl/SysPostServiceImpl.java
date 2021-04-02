@@ -34,6 +34,9 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.ou.client.SysPostFeignClient;
+import cn.ibizlab.pms.util.security.SpringContextHolder;
+import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
+import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -47,6 +50,7 @@ public class SysPostServiceImpl implements ISysPostService {
     SysPostFeignClient sysPostFeignClient;
 
 
+
     @Override
     public boolean create(SysPost et) {
         SysPost rt = sysPostFeignClient.create(et);
@@ -56,9 +60,11 @@ public class SysPostServiceImpl implements ISysPostService {
         return true;
     }
 
+
     public void createBatch(List<SysPost> list){
         sysPostFeignClient.createBatch(list) ;
     }
+
 
     @Override
     public boolean update(SysPost et) {
@@ -70,9 +76,11 @@ public class SysPostServiceImpl implements ISysPostService {
 
     }
 
+
     public void updateBatch(List<SysPost> list){
         sysPostFeignClient.updateBatch(list) ;
     }
+
 
     @Override
     public boolean remove(String postid) {
@@ -80,20 +88,24 @@ public class SysPostServiceImpl implements ISysPostService {
         return result;
     }
 
+
     public void removeBatch(Collection<String> idList){
         sysPostFeignClient.removeBatch(idList);
     }
+
 
     @Override
     public SysPost get(String postid) {
 		SysPost et=sysPostFeignClient.get(postid);
         if(et==null){
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), postid);
+            et=new SysPost();
+            et.setPostid(postid);
         }
         else{
         }
         return  et;
     }
+
 
     @Override
     public SysPost getDraft(SysPost et) {
@@ -101,10 +113,13 @@ public class SysPostServiceImpl implements ISysPostService {
         return et;
     }
 
+
     @Override
     public boolean checkKey(SysPost et) {
         return sysPostFeignClient.checkKey(et);
     }
+
+
     @Override
     @Transactional
     public boolean save(SysPost et) {
@@ -127,10 +142,13 @@ public class SysPostServiceImpl implements ISysPostService {
             return result;
     }
 
+
+
     @Override
     public void saveBatch(List<SysPost> list) {
         sysPostFeignClient.saveBatch(list) ;
     }
+
 
 
 
@@ -145,12 +163,12 @@ public class SysPostServiceImpl implements ISysPostService {
         return sysPosts;
     }
 
+
     @Override
     @Transactional
     public SysPost dynamicCall(String key, String action, SysPost et) {
         return et;
     }
 }
-
 
 

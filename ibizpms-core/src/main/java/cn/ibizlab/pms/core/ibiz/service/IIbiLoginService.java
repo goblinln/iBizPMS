@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbiLoginService extends IService<IbiLogin> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "实体";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "ibilogins";
+
     IbiLogin getUser(IbiLogin et);
     boolean getUserBatch(List<IbiLogin> etList);
     IbiLogin ztlogin(IbiLogin et);

@@ -100,8 +100,9 @@ public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> impleme
     @Transactional
     public IbzTop get(String key) {
         IbzTop et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new IbzTop();
+            et.setIbztopid(key);
         }
         else {
         }
@@ -250,6 +251,5 @@ public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> impleme
         return et;
     }
 }
-
 
 

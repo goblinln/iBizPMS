@@ -35,6 +35,11 @@ import cn.ibizlab.pms.util.domain.EntityClient;
 @Data
 @ApiModel("实体")
 public class PSDataEntity extends EntityClient implements Serializable {
+    @Override
+    public void modify(String field, Object val) {
+        getExtensionparams().put("dirtyflagenable", true);
+        super.modify(field, val);
+    }
 
     /**
      * 模型导入导出能力

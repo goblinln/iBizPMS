@@ -30,6 +30,9 @@ public class ImMessagestatusSearchContext extends QueryWrapperContext<ImMessages
 	private String n_status_eq;//[status]
 	public void setN_status_eq(String n_status_eq) {
         this.n_status_eq = n_status_eq;
+        if(!ObjectUtils.isEmpty(this.n_status_eq)){
+            this.getSearchCond().eq("`status`", n_status_eq);
+        }
     }
 
     /**

@@ -100,8 +100,9 @@ public class IbzproProductUserTaskServiceImpl extends ServiceImpl<IbzproProductU
     @Transactional
     public IbzproProductUserTask get(Long key) {
         IbzproProductUserTask et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new IbzproProductUserTask();
+            et.setId(key);
         }
         else {
         }
@@ -256,6 +257,5 @@ public class IbzproProductUserTaskServiceImpl extends ServiceImpl<IbzproProductU
         return et;
     }
 }
-
 
 

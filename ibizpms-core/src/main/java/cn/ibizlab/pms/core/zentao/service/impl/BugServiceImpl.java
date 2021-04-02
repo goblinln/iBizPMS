@@ -124,8 +124,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Transactional
     public Bug get(Long key) {
         Bug et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Bug();
+            et.setId(key);
         }
         else {
         }
@@ -191,26 +192,8 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
 
     @Override
     @Transactional
-    public boolean bugFavoritesBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            bugFavorites(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Bug bugNFavorites(Bug et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean bugNFavoritesBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            bugNFavorites(et);
-        }
-        return true;
     }
 
        @Override
@@ -547,15 +530,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Transactional
     public Bug updateStoryVersion(Bug et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean updateStoryVersionBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            updateStoryVersion(et);
-        }
-        return true;
     }
 
 
@@ -1108,6 +1082,5 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return et;
     }
 }
-
 
 

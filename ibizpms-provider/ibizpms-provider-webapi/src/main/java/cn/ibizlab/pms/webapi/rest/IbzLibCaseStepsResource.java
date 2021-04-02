@@ -43,11 +43,11 @@ public class IbzLibCaseStepsResource {
     @Autowired
     public IIbzLibCaseStepsService ibzlibcasestepsService;
 
-
     @Autowired
     @Lazy
     public IbzLibCaseStepsMapping ibzlibcasestepsMapping;
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Create-all')")
     @ApiOperation(value = "根据测试用例建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例建立用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps")
     public ResponseEntity<IbzLibCaseStepsDTO> createByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -58,6 +58,7 @@ public class IbzLibCaseStepsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Create-all')")
     @ApiOperation(value = "根据测试用例批量建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例批量建立用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
     public ResponseEntity<Boolean> createBatchByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
@@ -69,6 +70,7 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Update-all')")
     @ApiOperation(value = "根据测试用例更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例更新用例库用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> updateByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -80,6 +82,7 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Update-all')")
     @ApiOperation(value = "根据测试用例批量更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例批量更新用例库用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
     public ResponseEntity<Boolean> updateBatchByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
@@ -91,12 +94,14 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Remove-all')")
     @ApiOperation(value = "根据测试用例删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例删除用例库用例步骤")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<Boolean> removeByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.remove(ibzlibcasesteps_id));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Remove-all')")
     @ApiOperation(value = "根据测试用例批量删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例批量删除用例库用例步骤")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
     public ResponseEntity<Boolean> removeBatchByIbzCase(@RequestBody List<Long> ids) {
@@ -104,6 +109,7 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Get-all')")
     @ApiOperation(value = "根据测试用例获取用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例获取用例库用例步骤")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> getByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
@@ -126,6 +132,7 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.checkKey(ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto)));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Save-all')")
     @ApiOperation(value = "根据测试用例保存用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例保存用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/save")
     public ResponseEntity<IbzLibCaseStepsDTO> saveByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -135,6 +142,7 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsMapping.toDto(domain));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Save-all')")
     @ApiOperation(value = "根据测试用例批量保存用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例批量保存用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/savebatch")
     public ResponseEntity<Boolean> saveBatchByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
@@ -146,10 +154,11 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-searchDefault-all')")
 	@ApiOperation(value = "根据测试用例获取DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/ibzcases/{ibzcase_id}/ibzlibcasesteps/fetchdefault")
 	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchIbzLibCaseStepsDefaultByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id,IbzLibCaseStepsSearchContext context) {
-        context.setN_ibizcase_eq(ibzcase_id);
+        context.setN_case_eq(ibzcase_id);
         Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
         List<IbzLibCaseStepsDTO> list = ibzlibcasestepsMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -159,14 +168,16 @@ public class IbzLibCaseStepsResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-searchDefault-all')")
 	@ApiOperation(value = "根据测试用例查询DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据测试用例查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzcases/{ibzcase_id}/ibzlibcasesteps/searchdefault")
 	public ResponseEntity<Page<IbzLibCaseStepsDTO>> searchIbzLibCaseStepsDefaultByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsSearchContext context) {
-        context.setN_ibizcase_eq(ibzcase_id);
+        context.setN_case_eq(ibzcase_id);
         Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzlibcasestepsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Create-all')")
     @ApiOperation(value = "根据用例库测试用例建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例建立用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps")
     public ResponseEntity<IbzLibCaseStepsDTO> createByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -177,6 +188,7 @@ public class IbzLibCaseStepsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Create-all')")
     @ApiOperation(value = "根据用例库测试用例批量建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例批量建立用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
     public ResponseEntity<Boolean> createBatchByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
@@ -188,6 +200,7 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Update-all')")
     @ApiOperation(value = "根据用例库测试用例更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例更新用例库用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> updateByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -199,6 +212,7 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Update-all')")
     @ApiOperation(value = "根据用例库测试用例批量更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例批量更新用例库用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
     public ResponseEntity<Boolean> updateBatchByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
@@ -210,12 +224,14 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Remove-all')")
     @ApiOperation(value = "根据用例库测试用例删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例删除用例库用例步骤")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<Boolean> removeByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.remove(ibzlibcasesteps_id));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Remove-all')")
     @ApiOperation(value = "根据用例库测试用例批量删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例批量删除用例库用例步骤")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
     public ResponseEntity<Boolean> removeBatchByIbzLibIbzCase(@RequestBody List<Long> ids) {
@@ -223,6 +239,7 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Get-all')")
     @ApiOperation(value = "根据用例库测试用例获取用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例获取用例库用例步骤")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> getByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
@@ -245,6 +262,7 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.checkKey(ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto)));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Save-all')")
     @ApiOperation(value = "根据用例库测试用例保存用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例保存用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/save")
     public ResponseEntity<IbzLibCaseStepsDTO> saveByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -254,6 +272,7 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsMapping.toDto(domain));
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-Save-all')")
     @ApiOperation(value = "根据用例库测试用例批量保存用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例批量保存用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/savebatch")
     public ResponseEntity<Boolean> saveBatchByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
@@ -265,10 +284,11 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-searchDefault-all')")
 	@ApiOperation(value = "根据用例库测试用例获取DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据用例库测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/fetchdefault")
 	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchIbzLibCaseStepsDefaultByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id,IbzLibCaseStepsSearchContext context) {
-        context.setN_ibizcase_eq(ibzcase_id);
+        context.setN_case_eq(ibzcase_id);
         Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
         List<IbzLibCaseStepsDTO> list = ibzlibcasestepsMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -278,10 +298,11 @@ public class IbzLibCaseStepsResource {
                 .body(list);
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLibCaseSteps-searchDefault-all')")
 	@ApiOperation(value = "根据用例库测试用例查询DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据用例库测试用例查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/searchdefault")
 	public ResponseEntity<Page<IbzLibCaseStepsDTO>> searchIbzLibCaseStepsDefaultByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsSearchContext context) {
-        context.setN_ibizcase_eq(ibzcase_id);
+        context.setN_case_eq(ibzcase_id);
         Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzlibcasestepsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

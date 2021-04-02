@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzproProjectUserTaskService extends IService<IbzproProjectUserTask> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "项目汇报用户任务";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "ibzproprojectusertasks";
+
     boolean create(IbzproProjectUserTask et);
     void createBatch(List<IbzproProjectUserTask> list);
     boolean update(IbzproProjectUserTask et);

@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ISysUpdateFeaturesService extends IService<SysUpdateFeatures> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "系统更新功能";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "sysupdatefeatures";
+
     boolean create(SysUpdateFeatures et);
     void createBatch(List<SysUpdateFeatures> list);
     boolean update(SysUpdateFeatures et);

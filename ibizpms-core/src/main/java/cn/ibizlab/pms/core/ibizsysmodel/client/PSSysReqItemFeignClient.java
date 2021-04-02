@@ -16,7 +16,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[PSSysReqItem] 服务对象接口
  */
-@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysReqItem", fallback = PSSysReqItemFallback.class)
+//@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysReqItem", fallback = PSSysReqItemFallback.class)
 public interface PSSysReqItemFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/select")
@@ -24,14 +24,14 @@ public interface PSSysReqItemFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysreqitems")
-    PSSysReqItem create(@RequestBody PSSysReqItem pssysreqitem);
+    PSSysReqItem create(@RequestBody PSSysReqItem et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysreqitems/batch")
     Boolean createBatch(@RequestBody List<PSSysReqItem> pssysreqitems);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/pssysreqitems/{pssysreqitemid}")
-    PSSysReqItem update(@PathVariable("pssysreqitemid") String pssysreqitemid,@RequestBody PSSysReqItem pssysreqitem);
+    PSSysReqItem update(@PathVariable("pssysreqitemid") String pssysreqitemid, @RequestBody PSSysReqItem et);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/pssysreqitems/batch")
     Boolean updateBatch(@RequestBody List<PSSysReqItem> pssysreqitems);
@@ -47,19 +47,22 @@ public interface PSSysReqItemFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/{pssysreqitemid}")
     PSSysReqItem get(@PathVariable("pssysreqitemid") String pssysreqitemid);
 
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/getbycodename/{pssysreqitemid}")
+    String getByCodeName(@PathVariable("pssysreqitemid") String codeName);
+
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/getdraft")
     PSSysReqItem getDraft(PSSysReqItem entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysreqitems/checkkey")
-    Boolean checkKey(@RequestBody PSSysReqItem pssysreqitem);
+    Boolean checkKey(@RequestBody PSSysReqItem et);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysreqitems/save")
-    Object saveEntity(@RequestBody PSSysReqItem pssysreqitem);
+    Object saveEntity(@RequestBody PSSysReqItem et);
 
-    default Boolean save(@RequestBody PSSysReqItem pssysreqitem) { return saveEntity(pssysreqitem)!=null; }
+    default Boolean save(@RequestBody PSSysReqItem et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysreqitems/savebatch")
     Boolean saveBatch(@RequestBody List<PSSysReqItem> pssysreqitems);

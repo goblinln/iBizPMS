@@ -50,7 +50,7 @@ public class History extends EntityMP implements Serializable {
      * 不同
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "diff")
+    @TableField(value = "`diff`")
     @JSONField(name = "diff")
     @JsonProperty("diff")
     @ApiModelProperty("不同")
@@ -59,7 +59,7 @@ public class History extends EntityMP implements Serializable {
      * 字段
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "field")
+    @TableField(value = "`field`")
     @JSONField(name = "field")
     @JsonProperty("field")
     @ApiModelProperty("字段")
@@ -68,7 +68,7 @@ public class History extends EntityMP implements Serializable {
      * 新值
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "new")
+    @TableField(value = "`new`")
     @JSONField(name = "ibiznew")
     @JsonProperty("ibiznew")
     @ApiModelProperty("新值")
@@ -77,7 +77,7 @@ public class History extends EntityMP implements Serializable {
      * 旧值
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "old")
+    @TableField(value = "`old`")
     @JSONField(name = "old")
     @JsonProperty("old")
     @ApiModelProperty("旧值")
@@ -95,7 +95,7 @@ public class History extends EntityMP implements Serializable {
      * 关联日志
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "action")
+    @TableField(value = "`action`")
     @JSONField(name = "action")
     @JsonProperty("action")
     @ApiModelProperty("关联日志")

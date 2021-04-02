@@ -104,8 +104,9 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     @Transactional
     public Build get(Long key) {
         Build et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Build();
+            et.setId(key);
         }
         else {
         }
@@ -141,15 +142,6 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     @Transactional
     public Build mobProjectBuildCounter(Build et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean mobProjectBuildCounterBatch(List<Build> etList) {
-        for(Build et : etList) {
-            mobProjectBuildCounter(et);
-        }
-        return true;
     }
 
     @Override
@@ -370,6 +362,5 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
         return et;
     }
 }
-
 
 

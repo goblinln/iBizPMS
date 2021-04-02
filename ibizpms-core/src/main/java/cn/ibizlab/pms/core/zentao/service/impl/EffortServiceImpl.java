@@ -100,8 +100,9 @@ public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> impleme
     @Transactional
     public Effort get(Long key) {
         Effort et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Effort();
+            et.setId(key);
         }
         else {
         }
@@ -229,6 +230,5 @@ public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> impleme
         return et;
     }
 }
-
 
 

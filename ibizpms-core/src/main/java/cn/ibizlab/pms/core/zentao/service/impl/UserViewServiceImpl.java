@@ -100,8 +100,9 @@ public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> i
     @Transactional
     public UserView get(String key) {
         UserView et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new UserView();
+            et.setId(key);
         }
         else {
         }
@@ -229,6 +230,5 @@ public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> i
         return et;
     }
 }
-
 
 

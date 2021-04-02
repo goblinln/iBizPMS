@@ -30,10 +30,16 @@ public class IbzproProjectUserTaskSearchContext extends QueryWrapperContext<Ibzp
 	private String n_tasktype_eq;//[任务类型]
 	public void setN_tasktype_eq(String n_tasktype_eq) {
         this.n_tasktype_eq = n_tasktype_eq;
+        if(!ObjectUtils.isEmpty(this.n_tasktype_eq)){
+            this.getSearchCond().eq("`tasktype`", n_tasktype_eq);
+        }
     }
 	private Long n_id_like;//[编号]
 	public void setN_id_like(Long n_id_like) {
         this.n_id_like = n_id_like;
+        if(!ObjectUtils.isEmpty(this.n_id_like)){
+            this.getSearchCond().like("`id`", n_id_like);
+        }
     }
 
     /**
@@ -45,7 +51,7 @@ public class IbzproProjectUserTaskSearchContext extends QueryWrapperContext<Ibzp
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("id", query)
+                     wrapper.like("`id`", query)
             );
 		 }
 	}

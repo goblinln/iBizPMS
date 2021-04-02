@@ -30,18 +30,30 @@ public class IbzLibSearchContext extends QueryWrapperContext<IbzLib> {
 	private String n_addedby_eq;//[由谁创建]
 	public void setN_addedby_eq(String n_addedby_eq) {
         this.n_addedby_eq = n_addedby_eq;
+        if(!ObjectUtils.isEmpty(this.n_addedby_eq)){
+            this.getSearchCond().eq("`addedby`", n_addedby_eq);
+        }
     }
 	private String n_name_like;//[名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
+        if(!ObjectUtils.isEmpty(this.n_name_like)){
+            this.getSearchCond().like("`name`", n_name_like);
+        }
     }
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
+        if(!ObjectUtils.isEmpty(this.n_type_eq)){
+            this.getSearchCond().eq("`type`", n_type_eq);
+        }
     }
 	private String n_lasteditedby_eq;//[最后编辑人]
 	public void setN_lasteditedby_eq(String n_lasteditedby_eq) {
         this.n_lasteditedby_eq = n_lasteditedby_eq;
+        if(!ObjectUtils.isEmpty(this.n_lasteditedby_eq)){
+            this.getSearchCond().eq("`lasteditedby`", n_lasteditedby_eq);
+        }
     }
 
     /**
@@ -53,7 +65,7 @@ public class IbzLibSearchContext extends QueryWrapperContext<IbzLib> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("name", query)
+                     wrapper.like("`name`", query)
             );
 		 }
 	}

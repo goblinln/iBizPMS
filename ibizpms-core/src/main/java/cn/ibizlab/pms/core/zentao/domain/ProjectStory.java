@@ -58,7 +58,7 @@ public class ProjectStory extends EntityMP implements Serializable {
     /**
      * 排序
      */
-    @TableField(value = "order")
+    @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序")
@@ -67,7 +67,7 @@ public class ProjectStory extends EntityMP implements Serializable {
      * 需求版本
      */
     @DEField(defaultValue = "1")
-    @TableField(value = "version")
+    @TableField(value = "`version`")
     @JSONField(name = "version")
     @JsonProperty("version")
     @ApiModelProperty("需求版本")
@@ -75,7 +75,7 @@ public class ProjectStory extends EntityMP implements Serializable {
     /**
      * 需求
      */
-    @TableField(value = "story")
+    @TableField(value = "`story`")
     @JSONField(name = "story")
     @JsonProperty("story")
     @ApiModelProperty("需求")
@@ -83,7 +83,7 @@ public class ProjectStory extends EntityMP implements Serializable {
     /**
      * 项目
      */
-    @TableField(value = "project")
+    @TableField(value = "`project`")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("项目")
@@ -91,7 +91,7 @@ public class ProjectStory extends EntityMP implements Serializable {
     /**
      * 所属产品
      */
-    @TableField(value = "product")
+    @TableField(value = "`product`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("所属产品")

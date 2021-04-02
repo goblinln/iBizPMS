@@ -100,8 +100,9 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, Group> implements
     @Transactional
     public Group get(Long key) {
         Group et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Group();
+            et.setId(key);
         }
         else {
         }
@@ -229,6 +230,5 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, Group> implements
         return et;
     }
 }
-
 
 

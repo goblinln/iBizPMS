@@ -107,8 +107,9 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Transactional
     public SysUpdateFeatures get(String key) {
         SysUpdateFeatures et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new SysUpdateFeatures();
+            et.setSysupdatefeaturesid(key);
         }
         else {
         }
@@ -290,6 +291,5 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
         return et;
     }
 }
-
 
 

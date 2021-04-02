@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbizproProjectWeeklyService extends IService<IbizproProjectWeekly> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "项目周报";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "ibizproprojectweeklies";
+
     boolean create(IbizproProjectWeekly et);
     void createBatch(List<IbizproProjectWeekly> list);
     boolean update(IbizproProjectWeekly et);

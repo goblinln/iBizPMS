@@ -110,8 +110,9 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Transactional
     public StoryStage get(String key) {
         StoryStage et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
+        if(et == null){
+            et = new StoryStage();
+            et.setId(key);
         }
         else {
         }
@@ -277,6 +278,5 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
         return et;
     }
 }
-
 
 

@@ -24,14 +24,14 @@ public interface SysPostFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysposts")
-    SysPost create(@RequestBody SysPost syspost);
+    SysPost create(@RequestBody SysPost et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysposts/batch")
     Boolean createBatch(@RequestBody List<SysPost> sysposts);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysposts/{postid}")
-    SysPost update(@PathVariable("postid") String postid,@RequestBody SysPost syspost);
+    SysPost update(@PathVariable("postid") String postid, @RequestBody SysPost et);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysposts/batch")
     Boolean updateBatch(@RequestBody List<SysPost> sysposts);
@@ -47,19 +47,22 @@ public interface SysPostFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/sysposts/{postid}")
     SysPost get(@PathVariable("postid") String postid);
 
+    @RequestMapping(method = RequestMethod.GET, value = "/sysposts/getbycodename/{postid}")
+    String getByCodeName(@PathVariable("postid") String codeName);
+
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysposts/getdraft")
     SysPost getDraft(SysPost entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysposts/checkkey")
-    Boolean checkKey(@RequestBody SysPost syspost);
+    Boolean checkKey(@RequestBody SysPost et);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysposts/save")
-    Object saveEntity(@RequestBody SysPost syspost);
+    Object saveEntity(@RequestBody SysPost et);
 
-    default Boolean save(@RequestBody SysPost syspost) { return saveEntity(syspost)!=null; }
+    default Boolean save(@RequestBody SysPost et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysposts/savebatch")
     Boolean saveBatch(@RequestBody List<SysPost> sysposts);

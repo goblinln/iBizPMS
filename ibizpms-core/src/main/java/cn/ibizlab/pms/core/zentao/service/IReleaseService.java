@@ -25,6 +25,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IReleaseService extends IService<Release> {
 
+    /**
+     * 业务实体显示文本名称
+     */
+    final static String OBJECT_TEXT_NAME = "发布";
+
+    /**
+     * 业务实体资源路径名
+     */
+    final static String OBJECT_SOURCE_PATH = "releases";
+
     boolean create(Release et);
     void createBatch(List<Release> list);
     boolean update(Release et);
@@ -49,7 +59,6 @@ public interface IReleaseService extends IService<Release> {
     Release linkStory(Release et);
     boolean linkStoryBatch(List<Release> etList);
     Release mobReleaseCounter(Release et);
-    boolean mobReleaseCounterBatch(List<Release> etList);
     Release oneClickRelease(Release et);
     boolean oneClickReleaseBatch(List<Release> etList);
     boolean save(Release et);

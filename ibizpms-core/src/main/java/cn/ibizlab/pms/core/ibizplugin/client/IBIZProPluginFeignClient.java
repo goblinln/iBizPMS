@@ -24,14 +24,14 @@ public interface IBIZProPluginFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins")
-    IBIZProPlugin create(@RequestBody IBIZProPlugin ibizproplugin);
+    IBIZProPlugin create(@RequestBody IBIZProPlugin et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/batch")
     Boolean createBatch(@RequestBody List<IBIZProPlugin> ibizproplugins);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/ibizproplugins/{ibizpropluginid}")
-    IBIZProPlugin update(@PathVariable("ibizpropluginid") String ibizpropluginid,@RequestBody IBIZProPlugin ibizproplugin);
+    IBIZProPlugin update(@PathVariable("ibizpropluginid") String ibizpropluginid, @RequestBody IBIZProPlugin et);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/ibizproplugins/batch")
     Boolean updateBatch(@RequestBody List<IBIZProPlugin> ibizproplugins);
@@ -47,19 +47,22 @@ public interface IBIZProPluginFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/{ibizpropluginid}")
     IBIZProPlugin get(@PathVariable("ibizpropluginid") String ibizpropluginid);
 
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/getbycodename/{ibizpropluginid}")
+    String getByCodeName(@PathVariable("ibizpropluginid") String codeName);
+
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/getdraft")
     IBIZProPlugin getDraft(IBIZProPlugin entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/checkkey")
-    Boolean checkKey(@RequestBody IBIZProPlugin ibizproplugin);
+    Boolean checkKey(@RequestBody IBIZProPlugin et);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/save")
-    Object saveEntity(@RequestBody IBIZProPlugin ibizproplugin);
+    Object saveEntity(@RequestBody IBIZProPlugin et);
 
-    default Boolean save(@RequestBody IBIZProPlugin ibizproplugin) { return saveEntity(ibizproplugin)!=null; }
+    default Boolean save(@RequestBody IBIZProPlugin et) { return saveEntity(et)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/savebatch")
     Boolean saveBatch(@RequestBody List<IBIZProPlugin> ibizproplugins);

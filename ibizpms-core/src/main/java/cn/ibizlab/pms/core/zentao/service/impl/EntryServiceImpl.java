@@ -103,8 +103,9 @@ public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements
     @Transactional
     public Entry get(Long key) {
         Entry et = getById(key);
-        if (et == null) {
-            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        if(et == null){
+            et = new Entry();
+            et.setId(key);
         }
         else {
         }
@@ -232,6 +233,5 @@ public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements
         return et;
     }
 }
-
 
 
