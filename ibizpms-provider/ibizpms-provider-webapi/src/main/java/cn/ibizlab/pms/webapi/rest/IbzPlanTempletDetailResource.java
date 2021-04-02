@@ -43,6 +43,7 @@ public class IbzPlanTempletDetailResource {
     @Autowired
     public IIbzPlanTempletDetailService ibzplantempletdetailService;
 
+
     @Autowired
     @Lazy
     public IbzPlanTempletDetailMapping ibzplantempletdetailMapping;

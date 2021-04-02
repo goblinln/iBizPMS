@@ -113,9 +113,8 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
     @Transactional
     public TestRun get(Long key) {
         TestRun et = getById(key);
-        if(et == null){
-            et = new TestRun();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -280,5 +279,6 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
         return et;
     }
 }
+
 
 

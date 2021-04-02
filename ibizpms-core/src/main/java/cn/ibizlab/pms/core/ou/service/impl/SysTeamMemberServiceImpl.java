@@ -34,9 +34,6 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.ou.client.SysTeamMemberFeignClient;
-import cn.ibizlab.pms.util.security.SpringContextHolder;
-import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
-import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -50,7 +47,6 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
     SysTeamMemberFeignClient sysTeamMemberFeignClient;
 
 
-
     @Override
     public boolean create(SysTeamMember et) {
         SysTeamMember rt = sysTeamMemberFeignClient.create(et);
@@ -60,11 +56,9 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
         return true;
     }
 
-
     public void createBatch(List<SysTeamMember> list){
         sysTeamMemberFeignClient.createBatch(list) ;
     }
-
 
     @Override
     public boolean update(SysTeamMember et) {
@@ -76,11 +70,9 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
 
     }
 
-
     public void updateBatch(List<SysTeamMember> list){
         sysTeamMemberFeignClient.updateBatch(list) ;
     }
-
 
     @Override
     public boolean remove(String teammemberid) {
@@ -88,24 +80,20 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
         return result;
     }
 
-
     public void removeBatch(Collection<String> idList){
         sysTeamMemberFeignClient.removeBatch(idList);
     }
-
 
     @Override
     public SysTeamMember get(String teammemberid) {
 		SysTeamMember et=sysTeamMemberFeignClient.get(teammemberid);
         if(et==null){
-            et=new SysTeamMember();
-            et.setTeammemberid(teammemberid);
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), teammemberid);
         }
         else{
         }
         return  et;
     }
-
 
     @Override
     public SysTeamMember getDraft(SysTeamMember et) {
@@ -113,13 +101,10 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
         return et;
     }
 
-
     @Override
     public boolean checkKey(SysTeamMember et) {
         return sysTeamMemberFeignClient.checkKey(et);
     }
-
-
     @Override
     @Transactional
     public boolean save(SysTeamMember et) {
@@ -142,13 +127,10 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
             return result;
     }
 
-
-
     @Override
     public void saveBatch(List<SysTeamMember> list) {
         sysTeamMemberFeignClient.saveBatch(list) ;
     }
-
 
 
 
@@ -160,8 +142,6 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
         return sysTeamMemberFeignClient.searchDefault(context).getContent();
     }
 
-
-
     @Override
     public void removeByUserid(String userid) {
         Set<String> delIds=new HashSet<String>();
@@ -172,7 +152,6 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
             this.removeBatch(delIds);
     }
 
-
 	@Override
     public List<SysTeamMember> selectByPostid(String postid) {
         SysTeamMemberSearchContext context=new SysTeamMemberSearchContext();
@@ -180,8 +159,6 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
         context.setN_postid_eq(postid);
         return sysTeamMemberFeignClient.searchDefault(context).getContent();
     }
-
-
 
     @Override
     public void removeByPostid(String postid) {
@@ -193,7 +170,6 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
             this.removeBatch(delIds);
     }
 
-
 	@Override
     public List<SysTeamMember> selectByTeamid(String teamid) {
         SysTeamMemberSearchContext context=new SysTeamMemberSearchContext();
@@ -201,8 +177,6 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
         context.setN_teamid_eq(teamid);
         return sysTeamMemberFeignClient.searchDefault(context).getContent();
     }
-
-
 
     @Override
     public void removeByTeamid(String teamid) {
@@ -216,7 +190,6 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
 
 
 
-
     /**
      * 查询集合 数据集
      */
@@ -226,12 +199,12 @@ public class SysTeamMemberServiceImpl implements ISysTeamMemberService {
         return sysTeamMembers;
     }
 
-
     @Override
     @Transactional
     public SysTeamMember dynamicCall(String key, String action, SysTeamMember et) {
         return et;
     }
 }
+
 
 

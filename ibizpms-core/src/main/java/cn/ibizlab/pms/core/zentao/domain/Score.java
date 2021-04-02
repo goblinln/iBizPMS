@@ -49,7 +49,7 @@ public class Score extends EntityMP implements Serializable {
     /**
      * method
      */
-    @TableField(value = "`method`")
+    @TableField(value = "method")
     @JSONField(name = "method")
     @JsonProperty("method")
     @ApiModelProperty("method")
@@ -58,7 +58,7 @@ public class Score extends EntityMP implements Serializable {
      * score
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`score`")
+    @TableField(value = "score")
     @JSONField(name = "score")
     @JsonProperty("score")
     @ApiModelProperty("score")
@@ -66,7 +66,7 @@ public class Score extends EntityMP implements Serializable {
     /**
      * time
      */
-    @TableField(value = "`time`")
+    @TableField(value = "time")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "time", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("time")
@@ -75,7 +75,7 @@ public class Score extends EntityMP implements Serializable {
     /**
      * account
      */
-    @TableField(value = "`account`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("account")
@@ -84,7 +84,7 @@ public class Score extends EntityMP implements Serializable {
      * before
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`before`")
+    @TableField(value = "before")
     @JSONField(name = "before")
     @JsonProperty("before")
     @ApiModelProperty("before")
@@ -92,7 +92,7 @@ public class Score extends EntityMP implements Serializable {
     /**
      * desc
      */
-    @TableField(value = "`desc`")
+    @TableField(value = "desc")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("desc")
@@ -110,7 +110,7 @@ public class Score extends EntityMP implements Serializable {
      * after
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`after`")
+    @TableField(value = "after")
     @JSONField(name = "after")
     @JsonProperty("after")
     @ApiModelProperty("after")
@@ -118,7 +118,7 @@ public class Score extends EntityMP implements Serializable {
     /**
      * module
      */
-    @TableField(value = "`module`")
+    @TableField(value = "module")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("module")

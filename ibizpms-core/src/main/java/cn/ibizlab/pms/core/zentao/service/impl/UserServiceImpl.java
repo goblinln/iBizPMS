@@ -100,9 +100,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Transactional
     public User get(Long key) {
         User et = getById(key);
-        if(et == null){
-            et = new User();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -307,5 +306,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return et;
     }
 }
+
 
 

@@ -23,14 +23,14 @@ public class PSModuleFallback implements PSModuleFeignClient {
         return null;
     }
 
-    public PSModule create(PSModule et) {
+    public PSModule create(PSModule psmodule) {
         return null;
     }
     public Boolean createBatch(List<PSModule> psmodules) {
         return false;
     }
 
-    public PSModule update(String psmoduleid, PSModule et) {
+    public PSModule update(String psmoduleid, PSModule psmodule) {
         return null;
     }
     public Boolean updateBatch(List<PSModule> psmodules) {
@@ -50,26 +50,22 @@ public class PSModuleFallback implements PSModuleFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public PSModule getDraft(PSModule entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(PSModule et) {
+    public Boolean checkKey(PSModule psmodule) {
         return false;
     }
 
 
-    public Object saveEntity(PSModule et) {
+    public Object saveEntity(PSModule psmodule) {
         return null;
     }
-    public Boolean save(PSModule et) {
+
+    public Boolean save(PSModule psmodule) {
         return false;
     }
     public Boolean saveBatch(List<PSModule> psmodules) {

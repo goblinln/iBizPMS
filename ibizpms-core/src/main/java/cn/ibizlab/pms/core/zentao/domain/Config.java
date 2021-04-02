@@ -58,7 +58,7 @@ public class Config extends EntityMP implements Serializable {
     /**
      * 模块
      */
-    @TableField(value = "`module`")
+    @TableField(value = "module")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("模块")
@@ -66,7 +66,7 @@ public class Config extends EntityMP implements Serializable {
     /**
      * 附加部分
      */
-    @TableField(value = "`section`")
+    @TableField(value = "section")
     @JSONField(name = "section")
     @JsonProperty("section")
     @ApiModelProperty("附加部分")
@@ -74,7 +74,7 @@ public class Config extends EntityMP implements Serializable {
     /**
      * 值
      */
-    @TableField(value = "`value`")
+    @TableField(value = "value")
     @JSONField(name = "value")
     @JsonProperty("value")
     @ApiModelProperty("值")
@@ -82,7 +82,7 @@ public class Config extends EntityMP implements Serializable {
     /**
      * 键
      */
-    @TableField(value = "`key`")
+    @TableField(value = "key")
     @JSONField(name = "key")
     @JsonProperty("key")
     @ApiModelProperty("键")
@@ -90,7 +90,7 @@ public class Config extends EntityMP implements Serializable {
     /**
      * 所有者
      */
-    @TableField(value = "`owner`")
+    @TableField(value = "owner")
     @JSONField(name = "owner")
     @JsonProperty("owner")
     @ApiModelProperty("所有者")

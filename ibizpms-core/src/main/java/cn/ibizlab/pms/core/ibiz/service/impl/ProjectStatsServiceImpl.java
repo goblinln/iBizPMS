@@ -100,9 +100,8 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
     @Transactional
     public ProjectStats get(Long key) {
         ProjectStats et = getById(key);
-        if(et == null){
-            et = new ProjectStats();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -122,6 +121,15 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
     @Transactional
     public ProjectStats projectQualitySum(ProjectStats et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean projectQualitySumBatch(List<ProjectStats> etList) {
+        for(ProjectStats et : etList) {
+            projectQualitySum(et);
+        }
+        return true;
     }
 
     @Override
@@ -326,5 +334,6 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
         return et;
     }
 }
+
 
 

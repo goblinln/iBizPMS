@@ -24,16 +24,6 @@ import cn.ibizlab.pms.core.ibiz.filter.ProductLineSearchContext;
  */
 public interface IProductLineService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "产品线";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "productlines";
-
     boolean create(ProductLine et);
     void createBatch(List<ProductLine> list);
     boolean update(ProductLine et);

@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IProductLifeService extends IService<ProductLife> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "产品生命周期";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "productlives";
-
     boolean create(ProductLife et);
     void createBatch(List<ProductLife> list);
     boolean update(ProductLife et);

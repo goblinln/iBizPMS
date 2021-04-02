@@ -100,9 +100,8 @@ public class IBZProSystemServiceImpl extends ServiceImpl<IBZProSystemMapper, IBZ
     @Transactional
     public IBZProSystem get(String key) {
         IBZProSystem et = getById(key);
-        if(et == null){
-            et = new IBZProSystem();
-            et.setIbzprosystemid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
         }
@@ -251,5 +250,6 @@ public class IBZProSystemServiceImpl extends ServiceImpl<IBZProSystemMapper, IBZ
         return et;
     }
 }
+
 
 

@@ -94,9 +94,8 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     @Transactional
     public Action get(Long key) {
         Action et = getById(key);
-        if(et == null){
-            et = new Action();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -116,6 +115,15 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     @Transactional
     public Action comment(Action et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean commentBatch(List<Action> etList) {
+        for(Action et : etList) {
+            comment(et);
+        }
+        return true;
     }
 
        @Override
@@ -323,5 +331,6 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         return et;
     }
 }
+
 
 

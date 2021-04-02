@@ -107,9 +107,8 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Transactional
     public EmpLoyeeload get(Long key) {
         EmpLoyeeload et = getById(key);
-        if(et == null){
-            et = new EmpLoyeeload();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -274,5 +273,6 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
         return et;
     }
 }
+
 
 

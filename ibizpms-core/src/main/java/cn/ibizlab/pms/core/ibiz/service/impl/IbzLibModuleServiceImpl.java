@@ -74,7 +74,9 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Transactional
     public void createBatch(List<IbzLibModule> list) {
         list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
+        for (IbzLibModule et : list) {
+            getProxyService().save(et);
+        }
     }
 
     @Override
@@ -92,7 +94,9 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Transactional
     public void updateBatch(List<IbzLibModule> list) {
         list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
+        for (IbzLibModule et : list) {
+            getProxyService().update(et);
+        }
     }
 
     @Override
@@ -112,9 +116,8 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Transactional
     public IbzLibModule get(Long key) {
         IbzLibModule et = getById(key);
-        if(et == null){
-            et = new IbzLibModule();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -288,5 +291,6 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
         return et;
     }
 }
+
 
 

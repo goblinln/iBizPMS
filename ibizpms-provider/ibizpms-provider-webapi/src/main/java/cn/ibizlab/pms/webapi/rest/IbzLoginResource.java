@@ -43,11 +43,11 @@ public class IbzLoginResource {
     @Autowired
     public IIbiLoginService ibiloginService;
 
+
     @Autowired
     @Lazy
     public IbzLoginMapping ibzloginMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbiLogin-GetUser-all')")
     @ApiOperation(value = "获取ZT账户登录信息", tags = {"实体" },  notes = "获取ZT账户登录信息")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlogins/{ibzlogin_id}/getuser")
     public ResponseEntity<IbzLoginDTO> getUser(@PathVariable("ibzlogin_id") Long ibzlogin_id, @RequestBody IbzLoginDTO ibzlogindto) {
@@ -57,7 +57,6 @@ public class IbzLoginResource {
         ibzlogindto = ibzloginMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbiLogin-GetUser-all')")
     @ApiOperation(value = "批量处理[获取ZT账户登录信息]", tags = {"实体" },  notes = "批量处理[获取ZT账户登录信息]")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlogins/getuserbatch")
     public ResponseEntity<Boolean> getUserBatch(@RequestBody List<IbzLoginDTO> ibzlogindtos) {
@@ -66,7 +65,6 @@ public class IbzLoginResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbiLogin-Ztlogin-all')")
     @ApiOperation(value = "ZT登录", tags = {"实体" },  notes = "ZT登录")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlogins/{ibzlogin_id}/ztlogin")
     public ResponseEntity<IbzLoginDTO> ztlogin(@PathVariable("ibzlogin_id") Long ibzlogin_id, @RequestBody IbzLoginDTO ibzlogindto) {
@@ -76,7 +74,6 @@ public class IbzLoginResource {
         ibzlogindto = ibzloginMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbiLogin-Ztlogin-all')")
     @ApiOperation(value = "批量处理[ZT登录]", tags = {"实体" },  notes = "批量处理[ZT登录]")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlogins/ztloginbatch")
     public ResponseEntity<Boolean> ztloginBatch(@RequestBody List<IbzLoginDTO> ibzlogindtos) {

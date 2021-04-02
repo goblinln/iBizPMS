@@ -50,7 +50,7 @@ public class Module extends EntityMP implements Serializable {
      * 所属根
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`root`")
+    @TableField(value = "root")
     @JSONField(name = "root")
     @JsonProperty("root")
     @ApiModelProperty("所属根")
@@ -59,7 +59,7 @@ public class Module extends EntityMP implements Serializable {
      * 级别
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`grade`")
+    @TableField(value = "grade")
     @JSONField(name = "grade")
     @JsonProperty("grade")
     @ApiModelProperty("级别")
@@ -67,7 +67,7 @@ public class Module extends EntityMP implements Serializable {
     /**
      * 类型
      */
-    @TableField(value = "`type`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("类型")
@@ -75,7 +75,7 @@ public class Module extends EntityMP implements Serializable {
     /**
      * 模块名称
      */
-    @TableField(value = "`name`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("模块名称")
@@ -84,7 +84,7 @@ public class Module extends EntityMP implements Serializable {
      * 排序
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`order`")
+    @TableField(value = "order")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序")
@@ -93,7 +93,7 @@ public class Module extends EntityMP implements Serializable {
      * 负责人
      */
     @DEField(defaultValue = "/")
-    @TableField(value = "`owner`")
+    @TableField(value = "owner")
     @JSONField(name = "owner")
     @JsonProperty("owner")
     @ApiModelProperty("负责人")
@@ -119,7 +119,7 @@ public class Module extends EntityMP implements Serializable {
      * 收藏者
      */
     @DEField(defaultValue = "/")
-    @TableField(value = "`collector`")
+    @TableField(value = "collector")
     @JSONField(name = "collector")
     @JsonProperty("collector")
     @ApiModelProperty("收藏者")
@@ -128,7 +128,7 @@ public class Module extends EntityMP implements Serializable {
      * 简称
      */
     @DEField(defaultValue = "/")
-    @TableField(value = "`short`")
+    @TableField(value = "short")
     @JSONField(name = "ibizshort")
     @JsonProperty("ibizshort")
     @ApiModelProperty("简称")
@@ -137,7 +137,7 @@ public class Module extends EntityMP implements Serializable {
      * 路径
      */
     @DEField(defaultValue = ",")
-    @TableField(value = "`path`")
+    @TableField(value = "path")
     @JSONField(name = "path")
     @JsonProperty("path")
     @ApiModelProperty("路径")
@@ -146,7 +146,7 @@ public class Module extends EntityMP implements Serializable {
      * 部门标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`mdeptid`")
+    @TableField(value = "mdeptid")
     @JSONField(name = "mdeptid")
     @JsonProperty("mdeptid")
     @ApiModelProperty("部门标识")
@@ -155,7 +155,7 @@ public class Module extends EntityMP implements Serializable {
      * 组织标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`orgid`")
+    @TableField(value = "orgid")
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
     @ApiModelProperty("组织标识")
@@ -165,7 +165,7 @@ public class Module extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "`deleted`")
+    @TableField(value = "deleted")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -182,7 +182,7 @@ public class Module extends EntityMP implements Serializable {
      * 平台/分支
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`branch`")
+    @TableField(value = "branch")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")
@@ -190,7 +190,7 @@ public class Module extends EntityMP implements Serializable {
     /**
      * 上级模块
      */
-    @TableField(value = "`parent`")
+    @TableField(value = "parent")
     @JSONField(name = "parent")
     @JsonProperty("parent")
     @ApiModelProperty("上级模块")

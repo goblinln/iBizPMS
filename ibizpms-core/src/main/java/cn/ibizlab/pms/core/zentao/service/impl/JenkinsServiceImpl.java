@@ -100,9 +100,8 @@ public class JenkinsServiceImpl extends ServiceImpl<JenkinsMapper, Jenkins> impl
     @Transactional
     public Jenkins get(Long key) {
         Jenkins et = getById(key);
-        if(et == null){
-            et = new Jenkins();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -230,5 +229,6 @@ public class JenkinsServiceImpl extends ServiceImpl<JenkinsMapper, Jenkins> impl
         return et;
     }
 }
+
 
 

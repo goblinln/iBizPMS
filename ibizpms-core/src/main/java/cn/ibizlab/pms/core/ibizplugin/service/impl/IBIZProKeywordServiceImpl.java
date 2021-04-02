@@ -34,9 +34,6 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.ibizplugin.client.IBIZProKeywordFeignClient;
-import cn.ibizlab.pms.util.security.SpringContextHolder;
-import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
-import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -50,7 +47,6 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
     IBIZProKeywordFeignClient iBIZProKeywordFeignClient;
 
 
-
     @Override
     public boolean create(IBIZProKeyword et) {
         IBIZProKeyword rt = iBIZProKeywordFeignClient.create(et);
@@ -60,11 +56,9 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
         return true;
     }
 
-
     public void createBatch(List<IBIZProKeyword> list){
         iBIZProKeywordFeignClient.createBatch(list) ;
     }
-
 
     @Override
     public boolean update(IBIZProKeyword et) {
@@ -76,11 +70,9 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
 
     }
 
-
     public void updateBatch(List<IBIZProKeyword> list){
         iBIZProKeywordFeignClient.updateBatch(list) ;
     }
-
 
     @Override
     public boolean remove(String id) {
@@ -88,24 +80,20 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
         return result;
     }
 
-
     public void removeBatch(Collection<String> idList){
         iBIZProKeywordFeignClient.removeBatch(idList);
     }
-
 
     @Override
     public IBIZProKeyword get(String id) {
 		IBIZProKeyword et=iBIZProKeywordFeignClient.get(id);
         if(et==null){
-            et=new IBIZProKeyword();
-            et.setId(id);
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), id);
         }
         else{
         }
         return  et;
     }
-
 
     @Override
     public IBIZProKeyword getDraft(IBIZProKeyword et) {
@@ -113,13 +101,10 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
         return et;
     }
 
-
     @Override
     public boolean checkKey(IBIZProKeyword et) {
         return iBIZProKeywordFeignClient.checkKey(et);
     }
-
-
     @Override
     @Transactional
     public boolean save(IBIZProKeyword et) {
@@ -142,13 +127,10 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
             return result;
     }
 
-
-
     @Override
     public void saveBatch(List<IBIZProKeyword> list) {
         iBIZProKeywordFeignClient.saveBatch(list) ;
     }
-
 
 
 
@@ -163,12 +145,12 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
         return iBIZProKeywords;
     }
 
-
     @Override
     @Transactional
     public IBIZProKeyword dynamicCall(String key, String action, IBIZProKeyword et) {
         return et;
     }
 }
+
 
 

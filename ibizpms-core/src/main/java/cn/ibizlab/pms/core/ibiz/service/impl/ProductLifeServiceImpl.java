@@ -100,9 +100,8 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
     @Transactional
     public ProductLife get(String key) {
         ProductLife et = getById(key);
-        if(et == null){
-            et = new ProductLife();
-            et.setProductlifeid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
         }
@@ -278,5 +277,6 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
         return et;
     }
 }
+
 
 

@@ -106,9 +106,8 @@ public class IBZProStoryServiceImpl extends ServiceImpl<IBZProStoryMapper, IBZPr
     @Transactional
     public IBZProStory get(Long key) {
         IBZProStory et = getById(key);
-        if(et == null){
-            et = new IBZProStory();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -270,5 +269,6 @@ public class IBZProStoryServiceImpl extends ServiceImpl<IBZProStoryMapper, IBZPr
         return et;
     }
 }
+
 
 

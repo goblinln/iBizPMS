@@ -43,11 +43,11 @@ public class PSSysAppResource {
     @Autowired
     public IPSSysAppService pssysappService;
 
+
     @Autowired
     @Lazy
     public PSSysAppMapping pssysappMapping;
 
-    @PreAuthorize("hasPermission(this.pssysappMapping.toDomain(#pssysappdto),'iBizPMS-PSSysApp-Create')")
     @ApiOperation(value = "新建系统应用", tags = {"系统应用" },  notes = "新建系统应用")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps")
     public ResponseEntity<PSSysAppDTO> create(@Validated @RequestBody PSSysAppDTO pssysappdto) {
@@ -57,7 +57,6 @@ public class PSSysAppResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.pssysappMapping.toDomain(#pssysappdtos),'iBizPMS-PSSysApp-Create')")
     @ApiOperation(value = "批量新建系统应用", tags = {"系统应用" },  notes = "批量新建系统应用")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<PSSysAppDTO> pssysappdtos) {
@@ -66,7 +65,6 @@ public class PSSysAppResource {
     }
 
     @VersionCheck(entity = "pssysapp" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.pssysappService.get(#pssysapp_id),'iBizPMS-PSSysApp-Update')")
     @ApiOperation(value = "更新系统应用", tags = {"系统应用" },  notes = "更新系统应用")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/{pssysapp_id}")
     public ResponseEntity<PSSysAppDTO> update(@PathVariable("pssysapp_id") String pssysapp_id, @RequestBody PSSysAppDTO pssysappdto) {
@@ -77,7 +75,6 @@ public class PSSysAppResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.pssysappService.getPssysappByEntities(this.pssysappMapping.toDomain(#pssysappdtos)),'iBizPMS-PSSysApp-Update')")
     @ApiOperation(value = "批量更新系统应用", tags = {"系统应用" },  notes = "批量更新系统应用")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<PSSysAppDTO> pssysappdtos) {
@@ -85,14 +82,12 @@ public class PSSysAppResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.pssysappService.get(#pssysapp_id),'iBizPMS-PSSysApp-Remove')")
     @ApiOperation(value = "删除系统应用", tags = {"系统应用" },  notes = "删除系统应用")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/{pssysapp_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("pssysapp_id") String pssysapp_id) {
          return ResponseEntity.status(HttpStatus.OK).body(pssysappService.remove(pssysapp_id));
     }
 
-    @PreAuthorize("hasPermission(this.pssysappService.getPssysappByIds(#ids),'iBizPMS-PSSysApp-Remove')")
     @ApiOperation(value = "批量删除系统应用", tags = {"系统应用" },  notes = "批量删除系统应用")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +95,6 @@ public class PSSysAppResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.pssysappMapping.toDomain(returnObject.body),'iBizPMS-PSSysApp-Get')")
     @ApiOperation(value = "获取系统应用", tags = {"系统应用" },  notes = "获取系统应用")
 	@RequestMapping(method = RequestMethod.GET, value = "/pssysapps/{pssysapp_id}")
     public ResponseEntity<PSSysAppDTO> get(@PathVariable("pssysapp_id") String pssysapp_id) {
@@ -122,7 +116,6 @@ public class PSSysAppResource {
         return  ResponseEntity.status(HttpStatus.OK).body(pssysappService.checkKey(pssysappMapping.toDomain(pssysappdto)));
     }
 
-    @PreAuthorize("hasPermission(this.pssysappMapping.toDomain(#pssysappdto),'iBizPMS-PSSysApp-Save')")
     @ApiOperation(value = "保存系统应用", tags = {"系统应用" },  notes = "保存系统应用")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps/save")
     public ResponseEntity<PSSysAppDTO> save(@RequestBody PSSysAppDTO pssysappdto) {
@@ -131,7 +124,6 @@ public class PSSysAppResource {
         return ResponseEntity.status(HttpStatus.OK).body(pssysappMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.pssysappMapping.toDomain(#pssysappdtos),'iBizPMS-PSSysApp-Save')")
     @ApiOperation(value = "批量保存系统应用", tags = {"系统应用" },  notes = "批量保存系统应用")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<PSSysAppDTO> pssysappdtos) {
@@ -139,7 +131,6 @@ public class PSSysAppResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PSSysApp-searchBuild-all') and hasPermission(#context,'iBizPMS-PSSysApp-Get')")
 	@ApiOperation(value = "获取版本", tags = {"系统应用" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.GET , value="/pssysapps/fetchbuild")
 	public ResponseEntity<List<PSSysAppDTO>> fetchBuild(PSSysAppSearchContext context) {
@@ -152,7 +143,6 @@ public class PSSysAppResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PSSysApp-searchBuild-all') and hasPermission(#context,'iBizPMS-PSSysApp-Get')")
 	@ApiOperation(value = "查询版本", tags = {"系统应用" } ,notes = "查询版本")
     @RequestMapping(method= RequestMethod.POST , value="/pssysapps/searchbuild")
 	public ResponseEntity<Page<PSSysAppDTO>> searchBuild(@RequestBody PSSysAppSearchContext context) {
@@ -161,7 +151,6 @@ public class PSSysAppResource {
                 .body(new PageImpl(pssysappMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PSSysApp-searchDefault-all') and hasPermission(#context,'iBizPMS-PSSysApp-Get')")
 	@ApiOperation(value = "获取数据集", tags = {"系统应用" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/pssysapps/fetchdefault")
 	public ResponseEntity<List<PSSysAppDTO>> fetchDefault(PSSysAppSearchContext context) {
@@ -174,7 +163,6 @@ public class PSSysAppResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-PSSysApp-searchDefault-all') and hasPermission(#context,'iBizPMS-PSSysApp-Get')")
 	@ApiOperation(value = "查询数据集", tags = {"系统应用" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssysapps/searchdefault")
 	public ResponseEntity<Page<PSSysAppDTO>> searchDefault(@RequestBody PSSysAppSearchContext context) {

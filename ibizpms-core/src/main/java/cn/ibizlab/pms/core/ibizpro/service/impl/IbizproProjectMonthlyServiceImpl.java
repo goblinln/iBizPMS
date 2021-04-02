@@ -107,9 +107,8 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     @Transactional
     public IbizproProjectMonthly get(String key) {
         IbizproProjectMonthly et = getById(key);
-        if(et == null){
-            et = new IbizproProjectMonthly();
-            et.setIbizproprojectmonthlyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
         }
@@ -319,5 +318,6 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
         return et;
     }
 }
+
 
 

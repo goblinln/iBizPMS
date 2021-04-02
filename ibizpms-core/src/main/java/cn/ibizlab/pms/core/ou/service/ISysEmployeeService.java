@@ -24,16 +24,6 @@ import cn.ibizlab.pms.core.ou.filter.SysEmployeeSearchContext;
  */
 public interface ISysEmployeeService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "人员";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "sysemployees";
-
     boolean create(SysEmployee et);
     void createBatch(List<SysEmployee> list);
     boolean update(SysEmployee et);
@@ -67,7 +57,6 @@ public interface ISysEmployeeService {
     void resetByOrgid(Collection<String> ids);
     void removeByOrgid(String orgid);
     SysEmployee dynamicCall(String key, String action, SysEmployee et);
-
 
 }
 

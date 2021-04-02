@@ -30,30 +30,18 @@ public class IbzMyTerritorySearchContext extends QueryWrapperContext<IbzMyTerrit
 	private String n_realname_like;//[真实姓名]
 	public void setN_realname_like(String n_realname_like) {
         this.n_realname_like = n_realname_like;
-        if(!ObjectUtils.isEmpty(this.n_realname_like)){
-            this.getSearchCond().like("`realname`", n_realname_like);
-        }
     }
 	private String n_clientstatus_eq;//[clientStatus]
 	public void setN_clientstatus_eq(String n_clientstatus_eq) {
         this.n_clientstatus_eq = n_clientstatus_eq;
-        if(!ObjectUtils.isEmpty(this.n_clientstatus_eq)){
-            this.getSearchCond().eq("`clientstatus`", n_clientstatus_eq);
-        }
     }
 	private String n_account_eq;//[账户]
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;
-        if(!ObjectUtils.isEmpty(this.n_account_eq)){
-            this.getSearchCond().eq("`account`", n_account_eq);
-        }
     }
 	private String n_gender_eq;//[男女]
 	public void setN_gender_eq(String n_gender_eq) {
         this.n_gender_eq = n_gender_eq;
-        if(!ObjectUtils.isEmpty(this.n_gender_eq)){
-            this.getSearchCond().eq("`gender`", n_gender_eq);
-        }
     }
 
     /**
@@ -65,7 +53,7 @@ public class IbzMyTerritorySearchContext extends QueryWrapperContext<IbzMyTerrit
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`realname`", query)
+                     wrapper.like("realname", query)
             );
 		 }
 	}

@@ -107,9 +107,8 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Transactional
     public StorySpec get(String key) {
         StorySpec et = getById(key);
-        if(et == null){
-            et = new StorySpec();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
         }
@@ -275,5 +274,6 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
         return et;
     }
 }
+
 
 

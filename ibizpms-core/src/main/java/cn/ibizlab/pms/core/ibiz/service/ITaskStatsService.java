@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITaskStatsService extends IService<TaskStats> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "任务统计";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "taskstats";
-
     boolean create(TaskStats et);
     void createBatch(List<TaskStats> list);
     boolean update(TaskStats et);

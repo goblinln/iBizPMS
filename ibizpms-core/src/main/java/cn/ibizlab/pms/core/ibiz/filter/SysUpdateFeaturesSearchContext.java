@@ -30,37 +30,22 @@ public class SysUpdateFeaturesSearchContext extends QueryWrapperContext<SysUpdat
 	private String n_sys_update_featuresname_like;//[系统更新功能名称]
 	public void setN_sys_update_featuresname_like(String n_sys_update_featuresname_like) {
         this.n_sys_update_featuresname_like = n_sys_update_featuresname_like;
-        if(!ObjectUtils.isEmpty(this.n_sys_update_featuresname_like)){
-            this.getSearchCond().like("`sys_update_featuresname`", n_sys_update_featuresname_like);
-        }
     }
 	private String n_type_eq;//[更新类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
-        if(!ObjectUtils.isEmpty(this.n_type_eq)){
-            this.getSearchCond().eq("`type`", n_type_eq);
-        }
     }
 	private String n_sys_update_logname_eq;//[所属更新]
 	public void setN_sys_update_logname_eq(String n_sys_update_logname_eq) {
         this.n_sys_update_logname_eq = n_sys_update_logname_eq;
-        if(!ObjectUtils.isEmpty(this.n_sys_update_logname_eq)){
-            this.getSearchCond().eq("`sys_update_logname`", n_sys_update_logname_eq);
-        }
     }
 	private String n_sys_update_logname_like;//[所属更新]
 	public void setN_sys_update_logname_like(String n_sys_update_logname_like) {
         this.n_sys_update_logname_like = n_sys_update_logname_like;
-        if(!ObjectUtils.isEmpty(this.n_sys_update_logname_like)){
-            this.getSearchCond().like("`sys_update_logname`", n_sys_update_logname_like);
-        }
     }
 	private String n_sys_update_logid_eq;//[系统更新日志标识]
 	public void setN_sys_update_logid_eq(String n_sys_update_logid_eq) {
         this.n_sys_update_logid_eq = n_sys_update_logid_eq;
-        if(!ObjectUtils.isEmpty(this.n_sys_update_logid_eq)){
-            this.getSearchCond().eq("`sys_update_logid`", n_sys_update_logid_eq);
-        }
     }
 
     /**
@@ -72,7 +57,7 @@ public class SysUpdateFeaturesSearchContext extends QueryWrapperContext<SysUpdat
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`sys_update_featuresname`", query)
+                     wrapper.like("sys_update_featuresname", query)
             );
 		 }
 	}

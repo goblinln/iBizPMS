@@ -106,9 +106,8 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
     @Transactional
     public IBZProProduct get(Long key) {
         IBZProProduct et = getById(key);
-        if(et == null){
-            et = new IBZProProduct();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -236,5 +235,6 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
         return et;
     }
 }
+
 
 

@@ -30,23 +30,14 @@ public class IbizproProjectWeeklySearchContext extends QueryWrapperContext<Ibizp
 	private String n_ibzpro_projectweeklyname_like;//[项目周报名称]
 	public void setN_ibzpro_projectweeklyname_like(String n_ibzpro_projectweeklyname_like) {
         this.n_ibzpro_projectweeklyname_like = n_ibzpro_projectweeklyname_like;
-        if(!ObjectUtils.isEmpty(this.n_ibzpro_projectweeklyname_like)){
-            this.getSearchCond().like("`ibzpro_projectweeklyname`", n_ibzpro_projectweeklyname_like);
-        }
     }
 	private String n_pm_eq;//[项目负责人]
 	public void setN_pm_eq(String n_pm_eq) {
         this.n_pm_eq = n_pm_eq;
-        if(!ObjectUtils.isEmpty(this.n_pm_eq)){
-            this.getSearchCond().eq("`pm`", n_pm_eq);
-        }
     }
 	private Long n_project_eq;//[项目编号]
 	public void setN_project_eq(Long n_project_eq) {
         this.n_project_eq = n_project_eq;
-        if(!ObjectUtils.isEmpty(this.n_project_eq)){
-            this.getSearchCond().eq("`project`", n_project_eq);
-        }
     }
 
     /**
@@ -58,7 +49,7 @@ public class IbizproProjectWeeklySearchContext extends QueryWrapperContext<Ibizp
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`ibzpro_projectweeklyname`", query)
+                     wrapper.like("ibzpro_projectweeklyname", query)
             );
 		 }
 	}

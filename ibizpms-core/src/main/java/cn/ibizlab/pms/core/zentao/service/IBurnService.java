@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBurnService extends IService<Burn> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "burn";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "burns";
-
     boolean create(Burn et);
     void createBatch(List<Burn> list);
     boolean update(Burn et);

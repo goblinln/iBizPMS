@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBuildService extends IService<Build> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "版本";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "builds";
-
     boolean create(Build et);
     void createBatch(List<Build> list);
     boolean update(Build et);
@@ -47,6 +37,7 @@ public interface IBuildService extends IService<Build> {
     Build linkStory(Build et);
     boolean linkStoryBatch(List<Build> etList);
     Build mobProjectBuildCounter(Build et);
+    boolean mobProjectBuildCounterBatch(List<Build> etList);
     Build oneClickRelease(Build et);
     boolean oneClickReleaseBatch(List<Build> etList);
     boolean save(Build et);

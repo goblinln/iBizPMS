@@ -43,11 +43,11 @@ public class ModuleResource {
     @Autowired
     public IModuleService moduleService;
 
+
     @Autowired
     @Lazy
     public ModuleMapping moduleMapping;
 
-    @PreAuthorize("hasPermission(this.moduleMapping.toDomain(#moduledto),'iBizPMS-Module-Create')")
     @ApiOperation(value = "新建模块", tags = {"模块" },  notes = "新建模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules")
     public ResponseEntity<ModuleDTO> create(@Validated @RequestBody ModuleDTO moduledto) {
@@ -57,7 +57,6 @@ public class ModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.moduleMapping.toDomain(#moduledtos),'iBizPMS-Module-Create')")
     @ApiOperation(value = "批量新建模块", tags = {"模块" },  notes = "批量新建模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<ModuleDTO> moduledtos) {
@@ -65,7 +64,6 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.moduleService.get(#module_id),'iBizPMS-Module-Update')")
     @ApiOperation(value = "更新模块", tags = {"模块" },  notes = "更新模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/modules/{module_id}")
     public ResponseEntity<ModuleDTO> update(@PathVariable("module_id") Long module_id, @RequestBody ModuleDTO moduledto) {
@@ -76,7 +74,6 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.moduleService.getModuleByEntities(this.moduleMapping.toDomain(#moduledtos)),'iBizPMS-Module-Update')")
     @ApiOperation(value = "批量更新模块", tags = {"模块" },  notes = "批量更新模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/modules/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<ModuleDTO> moduledtos) {
@@ -84,14 +81,12 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.moduleService.get(#module_id),'iBizPMS-Module-Remove')")
     @ApiOperation(value = "删除模块", tags = {"模块" },  notes = "删除模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/modules/{module_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("module_id") Long module_id) {
          return ResponseEntity.status(HttpStatus.OK).body(moduleService.remove(module_id));
     }
 
-    @PreAuthorize("hasPermission(this.moduleService.getModuleByIds(#ids),'iBizPMS-Module-Remove')")
     @ApiOperation(value = "批量删除模块", tags = {"模块" },  notes = "批量删除模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/modules/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +94,6 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.moduleMapping.toDomain(returnObject.body),'iBizPMS-Module-Get')")
     @ApiOperation(value = "获取模块", tags = {"模块" },  notes = "获取模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/modules/{module_id}")
     public ResponseEntity<ModuleDTO> get(@PathVariable("module_id") Long module_id) {
@@ -121,7 +115,6 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(moduleService.checkKey(moduleMapping.toDomain(moduledto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-Fix-all')")
     @ApiOperation(value = "重建模块路径", tags = {"模块" },  notes = "重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/{module_id}/fix")
     public ResponseEntity<ModuleDTO> fix(@PathVariable("module_id") Long module_id, @RequestBody ModuleDTO moduledto) {
@@ -131,7 +124,6 @@ public class ModuleResource {
         moduledto = moduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(moduledto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-Fix-all')")
     @ApiOperation(value = "批量处理[重建模块路径]", tags = {"模块" },  notes = "批量处理[重建模块路径]")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/fixbatch")
     public ResponseEntity<Boolean> fixBatch(@RequestBody List<ModuleDTO> moduledtos) {
@@ -140,7 +132,6 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasPermission(this.moduleMapping.toDomain(#moduledto),'iBizPMS-Module-Save')")
     @ApiOperation(value = "保存模块", tags = {"模块" },  notes = "保存模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/save")
     public ResponseEntity<ModuleDTO> save(@RequestBody ModuleDTO moduledto) {
@@ -149,7 +140,6 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(moduleMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.moduleMapping.toDomain(#moduledtos),'iBizPMS-Module-Save')")
     @ApiOperation(value = "批量保存模块", tags = {"模块" },  notes = "批量保存模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<ModuleDTO> moduledtos) {
@@ -157,7 +147,6 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchBugModule-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "获取BugModule", tags = {"模块" } ,notes = "获取BugModule")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchbugmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchBugModule(ModuleSearchContext context) {
@@ -170,7 +159,6 @@ public class ModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchBugModule-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "查询BugModule", tags = {"模块" } ,notes = "查询BugModule")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchbugmodule")
 	public ResponseEntity<Page<ModuleDTO>> searchBugModule(@RequestBody ModuleSearchContext context) {
@@ -179,7 +167,6 @@ public class ModuleResource {
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchBugModuleCodeList-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "获取数据集", tags = {"模块" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchbugmodulecodelist")
 	public ResponseEntity<List<ModuleDTO>> fetchBugModuleCodeList(ModuleSearchContext context) {
@@ -192,7 +179,6 @@ public class ModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchBugModuleCodeList-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "查询数据集", tags = {"模块" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchbugmodulecodelist")
 	public ResponseEntity<Page<ModuleDTO>> searchBugModuleCodeList(@RequestBody ModuleSearchContext context) {
@@ -201,7 +187,6 @@ public class ModuleResource {
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchDefault-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchdefault")
 	public ResponseEntity<List<ModuleDTO>> fetchDefault(ModuleSearchContext context) {
@@ -214,7 +199,6 @@ public class ModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchDefault-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"模块" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchdefault")
 	public ResponseEntity<Page<ModuleDTO>> searchDefault(@RequestBody ModuleSearchContext context) {
@@ -223,7 +207,6 @@ public class ModuleResource {
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchDocModule-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "获取文档目录", tags = {"模块" } ,notes = "获取文档目录")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchdocmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchDocModule(ModuleSearchContext context) {
@@ -236,7 +219,6 @@ public class ModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchDocModule-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "查询文档目录", tags = {"模块" } ,notes = "查询文档目录")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchdocmodule")
 	public ResponseEntity<Page<ModuleDTO>> searchDocModule(@RequestBody ModuleSearchContext context) {
@@ -245,7 +227,6 @@ public class ModuleResource {
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchLine-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "获取产品线", tags = {"模块" } ,notes = "获取产品线")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchline")
 	public ResponseEntity<List<ModuleDTO>> fetchLine(ModuleSearchContext context) {
@@ -258,7 +239,6 @@ public class ModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchLine-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "查询产品线", tags = {"模块" } ,notes = "查询产品线")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchline")
 	public ResponseEntity<Page<ModuleDTO>> searchLine(@RequestBody ModuleSearchContext context) {
@@ -267,7 +247,6 @@ public class ModuleResource {
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchStoryModule-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "获取需求模块", tags = {"模块" } ,notes = "获取需求模块")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchstorymodule")
 	public ResponseEntity<List<ModuleDTO>> fetchStoryModule(ModuleSearchContext context) {
@@ -280,7 +259,6 @@ public class ModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchStoryModule-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "查询需求模块", tags = {"模块" } ,notes = "查询需求模块")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchstorymodule")
 	public ResponseEntity<Page<ModuleDTO>> searchStoryModule(@RequestBody ModuleSearchContext context) {
@@ -289,7 +267,6 @@ public class ModuleResource {
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchTaskModule-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "获取任务模块", tags = {"模块" } ,notes = "获取任务模块")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchtaskmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchTaskModule(ModuleSearchContext context) {
@@ -302,7 +279,6 @@ public class ModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Module-searchTaskModule-all') and hasPermission(#context,'iBizPMS-Module-Get')")
 	@ApiOperation(value = "查询任务模块", tags = {"模块" } ,notes = "查询任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchtaskmodule")
 	public ResponseEntity<Page<ModuleDTO>> searchTaskModule(@RequestBody ModuleSearchContext context) {

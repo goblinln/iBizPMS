@@ -100,9 +100,8 @@ public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage
     @Transactional
     public ImMessage get(Long key) {
         ImMessage et = getById(key);
-        if(et == null){
-            et = new ImMessage();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -230,5 +229,6 @@ public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage
         return et;
     }
 }
+
 
 

@@ -30,16 +30,10 @@ public class IbzLibCaseStepSearchContext extends QueryWrapperContext<IbzLibCaseS
 	private String n_expect_like;//[预期]
 	public void setN_expect_like(String n_expect_like) {
         this.n_expect_like = n_expect_like;
-        if(!ObjectUtils.isEmpty(this.n_expect_like)){
-            this.getSearchCond().like("`expect`", n_expect_like);
-        }
     }
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
-        if(!ObjectUtils.isEmpty(this.n_type_eq)){
-            this.getSearchCond().eq("`type`", n_type_eq);
-        }
     }
 
     /**
@@ -51,7 +45,7 @@ public class IbzLibCaseStepSearchContext extends QueryWrapperContext<IbzLibCaseS
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`expect`", query)
+                     wrapper.like("expect", query)
             );
 		 }
 	}

@@ -100,9 +100,8 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
     @Transactional
     public IbzReport get(Long key) {
         IbzReport et = getById(key);
-        if(et == null){
-            et = new IbzReport();
-            et.setIbzdailyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -126,8 +125,26 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
 
     @Override
     @Transactional
+    public boolean myReportINotSubmitBatch(List<IbzReport> etList) {
+        for(IbzReport et : etList) {
+            myReportINotSubmit(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public IbzReport reportIReceived(IbzReport et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean reportIReceivedBatch(List<IbzReport> etList) {
+        for(IbzReport et : etList) {
+            reportIReceived(et);
+        }
+        return true;
     }
 
     @Override
@@ -281,5 +298,6 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
         return et;
     }
 }
+
 
 

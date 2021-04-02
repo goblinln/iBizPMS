@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IGroupPrivService extends IService<GroupPriv> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "群组权限";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "groupprivs";
-
     boolean create(GroupPriv et);
     void createBatch(List<GroupPriv> list);
     boolean update(GroupPriv et);

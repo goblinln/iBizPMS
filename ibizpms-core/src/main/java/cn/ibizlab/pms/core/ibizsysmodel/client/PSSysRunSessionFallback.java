@@ -23,14 +23,14 @@ public class PSSysRunSessionFallback implements PSSysRunSessionFeignClient {
         return null;
     }
 
-    public PSSysRunSession create(PSSysRunSession et) {
+    public PSSysRunSession create(PSSysRunSession pssysrunsession) {
         return null;
     }
     public Boolean createBatch(List<PSSysRunSession> pssysrunsessions) {
         return false;
     }
 
-    public PSSysRunSession update(String pssysrunsessionid, PSSysRunSession et) {
+    public PSSysRunSession update(String pssysrunsessionid, PSSysRunSession pssysrunsession) {
         return null;
     }
     public Boolean updateBatch(List<PSSysRunSession> pssysrunsessions) {
@@ -50,26 +50,22 @@ public class PSSysRunSessionFallback implements PSSysRunSessionFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public PSSysRunSession getDraft(PSSysRunSession entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(PSSysRunSession et) {
+    public Boolean checkKey(PSSysRunSession pssysrunsession) {
         return false;
     }
 
 
-    public Object saveEntity(PSSysRunSession et) {
+    public Object saveEntity(PSSysRunSession pssysrunsession) {
         return null;
     }
-    public Boolean save(PSSysRunSession et) {
+
+    public Boolean save(PSSysRunSession pssysrunsession) {
         return false;
     }
     public Boolean saveBatch(List<PSSysRunSession> pssysrunsessions) {

@@ -49,7 +49,7 @@ public class IbiLogin extends EntityMP implements Serializable {
     /**
      * 真实姓名
      */
-    @TableField(value = "`realname`")
+    @TableField(value = "realname")
     @JSONField(name = "realname")
     @JsonProperty("realname")
     @ApiModelProperty("真实姓名")
@@ -66,7 +66,7 @@ public class IbiLogin extends EntityMP implements Serializable {
     /**
      * 账户
      */
-    @TableField(value = "`account`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("账户")
@@ -82,7 +82,7 @@ public class IbiLogin extends EntityMP implements Serializable {
     /**
      * 源代码账户
      */
-    @TableField(value = "`commiter`")
+    @TableField(value = "commiter")
     @JSONField(name = "commiter")
     @JsonProperty("commiter")
     @ApiModelProperty("源代码账户")

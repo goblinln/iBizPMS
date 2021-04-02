@@ -2,32 +2,97 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.ProductMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, t1.`DESC`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`, t1.`WHITELIST` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_productclass_eq != null ">
+			<![CDATA[ AND  t1.`PRODUCTCLASS` = #{srf.n_productclass_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_acl_eq != null ">
+			<![CDATA[ AND  t1.`ACL` = #{srf.n_acl_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_name_eq != null ">
+			<![CDATA[ AND  t1.`NAME` = #{srf.n_name_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_name_like != null ">
+            <bind name="bind_n_name_like" value="'%' + srf.n_name_like + '%'" />
+            <![CDATA[ AND  t1.`NAME` like #{bind_n_name_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_id_in != null ">
+			<![CDATA[ AND  t1.`ID` IN ]]>
+            <foreach item="item" collection="srf.n_id_in.split(',|;')"  open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+		<if test="srf.n_type_eq != null ">
+			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_status_eq != null ">
+			<![CDATA[ AND  t1.`STATUS` = #{srf.n_status_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_status_isnotnull != null ">
+			<![CDATA[ AND  t1.`STATUS` IS NOT NULL ]]>
+        </if>
+		<if test="srf.n_linename_eq != null ">
+			<![CDATA[ AND  t11.`NAME` = #{srf.n_linename_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_linename_like != null ">
+            <bind name="bind_n_linename_like" value="'%' + srf.n_linename_like + '%'" />
+            <![CDATA[ AND  t11.`NAME` like #{bind_n_linename_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_line_eq != null ">
+			<![CDATA[ AND  t1.`LINE` = #{srf.n_line_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="ProductResultMap" databaseId="mysql">
-        <![CDATA[select t1.* from (SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, t1.`DESC`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`, t1.`WHITELIST` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`  ) t1 where id=#{id}]]>
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
     </select>
+
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="ProductResultMap" type="cn.ibizlab.pms.core.zentao.domain.Product" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="ibizId" column="ibiz_id" />
 		<result property="line" column="line" />
-
-
+            
+		
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="moduleline" javaType="cn.ibizlab.pms.core.zentao.domain.Module" column="line" select="cn.ibizlab.pms.core.zentao.mapper.ModuleMapper.selectById" fetchType="lazy"></association>
     </resultMap>
 
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PRODUCT_ZT_MODULE_LINE] -->
-	 <select id="selectByLine" resultMap="ProductResultMap">
-	select * from (
-         select t1.* from (
-                <include refid="Default" />
-			 ) t1
-			 where  line=#{id}
+	 <select id="selectByLine" resultMap="ProductResultMap"  databaseId="mysql">
+		select * from (
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.LINE=#{id} ]]>
+		</trim>
 		 )t1
-		 order by `id`  desc  
+		 order by id  desc  
      </select>
 
     <!--数据集合[AllList]-->
@@ -35,8 +100,6 @@
          select t1.* from (
                 <include refid="AllList" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[AllProduct]-->
@@ -44,8 +107,6 @@
          select t1.* from (
                 <include refid="AllProduct" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[CheckNameOrCode]-->
@@ -53,8 +114,6 @@
          select t1.* from (
                 <include refid="CheckNameOrCode" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[CurProject]-->
@@ -63,10 +122,8 @@
          select t1.* from (
                 <include refid="CurProject" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
 		 )t1
-		 order by `id`  desc  
+		 order by id  desc  
      </select>
 
     <!--数据集合[CurUer]-->
@@ -75,10 +132,8 @@
          select t1.* from (
                 <include refid="CurUer" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
 		 )t1
-		 order by `order1`  desc , `id`   desc
+		 order by order1  desc , id   desc
      </select>
 
     <!--数据集合[Default]-->
@@ -87,10 +142,8 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
 		 )t1
-		 order by `id`  desc  
+		 order by id  desc  
      </select>
 
     <!--数据集合[ESBulk]-->
@@ -98,8 +151,6 @@
          select t1.* from (
                 <include refid="ESBulk" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[ProductPM]-->
@@ -107,8 +158,6 @@
          select t1.* from (
                 <include refid="ProductPM" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[ProductTeam]-->
@@ -116,8 +165,6 @@
          select t1.* from (
                 <include refid="ProductTeam" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[StoryCurProject]-->
@@ -125,78 +172,137 @@
          select t1.* from (
                 <include refid="StoryCurProject" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[AllList]-->
     <sql id="AllList" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`  
-					 WHERE 	t1.DELETED = '0'
-						 AND ( ( t1.`STATUS` <> 'closed'  OR  (#{srf.datacontext.products} is not null and t1.id = #{srf.datacontext.products}) )  AND  t1.`ORGID` =  #{srf.sessioncontext.srforgid} )
-			]]>
+		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ( ( t1.`STATUS` <> 'closed'  OR  (#{srf.datacontext.products} is not null and t1.id = #{srf.datacontext.products}) )  AND  t1.`ORGID` =  #{srf.sessioncontext.srforgid} ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[AllProduct]-->
     <sql id="AllProduct" databaseId="mysql">
-		<![CDATA[ SELECT 	id, 	`name`, 	`code`, 	line, 	type, 	`status`, 	subStatus, 	`desc`, 	PO, 	QD, 	RD, 	acl, 	whitelist, 	createdBy, 	createdDate, 	createdVersion, 	`order`, 	deleted, 	IBIZ_ID, 	ORGID, 	MDEPTID  FROM 	zt_product  WHERE 	deleted = '0'
-			]]>
+		<![CDATA[ SELECT 	id, 	`name`, 	`code`, 	line, 	type, 	`status`, 	subStatus, 	`desc`, 	PO, 	QD, 	RD, 	acl, 	whitelist, 	createdBy, 	createdDate, 	createdVersion, 	`order`, 	deleted, 	IBIZ_ID, 	ORGID, 	MDEPTID  FROM 	zt_product  WHERE 	deleted = '0' ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[CheckNameOrCode]-->
     <sql id="CheckNameOrCode" databaseId="mysql">
-		<![CDATA[ SELECT t1.id FROM `zt_product` t1  
-			]]>
+		<![CDATA[ SELECT t1.id FROM `zt_product` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[CurProject]-->
     <sql id="CurProject" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`  
-					 WHERE 	EXISTS(SELECT * FROM `zt_projectproduct` t21   WHERE   t1.`ID` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = #{srf.datacontext.srfparentkey} ) )
-						 AND t1.DELETED = '0'
-			]]>
+		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND EXISTS(SELECT * FROM `zt_projectproduct` t21   WHERE   t1.`ID` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = #{srf.datacontext.srfparentkey} ) ) ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[CurUer]-->
     <sql id="CurUer" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.*  FROM 	( SELECT         t1.MDEPTID,         t1.orgid, 	t1.`ACL`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0' ) AS `ACTIVEBUGCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0' ) AS `ACTIVESTORYCNT`, 	( SELECT count( 1 ) FROM zt_build t WHERE t.product = t1.id AND t.deleted = '0' ) AS `BUILDCNT`, 	( SELECT count( 1 ) FROM zt_case t WHERE t.product = t1.id AND t.deleted = '0' ) AS `CASECNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'changed' AND DELETED = '0' ) AS `CHANGEDSTORYCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'closed' AND DELETED = '0' ) AS `CLOSEDSTORYCNT`, 	t1.`CODE`, 	t1.`CREATEDBY`, 	t1.`CREATEDDATE`, 	t1.`CREATEDVERSION`, 	t1.`DELETED`, 	( SELECT count( 1 ) FROM zt_doc t WHERE t.product = t1.id AND t.deleted = '0' ) AS `DOCCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'draft' AND DELETED = '0' ) AS `DRAFTSTORYCNT`, 	t1.`ID`, 	t1.`LINE`, 	t11.`NAME` AS `LINENAME`, 	t1.`NAME`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0' ) AS `NOTCLOSEDBUGCNT`, 	t1.`ORDER`, 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END) as `ORDER1`, 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END) as `ISTOP`, 	t1.`PO`, 	( SELECT COUNT( 1 ) FROM ZT_PRODUCTPLAN WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `PRODUCTPLANCNT`, 	t1.`QD`, 	t1.`RD`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `RELATEDBUGCNT`, 	( SELECT 	count( 1 )  FROM 	zt_projectproduct t 	INNER JOIN zt_project t2 ON t2.id = t.project  WHERE 	t.product = t1.id  	AND t2.deleted = '0'  	) AS `RELATEDPROJECTS`, 	( SELECT COUNT( 1 ) FROM ZT_RELEASE WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `RELEASECNT`, 	t1.`STATUS`, 	t1.`SUBSTATUS`, 	t1.`TYPE`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0' ) AS `UNCONFIRMBUGCNT`  FROM 	`zt_product` t1 	left join t_ibz_top t2 on t1.id = t2.OBJECTID and t2.type = 'product' and t2.ACCOUNT = #{srf.sessioncontext.srfloginname} 	LEFT JOIN zt_module t11 ON t1.LINE = t11.ID  WHERE 	t1.deleted = '0'  	AND (t1.acl = 'open' or  t1.CREATEDBY =  #{srf.sessioncontext.srfloginname}  	or t1.PO = #{srf.sessioncontext.srfloginname}  	or t1.RD = #{srf.sessioncontext.srfloginname}  	or t1.QD =  #{srf.sessioncontext.srfloginname}  	)  	UNION SELECT        t1.MDEPTID,         t1.orgid, 	t1.`ACL`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0' ) AS `ACTIVEBUGCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0' ) AS `ACTIVESTORYCNT`, 	( SELECT count( 1 ) FROM zt_build t WHERE t.product = t1.id AND t.deleted = '0' ) AS `BUILDCNT`, 	( SELECT count( 1 ) FROM zt_case t WHERE t.product = t1.id AND t.deleted = '0' ) AS `CASECNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'changed' AND DELETED = '0' ) AS `CHANGEDSTORYCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'closed' AND DELETED = '0' ) AS `CLOSEDSTORYCNT`, 	t1.`CODE`, 	t1.`CREATEDBY`, 	t1.`CREATEDDATE`, 	t1.`CREATEDVERSION`, 	t1.`DELETED`, 	( SELECT count( 1 ) FROM zt_doc t WHERE t.product = t1.id AND t.deleted = '0' ) AS `DOCCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'draft' AND DELETED = '0' ) AS `DRAFTSTORYCNT`, 	t1.`ID`, 	t1.`LINE`, 	t11.`NAME` AS `LINENAME`, 	t1.`NAME`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0' ) AS `NOTCLOSEDBUGCNT`, 	t1.`ORDER`, 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END) as `ORDER1`, 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END) as `ISTOP`, 	t1.`PO`, 	( SELECT COUNT( 1 ) FROM ZT_PRODUCTPLAN WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `PRODUCTPLANCNT`, 	t1.`QD`, 	t1.`RD`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `RELATEDBUGCNT`, 	( SELECT 	count( 1 )  FROM 	zt_projectproduct t 	INNER JOIN zt_project t2 ON t2.id = t.project  WHERE 	t.product = t1.id  	AND t2.deleted = '0'  	) AS `RELATEDPROJECTS`, 	( SELECT COUNT( 1 ) FROM ZT_RELEASE WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `RELEASECNT`, 	t1.`STATUS`, 	t1.`SUBSTATUS`, 	t1.`TYPE`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0' ) AS `UNCONFIRMBUGCNT`  FROM 	`zt_product` t1 	left join t_ibz_top t2 on t1.id = t2.OBJECTID and t2.type = 'product' and t2.ACCOUNT = #{srf.sessioncontext.srfloginname} 	LEFT JOIN zt_module t11 ON t1.LINE = t11.ID  WHERE 	t1.deleted = '0'  	AND t1.id IN ( SELECT t.root from zt_team t WHERE 	t.account =  #{srf.sessioncontext.srfloginname}  	AND t.type = 'product'  	  	)  	) t1
-					 WHERE 	t1.orgid = #{srf.sessioncontext.srforgid}
-			]]>
+		<![CDATA[ SELECT 	t1.*  FROM 	( SELECT         t1.MDEPTID,         t1.orgid, 	t1.`ACL`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0' ) AS `ACTIVEBUGCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0' ) AS `ACTIVESTORYCNT`, 	( SELECT count( 1 ) FROM zt_build t WHERE t.product = t1.id AND t.deleted = '0' ) AS `BUILDCNT`, 	( SELECT count( 1 ) FROM zt_case t WHERE t.product = t1.id AND t.deleted = '0' ) AS `CASECNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'changed' AND DELETED = '0' ) AS `CHANGEDSTORYCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'closed' AND DELETED = '0' ) AS `CLOSEDSTORYCNT`, 	t1.`CODE`, 	t1.`CREATEDBY`, 	t1.`CREATEDDATE`, 	t1.`CREATEDVERSION`, 	t1.`DELETED`, 	( SELECT count( 1 ) FROM zt_doc t WHERE t.product = t1.id AND t.deleted = '0' ) AS `DOCCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'draft' AND DELETED = '0' ) AS `DRAFTSTORYCNT`, 	t1.`ID`, 	t1.`LINE`, 	t11.`NAME` AS `LINENAME`, 	t1.`NAME`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0' ) AS `NOTCLOSEDBUGCNT`, 	t1.`ORDER`, 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END) as `ORDER1`, 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END) as `ISTOP`, 	t1.`PO`, 	( SELECT COUNT( 1 ) FROM ZT_PRODUCTPLAN WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `PRODUCTPLANCNT`, 	t1.`QD`, 	t1.`RD`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `RELATEDBUGCNT`, 	( SELECT 	count( 1 )  FROM 	zt_projectproduct t 	INNER JOIN zt_project t2 ON t2.id = t.project  WHERE 	t.product = t1.id  	AND t2.deleted = '0'  	) AS `RELATEDPROJECTS`, 	( SELECT COUNT( 1 ) FROM ZT_RELEASE WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `RELEASECNT`, 	t1.`STATUS`, 	t1.`SUBSTATUS`, 	t1.`TYPE`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0' ) AS `UNCONFIRMBUGCNT`  FROM 	`zt_product` t1 	left join t_ibz_top t2 on t1.id = t2.OBJECTID and t2.type = 'product' and t2.ACCOUNT = #{srf.sessioncontext.srfloginname} 	LEFT JOIN zt_module t11 ON t1.LINE = t11.ID  WHERE 	t1.deleted = '0'  	AND (t1.acl = 'open' or  t1.CREATEDBY =  #{srf.sessioncontext.srfloginname}  	or t1.PO = #{srf.sessioncontext.srfloginname}  	or t1.RD = #{srf.sessioncontext.srfloginname}  	or t1.QD =  #{srf.sessioncontext.srfloginname}  	)  	UNION SELECT        t1.MDEPTID,         t1.orgid, 	t1.`ACL`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0' ) AS `ACTIVEBUGCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0' ) AS `ACTIVESTORYCNT`, 	( SELECT count( 1 ) FROM zt_build t WHERE t.product = t1.id AND t.deleted = '0' ) AS `BUILDCNT`, 	( SELECT count( 1 ) FROM zt_case t WHERE t.product = t1.id AND t.deleted = '0' ) AS `CASECNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'changed' AND DELETED = '0' ) AS `CHANGEDSTORYCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'closed' AND DELETED = '0' ) AS `CLOSEDSTORYCNT`, 	t1.`CODE`, 	t1.`CREATEDBY`, 	t1.`CREATEDDATE`, 	t1.`CREATEDVERSION`, 	t1.`DELETED`, 	( SELECT count( 1 ) FROM zt_doc t WHERE t.product = t1.id AND t.deleted = '0' ) AS `DOCCNT`, 	( SELECT COUNT( 1 ) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS` = 'draft' AND DELETED = '0' ) AS `DRAFTSTORYCNT`, 	t1.`ID`, 	t1.`LINE`, 	t11.`NAME` AS `LINENAME`, 	t1.`NAME`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0' ) AS `NOTCLOSEDBUGCNT`, 	t1.`ORDER`, 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END) as `ORDER1`, 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END) as `ISTOP`, 	t1.`PO`, 	( SELECT COUNT( 1 ) FROM ZT_PRODUCTPLAN WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `PRODUCTPLANCNT`, 	t1.`QD`, 	t1.`RD`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `RELATEDBUGCNT`, 	( SELECT 	count( 1 )  FROM 	zt_projectproduct t 	INNER JOIN zt_project t2 ON t2.id = t.project  WHERE 	t.product = t1.id  	AND t2.deleted = '0'  	) AS `RELATEDPROJECTS`, 	( SELECT COUNT( 1 ) FROM ZT_RELEASE WHERE PRODUCT = t1.`ID` AND DELETED = '0' ) AS `RELEASECNT`, 	t1.`STATUS`, 	t1.`SUBSTATUS`, 	t1.`TYPE`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0' ) AS `UNCONFIRMBUGCNT`  FROM 	`zt_product` t1 	left join t_ibz_top t2 on t1.id = t2.OBJECTID and t2.type = 'product' and t2.ACCOUNT = #{srf.sessioncontext.srfloginname} 	LEFT JOIN zt_module t11 ON t1.LINE = t11.ID  WHERE 	t1.deleted = '0'  	AND t1.id IN ( SELECT t.root from zt_team t WHERE 	t.account =  #{srf.sessioncontext.srfloginname}  	AND t.type = 'product'  	  	)  	) t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.orgid = #{srf.sessioncontext.srforgid} ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`  
-					 WHERE 	t1.DELETED = '0'
-						 AND ( t1.`ORGID` =  #{srf.sessioncontext.srforgid} )
-			]]>
+		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ( t1.`ORGID` =  #{srf.sessioncontext.srforgid} ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[ESBulk]-->
     <sql id="ESBulk" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.id, 	t1.`name`, 	t1.desc, 	t1.deleted FROM 	zt_product t1
-			]]>
+		<![CDATA[ SELECT 	t1.id, 	t1.`name`, 	t1.desc, 	t1.deleted FROM 	zt_product t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[ProductPM]-->
     <sql id="ProductPM" databaseId="mysql">
-		<![CDATA[ select t.`status`, count(t.id) as SRFCOUNT from zt_product t where t.`status` <> '' and t.`status` is not null and t.deleted = '0' and t.orgid = #{srf.sessioncontext.srforgid} GROUP BY t.`status`
-			]]>
+		<![CDATA[ select t.`status`, count(t.id) as SRFCOUNT from zt_product t where t.`status` <> '' and t.`status` is not null and t.deleted = '0' and t.orgid = #{srf.sessioncontext.srforgid} GROUP BY t.`status` ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[ProductTeam]-->
     <sql id="ProductTeam" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT` FROM `zt_product` t1  LEFT JOIN zt_module t11 ON t1.LINE = t11.ID  LEFT JOIN zt_team t21 on t21.root = t1.id
-					 WHERE 	t1.DELETED = '0'
-						 AND t21.type = 'product'
-						 AND  t21.account = #{srf.sessioncontext.srfloginname}
-						 AND t1.orgid = #{srf.sessioncontext.srforgid}
-			]]>
+		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT` FROM `zt_product` t1  LEFT JOIN zt_module t11 ON t1.LINE = t11.ID  LEFT JOIN zt_team t21 on t21.root = t1.id ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t21.type = 'product' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND  t21.account = #{srf.sessioncontext.srfloginname} ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.orgid = #{srf.sessioncontext.srforgid} ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[StoryCurProject]-->
     <sql id="StoryCurProject" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`  
-					 WHERE 	EXISTS(SELECT * FROM `zt_projectproduct` t21   WHERE   t1.`ID` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = #{srf.datacontext.project} ) )
-						 AND t1.DELETED = '0'
-			]]>
+		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND EXISTS(SELECT * FROM `zt_projectproduct` t21   WHERE   t1.`ID` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = #{srf.datacontext.project} ) ) ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, t1.`DESC`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`, t1.`WHITELIST` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`  
-					 WHERE 	t1.DELETED = '0'
-			]]>
+		<![CDATA[ SELECT t1.`ACL`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0') AS `ACTIVESTORYCNT`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0') AS `BUILDCNT`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0') AS `CASECNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0') AS `CHANGEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0') AS `CLOSEDSTORYCNT`, t1.`CODE`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`CREATEDVERSION`, t1.`DELETED`, t1.`DESC`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `DOCCNT`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0') AS `DRAFTSTORYCNT`, t1.`IBIZ_ID`, t1.`ID`, '0' AS `ISTOP`, t1.`LINE`, t11.`NAME` AS `LINENAME`, t1.`MDEPTID`, t1.`NAME`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `NOTCLOSEDBUGCNT`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PO`, t1.PO AS `POPK`, t1.`PRODUCTCLASS`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `PRODUCTPLANCNT`, t1.`QD`, t1.QD AS `QDPK`, t1.`RD`, t1.RD AS `RDPK`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0') AS `RELATEDBUGCNT`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0') AS `RELATEDPROJECTS`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0') AS `RELEASECNT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, t1.`TYPE`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`, t1.`WHITELIST` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
 </mapper>
 

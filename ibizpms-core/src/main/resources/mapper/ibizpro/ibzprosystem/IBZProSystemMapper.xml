@@ -2,18 +2,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.ibizpro.mapper.IBZProSystemMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_SYSTEMID`, t1.`IBZPRO_SYSTEMNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTEM` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_ibzpro_systemname_like != null ">
+            <bind name="bind_n_ibzpro_systemname_like" value="'%' + srf.n_ibzpro_systemname_like + '%'" />
+            <![CDATA[ AND  t1.`IBZPRO_SYSTEMNAME` like #{bind_n_ibzpro_systemname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="IBZProSystemResultMap" databaseId="mysql">
-        <![CDATA[select t1.* from (SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_SYSTEMID`, t1.`IBZPRO_SYSTEMNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTEM` t1  ) t1 where ibzpro_systemid=#{id}]]>
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.IBZPRO_SYSTEMID = #{id} ]]>
+		</trim>
     </select>
+
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="IBZProSystemResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.IBZProSystem" autoMapping="true">
 		<id property="ibzprosystemid" column="ibzpro_systemid" /><!--主键字段映射-->
 		<result property="ibzprosystemname" column="ibzpro_systemname" />
-
-
+            
+		
     </resultMap>
 
 
@@ -22,19 +44,23 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_SYSTEMID`, t1.`IBZPRO_SYSTEMNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTEM` t1  
-			]]>
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_SYSTEMID`, t1.`IBZPRO_SYSTEMNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTEM` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_SYSTEMID`, t1.`IBZPRO_SYSTEMNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTEM` t1  
-			]]>
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_SYSTEMID`, t1.`IBZPRO_SYSTEMNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTEM` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
 </mapper>
 

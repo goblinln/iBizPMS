@@ -110,9 +110,8 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
     @Transactional
     public CaseStats get(Long key) {
         CaseStats et = getById(key);
-        if(et == null){
-            et = new CaseStats();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -286,5 +285,6 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
         return et;
     }
 }
+
 
 

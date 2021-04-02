@@ -161,7 +161,7 @@ public class ProductSum extends EntityMP implements Serializable {
     /**
      * 产品负责人
      */
-    @TableField(value = "`po`")
+    @TableField(value = "po")
     @JSONField(name = "po")
     @JsonProperty("po")
     @ApiModelProperty("产品负责人")
@@ -314,7 +314,7 @@ public class ProductSum extends EntityMP implements Serializable {
     /**
      * 产品名称
      */
-    @TableField(value = "`name`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("产品名称")

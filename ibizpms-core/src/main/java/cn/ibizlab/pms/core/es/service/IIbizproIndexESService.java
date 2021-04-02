@@ -10,13 +10,13 @@ import java.util.List;
  * 实体[IbizproIndex] 服务对象接口
  */
 public interface IIbizproIndexESService{
-    boolean createES(IbizproIndex et) ;
+    boolean create(IbizproIndex et) ;
     void createBatch(List<IbizproIndex> list) ;
-    boolean updateES(IbizproIndex et) ;
+    boolean update(IbizproIndex et) ;
     void updateBatch(List<IbizproIndex> list) ;
-    boolean removeES(String key) ;
-    void removeBatch(Collection<String> idList) ;
-    IbizproIndex get(String key) ;
+    boolean remove(Long key) ;
+    void removeBatch(Collection<Long> idList) ;
+    IbizproIndex get(Long key) ;
     boolean save(IbizproIndex et) ;
     void saveBatch(List<IbizproIndex> list) ;
     Page<IbizproIndex> searchDefault(IbizproIndexSearchContext context) ;

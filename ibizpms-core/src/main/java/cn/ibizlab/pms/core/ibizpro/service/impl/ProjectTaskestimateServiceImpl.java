@@ -100,9 +100,8 @@ public class ProjectTaskestimateServiceImpl extends ServiceImpl<ProjectTaskestim
     @Transactional
     public ProjectTaskestimate get(String key) {
         ProjectTaskestimate et = getById(key);
-        if(et == null){
-            et = new ProjectTaskestimate();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
         }
@@ -239,5 +238,6 @@ public class ProjectTaskestimateServiceImpl extends ServiceImpl<ProjectTaskestim
         return et;
     }
 }
+
 
 

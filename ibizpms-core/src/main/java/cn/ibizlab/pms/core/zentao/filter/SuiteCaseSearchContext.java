@@ -30,23 +30,14 @@ public class SuiteCaseSearchContext extends QueryWrapperContext<SuiteCase> {
 	private Long n_suite_eq;//[测试套件]
 	public void setN_suite_eq(Long n_suite_eq) {
         this.n_suite_eq = n_suite_eq;
-        if(!ObjectUtils.isEmpty(this.n_suite_eq)){
-            this.getSearchCond().eq("`suite`", n_suite_eq);
-        }
     }
 	private Long n_case_eq;//[用例]
 	public void setN_case_eq(Long n_case_eq) {
         this.n_case_eq = n_case_eq;
-        if(!ObjectUtils.isEmpty(this.n_case_eq)){
-            this.getSearchCond().eq("`case`", n_case_eq);
-        }
     }
 	private Long n_product_eq;//[所属产品]
 	public void setN_product_eq(Long n_product_eq) {
         this.n_product_eq = n_product_eq;
-        if(!ObjectUtils.isEmpty(this.n_product_eq)){
-            this.getSearchCond().eq("`product`", n_product_eq);
-        }
     }
 
     /**

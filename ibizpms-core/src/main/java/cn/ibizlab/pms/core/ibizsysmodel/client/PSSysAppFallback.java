@@ -23,14 +23,14 @@ public class PSSysAppFallback implements PSSysAppFeignClient {
         return null;
     }
 
-    public PSSysApp create(PSSysApp et) {
+    public PSSysApp create(PSSysApp pssysapp) {
         return null;
     }
     public Boolean createBatch(List<PSSysApp> pssysapps) {
         return false;
     }
 
-    public PSSysApp update(String pssysappid, PSSysApp et) {
+    public PSSysApp update(String pssysappid, PSSysApp pssysapp) {
         return null;
     }
     public Boolean updateBatch(List<PSSysApp> pssysapps) {
@@ -50,26 +50,22 @@ public class PSSysAppFallback implements PSSysAppFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public PSSysApp getDraft(PSSysApp entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(PSSysApp et) {
+    public Boolean checkKey(PSSysApp pssysapp) {
         return false;
     }
 
 
-    public Object saveEntity(PSSysApp et) {
+    public Object saveEntity(PSSysApp pssysapp) {
         return null;
     }
-    public Boolean save(PSSysApp et) {
+
+    public Boolean save(PSSysApp pssysapp) {
         return false;
     }
     public Boolean saveBatch(List<PSSysApp> pssysapps) {

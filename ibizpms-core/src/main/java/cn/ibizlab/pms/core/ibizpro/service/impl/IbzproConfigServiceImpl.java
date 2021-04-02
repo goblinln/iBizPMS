@@ -100,9 +100,8 @@ public class IbzproConfigServiceImpl extends ServiceImpl<IbzproConfigMapper, Ibz
     @Transactional
     public IbzproConfig get(String key) {
         IbzproConfig et = getById(key);
-        if(et == null){
-            et = new IbzproConfig();
-            et.setIbzproconfigid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
         }
@@ -267,5 +266,6 @@ public class IbzproConfigServiceImpl extends ServiceImpl<IbzproConfigMapper, Ibz
         return et;
     }
 }
+
 
 

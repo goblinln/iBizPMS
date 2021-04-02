@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITaskService extends IService<Task> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "任务";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "tasks";
-
     boolean create(Task et);
     void createBatch(List<Task> list);
     boolean update(Task et);
@@ -69,6 +59,7 @@ public interface ITaskService extends IService<Task> {
     Task getTeamUserLeftStart(Task et);
     boolean getTeamUserLeftStartBatch(List<Task> etList);
     Task getUsernames(Task et);
+    boolean getUsernamesBatch(List<Task> etList);
     Task linkPlan(Task et);
     boolean linkPlanBatch(List<Task> etList);
     Task otherUpdate(Task et);
@@ -88,10 +79,13 @@ public interface ITaskService extends IService<Task> {
     Task start(Task et);
     boolean startBatch(List<Task> etList);
     Task taskFavorites(Task et);
+    boolean taskFavoritesBatch(List<Task> etList);
     Task taskForward(Task et);
     boolean taskForwardBatch(List<Task> etList);
     Task taskNFavorites(Task et);
+    boolean taskNFavoritesBatch(List<Task> etList);
     Task updateStoryVersion(Task et);
+    boolean updateStoryVersionBatch(List<Task> etList);
     Page<Task> searchAssignedToMyTask(TaskSearchContext context);
     Page<Task> searchAssignedToMyTaskPc(TaskSearchContext context);
     Page<Task> searchBugTask(TaskSearchContext context);

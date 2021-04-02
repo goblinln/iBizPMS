@@ -49,7 +49,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
     /**
      * 月（显示）
      */
-    @TableField(value = "`monthname`")
+    @TableField(value = "monthname")
     @JSONField(name = "monthname")
     @JsonProperty("monthname")
     @ApiModelProperty("月（显示）")
@@ -66,7 +66,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
      * 用户
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`account`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("用户")
@@ -75,7 +75,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
      * 预计剩余
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`left`")
+    @TableField(value = "left")
     @JSONField(name = "left")
     @JsonProperty("left")
     @ApiModelProperty("预计剩余")
@@ -84,7 +84,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
      * 总计消耗
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`consumed`")
+    @TableField(value = "consumed")
     @JSONField(name = "consumed")
     @JsonProperty("consumed")
     @ApiModelProperty("总计消耗")
@@ -92,7 +92,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
     /**
      * 评估成本
      */
-    @TableField(value = "`evaluationcost`")
+    @TableField(value = "evaluationcost")
     @JSONField(name = "evaluationcost")
     @JsonProperty("evaluationcost")
     @ApiModelProperty("评估成本")
@@ -108,7 +108,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
     /**
      * 附件
      */
-    @TableField(value = "`files`")
+    @TableField(value = "files")
     @JSONField(name = "files")
     @JsonProperty("files")
     @ApiModelProperty("附件")
@@ -126,7 +126,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
      * 评估状态
      */
     @DEField(defaultValue = "no")
-    @TableField(value = "`evaluationstatus`")
+    @TableField(value = "evaluationstatus")
     @JSONField(name = "evaluationstatus")
     @JsonProperty("evaluationstatus")
     @ApiModelProperty("评估状态")
@@ -142,7 +142,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
     /**
      * 日期
      */
-    @TableField(value = "`date`")
+    @TableField(value = "date")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -151,7 +151,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
     /**
      * 评估工时
      */
-    @TableField(value = "`evaluationtime`")
+    @TableField(value = "evaluationtime")
     @JSONField(name = "evaluationtime")
     @JsonProperty("evaluationtime")
     @ApiModelProperty("评估工时")
@@ -159,7 +159,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
     /**
      * 投入成本
      */
-    @TableField(value = "`inputcost`")
+    @TableField(value = "inputcost")
     @JSONField(name = "inputcost")
     @JsonProperty("inputcost")
     @ApiModelProperty("投入成本")
@@ -185,7 +185,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
      * work
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`work`")
+    @TableField(value = "work")
     @JSONField(name = "work")
     @JsonProperty("work")
     @ApiModelProperty("work")
@@ -193,7 +193,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
     /**
      * 评估说明
      */
-    @TableField(value = "`evaluationdesc`")
+    @TableField(value = "evaluationdesc")
     @JSONField(name = "evaluationdesc")
     @JsonProperty("evaluationdesc")
     @ApiModelProperty("评估说明")
@@ -250,7 +250,7 @@ public class TaskEstimate extends EntityMP implements Serializable {
      * 任务
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`task`")
+    @TableField(value = "task")
     @JSONField(name = "task")
     @JsonProperty("task")
     @ApiModelProperty("任务")

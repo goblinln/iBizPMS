@@ -100,9 +100,8 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score> implements
     @Transactional
     public Score get(Long key) {
         Score et = getById(key);
-        if(et == null){
-            et = new Score();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -230,5 +229,6 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score> implements
         return et;
     }
 }
+
 
 

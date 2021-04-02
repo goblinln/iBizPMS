@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzMyTerritoryService extends IService<IbzMyTerritory> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "我的地盘";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzmyterritories";
-
     boolean create(IbzMyTerritory et);
     void createBatch(List<IbzMyTerritory> list);
     boolean update(IbzMyTerritory et);
@@ -45,8 +35,11 @@ public interface IIbzMyTerritoryService extends IService<IbzMyTerritory> {
     IbzMyTerritory getDraft(IbzMyTerritory et);
     boolean checkKey(IbzMyTerritory et);
     IbzMyTerritory mobMenuCount(IbzMyTerritory et);
+    boolean mobMenuCountBatch(List<IbzMyTerritory> etList);
     IbzMyTerritory myFavoriteCount(IbzMyTerritory et);
+    boolean myFavoriteCountBatch(List<IbzMyTerritory> etList);
     IbzMyTerritory myTerritoryCount(IbzMyTerritory et);
+    boolean myTerritoryCountBatch(List<IbzMyTerritory> etList);
     boolean save(IbzMyTerritory et);
     void saveBatch(List<IbzMyTerritory> list);
     Page<IbzMyTerritory> searchDefault(IbzMyTerritorySearchContext context);

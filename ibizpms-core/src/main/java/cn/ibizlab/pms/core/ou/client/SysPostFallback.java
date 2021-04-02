@@ -23,14 +23,14 @@ public class SysPostFallback implements SysPostFeignClient {
         return null;
     }
 
-    public SysPost create(SysPost et) {
+    public SysPost create(SysPost syspost) {
         return null;
     }
     public Boolean createBatch(List<SysPost> sysposts) {
         return false;
     }
 
-    public SysPost update(String postid, SysPost et) {
+    public SysPost update(String postid, SysPost syspost) {
         return null;
     }
     public Boolean updateBatch(List<SysPost> sysposts) {
@@ -50,26 +50,22 @@ public class SysPostFallback implements SysPostFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public SysPost getDraft(SysPost entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(SysPost et) {
+    public Boolean checkKey(SysPost syspost) {
         return false;
     }
 
 
-    public Object saveEntity(SysPost et) {
+    public Object saveEntity(SysPost syspost) {
         return null;
     }
-    public Boolean save(SysPost et) {
+
+    public Boolean save(SysPost syspost) {
         return false;
     }
     public Boolean saveBatch(List<SysPost> sysposts) {

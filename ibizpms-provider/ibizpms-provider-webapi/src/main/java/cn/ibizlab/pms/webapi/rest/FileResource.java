@@ -43,11 +43,11 @@ public class FileResource {
     @Autowired
     public IFileService fileService;
 
+
     @Autowired
     @Lazy
     public FileMapping fileMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-Create-all')")
     @ApiOperation(value = "新建附件", tags = {"附件" },  notes = "新建附件")
 	@RequestMapping(method = RequestMethod.POST, value = "/files")
     public ResponseEntity<FileDTO> create(@Validated @RequestBody FileDTO filedto) {
@@ -57,7 +57,6 @@ public class FileResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-Create-all')")
     @ApiOperation(value = "批量新建附件", tags = {"附件" },  notes = "批量新建附件")
 	@RequestMapping(method = RequestMethod.POST, value = "/files/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<FileDTO> filedtos) {
@@ -65,7 +64,6 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-Update-all')")
     @ApiOperation(value = "更新附件", tags = {"附件" },  notes = "更新附件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}")
     public ResponseEntity<FileDTO> update(@PathVariable("file_id") Long file_id, @RequestBody FileDTO filedto) {
@@ -76,7 +74,6 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-Update-all')")
     @ApiOperation(value = "批量更新附件", tags = {"附件" },  notes = "批量更新附件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<FileDTO> filedtos) {
@@ -84,14 +81,12 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-Remove-all')")
     @ApiOperation(value = "删除附件", tags = {"附件" },  notes = "删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/files/{file_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("file_id") Long file_id) {
          return ResponseEntity.status(HttpStatus.OK).body(fileService.remove(file_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-Remove-all')")
     @ApiOperation(value = "批量删除附件", tags = {"附件" },  notes = "批量删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/files/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +94,6 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-Get-all')")
     @ApiOperation(value = "获取附件", tags = {"附件" },  notes = "获取附件")
 	@RequestMapping(method = RequestMethod.GET, value = "/files/{file_id}")
     public ResponseEntity<FileDTO> get(@PathVariable("file_id") Long file_id) {
@@ -121,7 +115,6 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(fileService.checkKey(fileMapping.toDomain(filedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-Save-all')")
     @ApiOperation(value = "保存附件", tags = {"附件" },  notes = "保存附件")
 	@RequestMapping(method = RequestMethod.POST, value = "/files/save")
     public ResponseEntity<FileDTO> save(@RequestBody FileDTO filedto) {
@@ -130,7 +123,6 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(fileMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-Save-all')")
     @ApiOperation(value = "批量保存附件", tags = {"附件" },  notes = "批量保存附件")
 	@RequestMapping(method = RequestMethod.POST, value = "/files/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<FileDTO> filedtos) {
@@ -138,7 +130,6 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-UpdateObjectIDForPmsEe-all')")
     @ApiOperation(value = "保存附件", tags = {"附件" },  notes = "保存附件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}/updateobjectidforpmsee")
     public ResponseEntity<FileDTO> updateObjectIDForPmsEe(@PathVariable("file_id") Long file_id, @RequestBody FileDTO filedto) {
@@ -148,7 +139,6 @@ public class FileResource {
         filedto = fileMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(filedto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-UpdateObjectIDForPmsEe-all')")
     @ApiOperation(value = "批量处理[保存附件]", tags = {"附件" },  notes = "批量处理[保存附件]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/updateobjectidforpmseebatch")
     public ResponseEntity<Boolean> updateObjectIDForPmsEeBatch(@RequestBody List<FileDTO> filedtos) {
@@ -157,7 +147,6 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-searchDefault-all')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"附件" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/files/fetchdefault")
 	public ResponseEntity<List<FileDTO>> fetchDefault(FileSearchContext context) {
@@ -170,7 +159,6 @@ public class FileResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-searchDefault-all')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"附件" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/files/searchdefault")
 	public ResponseEntity<Page<FileDTO>> searchDefault(@RequestBody FileSearchContext context) {
@@ -179,7 +167,6 @@ public class FileResource {
                 .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-searchDocLibFile-all')")
 	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
     @RequestMapping(method= RequestMethod.GET , value="/files/fetchdoclibfile")
 	public ResponseEntity<List<FileDTO>> fetchDocLibFile(FileSearchContext context) {
@@ -192,7 +179,6 @@ public class FileResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-searchDocLibFile-all')")
 	@ApiOperation(value = "查询文件库查询", tags = {"附件" } ,notes = "查询文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/files/searchdoclibfile")
 	public ResponseEntity<Page<FileDTO>> searchDocLibFile(@RequestBody FileSearchContext context) {
@@ -201,7 +187,6 @@ public class FileResource {
                 .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-searchProductDocLibFile-all')")
 	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
     @RequestMapping(method= RequestMethod.GET , value="/files/fetchproductdoclibfile")
 	public ResponseEntity<List<FileDTO>> fetchProductDocLibFile(FileSearchContext context) {
@@ -214,7 +199,6 @@ public class FileResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-searchProductDocLibFile-all')")
 	@ApiOperation(value = "查询文件库查询", tags = {"附件" } ,notes = "查询文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/files/searchproductdoclibfile")
 	public ResponseEntity<Page<FileDTO>> searchProductDocLibFile(@RequestBody FileSearchContext context) {
@@ -223,7 +207,6 @@ public class FileResource {
                 .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-searchType-all')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"附件" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.GET , value="/files/fetchtype")
 	public ResponseEntity<List<FileDTO>> fetchType(FileSearchContext context) {
@@ -236,7 +219,6 @@ public class FileResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-searchType-all')")
 	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"附件" } ,notes = "查询动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/files/searchtype")
 	public ResponseEntity<Page<FileDTO>> searchType(@RequestBody FileSearchContext context) {
@@ -245,7 +227,6 @@ public class FileResource {
                 .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-searchTypeNotBySrfparentkey-all')")
 	@ApiOperation(value = "获取查询附件", tags = {"附件" } ,notes = "获取查询附件")
     @RequestMapping(method= RequestMethod.GET , value="/files/fetchtypenotbysrfparentkey")
 	public ResponseEntity<List<FileDTO>> fetchTypeNotBySrfparentkey(FileSearchContext context) {
@@ -258,7 +239,6 @@ public class FileResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-File-searchTypeNotBySrfparentkey-all')")
 	@ApiOperation(value = "查询查询附件", tags = {"附件" } ,notes = "查询查询附件")
     @RequestMapping(method= RequestMethod.POST , value="/files/searchtypenotbysrfparentkey")
 	public ResponseEntity<Page<FileDTO>> searchTypeNotBySrfparentkey(@RequestBody FileSearchContext context) {

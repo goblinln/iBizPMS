@@ -100,9 +100,8 @@ public class ImMessagestatusServiceImpl extends ServiceImpl<ImMessagestatusMappe
     @Transactional
     public ImMessagestatus get(String key) {
         ImMessagestatus et = getById(key);
-        if(et == null){
-            et = new ImMessagestatus();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
         }
@@ -230,5 +229,6 @@ public class ImMessagestatusServiceImpl extends ServiceImpl<ImMessagestatusMappe
         return et;
     }
 }
+
 
 

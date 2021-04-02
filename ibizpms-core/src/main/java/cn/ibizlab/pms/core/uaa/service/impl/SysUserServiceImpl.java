@@ -34,9 +34,6 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.uaa.client.SysUserFeignClient;
-import cn.ibizlab.pms.util.security.SpringContextHolder;
-import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
-import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -50,7 +47,6 @@ public class SysUserServiceImpl implements ISysUserService {
     SysUserFeignClient sysUserFeignClient;
 
 
-
     @Override
     public boolean create(SysUser et) {
         SysUser rt = sysUserFeignClient.create(et);
@@ -60,11 +56,9 @@ public class SysUserServiceImpl implements ISysUserService {
         return true;
     }
 
-
     public void createBatch(List<SysUser> list){
         sysUserFeignClient.createBatch(list) ;
     }
-
 
     @Override
     public boolean update(SysUser et) {
@@ -76,11 +70,9 @@ public class SysUserServiceImpl implements ISysUserService {
 
     }
 
-
     public void updateBatch(List<SysUser> list){
         sysUserFeignClient.updateBatch(list) ;
     }
-
 
     @Override
     public boolean remove(String userid) {
@@ -88,24 +80,20 @@ public class SysUserServiceImpl implements ISysUserService {
         return result;
     }
 
-
     public void removeBatch(Collection<String> idList){
         sysUserFeignClient.removeBatch(idList);
     }
-
 
     @Override
     public SysUser get(String userid) {
 		SysUser et=sysUserFeignClient.get(userid);
         if(et==null){
-            et=new SysUser();
-            et.setUserid(userid);
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), userid);
         }
         else{
         }
         return  et;
     }
-
 
     @Override
     public SysUser getDraft(SysUser et) {
@@ -113,11 +101,10 @@ public class SysUserServiceImpl implements ISysUserService {
         return et;
     }
 
-
     @Override
     @Transactional
     public SysUser changePwd(SysUser et) {
-        //自定义代码
+        et = sysUserFeignClient.changePwd(et.getUserid(), et);
         return et;
     }
 
@@ -130,14 +117,10 @@ public class SysUserServiceImpl implements ISysUserService {
         return true;
     }
 
-
-
     @Override
     public boolean checkKey(SysUser et) {
         return sysUserFeignClient.checkKey(et);
     }
-
-
     @Override
     @Transactional
     public boolean save(SysUser et) {
@@ -160,13 +143,10 @@ public class SysUserServiceImpl implements ISysUserService {
             return result;
     }
 
-
-
     @Override
     public void saveBatch(List<SysUser> list) {
         sysUserFeignClient.saveBatch(list) ;
     }
-
 
 
 
@@ -181,12 +161,12 @@ public class SysUserServiceImpl implements ISysUserService {
         return sysUsers;
     }
 
-
     @Override
     @Transactional
     public SysUser dynamicCall(String key, String action, SysUser et) {
         return et;
     }
 }
+
 
 

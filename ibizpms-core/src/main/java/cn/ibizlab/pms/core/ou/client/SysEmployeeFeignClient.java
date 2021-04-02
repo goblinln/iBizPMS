@@ -24,14 +24,14 @@ public interface SysEmployeeFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysemployees")
-    SysEmployee create(@RequestBody SysEmployee et);
+    SysEmployee create(@RequestBody SysEmployee sysemployee);
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/batch")
     Boolean createBatch(@RequestBody List<SysEmployee> sysemployees);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysemployees/{userid}")
-    SysEmployee update(@PathVariable("userid") String userid, @RequestBody SysEmployee et);
+    SysEmployee update(@PathVariable("userid") String userid,@RequestBody SysEmployee sysemployee);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysemployees/batch")
     Boolean updateBatch(@RequestBody List<SysEmployee> sysemployees);
@@ -47,22 +47,19 @@ public interface SysEmployeeFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/{userid}")
     SysEmployee get(@PathVariable("userid") String userid);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/getbycodename/{userid}")
-    String getByCodeName(@PathVariable("userid") String codeName);
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/getdraft")
     SysEmployee getDraft(SysEmployee entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/checkkey")
-    Boolean checkKey(@RequestBody SysEmployee et);
+    Boolean checkKey(@RequestBody SysEmployee sysemployee);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/save")
-    Object saveEntity(@RequestBody SysEmployee et);
+    Object saveEntity(@RequestBody SysEmployee sysemployee);
 
-    default Boolean save(@RequestBody SysEmployee et) { return saveEntity(et)!=null; }
+    default Boolean save(@RequestBody SysEmployee sysemployee) { return saveEntity(sysemployee)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/savebatch")
     Boolean saveBatch(@RequestBody List<SysEmployee> sysemployees);

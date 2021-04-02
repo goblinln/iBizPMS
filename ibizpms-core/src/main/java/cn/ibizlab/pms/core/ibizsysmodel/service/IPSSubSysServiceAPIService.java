@@ -24,16 +24,6 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSubSysServiceAPISearchContext;
  */
 public interface IPSSubSysServiceAPIService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "外部服务接口";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "pssubsysserviceapis";
-
     boolean create(PSSubSysServiceAPI et);
     void createBatch(List<PSSubSysServiceAPI> list);
     boolean update(PSSubSysServiceAPI et);
@@ -53,24 +43,6 @@ public interface IPSSubSysServiceAPIService {
     List<PSSubSysServiceAPI> selectByPssysserviceapiid(Collection<String> ids);
     void removeByPssysserviceapiid(String pssysserviceapiid);
     PSSubSysServiceAPI dynamicCall(String key, String action, PSSubSysServiceAPI et);
-
-    boolean create(String devSlnSysId , PSSubSysServiceAPI et) ;
-    void createBatch(String devSlnSysId, List<PSSubSysServiceAPI> list);
-    boolean update(String devSlnSysId, PSSubSysServiceAPI et);
-    void updateBatch(String devSlnSysId, List<PSSubSysServiceAPI> list);
-    boolean remove(String devSlnSysId, String key);
-    void removeBatch(String devSlnSysId , Collection<String> idList) ;
-    PSSubSysServiceAPI get(String devSlnSysId , String key);
-    String getByCodeName(String devSlnSysId , String codeName);
-    PSSubSysServiceAPI getDraft(String devSlnSysId, PSSubSysServiceAPI et);
-    boolean checkKey(String devSlnSysId, PSSubSysServiceAPI et);
-    boolean save(String devSlnSysId, PSSubSysServiceAPI et);
-    void saveBatch(String devSlnSysId, List<PSSubSysServiceAPI> list);
-    Page<PSSubSysServiceAPI> searchDefault(String devSlnSysId, PSSubSysServiceAPISearchContext context);
-    List<PSSubSysServiceAPI> selectByPsmoduleid(String devSlnSysId, String psmoduleid);
-    void removeByPsmoduleid(String devSlnSysId, String psmoduleid);
-    List<PSSubSysServiceAPI> selectByPssysserviceapiid(String devSlnSysId, String pssysserviceapiid);
-    void removeByPssysserviceapiid(String devSlnSysId, String pssysserviceapiid);
 
 }
 

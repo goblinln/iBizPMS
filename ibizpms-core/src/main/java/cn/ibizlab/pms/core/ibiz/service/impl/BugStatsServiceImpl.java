@@ -110,9 +110,8 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Transactional
     public BugStats get(Long key) {
         BugStats et = getById(key);
-        if(et == null){
-            et = new BugStats();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -349,5 +348,6 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
         return et;
     }
 }
+
 
 

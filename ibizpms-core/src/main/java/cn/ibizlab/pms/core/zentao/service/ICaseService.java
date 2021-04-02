@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ICaseService extends IService<Case> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "测试用例";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "cases";
-
     boolean create(Case et);
     void createBatch(List<Case> list);
     boolean update(Case et);
@@ -44,7 +34,9 @@ public interface ICaseService extends IService<Case> {
     Case get(Long key);
     Case getDraft(Case et);
     Case caseFavorite(Case et);
+    boolean caseFavoriteBatch(List<Case> etList);
     Case caseNFavorite(Case et);
+    boolean caseNFavoriteBatch(List<Case> etList);
     boolean checkKey(Case et);
     Case confirmChange(Case et);
     boolean confirmChangeBatch(List<Case> etList);
@@ -61,19 +53,23 @@ public interface ICaseService extends IService<Case> {
     Case runCase(Case et);
     boolean runCaseBatch(List<Case> etList);
     Case runCases(Case et);
+    boolean runCasesBatch(List<Case> etList);
     boolean save(Case et);
     void saveBatch(List<Case> list);
     Case testRunCase(Case et);
     boolean testRunCaseBatch(List<Case> etList);
     Case testRunCases(Case et);
+    boolean testRunCasesBatch(List<Case> etList);
     Case testsuitelinkCase(Case et);
     boolean testsuitelinkCaseBatch(List<Case> etList);
     Case unlinkCase(Case et);
     boolean unlinkCaseBatch(List<Case> etList);
     Case unlinkCases(Case et);
+    boolean unlinkCasesBatch(List<Case> etList);
     Case unlinkSuiteCase(Case et);
     boolean unlinkSuiteCaseBatch(List<Case> etList);
     Case unlinkSuiteCases(Case et);
+    boolean unlinkSuiteCasesBatch(List<Case> etList);
     Page<Case> searchBatchNew(CaseSearchContext context);
     Page<Case> searchCurOpenedCase(CaseSearchContext context);
     Page<Case> searchCurSuite(CaseSearchContext context);

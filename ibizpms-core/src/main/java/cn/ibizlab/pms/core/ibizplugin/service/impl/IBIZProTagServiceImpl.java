@@ -34,9 +34,6 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.ibizplugin.client.IBIZProTagFeignClient;
-import cn.ibizlab.pms.util.security.SpringContextHolder;
-import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
-import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -50,7 +47,6 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
     IBIZProTagFeignClient iBIZProTagFeignClient;
 
 
-
     @Override
     public boolean create(IBIZProTag et) {
         IBIZProTag rt = iBIZProTagFeignClient.create(et);
@@ -60,11 +56,9 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
         return true;
     }
 
-
     public void createBatch(List<IBIZProTag> list){
         iBIZProTagFeignClient.createBatch(list) ;
     }
-
 
     @Override
     public boolean update(IBIZProTag et) {
@@ -76,11 +70,9 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
 
     }
 
-
     public void updateBatch(List<IBIZProTag> list){
         iBIZProTagFeignClient.updateBatch(list) ;
     }
-
 
     @Override
     public boolean remove(String id) {
@@ -88,24 +80,20 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
         return result;
     }
 
-
     public void removeBatch(Collection<String> idList){
         iBIZProTagFeignClient.removeBatch(idList);
     }
-
 
     @Override
     public IBIZProTag get(String id) {
 		IBIZProTag et=iBIZProTagFeignClient.get(id);
         if(et==null){
-            et=new IBIZProTag();
-            et.setId(id);
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), id);
         }
         else{
         }
         return  et;
     }
-
 
     @Override
     public IBIZProTag getDraft(IBIZProTag et) {
@@ -113,13 +101,10 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
         return et;
     }
 
-
     @Override
     public boolean checkKey(IBIZProTag et) {
         return iBIZProTagFeignClient.checkKey(et);
     }
-
-
     @Override
     @Transactional
     public boolean save(IBIZProTag et) {
@@ -142,13 +127,10 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
             return result;
     }
 
-
-
     @Override
     public void saveBatch(List<IBIZProTag> list) {
         iBIZProTagFeignClient.saveBatch(list) ;
     }
-
 
 
 
@@ -163,12 +145,12 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
         return iBIZProTags;
     }
 
-
     @Override
     @Transactional
     public IBIZProTag dynamicCall(String key, String action, IBIZProTag et) {
         return et;
     }
 }
+
 
 

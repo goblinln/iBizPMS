@@ -2,19 +2,76 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.IbzCaseMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`AUTO`, t1.`DELETED`, t1.`HOWRUN`, t1.`ID`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LIB`, t11.`NAME` AS `LIBNAME`, t1.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`ORDER`, t1.`PATH`, t1.`PRECONDITION`, t1.`PRI`, t1.`SCRIPTEDBY`, t1.`SCRIPTEDDATE`, t1.`SCRIPTLOCATION`, t1.`SCRIPTSTATUS`, t1.`STAGE`, t1.`STATUS`, t1.`TITLE`, t1.`TYPE`, t1.`VERSION` FROM `zt_case` t1  LEFT JOIN `zt_testsuite` t11 ON t1.`LIB` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`MODULE` = t21.`ID`   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_lasteditedby_eq != null ">
+			<![CDATA[ AND  t1.`LASTEDITEDBY` = #{srf.n_lasteditedby_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_type_eq != null ">
+			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_title_like != null ">
+            <bind name="bind_n_title_like" value="'%' + srf.n_title_like + '%'" />
+            <![CDATA[ AND  t1.`TITLE` like #{bind_n_title_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_pri_eq != null ">
+			<![CDATA[ AND  t1.`PRI` = #{srf.n_pri_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_status_eq != null ">
+			<![CDATA[ AND  t1.`STATUS` = #{srf.n_status_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_openedby_eq != null ">
+			<![CDATA[ AND  t1.`OPENEDBY` = #{srf.n_openedby_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_libname_eq != null ">
+			<![CDATA[ AND  t11.`NAME` = #{srf.n_libname_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_libname_like != null ">
+            <bind name="bind_n_libname_like" value="'%' + srf.n_libname_like + '%'" />
+            <![CDATA[ AND  t11.`NAME` like #{bind_n_libname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_modulename_eq != null ">
+			<![CDATA[ AND  t21.`NAME` = #{srf.n_modulename_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_modulename_like != null ">
+            <bind name="bind_n_modulename_like" value="'%' + srf.n_modulename_like + '%'" />
+            <![CDATA[ AND  t21.`NAME` like #{bind_n_modulename_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_module_eq != null ">
+			<![CDATA[ AND  t1.`MODULE` = #{srf.n_module_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_lib_eq != null ">
+			<![CDATA[ AND  t1.`LIB` = #{srf.n_lib_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="IbzCaseResultMap" databaseId="mysql">
-        <![CDATA[select t1.* from (SELECT t1.`AUTO`, t1.`DELETED`, t1.`HOWRUN`, t1.`ID`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LIB`, t11.`NAME` AS `LIBNAME`, t1.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`ORDER`, t1.`PATH`, t1.`PRECONDITION`, t1.`PRI`, t1.`SCRIPTEDBY`, t1.`SCRIPTEDDATE`, t1.`SCRIPTLOCATION`, t1.`SCRIPTSTATUS`, t1.`STAGE`, t1.`STATUS`, t1.`TITLE`, t1.`TYPE`, t1.`VERSION` FROM `zt_case` t1  LEFT JOIN `zt_testsuite` t11 ON t1.`LIB` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`MODULE` = t21.`ID`  ) t1 where id=#{id}]]>
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
     </select>
+
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="IbzCaseResultMap" type="cn.ibizlab.pms.core.ibiz.domain.IbzCase" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="module" column="module" />
 		<result property="lib" column="lib" />
-
-
+            
+		
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="libmodule" javaType="cn.ibizlab.pms.core.ibiz.domain.IbzLibModule" column="module" select="cn.ibizlab.pms.core.ibiz.mapper.IbzLibModuleMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
@@ -22,18 +79,18 @@
     </resultMap>
 
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_CASE_IBZ_LIBMODULE_MODULE] -->
-	 <select id="selectByModule" resultMap="IbzCaseResultMap">
-         select t1.* from (
-                <include refid="Default" />
-			 ) t1
-			 where  module=#{id}
+	 <select id="selectByModule" resultMap="IbzCaseResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.MODULE=#{id} ]]>
+		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_CASE_IBZ_LIB_LIB] -->
-	 <select id="selectByLib" resultMap="IbzCaseResultMap">
-         select t1.* from (
-                <include refid="Default" />
-			 ) t1
-			 where  lib=#{id}
+	 <select id="selectByLib" resultMap="IbzCaseResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.LIB=#{id} ]]>
+		</trim>
      </select>
 
     <!--数据集合[Default]-->
@@ -41,19 +98,23 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`AUTO`, t1.`DELETED`, t1.`HOWRUN`, t1.`ID`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LIB`, t11.`NAME` AS `LIBNAME`, t1.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`ORDER`, t1.`PATH`, t1.`PRI`, t1.`SCRIPTEDBY`, t1.`SCRIPTEDDATE`, t1.`SCRIPTLOCATION`, t1.`SCRIPTSTATUS`, t1.`STAGE`, t1.`STATUS`, t1.`TITLE`, t1.`TYPE`, t1.`VERSION` FROM `zt_case` t1  LEFT JOIN `zt_testsuite` t11 ON t1.`LIB` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`MODULE` = t21.`ID`  
-			]]>
+		<![CDATA[ SELECT t1.`AUTO`, t1.`DELETED`, t1.`HOWRUN`, t1.`ID`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LIB`, t11.`NAME` AS `LIBNAME`, t1.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`ORDER`, t1.`PATH`, t1.`PRI`, t1.`SCRIPTEDBY`, t1.`SCRIPTEDDATE`, t1.`SCRIPTLOCATION`, t1.`SCRIPTSTATUS`, t1.`STAGE`, t1.`STATUS`, t1.`TITLE`, t1.`TYPE`, t1.`VERSION` FROM `zt_case` t1  LEFT JOIN `zt_testsuite` t11 ON t1.`LIB` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`MODULE` = t21.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`AUTO`, t1.`DELETED`, t1.`HOWRUN`, t1.`ID`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LIB`, t11.`NAME` AS `LIBNAME`, t1.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`ORDER`, t1.`PATH`, t1.`PRECONDITION`, t1.`PRI`, t1.`SCRIPTEDBY`, t1.`SCRIPTEDDATE`, t1.`SCRIPTLOCATION`, t1.`SCRIPTSTATUS`, t1.`STAGE`, t1.`STATUS`, t1.`TITLE`, t1.`TYPE`, t1.`VERSION` FROM `zt_case` t1  LEFT JOIN `zt_testsuite` t11 ON t1.`LIB` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`MODULE` = t21.`ID`  
-			]]>
+		<![CDATA[ SELECT t1.`AUTO`, t1.`DELETED`, t1.`HOWRUN`, t1.`ID`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LIB`, t11.`NAME` AS `LIBNAME`, t1.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`ORDER`, t1.`PATH`, t1.`PRECONDITION`, t1.`PRI`, t1.`SCRIPTEDBY`, t1.`SCRIPTEDDATE`, t1.`SCRIPTLOCATION`, t1.`SCRIPTSTATUS`, t1.`STAGE`, t1.`STATUS`, t1.`TITLE`, t1.`TYPE`, t1.`VERSION` FROM `zt_case` t1  LEFT JOIN `zt_testsuite` t11 ON t1.`LIB` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`MODULE` = t21.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
 </mapper>
 

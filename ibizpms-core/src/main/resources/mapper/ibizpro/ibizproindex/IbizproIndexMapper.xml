@@ -2,17 +2,42 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.ibizpro.mapper.IbizproIndexMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`ACL`, t1.`ACLLIST`, t1.`COLOR`, t1.`DELETED`, t1.`INDEXDESC`, t1.`INDEXID`, t1.`INDEXNAME`, t1.`INDEX_TYPE`, t1.`MDEPTID`, t1.`ORGID`, t1.`PROJECT` FROM (SELECT 'bug' AS `INDEX_TYPE`,v1.`ID` AS `INDEXID` ,NULL AS `ACL` ,v1.`TITLE` AS `INDEXNAME` ,NULL AS `COLOR` ,v1.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v1.`STEPS` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v1.`PROJECT` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`PROJECT`, t1.`TITLE` FROM `zt_bug` t1  ) v1 UNION ALL SELECT 'case' AS `INDEX_TYPE`,v2.`ID` AS `INDEXID` ,NULL AS `ACL` ,v2.`TITLE` AS `INDEXNAME` ,NULL AS `COLOR` ,v2.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v2.`PRECONDITION` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`TITLE` FROM `zt_case` t1  ) v2 UNION ALL SELECT 'product' AS `INDEX_TYPE`,v3.`ID` AS `INDEXID` ,NULL AS `ACL` ,v3.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v3.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v3.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME` FROM `zt_product` t1  ) v3 UNION ALL SELECT 'project' AS `INDEX_TYPE`,v4.`ID` AS `INDEXID` ,NULL AS `ACL` ,v4.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v4.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v4.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v4.`ID` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME` FROM `zt_project` t1  ) v4 UNION ALL SELECT 'story' AS `INDEX_TYPE`,v5.`ID` AS `INDEXID` ,NULL AS `ACL` ,v5.`TITLE` AS `INDEXNAME` ,v5.`COLOR` AS `COLOR` ,v5.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v5.`SPEC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`COLOR`, t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`TITLE` FROM `zt_story` t1  ) v5 UNION ALL SELECT 'task' AS `INDEX_TYPE`,v6.`ID` AS `INDEXID` ,NULL AS `ACL` ,v6.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v6.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v6.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v6.`PROJECT` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME`, t1.`PROJECT` FROM `zt_task` t1  ) v6 ) t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_indexname_like != null ">
+            <bind name="bind_n_indexname_like" value="'%' + srf.n_indexname_like + '%'" />
+            <![CDATA[ AND  t1.`INDEXNAME` like #{bind_n_indexname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_index_type_eq != null ">
+			<![CDATA[ AND  t1.`INDEX_TYPE` = #{srf.n_index_type_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="IbizproIndexResultMap" databaseId="mysql">
-        <![CDATA[select t1.* from (SELECT t1.`ACL`, t1.`ACLLIST`, t1.`COLOR`, t1.`DELETED`, t1.`INDEXDESC`, t1.`INDEXID`, t1.`INDEXNAME`, t1.`INDEX_TYPE`, t1.`MDEPTID`, t1.`ORGID`, t1.`PROJECT` FROM (SELECT 'bug' AS `INDEX_TYPE`,v1.`ID` AS `INDEXID` ,NULL AS `ACL` ,v1.`TITLE` AS `INDEXNAME` ,NULL AS `COLOR` ,v1.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v1.`STEPS` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v1.`PROJECT` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`PROJECT`, t1.`TITLE` FROM `zt_bug` t1  ) v1 UNION ALL SELECT 'case' AS `INDEX_TYPE`,v2.`ID` AS `INDEXID` ,NULL AS `ACL` ,v2.`TITLE` AS `INDEXNAME` ,NULL AS `COLOR` ,v2.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v2.`PRECONDITION` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`TITLE` FROM `zt_case` t1  ) v2 UNION ALL SELECT 'product' AS `INDEX_TYPE`,v3.`ID` AS `INDEXID` ,NULL AS `ACL` ,v3.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v3.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v3.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME` FROM `zt_product` t1  ) v3 UNION ALL SELECT 'project' AS `INDEX_TYPE`,v4.`ID` AS `INDEXID` ,NULL AS `ACL` ,v4.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v4.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v4.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v4.`ID` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME` FROM `zt_project` t1  ) v4 UNION ALL SELECT 'story' AS `INDEX_TYPE`,v5.`ID` AS `INDEXID` ,NULL AS `ACL` ,v5.`TITLE` AS `INDEXNAME` ,v5.`COLOR` AS `COLOR` ,v5.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v5.`SPEC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`COLOR`, t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`TITLE` FROM `zt_story` t1  ) v5 UNION ALL SELECT 'task' AS `INDEX_TYPE`,v6.`ID` AS `INDEXID` ,NULL AS `ACL` ,v6.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v6.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v6.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v6.`PROJECT` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME`, t1.`PROJECT` FROM `zt_task` t1  ) v6 ) t1  ) t1 where indexid=#{id}]]>
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.INDEXID = #{id} ]]>
+		</trim>
     </select>
+
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="IbizproIndexResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.IbizproIndex" autoMapping="true">
 		<result property="indextype" column="index_type" />
-
-
+            
+		
     </resultMap>
 
 
@@ -21,8 +46,6 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[ESquery]-->
@@ -30,22 +53,32 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`DELETED`, t1.`INDEXID`, t1.`INDEXNAME`, t1.`INDEX_TYPE`, t1.`MDEPTID`, t1.`ORGID`, t1.INDEXDESC, t1.color, t1.project, t1.acllist, t1.acl FROM (SELECT 'bug' AS `INDEX_TYPE`,v1.`ID` AS `INDEXID` ,v1.`TITLE` AS `INDEXNAME` ,v1.deleted AS `DELETED` ,v1.orgid AS `ORGID` ,v1.MDEPTID AS `MDEPTID` ,v1.steps as INDEXDESC ,v1.color ,v1.project ,v1.acllist ,v1.acl FROM (SELECT t1.`ID`, t1.`TITLE`, t11.orgid, t11.MDEPTID, t1.deleted, t1.steps, t1.color, t11.acl, CONCAT_WS(',',t11.CREATEDBY,t11.qd,t11.po,t11.rd) as acllist, (select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.product GROUP BY t.product) as project FROM `zt_bug` t1 left join zt_product t11 on t11.id = t1.product  where t11.deleted = '0' ) v1 UNION ALL SELECT 'case' AS `INDEX_TYPE`,v2.`ID` AS `INDEXID` ,v2.`TITLE` AS `INDEXNAME` ,v2.deleted AS `DELETED` ,v2.orgid AS `ORGID` ,v2.MDEPTID AS `MDEPTID` ,v2.precondition as INDEXDESC ,v2.color ,v2.project ,v2.acllist ,v2.acl FROM (SELECT t1.`ID`, t1.`TITLE`, t11.orgid, t11.MDEPTID, t1.deleted, t1.`PRECONDITION`, t1.color, t11.acl, CONCAT_WS(',',t11.CREATEDBY,t11.qd,t11.po,t11.rd) as acllist, (select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.product GROUP BY t.product) as project FROM `zt_case` t1 left join zt_product t11 on t11.id = t1.product  where t11.deleted = '0' ) v2 UNION ALL SELECT 'product' AS `INDEX_TYPE` ,v3.`ID` AS `INDEXID` ,v3.`NAME` AS `INDEXNAME` ,v3.deleted AS `DELETED` ,v3.orgid AS `ORGID` ,v3.MDEPTID AS `MDEPTID` ,v3.`desc` as INDEXDESC , null as color ,v3.project ,v3.acllist ,v3.acl FROM (SELECT t1.`ID`, t1.`NAME`, t1.orgid, t1.MDEPTID, t1.deleted, t1.`desc`, t1.acl, CONCAT_WS(',',t1.CREATEDBY,t1.qd,t1.po,t1.rd) as acllist, (select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.id GROUP BY t.product) as project FROM `zt_product` t1  ) v3 UNION ALL SELECT 'project' AS `INDEX_TYPE`,v4.`ID` AS `INDEXID` ,v4.`NAME` AS `INDEXNAME` ,v4.deleted AS `DELETED` ,v4.orgid AS `ORGID` ,v4.MDEPTID AS `MDEPTID` ,v4.`desc` as INDEXDESC ,null as color ,v4.project ,v4.acllist ,v4.acl FROM (SELECT t1.`ID`, t1.`NAME`, t1.orgid, t1.MDEPTID, t1.deleted, t1.`desc`, t1.acl, CONCAT_WS(',',t1.openedBy,t1.pm,t1.qd,t1.po,t1.rd) as acllist, t1.id as project FROM `zt_project` t1  ) v4 UNION ALL SELECT 'story' AS `INDEX_TYPE`,v5.`ID` AS `INDEXID` ,v5.`TITLE` AS `INDEXNAME` ,v5.deleted AS `DELETED` ,v5.orgid AS `ORGID` ,v5.MDEPTID AS `MDEPTID` ,v5.spec as INDEXDESC ,v5.color ,v5.project ,v5.acllist ,v5.acl FROM (SELECT t1.`ID`, t1.`TITLE`, t11.orgid, t11.MDEPTID, t1.deleted, t21.spec, t1.color, t11.acl, CONCAT_WS(',',t11.CREATEDBY,t11.qd,t11.po,t11.rd) as acllist, (select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.product GROUP BY t.product) as project FROM `zt_story` t1 left join zt_product t11 on t11.id = t1.product  left join zt_storyspec t21 on t21.story = t1.id and t1.version = t21.version where t11.deleted = '0'  ) v5 UNION ALL SELECT 'task' AS `INDEX_TYPE` ,v6.`ID` AS `INDEXID` ,v6.`NAME` AS `INDEXNAME` ,v6.deleted AS `DELETED` ,v6.orgid AS `ORGID` ,v6.MDEPTID AS `MDEPTID` ,v6.`desc` as INDEXDESC ,v6.color ,v6.project ,v6.acllist ,v6.acl FROM (SELECT t1.`ID`, t1.`NAME`, t11.orgid, t11.MDEPTID, t1.deleted, t1.`desc`, t1.color, t1.project, t11.acl, CONCAT_WS(',',t11.openedBy,t11.pm,t11.qd,t11.po,t11.rd) as acllist FROM `zt_task` t1 left join zt_project t11 on t11.id = t1.project  where t11.deleted = '0' ) v6 ) t1
-					 WHERE 	t1.DELETED = '0'
-						 AND t1.orgid = #{srf.sessioncontext.srforgid}
-						 AND ((t1.acl = 'open') or (FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t1.acllist)) or (EXISTS(select 1 from zt_team t where t.type = 'project' and t.account = #{srf.sessioncontext.srfloginname} and FIND_IN_SET(t.root, t1.project))))
-			]]>
+		<![CDATA[ SELECT t1.`DELETED`, t1.`INDEXID`, t1.`INDEXNAME`, t1.`INDEX_TYPE`, t1.`MDEPTID`, t1.`ORGID`, t1.INDEXDESC, t1.color, t1.project, t1.acllist, t1.acl FROM (SELECT 'bug' AS `INDEX_TYPE`,v1.`ID` AS `INDEXID` ,v1.`TITLE` AS `INDEXNAME` ,v1.deleted AS `DELETED` ,v1.orgid AS `ORGID` ,v1.MDEPTID AS `MDEPTID` ,v1.steps as INDEXDESC ,v1.color ,v1.project ,v1.acllist ,v1.acl FROM (SELECT t1.`ID`, t1.`TITLE`, t11.orgid, t11.MDEPTID, t1.deleted, t1.steps, t1.color, t11.acl, CONCAT_WS(',',t11.CREATEDBY,t11.qd,t11.po,t11.rd) as acllist, (select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.product GROUP BY t.product) as project FROM `zt_bug` t1 left join zt_product t11 on t11.id = t1.product  where t11.deleted = '0' ) v1 UNION ALL SELECT 'case' AS `INDEX_TYPE`,v2.`ID` AS `INDEXID` ,v2.`TITLE` AS `INDEXNAME` ,v2.deleted AS `DELETED` ,v2.orgid AS `ORGID` ,v2.MDEPTID AS `MDEPTID` ,v2.precondition as INDEXDESC ,v2.color ,v2.project ,v2.acllist ,v2.acl FROM (SELECT t1.`ID`, t1.`TITLE`, t11.orgid, t11.MDEPTID, t1.deleted, t1.`PRECONDITION`, t1.color, t11.acl, CONCAT_WS(',',t11.CREATEDBY,t11.qd,t11.po,t11.rd) as acllist, (select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.product GROUP BY t.product) as project FROM `zt_case` t1 left join zt_product t11 on t11.id = t1.product  where t11.deleted = '0' ) v2 UNION ALL SELECT 'product' AS `INDEX_TYPE` ,v3.`ID` AS `INDEXID` ,v3.`NAME` AS `INDEXNAME` ,v3.deleted AS `DELETED` ,v3.orgid AS `ORGID` ,v3.MDEPTID AS `MDEPTID` ,v3.`desc` as INDEXDESC , null as color ,v3.project ,v3.acllist ,v3.acl FROM (SELECT t1.`ID`, t1.`NAME`, t1.orgid, t1.MDEPTID, t1.deleted, t1.`desc`, t1.acl, CONCAT_WS(',',t1.CREATEDBY,t1.qd,t1.po,t1.rd) as acllist, (select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.id GROUP BY t.product) as project FROM `zt_product` t1  ) v3 UNION ALL SELECT 'project' AS `INDEX_TYPE`,v4.`ID` AS `INDEXID` ,v4.`NAME` AS `INDEXNAME` ,v4.deleted AS `DELETED` ,v4.orgid AS `ORGID` ,v4.MDEPTID AS `MDEPTID` ,v4.`desc` as INDEXDESC ,null as color ,v4.project ,v4.acllist ,v4.acl FROM (SELECT t1.`ID`, t1.`NAME`, t1.orgid, t1.MDEPTID, t1.deleted, t1.`desc`, t1.acl, CONCAT_WS(',',t1.openedBy,t1.pm,t1.qd,t1.po,t1.rd) as acllist, t1.id as project FROM `zt_project` t1  ) v4 UNION ALL SELECT 'story' AS `INDEX_TYPE`,v5.`ID` AS `INDEXID` ,v5.`TITLE` AS `INDEXNAME` ,v5.deleted AS `DELETED` ,v5.orgid AS `ORGID` ,v5.MDEPTID AS `MDEPTID` ,v5.spec as INDEXDESC ,v5.color ,v5.project ,v5.acllist ,v5.acl FROM (SELECT t1.`ID`, t1.`TITLE`, t11.orgid, t11.MDEPTID, t1.deleted, t21.spec, t1.color, t11.acl, CONCAT_WS(',',t11.CREATEDBY,t11.qd,t11.po,t11.rd) as acllist, (select GROUP_CONCAT(t.project) from zt_projectproduct t where t.product = t1.product GROUP BY t.product) as project FROM `zt_story` t1 left join zt_product t11 on t11.id = t1.product  left join zt_storyspec t21 on t21.story = t1.id and t1.version = t21.version where t11.deleted = '0'  ) v5 UNION ALL SELECT 'task' AS `INDEX_TYPE` ,v6.`ID` AS `INDEXID` ,v6.`NAME` AS `INDEXNAME` ,v6.deleted AS `DELETED` ,v6.orgid AS `ORGID` ,v6.MDEPTID AS `MDEPTID` ,v6.`desc` as INDEXDESC ,v6.color ,v6.project ,v6.acllist ,v6.acl FROM (SELECT t1.`ID`, t1.`NAME`, t11.orgid, t11.MDEPTID, t1.deleted, t1.`desc`, t1.color, t1.project, t11.acl, CONCAT_WS(',',t11.openedBy,t11.pm,t11.qd,t11.po,t11.rd) as acllist FROM `zt_task` t1 left join zt_project t11 on t11.id = t1.project  where t11.deleted = '0' ) v6 ) t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.orgid = #{srf.sessioncontext.srforgid} ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ((t1.acl = 'open') or (FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t1.acllist)) or (EXISTS(select 1 from zt_team t where t.type = 'project' and t.account = #{srf.sessioncontext.srfloginname} and FIND_IN_SET(t.root, t1.project)))) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACL`, t1.`ACLLIST`, t1.`COLOR`, t1.`DELETED`, t1.`INDEXDESC`, t1.`INDEXID`, t1.`INDEXNAME`, t1.`INDEX_TYPE`, t1.`MDEPTID`, t1.`ORGID`, t1.`PROJECT` FROM (SELECT 'bug' AS `INDEX_TYPE`,v1.`ID` AS `INDEXID` ,NULL AS `ACL` ,v1.`TITLE` AS `INDEXNAME` ,NULL AS `COLOR` ,v1.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v1.`STEPS` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v1.`PROJECT` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`PROJECT`, t1.`TITLE` FROM `zt_bug` t1  ) v1 UNION ALL SELECT 'case' AS `INDEX_TYPE`,v2.`ID` AS `INDEXID` ,NULL AS `ACL` ,v2.`TITLE` AS `INDEXNAME` ,NULL AS `COLOR` ,v2.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v2.`PRECONDITION` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`TITLE` FROM `zt_case` t1  ) v2 UNION ALL SELECT 'product' AS `INDEX_TYPE`,v3.`ID` AS `INDEXID` ,NULL AS `ACL` ,v3.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v3.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v3.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME` FROM `zt_product` t1  ) v3 UNION ALL SELECT 'project' AS `INDEX_TYPE`,v4.`ID` AS `INDEXID` ,NULL AS `ACL` ,v4.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v4.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v4.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v4.`ID` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME` FROM `zt_project` t1  ) v4 UNION ALL SELECT 'story' AS `INDEX_TYPE`,v5.`ID` AS `INDEXID` ,NULL AS `ACL` ,v5.`TITLE` AS `INDEXNAME` ,v5.`COLOR` AS `COLOR` ,v5.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v5.`SPEC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`COLOR`, t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`TITLE` FROM `zt_story` t1  ) v5 UNION ALL SELECT 'task' AS `INDEX_TYPE`,v6.`ID` AS `INDEXID` ,NULL AS `ACL` ,v6.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v6.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v6.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v6.`PROJECT` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME`, t1.`PROJECT` FROM `zt_task` t1  ) v6 ) t1  
-			]]>
+		<![CDATA[ SELECT t1.`ACL`, t1.`ACLLIST`, t1.`COLOR`, t1.`DELETED`, t1.`INDEXDESC`, t1.`INDEXID`, t1.`INDEXNAME`, t1.`INDEX_TYPE`, t1.`MDEPTID`, t1.`ORGID`, t1.`PROJECT` FROM (SELECT 'bug' AS `INDEX_TYPE`,v1.`ID` AS `INDEXID` ,NULL AS `ACL` ,v1.`TITLE` AS `INDEXNAME` ,NULL AS `COLOR` ,v1.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v1.`STEPS` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v1.`PROJECT` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`PROJECT`, t1.`TITLE` FROM `zt_bug` t1  ) v1 UNION ALL SELECT 'case' AS `INDEX_TYPE`,v2.`ID` AS `INDEXID` ,NULL AS `ACL` ,v2.`TITLE` AS `INDEXNAME` ,NULL AS `COLOR` ,v2.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v2.`PRECONDITION` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`TITLE` FROM `zt_case` t1  ) v2 UNION ALL SELECT 'product' AS `INDEX_TYPE`,v3.`ID` AS `INDEXID` ,NULL AS `ACL` ,v3.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v3.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v3.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME` FROM `zt_product` t1  ) v3 UNION ALL SELECT 'project' AS `INDEX_TYPE`,v4.`ID` AS `INDEXID` ,NULL AS `ACL` ,v4.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v4.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v4.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v4.`ID` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME` FROM `zt_project` t1  ) v4 UNION ALL SELECT 'story' AS `INDEX_TYPE`,v5.`ID` AS `INDEXID` ,NULL AS `ACL` ,v5.`TITLE` AS `INDEXNAME` ,v5.`COLOR` AS `COLOR` ,v5.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v5.`SPEC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,NULL AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`COLOR`, t1.`DELETED`, t1.`ID`, t1.`PRODUCT`, t1.`TITLE` FROM `zt_story` t1  ) v5 UNION ALL SELECT 'task' AS `INDEX_TYPE`,v6.`ID` AS `INDEXID` ,NULL AS `ACL` ,v6.`NAME` AS `INDEXNAME` ,NULL AS `COLOR` ,v6.`DELETED` AS `DELETED` ,NULL AS `ACLLIST` ,v6.`DESC` AS `INDEXDESC` ,NULL AS `MDEPTID` ,v6.`PROJECT` AS `PROJECT` ,NULL AS `ORGID` FROM (SELECT t1.`DELETED`, t1.`ID`, t1.`NAME`, t1.`PROJECT` FROM `zt_task` t1  ) v6 ) t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
 </mapper>
 

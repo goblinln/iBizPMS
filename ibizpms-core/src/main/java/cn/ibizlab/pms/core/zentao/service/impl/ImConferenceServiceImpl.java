@@ -100,9 +100,8 @@ public class ImConferenceServiceImpl extends ServiceImpl<ImConferenceMapper, ImC
     @Transactional
     public ImConference get(Long key) {
         ImConference et = getById(key);
-        if(et == null){
-            et = new ImConference();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -230,5 +229,6 @@ public class ImConferenceServiceImpl extends ServiceImpl<ImConferenceMapper, ImC
         return et;
     }
 }
+
 
 

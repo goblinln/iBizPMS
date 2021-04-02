@@ -107,9 +107,8 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Transactional
     public IbizproProductDaily get(Long key) {
         IbizproProductDaily et = getById(key);
-        if(et == null){
-            et = new IbizproProductDaily();
-            et.setIbizproproductdailyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -327,5 +326,6 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         return et;
     }
 }
+
 
 

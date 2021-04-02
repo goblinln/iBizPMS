@@ -24,16 +24,6 @@ import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProTagSearchContext;
  */
 public interface IIBIZProTagService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "标签";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibizprotags";
-
     boolean create(IBIZProTag et);
     void createBatch(List<IBIZProTag> list);
     boolean update(IBIZProTag et);
@@ -47,7 +37,6 @@ public interface IIBIZProTagService {
     void saveBatch(List<IBIZProTag> list);
     Page<IBIZProTag> searchDefault(IBIZProTagSearchContext context);
     IBIZProTag dynamicCall(String key, String action, IBIZProTag et);
-
 
 }
 

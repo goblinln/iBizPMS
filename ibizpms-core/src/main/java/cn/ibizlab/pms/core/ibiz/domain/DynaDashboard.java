@@ -49,7 +49,7 @@ public class DynaDashboard extends EntityMP implements Serializable {
     /**
      * 用户标识
      */
-    @TableField(value = "`userid`")
+    @TableField(value = "userid")
     @JSONField(name = "userid")
     @JsonProperty("userid")
     @ApiModelProperty("用户标识")
@@ -66,7 +66,7 @@ public class DynaDashboard extends EntityMP implements Serializable {
     /**
      * 动态数据看板名称
      */
-    @TableField(value = "`dynadashboardname`")
+    @TableField(value = "dynadashboardname")
     @JSONField(name = "dynadashboardname")
     @JsonProperty("dynadashboardname")
     @ApiModelProperty("动态数据看板名称")
@@ -75,7 +75,7 @@ public class DynaDashboard extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`createman`", fill = FieldFill.INSERT)
+    @TableField(value = "createman", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -84,7 +84,7 @@ public class DynaDashboard extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`updateman`")
+    @TableField(value = "updateman")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -92,7 +92,7 @@ public class DynaDashboard extends EntityMP implements Serializable {
     /**
      * 模型标识
      */
-    @TableField(value = "`modelid`")
+    @TableField(value = "modelid")
     @JSONField(name = "modelid")
     @JsonProperty("modelid")
     @ApiModelProperty("模型标识")
@@ -101,7 +101,7 @@ public class DynaDashboard extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`updatedate`")
+    @TableField(value = "updatedate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -110,7 +110,7 @@ public class DynaDashboard extends EntityMP implements Serializable {
     /**
      * 应用标识
      */
-    @TableField(value = "`appid`")
+    @TableField(value = "appid")
     @JSONField(name = "appid")
     @JsonProperty("appid")
     @ApiModelProperty("应用标识")
@@ -119,7 +119,7 @@ public class DynaDashboard extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`createdate`", fill = FieldFill.INSERT)
+    @TableField(value = "createdate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -128,7 +128,7 @@ public class DynaDashboard extends EntityMP implements Serializable {
     /**
      * 模型
      */
-    @TableField(value = "`model`")
+    @TableField(value = "model")
     @JSONField(name = "model")
     @JsonProperty("model")
     @ApiModelProperty("模型")

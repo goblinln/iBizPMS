@@ -100,9 +100,8 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
     @Transactional
     public UserQuery get(Long key) {
         UserQuery et = getById(key);
-        if(et == null){
-            et = new UserQuery();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -230,5 +229,6 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
         return et;
     }
 }
+
 
 

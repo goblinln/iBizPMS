@@ -2,11 +2,64 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.ProductPlanMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, t1.`DESC`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`ORDER`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_title_like != null ">
+            <bind name="bind_n_title_like" value="'%' + srf.n_title_like + '%'" />
+            <![CDATA[ AND  t1.`TITLE` like #{bind_n_title_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_begin_gtandeq != null ">
+			<![CDATA[ AND  t1.`BEGIN` >= #{srf.n_begin_gtandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_end_ltandeq != null ">
+			<![CDATA[ AND  t1.`END` <= #{srf.n_end_ltandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_isexpired_eq != null ">
+			<![CDATA[ AND  (case when t1.`end` > now() then '0' else '1' end) = #{srf.n_isexpired_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_future_eq != null ">
+			<![CDATA[ AND  (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) = #{srf.n_future_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_parentname_eq != null ">
+			<![CDATA[ AND  t11.`TITLE` = #{srf.n_parentname_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_parentname_like != null ">
+            <bind name="bind_n_parentname_like" value="'%' + srf.n_parentname_like + '%'" />
+            <![CDATA[ AND  t11.`TITLE` like #{bind_n_parentname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_branch_eq != null ">
+			<![CDATA[ AND  t1.`BRANCH` = #{srf.n_branch_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_parent_eq != null ">
+			<![CDATA[ AND  t1.`PARENT` = #{srf.n_parent_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_product_eq != null ">
+			<![CDATA[ AND  t1.`PRODUCT` = #{srf.n_product_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="ProductPlanResultMap" databaseId="mysql">
-        <![CDATA[select t1.* from (SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, t1.`DESC`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`ORDER`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`  ) t1 where id=#{id}]]>
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
     </select>
+
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="ProductPlanResultMap" type="cn.ibizlab.pms.core.zentao.domain.ProductPlan" autoMapping="true">
@@ -14,8 +67,8 @@
 		<result property="branch" column="branch" />
 		<result property="parent" column="parent" />
 		<result property="product" column="product" />
-
-
+            
+		
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztbranch" javaType="cn.ibizlab.pms.core.zentao.domain.Branch" column="branch" select="cn.ibizlab.pms.core.zentao.mapper.BranchMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
@@ -25,34 +78,43 @@
     </resultMap>
 
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PRODUCTPLAN_ZT_BRANCH_BRANCH] -->
-	 <select id="selectByBranch" resultMap="ProductPlanResultMap">
-	select * from (
-         select t1.* from (
-                <include refid="Default" />
-			 ) t1
-			 where  branch=#{id}
+	 <select id="selectByBranch" resultMap="ProductPlanResultMap"  databaseId="mysql">
+		select * from (
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.BRANCH=#{id} ]]>
+		</trim>
 		 )t1
-		 order by `begin`  desc  
+		 order by begin  desc  
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT] -->
-	 <select id="selectByProduct" resultMap="ProductPlanResultMap">
-	select * from (
-         select t1.* from (
-                <include refid="Default" />
-			 ) t1
-			 where  product=#{id}
+	 <select id="selectByProduct" resultMap="ProductPlanResultMap"  databaseId="mysql">
+		select * from (
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.PRODUCT=#{id} ]]>
+		</trim>
 		 )t1
-		 order by `begin`  desc  
+		 order by begin  desc  
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N__ZT_PRODUCTPLAN__ZT_PRODUCTPLAN__PARENT] -->
-	 <select id="selectByParent" resultMap="ProductPlanResultMap">
-	select * from (
-         select t1.* from (
-                <include refid="Default" />
-			 ) t1
-			 where  parent=#{id}
+	 <select id="selectByParent" resultMap="ProductPlanResultMap"  databaseId="mysql">
+		select * from (
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.PARENT=#{id} ]]>
+		</trim>
 		 )t1
-		 order by `begin`  desc  
+		 order by begin  desc  
      </select>
 
     <!--数据集合[ChildPlan]-->
@@ -60,8 +122,6 @@
          select t1.* from (
                 <include refid="ChildPlan" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[CurProductPlan]-->
@@ -69,8 +129,6 @@
          select t1.* from (
                 <include refid="GetList" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[Default]-->
@@ -79,10 +137,8 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
 		 )t1
-		 order by `begin`  desc  
+		 order by begin  desc  
      </select>
 
     <!--数据集合[DefaultParent]-->
@@ -90,8 +146,6 @@
          select t1.* from (
                 <include refid="DefaultParent" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[PlanCodeList]-->
@@ -99,8 +153,6 @@
          select t1.* from (
                 <include refid="PlanCodeList" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[PlanTasks]-->
@@ -108,8 +160,6 @@
          select t1.* from (
                 <include refid="PlanTasks" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[ProjectApp]-->
@@ -117,8 +167,6 @@
          select t1.* from (
                 <include refid="ProjectApp" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[ProjectPlan]-->
@@ -126,8 +174,6 @@
          select t1.* from (
                 <include refid="ProjectPlan" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[RootPlan]-->
@@ -135,8 +181,6 @@
          select t1.* from (
                 <include refid="RootPlan" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[TaskPlan]-->
@@ -144,81 +188,146 @@
          select t1.* from (
                 <include refid="TaskPlan" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[ChildPlan]-->
     <sql id="ChildPlan" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, t1.`DELETED`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, 	case when ( To_Days( t1.`end` ) - To_Days( t1.`begin`) ) is null then null else ( To_Days( t1.`end` ) - To_Days( t1.`begin` ) ) + 1 end  AS `DURATION`, t1.`TITLE` as `TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`  
-					 WHERE 	t1.DELETED = '0'
-			]]>
+		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, t1.`DELETED`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, 	case when ( To_Days( t1.`end` ) - To_Days( t1.`begin`) ) is null then null else ( To_Days( t1.`end` ) - To_Days( t1.`begin` ) ) + 1 end  AS `DURATION`, t1.`TITLE` as `TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`  
-					 WHERE 	t1.DELETED = '0'
-			]]>
+		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[DefaultParent]-->
     <sql id="DefaultParent" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`  
-					 WHERE 	t1.DELETED = '0'
-						 AND ( ( t1.`PARENT` <= 0 ) )
-			]]>
+		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ( ( t1.`PARENT` <= 0 ) ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[GetList]-->
     <sql id="GetList" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`  
-					 WHERE 	t1.DELETED = '0'
-						 AND ( ( t1.`PRODUCT` = #{srf.datacontext.product}  OR  t1.`PRODUCT` = #{srf.datacontext.products} ) )
-			]]>
+		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ( ( t1.`PRODUCT` = #{srf.datacontext.product}  OR  t1.`PRODUCT` = #{srf.datacontext.products} ) ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[PlanCodeList]-->
     <sql id="PlanCodeList" databaseId="mysql">
-		<![CDATA[ select t1.* from ( SELECT t1.`ID`, t1.`TITLE`, t1.product, t1.parent FROM `zt_productplan` t1  UNION SELECT 0 as `ID`, '未计划' as `TITLE`, 0 as product, 0 as parent FROM dual  ) t1
-			]]>
+		<![CDATA[ select t1.* from ( SELECT t1.`ID`, t1.`TITLE`, t1.product, t1.parent FROM `zt_productplan` t1  UNION SELECT 0 as `ID`, '未计划' as `TITLE`, 0 as product, 0 as parent FROM dual  ) t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[PlanTasks]-->
     <sql id="PlanTasks" databaseId="mysql">
-		<![CDATA[ SELECT case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end as delay, 	t1.`BEGIN`, 	( CASE WHEN t1.`begin` = '2030-01-01' THEN '待定' ELSE t1.`begin` END ) AS `BEGINSTR`, 	t1.`BRANCH`, 	( 	( SELECT 	count( t.id )  FROM 	zt_bug t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.deleted = '0'  	)  	) AS `BUGCNT`, 	t1.`DELETED`, 	t1.`END`, 	( CASE WHEN t1.`end` = '2030-01-01' THEN '待定' ELSE t1.`end` END ) AS `ENDSTR`, 	( SELECT 	sum( t.estimate )  FROM 	zt_story t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.deleted = '0'  	) AS `ESTIMATECNT`, 	( CASE WHEN t1.`begin` = '2030-01-01' OR t1.`end` = '2030-01-01' THEN 'on' ELSE '' END ) AS `FUTURE`, 	t1.`ID`, 	( CASE WHEN t1.`end` > now( ) THEN '0' ELSE '1' END ) AS `ISEXPIRED`, 	t1.`PARENT`, 	t11.`TITLE` AS `PARENTNAME`, 	t1.`PRODUCT`, 	( CASE WHEN t1.parent = - 1 THEN 'parent' WHEN t1.parent > 0 THEN 'chlid' ELSE 'normal' END ) AS `STATUSS`, 	( 	( SELECT 	COUNT( t.id )  FROM 	zt_story t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.deleted = '0'  	)  	) AS `STORYCNT`, 	( 	( SELECT 	COUNT( t.id )  FROM 	zt_task t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	)  	) AS `TASKSCNT`, 	( 	( SELECT 	COUNT( t.id )  FROM 	zt_task t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.`status` = 'done'  	)  	) AS `FINISHEDTASKSCNT`, 	( 	( SELECT 	COUNT( t.id )  FROM 	zt_task t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.`status` IN ( 'doing', 'wait', 'pause' )  	)  	) AS `UNFINISHEDTASKSCNT`, 	( 	( SELECT 	COUNT( t.id )  FROM 	zt_task t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.`status` IN ( 'wait', 'doing', 'pause' )  	AND t.deadline != '0000-00-00'  	AND t.deadline != '1970-01-01'  	AND t.deadline < DATE_FORMAT( now( ), '%y-%m-%d' )  	)  	) AS `DELAYTASKSCNT`, 	t1.`TITLE`, 	IFNULL(t2.LeftEstimate,0) as leftestimate, 	IFNULL(t2.ConsumedEstimate,0) as consumedestimate  ,         t1.`STATUS` FROM 	`zt_PRODUCTPLAN` t1 	LEFT JOIN `zt_PRODUCTPLAN` t11 ON t1.`PARENT` = t11.`ID` 	LEFT JOIN ( SELECT 	SUM( t.LeftEstimate ) AS LeftEstimate, 	SUM( t.ConsumedEstimate ) AS ConsumedEstimate, 	t.plan  FROM 	( SELECT 	t1.task, 	SUM( t1.LEFT ) AS LeftEstimate, 	SUM( t1.consumed ) AS ConsumedEstimate, 	t2.NAME, 	t2.plan  FROM 	zt_taskestimate t1 	LEFT JOIN zt_task t2 ON t1.task = t2.id  GROUP BY 	t1.task  	) t  WHERE 	t.plan > 0  GROUP BY 	t.plan  	) t2 ON t1.id = t2.plan
-					 WHERE 	t1.DELETED = '0'
-						 AND ( ( t1.`PARENT` <= 0 ) )
-			]]>
+		<![CDATA[ SELECT case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end as delay, 	t1.`BEGIN`, 	( CASE WHEN t1.`begin` = '2030-01-01' THEN '待定' ELSE t1.`begin` END ) AS `BEGINSTR`, 	t1.`BRANCH`, 	( 	( SELECT 	count( t.id )  FROM 	zt_bug t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.deleted = '0'  	)  	) AS `BUGCNT`, 	t1.`DELETED`, 	t1.`END`, 	( CASE WHEN t1.`end` = '2030-01-01' THEN '待定' ELSE t1.`end` END ) AS `ENDSTR`, 	( SELECT 	sum( t.estimate )  FROM 	zt_story t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.deleted = '0'  	) AS `ESTIMATECNT`, 	( CASE WHEN t1.`begin` = '2030-01-01' OR t1.`end` = '2030-01-01' THEN 'on' ELSE '' END ) AS `FUTURE`, 	t1.`ID`, 	( CASE WHEN t1.`end` > now( ) THEN '0' ELSE '1' END ) AS `ISEXPIRED`, 	t1.`PARENT`, 	t11.`TITLE` AS `PARENTNAME`, 	t1.`PRODUCT`, 	( CASE WHEN t1.parent = - 1 THEN 'parent' WHEN t1.parent > 0 THEN 'chlid' ELSE 'normal' END ) AS `STATUSS`, 	( 	( SELECT 	COUNT( t.id )  FROM 	zt_story t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.deleted = '0'  	)  	) AS `STORYCNT`, 	( 	( SELECT 	COUNT( t.id )  FROM 	zt_task t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	)  	) AS `TASKSCNT`, 	( 	( SELECT 	COUNT( t.id )  FROM 	zt_task t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.`status` = 'done'  	)  	) AS `FINISHEDTASKSCNT`, 	( 	( SELECT 	COUNT( t.id )  FROM 	zt_task t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.`status` IN ( 'doing', 'wait', 'pause' )  	)  	) AS `UNFINISHEDTASKSCNT`, 	( 	( SELECT 	COUNT( t.id )  FROM 	zt_task t  WHERE 	( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  	)  	)  	AND t.`status` IN ( 'wait', 'doing', 'pause' )  	AND t.deadline != '0000-00-00'  	AND t.deadline != '1970-01-01'  	AND t.deadline < DATE_FORMAT( now( ), '%y-%m-%d' )  	)  	) AS `DELAYTASKSCNT`, 	t1.`TITLE`, 	IFNULL(t2.LeftEstimate,0) as leftestimate, 	IFNULL(t2.ConsumedEstimate,0) as consumedestimate  ,         t1.`STATUS` FROM 	`zt_PRODUCTPLAN` t1 	LEFT JOIN `zt_PRODUCTPLAN` t11 ON t1.`PARENT` = t11.`ID` 	LEFT JOIN ( SELECT 	SUM( t.LeftEstimate ) AS LeftEstimate, 	SUM( t.ConsumedEstimate ) AS ConsumedEstimate, 	t.plan  FROM 	( SELECT 	t1.task, 	SUM( t1.LEFT ) AS LeftEstimate, 	SUM( t1.consumed ) AS ConsumedEstimate, 	t2.NAME, 	t2.plan  FROM 	zt_taskestimate t1 	LEFT JOIN zt_task t2 ON t1.task = t2.id  GROUP BY 	t1.task  	) t  WHERE 	t.plan > 0  GROUP BY 	t.plan  	) t2 ON t1.id = t2.plan ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ( ( t1.`PARENT` <= 0 ) ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[ProjectApp]-->
     <sql id="ProjectApp" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`  
-					 WHERE 	t1.DELETED = '0'
-						 AND ( t1.`PRODUCT` = #{srf.webcontext.product} )
-			]]>
+		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ( t1.`PRODUCT` = #{srf.webcontext.product} ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[ProjectPlan]-->
     <sql id="ProjectPlan" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, 	t1.`BRANCH`, 	t1.`DELETED`, 	t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, 	t1.`ID`, 	t1.`PARENT`, 	t11.`TITLE` AS `PARENTNAME`, 	t1.`PRODUCT`, 	(CONCAT(t31.`name`,'/',t1.title,'[',case when t1.`begin` is not null then t1.`begin` else '' end,'~',case when t1.`end` is not null then t1.`end` else '' end,']')) as `TITLE`  FROM 	`zt_productplan` t1 	LEFT JOIN zt_productplan t11 ON t1.PARENT = t11.ID 	LEFT JOIN zt_product t31 ON t1.product = t31.id  	LEFT JOIN zt_projectproduct t21 ON t31.id = t21.product and t1.id = t21.plan
-					 WHERE 	( t21.`PROJECT` = 	#{srf.datacontext.srfparentkey}  or t1.parent in (	SELECT GROUP_CONCAT(t1.id) FROM 	`zt_productplan` t1 	LEFT JOIN zt_productplan t11 ON t1.PARENT = t11.ID 	LEFT JOIN zt_product t31 ON t1.product = t31.id  	LEFT JOIN zt_projectproduct t21 ON t31.id = t21.product and t1.id = t21.plan 	 	where t1.deleted = '0' and ( t21.`PROJECT` =  #{srf.datacontext.srfparentkey}  ) ) )
-						 AND t1.DELETED = '0'
-			]]>
+		<![CDATA[ SELECT 	t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, 	t1.`BRANCH`, 	t1.`DELETED`, 	t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, 	t1.`ID`, 	t1.`PARENT`, 	t11.`TITLE` AS `PARENTNAME`, 	t1.`PRODUCT`, 	(CONCAT(t31.`name`,'/',t1.title,'[',case when t1.`begin` is not null then t1.`begin` else '' end,'~',case when t1.`end` is not null then t1.`end` else '' end,']')) as `TITLE`  FROM 	`zt_productplan` t1 	LEFT JOIN zt_productplan t11 ON t1.PARENT = t11.ID 	LEFT JOIN zt_product t31 ON t1.product = t31.id  	LEFT JOIN zt_projectproduct t21 ON t31.id = t21.product and t1.id = t21.plan ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND ( t21.`PROJECT` = 	#{srf.datacontext.srfparentkey}  or t1.parent in (	SELECT GROUP_CONCAT(t1.id) FROM 	`zt_productplan` t1 	LEFT JOIN zt_productplan t11 ON t1.PARENT = t11.ID 	LEFT JOIN zt_product t31 ON t1.product = t31.id  	LEFT JOIN zt_projectproduct t21 ON t31.id = t21.product and t1.id = t21.plan 	 	where t1.deleted = '0' and ( t21.`PROJECT` =  #{srf.datacontext.srfparentkey}  ) ) ) ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[RootPlan]-->
     <sql id="RootPlan" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, t1.`DELETED`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, 	case when ( To_Days( t1.`end` ) - To_Days( t1.`begin`) ) is null then null else ( To_Days( t1.`end` ) - To_Days( t1.`begin` ) ) + 1 end  AS `DURATION`, t1.`TITLE` as `TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`  
-					 WHERE 	t1.DELETED = '0'
-						 AND t1.parent <= '0'
-			]]>
+		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, t1.`DELETED`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, 	case when ( To_Days( t1.`end` ) - To_Days( t1.`begin`) ) is null then null else ( To_Days( t1.`end` ) - To_Days( t1.`begin` ) ) + 1 end  AS `DURATION`, t1.`TITLE` as `TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.parent <= '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[TaskPlan]-->
     <sql id="TaskPlan" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`  
-					 WHERE 	t1.DELETED = '0'
-						 AND ( t1.product in (select t.product from zt_projectproduct t where t.project =#{srf.webcontext.project} ) )
-			]]>
+		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ( t1.product in (select t.product from zt_projectproduct t where t.project =#{srf.webcontext.project} ) ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, t1.`DESC`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`ORDER`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`  
-					 WHERE 	t1.DELETED = '0'
-			]]>
+		<![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, t1.`DESC`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`ORDER`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
 </mapper>
 

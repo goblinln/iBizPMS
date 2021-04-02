@@ -43,11 +43,11 @@ public class UserResource {
     @Autowired
     public IUserService userService;
 
+
     @Autowired
     @Lazy
     public UserMapping userMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-Create-all')")
     @ApiOperation(value = "新建用户", tags = {"用户" },  notes = "新建用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users")
     public ResponseEntity<UserDTO> create(@Validated @RequestBody UserDTO userdto) {
@@ -57,7 +57,6 @@ public class UserResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-Create-all')")
     @ApiOperation(value = "批量新建用户", tags = {"用户" },  notes = "批量新建用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<UserDTO> userdtos) {
@@ -65,7 +64,6 @@ public class UserResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-Update-all')")
     @ApiOperation(value = "更新用户", tags = {"用户" },  notes = "更新用户")
 	@RequestMapping(method = RequestMethod.PUT, value = "/users/{user_id}")
     public ResponseEntity<UserDTO> update(@PathVariable("user_id") Long user_id, @RequestBody UserDTO userdto) {
@@ -76,7 +74,6 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-Update-all')")
     @ApiOperation(value = "批量更新用户", tags = {"用户" },  notes = "批量更新用户")
 	@RequestMapping(method = RequestMethod.PUT, value = "/users/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<UserDTO> userdtos) {
@@ -84,14 +81,12 @@ public class UserResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-Remove-all')")
     @ApiOperation(value = "删除用户", tags = {"用户" },  notes = "删除用户")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/users/{user_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("user_id") Long user_id) {
          return ResponseEntity.status(HttpStatus.OK).body(userService.remove(user_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-Remove-all')")
     @ApiOperation(value = "批量删除用户", tags = {"用户" },  notes = "批量删除用户")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/users/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +94,6 @@ public class UserResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-Get-all')")
     @ApiOperation(value = "获取用户", tags = {"用户" },  notes = "获取用户")
 	@RequestMapping(method = RequestMethod.GET, value = "/users/{user_id}")
     public ResponseEntity<UserDTO> get(@PathVariable("user_id") Long user_id) {
@@ -121,7 +115,6 @@ public class UserResource {
         return  ResponseEntity.status(HttpStatus.OK).body(userService.checkKey(userMapping.toDomain(userdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-GetByCommiter-all')")
     @ApiOperation(value = "根据代码账户查询用户信息", tags = {"用户" },  notes = "根据代码账户查询用户信息")
 	@RequestMapping(method = RequestMethod.GET, value = "/users/{user_id}/getbycommiter")
     public ResponseEntity<UserDTO> getByCommiter(@PathVariable("user_id") Long user_id, @RequestBody UserDTO userdto) {
@@ -132,7 +125,6 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-Save-all')")
     @ApiOperation(value = "保存用户", tags = {"用户" },  notes = "保存用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/save")
     public ResponseEntity<UserDTO> save(@RequestBody UserDTO userdto) {
@@ -141,7 +133,6 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(userMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-Save-all')")
     @ApiOperation(value = "批量保存用户", tags = {"用户" },  notes = "批量保存用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<UserDTO> userdtos) {
@@ -149,7 +140,6 @@ public class UserResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-SyncAccount-all')")
     @ApiOperation(value = "同步账号", tags = {"用户" },  notes = "同步账号")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/{user_id}/syncaccount")
     public ResponseEntity<UserDTO> syncAccount(@PathVariable("user_id") Long user_id, @RequestBody UserDTO userdto) {
@@ -159,7 +149,6 @@ public class UserResource {
         userdto = userMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-SyncAccount-all')")
     @ApiOperation(value = "批量处理[同步账号]", tags = {"用户" },  notes = "批量处理[同步账号]")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/syncaccountbatch")
     public ResponseEntity<Boolean> syncAccountBatch(@RequestBody List<UserDTO> userdtos) {
@@ -168,7 +157,6 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchBugUser-all')")
 	@ApiOperation(value = "获取Bug用户", tags = {"用户" } ,notes = "获取Bug用户")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchbuguser")
 	public ResponseEntity<List<UserDTO>> fetchBugUser(UserSearchContext context) {
@@ -181,7 +169,6 @@ public class UserResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchBugUser-all')")
 	@ApiOperation(value = "查询Bug用户", tags = {"用户" } ,notes = "查询Bug用户")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchbuguser")
 	public ResponseEntity<Page<UserDTO>> searchBugUser(@RequestBody UserSearchContext context) {
@@ -190,7 +177,6 @@ public class UserResource {
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchDefault-all')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchdefault")
 	public ResponseEntity<List<UserDTO>> fetchDefault(UserSearchContext context) {
@@ -203,7 +189,6 @@ public class UserResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchDefault-all')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"用户" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchdefault")
 	public ResponseEntity<Page<UserDTO>> searchDefault(@RequestBody UserSearchContext context) {
@@ -212,7 +197,6 @@ public class UserResource {
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchGetByCommiter-all')")
 	@ApiOperation(value = "获取根据源代码账户获取登录名", tags = {"用户" } ,notes = "获取根据源代码账户获取登录名")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchgetbycommiter")
 	public ResponseEntity<List<UserDTO>> fetchGetByCommiter(UserSearchContext context) {
@@ -225,7 +209,6 @@ public class UserResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchGetByCommiter-all')")
 	@ApiOperation(value = "查询根据源代码账户获取登录名", tags = {"用户" } ,notes = "查询根据源代码账户获取登录名")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchgetbycommiter")
 	public ResponseEntity<Page<UserDTO>> searchGetByCommiter(@RequestBody UserSearchContext context) {
@@ -234,7 +217,6 @@ public class UserResource {
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchProjectTeamM-all')")
 	@ApiOperation(value = "获取项目团队管理", tags = {"用户" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchprojectteamm")
 	public ResponseEntity<List<UserDTO>> fetchProjectTeamM(UserSearchContext context) {
@@ -247,7 +229,6 @@ public class UserResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchProjectTeamM-all')")
 	@ApiOperation(value = "查询项目团队管理", tags = {"用户" } ,notes = "查询项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchprojectteamm")
 	public ResponseEntity<Page<UserDTO>> searchProjectTeamM(@RequestBody UserSearchContext context) {
@@ -256,7 +237,6 @@ public class UserResource {
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchProjectTeamUser-all')")
 	@ApiOperation(value = "获取项目团队成员", tags = {"用户" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchprojectteamuser")
 	public ResponseEntity<List<UserDTO>> fetchProjectTeamUser(UserSearchContext context) {
@@ -269,7 +249,6 @@ public class UserResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchProjectTeamUser-all')")
 	@ApiOperation(value = "查询项目团队成员", tags = {"用户" } ,notes = "查询项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchprojectteamuser")
 	public ResponseEntity<Page<UserDTO>> searchProjectTeamUser(@RequestBody UserSearchContext context) {
@@ -278,7 +257,6 @@ public class UserResource {
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchProjectTeamUserTask-all')")
 	@ApiOperation(value = "获取项目团队成员", tags = {"用户" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchprojectteamusertask")
 	public ResponseEntity<List<UserDTO>> fetchProjectTeamUserTask(UserSearchContext context) {
@@ -291,7 +269,6 @@ public class UserResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchProjectTeamUserTask-all')")
 	@ApiOperation(value = "查询项目团队成员", tags = {"用户" } ,notes = "查询项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchprojectteamusertask")
 	public ResponseEntity<Page<UserDTO>> searchProjectTeamUserTask(@RequestBody UserSearchContext context) {
@@ -300,7 +277,6 @@ public class UserResource {
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchTaskTeam-all')")
 	@ApiOperation(value = "获取TASKTEAM", tags = {"用户" } ,notes = "获取TASKTEAM")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchtaskteam")
 	public ResponseEntity<List<UserDTO>> fetchTaskTeam(UserSearchContext context) {
@@ -313,7 +289,6 @@ public class UserResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-User-searchTaskTeam-all')")
 	@ApiOperation(value = "查询TASKTEAM", tags = {"用户" } ,notes = "查询TASKTEAM")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchtaskteam")
 	public ResponseEntity<Page<UserDTO>> searchTaskTeam(@RequestBody UserSearchContext context) {

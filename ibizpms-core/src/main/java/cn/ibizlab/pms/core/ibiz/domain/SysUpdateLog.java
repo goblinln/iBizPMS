@@ -50,7 +50,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`updatedate`")
+    @TableField(value = "updatedate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -60,7 +60,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`updateman`")
+    @TableField(value = "updateman")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -69,7 +69,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`createman`", fill = FieldFill.INSERT)
+    @TableField(value = "createman", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -78,7 +78,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`createdate`", fill = FieldFill.INSERT)
+    @TableField(value = "createdate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -97,7 +97,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
      * 更新平台
      */
     @DEField(defaultValue = "MOB")
-    @TableField(value = "`updatebranch`")
+    @TableField(value = "updatebranch")
     @JSONField(name = "updatebranch")
     @JsonProperty("updatebranch")
     @ApiModelProperty("更新平台")
@@ -105,7 +105,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
     /**
      * 更新说明
      */
-    @TableField(value = "`updesc`")
+    @TableField(value = "updesc")
     @JSONField(name = "updesc")
     @JsonProperty("updesc")
     @ApiModelProperty("更新说明")
@@ -114,7 +114,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
      * 更新名称
      */
     @DEField(name = "sys_update_logname")
-    @TableField(value = "`sys_update_logname`")
+    @TableField(value = "sys_update_logname")
     @JSONField(name = "sysupdatelogname")
     @JsonProperty("sysupdatelogname")
     @ApiModelProperty("更新名称")
@@ -123,7 +123,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
      * 最新更新
      */
     @DEField(defaultValue = "1")
-    @TableField(value = "`latestupdate`")
+    @TableField(value = "latestupdate")
     @JSONField(name = "latestupdate")
     @JsonProperty("latestupdate")
     @ApiModelProperty("最新更新")
@@ -131,7 +131,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
     /**
      * 更新日期
      */
-    @TableField(value = "`update`")
+    @TableField(value = "update")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "update", format = "yyyy-MM-dd")
     @JsonProperty("update")

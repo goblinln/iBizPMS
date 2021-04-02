@@ -100,9 +100,8 @@ public class ImClientServiceImpl extends ServiceImpl<ImClientMapper, ImClient> i
     @Transactional
     public ImClient get(Long key) {
         ImClient et = getById(key);
-        if(et == null){
-            et = new ImClient();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -230,5 +229,6 @@ public class ImClientServiceImpl extends ServiceImpl<ImClientMapper, ImClient> i
         return et;
     }
 }
+
 
 

@@ -106,9 +106,8 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
     @Transactional
     public IbzPlanTemplet get(String key) {
         IbzPlanTemplet et = getById(key);
-        if(et == null){
-            et = new IbzPlanTemplet();
-            et.setIbzplantempletid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
             et.setIbzplantempletdetail(ibzplantempletdetailService.selectByPlantempletid(key));
@@ -283,5 +282,6 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
         return et;
     }
 }
+
 
 

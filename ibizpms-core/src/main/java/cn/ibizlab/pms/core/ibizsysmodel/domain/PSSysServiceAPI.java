@@ -35,11 +35,6 @@ import cn.ibizlab.pms.util.domain.EntityClient;
 @Data
 @ApiModel("系统服务接口")
 public class PSSysServiceAPI extends EntityClient implements Serializable {
-    @Override
-    public void modify(String field, Object val) {
-        getExtensionparams().put("dirtyflagenable", true);
-        super.modify(field, val);
-    }
 
     /**
      * 认证客户端标识

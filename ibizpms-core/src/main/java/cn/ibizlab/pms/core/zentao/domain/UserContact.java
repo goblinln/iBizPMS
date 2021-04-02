@@ -49,7 +49,7 @@ public class UserContact extends EntityMP implements Serializable {
     /**
      * userList
      */
-    @TableField(value = "`userlist`")
+    @TableField(value = "userlist")
     @JSONField(name = "userlist")
     @JsonProperty("userlist")
     @ApiModelProperty("userList")
@@ -57,7 +57,7 @@ public class UserContact extends EntityMP implements Serializable {
     /**
      * 标题
      */
-    @TableField(value = "`listname`")
+    @TableField(value = "listname")
     @JSONField(name = "listname")
     @JsonProperty("listname")
     @ApiModelProperty("标题")
@@ -75,7 +75,7 @@ public class UserContact extends EntityMP implements Serializable {
      * account
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`account`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("account")

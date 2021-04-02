@@ -24,16 +24,6 @@ import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProKeywordSearchContext;
  */
 public interface IIBIZProKeywordService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "关键字";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibizprokeywords";
-
     boolean create(IBIZProKeyword et);
     void createBatch(List<IBIZProKeyword> list);
     boolean update(IBIZProKeyword et);
@@ -47,7 +37,6 @@ public interface IIBIZProKeywordService {
     void saveBatch(List<IBIZProKeyword> list);
     Page<IBIZProKeyword> searchDefault(IBIZProKeywordSearchContext context);
     IBIZProKeyword dynamicCall(String key, String action, IBIZProKeyword et);
-
 
 }
 

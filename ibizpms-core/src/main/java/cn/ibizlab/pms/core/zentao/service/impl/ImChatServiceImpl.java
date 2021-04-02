@@ -100,9 +100,8 @@ public class ImChatServiceImpl extends ServiceImpl<ImChatMapper, ImChat> impleme
     @Transactional
     public ImChat get(Long key) {
         ImChat et = getById(key);
-        if(et == null){
-            et = new ImChat();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -230,5 +229,6 @@ public class ImChatServiceImpl extends ServiceImpl<ImChatMapper, ImChat> impleme
         return et;
     }
 }
+
 
 

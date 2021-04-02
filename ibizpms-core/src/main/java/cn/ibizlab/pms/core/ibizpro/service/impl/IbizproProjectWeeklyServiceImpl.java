@@ -107,9 +107,8 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
     @Transactional
     public IbizproProjectWeekly get(String key) {
         IbizproProjectWeekly et = getById(key);
-        if(et == null){
-            et = new IbizproProjectWeekly();
-            et.setProjectweeklyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
         }
@@ -302,5 +301,6 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
         return et;
     }
 }
+
 
 

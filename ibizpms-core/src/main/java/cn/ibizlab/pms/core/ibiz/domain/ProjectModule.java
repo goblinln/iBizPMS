@@ -50,7 +50,7 @@ public class ProjectModule extends EntityMP implements Serializable {
      * 简称
      */
     @DEField(defaultValue = "/")
-    @TableField(value = "`short`")
+    @TableField(value = "short")
     @JSONField(name = "ibizshort")
     @JsonProperty("ibizshort")
     @ApiModelProperty("简称")
@@ -67,7 +67,7 @@ public class ProjectModule extends EntityMP implements Serializable {
      * 类型（task）
      */
     @DEField(defaultValue = "task")
-    @TableField(value = "`type`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("类型（task）")
@@ -83,7 +83,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     /**
      * 名称
      */
-    @TableField(value = "`name`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("名称")
@@ -92,7 +92,7 @@ public class ProjectModule extends EntityMP implements Serializable {
      * 排序值
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.ORDERVALUE)
-    @TableField(value = "`order`")
+    @TableField(value = "order")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序值")
@@ -101,7 +101,7 @@ public class ProjectModule extends EntityMP implements Serializable {
      * collector
      */
     @DEField(defaultValue = "/")
-    @TableField(value = "`collector`")
+    @TableField(value = "collector")
     @JSONField(name = "collector")
     @JsonProperty("collector")
     @ApiModelProperty("collector")
@@ -110,7 +110,7 @@ public class ProjectModule extends EntityMP implements Serializable {
      * grade
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`grade`")
+    @TableField(value = "grade")
     @JSONField(name = "grade")
     @JsonProperty("grade")
     @ApiModelProperty("grade")
@@ -119,7 +119,7 @@ public class ProjectModule extends EntityMP implements Serializable {
      * branch
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`branch`")
+    @TableField(value = "branch")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("branch")
@@ -128,7 +128,7 @@ public class ProjectModule extends EntityMP implements Serializable {
      * path
      */
     @DEField(defaultValue = ",")
-    @TableField(value = "`path`")
+    @TableField(value = "path")
     @JSONField(name = "path")
     @JsonProperty("path")
     @ApiModelProperty("path")
@@ -146,7 +146,7 @@ public class ProjectModule extends EntityMP implements Serializable {
      * owner
      */
     @DEField(defaultValue = "/")
-    @TableField(value = "`owner`")
+    @TableField(value = "owner")
     @JSONField(name = "owner")
     @JsonProperty("owner")
     @ApiModelProperty("owner")
@@ -156,7 +156,7 @@ public class ProjectModule extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "`deleted`")
+    @TableField(value = "deleted")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("逻辑删除标志")
@@ -180,7 +180,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     /**
      * 项目
      */
-    @TableField(value = "`root`")
+    @TableField(value = "root")
     @JSONField(name = "root")
     @JsonProperty("root")
     @ApiModelProperty("项目")
@@ -188,7 +188,7 @@ public class ProjectModule extends EntityMP implements Serializable {
     /**
      * id
      */
-    @TableField(value = "`parent`")
+    @TableField(value = "parent")
     @JSONField(name = "parent")
     @JsonProperty("parent")
     @ApiModelProperty("id")

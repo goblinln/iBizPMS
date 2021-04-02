@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IProjectStatsService extends IService<ProjectStats> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "项目统计";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "projectstats";
-
     boolean create(ProjectStats et);
     void createBatch(List<ProjectStats> list);
     boolean update(ProjectStats et);
@@ -45,6 +35,7 @@ public interface IProjectStatsService extends IService<ProjectStats> {
     ProjectStats getDraft(ProjectStats et);
     boolean checkKey(ProjectStats et);
     ProjectStats projectQualitySum(ProjectStats et);
+    boolean projectQualitySumBatch(List<ProjectStats> etList);
     boolean save(ProjectStats et);
     void saveBatch(List<ProjectStats> list);
     Page<ProjectStats> searchDefault(ProjectStatsSearchContext context);

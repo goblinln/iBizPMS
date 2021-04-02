@@ -89,9 +89,8 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
     @Transactional
     public IbzDaily get(Long key) {
         IbzDaily et = getById(key);
-        if(et == null){
-            et = new IbzDaily();
-            et.setIbzdailyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -402,5 +401,6 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         return et;
     }
 }
+
 
 

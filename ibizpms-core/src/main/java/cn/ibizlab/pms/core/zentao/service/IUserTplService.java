@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserTplService extends IService<UserTpl> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "用户模板";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "usertpls";
-
     boolean create(UserTpl et);
     void createBatch(List<UserTpl> list);
     boolean update(UserTpl et);

@@ -107,9 +107,8 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Transactional
     public IbizproProductWeekly get(Long key) {
         IbizproProductWeekly et = getById(key);
-        if(et == null){
-            et = new IbizproProductWeekly();
-            et.setIbizproProductweeklyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -302,5 +301,6 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
         return et;
     }
 }
+
 
 

@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbizproProjectDailyService extends IService<IbizproProjectDaily> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "项目日报";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibizproprojectdailies";
-
     boolean create(IbizproProjectDaily et);
     void createBatch(List<IbizproProjectDaily> list);
     boolean update(IbizproProjectDaily et);

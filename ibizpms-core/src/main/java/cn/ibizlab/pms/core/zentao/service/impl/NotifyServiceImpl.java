@@ -100,9 +100,8 @@ public class NotifyServiceImpl extends ServiceImpl<NotifyMapper, Notify> impleme
     @Transactional
     public Notify get(Long key) {
         Notify et = getById(key);
-        if(et == null){
-            et = new Notify();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -230,5 +229,6 @@ public class NotifyServiceImpl extends ServiceImpl<NotifyMapper, Notify> impleme
         return et;
     }
 }
+
 
 

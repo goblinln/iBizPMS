@@ -113,9 +113,8 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Transactional
     public ProjectStory get(String key) {
         ProjectStory et = getById(key);
-        if(et == null){
-            et = new ProjectStory();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
         }
@@ -289,5 +288,6 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
         return et;
     }
 }
+
 
 

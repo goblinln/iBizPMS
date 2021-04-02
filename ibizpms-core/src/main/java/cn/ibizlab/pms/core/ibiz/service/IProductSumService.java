@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IProductSumService extends IService<ProductSum> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "产品汇总表";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "productsums";
-
     boolean create(ProductSum et);
     void createBatch(List<ProductSum> list);
     boolean update(ProductSum et);

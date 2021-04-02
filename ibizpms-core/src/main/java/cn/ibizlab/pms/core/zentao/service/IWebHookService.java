@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IWebHookService extends IService<WebHook> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "网页钩子";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "webhooks";
-
     boolean create(WebHook et);
     void createBatch(List<WebHook> list);
     boolean update(WebHook et);

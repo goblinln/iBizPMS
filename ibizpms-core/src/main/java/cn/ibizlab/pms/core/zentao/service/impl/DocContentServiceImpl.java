@@ -103,9 +103,8 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
     @Transactional
     public DocContent get(Long key) {
         DocContent et = getById(key);
-        if(et == null){
-            et = new DocContent();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -251,5 +250,6 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
         return et;
     }
 }
+
 
 

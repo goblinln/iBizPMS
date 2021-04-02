@@ -43,11 +43,11 @@ public class DocLibResource {
     @Autowired
     public IDocLibService doclibService;
 
+
     @Autowired
     @Lazy
     public DocLibMapping doclibMapping;
 
-    @PreAuthorize("hasPermission(this.doclibMapping.toDomain(#doclibdto),'iBizPMS-DocLib-Create')")
     @ApiOperation(value = "新建文档库", tags = {"文档库" },  notes = "新建文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs")
     public ResponseEntity<DocLibDTO> create(@Validated @RequestBody DocLibDTO doclibdto) {
@@ -57,7 +57,6 @@ public class DocLibResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.doclibMapping.toDomain(#doclibdtos),'iBizPMS-DocLib-Create')")
     @ApiOperation(value = "批量新建文档库", tags = {"文档库" },  notes = "批量新建文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<DocLibDTO> doclibdtos) {
@@ -65,7 +64,6 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.doclibService.get(#doclib_id),'iBizPMS-DocLib-Update')")
     @ApiOperation(value = "更新文档库", tags = {"文档库" },  notes = "更新文档库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}")
     public ResponseEntity<DocLibDTO> update(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
@@ -76,7 +74,6 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.doclibService.getDoclibByEntities(this.doclibMapping.toDomain(#doclibdtos)),'iBizPMS-DocLib-Update')")
     @ApiOperation(value = "批量更新文档库", tags = {"文档库" },  notes = "批量更新文档库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<DocLibDTO> doclibdtos) {
@@ -84,14 +81,12 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.doclibService.get(#doclib_id),'iBizPMS-DocLib-Remove')")
     @ApiOperation(value = "删除文档库", tags = {"文档库" },  notes = "删除文档库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("doclib_id") Long doclib_id) {
          return ResponseEntity.status(HttpStatus.OK).body(doclibService.remove(doclib_id));
     }
 
-    @PreAuthorize("hasPermission(this.doclibService.getDoclibByIds(#ids),'iBizPMS-DocLib-Remove')")
     @ApiOperation(value = "批量删除文档库", tags = {"文档库" },  notes = "批量删除文档库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +94,6 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.doclibMapping.toDomain(returnObject.body),'iBizPMS-DocLib-Get')")
     @ApiOperation(value = "获取文档库", tags = {"文档库" },  notes = "获取文档库")
 	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}")
     public ResponseEntity<DocLibDTO> get(@PathVariable("doclib_id") Long doclib_id) {
@@ -121,7 +115,6 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doclibService.checkKey(doclibMapping.toDomain(doclibdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-Collect-all')")
     @ApiOperation(value = "收藏", tags = {"文档库" },  notes = "收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/collect")
     public ResponseEntity<DocLibDTO> collect(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
@@ -131,7 +124,6 @@ public class DocLibResource {
         doclibdto = doclibMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-Collect-all')")
     @ApiOperation(value = "批量处理[收藏]", tags = {"文档库" },  notes = "批量处理[收藏]")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/collectbatch")
     public ResponseEntity<Boolean> collectBatch(@RequestBody List<DocLibDTO> doclibdtos) {
@@ -140,7 +132,6 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasPermission(this.doclibMapping.toDomain(#doclibdto),'iBizPMS-DocLib-Save')")
     @ApiOperation(value = "保存文档库", tags = {"文档库" },  notes = "保存文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/save")
     public ResponseEntity<DocLibDTO> save(@RequestBody DocLibDTO doclibdto) {
@@ -149,7 +140,6 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.doclibMapping.toDomain(#doclibdtos),'iBizPMS-DocLib-Save')")
     @ApiOperation(value = "批量保存文档库", tags = {"文档库" },  notes = "批量保存文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<DocLibDTO> doclibdtos) {
@@ -157,7 +147,6 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-UnCollect-all')")
     @ApiOperation(value = "取消收藏", tags = {"文档库" },  notes = "取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/uncollect")
     public ResponseEntity<DocLibDTO> unCollect(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
@@ -167,7 +156,6 @@ public class DocLibResource {
         doclibdto = doclibMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-UnCollect-all')")
     @ApiOperation(value = "批量处理[取消收藏]", tags = {"文档库" },  notes = "批量处理[取消收藏]")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/uncollectbatch")
     public ResponseEntity<Boolean> unCollectBatch(@RequestBody List<DocLibDTO> doclibdtos) {
@@ -176,7 +164,6 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchByCustom-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "获取自定义文档库", tags = {"文档库" } ,notes = "获取自定义文档库")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchbycustom")
 	public ResponseEntity<List<DocLibDTO>> fetchByCustom(DocLibSearchContext context) {
@@ -189,7 +176,6 @@ public class DocLibResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchByCustom-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "查询自定义文档库", tags = {"文档库" } ,notes = "查询自定义文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbycustom")
 	public ResponseEntity<Page<DocLibDTO>> searchByCustom(@RequestBody DocLibSearchContext context) {
@@ -198,7 +184,6 @@ public class DocLibResource {
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchByProduct-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "获取产品文档库", tags = {"文档库" } ,notes = "获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproduct")
 	public ResponseEntity<List<DocLibDTO>> fetchByProduct(@RequestBody DocLibSearchContext context) {
@@ -211,7 +196,6 @@ public class DocLibResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchByProduct-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "查询产品文档库", tags = {"文档库" } ,notes = "查询产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyproduct")
 	public ResponseEntity<Page<DocLibDTO>> searchByProduct(@RequestBody DocLibSearchContext context) {
@@ -220,7 +204,6 @@ public class DocLibResource {
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchByProductNotFiles-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "获取产品文档库", tags = {"文档库" } ,notes = "获取产品文档库")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchbyproductnotfiles")
 	public ResponseEntity<List<DocLibDTO>> fetchByProductNotFiles(DocLibSearchContext context) {
@@ -233,7 +216,6 @@ public class DocLibResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchByProductNotFiles-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "查询产品文档库", tags = {"文档库" } ,notes = "查询产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyproductnotfiles")
 	public ResponseEntity<Page<DocLibDTO>> searchByProductNotFiles(@RequestBody DocLibSearchContext context) {
@@ -242,7 +224,6 @@ public class DocLibResource {
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchByProject-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "获取项目文件库", tags = {"文档库" } ,notes = "获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproject")
 	public ResponseEntity<List<DocLibDTO>> fetchByProject(@RequestBody DocLibSearchContext context) {
@@ -255,7 +236,6 @@ public class DocLibResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchByProject-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "查询项目文件库", tags = {"文档库" } ,notes = "查询项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyproject")
 	public ResponseEntity<Page<DocLibDTO>> searchByProject(@RequestBody DocLibSearchContext context) {
@@ -264,7 +244,6 @@ public class DocLibResource {
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchByProjectNotFiles-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "获取项目文件库", tags = {"文档库" } ,notes = "获取项目文件库")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchbyprojectnotfiles")
 	public ResponseEntity<List<DocLibDTO>> fetchByProjectNotFiles(DocLibSearchContext context) {
@@ -277,7 +256,6 @@ public class DocLibResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchByProjectNotFiles-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "查询项目文件库", tags = {"文档库" } ,notes = "查询项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyprojectnotfiles")
 	public ResponseEntity<Page<DocLibDTO>> searchByProjectNotFiles(@RequestBody DocLibSearchContext context) {
@@ -286,7 +264,6 @@ public class DocLibResource {
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchCurDocLib-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "获取所属文档库", tags = {"文档库" } ,notes = "获取所属文档库")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchcurdoclib")
 	public ResponseEntity<List<DocLibDTO>> fetchCurDocLib(DocLibSearchContext context) {
@@ -299,7 +276,6 @@ public class DocLibResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchCurDocLib-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "查询所属文档库", tags = {"文档库" } ,notes = "查询所属文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchcurdoclib")
 	public ResponseEntity<Page<DocLibDTO>> searchCurDocLib(@RequestBody DocLibSearchContext context) {
@@ -308,7 +284,6 @@ public class DocLibResource {
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchDefault-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"文档库" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchdefault")
 	public ResponseEntity<List<DocLibDTO>> fetchDefault(DocLibSearchContext context) {
@@ -321,7 +296,6 @@ public class DocLibResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchDefault-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"文档库" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchdefault")
 	public ResponseEntity<Page<DocLibDTO>> searchDefault(@RequestBody DocLibSearchContext context) {
@@ -330,7 +304,6 @@ public class DocLibResource {
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchMyFavourites-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "获取我的收藏", tags = {"文档库" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchmyfavourites")
 	public ResponseEntity<List<DocLibDTO>> fetchMyFavourites(DocLibSearchContext context) {
@@ -343,7 +316,6 @@ public class DocLibResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchMyFavourites-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "查询我的收藏", tags = {"文档库" } ,notes = "查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchmyfavourites")
 	public ResponseEntity<Page<DocLibDTO>> searchMyFavourites(@RequestBody DocLibSearchContext context) {
@@ -352,7 +324,6 @@ public class DocLibResource {
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchRootModuleMuLu-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "获取根目录", tags = {"文档库" } ,notes = "获取根目录")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchrootmodulemulu")
 	public ResponseEntity<List<DocLibDTO>> fetchRootModuleMuLu(DocLibSearchContext context) {
@@ -365,7 +336,6 @@ public class DocLibResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DocLib-searchRootModuleMuLu-all') and hasPermission(#context,'iBizPMS-DocLib-Get')")
 	@ApiOperation(value = "查询根目录", tags = {"文档库" } ,notes = "查询根目录")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchrootmodulemulu")
 	public ResponseEntity<Page<DocLibDTO>> searchRootModuleMuLu(@RequestBody DocLibSearchContext context) {

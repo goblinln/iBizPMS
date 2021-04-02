@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IStoryStageService extends IService<StoryStage> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "需求阶段";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "storystages";
-
     boolean create(StoryStage et);
     void createBatch(List<StoryStage> list);
     boolean update(StoryStage et);

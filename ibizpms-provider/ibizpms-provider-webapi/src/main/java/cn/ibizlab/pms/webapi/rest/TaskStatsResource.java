@@ -43,11 +43,11 @@ public class TaskStatsResource {
     @Autowired
     public ITaskStatsService taskstatsService;
 
+
     @Autowired
     @Lazy
     public TaskStatsMapping taskstatsMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-Create-all')")
     @ApiOperation(value = "新建任务统计", tags = {"任务统计" },  notes = "新建任务统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskstats")
     public ResponseEntity<TaskStatsDTO> create(@Validated @RequestBody TaskStatsDTO taskstatsdto) {
@@ -57,7 +57,6 @@ public class TaskStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-Create-all')")
     @ApiOperation(value = "批量新建任务统计", tags = {"任务统计" },  notes = "批量新建任务统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<TaskStatsDTO> taskstatsdtos) {
@@ -65,7 +64,6 @@ public class TaskStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-Update-all')")
     @ApiOperation(value = "更新任务统计", tags = {"任务统计" },  notes = "更新任务统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskstats/{taskstats_id}")
     public ResponseEntity<TaskStatsDTO> update(@PathVariable("taskstats_id") Long taskstats_id, @RequestBody TaskStatsDTO taskstatsdto) {
@@ -76,7 +74,6 @@ public class TaskStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-Update-all')")
     @ApiOperation(value = "批量更新任务统计", tags = {"任务统计" },  notes = "批量更新任务统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskstats/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<TaskStatsDTO> taskstatsdtos) {
@@ -84,14 +81,12 @@ public class TaskStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-Remove-all')")
     @ApiOperation(value = "删除任务统计", tags = {"任务统计" },  notes = "删除任务统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/{taskstats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("taskstats_id") Long taskstats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(taskstatsService.remove(taskstats_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-Remove-all')")
     @ApiOperation(value = "批量删除任务统计", tags = {"任务统计" },  notes = "批量删除任务统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +94,6 @@ public class TaskStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-Get-all')")
     @ApiOperation(value = "获取任务统计", tags = {"任务统计" },  notes = "获取任务统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskstats/{taskstats_id}")
     public ResponseEntity<TaskStatsDTO> get(@PathVariable("taskstats_id") Long taskstats_id) {
@@ -121,7 +115,6 @@ public class TaskStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskstatsService.checkKey(taskstatsMapping.toDomain(taskstatsdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-Save-all')")
     @ApiOperation(value = "保存任务统计", tags = {"任务统计" },  notes = "保存任务统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/save")
     public ResponseEntity<TaskStatsDTO> save(@RequestBody TaskStatsDTO taskstatsdto) {
@@ -130,7 +123,6 @@ public class TaskStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskstatsMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-Save-all')")
     @ApiOperation(value = "批量保存任务统计", tags = {"任务统计" },  notes = "批量保存任务统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<TaskStatsDTO> taskstatsdtos) {
@@ -138,7 +130,6 @@ public class TaskStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"任务统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/taskstats/fetchdefault")
 	public ResponseEntity<List<TaskStatsDTO>> fetchDefault(TaskStatsSearchContext context) {
@@ -151,7 +142,6 @@ public class TaskStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-searchDefault-all')")
 	@ApiOperation(value = "查询数据集", tags = {"任务统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchdefault")
 	public ResponseEntity<Page<TaskStatsDTO>> searchDefault(@RequestBody TaskStatsSearchContext context) {
@@ -160,7 +150,6 @@ public class TaskStatsResource {
                 .body(new PageImpl(taskstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-searchTaskFinishHuiZong-all')")
 	@ApiOperation(value = "获取任务完成汇总表", tags = {"任务统计" } ,notes = "获取任务完成汇总表")
     @RequestMapping(method= RequestMethod.GET , value="/taskstats/fetchtaskfinishhuizong")
 	public ResponseEntity<List<TaskStatsDTO>> fetchTaskFinishHuiZong(TaskStatsSearchContext context) {
@@ -173,7 +162,6 @@ public class TaskStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-searchTaskFinishHuiZong-all')")
 	@ApiOperation(value = "查询任务完成汇总表", tags = {"任务统计" } ,notes = "查询任务完成汇总表")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchtaskfinishhuizong")
 	public ResponseEntity<Page<TaskStatsDTO>> searchTaskFinishHuiZong(@RequestBody TaskStatsSearchContext context) {
@@ -182,7 +170,6 @@ public class TaskStatsResource {
                 .body(new PageImpl(taskstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-searchUserFinishTaskSum-all')")
 	@ApiOperation(value = "获取用户完成任务统计", tags = {"任务统计" } ,notes = "获取用户完成任务统计")
     @RequestMapping(method= RequestMethod.GET , value="/taskstats/fetchuserfinishtasksum")
 	public ResponseEntity<List<TaskStatsDTO>> fetchUserFinishTaskSum(TaskStatsSearchContext context) {
@@ -195,7 +182,6 @@ public class TaskStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskStats-searchUserFinishTaskSum-all')")
 	@ApiOperation(value = "查询用户完成任务统计", tags = {"任务统计" } ,notes = "查询用户完成任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchuserfinishtasksum")
 	public ResponseEntity<Page<TaskStatsDTO>> searchUserFinishTaskSum(@RequestBody TaskStatsSearchContext context) {

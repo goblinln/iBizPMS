@@ -58,7 +58,7 @@ public class UserView extends EntityMP implements Serializable {
     /**
      * products
      */
-    @TableField(value = "`products`")
+    @TableField(value = "products")
     @JSONField(name = "products")
     @JsonProperty("products")
     @ApiModelProperty("products")
@@ -66,7 +66,7 @@ public class UserView extends EntityMP implements Serializable {
     /**
      * account
      */
-    @TableField(value = "`account`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("account")
@@ -74,7 +74,7 @@ public class UserView extends EntityMP implements Serializable {
     /**
      * projects
      */
-    @TableField(value = "`projects`")
+    @TableField(value = "projects")
     @JSONField(name = "projects")
     @JsonProperty("projects")
     @ApiModelProperty("projects")

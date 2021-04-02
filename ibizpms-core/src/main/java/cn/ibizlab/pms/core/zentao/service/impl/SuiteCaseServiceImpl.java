@@ -113,9 +113,8 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Transactional
     public SuiteCase get(String key) {
         SuiteCase et = getById(key);
-        if(et == null){
-            et = new SuiteCase();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
         }
@@ -289,5 +288,6 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
         return et;
     }
 }
+
 
 

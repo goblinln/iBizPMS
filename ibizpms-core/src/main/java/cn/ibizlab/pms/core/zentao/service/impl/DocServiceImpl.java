@@ -103,9 +103,8 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Transactional
     public Doc get(Long key) {
         Doc et = getById(key);
-        if(et == null){
-            et = new Doc();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -504,5 +503,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         return et;
     }
 }
+
 
 

@@ -23,14 +23,14 @@ public class IBIZProPluginFallback implements IBIZProPluginFeignClient {
         return null;
     }
 
-    public IBIZProPlugin create(IBIZProPlugin et) {
+    public IBIZProPlugin create(IBIZProPlugin ibizproplugin) {
         return null;
     }
     public Boolean createBatch(List<IBIZProPlugin> ibizproplugins) {
         return false;
     }
 
-    public IBIZProPlugin update(String ibizpropluginid, IBIZProPlugin et) {
+    public IBIZProPlugin update(String ibizpropluginid, IBIZProPlugin ibizproplugin) {
         return null;
     }
     public Boolean updateBatch(List<IBIZProPlugin> ibizproplugins) {
@@ -50,26 +50,22 @@ public class IBIZProPluginFallback implements IBIZProPluginFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public IBIZProPlugin getDraft(IBIZProPlugin entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(IBIZProPlugin et) {
+    public Boolean checkKey(IBIZProPlugin ibizproplugin) {
         return false;
     }
 
 
-    public Object saveEntity(IBIZProPlugin et) {
+    public Object saveEntity(IBIZProPlugin ibizproplugin) {
         return null;
     }
-    public Boolean save(IBIZProPlugin et) {
+
+    public Boolean save(IBIZProPlugin ibizproplugin) {
         return false;
     }
     public Boolean saveBatch(List<IBIZProPlugin> ibizproplugins) {

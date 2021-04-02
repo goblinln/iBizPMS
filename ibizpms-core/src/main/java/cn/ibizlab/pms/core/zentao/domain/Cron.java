@@ -58,7 +58,7 @@ public class Cron extends EntityMP implements Serializable {
     /**
      * status
      */
-    @TableField(value = "`status`")
+    @TableField(value = "status")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("status")
@@ -67,7 +67,7 @@ public class Cron extends EntityMP implements Serializable {
      * buildin
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`buildin`")
+    @TableField(value = "buildin")
     @JSONField(name = "buildin")
     @JsonProperty("buildin")
     @ApiModelProperty("buildin")
@@ -75,7 +75,7 @@ public class Cron extends EntityMP implements Serializable {
     /**
      * m
      */
-    @TableField(value = "`m`")
+    @TableField(value = "m")
     @JSONField(name = "m")
     @JsonProperty("m")
     @ApiModelProperty("m")
@@ -83,7 +83,7 @@ public class Cron extends EntityMP implements Serializable {
     /**
      * lastTime
      */
-    @TableField(value = "`lasttime`")
+    @TableField(value = "lasttime")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lasttime", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lasttime")
@@ -92,7 +92,7 @@ public class Cron extends EntityMP implements Serializable {
     /**
      * command
      */
-    @TableField(value = "`command`")
+    @TableField(value = "command")
     @JSONField(name = "command")
     @JsonProperty("command")
     @ApiModelProperty("command")
@@ -100,7 +100,7 @@ public class Cron extends EntityMP implements Serializable {
     /**
      * dom
      */
-    @TableField(value = "`dom`")
+    @TableField(value = "dom")
     @JSONField(name = "dom")
     @JsonProperty("dom")
     @ApiModelProperty("dom")
@@ -108,7 +108,7 @@ public class Cron extends EntityMP implements Serializable {
     /**
      * mon
      */
-    @TableField(value = "`mon`")
+    @TableField(value = "mon")
     @JSONField(name = "mon")
     @JsonProperty("mon")
     @ApiModelProperty("mon")
@@ -116,7 +116,7 @@ public class Cron extends EntityMP implements Serializable {
     /**
      * remark
      */
-    @TableField(value = "`remark`")
+    @TableField(value = "remark")
     @JSONField(name = "remark")
     @JsonProperty("remark")
     @ApiModelProperty("remark")
@@ -124,7 +124,7 @@ public class Cron extends EntityMP implements Serializable {
     /**
      * h
      */
-    @TableField(value = "`h`")
+    @TableField(value = "h")
     @JSONField(name = "h")
     @JsonProperty("h")
     @ApiModelProperty("h")
@@ -132,7 +132,7 @@ public class Cron extends EntityMP implements Serializable {
     /**
      * type
      */
-    @TableField(value = "`type`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("type")
@@ -140,7 +140,7 @@ public class Cron extends EntityMP implements Serializable {
     /**
      * dow
      */
-    @TableField(value = "`dow`")
+    @TableField(value = "dow")
     @JSONField(name = "dow")
     @JsonProperty("dow")
     @ApiModelProperty("dow")

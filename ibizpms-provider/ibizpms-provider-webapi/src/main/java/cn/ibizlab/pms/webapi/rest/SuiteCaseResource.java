@@ -43,11 +43,11 @@ public class SuiteCaseResource {
     @Autowired
     public ISuiteCaseService suitecaseService;
 
+
     @Autowired
     @Lazy
     public SuiteCaseMapping suitecaseMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-Create-all')")
     @ApiOperation(value = "新建套件用例", tags = {"套件用例" },  notes = "新建套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases")
     public ResponseEntity<SuiteCaseDTO> create(@Validated @RequestBody SuiteCaseDTO suitecasedto) {
@@ -57,7 +57,6 @@ public class SuiteCaseResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-Create-all')")
     @ApiOperation(value = "批量新建套件用例", tags = {"套件用例" },  notes = "批量新建套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<SuiteCaseDTO> suitecasedtos) {
@@ -65,7 +64,6 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-Update-all')")
     @ApiOperation(value = "更新套件用例", tags = {"套件用例" },  notes = "更新套件用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/suitecases/{suitecase_id}")
     public ResponseEntity<SuiteCaseDTO> update(@PathVariable("suitecase_id") String suitecase_id, @RequestBody SuiteCaseDTO suitecasedto) {
@@ -76,7 +74,6 @@ public class SuiteCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-Update-all')")
     @ApiOperation(value = "批量更新套件用例", tags = {"套件用例" },  notes = "批量更新套件用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/suitecases/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<SuiteCaseDTO> suitecasedtos) {
@@ -84,14 +81,12 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-Remove-all')")
     @ApiOperation(value = "删除套件用例", tags = {"套件用例" },  notes = "删除套件用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/{suitecase_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("suitecase_id") String suitecase_id) {
          return ResponseEntity.status(HttpStatus.OK).body(suitecaseService.remove(suitecase_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-Remove-all')")
     @ApiOperation(value = "批量删除套件用例", tags = {"套件用例" },  notes = "批量删除套件用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -99,7 +94,6 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-Get-all')")
     @ApiOperation(value = "获取套件用例", tags = {"套件用例" },  notes = "获取套件用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/suitecases/{suitecase_id}")
     public ResponseEntity<SuiteCaseDTO> get(@PathVariable("suitecase_id") String suitecase_id) {
@@ -121,7 +115,6 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(suitecaseService.checkKey(suitecaseMapping.toDomain(suitecasedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-Save-all')")
     @ApiOperation(value = "保存套件用例", tags = {"套件用例" },  notes = "保存套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/save")
     public ResponseEntity<SuiteCaseDTO> save(@RequestBody SuiteCaseDTO suitecasedto) {
@@ -130,7 +123,6 @@ public class SuiteCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(suitecaseMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-Save-all')")
     @ApiOperation(value = "批量保存套件用例", tags = {"套件用例" },  notes = "批量保存套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<SuiteCaseDTO> suitecasedtos) {
@@ -138,7 +130,6 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-searchDefault-all')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"套件用例" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/suitecases/fetchdefault")
 	public ResponseEntity<List<SuiteCaseDTO>> fetchDefault(SuiteCaseSearchContext context) {
@@ -151,7 +142,6 @@ public class SuiteCaseResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-searchDefault-all')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"套件用例" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/suitecases/searchdefault")
 	public ResponseEntity<Page<SuiteCaseDTO>> searchDefault(@RequestBody SuiteCaseSearchContext context) {

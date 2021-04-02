@@ -100,9 +100,8 @@ public class WebHookServiceImpl extends ServiceImpl<WebHookMapper, WebHook> impl
     @Transactional
     public WebHook get(Long key) {
         WebHook et = getById(key);
-        if(et == null){
-            et = new WebHook();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -230,5 +229,6 @@ public class WebHookServiceImpl extends ServiceImpl<WebHookMapper, WebHook> impl
         return et;
     }
 }
+
 
 

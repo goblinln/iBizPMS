@@ -43,11 +43,11 @@ public class IbizproProjectDailyResource {
     @Autowired
     public IIbizproProjectDailyService ibizproprojectdailyService;
 
+
     @Autowired
     @Lazy
     public IbizproProjectDailyMapping ibizproprojectdailyMapping;
 
-    @PreAuthorize("hasPermission(this.ibizproprojectdailyMapping.toDomain(#ibizproprojectdailydto),'iBizPMS-IbizproProjectDaily-Create')")
     @ApiOperation(value = "新建项目日报", tags = {"项目日报" },  notes = "新建项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies")
     public ResponseEntity<IbizproProjectDailyDTO> create(@Validated @RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {
@@ -57,7 +57,6 @@ public class IbizproProjectDailyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproprojectdailyMapping.toDomain(#ibizproprojectdailydtos),'iBizPMS-IbizproProjectDaily-Create')")
     @ApiOperation(value = "批量新建项目日报", tags = {"项目日报" },  notes = "批量新建项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbizproProjectDailyDTO> ibizproprojectdailydtos) {
@@ -66,7 +65,6 @@ public class IbizproProjectDailyResource {
     }
 
     @VersionCheck(entity = "ibizproprojectdaily" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.ibizproprojectdailyService.get(#ibizproprojectdaily_id),'iBizPMS-IbizproProjectDaily-Update')")
     @ApiOperation(value = "更新项目日报", tags = {"项目日报" },  notes = "更新项目日报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}")
     public ResponseEntity<IbizproProjectDailyDTO> update(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id, @RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {
@@ -77,7 +75,6 @@ public class IbizproProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproprojectdailyService.getIbizproprojectdailyByEntities(this.ibizproprojectdailyMapping.toDomain(#ibizproprojectdailydtos)),'iBizPMS-IbizproProjectDaily-Update')")
     @ApiOperation(value = "批量更新项目日报", tags = {"项目日报" },  notes = "批量更新项目日报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproprojectdailies/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbizproProjectDailyDTO> ibizproprojectdailydtos) {
@@ -85,14 +82,12 @@ public class IbizproProjectDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproprojectdailyService.get(#ibizproprojectdaily_id),'iBizPMS-IbizproProjectDaily-Remove')")
     @ApiOperation(value = "删除项目日报", tags = {"项目日报" },  notes = "删除项目日报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyService.remove(ibizproprojectdaily_id));
     }
 
-    @PreAuthorize("hasPermission(this.ibizproprojectdailyService.getIbizproprojectdailyByIds(#ids),'iBizPMS-IbizproProjectDaily-Remove')")
     @ApiOperation(value = "批量删除项目日报", tags = {"项目日报" },  notes = "批量删除项目日报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectdailies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +95,6 @@ public class IbizproProjectDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.ibizproprojectdailyMapping.toDomain(returnObject.body),'iBizPMS-IbizproProjectDaily-Get')")
     @ApiOperation(value = "获取项目日报", tags = {"项目日报" },  notes = "获取项目日报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}")
     public ResponseEntity<IbizproProjectDailyDTO> get(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id) {
@@ -122,7 +116,6 @@ public class IbizproProjectDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyService.checkKey(ibizproprojectdailyMapping.toDomain(ibizproprojectdailydto)));
     }
 
-    @PreAuthorize("hasPermission(this.ibizproprojectdailyMapping.toDomain(#ibizproprojectdailydto),'iBizPMS-IbizproProjectDaily-Save')")
     @ApiOperation(value = "保存项目日报", tags = {"项目日报" },  notes = "保存项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/save")
     public ResponseEntity<IbizproProjectDailyDTO> save(@RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {
@@ -131,7 +124,6 @@ public class IbizproProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.ibizproprojectdailyMapping.toDomain(#ibizproprojectdailydtos),'iBizPMS-IbizproProjectDaily-Save')")
     @ApiOperation(value = "批量保存项目日报", tags = {"项目日报" },  notes = "批量保存项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbizproProjectDailyDTO> ibizproprojectdailydtos) {
@@ -139,7 +131,6 @@ public class IbizproProjectDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproProjectDaily-SumProjectDaily-all')")
     @ApiOperation(value = "汇总项目日报", tags = {"项目日报" },  notes = "汇总项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}/sumprojectdaily")
     public ResponseEntity<IbizproProjectDailyDTO> sumProjectDaily(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id, @RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {
@@ -149,7 +140,6 @@ public class IbizproProjectDailyResource {
         ibizproprojectdailydto = ibizproprojectdailyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailydto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproProjectDaily-SumProjectDaily-all')")
     @ApiOperation(value = "批量处理[汇总项目日报]", tags = {"项目日报" },  notes = "批量处理[汇总项目日报]")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/sumprojectdailybatch")
     public ResponseEntity<Boolean> sumProjectDailyBatch(@RequestBody List<IbizproProjectDailyDTO> ibizproprojectdailydtos) {
@@ -158,7 +148,6 @@ public class IbizproProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproProjectDaily-searchDefault-all') and hasPermission(#context,'iBizPMS-IbizproProjectDaily-Get')")
 	@ApiOperation(value = "获取数据集", tags = {"项目日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproprojectdailies/fetchdefault")
 	public ResponseEntity<List<IbizproProjectDailyDTO>> fetchDefault(IbizproProjectDailySearchContext context) {
@@ -171,7 +160,6 @@ public class IbizproProjectDailyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproProjectDaily-searchDefault-all') and hasPermission(#context,'iBizPMS-IbizproProjectDaily-Get')")
 	@ApiOperation(value = "查询数据集", tags = {"项目日报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectdailies/searchdefault")
 	public ResponseEntity<Page<IbizproProjectDailyDTO>> searchDefault(@RequestBody IbizproProjectDailySearchContext context) {

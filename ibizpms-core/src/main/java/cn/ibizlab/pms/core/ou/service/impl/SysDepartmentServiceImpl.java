@@ -34,9 +34,6 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.ou.client.SysDepartmentFeignClient;
-import cn.ibizlab.pms.util.security.SpringContextHolder;
-import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
-import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -50,7 +47,6 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
     SysDepartmentFeignClient sysDepartmentFeignClient;
 
 
-
     @Override
     public boolean create(SysDepartment et) {
         SysDepartment rt = sysDepartmentFeignClient.create(et);
@@ -60,11 +56,9 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
         return true;
     }
 
-
     public void createBatch(List<SysDepartment> list){
         sysDepartmentFeignClient.createBatch(list) ;
     }
-
 
     @Override
     public boolean update(SysDepartment et) {
@@ -76,11 +70,9 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
 
     }
 
-
     public void updateBatch(List<SysDepartment> list){
         sysDepartmentFeignClient.updateBatch(list) ;
     }
-
 
     @Override
     public boolean remove(String deptid) {
@@ -88,24 +80,20 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
         return result;
     }
 
-
     public void removeBatch(Collection<String> idList){
         sysDepartmentFeignClient.removeBatch(idList);
     }
-
 
     @Override
     public SysDepartment get(String deptid) {
 		SysDepartment et=sysDepartmentFeignClient.get(deptid);
         if(et==null){
-            et=new SysDepartment();
-            et.setDeptid(deptid);
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), deptid);
         }
         else{
         }
         return  et;
     }
-
 
     @Override
     public SysDepartment getDraft(SysDepartment et) {
@@ -113,13 +101,10 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
         return et;
     }
 
-
     @Override
     public boolean checkKey(SysDepartment et) {
         return sysDepartmentFeignClient.checkKey(et);
     }
-
-
     @Override
     @Transactional
     public boolean save(SysDepartment et) {
@@ -142,13 +127,10 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
             return result;
     }
 
-
-
     @Override
     public void saveBatch(List<SysDepartment> list) {
         sysDepartmentFeignClient.saveBatch(list) ;
     }
-
 
 
 
@@ -159,8 +141,6 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
         context.setN_pdeptid_eq(deptid);
         return sysDepartmentFeignClient.searchDefault(context).getContent();
     }
-
-
     @Override
     public List<SysDepartment> selectByParentdeptid(Collection<String> ids) {
         //暂未支持
@@ -178,7 +158,6 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
             this.removeBatch(delIds);
     }
 
-
 	@Override
     public List<SysDepartment> selectByOrgid(String orgid) {
         SysDepartmentSearchContext context=new SysDepartmentSearchContext();
@@ -186,8 +165,6 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
         context.setN_orgid_eq(orgid);
         return sysDepartmentFeignClient.searchDefault(context).getContent();
     }
-
-
     @Override
     public List<SysDepartment> selectByOrgid(Collection<String> ids) {
         //暂未支持
@@ -204,7 +181,6 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
         if(delIds.size()>0)
             this.removeBatch(delIds);
     }
-
 
     public ISysDepartmentService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
@@ -240,7 +216,6 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
 
 
 
-
     /**
      * 查询集合 数据集
      */
@@ -250,12 +225,12 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
         return sysDepartments;
     }
 
-
     @Override
     @Transactional
     public SysDepartment dynamicCall(String key, String action, SysDepartment et) {
         return et;
     }
 }
+
 
 

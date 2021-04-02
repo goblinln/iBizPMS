@@ -30,23 +30,14 @@ public class UserTplSearchContext extends QueryWrapperContext<UserTpl> {
 	private String n_title_like;//[模板标题]
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;
-        if(!ObjectUtils.isEmpty(this.n_title_like)){
-            this.getSearchCond().like("`title`", n_title_like);
-        }
     }
 	private String n_type_eq;//[type]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
-        if(!ObjectUtils.isEmpty(this.n_type_eq)){
-            this.getSearchCond().eq("`type`", n_type_eq);
-        }
     }
 	private String n_public_eq;//[公开]
 	public void setN_public_eq(String n_public_eq) {
         this.n_public_eq = n_public_eq;
-        if(!ObjectUtils.isEmpty(this.n_public_eq)){
-            this.getSearchCond().eq("`public`", n_public_eq);
-        }
     }
 
     /**
@@ -58,7 +49,7 @@ public class UserTplSearchContext extends QueryWrapperContext<UserTpl> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`title`", query)
+                     wrapper.like("title", query)
             );
 		 }
 	}

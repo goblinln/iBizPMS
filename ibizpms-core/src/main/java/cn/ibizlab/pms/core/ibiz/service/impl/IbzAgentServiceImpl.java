@@ -94,9 +94,8 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
     @Transactional
     public IbzAgent get(Long key) {
         IbzAgent et = getById(key);
-        if(et == null){
-            et = new IbzAgent();
-            et.setIbzagentid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -245,5 +244,6 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
         return et;
     }
 }
+
 
 

@@ -74,7 +74,9 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Transactional
     public void createBatch(List<ProjectModule> list) {
         list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
+        for (ProjectModule et : list) {
+            getProxyService().save(et);
+        }
     }
 
     @Override
@@ -92,7 +94,9 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Transactional
     public void updateBatch(List<ProjectModule> list) {
         list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
+        for (ProjectModule et : list) {
+            getProxyService().update(et);
+        }
     }
 
     @Override
@@ -112,9 +116,8 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Transactional
     public ProjectModule get(Long key) {
         ProjectModule et = getById(key);
-        if(et == null){
-            et = new ProjectModule();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -139,8 +142,26 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
 
     @Override
     @Transactional
+    public boolean fixBatch(List<ProjectModule> etList) {
+        for(ProjectModule et : etList) {
+            fix(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public ProjectModule removeModule(ProjectModule et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean removeModuleBatch(List<ProjectModule> etList) {
+        for(ProjectModule et : etList) {
+            removeModule(et);
+        }
+        return true;
     }
 
     @Override
@@ -355,5 +376,6 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
         return et;
     }
 }
+
 
 

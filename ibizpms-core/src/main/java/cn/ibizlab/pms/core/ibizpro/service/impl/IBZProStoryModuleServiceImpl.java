@@ -74,7 +74,9 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Transactional
     public void createBatch(List<IBZProStoryModule> list) {
         list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
+        for (IBZProStoryModule et : list) {
+            getProxyService().save(et);
+        }
     }
 
     @Override
@@ -92,7 +94,9 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Transactional
     public void updateBatch(List<IBZProStoryModule> list) {
         list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
+        for (IBZProStoryModule et : list) {
+            getProxyService().update(et);
+        }
     }
 
     @Override
@@ -112,9 +116,8 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Transactional
     public IBZProStoryModule get(Long key) {
         IBZProStoryModule et = getById(key);
-        if(et == null){
-            et = new IBZProStoryModule();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -295,5 +298,6 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
         return et;
     }
 }
+
 
 

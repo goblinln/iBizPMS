@@ -95,9 +95,8 @@ public class IbzLibServiceImpl extends ServiceImpl<IbzLibMapper, IbzLib> impleme
     @Transactional
     public IbzLib get(Long key) {
         IbzLib et = getById(key);
-        if(et == null){
-            et = new IbzLib();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -225,5 +224,6 @@ public class IbzLibServiceImpl extends ServiceImpl<IbzLibMapper, IbzLib> impleme
         return et;
     }
 }
+
 
 

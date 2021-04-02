@@ -24,16 +24,6 @@ import cn.ibizlab.pms.core.uaa.filter.SysUserRoleSearchContext;
  */
 public interface ISysUserRoleService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "用户角色关系";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "sysuserroles";
-
     boolean create(SysUserRole et);
     void createBatch(List<SysUserRole> list);
     boolean update(SysUserRole et);
@@ -52,7 +42,6 @@ public interface ISysUserRoleService {
     List<SysUserRole> selectByUserid(String userid);
     void removeByUserid(String userid);
     SysUserRole dynamicCall(String key, String action, SysUserRole et);
-
 
 }
 

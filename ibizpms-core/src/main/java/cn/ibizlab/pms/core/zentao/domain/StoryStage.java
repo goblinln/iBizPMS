@@ -58,7 +58,7 @@ public class StoryStage extends EntityMP implements Serializable {
     /**
      * 设置阶段者
      */
-    @TableField(value = "`stagedby`")
+    @TableField(value = "stagedby")
     @JSONField(name = "stagedby")
     @JsonProperty("stagedby")
     @ApiModelProperty("设置阶段者")
@@ -66,7 +66,7 @@ public class StoryStage extends EntityMP implements Serializable {
     /**
      * 所处阶段
      */
-    @TableField(value = "`stage`")
+    @TableField(value = "stage")
     @JSONField(name = "stage")
     @JsonProperty("stage")
     @ApiModelProperty("所处阶段")
@@ -74,7 +74,7 @@ public class StoryStage extends EntityMP implements Serializable {
     /**
      * 需求
      */
-    @TableField(value = "`story`")
+    @TableField(value = "story")
     @JSONField(name = "story")
     @JsonProperty("story")
     @ApiModelProperty("需求")
@@ -82,7 +82,7 @@ public class StoryStage extends EntityMP implements Serializable {
     /**
      * 平台/分支
      */
-    @TableField(value = "`branch`")
+    @TableField(value = "branch")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")

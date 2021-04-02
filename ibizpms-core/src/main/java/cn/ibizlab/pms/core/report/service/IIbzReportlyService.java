@@ -25,16 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzReportlyService extends IService<IbzReportly> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "汇报";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzreportlies";
-
     boolean create(IbzReportly et);
     void createBatch(List<IbzReportly> list);
     boolean update(IbzReportly et);

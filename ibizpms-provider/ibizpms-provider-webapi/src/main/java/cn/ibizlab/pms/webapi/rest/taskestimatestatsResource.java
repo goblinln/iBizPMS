@@ -43,11 +43,11 @@ public class taskestimatestatsResource {
     @Autowired
     public ITaskEstimateStatsService taskestimatestatsService;
 
+
     @Autowired
     @Lazy
     public taskestimatestatsMapping taskestimatestatsMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Create-all')")
     @ApiOperation(value = "新建任务工时统计", tags = {"任务工时统计" },  notes = "新建任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats")
     public ResponseEntity<taskestimatestatsDTO> create(@Validated @RequestBody taskestimatestatsDTO taskestimatestatsdto) {
@@ -57,7 +57,6 @@ public class taskestimatestatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Create-all')")
     @ApiOperation(value = "批量新建任务工时统计", tags = {"任务工时统计" },  notes = "批量新建任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<taskestimatestatsDTO> taskestimatestatsdtos) {
@@ -65,7 +64,6 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Update-all')")
     @ApiOperation(value = "更新任务工时统计", tags = {"任务工时统计" },  notes = "更新任务工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimatestats/{taskestimatestats_id}")
     public ResponseEntity<taskestimatestatsDTO> update(@PathVariable("taskestimatestats_id") Long taskestimatestats_id, @RequestBody taskestimatestatsDTO taskestimatestatsdto) {
@@ -76,7 +74,6 @@ public class taskestimatestatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Update-all')")
     @ApiOperation(value = "批量更新任务工时统计", tags = {"任务工时统计" },  notes = "批量更新任务工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimatestats/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<taskestimatestatsDTO> taskestimatestatsdtos) {
@@ -84,14 +81,12 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Remove-all')")
     @ApiOperation(value = "删除任务工时统计", tags = {"任务工时统计" },  notes = "删除任务工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimatestats/{taskestimatestats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsService.remove(taskestimatestats_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Remove-all')")
     @ApiOperation(value = "批量删除任务工时统计", tags = {"任务工时统计" },  notes = "批量删除任务工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimatestats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +94,6 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Get-all')")
     @ApiOperation(value = "获取任务工时统计", tags = {"任务工时统计" },  notes = "获取任务工时统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskestimatestats/{taskestimatestats_id}")
     public ResponseEntity<taskestimatestatsDTO> get(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
@@ -121,7 +115,6 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsService.checkKey(taskestimatestatsMapping.toDomain(taskestimatestatsdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Save-all')")
     @ApiOperation(value = "保存任务工时统计", tags = {"任务工时统计" },  notes = "保存任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/save")
     public ResponseEntity<taskestimatestatsDTO> save(@RequestBody taskestimatestatsDTO taskestimatestatsdto) {
@@ -130,7 +123,6 @@ public class taskestimatestatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Save-all')")
     @ApiOperation(value = "批量保存任务工时统计", tags = {"任务工时统计" },  notes = "批量保存任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<taskestimatestatsDTO> taskestimatestatsdtos) {
@@ -138,7 +130,6 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchActionMonth-all')")
 	@ApiOperation(value = "获取日志月", tags = {"任务工时统计" } ,notes = "获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimatestats/fetchactionmonth")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchActionMonth(TaskEstimateStatsSearchContext context) {
@@ -151,7 +142,6 @@ public class taskestimatestatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchActionMonth-all')")
 	@ApiOperation(value = "查询日志月", tags = {"任务工时统计" } ,notes = "查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchactionmonth")
 	public ResponseEntity<Page<taskestimatestatsDTO>> searchActionMonth(@RequestBody TaskEstimateStatsSearchContext context) {
@@ -160,7 +150,6 @@ public class taskestimatestatsResource {
                 .body(new PageImpl(taskestimatestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchActionYear-all')")
 	@ApiOperation(value = "获取日志年", tags = {"任务工时统计" } ,notes = "获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimatestats/fetchactionyear")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchActionYear(TaskEstimateStatsSearchContext context) {
@@ -173,7 +162,6 @@ public class taskestimatestatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchActionYear-all')")
 	@ApiOperation(value = "查询日志年", tags = {"任务工时统计" } ,notes = "查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchactionyear")
 	public ResponseEntity<Page<taskestimatestatsDTO>> searchActionYear(@RequestBody TaskEstimateStatsSearchContext context) {
@@ -182,7 +170,6 @@ public class taskestimatestatsResource {
                 .body(new PageImpl(taskestimatestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"任务工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimatestats/fetchdefault")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchDefault(TaskEstimateStatsSearchContext context) {
@@ -195,7 +182,6 @@ public class taskestimatestatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchDefault-all')")
 	@ApiOperation(value = "查询数据集", tags = {"任务工时统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchdefault")
 	public ResponseEntity<Page<taskestimatestatsDTO>> searchDefault(@RequestBody TaskEstimateStatsSearchContext context) {

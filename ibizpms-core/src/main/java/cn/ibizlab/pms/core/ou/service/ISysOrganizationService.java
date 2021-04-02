@@ -24,16 +24,6 @@ import cn.ibizlab.pms.core.ou.filter.SysOrganizationSearchContext;
  */
 public interface ISysOrganizationService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "单位";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "sysorganizations";
-
     boolean create(SysOrganization et);
     void createBatch(List<SysOrganization> list);
     boolean update(SysOrganization et);
@@ -50,7 +40,6 @@ public interface ISysOrganizationService {
     List<SysOrganization> selectByParentorgid(Collection<String> ids);
     void removeByParentorgid(String orgid);
     SysOrganization dynamicCall(String key, String action, SysOrganization et);
-
 
 }
 

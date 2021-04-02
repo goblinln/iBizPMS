@@ -100,9 +100,8 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
     @Transactional
     public RepoBranch get(String key) {
         RepoBranch et = getById(key);
-        if(et == null){
-            et = new RepoBranch();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
         }
@@ -230,5 +229,6 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
         return et;
     }
 }
+
 
 

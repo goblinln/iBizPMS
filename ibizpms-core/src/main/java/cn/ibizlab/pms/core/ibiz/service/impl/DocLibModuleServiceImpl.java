@@ -71,7 +71,9 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     @Transactional
     public void createBatch(List<DocLibModule> list) {
         list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
+        for (DocLibModule et : list) {
+            getProxyService().save(et);
+        }
     }
 
     @Override
@@ -89,7 +91,9 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     @Transactional
     public void updateBatch(List<DocLibModule> list) {
         list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
+        for (DocLibModule et : list) {
+            getProxyService().update(et);
+        }
     }
 
     @Override
@@ -102,16 +106,17 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
-        removeByIds(idList);
+        for (Long id : idList) {
+            getProxyService().removeById(id);
+        }
     }
 
     @Override
     @Transactional
     public DocLibModule get(Long key) {
         DocLibModule et = getById(key);
-        if(et == null){
-            et = new DocLibModule();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -152,14 +157,41 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
 
     @Override
     @Transactional
+    public boolean docLibModuleNFavoriteBatch(List<DocLibModule> etList) {
+        for(DocLibModule et : etList) {
+            docLibModuleNFavorite(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public DocLibModule doclibModuleFavorite(DocLibModule et) {
          return et ;
     }
 
     @Override
     @Transactional
+    public boolean doclibModuleFavoriteBatch(List<DocLibModule> etList) {
+        for(DocLibModule et : etList) {
+            doclibModuleFavorite(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public DocLibModule fix(DocLibModule et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean fixBatch(List<DocLibModule> etList) {
+        for(DocLibModule et : etList) {
+            fix(et);
+        }
+        return true;
     }
 
     @Override
@@ -417,5 +449,6 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
         return et;
     }
 }
+
 
 

@@ -7,7 +7,6 @@ import cn.ibizlab.pms.core.es.service.IIbizproIndexESService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbizproIndexSearchContext;
 import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -20,16 +19,15 @@ import java.util.Collection;
  * 实体[索引检索] 服务对象接口实现
  */
 @Service
-@ConditionalOnClass(IbizproIndexESRepository.class)
 public class IbizproIndexESServiceImpl implements IIbizproIndexESService {
 
     @Autowired
     @Lazy
     IbizproIndexESRepository repository;
     @Override
-    public boolean createES(IbizproIndex et) {
+    public boolean create(IbizproIndex et) {
         repository.save(et);
-        CachedBeanCopier.copy(get(et.getDocid()),et);
+        CachedBeanCopier.copy(get(et.getIndexid()),et);
         return true;
     }
 
@@ -39,9 +37,9 @@ public class IbizproIndexESServiceImpl implements IIbizproIndexESService {
     }
 
     @Override
-    public boolean updateES(IbizproIndex et) {
+    public boolean update(IbizproIndex et) {
         repository.save(et);
-        CachedBeanCopier.copy(get(et.getDocid()),et);
+        CachedBeanCopier.copy(get(et.getIndexid()),et);
         return true;
     }
 
@@ -51,21 +49,21 @@ public class IbizproIndexESServiceImpl implements IIbizproIndexESService {
     }
 
     @Override
-    public boolean removeES(String key) {
+    public boolean remove(Long key) {
         repository.deleteById(key);
         return true;
     }
 
     @Override
-    public void removeBatch(Collection<String> idList) {
+    public void removeBatch(Collection<Long> idList) {
 
     }
     @Override
-    public IbizproIndex get(String key) {
+    public IbizproIndex get(Long key) {
         Optional<IbizproIndex> result = repository.findById(key);
         if(!result.isPresent()){
             IbizproIndex et=new IbizproIndex();
-            et.setDocid(key);
+            et.setIndexid(key);
             return et;
         }
         else{
@@ -76,7 +74,7 @@ public class IbizproIndexESServiceImpl implements IIbizproIndexESService {
     @Override
     public boolean save(IbizproIndex et) {
         repository.save(et);
-        CachedBeanCopier.copy(get(et.getDocid()),et);
+        CachedBeanCopier.copy(get(et.getIndexid()),et);
         return true;
     }
 

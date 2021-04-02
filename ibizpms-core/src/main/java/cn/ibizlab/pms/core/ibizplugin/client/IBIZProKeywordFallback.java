@@ -23,14 +23,14 @@ public class IBIZProKeywordFallback implements IBIZProKeywordFeignClient {
         return null;
     }
 
-    public IBIZProKeyword create(IBIZProKeyword et) {
+    public IBIZProKeyword create(IBIZProKeyword ibizprokeyword) {
         return null;
     }
     public Boolean createBatch(List<IBIZProKeyword> ibizprokeywords) {
         return false;
     }
 
-    public IBIZProKeyword update(String id, IBIZProKeyword et) {
+    public IBIZProKeyword update(String id, IBIZProKeyword ibizprokeyword) {
         return null;
     }
     public Boolean updateBatch(List<IBIZProKeyword> ibizprokeywords) {
@@ -50,26 +50,22 @@ public class IBIZProKeywordFallback implements IBIZProKeywordFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public IBIZProKeyword getDraft(IBIZProKeyword entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(IBIZProKeyword et) {
+    public Boolean checkKey(IBIZProKeyword ibizprokeyword) {
         return false;
     }
 
 
-    public Object saveEntity(IBIZProKeyword et) {
+    public Object saveEntity(IBIZProKeyword ibizprokeyword) {
         return null;
     }
-    public Boolean save(IBIZProKeyword et) {
+
+    public Boolean save(IBIZProKeyword ibizprokeyword) {
         return false;
     }
     public Boolean saveBatch(List<IBIZProKeyword> ibizprokeywords) {

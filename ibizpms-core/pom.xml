@@ -14,17 +14,18 @@
     <description>Ibizpms Core</description>
 
     <dependencies>
-        <dependency>
+		<dependency>
 			<groupId>cn.ibizlab.pms</groupId>
 			<artifactId>ibizpms-util</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
+        
         <dependency>
 		    <groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-commons</artifactId>
 		</dependency>
-
+        
         <!--  JBPM  -->
         <dependency>
             <groupId>org.jbpm</groupId>

@@ -24,16 +24,6 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSysServiceAPISearchContext;
  */
 public interface IPSSysServiceAPIService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "系统服务接口";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "pssysserviceapis";
-
     boolean create(PSSysServiceAPI et);
     void createBatch(List<PSSysServiceAPI> list);
     boolean update(PSSysServiceAPI et);
@@ -50,22 +40,6 @@ public interface IPSSysServiceAPIService {
     List<PSSysServiceAPI> selectByPsmoduleid(Collection<String> ids);
     void removeByPsmoduleid(String psmoduleid);
     PSSysServiceAPI dynamicCall(String key, String action, PSSysServiceAPI et);
-
-    boolean create(String devSlnSysId , PSSysServiceAPI et) ;
-    void createBatch(String devSlnSysId, List<PSSysServiceAPI> list);
-    boolean update(String devSlnSysId, PSSysServiceAPI et);
-    void updateBatch(String devSlnSysId, List<PSSysServiceAPI> list);
-    boolean remove(String devSlnSysId, String key);
-    void removeBatch(String devSlnSysId , Collection<String> idList) ;
-    PSSysServiceAPI get(String devSlnSysId , String key);
-    String getByCodeName(String devSlnSysId , String codeName);
-    PSSysServiceAPI getDraft(String devSlnSysId, PSSysServiceAPI et);
-    boolean checkKey(String devSlnSysId, PSSysServiceAPI et);
-    boolean save(String devSlnSysId, PSSysServiceAPI et);
-    void saveBatch(String devSlnSysId, List<PSSysServiceAPI> list);
-    Page<PSSysServiceAPI> searchDefault(String devSlnSysId, PSSysServiceAPISearchContext context);
-    List<PSSysServiceAPI> selectByPsmoduleid(String devSlnSysId, String psmoduleid);
-    void removeByPsmoduleid(String devSlnSysId, String psmoduleid);
 
 }
 

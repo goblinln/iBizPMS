@@ -32,25 +32,16 @@ public class CompanyStatsSearchContext extends QueryWrapperContext<CompanyStats>
 	private Timestamp n_date_gtandeq;//[日志日期]
 	public void setN_date_gtandeq(Timestamp n_date_gtandeq) {
         this.n_date_gtandeq = n_date_gtandeq;
-        if(!ObjectUtils.isEmpty(this.n_date_gtandeq)){
-            this.getSearchCond().ge("`date`", n_date_gtandeq);
-        }
     }
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
     @JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Timestamp n_date_ltandeq;//[日志日期]
 	public void setN_date_ltandeq(Timestamp n_date_ltandeq) {
         this.n_date_ltandeq = n_date_ltandeq;
-        if(!ObjectUtils.isEmpty(this.n_date_ltandeq)){
-            this.getSearchCond().le("`date`", n_date_ltandeq);
-        }
     }
 	private String n_comment_like;//[备注]
 	public void setN_comment_like(String n_comment_like) {
         this.n_comment_like = n_comment_like;
-        if(!ObjectUtils.isEmpty(this.n_comment_like)){
-            this.getSearchCond().like("`comment`", n_comment_like);
-        }
     }
 
     /**
@@ -62,7 +53,7 @@ public class CompanyStatsSearchContext extends QueryWrapperContext<CompanyStats>
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`comment`", query)
+                     wrapper.like("comment", query)
             );
 		 }
 	}

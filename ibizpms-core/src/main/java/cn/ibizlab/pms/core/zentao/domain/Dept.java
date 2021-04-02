@@ -49,7 +49,7 @@ public class Dept extends EntityMP implements Serializable {
     /**
      * 负责人
      */
-    @TableField(value = "`manager`")
+    @TableField(value = "manager")
     @JSONField(name = "manager")
     @JsonProperty("manager")
     @ApiModelProperty("负责人")
@@ -66,7 +66,7 @@ public class Dept extends EntityMP implements Serializable {
      * grade
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`grade`")
+    @TableField(value = "grade")
     @JSONField(name = "grade")
     @JsonProperty("grade")
     @ApiModelProperty("grade")
@@ -74,7 +74,7 @@ public class Dept extends EntityMP implements Serializable {
     /**
      * function
      */
-    @TableField(value = "`function`")
+    @TableField(value = "function")
     @JSONField(name = "function")
     @JsonProperty("function")
     @ApiModelProperty("function")
@@ -83,7 +83,7 @@ public class Dept extends EntityMP implements Serializable {
      * order
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`order`")
+    @TableField(value = "order")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("order")
@@ -91,7 +91,7 @@ public class Dept extends EntityMP implements Serializable {
     /**
      * path
      */
-    @TableField(value = "`path`")
+    @TableField(value = "path")
     @JSONField(name = "path")
     @JsonProperty("path")
     @ApiModelProperty("path")
@@ -99,7 +99,7 @@ public class Dept extends EntityMP implements Serializable {
     /**
      * position
      */
-    @TableField(value = "`position`")
+    @TableField(value = "position")
     @JSONField(name = "position")
     @JsonProperty("position")
     @ApiModelProperty("position")
@@ -116,7 +116,7 @@ public class Dept extends EntityMP implements Serializable {
     /**
      * 部门名称
      */
-    @TableField(value = "`name`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("部门名称")
@@ -132,7 +132,7 @@ public class Dept extends EntityMP implements Serializable {
     /**
      * parent
      */
-    @TableField(value = "`parent`")
+    @TableField(value = "parent")
     @JSONField(name = "parent")
     @JsonProperty("parent")
     @ApiModelProperty("parent")

@@ -24,14 +24,14 @@ public interface SysUserRoleFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles")
-    SysUserRole create(@RequestBody SysUserRole et);
+    SysUserRole create(@RequestBody SysUserRole sysuserrole);
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/batch")
     Boolean createBatch(@RequestBody List<SysUserRole> sysuserroles);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysuserroles/{userroleid}")
-    SysUserRole update(@PathVariable("userroleid") String userroleid, @RequestBody SysUserRole et);
+    SysUserRole update(@PathVariable("userroleid") String userroleid,@RequestBody SysUserRole sysuserrole);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysuserroles/batch")
     Boolean updateBatch(@RequestBody List<SysUserRole> sysuserroles);
@@ -47,22 +47,19 @@ public interface SysUserRoleFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/sysuserroles/{userroleid}")
     SysUserRole get(@PathVariable("userroleid") String userroleid);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysuserroles/getbycodename/{userroleid}")
-    String getByCodeName(@PathVariable("userroleid") String codeName);
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysuserroles/getdraft")
     SysUserRole getDraft(SysUserRole entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/checkkey")
-    Boolean checkKey(@RequestBody SysUserRole et);
+    Boolean checkKey(@RequestBody SysUserRole sysuserrole);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/save")
-    Object saveEntity(@RequestBody SysUserRole et);
+    Object saveEntity(@RequestBody SysUserRole sysuserrole);
 
-    default Boolean save(@RequestBody SysUserRole et) { return saveEntity(et)!=null; }
+    default Boolean save(@RequestBody SysUserRole sysuserrole) { return saveEntity(sysuserrole)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/savebatch")
     Boolean saveBatch(@RequestBody List<SysUserRole> sysuserroles);

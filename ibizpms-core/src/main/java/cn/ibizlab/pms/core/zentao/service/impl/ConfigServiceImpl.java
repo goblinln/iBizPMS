@@ -100,9 +100,8 @@ public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> impleme
     @Transactional
     public Config get(Long key) {
         Config et = getById(key);
-        if(et == null){
-            et = new Config();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
         }
@@ -230,5 +229,6 @@ public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> impleme
         return et;
     }
 }
+
 
 
