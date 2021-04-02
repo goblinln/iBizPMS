@@ -47,7 +47,7 @@ public class SysRoleResource {
     @Lazy
     public SysRoleMapping sysroleMapping;
 
-    @PreAuthorize("hasPermission(this.sysroleMapping.toDomain(#sysroledto),'iBizPMS-SysRole-Create')")
+    @PreAuthorize("@SysRoleModelImpl.test(#sysrole_id,'CREATE')")
     @ApiOperation(value = "新建系统角色", tags = {"系统角色" },  notes = "新建系统角色")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysroles")
     public ResponseEntity<SysRoleDTO> create(@Validated @RequestBody SysRoleDTO sysroledto) {
@@ -57,7 +57,7 @@ public class SysRoleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysroleMapping.toDomain(#sysroledtos),'iBizPMS-SysRole-Create')")
+    @PreAuthorize("@SysRoleModelImpl.test(#sysrole_id,'CREATE')")
     @ApiOperation(value = "批量新建系统角色", tags = {"系统角色" },  notes = "批量新建系统角色")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysroles/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<SysRoleDTO> sysroledtos) {
@@ -66,7 +66,7 @@ public class SysRoleResource {
     }
 
     @VersionCheck(entity = "sysrole" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.sysroleService.get(#sysrole_id),'iBizPMS-SysRole-Update')")
+    @PreAuthorize("@SysRoleModelImpl.test(#sysrole_id,'UPDATE')")
     @ApiOperation(value = "更新系统角色", tags = {"系统角色" },  notes = "更新系统角色")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysroles/{sysrole_id}")
     public ResponseEntity<SysRoleDTO> update(@PathVariable("sysrole_id") String sysrole_id, @RequestBody SysRoleDTO sysroledto) {
@@ -77,7 +77,7 @@ public class SysRoleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysroleService.getSysroleByEntities(this.sysroleMapping.toDomain(#sysroledtos)),'iBizPMS-SysRole-Update')")
+    @PreAuthorize("@SysRoleModelImpl.test(#sysrole_id,'UPDATE')")
     @ApiOperation(value = "批量更新系统角色", tags = {"系统角色" },  notes = "批量更新系统角色")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysroles/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysRoleDTO> sysroledtos) {
@@ -85,14 +85,14 @@ public class SysRoleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.sysroleService.get(#sysrole_id),'iBizPMS-SysRole-Remove')")
+    @PreAuthorize("@SysRoleModelImpl.test(#sysrole_id,'DELETE')")
     @ApiOperation(value = "删除系统角色", tags = {"系统角色" },  notes = "删除系统角色")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysroles/{sysrole_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysrole_id") String sysrole_id) {
          return ResponseEntity.status(HttpStatus.OK).body(sysroleService.remove(sysrole_id));
     }
 
-    @PreAuthorize("hasPermission(this.sysroleService.getSysroleByIds(#ids),'iBizPMS-SysRole-Remove')")
+    @PreAuthorize("@SysRoleModelImpl.test(#sysrole_id,'DELETE')")
     @ApiOperation(value = "批量删除系统角色", tags = {"系统角色" },  notes = "批量删除系统角色")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysroles/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +100,7 @@ public class SysRoleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.sysroleMapping.toDomain(returnObject.body),'iBizPMS-SysRole-Get')")
+    @PreAuthorize("@SysRoleModelImpl.test(#sysrole_id,'READ')")
     @ApiOperation(value = "获取系统角色", tags = {"系统角色" },  notes = "获取系统角色")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysroles/{sysrole_id}")
     public ResponseEntity<SysRoleDTO> get(@PathVariable("sysrole_id") String sysrole_id) {
@@ -122,7 +122,6 @@ public class SysRoleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(sysroleService.checkKey(sysroleMapping.toDomain(sysroledto)));
     }
 
-    @PreAuthorize("hasPermission(this.sysroleMapping.toDomain(#sysroledto),'iBizPMS-SysRole-Save')")
     @ApiOperation(value = "保存系统角色", tags = {"系统角色" },  notes = "保存系统角色")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysroles/save")
     public ResponseEntity<SysRoleDTO> save(@RequestBody SysRoleDTO sysroledto) {
@@ -131,7 +130,6 @@ public class SysRoleResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysroleMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.sysroleMapping.toDomain(#sysroledtos),'iBizPMS-SysRole-Save')")
     @ApiOperation(value = "批量保存系统角色", tags = {"系统角色" },  notes = "批量保存系统角色")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysroles/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysRoleDTO> sysroledtos) {
@@ -139,7 +137,7 @@ public class SysRoleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysRole-searchDefault-all') and hasPermission(#context,'iBizPMS-SysRole-Get')")
+    @PreAuthorize("@SysRoleModelImpl.test('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"系统角色" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysroles/fetchdefault")
 	public ResponseEntity<List<SysRoleDTO>> fetchDefault(SysRoleSearchContext context) {
@@ -152,7 +150,7 @@ public class SysRoleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysRole-searchDefault-all') and hasPermission(#context,'iBizPMS-SysRole-Get')")
+    @PreAuthorize("@SysRoleModelImpl.test('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"系统角色" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysroles/searchdefault")
 	public ResponseEntity<Page<SysRoleDTO>> searchDefault(@RequestBody SysRoleSearchContext context) {

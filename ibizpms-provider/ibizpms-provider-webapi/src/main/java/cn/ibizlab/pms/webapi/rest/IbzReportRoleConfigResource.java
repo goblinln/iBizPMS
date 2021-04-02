@@ -47,7 +47,7 @@ public class IbzReportRoleConfigResource {
     @Lazy
     public IbzReportRoleConfigMapping ibzreportroleconfigMapping;
 
-    @PreAuthorize("hasPermission(this.ibzreportroleconfigMapping.toDomain(#ibzreportroleconfigdto),'iBizPMS-IbzReportRoleConfig-Create')")
+    @PreAuthorize("@IbzReportRoleConfigModelImpl.test(#ibzreportroleconfig_id,'CREATE')")
     @ApiOperation(value = "新建汇报角色配置", tags = {"汇报角色配置" },  notes = "新建汇报角色配置")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs")
     public ResponseEntity<IbzReportRoleConfigDTO> create(@Validated @RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {
@@ -57,7 +57,7 @@ public class IbzReportRoleConfigResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibzreportroleconfigMapping.toDomain(#ibzreportroleconfigdtos),'iBizPMS-IbzReportRoleConfig-Create')")
+    @PreAuthorize("@IbzReportRoleConfigModelImpl.test(#ibzreportroleconfig_id,'CREATE')")
     @ApiOperation(value = "批量新建汇报角色配置", tags = {"汇报角色配置" },  notes = "批量新建汇报角色配置")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzReportRoleConfigDTO> ibzreportroleconfigdtos) {
@@ -66,7 +66,7 @@ public class IbzReportRoleConfigResource {
     }
 
     @VersionCheck(entity = "ibzreportroleconfig" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.ibzreportroleconfigService.get(#ibzreportroleconfig_id),'iBizPMS-IbzReportRoleConfig-Update')")
+    @PreAuthorize("@IbzReportRoleConfigModelImpl.test(#ibzreportroleconfig_id,'UPDATE')")
     @ApiOperation(value = "更新汇报角色配置", tags = {"汇报角色配置" },  notes = "更新汇报角色配置")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
     public ResponseEntity<IbzReportRoleConfigDTO> update(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id, @RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {
@@ -77,7 +77,7 @@ public class IbzReportRoleConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibzreportroleconfigService.getIbzreportroleconfigByEntities(this.ibzreportroleconfigMapping.toDomain(#ibzreportroleconfigdtos)),'iBizPMS-IbzReportRoleConfig-Update')")
+    @PreAuthorize("@IbzReportRoleConfigModelImpl.test(#ibzreportroleconfig_id,'UPDATE')")
     @ApiOperation(value = "批量更新汇报角色配置", tags = {"汇报角色配置" },  notes = "批量更新汇报角色配置")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportroleconfigs/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzReportRoleConfigDTO> ibzreportroleconfigdtos) {
@@ -85,14 +85,14 @@ public class IbzReportRoleConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibzreportroleconfigService.get(#ibzreportroleconfig_id),'iBizPMS-IbzReportRoleConfig-Remove')")
+    @PreAuthorize("@IbzReportRoleConfigModelImpl.test(#ibzreportroleconfig_id,'DELETE')")
     @ApiOperation(value = "删除汇报角色配置", tags = {"汇报角色配置" },  notes = "删除汇报角色配置")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigService.remove(ibzreportroleconfig_id));
     }
 
-    @PreAuthorize("hasPermission(this.ibzreportroleconfigService.getIbzreportroleconfigByIds(#ids),'iBizPMS-IbzReportRoleConfig-Remove')")
+    @PreAuthorize("@IbzReportRoleConfigModelImpl.test(#ibzreportroleconfig_id,'DELETE')")
     @ApiOperation(value = "批量删除汇报角色配置", tags = {"汇报角色配置" },  notes = "批量删除汇报角色配置")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportroleconfigs/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +100,7 @@ public class IbzReportRoleConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.ibzreportroleconfigMapping.toDomain(returnObject.body),'iBizPMS-IbzReportRoleConfig-Get')")
+    @PreAuthorize("@IbzReportRoleConfigModelImpl.test(#ibzreportroleconfig_id,'READ')")
     @ApiOperation(value = "获取汇报角色配置", tags = {"汇报角色配置" },  notes = "获取汇报角色配置")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
     public ResponseEntity<IbzReportRoleConfigDTO> get(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
@@ -122,7 +122,6 @@ public class IbzReportRoleConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigService.checkKey(ibzreportroleconfigMapping.toDomain(ibzreportroleconfigdto)));
     }
 
-    @PreAuthorize("hasPermission(this.ibzreportroleconfigMapping.toDomain(#ibzreportroleconfigdto),'iBizPMS-IbzReportRoleConfig-Save')")
     @ApiOperation(value = "保存汇报角色配置", tags = {"汇报角色配置" },  notes = "保存汇报角色配置")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/save")
     public ResponseEntity<IbzReportRoleConfigDTO> save(@RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {
@@ -131,7 +130,6 @@ public class IbzReportRoleConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.ibzreportroleconfigMapping.toDomain(#ibzreportroleconfigdtos),'iBizPMS-IbzReportRoleConfig-Save')")
     @ApiOperation(value = "批量保存汇报角色配置", tags = {"汇报角色配置" },  notes = "批量保存汇报角色配置")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzReportRoleConfigDTO> ibzreportroleconfigdtos) {
@@ -139,7 +137,7 @@ public class IbzReportRoleConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportRoleConfig-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzReportRoleConfig-Get')")
+    @PreAuthorize("@IbzReportRoleConfigModelImpl.test('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报角色配置" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreportroleconfigs/fetchdefault")
 	public ResponseEntity<List<IbzReportRoleConfigDTO>> fetchDefault(IbzReportRoleConfigSearchContext context) {
@@ -152,7 +150,7 @@ public class IbzReportRoleConfigResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzReportRoleConfig-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzReportRoleConfig-Get')")
+    @PreAuthorize("@IbzReportRoleConfigModelImpl.test('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"汇报角色配置" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportroleconfigs/searchdefault")
 	public ResponseEntity<Page<IbzReportRoleConfigDTO>> searchDefault(@RequestBody IbzReportRoleConfigSearchContext context) {

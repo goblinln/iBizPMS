@@ -47,7 +47,6 @@ public class ProjectTeamResource {
     @Lazy
     public ProjectTeamMapping projectteamMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-GetUserRole-all')")
     @ApiOperation(value = "获取成员角色", tags = {"项目团队" },  notes = "获取成员角色")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectteams/{projectteam_id}/getuserrole")
     public ResponseEntity<ProjectTeamDTO> getUserRole(@PathVariable("projectteam_id") Long projectteam_id, @RequestBody ProjectTeamDTO projectteamdto) {
@@ -66,7 +65,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Create-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test(#projectteam_id,'CREATE')")
     @ApiOperation(value = "新建项目团队", tags = {"项目团队" },  notes = "新建项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectteams")
     public ResponseEntity<ProjectTeamDTO> create(@Validated @RequestBody ProjectTeamDTO projectteamdto) {
@@ -76,7 +75,7 @@ public class ProjectTeamResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Create-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test(#projectteam_id,'CREATE')")
     @ApiOperation(value = "批量新建项目团队", tags = {"项目团队" },  notes = "批量新建项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<ProjectTeamDTO> projectteamdtos) {
@@ -84,7 +83,7 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Update-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test(#projectteam_id,'UPDATE')")
     @ApiOperation(value = "更新项目团队", tags = {"项目团队" },  notes = "更新项目团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectteams/{projectteam_id}")
     public ResponseEntity<ProjectTeamDTO> update(@PathVariable("projectteam_id") Long projectteam_id, @RequestBody ProjectTeamDTO projectteamdto) {
@@ -95,7 +94,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Update-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test(#projectteam_id,'UPDATE')")
     @ApiOperation(value = "批量更新项目团队", tags = {"项目团队" },  notes = "批量更新项目团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectteams/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProjectTeamDTO> projectteamdtos) {
@@ -103,14 +102,14 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Remove-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test(#projectteam_id,'DELETE')")
     @ApiOperation(value = "删除项目团队", tags = {"项目团队" },  notes = "删除项目团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectteams/{projectteam_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("projectteam_id") Long projectteam_id) {
          return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Remove-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test(#projectteam_id,'DELETE')")
     @ApiOperation(value = "批量删除项目团队", tags = {"项目团队" },  notes = "批量删除项目团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectteams/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -118,7 +117,7 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Get-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test(#projectteam_id,'READ')")
     @ApiOperation(value = "获取项目团队", tags = {"项目团队" },  notes = "获取项目团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectteams/{projectteam_id}")
     public ResponseEntity<ProjectTeamDTO> get(@PathVariable("projectteam_id") Long projectteam_id) {
@@ -140,7 +139,6 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectteamService.checkKey(projectteamMapping.toDomain(projectteamdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Save-all')")
     @ApiOperation(value = "保存项目团队", tags = {"项目团队" },  notes = "保存项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/save")
     public ResponseEntity<ProjectTeamDTO> save(@RequestBody ProjectTeamDTO projectteamdto) {
@@ -149,7 +147,6 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Save-all')")
     @ApiOperation(value = "批量保存项目团队", tags = {"项目团队" },  notes = "批量保存项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProjectTeamDTO> projectteamdtos) {
@@ -157,7 +154,7 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchDefault-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目团队" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/projectteams/fetchdefault")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchDefault(ProjectTeamSearchContext context) {
@@ -170,7 +167,7 @@ public class ProjectTeamResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchDefault-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"项目团队" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/searchdefault")
 	public ResponseEntity<Page<ProjectTeamDTO>> searchDefault(@RequestBody ProjectTeamSearchContext context) {
@@ -179,7 +176,7 @@ public class ProjectTeamResource {
                 .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchProjectTeamPm-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test('READ')")
 	@ApiOperation(value = "获取项目成员（项目经理）", tags = {"项目团队" } ,notes = "获取项目成员（项目经理）")
     @RequestMapping(method= RequestMethod.GET , value="/projectteams/fetchprojectteampm")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamPm(ProjectTeamSearchContext context) {
@@ -192,7 +189,7 @@ public class ProjectTeamResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchProjectTeamPm-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test('READ')")
 	@ApiOperation(value = "查询项目成员（项目经理）", tags = {"项目团队" } ,notes = "查询项目成员（项目经理）")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/searchprojectteampm")
 	public ResponseEntity<Page<ProjectTeamDTO>> searchProjectTeamPm(@RequestBody ProjectTeamSearchContext context) {
@@ -201,7 +198,7 @@ public class ProjectTeamResource {
                 .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchRowEditDefault-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test('READ')")
 	@ApiOperation(value = "获取行编辑查询", tags = {"项目团队" } ,notes = "获取行编辑查询")
     @RequestMapping(method= RequestMethod.GET , value="/projectteams/fetchroweditdefault")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchRowEditDefault(ProjectTeamSearchContext context) {
@@ -214,7 +211,7 @@ public class ProjectTeamResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchRowEditDefault-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test('READ')")
 	@ApiOperation(value = "查询行编辑查询", tags = {"项目团队" } ,notes = "查询行编辑查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/searchroweditdefault")
 	public ResponseEntity<Page<ProjectTeamDTO>> searchRowEditDefault(@RequestBody ProjectTeamSearchContext context) {
@@ -223,7 +220,7 @@ public class ProjectTeamResource {
                 .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchTaskCntEstimateConsumedLeft-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test('READ')")
 	@ApiOperation(value = "获取数据查询", tags = {"项目团队" } ,notes = "获取数据查询")
     @RequestMapping(method= RequestMethod.GET , value="/projectteams/fetchtaskcntestimateconsumedleft")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchTaskCntEstimateConsumedLeft(ProjectTeamSearchContext context) {
@@ -236,7 +233,7 @@ public class ProjectTeamResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchTaskCntEstimateConsumedLeft-all')")
+    @PreAuthorize("@ProjectTeamModelImpl.test('READ')")
 	@ApiOperation(value = "查询数据查询", tags = {"项目团队" } ,notes = "查询数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/searchtaskcntestimateconsumedleft")
 	public ResponseEntity<Page<ProjectTeamDTO>> searchTaskCntEstimateConsumedLeft(@RequestBody ProjectTeamSearchContext context) {
@@ -254,7 +251,6 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-GetUserRole-all')")
     @ApiOperation(value = "根据项目项目团队", tags = {"项目团队" },  notes = "根据项目项目团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectteams/{projectteam_id}/getuserrole")
     public ResponseEntity<ProjectTeamDTO> getUserRoleByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id, @RequestBody ProjectTeamDTO projectteamdto) {
@@ -271,7 +267,6 @@ public class ProjectTeamResource {
         boolean result = projectteamService.getUserRoleBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Create-all')")
     @ApiOperation(value = "根据项目建立项目团队", tags = {"项目团队" },  notes = "根据项目建立项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams")
     public ResponseEntity<ProjectTeamDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamDTO projectteamdto) {
@@ -282,7 +277,6 @@ public class ProjectTeamResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Create-all')")
     @ApiOperation(value = "根据项目批量建立项目团队", tags = {"项目团队" },  notes = "根据项目批量建立项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/batch")
     public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTeamDTO> projectteamdtos) {
@@ -294,7 +288,6 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Update-all')")
     @ApiOperation(value = "根据项目更新项目团队", tags = {"项目团队" },  notes = "根据项目更新项目团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectteams/{projectteam_id}")
     public ResponseEntity<ProjectTeamDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id, @RequestBody ProjectTeamDTO projectteamdto) {
@@ -306,7 +299,6 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Update-all')")
     @ApiOperation(value = "根据项目批量更新项目团队", tags = {"项目团队" },  notes = "根据项目批量更新项目团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectteams/batch")
     public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTeamDTO> projectteamdtos) {
@@ -318,14 +310,12 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Remove-all')")
     @ApiOperation(value = "根据项目删除项目团队", tags = {"项目团队" },  notes = "根据项目删除项目团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/{projectteam_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Remove-all')")
     @ApiOperation(value = "根据项目批量删除项目团队", tags = {"项目团队" },  notes = "根据项目批量删除项目团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -333,7 +323,6 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Get-all')")
     @ApiOperation(value = "根据项目获取项目团队", tags = {"项目团队" },  notes = "根据项目获取项目团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/{projectteam_id}")
     public ResponseEntity<ProjectTeamDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
@@ -356,7 +345,6 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectteamService.checkKey(projectteamMapping.toDomain(projectteamdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Save-all')")
     @ApiOperation(value = "根据项目保存项目团队", tags = {"项目团队" },  notes = "根据项目保存项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/save")
     public ResponseEntity<ProjectTeamDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamDTO projectteamdto) {
@@ -366,7 +354,6 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-Save-all')")
     @ApiOperation(value = "根据项目批量保存项目团队", tags = {"项目团队" },  notes = "根据项目批量保存项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/savebatch")
     public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTeamDTO> projectteamdtos) {
@@ -378,7 +365,6 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchDefault-all')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"项目团队" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectteams/fetchdefault")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamDefaultByProject(@PathVariable("project_id") Long project_id,ProjectTeamSearchContext context) {
@@ -392,7 +378,6 @@ public class ProjectTeamResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchDefault-all')")
 	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"项目团队" } ,notes = "根据项目查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/searchdefault")
 	public ResponseEntity<Page<ProjectTeamDTO>> searchProjectTeamDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamSearchContext context) {
@@ -401,7 +386,6 @@ public class ProjectTeamResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchProjectTeamPm-all')")
 	@ApiOperation(value = "根据项目获取项目成员（项目经理）", tags = {"项目团队" } ,notes = "根据项目获取项目成员（项目经理）")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectteams/fetchprojectteampm")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamProjectTeamPmByProject(@PathVariable("project_id") Long project_id,ProjectTeamSearchContext context) {
@@ -415,7 +399,6 @@ public class ProjectTeamResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchProjectTeamPm-all')")
 	@ApiOperation(value = "根据项目查询项目成员（项目经理）", tags = {"项目团队" } ,notes = "根据项目查询项目成员（项目经理）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/searchprojectteampm")
 	public ResponseEntity<Page<ProjectTeamDTO>> searchProjectTeamProjectTeamPmByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamSearchContext context) {
@@ -424,7 +407,6 @@ public class ProjectTeamResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchRowEditDefault-all')")
 	@ApiOperation(value = "根据项目获取行编辑查询", tags = {"项目团队" } ,notes = "根据项目获取行编辑查询")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectteams/fetchroweditdefault")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamRowEditDefaultByProject(@PathVariable("project_id") Long project_id,ProjectTeamSearchContext context) {
@@ -438,7 +420,6 @@ public class ProjectTeamResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchRowEditDefault-all')")
 	@ApiOperation(value = "根据项目查询行编辑查询", tags = {"项目团队" } ,notes = "根据项目查询行编辑查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/searchroweditdefault")
 	public ResponseEntity<Page<ProjectTeamDTO>> searchProjectTeamRowEditDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamSearchContext context) {
@@ -447,7 +428,6 @@ public class ProjectTeamResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchTaskCntEstimateConsumedLeft-all')")
 	@ApiOperation(value = "根据项目获取数据查询", tags = {"项目团队" } ,notes = "根据项目获取数据查询")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectteams/fetchtaskcntestimateconsumedleft")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamTaskCntEstimateConsumedLeftByProject(@PathVariable("project_id") Long project_id,ProjectTeamSearchContext context) {
@@ -461,7 +441,6 @@ public class ProjectTeamResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTeam-searchTaskCntEstimateConsumedLeft-all')")
 	@ApiOperation(value = "根据项目查询数据查询", tags = {"项目团队" } ,notes = "根据项目查询数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/searchtaskcntestimateconsumedleft")
 	public ResponseEntity<Page<ProjectTeamDTO>> searchProjectTeamTaskCntEstimateConsumedLeftByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamSearchContext context) {

@@ -61,7 +61,7 @@ export class Associatedform {
                 formItems: formItemsProp
             },
             on: {
-                'formitemvaluechange': parentContainer.onFormItemValueChange
+                'formitemvaluechange': parentContainer.onFormItemValueChange.bind(parentContainer)
             },
             scopedSlots: this.renderSolt(formItems, parentContainer, ctrlItemModel, localParam)
         })

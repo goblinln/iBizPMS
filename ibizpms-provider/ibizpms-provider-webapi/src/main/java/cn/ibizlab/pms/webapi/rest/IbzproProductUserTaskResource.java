@@ -47,7 +47,7 @@ public class IbzproProductUserTaskResource {
     @Lazy
     public IbzproProductUserTaskMapping ibzproproductusertaskMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-Create-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test(#ibzproproductusertask_id,'CREATE')")
     @ApiOperation(value = "新建产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "新建产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductusertasks")
     public ResponseEntity<IbzproProductUserTaskDTO> create(@Validated @RequestBody IbzproProductUserTaskDTO ibzproproductusertaskdto) {
@@ -57,7 +57,7 @@ public class IbzproProductUserTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-Create-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test(#ibzproproductusertask_id,'CREATE')")
     @ApiOperation(value = "批量新建产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "批量新建产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductusertasks/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzproProductUserTaskDTO> ibzproproductusertaskdtos) {
@@ -65,7 +65,7 @@ public class IbzproProductUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-Update-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test(#ibzproproductusertask_id,'UPDATE')")
     @ApiOperation(value = "更新产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "更新产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproproductusertasks/{ibzproproductusertask_id}")
     public ResponseEntity<IbzproProductUserTaskDTO> update(@PathVariable("ibzproproductusertask_id") Long ibzproproductusertask_id, @RequestBody IbzproProductUserTaskDTO ibzproproductusertaskdto) {
@@ -76,7 +76,7 @@ public class IbzproProductUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-Update-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test(#ibzproproductusertask_id,'UPDATE')")
     @ApiOperation(value = "批量更新产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "批量更新产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproproductusertasks/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzproProductUserTaskDTO> ibzproproductusertaskdtos) {
@@ -84,14 +84,14 @@ public class IbzproProductUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-Remove-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test(#ibzproproductusertask_id,'DELETE')")
     @ApiOperation(value = "删除产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "删除产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductusertasks/{ibzproproductusertask_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproproductusertask_id") Long ibzproproductusertask_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproproductusertaskService.remove(ibzproproductusertask_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-Remove-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test(#ibzproproductusertask_id,'DELETE')")
     @ApiOperation(value = "批量删除产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "批量删除产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductusertasks/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class IbzproProductUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-Get-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test(#ibzproproductusertask_id,'READ')")
     @ApiOperation(value = "获取产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "获取产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproductusertasks/{ibzproproductusertask_id}")
     public ResponseEntity<IbzproProductUserTaskDTO> get(@PathVariable("ibzproproductusertask_id") Long ibzproproductusertask_id) {
@@ -121,7 +121,6 @@ public class IbzproProductUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproproductusertaskService.checkKey(ibzproproductusertaskMapping.toDomain(ibzproproductusertaskdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-Save-all')")
     @ApiOperation(value = "保存产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "保存产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductusertasks/save")
     public ResponseEntity<IbzproProductUserTaskDTO> save(@RequestBody IbzproProductUserTaskDTO ibzproproductusertaskdto) {
@@ -130,7 +129,6 @@ public class IbzproProductUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductusertaskMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-Save-all')")
     @ApiOperation(value = "批量保存产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "批量保存产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductusertasks/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzproProductUserTaskDTO> ibzproproductusertaskdtos) {
@@ -138,7 +136,7 @@ public class IbzproProductUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-searchDefault-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品汇报用户任务" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproproductusertasks/fetchdefault")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchDefault(IbzproProductUserTaskSearchContext context) {
@@ -151,7 +149,7 @@ public class IbzproProductUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-searchDefault-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"产品汇报用户任务" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchdefault")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchDefault(@RequestBody IbzproProductUserTaskSearchContext context) {
@@ -160,7 +158,7 @@ public class IbzproProductUserTaskResource {
                 .body(new PageImpl(ibzproproductusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-searchProductDailyUserTaskStats-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "获取产品日报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品日报用户任务统计")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproproductusertasks/fetchproductdailyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductDailyUserTaskStats(IbzproProductUserTaskSearchContext context) {
@@ -173,7 +171,7 @@ public class IbzproProductUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-searchProductDailyUserTaskStats-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "查询产品日报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "查询产品日报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchproductdailyusertaskstats")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchProductDailyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
@@ -182,7 +180,7 @@ public class IbzproProductUserTaskResource {
                 .body(new PageImpl(ibzproproductusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-searchProductMonthlyUserTaskStats-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "获取产品月报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品月报用户任务统计")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproproductusertasks/fetchproductmonthlyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductMonthlyUserTaskStats(IbzproProductUserTaskSearchContext context) {
@@ -195,7 +193,7 @@ public class IbzproProductUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-searchProductMonthlyUserTaskStats-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "查询产品月报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "查询产品月报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchproductmonthlyusertaskstats")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchProductMonthlyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
@@ -204,7 +202,7 @@ public class IbzproProductUserTaskResource {
                 .body(new PageImpl(ibzproproductusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-searchProductWeeklyUserTaskStats-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "获取产品周报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品周报用户任务统计")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproproductusertasks/fetchproductweeklyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductWeeklyUserTaskStats(IbzproProductUserTaskSearchContext context) {
@@ -217,7 +215,7 @@ public class IbzproProductUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProductUserTask-searchProductWeeklyUserTaskStats-all')")
+    @PreAuthorize("@IbzproProductUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "查询产品周报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "查询产品周报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchproductweeklyusertaskstats")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchProductWeeklyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {

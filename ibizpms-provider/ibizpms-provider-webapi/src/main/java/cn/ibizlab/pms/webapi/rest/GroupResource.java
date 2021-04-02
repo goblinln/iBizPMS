@@ -47,7 +47,7 @@ public class GroupResource {
     @Lazy
     public GroupMapping groupMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-Create-all')")
+    @PreAuthorize("@GroupModelImpl.test(#group_id,'CREATE')")
     @ApiOperation(value = "新建群组", tags = {"群组" },  notes = "新建群组")
 	@RequestMapping(method = RequestMethod.POST, value = "/groups")
     public ResponseEntity<GroupDTO> create(@Validated @RequestBody GroupDTO groupdto) {
@@ -57,7 +57,7 @@ public class GroupResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-Create-all')")
+    @PreAuthorize("@GroupModelImpl.test(#group_id,'CREATE')")
     @ApiOperation(value = "批量新建群组", tags = {"群组" },  notes = "批量新建群组")
 	@RequestMapping(method = RequestMethod.POST, value = "/groups/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<GroupDTO> groupdtos) {
@@ -65,7 +65,7 @@ public class GroupResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-Update-all')")
+    @PreAuthorize("@GroupModelImpl.test(#group_id,'UPDATE')")
     @ApiOperation(value = "更新群组", tags = {"群组" },  notes = "更新群组")
 	@RequestMapping(method = RequestMethod.PUT, value = "/groups/{group_id}")
     public ResponseEntity<GroupDTO> update(@PathVariable("group_id") Long group_id, @RequestBody GroupDTO groupdto) {
@@ -76,7 +76,7 @@ public class GroupResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-Update-all')")
+    @PreAuthorize("@GroupModelImpl.test(#group_id,'UPDATE')")
     @ApiOperation(value = "批量更新群组", tags = {"群组" },  notes = "批量更新群组")
 	@RequestMapping(method = RequestMethod.PUT, value = "/groups/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<GroupDTO> groupdtos) {
@@ -84,14 +84,14 @@ public class GroupResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-Remove-all')")
+    @PreAuthorize("@GroupModelImpl.test(#group_id,'DELETE')")
     @ApiOperation(value = "删除群组", tags = {"群组" },  notes = "删除群组")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/groups/{group_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("group_id") Long group_id) {
          return ResponseEntity.status(HttpStatus.OK).body(groupService.remove(group_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-Remove-all')")
+    @PreAuthorize("@GroupModelImpl.test(#group_id,'DELETE')")
     @ApiOperation(value = "批量删除群组", tags = {"群组" },  notes = "批量删除群组")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/groups/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class GroupResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-Get-all')")
+    @PreAuthorize("@GroupModelImpl.test(#group_id,'READ')")
     @ApiOperation(value = "获取群组", tags = {"群组" },  notes = "获取群组")
 	@RequestMapping(method = RequestMethod.GET, value = "/groups/{group_id}")
     public ResponseEntity<GroupDTO> get(@PathVariable("group_id") Long group_id) {
@@ -121,7 +121,6 @@ public class GroupResource {
         return  ResponseEntity.status(HttpStatus.OK).body(groupService.checkKey(groupMapping.toDomain(groupdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-Save-all')")
     @ApiOperation(value = "保存群组", tags = {"群组" },  notes = "保存群组")
 	@RequestMapping(method = RequestMethod.POST, value = "/groups/save")
     public ResponseEntity<GroupDTO> save(@RequestBody GroupDTO groupdto) {
@@ -130,7 +129,6 @@ public class GroupResource {
         return ResponseEntity.status(HttpStatus.OK).body(groupMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-Save-all')")
     @ApiOperation(value = "批量保存群组", tags = {"群组" },  notes = "批量保存群组")
 	@RequestMapping(method = RequestMethod.POST, value = "/groups/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<GroupDTO> groupdtos) {
@@ -138,7 +136,7 @@ public class GroupResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-searchDefault-all')")
+    @PreAuthorize("@GroupModelImpl.test('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"群组" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/groups/fetchdefault")
 	public ResponseEntity<List<GroupDTO>> fetchDefault(GroupSearchContext context) {
@@ -151,7 +149,7 @@ public class GroupResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Group-searchDefault-all')")
+    @PreAuthorize("@GroupModelImpl.test('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"群组" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/groups/searchdefault")
 	public ResponseEntity<Page<GroupDTO>> searchDefault(@RequestBody GroupSearchContext context) {

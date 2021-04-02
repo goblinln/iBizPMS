@@ -47,7 +47,7 @@ public class SysTeamResource {
     @Lazy
     public SysTeamMapping systeamMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeam-Create-all')")
+    @PreAuthorize("@SysTeamModelImpl.test(#systeam_id,'CREATE')")
     @ApiOperation(value = "新建组", tags = {"组" },  notes = "新建组")
 	@RequestMapping(method = RequestMethod.POST, value = "/systeams")
     public ResponseEntity<SysTeamDTO> create(@Validated @RequestBody SysTeamDTO systeamdto) {
@@ -57,7 +57,7 @@ public class SysTeamResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeam-Create-all')")
+    @PreAuthorize("@SysTeamModelImpl.test(#systeam_id,'CREATE')")
     @ApiOperation(value = "批量新建组", tags = {"组" },  notes = "批量新建组")
 	@RequestMapping(method = RequestMethod.POST, value = "/systeams/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<SysTeamDTO> systeamdtos) {
@@ -65,7 +65,7 @@ public class SysTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeam-Update-all')")
+    @PreAuthorize("@SysTeamModelImpl.test(#systeam_id,'UPDATE')")
     @ApiOperation(value = "更新组", tags = {"组" },  notes = "更新组")
 	@RequestMapping(method = RequestMethod.PUT, value = "/systeams/{systeam_id}")
     public ResponseEntity<SysTeamDTO> update(@PathVariable("systeam_id") String systeam_id, @RequestBody SysTeamDTO systeamdto) {
@@ -76,7 +76,7 @@ public class SysTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeam-Update-all')")
+    @PreAuthorize("@SysTeamModelImpl.test(#systeam_id,'UPDATE')")
     @ApiOperation(value = "批量更新组", tags = {"组" },  notes = "批量更新组")
 	@RequestMapping(method = RequestMethod.PUT, value = "/systeams/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysTeamDTO> systeamdtos) {
@@ -84,14 +84,14 @@ public class SysTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeam-Remove-all')")
+    @PreAuthorize("@SysTeamModelImpl.test(#systeam_id,'DELETE')")
     @ApiOperation(value = "删除组", tags = {"组" },  notes = "删除组")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/systeams/{systeam_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("systeam_id") String systeam_id) {
          return ResponseEntity.status(HttpStatus.OK).body(systeamService.remove(systeam_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeam-Remove-all')")
+    @PreAuthorize("@SysTeamModelImpl.test(#systeam_id,'DELETE')")
     @ApiOperation(value = "批量删除组", tags = {"组" },  notes = "批量删除组")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/systeams/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -99,7 +99,7 @@ public class SysTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeam-Get-all')")
+    @PreAuthorize("@SysTeamModelImpl.test(#systeam_id,'READ')")
     @ApiOperation(value = "获取组", tags = {"组" },  notes = "获取组")
 	@RequestMapping(method = RequestMethod.GET, value = "/systeams/{systeam_id}")
     public ResponseEntity<SysTeamDTO> get(@PathVariable("systeam_id") String systeam_id) {
@@ -121,7 +121,6 @@ public class SysTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(systeamService.checkKey(systeamMapping.toDomain(systeamdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeam-Save-all')")
     @ApiOperation(value = "保存组", tags = {"组" },  notes = "保存组")
 	@RequestMapping(method = RequestMethod.POST, value = "/systeams/save")
     public ResponseEntity<SysTeamDTO> save(@RequestBody SysTeamDTO systeamdto) {
@@ -130,7 +129,6 @@ public class SysTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(systeamMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeam-Save-all')")
     @ApiOperation(value = "批量保存组", tags = {"组" },  notes = "批量保存组")
 	@RequestMapping(method = RequestMethod.POST, value = "/systeams/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysTeamDTO> systeamdtos) {
@@ -138,7 +136,7 @@ public class SysTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeam-searchDefault-all')")
+    @PreAuthorize("@SysTeamModelImpl.test('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"组" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/systeams/fetchdefault")
 	public ResponseEntity<List<SysTeamDTO>> fetchDefault(SysTeamSearchContext context) {
@@ -151,7 +149,7 @@ public class SysTeamResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysTeam-searchDefault-all')")
+    @PreAuthorize("@SysTeamModelImpl.test('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"组" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/systeams/searchdefault")
 	public ResponseEntity<Page<SysTeamDTO>> searchDefault(@RequestBody SysTeamSearchContext context) {

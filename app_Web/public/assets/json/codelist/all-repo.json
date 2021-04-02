@@ -1,1 +1,1 @@
-{"codeListType":"DYNAMIC","codeName":"AllRepo","emptyText":"未定义","enableCache":true,"cacheTimeout":600,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/AllRepo.json","name":"所有代码"}
+{"codeListType":"DYNAMIC","codeName":"AllRepo","dynaInstMode":1,"emptyText":"未定义","enableCache":true,"cacheTimeout":600,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/AllRepo.json","name":"所有代码"}

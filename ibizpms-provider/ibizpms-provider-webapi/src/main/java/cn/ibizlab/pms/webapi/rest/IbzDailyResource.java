@@ -47,7 +47,7 @@ public class IbzDailyResource {
     @Lazy
     public IbzDailyMapping ibzdailyMapping;
 
-    @PreAuthorize("hasPermission(this.ibzdailyMapping.toDomain(#ibzdailydto),'iBizPMS-IbzDaily-Create')")
+    @PreAuthorize("@IbzDailyModelImpl.test(#ibzdaily_id,'CREATE')")
     @ApiOperation(value = "新建日报", tags = {"日报" },  notes = "新建日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies")
     public ResponseEntity<IbzDailyDTO> create(@Validated @RequestBody IbzDailyDTO ibzdailydto) {
@@ -57,7 +57,7 @@ public class IbzDailyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibzdailyMapping.toDomain(#ibzdailydtos),'iBizPMS-IbzDaily-Create')")
+    @PreAuthorize("@IbzDailyModelImpl.test(#ibzdaily_id,'CREATE')")
     @ApiOperation(value = "批量新建日报", tags = {"日报" },  notes = "批量新建日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzDailyDTO> ibzdailydtos) {
@@ -66,7 +66,7 @@ public class IbzDailyResource {
     }
 
     @VersionCheck(entity = "ibzdaily" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.ibzdailyService.get(#ibzdaily_id),'iBizPMS-IbzDaily-Update')")
+    @PreAuthorize("@IbzDailyModelImpl.test(#ibzdaily_id,'UPDATE')")
     @ApiOperation(value = "更新日报", tags = {"日报" },  notes = "更新日报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailies/{ibzdaily_id}")
     public ResponseEntity<IbzDailyDTO> update(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -77,7 +77,7 @@ public class IbzDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibzdailyService.getIbzdailyByEntities(this.ibzdailyMapping.toDomain(#ibzdailydtos)),'iBizPMS-IbzDaily-Update')")
+    @PreAuthorize("@IbzDailyModelImpl.test(#ibzdaily_id,'UPDATE')")
     @ApiOperation(value = "批量更新日报", tags = {"日报" },  notes = "批量更新日报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailies/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzDailyDTO> ibzdailydtos) {
@@ -85,14 +85,14 @@ public class IbzDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibzdailyService.get(#ibzdaily_id),'iBizPMS-IbzDaily-Remove')")
+    @PreAuthorize("@IbzDailyModelImpl.test(#ibzdaily_id,'DELETE')")
     @ApiOperation(value = "删除日报", tags = {"日报" },  notes = "删除日报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailies/{ibzdaily_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzdailyService.remove(ibzdaily_id));
     }
 
-    @PreAuthorize("hasPermission(this.ibzdailyService.getIbzdailyByIds(#ids),'iBizPMS-IbzDaily-Remove')")
+    @PreAuthorize("@IbzDailyModelImpl.test(#ibzdaily_id,'DELETE')")
     @ApiOperation(value = "批量删除日报", tags = {"日报" },  notes = "批量删除日报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -100,7 +100,7 @@ public class IbzDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.ibzdailyMapping.toDomain(returnObject.body),'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test(#ibzdaily_id,'READ')")
     @ApiOperation(value = "获取日报", tags = {"日报" },  notes = "获取日报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/{ibzdaily_id}")
     public ResponseEntity<IbzDailyDTO> get(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
@@ -122,7 +122,7 @@ public class IbzDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzdailyService.checkKey(ibzdailyMapping.toDomain(ibzdailydto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-CreateUserDaily-all')")
+    @PreAuthorize("@IbzDailyModelImpl.test(#ibzdaily_id,'CREATE')")
     @ApiOperation(value = "定时生成用户日报", tags = {"日报" },  notes = "定时生成用户日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/createuserdaily")
     public ResponseEntity<IbzDailyDTO> createUserDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -141,7 +141,7 @@ public class IbzDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-GetYeaterdayDailyPlansTaskEdit-all')")
+    @PreAuthorize("@IbzDailyModelImpl.test(#ibzdaily_id,'READ')")
     @ApiOperation(value = "获取前一天日报计划参与任务（编辑）", tags = {"日报" },  notes = "获取前一天日报计划参与任务（编辑）")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/getyeaterdaydailyplanstaskedit")
     public ResponseEntity<IbzDailyDTO> getYeaterdayDailyPlansTaskEdit(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -160,7 +160,7 @@ public class IbzDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-GetYesterdayDailyPlansTask-all')")
+    @PreAuthorize("@IbzDailyModelImpl.test(#ibzdaily_id,'READ')")
     @ApiOperation(value = "获取前一天日报计划参与任务（新建）", tags = {"日报" },  notes = "获取前一天日报计划参与任务（新建）")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/getyesterdaydailyplanstask")
     public ResponseEntity<IbzDailyDTO> getYesterdayDailyPlansTask(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -179,7 +179,6 @@ public class IbzDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-HaveRead-all')")
     @ApiOperation(value = "已读", tags = {"日报" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/haveread")
     public ResponseEntity<IbzDailyDTO> haveRead(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -198,7 +197,6 @@ public class IbzDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-LinkCompleteTask-all')")
     @ApiOperation(value = "关联完成任务", tags = {"日报" },  notes = "关联完成任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailies/{ibzdaily_id}/linkcompletetask")
     public ResponseEntity<IbzDailyDTO> linkCompleteTask(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -217,7 +215,6 @@ public class IbzDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-PushUserDaily-all')")
     @ApiOperation(value = "定时推送待阅提醒用户日报", tags = {"日报" },  notes = "定时推送待阅提醒用户日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/pushuserdaily")
     public ResponseEntity<IbzDailyDTO> pushUserDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -236,7 +233,6 @@ public class IbzDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasPermission(this.ibzdailyMapping.toDomain(#ibzdailydto),'iBizPMS-IbzDaily-Save')")
     @ApiOperation(value = "保存日报", tags = {"日报" },  notes = "保存日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/save")
     public ResponseEntity<IbzDailyDTO> save(@RequestBody IbzDailyDTO ibzdailydto) {
@@ -245,7 +241,6 @@ public class IbzDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.ibzdailyMapping.toDomain(#ibzdailydtos),'iBizPMS-IbzDaily-Save')")
     @ApiOperation(value = "批量保存日报", tags = {"日报" },  notes = "批量保存日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzDailyDTO> ibzdailydtos) {
@@ -253,7 +248,6 @@ public class IbzDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-Submit-all')")
     @ApiOperation(value = "提交", tags = {"日报" },  notes = "提交")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailies/{ibzdaily_id}/submit")
     public ResponseEntity<IbzDailyDTO> submit(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -272,7 +266,7 @@ public class IbzDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchdefault")
 	public ResponseEntity<List<IbzDailyDTO>> fetchDefault(IbzDailySearchContext context) {
@@ -285,7 +279,7 @@ public class IbzDailyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"日报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchdefault")
 	public ResponseEntity<Page<IbzDailyDTO>> searchDefault(@RequestBody IbzDailySearchContext context) {
@@ -294,7 +288,7 @@ public class IbzDailyResource {
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchMyAllDaily-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "获取我的日报（已提交和未提交）", tags = {"日报" } ,notes = "获取我的日报（已提交和未提交）")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmyalldaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchMyAllDaily(IbzDailySearchContext context) {
@@ -307,7 +301,7 @@ public class IbzDailyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchMyAllDaily-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "查询我的日报（已提交和未提交）", tags = {"日报" } ,notes = "查询我的日报（已提交和未提交）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchmyalldaily")
 	public ResponseEntity<Page<IbzDailyDTO>> searchMyAllDaily(@RequestBody IbzDailySearchContext context) {
@@ -316,7 +310,7 @@ public class IbzDailyResource {
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchMyDaily-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "获取我收到的日报", tags = {"日报" } ,notes = "获取我收到的日报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmydaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchMyDaily(IbzDailySearchContext context) {
@@ -329,7 +323,7 @@ public class IbzDailyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchMyDaily-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "查询我收到的日报", tags = {"日报" } ,notes = "查询我收到的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchmydaily")
 	public ResponseEntity<Page<IbzDailyDTO>> searchMyDaily(@RequestBody IbzDailySearchContext context) {
@@ -338,7 +332,7 @@ public class IbzDailyResource {
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchMyNotSubmit-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "获取我的日报", tags = {"日报" } ,notes = "获取我的日报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmynotsubmit")
 	public ResponseEntity<List<IbzDailyDTO>> fetchMyNotSubmit(IbzDailySearchContext context) {
@@ -351,7 +345,7 @@ public class IbzDailyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchMyNotSubmit-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "查询我的日报", tags = {"日报" } ,notes = "查询我的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchmynotsubmit")
 	public ResponseEntity<Page<IbzDailyDTO>> searchMyNotSubmit(@RequestBody IbzDailySearchContext context) {
@@ -360,7 +354,7 @@ public class IbzDailyResource {
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchMySubmitDaily-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "获取我提交的日报", tags = {"日报" } ,notes = "获取我提交的日报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmysubmitdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchMySubmitDaily(IbzDailySearchContext context) {
@@ -373,7 +367,7 @@ public class IbzDailyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchMySubmitDaily-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "查询我提交的日报", tags = {"日报" } ,notes = "查询我提交的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchmysubmitdaily")
 	public ResponseEntity<Page<IbzDailyDTO>> searchMySubmitDaily(@RequestBody IbzDailySearchContext context) {
@@ -382,7 +376,7 @@ public class IbzDailyResource {
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchProductDaily-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "获取产品日报", tags = {"日报" } ,notes = "获取产品日报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchproductdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchProductDaily(IbzDailySearchContext context) {
@@ -395,7 +389,7 @@ public class IbzDailyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchProductDaily-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "查询产品日报", tags = {"日报" } ,notes = "查询产品日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchproductdaily")
 	public ResponseEntity<Page<IbzDailyDTO>> searchProductDaily(@RequestBody IbzDailySearchContext context) {
@@ -404,7 +398,7 @@ public class IbzDailyResource {
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchProjectDaily-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "获取项目日报", tags = {"日报" } ,notes = "获取项目日报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchprojectdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchProjectDaily(IbzDailySearchContext context) {
@@ -417,7 +411,7 @@ public class IbzDailyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzDaily-searchProjectDaily-all') and hasPermission(#context,'iBizPMS-IbzDaily-Get')")
+    @PreAuthorize("@IbzDailyModelImpl.test('READ')")
 	@ApiOperation(value = "查询项目日报", tags = {"日报" } ,notes = "查询项目日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchprojectdaily")
 	public ResponseEntity<Page<IbzDailyDTO>> searchProjectDaily(@RequestBody IbzDailySearchContext context) {

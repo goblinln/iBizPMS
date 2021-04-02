@@ -47,7 +47,7 @@ public class AccountTaskestimateResource {
     @Lazy
     public AccountTaskestimateMapping accounttaskestimateMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-Create-all')")
+    @PreAuthorize("@AccountTaskestimateModelImpl.test(#accounttaskestimate_id,'CREATE')")
     @ApiOperation(value = "新建用户工时统计", tags = {"用户工时统计" },  notes = "新建用户工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounttaskestimates")
     public ResponseEntity<AccountTaskestimateDTO> create(@Validated @RequestBody AccountTaskestimateDTO accounttaskestimatedto) {
@@ -57,7 +57,7 @@ public class AccountTaskestimateResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-Create-all')")
+    @PreAuthorize("@AccountTaskestimateModelImpl.test(#accounttaskestimate_id,'CREATE')")
     @ApiOperation(value = "批量新建用户工时统计", tags = {"用户工时统计" },  notes = "批量新建用户工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounttaskestimates/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<AccountTaskestimateDTO> accounttaskestimatedtos) {
@@ -65,7 +65,7 @@ public class AccountTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-Update-all')")
+    @PreAuthorize("@AccountTaskestimateModelImpl.test(#accounttaskestimate_id,'UPDATE')")
     @ApiOperation(value = "更新用户工时统计", tags = {"用户工时统计" },  notes = "更新用户工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/accounttaskestimates/{accounttaskestimate_id}")
     public ResponseEntity<AccountTaskestimateDTO> update(@PathVariable("accounttaskestimate_id") String accounttaskestimate_id, @RequestBody AccountTaskestimateDTO accounttaskestimatedto) {
@@ -76,7 +76,7 @@ public class AccountTaskestimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-Update-all')")
+    @PreAuthorize("@AccountTaskestimateModelImpl.test(#accounttaskestimate_id,'UPDATE')")
     @ApiOperation(value = "批量更新用户工时统计", tags = {"用户工时统计" },  notes = "批量更新用户工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/accounttaskestimates/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<AccountTaskestimateDTO> accounttaskestimatedtos) {
@@ -84,14 +84,14 @@ public class AccountTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-Remove-all')")
+    @PreAuthorize("@AccountTaskestimateModelImpl.test(#accounttaskestimate_id,'DELETE')")
     @ApiOperation(value = "删除用户工时统计", tags = {"用户工时统计" },  notes = "删除用户工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/accounttaskestimates/{accounttaskestimate_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("accounttaskestimate_id") String accounttaskestimate_id) {
          return ResponseEntity.status(HttpStatus.OK).body(accounttaskestimateService.remove(accounttaskestimate_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-Remove-all')")
+    @PreAuthorize("@AccountTaskestimateModelImpl.test(#accounttaskestimate_id,'DELETE')")
     @ApiOperation(value = "批量删除用户工时统计", tags = {"用户工时统计" },  notes = "批量删除用户工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/accounttaskestimates/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -99,7 +99,7 @@ public class AccountTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-Get-all')")
+    @PreAuthorize("@AccountTaskestimateModelImpl.test(#accounttaskestimate_id,'READ')")
     @ApiOperation(value = "获取用户工时统计", tags = {"用户工时统计" },  notes = "获取用户工时统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/accounttaskestimates/{accounttaskestimate_id}")
     public ResponseEntity<AccountTaskestimateDTO> get(@PathVariable("accounttaskestimate_id") String accounttaskestimate_id) {
@@ -121,7 +121,6 @@ public class AccountTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(accounttaskestimateService.checkKey(accounttaskestimateMapping.toDomain(accounttaskestimatedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-Save-all')")
     @ApiOperation(value = "保存用户工时统计", tags = {"用户工时统计" },  notes = "保存用户工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounttaskestimates/save")
     public ResponseEntity<AccountTaskestimateDTO> save(@RequestBody AccountTaskestimateDTO accounttaskestimatedto) {
@@ -130,7 +129,6 @@ public class AccountTaskestimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(accounttaskestimateMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-Save-all')")
     @ApiOperation(value = "批量保存用户工时统计", tags = {"用户工时统计" },  notes = "批量保存用户工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounttaskestimates/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<AccountTaskestimateDTO> accounttaskestimatedtos) {
@@ -138,7 +136,7 @@ public class AccountTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-searchAllAccountEstimate-all')")
+    @PreAuthorize("@AccountTaskestimateModelImpl.test('READ')")
 	@ApiOperation(value = "获取所有用户工时", tags = {"用户工时统计" } ,notes = "获取所有用户工时")
     @RequestMapping(method= RequestMethod.GET , value="/accounttaskestimates/fetchallaccountestimate")
 	public ResponseEntity<List<AccountTaskestimateDTO>> fetchAllAccountEstimate(AccountTaskestimateSearchContext context) {
@@ -151,7 +149,7 @@ public class AccountTaskestimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-searchAllAccountEstimate-all')")
+    @PreAuthorize("@AccountTaskestimateModelImpl.test('READ')")
 	@ApiOperation(value = "查询所有用户工时", tags = {"用户工时统计" } ,notes = "查询所有用户工时")
     @RequestMapping(method= RequestMethod.POST , value="/accounttaskestimates/searchallaccountestimate")
 	public ResponseEntity<Page<AccountTaskestimateDTO>> searchAllAccountEstimate(@RequestBody AccountTaskestimateSearchContext context) {
@@ -160,7 +158,7 @@ public class AccountTaskestimateResource {
                 .body(new PageImpl(accounttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-searchDefault-all')")
+    @PreAuthorize("@AccountTaskestimateModelImpl.test('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"用户工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/accounttaskestimates/fetchdefault")
 	public ResponseEntity<List<AccountTaskestimateDTO>> fetchDefault(AccountTaskestimateSearchContext context) {
@@ -173,7 +171,7 @@ public class AccountTaskestimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-AccountTaskestimate-searchDefault-all')")
+    @PreAuthorize("@AccountTaskestimateModelImpl.test('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"用户工时统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/accounttaskestimates/searchdefault")
 	public ResponseEntity<Page<AccountTaskestimateDTO>> searchDefault(@RequestBody AccountTaskestimateSearchContext context) {

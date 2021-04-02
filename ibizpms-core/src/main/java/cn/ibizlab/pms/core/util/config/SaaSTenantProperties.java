@@ -15,7 +15,7 @@ public class SaaSTenantProperties {
     /**
      * 多租户字段名称
      */
-    private String column;
+    private String column = "SRFDCID";
 
     /**
      * 多租户系统数据表

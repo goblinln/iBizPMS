@@ -47,7 +47,7 @@ public class IbzproProjectUserTaskResource {
     @Lazy
     public IbzproProjectUserTaskMapping ibzproprojectusertaskMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-Create-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test(#ibzproprojectusertask_id,'CREATE')")
     @ApiOperation(value = "新建项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "新建项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks")
     public ResponseEntity<IbzproProjectUserTaskDTO> create(@Validated @RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {
@@ -57,7 +57,7 @@ public class IbzproProjectUserTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-Create-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test(#ibzproprojectusertask_id,'CREATE')")
     @ApiOperation(value = "批量新建项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "批量新建项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzproProjectUserTaskDTO> ibzproprojectusertaskdtos) {
@@ -65,7 +65,7 @@ public class IbzproProjectUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-Update-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test(#ibzproprojectusertask_id,'UPDATE')")
     @ApiOperation(value = "更新项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "更新项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}")
     public ResponseEntity<IbzproProjectUserTaskDTO> update(@PathVariable("ibzproprojectusertask_id") Long ibzproprojectusertask_id, @RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {
@@ -76,7 +76,7 @@ public class IbzproProjectUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-Update-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test(#ibzproprojectusertask_id,'UPDATE')")
     @ApiOperation(value = "批量更新项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "批量更新项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproprojectusertasks/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzproProjectUserTaskDTO> ibzproprojectusertaskdtos) {
@@ -84,14 +84,14 @@ public class IbzproProjectUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-Remove-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test(#ibzproprojectusertask_id,'DELETE')")
     @ApiOperation(value = "删除项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "删除项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproprojectusertask_id") Long ibzproprojectusertask_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskService.remove(ibzproprojectusertask_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-Remove-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test(#ibzproprojectusertask_id,'DELETE')")
     @ApiOperation(value = "批量删除项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "批量删除项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojectusertasks/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class IbzproProjectUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-Get-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test(#ibzproprojectusertask_id,'READ')")
     @ApiOperation(value = "获取项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "获取项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}")
     public ResponseEntity<IbzproProjectUserTaskDTO> get(@PathVariable("ibzproprojectusertask_id") Long ibzproprojectusertask_id) {
@@ -121,7 +121,6 @@ public class IbzproProjectUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskService.checkKey(ibzproprojectusertaskMapping.toDomain(ibzproprojectusertaskdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-Save-all')")
     @ApiOperation(value = "保存项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "保存项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks/save")
     public ResponseEntity<IbzproProjectUserTaskDTO> save(@RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {
@@ -130,7 +129,6 @@ public class IbzproProjectUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-Save-all')")
     @ApiOperation(value = "批量保存项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "批量保存项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzproProjectUserTaskDTO> ibzproprojectusertaskdtos) {
@@ -138,7 +136,7 @@ public class IbzproProjectUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-searchDefault-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目汇报用户任务" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproprojectusertasks/fetchdefault")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchDefault(IbzproProjectUserTaskSearchContext context) {
@@ -151,7 +149,7 @@ public class IbzproProjectUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-searchDefault-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"项目汇报用户任务" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchdefault")
 	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchDefault(@RequestBody IbzproProjectUserTaskSearchContext context) {
@@ -160,7 +158,7 @@ public class IbzproProjectUserTaskResource {
                 .body(new PageImpl(ibzproprojectusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-searchProjectDailyTask-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproprojectusertasks/fetchprojectdailytask")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectDailyTask(IbzproProjectUserTaskSearchContext context) {
@@ -173,7 +171,7 @@ public class IbzproProjectUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-searchProjectDailyTask-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "查询项目日报任务", tags = {"项目汇报用户任务" } ,notes = "查询项目日报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchprojectdailytask")
 	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchProjectDailyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
@@ -182,7 +180,7 @@ public class IbzproProjectUserTaskResource {
                 .body(new PageImpl(ibzproprojectusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-searchProjectMonthlyTask-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproprojectusertasks/fetchprojectmonthlytask")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectMonthlyTask(IbzproProjectUserTaskSearchContext context) {
@@ -195,7 +193,7 @@ public class IbzproProjectUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-searchProjectMonthlyTask-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "查询项目日报任务", tags = {"项目汇报用户任务" } ,notes = "查询项目日报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchprojectmonthlytask")
 	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchProjectMonthlyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
@@ -204,7 +202,7 @@ public class IbzproProjectUserTaskResource {
                 .body(new PageImpl(ibzproprojectusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-searchProjectWeeklyTask-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "获取项目周报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目周报任务")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproprojectusertasks/fetchprojectweeklytask")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectWeeklyTask(IbzproProjectUserTaskSearchContext context) {
@@ -217,7 +215,7 @@ public class IbzproProjectUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzproProjectUserTask-searchProjectWeeklyTask-all')")
+    @PreAuthorize("@IbzproProjectUserTaskModelImpl.test('READ')")
 	@ApiOperation(value = "查询项目周报任务", tags = {"项目汇报用户任务" } ,notes = "查询项目周报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchprojectweeklytask")
 	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchProjectWeeklyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {

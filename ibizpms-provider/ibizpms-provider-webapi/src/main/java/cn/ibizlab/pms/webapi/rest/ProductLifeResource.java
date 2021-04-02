@@ -47,7 +47,7 @@ public class ProductLifeResource {
     @Lazy
     public ProductLifeMapping productlifeMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductLife-searchRoadMapYear-all') and hasPermission(#context,'iBizPMS-ProductLife-Get')")
+    @PreAuthorize("@ProductLifeModelImpl.test('READ')")
 	@ApiOperation(value = "获取RoadMapYear", tags = {"产品生命周期" } ,notes = "获取RoadMapYear")
     @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchroadmapyear")
 	public ResponseEntity<List<ProductLifeDTO>> fetchRoadMapYear(ProductLifeSearchContext context) {
@@ -60,7 +60,7 @@ public class ProductLifeResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductLife-searchRoadMapYear-all') and hasPermission(#context,'iBizPMS-ProductLife-Get')")
+    @PreAuthorize("@ProductLifeModelImpl.test('READ')")
 	@ApiOperation(value = "查询RoadMapYear", tags = {"产品生命周期" } ,notes = "查询RoadMapYear")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/searchroadmapyear")
 	public ResponseEntity<Page<ProductLifeDTO>> searchRoadMapYear(@RequestBody ProductLifeSearchContext context) {
@@ -69,7 +69,7 @@ public class ProductLifeResource {
                 .body(new PageImpl(productlifeMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductLife-searchGetRoadmapS-all') and hasPermission(#context,'iBizPMS-ProductLife-Get')")
+    @PreAuthorize("@ProductLifeModelImpl.test('READ')")
 	@ApiOperation(value = "获取获取产品路线", tags = {"产品生命周期" } ,notes = "获取获取产品路线")
     @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchgetroadmaps")
 	public ResponseEntity<List<ProductLifeDTO>> fetchGetRoadmapS(ProductLifeSearchContext context) {
@@ -82,7 +82,7 @@ public class ProductLifeResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductLife-searchGetRoadmapS-all') and hasPermission(#context,'iBizPMS-ProductLife-Get')")
+    @PreAuthorize("@ProductLifeModelImpl.test('READ')")
 	@ApiOperation(value = "查询获取产品路线", tags = {"产品生命周期" } ,notes = "查询获取产品路线")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/searchgetroadmaps")
 	public ResponseEntity<Page<ProductLifeDTO>> searchGetRoadmapS(@RequestBody ProductLifeSearchContext context) {
@@ -91,7 +91,7 @@ public class ProductLifeResource {
                 .body(new PageImpl(productlifeMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductLife-searchGetRoadmap-all') and hasPermission(#context,'iBizPMS-ProductLife-Get')")
+    @PreAuthorize("@ProductLifeModelImpl.test('READ')")
 	@ApiOperation(value = "获取GetRoadmap", tags = {"产品生命周期" } ,notes = "获取GetRoadmap")
     @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchgetroadmap")
 	public ResponseEntity<List<ProductLifeDTO>> fetchGetRoadmap(ProductLifeSearchContext context) {
@@ -104,7 +104,7 @@ public class ProductLifeResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductLife-searchGetRoadmap-all') and hasPermission(#context,'iBizPMS-ProductLife-Get')")
+    @PreAuthorize("@ProductLifeModelImpl.test('READ')")
 	@ApiOperation(value = "查询GetRoadmap", tags = {"产品生命周期" } ,notes = "查询GetRoadmap")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/searchgetroadmap")
 	public ResponseEntity<Page<ProductLifeDTO>> searchGetRoadmap(@RequestBody ProductLifeSearchContext context) {

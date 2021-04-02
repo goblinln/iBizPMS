@@ -32,4 +32,12 @@ public interface IBZWFFeignClient
 	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{dynainstid}/{entity}/tasks/unread")
 	Map<String,Map<String,Object>> getUnReadTaskByUserId(@PathVariable("system") String system,@PathVariable("userId") String userId,
 										 @PathVariable("entity") String entity,@PathVariable("dynainstid") String dynainstid);
+
+	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{dynainstid}/{entity}/tasks/done")
+	Map<String,Map<String,Object>> getDoneTaskByUserId(@PathVariable("system") String system,@PathVariable("userId") String userId,
+										 @PathVariable("entity") String entity,@PathVariable("dynainstid") String dynainstid);
+
+		@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{dynainstid}/{entity}/tasks/finish")
+	Map<String,Map<String,Object>> getFinishTaskByUserId(@PathVariable("system") String system,@PathVariable("userId") String userId,
+										 @PathVariable("entity") String entity,@PathVariable("dynainstid") String dynainstid);
 }

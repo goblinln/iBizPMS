@@ -47,7 +47,7 @@ public class BugStatsResource {
     @Lazy
     public BugStatsMapping bugstatsMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-Create-all')")
+    @PreAuthorize("@BugStatsModelImpl.test(#bugstats_id,'CREATE')")
     @ApiOperation(value = "新建Bug统计", tags = {"Bug统计" },  notes = "新建Bug统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugstats")
     public ResponseEntity<BugStatsDTO> create(@Validated @RequestBody BugStatsDTO bugstatsdto) {
@@ -57,7 +57,7 @@ public class BugStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-Create-all')")
+    @PreAuthorize("@BugStatsModelImpl.test(#bugstats_id,'CREATE')")
     @ApiOperation(value = "批量新建Bug统计", tags = {"Bug统计" },  notes = "批量新建Bug统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<BugStatsDTO> bugstatsdtos) {
@@ -65,7 +65,7 @@ public class BugStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-Update-all')")
+    @PreAuthorize("@BugStatsModelImpl.test(#bugstats_id,'UPDATE')")
     @ApiOperation(value = "更新Bug统计", tags = {"Bug统计" },  notes = "更新Bug统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/bugstats/{bugstats_id}")
     public ResponseEntity<BugStatsDTO> update(@PathVariable("bugstats_id") Long bugstats_id, @RequestBody BugStatsDTO bugstatsdto) {
@@ -76,7 +76,7 @@ public class BugStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-Update-all')")
+    @PreAuthorize("@BugStatsModelImpl.test(#bugstats_id,'UPDATE')")
     @ApiOperation(value = "批量更新Bug统计", tags = {"Bug统计" },  notes = "批量更新Bug统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/bugstats/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<BugStatsDTO> bugstatsdtos) {
@@ -84,14 +84,14 @@ public class BugStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-Remove-all')")
+    @PreAuthorize("@BugStatsModelImpl.test(#bugstats_id,'DELETE')")
     @ApiOperation(value = "删除Bug统计", tags = {"Bug统计" },  notes = "删除Bug统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/{bugstats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("bugstats_id") Long bugstats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(bugstatsService.remove(bugstats_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-Remove-all')")
+    @PreAuthorize("@BugStatsModelImpl.test(#bugstats_id,'DELETE')")
     @ApiOperation(value = "批量删除Bug统计", tags = {"Bug统计" },  notes = "批量删除Bug统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class BugStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-Get-all')")
+    @PreAuthorize("@BugStatsModelImpl.test(#bugstats_id,'READ')")
     @ApiOperation(value = "获取Bug统计", tags = {"Bug统计" },  notes = "获取Bug统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/bugstats/{bugstats_id}")
     public ResponseEntity<BugStatsDTO> get(@PathVariable("bugstats_id") Long bugstats_id) {
@@ -121,7 +121,6 @@ public class BugStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(bugstatsService.checkKey(bugstatsMapping.toDomain(bugstatsdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-Save-all')")
     @ApiOperation(value = "保存Bug统计", tags = {"Bug统计" },  notes = "保存Bug统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/save")
     public ResponseEntity<BugStatsDTO> save(@RequestBody BugStatsDTO bugstatsdto) {
@@ -130,7 +129,6 @@ public class BugStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugstatsMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-Save-all')")
     @ApiOperation(value = "批量保存Bug统计", tags = {"Bug统计" },  notes = "批量保存Bug统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<BugStatsDTO> bugstatsdtos) {
@@ -138,7 +136,7 @@ public class BugStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchBugCountInResolution-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "获取Bug在每个解决方案的Bug数", tags = {"Bug统计" } ,notes = "获取Bug在每个解决方案的Bug数")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugcountinresolution")
 	public ResponseEntity<List<BugStatsDTO>> fetchBugCountInResolution(BugStatsSearchContext context) {
@@ -151,7 +149,7 @@ public class BugStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchBugCountInResolution-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "查询Bug在每个解决方案的Bug数", tags = {"Bug统计" } ,notes = "查询Bug在每个解决方案的Bug数")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchbugcountinresolution")
 	public ResponseEntity<Page<BugStatsDTO>> searchBugCountInResolution(@RequestBody BugStatsSearchContext context) {
@@ -160,7 +158,7 @@ public class BugStatsResource {
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchBugResolvedBy-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "获取Bug完成表", tags = {"Bug统计" } ,notes = "获取Bug完成表")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugresolvedby")
 	public ResponseEntity<List<BugStatsDTO>> fetchBugResolvedBy(BugStatsSearchContext context) {
@@ -173,7 +171,7 @@ public class BugStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchBugResolvedBy-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "查询Bug完成表", tags = {"Bug统计" } ,notes = "查询Bug完成表")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchbugresolvedby")
 	public ResponseEntity<Page<BugStatsDTO>> searchBugResolvedBy(@RequestBody BugStatsSearchContext context) {
@@ -182,7 +180,7 @@ public class BugStatsResource {
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchBugResolvedGird-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "获取bug解决汇总表", tags = {"Bug统计" } ,notes = "获取bug解决汇总表")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugresolvedgird")
 	public ResponseEntity<List<BugStatsDTO>> fetchBugResolvedGird(BugStatsSearchContext context) {
@@ -195,7 +193,7 @@ public class BugStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchBugResolvedGird-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "查询bug解决汇总表", tags = {"Bug统计" } ,notes = "查询bug解决汇总表")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchbugresolvedgird")
 	public ResponseEntity<Page<BugStatsDTO>> searchBugResolvedGird(@RequestBody BugStatsSearchContext context) {
@@ -204,7 +202,7 @@ public class BugStatsResource {
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchBugassignedTo-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "获取Bug指派表", tags = {"Bug统计" } ,notes = "获取Bug指派表")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugassignedto")
 	public ResponseEntity<List<BugStatsDTO>> fetchBugassignedTo(BugStatsSearchContext context) {
@@ -217,7 +215,7 @@ public class BugStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchBugassignedTo-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "查询Bug指派表", tags = {"Bug统计" } ,notes = "查询Bug指派表")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchbugassignedto")
 	public ResponseEntity<Page<BugStatsDTO>> searchBugassignedTo(@RequestBody BugStatsSearchContext context) {
@@ -226,7 +224,7 @@ public class BugStatsResource {
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchDefault-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"Bug统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchdefault")
 	public ResponseEntity<List<BugStatsDTO>> fetchDefault(BugStatsSearchContext context) {
@@ -239,7 +237,7 @@ public class BugStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchDefault-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"Bug统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchdefault")
 	public ResponseEntity<Page<BugStatsDTO>> searchDefault(@RequestBody BugStatsSearchContext context) {
@@ -248,7 +246,7 @@ public class BugStatsResource {
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchProductBugResolutionStats-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "获取产品Bug解决方案汇总", tags = {"Bug统计" } ,notes = "获取产品Bug解决方案汇总")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchproductbugresolutionstats")
 	public ResponseEntity<List<BugStatsDTO>> fetchProductBugResolutionStats(BugStatsSearchContext context) {
@@ -261,7 +259,7 @@ public class BugStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchProductBugResolutionStats-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "查询产品Bug解决方案汇总", tags = {"Bug统计" } ,notes = "查询产品Bug解决方案汇总")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchproductbugresolutionstats")
 	public ResponseEntity<Page<BugStatsDTO>> searchProductBugResolutionStats(@RequestBody BugStatsSearchContext context) {
@@ -270,7 +268,7 @@ public class BugStatsResource {
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchProductBugStatusSum-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "获取产品Bug状态汇总", tags = {"Bug统计" } ,notes = "获取产品Bug状态汇总")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchproductbugstatussum")
 	public ResponseEntity<List<BugStatsDTO>> fetchProductBugStatusSum(BugStatsSearchContext context) {
@@ -283,7 +281,7 @@ public class BugStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchProductBugStatusSum-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "查询产品Bug状态汇总", tags = {"Bug统计" } ,notes = "查询产品Bug状态汇总")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchproductbugstatussum")
 	public ResponseEntity<Page<BugStatsDTO>> searchProductBugStatusSum(@RequestBody BugStatsSearchContext context) {
@@ -292,7 +290,7 @@ public class BugStatsResource {
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchProductCreateBug-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "获取产品创建bug占比", tags = {"Bug统计" } ,notes = "获取产品创建bug占比")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchproductcreatebug")
 	public ResponseEntity<List<BugStatsDTO>> fetchProductCreateBug(BugStatsSearchContext context) {
@@ -305,7 +303,7 @@ public class BugStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchProductCreateBug-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "查询产品创建bug占比", tags = {"Bug统计" } ,notes = "查询产品创建bug占比")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchproductcreatebug")
 	public ResponseEntity<Page<BugStatsDTO>> searchProductCreateBug(@RequestBody BugStatsSearchContext context) {
@@ -314,7 +312,7 @@ public class BugStatsResource {
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchProjectBugStatusCount-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "获取项目bug状态统计", tags = {"Bug统计" } ,notes = "获取项目bug状态统计")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchprojectbugstatuscount")
 	public ResponseEntity<List<BugStatsDTO>> fetchProjectBugStatusCount(BugStatsSearchContext context) {
@@ -327,7 +325,7 @@ public class BugStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-BugStats-searchProjectBugStatusCount-all')")
+    @PreAuthorize("@BugStatsModelImpl.test('READ')")
 	@ApiOperation(value = "查询项目bug状态统计", tags = {"Bug统计" } ,notes = "查询项目bug状态统计")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchprojectbugstatuscount")
 	public ResponseEntity<Page<BugStatsDTO>> searchProjectBugStatusCount(@RequestBody BugStatsSearchContext context) {
