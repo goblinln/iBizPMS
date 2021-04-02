@@ -3,9 +3,36 @@ services:
   ibizpms-app-web:
     image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-app-web:latest
     ports:
-      - "8080:8080"
+      - "22120:22120"
     networks:
       - agent_network
+    environment:
+      - SPRING_CLOUD_NACOS_DISCOVERY_IP=172.16.240.110
+      - SERVER_PORT=22120
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=172.16.240.110:8848
+      - SPRING_REDIS_HOST=172.16.240.110
+      - SPRING_REDIS_PORT=6380
+      - SPRING_REDIS_DATABASE=0
+      - SPRING_DATASOURCE_USERNAME=zentao
+      - SPRING_DATASOURCE_PASSWORD=123456
+      - SPRING_DATASOURCE_URL=jdbc:mysql://172.16.180.217:3306/zentao?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+      - SPRING_DATASOURCE_DRIVER-CLASS-NAME=com.mysql.jdbc.Driver
+      - SPRING_DATASOURCE_DEFAULTSCHEMA=zentao
+      - IBIZ_AUTH_LADP=true
+      - JOBS_ADMINNAME=admin
+      - JOBS_ADMIN-ADDRESS=http://172.16.240.110:10001
+      - NACOS=172.16.240.110:8849
+      - IBIZ_REF_SERVICE_IBIZPMS-WEBAPI=pms-webapi
+      - JOBS_ADMINPASSWORD=123456
+      - JOBS_APP-NAME=ibzpms
+      - ZUUL_ROUTES_IBZEMP_SERVICEID=pms-webapi
+      - JOBS_APP-PORT=9998
+      - JOBS_APP-IP=172.16.240.110
+      - CAS=https://passport.ibizlab.cn
+      - REMOTEDYNAPATH=http://172.16.240.51/dynamic_demo/1688344C-3A57-44BD-B135-249E24FCE4F6/
+      - BDYNAMIC=false
+      - SEATA_REGISTRY_NACOS_SERVER-ADDR=172.16.240.110:8848
+      - SEATA_ENABLED=true
     deploy:
       resources:
            limits:

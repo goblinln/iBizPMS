@@ -26,7 +26,7 @@ ruleflow-group "taskgetprojectbyplanrawsqlcall1"
     then
     Map param =new HashMap();
     param.put("param0",taskgetprojectbyplandefault.get("story"));
-    String strSql="select t1.project,t11.`name` as projectname,t21.plan,t31.`TITLE` as PLANNAME  from zt_projectstory t1 inner join zt_project t11 on t1.project = t11.id INNER JOIN zt_story t21 on t1.story = t21.id left join zt_productplan t31 on t21.plan = t31.id  where t1.story = #{et.param0} LIMIT 0,1";
+    String strSql="select t1.project,t11.`name` as projectname,t21.plan,t31.`TITLE` as PLANNAME,t21.module,t41.`name` as MODULENAME  from zt_projectstory t1 inner join zt_project t11 on t1.project = t11.id INNER JOIN zt_story t21 on t1.story = t21.id left join zt_productplan t31 on t21.plan = t31.id left join zt_module t41 on t21.module = t41.id  where t1.story = #{et.param0} LIMIT 0,1";
     java.util.List<JSONObject> entities=iBzSysTaskDefaultService.select(strSql,param);//SQL调用
     if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
         JSONObject entity=entities.get(0);
