@@ -3,16 +3,11 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Entry;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
-import net.ibizsys.runtime.ISystem;
-import net.ibizsys.runtime.dataentity.DataEntityImplBase;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
 
 @Component("EntryRuntime")
-public class EntryRuntime extends DataEntityImplBase {
-
-    @Autowired
-    ISystem system ;
+public class EntryRuntime extends DataEntityRuntime {
 
     @Override
     protected Object getSimpleEntity(Object o) {
@@ -27,11 +22,6 @@ public class EntryRuntime extends DataEntityImplBase {
     @Override
     public String getName() {
         return null;
-    }
-
-    @Override
-    public ISystem getSystem() {
-        return system;
     }
 
     @Override

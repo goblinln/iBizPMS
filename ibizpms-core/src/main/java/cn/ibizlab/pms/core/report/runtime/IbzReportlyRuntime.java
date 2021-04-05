@@ -3,16 +3,11 @@ package cn.ibizlab.pms.core.report.runtime;
 import cn.ibizlab.pms.core.report.domain.IbzReportly;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
-import net.ibizsys.runtime.ISystem;
-import net.ibizsys.runtime.dataentity.DataEntityImplBase;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
 
 @Component("IbzReportlyRuntime")
-public class IbzReportlyRuntime extends DataEntityImplBase {
-
-    @Autowired
-    ISystem system ;
+public class IbzReportlyRuntime extends DataEntityRuntime {
 
     @Override
     protected Object getSimpleEntity(Object o) {
@@ -27,11 +22,6 @@ public class IbzReportlyRuntime extends DataEntityImplBase {
     @Override
     public String getName() {
         return null;
-    }
-
-    @Override
-    public ISystem getSystem() {
-        return system;
     }
 
     @Override
