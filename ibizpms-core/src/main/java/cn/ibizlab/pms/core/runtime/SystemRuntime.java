@@ -2,6 +2,7 @@ package cn.ibizlab.pms.core.runtime;
 
 import net.ibizsys.model.IPSDynaInstService;
 import net.ibizsys.runtime.SystemImplBase;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
