@@ -1,0 +1,505 @@
+{
+  "showDataInfoBar" : true,
+  "showCaptionBar" : true,
+  "xDataControlName" : "form",
+  "getPSDEViewCodeName" : "OptionView",
+  "caption" : "版本",
+  "openMode" : "DRAWER_RIGHT",
+  "title" : "版本选项操作视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+    },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEOPTVIEW_STYLE2",
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "OptionView",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "paramType" : "CTRL",
+      "name" : "FORM"
+    }, {
+      "paramType" : "VALUE",
+      "name" : "P2K",
+      "value" : 0
+    } ],
+    "name" : "engine"
+  } ],
+  "viewStyle" : "STYLE2",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+  },
+  "getPSControls" : [ {
+    "enableAutoSave" : false,
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "getGetDraftPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraft"
+    },
+    "getGetDraftFromPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraftfrom"
+    },
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
+    "controlType" : "FORM",
+    "readOnly" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "getPSDEFormPages" : [ {
+      "getPSDEFormDetails" : [ {
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RELEASE_Type.json"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "releasetype"
+        },
+        "inputTipClosable" : false,
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "RELEASETYPE",
+          "codeName" : "Releasetype"
+        },
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "caption" : "运行模式",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "releasetype",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "releasetype"
+      }, {
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BackendBuild.json"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "backgroundid"
+        },
+        "inputTipClosable" : false,
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "BACKGROUNDID",
+          "codeName" : "Backgroundid"
+        },
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "caption" : "后台体系",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "backgroundid",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "backgroundid"
+      }, {
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SQLBuild.json"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "sqlid"
+        },
+        "inputTipClosable" : false,
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "SQLID",
+          "codeName" : "Sqlid"
+        },
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "caption" : "运行数据库",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "sqlid",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "sqlid"
+      }, {
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/APPBuild.json"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "frontapplication"
+        },
+        "inputTipClosable" : false,
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "FRONTAPPLICATION",
+          "codeName" : "Frontapplication"
+        },
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "caption" : "系统应用",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "frontapplication",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "frontapplication"
+      }, {
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RELEASE_rebuild.json"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "rebuild"
+        },
+        "inputTipClosable" : false,
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "REBUILD",
+          "codeName" : "Rebuild"
+        },
+        "dataType" : 9,
+        "needCodeListConfig" : true,
+        "caption" : "重新构建",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "rebuild",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "rebuild"
+      } ],
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "infoGroupMode" : false,
+      "codeName" : "formpage1",
+      "caption" : "基本信息",
+      "detailType" : "FORMPAGE",
+      "detailStyle" : "DEFAULT",
+      "name" : "formpage1"
+    } ],
+    "getPSDEFormItems" : [ {
+      "id" : "srforikey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfkey",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "id" : "srftempmode",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfuf",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfdeid",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfsourcekey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "releasetype",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "RELEASETYPE",
+        "codeName" : "Releasetype"
+      }
+    }, {
+      "id" : "backgroundid",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "BACKGROUNDID",
+        "codeName" : "Backgroundid"
+      }
+    }, {
+      "id" : "sqlid",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "SQLID",
+        "codeName" : "Sqlid"
+      }
+    }, {
+      "id" : "frontapplication",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FRONTAPPLICATION",
+        "codeName" : "Frontapplication"
+      }
+    }, {
+      "id" : "rebuild",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "REBUILD",
+        "codeName" : "Rebuild"
+      }
+    }, {
+      "id" : "id",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    } ],
+    "noTabHeader" : true,
+    "codeName" : "TestBuildRelease",
+    "tabHeaderPos" : "TOP",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "OneClickRelease"
+        },
+        "dataAccessAction" : "UPDATE",
+        "actionName" : "OneClickRelease",
+        "actionType" : "DEACTION",
+        "name" : "update"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GETDRAFTFROM",
+        "actionType" : "DEACTION",
+        "name" : "loaddraftfrom"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "name" : "loaddraft"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "dataAccessAction" : "READ",
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "name" : "load"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "name" : "create"
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "选项表单处理器（一键发布）（版本）"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build/PSFORMS/TestBuildRelease.json",
+    "logicName" : "测试版本发布",
+    "name" : "form",
+    "modelid" : "75ab11acbae64a0a9be66f5ab6e9dca8"
+  } ],
+  "getPSSysImage" : {
+    "glyph" : "xf126@FontAwesome",
+    "cssClass" : "fa fa-code-fork"
+  },
+  "codeName" : "BuildOptionView",
+  "viewType" : "DEOPTVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildOptionView.json",
+  "name" : "BuildOptionView",
+  "getPSAppDERSPaths" : [ [ {
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "codeName" : "Builds",
+    "actionRSMode" : 1,
+    "dataRSMode" : 0,
+    "rSMode" : 2,
+    "name" : "项目版本"
+  } ], [ {
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "codeName" : "Builds",
+    "actionRSMode" : 1,
+    "dataRSMode" : 0,
+    "rSMode" : 2,
+    "name" : "产品版本"
+  } ] ]
+}

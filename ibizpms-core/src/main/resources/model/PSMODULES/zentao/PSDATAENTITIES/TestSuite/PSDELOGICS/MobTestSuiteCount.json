@@ -1,0 +1,66 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "logicHolder" : 1,
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接1938"
+    } ],
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "ID",
+      "name" : "Default[ID]"
+    } ],
+    "codeName" : "Rawsqlcall1",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "查询测试用例数"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接1938"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : false,
+    "envParam" : false,
+    "lastParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "codeName" : "MobTestSuiteCount",
+  "logicName" : "移动端测试套件计数器",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDELOGICS/MobTestSuiteCount.json",
+  "name" : "移动端测试套件计数器"
+}

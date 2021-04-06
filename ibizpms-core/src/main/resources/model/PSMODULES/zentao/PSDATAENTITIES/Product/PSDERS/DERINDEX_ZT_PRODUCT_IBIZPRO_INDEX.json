@@ -1,0 +1,50 @@
+{
+  "typeValue" : "product",
+  "inherit" : false,
+  "getPSDERIndexDEFieldMaps" : [ {
+    "getMajorPSDEField" : {
+      "name" : "DELETED",
+      "codeName" : "Deleted"
+    },
+    "getMinorPSDEField" : {
+      "name" : "DELETED",
+      "codeName" : "Deleted"
+    },
+    "name" : "deleted=deleted"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "INDEXDESC",
+      "codeName" : "Indexdesc"
+    },
+    "getMinorPSDEField" : {
+      "name" : "DESC",
+      "codeName" : "Desc"
+    },
+    "name" : "INDEXDESC=DESC"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "getMinorPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "PRODUCT=ID"
+  } ],
+  "virtual" : true,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "Product",
+  "logicName" : "产品",
+  "dERType" : "DERINDEX",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DERINDEX_ZT_PRODUCT_IBIZPRO_INDEX.json",
+  "name" : "DERINDEX_ZT_PRODUCT_IBIZPRO_INDEX"
+}

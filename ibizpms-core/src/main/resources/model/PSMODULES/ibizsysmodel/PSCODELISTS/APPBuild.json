@@ -1,0 +1,14 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSCODELISTS/APPBuild.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "APPBuild",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true
+}

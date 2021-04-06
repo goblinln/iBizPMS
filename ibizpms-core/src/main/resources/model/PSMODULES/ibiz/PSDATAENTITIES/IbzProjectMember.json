@@ -1,0 +1,861 @@
+{
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
+  "getAllPSDEFields" : [ {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "TEXT",
+    "deployId" : "05f7664bd43ff0cbd967a429c6017c0d",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "codeName" : "Secondmember",
+    "logicName" : "团队成员（二）",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "SECONDMEMBER",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SECONDMEMBER",
+        "codeName" : "Secondmember"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1)",
+      "columnName" : "SECONDMEMBER",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "SECONDMEMBER"
+    } ],
+    "length" : 200,
+    "name" : "SECONDMEMBER"
+  }, {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "TEXT",
+    "deployId" : "79fadfa8a37ed25c937e275760e4e2d5",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "codeName" : "RD",
+    "logicName" : "发布负责人",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "RD",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "RD",
+        "codeName" : "RD"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.RD",
+      "columnName" : "RD",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RD"
+    } ],
+    "length" : 200,
+    "name" : "RD"
+  }, {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "TEXT",
+    "deployId" : "33cf258279a592f568c75ddf1d0ee4b0",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "codeName" : "QD",
+    "logicName" : "测试负责人",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "QD",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "QD",
+        "codeName" : "QD"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.QD",
+      "columnName" : "QD",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "QD"
+    } ],
+    "length" : 200,
+    "name" : "QD"
+  }, {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "SMCODELIST",
+    "deployId" : "b052c6ffde8ddc80271363fc725c2a2d",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "codeName" : "Teamembers",
+    "logicName" : "全部成员",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "TEAMEMBERS",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "TEAMEMBERS",
+        "codeName" : "Teamembers"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root)",
+      "columnName" : "TEAMEMBERS",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TEAMEMBERS"
+    } ],
+    "length" : 200,
+    "name" : "TEAMEMBERS"
+  }, {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "TEXT",
+    "deployId" : "1ae6dd2e6e8571b0b286aa258b587747",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "codeName" : "Thirdmember",
+    "logicName" : "团队成员（三）",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "THIRDMEMBER",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "THIRDMEMBER",
+        "codeName" : "Thirdmember"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1)",
+      "columnName" : "THIRDMEMBER",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "THIRDMEMBER"
+    } ],
+    "length" : 200,
+    "name" : "THIRDMEMBER"
+  }, {
+    "dataType" : "ACID",
+    "deployId" : "503f0e033b2a4bb980c66ecb07581209",
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
+    "codeName" : "Id",
+    "logicName" : "编号",
+    "stdDataType" : 1,
+    "pasteReset" : true,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ID`",
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : true,
+      "name" : "ID"
+    } ],
+    "length" : 8,
+    "name" : "ID"
+  }, {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "TEXT",
+    "deployId" : "dd43b59dee0c2318216942e891a4853f",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "codeName" : "Fristmember",
+    "logicName" : "团队成员（一）",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "FRISTMEMBER",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "FRISTMEMBER",
+        "codeName" : "Fristmember"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1)",
+      "columnName" : "FRISTMEMBER",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "FRISTMEMBER"
+    } ],
+    "length" : 200,
+    "name" : "FRISTMEMBER"
+  }, {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "TEXT",
+    "deployId" : "b5f4786721b5242b0349cfb8acb96c35",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "codeName" : "PO",
+    "logicName" : "产品负责人",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "PO",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PO",
+        "codeName" : "PO"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.PO",
+      "columnName" : "PO",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PO"
+    } ],
+    "length" : 200,
+    "name" : "PO"
+  }, {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "TEXT",
+    "deployId" : "1649ce27ff7fe07c34011ab897001272",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "codeName" : "Fourthmember",
+    "logicName" : "团队成员（四）",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "FOURTHMEMBER",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "FOURTHMEMBER",
+        "codeName" : "Fourthmember"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1)",
+      "columnName" : "FOURTHMEMBER",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "FOURTHMEMBER"
+    } ],
+    "length" : 200,
+    "name" : "FOURTHMEMBER"
+  }, {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "TEXT",
+    "deployId" : "9b19f6fc5994d2e1324e128fed05073b",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "codeName" : "PM",
+    "logicName" : "项目负责人",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "PM",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PM",
+        "codeName" : "PM"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.PM",
+      "columnName" : "PM",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PM"
+    } ],
+    "length" : 200,
+    "name" : "PM"
+  }, {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "TEXT",
+    "deployId" : "9245d906d3dbffa5fee1c871f3cbd6b0",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "codeName" : "Fifthmember",
+    "logicName" : "团队成员（五）",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "FIFTHMEMBER",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "FIFTHMEMBER",
+        "codeName" : "Fifthmember"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1)",
+      "columnName" : "FIFTHMEMBER",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "FIFTHMEMBER"
+    } ],
+    "length" : 200,
+    "name" : "FIFTHMEMBER"
+  }, {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "TEXT",
+    "deployId" : "a94dee25381a9793a8822f4bea5cb74c",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "codeName" : "Sixthmember",
+    "logicName" : "团队成员（六）",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "SIXTHMEMBER",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SIXTHMEMBER",
+        "codeName" : "Sixthmember"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1)",
+      "columnName" : "SIXTHMEMBER",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "SIXTHMEMBER"
+    } ],
+    "length" : 200,
+    "name" : "SIXTHMEMBER"
+  }, {
+    "dataType" : "TEXT",
+    "deployId" : "325302e332a71b73c22cb9c342c2e64c",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
+    "codeName" : "Name",
+    "logicName" : "项目名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "NAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`NAME`",
+      "columnName" : "NAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "NAME"
+    } ],
+    "length" : 100,
+    "name" : "NAME"
+  } ],
+  "enableDataVer" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableAPIStorage" : false,
+  "serviceAPIMode" : 1,
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "saaSMode" : 4,
+  "deployId" : "22312953a122afe2e3542e620d737d66",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "IbzProjectMember",
+  "logicName" : "项目相关成员",
+  "tableName" : "zt_project",
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "serviceCodeName" : "IbzProjectMember",
+  "enableRemove" : true,
+  "logicValid" : false,
+  "enableMultiDS" : false,
+  "dataAccCtrlMode" : 1,
+  "auditMode" : 0,
+  "dataChangeLogMode" : 0,
+  "storageMode" : 1,
+  "dataImpExpMode" : 3,
+  "dataAccCtrlArch" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "enableMultiForm" : false,
+  "enableEntityCache" : false,
+  "dEType" : 1,
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json",
+  "name" : "IBZ_PROJECTMEMBER"
+}

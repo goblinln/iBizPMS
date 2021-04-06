@@ -1,0 +1,181 @@
+{
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
+  "getAllPSDEFields" : [ {
+    "dataType" : "GUID",
+    "deployId" : "67d69afeae92f3106f3250bbe356a50f",
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
+    "codeName" : "Id",
+    "logicName" : "ID",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "pasteReset" : true,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 60,
+          "dEFName" : "ID",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[60]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ID`",
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ID"
+    } ],
+    "length" : 60,
+    "name" : "ID"
+  } ],
+  "enableDataVer" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableAPIStorage" : true,
+  "serviceAPIMode" : 0,
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "saaSMode" : 0,
+  "deployId" : "68001d6bd68a83938b61023b004df2c8",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "IBIZProKeyword",
+  "logicName" : "关键字",
+  "tableName" : "T_IBIZPRO_KEYWORD",
+  "virtualMode" : 0,
+  "enableSQLStorage" : false,
+  "serviceCodeName" : "IBIZProKeyword",
+  "serviceAPIClientId" : "3c9f3dc2e8583c9e7c71311502bbc307",
+  "enableRemove" : true,
+  "logicValid" : false,
+  "enableMultiDS" : false,
+  "dataAccCtrlMode" : 1,
+  "auditMode" : 0,
+  "dataChangeLogMode" : 0,
+  "storageMode" : 4,
+  "dataImpExpMode" : 3,
+  "dataAccCtrlArch" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "enableMultiForm" : false,
+  "enableEntityCache" : false,
+  "dEType" : 1,
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "dynaModelFilePath" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword.json",
+  "name" : "IBIZPRO_KEYWORD"
+}

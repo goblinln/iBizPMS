@@ -1,0 +1,30 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "logicHolder" : 1,
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : false,
+    "envParam" : false,
+    "lastParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "codeName" : "sendNotice",
+  "logicName" : "发送通知",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/sendNotice.json",
+  "name" : "发送通知"
+}

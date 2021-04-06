@@ -1,0 +1,46 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProjectQuickpacket.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "codeName" : "ProjectQuickpacket",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "data" : "{}",
+    "codeName" : "All",
+    "text" : "所有",
+    "default" : true,
+    "value" : "All"
+  }, {
+    "data" : "{\"n_status_noteq\":\"closed\"}",
+    "codeName" : "Nowait",
+    "text" : "未完成",
+    "value" : "nowait"
+  }, {
+    "data" : "{\"n_status_eq\":\"wait\"}",
+    "codeName" : "Wait",
+    "text" : "未开始",
+    "value" : "wait"
+  }, {
+    "data" : "{\"n_status_eq\":\"doing\"}",
+    "codeName" : "Doing",
+    "text" : "进行中",
+    "value" : "doing"
+  }, {
+    "data" : "{\"n_status_eq\":\"suspended\"}",
+    "codeName" : "Suspended",
+    "text" : "已挂起",
+    "value" : "suspended"
+  }, {
+    "data" : "{\"n_status_eq\":\"closed\"}",
+    "codeName" : "Closed",
+    "text" : "已关闭",
+    "value" : "closed"
+  } ]
+}

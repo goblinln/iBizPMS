@@ -1,0 +1,671 @@
+{
+  "singleSelect" : false,
+  "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "编号",
+    "name" : "srfkey"
+  } ],
+  "columnEnableLink" : 2,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : true,
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "id"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PRI",
+      "codeName" : "Pri"
+    },
+    "dataType" : 9,
+    "name" : "pri"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    },
+    "dataType" : 25,
+    "name" : "status"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "dataType" : 25,
+    "name" : "type"
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "END",
+      "codeName" : "End"
+    },
+    "dataType" : 9,
+    "name" : "end"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DATE1",
+      "codeName" : "Date1"
+    },
+    "dataType" : 25,
+    "name" : "date1"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BEGIN",
+      "codeName" : "Begin"
+    },
+    "dataType" : 9,
+    "name" : "begin"
+  } ],
+  "enableRowEdit" : false,
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "编号",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataItemName" : "id",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "id",
+    "caption" : "编号",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "id"
+  }, {
+    "excelCaption" : "日期",
+    "getPSAppDEField" : {
+      "name" : "DATE1",
+      "codeName" : "Date1"
+    },
+    "dataItemName" : "date1",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "date1",
+    "caption" : "日期",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "date1"
+  }, {
+    "excelCaption" : "类型",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TypeAll.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "dataItemName" : "type",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "type",
+    "caption" : "类型",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "type"
+  }, {
+    "excelCaption" : "优先级",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Pri.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "PRI",
+      "codeName" : "Pri"
+    },
+    "dataItemName" : "pri",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "pri",
+    "caption" : "优先级",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "pri"
+  }, {
+    "enableLinkView" : true,
+    "getLinkPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
+    },
+    "excelCaption" : "待办名称",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataItemName" : "name",
+    "linkValueItem" : "srfkey",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "name",
+    "caption" : "待办名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "name"
+  }, {
+    "excelCaption" : "开始",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "BEGIN",
+      "codeName" : "Begin"
+    },
+    "dataItemName" : "begin",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "begin",
+    "caption" : "开始",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "begin"
+  }, {
+    "excelCaption" : "结束",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "END",
+      "codeName" : "End"
+    },
+    "dataItemName" : "end",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "end",
+    "caption" : "结束",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "end"
+  }, {
+    "excelCaption" : "状态",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Todo__status.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    },
+    "dataItemName" : "status",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "status",
+    "caption" : "状态",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "status"
+  }, {
+    "getPSDEUIActionGroup" : {
+      "getPSUIActionGroupDetails" : [ {
+        "addSeparator" : false,
+        "showIcon" : true,
+        "getPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+          },
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoAssignToView.json",
+            "viewType" : "DEOPTVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "refreshMode" : 1,
+          "getNoPrivDisplayMode" : 1,
+          "timeout" : 60000,
+          "getPSSysImage" : {
+            "glyph" : "xf0a4@FontAwesome",
+            "cssClass" : "fa fa-hand-o-right"
+          },
+          "codeName" : "assignTo",
+          "caption" : "指派",
+          "actionTarget" : "SINGLEKEY",
+          "reloadData" : true,
+          "dataAccessAction" : "ASSIGNTO",
+          "uIActionTag" : "assignTo",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "FRONT",
+          "fullCodeName" : "Todo_assignTo",
+          "name" : "todo指派",
+          "id" : "assignTo@Todo"
+        },
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "ucbe5848"
+      }, {
+        "addSeparator" : false,
+        "showIcon" : true,
+        "getPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Finish"
+          },
+          "refreshMode" : 1,
+          "enableConfirm" : true,
+          "getNoPrivDisplayMode" : 1,
+          "timeout" : 60000,
+          "getPSSysImage" : {
+            "glyph" : "xf046@FontAwesome",
+            "cssClass" : "fa fa-check-square-o"
+          },
+          "codeName" : "finish",
+          "caption" : "完成",
+          "actionTarget" : "SINGLEKEY",
+          "reloadData" : true,
+          "dataAccessAction" : "FINISH",
+          "uIActionTag" : "finish",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "BACKEND",
+          "confirmMsg" : "您确定这条待办已经完成了吗？",
+          "fullCodeName" : "Todo_finish",
+          "name" : "todo完成",
+          "id" : "finish@Todo"
+        },
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "u73f3925"
+      }, {
+        "addSeparator" : false,
+        "showIcon" : true,
+        "getPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Activate"
+          },
+          "refreshMode" : 1,
+          "enableConfirm" : true,
+          "getNoPrivDisplayMode" : 1,
+          "timeout" : 60000,
+          "getPSSysImage" : {
+            "glyph" : "xf0d0@FontAwesome",
+            "cssClass" : "fa fa-magic"
+          },
+          "codeName" : "activate",
+          "caption" : "激活",
+          "actionTarget" : "SINGLEKEY",
+          "reloadData" : true,
+          "dataAccessAction" : "ACTIVATE",
+          "uIActionTag" : "activate",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "BACKEND",
+          "confirmMsg" : "您确定要激活这条待办吗？",
+          "fullCodeName" : "Todo_activate",
+          "name" : "todo激活",
+          "id" : "activate@Todo"
+        },
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "u028b830"
+      }, {
+        "addSeparator" : false,
+        "showIcon" : true,
+        "getPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Close"
+          },
+          "refreshMode" : 1,
+          "enableConfirm" : true,
+          "getNoPrivDisplayMode" : 1,
+          "timeout" : 60000,
+          "getPSSysImage" : {
+            "glyph" : "xf00d@FontAwesome",
+            "cssClass" : "fa fa-close"
+          },
+          "codeName" : "close",
+          "caption" : "关闭",
+          "actionTarget" : "SINGLEKEY",
+          "reloadData" : true,
+          "dataAccessAction" : "CLOSE",
+          "uIActionTag" : "close",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "BACKEND",
+          "confirmMsg" : "您确定要关闭这条待办吗？",
+          "fullCodeName" : "Todo_close",
+          "name" : "todo关闭",
+          "id" : "close@Todo"
+        },
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "u24b965b"
+      }, {
+        "addSeparator" : false,
+        "showIcon" : true,
+        "getPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+          },
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoEditView.json",
+            "viewType" : "DEEDITVIEW"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "frontProcessType" : "WIZARD",
+          "getNoPrivDisplayMode" : 1,
+          "timeout" : 60000,
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "codeName" : "edit1",
+          "caption" : "编辑",
+          "actionTarget" : "SINGLEKEY",
+          "dataAccessAction" : "UPDATE",
+          "uIActionTag" : "edit1",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "FRONT",
+          "fullCodeName" : "Todo_edit1",
+          "name" : "todo编辑",
+          "id" : "edit1@Todo"
+        },
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "uc8e81f7"
+      }, {
+        "addSeparator" : false,
+        "showIcon" : true,
+        "getPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "refreshMode" : 1,
+          "enableConfirm" : true,
+          "getNoPrivDisplayMode" : 1,
+          "timeout" : 60000,
+          "getPSSysImage" : {
+            "glyph" : "xf1f8@FontAwesome",
+            "cssClass" : "fa fa-trash"
+          },
+          "codeName" : "delete",
+          "caption" : "删除",
+          "actionTarget" : "SINGLEKEY",
+          "reloadData" : true,
+          "dataAccessAction" : "DELETE",
+          "uIActionTag" : "delete",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "BACKEND",
+          "confirmMsg" : "您确定要删除这条待办吗？",
+          "fullCodeName" : "Todo_delete",
+          "name" : "todo删除",
+          "id" : "delete@Todo"
+        },
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "u51ddac6"
+      } ],
+      "name" : "todo行为组"
+    },
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 200,
+    "codeName" : "uagridcolumn1",
+    "caption" : "操作",
+    "columnType" : "UAGRIDCOLUMN",
+    "align" : "RIGHT",
+    "widthUnit" : "PX",
+    "name" : "uagridcolumn1"
+  } ],
+  "codeName" : "Main",
+  "minorSortDir" : "DESC",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 20,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSDEDataExport" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo/PSAPPDEDATAEXPS/DataExport.json"
+  },
+  "getPSAppViewUIActions" : [ {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+      },
+      "modelref" : true,
+      "id" : "assignTo@Todo"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "name" : "todo指派"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+      },
+      "modelref" : true,
+      "id" : "finish@Todo"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "name" : "todo完成"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+      },
+      "modelref" : true,
+      "id" : "activate@Todo"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "name" : "todo激活"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+      },
+      "modelref" : true,
+      "id" : "close@Todo"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "name" : "todo关闭"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+      },
+      "modelref" : true,
+      "id" : "edit1@Todo"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "name" : "todo编辑"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+      },
+      "modelref" : true,
+      "id" : "delete@Todo"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "name" : "todo删除"
+  } ],
+  "getPSAppViewLogics" : [ {
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "todo指派"
+    },
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_ucbe5848_click"
+  }, {
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "todo完成"
+    },
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_u73f3925_click"
+  }, {
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "todo激活"
+    },
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_u028b830_click"
+  }, {
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "todo关闭"
+    },
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_u24b965b_click"
+  }, {
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "todo编辑"
+    },
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_uc8e81f7_click"
+  }, {
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "todo删除"
+    },
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_u51ddac6_click"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo/PSGRIDS/Main.json",
+  "logicName" : "主表格",
+  "modelid" : "a90961e0afa20e8a9ed19eb28a306fef"
+}

@@ -1,0 +1,24 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : true,
+  "customParam" : false,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "orderValue" : 31,
+  "codeName" : "Get",
+  "logicName" : "Get",
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "requestField" : "IBIZPRO_PROJECTDAILYID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Get.json",
+  "name" : "Get"
+}

@@ -1,0 +1,31 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/Zt__productplan.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "codeName" : "Zt__productplan",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "data" : "{}",
+    "codeName" : "All",
+    "text" : "所有",
+    "default" : true,
+    "value" : "All"
+  }, {
+    "data" : "{\"n_isexpired_eq\":0}",
+    "codeName" : "Unexpired",
+    "text" : "未过期",
+    "value" : "UNEXPIRED"
+  }, {
+    "data" : "{\"n_isexpired_eq\":1}",
+    "codeName" : "Isexpired",
+    "text" : "已过期",
+    "value" : "ISEXPIRED"
+  } ]
+}

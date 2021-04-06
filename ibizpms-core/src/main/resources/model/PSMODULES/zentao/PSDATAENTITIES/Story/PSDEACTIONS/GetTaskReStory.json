@@ -1,0 +1,24 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "orderValue" : 99999,
+  "codeName" : "GetTaskReStory",
+  "logicName" : "任务相关需求草稿方法",
+  "actionMode" : "READ",
+  "actionType" : "USERCUSTOM",
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetTaskReStory.json",
+  "name" : "GetTaskReStory"
+}

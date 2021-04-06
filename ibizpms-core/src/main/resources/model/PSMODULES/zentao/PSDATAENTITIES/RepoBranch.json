@@ -1,0 +1,312 @@
+{
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
+  "getAllPSDEFields" : [ {
+    "dataType" : "INT",
+    "deployId" : "b4ca7c4348f2421c69c7670bbb2adb49",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
+    "codeName" : "Revision",
+    "logicName" : "revision",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "REVISION",
+        "codeName" : "Revision"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`REVISION`",
+      "columnName" : "REVISION",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "REVISION"
+    } ],
+    "name" : "REVISION"
+  }, {
+    "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "dataType" : "TEXT",
+    "deployId" : "783f65a8983cd9cf965f663c293e4093",
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "codeName" : "Id",
+    "logicName" : "虚拟主键",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "pasteReset" : true,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "ID",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "concat(t1.`REPO`,'__',t1.`REVISION`,'__',t1.`BRANCH`)",
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ID"
+    } ],
+    "length" : 200,
+    "name" : "ID"
+  }, {
+    "dataType" : "INT",
+    "deployId" : "3f1c11a8fdf09916fbc0af05d15dae61",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
+    "codeName" : "Repo",
+    "logicName" : "repo",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "REPO",
+        "codeName" : "Repo"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`REPO`",
+      "columnName" : "REPO",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "REPO"
+    } ],
+    "name" : "REPO"
+  }, {
+    "dataType" : "TEXT",
+    "deployId" : "e7ffd2d9390e2d067924eab56b5b0f9f",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
+    "codeName" : "Branch",
+    "logicName" : "branch",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "BRANCH",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "BRANCH",
+        "codeName" : "Branch"
+      },
+      "name" : "默认规则"
+    } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`BRANCH`",
+      "columnName" : "BRANCH",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "BRANCH"
+    } ],
+    "length" : 255,
+    "name" : "BRANCH"
+  } ],
+  "enableDataVer" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableAPIStorage" : false,
+  "serviceAPIMode" : 1,
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "saaSMode" : 4,
+  "deployId" : "7cbc9d7aba70f9fcdf54e6c06f923d0e",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "RepoBranch",
+  "logicName" : "repobranch",
+  "tableName" : "zt_repobranch",
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "serviceCodeName" : "RepoBranch",
+  "enableRemove" : true,
+  "logicValid" : false,
+  "enableMultiDS" : false,
+  "dataAccCtrlMode" : 1,
+  "auditMode" : 0,
+  "dataChangeLogMode" : 0,
+  "storageMode" : 1,
+  "dataImpExpMode" : 3,
+  "dataAccCtrlArch" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "enableMultiForm" : false,
+  "enableEntityCache" : false,
+  "dEType" : 1,
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch.json",
+  "name" : "ZT_REPOBRANCH"
+}

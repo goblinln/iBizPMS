@@ -1,0 +1,212 @@
+{
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
+  "controlType" : "SEARCHFORM",
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "contentType" : "RAW",
+      "rawContent" : "<div style=\" padding-top: 6px;  padding-left: 20px;\"> 筛选条件： </div>",
+      "getPSLayoutPos" : {
+        "colLG" : 2,
+        "colLGOffset" : 2,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "rawitem1",
+      "detailType" : "RAWITEM",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "rawitem1"
+    }, {
+      "getPSEditor" : {
+        "editorType" : "CHECKBOX",
+        "name" : "closed"
+      },
+      "inputTipClosable" : false,
+      "emptyCaption" : false,
+      "noPrivDisplayMode" : 1,
+      "dataType" : 25,
+      "caption" : "关闭产品",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "RIGHT",
+      "labelWidth" : 130,
+      "showCaption" : true,
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colMD" : 2,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "closed",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "closed"
+    }, {
+      "getPSEditor" : {
+        "editorType" : "CHECKBOX",
+        "name" : "expired"
+      },
+      "inputTipClosable" : false,
+      "emptyCaption" : false,
+      "noPrivDisplayMode" : 1,
+      "dataType" : 25,
+      "caption" : "过期计划",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "RIGHT",
+      "labelWidth" : 130,
+      "showCaption" : true,
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colMD" : 2,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "expired",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "expired"
+    }, {
+      "getPSEditor" : {
+        "singleSelect" : true,
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product.json"
+        },
+        "editorType" : "DROPDOWNLIST",
+        "name" : "n_id_eq"
+      },
+      "inputTipClosable" : false,
+      "emptyCaption" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 1,
+      "needCodeListConfig" : true,
+      "caption" : "产品",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 50,
+      "showCaption" : true,
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colLG" : 6,
+        "colMD" : 6,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "n_id_eq",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "n_id_eq"
+    }, {
+      "getPSEditor" : {
+        "singleSelect" : true,
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanCodeList.json"
+        },
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "n_id_eq",
+          "key" : "n_product_eq",
+          "name" : "n_product_eq"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "n_id_eq",
+          "key" : "N_PRODUCT_EQ",
+          "name" : "N_PRODUCT_EQ"
+        } ],
+        "editorParams" : {
+          "SRFNAVPARAM.n_product_eq" : "%n_id_eq%",
+          "SRFNAVCTX.n_product_eq" : "%n_id_eq%"
+        },
+        "editorType" : "DROPDOWNLIST",
+        "name" : "n_plan_eq"
+      },
+      "inputTipClosable" : false,
+      "emptyCaption" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PLAN",
+        "codeName" : "Plan"
+      },
+      "dataType" : 1,
+      "needCodeListConfig" : true,
+      "caption" : "计划",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 50,
+      "showCaption" : true,
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colLG" : 6,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "n_plan_eq",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "n_plan_eq"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "infoGroupMode" : false,
+    "codeName" : "formpage1",
+    "caption" : "常规条件",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "closed",
+    "dataType" : 25
+  }, {
+    "id" : "expired",
+    "dataType" : 25
+  }, {
+    "id" : "n_id_eq",
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "id" : "n_plan_eq",
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "PLAN",
+      "codeName" : "Plan"
+    }
+  } ],
+  "noTabHeader" : true,
+  "codeName" : "Default",
+  "tabHeaderPos" : "TOP",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+  },
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSSEARCHFORMS/Default.json",
+  "logicName" : "默认搜索表单",
+  "modelid" : "2b71fa6c133aaa4b5001a7efb2706399"
+}

@@ -1,0 +1,2290 @@
+{
+  "vCName" : "trunk",
+  "defaultLanguage" : "ZH_CN",
+  "getAllPSSysUserRoles" : [ {
+    "codeName" : "ProductManger",
+    "roleTag" : "ProductManger",
+    "roleType" : "CUSTOM",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductManger.json",
+    "name" : "产品经理"
+  }, {
+    "codeName" : "ProductSupervisor",
+    "roleTag" : "ProductSupervisor",
+    "roleType" : "CUSTOM",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductSupervisor.json",
+    "name" : "产品主管"
+  }, {
+    "codeName" : "TestSupervisor",
+    "roleTag" : "TestSupervisor",
+    "roleType" : "CUSTOM",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/TestSupervisor.json",
+    "name" : "测试主管"
+  }, {
+    "codeName" : "ProjectManger",
+    "roleTag" : "ProjectManger",
+    "roleType" : "CUSTOM",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProjectManger.json",
+    "name" : "项目经理"
+  }, {
+    "codeName" : "ResearchDirector",
+    "roleTag" : "ResearchDirector",
+    "roleType" : "CUSTOM",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ResearchDirector.json",
+    "name" : "研发主管"
+  } ],
+  "getAllPSSysUniReses" : [ {
+    "resCode" : "UNIVERSALCREATE",
+    "name" : "通用创建",
+    "id" : "ibiz__UNIVERSALCREATE"
+  }, {
+    "resCode" : "CASE_CASECOF_BUT",
+    "name" : "测试用例（用例确认）",
+    "id" : "ibiz__CASE_CASECOF_BUT"
+  }, {
+    "resCode" : "CASE_DELETE_BUT",
+    "name" : "测试用例删除",
+    "id" : "ibiz__CASE_DELETE_BUT"
+  }, {
+    "resCode" : "CUTINTBEHAVIOR",
+    "name" : "通用自定义界面行为",
+    "id" : "ibiz__CUTINTBEHAVIOR"
+  }, {
+    "resCode" : "BUG_DELETE_BUT",
+    "name" : "Bug删除",
+    "id" : "ibiz__BUG_DELETE_BUT"
+  }, {
+    "resCode" : "BUG_CREATE_BUT",
+    "name" : "bug新建",
+    "id" : "ibiz__BUG_CREATE_BUT"
+  }, {
+    "resCode" : "UNIVERSALSAVE",
+    "name" : "通用保存",
+    "id" : "ibiz__UNIVERSALSAVE"
+  }, {
+    "resCode" : "CASE_UNLINK_BUT",
+    "name" : "测试用例移除",
+    "id" : "ibiz__CASE_UNLINK_BUT"
+  }, {
+    "resCode" : "STORY_FJTASK_BUT",
+    "name" : "需求分解任务",
+    "id" : "ibiz__STORY_FJTASK_BUT"
+  }, {
+    "resCode" : "CASE_RESULT_BUT",
+    "name" : "测试用例结果",
+    "id" : "ibiz__CASE_RESULT_BUT"
+  }, {
+    "resCode" : "PROJ_MANAGE_BUT",
+    "name" : "项目管理",
+    "id" : "ibiz__PROJ_MANAGE_BUT"
+  }, {
+    "resCode" : "STORY_REVIEW_BUT",
+    "name" : "需求评审",
+    "id" : "ibiz__STORY_REVIEW_BUT"
+  }, {
+    "resCode" : "TASK_DELETE_BUT",
+    "name" : "任务删除",
+    "id" : "ibiz__TASK_DELETE_BUT"
+  }, {
+    "resCode" : "PROJ_SUSPEND_BUT",
+    "name" : "项目挂起",
+    "id" : "ibiz__PROJ_SUSPEND_BUT"
+  }, {
+    "resCode" : "PRODSTA_STOREOP_BUT",
+    "name" : "产品统计打开需求",
+    "id" : "ibiz__PRODSTA_STOREOP_BUT"
+  }, {
+    "resCode" : "TESTMOD_FIX_BUT",
+    "name" : "测试模块修复路径",
+    "id" : "ibiz__TESTMOD_FIX_BUT"
+  }, {
+    "resCode" : "PRODSTA_PROJCRT_BUT",
+    "name" : "产品统计创建项目",
+    "id" : "ibiz__PRODSTA_PROJCRT_BUT"
+  }, {
+    "resCode" : "WEEKLY_SUBMIT_BUT",
+    "name" : "周报已提交",
+    "id" : "report__WEEKLY_SUBMIT_BUT"
+  }, {
+    "resCode" : "TESTT_OPEN_BUT",
+    "name" : "测试版本打开概况",
+    "id" : "ibiz__TESTT_OPEN_BUT"
+  }, {
+    "resCode" : "ADMIN",
+    "name" : "管理员操作",
+    "id" : "ibiz__ADMIN"
+  }, {
+    "resCode" : "STORY_CLOSED_BUT",
+    "name" : "需求关闭",
+    "id" : "ibiz__STORY_CLOSED_BUT"
+  }, {
+    "resCode" : "BUG_EDIT_BUT",
+    "name" : "Bug编辑",
+    "id" : "ibiz__BUG_EDIT_BUT"
+  }, {
+    "resCode" : "STORY_DELETE_BUT",
+    "name" : "需求删除",
+    "id" : "ibiz__STORY_DELETE_BUT"
+  }, {
+    "resCode" : "DOCLIBMODULE_FAVOUR_BUT",
+    "name" : "收藏文档库分类",
+    "id" : "ibiz__DOCLIBMODULE_FAVOUR_BUT"
+  }, {
+    "resCode" : "STEP_CREATE_BUT",
+    "name" : "用例库用例步骤新建",
+    "id" : "ibiz__STEP_CREATE_BUT"
+  }, {
+    "resCode" : "LIB_OPEN_BUT",
+    "name" : "用例库概况",
+    "id" : "ibiz__LIB_OPEN_BUT"
+  }, {
+    "resCode" : "PROP_LSTORY_BUT",
+    "name" : "计划关联需求",
+    "id" : "ibiz__PROP_LSTORY_BUT"
+  }, {
+    "resCode" : "TESTT_EDIT_BUT",
+    "name" : "测试版本编辑",
+    "id" : "ibiz__TESTT_EDIT_BUT"
+  }, {
+    "resCode" : "BUG_UNLINK_BUT",
+    "name" : "Bug移除",
+    "id" : "ibiz__BUG_UNLINK_BUT"
+  }, {
+    "resCode" : "CASE_CREATE_BUT",
+    "name" : "测试用例新建",
+    "id" : "ibiz__CASE_CREATE_BUT"
+  }, {
+    "resCode" : "PROJ_CLOSED_BUT",
+    "name" : "项目关闭",
+    "id" : "ibiz__PROJ_CLOSED_BUT"
+  }, {
+    "resCode" : "PROD_UPDATE_BUT",
+    "name" : "产品更新",
+    "id" : "ibiz__PROD_UPDATE_BUT"
+  }, {
+    "resCode" : "CASE_EDIT_BUT",
+    "name" : "测试用例编辑",
+    "id" : "ibiz__CASE_EDIT_BUT"
+  }, {
+    "resCode" : "CASE_CASERESULT_BUT",
+    "name" : "测试用例（用例结果）",
+    "id" : "ibiz__CASE_CASERESULT_BUT"
+  }, {
+    "resCode" : "RELEASE_TERMINATE",
+    "name" : "发布操作列（停止维护）",
+    "id" : "ibiz__RELEASE_TERMINATE"
+  }, {
+    "resCode" : "BUILD_SUBT_BUT",
+    "name" : "项目版本提交测试",
+    "id" : "ibiz__BUILD_SUBT_BUT"
+  }, {
+    "resCode" : "PROJ_DELETE_BUT",
+    "name" : "项目删除",
+    "id" : "ibiz__PROJ_DELETE_BUT"
+  }, {
+    "resCode" : "PROD_EDIT_BUT",
+    "name" : "产品编辑",
+    "id" : "ibiz__PROD_EDIT_BUT"
+  }, {
+    "resCode" : "DOCLIB_NFAVOUR_BUT",
+    "name" : "取消收藏文档库",
+    "id" : "ibiz__DOCLIB_NFAVOUR_BUT"
+  }, {
+    "resCode" : "STEP_EDIT_BUT",
+    "name" : "用例库用例步骤编辑",
+    "id" : "ibiz__STEP_EDIT_BUT"
+  }, {
+    "resCode" : "BUILD_DELETE_BUT",
+    "name" : "项目版本删除",
+    "id" : "ibiz__BUILD_DELETE_BUT"
+  }, {
+    "resCode" : "LIBM_OPEN_BUT",
+    "name" : "用例库模块概况",
+    "id" : "ibiz__LIBM_OPEN_BUT"
+  }, {
+    "resCode" : "PROD_CLOSED_BUT",
+    "name" : "产品关闭",
+    "id" : "ibiz__PROD_CLOSED_BUT"
+  }, {
+    "resCode" : "DOCLIBMODULE_MAINTENANCE_BUT",
+    "name" : "维护分类",
+    "id" : "ibiz__DOCLIBMODULE_MAINTENANCE_BUT"
+  }, {
+    "resCode" : "TASK_CREATE_BUT",
+    "name" : "任务新建",
+    "id" : "ibiz__TASK_CREATE_BUT"
+  }, {
+    "resCode" : "TESTT_START_BUT",
+    "name" : "测试版本开始",
+    "id" : "ibiz__TESTT_START_BUT"
+  }, {
+    "resCode" : "TEST_TESTTASK",
+    "name" : "测试分页导航-测试单",
+    "id" : "ibiz__TEST_TESTTASK"
+  }, {
+    "resCode" : "PROP_EDIT_BUT",
+    "name" : "计划编辑",
+    "id" : "ibiz__PROP_EDIT_BUT"
+  }, {
+    "resCode" : "TESTSU_EDITSUITE_BUT",
+    "name" : "测试套件编辑",
+    "id" : "ibiz__TESTSU_EDITSUITE_BUT"
+  }, {
+    "resCode" : "PROJ_CREATE_BUT",
+    "name" : "项目新建",
+    "id" : "ibiz__PROJ_CREATE_BUT"
+  }, {
+    "resCode" : "TESTSU_DELETE_BUT",
+    "name" : "测试套件删除",
+    "id" : "ibiz__TESTSU_DELETE_BUT"
+  }, {
+    "resCode" : "TASK_CLOSE_BUT",
+    "name" : "任务关闭",
+    "id" : "ibiz__TASK_CLOSE_BUT"
+  }, {
+    "resCode" : "PROP_CREATE_BUT",
+    "name" : "计划新建",
+    "id" : "ibiz__PROP_CREATE_BUT"
+  }, {
+    "resCode" : "STEP_OPEN_BUT",
+    "name" : "用例库用例步骤概况",
+    "id" : "ibiz__STEP_OPEN_BUT"
+  }, {
+    "resCode" : "TASK_PROCEED_BUT",
+    "name" : "任务继续",
+    "id" : "ibiz__TASK_PROCEED_BUT"
+  }, {
+    "resCode" : "STORY_UNLP_BUT",
+    "name" : "需求移除项目关联",
+    "id" : "ibiz__STORY_UNLP_BUT"
+  }, {
+    "resCode" : "REPORTLY_EDIT_BUT",
+    "name" : "汇报编辑",
+    "id" : "report__REPORTLY_EDIT_BUT"
+  }, {
+    "resCode" : "LICASE_EDIT_BUT",
+    "name" : "用例库用例编辑",
+    "id" : "ibiz__LICASE_EDIT_BUT"
+  }, {
+    "resCode" : "WEEKLY_NSUBMIT_BUT",
+    "name" : "周报待提交",
+    "id" : "ibiz__WEEKLY_NSUBMIT_BUT"
+  }, {
+    "resCode" : "BUG_FAVOR_BUT",
+    "name" : "Bug已收藏",
+    "id" : "ibiz__BUG_FAVOR_BUT"
+  }, {
+    "resCode" : "TESTT_BLOCK_BUT",
+    "name" : "测试版本阻塞",
+    "id" : "ibiz__TESTT_BLOCK_BUT"
+  }, {
+    "resCode" : "DOCLIB_FAVOUR_BUT",
+    "name" : "收藏文档库",
+    "id" : "ibiz__DOCLIB_FAVOUR_BUT"
+  }, {
+    "resCode" : "TASK_ACTIVATION_BUT",
+    "name" : "任务激活",
+    "id" : "ibiz__TASK_ACTIVATION_BUT"
+  }, {
+    "resCode" : "BUG_RESOLVE_BUT",
+    "name" : "Bug解决",
+    "id" : "ibiz__BUG_RESOLVE_BUT"
+  }, {
+    "resCode" : "STORY_NFAVOR_BUT",
+    "name" : "需求待收藏",
+    "id" : "ibiz__STORY_NFAVOR_BUT"
+  }, {
+    "resCode" : "TESTT_LCASE_BUT",
+    "name" : "测试版本关联用例",
+    "id" : "ibiz__TESTT_LCASE_BUT"
+  }, {
+    "resCode" : "LICASE_CREATE_BUT",
+    "name" : "用例库用例新建",
+    "id" : "ibiz__LICASE_CREATE_BUT"
+  }, {
+    "resCode" : "CASE_NFAVOR_BUT",
+    "name" : "用例待收藏",
+    "id" : "ibiz__CASE_NFAVOR_BUT"
+  }, {
+    "resCode" : "TASK_COMPLETE_BUT",
+    "name" : "任务完成",
+    "id" : "ibiz__TASK_COMPLETE_BUT"
+  }, {
+    "resCode" : "TASK_START_BUT",
+    "name" : "任务开始",
+    "id" : "ibiz__TASK_START_BUT"
+  }, {
+    "resCode" : "LIB_EDIT_BUT",
+    "name" : "用例库编辑",
+    "id" : "ibiz__LIB_EDIT_BUT"
+  }, {
+    "resCode" : "TESTSU_LINKCASE_BUT",
+    "name" : "测试套件关联用例",
+    "id" : "ibiz__TESTSU_LINKCASE_BUT"
+  }, {
+    "resCode" : "PLUS",
+    "name" : "Plus增强权限",
+    "id" : "ibiz__PLUS"
+  }, {
+    "resCode" : "PROJECT_REPORT_BUT",
+    "name" : "项目报告列表",
+    "id" : "ibiz__PROJECT_REPORT_BUT"
+  }, {
+    "resCode" : "TESTSU_CREATE_BUT",
+    "name" : "测试套件新建",
+    "id" : "ibiz__TESTSU_CREATE_BUT"
+  }, {
+    "resCode" : "FILE_DOWNLOAD_BUT",
+    "name" : "附件下载",
+    "id" : "ibiz__FILE_DOWNLOAD_BUT"
+  }, {
+    "resCode" : "DOC_NFAVOUR_BUT",
+    "name" : "取消收藏文档",
+    "id" : "ibiz__DOC_NFAVOUR_BUT"
+  }, {
+    "resCode" : "BUG_CREATECASE_BUT",
+    "name" : "Bug建用例",
+    "id" : "ibiz__BUG_CREATECASE_BUT"
+  }, {
+    "resCode" : "RELEASE_ACTIVE",
+    "name" : "发布操作列（激活）",
+    "id" : "ibiz__RELEASE_ACTIVE"
+  }, {
+    "resCode" : "PROJ_DELAY_BUT",
+    "name" : "项目延期",
+    "id" : "ibiz__PROJ_DELAY_BUT"
+  }, {
+    "resCode" : "PROJ_EDIT_BUT",
+    "name" : "项目编辑",
+    "id" : "ibiz__PROJ_EDIT_BUT"
+  }, {
+    "resCode" : "LICASE_OPEN_BUT",
+    "name" : "用例库用例概况",
+    "id" : "ibiz__LICASE_OPEN_BUT"
+  }, {
+    "resCode" : "STORY_ACTIVE_BUT",
+    "name" : "需求激活",
+    "id" : "ibiz__STORY_ACTIVE_BUT"
+  }, {
+    "resCode" : "PROD_CREATE_BUT",
+    "name" : "产品新建",
+    "id" : "ibiz__PROD_CREATE_BUT"
+  }, {
+    "resCode" : "TESTT_CREATE_BUT",
+    "name" : "测试版本新建",
+    "id" : "ibiz__TESTT_CREATE_BUT"
+  }, {
+    "resCode" : "CASE_TOBUG_BUT",
+    "name" : "测试用例转BUG",
+    "id" : "ibiz__CASE_TOBUG_BUT"
+  }, {
+    "resCode" : "CASE_CASETOBUG_BUT",
+    "name" : "测试用例（用例转BUG）",
+    "id" : "ibiz__CASE_CASETOBUG_BUT"
+  }, {
+    "resCode" : "MONTHLY_EDIT_BUT",
+    "name" : "月报编辑",
+    "id" : "report__MONTHLY_EDIT_BUT"
+  }, {
+    "resCode" : "PRODUCT_MANAGER",
+    "name" : "产品经理",
+    "id" : "PRODUCT_MANAGER"
+  }, {
+    "resCode" : "PROJ_START_BUT",
+    "name" : "项目开始",
+    "id" : "ibiz__PROJ_START_BUT"
+  }, {
+    "resCode" : "LIBM_CREATE_BUT",
+    "name" : "用例库模块新建",
+    "id" : "ibiz__LIBM_CREATE_BUT"
+  }, {
+    "resCode" : "TASK_FAVOR_BUT",
+    "name" : "任务已收藏",
+    "id" : "ibiz__TASK_FAVOR_BUT"
+  }, {
+    "resCode" : "PROJT_TM_BUT",
+    "name" : "项目团队管理",
+    "id" : "ibiz__PROJT_TM_BUT"
+  }, {
+    "resCode" : "TASK_PAUSE_BUT",
+    "name" : "任务暂停",
+    "id" : "ibiz__TASK_PAUSE_BUT"
+  }, {
+    "resCode" : "TESTT_DELETE_BUT",
+    "name" : "测试版本删除",
+    "id" : "ibiz__TESTT_DELETE_BUT"
+  }, {
+    "resCode" : "BUG_CLOSE_BUT",
+    "name" : "Bug关闭",
+    "id" : "ibiz__BUG_CLOSE_BUT"
+  }, {
+    "resCode" : "STORY_EDIT_BUT",
+    "name" : "需求编辑",
+    "id" : "ibiz__STORY_EDIT_BUT"
+  }, {
+    "resCode" : "DOC_FAVOUR_BUT",
+    "name" : "收藏文档",
+    "id" : "ibiz__DOC_FAVOUR_BUT"
+  }, {
+    "resCode" : "PRODSTA_STORYCRT_BUT",
+    "name" : "产品统计提需求",
+    "id" : "ibiz__PRODSTA_STORYCRT_BUT"
+  }, {
+    "resCode" : "BUG_NFAVOR_BUT",
+    "name" : "Bug待收藏",
+    "id" : "ibiz__BUG_NFAVOR_BUT"
+  }, {
+    "resCode" : "PROP_CHILD_BUT",
+    "name" : "计划子计划",
+    "id" : "ibiz__PROP_CHILD_BUT"
+  }, {
+    "resCode" : "TASK_XQCHANGE_BUT",
+    "name" : "任务确认需求变更",
+    "id" : "ibiz__TASK_XQCHANGE_BUT"
+  }, {
+    "resCode" : "STORY_ASS_BUT",
+    "name" : "需求指派给",
+    "id" : "ibiz__STORY_ASS_BUT"
+  }, {
+    "resCode" : "PRODUCTLEFT",
+    "name" : "产品左侧资源",
+    "id" : "ibiz__PRODUCTLEFT"
+  }, {
+    "resCode" : "UNIVERSALEDIT",
+    "name" : "通用编辑",
+    "id" : "ibiz__UNIVERSALEDIT"
+  }, {
+    "resCode" : "REPORT_EDIT_BUT",
+    "name" : "测试报告编辑",
+    "id" : "ibiz__REPORT_EDIT_BUT"
+  }, {
+    "resCode" : "BUG_TOSTORY_BUT",
+    "name" : "Bug提需求",
+    "id" : "ibiz__BUG_TOSTORY_BUT"
+  }, {
+    "resCode" : "DOCLIBMODULE_NFAVOUR_BUT",
+    "name" : "取消收藏文档库分类",
+    "id" : "ibiz__DOCLIBMODULE_NFAVOUR_BUT"
+  }, {
+    "resCode" : "TEST_TESTREPORT",
+    "name" : "测试分页导航-测试报告",
+    "id" : "ibiz__TEST_TESTREPORT"
+  }, {
+    "resCode" : "TASK_ASSIGN_BUT",
+    "name" : "任务指派",
+    "id" : "ibiz__TASK_ASSIGN_BUT"
+  }, {
+    "resCode" : "TESTT_CLOSED_BUT",
+    "name" : "测试版本关闭",
+    "id" : "ibiz__TESTT_CLOSED_BUT"
+  }, {
+    "resCode" : "PROP_LBUG_BUT",
+    "name" : "计划关联bug",
+    "id" : "ibiz__PROP_LBUG_BUT"
+  }, {
+    "resCode" : "CASE_RUN_BUT",
+    "name" : "测试用例执行",
+    "id" : "ibiz__CASE_RUN_BUT"
+  }, {
+    "resCode" : "STORY_CHANGED_BUT",
+    "name" : "需求变更",
+    "id" : "ibiz__STORY_CHANGED_BUT"
+  }, {
+    "resCode" : "PROJ_ACTIVATION_BUT",
+    "name" : "项目激活",
+    "id" : "ibiz__PROJ_ACTIVATION_BUT"
+  }, {
+    "resCode" : "STORY_CCASE_BUT",
+    "name" : "需求建用例",
+    "id" : "ibiz__STORY_CCASE_BUT"
+  }, {
+    "resCode" : "RELEASE_COMMON",
+    "name" : "发布操作列（通用）",
+    "id" : "ibiz__RELEASE_COMMON"
+  }, {
+    "resCode" : "PRODSTA_ADDPROD_BUT",
+    "name" : "产品统计添加产品",
+    "id" : "ibiz__PRODSTA_ADDPROD_BUT"
+  }, {
+    "resCode" : "BUG_ACTIVATE_BUT",
+    "name" : "Bug激活",
+    "id" : "ibiz__BUG_ACTIVATE_BUT"
+  }, {
+    "resCode" : "MONTHLY_SUBMIT_BUT",
+    "name" : "月报提交",
+    "id" : "report__MONTHLY_SUBMIT_BUT"
+  }, {
+    "resCode" : "DOC_DELETE_BUT",
+    "name" : "文档删除",
+    "id" : "ibiz__DOC_DELETE_BUT"
+  }, {
+    "resCode" : "STORY_FAVOR_BUT",
+    "name" : "需求已收藏",
+    "id" : "ibiz__STORY_FAVOR_BUT"
+  }, {
+    "resCode" : "PRODSTA_RELCRT_BUT",
+    "name" : "产品统计创建发布",
+    "id" : "ibiz__PRODSTA_RELCRT_BUT"
+  }, {
+    "resCode" : "TASK_CONSUM_BUT",
+    "name" : "任务工时",
+    "id" : "ibiz__TASK_CONSUM_BUT"
+  }, {
+    "resCode" : "TESTMOD_OQCVIEW_BUT",
+    "name" : "测试模块打开快速编辑试图",
+    "id" : "ibiz__TESTMOD_OQCVIEW_BUT"
+  }, {
+    "resCode" : "TASK_FORWARD_BUT",
+    "name" : "任务转交",
+    "id" : "ibiz__TASK_FORWARD_BUT"
+  }, {
+    "resCode" : "LIBM_EDIT_BUT",
+    "name" : "用例库模块编辑",
+    "id" : "ibiz__LIBM_EDIT_BUT"
+  }, {
+    "resCode" : "BUG_CONFIRM_BUT",
+    "name" : "Bug确认",
+    "id" : "ibiz__BUG_CONFIRM_BUT"
+  }, {
+    "resCode" : "DOC_EDIT_BUT",
+    "name" : "文档编辑",
+    "id" : "ibiz__DOC_EDIT_BUT"
+  }, {
+    "resCode" : "REPORT_DELETE_BUT",
+    "name" : "测试报告删除",
+    "id" : "ibiz__REPORT_DELETE_BUT"
+  }, {
+    "resCode" : "PROP_DELETE_BUT",
+    "name" : "计划删除",
+    "id" : "ibiz__PROP_DELETE_BUT"
+  }, {
+    "resCode" : "UNIVERSALDELETE",
+    "name" : "通用删除",
+    "id" : "ibiz__UNIVERSALDELETE"
+  }, {
+    "resCode" : "DOCLIBMODULE_EDIT_BUT",
+    "name" : "文档库分类编辑",
+    "id" : "ibiz__DOCLIBMODULE_EDIT_BUT"
+  }, {
+    "resCode" : "TASK_SUBTASKS_BUT",
+    "name" : "任务子任务",
+    "id" : "ibiz__TASK_SUBTASKS_BUT"
+  }, {
+    "resCode" : "PROJ_TEST_TESTTASK",
+    "name" : "项目分页导航-测试-测试单",
+    "id" : "ibiz__PROJ_TEST_TESTTASK"
+  }, {
+    "resCode" : "LIB_CREATE_BUT",
+    "name" : "用例库新建",
+    "id" : "ibiz__LIB_CREATE_BUT"
+  }, {
+    "resCode" : "DOCLIB_EDIT_BUT",
+    "name" : "文档库编辑",
+    "id" : "ibiz__DOCLIB_EDIT_BUT"
+  }, {
+    "resCode" : "FILE_DELETE_BUT",
+    "name" : "附件删除",
+    "id" : "ibiz__FILE_DELETE_BUT"
+  }, {
+    "resCode" : "REPORT_CREATE_BUT",
+    "name" : "测试报告新建",
+    "id" : "ibiz__REPORT_CREATE_BUT"
+  }, {
+    "resCode" : "REPORTLY_SUBMIT_BUT",
+    "name" : "汇报提交",
+    "id" : "report__REPORTLY_SUBMIT_BUT"
+  }, {
+    "resCode" : "DAILY_SUBMIT_BUT",
+    "name" : "日报提交",
+    "id" : "report__DAILY_SUBMIT_BUT"
+  }, {
+    "resCode" : "CASE_CASERUN_BUT",
+    "name" : "测试用例（用例执行）",
+    "id" : "ibiz__CASE_CASERUN_BUT"
+  }, {
+    "resCode" : "CASE_FAVOR_BUT",
+    "name" : "用例已收藏",
+    "id" : "ibiz__CASE_FAVOR_BUT"
+  }, {
+    "resCode" : "PROD_DELETE_BUT",
+    "name" : "产品删除",
+    "id" : "ibiz__PROD_DELETE_BUT"
+  }, {
+    "resCode" : "TASK_NFAVOR_BUT",
+    "name" : "任务待收藏",
+    "id" : "ibiz__TASK_NFAVOR_BUT"
+  }, {
+    "resCode" : "STORY_XQXF_BUT",
+    "name" : "需求细分",
+    "id" : "ibiz__STORY_XQXF_BUT"
+  }, {
+    "resCode" : "BUILD_EDIT_BUT",
+    "name" : "项目版本编辑",
+    "id" : "ibiz__BUILD_EDIT_BUT"
+  }, {
+    "resCode" : "IBZ_LIB_M",
+    "name" : "用例库管理",
+    "id" : "ibiz__IBZ_LIB_M"
+  }, {
+    "resCode" : "TASK_CANCEL_BUT",
+    "name" : "任务取消",
+    "id" : "ibiz__TASK_CANCEL_BUT"
+  }, {
+    "resCode" : "PROJECT_MANAGER",
+    "name" : "项目经理",
+    "id" : "PROJECT_MANAGER"
+  }, {
+    "resCode" : "BUILD_LINK_BUT",
+    "name" : "项目版本关联Bug（需求）",
+    "id" : "ibiz__BUILD_LINK_BUT"
+  }, {
+    "resCode" : "TESTT_ACTIVITE_BUT",
+    "name" : "测试版本激活",
+    "id" : "ibiz__TESTT_ACTIVITE_BUT"
+  }, {
+    "resCode" : "BUILD_CREATE_BUT",
+    "name" : "项目版本新建",
+    "id" : "ibiz__BUILD_CREATE_BUT"
+  }, {
+    "resCode" : "CASE_CONFIRM_BUT",
+    "name" : "测试用例确认",
+    "id" : "ibiz__CASE_CONFIRM_BUT"
+  }, {
+    "resCode" : "PRODSTA_PLANCRT_BUT",
+    "name" : "产品统计创建计划",
+    "id" : "ibiz__PRODSTA_PLANCRT_BUT"
+  }, {
+    "resCode" : "STORY_CREATE_BUT",
+    "name" : "需求新建",
+    "id" : "ibiz__STORY_CREATE_BUT"
+  }, {
+    "resCode" : "TASK_EDIT_BUT",
+    "name" : "任务编辑",
+    "id" : "ibiz__TASK_EDIT_BUT"
+  }, {
+    "resCode" : "BUG_ASSIGNTO_BUT",
+    "name" : "Bug指派",
+    "id" : "ibiz__BUG_ASSIGNTO_BUT"
+  } ],
+  "getAllPSSysBackServices" : [ {
+    "serviceOrder" : 0,
+    "serviceHandler" : "PushProjectWeekly",
+    "codeName" : "pushProjectWeekly",
+    "serviceContainer" : "SC01",
+    "startMode" : "AUTO",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/pushProjectWeekly.json",
+    "name" : "定时推送项目周报"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "BurnService",
+    "codeName" : "BurnService",
+    "serviceContainer" : "SC01",
+    "startMode" : "MANUAL",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/BurnService.json",
+    "name" : "定时更新燃尽图服务"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "synchronousPMSToOuSystemService",
+    "codeName" : "synchronousPMSToOuSystemService",
+    "serviceContainer" : "SC01",
+    "startMode" : "MANUAL",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/synchronousPMSToOuSystemService.json",
+    "name" : "定时任务同步PMS账户到OU系统"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "PushProductWeekly",
+    "codeName" : "SumProducctWeekly",
+    "serviceContainer" : "SC01",
+    "startMode" : "MANUAL",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumProducctWeekly.json",
+    "name" : "定时生成汇总产品周报"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "PushReportUserMonthlyService",
+    "codeName" : "PushReportUserMonthlyService",
+    "serviceContainer" : "SC01",
+    "startMode" : "MANUAL",
+    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserMonthlyService.json",
+    "name" : "定时推送待阅提醒用户月报"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "CreateReportUserWeeklyService",
+    "codeName" : "CreateReportUserWeeklyService",
+    "serviceContainer" : "SC01",
+    "startMode" : "MANUAL",
+    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserWeeklyService.json",
+    "name" : "每周定时生成用户周报"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "PushReportUserDailyService",
+    "codeName" : "PushReportUserDailyService",
+    "serviceContainer" : "SC01",
+    "startMode" : "MANUAL",
+    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserDailyService.json",
+    "name" : "定时推送待阅提醒用户日报"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "ReportService",
+    "codeName" : "ReportService",
+    "serviceContainer" : "SC01",
+    "startMode" : "MANUAL",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/ReportService.json",
+    "name" : "每日任务提醒定时服务"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "CreateReportUserDailyService",
+    "codeName" : "CreateReportUserDailyService",
+    "serviceContainer" : "SC01",
+    "startMode" : "MANUAL",
+    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserDailyService.json",
+    "name" : "每日定时生成用户日报"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "CreateProductMonthlyService",
+    "codeName" : "CreateProductMonthlyService",
+    "serviceContainer" : "SC01",
+    "startMode" : "AUTO",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductMonthlyService.json",
+    "name" : "定时生成产品月报"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "SumPorjectMonthly",
+    "codeName" : "SumPorjectMonthly",
+    "serviceContainer" : "SC01",
+    "startMode" : "AUTO",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectMonthly.json",
+    "name" : "汇总项目月报"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "SumPorjectDaily",
+    "codeName" : "SumPorjectDaily",
+    "serviceContainer" : "SC01",
+    "startMode" : "AUTO",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectDaily.json",
+    "name" : "汇总项目日报"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "CreateReportUserMonthlyService",
+    "codeName" : "CreateReportUserMonthlyService",
+    "serviceContainer" : "SC01",
+    "startMode" : "MANUAL",
+    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserMonthlyService.json",
+    "name" : "每月定时生成用户月报"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "TodoService",
+    "codeName" : "TodoService",
+    "serviceContainer" : "SC01",
+    "startMode" : "MANUAL",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/TodoService.json",
+    "name" : "创建周期定时服务"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "PushReportUserWeeklyService",
+    "codeName" : "PushReportUserWeeklyService",
+    "serviceContainer" : "SC01",
+    "startMode" : "MANUAL",
+    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserWeeklyService.json",
+    "name" : "定时推送待阅提醒用户周报提交"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "CreateCycleTasksService",
+    "codeName" : "CreateCycleTasksService",
+    "serviceContainer" : "SC01",
+    "startMode" : "AUTO",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateCycleTasksService.json",
+    "name" : "定时生成周期任务"
+  }, {
+    "serviceOrder" : 0,
+    "serviceHandler" : "CreateProductDailyService",
+    "codeName" : "CreateProductDailyService",
+    "serviceContainer" : "SC01",
+    "startMode" : "AUTO",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductDailyService.json",
+    "name" : "定时生成产品日报"
+  } ],
+  "getAllPSSystemModules" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro.json"
+  } ],
+  "getAllPSDataEntities" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/AccountTaskestimate.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Block.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Company.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Compile.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Config.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Effort.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Entry.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Group.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/GroupPriv.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/History.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProPlugin.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProTag.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProduct.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSystem.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLib.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportRoleConfig.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProductUserTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProjectUserTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImChat.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImChatuser.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImClient.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImConference.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImConferenceaction.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImMessage.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImMessagestatus.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImQueue.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Jenkins.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Job.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Lang.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Log.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Notify.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDataEntity.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysSADE.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqItem.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysSFPub.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Relation.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Repo.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoHistory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Score.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeam.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateFeatures.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Team.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserQuery.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserView.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/WebHook.json"
+  } ],
+  "getAllPSCodeLists" : [ {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList64.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/CurDocVersion.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Doclib__acl.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList75.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/NeedNotReview.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList68.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Company__guest.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList95.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Block__module.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Bug__severity_mob.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList27.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSCODELISTS/AllRole.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/TaskStatusCK.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/TestQuickpacket.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList118.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Module__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList42.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Private_choose.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__frame.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList60.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/PlanAcl.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameW.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList81.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList83.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList94.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Project__pri.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Assignedto_closed.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/BurnQuickpacket.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectQuickpacket.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList79.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/ConfigManagementstatus.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Task__closed_reason.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList30.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Bug__quickpacket.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Casestep__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/BackendBuild.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList113.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Story__quickpacket.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/TestTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/SQLBuild.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/User__gender.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/ProjectProductPlan.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testsuite__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectTeamProduct.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Action__read.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/PlanCodeList.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/RELEASE_Type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList11.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Burninterval.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameTaskMTeam.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList116.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testreport__object_type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList84.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList65.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/RealNameProjectM.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/MyPlanTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/WFStates.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList77.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Task__pri.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/CaseQuickpachet.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList70.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/StoryQuickpacketMy.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/AllRepo.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/ActionManner.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList48.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Action__object_type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Story__color.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList38.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameUnAssignTo_Gird.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/AllCase.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibzpro__pssystype.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Todo__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Story__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList5.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/NeedNotReviewNew.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList24.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList114.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList41.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Project__acl.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/TrueFalse.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList37.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList111.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/CurProductProject.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/TASK_QuickacketMy.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectTimeType.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/MonthlyCompleteTaskChoice.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/BugUserRealName.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/StoryPoints.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Task__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testtask__pri.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList34.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/MobBugQuickGroup.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Task__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ProductActionQuickpacket.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList28.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testtask__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/TaskTeamUserTemp.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList62.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList6.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList46.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch_Cache.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList23.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Story__closed_reason.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList86.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Action__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList89.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/StoryStageKane.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/MobTestQuickpacket.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList2.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList90.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Im_message__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Im_client__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList19.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/AllTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList67.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Task__color.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList4.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__pri.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Product__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/User__clientStatus.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList102.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Im_messagestatus__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList20.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Bug__color.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList50.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList9.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserTplType.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Project_staus.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Block__source.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList29.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList45.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList74.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/ProjectQuickpaketMy.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Team__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Im_conference__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/IsAssigned.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/AllTestTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList39.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/CurStory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameProductTeamNotAssign.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList101.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Story__pri.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList3.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Block__source_block.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList1.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Bug__resolution.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList32.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList87.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameTaskTeam.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/Backendservicesystem.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/SYS_UPDATE_BRANCH.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/File__object_type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Case__frequency.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList57.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Usertpl__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/CycleType.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/AllBug.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/MobStoryQuickGroup.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Story__review_result.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList16.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList7.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Story__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Date_disable.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/CaseQuickpacketMy.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Project_quickpacket.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Bug__browser.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Role.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__stage.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSCODELISTS/Message__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/TypeAll.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Doclib__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectTeam.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList40.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/TimeEvaluationStatuts.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList58.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibz__systpl__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/TestsuiteTypeNew.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Pri.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Zt__productplan.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/BugQuickpacketMy.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Doc__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Release__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList10.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList36.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList93.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Webhook__sendType.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList92.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList107.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/SystemAPP.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/CurProductBuild.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList88.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__color.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/BeginendDropList.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Project__statge.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/CodeList25.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList80.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Bug__pri.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList52.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList8.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList103.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibizpro_storymodule__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList35.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Cycle_enable.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/CodeList.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList55.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList33.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList59.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/AllEntry.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/BugCreateResolve.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/DOCLIBTYPE.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList104.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList99.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/SYS_UPDATE_LOG_TYPE.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList21.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList108.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Beginend_disable.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Story__stage.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList96.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList112.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList14.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Test__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/CaseTestTaskQuickpachet.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Im_conferenceaction__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/TodoQuickpacketMy.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/RelatedStory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList56.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Project__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_Gird.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList100.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_valueofid.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Zt__delta.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList117.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList66.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/CCCCodeList.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/YesNo.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Realease_sort.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/DOCQTYPE.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/CurCaseVersion.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Story__review_result_draft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/SysOperator.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList13.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Bug__severity.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList54.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/DCodeList.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testrun__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Doccontent__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testresult__result.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Doc__acl.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/ProductPlan.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameProductTeam.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList12.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/TaskSpecies.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList71.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/RELEASE_rebuild.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/REPORTQuickGroup.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList98.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ProductTeam.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList31.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Product__acl.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Product_quickpacket.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserTplQuickGroup.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Story__source.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList105.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/CurProductPlan.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList22.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ProductQuickpacket.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/RealDept.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList17.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectCodeList.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList47.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList61.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList106.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/RunSQL.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/MyCompleteTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList97.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ExpiredPlan.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/BugCodeList2.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList18.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList69.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList115.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList63.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList49.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/UserYEAR.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList26.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Bug__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList91.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/CloseProduct.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Task_quickpacket.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList85.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList82.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList72.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/PlanTemplet.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList110.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/PlantempletType.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameProject.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__result.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Bug_type_pie.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/IndexType.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSCODELISTS/ReportStatus.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Product__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Project__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/TestCaseStatusGrid.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/BugModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList78.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/AllStory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Bug__os.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Bug__status.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/APPBuild.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Im_message__contentType.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList109.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Product.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSCODELISTS/ReportType.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/ConfigScope.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/SortDir.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList15.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Datecheckbox.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibizpro_story__sourceobject.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/Testrun__result.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList53.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSCODELISTS/CodeList76.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/ConfigGroup.json"
+  } ],
+  "getAllPSApps" : [ {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSSYSAPP.json"
+  } ],
+  "codeName" : "iBizPMS",
+  "logicName" : "iBiz软件生产管理",
+  "deploySysId" : "67F0CDDF-FF00-4012-97F5-2BF520769214",
+  "name" : "iBizPMS",
+  "id" : "PSSYSTEM.json"
+}

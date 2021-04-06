@@ -1,0 +1,24 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCommon"
+  },
+  "codeName" : "ReleaseUnLinkBugbyLeftBug",
+  "logicName" : "移除关联Bug（遗留Bug）",
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseUnLinkBugbyLeftBug.json",
+  "userCat" : "CAT1",
+  "name" : "ReleaseUnLinkBugbyLeftBug"
+}

@@ -1,0 +1,1996 @@
+{
+  "showDataInfoBar" : false,
+  "showCaptionBar" : false,
+  "xDataControlName" : "form",
+  "getPSDEViewCodeName" : "EditView9",
+  "caption" : "产品统计",
+  "title" : "产品统计编辑视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEEDITVIEW9_STYLE2",
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "EditView9",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "paramType" : "CTRL",
+      "name" : "FORM"
+    }, {
+      "paramType" : "VALUE",
+      "name" : "P2K",
+      "value" : 0
+    } ],
+    "name" : "engine"
+  } ],
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "product",
+    "key" : "product",
+    "name" : "product"
+  } ],
+  "getPSAppViewNavContexts" : [ {
+    "rawValue" : false,
+    "value" : "product",
+    "key" : "PRODUCTSTATS",
+    "name" : "PRODUCTSTATS"
+  } ],
+  "viewStyle" : "STYLE2",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+  },
+  "getPSControls" : [ {
+    "enableAutoSave" : false,
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "getGetDraftPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraft"
+    },
+    "getGetDraftFromPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraftfrom"
+    },
+    "infoFormMode" : true,
+    "showFormNavBar" : false,
+    "controlType" : "FORM",
+    "readOnly" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "getPSDEFormPages" : [ {
+      "getPSDEFormDetails" : [ {
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "product"
+        },
+        "inputTipClosable" : false,
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "dataType" : 25,
+        "caption" : "产品标识",
+        "allowEmpty" : true,
+        "updateDVT" : "CONTEXT",
+        "createDV" : "product",
+        "createDVT" : "CONTEXT",
+        "updateDV" : "product",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 70,
+        "showCaption" : true,
+        "hidden" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "product",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "product"
+      }, {
+        "infoGroupMode" : true,
+        "actionGroupExtractMode" : "ITEM",
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
+        "getPSDEFormDetails" : [ {
+          "infoGroupMode" : true,
+          "actionGroupExtractMode" : "ITEM",
+          "getPSLayout" : {
+            "layout" : "TABLE_24COL",
+            "columnCount" : 24
+          },
+          "getPSDEFormDetails" : [ {
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "contentType" : "RAW",
+            "rawContent" : "<br/>\n<br/>",
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "codeName" : "rawitem1",
+            "detailType" : "RAWITEM",
+            "detailStyle" : "DEFAULT",
+            "showCaption" : true,
+            "name" : "rawitem1"
+          }, {
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "contentType" : "RAW",
+            "rawContent" : "需求数",
+            "getPSLayoutPos" : {
+              "colLG" : 22,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "text-center"
+            },
+            "codeName" : "rawitem3",
+            "detailType" : "RAWITEM",
+            "detailStyle" : "DEFAULT",
+            "showCaption" : true,
+            "name" : "rawitem3"
+          }, {
+            "getPSEditor" : {
+              "enableLinkView" : false,
+              "editable" : false,
+              "editorType" : "SPAN",
+              "name" : "storycnt"
+            },
+            "inputTipClosable" : false,
+            "emptyCaption" : true,
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "STORYCNT",
+              "codeName" : "StoryCnt"
+            },
+            "dataType" : 9,
+            "allowEmpty" : true,
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "TOP",
+            "labelWidth" : 1,
+            "showCaption" : true,
+            "hidden" : false,
+            "getPSLayoutPos" : {
+              "colLG" : 14,
+              "colLGOffset" : 10,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "MainInfo"
+            },
+            "codeName" : "storycnt",
+            "detailType" : "FORMITEM",
+            "detailStyle" : "DEFAULT",
+            "name" : "storycnt"
+          }, {
+            "infoGroupMode" : true,
+            "actionGroupExtractMode" : "ITEM",
+            "getPSLayout" : {
+              "layout" : "TABLE_24COL",
+              "columnCount" : 24
+            },
+            "getPSDEFormDetails" : [ {
+              "getPSAppViewUIAction" : {
+                "modelref" : true,
+                "id" : "form_button4"
+              },
+              "getPSUIAction" : {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+                },
+                "getFrontPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+                  "viewType" : "DETABEXPVIEW"
+                },
+                "getPSNavigateParams" : [ {
+                  "rawValue" : true,
+                  "value" : "TABVIEWPANEL2",
+                  "key" : "srftabactivate",
+                  "name" : "srftabactivate"
+                } ],
+                "frontProcessType" : "WIZARD",
+                "uIActionParamJO" : {
+                  "srftabactivate" : "TABVIEWPANEL2"
+                },
+                "getNoPrivDisplayMode" : 2,
+                "timeout" : 60000,
+                "getPSSysImage" : {
+                  "glyph" : "xf002@FontAwesome",
+                  "cssClass" : "fa fa-search"
+                },
+                "codeName" : "OpenProductStoryView",
+                "caption" : "查看全部",
+                "actionTarget" : "SINGLEKEY",
+                "dataAccessAction" : "SRFUR__PRODSTA_STOREOP_BUT",
+                "uIActionTag" : "OpenProductStoryView",
+                "uIActionType" : "DEUIACTION",
+                "uIActionMode" : "FRONT",
+                "fullCodeName" : "ProductStats_OpenProductStoryView",
+                "name" : "打开产品需求",
+                "id" : "OpenProductStoryView@ProductStats"
+              },
+              "tooltip" : "查看全部",
+              "actionType" : "UIACTION",
+              "getPSLayoutPos" : {
+                "colLG" : 8,
+                "colLGOffset" : 9,
+                "colMD" : 8,
+                "colMDOffset" : 8,
+                "layout" : "TABLE_24COL"
+              },
+              "getPSDEFDGroupLogics" : [ {
+                "logicCat" : "PANELVISIBLE",
+                "getPSDEFDLogics" : [ {
+                  "dEFDName" : "storycnt",
+                  "condOP" : "NOTEQ",
+                  "value" : "0",
+                  "logicType" : "SINGLE",
+                  "name" : "storycnt 不等于(<>) (0)"
+                } ],
+                "notMode" : false,
+                "groupOP" : "AND",
+                "logicType" : "GROUP",
+                "name" : "表单成员[button4][面板显示]逻辑"
+              } ],
+              "codeName" : "button4",
+              "caption" : "查看全部",
+              "detailType" : "BUTTON",
+              "detailStyle" : "DEFAULT",
+              "showCaption" : true,
+              "name" : "button4"
+            }, {
+              "getPSAppViewUIAction" : {
+                "modelref" : true,
+                "id" : "form_button5"
+              },
+              "getPSUIAction" : {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+                },
+                "getFrontPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                },
+                "frontProcessType" : "WIZARD",
+                "getNoPrivDisplayMode" : 2,
+                "timeout" : 60000,
+                "codeName" : "OpenStoryCreateView",
+                "caption" : "提需求",
+                "actionTarget" : "SINGLEKEY",
+                "dataAccessAction" : "SRFUR__PRODSTA_STORYCRT_BUT",
+                "uIActionTag" : "OpenStoryCreateView",
+                "uIActionType" : "DEUIACTION",
+                "uIActionMode" : "FRONT",
+                "fullCodeName" : "ProductStats_OpenStoryCreateView",
+                "name" : "提需求",
+                "id" : "OpenStoryCreateView@ProductStats"
+              },
+              "tooltip" : "提需求",
+              "actionType" : "UIACTION",
+              "getPSLayoutPos" : {
+                "colLG" : 8,
+                "colLGOffset" : 9,
+                "colMD" : 8,
+                "colMDOffset" : 8,
+                "layout" : "TABLE_24COL"
+              },
+              "getPSDEFDGroupLogics" : [ {
+                "logicCat" : "PANELVISIBLE",
+                "getPSDEFDLogics" : [ {
+                  "dEFDName" : "storycnt",
+                  "condOP" : "EQ",
+                  "value" : "0",
+                  "logicType" : "SINGLE",
+                  "name" : "storycnt 等于(=) (0)"
+                } ],
+                "notMode" : false,
+                "groupOP" : "AND",
+                "logicType" : "GROUP",
+                "name" : "表单成员[button5][面板显示]逻辑"
+              } ],
+              "codeName" : "button5",
+              "caption" : "提需求",
+              "detailType" : "BUTTON",
+              "detailStyle" : "DEFAULT",
+              "showCaption" : true,
+              "name" : "button5"
+            } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "codeName" : "grouppanel6",
+            "detailType" : "GROUPPANEL",
+            "detailStyle" : "DEFAULT",
+            "showCaption" : false,
+            "name" : "grouppanel6"
+          }, {
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "contentType" : "RAW",
+            "rawContent" : "<br/>",
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "codeName" : "rawitem2",
+            "detailType" : "RAWITEM",
+            "detailStyle" : "DEFAULT",
+            "showCaption" : true,
+            "name" : "rawitem2"
+          }, {
+            "infoGroupMode" : true,
+            "actionGroupExtractMode" : "ITEM",
+            "getPSLayout" : {
+              "layout" : "TABLE_24COL",
+              "columnCount" : 24
+            },
+            "getPSDEFormDetails" : [ {
+              "getPSEditor" : {
+                "enableLinkView" : false,
+                "editable" : false,
+                "editorType" : "SPAN",
+                "name" : "waitstorycnt"
+              },
+              "inputTipClosable" : false,
+              "emptyCaption" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "WAITSTORYCNT",
+                "codeName" : "WaitStoryCnt"
+              },
+              "dataType" : 9,
+              "caption" : "未开始",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "TOP",
+              "labelWidth" : 70,
+              "showCaption" : true,
+              "hidden" : false,
+              "getPSLayoutPos" : {
+                "colLG" : 4,
+                "colLGOffset" : 2,
+                "colMD" : 4,
+                "colMDOffset" : 2,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "waitstorycnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "waitstorycnt"
+            }, {
+              "getPSEditor" : {
+                "enableLinkView" : false,
+                "editable" : false,
+                "editorType" : "SPAN",
+                "name" : "plannedstorycnt"
+              },
+              "inputTipClosable" : false,
+              "emptyCaption" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "PLANNEDSTORYCNT",
+                "codeName" : "PlannedStoryCnt"
+              },
+              "dataType" : 9,
+              "caption" : "已计划",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "TOP",
+              "labelWidth" : 70,
+              "showCaption" : true,
+              "hidden" : false,
+              "getPSLayoutPos" : {
+                "colLG" : 4,
+                "colMD" : 4,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "plannedstorycnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "plannedstorycnt"
+            }, {
+              "getPSEditor" : {
+                "enableLinkView" : false,
+                "editable" : false,
+                "editorType" : "SPAN",
+                "name" : "developingstorycnt"
+              },
+              "inputTipClosable" : false,
+              "emptyCaption" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "DEVELOPINGSTORYCNT",
+                "codeName" : "DevelopingStoryCnt"
+              },
+              "dataType" : 9,
+              "caption" : "研发中",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "TOP",
+              "labelWidth" : 70,
+              "showCaption" : true,
+              "hidden" : false,
+              "getPSLayoutPos" : {
+                "colLG" : 4,
+                "colMD" : 4,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "developingstorycnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "developingstorycnt"
+            }, {
+              "getPSEditor" : {
+                "enableLinkView" : false,
+                "editable" : false,
+                "editorType" : "SPAN",
+                "name" : "testingstorycnt"
+              },
+              "inputTipClosable" : false,
+              "emptyCaption" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "TESTINGSTORYCNT",
+                "codeName" : "TestingStoryCnt"
+              },
+              "dataType" : 9,
+              "caption" : "测试中",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "TOP",
+              "labelWidth" : 70,
+              "showCaption" : true,
+              "hidden" : false,
+              "getPSLayoutPos" : {
+                "colLG" : 4,
+                "colMD" : 4,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "testingstorycnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "testingstorycnt"
+            }, {
+              "getPSEditor" : {
+                "enableLinkView" : false,
+                "editable" : false,
+                "editorType" : "SPAN",
+                "name" : "releasedstorycnt"
+              },
+              "inputTipClosable" : false,
+              "emptyCaption" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "RELEASEDSTORYCNT",
+                "codeName" : "ReleasedStoryCnt"
+              },
+              "dataType" : 9,
+              "caption" : "已发布",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "TOP",
+              "labelWidth" : 70,
+              "showCaption" : true,
+              "hidden" : false,
+              "getPSLayoutPos" : {
+                "colLG" : 4,
+                "colMD" : 4,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "releasedstorycnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "releasedstorycnt"
+            } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "codeName" : "grouppanel13",
+            "caption" : "需求状态统计",
+            "detailType" : "GROUPPANEL",
+            "detailStyle" : "DEFAULT",
+            "showCaption" : false,
+            "name" : "grouppanel13"
+          } ],
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "grouppanel1",
+          "caption" : "产品需求统计",
+          "detailType" : "GROUPPANEL",
+          "detailStyle" : "DEFAULT",
+          "showCaption" : false,
+          "name" : "grouppanel1"
+        }, {
+          "infoGroupMode" : true,
+          "actionGroupExtractMode" : "ITEM",
+          "getPSLayout" : {
+            "layout" : "TABLE_24COL",
+            "columnCount" : 24
+          },
+          "getPSDEFormDetails" : [ {
+            "infoGroupMode" : true,
+            "actionGroupExtractMode" : "ITEM",
+            "getPSLayout" : {
+              "layout" : "TABLE_24COL",
+              "columnCount" : 24
+            },
+            "getPSDEFormDetails" : [ {
+              "rawItemHeight" : -1.0,
+              "rawItemWidth" : -1.0,
+              "contentType" : "RAW",
+              "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;所有计划&nbsp;:&nbsp;{{data.productplancnt ? data.productplancnt : 0}}</div>",
+              "getPSLayoutPos" : {
+                "colLG" : 8,
+                "colLGOffset" : 16,
+                "colMD" : 8,
+                "colMDOffset" : 16,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "rawitem5",
+              "detailType" : "RAWITEM",
+              "detailStyle" : "DEFAULT",
+              "showCaption" : true,
+              "name" : "rawitem5"
+            }, {
+              "infoGroupMode" : true,
+              "actionGroupExtractMode" : "ITEM",
+              "getPSLayout" : {
+                "layout" : "TABLE_24COL",
+                "columnCount" : 24
+              },
+              "getPSDEFormDetails" : [ {
+                "getPSDEFormItems" : [ {
+                  "getPSEditor" : {
+                    "editorType" : "HIDDEN",
+                    "name" : "custom1"
+                  },
+                  "inputTipClosable" : false,
+                  "emptyCaption" : false,
+                  "noPrivDisplayMode" : 1,
+                  "getPSAppDEField" : {
+                    "name" : "PRODUCTPLANCNT",
+                    "codeName" : "ProductPlanCnt"
+                  },
+                  "dataType" : 9,
+                  "caption" : "计划总数",
+                  "allowEmpty" : true,
+                  "enableCond" : 3,
+                  "ignoreInput" : 0,
+                  "labelPos" : "LEFT",
+                  "labelWidth" : 70,
+                  "showCaption" : true,
+                  "hidden" : true,
+                  "codeName" : "custom1",
+                  "detailType" : "FORMITEM",
+                  "detailStyle" : "DEFAULT",
+                  "name" : "custom1"
+                }, {
+                  "getPSEditor" : {
+                    "editorType" : "HIDDEN",
+                    "name" : "custom2"
+                  },
+                  "inputTipClosable" : false,
+                  "emptyCaption" : false,
+                  "noPrivDisplayMode" : 1,
+                  "getPSAppDEField" : {
+                    "name" : "UNENDPRODUCTPLANCNT",
+                    "codeName" : "UnEndProductPlanCnt"
+                  },
+                  "dataType" : 9,
+                  "caption" : "未过期计划数",
+                  "allowEmpty" : true,
+                  "enableCond" : 3,
+                  "ignoreInput" : 0,
+                  "labelPos" : "LEFT",
+                  "labelWidth" : 70,
+                  "showCaption" : true,
+                  "hidden" : true,
+                  "codeName" : "custom2",
+                  "detailType" : "FORMITEM",
+                  "detailStyle" : "DEFAULT",
+                  "name" : "custom2"
+                } ],
+                "compositeItem" : true,
+                "getPSEditor" : {
+                  "getPSSysPFPlugin" : {
+                    "pluginType" : "EDITOR_CUSTOMSTYLE",
+                    "pluginCode" : "PROGRESSLINE"
+                  },
+                  "editorParams" : {
+                    "USERCONTROL" : "TRUE"
+                  },
+                  "editorType" : "USERCONTROL",
+                  "editorStyle" : "PROGRESSLINE",
+                  "name" : "formitemex1"
+                },
+                "inputTipClosable" : false,
+                "emptyCaption" : false,
+                "noPrivDisplayMode" : 1,
+                "dataType" : 25,
+                "allowEmpty" : true,
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "NONE",
+                "labelWidth" : 0,
+                "showCaption" : false,
+                "hidden" : false,
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "getPSDEFDGroupLogics" : [ {
+                  "logicCat" : "PANELVISIBLE",
+                  "getPSDEFDLogics" : [ {
+                    "dEFDName" : "productplancnt",
+                    "condOP" : "NOTEQ",
+                    "value" : "0",
+                    "logicType" : "SINGLE",
+                    "name" : "productplancnt 不等于(<>) (0)"
+                  } ],
+                  "notMode" : false,
+                  "groupOP" : "AND",
+                  "logicType" : "GROUP",
+                  "name" : "表单成员[formitemex1][面板显示]逻辑"
+                } ],
+                "codeName" : "formitemex1",
+                "detailStyle" : "DEFAULT",
+                "name" : "formitemex1"
+              }, {
+                "getPSAppViewUIAction" : {
+                  "modelref" : true,
+                  "id" : "form_button1"
+                },
+                "getPSUIAction" : {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+                  },
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
+                    "viewType" : "DEEDITVIEW"
+                  },
+                  "frontProcessType" : "WIZARD",
+                  "getNoPrivDisplayMode" : 2,
+                  "timeout" : 60000,
+                  "getPSSysImage" : {
+                    "glyph" : "xf067@FontAwesome",
+                    "cssClass" : "fa fa-plus"
+                  },
+                  "codeName" : "OpenProductPlanCreateView",
+                  "caption" : "创建计划",
+                  "actionTarget" : "SINGLEKEY",
+                  "dataAccessAction" : "SRFUR__PRODSTA_PLANCRT_BUT",
+                  "uIActionTag" : "OpenProductPlanCreateView",
+                  "uIActionType" : "DEUIACTION",
+                  "uIActionMode" : "FRONT",
+                  "fullCodeName" : "ProductStats_OpenProductPlanCreateView",
+                  "name" : "创建计划",
+                  "id" : "OpenProductPlanCreateView@ProductStats"
+                },
+                "tooltip" : "创建计划",
+                "actionType" : "UIACTION",
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "getPSDEFDGroupLogics" : [ {
+                  "logicCat" : "PANELVISIBLE",
+                  "getPSDEFDLogics" : [ {
+                    "dEFDName" : "productplancnt",
+                    "condOP" : "EQ",
+                    "value" : "0",
+                    "logicType" : "SINGLE",
+                    "name" : "productplancnt 等于(=) (0)"
+                  } ],
+                  "notMode" : false,
+                  "groupOP" : "AND",
+                  "logicType" : "GROUP",
+                  "name" : "表单成员[button1][面板显示]逻辑"
+                } ],
+                "getPSSysImage" : {
+                  "glyph" : "xf067@FontAwesome",
+                  "cssClass" : "fa fa-plus"
+                },
+                "codeName" : "button1",
+                "caption" : "创建计划",
+                "detailType" : "BUTTON",
+                "detailStyle" : "DEFAULT",
+                "showCaption" : true,
+                "name" : "button1"
+              } ],
+              "getPSLayoutPos" : {
+                "colLG" : 16,
+                "colMD" : 16,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "grouppanel3",
+              "detailType" : "GROUPPANEL",
+              "detailStyle" : "DEFAULT",
+              "showCaption" : false,
+              "name" : "grouppanel3"
+            }, {
+              "rawItemHeight" : -1.0,
+              "rawItemWidth" : -1.0,
+              "contentType" : "RAW",
+              "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;未过期&nbsp;:&nbsp;{{data.unendproductplancnt ? data.unendproductplancnt : 0}}</div>",
+              "getPSLayoutPos" : {
+                "colLG" : 8,
+                "colMD" : 8,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "rawitem6",
+              "detailType" : "RAWITEM",
+              "detailStyle" : "DEFAULT",
+              "showCaption" : true,
+              "name" : "rawitem6"
+            } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "group-projectstats"
+            },
+            "codeName" : "grouppanel8",
+            "caption" : "计划",
+            "detailType" : "GROUPPANEL",
+            "detailStyle" : "DEFAULT",
+            "showCaption" : false,
+            "name" : "grouppanel8"
+          }, {
+            "infoGroupMode" : true,
+            "actionGroupExtractMode" : "ITEM",
+            "getPSLayout" : {
+              "layout" : "TABLE_24COL",
+              "columnCount" : 24
+            },
+            "getPSDEFormDetails" : [ {
+              "infoGroupMode" : true,
+              "actionGroupExtractMode" : "ITEM",
+              "getPSLayout" : {
+                "layout" : "TABLE_24COL",
+                "columnCount" : 24
+              },
+              "getPSDEFormDetails" : [ {
+                "rawItemHeight" : -1.0,
+                "rawItemWidth" : -1.0,
+                "contentType" : "RAW",
+                "rawContent" : "<div style=\"margin-top: 6px;\"><Icon type=\"md-alert\" color=\"red\"/>&nbsp;已延期&nbsp;<b>{{data.postponedprojectcnt ? data.postponedprojectcnt : 0}}</b></div>",
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "getPSDEFDGroupLogics" : [ {
+                  "logicCat" : "PANELVISIBLE",
+                  "getPSDEFDLogics" : [ {
+                    "dEFDName" : "resprojectcnt",
+                    "condOP" : "NOTEQ",
+                    "value" : "0",
+                    "logicType" : "SINGLE",
+                    "name" : "resprojectcnt 不等于(<>) (0)"
+                  } ],
+                  "notMode" : false,
+                  "groupOP" : "AND",
+                  "logicType" : "GROUP",
+                  "name" : "表单成员[rawitem4][面板显示]逻辑"
+                } ],
+                "codeName" : "rawitem4",
+                "detailType" : "RAWITEM",
+                "detailStyle" : "DEFAULT",
+                "showCaption" : true,
+                "name" : "rawitem4"
+              }, {
+                "getPSDEFormItems" : [ {
+                  "getPSEditor" : {
+                    "editorType" : "HIDDEN",
+                    "name" : "custom3"
+                  },
+                  "inputTipClosable" : false,
+                  "emptyCaption" : false,
+                  "noPrivDisplayMode" : 1,
+                  "getPSAppDEField" : {
+                    "name" : "RESPROJECTCNT",
+                    "codeName" : "ResProjectCnt"
+                  },
+                  "dataType" : 9,
+                  "caption" : "关联项目数",
+                  "allowEmpty" : true,
+                  "enableCond" : 3,
+                  "ignoreInput" : 0,
+                  "labelPos" : "LEFT",
+                  "labelWidth" : 70,
+                  "showCaption" : true,
+                  "hidden" : true,
+                  "codeName" : "custom3",
+                  "detailType" : "FORMITEM",
+                  "detailStyle" : "DEFAULT",
+                  "name" : "custom3"
+                }, {
+                  "getPSEditor" : {
+                    "editorType" : "HIDDEN",
+                    "name" : "custom4"
+                  },
+                  "inputTipClosable" : false,
+                  "emptyCaption" : false,
+                  "noPrivDisplayMode" : 1,
+                  "getPSAppDEField" : {
+                    "name" : "UNDONERESPROJECTCNT",
+                    "codeName" : "UnDoneResProjectCnt"
+                  },
+                  "dataType" : 9,
+                  "caption" : "未完成关联项目数",
+                  "allowEmpty" : true,
+                  "enableCond" : 3,
+                  "ignoreInput" : 0,
+                  "labelPos" : "LEFT",
+                  "labelWidth" : 70,
+                  "showCaption" : true,
+                  "hidden" : true,
+                  "codeName" : "custom4",
+                  "detailType" : "FORMITEM",
+                  "detailStyle" : "DEFAULT",
+                  "name" : "custom4"
+                } ],
+                "compositeItem" : true,
+                "getPSEditor" : {
+                  "getPSSysPFPlugin" : {
+                    "pluginType" : "EDITOR_CUSTOMSTYLE",
+                    "pluginCode" : "PROGRESSLINE"
+                  },
+                  "editorParams" : {
+                    "USERCONTROL" : "TRUE"
+                  },
+                  "editorType" : "USERCONTROL",
+                  "editorStyle" : "PROGRESSLINE",
+                  "name" : "formitemex2"
+                },
+                "inputTipClosable" : false,
+                "emptyCaption" : false,
+                "noPrivDisplayMode" : 1,
+                "dataType" : 25,
+                "allowEmpty" : true,
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "NONE",
+                "labelWidth" : 0,
+                "showCaption" : false,
+                "hidden" : false,
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "getPSDEFDGroupLogics" : [ {
+                  "logicCat" : "PANELVISIBLE",
+                  "getPSDEFDLogics" : [ {
+                    "dEFDName" : "resprojectcnt",
+                    "condOP" : "NOTEQ",
+                    "value" : "0",
+                    "logicType" : "SINGLE",
+                    "name" : "resprojectcnt 不等于(<>) (0)"
+                  } ],
+                  "notMode" : false,
+                  "groupOP" : "AND",
+                  "logicType" : "GROUP",
+                  "name" : "表单成员[formitemex2][面板显示]逻辑"
+                } ],
+                "codeName" : "formitemex2",
+                "detailStyle" : "DEFAULT",
+                "name" : "formitemex2"
+              }, {
+                "rawItemHeight" : 22.0,
+                "rawItemWidth" : -1.0,
+                "contentType" : "RAW",
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "getPSDEFDGroupLogics" : [ {
+                  "logicCat" : "PANELVISIBLE",
+                  "getPSDEFDLogics" : [ {
+                    "dEFDName" : "resprojectcnt",
+                    "condOP" : "EQ",
+                    "value" : "0",
+                    "logicType" : "SINGLE",
+                    "name" : "resprojectcnt 等于(=) (0)"
+                  } ],
+                  "notMode" : false,
+                  "groupOP" : "AND",
+                  "logicType" : "GROUP",
+                  "name" : "表单成员[rawitem11][面板显示]逻辑"
+                } ],
+                "codeName" : "rawitem11",
+                "detailType" : "RAWITEM",
+                "detailStyle" : "DEFAULT",
+                "showCaption" : true,
+                "name" : "rawitem11"
+              }, {
+                "getPSAppViewUIAction" : {
+                  "modelref" : true,
+                  "id" : "form_button2"
+                },
+                "getPSUIAction" : {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+                  },
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+                    "viewType" : "DEEDITVIEW"
+                  },
+                  "frontProcessType" : "WIZARD",
+                  "getNoPrivDisplayMode" : 2,
+                  "timeout" : 60000,
+                  "getPSSysImage" : {
+                    "glyph" : "xf067@FontAwesome",
+                    "cssClass" : "fa fa-plus"
+                  },
+                  "codeName" : "OpenProjectCreateView",
+                  "caption" : "创建项目",
+                  "actionTarget" : "SINGLEKEY",
+                  "dataAccessAction" : "SRFUR__PRODSTA_PROJCRT_BUT",
+                  "uIActionTag" : "OpenProjectCreateView",
+                  "uIActionType" : "DEUIACTION",
+                  "uIActionMode" : "FRONT",
+                  "fullCodeName" : "ProductStats_OpenProjectCreateView",
+                  "name" : "创建项目",
+                  "id" : "OpenProjectCreateView@ProductStats"
+                },
+                "tooltip" : "创建项目",
+                "actionType" : "UIACTION",
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "getPSDEFDGroupLogics" : [ {
+                  "logicCat" : "PANELVISIBLE",
+                  "getPSDEFDLogics" : [ {
+                    "dEFDName" : "resprojectcnt",
+                    "condOP" : "EQ",
+                    "value" : "0",
+                    "logicType" : "SINGLE",
+                    "name" : "resprojectcnt 等于(=) (0)"
+                  } ],
+                  "notMode" : false,
+                  "groupOP" : "AND",
+                  "logicType" : "GROUP",
+                  "name" : "表单成员[button2][面板显示]逻辑"
+                } ],
+                "getPSSysImage" : {
+                  "glyph" : "xf067@FontAwesome",
+                  "cssClass" : "fa fa-plus"
+                },
+                "codeName" : "button2",
+                "caption" : "创建项目",
+                "detailType" : "BUTTON",
+                "detailStyle" : "DEFAULT",
+                "showCaption" : true,
+                "name" : "button2"
+              } ],
+              "getPSLayoutPos" : {
+                "colLG" : 16,
+                "colMD" : 16,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "grouppanel4",
+              "detailType" : "GROUPPANEL",
+              "detailStyle" : "DEFAULT",
+              "showCaption" : false,
+              "name" : "grouppanel4"
+            }, {
+              "infoGroupMode" : true,
+              "actionGroupExtractMode" : "ITEM",
+              "getPSLayout" : {
+                "layout" : "TABLE_24COL",
+                "columnCount" : 24
+              },
+              "getPSDEFormDetails" : [ {
+                "rawItemHeight" : -1.0,
+                "rawItemWidth" : -1.0,
+                "contentType" : "RAW",
+                "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;所有项目&nbsp;:&nbsp;{{data.resprojectcnt ? data.resprojectcnt : 0}}</div>",
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "codeName" : "rawitem7",
+                "detailType" : "RAWITEM",
+                "detailStyle" : "DEFAULT",
+                "showCaption" : true,
+                "name" : "rawitem7"
+              }, {
+                "rawItemHeight" : -1.0,
+                "rawItemWidth" : -1.0,
+                "contentType" : "RAW",
+                "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;进行中&nbsp;:&nbsp;{{data.undoneresprojectcnt ? data.undoneresprojectcnt : 0}}</div>",
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "codeName" : "rawitem8",
+                "detailType" : "RAWITEM",
+                "detailStyle" : "DEFAULT",
+                "showCaption" : true,
+                "name" : "rawitem8"
+              } ],
+              "getPSLayoutPos" : {
+                "colLG" : 8,
+                "colMD" : 8,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "grouppanel10",
+              "caption" : "分组面板",
+              "detailType" : "GROUPPANEL",
+              "detailStyle" : "DEFAULT",
+              "showCaption" : false,
+              "name" : "grouppanel10"
+            }, {
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "postponedprojectcnt"
+              },
+              "inputTipClosable" : false,
+              "emptyCaption" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "POSTPONEDPROJECTCNT",
+                "codeName" : "Postponedprojectcnt"
+              },
+              "dataType" : 9,
+              "caption" : "已延期",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 70,
+              "showCaption" : true,
+              "hidden" : true,
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "width" : 0,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "postponedprojectcnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "postponedprojectcnt"
+            } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "group-projectstats"
+            },
+            "codeName" : "grouppanel9",
+            "caption" : "项目",
+            "detailType" : "GROUPPANEL",
+            "detailStyle" : "DEFAULT",
+            "showCaption" : false,
+            "name" : "grouppanel9"
+          }, {
+            "infoGroupMode" : true,
+            "actionGroupExtractMode" : "ITEM",
+            "getPSLayout" : {
+              "layout" : "TABLE_24COL",
+              "columnCount" : 24
+            },
+            "getPSDEFormDetails" : [ {
+              "rawItemHeight" : -1.0,
+              "rawItemWidth" : -1.0,
+              "contentType" : "RAW",
+              "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;所有发布&nbsp;:&nbsp;{{data.releasecnt ? data.releasecnt : 0}}</div>",
+              "getPSLayoutPos" : {
+                "colLG" : 8,
+                "colLGOffset" : 16,
+                "colMD" : 8,
+                "colMDOffset" : 16,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "rawitem9",
+              "detailType" : "RAWITEM",
+              "detailStyle" : "DEFAULT",
+              "showCaption" : true,
+              "name" : "rawitem9"
+            }, {
+              "infoGroupMode" : true,
+              "actionGroupExtractMode" : "ITEM",
+              "getPSLayout" : {
+                "layout" : "TABLE_24COL",
+                "columnCount" : 24
+              },
+              "getPSDEFormDetails" : [ {
+                "getPSDEFormItems" : [ {
+                  "getPSEditor" : {
+                    "editorType" : "HIDDEN",
+                    "name" : "custom5"
+                  },
+                  "inputTipClosable" : false,
+                  "emptyCaption" : false,
+                  "noPrivDisplayMode" : 1,
+                  "getPSAppDEField" : {
+                    "name" : "RELEASECNT",
+                    "codeName" : "ReleaseCnt"
+                  },
+                  "dataType" : 9,
+                  "caption" : "发布总数",
+                  "allowEmpty" : true,
+                  "enableCond" : 3,
+                  "ignoreInput" : 0,
+                  "labelPos" : "LEFT",
+                  "labelWidth" : 70,
+                  "showCaption" : true,
+                  "hidden" : true,
+                  "codeName" : "custom5",
+                  "detailType" : "FORMITEM",
+                  "detailStyle" : "DEFAULT",
+                  "name" : "custom5"
+                }, {
+                  "getPSEditor" : {
+                    "editorType" : "HIDDEN",
+                    "name" : "custom6"
+                  },
+                  "inputTipClosable" : false,
+                  "emptyCaption" : false,
+                  "noPrivDisplayMode" : 1,
+                  "getPSAppDEField" : {
+                    "name" : "NORMALRELEASECNT",
+                    "codeName" : "NormalReleaseCnt"
+                  },
+                  "dataType" : 9,
+                  "caption" : "维护中发布数",
+                  "allowEmpty" : true,
+                  "enableCond" : 3,
+                  "ignoreInput" : 0,
+                  "labelPos" : "LEFT",
+                  "labelWidth" : 70,
+                  "showCaption" : true,
+                  "hidden" : true,
+                  "codeName" : "custom6",
+                  "detailType" : "FORMITEM",
+                  "detailStyle" : "DEFAULT",
+                  "name" : "custom6"
+                } ],
+                "compositeItem" : true,
+                "getPSEditor" : {
+                  "getPSSysPFPlugin" : {
+                    "pluginType" : "EDITOR_CUSTOMSTYLE",
+                    "pluginCode" : "PROGRESSLINE"
+                  },
+                  "editorParams" : {
+                    "USERCONTROL" : "TRUE"
+                  },
+                  "editorType" : "USERCONTROL",
+                  "editorStyle" : "PROGRESSLINE",
+                  "name" : "formitemex3"
+                },
+                "inputTipClosable" : false,
+                "emptyCaption" : false,
+                "noPrivDisplayMode" : 1,
+                "dataType" : 25,
+                "allowEmpty" : true,
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "NONE",
+                "labelWidth" : 0,
+                "showCaption" : false,
+                "hidden" : false,
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "getPSDEFDGroupLogics" : [ {
+                  "logicCat" : "PANELVISIBLE",
+                  "getPSDEFDLogics" : [ {
+                    "dEFDName" : "releasecnt",
+                    "condOP" : "NOTEQ",
+                    "value" : "0",
+                    "logicType" : "SINGLE",
+                    "name" : "releasecnt 不等于(<>) (0)"
+                  } ],
+                  "notMode" : false,
+                  "groupOP" : "AND",
+                  "logicType" : "GROUP",
+                  "name" : "表单成员[formitemex3][面板显示]逻辑"
+                } ],
+                "codeName" : "formitemex3",
+                "detailStyle" : "DEFAULT",
+                "name" : "formitemex3"
+              }, {
+                "getPSAppViewUIAction" : {
+                  "modelref" : true,
+                  "id" : "form_button3"
+                },
+                "getPSUIAction" : {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+                  },
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseQuickCreateView.json",
+                    "viewType" : "DEEDITVIEW"
+                  },
+                  "frontProcessType" : "WIZARD",
+                  "getNoPrivDisplayMode" : 2,
+                  "timeout" : 60000,
+                  "getPSSysImage" : {
+                    "glyph" : "xf067@FontAwesome",
+                    "cssClass" : "fa fa-plus"
+                  },
+                  "codeName" : "OpenReleasedCreateView",
+                  "caption" : "创建发布",
+                  "actionTarget" : "SINGLEKEY",
+                  "dataAccessAction" : "SRFUR__PRODSTA_RELCRT_BUT",
+                  "uIActionTag" : "OpenReleasedCreateView",
+                  "uIActionType" : "DEUIACTION",
+                  "uIActionMode" : "FRONT",
+                  "fullCodeName" : "ProductStats_OpenReleasedCreateView",
+                  "name" : "创建发布",
+                  "id" : "OpenReleasedCreateView@ProductStats"
+                },
+                "tooltip" : "创建发布",
+                "actionType" : "UIACTION",
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "getPSDEFDGroupLogics" : [ {
+                  "logicCat" : "PANELVISIBLE",
+                  "getPSDEFDLogics" : [ {
+                    "dEFDName" : "releasecnt",
+                    "condOP" : "EQ",
+                    "value" : "0",
+                    "logicType" : "SINGLE",
+                    "name" : "releasecnt 等于(=) (0)"
+                  } ],
+                  "notMode" : false,
+                  "groupOP" : "AND",
+                  "logicType" : "GROUP",
+                  "name" : "表单成员[button3][面板显示]逻辑"
+                } ],
+                "getPSSysImage" : {
+                  "glyph" : "xf067@FontAwesome",
+                  "cssClass" : "fa fa-plus"
+                },
+                "codeName" : "button3",
+                "caption" : "创建发布",
+                "detailType" : "BUTTON",
+                "detailStyle" : "DEFAULT",
+                "showCaption" : true,
+                "name" : "button3"
+              } ],
+              "getPSLayoutPos" : {
+                "colLG" : 16,
+                "colMD" : 16,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "grouppanel5",
+              "detailType" : "GROUPPANEL",
+              "detailStyle" : "DEFAULT",
+              "showCaption" : false,
+              "name" : "grouppanel5"
+            }, {
+              "rawItemHeight" : -1.0,
+              "rawItemWidth" : -1.0,
+              "contentType" : "RAW",
+              "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;维护中&nbsp;:&nbsp;{{data.normalreleasecnt ? data.normalreleasecnt : 0}}</div>",
+              "getPSLayoutPos" : {
+                "colLG" : 8,
+                "colMD" : 8,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "rawitem10",
+              "detailType" : "RAWITEM",
+              "detailStyle" : "DEFAULT",
+              "showCaption" : true,
+              "name" : "rawitem10"
+            } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "group-projectstats"
+            },
+            "codeName" : "grouppanel11",
+            "caption" : "发布",
+            "detailType" : "GROUPPANEL",
+            "detailStyle" : "DEFAULT",
+            "showCaption" : false,
+            "name" : "grouppanel11"
+          } ],
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSDEFDGroupLogics" : [ {
+            "logicCat" : "PANELVISIBLE",
+            "getPSDEFDLogics" : [ {
+              "dEFDName" : "storycnt",
+              "condOP" : "NOTEQ",
+              "value" : "0",
+              "logicType" : "SINGLE",
+              "name" : "storycnt 不等于(<>) (0)"
+            } ],
+            "notMode" : false,
+            "groupOP" : "AND",
+            "logicType" : "GROUP",
+            "name" : "表单成员[grouppanel2][面板显示]逻辑"
+          } ],
+          "codeName" : "grouppanel2",
+          "caption" : "产品统计",
+          "detailType" : "GROUPPANEL",
+          "detailStyle" : "DEFAULT",
+          "showCaption" : false,
+          "name" : "grouppanel2"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "group1",
+        "caption" : "统计",
+        "detailType" : "GROUPPANEL",
+        "detailStyle" : "DEFAULT",
+        "showCaption" : false,
+        "name" : "group1"
+      }, {
+        "infoGroupMode" : true,
+        "actionGroupExtractMode" : "ITEM",
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
+        "getPSDEFormDetails" : [ {
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "productplancnt"
+          },
+          "inputTipClosable" : false,
+          "emptyCaption" : true,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "PRODUCTPLANCNT",
+            "codeName" : "ProductPlanCnt"
+          },
+          "dataType" : 9,
+          "allowEmpty" : true,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "showCaption" : false,
+          "hidden" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "productplancnt",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "productplancnt"
+        }, {
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "unendproductplancnt"
+          },
+          "inputTipClosable" : false,
+          "emptyCaption" : true,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "UNENDPRODUCTPLANCNT",
+            "codeName" : "UnEndProductPlanCnt"
+          },
+          "dataType" : 9,
+          "allowEmpty" : true,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "showCaption" : false,
+          "hidden" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "unendproductplancnt",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "unendproductplancnt"
+        }, {
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "resprojectcnt"
+          },
+          "inputTipClosable" : false,
+          "emptyCaption" : true,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "RESPROJECTCNT",
+            "codeName" : "ResProjectCnt"
+          },
+          "dataType" : 9,
+          "allowEmpty" : true,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "showCaption" : false,
+          "hidden" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "resprojectcnt",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "resprojectcnt"
+        }, {
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "undoneresprojectcnt"
+          },
+          "inputTipClosable" : false,
+          "emptyCaption" : true,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "UNDONERESPROJECTCNT",
+            "codeName" : "UnDoneResProjectCnt"
+          },
+          "dataType" : 9,
+          "allowEmpty" : true,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "showCaption" : false,
+          "hidden" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "undoneresprojectcnt",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "undoneresprojectcnt"
+        }, {
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "releasecnt"
+          },
+          "inputTipClosable" : false,
+          "emptyCaption" : true,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "RELEASECNT",
+            "codeName" : "ReleaseCnt"
+          },
+          "dataType" : 9,
+          "allowEmpty" : true,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "showCaption" : false,
+          "hidden" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "releasecnt",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "releasecnt"
+        }, {
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "normalreleasecnt"
+          },
+          "inputTipClosable" : false,
+          "emptyCaption" : true,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "NORMALRELEASECNT",
+            "codeName" : "NormalReleaseCnt"
+          },
+          "dataType" : 9,
+          "allowEmpty" : true,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "showCaption" : false,
+          "hidden" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "normalreleasecnt",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "normalreleasecnt"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "grouppanel7",
+        "caption" : "隐藏表单项",
+        "detailType" : "GROUPPANEL",
+        "detailStyle" : "DEFAULT",
+        "showCaption" : false,
+        "name" : "grouppanel7"
+      } ],
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "infoGroupMode" : true,
+      "codeName" : "formpage1",
+      "caption" : "基本信息",
+      "detailType" : "FORMPAGE",
+      "detailStyle" : "DEFAULT",
+      "name" : "formpage1"
+    } ],
+    "getPSDEFormItems" : [ {
+      "id" : "srforikey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfkey",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "id" : "srftempmode",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfuf",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfdeid",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfsourcekey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "product",
+      "hidden" : true,
+      "dataType" : 25,
+      "createDVT" : "CONTEXT",
+      "createDV" : "product",
+      "updateDVT" : "CONTEXT",
+      "updateDV" : "product"
+    }, {
+      "id" : "storycnt",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      }
+    }, {
+      "id" : "waitstorycnt",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "WAITSTORYCNT",
+        "codeName" : "WaitStoryCnt"
+      }
+    }, {
+      "id" : "plannedstorycnt",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "PLANNEDSTORYCNT",
+        "codeName" : "PlannedStoryCnt"
+      }
+    }, {
+      "id" : "developingstorycnt",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "DEVELOPINGSTORYCNT",
+        "codeName" : "DevelopingStoryCnt"
+      }
+    }, {
+      "id" : "testingstorycnt",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "TESTINGSTORYCNT",
+        "codeName" : "TestingStoryCnt"
+      }
+    }, {
+      "id" : "releasedstorycnt",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "RELEASEDSTORYCNT",
+        "codeName" : "ReleasedStoryCnt"
+      }
+    }, {
+      "id" : "custom1",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTPLANCNT",
+        "codeName" : "ProductPlanCnt"
+      }
+    }, {
+      "id" : "custom2",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "UNENDPRODUCTPLANCNT",
+        "codeName" : "UnEndProductPlanCnt"
+      }
+    }, {
+      "id" : "formitemex1",
+      "dataType" : 25
+    }, {
+      "id" : "custom3",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "RESPROJECTCNT",
+        "codeName" : "ResProjectCnt"
+      }
+    }, {
+      "id" : "custom4",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "UNDONERESPROJECTCNT",
+        "codeName" : "UnDoneResProjectCnt"
+      }
+    }, {
+      "id" : "formitemex2",
+      "dataType" : 25
+    }, {
+      "id" : "postponedprojectcnt",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "POSTPONEDPROJECTCNT",
+        "codeName" : "Postponedprojectcnt"
+      }
+    }, {
+      "id" : "custom5",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "RELEASECNT",
+        "codeName" : "ReleaseCnt"
+      }
+    }, {
+      "id" : "custom6",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "NORMALRELEASECNT",
+        "codeName" : "NormalReleaseCnt"
+      }
+    }, {
+      "id" : "formitemex3",
+      "dataType" : 25
+    }, {
+      "id" : "productplancnt",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTPLANCNT",
+        "codeName" : "ProductPlanCnt"
+      }
+    }, {
+      "id" : "unendproductplancnt",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "UNENDPRODUCTPLANCNT",
+        "codeName" : "UnEndProductPlanCnt"
+      }
+    }, {
+      "id" : "resprojectcnt",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "RESPROJECTCNT",
+        "codeName" : "ResProjectCnt"
+      }
+    }, {
+      "id" : "undoneresprojectcnt",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "UNDONERESPROJECTCNT",
+        "codeName" : "UnDoneResProjectCnt"
+      }
+    }, {
+      "id" : "releasecnt",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "RELEASECNT",
+        "codeName" : "ReleaseCnt"
+      }
+    }, {
+      "id" : "normalreleasecnt",
+      "hidden" : true,
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "NORMALRELEASECNT",
+        "codeName" : "NormalReleaseCnt"
+      }
+    }, {
+      "id" : "id",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    } ],
+    "noTabHeader" : true,
+    "codeName" : "Main2",
+    "tabHeaderPos" : "TOP",
+    "getPSAppViewUIActions" : [ {
+      "xDataControlName" : "form",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        },
+        "modelref" : true,
+        "id" : "OpenProductStoryView@ProductStats"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "name" : "form_button4"
+    }, {
+      "xDataControlName" : "form",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        },
+        "modelref" : true,
+        "id" : "OpenStoryCreateView@ProductStats"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "name" : "form_button5"
+    }, {
+      "xDataControlName" : "form",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        },
+        "modelref" : true,
+        "id" : "OpenProductPlanCreateView@ProductStats"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "name" : "form_button1"
+    }, {
+      "xDataControlName" : "form",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        },
+        "modelref" : true,
+        "id" : "OpenProjectCreateView@ProductStats"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "name" : "form_button2"
+    }, {
+      "xDataControlName" : "form",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        },
+        "modelref" : true,
+        "id" : "OpenReleasedCreateView@ProductStats"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "name" : "form_button3"
+    } ],
+    "getPSAppViewLogics" : [ {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "form_button4"
+      },
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "form_button4_click"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "form_button5"
+      },
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "form_button5_click"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "form_button1"
+      },
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "form_button1_click"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "form_button2"
+      },
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "form_button2_click"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "form_button3"
+      },
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "form_button3_click"
+    } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "dataAccessAction" : "UPDATE",
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "name" : "update"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GETDRAFTFROM",
+        "actionType" : "DEACTION",
+        "name" : "loaddraftfrom"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "name" : "loaddraft"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "dataAccessAction" : "READ",
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "name" : "load"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "name" : "create"
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "编辑表单处理器"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats/PSFORMS/Main2.json",
+    "logicName" : "嵌入统计",
+    "name" : "form",
+    "modelid" : "f676d4d97df8e1ee4650b2180093af60"
+  } ],
+  "codeName" : "ProductStatsEditView9",
+  "viewType" : "DEEDITVIEW9",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView9.json",
+  "name" : "ProductStatsEditView9"
+}

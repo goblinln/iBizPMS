@@ -1,0 +1,23 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSCODELISTS/ConfigGroup.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "codeName" : "ConfigGroup",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "codeName" : "Group",
+    "text" : "分组",
+    "value" : "GROUP"
+  }, {
+    "codeName" : "Item",
+    "text" : "配置项",
+    "value" : "ITEM"
+  } ]
+}

@@ -1,0 +1,242 @@
+{
+  "singleSelect" : true,
+  "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "产品编号",
+    "name" : "srfkey"
+  } ],
+  "columnEnableLink" : 2,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "PRODUCTPLANCNT",
+      "codeName" : "ProductPlanCnt"
+    },
+    "dataType" : 9,
+    "name" : "productplancnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACTIVEBUGCNT",
+      "codeName" : "ActiveBugCnt"
+    },
+    "dataType" : 9,
+    "name" : "activebugcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "RELEASECNT",
+      "codeName" : "ReleaseCnt"
+    },
+    "dataType" : 9,
+    "name" : "releasecnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACTIVESTORYCNT",
+      "codeName" : "ActiveStoryCnt"
+    },
+    "dataType" : 9,
+    "name" : "activestorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CURRPROJECT",
+      "codeName" : "Currproject"
+    },
+    "dataType" : 25,
+    "name" : "currproject"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  } ],
+  "enableRowEdit" : false,
+  "getPSDEGridColumns" : [ {
+    "enableLinkView" : true,
+    "getLinkPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    },
+    "excelCaption" : "产品名称",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataItemName" : "name",
+    "linkValueItem" : "srfkey",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "name",
+    "caption" : "产品名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "name"
+  }, {
+    "excelCaption" : "当前项目",
+    "getPSAppDEField" : {
+      "name" : "CURRPROJECT",
+      "codeName" : "Currproject"
+    },
+    "dataItemName" : "currproject",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 200,
+    "codeName" : "currproject",
+    "caption" : "当前项目",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "currproject"
+  }, {
+    "excelCaption" : "计划数",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTPLANCNT",
+      "codeName" : "ProductPlanCnt"
+    },
+    "dataItemName" : "productplancnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 90,
+    "codeName" : "productplancnt",
+    "caption" : "计划数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "productplancnt"
+  }, {
+    "excelCaption" : "发布数",
+    "getPSAppDEField" : {
+      "name" : "RELEASECNT",
+      "codeName" : "ReleaseCnt"
+    },
+    "dataItemName" : "releasecnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 90,
+    "codeName" : "releasecnt",
+    "caption" : "发布数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "releasecnt"
+  }, {
+    "excelCaption" : "激活需求",
+    "getPSAppDEField" : {
+      "name" : "ACTIVESTORYCNT",
+      "codeName" : "ActiveStoryCnt"
+    },
+    "dataItemName" : "activestorycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "activestorycnt",
+    "caption" : "激活需求",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "activestorycnt"
+  }, {
+    "excelCaption" : "未解决Bug",
+    "getPSAppDEField" : {
+      "name" : "ACTIVEBUGCNT",
+      "codeName" : "ActiveBugCnt"
+    },
+    "dataItemName" : "activebugcnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 115,
+    "codeName" : "activebugcnt",
+    "caption" : "未解决Bug",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "activebugcnt"
+  } ],
+  "codeName" : "OpenItems",
+  "minorSortDir" : "DESC",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 100,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats/PSGRIDS/OpenItems.json",
+  "logicName" : "未关闭的产品",
+  "modelid" : "9974287f03326c9cfd960a6eea571f2d"
+}

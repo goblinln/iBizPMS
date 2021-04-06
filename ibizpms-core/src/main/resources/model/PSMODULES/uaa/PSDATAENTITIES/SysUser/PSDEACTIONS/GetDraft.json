@@ -1,0 +1,23 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "orderValue" : 41,
+  "codeName" : "GetDraft",
+  "logicName" : "GetDraft",
+  "actionMode" : "GETDRAFT",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "NONE",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/GetDraft.json",
+  "name" : "GetDraft"
+}

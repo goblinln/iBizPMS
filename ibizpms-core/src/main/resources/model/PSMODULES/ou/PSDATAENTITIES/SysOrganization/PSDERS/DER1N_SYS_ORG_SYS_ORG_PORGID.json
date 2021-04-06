@@ -1,0 +1,27 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "PORGID",
+    "codeName" : "ParentOrgId"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "PORGNAME",
+    "codeName" : "ParentOrgName"
+  },
+  "removeActionType" : 3,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ParentOrg",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization/PSDERS/DER1N_SYS_ORG_SYS_ORG_PORGID.json",
+  "name" : "DER1N_SYS_ORG_SYS_ORG_PORGID"
+}

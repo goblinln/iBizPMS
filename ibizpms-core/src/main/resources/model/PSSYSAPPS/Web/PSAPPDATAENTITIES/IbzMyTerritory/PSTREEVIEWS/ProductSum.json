@@ -1,0 +1,363 @@
+{
+  "getPSDETreeNodeRSs" : [ {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ProductSum"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - 产品汇总表"
+  }, {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ProductStorySum"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - 需求汇总表"
+  }, {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "StoryHoursSum"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - 需求工时汇总表"
+  }, {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ProductBugTypeSum"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - 产品Bug类型统计表"
+  }, {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "productquantity"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - 产品质量表"
+  }, {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "productInputTable"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - 产品投入表"
+  }, {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ProductCompleteTable"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - 产品完成度统计表"
+  } ],
+  "enableRootSelect" : false,
+  "outputIconDefault" : true,
+  "enableSearchDefault" : false,
+  "treeGridMode" : 0,
+  "controlType" : "TREEVIEW",
+  "getPSDETreeNodes" : [ {
+    "text" : "产品投入表",
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridViewProducntInputTable.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "productInputTable",
+    "expanded" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "name" : "产品投入表",
+    "id" : "productInputTable"
+  }, {
+    "text" : "需求汇总表",
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumStorySumGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "ProductStorySum",
+    "expanded" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "name" : "需求汇总表",
+    "id" : "ProductStorySum"
+  }, {
+    "text" : "需求工时汇总表",
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumStoryHoursSumGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "StoryHoursSum",
+    "expanded" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "name" : "需求工时汇总表",
+    "id" : "StoryHoursSum"
+  }, {
+    "text" : "产品汇总表",
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "ProductSum",
+    "expanded" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "name" : "产品汇总表",
+    "id" : "ProductSum"
+  }, {
+    "text" : "产品质量表",
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "productquantity",
+    "expanded" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "name" : "产品质量表",
+    "id" : "productquantity"
+  }, {
+    "text" : "产品完成度统计表",
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsUsr2GridViewPRoductComplete.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "ProductCompleteTable",
+    "expanded" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "name" : "产品完成度统计表",
+    "id" : "ProductCompleteTable"
+  }, {
+    "text" : "产品Bug类型统计表",
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumProductBugTypeSumUsr4GridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "ProductBugTypeSum",
+    "expanded" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "name" : "产品Bug类型统计表",
+    "id" : "ProductBugTypeSum"
+  }, {
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableQuickCreate" : false,
+    "rootNode" : true,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "ROOT",
+    "expanded" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "name" : "默认根节点",
+    "id" : "ROOT"
+  } ],
+  "codeName" : "ProductSum",
+  "rootVisible" : false,
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSTREEVIEWS/ProductSum.json",
+  "logicName" : "产品汇总表",
+  "modelid" : "4769507c03b0cb4c3c566bd2af6f9eed"
+}

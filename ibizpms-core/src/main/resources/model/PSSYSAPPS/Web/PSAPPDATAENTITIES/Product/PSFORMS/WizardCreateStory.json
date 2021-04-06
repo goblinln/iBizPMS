@@ -1,0 +1,114 @@
+{
+  "enableAutoSave" : false,
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getPSDEWizardForm" : {
+    "firstForm" : false,
+    "getPSDEWizardStep" : {
+      "modelref" : true,
+      "id" : "需求"
+    },
+    "getPSDEFormName" : "向导使用（创建需求）",
+    "formTag" : "CreateStory",
+    "stepActions" : [ "PREV", "NEXT", "FINISH" ],
+    "name" : "需求"
+  },
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
+  "controlType" : "FORM",
+  "readOnly" : false,
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "contentType" : "RAW",
+      "rawContent" : "<p>路径：产品→[测试数据]在线培训→需求→创建需求</p>\n<p><img src=\"../../../assets/img/storyadd.png\" referrerpolicy=\"no-referrer\" alt=\"show1\"></p>",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "rawitem1",
+      "detailType" : "RAWITEM",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "rawitem1"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "infoGroupMode" : false,
+    "codeName" : "formpage1",
+    "caption" : "表单分页",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "id",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "noTabHeader" : true,
+  "formFuncMode" : "WIZARDFORM",
+  "codeName" : "WizardCreateStory",
+  "tabHeaderPos" : "TOP",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+  },
+  "hookEventNames" : [ "SAVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSFORMS/WizardCreateStory.json",
+  "logicName" : "向导使用（创建需求）",
+  "modelid" : "1de31b7359af61cc5407c57e88250cf7"
+}

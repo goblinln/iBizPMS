@@ -1,0 +1,284 @@
+{
+  "enableUIActions" : 15,
+  "major" : true,
+  "enableUIRemove" : true,
+  "getAllPSAppDEMethods" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "Select",
+    "methodType" : "SELECT"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSTEAMMEMBER__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSTEAMMEMBER__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSTEAMMEMBER__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSTEAMMEMBER__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH"
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "keyField" : true,
+    "codeName" : "TeamMemberId",
+    "logicName" : "组成员标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "TEAMMEMBERID"
+  }, {
+    "codeName" : "TeamName",
+    "logicName" : "组名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "TEAMNAME"
+  }, {
+    "codeName" : "PostName",
+    "logicName" : "岗位",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "POSTNAME"
+  }, {
+    "codeName" : "Domains",
+    "logicName" : "区属",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "DOMAINS"
+  }, {
+    "codeName" : "UserIcon",
+    "logicName" : "头像",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "name" : "USERICON"
+  }, {
+    "codeName" : "PersonName",
+    "logicName" : "姓名",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "PERSONNAME"
+  }, {
+    "codeName" : "UserName",
+    "logicName" : "账号",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "USERNAME"
+  }, {
+    "codeName" : "PostId",
+    "logicName" : "岗位标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "POSTID"
+  }, {
+    "codeName" : "TeamId",
+    "logicName" : "组标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "TEAMID"
+  }, {
+    "codeName" : "UserId",
+    "logicName" : "用户标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "USERID"
+  } ],
+  "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "TEAMMEMBERID",
+        "codeName" : "TeamMemberId"
+      },
+      "dataType" : 25,
+      "name" : "value"
+    } ],
+    "getValuePSAppDEField" : {
+      "name" : "TEAMMEMBERID",
+      "codeName" : "TeamMemberId"
+    },
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "pagingSize" : 50,
+    "name" : "DEFAULT"
+  } ],
+  "enableFilterActions" : true,
+  "enableWFActions" : false,
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDESERVICEAPIS/SysTeamMember.json"
+  },
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "codeName" : "SysTeamMember",
+  "logicName" : "组成员",
+  "dataAccCtrlMode" : 1,
+  "storageMode" : 0,
+  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json",
+  "name" : "SYS_TEAMMEMBER"
+}

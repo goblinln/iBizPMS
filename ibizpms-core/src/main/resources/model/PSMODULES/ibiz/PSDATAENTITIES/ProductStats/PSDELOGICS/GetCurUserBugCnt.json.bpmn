@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:g="http://www.jboss.org/drools/flow/gpd" xmlns:tns="http://www.jboss.org/drools" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.mvel.org/2.0" id="Definition" name="" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+        <process id="cn.ibizlab.pms.core.ibiz.service.logic.productstatsgetcuruserbugcnt" isClosed="false" isExecutable="true" name="ibiz_productstats_getcuruserbugcnt_ruleFlow" processType="Private" tns:packageName="cn.ibizlab.pms.core.ibiz.service.logic.productstatsgetcuruserbugcnt">
+            <extensionElements>
+                <tns:import name="java.util.Map" />
+                <tns:import name="org.springframework.util.StringUtils"/>
+                <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
+                                <tns:metaData express="" name="productstatsgetcuruserbugcntdefault" type="entity"/>
+                    <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.ibiz.service.IProductStatsService))" name="iBzSysProductstatsDefaultService" type="service"/>
+                    <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
+                            <tns:global identifier="productstatsgetcuruserbugcntdefault" type="cn.ibizlab.pms.core.ibiz.domain.ProductStats" />
+            </extensionElements>
+                        <startEvent id="begin" isInterrupting="true"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productstatsgetcuruserbugcntrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取bug数"/>
+                        <endEvent id="rawsqlcall1_end" name="end"/>
+                        <sequenceFlow id="rawsqlcall1_end_line" sourceRef="rawsqlcall1" targetRef="rawsqlcall1_end"/>
+                    <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+                    </sequenceFlow>
+        </process>
+    </definitions>

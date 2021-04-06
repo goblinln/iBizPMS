@@ -1,0 +1,24 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : true,
+  "customParam" : false,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "orderValue" : 31,
+  "codeName" : "Get",
+  "logicName" : "Get",
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ImConferenceaction/PSDEACTIONS/Get.json",
+  "name" : "Get"
+}

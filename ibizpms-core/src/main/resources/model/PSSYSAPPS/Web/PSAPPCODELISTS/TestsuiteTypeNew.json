@@ -1,0 +1,22 @@
+{
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "getPSCodeItems" : [ {
+    "codeName" : "Private",
+    "text" : "私有",
+    "value" : "private"
+  }, {
+    "codeName" : "Public",
+    "text" : "公开",
+    "value" : "public"
+  } ],
+  "codeName" : "TestsuiteTypeNew",
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestsuiteTypeNew.json",
+  "name" : "测试套件&用例库类型（新建套件）"
+}

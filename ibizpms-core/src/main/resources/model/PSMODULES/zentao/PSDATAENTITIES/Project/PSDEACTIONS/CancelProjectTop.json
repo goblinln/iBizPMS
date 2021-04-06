@@ -1,0 +1,19 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
+  "codeName" : "CancelProjectTop",
+  "logicName" : "取消置顶",
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/CancelProjectTop.json",
+  "name" : "CancelProjectTop"
+}

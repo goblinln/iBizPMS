@@ -1,0 +1,19 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
+  "codeName" : "CheckKey",
+  "logicName" : "CheckKey",
+  "actionMode" : "UNKNOWN",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/CheckKey.json",
+  "name" : "CheckKey"
+}

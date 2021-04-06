@@ -1,0 +1,24 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "orderValue" : 99999,
+  "codeName" : "GetByCommiter",
+  "logicName" : "根据代码账户查询用户信息",
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/GetByCommiter.json",
+  "name" : "getByCommiter"
+}

@@ -1,0 +1,19 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
+  "codeName" : "TaskForward",
+  "logicName" : "检查多人任务操作权限",
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskForward.json",
+  "name" : "taskForward"
+}

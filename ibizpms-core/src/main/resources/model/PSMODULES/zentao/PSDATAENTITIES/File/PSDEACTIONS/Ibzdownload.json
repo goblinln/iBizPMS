@@ -1,0 +1,19 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
+  "codeName" : "Ibzdownload",
+  "logicName" : "下载",
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/Ibzdownload.json",
+  "name" : "ibzdownload"
+}

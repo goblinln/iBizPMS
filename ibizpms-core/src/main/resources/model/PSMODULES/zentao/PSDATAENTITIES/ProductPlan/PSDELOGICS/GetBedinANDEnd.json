@@ -1,0 +1,88 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "logicHolder" : 1,
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "NULLVALUE",
+      "dstFieldName" : "BEGIN",
+      "name" : "空值（NULL） ==> Default[BEGIN]"
+    }, {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "NULLVALUE",
+      "dstFieldName" : "END",
+      "name" : "空值（NULL） ==> Default[END]"
+    } ],
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置待定"
+  }, {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接6861"
+    } ],
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "paramValue" : "待定",
+        "dstFieldName" : "BEGINSTR",
+        "logicType" : "SINGLE",
+        "name" : "Default[BEGINSTR] 等于(=) (待定)"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "b025edd6f6275e220258792e0a97727b"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接6861"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : false,
+    "envParam" : false,
+    "lastParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "codeName" : "GetBedinANDEnd",
+  "logicName" : "获取开始日期和结束日期",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDELOGICS/GetBedinANDEnd.json",
+  "name" : "获取开始日期和结束日期"
+}

@@ -1,0 +1,35 @@
+{
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "getPSCodeItems" : [ {
+    "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
+    "codeName" : "Tome",
+    "text" : "指派给我",
+    "default" : true,
+    "value" : "TOME"
+  }, {
+    "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
+    "codeName" : "Icreate",
+    "text" : "由我创建",
+    "value" : "ICREATE"
+  }, {
+    "data" : "{\"n_resolvedby_eq\":\"%srfloginname%\"}",
+    "codeName" : "Byme",
+    "text" : "由我解决",
+    "value" : "BYME"
+  }, {
+    "data" : "{\"n_closedby_eq\":\"%srfloginname%\"}",
+    "codeName" : "Waitclosed",
+    "text" : "由我关闭",
+    "value" : "WAITCLOSED"
+  } ],
+  "codeName" : "BugQuickpacketMy",
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/BugQuickpacketMy.json",
+  "name" : "Bug快速分组（我的地盘）"
+}

@@ -1,0 +1,431 @@
+{
+  "showDataInfoBar" : true,
+  "showCaptionBar" : true,
+  "xDataControlName" : "form",
+  "getPSDEViewCodeName" : "OptionView",
+  "height" : 500,
+  "width" : 800,
+  "caption" : "同步",
+  "openMode" : "POPUPMODAL",
+  "title" : "需求模块选项操作视图同步",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
+    },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEOPTVIEW_STYLE2",
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "OptionView",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "paramType" : "CTRL",
+      "name" : "FORM"
+    }, {
+      "paramType" : "VALUE",
+      "name" : "P2K",
+      "value" : 0
+    } ],
+    "name" : "engine"
+  } ],
+  "viewStyle" : "STYLE2",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
+  },
+  "getPSControls" : [ {
+    "enableAutoSave" : false,
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "getGetDraftPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraft"
+    },
+    "getGetDraftFromPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraftfrom"
+    },
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
+    "controlType" : "FORM",
+    "readOnly" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "getPSDEFormPages" : [ {
+      "getPSDEFormDetails" : [ {
+        "infoGroupMode" : false,
+        "actionGroupExtractMode" : "ITEM",
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
+        "getPSDEFormDetails" : [ {
+          "getPSEditor" : {
+            "maxLength" : 100,
+            "editorType" : "TEXTBOX",
+            "name" : "ibiz_id"
+          },
+          "inputTipClosable" : false,
+          "emptyCaption" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "IBIZ_ID",
+            "codeName" : "IBIZId"
+          },
+          "dataType" : 25,
+          "caption" : "IBIZ标识",
+          "allowEmpty" : true,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "showCaption" : true,
+          "hidden" : false,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "ibiz_id",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "ibiz_id"
+        }, {
+          "getPSEditor" : {
+            "singleSelect" : true,
+            "enableLinkView" : false,
+            "dropDownView" : false,
+            "enablePickupView" : false,
+            "enableAC" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "handlerType" : "PickupText",
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct.json"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "valueItemName" : "root",
+            "editorParams" : {
+              "AC" : "TRUE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "FALSE"
+            },
+            "editorType" : "PICKEREX_TRIGGER",
+            "name" : "productname"
+          },
+          "inputTipClosable" : false,
+          "emptyCaption" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "PRODUCTNAME",
+            "codeName" : "ProductName"
+          },
+          "dataType" : 25,
+          "caption" : "产品",
+          "allowEmpty" : true,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "valueItemName" : "root",
+          "labelWidth" : 130,
+          "showCaption" : true,
+          "hidden" : false,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "productname",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "productname"
+        }, {
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "root"
+          },
+          "inputTipClosable" : false,
+          "emptyCaption" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ROOT",
+            "codeName" : "Root"
+          },
+          "dataType" : 1,
+          "caption" : "编号",
+          "allowEmpty" : true,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "showCaption" : true,
+          "hidden" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "root",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "root"
+        }, {
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "type"
+          },
+          "inputTipClosable" : false,
+          "emptyCaption" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          },
+          "dataType" : 25,
+          "caption" : "类型",
+          "allowEmpty" : true,
+          "createDV" : "story",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "showCaption" : true,
+          "hidden" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "type",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "type"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "group1",
+        "caption" : "需求模块基本信息",
+        "detailType" : "GROUPPANEL",
+        "detailStyle" : "DEFAULT",
+        "showCaption" : true,
+        "name" : "group1"
+      } ],
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "infoGroupMode" : false,
+      "codeName" : "formpage1",
+      "caption" : "基本信息",
+      "detailType" : "FORMPAGE",
+      "detailStyle" : "DEFAULT",
+      "name" : "formpage1"
+    } ],
+    "getPSDEFormItems" : [ {
+      "id" : "srforikey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfkey",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "id" : "srftempmode",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfuf",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfdeid",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfsourcekey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "ibiz_id",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "IBIZ_ID",
+        "codeName" : "IBIZId"
+      }
+    }, {
+      "id" : "productname",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      }
+    }, {
+      "id" : "root",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ROOT",
+        "codeName" : "Root"
+      }
+    }, {
+      "id" : "type",
+      "hidden" : true,
+      "dataType" : 25,
+      "createDV" : "story",
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      }
+    }, {
+      "id" : "id",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    } ],
+    "noTabHeader" : true,
+    "codeName" : "SycFromIbz",
+    "tabHeaderPos" : "TOP",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "dataAccessAction" : "UPDATE",
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "name" : "update"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GETDRAFTFROM",
+        "actionType" : "DEACTION",
+        "name" : "loaddraftfrom"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "name" : "loaddraft"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "dataAccessAction" : "READ",
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "name" : "load"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "name" : "create"
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "选项表单处理器"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule/PSFORMS/SycFromIbz.json",
+    "logicName" : "同步平台模块",
+    "name" : "form",
+    "modelid" : "ce739ae7bbb2864fba0c467f8e64b276"
+  } ],
+  "codeName" : "IBZProStoryModuleOptionView",
+  "viewType" : "DEOPTVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryModuleOptionView.json",
+  "name" : "IBZProStoryModuleOptionView"
+}

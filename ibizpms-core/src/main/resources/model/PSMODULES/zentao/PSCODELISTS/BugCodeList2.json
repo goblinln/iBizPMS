@@ -1,0 +1,26 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/BugCodeList2.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "codeName" : "BugCodeList2",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "data" : "{}",
+    "codeName" : "All",
+    "text" : "所有",
+    "default" : true,
+    "value" : "All"
+  }, {
+    "data" : "{\"n_status_eq\":\"active\"}",
+    "codeName" : "Active",
+    "text" : "未解决",
+    "value" : "active"
+  } ]
+}

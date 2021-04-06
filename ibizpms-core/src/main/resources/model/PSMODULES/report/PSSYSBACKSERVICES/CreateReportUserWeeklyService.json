@@ -1,0 +1,9 @@
+{
+  "serviceOrder" : 0,
+  "serviceHandler" : "CreateReportUserWeeklyService",
+  "codeName" : "CreateReportUserWeeklyService",
+  "serviceContainer" : "SC01",
+  "startMode" : "MANUAL",
+  "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserWeeklyService.json",
+  "name" : "每周定时生成用户周报"
+}

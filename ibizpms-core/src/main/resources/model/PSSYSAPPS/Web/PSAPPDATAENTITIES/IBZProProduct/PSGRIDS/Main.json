@@ -1,0 +1,134 @@
+{
+  "singleSelect" : false,
+  "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "编号",
+    "name" : "srfkey"
+  } ],
+  "columnEnableLink" : 2,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : true,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "id"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  } ],
+  "enableRowEdit" : false,
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "编号",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataItemName" : "id",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "id",
+    "caption" : "编号",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "id"
+  }, {
+    "excelCaption" : "产品名称",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataItemName" : "name",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "name",
+    "caption" : "产品名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "name"
+  } ],
+  "codeName" : "Main",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 20,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct/PSGRIDS/Main.json",
+  "logicName" : "主表格",
+  "modelid" : "403d9fad4c29737c34e28e44d5042073"
+}

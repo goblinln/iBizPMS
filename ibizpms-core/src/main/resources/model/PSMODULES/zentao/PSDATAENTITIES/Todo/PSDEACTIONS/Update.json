@@ -1,0 +1,28 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : true,
+  "customParam" : false,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "UPDATE"
+  },
+  "orderValue" : 11,
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTUpdate"
+  },
+  "codeName" : "Update",
+  "logicName" : "Update",
+  "actionMode" : "UPDATE",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Update.json",
+  "userCat" : "CAT1",
+  "name" : "Update"
+}

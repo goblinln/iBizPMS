@@ -1,0 +1,207 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "logicHolder" : 1,
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "ACCOUNT",
+      "name" : "Default[ACCOUNT]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "CURYEAR",
+      "name" : "Default[CURYEAR]"
+    } ],
+    "codeName" : "Rawsqlcall4",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取登录次数"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接8169"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "ACCOUNT",
+      "name" : "Default[ACCOUNT]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "CURYEAR",
+      "name" : "Default[CURYEAR]"
+    } ],
+    "codeName" : "Rawsqlcall2",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取创建bug数"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接5084"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "ACCOUNT",
+      "name" : "Default[ACCOUNT]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "CURYEAR",
+      "name" : "Default[CURYEAR]"
+    } ],
+    "codeName" : "Rawsqlcall3",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取创建用例数"
+  }, {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接9789"
+    } ],
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接5688"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "ACCOUNT",
+      "name" : "Default[ACCOUNT]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "CURYEAR",
+      "name" : "Default[CURYEAR]"
+    } ],
+    "codeName" : "Rawsqlcall1",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取动态数"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall3"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "name" : "连接8169"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall4"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall3"
+    },
+    "name" : "连接5084"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接9789"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接5688"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : false,
+    "envParam" : false,
+    "lastParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "codeName" : "GetQAInformation",
+  "logicName" : "获取测试人员相关数据",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetQAInformation.json",
+  "name" : "获取测试人员相关数据"
+}

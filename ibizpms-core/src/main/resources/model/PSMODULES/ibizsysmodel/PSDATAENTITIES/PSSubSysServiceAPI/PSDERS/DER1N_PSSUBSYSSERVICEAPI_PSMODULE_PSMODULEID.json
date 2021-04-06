@@ -1,0 +1,28 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "PSMODULEID",
+    "codeName" : "PSModuleId"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "PSMODULENAME",
+    "codeName" : "PSModuleName"
+  },
+  "removeActionType" : 3,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSModule.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "PSModule",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI.json"
+  },
+  "minorCodeName" : "PSSubSysServiceAPIs",
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDERS/DER1N_PSSUBSYSSERVICEAPI_PSMODULE_PSMODULEID.json",
+  "name" : "DER1N_PSSUBSYSSERVICEAPI_PSMODULE_PSMODULEID"
+}

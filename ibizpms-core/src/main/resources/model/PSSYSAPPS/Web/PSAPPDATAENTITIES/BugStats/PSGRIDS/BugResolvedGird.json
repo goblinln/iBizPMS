@@ -1,0 +1,372 @@
+{
+  "singleSelect" : true,
+  "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "标识",
+    "name" : "srfkey"
+  } ],
+  "columnEnableLink" : 2,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : true,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "BUGSTATUS",
+      "codeName" : "Bugstatus"
+    },
+    "dataType" : 25,
+    "name" : "bugstatus"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGOPENEDDATE",
+      "codeName" : "Bugopeneddate"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "bugopeneddate"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "dataType" : 1,
+    "name" : "product"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGOPENEDBY",
+      "codeName" : "Bugopenedby"
+    },
+    "dataType" : 25,
+    "name" : "bugopenedby"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "dataType" : 1,
+    "name" : "project"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLVEDDATE",
+      "codeName" : "Bugresolveddate"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "bugresolveddate"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGID",
+      "codeName" : "Bugid"
+    },
+    "dataType" : 9,
+    "name" : "bugid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "RESOLVEDBY",
+      "codeName" : "ResolvedBy"
+    },
+    "dataType" : 25,
+    "name" : "resolvedby"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGTITLE",
+      "codeName" : "Bugtitle"
+    },
+    "dataType" : 25,
+    "name" : "bugtitle"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLUTION",
+      "codeName" : "BugRESOLUTION"
+    },
+    "dataType" : 25,
+    "name" : "bugresolution"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGPRI",
+      "codeName" : "Bugpri"
+    },
+    "dataType" : 9,
+    "name" : "bugpri"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGSEVERITY",
+      "codeName" : "Bugseverity"
+    },
+    "dataType" : 9,
+    "name" : "bugseverity"
+  } ],
+  "enableRowEdit" : false,
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "由谁解决",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "RESOLVEDBY",
+      "codeName" : "ResolvedBy"
+    },
+    "dataItemName" : "resolvedby",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "resolvedby",
+    "caption" : "由谁解决",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "resolvedby"
+  }, {
+    "excelCaption" : "Bug编号",
+    "getPSAppDEField" : {
+      "name" : "BUGID",
+      "codeName" : "Bugid"
+    },
+    "dataItemName" : "bugid",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "bugid",
+    "caption" : "Bug编号",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "bugid"
+  }, {
+    "excelCaption" : "Bug标题",
+    "getPSAppDEField" : {
+      "name" : "BUGTITLE",
+      "codeName" : "Bugtitle"
+    },
+    "dataItemName" : "bugtitle",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 200,
+    "codeName" : "bugtitle",
+    "caption" : "Bug标题",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "bugtitle"
+  }, {
+    "excelCaption" : "优先级",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "BUGPRI",
+      "codeName" : "Bugpri"
+    },
+    "dataItemName" : "bugpri",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "bugpri",
+    "caption" : "优先级",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "bugpri"
+  }, {
+    "excelCaption" : "严重程度",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "BUGSEVERITY",
+      "codeName" : "Bugseverity"
+    },
+    "dataItemName" : "bugseverity",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "bugseverity",
+    "caption" : "严重程度",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "bugseverity"
+  }, {
+    "excelCaption" : "由谁创建",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "BUGOPENEDBY",
+      "codeName" : "Bugopenedby"
+    },
+    "dataItemName" : "bugopenedby",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "bugopenedby",
+    "caption" : "由谁创建",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "bugopenedby"
+  }, {
+    "excelCaption" : "创建",
+    "getPSAppDEField" : {
+      "name" : "BUGOPENEDDATE",
+      "codeName" : "Bugopeneddate"
+    },
+    "dataItemName" : "bugopeneddate",
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "bugopeneddate",
+    "caption" : "创建",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "bugopeneddate"
+  }, {
+    "excelCaption" : "解决方案",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLUTION",
+      "codeName" : "BugRESOLUTION"
+    },
+    "dataItemName" : "bugresolution",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "bugresolution",
+    "caption" : "解决方案",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "bugresolution"
+  }, {
+    "excelCaption" : "解决日期",
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLVEDDATE",
+      "codeName" : "Bugresolveddate"
+    },
+    "dataItemName" : "bugresolveddate",
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "bugresolveddate",
+    "caption" : "解决日期",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "bugresolveddate"
+  }, {
+    "excelCaption" : "Bug状态",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "BUGSTATUS",
+      "codeName" : "Bugstatus"
+    },
+    "dataItemName" : "bugstatus",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "bugstatus",
+    "caption" : "Bug状态",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "bugstatus"
+  } ],
+  "codeName" : "BugResolvedGird",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 40,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSDEDataExport" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSAPPDEDATAEXPS/BugResolvedExport.json"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSGRIDS/BugResolvedGird.json",
+  "logicName" : "Bug解决汇总表",
+  "modelid" : "6f89d860f7f91dab681e0d1439abc6ac"
+}

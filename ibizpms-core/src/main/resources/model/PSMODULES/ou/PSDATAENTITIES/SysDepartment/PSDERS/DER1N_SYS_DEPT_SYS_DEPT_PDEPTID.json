@@ -1,0 +1,27 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "PDEPTID",
+    "codeName" : "ParentDeptid"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "PDEPTNAME",
+    "codeName" : "ParentDeptName"
+  },
+  "removeActionType" : 3,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ParentDept",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDERS/DER1N_SYS_DEPT_SYS_DEPT_PDEPTID.json",
+  "name" : "DER1N_SYS_DEPT_SYS_DEPT_PDEPTID"
+}

@@ -1,0 +1,313 @@
+{
+  "loadDefault" : true,
+  "expandSearchForm" : false,
+  "enableSearch" : false,
+  "enableQuickGroup" : false,
+  "enableQuickSearch" : false,
+  "getPSDEViewCodeName" : "ModuleChartView9",
+  "showCaptionBar" : true,
+  "caption" : "模块",
+  "title" : "测试用例图表视图（模块）",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDECHARTVIEW9_STYLE2",
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "ChartView9",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "paramType" : "CTRL",
+      "name" : "CHART"
+    } ],
+    "name" : "engine"
+  } ],
+  "viewStyle" : "STYLE2",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+  },
+  "getPSControls" : [ {
+    "getPSDEChartTitle" : {
+      "showTitle" : false,
+      "title" : "按用例模块统计",
+      "index" : 0,
+      "id" : "0"
+    },
+    "getPSDEChartLegend" : {
+      "showLegend" : true,
+      "index" : 0,
+      "id" : "0"
+    },
+    "getPSChartCoordinateSystems" : [ {
+      "eChartsType" : "none",
+      "type" : "NONE",
+      "index" : 0,
+      "name" : "[Caseresult]无坐标系[0]",
+      "id" : "0"
+    } ],
+    "controlType" : "CHART",
+    "getPSDEChartSerieses" : [ {
+      "catalogField" : "MODULENAME",
+      "seriesType" : "pie",
+      "eChartsType" : "pie",
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "enableChartDataSet" : true,
+      "getPSChartDataSet" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartSeriesEncode" : {
+        "category" : "MODULENAME",
+        "value" : "SRFCOUNT",
+        "index" : 0,
+        "name" : "坐标系编码",
+        "id" : "0"
+      },
+      "valueField" : "SRFCOUNT",
+      "seriesLayoutBy" : "column",
+      "index" : 0,
+      "name" : "Caseresult"
+    } ],
+    "codeName" : "CaseModule",
+    "emptyText" : "无",
+    "getPSChartDataSets" : [ {
+      "getPSChartDataSetFields" : [ {
+        "groupField" : true,
+        "index" : 0,
+        "name" : "MODULENAME",
+        "id" : "0"
+      }, {
+        "groupField" : false,
+        "index" : 1,
+        "name" : "SRFCOUNT",
+        "id" : "1"
+      } ],
+      "index" : 0,
+      "name" : "Caseresult-ModuleRePortCase",
+      "id" : "0"
+    } ],
+    "getPSChartDataSetGroups" : [ {
+      "index" : 0,
+      "name" : "ModuleRePortCase",
+      "id" : "0"
+    } ],
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "readOnly" : true,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CHART"
+    },
+    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+    "getPSControlHandler" : {
+      "userDRAction" : "READ",
+      "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "dataAccessAction" : "UPDATE",
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "name" : "update"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchModuleRePortCase"
+        },
+        "actionType" : "DEDATASET",
+        "name" : "fetch"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "dataAccessAction" : "READ",
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "name" : "load"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "name" : "create"
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "图形控件处理器"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseModule.json",
+    "getPSSysPFPlugin" : {
+      "pluginType" : "CHART_RENDER",
+      "pluginCode" : "tablechart"
+    },
+    "logicName" : "CaseModule",
+    "name" : "chart",
+    "modelid" : "bc25d99a6895ec072cbb4ed1f1668c23",
+    "getUserParam" : {
+      "EC.color" : "[\"#663399\",\"#996600\",\"#FF9900\",\"#FF3333\",'#00ffa9','#85B3FF','#A1FFFF']"
+    }
+  } ],
+  "getPSSysImage" : {
+    "glyph" : "xf006@FontAwesome",
+    "cssClass" : "fa fa-star-o"
+  },
+  "codeName" : "CaseModuleChartView9",
+  "viewType" : "DECHARTVIEW9",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseModuleChartView9.json",
+  "name" : "CaseModuleChartView9",
+  "getPSAppDERSPaths" : [ [ {
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "codeName" : "Stories",
+    "actionRSMode" : 1,
+    "dataRSMode" : 0,
+    "rSMode" : 2,
+    "name" : "产品需求"
+  }, {
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "codeName" : "Cases",
+    "actionRSMode" : 1,
+    "dataRSMode" : 0,
+    "rSMode" : 2,
+    "name" : "需求用例"
+  } ], [ {
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "codeName" : "Cases",
+    "actionRSMode" : 1,
+    "dataRSMode" : 0,
+    "rSMode" : 2,
+    "name" : "需求用例"
+  } ], [ {
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "codeName" : "Cases",
+    "actionRSMode" : 1,
+    "dataRSMode" : 0,
+    "rSMode" : 2,
+    "name" : "产品用例"
+  } ] ]
+}

@@ -1,0 +1,171 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "logicHolder" : 1,
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接6010"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "ID",
+      "name" : "Default[ID]"
+    } ],
+    "codeName" : "Rawsqlcall3",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "计划数"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "ID",
+      "name" : "Default[ID]"
+    } ],
+    "codeName" : "Rawsqlcall4",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "发布数"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接7373"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "ID",
+      "name" : "Default[ID]"
+    } ],
+    "codeName" : "Rawsqlcall1",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取相关BUG数"
+  }, {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接1090"
+    } ],
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接9158"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "ID",
+      "name" : "Default[ID]"
+    } ],
+    "codeName" : "Rawsqlcall2",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取需求数"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接1090"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接7373"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall4"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall3"
+    },
+    "name" : "连接6010"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall3"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "name" : "连接9158"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : false,
+    "envParam" : false,
+    "lastParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "codeName" : "MobProductCounter",
+  "logicName" : "移动端产品计数器",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDELOGICS/MobProductCounter.json",
+  "name" : "移动端产品计数器"
+}

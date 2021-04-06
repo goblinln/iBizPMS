@@ -1,0 +1,24 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Product__status.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "codeName" : "Product__status",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "codeName" : "Normal",
+    "text" : "正常",
+    "color" : "rgba(13, 255, 0, 1)",
+    "value" : "normal"
+  }, {
+    "codeName" : "Closed",
+    "text" : "结束",
+    "value" : "closed"
+  } ]
+}

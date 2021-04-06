@@ -1,0 +1,93 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "logicHolder" : 1,
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接7637"
+    } ],
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "BEGIN",
+      "name" : "Default[BEGIN]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "BEGIN",
+      "name" : "Default[BEGIN]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "END",
+      "name" : "Default[END]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "END",
+      "name" : "Default[END]"
+    } ],
+    "codeName" : "Rawsqlcall1",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取开始日期"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接7637"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : false,
+    "envParam" : false,
+    "lastParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "codeName" : "ResetBeginEnd",
+  "logicName" : "重置开始日期和结束日期",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDELOGICS/ResetBeginEnd.json",
+  "name" : "重置开始日期和结束日期"
+}

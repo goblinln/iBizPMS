@@ -1,0 +1,275 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "logicHolder" : 1,
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接3736"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "WEBCONTEXT",
+      "srcFieldName" : "srfcurproject",
+      "name" : "网页请求上下文[srfcurproject]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    } ],
+    "codeName" : "Rawsqlcall3",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取计划任务"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接7308"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "WEBCONTEXT",
+      "srcFieldName" : "srfcurproject",
+      "name" : "网页请求上下文[srfcurproject]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    } ],
+    "codeName" : "Rawsqlcall1",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取临时任务"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "WEBCONTEXT",
+      "srcFieldName" : "srfcurproject",
+      "name" : "网页请求上下文[srfcurproject]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    } ],
+    "codeName" : "Rawsqlcall4",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取所有任务"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接2761"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "WEBCONTEXT",
+      "srcFieldName" : "srfcurproject",
+      "name" : "网页请求上下文[srfcurproject]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    }, {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    } ],
+    "codeName" : "Rawsqlcall2",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取周期任务"
+  }, {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接9322"
+    } ],
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall3"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "name" : "连接2761"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接7308"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接9322"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall4"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall3"
+    },
+    "name" : "连接3736"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : false,
+    "envParam" : false,
+    "lastParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "codeName" : "PmsEeProjectAllTaskCount",
+  "logicName" : "项目立项全部任务快速分组计数器",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/PmsEeProjectAllTaskCount.json",
+  "name" : "项目立项全部任务快速分组计数器"
+}

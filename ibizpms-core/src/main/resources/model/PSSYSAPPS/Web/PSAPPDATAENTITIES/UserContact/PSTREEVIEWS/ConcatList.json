@@ -1,0 +1,119 @@
+{
+  "getPSDETreeNodeRSs" : [ {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ConcatList"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - 联系列表"
+  } ],
+  "enableRootSelect" : false,
+  "outputIconDefault" : true,
+  "enableSearchDefault" : false,
+  "treeGridMode" : 0,
+  "controlType" : "TREEVIEW",
+  "getPSDETreeNodes" : [ {
+    "getIdPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "textFormat" : "联系列表",
+    "appendCaption" : false,
+    "getTextPSAppDEField" : {
+      "name" : "LISTNAME",
+      "codeName" : "ListName"
+    },
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchMyUSERCONTACT"
+    },
+    "maxSize" : -1,
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserContactEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
+    },
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "ConcatList",
+    "expanded" : true,
+    "counterMode" : 0,
+    "treeNodeType" : "DE",
+    "name" : "联系列表",
+    "id" : "ConcatList"
+  }, {
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableQuickCreate" : false,
+    "rootNode" : true,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "ROOT",
+    "expanded" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "name" : "默认根节点",
+    "id" : "ROOT"
+  } ],
+  "codeName" : "ConcatList",
+  "rootVisible" : false,
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact/PSTREEVIEWS/ConcatList.json",
+  "logicName" : "联系人列表",
+  "modelid" : "84da7b11348c9a566ad10f890ade2cf2"
+}

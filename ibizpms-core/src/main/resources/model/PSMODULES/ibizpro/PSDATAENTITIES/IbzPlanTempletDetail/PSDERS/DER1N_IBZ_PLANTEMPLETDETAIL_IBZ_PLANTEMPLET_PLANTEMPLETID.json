@@ -1,0 +1,25 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "PLANTEMPLETID",
+    "codeName" : "Plantempletid"
+  },
+  "nestedRS" : true,
+  "removeActionType" : -1,
+  "masterRS" : 8,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "IbzPlanTemplet",
+  "logicName" : "计划模板标识",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDERS/DER1N_IBZ_PLANTEMPLETDETAIL_IBZ_PLANTEMPLET_PLANTEMPLETID.json",
+  "name" : "DER1N_IBZ_PLANTEMPLETDETAIL_IBZ_PLANTEMPLET_PLANTEMPLETID"
+}

@@ -1,0 +1,462 @@
+{
+  "singleSelect" : true,
+  "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "编号",
+    "name" : "srfkey"
+  } ],
+  "columnEnableLink" : 2,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : true,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    },
+    "dataType" : 9,
+    "name" : "taskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKDELAY",
+      "codeName" : "Taskdelay"
+    },
+    "dataType" : 25,
+    "name" : "taskdelay"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PROJECTCONSUMED",
+      "codeName" : "Projectconsumed"
+    },
+    "dataType" : 9,
+    "name" : "projectconsumed"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "FINISHEDBY",
+      "codeName" : "FinishedBy"
+    },
+    "dataType" : 25,
+    "name" : "finishedby"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKESTIMATE",
+      "codeName" : "Taskestimate"
+    },
+    "dataType" : 9,
+    "name" : "taskestimate"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKDEADLINE",
+      "codeName" : "Taskdeadline"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "taskdeadline"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKID",
+      "codeName" : "Taskid"
+    },
+    "dataType" : 9,
+    "name" : "taskid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKPRI",
+      "codeName" : "Taskpri"
+    },
+    "dataType" : 9,
+    "name" : "taskpri"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PROJECTNAME",
+      "codeName" : "ProjectName"
+    },
+    "dataType" : 25,
+    "name" : "projectname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKESTSTARTED",
+      "codeName" : "Taskeststarted"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "taskeststarted"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKFINISHEDDATE",
+      "codeName" : "Taskfinisheddate"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "taskfinisheddate"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TOTALCONSUMED",
+      "codeName" : "TotalConsumed"
+    },
+    "dataType" : 9,
+    "name" : "totalconsumed"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKREALSTART",
+      "codeName" : "Taskrealstart"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "taskrealstart"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKNAME",
+      "codeName" : "TaskName"
+    },
+    "dataType" : 25,
+    "name" : "taskname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "USERCONSUMED",
+      "codeName" : "Userconsumed"
+    },
+    "dataType" : 9,
+    "name" : "userconsumed"
+  } ],
+  "enableRowEdit" : false,
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "完成者",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "FINISHEDBY",
+      "codeName" : "FinishedBy"
+    },
+    "dataItemName" : "finishedby",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "finishedby",
+    "caption" : "完成者",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "finishedby"
+  }, {
+    "excelCaption" : "所属项目",
+    "getPSAppDEField" : {
+      "name" : "PROJECTNAME",
+      "codeName" : "ProjectName"
+    },
+    "dataItemName" : "projectname",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 150,
+    "codeName" : "projectname",
+    "caption" : "所属项目",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "projectname"
+  }, {
+    "excelCaption" : "编号",
+    "getPSAppDEField" : {
+      "name" : "TASKID",
+      "codeName" : "Taskid"
+    },
+    "dataItemName" : "taskid",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskid",
+    "caption" : "编号",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "taskid"
+  }, {
+    "excelCaption" : "任务名称",
+    "getPSAppDEField" : {
+      "name" : "TASKNAME",
+      "codeName" : "TaskName"
+    },
+    "dataItemName" : "taskname",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 200,
+    "codeName" : "taskname",
+    "caption" : "任务名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "taskname"
+  }, {
+    "excelCaption" : "优先级",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "TASKPRI",
+      "codeName" : "Taskpri"
+    },
+    "dataItemName" : "taskpri",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskpri",
+    "caption" : "优先级",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "taskpri"
+  }, {
+    "excelCaption" : "预计开始",
+    "getPSAppDEField" : {
+      "name" : "TASKESTSTARTED",
+      "codeName" : "Taskeststarted"
+    },
+    "dataItemName" : "taskeststarted",
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskeststarted",
+    "caption" : "预计开始",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "taskeststarted"
+  }, {
+    "excelCaption" : "实际开始",
+    "getPSAppDEField" : {
+      "name" : "TASKREALSTART",
+      "codeName" : "Taskrealstart"
+    },
+    "dataItemName" : "taskrealstart",
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskrealstart",
+    "caption" : "实际开始",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "taskrealstart"
+  }, {
+    "excelCaption" : "截至日期",
+    "getPSAppDEField" : {
+      "name" : "TASKDEADLINE",
+      "codeName" : "Taskdeadline"
+    },
+    "dataItemName" : "taskdeadline",
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskdeadline",
+    "caption" : "截至日期",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "taskdeadline"
+  }, {
+    "excelCaption" : "实际完成",
+    "getPSAppDEField" : {
+      "name" : "TASKFINISHEDDATE",
+      "codeName" : "Taskfinisheddate"
+    },
+    "dataItemName" : "taskfinisheddate",
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskfinisheddate",
+    "caption" : "实际完成",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "taskfinisheddate"
+  }, {
+    "excelCaption" : "延期",
+    "getPSAppDEField" : {
+      "name" : "TASKDELAY",
+      "codeName" : "Taskdelay"
+    },
+    "dataItemName" : "taskdelay",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskdelay",
+    "caption" : "延期",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "taskdelay"
+  }, {
+    "excelCaption" : "最初预计",
+    "getPSAppDEField" : {
+      "name" : "TASKESTIMATE",
+      "codeName" : "Taskestimate"
+    },
+    "dataItemName" : "taskestimate",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskestimate",
+    "caption" : "最初预计",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "taskestimate"
+  }, {
+    "excelCaption" : "任务总消耗",
+    "getPSAppDEField" : {
+      "name" : "TOTALCONSUMED",
+      "codeName" : "TotalConsumed"
+    },
+    "dataItemName" : "totalconsumed",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "totalconsumed",
+    "caption" : "任务总消耗",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "totalconsumed"
+  }, {
+    "excelCaption" : "总任务数",
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    },
+    "dataItemName" : "taskcnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskcnt",
+    "caption" : "总任务数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "taskcnt"
+  }, {
+    "excelCaption" : "项目总消耗",
+    "getPSAppDEField" : {
+      "name" : "PROJECTCONSUMED",
+      "codeName" : "Projectconsumed"
+    },
+    "dataItemName" : "projectconsumed",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "projectconsumed",
+    "caption" : "项目总消耗",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "projectconsumed"
+  }, {
+    "excelCaption" : "用户总消耗",
+    "getPSAppDEField" : {
+      "name" : "USERCONSUMED",
+      "codeName" : "Userconsumed"
+    },
+    "dataItemName" : "userconsumed",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "userconsumed",
+    "caption" : "用户总消耗",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "userconsumed"
+  } ],
+  "codeName" : "TaskFinishGird",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 40,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats/PSGRIDS/TaskFinishGird.json",
+  "logicName" : "任务完成汇总表",
+  "modelid" : "b1fbeff64dd1c0df071ac39bee918aee"
+}

@@ -1,0 +1,96 @@
+{
+  "mobilePanel" : true,
+  "getPSLayout" : {
+    "layout" : "TABLE_12COL",
+    "columnCount" : 12
+  },
+  "getRootPSPanelItems" : [ {
+    "getPSPanelItems" : [ {
+      "htmlContent" : "<ion-icon name=\"person-add-sharp\" style=\"font-size: 18px;\"></ion-icon>",
+      "getPSLayoutPos" : {
+        "colLG" : 1,
+        "colMD" : 1,
+        "layout" : "TABLE_12COL"
+      },
+      "itemType" : "RAWITEM",
+      "itemStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "rawitem1"
+    }, {
+      "getPSEditor" : {
+        "enableLinkView" : false,
+        "editable" : false,
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+        },
+        "editorType" : "SPAN",
+        "name" : "account"
+      },
+      "viewFieldName" : "account",
+      "convertToCodeItemText" : true,
+      "showCaption" : false,
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colLG" : 6,
+        "colMD" : 6,
+        "layout" : "TABLE_12COL"
+      },
+      "itemType" : "FIELD",
+      "itemStyle" : "DEFAULT",
+      "name" : "account"
+    }, {
+      "getPSEditor" : {
+        "enableLinkView" : false,
+        "editable" : false,
+        "editorType" : "SPAN",
+        "name" : "role"
+      },
+      "viewFieldName" : "role",
+      "showCaption" : false,
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colLG" : 4,
+        "colLGOffset" : 1,
+        "colMD" : 4,
+        "colMDOffset" : 1,
+        "layout" : "TABLE_12COL"
+      },
+      "itemType" : "FIELD",
+      "itemStyle" : "DEFAULT",
+      "name" : "role"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_12COL",
+      "columnCount" : 12
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSSysCss" : {
+      "cssName" : "mob_list_card"
+    },
+    "itemType" : "CONTAINER",
+    "itemStyle" : "DEFAULT",
+    "showCaption" : true,
+    "name" : "container1"
+  } ],
+  "getAllPSPanelFields" : [ {
+    "modelref" : true,
+    "id" : "account"
+  }, {
+    "modelref" : true,
+    "id" : "role"
+  } ],
+  "controlType" : "PANEL",
+  "codeName" : "Mob",
+  "layoutMode" : "TABLE_12COL",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam/PSPANELS/Mob.json",
+  "logicName" : "移动端列表项布局面板",
+  "modelid" : "7f1e8cfe65f600cd812168d377dfae3e"
+}

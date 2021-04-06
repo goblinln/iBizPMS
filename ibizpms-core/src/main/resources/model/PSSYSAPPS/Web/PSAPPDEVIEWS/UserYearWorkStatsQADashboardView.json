@@ -1,0 +1,969 @@
+{
+  "showDataInfoBar" : true,
+  "loadDefault" : true,
+  "expandSearchForm" : true,
+  "enableSearch" : false,
+  "enableQuickGroup" : false,
+  "enableQuickSearch" : false,
+  "getPSDEViewCodeName" : "QADashboardView",
+  "showCaptionBar" : false,
+  "caption" : "用户年度工作内容统计",
+  "openMode" : "DRAWER_TOP",
+  "title" : "用户年度工作内容统计数据看板视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+    },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEPORTALVIEW_STYLE2",
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "PortalView",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "paramType" : "CTRL",
+      "name" : "DASHBOARD"
+    } ],
+    "name" : "engine"
+  } ],
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "curyear",
+    "key" : "curyear",
+    "name" : "curyear"
+  } ],
+  "getPSAppViewNavContexts" : [ {
+    "rawValue" : false,
+    "value" : "curyear",
+    "key" : "CURYEAR",
+    "name" : "CURYEAR"
+  } ],
+  "viewStyle" : "STYLE2",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+  },
+  "getPSControls" : [ {
+    "codeName" : "QAY",
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "enableCustomized" : false,
+    "getPSControls" : [ {
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSControls" : [ {
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
+        "getPSControls" : [ {
+          "getPSLayout" : {
+            "layout" : "TABLE_24COL",
+            "columnCount" : 24
+          },
+          "getPSControls" : [ {
+            "getContentPSControl" : {
+              "name" : "dashboard_sysportlet4_chart"
+            },
+            "getPSControls" : [ {
+              "getPSDEChartTitle" : {
+                "showTitle" : true,
+                "title" : "累计创建Bug",
+                "index" : 0,
+                "id" : "0"
+              },
+              "getPSDEChartLegend" : {
+                "showLegend" : true,
+                "legendPos" : "BOTTOM",
+                "index" : 0,
+                "id" : "0"
+              },
+              "getPSChartCoordinateSystems" : [ {
+                "eChartsType" : "none",
+                "type" : "NONE",
+                "index" : 0,
+                "name" : "[ResolveBug]无坐标系[0]",
+                "id" : "0"
+              } ],
+              "controlType" : "CHART",
+              "getPSDEChartSerieses" : [ {
+                "catalogField" : "PRI",
+                "seriesType" : "pie",
+                "getCatalogPSCodeList" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
+                },
+                "eChartsType" : "pie",
+                "getPSChartCoordinateSystem" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "enableChartDataSet" : true,
+                "getPSChartDataSet" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "getPSChartSeriesEncode" : {
+                  "category" : "PRI",
+                  "value" : "SRFCOUNT",
+                  "index" : 0,
+                  "name" : "坐标系编码",
+                  "id" : "0"
+                },
+                "valueField" : "SRFCOUNT",
+                "seriesLayoutBy" : "column",
+                "index" : 0,
+                "name" : "ResolveBug",
+                "getUserParam" : {
+                  "ECX.labelLine" : "{show:false}",
+                  "ECX.label" : "{show:false}",
+                  "EC.radius" : "['60%', '70%']"
+                }
+              } ],
+              "codeName" : "CurUserOpenedBug",
+              "emptyText" : "无",
+              "coordinateSystem" : "NONE",
+              "getPSChartDataSets" : [ {
+                "getPSChartDataSetFields" : [ {
+                  "groupField" : true,
+                  "getPSCodeList" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
+                  },
+                  "index" : 0,
+                  "name" : "PRI",
+                  "id" : "0"
+                }, {
+                  "groupField" : false,
+                  "index" : 1,
+                  "name" : "SRFCOUNT",
+                  "id" : "1"
+                } ],
+                "index" : 0,
+                "name" : "ResolveBug-MyCurOpenedBug",
+                "id" : "0"
+              } ],
+              "getPSChartDataSetGroups" : [ {
+                "index" : 0,
+                "name" : "MyCurOpenedBug",
+                "id" : "0"
+              } ],
+              "getFetchPSControlAction" : {
+                "modelref" : true,
+                "id" : "fetch"
+              },
+              "readOnly" : true,
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+              },
+              "getPSControlParam" : {
+                "autoLoad" : true,
+                "showBusyIndicator" : true,
+                "height" : 300.0
+              },
+              "getPSControlHandler" : {
+                "userDRAction" : "READ",
+                "getPSHandlerActions" : [ {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                  },
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Update"
+                  },
+                  "dataAccessAction" : "UPDATE",
+                  "actionName" : "Update",
+                  "actionType" : "DEACTION",
+                  "name" : "update"
+                }, {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                  },
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "FetchMyCurOpenedBug"
+                  },
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch"
+                }, {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                  },
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Remove"
+                  },
+                  "dataAccessAction" : "DELETE",
+                  "actionName" : "Remove",
+                  "actionType" : "DEACTION",
+                  "name" : "remove"
+                }, {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                  },
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Get"
+                  },
+                  "dataAccessAction" : "READ",
+                  "actionName" : "Get",
+                  "actionType" : "DEACTION",
+                  "name" : "load"
+                }, {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                  },
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Create"
+                  },
+                  "dataAccessAction" : "CREATE",
+                  "actionName" : "Create",
+                  "actionType" : "DEACTION",
+                  "name" : "create"
+                } ],
+                "enableDEFieldPrivilege" : false,
+                "id" : "图形控件处理器"
+              },
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/CurUserOpenedBug.json",
+              "getPSSysPFPlugin" : {
+                "pluginType" : "CHART_RENDER",
+                "pluginCode" : "piePlugin"
+              },
+              "height" : 300.0,
+              "logicName" : "CurUserOpenedBug",
+              "name" : "dashboard_sysportlet4_chart",
+              "modelid" : "534e561f7a0e57fe4e6dee579ae16779",
+              "getUserParam" : {
+                "EC.legend" : "{show:false}",
+                "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
+              }
+            } ],
+            "height" : 350.0,
+            "codeName" : "TotalCurOpenedBug",
+            "title" : "累计创建的Bug",
+            "portletType" : "CHART",
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "height" : 350,
+              "layout" : "TABLE_24COL"
+            },
+            "controlType" : "PORTLET",
+            "showTitleBar" : false,
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+            },
+            "getPSControlParam" : {
+              "autoLoad" : true,
+              "showBusyIndicator" : true,
+              "height" : 350.0
+            },
+            "getPSControlHandler" : {
+              "enableDEFieldPrivilege" : false,
+              "id" : "dashboard_sysportlet4"
+            },
+            "name" : "dashboard_sysportlet4",
+            "modelid" : "67b81d2df4e2708ad21a8f64c35fe088"
+          } ],
+          "portletType" : "CONTAINER",
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "controlType" : "PORTLET",
+          "showTitleBar" : true,
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+          },
+          "getPSControlParam" : {
+            "autoLoad" : true,
+            "showBusyIndicator" : true
+          },
+          "getPSControlHandler" : {
+            "enableDEFieldPrivilege" : false,
+            "id" : "dashboard_container9"
+          },
+          "codeName" : "QADashboardViewdashboard_container9",
+          "name" : "dashboard_container9"
+        }, {
+          "getPSLayout" : {
+            "layout" : "TABLE_24COL",
+            "columnCount" : 24
+          },
+          "getPSControls" : [ {
+            "getContentPSControl" : {
+              "name" : "dashboard_sysportlet5_chart"
+            },
+            "getPSControls" : [ {
+              "getPSDEChartTitle" : {
+                "showTitle" : true,
+                "title" : "累计创建用例",
+                "index" : 0,
+                "id" : "0"
+              },
+              "getPSDEChartLegend" : {
+                "showLegend" : true,
+                "index" : 0,
+                "id" : "0"
+              },
+              "getPSChartCoordinateSystems" : [ {
+                "eChartsType" : "none",
+                "type" : "NONE",
+                "index" : 0,
+                "name" : "[Caseresult]无坐标系[0]",
+                "id" : "0"
+              } ],
+              "controlType" : "CHART",
+              "getPSDEChartSerieses" : [ {
+                "catalogField" : "PRI",
+                "seriesType" : "pie",
+                "getCatalogPSCodeList" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
+                },
+                "eChartsType" : "pie",
+                "getPSChartCoordinateSystem" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "enableChartDataSet" : true,
+                "getPSChartDataSet" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "getPSChartSeriesEncode" : {
+                  "category" : "PRI",
+                  "value" : "SRFCOUNT",
+                  "index" : 0,
+                  "name" : "坐标系编码",
+                  "id" : "0"
+                },
+                "valueField" : "SRFCOUNT",
+                "seriesLayoutBy" : "column",
+                "index" : 0,
+                "name" : "Caseresult",
+                "getUserParam" : {
+                  "ECX.labelLine" : "{show:false}",
+                  "ECX.label" : "{show:false}",
+                  "EC.radius" : "['60%', '70%']"
+                }
+              } ],
+              "codeName" : "CurOpenedCase",
+              "emptyText" : "无",
+              "getPSChartDataSets" : [ {
+                "getPSChartDataSetFields" : [ {
+                  "groupField" : true,
+                  "getPSCodeList" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
+                  },
+                  "index" : 0,
+                  "name" : "PRI",
+                  "id" : "0"
+                }, {
+                  "groupField" : false,
+                  "index" : 1,
+                  "name" : "SRFCOUNT",
+                  "id" : "1"
+                } ],
+                "index" : 0,
+                "name" : "Caseresult-CurOpenedCase",
+                "id" : "0"
+              } ],
+              "getPSChartDataSetGroups" : [ {
+                "index" : 0,
+                "name" : "CurOpenedCase",
+                "id" : "0"
+              } ],
+              "getFetchPSControlAction" : {
+                "modelref" : true,
+                "id" : "fetch"
+              },
+              "readOnly" : true,
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+              },
+              "getPSControlParam" : {
+                "autoLoad" : true,
+                "showBusyIndicator" : true,
+                "height" : 300.0
+              },
+              "getPSControlHandler" : {
+                "userDRAction" : "READ",
+                "getPSHandlerActions" : [ {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                  },
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Update"
+                  },
+                  "dataAccessAction" : "UPDATE",
+                  "actionName" : "Update",
+                  "actionType" : "DEACTION",
+                  "name" : "update"
+                }, {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                  },
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "FetchCurOpenedCase"
+                  },
+                  "actionType" : "DEDATASET",
+                  "name" : "fetch"
+                }, {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                  },
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Remove"
+                  },
+                  "dataAccessAction" : "DELETE",
+                  "actionName" : "Remove",
+                  "actionType" : "DEACTION",
+                  "name" : "remove"
+                }, {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                  },
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Get"
+                  },
+                  "dataAccessAction" : "READ",
+                  "actionName" : "Get",
+                  "actionType" : "DEACTION",
+                  "name" : "load"
+                }, {
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                  },
+                  "getPSAppDEMethod" : {
+                    "modelref" : true,
+                    "id" : "Create"
+                  },
+                  "dataAccessAction" : "CREATE",
+                  "actionName" : "Create",
+                  "actionType" : "DEACTION",
+                  "name" : "create"
+                } ],
+                "enableDEFieldPrivilege" : false,
+                "id" : "图形控件处理器"
+              },
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CurOpenedCase.json",
+              "getPSSysPFPlugin" : {
+                "pluginType" : "CHART_RENDER",
+                "pluginCode" : "piePlugin"
+              },
+              "height" : 300.0,
+              "logicName" : "CurOpenedCase",
+              "name" : "dashboard_sysportlet5_chart",
+              "modelid" : "5b60ad4bb21c7faf9c631c8c13e42149",
+              "getUserParam" : {
+                "EC.legend" : "{show:false}",
+                "EC.color" : "[\"#00FF99\",\"#00CCFF\",\"#aa00ff\",\"#884bff\",'#00ffa9','#85B3FF','#A1FFFF']"
+              }
+            } ],
+            "height" : 350.0,
+            "codeName" : "TotalCurOpenedCase",
+            "title" : "累计创建用例",
+            "portletType" : "CHART",
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "height" : 350,
+              "layout" : "TABLE_24COL"
+            },
+            "controlType" : "PORTLET",
+            "showTitleBar" : false,
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+            },
+            "getPSControlParam" : {
+              "autoLoad" : true,
+              "showBusyIndicator" : true,
+              "height" : 350.0
+            },
+            "getPSControlHandler" : {
+              "enableDEFieldPrivilege" : false,
+              "id" : "dashboard_sysportlet5"
+            },
+            "name" : "dashboard_sysportlet5",
+            "modelid" : "3374038650d1bfc992f420b76f6f8fb5"
+          } ],
+          "portletType" : "CONTAINER",
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "controlType" : "PORTLET",
+          "showTitleBar" : true,
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+          },
+          "getPSControlParam" : {
+            "autoLoad" : true,
+            "showBusyIndicator" : true
+          },
+          "getPSControlHandler" : {
+            "enableDEFieldPrivilege" : false,
+            "id" : "dashboard_container10"
+          },
+          "codeName" : "QADashboardViewdashboard_container10",
+          "name" : "dashboard_container10"
+        } ],
+        "portletType" : "CONTAINER",
+        "getPSLayoutPos" : {
+          "colLG" : 14,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "controlType" : "PORTLET",
+        "showTitleBar" : true,
+        "title" : "累计创建Bug数和创建用例数",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+        },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true
+        },
+        "getPSControlHandler" : {
+          "enableDEFieldPrivilege" : false,
+          "id" : "dashboard_container4"
+        },
+        "codeName" : "QADashboardViewdashboard_container4",
+        "name" : "dashboard_container4"
+      }, {
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
+        "getPSControls" : [ {
+          "getContentPSControl" : {
+            "name" : "dashboard_sysportlet3_chart"
+          },
+          "getPSControls" : [ {
+            "getPSDEChartTitle" : {
+              "showTitle" : false,
+              "title" : "累计创建Bug数和创建用例数",
+              "index" : 0,
+              "id" : "0"
+            },
+            "getPSDEChartLegend" : {
+              "showLegend" : true,
+              "index" : 0,
+              "id" : "0"
+            },
+            "getPSChartCoordinateSystems" : [ {
+              "getPSChartGrid" : {
+                "getPSChartGridXAxis0" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "getPSChartGridYAxis0" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "getPSChartCoordinateSystem" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "type" : "grid",
+                "index" : 0,
+                "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+                "id" : "0"
+              },
+              "eChartsType" : "cartesian2d",
+              "type" : "XY",
+              "index" : 0,
+              "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+              "id" : "0"
+            } ],
+            "controlType" : "CHART",
+            "getPSDEChartSerieses" : [ {
+              "stack" : false,
+              "catalogField" : "CURMONTH",
+              "seriesType" : "line",
+              "eChartsType" : "line",
+              "getPSChartCoordinateSystem" : {
+                "modelref" : true,
+                "id" : "0"
+              },
+              "enableChartDataSet" : true,
+              "getPSChartDataSet" : {
+                "modelref" : true,
+                "id" : "0"
+              },
+              "getPSChartSeriesEncode" : {
+                "getPSChartXAxis" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "getPSChartYAxis" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "x" : [ "CURMONTH" ],
+                "y" : [ "MONTRESOLVEDBUG" ],
+                "index" : 0,
+                "name" : "坐标系编码",
+                "id" : "0"
+              },
+              "caption" : "创建Bug",
+              "valueField" : "MONTRESOLVEDBUG",
+              "seriesLayoutBy" : "column",
+              "groupMode" : "MONTH",
+              "index" : 0,
+              "name" : "MONTRESOLVEDBUG"
+            }, {
+              "stack" : false,
+              "catalogField" : "CURMONTH",
+              "seriesType" : "line",
+              "eChartsType" : "line",
+              "getPSChartCoordinateSystem" : {
+                "modelref" : true,
+                "id" : "0"
+              },
+              "enableChartDataSet" : true,
+              "getPSChartDataSet" : {
+                "modelref" : true,
+                "id" : "1"
+              },
+              "getPSChartSeriesEncode" : {
+                "getPSChartXAxis" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "getPSChartYAxis" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "x" : [ "CURMONTH" ],
+                "y" : [ "YEARCASECNT" ],
+                "index" : 0,
+                "name" : "坐标系编码",
+                "id" : "0"
+              },
+              "caption" : "创建用例",
+              "valueField" : "YEARCASECNT",
+              "seriesLayoutBy" : "column",
+              "groupMode" : "MONTH",
+              "index" : 1,
+              "name" : "FinishTask"
+            } ],
+            "codeName" : "MonthOpenedBugAndCase",
+            "getPSChartXAxises" : [ {
+              "eChartsPos" : "xAxis",
+              "eChartsType" : "category",
+              "position" : "bottom",
+              "caption" : "月",
+              "type" : "category",
+              "index" : 0,
+              "name" : "月",
+              "id" : "0"
+            } ],
+            "getPSChartYAxises" : [ {
+              "eChartsPos" : "yAxis",
+              "eChartsType" : "value",
+              "position" : "left",
+              "maxValue" : 200.0,
+              "minValue" : 0.0,
+              "caption" : "数量",
+              "type" : "numeric",
+              "index" : 0,
+              "name" : "数量",
+              "id" : "0"
+            } ],
+            "getPSChartDataSets" : [ {
+              "getPSChartDataSetFields" : [ {
+                "groupField" : true,
+                "groupMode" : "MONTH",
+                "index" : 0,
+                "name" : "CURMONTH",
+                "id" : "0"
+              }, {
+                "groupField" : false,
+                "index" : 1,
+                "name" : "MONTRESOLVEDBUG",
+                "id" : "1"
+              } ],
+              "index" : 0,
+              "name" : "MONTRESOLVEDBUG-MonthOpenedBugAndCase",
+              "id" : "0"
+            }, {
+              "getPSChartDataSetFields" : [ {
+                "groupField" : true,
+                "groupMode" : "MONTH",
+                "index" : 0,
+                "name" : "CURMONTH",
+                "id" : "0"
+              }, {
+                "groupField" : false,
+                "index" : 1,
+                "name" : "YEARCASECNT",
+                "id" : "1"
+              } ],
+              "index" : 1,
+              "name" : "FinishTask-MonthOpenedBugAndCase",
+              "id" : "1"
+            } ],
+            "getPSChartDataSetGroups" : [ {
+              "index" : 0,
+              "name" : "MonthOpenedBugAndCase",
+              "id" : "0"
+            } ],
+            "getPSChartGrids" : [ {
+              "getPSChartGridXAxis0" : {
+                "modelref" : true,
+                "id" : "0"
+              },
+              "getPSChartGridYAxis0" : {
+                "modelref" : true,
+                "id" : "0"
+              },
+              "getPSChartCoordinateSystem" : {
+                "getPSChartGrid" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "eChartsType" : "cartesian2d",
+                "type" : "XY",
+                "index" : 0,
+                "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+                "id" : "0"
+              },
+              "type" : "grid",
+              "index" : 0,
+              "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+              "id" : "0"
+            } ],
+            "getFetchPSControlAction" : {
+              "modelref" : true,
+              "id" : "fetch"
+            },
+            "readOnly" : true,
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+            },
+            "getPSControlParam" : {
+              "autoLoad" : true,
+              "showBusyIndicator" : true,
+              "height" : 300.0
+            },
+            "getPSControlHandler" : {
+              "userDRAction" : "READ",
+              "getPSHandlerActions" : [ {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Update"
+                },
+                "dataAccessAction" : "UPDATE",
+                "actionName" : "Update",
+                "actionType" : "DEACTION",
+                "name" : "update"
+              }, {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "FetchMonthOpenedBugAndCase"
+                },
+                "actionType" : "DEDATASET",
+                "name" : "fetch"
+              }, {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Remove"
+                },
+                "dataAccessAction" : "DELETE",
+                "actionName" : "Remove",
+                "actionType" : "DEACTION",
+                "name" : "remove"
+              }, {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Get"
+                },
+                "dataAccessAction" : "READ",
+                "actionName" : "Get",
+                "actionType" : "DEACTION",
+                "name" : "load"
+              }, {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Create"
+                },
+                "dataAccessAction" : "CREATE",
+                "actionName" : "Create",
+                "actionType" : "DEACTION",
+                "name" : "create"
+              } ],
+              "enableDEFieldPrivilege" : false,
+              "id" : "图形控件处理器"
+            },
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedBugAndCase.json",
+            "getPSSysPFPlugin" : {
+              "pluginType" : "CHART_RENDER",
+              "pluginCode" : "NEW"
+            },
+            "height" : 300.0,
+            "logicName" : "MonthOpenedBugAndCase",
+            "name" : "dashboard_sysportlet3_chart",
+            "modelid" : "419cfd8e4688bd7a4d507d481bb24879",
+            "getUserParam" : {
+              "EC.color" : "[\"#76FF03\",\"#2979FF\",\"#00B0FF\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
+            }
+          } ],
+          "height" : 350.0,
+          "codeName" : "MonthOpenedBugAndCase",
+          "title" : "月创建Bug数和创建用例数",
+          "portletType" : "CHART",
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "height" : 350,
+            "layout" : "TABLE_24COL"
+          },
+          "controlType" : "PORTLET",
+          "showTitleBar" : false,
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+          },
+          "getPSControlParam" : {
+            "autoLoad" : true,
+            "showBusyIndicator" : true,
+            "height" : 350.0
+          },
+          "getPSControlHandler" : {
+            "enableDEFieldPrivilege" : false,
+            "id" : "dashboard_sysportlet3"
+          },
+          "name" : "dashboard_sysportlet3",
+          "modelid" : "7e897d7840c7fbca7bb954f13d8dbeb3"
+        } ],
+        "portletType" : "CONTAINER",
+        "getPSLayoutPos" : {
+          "colLG" : 10,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "controlType" : "PORTLET",
+        "showTitleBar" : true,
+        "title" : "月创建Bug数和创建用例数",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+        },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true
+        },
+        "getPSControlHandler" : {
+          "enableDEFieldPrivilege" : false,
+          "id" : "dashboard_container5"
+        },
+        "codeName" : "QADashboardViewdashboard_container5",
+        "name" : "dashboard_container5"
+      } ],
+      "portletType" : "CONTAINER",
+      "getPSLayoutPos" : {
+        "colLG" : 22,
+        "colLGOffset" : 1,
+        "colMD" : 22,
+        "colMDOffset" : 1,
+        "layout" : "TABLE_24COL"
+      },
+      "controlType" : "PORTLET",
+      "showTitleBar" : true,
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+      },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_container3"
+      },
+      "codeName" : "QADashboardViewdashboard_container3",
+      "name" : "dashboard_container3"
+    } ],
+    "controlType" : "DASHBOARD",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "DASHBOARD"
+    },
+    "hookEventNames" : [ "LOAD" ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "dashboard"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSDASHBOARDS/QAY.json",
+    "logicName" : "年度工作统计（测试）",
+    "name" : "dashboard",
+    "modelid" : "73c630ad73ee5b10d79c36c91df91b39"
+  } ],
+  "codeName" : "UserYearWorkStatsQADashboardView",
+  "viewType" : "DEPORTALVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsQADashboardView.json",
+  "name" : "UserYearWorkStatsQADashboardView"
+}

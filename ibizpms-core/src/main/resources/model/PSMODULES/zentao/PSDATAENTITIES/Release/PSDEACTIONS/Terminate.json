@@ -1,0 +1,24 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCommon"
+  },
+  "codeName" : "Terminate",
+  "logicName" : "状态变更（停止维护）",
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Terminate.json",
+  "userCat" : "CAT1",
+  "name" : "Terminate"
+}

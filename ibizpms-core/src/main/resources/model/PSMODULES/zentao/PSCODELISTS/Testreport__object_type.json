@@ -1,0 +1,23 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Testreport__object_type.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "codeName" : "Testreport__object_type",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "codeName" : "Testtask",
+    "text" : "测试单",
+    "value" : "testtask"
+  }, {
+    "codeName" : "Project",
+    "text" : "项目",
+    "value" : "project"
+  } ]
+}

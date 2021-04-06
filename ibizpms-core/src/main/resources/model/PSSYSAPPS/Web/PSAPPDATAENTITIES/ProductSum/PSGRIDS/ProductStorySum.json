@@ -1,0 +1,413 @@
+{
+  "singleSelect" : true,
+  "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : true,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "主键标识",
+    "name" : "srfkey"
+  } ],
+  "columnEnableLink" : 2,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "DEVELOPEDSTAGESTORYCNT",
+      "codeName" : "Developedstagestorycnt"
+    },
+    "dataType" : 9,
+    "name" : "developedstagestorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "VERIFIEDSTAGESTORYCNT",
+      "codeName" : "Verifiedstagestorycnt"
+    },
+    "dataType" : 9,
+    "name" : "verifiedstagestorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TESTEDSTAGESTORYCNT",
+      "codeName" : "Testedstagestorycnt"
+    },
+    "dataType" : 9,
+    "name" : "testedstagestorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    },
+    "dataType" : 9,
+    "name" : "storycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CLOSEDSTAGESTORYCNT",
+      "codeName" : "Closedstagestorycnt"
+    },
+    "dataType" : 9,
+    "name" : "closedstagestorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PROJECTEDSTAGESTORYCNT",
+      "codeName" : "Projectedstagestorycnt"
+    },
+    "dataType" : 9,
+    "name" : "projectedstagestorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "RELEASEDSTAGESTORYCNT",
+      "codeName" : "Releasedstagestorycnt"
+    },
+    "dataType" : 9,
+    "name" : "releasedstagestorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PO",
+      "codeName" : "PO"
+    },
+    "dataType" : 25,
+    "name" : "po"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PLANEDSTAGESTORYCNT",
+      "codeName" : "Planedstagestorycnt"
+    },
+    "dataType" : 9,
+    "name" : "planedstagestorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TESTINGSTAGESTORYCNT",
+      "codeName" : "Testingstagestorycnt"
+    },
+    "dataType" : 9,
+    "name" : "testingstagestorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "WAITSTAGESTORYCNT",
+      "codeName" : "Waitstagestorycnt"
+    },
+    "dataType" : 9,
+    "name" : "waitstagestorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DEVELOPINGSTAGESTORYCNT",
+      "codeName" : "Developingstagestorycnt"
+    },
+    "dataType" : 9,
+    "name" : "developingstagestorycnt"
+  } ],
+  "enableRowEdit" : false,
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "产品名称",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataItemName" : "name",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 180,
+    "codeName" : "name",
+    "caption" : "产品名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "STAR",
+    "name" : "name"
+  }, {
+    "excelCaption" : "产品负责人",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "PO",
+      "codeName" : "PO"
+    },
+    "dataItemName" : "po",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 120,
+    "codeName" : "po",
+    "caption" : "产品负责人",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "name" : "po"
+  }, {
+    "excelCaption" : "未开始",
+    "getPSAppDEField" : {
+      "name" : "WAITSTAGESTORYCNT",
+      "codeName" : "Waitstagestorycnt"
+    },
+    "dataItemName" : "waitstagestorycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "waitstagestorycnt",
+    "caption" : "未开始",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "waitstagestorycnt"
+  }, {
+    "excelCaption" : "已计划",
+    "getPSAppDEField" : {
+      "name" : "PLANEDSTAGESTORYCNT",
+      "codeName" : "Planedstagestorycnt"
+    },
+    "dataItemName" : "planedstagestorycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "planedstagestorycnt",
+    "caption" : "已计划",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "planedstagestorycnt"
+  }, {
+    "excelCaption" : "已立项",
+    "getPSAppDEField" : {
+      "name" : "PROJECTEDSTAGESTORYCNT",
+      "codeName" : "Projectedstagestorycnt"
+    },
+    "dataItemName" : "projectedstagestorycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "projectedstagestorycnt",
+    "caption" : "已立项",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "projectedstagestorycnt"
+  }, {
+    "excelCaption" : "研发中",
+    "getPSAppDEField" : {
+      "name" : "DEVELOPINGSTAGESTORYCNT",
+      "codeName" : "Developingstagestorycnt"
+    },
+    "dataItemName" : "developingstagestorycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "developingstagestorycnt",
+    "caption" : "研发中",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "developingstagestorycnt"
+  }, {
+    "excelCaption" : "研发完毕",
+    "getPSAppDEField" : {
+      "name" : "DEVELOPEDSTAGESTORYCNT",
+      "codeName" : "Developedstagestorycnt"
+    },
+    "dataItemName" : "developedstagestorycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "developedstagestorycnt",
+    "caption" : "研发完毕",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "developedstagestorycnt"
+  }, {
+    "excelCaption" : "测试中",
+    "getPSAppDEField" : {
+      "name" : "TESTINGSTAGESTORYCNT",
+      "codeName" : "Testingstagestorycnt"
+    },
+    "dataItemName" : "testingstagestorycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "testingstagestorycnt",
+    "caption" : "测试中",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "testingstagestorycnt"
+  }, {
+    "excelCaption" : "测试完毕",
+    "getPSAppDEField" : {
+      "name" : "TESTEDSTAGESTORYCNT",
+      "codeName" : "Testedstagestorycnt"
+    },
+    "dataItemName" : "testedstagestorycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "testedstagestorycnt",
+    "caption" : "测试完毕",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "testedstagestorycnt"
+  }, {
+    "excelCaption" : "已验收",
+    "getPSAppDEField" : {
+      "name" : "VERIFIEDSTAGESTORYCNT",
+      "codeName" : "Verifiedstagestorycnt"
+    },
+    "dataItemName" : "verifiedstagestorycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "verifiedstagestorycnt",
+    "caption" : "已验收",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "verifiedstagestorycnt"
+  }, {
+    "excelCaption" : "已发布",
+    "getPSAppDEField" : {
+      "name" : "RELEASEDSTAGESTORYCNT",
+      "codeName" : "Releasedstagestorycnt"
+    },
+    "dataItemName" : "releasedstagestorycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "releasedstagestorycnt",
+    "caption" : "已发布",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "releasedstagestorycnt"
+  }, {
+    "excelCaption" : "已关闭",
+    "getPSAppDEField" : {
+      "name" : "CLOSEDSTAGESTORYCNT",
+      "codeName" : "Closedstagestorycnt"
+    },
+    "dataItemName" : "closedstagestorycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "closedstagestorycnt",
+    "caption" : "已关闭",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "closedstagestorycnt"
+  }, {
+    "excelCaption" : "总计",
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    },
+    "dataItemName" : "storycnt",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "storycnt",
+    "caption" : "总计",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "storycnt"
+  } ],
+  "codeName" : "ProductStorySum",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 10,
+  "aggMode" : "PAGE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSGRIDS/ProductStorySum.json",
+  "logicName" : "产品需求汇总表格",
+  "modelid" : "7f666c41d1c111c3f7c65b3bd6160800"
+}

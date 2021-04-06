@@ -1,0 +1,19 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
+  "codeName" : "OnlyCollectDoc",
+  "logicName" : "仅收藏文档",
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyCollectDoc.json",
+  "name" : "OnlyCollectDoc"
+}

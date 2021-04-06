@@ -1,0 +1,17 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/RelatedStory.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "orMode" : "STR",
+  "textSeparator" : ",",
+  "codeName" : "RelatedStory",
+  "userScope" : false,
+  "valueSeparator" : ",",
+  "cacheTimeout" : 600,
+  "enableCache" : true,
+  "refFlag" : true
+}

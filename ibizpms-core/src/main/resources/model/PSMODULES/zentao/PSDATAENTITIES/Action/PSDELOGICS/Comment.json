@@ -1,0 +1,112 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "logicHolder" : 1,
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SESSION",
+      "dstFieldName" : "ACTOR",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname] ==> Default[ACTOR]"
+    }, {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCVALUE",
+      "srcValue" : "0",
+      "dstFieldName" : "PRODUCT",
+      "name" : "直接值[0] ==> Default[PRODUCT]"
+    }, {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCVALUE",
+      "srcValue" : "0",
+      "dstFieldName" : "PROJECT",
+      "name" : "直接值[0] ==> Default[PROJECT]"
+    }, {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCVALUE",
+      "srcValue" : "0",
+      "dstFieldName" : "READ",
+      "name" : "直接值[0] ==> Default[READ]"
+    }, {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCVALUE",
+      "srcValue" : "commented",
+      "dstFieldName" : "ACTION",
+      "name" : "直接值[commented] ==> Default[ACTION]"
+    }, {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCVALUE",
+      "dstFieldName" : "EXTRA",
+      "name" : "直接值[null] ==> Default[EXTRA]"
+    } ],
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置默认参数"
+  }, {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接6740"
+    } ],
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接6740"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : false,
+    "envParam" : false,
+    "lastParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "codeName" : "Comment",
+  "logicName" : "Comment",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDELOGICS/Comment.json",
+  "name" : "Comment"
+}

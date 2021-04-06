@@ -1,0 +1,34 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : true,
+  "getAfterPSDEActionLogics" : [ {
+    "internalLogic" : true,
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDELOGICS/GetProductBuild.json"
+    },
+    "ignoreException" : false,
+    "cloneParam" : false,
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑"
+  } ],
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "orderValue" : 41,
+  "codeName" : "GetDraft",
+  "logicName" : "GetDraft",
+  "actionMode" : "GETDRAFT",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "NONE",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/GetDraft.json",
+  "name" : "GetDraft"
+}

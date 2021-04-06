@@ -1,0 +1,446 @@
+{
+  "quickSearchMode" : 1,
+  "getPSSearchBarFilters" : [ {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "lasteditedby"
+    },
+    "emptyCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "最后修改者(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_LASTEDITEDBY_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "LASTEDITEDBY",
+        "codeName" : "LastEditedBy"
+      },
+      "name" : "N_LASTEDITEDBY_EQ"
+    },
+    "allowEmpty" : true,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "itemWidth" : 100.0,
+    "showCaption" : false,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "LASTEDITEDBY",
+      "codeName" : "LastEditedBy"
+    },
+    "itemType" : "FILTER",
+    "name" : "lasteditedby"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "enableLinkView" : false,
+      "dropDownView" : false,
+      "enablePickupView" : false,
+      "enableAC" : true,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "libnameeq"
+    },
+    "emptyCaption" : false,
+    "dataType" : 25,
+    "caption" : "用例库(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_LIBNAME_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "LIBNAME",
+        "codeName" : "Libname"
+      },
+      "name" : "N_LIBNAME_EQ"
+    },
+    "allowEmpty" : true,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "showCaption" : false,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "LIBNAME",
+      "codeName" : "Libname"
+    },
+    "itemType" : "FILTER",
+    "name" : "libnameeq"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "enableLinkView" : false,
+      "dropDownView" : false,
+      "enablePickupView" : false,
+      "enableAC" : true,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "libnamelike"
+    },
+    "emptyCaption" : false,
+    "dataType" : 25,
+    "caption" : "用例库(%)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "LIKE",
+      "codeName" : "N_LIBNAME_LIKE",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "LIBNAME",
+        "codeName" : "Libname"
+      },
+      "name" : "N_LIBNAME_LIKE"
+    },
+    "allowEmpty" : true,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "showCaption" : false,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "LIBNAME",
+      "codeName" : "Libname"
+    },
+    "itemType" : "FILTER",
+    "name" : "libnamelike"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "enableLinkView" : false,
+      "dropDownView" : false,
+      "enablePickupView" : false,
+      "enableAC" : true,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "modulenameeq"
+    },
+    "emptyCaption" : false,
+    "dataType" : 25,
+    "caption" : "所属模块(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_MODULENAME_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "MODULENAME",
+        "codeName" : "Modulename"
+      },
+      "name" : "N_MODULENAME_EQ"
+    },
+    "allowEmpty" : true,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "showCaption" : false,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
+    },
+    "itemType" : "FILTER",
+    "name" : "modulenameeq"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "enableLinkView" : false,
+      "dropDownView" : false,
+      "enablePickupView" : false,
+      "enableAC" : true,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "modulenamelike"
+    },
+    "emptyCaption" : false,
+    "dataType" : 25,
+    "caption" : "所属模块(%)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "LIKE",
+      "codeName" : "N_MODULENAME_LIKE",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "MODULENAME",
+        "codeName" : "Modulename"
+      },
+      "name" : "N_MODULENAME_LIKE"
+    },
+    "allowEmpty" : true,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "showCaption" : false,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
+    },
+    "itemType" : "FILTER",
+    "name" : "modulenamelike"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "openedbyeq"
+    },
+    "emptyCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "由谁创建(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_OPENEDBY_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "OPENEDBY",
+        "codeName" : "OpenedBy"
+      },
+      "name" : "N_OPENEDBY_EQ"
+    },
+    "allowEmpty" : true,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "itemWidth" : 100.0,
+    "showCaption" : false,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "OPENEDBY",
+      "codeName" : "OpenedBy"
+    },
+    "itemType" : "FILTER",
+    "name" : "openedbyeq"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "prieq"
+    },
+    "emptyCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "优先级(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_PRI_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
+      },
+      "name" : "N_PRI_EQ"
+    },
+    "allowEmpty" : true,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "itemWidth" : 100.0,
+    "showCaption" : false,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "PRI",
+      "codeName" : "Pri"
+    },
+    "itemType" : "FILTER",
+    "name" : "prieq"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__status.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "statuseq"
+    },
+    "emptyCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "状态(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_STATUS_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "name" : "N_STATUS_EQ"
+    },
+    "allowEmpty" : true,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "itemWidth" : 100.0,
+    "showCaption" : false,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    },
+    "itemType" : "FILTER",
+    "name" : "statuseq"
+  }, {
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "editorWidth" : 100.0,
+      "name" : "titlelike"
+    },
+    "emptyCaption" : false,
+    "dataType" : 25,
+    "caption" : "用例标题(%)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "LIKE",
+      "codeName" : "N_TITLE_LIKE",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "name" : "N_TITLE_LIKE"
+    },
+    "allowEmpty" : true,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "itemWidth" : 100.0,
+    "showCaption" : false,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "itemType" : "FILTER",
+    "name" : "titlelike"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__type.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "typeeq"
+    },
+    "emptyCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "用例类型(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_TYPE_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "name" : "N_TYPE_EQ"
+    },
+    "allowEmpty" : true,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "itemWidth" : 100.0,
+    "showCaption" : false,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "itemType" : "FILTER",
+    "name" : "typeeq"
+  } ],
+  "mobileSearchBar" : false,
+  "controlType" : "SEARCHBAR",
+  "enableFilter" : true,
+  "enableQuickSearch" : true,
+  "codeName" : "Custom",
+  "enableGroup" : false,
+  "quickSearchWidth" : 0,
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase/PSSEARCHBARS/Custom.json",
+  "logicName" : "用例库用例自定义搜索栏",
+  "modelid" : "c73944fdd6f69cdae64e39117adc2631"
+}

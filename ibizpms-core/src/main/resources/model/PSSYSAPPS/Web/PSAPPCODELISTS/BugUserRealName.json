@@ -1,0 +1,33 @@
+{
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "USERNAME",
+    "codeName" : "UserName"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "PERSONNAME",
+    "codeName" : "PersonName"
+  },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchBugUser"
+  },
+  "getIconPathPSAppDEField" : {
+    "name" : "USERICON",
+    "codeName" : "UserIcon"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "orMode" : "STR",
+  "textSeparator" : ",",
+  "codeName" : "BugUserRealName",
+  "emptyText" : "未定义",
+  "valueSeparator" : ",",
+  "cacheTimeout" : 600,
+  "enableCache" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/BugUserRealName.json",
+  "name" : "用户真实名称（动态）（Bug）"
+}

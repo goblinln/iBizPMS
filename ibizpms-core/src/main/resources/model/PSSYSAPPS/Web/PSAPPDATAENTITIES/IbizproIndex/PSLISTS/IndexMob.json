@@ -1,0 +1,113 @@
+{
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "enableRowEditGroup" : false,
+  "getPSDEListDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "INDEX_TYPE",
+      "codeName" : "IndexType"
+    },
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
+    },
+    "dataType" : 25,
+    "name" : "indextype"
+  }, {
+    "dataType" : 25,
+    "name" : "indexname"
+  }, {
+    "dataType" : 25,
+    "name" : "orgid"
+  }, {
+    "dataType" : 1,
+    "name" : "indexid"
+  }, {
+    "dataType" : 25,
+    "name" : "indexdesc"
+  }, {
+    "dataType" : 25,
+    "name" : "color"
+  }, {
+    "dataType" : 25,
+    "name" : "mdeptid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "INDEXID",
+      "codeName" : "Indexid"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "INDEXNAME",
+      "codeName" : "Indexname"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "INDEX_TYPE",
+      "codeName" : "IndexType"
+    },
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
+    },
+    "dataType" : 25,
+    "name" : "srfdatatype"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "INDEX_TYPE",
+      "codeName" : "IndexType"
+    },
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
+    },
+    "dataType" : 25,
+    "name" : "index_type"
+  } ],
+  "showHeader" : true,
+  "controlType" : "LIST",
+  "enableRowEdit" : false,
+  "codeName" : "IndexMob",
+  "enableGroup" : false,
+  "pagingSize" : 20,
+  "groupMode" : "NONE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+  },
+  "controlStyle" : "FullTextSearch",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSLISTS/IndexMob.json",
+  "getPSSysPFPlugin" : {
+    "pluginType" : "LIST_RENDER",
+    "pluginCode" : "FullTextSearch"
+  },
+  "logicName" : "IndexMob",
+  "modelid" : "3d749efd9d96f3330022d35dfcdaaf60"
+}

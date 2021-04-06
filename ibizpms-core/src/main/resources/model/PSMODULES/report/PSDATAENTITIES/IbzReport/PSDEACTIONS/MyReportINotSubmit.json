@@ -1,0 +1,19 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
+  "codeName" : "MyReportINotSubmit",
+  "logicName" : "我未提交的（计数器）",
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json",
+  "name" : "MyReportINotSubmit"
+}

@@ -1,0 +1,23 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : true,
+  "customParam" : false,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "UPDATE"
+  },
+  "orderValue" : 11,
+  "codeName" : "Update",
+  "logicName" : "Update",
+  "actionMode" : "UPDATE",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ImQueue/PSDEACTIONS/Update.json",
+  "name" : "Update"
+}

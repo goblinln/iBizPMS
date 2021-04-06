@@ -1,0 +1,26 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : true,
+  "tempDataMode" : 2,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "enableTempData" : true,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "DELETE"
+  },
+  "orderValue" : 22,
+  "codeName" : "RemoveTemp",
+  "logicName" : "RemoveTemp",
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/RemoveTemp.json",
+  "name" : "RemoveTemp"
+}

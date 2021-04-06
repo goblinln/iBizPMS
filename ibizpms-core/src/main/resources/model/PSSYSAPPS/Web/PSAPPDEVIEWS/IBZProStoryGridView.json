@@ -1,0 +1,642 @@
+{
+  "rowEditDefault" : false,
+  "enableExport" : true,
+  "enableImport" : true,
+  "enableRowEdit" : false,
+  "gridRowActiveMode" : 2,
+  "enableSearch" : true,
+  "enableFilter" : true,
+  "enableQuickSearch" : true,
+  "xDataControlName" : "grid",
+  "funcViewMode" : "MDATAVIEW",
+  "getPSDEViewCodeName" : "GridView",
+  "showCaptionBar" : true,
+  "caption" : "需求",
+  "title" : "需求表格视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+    },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEGRIDVIEW_STYLE2",
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "GridView",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
+    }, {
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
+    }, {
+      "paramType" : "CTRL",
+      "name" : "GRID"
+    }, {
+      "paramType" : "CTRL",
+      "name" : "SEARCHFORM"
+    } ],
+    "name" : "engine"
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "New"
+    },
+    "name" : "toolbar_deuiaction1"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Refresh"
+    },
+    "name" : "toolbar_deuiaction2"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "ExportExcel"
+    },
+    "name" : "toolbar_deuiaction4"
+  } ],
+  "viewStyle" : "STYLE2",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+  },
+  "getPSControls" : [ {
+    "controlType" : "TOOLBAR",
+    "getPSDEToolbarItems" : [ {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "noPrivDisplayMode" : 2,
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "codeName" : "New",
+        "caption" : "新建",
+        "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
+        "uIActionTag" : "New",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "New",
+        "name" : "表格界面_新建操作"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "tooltip" : "新建",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "itemType" : "DEUIACTION",
+      "caption" : "新建",
+      "showCaption" : false,
+      "name" : "deuiaction1"
+    }, {
+      "spanMode" : false,
+      "itemType" : "SEPERATOR",
+      "name" : "seperator1"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "noPrivDisplayMode" : 2,
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "codeName" : "Refresh",
+        "caption" : "刷新",
+        "uIActionTag" : "Refresh",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "Refresh",
+        "name" : "表格界面_刷新操作"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "tooltip" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "itemType" : "DEUIACTION",
+      "caption" : "刷新",
+      "showCaption" : false,
+      "name" : "deuiaction2"
+    }, {
+      "spanMode" : false,
+      "itemType" : "SEPERATOR",
+      "name" : "seperator3"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4"
+      },
+      "noPrivDisplayMode" : 2,
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "codeName" : "ExportExcel",
+        "caption" : "导出",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "tooltip" : "导出",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "itemType" : "DEUIACTION",
+      "caption" : "导出",
+      "showCaption" : true,
+      "name" : "deuiaction4"
+    } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+    },
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "hookEventNames" : [ "CLICK" ],
+    "codeName" : "GridViewtoolbar",
+    "logicName" : "表格界面（只新建，刷新）",
+    "name" : "toolbar",
+    "modelid" : "24ddc68b1717d44d1ea610d438f930f6"
+  }, {
+    "singleSelect" : false,
+    "enableColFilter" : false,
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
+    "enableRowNew" : false,
+    "enableRowEditOrder" : false,
+    "noSort" : false,
+    "getPSDEGridEditItems" : [ {
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "allowEmpty" : true,
+      "enableCond" : 0,
+      "ignoreInput" : 0,
+      "codeName" : "srfkey",
+      "caption" : "编号",
+      "name" : "srfkey"
+    } ],
+    "columnEnableLink" : 2,
+    "hasWFDataItems" : false,
+    "controlType" : "GRID",
+    "enablePagingBar" : true,
+    "getPSDEGridDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "dataType" : 1,
+      "name" : "product"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 1,
+      "name" : "id"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
+      },
+      "dataType" : 1,
+      "name" : "module"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "dataType" : 25,
+      "name" : "title"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBIZ_ID",
+        "codeName" : "IBIZId"
+      },
+      "dataType" : 25,
+      "name" : "ibiz_id"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "dataType" : 25,
+      "name" : "srfmajortext"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataAccessAction" : true,
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 1,
+      "name" : "srfkey"
+    } ],
+    "enableRowEdit" : false,
+    "getPSDEGridColumns" : [ {
+      "excelCaption" : "编号",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataItemName" : "id",
+      "cLConvertMode" : "NONE",
+      "noPrivDisplayMode" : 1,
+      "enableSort" : true,
+      "width" : 100,
+      "codeName" : "id",
+      "caption" : "编号",
+      "columnType" : "DEFGRIDCOLUMN",
+      "align" : "LEFT",
+      "widthUnit" : "PX",
+      "name" : "id"
+    }, {
+      "excelCaption" : "需求名称",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "dataItemName" : "title",
+      "cLConvertMode" : "NONE",
+      "noPrivDisplayMode" : 1,
+      "enableSort" : true,
+      "width" : 100,
+      "codeName" : "title",
+      "caption" : "需求名称",
+      "columnType" : "DEFGRIDCOLUMN",
+      "align" : "LEFT",
+      "widthUnit" : "PX",
+      "name" : "title"
+    }, {
+      "excelCaption" : "IBIZ标识",
+      "getPSAppDEField" : {
+        "name" : "IBIZ_ID",
+        "codeName" : "IBIZId"
+      },
+      "dataItemName" : "ibiz_id",
+      "cLConvertMode" : "NONE",
+      "noPrivDisplayMode" : 1,
+      "enableSort" : true,
+      "width" : 100,
+      "codeName" : "ibiz_id",
+      "caption" : "IBIZ标识",
+      "columnType" : "DEFGRIDCOLUMN",
+      "align" : "LEFT",
+      "widthUnit" : "PX",
+      "name" : "ibiz_id"
+    } ],
+    "codeName" : "Main",
+    "enableGroup" : false,
+    "hideHeader" : false,
+    "forceFit" : false,
+    "pagingSize" : 20,
+    "aggMode" : "NONE",
+    "groupMode" : "NONE",
+    "sortMode" : "REMOTE",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "getPSControlHandler" : {
+      "userDRAction" : "READ",
+      "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "dataAccessAction" : "UPDATE",
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "name" : "update"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "actionType" : "DEDATASET",
+        "name" : "fetch"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "dataAccessAction" : "READ",
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "name" : "load"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "name" : "loaddraft"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "name" : "create"
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory/PSGRIDS/Main.json",
+    "logicName" : "主表格",
+    "name" : "grid",
+    "modelid" : "6b95be0b8434fb93f6242d17a20b5369"
+  }, {
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "searchButtonStyle" : "DEFAULT",
+    "controlType" : "SEARCHFORM",
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "getPSDEFormPages" : [ {
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "infoGroupMode" : false,
+      "codeName" : "formpage1",
+      "caption" : "常规条件",
+      "detailType" : "FORMPAGE",
+      "detailStyle" : "DEFAULT",
+      "name" : "formpage1"
+    } ],
+    "noTabHeader" : true,
+    "codeName" : "Default",
+    "tabHeaderPos" : "TOP",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "actionType" : "FILTERACTION",
+        "name" : "search"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "actionType" : "FILTERACTION",
+        "name" : "load"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft"
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStory/PSSEARCHFORMS/Default.json",
+    "logicName" : "默认搜索表单",
+    "name" : "searchform",
+    "modelid" : "188179763d7bd9b0f49b9481a142e3e2"
+  } ],
+  "getPSAppViewRefs" : [ {
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "realTitle" : "需求编辑视图",
+    "name" : "NEWDATA"
+  }, {
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "realTitle" : "需求编辑视图",
+    "name" : "EDITDATA"
+  } ],
+  "getPSAppViewLogics" : [ {
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction1"
+    },
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction1_click"
+  }, {
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction2"
+    },
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction2_click"
+  }, {
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction4"
+    },
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "eventArg" : "deuiaction4",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction4_click"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppUILogic" : {
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryEditView.json"
+      },
+      "viewLogicType" : "APP_NEWDATA",
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryEditView.json"
+      } ],
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据"
+    },
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppUILogic" : {
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryEditView.json"
+      },
+      "viewLogicType" : "APP_OPENDATA",
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryEditView.json"
+      } ],
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据"
+    },
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata"
+  } ],
+  "codeName" : "IBZProStoryGridView",
+  "viewType" : "DEGRIDVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryGridView.json",
+  "name" : "IBZProStoryGridView"
+}

@@ -1,0 +1,29 @@
+{
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "USERNAME",
+    "codeName" : "UserName"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "PERSONNAME",
+    "codeName" : "PersonName"
+  },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "orMode" : "STR",
+  "textSeparator" : ",",
+  "codeName" : "UserRealNameUnAssignTo_Gird",
+  "emptyText" : "未指派",
+  "valueSeparator" : ",",
+  "cacheTimeout" : 600,
+  "enableCache" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameUnAssignTo_Gird.json",
+  "name" : "用户真实名称（动态-表格）（未指派）"
+}

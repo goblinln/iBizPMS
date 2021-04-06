@@ -1,0 +1,25 @@
+{
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "getPSCodeItems" : [ {
+    "data" : "{\"n_lastrunner_eq\":\"%srfloginname%\"}",
+    "codeName" : "Tome",
+    "text" : "给我的用例",
+    "default" : true,
+    "value" : "TOME"
+  }, {
+    "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
+    "codeName" : "Icreate",
+    "text" : "我建的用例",
+    "value" : "ICREATE"
+  } ],
+  "codeName" : "CaseQuickpacketMy",
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/CaseQuickpacketMy.json",
+  "name" : "功能测试快速分组（我的地盘）"
+}

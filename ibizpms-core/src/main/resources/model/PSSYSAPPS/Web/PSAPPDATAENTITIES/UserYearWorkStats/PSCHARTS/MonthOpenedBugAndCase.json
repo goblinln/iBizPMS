@@ -1,0 +1,216 @@
+{
+  "getPSDEChartTitle" : {
+    "showTitle" : false,
+    "title" : "累计创建Bug数和创建用例数",
+    "index" : 0,
+    "id" : "0"
+  },
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
+  "getPSChartCoordinateSystems" : [ {
+    "getPSChartGrid" : {
+      "getPSChartGridXAxis0" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartGridYAxis0" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "grid",
+      "index" : 0,
+      "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+      "id" : "0"
+    },
+    "eChartsType" : "cartesian2d",
+    "type" : "XY",
+    "index" : 0,
+    "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+    "id" : "0"
+  } ],
+  "controlType" : "CHART",
+  "getPSDEChartSerieses" : [ {
+    "stack" : false,
+    "catalogField" : "CURMONTH",
+    "seriesType" : "line",
+    "eChartsType" : "line",
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "enableChartDataSet" : true,
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartSeriesEncode" : {
+      "getPSChartXAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartYAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "x" : [ "CURMONTH" ],
+      "y" : [ "MONTRESOLVEDBUG" ],
+      "index" : 0,
+      "name" : "坐标系编码",
+      "id" : "0"
+    },
+    "caption" : "创建Bug",
+    "valueField" : "MONTRESOLVEDBUG",
+    "seriesLayoutBy" : "column",
+    "groupMode" : "MONTH",
+    "index" : 0,
+    "name" : "MONTRESOLVEDBUG"
+  }, {
+    "stack" : false,
+    "catalogField" : "CURMONTH",
+    "seriesType" : "line",
+    "eChartsType" : "line",
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "enableChartDataSet" : true,
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "1"
+    },
+    "getPSChartSeriesEncode" : {
+      "getPSChartXAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartYAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "x" : [ "CURMONTH" ],
+      "y" : [ "YEARCASECNT" ],
+      "index" : 0,
+      "name" : "坐标系编码",
+      "id" : "0"
+    },
+    "caption" : "创建用例",
+    "valueField" : "YEARCASECNT",
+    "seriesLayoutBy" : "column",
+    "groupMode" : "MONTH",
+    "index" : 1,
+    "name" : "FinishTask"
+  } ],
+  "codeName" : "MonthOpenedBugAndCase",
+  "getPSChartXAxises" : [ {
+    "eChartsPos" : "xAxis",
+    "eChartsType" : "category",
+    "position" : "bottom",
+    "caption" : "月",
+    "type" : "category",
+    "index" : 0,
+    "name" : "月",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "eChartsPos" : "yAxis",
+    "eChartsType" : "value",
+    "position" : "left",
+    "maxValue" : 200.0,
+    "minValue" : 0.0,
+    "caption" : "数量",
+    "type" : "numeric",
+    "index" : 0,
+    "name" : "数量",
+    "id" : "0"
+  } ],
+  "getPSChartDataSets" : [ {
+    "getPSChartDataSetFields" : [ {
+      "groupField" : true,
+      "groupMode" : "MONTH",
+      "index" : 0,
+      "name" : "CURMONTH",
+      "id" : "0"
+    }, {
+      "groupField" : false,
+      "index" : 1,
+      "name" : "MONTRESOLVEDBUG",
+      "id" : "1"
+    } ],
+    "index" : 0,
+    "name" : "MONTRESOLVEDBUG-MonthOpenedBugAndCase",
+    "id" : "0"
+  }, {
+    "getPSChartDataSetFields" : [ {
+      "groupField" : true,
+      "groupMode" : "MONTH",
+      "index" : 0,
+      "name" : "CURMONTH",
+      "id" : "0"
+    }, {
+      "groupField" : false,
+      "index" : 1,
+      "name" : "YEARCASECNT",
+      "id" : "1"
+    } ],
+    "index" : 1,
+    "name" : "FinishTask-MonthOpenedBugAndCase",
+    "id" : "1"
+  } ],
+  "getPSChartDataSetGroups" : [ {
+    "index" : 0,
+    "name" : "MonthOpenedBugAndCase",
+    "id" : "0"
+  } ],
+  "getPSChartGrids" : [ {
+    "getPSChartGridXAxis0" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartGridYAxis0" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartCoordinateSystem" : {
+      "getPSChartGrid" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "eChartsType" : "cartesian2d",
+      "type" : "XY",
+      "index" : 0,
+      "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+      "id" : "0"
+    },
+    "type" : "grid",
+    "index" : 0,
+    "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+    "id" : "0"
+  } ],
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "readOnly" : true,
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedBugAndCase.json",
+  "getPSSysPFPlugin" : {
+    "pluginType" : "CHART_RENDER",
+    "pluginCode" : "NEW"
+  },
+  "height" : 300.0,
+  "logicName" : "MonthOpenedBugAndCase",
+  "modelid" : "419cfd8e4688bd7a4d507d481bb24879",
+  "getUserParam" : {
+    "EC.color" : "[\"#76FF03\",\"#2979FF\",\"#00B0FF\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
+  }
+}

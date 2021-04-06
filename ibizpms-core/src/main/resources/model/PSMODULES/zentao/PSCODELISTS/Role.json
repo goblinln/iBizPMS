@@ -1,0 +1,14 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Role.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "Role",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true
+}

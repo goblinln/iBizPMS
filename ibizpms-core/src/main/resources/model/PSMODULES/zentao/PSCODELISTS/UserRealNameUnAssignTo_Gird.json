@@ -1,0 +1,18 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/UserRealNameUnAssignTo_Gird.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "orMode" : "STR",
+  "textSeparator" : ",",
+  "codeName" : "UserRealNameUnAssignTo_Gird",
+  "userScope" : false,
+  "emptyText" : "未指派",
+  "valueSeparator" : ",",
+  "cacheTimeout" : 600,
+  "enableCache" : true,
+  "refFlag" : true
+}

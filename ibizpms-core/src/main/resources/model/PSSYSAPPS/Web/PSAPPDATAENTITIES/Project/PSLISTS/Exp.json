@@ -1,0 +1,79 @@
+{
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "enableRowEditGroup" : false,
+  "getPSDEListDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "dataType" : 25,
+    "name" : "parent"
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  } ],
+  "showHeader" : true,
+  "controlType" : "LIST",
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "enableRowEdit" : false,
+  "codeName" : "Exp",
+  "minorSortDir" : "DESC",
+  "enableGroup" : false,
+  "pagingSize" : 20,
+  "groupMode" : "NONE",
+  "mobListStyle" : "LISTVIEW",
+  "getNavPSAppView" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView9.json",
+    "viewType" : "DEEDITVIEW9"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+  },
+  "controlStyle" : "LISTVIEW",
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSLISTS/Exp.json",
+  "logicName" : "Exp",
+  "modelid" : "2117568b84525320ec8ad1b8481bc912"
+}

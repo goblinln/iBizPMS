@@ -1,0 +1,24 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : true,
+  "customParam" : false,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "DELETE"
+  },
+  "orderValue" : 21,
+  "codeName" : "Remove",
+  "logicName" : "Remove",
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "requestField" : "SYS_USER_ROLEID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/Remove.json",
+  "name" : "Remove"
+}

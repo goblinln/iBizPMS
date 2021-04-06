@@ -1,0 +1,88 @@
+{
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "enableRowEditGroup" : false,
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "name" : "type"
+  }, {
+    "dataType" : 25,
+    "name" : "productlifeid"
+  }, {
+    "dataType" : 25,
+    "name" : "parent"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "end"
+  }, {
+    "dataType" : 25,
+    "name" : "productlifename"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "begin"
+  }, {
+    "dataType" : 25,
+    "name" : "branch"
+  }, {
+    "dataType" : 9,
+    "name" : "product"
+  }, {
+    "dataType" : 25,
+    "name" : "year"
+  }, {
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
+    },
+    "dataType" : 9,
+    "name" : "marker"
+  } ],
+  "showHeader" : true,
+  "controlType" : "LIST",
+  "getMinorSortPSAppDEField" : {
+    "name" : "YEAR",
+    "codeName" : "Year"
+  },
+  "enableRowEdit" : false,
+  "codeName" : "GetRoadmapYearS",
+  "minorSortDir" : "DESC",
+  "enableGroup" : false,
+  "pagingSize" : 1000,
+  "groupMode" : "NONE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife/PSLISTS/GetRoadmapYearS.json",
+  "getPSSysPFPlugin" : {
+    "pluginType" : "CUSTOM",
+    "pluginCode" : "RoadMap"
+  },
+  "logicName" : "GetRoadmapYearS",
+  "modelid" : "1f23a4ba710a8b45f1cf253adbfd3762"
+}

@@ -1,0 +1,19 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
+  "codeName" : "ProjectTaskQCnt",
+  "logicName" : "项目任务快速分组计数器",
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ProjectTaskQCnt.json",
+  "name" : "ProjectTaskQCnt"
+}

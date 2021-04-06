@@ -1,0 +1,13 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/UserYEAR.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "UserYEAR",
+  "userScope" : false,
+  "enableCache" : true,
+  "refFlag" : true
+}

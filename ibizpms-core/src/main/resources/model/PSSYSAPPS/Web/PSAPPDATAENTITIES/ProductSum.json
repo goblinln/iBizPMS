@@ -1,0 +1,556 @@
+{
+  "enableUIActions" : 15,
+  "major" : true,
+  "enableUIRemove" : true,
+  "getAllPSAppDEMethods" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "Select",
+    "methodType" : "SELECT"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSUM__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSUM__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSUM__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSUM__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductBugcnt_QA"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductBugcnt_QA"
+    },
+    "codeName" : "FetchProductBugcnt_QA",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductCreateStory"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductCreateStory"
+    },
+    "codeName" : "FetchProductCreateStory",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductStoryHoursSum"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductStoryHoursSum"
+    },
+    "codeName" : "FetchProductStoryHoursSum",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductStorySum"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductStorySum"
+    },
+    "codeName" : "FetchProductStorySum",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductStorycntAndPlancnt"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductStorycntAndPlancnt"
+    },
+    "codeName" : "FetchProductStorycntAndPlancnt",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductSumBugType"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductSumBugType"
+    },
+    "codeName" : "FetchProductSumBugType",
+    "methodType" : "FETCH"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH"
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "Designdefect",
+    "logicName" : "设计缺陷",
+    "stdDataType" : 9,
+    "name" : "DESIGNDEFECT"
+  }, {
+    "codeName" : "Changedstorycnt",
+    "logicName" : "已变更",
+    "stdDataType" : 9,
+    "name" : "CHANGEDSTORYCNT"
+  }, {
+    "codeName" : "Developingstagestoryhours",
+    "logicName" : "研发中阶段需求工时",
+    "stdDataType" : 9,
+    "name" : "DEVELOPINGSTAGESTORYHOURS"
+  }, {
+    "codeName" : "StoryCnt",
+    "logicName" : "总计",
+    "stdDataType" : 9,
+    "name" : "STORYCNT"
+  }, {
+    "codeName" : "Others",
+    "logicName" : "其他",
+    "stdDataType" : 9,
+    "name" : "OTHERS"
+  }, {
+    "codeName" : "Config",
+    "logicName" : "配置相关",
+    "stdDataType" : 9,
+    "name" : "CONFIG"
+  }, {
+    "codeName" : "Codeerror",
+    "logicName" : "代码错误",
+    "stdDataType" : 9,
+    "name" : "CODEERROR"
+  }, {
+    "codeName" : "Bugsum",
+    "logicName" : "bug总计",
+    "stdDataType" : 9,
+    "name" : "BUGSUM"
+  }, {
+    "codeName" : "Performance",
+    "logicName" : "性能问题",
+    "stdDataType" : 9,
+    "name" : "PERFORMANCE"
+  }, {
+    "codeName" : "End",
+    "logicName" : "结束日期",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "END"
+  }, {
+    "codeName" : "ClosedStoryCnt",
+    "logicName" : "已关闭",
+    "stdDataType" : 9,
+    "name" : "CLOSEDSTORYCNT"
+  }, {
+    "codeName" : "Closedstagestoryhours",
+    "logicName" : "已关闭阶段需求工时",
+    "stdDataType" : 9,
+    "name" : "CLOSEDSTAGESTORYHOURS"
+  }, {
+    "codeName" : "Testedstagestoryhours",
+    "logicName" : "测试完毕阶段需求工时",
+    "stdDataType" : 9,
+    "name" : "TESTEDSTAGESTORYHOURS"
+  }, {
+    "codeName" : "Waitstagestoryhours",
+    "logicName" : "未开始阶段需求工时",
+    "stdDataType" : 9,
+    "name" : "WAITSTAGESTORYHOURS"
+  }, {
+    "codeName" : "PO",
+    "logicName" : "产品负责人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "name" : "PO"
+  }, {
+    "codeName" : "Testingstagestoryhours",
+    "logicName" : "测试中阶段需求工时",
+    "stdDataType" : 9,
+    "name" : "TESTINGSTAGESTORYHOURS"
+  }, {
+    "codeName" : "Projectedstagestoryhours",
+    "logicName" : "已立项阶段需求工时",
+    "stdDataType" : 9,
+    "name" : "PROJECTEDSTAGESTORYHOURS"
+  }, {
+    "codeName" : "Projectedstagestorycnt",
+    "logicName" : "已立项阶段需求数量",
+    "stdDataType" : 9,
+    "name" : "PROJECTEDSTAGESTORYCNT"
+  }, {
+    "codeName" : "Verifiedstagestorycnt",
+    "logicName" : "已验收阶段需求数量",
+    "stdDataType" : 9,
+    "name" : "VERIFIEDSTAGESTORYCNT"
+  }, {
+    "keyField" : true,
+    "codeName" : "Id",
+    "logicName" : "主键标识",
+    "stdDataType" : 1,
+    "name" : "ID"
+  }, {
+    "codeName" : "Totalhours",
+    "logicName" : "总工时",
+    "stdDataType" : 9,
+    "name" : "TOTALHOURS"
+  }, {
+    "codeName" : "Planedstagestorycnt",
+    "logicName" : "已计划阶段需求数量",
+    "stdDataType" : 9,
+    "name" : "PLANEDSTAGESTORYCNT"
+  }, {
+    "codeName" : "Developingstagestorycnt",
+    "logicName" : "研发中阶段需求数量",
+    "stdDataType" : 9,
+    "name" : "DEVELOPINGSTAGESTORYCNT"
+  }, {
+    "codeName" : "ActiveStoryCnt",
+    "logicName" : "激活",
+    "stdDataType" : 9,
+    "name" : "ACTIVESTORYCNT"
+  }, {
+    "codeName" : "BugCnt",
+    "logicName" : "Bug数",
+    "stdDataType" : 9,
+    "name" : "BUGCNT"
+  }, {
+    "codeName" : "Waitstagestorycnt",
+    "logicName" : "未开始阶段需求数量",
+    "stdDataType" : 9,
+    "name" : "WAITSTAGESTORYCNT"
+  }, {
+    "codeName" : "Verifiedstagestoryhours",
+    "logicName" : "已验收阶段需求工时",
+    "stdDataType" : 9,
+    "name" : "VERIFIEDSTAGESTORYHOURS"
+  }, {
+    "codeName" : "WaitStoryCnt",
+    "logicName" : "草稿",
+    "stdDataType" : 9,
+    "name" : "WAITSTORYCNT"
+  }, {
+    "codeName" : "Testingstagestorycnt",
+    "logicName" : "测试中阶段需求数量",
+    "stdDataType" : 9,
+    "name" : "TESTINGSTAGESTORYCNT"
+  }, {
+    "codeName" : "Begin",
+    "logicName" : "开始日期",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "BEGIN"
+  }, {
+    "codeName" : "Plan",
+    "logicName" : "计划",
+    "stdDataType" : 1,
+    "name" : "PLAN"
+  }, {
+    "codeName" : "Releasedstagestoryhours",
+    "logicName" : "已发布阶段需求工时",
+    "stdDataType" : 9,
+    "name" : "RELEASEDSTAGESTORYHOURS"
+  }, {
+    "codeName" : "Developedstagestoryhours",
+    "logicName" : "研发完毕阶段需求工时",
+    "stdDataType" : 9,
+    "name" : "DEVELOPEDSTAGESTORYHOURS"
+  }, {
+    "majorField" : true,
+    "enableQuickSearch" : true,
+    "codeName" : "Name",
+    "logicName" : "产品名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "NAME"
+  }, {
+    "codeName" : "Developedstagestorycnt",
+    "logicName" : "研发完毕阶段需求数量",
+    "stdDataType" : 9,
+    "name" : "DEVELOPEDSTAGESTORYCNT"
+  }, {
+    "codeName" : "Automation",
+    "logicName" : "测试脚本",
+    "stdDataType" : 9,
+    "name" : "AUTOMATION"
+  }, {
+    "codeName" : "Planedstagestoryhours",
+    "logicName" : "已计划阶段需求工时",
+    "stdDataType" : 9,
+    "name" : "PLANEDSTAGESTORYHOURS"
+  }, {
+    "codeName" : "Install",
+    "logicName" : "安装部署",
+    "stdDataType" : 9,
+    "name" : "INSTALL"
+  }, {
+    "codeName" : "Security",
+    "logicName" : "安全相关",
+    "stdDataType" : 9,
+    "name" : "SECURITY"
+  }, {
+    "codeName" : "Releasedstagestorycnt",
+    "logicName" : "已发布阶段需求数量",
+    "stdDataType" : 9,
+    "name" : "RELEASEDSTAGESTORYCNT"
+  }, {
+    "codeName" : "Testedstagestorycnt",
+    "logicName" : "测试完毕阶段需求数量",
+    "stdDataType" : 9,
+    "name" : "TESTEDSTAGESTORYCNT"
+  }, {
+    "codeName" : "Standard",
+    "logicName" : "标准规范",
+    "stdDataType" : 9,
+    "name" : "STANDARD"
+  }, {
+    "codeName" : "Closedstagestorycnt",
+    "logicName" : "已关闭阶段需求数量",
+    "stdDataType" : 9,
+    "name" : "CLOSEDSTAGESTORYCNT"
+  } ],
+  "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "pagingSize" : 50,
+    "name" : "DEFAULT"
+  } ],
+  "enableFilterActions" : true,
+  "enableWFActions" : false,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "NAME",
+    "codeName" : "Name"
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDESERVICEAPIS/ProductSum.json"
+  },
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "codeName" : "ProductSum",
+  "logicName" : "产品汇总表",
+  "dataAccCtrlMode" : 1,
+  "storageMode" : 0,
+  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json",
+  "name" : "IBZ_PRODUCTSUM"
+}

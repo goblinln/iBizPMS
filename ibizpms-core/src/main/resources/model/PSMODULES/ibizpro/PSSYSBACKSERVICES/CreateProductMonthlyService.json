@@ -1,0 +1,9 @@
+{
+  "serviceOrder" : 0,
+  "serviceHandler" : "CreateProductMonthlyService",
+  "codeName" : "CreateProductMonthlyService",
+  "serviceContainer" : "SC01",
+  "startMode" : "AUTO",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductMonthlyService.json",
+  "name" : "定时生成产品月报"
+}

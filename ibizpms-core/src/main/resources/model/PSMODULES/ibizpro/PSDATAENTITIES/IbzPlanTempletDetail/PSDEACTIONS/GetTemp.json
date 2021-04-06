@@ -1,0 +1,26 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : true,
+  "tempDataMode" : 2,
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "enableTempData" : true,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "orderValue" : 32,
+  "codeName" : "GetTemp",
+  "logicName" : "GetTemp",
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "requestField" : "IBZ_PLANTEMPLETDETAILID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDEACTIONS/GetTemp.json",
+  "name" : "GetTemp"
+}

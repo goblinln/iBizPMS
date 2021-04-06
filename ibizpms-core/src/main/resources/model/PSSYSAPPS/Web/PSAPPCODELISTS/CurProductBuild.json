@@ -1,0 +1,25 @@
+{
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "IDS",
+    "codeName" : "Ids"
+  },
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchBugProductBuild"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "CurProductBuild",
+  "emptyText" : "未定义",
+  "minorSortDir" : "DESC",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductBuild.json",
+  "name" : "当前产品版本（动态）"
+}

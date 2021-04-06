@@ -1,0 +1,105 @@
+{
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
+  "controlType" : "SEARCHFORM",
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "editorWidth" : 100.0,
+        "name" : "begin"
+      },
+      "inputTipClosable" : false,
+      "emptyCaption" : false,
+      "noPrivDisplayMode" : 1,
+      "dataType" : 25,
+      "caption" : "起始日期",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 80,
+      "showCaption" : true,
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colLG" : 6,
+        "colLGOffset" : 1,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "begin",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "begin"
+    }, {
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "editorWidth" : 100.0,
+        "name" : "end"
+      },
+      "inputTipClosable" : false,
+      "emptyCaption" : false,
+      "noPrivDisplayMode" : 1,
+      "dataType" : 25,
+      "caption" : "结束日期",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 80,
+      "showCaption" : true,
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colLG" : 6,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "end",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "end"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "infoGroupMode" : false,
+    "codeName" : "formpage1",
+    "caption" : "表单分页",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "begin",
+    "dataType" : 25
+  }, {
+    "id" : "end",
+    "dataType" : 25
+  } ],
+  "noTabHeader" : true,
+  "codeName" : "CompanyDynamicStatic",
+  "tabHeaderPos" : "TOP",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats.json"
+  },
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats/PSSEARCHFORMS/CompanyDynamicStatic.json",
+  "logicName" : "公司动态统计专用",
+  "modelid" : "998be256746fc1cca97786857670f156"
+}

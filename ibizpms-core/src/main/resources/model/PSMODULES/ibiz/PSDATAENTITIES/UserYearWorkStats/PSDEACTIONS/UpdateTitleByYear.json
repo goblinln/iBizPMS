@@ -1,0 +1,34 @@
+{
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "getAfterPSDEActionLogics" : [ {
+    "internalLogic" : true,
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/UpdateInfo.json"
+    },
+    "ignoreException" : false,
+    "cloneParam" : false,
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑"
+  } ],
+  "timeOut" : -1,
+  "extendMode" : 0,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "UPDATE"
+  },
+  "orderValue" : 99999,
+  "codeName" : "UpdateTitleByYear",
+  "logicName" : "更新标题",
+  "actionMode" : "UPDATE",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/UpdateTitleByYear.json",
+  "name" : "UpdateTitleByYear"
+}

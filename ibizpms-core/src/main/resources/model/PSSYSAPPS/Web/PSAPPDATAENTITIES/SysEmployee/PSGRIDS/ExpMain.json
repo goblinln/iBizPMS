@@ -1,0 +1,177 @@
+{
+  "singleSelect" : false,
+  "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "USERID",
+      "codeName" : "UserId"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "用户标识",
+    "name" : "srfkey"
+  } ],
+  "columnEnableLink" : 2,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    },
+    "dataType" : 25,
+    "name" : "orgid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NICKNAME",
+      "codeName" : "NickName"
+    },
+    "dataType" : 25,
+    "name" : "nickname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "MDEPTID",
+      "codeName" : "MdeptId"
+    },
+    "dataType" : 25,
+    "name" : "mdeptid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "USERID",
+      "codeName" : "UserId"
+    },
+    "dataType" : 25,
+    "name" : "userid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PERSONNAME",
+      "codeName" : "PersonName"
+    },
+    "dataType" : 25,
+    "name" : "personname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PERSONNAME",
+      "codeName" : "PersonName"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "USERID",
+      "codeName" : "UserId"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 25,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "USERID",
+      "codeName" : "UserId"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  } ],
+  "enableRowEdit" : false,
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "用户标识",
+    "getPSAppDEField" : {
+      "name" : "USERID",
+      "codeName" : "UserId"
+    },
+    "dataItemName" : "userid",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "userid",
+    "caption" : "用户标识",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "userid"
+  }, {
+    "excelCaption" : "姓名",
+    "getPSAppDEField" : {
+      "name" : "PERSONNAME",
+      "codeName" : "PersonName"
+    },
+    "dataItemName" : "personname",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "personname",
+    "caption" : "姓名",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "personname"
+  }, {
+    "excelCaption" : "昵称别名",
+    "getPSAppDEField" : {
+      "name" : "NICKNAME",
+      "codeName" : "NickName"
+    },
+    "dataItemName" : "nickname",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "nickname",
+    "caption" : "昵称别名",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "nickname"
+  } ],
+  "codeName" : "ExpMain",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 500,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getNavPSAppView" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
+    "viewType" : "DEEDITVIEW"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee/PSGRIDS/ExpMain.json",
+  "logicName" : "主表格（通讯录用户联系人）",
+  "modelid" : "766cfb095df7862d22d3f8c9511ec6a6"
+}

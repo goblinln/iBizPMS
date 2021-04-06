@@ -1,0 +1,43 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_message__contentType.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "codeName" : "Im_message__contentType",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "codeName" : "Text",
+    "text" : "text",
+    "value" : "text"
+  }, {
+    "codeName" : "Plain",
+    "text" : "plain",
+    "value" : "plain"
+  }, {
+    "codeName" : "Emotion",
+    "text" : "emotion",
+    "value" : "emotion"
+  }, {
+    "codeName" : "Image",
+    "text" : "image",
+    "value" : "image"
+  }, {
+    "codeName" : "File",
+    "text" : "file",
+    "value" : "file"
+  }, {
+    "codeName" : "Object",
+    "text" : "object",
+    "value" : "object"
+  }, {
+    "codeName" : "Code",
+    "text" : "code",
+    "value" : "code"
+  } ]
+}

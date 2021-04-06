@@ -1,0 +1,47 @@
+{
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Testcase__frame.json",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "codeName" : "Testcase__frame",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "codeName" : "Junit",
+    "text" : "JUnit",
+    "value" : "junit"
+  }, {
+    "codeName" : "Testng",
+    "text" : "TestNG",
+    "value" : "testng"
+  }, {
+    "codeName" : "Phpunit",
+    "text" : "PHPUnit",
+    "value" : "phpunit"
+  }, {
+    "codeName" : "Pytest",
+    "text" : "Pytest",
+    "value" : "pytest"
+  }, {
+    "codeName" : "Jtest",
+    "text" : "JTest",
+    "value" : "jtest"
+  }, {
+    "codeName" : "Cppunit",
+    "text" : "CppUnit",
+    "value" : "cppunit"
+  }, {
+    "codeName" : "Gtest",
+    "text" : "GTest",
+    "value" : "gtest"
+  }, {
+    "codeName" : "Qtest",
+    "text" : "QTest",
+    "value" : "qtest"
+  } ]
+}
