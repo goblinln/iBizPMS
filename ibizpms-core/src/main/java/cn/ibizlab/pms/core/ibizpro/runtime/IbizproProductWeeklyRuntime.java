@@ -98,9 +98,8 @@ public class IbizproProductWeeklyRuntime extends DataEntityRuntime {
             return aroundAction("SUMPRODUCTWEEKLY", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

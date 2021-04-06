@@ -95,15 +95,14 @@ public class UserContactRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchCurUSERCONTACT")) {
-            return aroundAction("CurUSERCONTACT", point);
+            return aroundDataSet("CurUSERCONTACT", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyUSERCONTACT")) {
-            return aroundAction("MyUSERCONTACT", point);
+            return aroundDataSet("MyUSERCONTACT", point);
         }
         return point.proceed();
     }

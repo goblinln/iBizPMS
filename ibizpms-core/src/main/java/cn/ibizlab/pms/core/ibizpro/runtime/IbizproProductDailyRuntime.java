@@ -101,12 +101,11 @@ public class IbizproProductDailyRuntime extends DataEntityRuntime {
             return aroundAction("StatsProductDaily", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchProductDaily")) {
-            return aroundAction("ProductDaily", point);
+            return aroundDataSet("ProductDaily", point);
         }
         return point.proceed();
     }

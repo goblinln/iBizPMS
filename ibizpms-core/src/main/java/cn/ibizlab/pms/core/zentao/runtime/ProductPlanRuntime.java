@@ -140,36 +140,35 @@ public class ProductPlanRuntime extends DataEntityRuntime {
             return aroundAction("UnlinkStory", point);
         }
 
-    //
         if (action.equals("searchChildPlan")) {
-            return aroundAction("ChildPlan", point);
+            return aroundDataSet("ChildPlan", point);
         }
         if (action.equals("searchCurProductPlan")) {
-            return aroundAction("CurProductPlan", point);
+            return aroundDataSet("CurProductPlan", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchDefaultParent")) {
-            return aroundAction("DefaultParent", point);
+            return aroundDataSet("DefaultParent", point);
         }
         if (action.equals("searchPlanCodeList")) {
-            return aroundAction("PlanCodeList", point);
+            return aroundDataSet("PlanCodeList", point);
         }
         if (action.equals("searchPlanTasks")) {
-            return aroundAction("PlanTasks", point);
+            return aroundDataSet("PlanTasks", point);
         }
         if (action.equals("searchProjectApp")) {
-            return aroundAction("ProjectApp", point);
+            return aroundDataSet("ProjectApp", point);
         }
         if (action.equals("searchProjectPlan")) {
-            return aroundAction("ProjectPlan", point);
+            return aroundDataSet("ProjectPlan", point);
         }
         if (action.equals("searchRootPlan")) {
-            return aroundAction("RootPlan", point);
+            return aroundDataSet("RootPlan", point);
         }
         if (action.equals("searchTaskPlan")) {
-            return aroundAction("TaskPlan", point);
+            return aroundDataSet("TaskPlan", point);
         }
         return point.proceed();
     }

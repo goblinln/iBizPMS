@@ -98,9 +98,8 @@ public class IbizproProjectDailyRuntime extends DataEntityRuntime {
             return aroundAction("SumProjectDaily", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

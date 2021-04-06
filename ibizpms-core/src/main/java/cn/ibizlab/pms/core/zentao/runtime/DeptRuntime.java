@@ -95,12 +95,11 @@ public class DeptRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchRoot")) {
-            return aroundAction("ROOT", point);
+            return aroundDataSet("ROOT", point);
         }
         return point.proceed();
     }

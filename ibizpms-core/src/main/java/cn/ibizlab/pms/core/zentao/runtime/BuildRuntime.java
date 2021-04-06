@@ -101,24 +101,23 @@ public class BuildRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchBugProductBuild")) {
-            return aroundAction("BugProductBuild", point);
+            return aroundDataSet("BugProductBuild", point);
         }
         if (action.equals("searchCurProduct")) {
-            return aroundAction("CurProduct", point);
+            return aroundDataSet("CurProduct", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchTestBuild")) {
-            return aroundAction("TestBuild", point);
+            return aroundDataSet("TestBuild", point);
         }
         if (action.equals("searchTestRounds")) {
-            return aroundAction("TestRounds", point);
+            return aroundDataSet("TestRounds", point);
         }
         if (action.equals("searchUpdateLog")) {
-            return aroundAction("UpdateLog", point);
+            return aroundDataSet("UpdateLog", point);
         }
         return point.proceed();
     }

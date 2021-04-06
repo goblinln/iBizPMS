@@ -95,12 +95,11 @@ public class StorySpecRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchVersion")) {
-            return aroundAction("Version", point);
+            return aroundDataSet("Version", point);
         }
         return point.proceed();
     }

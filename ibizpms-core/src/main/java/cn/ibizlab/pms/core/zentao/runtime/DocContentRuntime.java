@@ -95,12 +95,11 @@ public class DocContentRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchCurVersion")) {
-            return aroundAction("CurVersion", point);
+            return aroundDataSet("CurVersion", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

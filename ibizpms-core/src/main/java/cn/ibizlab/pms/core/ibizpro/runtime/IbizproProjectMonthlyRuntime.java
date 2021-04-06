@@ -101,9 +101,8 @@ public class IbizproProjectMonthlyRuntime extends DataEntityRuntime {
             return aroundAction("SumProjectMonthly", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

@@ -125,12 +125,11 @@ public class ReleaseRuntime extends DataEntityRuntime {
             return aroundAction("UnlinkBug", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchReportRelease")) {
-            return aroundAction("ReportRelease", point);
+            return aroundDataSet("ReportRelease", point);
         }
         return point.proceed();
     }

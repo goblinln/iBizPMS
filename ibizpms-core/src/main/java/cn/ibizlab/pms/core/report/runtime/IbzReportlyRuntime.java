@@ -101,18 +101,17 @@ public class IbzReportlyRuntime extends DataEntityRuntime {
             return aroundAction("Submit", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyAllReportly")) {
-            return aroundAction("MyAllReportly", point);
+            return aroundDataSet("MyAllReportly", point);
         }
         if (action.equals("searchMyReceived")) {
-            return aroundAction("MyReceived", point);
+            return aroundDataSet("MyReceived", point);
         }
         if (action.equals("searchMyReportlyMob")) {
-            return aroundAction("MyReportlyMob", point);
+            return aroundDataSet("MyReportlyMob", point);
         }
         return point.proceed();
     }

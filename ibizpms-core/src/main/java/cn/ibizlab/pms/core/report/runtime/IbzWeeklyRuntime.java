@@ -116,21 +116,20 @@ public class IbzWeeklyRuntime extends DataEntityRuntime {
             return aroundAction("submit", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyNotSubmit")) {
-            return aroundAction("MyNotSubmit", point);
+            return aroundDataSet("MyNotSubmit", point);
         }
         if (action.equals("searchMyWeekly")) {
-            return aroundAction("MyWeekly", point);
+            return aroundDataSet("MyWeekly", point);
         }
         if (action.equals("searchProductTeamMemberWeekly")) {
-            return aroundAction("ProductTeamMemberWeekly", point);
+            return aroundDataSet("ProductTeamMemberWeekly", point);
         }
         if (action.equals("searchProjectWeekly")) {
-            return aroundAction("ProjectWeekly", point);
+            return aroundDataSet("ProjectWeekly", point);
         }
         return point.proceed();
     }

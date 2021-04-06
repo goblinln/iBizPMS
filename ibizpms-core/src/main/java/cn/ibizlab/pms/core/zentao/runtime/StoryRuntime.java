@@ -197,87 +197,86 @@ public class StoryRuntime extends DataEntityRuntime {
             return aroundAction("UnlinkStory", point);
         }
 
-    //
         if (action.equals("searchAssignedToMyStory")) {
-            return aroundAction("AssignedToMyStory", point);
+            return aroundDataSet("AssignedToMyStory", point);
         }
         if (action.equals("searchAssignedToMyStoryCalendar")) {
-            return aroundAction("AssignedToMyStoryCalendar", point);
+            return aroundDataSet("AssignedToMyStoryCalendar", point);
         }
         if (action.equals("searchBugStory")) {
-            return aroundAction("BugStory", point);
+            return aroundDataSet("BugStory", point);
         }
         if (action.equals("searchBuildLinkCompletedStories")) {
-            return aroundAction("buildLinkCompletedStories", point);
+            return aroundDataSet("buildLinkCompletedStories", point);
         }
         if (action.equals("searchBuildLinkableStories")) {
-            return aroundAction("BuildLinkableStories", point);
+            return aroundDataSet("BuildLinkableStories", point);
         }
         if (action.equals("searchBuildStories")) {
-            return aroundAction("BuildStories", point);
+            return aroundDataSet("BuildStories", point);
         }
         if (action.equals("searchByModule")) {
-            return aroundAction("ByModule", point);
+            return aroundDataSet("ByModule", point);
         }
         if (action.equals("searchCaseStory")) {
-            return aroundAction("CaseStory", point);
+            return aroundDataSet("CaseStory", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchESBulk")) {
-            return aroundAction("ESBulk", point);
+            return aroundDataSet("ESBulk", point);
         }
         if (action.equals("searchGetProductStories")) {
-            return aroundAction("GetProductStories", point);
+            return aroundDataSet("GetProductStories", point);
         }
         if (action.equals("searchMyAgentStory")) {
-            return aroundAction("MyAgentStory", point);
+            return aroundDataSet("MyAgentStory", point);
         }
         if (action.equals("searchMyCurOpenedStory")) {
-            return aroundAction("MyCurOpenedStory", point);
+            return aroundDataSet("MyCurOpenedStory", point);
         }
         if (action.equals("searchMyFavorites")) {
-            return aroundAction("MyFavorites", point);
+            return aroundDataSet("MyFavorites", point);
         }
         if (action.equals("searchNotCurPlanLinkStory")) {
-            return aroundAction("NotCurPlanLinkStory", point);
+            return aroundDataSet("NotCurPlanLinkStory", point);
         }
         if (action.equals("searchParentDefault")) {
-            return aroundAction("ParentDefault", point);
+            return aroundDataSet("ParentDefault", point);
         }
         if (action.equals("searchParentDefaultQ")) {
-            return aroundAction("ParentDefaultQ", point);
+            return aroundDataSet("ParentDefaultQ", point);
         }
         if (action.equals("searchProjectLinkStory")) {
-            return aroundAction("projectLinkStory", point);
+            return aroundDataSet("projectLinkStory", point);
         }
         if (action.equals("searchProjectStories")) {
-            return aroundAction("ProjectStories", point);
+            return aroundDataSet("ProjectStories", point);
         }
         if (action.equals("searchReleaseLinkableStories")) {
-            return aroundAction("ReleaseLinkableStories", point);
+            return aroundDataSet("ReleaseLinkableStories", point);
         }
         if (action.equals("searchReleaseStories")) {
-            return aroundAction("ReleaseStories", point);
+            return aroundDataSet("ReleaseStories", point);
         }
         if (action.equals("searchReportStories")) {
-            return aroundAction("ReportStories", point);
+            return aroundDataSet("ReportStories", point);
         }
         if (action.equals("searchStoryChild")) {
-            return aroundAction("StoryChild", point);
+            return aroundDataSet("StoryChild", point);
         }
         if (action.equals("searchStoryRelated")) {
-            return aroundAction("StoryRelated", point);
+            return aroundDataSet("StoryRelated", point);
         }
         if (action.equals("searchSubStory")) {
-            return aroundAction("SubStory", point);
+            return aroundDataSet("SubStory", point);
         }
         if (action.equals("searchTaskRelatedStory")) {
-            return aroundAction("TaskRelatedStory", point);
+            return aroundDataSet("TaskRelatedStory", point);
         }
         if (action.equals("searchView")) {
-            return aroundAction("VIEW", point);
+            return aroundDataSet("VIEW", point);
         }
         return point.proceed();
     }

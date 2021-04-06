@@ -98,12 +98,11 @@ public class BurnRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchESTIMATEANDLEFT")) {
-            return aroundAction("ESTIMATEANDLEFT", point);
+            return aroundDataSet("ESTIMATEANDLEFT", point);
         }
         return point.proceed();
     }

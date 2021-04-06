@@ -95,12 +95,11 @@ public class CaseStatsRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchTestCaseStats")) {
-            return aroundAction("TestCaseStats", point);
+            return aroundDataSet("TestCaseStats", point);
         }
         return point.proceed();
     }

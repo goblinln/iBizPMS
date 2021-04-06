@@ -95,33 +95,32 @@ public class BugStatsRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchBugCountInResolution")) {
-            return aroundAction("BugCountInResolution", point);
+            return aroundDataSet("BugCountInResolution", point);
         }
         if (action.equals("searchBugResolvedBy")) {
-            return aroundAction("BugResolvedBy", point);
+            return aroundDataSet("BugResolvedBy", point);
         }
         if (action.equals("searchBugResolvedGird")) {
-            return aroundAction("BugResolvedGird", point);
+            return aroundDataSet("BugResolvedGird", point);
         }
         if (action.equals("searchBugassignedTo")) {
-            return aroundAction("BugassignedTo", point);
+            return aroundDataSet("BugassignedTo", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchProductBugResolutionStats")) {
-            return aroundAction("ProductBugResolutionStats", point);
+            return aroundDataSet("ProductBugResolutionStats", point);
         }
         if (action.equals("searchProductBugStatusSum")) {
-            return aroundAction("ProductBugStatusSum", point);
+            return aroundDataSet("ProductBugStatusSum", point);
         }
         if (action.equals("searchProductCreateBug")) {
-            return aroundAction("ProductCreateBug", point);
+            return aroundDataSet("ProductCreateBug", point);
         }
         if (action.equals("searchProjectBugStatusCount")) {
-            return aroundAction("ProjectBugStatusCount", point);
+            return aroundDataSet("ProjectBugStatusCount", point);
         }
         return point.proceed();
     }

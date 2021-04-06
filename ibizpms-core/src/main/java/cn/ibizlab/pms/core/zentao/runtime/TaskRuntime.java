@@ -158,117 +158,116 @@ public class TaskRuntime extends DataEntityRuntime {
             return aroundAction("taskForward", point);
         }
 
-    //
         if (action.equals("searchAssignedToMyTask")) {
-            return aroundAction("AssignedToMyTask", point);
+            return aroundDataSet("AssignedToMyTask", point);
         }
         if (action.equals("searchAssignedToMyTaskPc")) {
-            return aroundAction("AssignedToMyTaskPc", point);
+            return aroundDataSet("AssignedToMyTaskPc", point);
         }
         if (action.equals("searchBugTask")) {
-            return aroundAction("BugTask", point);
+            return aroundDataSet("BugTask", point);
         }
         if (action.equals("searchByModule")) {
-            return aroundAction("ByModule", point);
+            return aroundDataSet("ByModule", point);
         }
         if (action.equals("searchChildTask")) {
-            return aroundAction("ChildTask", point);
+            return aroundDataSet("ChildTask", point);
         }
         if (action.equals("searchChildTaskTree")) {
-            return aroundAction("ChildTaskTree", point);
+            return aroundDataSet("ChildTaskTree", point);
         }
         if (action.equals("searchCurFinishTask")) {
-            return aroundAction("CurFinishTask", point);
+            return aroundDataSet("CurFinishTask", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchDefaultRow")) {
-            return aroundAction("DefaultRow", point);
+            return aroundDataSet("DefaultRow", point);
         }
         if (action.equals("searchESBulk")) {
-            return aroundAction("ESBulk", point);
+            return aroundDataSet("ESBulk", point);
         }
         if (action.equals("searchMyAgentTask")) {
-            return aroundAction("MyAgentTask", point);
+            return aroundDataSet("MyAgentTask", point);
         }
         if (action.equals("searchMyAllTask")) {
-            return aroundAction("MyAllTask", point);
+            return aroundDataSet("MyAllTask", point);
         }
         if (action.equals("searchMyCompleteTask")) {
-            return aroundAction("MyCompleteTask", point);
+            return aroundDataSet("MyCompleteTask", point);
         }
         if (action.equals("searchMyCompleteTaskMobDaily")) {
-            return aroundAction("MyCompleteTaskMobDaily", point);
+            return aroundDataSet("MyCompleteTaskMobDaily", point);
         }
         if (action.equals("searchMyCompleteTaskMobMonthly")) {
-            return aroundAction("MyCompleteTaskMobMonthly", point);
+            return aroundDataSet("MyCompleteTaskMobMonthly", point);
         }
         if (action.equals("searchMyCompleteTaskMonthlyZS")) {
-            return aroundAction("MyCompleteTaskMonthlyZS", point);
+            return aroundDataSet("MyCompleteTaskMonthlyZS", point);
         }
         if (action.equals("searchMyCompleteTaskZS")) {
-            return aroundAction("MyCompleteTaskZS", point);
+            return aroundDataSet("MyCompleteTaskZS", point);
         }
         if (action.equals("searchMyFavorites")) {
-            return aroundAction("MyFavorites", point);
+            return aroundDataSet("MyFavorites", point);
         }
         if (action.equals("searchMyPlansTaskMobMonthly")) {
-            return aroundAction("MyPlansTaskMobMonthly", point);
+            return aroundDataSet("MyPlansTaskMobMonthly", point);
         }
         if (action.equals("searchMyTomorrowPlanTask")) {
-            return aroundAction("MyTomorrowPlanTask", point);
+            return aroundDataSet("MyTomorrowPlanTask", point);
         }
         if (action.equals("searchMyTomorrowPlanTaskMobDaily")) {
-            return aroundAction("MyTomorrowPlanTaskMobDaily", point);
+            return aroundDataSet("MyTomorrowPlanTaskMobDaily", point);
         }
         if (action.equals("searchNextWeekCompleteTaskMobZS")) {
-            return aroundAction("NextWeekCompleteTaskMobZS", point);
+            return aroundDataSet("NextWeekCompleteTaskMobZS", point);
         }
         if (action.equals("searchNextWeekCompleteTaskZS")) {
-            return aroundAction("NextWeekCompleteTaskZS", point);
+            return aroundDataSet("NextWeekCompleteTaskZS", point);
         }
         if (action.equals("searchNextWeekPlanCompleteTask")) {
-            return aroundAction("NextWeekPlanCompleteTask", point);
+            return aroundDataSet("NextWeekPlanCompleteTask", point);
         }
         if (action.equals("searchPlanTask")) {
-            return aroundAction("PlanTask", point);
+            return aroundDataSet("PlanTask", point);
         }
         if (action.equals("searchProjectAppTask")) {
-            return aroundAction("ProjectAppTask", point);
+            return aroundDataSet("ProjectAppTask", point);
         }
         if (action.equals("searchProjectTask")) {
-            return aroundAction("ProjectTask", point);
+            return aroundDataSet("ProjectTask", point);
         }
         if (action.equals("searchRootTask")) {
-            return aroundAction("RootTask", point);
+            return aroundDataSet("RootTask", point);
         }
         if (action.equals("searchTaskLinkPlan")) {
-            return aroundAction("TaskLinkPlan", point);
+            return aroundDataSet("TaskLinkPlan", point);
         }
         if (action.equals("searchThisMonthCompleteTaskChoice")) {
-            return aroundAction("ThisMonthCompleteTaskChoice", point);
+            return aroundDataSet("ThisMonthCompleteTaskChoice", point);
         }
         if (action.equals("searchThisWeekCompleteTask")) {
-            return aroundAction("ThisWeekCompleteTask", point);
+            return aroundDataSet("ThisWeekCompleteTask", point);
         }
         if (action.equals("searchThisWeekCompleteTaskChoice")) {
-            return aroundAction("ThisWeekCompleteTaskChoice", point);
+            return aroundDataSet("ThisWeekCompleteTaskChoice", point);
         }
         if (action.equals("searchThisWeekCompleteTaskMobZS")) {
-            return aroundAction("ThisWeekCompleteTaskMobZS", point);
+            return aroundDataSet("ThisWeekCompleteTaskMobZS", point);
         }
         if (action.equals("searchThisWeekCompleteTaskZS")) {
-            return aroundAction("ThisWeekCompleteTaskZS", point);
+            return aroundDataSet("ThisWeekCompleteTaskZS", point);
         }
         if (action.equals("searchTodoListTask")) {
-            return aroundAction("TodoListTask", point);
+            return aroundDataSet("TodoListTask", point);
         }
         if (action.equals("searchTypeGroup")) {
-            return aroundAction("TypeGroup", point);
+            return aroundDataSet("TypeGroup", point);
         }
         if (action.equals("searchTypeGroupPlan")) {
-            return aroundAction("TypeGroupPlan", point);
+            return aroundDataSet("TypeGroupPlan", point);
         }
         return point.proceed();
     }

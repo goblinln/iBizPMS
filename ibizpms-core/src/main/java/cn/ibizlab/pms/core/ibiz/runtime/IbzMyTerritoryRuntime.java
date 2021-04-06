@@ -95,24 +95,23 @@ public class IbzMyTerritoryRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyWork")) {
-            return aroundAction("MyWork", point);
+            return aroundDataSet("MyWork", point);
         }
         if (action.equals("searchMyWorkMob")) {
-            return aroundAction("MyWorkMob", point);
+            return aroundDataSet("MyWorkMob", point);
         }
         if (action.equals("searchMyWorkPm")) {
-            return aroundAction("MyWorkPm", point);
+            return aroundDataSet("MyWorkPm", point);
         }
         if (action.equals("searchPersonInfo")) {
-            return aroundAction("PersonInfo", point);
+            return aroundDataSet("PersonInfo", point);
         }
         if (action.equals("searchWelcome")) {
-            return aroundAction("welcome", point);
+            return aroundDataSet("welcome", point);
         }
         return point.proceed();
     }

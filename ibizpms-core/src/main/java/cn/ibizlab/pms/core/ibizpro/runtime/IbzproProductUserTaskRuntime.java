@@ -95,18 +95,17 @@ public class IbzproProductUserTaskRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchProductDailyUserTaskStats")) {
-            return aroundAction("ProductDailyUserTaskStats", point);
+            return aroundDataSet("ProductDailyUserTaskStats", point);
         }
         if (action.equals("searchProductMonthlyUserTaskStats")) {
-            return aroundAction("ProductMonthlyUserTaskStats", point);
+            return aroundDataSet("ProductMonthlyUserTaskStats", point);
         }
         if (action.equals("searchProductWeeklyUserTaskStats")) {
-            return aroundAction("ProductWeeklyUserTaskStats", point);
+            return aroundDataSet("ProductWeeklyUserTaskStats", point);
         }
         return point.proceed();
     }

@@ -152,102 +152,101 @@ public class BugRuntime extends DataEntityRuntime {
             return aroundAction("UnlinkBug", point);
         }
 
-    //
         if (action.equals("searchAssignedToMyBug")) {
-            return aroundAction("AssignedToMyBug", point);
+            return aroundDataSet("AssignedToMyBug", point);
         }
         if (action.equals("searchAssignedToMyBugPc")) {
-            return aroundAction("AssignedToMyBugPc", point);
+            return aroundDataSet("AssignedToMyBugPc", point);
         }
         if (action.equals("searchBugsByBuild")) {
-            return aroundAction("BugsByBuild", point);
+            return aroundDataSet("BugsByBuild", point);
         }
         if (action.equals("searchBuildBugs")) {
-            return aroundAction("BuildBugs", point);
+            return aroundDataSet("BuildBugs", point);
         }
         if (action.equals("searchBuildLinkResolvedBugs")) {
-            return aroundAction("buildLinkResolvedBugs", point);
+            return aroundDataSet("buildLinkResolvedBugs", point);
         }
         if (action.equals("searchBuildOpenBugs")) {
-            return aroundAction("BuildOpenBugs", point);
+            return aroundDataSet("BuildOpenBugs", point);
         }
         if (action.equals("searchBuildProduceBug")) {
-            return aroundAction("BuildProduceBug", point);
+            return aroundDataSet("BuildProduceBug", point);
         }
         if (action.equals("searchBuildProduceBugModule")) {
-            return aroundAction("BuildProduceBugModule", point);
+            return aroundDataSet("BuildProduceBugModule", point);
         }
         if (action.equals("searchBuildProduceBugModule_Project")) {
-            return aroundAction("BuildProduceBugModule_Project", point);
+            return aroundDataSet("BuildProduceBugModule_Project", point);
         }
         if (action.equals("searchBuildProduceBugOpenedBy")) {
-            return aroundAction("BuildProduceBugOpenedBy", point);
+            return aroundDataSet("BuildProduceBugOpenedBy", point);
         }
         if (action.equals("searchBuildProduceBugOpenedBy_Project")) {
-            return aroundAction("BuildProduceBugOpenedBy_Project", point);
+            return aroundDataSet("BuildProduceBugOpenedBy_Project", point);
         }
         if (action.equals("searchBuildProduceBugRES")) {
-            return aroundAction("BuildProduceBugRES", point);
+            return aroundDataSet("BuildProduceBugRES", point);
         }
         if (action.equals("searchBuildProduceBugRESOLVEDBY")) {
-            return aroundAction("BuildProduceBugRESOLVEDBY", point);
+            return aroundDataSet("BuildProduceBugRESOLVEDBY", point);
         }
         if (action.equals("searchBuildProduceBugRESOLVEDBY_Project")) {
-            return aroundAction("BuildProduceBugRESOLVEDBY_Project", point);
+            return aroundDataSet("BuildProduceBugRESOLVEDBY_Project", point);
         }
         if (action.equals("searchBuildProduceBugResolution_Project")) {
-            return aroundAction("BuildProduceBugResolution_Project", point);
+            return aroundDataSet("BuildProduceBugResolution_Project", point);
         }
         if (action.equals("searchBuildProduceBugSeverity_Project")) {
-            return aroundAction("BuildProduceBugSeverity_Project", point);
+            return aroundDataSet("BuildProduceBugSeverity_Project", point);
         }
         if (action.equals("searchBuildProduceBugStatus_Project")) {
-            return aroundAction("BuildProduceBugStatus_Project", point);
+            return aroundDataSet("BuildProduceBugStatus_Project", point);
         }
         if (action.equals("searchBuildProduceBugType_Project")) {
-            return aroundAction("BuildProduceBugType_Project", point);
+            return aroundDataSet("BuildProduceBugType_Project", point);
         }
         if (action.equals("searchCurUserResolve")) {
-            return aroundAction("CurUserResolve", point);
+            return aroundDataSet("CurUserResolve", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchESBulk")) {
-            return aroundAction("ESBulk", point);
+            return aroundDataSet("ESBulk", point);
         }
         if (action.equals("searchMyAgentBug")) {
-            return aroundAction("MyAgentBug", point);
+            return aroundDataSet("MyAgentBug", point);
         }
         if (action.equals("searchMyCurOpenedBug")) {
-            return aroundAction("MyCurOpenedBug", point);
+            return aroundDataSet("MyCurOpenedBug", point);
         }
         if (action.equals("searchMyFavorites")) {
-            return aroundAction("MyFavorites", point);
+            return aroundDataSet("MyFavorites", point);
         }
         if (action.equals("searchNotCurPlanLinkBug")) {
-            return aroundAction("NotCurPlanLinkBug", point);
+            return aroundDataSet("NotCurPlanLinkBug", point);
         }
         if (action.equals("searchProjectBugs")) {
-            return aroundAction("ProjectBugs", point);
+            return aroundDataSet("ProjectBugs", point);
         }
         if (action.equals("searchReleaseBugs")) {
-            return aroundAction("ReleaseBugs", point);
+            return aroundDataSet("ReleaseBugs", point);
         }
         if (action.equals("searchReleaseLeftBugs")) {
-            return aroundAction("ReleaseLeftBugs", point);
+            return aroundDataSet("ReleaseLeftBugs", point);
         }
         if (action.equals("searchReleaseLinkableLeftBug")) {
-            return aroundAction("ReleaseLinkableLeftBug", point);
+            return aroundDataSet("ReleaseLinkableLeftBug", point);
         }
         if (action.equals("searchReleaseLinkableResolvedBug")) {
-            return aroundAction("ReleaseLinkableResolvedBug", point);
+            return aroundDataSet("ReleaseLinkableResolvedBug", point);
         }
         if (action.equals("searchReportBugs")) {
-            return aroundAction("ReportBugs", point);
+            return aroundDataSet("ReportBugs", point);
         }
         if (action.equals("searchTaskRelatedBug")) {
-            return aroundAction("TaskBug", point);
+            return aroundDataSet("TaskBug", point);
         }
         return point.proceed();
     }

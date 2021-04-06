@@ -128,72 +128,71 @@ public class CaseRuntime extends DataEntityRuntime {
             return aroundAction("unlinkSuiteCase", point);
         }
 
-    //
         if (action.equals("searchBatchNew")) {
-            return aroundAction("BatchNew", point);
+            return aroundDataSet("BatchNew", point);
         }
         if (action.equals("searchCurOpenedCase")) {
-            return aroundAction("CurOpenedCase", point);
+            return aroundDataSet("CurOpenedCase", point);
         }
         if (action.equals("searchCurSuite")) {
-            return aroundAction("CurSuite", point);
+            return aroundDataSet("CurSuite", point);
         }
         if (action.equals("searchCurTestTask")) {
-            return aroundAction("CurTestTask", point);
+            return aroundDataSet("CurTestTask", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchESBulk")) {
-            return aroundAction("ESBulk", point);
+            return aroundDataSet("ESBulk", point);
         }
         if (action.equals("searchModuleRePortCase")) {
-            return aroundAction("ModuleRePortCase", point);
+            return aroundDataSet("ModuleRePortCase", point);
         }
         if (action.equals("searchModuleRePortCaseEntry")) {
-            return aroundAction("ModuleRePortCaseEntry", point);
+            return aroundDataSet("ModuleRePortCaseEntry", point);
         }
         if (action.equals("searchModuleRePortCase_Project")) {
-            return aroundAction("ModuleRePortCase_Project", point);
+            return aroundDataSet("ModuleRePortCase_Project", point);
         }
         if (action.equals("searchMyFavorites")) {
-            return aroundAction("MyFavorite", point);
+            return aroundDataSet("MyFavorite", point);
         }
         if (action.equals("searchNotCurTestSuite")) {
-            return aroundAction("NotCurTestSuite", point);
+            return aroundDataSet("NotCurTestSuite", point);
         }
         if (action.equals("searchNotCurTestTask")) {
-            return aroundAction("NotCurTestTask", point);
+            return aroundDataSet("NotCurTestTask", point);
         }
         if (action.equals("searchNotCurTestTaskProject")) {
-            return aroundAction("NotCurTestTaskProject", point);
+            return aroundDataSet("NotCurTestTaskProject", point);
         }
         if (action.equals("searchRePortCase")) {
-            return aroundAction("RePortCase", point);
+            return aroundDataSet("RePortCase", point);
         }
         if (action.equals("searchRePortCaseEntry")) {
-            return aroundAction("RePortCaseEntry", point);
+            return aroundDataSet("RePortCaseEntry", point);
         }
         if (action.equals("searchRePortCase_Project")) {
-            return aroundAction("RePortCase_Project", point);
+            return aroundDataSet("RePortCase_Project", point);
         }
         if (action.equals("searchRunERRePortCase")) {
-            return aroundAction("RunERRePortCase", point);
+            return aroundDataSet("RunERRePortCase", point);
         }
         if (action.equals("searchRunERRePortCaseEntry")) {
-            return aroundAction("RunERRePortCaseEntry", point);
+            return aroundDataSet("RunERRePortCaseEntry", point);
         }
         if (action.equals("searchRunERRePortCase_Project")) {
-            return aroundAction("RunERRePortCase_Project", point);
+            return aroundDataSet("RunERRePortCase_Project", point);
         }
         if (action.equals("searchRunRePortCase")) {
-            return aroundAction("RunRePortCase", point);
+            return aroundDataSet("RunRePortCase", point);
         }
         if (action.equals("searchRunRePortCaseEntry")) {
-            return aroundAction("RunRePortCaseEntry", point);
+            return aroundDataSet("RunRePortCaseEntry", point);
         }
         if (action.equals("searchRunRePortCase_Project")) {
-            return aroundAction("RunRePortCase_Project", point);
+            return aroundDataSet("RunRePortCase_Project", point);
         }
         return point.proceed();
     }

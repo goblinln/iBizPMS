@@ -101,9 +101,8 @@ public class TeamRuntime extends DataEntityRuntime {
             return aroundAction("unlinkPorjectMember", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

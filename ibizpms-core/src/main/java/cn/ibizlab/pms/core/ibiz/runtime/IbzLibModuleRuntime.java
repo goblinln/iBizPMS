@@ -95,12 +95,11 @@ public class IbzLibModuleRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchRoot_NoBranch")) {
-            return aroundAction("Root_NoBranch", point);
+            return aroundDataSet("Root_NoBranch", point);
         }
         return point.proceed();
     }

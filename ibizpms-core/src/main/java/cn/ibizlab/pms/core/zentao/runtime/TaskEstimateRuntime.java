@@ -98,27 +98,26 @@ public class TaskEstimateRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchActionMonth")) {
-            return aroundAction("ActionMonth", point);
+            return aroundDataSet("ActionMonth", point);
         }
         if (action.equals("searchActionYear")) {
-            return aroundAction("ActionYear", point);
+            return aroundDataSet("ActionYear", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchDefaults")) {
-            return aroundAction("DEFAULT1", point);
+            return aroundDataSet("DEFAULT1", point);
         }
         if (action.equals("searchProjectActionMonth")) {
-            return aroundAction("ProjectActionMonth", point);
+            return aroundDataSet("ProjectActionMonth", point);
         }
         if (action.equals("searchProjectActionYear")) {
-            return aroundAction("ProjectActionYear", point);
+            return aroundDataSet("ProjectActionYear", point);
         }
         if (action.equals("searchProjectTaskEstimate")) {
-            return aroundAction("ProjectTaskEstimate", point);
+            return aroundDataSet("ProjectTaskEstimate", point);
         }
         return point.proceed();
     }

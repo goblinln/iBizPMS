@@ -98,18 +98,17 @@ public class ProjectTeamRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchProjectTeamPm")) {
-            return aroundAction("ProjectTeamPm", point);
+            return aroundDataSet("ProjectTeamPm", point);
         }
         if (action.equals("searchRowEditDefault")) {
-            return aroundAction("RowEditDefault", point);
+            return aroundDataSet("RowEditDefault", point);
         }
         if (action.equals("searchTaskCntEstimateConsumedLeft")) {
-            return aroundAction("TaskCntEstimateConsumedLeft", point);
+            return aroundDataSet("TaskCntEstimateConsumedLeft", point);
         }
         return point.proceed();
     }

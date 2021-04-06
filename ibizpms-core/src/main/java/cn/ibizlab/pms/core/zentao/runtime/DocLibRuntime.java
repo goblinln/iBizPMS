@@ -101,33 +101,32 @@ public class DocLibRuntime extends DataEntityRuntime {
             return aroundAction("UnCollect", point);
         }
 
-    //
         if (action.equals("searchByCustom")) {
-            return aroundAction("ByCustom", point);
+            return aroundDataSet("ByCustom", point);
         }
         if (action.equals("searchByProduct")) {
-            return aroundAction("ByProduct", point);
+            return aroundDataSet("ByProduct", point);
         }
         if (action.equals("searchByProductNotFiles")) {
-            return aroundAction("ByProductNotFiles", point);
+            return aroundDataSet("ByProductNotFiles", point);
         }
         if (action.equals("searchByProject")) {
-            return aroundAction("ByProject", point);
+            return aroundDataSet("ByProject", point);
         }
         if (action.equals("searchByProjectNotFiles")) {
-            return aroundAction("ByProjectNotFiles", point);
+            return aroundDataSet("ByProjectNotFiles", point);
         }
         if (action.equals("searchCurDocLib")) {
-            return aroundAction("CurDocLib", point);
+            return aroundDataSet("CurDocLib", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyFavourites")) {
-            return aroundAction("MyFavourites", point);
+            return aroundDataSet("MyFavourites", point);
         }
         if (action.equals("searchRootModuleMuLu")) {
-            return aroundAction("RootModuleMuLu", point);
+            return aroundDataSet("RootModuleMuLu", point);
         }
         return point.proceed();
     }

@@ -95,15 +95,14 @@ public class IbzReportRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchAllReport")) {
-            return aroundAction("AllReport", point);
+            return aroundDataSet("AllReport", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyReAllReport")) {
-            return aroundAction("MyReAllReport", point);
+            return aroundDataSet("MyReAllReport", point);
         }
         return point.proceed();
     }

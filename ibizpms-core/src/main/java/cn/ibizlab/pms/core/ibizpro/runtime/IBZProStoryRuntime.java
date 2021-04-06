@@ -98,9 +98,8 @@ public class IBZProStoryRuntime extends DataEntityRuntime {
             return aroundAction("SyncFromIBIZ", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

@@ -113,12 +113,11 @@ public class TestTaskRuntime extends DataEntityRuntime {
             return aroundAction("unlinkCase", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyTestTaskPc")) {
-            return aroundAction("MyTestTaskPc", point);
+            return aroundDataSet("MyTestTaskPc", point);
         }
         return point.proceed();
     }

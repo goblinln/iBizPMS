@@ -95,12 +95,11 @@ public class AccountTaskestimateRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchAllAccountEstimate")) {
-            return aroundAction("AllAccountEstimate", point);
+            return aroundDataSet("AllAccountEstimate", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

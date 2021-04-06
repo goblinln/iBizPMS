@@ -80,9 +80,8 @@ public class IbiLoginRuntime extends DataEntityRuntime {
             return aroundAction("ztlogin", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

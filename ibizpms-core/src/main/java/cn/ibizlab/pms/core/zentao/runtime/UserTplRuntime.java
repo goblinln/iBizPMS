@@ -95,12 +95,11 @@ public class UserTplRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyUserTpl")) {
-            return aroundAction("MyUserTpl", point);
+            return aroundDataSet("MyUserTpl", point);
         }
         return point.proceed();
     }

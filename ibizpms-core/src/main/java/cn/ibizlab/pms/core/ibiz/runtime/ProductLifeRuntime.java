@@ -95,18 +95,17 @@ public class ProductLifeRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchGetRoadmap")) {
-            return aroundAction("GetRoadmap", point);
+            return aroundDataSet("GetRoadmap", point);
         }
         if (action.equals("searchGetRoadmapS")) {
-            return aroundAction("GetRoadmapS", point);
+            return aroundDataSet("GetRoadmapS", point);
         }
         if (action.equals("searchRoadMapYear")) {
-            return aroundAction("RoadMapYear", point);
+            return aroundDataSet("RoadMapYear", point);
         }
         return point.proceed();
     }

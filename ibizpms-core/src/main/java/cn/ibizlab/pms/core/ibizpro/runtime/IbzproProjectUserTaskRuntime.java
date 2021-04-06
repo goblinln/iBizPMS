@@ -95,18 +95,17 @@ public class IbzproProjectUserTaskRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchProjectDailyTask")) {
-            return aroundAction("ProjectDailyTask", point);
+            return aroundDataSet("ProjectDailyTask", point);
         }
         if (action.equals("searchProjectMonthlyTask")) {
-            return aroundAction("ProjectMonthlyTask", point);
+            return aroundDataSet("ProjectMonthlyTask", point);
         }
         if (action.equals("searchProjectWeeklyTask")) {
-            return aroundAction("ProjectWeeklyTask", point);
+            return aroundDataSet("ProjectWeeklyTask", point);
         }
         return point.proceed();
     }

@@ -98,36 +98,35 @@ public class ProductRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchAllList")) {
-            return aroundAction("AllList", point);
+            return aroundDataSet("AllList", point);
         }
         if (action.equals("searchAllProduct")) {
-            return aroundAction("AllProduct", point);
+            return aroundDataSet("AllProduct", point);
         }
         if (action.equals("searchCheckNameOrCode")) {
-            return aroundAction("CheckNameOrCode", point);
+            return aroundDataSet("CheckNameOrCode", point);
         }
         if (action.equals("searchCurProject")) {
-            return aroundAction("CURPROJECT", point);
+            return aroundDataSet("CURPROJECT", point);
         }
         if (action.equals("searchCurUer")) {
-            return aroundAction("CurUer", point);
+            return aroundDataSet("CurUer", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchESBulk")) {
-            return aroundAction("ESBulk", point);
+            return aroundDataSet("ESBulk", point);
         }
         if (action.equals("searchProductPM")) {
-            return aroundAction("ProductPM", point);
+            return aroundDataSet("ProductPM", point);
         }
         if (action.equals("searchProductTeam")) {
-            return aroundAction("ProductTeam", point);
+            return aroundDataSet("ProductTeam", point);
         }
         if (action.equals("searchStoryCurProject")) {
-            return aroundAction("StoryCURPROJECT", point);
+            return aroundDataSet("StoryCURPROJECT", point);
         }
         return point.proceed();
     }

@@ -95,12 +95,11 @@ public class TestResultRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchCurTestRun")) {
-            return aroundAction("CurTestRun", point);
+            return aroundDataSet("CurTestRun", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

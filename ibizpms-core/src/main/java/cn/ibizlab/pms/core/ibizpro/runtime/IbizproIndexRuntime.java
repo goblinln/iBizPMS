@@ -95,15 +95,14 @@ public class IbizproIndexRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchESquery")) {
-            return aroundAction("ESquery", point);
+            return aroundDataSet("ESquery", point);
         }
         if (action.equals("searchIndexDER")) {
-            return aroundAction("IndexDER", point);
+            return aroundDataSet("IndexDER", point);
         }
         return point.proceed();
     }

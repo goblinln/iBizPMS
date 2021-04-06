@@ -116,18 +116,17 @@ public class TodoRuntime extends DataEntityRuntime {
             return aroundAction("sendMsgPreProcess", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyTodo")) {
-            return aroundAction("MyTodo", point);
+            return aroundDataSet("MyTodo", point);
         }
         if (action.equals("searchMyTodoPc")) {
-            return aroundAction("MyTodoPc", point);
+            return aroundDataSet("MyTodoPc", point);
         }
         if (action.equals("searchMyUpcoming")) {
-            return aroundAction("MyUpcoming", point);
+            return aroundDataSet("MyUpcoming", point);
         }
         return point.proceed();
     }

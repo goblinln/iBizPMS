@@ -116,27 +116,26 @@ public class IbzDailyRuntime extends DataEntityRuntime {
             return aroundAction("submit", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyAllDaily")) {
-            return aroundAction("MyAllDaily", point);
+            return aroundDataSet("MyAllDaily", point);
         }
         if (action.equals("searchMyDaily")) {
-            return aroundAction("MyDaily", point);
+            return aroundDataSet("MyDaily", point);
         }
         if (action.equals("searchMyNotSubmit")) {
-            return aroundAction("MyNotSubmit", point);
+            return aroundDataSet("MyNotSubmit", point);
         }
         if (action.equals("searchMySubmitDaily")) {
-            return aroundAction("MySubmitDaily", point);
+            return aroundDataSet("MySubmitDaily", point);
         }
         if (action.equals("searchProductDaily")) {
-            return aroundAction("ProductDaily", point);
+            return aroundDataSet("ProductDaily", point);
         }
         if (action.equals("searchProjectDaily")) {
-            return aroundAction("ProjectDaily", point);
+            return aroundDataSet("ProjectDaily", point);
         }
         return point.proceed();
     }

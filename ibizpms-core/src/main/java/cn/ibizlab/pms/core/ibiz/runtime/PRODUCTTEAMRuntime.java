@@ -98,18 +98,17 @@ public class PRODUCTTEAMRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchProductTeamInfo")) {
-            return aroundAction("ProductTeamInfo", point);
+            return aroundDataSet("ProductTeamInfo", point);
         }
         if (action.equals("searchProjectApp")) {
-            return aroundAction("ProjectApp", point);
+            return aroundDataSet("ProjectApp", point);
         }
         if (action.equals("searchRowEditDefaultProductTeam")) {
-            return aroundAction("RowEditDefaultProductTeam", point);
+            return aroundDataSet("RowEditDefaultProductTeam", point);
         }
         return point.proceed();
     }

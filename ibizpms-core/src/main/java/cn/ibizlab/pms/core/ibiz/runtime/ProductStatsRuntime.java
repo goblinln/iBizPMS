@@ -98,21 +98,20 @@ public class ProductStatsRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchNoOpenProduct")) {
-            return aroundAction("NoOpenProduct", point);
+            return aroundDataSet("NoOpenProduct", point);
         }
         if (action.equals("searchProdctQuantiGird")) {
-            return aroundAction("ProdctQuantiGird", point);
+            return aroundDataSet("ProdctQuantiGird", point);
         }
         if (action.equals("searchProductInputTable")) {
-            return aroundAction("ProductInputTable", point);
+            return aroundDataSet("ProductInputTable", point);
         }
         if (action.equals("searchProductcompletionstatistics")) {
-            return aroundAction("Productcompletionstatistics", point);
+            return aroundDataSet("Productcompletionstatistics", point);
         }
         return point.proceed();
     }

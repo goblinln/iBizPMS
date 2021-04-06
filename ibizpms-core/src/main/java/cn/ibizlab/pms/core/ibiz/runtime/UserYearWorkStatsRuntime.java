@@ -101,18 +101,17 @@ public class UserYearWorkStatsRuntime extends DataEntityRuntime {
             return aroundAction("UpdateTitleByYear", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMonthFinishTaskAndBug")) {
-            return aroundAction("MonthFinishTaskAndBug", point);
+            return aroundDataSet("MonthFinishTaskAndBug", point);
         }
         if (action.equals("searchMonthOpenedBugAndCase")) {
-            return aroundAction("MonthOpenedBugAndCase", point);
+            return aroundDataSet("MonthOpenedBugAndCase", point);
         }
         if (action.equals("searchMonthOpenedStory")) {
-            return aroundAction("MonthOpenedStory", point);
+            return aroundDataSet("MonthOpenedStory", point);
         }
         return point.proceed();
     }

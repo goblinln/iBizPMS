@@ -95,15 +95,14 @@ public class TaskStatsRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchTaskFinishHuiZong")) {
-            return aroundAction("TaskFinishHuiZong", point);
+            return aroundDataSet("TaskFinishHuiZong", point);
         }
         if (action.equals("searchUserFinishTaskSum")) {
-            return aroundAction("UserFinishTaskSum", point);
+            return aroundDataSet("UserFinishTaskSum", point);
         }
         return point.proceed();
     }

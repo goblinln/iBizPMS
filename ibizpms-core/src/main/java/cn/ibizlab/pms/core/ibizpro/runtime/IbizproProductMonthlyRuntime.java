@@ -101,9 +101,8 @@ public class IbizproProductMonthlyRuntime extends DataEntityRuntime {
             return aroundAction("StatsProductMonthly", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

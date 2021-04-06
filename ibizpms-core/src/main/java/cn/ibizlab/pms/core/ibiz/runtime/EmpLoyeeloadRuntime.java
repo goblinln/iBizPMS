@@ -95,12 +95,11 @@ public class EmpLoyeeloadRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchGETWOERKLOAD")) {
-            return aroundAction("GETWOERKLOAD", point);
+            return aroundDataSet("GETWOERKLOAD", point);
         }
         return point.proceed();
     }

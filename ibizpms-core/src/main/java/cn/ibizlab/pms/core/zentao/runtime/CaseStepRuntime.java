@@ -95,24 +95,23 @@ public class CaseStepRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchCurTest")) {
-            return aroundAction("CurTest", point);
+            return aroundDataSet("CurTest", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchDefault1")) {
-            return aroundAction("DEFAULT1", point);
+            return aroundDataSet("DEFAULT1", point);
         }
         if (action.equals("searchMob")) {
-            return aroundAction("Mob", point);
+            return aroundDataSet("Mob", point);
         }
         if (action.equals("searchVersion")) {
-            return aroundAction("Version", point);
+            return aroundDataSet("Version", point);
         }
         if (action.equals("searchVersions")) {
-            return aroundAction("Versions", point);
+            return aroundDataSet("Versions", point);
         }
         return point.proceed();
     }

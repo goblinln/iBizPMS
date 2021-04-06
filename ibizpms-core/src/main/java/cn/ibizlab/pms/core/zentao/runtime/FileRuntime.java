@@ -98,21 +98,20 @@ public class FileRuntime extends DataEntityRuntime {
             return aroundAction("updateObjectIDForPmsEe", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchDocLibFile")) {
-            return aroundAction("DocLibFile", point);
+            return aroundDataSet("DocLibFile", point);
         }
         if (action.equals("searchProductDocLibFile")) {
-            return aroundAction("ProductDocLibFile", point);
+            return aroundDataSet("ProductDocLibFile", point);
         }
         if (action.equals("searchType")) {
-            return aroundAction("Type", point);
+            return aroundDataSet("Type", point);
         }
         if (action.equals("searchTypeNotBySrfparentkey")) {
-            return aroundAction("TypeNotBySrfparentkey", point);
+            return aroundDataSet("TypeNotBySrfparentkey", point);
         }
         return point.proceed();
     }

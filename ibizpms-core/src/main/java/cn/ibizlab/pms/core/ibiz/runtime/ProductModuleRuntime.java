@@ -98,24 +98,23 @@ public class ProductModuleRuntime extends DataEntityRuntime {
             return aroundAction("SyncFromIBIZ", point);
         }
 
-    //
         if (action.equals("searchByPath")) {
-            return aroundAction("BYPATH", point);
+            return aroundDataSet("BYPATH", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchParentModule")) {
-            return aroundAction("ParentModule", point);
+            return aroundDataSet("ParentModule", point);
         }
         if (action.equals("searchRoot")) {
-            return aroundAction("ROOT", point);
+            return aroundDataSet("ROOT", point);
         }
         if (action.equals("searchRoot_NoBranch")) {
-            return aroundAction("Root_NoBranch", point);
+            return aroundDataSet("Root_NoBranch", point);
         }
         if (action.equals("searchStoryModule")) {
-            return aroundAction("StoryModule", point);
+            return aroundDataSet("StoryModule", point);
         }
         return point.proceed();
     }

@@ -98,12 +98,11 @@ public class BranchRuntime extends DataEntityRuntime {
             return aroundAction("Sort", point);
         }
 
-    //
         if (action.equals("searchCurProduct")) {
-            return aroundAction("CurProduct", point);
+            return aroundDataSet("CurProduct", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

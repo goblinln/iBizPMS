@@ -101,27 +101,26 @@ public class UserRuntime extends DataEntityRuntime {
             return aroundAction("SyncAccount", point);
         }
 
-    //
         if (action.equals("searchBugUser")) {
-            return aroundAction("BugUser", point);
+            return aroundDataSet("BugUser", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchGetByCommiter")) {
-            return aroundAction("getByCommiter", point);
+            return aroundDataSet("getByCommiter", point);
         }
         if (action.equals("searchProjectTeamM")) {
-            return aroundAction("ProjectTeamM", point);
+            return aroundDataSet("ProjectTeamM", point);
         }
         if (action.equals("searchProjectTeamUser")) {
-            return aroundAction("ProjectTeamUser", point);
+            return aroundDataSet("ProjectTeamUser", point);
         }
         if (action.equals("searchProjectTeamUserTask")) {
-            return aroundAction("ProjectTeamUserTask", point);
+            return aroundDataSet("ProjectTeamUserTask", point);
         }
         if (action.equals("searchTaskTeam")) {
-            return aroundAction("TASKTEAM", point);
+            return aroundDataSet("TASKTEAM", point);
         }
         return point.proceed();
     }

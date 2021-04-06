@@ -134,45 +134,44 @@ public class ProjectRuntime extends DataEntityRuntime {
             return aroundAction("UpdateOrder", point);
         }
 
-    //
         if (action.equals("searchBugProject")) {
-            return aroundAction("BugProject", point);
+            return aroundDataSet("BugProject", point);
         }
         if (action.equals("searchCurPlanProject")) {
-            return aroundAction("CurPlanProject", point);
+            return aroundDataSet("CurPlanProject", point);
         }
         if (action.equals("searchCurProduct")) {
-            return aroundAction("CurProduct", point);
+            return aroundDataSet("CurProduct", point);
         }
         if (action.equals("searchCurUser")) {
-            return aroundAction("CurUser", point);
+            return aroundDataSet("CurUser", point);
         }
         if (action.equals("searchCurUserSa")) {
-            return aroundAction("CurUserSa", point);
+            return aroundDataSet("CurUserSa", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchESBulk")) {
-            return aroundAction("ESBulk", point);
+            return aroundDataSet("ESBulk", point);
         }
         if (action.equals("searchInvolvedProject")) {
-            return aroundAction("InvolvedProject", point);
+            return aroundDataSet("InvolvedProject", point);
         }
         if (action.equals("searchInvolvedProject_StoryTaskBug")) {
-            return aroundAction("InvolvedProject_StoryTaskBug", point);
+            return aroundDataSet("InvolvedProject_StoryTaskBug", point);
         }
         if (action.equals("searchMyProject")) {
-            return aroundAction("MyProject", point);
+            return aroundDataSet("MyProject", point);
         }
         if (action.equals("searchProjectTeam")) {
-            return aroundAction("ProjectTeam", point);
+            return aroundDataSet("ProjectTeam", point);
         }
         if (action.equals("searchStoryProject")) {
-            return aroundAction("StoryProject", point);
+            return aroundDataSet("StoryProject", point);
         }
         if (action.equals("searchUnDoneProject")) {
-            return aroundAction("UnDoneProject", point);
+            return aroundDataSet("UnDoneProject", point);
         }
         return point.proceed();
     }

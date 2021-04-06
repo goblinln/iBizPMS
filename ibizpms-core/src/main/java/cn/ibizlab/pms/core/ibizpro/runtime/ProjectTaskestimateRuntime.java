@@ -95,12 +95,11 @@ public class ProjectTaskestimateRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchAccountDetail")) {
-            return aroundAction("AccountDetail", point);
+            return aroundDataSet("AccountDetail", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

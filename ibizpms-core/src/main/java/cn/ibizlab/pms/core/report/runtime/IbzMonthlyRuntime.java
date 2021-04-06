@@ -113,27 +113,26 @@ public class IbzMonthlyRuntime extends DataEntityRuntime {
             return aroundAction("Submit", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyMonthly")) {
-            return aroundAction("MyMonthly", point);
+            return aroundDataSet("MyMonthly", point);
         }
         if (action.equals("searchMyMonthlyMob")) {
-            return aroundAction("MyMonthlyMob", point);
+            return aroundDataSet("MyMonthlyMob", point);
         }
         if (action.equals("searchMyReceivedMonthly")) {
-            return aroundAction("MyReceivedMonthly", point);
+            return aroundDataSet("MyReceivedMonthly", point);
         }
         if (action.equals("searchMySubmitMonthly")) {
-            return aroundAction("MySubmitMonthly", point);
+            return aroundDataSet("MySubmitMonthly", point);
         }
         if (action.equals("searchProductMonthly")) {
-            return aroundAction("ProductMonthly", point);
+            return aroundDataSet("ProductMonthly", point);
         }
         if (action.equals("searchProjectMonthly")) {
-            return aroundAction("ProjectMonthly", point);
+            return aroundDataSet("ProjectMonthly", point);
         }
         return point.proceed();
     }

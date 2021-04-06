@@ -95,27 +95,26 @@ public class ProductSumRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchProductBugcnt_QA")) {
-            return aroundAction("ProductBugcnt_QA", point);
+            return aroundDataSet("ProductBugcnt_QA", point);
         }
         if (action.equals("searchProductCreateStory")) {
-            return aroundAction("ProductCreateStory", point);
+            return aroundDataSet("ProductCreateStory", point);
         }
         if (action.equals("searchProductStoryHoursSum")) {
-            return aroundAction("ProductStoryHoursSum", point);
+            return aroundDataSet("ProductStoryHoursSum", point);
         }
         if (action.equals("searchProductStorySum")) {
-            return aroundAction("ProductStorySum", point);
+            return aroundDataSet("ProductStorySum", point);
         }
         if (action.equals("searchProductStorycntAndPlancnt")) {
-            return aroundAction("ProductStorycntAndPlancnt", point);
+            return aroundDataSet("ProductStorycntAndPlancnt", point);
         }
         if (action.equals("searchProductSumBugType")) {
-            return aroundAction("ProductSumBugType", point);
+            return aroundDataSet("ProductSumBugType", point);
         }
         return point.proceed();
     }

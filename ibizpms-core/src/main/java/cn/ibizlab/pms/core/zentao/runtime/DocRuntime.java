@@ -113,39 +113,38 @@ public class DocRuntime extends DataEntityRuntime {
             return aroundAction("UnCollect", point);
         }
 
-    //
         if (action.equals("searchChildDocLibDoc")) {
-            return aroundAction("ChildDocLibDoc", point);
+            return aroundDataSet("ChildDocLibDoc", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchDocLibAndDoc")) {
-            return aroundAction("DocLibAndDoc", point);
+            return aroundDataSet("DocLibAndDoc", point);
         }
         if (action.equals("searchDocLibDoc")) {
-            return aroundAction("DocLibDoc", point);
+            return aroundDataSet("DocLibDoc", point);
         }
         if (action.equals("searchDocModuleDoc")) {
-            return aroundAction("DocModuleDoc", point);
+            return aroundDataSet("DocModuleDoc", point);
         }
         if (action.equals("searchDocStatus")) {
-            return aroundAction("DocStatus", point);
+            return aroundDataSet("DocStatus", point);
         }
         if (action.equals("searchModuleDocChild")) {
-            return aroundAction("ModuleDocChild", point);
+            return aroundDataSet("ModuleDocChild", point);
         }
         if (action.equals("searchMyFavourite")) {
-            return aroundAction("MYFAVOURITE", point);
+            return aroundDataSet("MYFAVOURITE", point);
         }
         if (action.equals("searchMyFavouritesOnlyDoc")) {
-            return aroundAction("MyFavouritesOnlyDoc", point);
+            return aroundDataSet("MyFavouritesOnlyDoc", point);
         }
         if (action.equals("searchNotRootDoc")) {
-            return aroundAction("NotRootDoc", point);
+            return aroundDataSet("NotRootDoc", point);
         }
         if (action.equals("searchRootDoc")) {
-            return aroundAction("RootDoc", point);
+            return aroundDataSet("RootDoc", point);
         }
         return point.proceed();
     }

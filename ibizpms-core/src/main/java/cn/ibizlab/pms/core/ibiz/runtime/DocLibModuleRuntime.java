@@ -101,36 +101,35 @@ public class DocLibModuleRuntime extends DataEntityRuntime {
             return aroundAction("UnCollect", point);
         }
 
-    //
         if (action.equals("searchAllDocLibModule_Custom")) {
-            return aroundAction("AllDocLibModule_Custom", point);
+            return aroundDataSet("AllDocLibModule_Custom", point);
         }
         if (action.equals("searchAllDoclibModule")) {
-            return aroundAction("AllDoclibModule", point);
+            return aroundDataSet("AllDoclibModule", point);
         }
         if (action.equals("searchChildModuleByParent")) {
-            return aroundAction("ChildModuleByParent", point);
+            return aroundDataSet("ChildModuleByParent", point);
         }
         if (action.equals("searchChildModuleByRealParent")) {
-            return aroundAction("ChildModuleByRealParent", point);
+            return aroundDataSet("ChildModuleByRealParent", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMyFavourites")) {
-            return aroundAction("MyFavourites", point);
+            return aroundDataSet("MyFavourites", point);
         }
         if (action.equals("searchParentModule")) {
-            return aroundAction("ParentModule", point);
+            return aroundDataSet("ParentModule", point);
         }
         if (action.equals("searchRootModuleMuLu")) {
-            return aroundAction("RootModuleMuLu", point);
+            return aroundDataSet("RootModuleMuLu", point);
         }
         if (action.equals("searchRootModuleMuLuByRoot")) {
-            return aroundAction("RootModuleMuLuByRoot", point);
+            return aroundDataSet("RootModuleMuLuByRoot", point);
         }
         if (action.equals("searchRootModuleMuLuBysrfparentkey")) {
-            return aroundAction("RootModuleMuLuBysrfparentkey", point);
+            return aroundDataSet("RootModuleMuLuBysrfparentkey", point);
         }
         return point.proceed();
     }

@@ -95,39 +95,38 @@ public class ProjectStatsRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchNoOpenProduct")) {
-            return aroundAction("NOOpenProduct", point);
+            return aroundDataSet("NOOpenProduct", point);
         }
         if (action.equals("searchProjectBugType")) {
-            return aroundAction("ProjectBugType", point);
+            return aroundDataSet("ProjectBugType", point);
         }
         if (action.equals("searchProjectInputStats")) {
-            return aroundAction("ProjectInputStats", point);
+            return aroundDataSet("ProjectInputStats", point);
         }
         if (action.equals("searchProjectProgress")) {
-            return aroundAction("ProjectProgress", point);
+            return aroundDataSet("ProjectProgress", point);
         }
         if (action.equals("searchProjectQuality")) {
-            return aroundAction("ProjectQuality", point);
+            return aroundDataSet("ProjectQuality", point);
         }
         if (action.equals("searchProjectStoryStageStats")) {
-            return aroundAction("ProjectStoryStageStats", point);
+            return aroundDataSet("ProjectStoryStageStats", point);
         }
         if (action.equals("searchProjectStoryStatusStats")) {
-            return aroundAction("ProjectStoryStatusStats", point);
+            return aroundDataSet("ProjectStoryStatusStats", point);
         }
         if (action.equals("searchProjectTaskCountByTaskStatus")) {
-            return aroundAction("ProjectTaskCountByTaskStatus", point);
+            return aroundDataSet("ProjectTaskCountByTaskStatus", point);
         }
         if (action.equals("searchProjectTaskCountByType")) {
-            return aroundAction("ProjectTaskCountByType", point);
+            return aroundDataSet("ProjectTaskCountByType", point);
         }
         if (action.equals("searchTaskTime")) {
-            return aroundAction("TASKTIME", point);
+            return aroundDataSet("TASKTIME", point);
         }
         return point.proceed();
     }

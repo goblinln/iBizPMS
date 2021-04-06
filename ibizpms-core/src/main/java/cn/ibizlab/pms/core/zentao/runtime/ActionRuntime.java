@@ -101,27 +101,26 @@ public class ActionRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchMobType")) {
-            return aroundAction("MobType", point);
+            return aroundDataSet("MobType", point);
         }
         if (action.equals("searchMyTrends")) {
-            return aroundAction("MyTrends", point);
+            return aroundDataSet("MyTrends", point);
         }
         if (action.equals("searchProductTrends")) {
-            return aroundAction("ProductTrends", point);
+            return aroundDataSet("ProductTrends", point);
         }
         if (action.equals("searchProjectTrends")) {
-            return aroundAction("ProjectTrends", point);
+            return aroundDataSet("ProjectTrends", point);
         }
         if (action.equals("searchQueryUserYEAR")) {
-            return aroundAction("QueryUserYEAR", point);
+            return aroundDataSet("QueryUserYEAR", point);
         }
         if (action.equals("searchType")) {
-            return aroundAction("Type", point);
+            return aroundDataSet("Type", point);
         }
         return point.proceed();
     }

@@ -95,15 +95,14 @@ public class TaskEstimateStatsRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchActionMonth")) {
-            return aroundAction("ActionMonth", point);
+            return aroundDataSet("ActionMonth", point);
         }
         if (action.equals("searchActionYear")) {
-            return aroundAction("ActionYear", point);
+            return aroundDataSet("ActionYear", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

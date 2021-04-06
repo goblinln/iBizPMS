@@ -98,27 +98,26 @@ public class ModuleRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchBugModule")) {
-            return aroundAction("BugModule", point);
+            return aroundDataSet("BugModule", point);
         }
         if (action.equals("searchBugModuleCodeList")) {
-            return aroundAction("BugModuleCodeList", point);
+            return aroundDataSet("BugModuleCodeList", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         if (action.equals("searchDocModule")) {
-            return aroundAction("DocModule", point);
+            return aroundDataSet("DocModule", point);
         }
         if (action.equals("searchLine")) {
-            return aroundAction("Line", point);
+            return aroundDataSet("Line", point);
         }
         if (action.equals("searchStoryModule")) {
-            return aroundAction("StoryModule", point);
+            return aroundDataSet("StoryModule", point);
         }
         if (action.equals("searchTaskModule")) {
-            return aroundAction("TaskModule", point);
+            return aroundDataSet("TaskModule", point);
         }
         return point.proceed();
     }

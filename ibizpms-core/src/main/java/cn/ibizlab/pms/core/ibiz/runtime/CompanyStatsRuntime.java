@@ -95,12 +95,11 @@ public class CompanyStatsRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchCompanyDynamicStats")) {
-            return aroundAction("CompanyDynamicStats", point);
+            return aroundDataSet("CompanyDynamicStats", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }

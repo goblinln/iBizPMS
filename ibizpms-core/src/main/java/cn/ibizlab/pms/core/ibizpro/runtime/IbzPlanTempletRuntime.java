@@ -98,12 +98,11 @@ public class IbzPlanTempletRuntime extends DataEntityRuntime {
             return aroundAction("Save", point);
         }
 
-    //
         if (action.equals("searchCurUserTemplet")) {
-            return aroundAction("CurUserTemplet", point);
+            return aroundDataSet("CurUserTemplet", point);
         }
         if (action.equals("searchDefault")) {
-            return aroundAction("DEFAULT", point);
+            return aroundDataSet("DEFAULT", point);
         }
         return point.proceed();
     }
