@@ -1,4 +1,6 @@
 {
+  "vCName" : "trunk",
+  "defaultLanguage" : "ZH_CN",
   "getAllPSSysUserRoles" : [ {
     "codeName" : "ProductManger",
     "roleTag" : "ProductManger",
@@ -800,9 +802,30 @@
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductDailyService.json",
     "name" : "定时生成产品日报"
   } ],
-  "getAllPSApps" : [ {
+  "getAllPSSystemModules" : [ {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSSYSAPP.json"
+    "path" : "PSMODULES/ibiz.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro.json"
   } ],
   "getAllPSDataEntities" : [ {
     "modelref" : true,
@@ -2255,34 +2278,11 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSCODELISTS/ConfigGroup.json"
   } ],
-  "getAllPSSystemModules" : [ {
+  "getAllPSApps" : [ {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizplugin.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro.json"
+    "path" : "PSSYSAPPS/Web/PSSYSAPP.json"
   } ],
   "codeName" : "iBizPMS",
-  "vCName" : "trunk",
-  "defaultLanguage" : "ZH_CN",
   "logicName" : "iBiz软件生产管理",
   "deploySysId" : "67F0CDDF-FF00-4012-97F5-2BF520769214",
   "name" : "iBizPMS",

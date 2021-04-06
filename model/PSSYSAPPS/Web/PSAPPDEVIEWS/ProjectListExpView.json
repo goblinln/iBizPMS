@@ -1,17 +1,17 @@
 {
-  "sideBarLayout" : "LEFT",
   "showDataInfoBar" : true,
+  "sideBarLayout" : "LEFT",
   "enableFilter" : false,
   "enableQuickSearch" : true,
-  "showCaptionBar" : false,
   "getPSDEViewCodeName" : "ListExpView",
+  "showCaptionBar" : false,
   "caption" : "项目",
   "title" : "项目列表导航视图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -26,18 +26,18 @@
     "engineType" : "ListExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "LISTEXPBAR",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "LISTEXPBAR"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
   "getPSControls" : [ {
     "controlType" : "LISTEXPBAR",
-    "enableCounter" : true,
     "enableSearch" : true,
     "getXDataPSControl" : {
       "modelref" : true,
@@ -51,63 +51,63 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
           "actionType" : "DEACTION",
           "name" : "update"
         }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "FetchCurUser"
           },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-          },
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Get"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Create"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -119,45 +119,46 @@
       },
       "controlType" : "LIST"
     },
+    "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
       "enableRowNew" : false,
       "enableRowEditOrder" : false,
       "noSort" : false,
       "hasWFDataItems" : false,
-      "showHeader" : true,
       "enableRowEditGroup" : false,
       "getPSDEListDataItems" : [ {
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "name" : "srfmajortext",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfmajortext"
       }, {
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "name" : "srfkey",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfkey"
       }, {
         "getPSAppDEField" : {
           "name" : "PARENT",
           "codeName" : "Parent"
         },
-        "name" : "parent",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "parent"
       }, {
-        "name" : "srfmstag",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfmstag"
       } ],
+      "showHeader" : true,
+      "controlType" : "LIST",
       "getMinorSortPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
       "enableRowEdit" : false,
-      "controlType" : "LIST",
       "codeName" : "Exp",
       "minorSortDir" : "DESC",
       "enableGroup" : false,
@@ -198,67 +199,68 @@
         "showBusyIndicator" : true,
         "id" : "listexpbar_list"
       },
+      "controlStyle" : "LISTVIEW",
       "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
           "actionType" : "DEACTION",
           "name" : "update"
         }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "FetchCurUser"
           },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-          },
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Get"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Create"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -268,7 +270,6 @@
         "enableDEFieldPrivilege" : false,
         "id" : "列表控件处理器"
       },
-      "controlStyle" : "LISTVIEW",
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSLISTS/Exp.json",
       "logicName" : "Exp",
       "name" : "listexpbar_list",
@@ -303,12 +304,11 @@
     "name" : "listexpbar",
     "modelid" : "d1de7b1c3f0c14ee93de65e6b1045786_listexpbar"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
       "batchAddOnly" : false,
+      "enableBatchAdd" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "viewLogicType" : "APP_NEWDATA",

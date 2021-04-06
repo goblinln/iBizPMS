@@ -1,18 +1,17 @@
 {
+  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "TASK",
     "codeName" : "Task"
-  },
-  "getERMajorPSDEF" : {
-    "name" : "PROJECT",
-    "codeName" : "Project"
   },
   "getPSPickupTextDEField" : {
     "name" : "TASKNAME",
     "codeName" : "TaskName"
   },
-  "enableExtRestrict" : true,
-  "masterOrder" : -1,
+  "getERMajorPSDEF" : {
+    "name" : "PROJECT",
+    "codeName" : "Project"
+  },
   "getERMinorPSDEF" : {
     "name" : "PROJECT",
     "codeName" : "Project"
@@ -26,6 +25,7 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
   },
+  "enableExtRestrict" : true,
   "removeActionType" : -1,
   "masterRS" : 0,
   "removeOrder" : 0,

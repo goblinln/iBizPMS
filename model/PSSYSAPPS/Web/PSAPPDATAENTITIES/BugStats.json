@@ -1,26 +1,25 @@
 {
   "enableUIActions" : 15,
-  "enableUIRemove" : true,
   "major" : true,
+  "enableUIRemove" : true,
   "getAllPSAppDEMethods" : [ {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
     "builtinMethod" : false,
-    "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
+    "codeName" : "Select",
+    "methodType" : "SELECT"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BUGSTATS__DEACTION__CREATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -29,14 +28,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Create.json"
     },
-    "codeName" : "Create"
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BUGSTATS__DEACTION__UPDATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
@@ -45,14 +44,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Update.json"
     },
-    "codeName" : "Update"
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BUGSTATS__DEACTION__REMOVE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
@@ -61,14 +60,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Remove.json"
     },
-    "codeName" : "Remove"
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BUGSTATS__DEACTION__GET"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -77,14 +76,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Get.json"
     },
-    "codeName" : "Get"
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -93,38 +92,38 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/GetDraft.json"
     },
-    "codeName" : "GetDraft"
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugCountInResolution"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -133,14 +132,14 @@
       "modelref" : true,
       "id" : "BugCountInResolution"
     },
-    "codeName" : "FetchBugCountInResolution"
+    "codeName" : "FetchBugCountInResolution",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugResolvedBy"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -149,14 +148,14 @@
       "modelref" : true,
       "id" : "BugResolvedBy"
     },
-    "codeName" : "FetchBugResolvedBy"
+    "codeName" : "FetchBugResolvedBy",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugResolvedGird"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -165,14 +164,14 @@
       "modelref" : true,
       "id" : "BugResolvedGird"
     },
-    "codeName" : "FetchBugResolvedGird"
+    "codeName" : "FetchBugResolvedGird",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugassignedTo"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -181,14 +180,14 @@
       "modelref" : true,
       "id" : "BugassignedTo"
     },
-    "codeName" : "FetchBugassignedTo"
+    "codeName" : "FetchBugassignedTo",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -197,14 +196,14 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "codeName" : "FetchDefault"
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProductBugResolutionStats"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -213,14 +212,14 @@
       "modelref" : true,
       "id" : "ProductBugResolutionStats"
     },
-    "codeName" : "FetchProductBugResolutionStats"
+    "codeName" : "FetchProductBugResolutionStats",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProductBugStatusSum"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -229,14 +228,14 @@
       "modelref" : true,
       "id" : "ProductBugStatusSum"
     },
-    "codeName" : "FetchProductBugStatusSum"
+    "codeName" : "FetchProductBugStatusSum",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProductCreateBug"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -245,14 +244,14 @@
       "modelref" : true,
       "id" : "ProductCreateBug"
     },
-    "codeName" : "FetchProductCreateBug"
+    "codeName" : "FetchProductCreateBug",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectBugStatusCount"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -261,41 +260,42 @@
       "modelref" : true,
       "id" : "ProjectBugStatusCount"
     },
-    "codeName" : "FetchProjectBugStatusCount"
+    "codeName" : "FetchProjectBugStatusCount",
+    "methodType" : "FETCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
@@ -360,20 +360,20 @@
     "stdDataType" : 9,
     "name" : "BUGEXTERNAL"
   }, {
-    "codeName" : "Begin",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "Begin",
     "logicName" : "开始",
     "stdDataType" : 5,
     "name" : "BEGIN"
   }, {
-    "codeName" : "Bugresolveddate",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "Bugresolveddate",
     "logicName" : "bug解决日期",
     "stdDataType" : 5,
     "name" : "BUGRESOLVEDDATE"
   }, {
-    "codeName" : "End",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "End",
     "logicName" : "结束",
     "stdDataType" : 5,
     "name" : "END"
@@ -416,8 +416,8 @@
     "stdDataType" : 9,
     "name" : "BUGCNT"
   }, {
-    "codeName" : "Bugopeneddate",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "Bugopeneddate",
     "logicName" : "Bug创建日期",
     "stdDataType" : 5,
     "name" : "BUGOPENEDDATE"
@@ -428,11 +428,11 @@
     "name" : "BUGWJJ"
   }, {
     "majorField" : true,
+    "enableQuickSearch" : true,
     "codeName" : "Title",
     "logicName" : "名称",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "enableQuickSearch" : true,
     "name" : "TITLE"
   }, {
     "codeName" : "Bugpri",
@@ -505,22 +505,22 @@
     "name" : "PROJECT"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
     "getPSDEACModeDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "value",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "value"
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "name" : "text",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "text"
     } ],
-    "enablePagingBar" : false,
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -542,7 +542,6 @@
     "codeName" : "Title"
   } ],
   "getAllPSAppDEDataExports" : [ {
-    "maxRowCount" : 1000,
     "getPSDEDataExportItems" : [ {
       "getPSAppDEField" : {
         "name" : "RESOLVEDBY",
@@ -648,15 +647,11 @@
       "caption" : "Bug状态",
       "name" : "bugstatus"
     } ],
+    "maxRowCount" : 1000,
     "codeName" : "BugResolvedExport",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSAPPDEDATAEXPS/BugResolvedExport.json",
     "name" : "Bug解决数据导出"
   } ],
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDESERVICEAPIS/BugStats.json"
-  },
-  "codeName" : "BugStats",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -670,12 +665,17 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDESERVICEAPIS/BugStats.json"
+  },
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "codeName" : "BugStats",
   "logicName" : "Bug统计",
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,
   "dataAccCtrlArch" : 1,
-  "enableUICreate" : true,
-  "enableUIModify" : true,
   "defaultMode" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json",
   "name" : "IBZ_BUGSTATS"

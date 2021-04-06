@@ -5,36 +5,37 @@
   "appSwitchMode" : 0,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSControlParam" : { },
     "controlStyle" : "APPINDEXVIEW_STYLE2",
     "name" : "layoutpanel"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "enableCustomize" : false,
     "controlType" : "APPMENU",
     "getPSAppMenuItems" : [ {
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
       "getPSAppMenuItems" : [ {
-        "openDefault" : true,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
         },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "openDefault" : true,
         "getPSAppFunc" : {
           "modelref" : true,
           "id" : "Auto23"
@@ -45,13 +46,13 @@
         "tooltip" : "我的收藏",
         "name" : "menuitem12"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -63,13 +64,13 @@
         "tooltip" : "我的地盘",
         "name" : "menuitem9"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -81,13 +82,13 @@
         "tooltip" : "产品主页",
         "name" : "menuitem3"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -99,13 +100,13 @@
         "tooltip" : "项目主页",
         "name" : "menuitem2"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -117,13 +118,13 @@
         "tooltip" : "测试主页",
         "name" : "menuitem1"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -135,13 +136,13 @@
         "tooltip" : "文档",
         "name" : "menuitem16"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -153,13 +154,13 @@
         "tooltip" : "计划模板",
         "name" : "menuitem23"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -171,13 +172,13 @@
         "tooltip" : "统计",
         "name" : "menuitem22"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -189,13 +190,13 @@
         "tooltip" : "年度统计",
         "name" : "menuitem25"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -207,13 +208,13 @@
         "tooltip" : "iBiz软件生产管理",
         "name" : "menuitem7"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -225,41 +226,41 @@
         "tooltip" : "通讯录",
         "name" : "menuitem26"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
         },
-        "hidden" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
         "getPSAppFunc" : {
           "modelref" : true,
           "id" : "AppFunc9"
         },
         "itemType" : "MENUITEM",
         "accUserMode" : 2,
+        "hidden" : true,
         "caption" : "全文检索",
         "tooltip" : "全文检索",
         "name" : "menuitem27"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
         },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
         "getPSAppMenuItems" : [ {
-          "getPSLayoutPos" : {
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
           "getPSLayout" : {
             "layout" : "TABLE_24COL",
             "columnCount" : 24
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
           },
           "getPSAppFunc" : {
             "modelref" : true,
@@ -271,13 +272,13 @@
           "tooltip" : "用户",
           "name" : "menuitem11"
         }, {
-          "getPSLayoutPos" : {
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
           "getPSLayout" : {
             "layout" : "TABLE_24COL",
             "columnCount" : 24
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
           },
           "getPSAppFunc" : {
             "modelref" : true,
@@ -289,13 +290,13 @@
           "tooltip" : "用例库",
           "name" : "menuitem10"
         }, {
-          "getPSLayoutPos" : {
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
           "getPSLayout" : {
             "layout" : "TABLE_24COL",
             "columnCount" : 24
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
           },
           "getPSAppFunc" : {
             "modelref" : true,
@@ -307,13 +308,13 @@
           "tooltip" : "系统配置",
           "name" : "menuitem21"
         }, {
-          "getPSLayoutPos" : {
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
           "getPSLayout" : {
             "layout" : "TABLE_24COL",
             "columnCount" : 24
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
           },
           "getPSAppFunc" : {
             "modelref" : true,
@@ -325,13 +326,13 @@
           "tooltip" : "汇报角色角色",
           "name" : "menuitem19"
         }, {
-          "getPSLayoutPos" : {
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
           "getPSLayout" : {
             "layout" : "TABLE_24COL",
             "columnCount" : 24
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
           },
           "getPSAppFunc" : {
             "modelref" : true,
@@ -343,13 +344,13 @@
           "tooltip" : "插件管理",
           "name" : "menuitem17"
         }, {
-          "getPSLayoutPos" : {
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
           "getPSLayout" : {
             "layout" : "TABLE_24COL",
             "columnCount" : 24
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
           },
           "getPSAppFunc" : {
             "modelref" : true,
@@ -373,22 +374,22 @@
       "tooltip" : "顶部菜单",
       "name" : "top_menus"
     }, {
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
       "getPSAppMenuItems" : [ {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "accessKey" : "PRODUCTLEFT",
         "getPSAppFunc" : {
@@ -405,13 +406,13 @@
         "tooltip" : "产品",
         "name" : "menuitem4"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -427,13 +428,13 @@
         "tooltip" : "项目",
         "name" : "menuitem5"
       }, {
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
         },
         "getPSAppFunc" : {
           "modelref" : true,
@@ -455,13 +456,13 @@
       "tooltip" : "左侧分页导航",
       "name" : "left_exp"
     }, {
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 0,
@@ -469,13 +470,13 @@
       "tooltip" : "底部导航区",
       "name" : "bottom_exp"
     }, {
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 0,
@@ -483,97 +484,97 @@
       "tooltip" : "底部中间菜单",
       "name" : "footer_center"
     }, {
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
-      "hidden" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto26"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
+      "hidden" : true,
       "caption" : "bug菜单项",
       "tooltip" : "bug菜单项",
       "name" : "menuitem13"
     }, {
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
-      "hidden" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto26"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
+      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem14"
     }, {
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
-      "hidden" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto27"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
+      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem15"
     }, {
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
-      "hidden" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto29"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
+      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem18"
     }, {
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
-      "hidden" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto32"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
+      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem20"
@@ -592,7 +593,6 @@
     "name" : "appmenu",
     "modelid" : "0a4e485b6222864606f7d7e77325ee2d"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "iBizPMS",
   "caption" : "iBiz软件生产管理",
   "title" : "iBiz软件生产管理",

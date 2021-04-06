@@ -1,4 +1,8 @@
 {
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+  },
   "getValuePSAppDEField" : {
     "name" : "USERNAME",
     "codeName" : "UserName"
@@ -14,10 +18,6 @@
   "getIconPathPSAppDEField" : {
     "name" : "USERICON",
     "codeName" : "UserIcon"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

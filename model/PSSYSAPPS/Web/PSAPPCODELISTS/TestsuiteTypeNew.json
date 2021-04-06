@@ -6,13 +6,13 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "private",
     "codeName" : "Private",
-    "text" : "私有"
+    "text" : "私有",
+    "value" : "private"
   }, {
-    "value" : "public",
     "codeName" : "Public",
-    "text" : "公开"
+    "text" : "公开",
+    "value" : "public"
   } ],
   "codeName" : "TestsuiteTypeNew",
   "emptyText" : "未定义",

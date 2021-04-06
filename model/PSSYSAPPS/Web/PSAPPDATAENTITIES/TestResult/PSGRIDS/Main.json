@@ -1,78 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "COMPILE",
-      "codeName" : "Compile"
-    },
-    "name" : "compile",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "JOB",
-      "codeName" : "Job"
-    },
-    "name" : "job",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CASERESULT",
-      "codeName" : "CaseResult"
-    },
-    "name" : "caseresult",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CASE",
-      "codeName" : "IBizCase"
-    },
-    "name" : "case",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "RUN",
-      "codeName" : "Run"
-    },
-    "name" : "run",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "LASTRUNNER",
-      "codeName" : "LastRunner"
-    },
-    "name" : "lastrunner",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
-    },
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "name" : "date",
-    "dataType" : 5
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  } ],
+  "singleSelect" : true,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -92,31 +34,90 @@
     "caption" : "编号",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : true,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
   "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "COMPILE",
+      "codeName" : "Compile"
+    },
+    "dataType" : 1,
+    "name" : "compile"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "JOB",
+      "codeName" : "Job"
+    },
+    "dataType" : 1,
+    "name" : "job"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CASERESULT",
+      "codeName" : "CaseResult"
+    },
+    "dataType" : 25,
+    "name" : "caseresult"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    },
+    "dataType" : 1,
+    "name" : "case"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "RUN",
+      "codeName" : "Run"
+    },
+    "dataType" : 1,
+    "name" : "run"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "LASTRUNNER",
+      "codeName" : "LastRunner"
+    },
+    "dataType" : 25,
+    "name" : "lastrunner"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "date"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  } ],
   "enableRowEdit" : false,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "测试结果",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testresult__result.json"
@@ -126,7 +127,6 @@
       "codeName" : "CaseResult"
     },
     "dataItemName" : "caseresult",
-    "excelCaption" : "测试结果",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -138,12 +138,12 @@
     "widthUnit" : "PX",
     "name" : "caseresult"
   }, {
+    "excelCaption" : "测试时间",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
     "dataItemName" : "date",
-    "excelCaption" : "测试时间",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -156,6 +156,7 @@
     "widthUnit" : "PX",
     "name" : "date"
   }, {
+    "excelCaption" : "最后执行人",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
@@ -165,7 +166,6 @@
       "codeName" : "LastRunner"
     },
     "dataItemName" : "lastrunner",
-    "excelCaption" : "最后执行人",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -177,12 +177,12 @@
     "widthUnit" : "PX",
     "name" : "lastrunner"
   }, {
+    "excelCaption" : "测试执行",
     "getPSAppDEField" : {
       "name" : "RUN",
       "codeName" : "Run"
     },
     "dataItemName" : "run",
-    "excelCaption" : "测试执行",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -197,12 +197,12 @@
   "codeName" : "Main",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 500,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

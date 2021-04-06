@@ -8,8 +8,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -24,20 +24,22 @@
     "engineType" : "EditView9",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "FORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "FORM"
     }, {
+      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0,
-      "paramType" : "VALUE"
+      "value" : 0
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
   },
   "getPSControls" : [ {
+    "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -62,7 +64,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "enableAutoSave" : false,
     "infoFormMode" : true,
     "showFormNavBar" : false,
     "controlType" : "FORM",
@@ -80,9 +81,9 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
+            "enableLinkView" : true,
             "getLinkPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibTabExpView.json",
@@ -90,21 +91,20 @@
             },
             "dropDownView" : false,
             "enablePickupView" : false,
-            "enableLinkView" : true,
             "enableAC" : false,
             "forceSelection" : true,
             "showTrigger" : false,
-            "getPSAppDEACMode" : {
+            "getPSAppDataEntity" : {
               "modelref" : true,
-              "id" : "Default"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
               "id" : "FetchDefault"
             },
-            "getPSAppDataEntity" : {
+            "getPSAppDEACMode" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+              "id" : "Default"
             },
             "valueItemName" : "lib",
             "editable" : false,
@@ -119,12 +119,12 @@
             "name" : "libname"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "LIBNAME",
             "codeName" : "Libname"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "用例库",
           "allowEmpty" : true,
@@ -134,6 +134,7 @@
           "valueItemName" : "lib",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -143,7 +144,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "libname"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -151,12 +151,12 @@
             "name" : "modulename"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "MODULENAME",
             "codeName" : "Modulename"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "所属模块",
           "allowEmpty" : true,
@@ -165,6 +165,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -174,7 +175,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "modulename"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -186,12 +186,12 @@
             "name" : "type"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "TYPE",
             "codeName" : "Type"
           },
-          "hidden" : false,
           "dataType" : 25,
           "convertToCodeItemText" : true,
           "caption" : "用例类型",
@@ -201,6 +201,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -210,7 +211,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "type"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -222,12 +222,12 @@
             "name" : "stage"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "STAGE",
             "codeName" : "Stage"
           },
-          "hidden" : false,
           "dataType" : 25,
           "convertToCodeItemText" : true,
           "caption" : "适用阶段",
@@ -237,6 +237,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -246,7 +247,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "stage"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -258,12 +258,12 @@
             "name" : "pri"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PRI",
             "codeName" : "Pri"
           },
-          "hidden" : false,
           "dataType" : 25,
           "convertToCodeItemText" : true,
           "caption" : "优先级",
@@ -273,6 +273,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -282,7 +283,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "pri"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -294,12 +294,12 @@
             "name" : "status"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "STATUS",
             "codeName" : "Status"
           },
-          "hidden" : false,
           "dataType" : 25,
           "convertToCodeItemText" : true,
           "caption" : "状态",
@@ -309,6 +309,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -318,7 +319,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "status"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -326,12 +326,12 @@
             "name" : "keywords"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "KEYWORDS",
             "codeName" : "Keywords"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "关键词",
           "allowEmpty" : true,
@@ -340,6 +340,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -360,11 +361,11 @@
         "showCaption" : false,
         "name" : "group1"
       } ],
-      "infoGroupMode" : true,
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
+      "infoGroupMode" : true,
       "codeName" : "formpage1",
       "caption" : "基本信息",
       "detailType" : "FORMPAGE",
@@ -488,13 +489,13 @@
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
@@ -510,52 +511,52 @@
         "actionType" : "DEACTION",
         "name" : "loaddraftfrom"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "name" : "loaddraft"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -570,7 +571,6 @@
     "name" : "form",
     "modelid" : "d0dbbd73d48f2c563cec7a32b8163afa"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "IbzCaseInfoEditView9",
   "viewType" : "DEEDITVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzCaseInfoEditView9.json",
@@ -579,6 +579,14 @@
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "LIB",
+      "codeName" : "Lib"
+    },
     "enableCreateDataRS" : false,
     "enableUpdateDataRS" : false,
     "enableGetDataRS" : false,
@@ -586,14 +594,6 @@
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
-    },
-    "getParentPSAppDEField" : {
-      "name" : "LIB",
-      "codeName" : "Lib"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
     },
     "codeName" : "IbzCases",
     "actionRSMode" : 1,

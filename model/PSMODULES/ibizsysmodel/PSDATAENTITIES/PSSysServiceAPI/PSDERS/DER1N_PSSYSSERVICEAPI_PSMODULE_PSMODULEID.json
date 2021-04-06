@@ -1,4 +1,5 @@
 {
+  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "PSMODULEID",
     "codeName" : "PSModuleId"
@@ -7,7 +8,6 @@
     "name" : "PSMODULENAME",
     "codeName" : "PSModuleName"
   },
-  "masterOrder" : -1,
   "removeActionType" : 3,
   "masterRS" : 0,
   "removeOrder" : 0,

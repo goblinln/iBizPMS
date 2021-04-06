@@ -1,96 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
-    "name" : "product",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "id",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
-    "name" : "project",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PROJECTTNAME",
-      "codeName" : "ProjecttName"
-    },
-    "name" : "projecttname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "name",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "BUILD",
-      "codeName" : "Build"
-    },
-    "name" : "build",
-    "dataType" : 1
-  }, {
-    "name" : "srfmstag",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "END",
-      "codeName" : "End"
-    },
-    "format" : "YYYY-MM-DD",
-    "name" : "end",
-    "dataType" : 5
-  }, {
-    "getPSAppDEField" : {
-      "name" : "BEGIN",
-      "codeName" : "Begin"
-    },
-    "format" : "YYYY-MM-DD",
-    "name" : "begin",
-    "dataType" : 5
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PRODUCTNAME",
-      "codeName" : "ProductName"
-    },
-    "name" : "productname",
-    "dataType" : 25
-  } ],
+  "singleSelect" : true,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -110,37 +34,113 @@
     "caption" : "编号",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : true,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
   "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "dataType" : 1,
+    "name" : "product"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "id"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "dataType" : 1,
+    "name" : "project"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PROJECTTNAME",
+      "codeName" : "ProjecttName"
+    },
+    "dataType" : 25,
+    "name" : "projecttname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUILD",
+      "codeName" : "Build"
+    },
+    "dataType" : 1,
+    "name" : "build"
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "END",
+      "codeName" : "End"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "end"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BEGIN",
+      "codeName" : "Begin"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "begin"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    },
+    "dataType" : 25,
+    "name" : "productname"
+  } ],
   "enableRowEdit" : false,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "ID",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "dataItemName" : "id",
-    "excelCaption" : "ID",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -152,19 +152,19 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "linkValueItem" : "product",
+    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "enableLinkView" : true,
+    "excelCaption" : "产品",
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
     "dataItemName" : "productname",
-    "excelCaption" : "产品",
+    "linkValueItem" : "product",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -176,19 +176,19 @@
     "widthUnit" : "STAR",
     "name" : "productname"
   }, {
-    "linkValueItem" : "srfkey",
+    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "enableLinkView" : true,
+    "excelCaption" : "名称",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
     "dataItemName" : "name",
-    "excelCaption" : "名称",
+    "linkValueItem" : "srfkey",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -200,19 +200,19 @@
     "widthUnit" : "PX",
     "name" : "name"
   }, {
-    "linkValueItem" : "project",
+    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "enableLinkView" : true,
+    "excelCaption" : "项目",
     "getPSAppDEField" : {
       "name" : "PROJECTTNAME",
       "codeName" : "ProjecttName"
     },
     "dataItemName" : "projecttname",
-    "excelCaption" : "项目",
+    "linkValueItem" : "project",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -224,12 +224,12 @@
     "widthUnit" : "PX",
     "name" : "projecttname"
   }, {
+    "excelCaption" : "版本",
     "getPSAppDEField" : {
       "name" : "BUILD",
       "codeName" : "Build"
     },
     "dataItemName" : "build",
-    "excelCaption" : "版本",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -241,12 +241,12 @@
     "widthUnit" : "PX",
     "name" : "build"
   }, {
+    "excelCaption" : "开始日期",
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
     "dataItemName" : "begin",
-    "excelCaption" : "开始日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -259,12 +259,12 @@
     "widthUnit" : "PX",
     "name" : "begin"
   }, {
+    "excelCaption" : "结束日期",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
     "dataItemName" : "end",
-    "excelCaption" : "结束日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -280,12 +280,12 @@
   "codeName" : "Main2",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 500,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

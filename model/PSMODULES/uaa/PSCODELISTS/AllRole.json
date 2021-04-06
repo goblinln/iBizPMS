@@ -1,11 +1,11 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/uaa/PSCODELISTS/AllRole.json",
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
-  "dynaModelFilePath" : "PSMODULES/uaa/PSCODELISTS/AllRole.json",
   "codeName" : "AllRole",
   "userScope" : false,
   "emptyText" : "未定义",

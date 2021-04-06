@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
@@ -14,13 +15,12 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 1,
   "codeName" : "sendNotice",
   "logicName" : "发送通知",
   "defaultParamName" : "Default",

@@ -1,4 +1,5 @@
 {
+  "transactionMode" : "DEFAULT",
   "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : true,
@@ -8,26 +9,25 @@
     "name" : "行为[Update]主状态拒绝逻辑",
     "id" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDELOGICS/Update__MSDeny.json"
   } ],
-  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTUpdate"
-  },
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
   },
   "orderValue" : 11,
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTUpdate"
+  },
   "codeName" : "Update",
   "logicName" : "Update",
-  "extendMode" : 0,
   "actionMode" : "UPDATE",
   "actionType" : "BUILTIN",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json",
-  "name" : "Update",
   "userTag4" : "update",
-  "userCat" : "CAT1"
+  "userCat" : "CAT1",
+  "name" : "Update"
 }

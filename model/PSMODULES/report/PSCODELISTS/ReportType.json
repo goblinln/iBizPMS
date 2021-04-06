@@ -1,31 +1,31 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/report/PSCODELISTS/ReportType.json",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/report/PSCODELISTS/ReportType.json",
   "codeName" : "ReportType",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "weekly",
     "codeName" : "Weekly",
-    "text" : "周报"
+    "text" : "周报",
+    "value" : "weekly"
   }, {
-    "value" : "daily",
     "codeName" : "Daily",
-    "text" : "日报"
+    "text" : "日报",
+    "value" : "daily"
   }, {
-    "value" : "monthly",
     "codeName" : "Monthly",
-    "text" : "月报"
+    "text" : "月报",
+    "value" : "monthly"
   }, {
-    "value" : "reportly",
     "codeName" : "Reportly",
-    "text" : "汇报"
+    "text" : "汇报",
+    "value" : "reportly"
   } ]
 }

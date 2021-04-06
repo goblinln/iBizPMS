@@ -1,39 +1,39 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doccontent__type.json",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doccontent__type.json",
   "codeName" : "Doccontent__type",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "html",
     "codeName" : "Html",
-    "text" : "富文本"
+    "text" : "富文本",
+    "value" : "html"
   }, {
-    "value" : "markdown",
     "codeName" : "Markdown",
-    "text" : "Markdown"
+    "text" : "Markdown",
+    "value" : "markdown"
   }, {
-    "value" : "url",
     "codeName" : "Url",
-    "text" : "链接"
+    "text" : "链接",
+    "value" : "url"
   }, {
-    "value" : "word",
     "codeName" : "Word",
-    "text" : "Word"
+    "text" : "Word",
+    "value" : "word"
   }, {
-    "value" : "ppt",
     "codeName" : "Ppt",
-    "text" : "PPT"
+    "text" : "PPT",
+    "value" : "ppt"
   }, {
-    "value" : "excel",
     "codeName" : "Excel",
-    "text" : "Excel"
+    "text" : "Excel",
+    "value" : "excel"
   } ]
 }

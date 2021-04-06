@@ -1,11 +1,12 @@
 {
+  "transactionMode" : "NONE",
   "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : true,
   "builtinAction" : false,
-  "transactionMode" : "NONE",
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
@@ -13,7 +14,6 @@
   "orderValue" : 99999,
   "codeName" : "GetUser",
   "logicName" : "获取ZT账户登录信息\u001C",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "USERCUSTOM",
   "requestField" : "ID",

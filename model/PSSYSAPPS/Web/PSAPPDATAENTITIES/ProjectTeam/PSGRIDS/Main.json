@@ -1,85 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "TOTAL",
-      "codeName" : "Total"
-    },
-    "name" : "total",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "LIMITED",
-      "codeName" : "Limited"
-    },
-    "name" : "limited",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DAYS",
-      "codeName" : "Days"
-    },
-    "name" : "days",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
-    },
-    "name" : "root",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "HOURS",
-      "codeName" : "Hours"
-    },
-    "name" : "hours",
-    "dataType" : 7
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ROLE",
-      "codeName" : "Role"
-    },
-    "name" : "role",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "name" : "account",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "JOIN",
-      "codeName" : "Join"
-    },
-    "format" : "YYYY-MM-DD",
-    "name" : "join",
-    "dataType" : 5
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  } ],
+  "singleSelect" : false,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -99,31 +34,97 @@
     "caption" : "编号",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : false,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
   "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "TOTAL",
+      "codeName" : "Total"
+    },
+    "dataType" : 9,
+    "name" : "total"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "LIMITED",
+      "codeName" : "Limited"
+    },
+    "dataType" : 25,
+    "name" : "limited"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DAYS",
+      "codeName" : "Days"
+    },
+    "dataType" : 9,
+    "name" : "days"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
+    "dataType" : 1,
+    "name" : "root"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "HOURS",
+      "codeName" : "Hours"
+    },
+    "dataType" : 7,
+    "name" : "hours"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ROLE",
+      "codeName" : "Role"
+    },
+    "dataType" : 25,
+    "name" : "role"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "dataType" : 25,
+    "name" : "account"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "JOIN",
+      "codeName" : "Join"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "join"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  } ],
   "enableRowEdit" : false,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "用户",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
@@ -133,14 +134,13 @@
       "codeName" : "Account"
     },
     "dataItemName" : "account",
-    "excelCaption" : "用户",
     "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_COLRENDER",
       "pluginCode" : "gridIcon"
     },
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 200,
     "codeName" : "account",
     "caption" : "用户",
@@ -149,12 +149,12 @@
     "widthUnit" : "PX",
     "name" : "account"
   }, {
+    "excelCaption" : "角色",
     "getPSAppDEField" : {
       "name" : "ROLE",
       "codeName" : "Role"
     },
     "dataItemName" : "role",
-    "excelCaption" : "角色",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -166,12 +166,12 @@
     "widthUnit" : "STAR",
     "name" : "role"
   }, {
+    "excelCaption" : "加盟日",
     "getPSAppDEField" : {
       "name" : "JOIN",
       "codeName" : "Join"
     },
     "dataItemName" : "join",
-    "excelCaption" : "加盟日",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -184,12 +184,12 @@
     "widthUnit" : "PX",
     "name" : "join"
   }, {
+    "excelCaption" : "可用工日",
     "getPSAppDEField" : {
       "name" : "DAYS",
       "codeName" : "Days"
     },
     "dataItemName" : "days",
-    "excelCaption" : "可用工日",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -201,12 +201,12 @@
     "widthUnit" : "PX",
     "name" : "days"
   }, {
+    "excelCaption" : "可用工时/天",
     "getPSAppDEField" : {
       "name" : "HOURS",
       "codeName" : "Hours"
     },
     "dataItemName" : "hours",
-    "excelCaption" : "可用工时/天",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -218,12 +218,12 @@
     "widthUnit" : "PX",
     "name" : "hours"
   }, {
+    "excelCaption" : "总计可用",
     "getPSAppDEField" : {
       "name" : "TOTAL",
       "codeName" : "Total"
     },
     "dataItemName" : "total",
-    "excelCaption" : "总计可用",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -235,6 +235,7 @@
     "widthUnit" : "PX",
     "name" : "total"
   }, {
+    "excelCaption" : "受限用户",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
@@ -244,7 +245,6 @@
       "codeName" : "Limited"
     },
     "dataItemName" : "limited",
-    "excelCaption" : "受限用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -261,22 +261,22 @@
         "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
-          "refreshMode" : 1,
-          "enableConfirm" : true,
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
           },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "refreshMode" : 1,
+          "enableConfirm" : true,
+          "getNoPrivDisplayMode" : 1,
+          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf127@FontAwesome",
             "cssClass" : "fa fa-unlink"
           },
-          "timeout" : 60000,
           "codeName" : "RemoveMember",
           "caption" : "移除成员",
           "actionTarget" : "SINGLEKEY",
@@ -310,12 +310,12 @@
   "codeName" : "Main",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

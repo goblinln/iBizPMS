@@ -1,10 +1,200 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetDevInfomation.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetPoInfomation.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetUserYearAction.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/Save.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/UpdateTitleByYear.json"
+  } ],
+  "subSysAsCloud" : false,
+  "getAllPSDELogics" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetDevInfomation.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetInfo.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetPOInfomation.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetQAInformation.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/UpdateInfo.json"
+  } ],
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "MonthFinishTaskAndBug",
+    "logicName" : "月完成任务数及累计工时和解决Bug数",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "MonthFinishTaskAndBug"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "MonthOpenedBugAndCase",
+    "logicName" : "月创建Bug数和创建用例数",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "MonthOpenedBugAndCase"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "MonthOpenedStory",
+    "logicName" : "月创建需求数",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "MonthOpenedStory"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "MonthFinishTaskAndBug",
+    "logicName" : "月完成任务数及累计工时和解决Bug数",
+    "defaultMode" : false,
+    "name" : "MonthFinishTaskAndBug"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "MonthOpenedBugAndCase",
+    "logicName" : "月创建Bug数和创建用例数",
+    "defaultMode" : false,
+    "name" : "MonthOpenedBugAndCase"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "MonthOpenedStory",
+    "logicName" : "月创建需求数",
+    "defaultMode" : false,
+    "name" : "MonthOpenedStory"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
-    "length" : 32,
     "dataType" : "TEXT",
     "deployId" : "fa09e29eee78addeb3991bbc06879ffc",
-    "codeName" : "PASSWORD",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "PASSWORD",
     "logicName" : "密码",
     "stringLength" : 32,
     "stdDataType" : 25,
@@ -48,16 +238,17 @@
       "autoIncrement" : false,
       "name" : "PASSWORD"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 32,
     "name" : "PASSWORD"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "582c2d27706cd9986e9bdb362d4c1dda",
-    "codeName" : "Yearproductcnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Yearproductcnt",
     "logicName" : "累计参与产品数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -88,16 +279,16 @@
       "autoIncrement" : false,
       "name" : "YEARPRODUCTCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "YEARPRODUCTCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "f374df6b52b31c73690662541cf4a1f5",
-    "codeName" : "Yearbugcnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Yearbugcnt",
     "logicName" : "累计创建Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -128,15 +319,14 @@
       "autoIncrement" : false,
       "name" : "YEARBUGCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "YEARBUGCNT"
   }, {
-    "length" : 90,
     "dataType" : "TEXT",
     "deployId" : "0bc02bd653cb7bed9b8d74f0e98798b1",
-    "codeName" : "WEIXIN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "WEIXIN",
     "logicName" : "微信",
     "stringLength" : 90,
     "stdDataType" : 25,
@@ -180,16 +370,17 @@
       "autoIncrement" : false,
       "name" : "WEIXIN"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 90,
     "name" : "WEIXIN"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "3918d334c73e4934eaa81a8eb6d5a451",
-    "codeName" : "Yearcasecnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Yearcasecnt",
     "logicName" : "累计创建用例数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -220,15 +411,14 @@
       "autoIncrement" : false,
       "name" : "YEARCASECNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "YEARCASECNT"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "ce212ffa3443fc6e44573e2131979aa8",
-    "codeName" : "Account",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Account",
     "logicName" : "账号",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -272,15 +462,15 @@
       "autoIncrement" : false,
       "name" : "ACCOUNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "ACCOUNT"
   }, {
-    "length" : 20,
     "dataType" : "TEXT",
     "deployId" : "1d5cd44cc9f35876b96108ac5051a590",
-    "codeName" : "QQ",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "QQ",
     "logicName" : "QQ",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -324,15 +514,15 @@
       "autoIncrement" : false,
       "name" : "QQ"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "QQ"
   }, {
-    "length" : 30,
     "dataType" : "TEXT",
     "deployId" : "1d58c480b0ef28bfb5aa7863438e2c92",
-    "codeName" : "RANZHI",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "RANZHI",
     "logicName" : "ranzhi",
     "stringLength" : 30,
     "stdDataType" : 25,
@@ -376,15 +566,15 @@
       "autoIncrement" : false,
       "name" : "RANZHI"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
     "name" : "RANZHI"
   }, {
-    "length" : 60,
     "dataType" : "TEXT",
     "deployId" : "bfaef8318150fe264747e0bf4833e5fa",
-    "codeName" : "NICKNAME",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "NICKNAME",
     "logicName" : "nickname",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -428,15 +618,15 @@
       "autoIncrement" : false,
       "name" : "NICKNAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "NICKNAME"
   }, {
-    "length" : 30,
     "dataType" : "TEXT",
     "deployId" : "1d26f75e9ad14193869ffcf53590c1be",
-    "codeName" : "AVATAR",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "AVATAR",
     "logicName" : "avatar",
     "stringLength" : 30,
     "stdDataType" : 25,
@@ -480,16 +670,17 @@
       "autoIncrement" : false,
       "name" : "AVATAR"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
     "name" : "AVATAR"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "c21c54a88c92e506a7a4966004420ab6",
-    "codeName" : "Monthfinishtask",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Monthfinishtask",
     "logicName" : "月完成任务数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -520,14 +711,14 @@
       "autoIncrement" : false,
       "name" : "MONTHFINISHTASK"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "MONTHFINISHTASK"
   }, {
     "dataType" : "INT",
     "deployId" : "b91c853b37f858da84ebaabdfd432029",
-    "codeName" : "FAILS",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "FAILS",
     "logicName" : "fails",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -558,14 +749,14 @@
       "autoIncrement" : false,
       "name" : "FAILS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "FAILS"
   }, {
     "dataType" : "DATETIME",
     "deployId" : "8ab0f964d074faa121ce4dbcf0cde2c9",
-    "codeName" : "JOIN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "JOIN",
     "logicName" : "入职日期",
     "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -596,16 +787,16 @@
       "autoIncrement" : false,
       "name" : "JOIN"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "JOIN"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "4136231f08c747ef33de275169c7c7cf",
-    "codeName" : "Yearstorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Yearstorycnt",
     "logicName" : "累计创建需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -636,16 +827,16 @@
       "autoIncrement" : false,
       "name" : "YEARSTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "YEARSTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "fc7655ed3043b8a95e250ef0b2d64955",
-    "codeName" : "Yearplancnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Yearplancnt",
     "logicName" : "累计创建计划数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -676,15 +867,14 @@
       "autoIncrement" : false,
       "name" : "YEARPLANCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "YEARPLANCNT"
   }, {
-    "length" : 90,
     "dataType" : "TEXT",
     "deployId" : "968a31613b55720fbe176563ea7fe9ee",
-    "codeName" : "DINGDING",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "DINGDING",
     "logicName" : "钉钉",
     "stringLength" : 90,
     "stdDataType" : 25,
@@ -728,15 +918,15 @@
       "autoIncrement" : false,
       "name" : "DINGDING"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 90,
     "name" : "DINGDING"
   }, {
-    "length" : 15,
     "dataType" : "TEXT",
     "deployId" : "5767aae50ae4a344e3ac4ee672a39ea2",
-    "codeName" : "IP",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "IP",
     "logicName" : "ip",
     "stringLength" : 15,
     "stdDataType" : 25,
@@ -780,16 +970,17 @@
       "autoIncrement" : false,
       "name" : "IP"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 15,
     "name" : "IP"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "1fbf4bcf4dc767d3655ed5d09df98937",
-    "codeName" : "Yearactioncnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Yearactioncnt",
     "logicName" : "累计动态数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -820,15 +1011,14 @@
       "autoIncrement" : false,
       "name" : "YEARACTIONCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "YEARACTIONCNT"
   }, {
-    "length" : 11,
     "dataType" : "TEXT",
     "deployId" : "9632b5fba4535761414ba5cabbe4c6c6",
-    "codeName" : "MOBILE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "MOBILE",
     "logicName" : "手机",
     "stringLength" : 11,
     "stdDataType" : 25,
@@ -872,15 +1062,15 @@
       "autoIncrement" : false,
       "name" : "MOBILE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 11,
     "name" : "MOBILE"
   }, {
-    "length" : 90,
     "dataType" : "TEXT",
     "deployId" : "6975c58db18dd1ce2a898084365833e5",
-    "codeName" : "WHATSAPP",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "WHATSAPP",
     "logicName" : "whatsapp",
     "stringLength" : 90,
     "stdDataType" : 25,
@@ -924,15 +1114,17 @@
       "autoIncrement" : false,
       "name" : "WHATSAPP"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 90,
     "name" : "WHATSAPP"
   }, {
-    "length" : 20,
     "dataType" : "ACID",
     "deployId" : "fa71332f56f7862af957aaf15f1fc2bd",
-    "codeName" : "Id",
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Id",
     "logicName" : "用户编号",
     "stdDataType" : 1,
     "pasteReset" : true,
@@ -964,17 +1156,15 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "enableDBAutoValue" : true,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "ID"
   }, {
-    "length" : 90,
     "dataType" : "TEXT",
     "deployId" : "e25340f5457d7f1f1fcff2f4517c05ce",
-    "codeName" : "EMAIL",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "EMAIL",
     "logicName" : "邮箱",
     "stringLength" : 90,
     "stdDataType" : 25,
@@ -1018,16 +1208,17 @@
       "autoIncrement" : false,
       "name" : "EMAIL"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 90,
     "name" : "EMAIL"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "5ffbb56a904869a16ef26c0a90c54a5c",
-    "codeName" : "Yearestimatecnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Yearestimatecnt",
     "logicName" : "累计工时数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1058,15 +1249,14 @@
       "autoIncrement" : false,
       "name" : "YEARESTIMATECNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "YEARESTIMATECNT"
   }, {
-    "length" : 10,
     "dataType" : "TEXT",
     "deployId" : "90316c68cd5598d515d4c0ee3d989748",
-    "codeName" : "CLIENTLANG",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "CLIENTLANG",
     "logicName" : "clientLang",
     "stringLength" : 10,
     "stdDataType" : 25,
@@ -1110,16 +1300,17 @@
       "autoIncrement" : false,
       "name" : "CLIENTLANG"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 10,
     "name" : "CLIENTLANG"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "9f0a1dea6cfaf7340937ad72f6c4227e",
-    "codeName" : "Montestimate",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Montestimate",
     "logicName" : "月累计工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1150,15 +1341,14 @@
       "autoIncrement" : false,
       "name" : "MONTESTIMATE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "MONTESTIMATE"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "8edb098c79ee6de5b749920dfbae6097",
-    "codeName" : "Realname",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Realname",
     "logicName" : "真实用户名",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -1202,15 +1392,15 @@
       "autoIncrement" : false,
       "name" : "REALNAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "REALNAME"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "9635d6bf321805ae9dbb34fcf877ac77",
-    "codeName" : "COMMITER",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "COMMITER",
     "logicName" : "源代码账户",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -1254,15 +1444,15 @@
       "autoIncrement" : false,
       "name" : "COMMITER"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "COMMITER"
   }, {
-    "length" : 90,
     "dataType" : "TEXT",
     "deployId" : "2b2103e324bd36dc986f406a1009943e",
-    "codeName" : "SLACK",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "SLACK",
     "logicName" : "slack",
     "stringLength" : 90,
     "stdDataType" : 25,
@@ -1306,15 +1496,15 @@
       "autoIncrement" : false,
       "name" : "SLACK"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 90,
     "name" : "SLACK"
   }, {
-    "length" : 1,
     "dataType" : "TEXT",
     "deployId" : "9d955aa01cff9334b92bd9ae6e0b6256",
-    "codeName" : "DELETED",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "DELETED",
     "logicName" : "逻辑删除标志",
     "stringLength" : 1,
     "stdDataType" : 25,
@@ -1358,14 +1548,15 @@
       "autoIncrement" : false,
       "name" : "DELETED"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1,
     "name" : "DELETED"
   }, {
     "dataType" : "INT",
     "deployId" : "ffda8f01e6ed65e61cfe721ea302d4c8",
-    "codeName" : "LAST",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "LAST",
     "logicName" : "最后登录",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1396,17 +1587,16 @@
       "autoIncrement" : false,
       "name" : "LAST"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "LAST"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "43ee14165623c578a1f143b1af9b791f",
-    "codeName" : "Curyear",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Curyear",
     "logicName" : "年度",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -1450,17 +1640,17 @@
       "autoIncrement" : false,
       "name" : "CURYEAR"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "CURYEAR"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "34f20a078a94864b71a86a2377e8df50",
-    "codeName" : "Judgerole",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Judgerole",
     "logicName" : "判断角色",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -1504,15 +1694,15 @@
       "autoIncrement" : false,
       "name" : "JUDGEROLE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 100,
     "name" : "JUDGEROLE"
   }, {
-    "length" : 90,
     "dataType" : "TEXT",
     "deployId" : "3b7af4e2b26be502831fbd7a83ae22c1",
-    "codeName" : "SKYPE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "SKYPE",
     "logicName" : "skype",
     "stringLength" : 90,
     "stdDataType" : 25,
@@ -1556,14 +1746,15 @@
       "autoIncrement" : false,
       "name" : "SKYPE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 90,
     "name" : "SKYPE"
   }, {
     "dataType" : "DATETIME",
     "deployId" : "9115cc2eda9a16f3782573e661ab2cdf",
-    "codeName" : "BIRTHDAY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "BIRTHDAY",
     "logicName" : "birthday",
     "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -1594,15 +1785,14 @@
       "autoIncrement" : false,
       "name" : "BIRTHDAY"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "BIRTHDAY"
   }, {
-    "length" : 20,
     "dataType" : "TEXT",
     "deployId" : "6ccfde724cc3021cc9b391217bfbd4a1",
-    "codeName" : "PHONE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "PHONE",
     "logicName" : "电话",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -1646,17 +1836,17 @@
       "autoIncrement" : false,
       "name" : "PHONE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "PHONE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "defaultValue" : "0",
     "dataType" : "INT",
     "deployId" : "93fdb5108eb2dd5e01e27544ea59ab1c",
-    "codeName" : "Yearvisits",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Yearvisits",
     "logicName" : "累计登录次数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1687,14 +1877,15 @@
       "autoIncrement" : false,
       "name" : "YEARVISITS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "defaultValue" : "0",
     "name" : "YEARVISITS"
   }, {
     "dataType" : "INT",
     "deployId" : "fdb41b80c2a66cefde2e3d36a8405758",
-    "codeName" : "SCORE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "SCORE",
     "logicName" : "score",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1725,15 +1916,14 @@
       "autoIncrement" : false,
       "name" : "SCORE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "SCORE"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "121d619e3401601dc0505546168ddf5f",
-    "codeName" : "Role",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Role",
     "logicName" : "角色",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -1777,15 +1967,15 @@
       "autoIncrement" : false,
       "name" : "ROLE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "ROLE"
   }, {
-    "length" : 7,
     "dataType" : "TEXT",
     "deployId" : "2629ce5f9faff326a04f863a27c14284",
-    "codeName" : "CLIENTSTATUS",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "CLIENTSTATUS",
     "logicName" : "clientStatus",
     "stringLength" : 7,
     "stdDataType" : 25,
@@ -1829,19 +2019,19 @@
       "autoIncrement" : false,
       "name" : "CLIENTSTATUS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 7,
     "name" : "CLIENTSTATUS"
   }, {
-    "length" : 60,
+    "dataType" : "SSCODELIST",
+    "deployId" : "b988f43c761bb331d6d7232a0ce65928",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/RealDept.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "b988f43c761bb331d6d7232a0ce65928",
     "codeName" : "Dept",
-    "valueFormat" : "%1$s",
     "logicName" : "部门编号",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -1885,17 +2075,19 @@
       "autoIncrement" : false,
       "name" : "DEPT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "DEPT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "c602a47b05357cb701ed43d76abdb47b",
-    "codeName" : "Title",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Title",
     "logicName" : "标题",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -1939,19 +2131,17 @@
       "autoIncrement" : false,
       "name" : "TITLE"
     } ],
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "TITLE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "f176da41c961eb2f85c9d53ae4913287",
-    "codeName" : "Curmonth",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Curmonth",
     "logicName" : "当前月",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -1995,16 +2185,17 @@
       "autoIncrement" : false,
       "name" : "CURMONTH"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "CURMONTH"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "b47c8c37fcddaefa6156fc413ad6bfe6",
-    "codeName" : "Montresolvedbug",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Montresolvedbug",
     "logicName" : "月解决Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2035,15 +2226,14 @@
       "autoIncrement" : false,
       "name" : "MONTRESOLVEDBUG"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "MONTRESOLVEDBUG"
   }, {
-    "length" : 120,
     "dataType" : "TEXT",
     "deployId" : "1b30d7ac2500e888765ad8c4e38b9576",
-    "codeName" : "ADDRESS",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "ADDRESS",
     "logicName" : "通讯地址",
     "stringLength" : 120,
     "stdDataType" : 25,
@@ -2087,14 +2277,15 @@
       "autoIncrement" : false,
       "name" : "ADDRESS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 120,
     "name" : "ADDRESS"
   }, {
     "dataType" : "INT",
     "deployId" : "0334f72c023d3377f961a3b8fa606fa8",
-    "codeName" : "SCORELEVEL",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "SCORELEVEL",
     "logicName" : "scoreLevel",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2125,15 +2316,14 @@
       "autoIncrement" : false,
       "name" : "SCORELEVEL"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "SCORELEVEL"
   }, {
-    "defaultValue" : "0",
     "dataType" : "INT",
     "deployId" : "4f1afd40285a660a2944bd6b01080c1f",
-    "codeName" : "Visits",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Visits",
     "logicName" : "累计登录次数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2164,16 +2354,17 @@
       "autoIncrement" : false,
       "name" : "VISITS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "defaultValue" : "0",
     "name" : "VISITS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "ffb9a670c2eee917d1938231cf3f9e01",
-    "codeName" : "Yearlogcnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Yearlogcnt",
     "logicName" : "累计日志数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2204,14 +2395,14 @@
       "autoIncrement" : false,
       "name" : "YEARLOGCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "YEARLOGCNT"
   }, {
     "dataType" : "DATETIME",
     "deployId" : "86e657fefd8887300b3166012c98420d",
-    "codeName" : "LOCKED",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "LOCKED",
     "logicName" : "locked",
     "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -2242,15 +2433,14 @@
       "autoIncrement" : false,
       "name" : "LOCKED"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "LOCKED"
   }, {
-    "length" : 1,
     "dataType" : "TEXT",
     "deployId" : "f2f9fed0dc9138d730ace4fe70a8a989",
-    "codeName" : "GENDER",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "GENDER",
     "logicName" : "性别",
     "stringLength" : 1,
     "stdDataType" : 25,
@@ -2294,15 +2484,15 @@
       "autoIncrement" : false,
       "name" : "GENDER"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1,
     "name" : "GENDER"
   }, {
-    "length" : 10,
     "dataType" : "TEXT",
     "deployId" : "5a963f05b9bee1d0cc4bd2b41af05a55",
-    "codeName" : "ZIPCODE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "ZIPCODE",
     "logicName" : "zipcode",
     "stringLength" : 10,
     "stdDataType" : 25,
@@ -2346,209 +2536,14 @@
       "autoIncrement" : false,
       "name" : "ZIPCODE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 10,
     "name" : "ZIPCODE"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据集",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "MonthFinishTaskAndBug",
-    "logicName" : "月完成任务数及累计工时和解决Bug数",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "MonthFinishTaskAndBug"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "MonthOpenedBugAndCase",
-    "logicName" : "月创建Bug数和创建用例数",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "MonthOpenedBugAndCase"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "MonthOpenedStory",
-    "logicName" : "月创建需求数",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "MonthOpenedStory"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetDevInfomation.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetPoInfomation.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetUserYearAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/Save.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/UpdateTitleByYear.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据查询",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "MonthFinishTaskAndBug",
-    "logicName" : "月完成任务数及累计工时和解决Bug数",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "MonthFinishTaskAndBug"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "MonthOpenedBugAndCase",
-    "logicName" : "月创建Bug数和创建用例数",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "MonthOpenedBugAndCase"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "MonthOpenedStory",
-    "logicName" : "月创建需求数",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "MonthOpenedStory"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "getAllPSDELogics" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetDevInfomation.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetInfo.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetPOInfomation.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetQAInformation.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/UpdateInfo.json"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
   "serviceAPIMode" : 1,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "59435cc0b6ad971c2e8bf3da47594feb",
-  "codeName" : "UserYearWorkStats",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -2563,13 +2558,23 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "59435cc0b6ad971c2e8bf3da47594feb",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "UserYearWorkStats",
   "logicName" : "用户年度工作内容统计",
   "tableName" : "zt_user",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : true,
+  "serviceCodeName" : "UserYearWorkStats",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -2578,14 +2583,9 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "serviceCodeName" : "UserYearWorkStats",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

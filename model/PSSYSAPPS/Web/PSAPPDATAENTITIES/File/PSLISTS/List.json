@@ -3,32 +3,32 @@
   "enableRowEditOrder" : false,
   "noSort" : false,
   "hasWFDataItems" : false,
-  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "name" : "title",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "title"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   } ],
-  "enableRowEdit" : false,
+  "showHeader" : true,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "codeName" : "List",
   "enableGroup" : false,
   "pagingSize" : 1000,
@@ -58,11 +58,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
   },
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File/PSLISTS/List.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "LIST_ITEMRENDER",
     "pluginCode" : "listDownload"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File/PSLISTS/List.json",
   "logicName" : "List",
   "modelid" : "835d0e318f958e732332eceda335286e"
 }

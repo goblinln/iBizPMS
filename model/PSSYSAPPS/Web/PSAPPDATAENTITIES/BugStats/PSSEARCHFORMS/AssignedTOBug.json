@@ -1,8 +1,8 @@
 {
-  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -10,7 +10,6 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -21,12 +20,12 @@
         "name" : "n_product_eq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "hidden" : false,
       "dataType" : 1,
       "needCodeListConfig" : true,
       "caption" : "产品",
@@ -36,6 +35,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 50,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 6,
         "colMD" : 24,
@@ -46,7 +46,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_product_eq"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -58,12 +57,12 @@
         "name" : "n_assignedto_eq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "指派给",
@@ -73,6 +72,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 70,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 6,
         "colMD" : 24,
@@ -83,11 +83,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_assignedto_eq"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "表单分页",
     "detailType" : "FORMPAGE",

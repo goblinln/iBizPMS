@@ -1,8 +1,11 @@
 {
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
       "getPSPanelItems" : [ {
-        "viewFieldName" : "account",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -13,9 +16,10 @@
           "editorType" : "SPAN",
           "name" : "account"
         },
-        "hidden" : false,
+        "viewFieldName" : "account",
         "convertToCodeItemText" : true,
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "grow" : -1,
           "layout" : "FLEX"
@@ -43,8 +47,8 @@
       },
       "itemType" : "CONTAINER",
       "itemStyle" : "DEFAULT",
-      "contentWidth" : 230.0,
       "showCaption" : true,
+      "contentWidth" : 230.0,
       "name" : "container2"
     }, {
       "getPSPanelItems" : [ {
@@ -97,15 +101,15 @@
             "showCaption" : true,
             "name" : "rawitem2"
           }, {
-            "viewFieldName" : "MYTASKS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "mytasks"
             },
-            "hidden" : false,
+            "viewFieldName" : "MYTASKS",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -117,15 +121,15 @@
             "itemStyle" : "DEFAULT",
             "name" : "mytasks"
           }, {
-            "viewFieldName" : "myetasks",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "myetasks"
             },
-            "hidden" : false,
+            "viewFieldName" : "myetasks",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -168,15 +172,15 @@
             "showCaption" : true,
             "name" : "rawitem3"
           }, {
-            "viewFieldName" : "MYBUGS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "mybugs"
             },
-            "hidden" : false,
+            "viewFieldName" : "MYBUGS",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -188,15 +192,15 @@
             "itemStyle" : "DEFAULT",
             "name" : "mybugs"
           }, {
-            "viewFieldName" : "MYEBUGS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "myebugs"
             },
-            "hidden" : false,
+            "viewFieldName" : "MYEBUGS",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -239,15 +243,15 @@
             "showCaption" : true,
             "name" : "rawitem4"
           }, {
-            "viewFieldName" : "MYSTORYS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "mystorys"
             },
-            "hidden" : false,
+            "viewFieldName" : "MYSTORYS",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -304,15 +308,15 @@
             "showCaption" : true,
             "name" : "rawitem5"
           }, {
-            "viewFieldName" : "PROJECTS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "projects"
             },
-            "hidden" : false,
+            "viewFieldName" : "PROJECTS",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -324,15 +328,15 @@
             "itemStyle" : "DEFAULT",
             "name" : "projects"
           }, {
-            "viewFieldName" : "EPROJECTS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "eprojects"
             },
-            "hidden" : false,
+            "viewFieldName" : "EPROJECTS",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -375,15 +379,15 @@
             "showCaption" : true,
             "name" : "rawitem6"
           }, {
-            "viewFieldName" : "PRODUCTS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "products"
             },
-            "hidden" : false,
+            "viewFieldName" : "PRODUCTS",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -497,10 +501,6 @@
     "modelref" : true,
     "id" : "products"
   } ],
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
-  },
   "controlType" : "PANEL",
   "codeName" : "MyWork2",
   "layoutMode" : "TABLE_24COL",

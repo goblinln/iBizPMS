@@ -1,26 +1,25 @@
 {
   "enableUIActions" : 15,
-  "enableUIRemove" : true,
   "major" : true,
+  "enableUIRemove" : true,
   "getAllPSAppDEMethods" : [ {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
     "builtinMethod" : false,
-    "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
+    "codeName" : "Select",
+    "methodType" : "SELECT"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPROCONFIG__DEACTION__CREATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -29,14 +28,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDEACTIONS/Create.json"
     },
-    "codeName" : "Create"
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPROCONFIG__DEACTION__UPDATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
@@ -45,14 +44,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDEACTIONS/Update.json"
     },
-    "codeName" : "Update"
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPROCONFIG__DEACTION__REMOVE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
@@ -61,14 +60,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDEACTIONS/Remove.json"
     },
-    "codeName" : "Remove"
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPROCONFIG__DEACTION__GET"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -77,14 +76,14 @@
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDEACTIONS/Get.json"
     },
-    "codeName" : "Get"
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -93,26 +92,26 @@
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDEACTIONS/GetDraft.json"
     },
-    "codeName" : "GetDraft"
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetSystemConfig"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -121,26 +120,26 @@
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDEACTIONS/GetSystemConfig.json"
     },
-    "codeName" : "GetSystemConfig"
+    "codeName" : "GetSystemConfig",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -149,41 +148,42 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "codeName" : "FetchDefault"
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
@@ -194,11 +194,11 @@
     "name" : "UPDATEMAN"
   }, {
     "majorField" : true,
+    "enableQuickSearch" : true,
     "codeName" : "IbzproConfigName",
     "logicName" : "系统配置表名称",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "enableQuickSearch" : true,
     "name" : "IBZPRO_CONFIGNAME"
   }, {
     "codeName" : "Memo",
@@ -207,14 +207,14 @@
     "stdDataType" : 25,
     "name" : "MEMO"
   }, {
-    "codeName" : "UpdateDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
     "name" : "UPDATEDATE"
   }, {
-    "codeName" : "CreateDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
     "name" : "CREATEDATE"
@@ -257,22 +257,22 @@
     "name" : "CREATEMAN"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
     "getPSDEACModeDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "IBZPRO_CONFIGID",
         "codeName" : "IbzproConfigId"
       },
-      "name" : "value",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "value"
     }, {
       "getPSAppDEField" : {
         "name" : "IBZPRO_CONFIGNAME",
         "codeName" : "IbzproConfigName"
       },
-      "name" : "text",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "text"
     } ],
-    "enablePagingBar" : false,
     "getValuePSAppDEField" : {
       "name" : "IBZPRO_CONFIGID",
       "codeName" : "IbzproConfigId"
@@ -293,11 +293,6 @@
     "name" : "IBZPRO_CONFIGNAME",
     "codeName" : "IbzproConfigName"
   } ],
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDESERVICEAPIS/IbzproConfig.json"
-  },
-  "codeName" : "IbzproConfig",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -311,12 +306,17 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDESERVICEAPIS/IbzproConfig.json"
+  },
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "codeName" : "IbzproConfig",
   "logicName" : "系统配置表",
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,
   "dataAccCtrlArch" : 1,
-  "enableUICreate" : true,
-  "enableUIModify" : true,
   "defaultMode" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproConfig.json",
   "name" : "IBZPRO_CONFIG"

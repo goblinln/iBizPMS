@@ -1,43 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "IBZ_PLANTEMPLETNAME",
-      "codeName" : "IbzPlanTempletName"
-    },
-    "name" : "ibz_plantempletname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "UPDATEDATE",
-      "codeName" : "UpdateDate"
-    },
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "name" : "updatedate",
-    "dataType" : 5
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_PLANTEMPLETNAME",
-      "codeName" : "IbzPlanTempletName"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "IBZ_PLANTEMPLETID",
-      "codeName" : "IbzPlanTempletId"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_PLANTEMPLETID",
-      "codeName" : "IbzPlanTempletId"
-    },
-    "name" : "srfkey",
-    "dataType" : 25
-  } ],
+  "singleSelect" : false,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -57,33 +34,56 @@
     "caption" : "产品计划模板标识",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : false,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
+  "hasWFDataItems" : false,
   "controlType" : "GRID",
+  "enablePagingBar" : true,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "IBZ_PLANTEMPLETNAME",
+      "codeName" : "IbzPlanTempletName"
+    },
+    "dataType" : 25,
+    "name" : "ibz_plantempletname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "updatedate"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_PLANTEMPLETNAME",
+      "codeName" : "IbzPlanTempletName"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_PLANTEMPLETID",
+      "codeName" : "IbzPlanTempletId"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 25,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_PLANTEMPLETID",
+      "codeName" : "IbzPlanTempletId"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  } ],
+  "enableRowEdit" : false,
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "模板名称",
     "getPSAppDEField" : {
       "name" : "IBZ_PLANTEMPLETNAME",
       "codeName" : "IbzPlanTempletName"
     },
     "dataItemName" : "ibz_plantempletname",
-    "excelCaption" : "模板名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -95,12 +95,12 @@
     "widthUnit" : "STAR",
     "name" : "ibz_plantempletname"
   }, {
+    "excelCaption" : "更新时间",
     "getPSAppDEField" : {
       "name" : "UPDATEDATE",
       "codeName" : "UpdateDate"
     },
     "dataItemName" : "updatedate",
-    "excelCaption" : "更新时间",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -115,12 +115,12 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

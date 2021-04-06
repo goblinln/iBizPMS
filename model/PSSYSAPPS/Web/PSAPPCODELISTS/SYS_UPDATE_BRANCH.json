@@ -6,13 +6,13 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "PC",
     "codeName" : "Pc",
-    "text" : "PC"
+    "text" : "PC",
+    "value" : "PC"
   }, {
-    "value" : "MOB",
     "codeName" : "Mob",
-    "text" : "MOB"
+    "text" : "MOB",
+    "value" : "MOB"
   } ],
   "codeName" : "SYS_UPDATE_BRANCH",
   "emptyText" : "未定义",

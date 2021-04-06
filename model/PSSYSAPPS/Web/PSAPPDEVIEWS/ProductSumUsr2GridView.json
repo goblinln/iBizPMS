@@ -6,21 +6,15 @@
   "gridRowActiveMode" : 2,
   "enableFilter" : false,
   "xDataControlName" : "grid",
-  "showCaptionBar" : false,
   "getPSDEViewCodeName" : "Usr2GridView",
+  "showCaptionBar" : false,
   "caption" : "产品汇总表",
   "title" : "产品计划数和需求数实体表格视图",
   "accUserMode" : 2,
   "enableDP" : true,
-  "getPSAppViewNavParams" : [ {
-    "rawValue" : false,
-    "value" : "curyear",
-    "key" : "curyear",
-    "name" : "curyear"
-  } ],
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -35,16 +29,22 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     }, {
-      "name" : "GRID",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRID"
     } ],
     "name" : "engine"
+  } ],
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "curyear",
+    "key" : "curyear",
+    "name" : "curyear"
   } ],
   "getPSAppViewNavContexts" : [ {
     "rawValue" : false,
@@ -52,56 +52,28 @@
     "key" : "CURYEAR",
     "name" : "CURYEAR"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
   },
   "getPSControls" : [ {
-    "getPSDEGridDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "WAITSTORYCNT",
-        "codeName" : "WaitStoryCnt"
-      },
-      "name" : "waitstorycnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "name" : "name",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "STORYCNT",
-        "codeName" : "StoryCnt"
-      },
-      "name" : "storycnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "name" : "srfmajortext",
-      "dataType" : 25
-    }, {
-      "dataAccessAction" : true,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "srfkey",
-      "dataType" : 1
-    } ],
+    "singleSelect" : true,
     "enableColFilter" : false,
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : true,
@@ -121,33 +93,62 @@
       "caption" : "主键标识",
       "name" : "srfkey"
     } ],
-    "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "getRemovePSControlAction" : {
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
-    "singleSelect" : true,
-    "enablePagingBar" : false,
-    "enableRowEdit" : false,
+    "hasWFDataItems" : false,
     "controlType" : "GRID",
+    "enablePagingBar" : false,
+    "getPSDEGridDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "WAITSTORYCNT",
+        "codeName" : "WaitStoryCnt"
+      },
+      "dataType" : 9,
+      "name" : "waitstorycnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "dataType" : 25,
+      "name" : "name"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      },
+      "dataType" : 9,
+      "name" : "storycnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "dataType" : 25,
+      "name" : "srfmajortext"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataAccessAction" : true,
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 1,
+      "name" : "srfkey"
+    } ],
+    "enableRowEdit" : false,
     "getPSDEGridColumns" : [ {
+      "excelCaption" : "产品名称",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
       "dataItemName" : "name",
-      "excelCaption" : "产品名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -159,12 +160,12 @@
       "widthUnit" : "STAR",
       "name" : "name"
     }, {
+      "excelCaption" : "计划数",
       "getPSAppDEField" : {
         "name" : "WAITSTORYCNT",
         "codeName" : "WaitStoryCnt"
       },
       "dataItemName" : "waitstorycnt",
-      "excelCaption" : "计划数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -176,12 +177,12 @@
       "widthUnit" : "PX",
       "name" : "plan"
     }, {
+      "excelCaption" : "需求数",
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
       "dataItemName" : "storycnt",
-      "excelCaption" : "需求数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -195,12 +196,12 @@
     } ],
     "codeName" : "ProductPlancntAndStorycnt_PO",
     "enableGroup" : false,
+    "hideHeader" : false,
+    "forceFit" : false,
     "pagingSize" : 100,
     "aggMode" : "NONE",
     "groupMode" : "NONE",
     "sortMode" : "REMOTE",
-    "hideHeader" : false,
-    "forceFit" : false,
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -218,76 +219,76 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchProductStorycntAndPlancnt"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-        },
         "actionType" : "DEDATASET",
         "name" : "fetch"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "name" : "loaddraft"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -302,7 +303,6 @@
     "name" : "grid",
     "modelid" : "ae82a7ec8ca547511933021ad3546e27"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -323,8 +323,8 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
       "batchAddOnly" : false,
+      "enableBatchAdd" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {

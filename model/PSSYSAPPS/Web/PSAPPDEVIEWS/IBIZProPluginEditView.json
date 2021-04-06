@@ -2,15 +2,15 @@
   "showDataInfoBar" : true,
   "showCaptionBar" : true,
   "xDataControlName" : "form",
-  "getPSDEViewCodeName" : "EditView",
   "funcViewMode" : "EDITVIEW",
+  "getPSDEViewCodeName" : "EditView",
   "caption" : "系统插件",
   "title" : "系统插件编辑视图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -25,12 +25,12 @@
     "engineType" : "EditView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "FORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "FORM"
     }, {
+      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0,
-      "paramType" : "VALUE"
+      "value" : 0
     } ],
     "name" : "engine"
   } ],
@@ -42,6 +42,7 @@
     },
     "name" : "toolbar_deuiaction1"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin.json"
@@ -56,10 +57,10 @@
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
-        "timeout" : 60000,
         "codeName" : "SaveAndExit",
         "caption" : "保存并关闭",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
@@ -93,6 +94,7 @@
     "name" : "toolbar",
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
+    "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -117,7 +119,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "enableAutoSave" : false,
     "infoFormMode" : false,
     "showFormNavBar" : false,
     "controlType" : "FORM",
@@ -135,19 +136,18 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "maxLength" : 200,
             "editorType" : "TEXTBOX",
             "name" : "ibizpro_pluginname"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "IBIZPRO_PLUGINNAME",
             "codeName" : "IBIZProPluginName"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "插件名称",
           "allowEmpty" : true,
@@ -156,6 +156,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -165,18 +166,17 @@
           "detailStyle" : "DEFAULT",
           "name" : "ibizpro_pluginname"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "version"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "VERSION",
             "codeName" : "Version"
           },
-          "hidden" : true,
           "dataType" : 9,
           "caption" : "版本",
           "allowEmpty" : true,
@@ -185,6 +185,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -194,19 +195,18 @@
           "detailStyle" : "DEFAULT",
           "name" : "version"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "editorType" : "DROPDOWNLIST",
             "name" : "type"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "TYPE",
             "codeName" : "Type"
           },
-          "hidden" : false,
           "dataType" : 25,
           "needCodeListConfig" : true,
           "caption" : "类型",
@@ -216,6 +216,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -225,19 +226,18 @@
           "detailStyle" : "DEFAULT",
           "name" : "type"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "maxLength" : 100,
             "editorType" : "TEXTBOX",
             "name" : "downloadurl"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "DOWNLOADURL",
             "codeName" : "Downloadurl"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "最新版本下载地址",
           "allowEmpty" : true,
@@ -246,6 +246,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -255,19 +256,18 @@
           "detailStyle" : "DEFAULT",
           "name" : "downloadurl"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : false,
             "editorType" : "MDROPDOWNLIST",
             "name" : "tag"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "TAG",
             "codeName" : "Tag"
           },
-          "hidden" : false,
           "dataType" : 25,
           "needCodeListConfig" : true,
           "caption" : "标签",
@@ -277,6 +277,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -286,19 +287,18 @@
           "detailStyle" : "DEFAULT",
           "name" : "tag"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : false,
             "editorType" : "MDROPDOWNLIST",
             "name" : "keyword"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "KEYWORD",
             "codeName" : "Keyword"
           },
-          "hidden" : false,
           "dataType" : 25,
           "needCodeListConfig" : true,
           "caption" : "关键字",
@@ -308,6 +308,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -328,11 +329,11 @@
         "showCaption" : true,
         "name" : "group1"
       } ],
-      "infoGroupMode" : false,
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
+      "infoGroupMode" : false,
       "codeName" : "formpage1",
       "caption" : "基本信息",
       "detailType" : "FORMPAGE",
@@ -450,13 +451,13 @@
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
@@ -472,52 +473,52 @@
         "actionType" : "DEACTION",
         "name" : "loaddraftfrom"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "name" : "loaddraft"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -532,14 +533,13 @@
     "name" : "form",
     "modelid" : "2f854edeeb01f9eb8bcef848bc4165ad"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction1"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",

@@ -3,74 +3,74 @@
   "enableRowEditOrder" : false,
   "noSort" : false,
   "hasWFDataItems" : false,
-  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "name" : "name",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "name"
   }, {
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
     },
-    "name" : "status",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "status"
   }, {
-    "name" : "bugcnt",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "bugcnt"
   }, {
-    "name" : "id",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "id"
   }, {
-    "name" : "code",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "code"
   }, {
-    "name" : "istop",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "istop"
   }, {
-    "name" : "storycnt",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "storycnt"
   }, {
-    "name" : "taskcnt",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "taskcnt"
   }, {
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__type.json"
     },
-    "name" : "type",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "type"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "name" : "parent",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "parent"
   }, {
-    "name" : "srfmstag",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
+  "showHeader" : true,
+  "controlType" : "LIST",
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
   "enableRowEdit" : false,
-  "controlType" : "LIST",
   "codeName" : "Sidebar",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
@@ -131,22 +131,22 @@
       },
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "refreshMode" : 1,
-        "enableConfirm" : true,
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "ProjectTop"
-        },
-        "getNoPrivDisplayMode" : 2,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
         },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "ProjectTop"
+        },
+        "refreshMode" : 1,
+        "enableConfirm" : true,
+        "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf0a6@FontAwesome",
           "cssClass" : "fa fa-hand-o-up"
         },
-        "timeout" : 60000,
         "codeName" : "ProjectTop",
         "caption" : "置顶",
         "actionTarget" : "SINGLEKEY",
@@ -178,22 +178,22 @@
       },
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "refreshMode" : 1,
-        "enableConfirm" : true,
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "CancelProjectTop"
-        },
-        "getNoPrivDisplayMode" : 2,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
         },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "CancelProjectTop"
+        },
+        "refreshMode" : 1,
+        "enableConfirm" : true,
+        "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf0a7@FontAwesome",
           "cssClass" : "fa fa-hand-o-down"
         },
-        "timeout" : 60000,
         "codeName" : "CancelProjectTop",
         "caption" : "取消置顶",
         "actionTarget" : "SINGLEKEY",
@@ -233,23 +233,23 @@
     "modelid" : "ec4939f802261dd9603febd37dcce6ae"
   } ],
   "getPSAppViewLogics" : [ {
-    "getPSViewCtrlName" : "list_quicktoolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "list_quicktoolbar_deuiaction1"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "list_quicktoolbar",
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "list_quicktoolbar_deuiaction1_click"
   }, {
-    "getPSViewCtrlName" : "list_quicktoolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "list_quicktoolbar_deuiaction2"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "list_quicktoolbar",
     "eventArg" : "deuiaction2",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
@@ -259,13 +259,13 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "controlStyle" : "LISTVIEW",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSLISTS/Sidebar.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "AC_ITEM",
     "pluginCode" : "PROJECTLEFTNavLIST"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSLISTS/Sidebar.json",
   "logicName" : "Sidebar",
   "modelid" : "547fa4cbd79cffd2b831b89850a79e25"
 }

@@ -3,7 +3,6 @@
   "enableRowEditOrder" : false,
   "noSort" : false,
   "hasWFDataItems" : false,
-  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "getPSAppDEField" : {
@@ -14,40 +13,40 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
     },
-    "name" : "indextype",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "indextype"
   }, {
-    "name" : "indexname",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "indexname"
   }, {
-    "name" : "orgid",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "orgid"
   }, {
-    "name" : "indexid",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "indexid"
   }, {
-    "name" : "indexdesc",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "indexdesc"
   }, {
-    "name" : "color",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "color"
   }, {
-    "name" : "mdeptid",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "mdeptid"
   }, {
     "getPSAppDEField" : {
       "name" : "INDEXID",
       "codeName" : "Indexid"
     },
-    "name" : "srfkey",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "INDEXNAME",
       "codeName" : "Indexname"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "getPSAppDEField" : {
       "name" : "INDEX_TYPE",
@@ -57,8 +56,8 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
     },
-    "name" : "srfdatatype",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfdatatype"
   }, {
     "getPSAppDEField" : {
       "name" : "INDEX_TYPE",
@@ -68,11 +67,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
     },
-    "name" : "index_type",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "index_type"
   } ],
-  "enableRowEdit" : false,
+  "showHeader" : true,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "codeName" : "IndexMob",
   "enableGroup" : false,
   "pagingSize" : 20,
@@ -101,13 +101,13 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "controlStyle" : "FullTextSearch",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSLISTS/IndexMob.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "LIST_RENDER",
     "pluginCode" : "FullTextSearch"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSLISTS/IndexMob.json",
   "logicName" : "IndexMob",
   "modelid" : "3d749efd9d96f3330022d35dfcdaaf60"
 }

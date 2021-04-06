@@ -7,15 +7,15 @@
   "enableFilter" : false,
   "enableQuickSearch" : true,
   "xDataControlName" : "grid",
-  "showCaptionBar" : false,
   "getPSDEViewCodeName" : "MainGridView",
+  "showCaptionBar" : false,
   "caption" : "群组",
   "title" : "群组表格视图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -30,14 +30,14 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     }, {
-      "name" : "GRID",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRID"
     } ],
     "name" : "engine"
   } ],
@@ -63,6 +63,7 @@
     },
     "name" : "toolbar_deuiaction4"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
@@ -77,11 +78,11 @@
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf0f6@FontAwesome",
           "cssClass" : "fa fa-file-text-o"
         },
-        "timeout" : 60000,
         "codeName" : "New",
         "caption" : "新建",
         "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -114,11 +115,11 @@
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
-        "timeout" : 60000,
         "codeName" : "Refresh",
         "caption" : "刷新",
         "uIActionTag" : "Refresh",
@@ -150,11 +151,11 @@
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf1c3@FontAwesome",
           "cssClass" : "fa fa-file-excel-o"
         },
-        "timeout" : 60000,
         "codeName" : "ExportExcel",
         "caption" : "导出",
         "uIActionTag" : "ExportExcel",
@@ -188,51 +189,22 @@
     "name" : "toolbar",
     "modelid" : "24ddc68b1717d44d1ea610d438f930f6"
   }, {
-    "getPSDEGridDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "id",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "DESC",
-        "codeName" : "Desc"
-      },
-      "name" : "desc",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "name" : "name",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "name" : "srfmajortext",
-      "dataType" : 25
-    }, {
-      "dataAccessAction" : true,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "srfkey",
-      "dataType" : 1
-    } ],
+    "singleSelect" : false,
     "enableColFilter" : false,
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -252,33 +224,62 @@
       "caption" : "ID",
       "name" : "srfkey"
     } ],
-    "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "getRemovePSControlAction" : {
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
-    "singleSelect" : false,
-    "enablePagingBar" : true,
-    "enableRowEdit" : false,
+    "hasWFDataItems" : false,
     "controlType" : "GRID",
+    "enablePagingBar" : true,
+    "getPSDEGridDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 1,
+      "name" : "id"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "dataType" : 25,
+      "name" : "desc"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "dataType" : 25,
+      "name" : "name"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "dataType" : 25,
+      "name" : "srfmajortext"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataAccessAction" : true,
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 1,
+      "name" : "srfkey"
+    } ],
+    "enableRowEdit" : false,
     "getPSDEGridColumns" : [ {
+      "excelCaption" : "ID",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
       "dataItemName" : "id",
-      "excelCaption" : "ID",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -290,12 +291,12 @@
       "widthUnit" : "PX",
       "name" : "id"
     }, {
+      "excelCaption" : "分组名称",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
       "dataItemName" : "name",
-      "excelCaption" : "分组名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -307,12 +308,12 @@
       "widthUnit" : "PX",
       "name" : "name"
     }, {
+      "excelCaption" : "分组描述",
       "getPSAppDEField" : {
         "name" : "DESC",
         "codeName" : "Desc"
       },
       "dataItemName" : "desc",
-      "excelCaption" : "分组描述",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -330,11 +331,11 @@
           "showIcon" : true,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
+            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
-            "timeout" : 60000,
             "codeName" : "Edit",
             "caption" : "编辑",
             "actionTarget" : "SINGLEKEY",
@@ -352,11 +353,11 @@
           "showIcon" : true,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
+            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-remove"
             },
-            "timeout" : 60000,
             "codeName" : "Remove",
             "caption" : "删除",
             "actionTarget" : "MULTIKEY",
@@ -385,12 +386,12 @@
     } ],
     "codeName" : "Main",
     "enableGroup" : false,
+    "hideHeader" : false,
+    "forceFit" : false,
     "pagingSize" : 20,
     "aggMode" : "NONE",
     "groupMode" : "NONE",
     "sortMode" : "REMOTE",
-    "hideHeader" : false,
-    "forceFit" : false,
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -442,76 +443,76 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchDefault"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
-        },
         "actionType" : "DEDATASET",
         "name" : "fetch"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "name" : "loaddraft"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -526,15 +527,14 @@
     "name" : "grid",
     "modelid" : "a813b0da34be74b92d86c1364b7ac61a"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_RIGHT",
     "realTitle" : "群组编辑视图",
+    "realOpenMode" : "DRAWER_RIGHT",
     "name" : "NEWDATA"
   }, {
     "getRefPSAppView" : {
@@ -542,39 +542,39 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_RIGHT",
     "realTitle" : "群组编辑视图",
+    "realOpenMode" : "DRAWER_RIGHT",
     "name" : "EDITDATA"
   } ],
   "getPSAppViewLogics" : [ {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction1"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction1_click"
   }, {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction2"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction2",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction2_click"
   }, {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction4"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction4",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
@@ -582,8 +582,8 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
       "batchAddOnly" : false,
+      "enableBatchAdd" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {

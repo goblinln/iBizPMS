@@ -90,12 +90,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
-  "height" : 300.0,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/CurUserOpenedBug.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/CurUserOpenedBug.json",
+  "height" : 300.0,
   "logicName" : "CurUserOpenedBug",
   "modelid" : "534e561f7a0e57fe4e6dee579ae16779",
   "getUserParam" : {

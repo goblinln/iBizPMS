@@ -1,9 +1,25 @@
 {
   "codeName" : "POY",
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
   "enableCustomized" : false,
   "getPSControls" : [ {
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "getPSControls" : [ {
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
       "getPSControls" : [ {
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
         "getPSControls" : [ {
           "getContentPSControl" : {
             "name" : "dashboard_sysportlet6_chart"
@@ -106,63 +122,63 @@
             "getPSControlHandler" : {
               "userDRAction" : "READ",
               "getPSHandlerActions" : [ {
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Update"
-                },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Update"
                 },
                 "dataAccessAction" : "UPDATE",
                 "actionName" : "Update",
                 "actionType" : "DEACTION",
                 "name" : "update"
               }, {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "FetchMyCurOpenedStory"
                 },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                },
                 "actionType" : "DEDATASET",
                 "name" : "fetch"
               }, {
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Remove"
-                },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Remove"
                 },
                 "dataAccessAction" : "DELETE",
                 "actionName" : "Remove",
                 "actionType" : "DEACTION",
                 "name" : "remove"
               }, {
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Get"
-                },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Get"
                 },
                 "dataAccessAction" : "READ",
                 "actionName" : "Get",
                 "actionType" : "DEACTION",
                 "name" : "load"
               }, {
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Create"
-                },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Create"
                 },
                 "dataAccessAction" : "CREATE",
                 "actionName" : "Create",
@@ -172,12 +188,12 @@
               "enableDEFieldPrivilege" : false,
               "id" : "图形控件处理器"
             },
-            "height" : 300.0,
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory.json",
             "getPSSysPFPlugin" : {
               "pluginType" : "CHART_RENDER",
               "pluginCode" : "piePlugin"
             },
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory.json",
+            "height" : 300.0,
             "logicName" : "MyOpenedStory",
             "name" : "dashboard_sysportlet6_chart",
             "modelid" : "96894e73f66dfc1bf9d4cb2b2b6f52e3",
@@ -195,8 +211,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "showTitleBar" : false,
           "controlType" : "PORTLET",
+          "showTitleBar" : false,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -213,18 +229,14 @@
           "name" : "dashboard_sysportlet6",
           "modelid" : "f95dde4138238d540065bb251aa84e6f"
         } ],
-        "getPSLayout" : {
-          "layout" : "TABLE_24COL",
-          "columnCount" : 24
-        },
         "portletType" : "CONTAINER",
         "getPSLayoutPos" : {
           "colLG" : 12,
           "colMD" : 12,
           "layout" : "TABLE_24COL"
         },
-        "showTitleBar" : false,
         "controlType" : "PORTLET",
+        "showTitleBar" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -240,6 +252,10 @@
         "codeName" : "PODashboardViewdashboard_container9",
         "name" : "dashboard_container9"
       }, {
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
         "getPSControls" : [ {
           "getContentPSControl" : {
             "name" : "dashboard_sysportlet7_chart"
@@ -342,63 +358,63 @@
             "getPSControlHandler" : {
               "userDRAction" : "READ",
               "getPSHandlerActions" : [ {
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Update"
-                },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Update"
                 },
                 "dataAccessAction" : "UPDATE",
                 "actionName" : "Update",
                 "actionType" : "DEACTION",
                 "name" : "update"
               }, {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "FetchMyCurOpenedStory"
                 },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-                },
                 "actionType" : "DEDATASET",
                 "name" : "fetch"
               }, {
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Remove"
-                },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Remove"
                 },
                 "dataAccessAction" : "DELETE",
                 "actionName" : "Remove",
                 "actionType" : "DEACTION",
                 "name" : "remove"
               }, {
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Get"
-                },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Get"
                 },
                 "dataAccessAction" : "READ",
                 "actionName" : "Get",
                 "actionType" : "DEACTION",
                 "name" : "load"
               }, {
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Create"
-                },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Create"
                 },
                 "dataAccessAction" : "CREATE",
                 "actionName" : "Create",
@@ -408,12 +424,12 @@
               "enableDEFieldPrivilege" : false,
               "id" : "图形控件处理器"
             },
-            "height" : 300.0,
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory_Stage.json",
             "getPSSysPFPlugin" : {
               "pluginType" : "CHART_RENDER",
               "pluginCode" : "piePlugin"
             },
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory_Stage.json",
+            "height" : 300.0,
             "logicName" : "MyOpenedStory_Stage",
             "name" : "dashboard_sysportlet7_chart",
             "modelid" : "c90b74e360af0b39214b0aaa1ce800b4",
@@ -431,8 +447,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "showTitleBar" : false,
           "controlType" : "PORTLET",
+          "showTitleBar" : false,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -449,18 +465,14 @@
           "name" : "dashboard_sysportlet7",
           "modelid" : "c8c7597a820a89e52b2250906bd4c7fa"
         } ],
-        "getPSLayout" : {
-          "layout" : "TABLE_24COL",
-          "columnCount" : 24
-        },
         "portletType" : "CONTAINER",
         "getPSLayoutPos" : {
           "colLG" : 12,
           "colMD" : 12,
           "layout" : "TABLE_24COL"
         },
-        "showTitleBar" : false,
         "controlType" : "PORTLET",
+        "showTitleBar" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -476,18 +488,14 @@
         "codeName" : "PODashboardViewdashboard_container10",
         "name" : "dashboard_container10"
       } ],
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
       "portletType" : "CONTAINER",
       "getPSLayoutPos" : {
         "colLG" : 14,
         "colMD" : 12,
         "layout" : "TABLE_24COL"
       },
-      "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "showTitleBar" : true,
       "title" : "所创建需求数和对应的优先级及状态",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -504,6 +512,10 @@
       "codeName" : "PODashboardViewdashboard_container4",
       "name" : "dashboard_container4"
     }, {
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
       "getPSControls" : [ {
         "getContentPSControl" : {
           "name" : "dashboard_sysportlet5_chart"
@@ -583,6 +595,27 @@
             "name" : "storycnt"
           } ],
           "codeName" : "MonthOpenedStory",
+          "getPSChartXAxises" : [ {
+            "eChartsPos" : "xAxis",
+            "eChartsType" : "category",
+            "position" : "bottom",
+            "caption" : "月",
+            "type" : "category",
+            "index" : 0,
+            "name" : "月",
+            "id" : "0"
+          } ],
+          "getPSChartYAxises" : [ {
+            "eChartsPos" : "yAxis",
+            "eChartsType" : "value",
+            "position" : "left",
+            "maxValue" : 200.0,
+            "minValue" : 0.0,
+            "type" : "numeric",
+            "index" : 0,
+            "name" : "数值",
+            "id" : "0"
+          } ],
           "getPSChartDataSets" : [ {
             "getPSChartDataSetFields" : [ {
               "groupField" : true,
@@ -600,14 +633,9 @@
             "name" : "storycnt-MonthOpenedStory",
             "id" : "0"
           } ],
-          "getPSChartXAxises" : [ {
-            "eChartsType" : "category",
-            "eChartsPos" : "xAxis",
-            "position" : "bottom",
-            "type" : "category",
-            "caption" : "月",
+          "getPSChartDataSetGroups" : [ {
             "index" : 0,
-            "name" : "月",
+            "name" : "MonthOpenedStory",
             "id" : "0"
           } ],
           "getPSChartGrids" : [ {
@@ -635,22 +663,6 @@
             "name" : "[storycnt]直角坐标系[0]",
             "id" : "0"
           } ],
-          "getPSChartYAxises" : [ {
-            "eChartsType" : "value",
-            "eChartsPos" : "yAxis",
-            "maxValue" : 200.0,
-            "minValue" : 0.0,
-            "position" : "left",
-            "type" : "numeric",
-            "index" : 0,
-            "name" : "数值",
-            "id" : "0"
-          } ],
-          "getPSChartDataSetGroups" : [ {
-            "index" : 0,
-            "name" : "MonthOpenedStory",
-            "id" : "0"
-          } ],
           "getFetchPSControlAction" : {
             "modelref" : true,
             "id" : "fetch"
@@ -668,63 +680,63 @@
           "getPSControlHandler" : {
             "userDRAction" : "READ",
             "getPSHandlerActions" : [ {
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Update"
-              },
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+              },
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Update"
               },
               "dataAccessAction" : "UPDATE",
               "actionName" : "Update",
               "actionType" : "DEACTION",
               "name" : "update"
             }, {
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+              },
               "getPSAppDEMethod" : {
                 "modelref" : true,
                 "id" : "FetchMonthOpenedStory"
               },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-              },
               "actionType" : "DEDATASET",
               "name" : "fetch"
             }, {
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Remove"
-              },
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+              },
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Remove"
               },
               "dataAccessAction" : "DELETE",
               "actionName" : "Remove",
               "actionType" : "DEACTION",
               "name" : "remove"
             }, {
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Get"
-              },
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+              },
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Get"
               },
               "dataAccessAction" : "READ",
               "actionName" : "Get",
               "actionType" : "DEACTION",
               "name" : "load"
             }, {
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Create"
-              },
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+              },
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Create"
               },
               "dataAccessAction" : "CREATE",
               "actionName" : "Create",
@@ -734,12 +746,12 @@
             "enableDEFieldPrivilege" : false,
             "id" : "图形控件处理器"
           },
-          "height" : 300.0,
+          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedStory.json",
           "getPSSysPFPlugin" : {
             "pluginType" : "CHART_RENDER",
             "pluginCode" : "NEW"
           },
-          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedStory.json",
+          "height" : 300.0,
           "logicName" : "MonthOpenedStory",
           "name" : "dashboard_sysportlet5_chart",
           "modelid" : "2ad3d195a67cf63c7a1e78851643e2c1",
@@ -756,8 +768,8 @@
           "height" : 350,
           "layout" : "TABLE_24COL"
         },
-        "showTitleBar" : false,
         "controlType" : "PORTLET",
+        "showTitleBar" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -774,18 +786,14 @@
         "name" : "dashboard_sysportlet5",
         "modelid" : "3f660fce6240a5ddac1e9c73555ae46d"
       } ],
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
       "portletType" : "CONTAINER",
       "getPSLayoutPos" : {
         "colLG" : 10,
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
-      "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "showTitleBar" : true,
       "title" : "月创建需求数",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -802,20 +810,16 @@
       "codeName" : "PODashboardViewdashboard_container5",
       "name" : "dashboard_container5"
     } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
       "colLG" : 22,
-      "colMDOffset" : 1,
       "colLGOffset" : 1,
       "colMD" : 22,
+      "colMDOffset" : 1,
       "layout" : "TABLE_24COL"
     },
-    "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "showTitleBar" : true,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -831,10 +835,6 @@
     "codeName" : "PODashboardViewdashboard_container3",
     "name" : "dashboard_container3"
   } ],
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
-  },
   "controlType" : "DASHBOARD",
   "getPSAppDataEntity" : {
     "modelref" : true,

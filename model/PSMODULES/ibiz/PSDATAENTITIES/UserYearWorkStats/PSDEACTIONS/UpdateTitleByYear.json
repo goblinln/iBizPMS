@@ -1,4 +1,5 @@
 {
+  "transactionMode" : "DEFAULT",
   "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : false,
@@ -15,8 +16,8 @@
     "attachMode" : "AFTER",
     "name" : "附加逻辑"
   } ],
-  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
@@ -24,7 +25,6 @@
   "orderValue" : 99999,
   "codeName" : "UpdateTitleByYear",
   "logicName" : "更新标题",
-  "extendMode" : 0,
   "actionMode" : "UPDATE",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

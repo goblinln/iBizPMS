@@ -5,13 +5,14 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接592"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -61,6 +62,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接665"
@@ -71,7 +73,6 @@
       "modelref" : true,
       "id" : "连接3532"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Deaction1",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
@@ -196,13 +197,12 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 1,
   "codeName" : "GetInfo",
   "logicName" : "获取相关信息",
   "defaultParamName" : "Default",

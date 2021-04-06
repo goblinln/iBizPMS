@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getUpdatePSControlAction" : {
     "modelref" : true,
     "id" : "update"
@@ -18,7 +19,6 @@
     "stepActions" : [ "PREV", "NEXT", "FINISH" ],
     "name" : "需求"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -27,7 +27,6 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "formFuncMode" : "WIZARDFORM",
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "rawItemHeight" : -1.0,
@@ -44,11 +43,11 @@
       "showCaption" : true,
       "name" : "rawitem1"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "表单分页",
     "detailType" : "FORMPAGE",
@@ -101,6 +100,7 @@
     }
   } ],
   "noTabHeader" : true,
+  "formFuncMode" : "WIZARDFORM",
   "codeName" : "WizardCreateStory",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

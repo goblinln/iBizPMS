@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : true,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -42,7 +42,6 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -50,12 +49,12 @@
           "name" : "keywords"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "KEYWORDS",
           "codeName" : "Keywords"
         },
-        "hidden" : false,
         "dataType" : 25,
         "allowEmpty" : true,
         "enableCond" : 3,
@@ -63,6 +62,7 @@
         "labelPos" : "NONE",
         "labelWidth" : 0,
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -83,11 +83,11 @@
       "showCaption" : true,
       "name" : "grouppanel1"
     } ],
-    "infoGroupMode" : true,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : true,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

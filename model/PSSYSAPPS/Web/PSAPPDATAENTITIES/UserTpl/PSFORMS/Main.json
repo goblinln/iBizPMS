@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : true,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : true,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -41,19 +41,18 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 150,
           "editorType" : "TEXTBOX",
           "name" : "title"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TITLE",
           "codeName" : "Title"
         },
-        "hidden" : false,
         "dataType" : 25,
         "caption" : "模板标题",
         "allowEmpty" : false,
@@ -62,6 +61,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -71,7 +71,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "title"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -82,12 +81,12 @@
           "name" : "type"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TYPE",
           "codeName" : "Type"
         },
-        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "类型",
@@ -97,6 +96,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -117,18 +117,17 @@
       "showCaption" : false,
       "name" : "group1"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "account"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
-      "hidden" : true,
       "dataType" : 25,
       "caption" : "所属用户",
       "allowEmpty" : true,
@@ -137,6 +136,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -146,7 +146,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "account"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorParams" : {
           "uploadparams" : "{objecttype:\"%type%\",version:\"editor\"}",
@@ -156,12 +155,12 @@
         "name" : "content"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "CONTENT",
         "codeName" : "Content"
       },
-      "hidden" : false,
       "dataType" : 21,
       "caption" : "模板",
       "allowEmpty" : false,
@@ -170,6 +169,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -179,7 +179,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "content"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "getPSAppCodeList" : {
           "modelref" : true,
@@ -189,12 +188,12 @@
         "name" : "public"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PUBLIC",
         "codeName" : "IBizPublic"
       },
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "公开",
@@ -205,6 +204,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -214,11 +214,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "public"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

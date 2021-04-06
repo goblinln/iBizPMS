@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
@@ -21,6 +22,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接613"
@@ -40,17 +42,16 @@
       "srcFieldName" : "COLLECTOR",
       "name" : "Default[COLLECTOR]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "查询是否收藏"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1933"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -80,13 +81,12 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 1,
   "codeName" : "CurUserIsF",
   "logicName" : "当前是否收藏文档库分类",
   "defaultParamName" : "Default",

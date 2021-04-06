@@ -2,6 +2,7 @@
   "subSysAsCloud" : false,
   "subSysModule" : false,
   "defaultModule" : false,
+  "deployId" : "31f2e2d12885f5403c93544c0f6866d2",
   "getAllPSDataEntities" : [ {
     "modelref" : true,
     "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
@@ -16,7 +17,6 @@
     "modelref" : true,
     "path" : "PSMODULES/uaa/PSCODELISTS/AllRole.json"
   } ],
-  "deployId" : "31f2e2d12885f5403c93544c0f6866d2",
   "codeName" : "uaa",
   "dynaModelFilePath" : "PSMODULES/uaa.json",
   "name" : "uaa权限模块"

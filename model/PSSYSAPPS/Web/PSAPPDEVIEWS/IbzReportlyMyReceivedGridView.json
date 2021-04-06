@@ -7,15 +7,15 @@
   "enableFilter" : false,
   "enableQuickSearch" : true,
   "xDataControlName" : "grid",
-  "showCaptionBar" : false,
   "getPSDEViewCodeName" : "MyReceivedGridView",
+  "showCaptionBar" : false,
   "caption" : "汇报",
   "title" : "汇报表格视图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -30,99 +30,39 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     }, {
-      "name" : "GRID",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRID"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
   },
   "getPSControls" : [ {
-    "getPSDEGridDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "IBZ_REPORTLYNAME",
-        "codeName" : "IbzReportlyName"
-      },
-      "name" : "ibz_reportlyname",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ISSUBMIT",
-        "codeName" : "Issubmit"
-      },
-      "name" : "issubmit",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
-      },
-      "name" : "account",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "REPORTSTATUS",
-        "codeName" : "Reportstatus"
-      },
-      "name" : "reportstatus",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "DATE",
-        "codeName" : "Date"
-      },
-      "format" : "YYYY-MM-DD",
-      "name" : "date",
-      "dataType" : 5
-    }, {
-      "name" : "srfmstag",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZ_REPORTLYID",
-        "codeName" : "IbzReportlyId"
-      },
-      "name" : "ibz_reportlyid",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZ_REPORTLYNAME",
-        "codeName" : "IbzReportlyName"
-      },
-      "name" : "srfmajortext",
-      "dataType" : 25
-    }, {
-      "dataAccessAction" : true,
-      "getPSAppDEField" : {
-        "name" : "IBZ_REPORTLYID",
-        "codeName" : "IbzReportlyId"
-      },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZ_REPORTLYID",
-        "codeName" : "IbzReportlyId"
-      },
-      "name" : "srfkey",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "REPORTTO",
-        "codeName" : "Reportto"
-      },
-      "name" : "reportto",
-      "dataType" : 25
-    } ],
+    "singleSelect" : false,
     "enableColFilter" : false,
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -142,37 +82,98 @@
       "caption" : "汇报标识",
       "name" : "srfkey"
     } ],
-    "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "getRemovePSControlAction" : {
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
-    "singleSelect" : false,
+    "hasWFDataItems" : false,
+    "controlType" : "GRID",
     "enablePagingBar" : true,
     "getMinorSortPSAppDEField" : {
       "name" : "IBZ_REPORTLYID",
       "codeName" : "IbzReportlyId"
     },
+    "getPSDEGridDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "IBZ_REPORTLYNAME",
+        "codeName" : "IbzReportlyName"
+      },
+      "dataType" : 25,
+      "name" : "ibz_reportlyname"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ISSUBMIT",
+        "codeName" : "Issubmit"
+      },
+      "dataType" : 25,
+      "name" : "issubmit"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "dataType" : 25,
+      "name" : "account"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "REPORTSTATUS",
+        "codeName" : "Reportstatus"
+      },
+      "dataType" : 25,
+      "name" : "reportstatus"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "date"
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_REPORTLYID",
+        "codeName" : "IbzReportlyId"
+      },
+      "dataType" : 1,
+      "name" : "ibz_reportlyid"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_REPORTLYNAME",
+        "codeName" : "IbzReportlyName"
+      },
+      "dataType" : 25,
+      "name" : "srfmajortext"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_REPORTLYID",
+        "codeName" : "IbzReportlyId"
+      },
+      "dataAccessAction" : true,
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_REPORTLYID",
+        "codeName" : "IbzReportlyId"
+      },
+      "dataType" : 1,
+      "name" : "srfkey"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "REPORTTO",
+        "codeName" : "Reportto"
+      },
+      "dataType" : 25,
+      "name" : "reportto"
+    } ],
     "enableRowEdit" : false,
-    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
+      "excelCaption" : "编号",
       "getPSAppDEField" : {
         "name" : "IBZ_REPORTLYID",
         "codeName" : "IbzReportlyId"
       },
       "dataItemName" : "ibz_reportlyid",
-      "excelCaption" : "编号",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -184,13 +185,17 @@
       "widthUnit" : "PX",
       "name" : "ibz_reportlyid"
     }, {
+      "excelCaption" : "汇报名称",
       "getPSAppDEField" : {
         "name" : "IBZ_REPORTLYNAME",
         "codeName" : "IbzReportlyName"
       },
       "dataItemName" : "ibz_reportlyname",
-      "excelCaption" : "汇报名称",
       "getPSDEUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+        },
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyMyReceivedReportlyDetailEditView.json",
@@ -199,10 +204,6 @@
         "frontProcessType" : "WIZARD",
         "refreshMode" : 1,
         "getNoPrivDisplayMode" : 2,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
-        },
         "timeout" : 60000,
         "codeName" : "HaveRead",
         "caption" : "已读",
@@ -226,6 +227,7 @@
       "widthUnit" : "STAR",
       "name" : "ibz_reportlyname"
     }, {
+      "excelCaption" : "用户",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -235,7 +237,6 @@
         "codeName" : "Account"
       },
       "dataItemName" : "account",
-      "excelCaption" : "用户",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -247,12 +248,12 @@
       "widthUnit" : "PX",
       "name" : "account"
     }, {
+      "excelCaption" : "日期",
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
       },
       "dataItemName" : "date",
-      "excelCaption" : "日期",
       "valueFormat" : "YYYY-MM-DD",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -265,6 +266,7 @@
       "widthUnit" : "PX",
       "name" : "date"
     }, {
+      "excelCaption" : "汇报给",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -274,7 +276,6 @@
         "codeName" : "Reportto"
       },
       "dataItemName" : "reportto",
-      "excelCaption" : "汇报给",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -286,6 +287,7 @@
       "widthUnit" : "PX",
       "name" : "reportto"
     }, {
+      "excelCaption" : "状态",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ReportStatus.json"
@@ -295,7 +297,6 @@
         "codeName" : "Reportstatus"
       },
       "dataItemName" : "reportstatus",
-      "excelCaption" : "状态",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -310,12 +311,12 @@
     "codeName" : "MyReceived",
     "minorSortDir" : "DESC",
     "enableGroup" : false,
+    "hideHeader" : false,
+    "forceFit" : false,
     "pagingSize" : 20,
     "aggMode" : "NONE",
     "groupMode" : "NONE",
     "sortMode" : "REMOTE",
-    "hideHeader" : false,
-    "forceFit" : false,
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -355,76 +356,76 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchMyReceived"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
-        },
         "actionType" : "DEDATASET",
         "name" : "fetch"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "name" : "loaddraft"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -439,7 +440,6 @@
     "name" : "grid",
     "modelid" : "623942921cd05a29c3f923b2f36c3447"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA"
   }, {
@@ -448,15 +448,15 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyMyReceivedReportlyDetailEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "汇报编辑视图",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "EDITDATA"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
       "batchAddOnly" : false,
+      "enableBatchAdd" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "viewLogicType" : "APP_NEWDATA",

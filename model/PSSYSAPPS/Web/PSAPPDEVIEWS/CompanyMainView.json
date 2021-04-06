@@ -1,19 +1,19 @@
 {
   "showDataInfoBar" : true,
-  "enableSearch" : false,
-  "expandSearchForm" : true,
   "loadDefault" : true,
+  "expandSearchForm" : true,
+  "enableSearch" : false,
   "enableQuickGroup" : false,
   "enableQuickSearch" : false,
-  "showCaptionBar" : false,
   "getPSDEViewCodeName" : "MainView",
+  "showCaptionBar" : false,
   "caption" : "公司信息",
   "title" : "公司数据看板视图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -28,17 +28,22 @@
     "engineType" : "PortalView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "DASHBOARD",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "DASHBOARD"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
   },
   "getPSControls" : [ {
     "codeName" : "Main",
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "enableCustomized" : false,
     "getPSControls" : [ {
       "getPSLayout" : {
@@ -50,8 +55,8 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
-      "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "showTitleBar" : true,
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
@@ -67,10 +72,6 @@
       "codeName" : "MainViewdashboard_companycontainer1",
       "name" : "dashboard_companycontainer1"
     } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "controlType" : "DASHBOARD",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -91,7 +92,6 @@
     "name" : "dashboard",
     "modelid" : "b293e263c81ae9f040fd871f38287bca"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "CompanyMainView",
   "viewType" : "DEPORTALVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CompanyMainView.json",

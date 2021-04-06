@@ -1,11 +1,11 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/ProjectProductPlan.json",
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/ProjectProductPlan.json",
   "codeName" : "ProjectProductPlan",
   "userScope" : false,
   "emptyText" : "未定义",

@@ -1,63 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "CONSUMED",
-      "codeName" : "Consumed"
-    },
-    "name" : "consumed",
-    "dataType" : 7
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
-    },
-    "name" : "root",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "name" : "account",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "LEFT",
-      "codeName" : "Left"
-    },
-    "name" : "left",
-    "dataType" : 7
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ESTIMATE",
-      "codeName" : "Estimate"
-    },
-    "name" : "estimate",
-    "dataType" : 7
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  } ],
+  "singleSelect" : true,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeam.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -77,31 +34,75 @@
     "caption" : "编号",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeam.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : true,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
   "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    },
+    "dataType" : 7,
+    "name" : "consumed"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
+    "dataType" : 1,
+    "name" : "root"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "dataType" : 25,
+    "name" : "account"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    },
+    "dataType" : 7,
+    "name" : "left"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ESTIMATE",
+      "codeName" : "Estimate"
+    },
+    "dataType" : 7,
+    "name" : "estimate"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  } ],
   "enableRowEdit" : false,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "团队",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
@@ -111,7 +112,6 @@
       "codeName" : "Account"
     },
     "dataItemName" : "account",
-    "excelCaption" : "团队",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -123,12 +123,12 @@
     "widthUnit" : "STAR",
     "name" : "account"
   }, {
+    "excelCaption" : "最初预计",
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
     "dataItemName" : "estimate",
-    "excelCaption" : "最初预计",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -140,12 +140,12 @@
     "widthUnit" : "PX",
     "name" : "estimate"
   }, {
+    "excelCaption" : "总计消耗",
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
     "dataItemName" : "consumed",
-    "excelCaption" : "总计消耗",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -157,12 +157,12 @@
     "widthUnit" : "PX",
     "name" : "consumed"
   }, {
+    "excelCaption" : "预计剩余",
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
     "dataItemName" : "left",
-    "excelCaption" : "预计剩余",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -177,12 +177,12 @@
   "codeName" : "Main",
   "minorSortDir" : "ASC",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 1000,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

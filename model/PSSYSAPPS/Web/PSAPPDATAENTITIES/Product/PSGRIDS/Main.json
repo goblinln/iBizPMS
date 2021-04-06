@@ -1,73 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "LINENAME",
-      "codeName" : "LineName"
-    },
-    "name" : "linename",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
-    },
-    "name" : "status",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "name",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "LINE",
-      "codeName" : "Line"
-    },
-    "name" : "line",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CODE",
-      "codeName" : "Code"
-    },
-    "name" : "code",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    },
-    "name" : "type",
-    "dataType" : 25
-  }, {
-    "name" : "srfmstag",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  } ],
+  "singleSelect" : false,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -87,44 +34,97 @@
     "caption" : "编号",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : false,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
   "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "LINENAME",
+      "codeName" : "LineName"
+    },
+    "dataType" : 25,
+    "name" : "linename"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    },
+    "dataType" : 25,
+    "name" : "status"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "LINE",
+      "codeName" : "Line"
+    },
+    "dataType" : 1,
+    "name" : "line"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CODE",
+      "codeName" : "Code"
+    },
+    "dataType" : 25,
+    "name" : "code"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "dataType" : 25,
+    "name" : "type"
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  } ],
   "enableRowEdit" : false,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "linkValueItem" : "srfkey",
+    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "enableLinkView" : true,
+    "excelCaption" : "产品名称",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
     "dataItemName" : "name",
-    "excelCaption" : "产品名称",
+    "linkValueItem" : "srfkey",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -136,12 +136,12 @@
     "widthUnit" : "PX",
     "name" : "name"
   }, {
+    "excelCaption" : "产品代号",
     "getPSAppDEField" : {
       "name" : "CODE",
       "codeName" : "Code"
     },
     "dataItemName" : "code",
-    "excelCaption" : "产品代号",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -153,6 +153,7 @@
     "widthUnit" : "PX",
     "name" : "code"
   }, {
+    "excelCaption" : "状态",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
@@ -162,7 +163,6 @@
       "codeName" : "Status"
     },
     "dataItemName" : "status",
-    "excelCaption" : "状态",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -174,6 +174,7 @@
     "widthUnit" : "PX",
     "name" : "status"
   }, {
+    "excelCaption" : "产品类型",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__type.json"
@@ -183,7 +184,6 @@
       "codeName" : "Type"
     },
     "dataItemName" : "type",
-    "excelCaption" : "产品类型",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -195,12 +195,12 @@
     "widthUnit" : "PX",
     "name" : "type"
   }, {
+    "excelCaption" : "产品线",
     "getPSAppDEField" : {
       "name" : "LINENAME",
       "codeName" : "LineName"
     },
     "dataItemName" : "linename",
-    "excelCaption" : "产品线",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -215,12 +215,12 @@
   "codeName" : "Main",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

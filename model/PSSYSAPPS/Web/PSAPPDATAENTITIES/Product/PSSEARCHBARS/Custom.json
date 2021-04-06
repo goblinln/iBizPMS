@@ -1,17 +1,14 @@
 {
   "quickSearchMode" : 1,
-  "mobileSearchBar" : false,
   "getPSSearchBarFilters" : [ {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "editorType" : "NUMBER",
       "name" : "ideq"
     },
-    "width" : 300.0,
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 1,
+    "width" : 300.0,
     "caption" : "编号(=)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_ID_EQ",
@@ -22,9 +19,11 @@
       },
       "name" : "N_ID_EQ"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -32,16 +31,14 @@
     "itemType" : "FILTER",
     "name" : "ideq"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "editorType" : "TEXTBOX",
       "editorWidth" : 100.0,
       "name" : "nameeq"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "caption" : "产品名称(%)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_NAME_LIKE",
@@ -52,10 +49,12 @@
       },
       "name" : "N_NAME_LIKE"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -63,7 +62,6 @@
     "itemType" : "FILTER",
     "name" : "nameeq"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
       "getPSAppCodeList" : {
@@ -74,12 +72,11 @@
       "editorWidth" : 100.0,
       "name" : "typeeq"
     },
-    "width" : 300.0,
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
+    "width" : 300.0,
     "needCodeListConfig" : true,
     "caption" : "产品类型(=)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_TYPE_EQ",
@@ -90,10 +87,12 @@
       },
       "name" : "N_TYPE_EQ"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
@@ -101,7 +100,6 @@
     "itemType" : "FILTER",
     "name" : "typeeq"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
       "getPSAppCodeList" : {
@@ -112,11 +110,10 @@
       "editorWidth" : 100.0,
       "name" : "acleq"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "needCodeListConfig" : true,
     "caption" : "访问控制(=)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_ACL_EQ",
@@ -127,10 +124,12 @@
       },
       "name" : "N_ACL_EQ"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "ACL",
       "codeName" : "Acl"
@@ -138,7 +137,6 @@
     "itemType" : "FILTER",
     "name" : "acleq"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
       "getPSAppCodeList" : {
@@ -149,11 +147,10 @@
       "editorWidth" : 100.0,
       "name" : "statuseq"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "needCodeListConfig" : true,
     "caption" : "状态(=)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_STATUS_EQ",
@@ -164,10 +161,12 @@
       },
       "name" : "N_STATUS_EQ"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
@@ -175,7 +174,6 @@
     "itemType" : "FILTER",
     "name" : "statuseq"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
       "getPSAppCodeList" : {
@@ -186,11 +184,10 @@
       "editorWidth" : 100.0,
       "name" : "statusisnotnull"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "needCodeListConfig" : true,
     "caption" : "状态(NotNil)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "ISNOTNULL",
       "codeName" : "N_STATUS_ISNOTNULL",
@@ -201,10 +198,12 @@
       },
       "name" : "N_STATUS_ISNOTNULL"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
@@ -212,26 +211,25 @@
     "itemType" : "FILTER",
     "name" : "statusisnotnull"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
+      "enableLinkView" : false,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
-      "getPSAppDEACMode" : {
+      "getPSAppDataEntity" : {
         "modelref" : true,
-        "id" : "Default"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
       },
       "getPSAppDEDataSet" : {
         "modelref" : true,
         "id" : "FetchLine"
       },
-      "getPSAppDataEntity" : {
+      "getPSAppDEACMode" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
+        "id" : "Default"
       },
       "editorParams" : {
         "AC" : "TRUE",
@@ -241,10 +239,9 @@
       "editorType" : "PICKEREX_TRIGGER",
       "name" : "linenameeq"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "caption" : "产品线(=)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_LINENAME_EQ",
@@ -255,9 +252,11 @@
       },
       "name" : "N_LINENAME_EQ"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "LINENAME",
       "codeName" : "LineName"
@@ -265,26 +264,25 @@
     "itemType" : "FILTER",
     "name" : "linenameeq"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
+      "enableLinkView" : false,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
-      "getPSAppDEACMode" : {
+      "getPSAppDataEntity" : {
         "modelref" : true,
-        "id" : "Default"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
       },
       "getPSAppDEDataSet" : {
         "modelref" : true,
         "id" : "FetchLine"
       },
-      "getPSAppDataEntity" : {
+      "getPSAppDEACMode" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
+        "id" : "Default"
       },
       "editorParams" : {
         "AC" : "TRUE",
@@ -294,10 +292,9 @@
       "editorType" : "PICKEREX_TRIGGER",
       "name" : "linenamelike"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "caption" : "产品线(%)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_LINENAME_LIKE",
@@ -308,9 +305,11 @@
       },
       "name" : "N_LINENAME_LIKE"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "LINENAME",
       "codeName" : "LineName"
@@ -318,10 +317,11 @@
     "itemType" : "FILTER",
     "name" : "linenamelike"
   } ],
-  "enableFilter" : true,
+  "mobileSearchBar" : false,
   "controlType" : "SEARCHBAR",
-  "codeName" : "Custom",
+  "enableFilter" : true,
   "enableQuickSearch" : true,
+  "codeName" : "Custom",
   "enableGroup" : false,
   "quickSearchWidth" : 0,
   "getPSAppDataEntity" : {

@@ -1,23 +1,23 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doc__type.json",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doc__type.json",
   "codeName" : "Doc__type",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "text",
     "codeName" : "Text",
-    "text" : "文档"
+    "text" : "文档",
+    "value" : "text"
   }, {
-    "value" : "url",
     "codeName" : "Url",
-    "text" : "链接"
+    "text" : "链接",
+    "value" : "url"
   } ]
 }

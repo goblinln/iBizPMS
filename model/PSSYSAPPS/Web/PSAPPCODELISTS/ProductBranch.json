@@ -1,4 +1,8 @@
 {
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+  },
   "codeItemValueNumber" : true,
   "getValuePSAppDEField" : {
     "name" : "ID",
@@ -11,10 +15,6 @@
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchCurProduct"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

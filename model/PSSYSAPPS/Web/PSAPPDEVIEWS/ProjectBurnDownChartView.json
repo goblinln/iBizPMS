@@ -1,18 +1,18 @@
 {
-  "enableSearch" : false,
-  "expandSearchForm" : false,
   "loadDefault" : true,
+  "expandSearchForm" : false,
+  "enableSearch" : false,
   "enableQuickGroup" : false,
   "enableQuickSearch" : false,
-  "showCaptionBar" : false,
   "getPSDEViewCodeName" : "BurnDownChartView",
+  "showCaptionBar" : false,
   "caption" : "项目",
   "title" : "燃尽图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -27,11 +27,12 @@
     "engineType" : "ChartView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "CHART",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "CHART"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -110,6 +111,26 @@
       "name" : "BurnDown"
     } ],
     "codeName" : "BurnDown",
+    "getPSChartXAxises" : [ {
+      "eChartsPos" : "xAxis",
+      "eChartsType" : "category",
+      "position" : "bottom",
+      "caption" : "日期",
+      "type" : "category",
+      "index" : 0,
+      "name" : "X",
+      "id" : "0"
+    } ],
+    "getPSChartYAxises" : [ {
+      "eChartsPos" : "yAxis",
+      "eChartsType" : "value",
+      "position" : "left",
+      "caption" : "工时",
+      "type" : "numeric",
+      "index" : 0,
+      "name" : "Y",
+      "id" : "0"
+    } ],
     "getPSChartDataSets" : [ {
       "getPSChartDataSetFields" : [ {
         "groupField" : true,
@@ -127,14 +148,9 @@
       "name" : "BurnDown-DEFAULT",
       "id" : "0"
     } ],
-    "getPSChartXAxises" : [ {
-      "eChartsType" : "category",
-      "eChartsPos" : "xAxis",
-      "position" : "bottom",
-      "type" : "category",
-      "caption" : "日期",
+    "getPSChartDataSetGroups" : [ {
       "index" : 0,
-      "name" : "X",
+      "name" : "DEFAULT",
       "id" : "0"
     } ],
     "getPSChartGrids" : [ {
@@ -162,21 +178,6 @@
       "name" : "[BurnDown]直角坐标系[0]",
       "id" : "0"
     } ],
-    "getPSChartYAxises" : [ {
-      "eChartsType" : "value",
-      "eChartsPos" : "yAxis",
-      "position" : "left",
-      "type" : "numeric",
-      "caption" : "工时",
-      "index" : 0,
-      "name" : "Y",
-      "id" : "0"
-    } ],
-    "getPSChartDataSetGroups" : [ {
-      "index" : 0,
-      "name" : "DEFAULT",
-      "id" : "0"
-    } ],
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -195,63 +196,63 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchDefault"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
         "actionType" : "DEDATASET",
         "name" : "fetch"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -266,7 +267,6 @@
     "name" : "chart",
     "modelid" : "b09f35e51d613eb6892615d2cdbeb77d"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "ProjectBurnDownChartView",
   "viewType" : "DECHARTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectBurnDownChartView.json",

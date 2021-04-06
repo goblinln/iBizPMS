@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDataEntity" : {
@@ -25,11 +26,11 @@
     "name" : "获取测试用户信息"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6657"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -75,6 +76,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7399"
@@ -104,7 +106,6 @@
       "srcFieldName" : "REALNAME",
       "name" : "Default[REALNAME]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取标题"
@@ -207,13 +208,12 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 1,
   "codeName" : "UpdateInfo",
   "logicName" : "更新相关信息",
   "defaultParamName" : "Default",

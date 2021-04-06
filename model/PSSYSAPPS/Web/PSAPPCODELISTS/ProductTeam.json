@@ -1,11 +1,11 @@
 {
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchProductTeam"
-  },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+  },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchProductTeam"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

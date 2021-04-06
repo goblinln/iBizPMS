@@ -1,51 +1,51 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Task__type.json",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Task__type.json",
   "codeName" : "Task__type",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "design",
     "codeName" : "Design",
-    "text" : "设计"
+    "text" : "设计",
+    "value" : "design"
   }, {
-    "value" : "devel",
     "codeName" : "Devel",
-    "text" : "开发"
+    "text" : "开发",
+    "value" : "devel"
   }, {
-    "value" : "test",
     "codeName" : "Test",
-    "text" : "测试"
+    "text" : "测试",
+    "value" : "test"
   }, {
-    "value" : "study",
     "codeName" : "Study",
-    "text" : "研究"
+    "text" : "研究",
+    "value" : "study"
   }, {
-    "value" : "discuss",
     "codeName" : "Discuss",
-    "text" : "讨论"
+    "text" : "讨论",
+    "value" : "discuss"
   }, {
-    "value" : "ui",
     "codeName" : "Ui",
-    "text" : "界面"
+    "text" : "界面",
+    "value" : "ui"
   }, {
-    "value" : "affair",
     "codeName" : "Affair",
-    "text" : "事务"
+    "text" : "事务",
+    "value" : "affair"
   }, {
-    "value" : "serve",
     "codeName" : "Serve",
-    "text" : "服务"
+    "text" : "服务",
+    "value" : "serve"
   }, {
-    "value" : "misc",
     "codeName" : "Misc",
-    "text" : "其他"
+    "text" : "其他",
+    "value" : "misc"
   } ]
 }

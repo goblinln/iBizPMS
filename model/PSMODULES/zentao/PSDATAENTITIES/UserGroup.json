@@ -1,10 +1,79 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
-    "length" : 30,
     "dataType" : "TEXT",
     "deployId" : "8d4d64b7a87a0b2db37197b563141e2b",
-    "codeName" : "Account",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Account",
     "logicName" : "account",
     "stringLength" : 30,
     "stdDataType" : 25,
@@ -48,15 +117,15 @@
       "autoIncrement" : false,
       "name" : "ACCOUNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
     "name" : "ACCOUNT"
   }, {
-    "defaultValue" : "0",
     "dataType" : "INT",
     "deployId" : "4325fc7996d77e38f477533919496048",
-    "codeName" : "Group",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Group",
     "logicName" : "group",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -87,17 +156,18 @@
       "autoIncrement" : false,
       "name" : "GROUP"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "defaultValue" : "0",
     "name" : "GROUP"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "813d912b8af2410403be4b36c586c9ee",
-    "codeName" : "Id",
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Id",
     "logicName" : "虚拟主键",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -143,89 +213,14 @@
       "autoIncrement" : false,
       "name" : "ID"
     } ],
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "ID"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup/PSDEACTIONS/Save.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
   "serviceAPIMode" : 1,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "22ccd3036ada81857532b9daf0ccaa10",
-  "codeName" : "UserGroup",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -240,13 +235,23 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "22ccd3036ada81857532b9daf0ccaa10",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "UserGroup",
   "logicName" : "用户组",
   "tableName" : "zt_usergroup",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : true,
+  "serviceCodeName" : "UserGroup",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -255,14 +260,9 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "serviceCodeName" : "UserGroup",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

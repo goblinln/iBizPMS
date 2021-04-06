@@ -1,9 +1,83 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
     "dataType" : "ACID",
     "deployId" : "1d6a974d8b28411038fd6ebee256c786",
-    "codeName" : "Id",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Id",
     "logicName" : "id",
     "stdDataType" : 1,
     "pasteReset" : true,
@@ -36,19 +110,14 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "enableDBAutoValue" : true,
-    "dEFType" : 1,
     "name" : "ID"
   }, {
-    "length" : 20,
     "dataType" : "TEXT",
     "deployId" : "fab0ba2b7aa0ae89c5f9a3179c9f6cc5",
-    "codeName" : "Status",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Status",
     "logicName" : "status",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -92,15 +161,15 @@
       "autoIncrement" : false,
       "name" : "STATUS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "STATUS"
   }, {
-    "defaultValue" : "0",
     "dataType" : "INT",
     "deployId" : "dfce61f91e5783a41cc9faf26f9ff7a7",
-    "codeName" : "Buildin",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Buildin",
     "logicName" : "buildin",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -131,15 +200,15 @@
       "autoIncrement" : false,
       "name" : "BUILDIN"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "defaultValue" : "0",
     "name" : "BUILDIN"
   }, {
-    "length" : 20,
     "dataType" : "TEXT",
     "deployId" : "e3593864c96ee360f092d6fc495f2035",
-    "codeName" : "M",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "M",
     "logicName" : "m",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -183,14 +252,15 @@
       "autoIncrement" : false,
       "name" : "M"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "M"
   }, {
     "dataType" : "DATETIME",
     "deployId" : "1f2cf945855793b21f2b8609e2ebc14c",
-    "codeName" : "LastTime",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "LastTime",
     "logicName" : "lastTime",
     "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -221,15 +291,14 @@
       "autoIncrement" : false,
       "name" : "LASTTIME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "LASTTIME"
   }, {
-    "length" : 65535,
     "dataType" : "LONGTEXT",
     "deployId" : "2aa3735c708f04ba59719520a65383e2",
-    "codeName" : "Command",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Command",
     "logicName" : "command",
     "stringLength" : 65535,
     "stdDataType" : 21,
@@ -274,15 +343,15 @@
       "autoIncrement" : false,
       "name" : "COMMAND"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 65535,
     "name" : "COMMAND"
   }, {
-    "length" : 20,
     "dataType" : "TEXT",
     "deployId" : "9a47be95797cfd9aa20a32f943c4b99f",
-    "codeName" : "Dom",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Dom",
     "logicName" : "dom",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -326,15 +395,15 @@
       "autoIncrement" : false,
       "name" : "DOM"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "DOM"
   }, {
-    "length" : 20,
     "dataType" : "TEXT",
     "deployId" : "e9816a15d369c961c85fb0b7c8a3b091",
-    "codeName" : "Mon",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Mon",
     "logicName" : "mon",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -378,15 +447,15 @@
       "autoIncrement" : false,
       "name" : "MON"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "MON"
   }, {
-    "length" : 255,
     "dataType" : "TEXT",
     "deployId" : "ca7edf470def391a0fcaa4c05e4edd50",
-    "codeName" : "Remark",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Remark",
     "logicName" : "remark",
     "stringLength" : 255,
     "stdDataType" : 25,
@@ -430,15 +499,15 @@
       "autoIncrement" : false,
       "name" : "REMARK"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 255,
     "name" : "REMARK"
   }, {
-    "length" : 20,
     "dataType" : "TEXT",
     "deployId" : "1eb87912b26545c0f40b033b20fe0d87",
-    "codeName" : "H",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "H",
     "logicName" : "h",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -482,15 +551,15 @@
       "autoIncrement" : false,
       "name" : "H"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "H"
   }, {
-    "length" : 20,
     "dataType" : "TEXT",
     "deployId" : "df93e7ab88e8a5dd687516067bd48bfc",
-    "codeName" : "Type",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Type",
     "logicName" : "type",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -534,15 +603,15 @@
       "autoIncrement" : false,
       "name" : "TYPE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "TYPE"
   }, {
-    "length" : 20,
     "dataType" : "TEXT",
     "deployId" : "4a8e44025b3283e0e09984fefc303809",
-    "codeName" : "Dow",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Dow",
     "logicName" : "dow",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -586,88 +655,14 @@
       "autoIncrement" : false,
       "name" : "DOW"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "DOW"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron/PSDEACTIONS/Save.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
   "serviceAPIMode" : 1,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "7ca9bae3dc2de552c8809d4f25a9003b",
-  "codeName" : "Cron",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -682,13 +677,23 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "7ca9bae3dc2de552c8809d4f25a9003b",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "Cron",
   "logicName" : "cron",
   "tableName" : "zt_cron",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : true,
+  "serviceCodeName" : "Cron",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -697,14 +702,9 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "serviceCodeName" : "Cron",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

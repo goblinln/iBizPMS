@@ -5,12 +5,14 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接2948"
@@ -34,7 +36,6 @@
       "srcFieldName" : "ACCOUNT",
       "name" : "Default[ACCOUNT]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取计划数"
@@ -44,6 +45,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -63,7 +65,6 @@
       "srcFieldName" : "CURYEAR",
       "name" : "Default[CURYEAR]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall4",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取登录数"
@@ -73,6 +74,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8088"
@@ -159,17 +161,16 @@
       "srcFieldName" : "CURYEAR",
       "name" : "Default[CURYEAR]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取产品数"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8292"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -179,6 +180,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7307"
@@ -202,7 +204,6 @@
       "srcFieldName" : "CURYEAR",
       "name" : "Default[CURYEAR]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall3",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取需求数"
@@ -254,13 +255,12 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 1,
   "codeName" : "GetPOInfomation",
   "logicName" : "获取产品经理相关数据",
   "defaultParamName" : "Default",

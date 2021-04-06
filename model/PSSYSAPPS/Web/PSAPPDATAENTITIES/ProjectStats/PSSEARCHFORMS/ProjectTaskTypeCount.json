@@ -1,8 +1,8 @@
 {
-  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -10,7 +10,6 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -21,12 +20,12 @@
         "name" : "n_status_eq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
       },
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "项目状态",
@@ -36,6 +35,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 6,
         "colMD" : 6,
@@ -46,7 +46,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_status_eq"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
         "editorParams" : {
@@ -57,12 +56,12 @@
         "name" : "n_begin_gtandeq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "hidden" : false,
       "dataType" : 5,
       "caption" : "项目起始时间",
       "allowEmpty" : true,
@@ -71,6 +70,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 6,
         "colMD" : 6,
@@ -81,7 +81,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_begin_gtandeq"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
         "editorParams" : {
@@ -92,12 +91,12 @@
         "name" : "n_end_ltandeq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "hidden" : false,
       "dataType" : 5,
       "caption" : "至",
       "allowEmpty" : true,
@@ -106,6 +105,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 20,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 6,
         "colMD" : 6,
@@ -116,11 +116,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_end_ltandeq"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "表单分页",
     "detailType" : "FORMPAGE",

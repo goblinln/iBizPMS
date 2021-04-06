@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -41,28 +41,27 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
+          "enableLinkView" : false,
           "dropDownView" : false,
           "enablePickupView" : false,
-          "enableLinkView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
-          "getPSAppDEACMode" : {
+          "handlerType" : "PickupText",
+          "getPSAppDataEntity" : {
             "modelref" : true,
-            "id" : "Default"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
           },
           "getPSAppDEDataSet" : {
             "modelref" : true,
             "id" : "FetchDefault"
           },
-          "getPSAppDataEntity" : {
+          "getPSAppDEACMode" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+            "id" : "Default"
           },
-          "handlerType" : "PickupText",
           "valueItemName" : "root",
           "editorParams" : {
             "AC" : "TRUE",
@@ -73,12 +72,12 @@
           "name" : "rootname"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ROOTNAME",
           "codeName" : "RootName"
         },
-        "hidden" : false,
         "dataType" : 25,
         "caption" : "所属产品",
         "allowEmpty" : true,
@@ -88,6 +87,7 @@
         "valueItemName" : "root",
         "labelWidth" : 80,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 16,
           "colMD" : 16,
@@ -98,24 +98,23 @@
         "detailStyle" : "DEFAULT",
         "name" : "rootname"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch.json"
           },
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "root",
-            "key" : "PRODUCT",
-            "name" : "PRODUCT"
-          } ],
           "getPSNavigateParams" : [ {
             "rawValue" : false,
             "value" : "root",
             "key" : "product",
             "name" : "product"
+          } ],
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "root",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT"
           } ],
           "editorParams" : {
             "SRFNAVPARAM.product" : "%root%",
@@ -125,12 +124,12 @@
           "name" : "branch"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "BRANCH",
           "codeName" : "Branch"
         },
-        "hidden" : false,
         "dataType" : 9,
         "needCodeListConfig" : true,
         "allowEmpty" : true,
@@ -139,6 +138,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 10,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 8,
           "colMD" : 8,
@@ -149,18 +149,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "branch"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "path"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PATH",
           "codeName" : "Path"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "path",
         "allowEmpty" : true,
@@ -169,6 +168,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -178,18 +178,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "path"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "root"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ROOT",
           "codeName" : "Root"
         },
-        "hidden" : true,
         "dataType" : 1,
         "caption" : "编号",
         "allowEmpty" : true,
@@ -198,6 +197,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -207,45 +207,28 @@
         "detailStyle" : "DEFAULT",
         "name" : "root"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
+          "enableLinkView" : false,
           "dropDownView" : false,
           "enablePickupView" : false,
-          "enableLinkView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
-          "getPSAppDEACMode" : {
+          "handlerType" : "PickupText",
+          "getPSAppDataEntity" : {
             "modelref" : true,
-            "id" : "Default"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
           },
           "getPSAppDEDataSet" : {
             "modelref" : true,
             "id" : "FetchParentModule"
           },
-          "getPSAppDataEntity" : {
+          "getPSAppDEACMode" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+            "id" : "Default"
           },
-          "handlerType" : "PickupText",
           "valueItemName" : "parent",
-          "getPSNavigateContexts" : [ {
-            "rawValue" : true,
-            "value" : "story",
-            "key" : "N_TYPE_EQ",
-            "name" : "N_TYPE_EQ"
-          }, {
-            "rawValue" : false,
-            "value" : "branch",
-            "key" : "N_BRANCH_EQ",
-            "name" : "N_BRANCH_EQ"
-          }, {
-            "rawValue" : false,
-            "value" : "root",
-            "key" : "N_ROOT_EQ",
-            "name" : "N_ROOT_EQ"
-          } ],
           "getPSNavigateParams" : [ {
             "rawValue" : true,
             "value" : "story",
@@ -261,6 +244,22 @@
             "value" : "branch",
             "key" : "n_branch_eq",
             "name" : "n_branch_eq"
+          } ],
+          "getPSNavigateContexts" : [ {
+            "rawValue" : true,
+            "value" : "story",
+            "key" : "N_TYPE_EQ",
+            "name" : "N_TYPE_EQ"
+          }, {
+            "rawValue" : false,
+            "value" : "branch",
+            "key" : "N_BRANCH_EQ",
+            "name" : "N_BRANCH_EQ"
+          }, {
+            "rawValue" : false,
+            "value" : "root",
+            "key" : "N_ROOT_EQ",
+            "name" : "N_ROOT_EQ"
           } ],
           "editorParams" : {
             "SRFNAVCTX.n_branch_eq" : "%branch%",
@@ -278,12 +277,12 @@
           "name" : "parentname"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PARENTNAME",
           "codeName" : "ParentName"
         },
-        "hidden" : false,
         "dataType" : 25,
         "caption" : "上级模块",
         "allowEmpty" : true,
@@ -293,6 +292,7 @@
         "valueItemName" : "parent",
         "labelWidth" : 80,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -302,19 +302,18 @@
         "detailStyle" : "DEFAULT",
         "name" : "parentname"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 60,
           "editorType" : "TEXTBOX",
           "name" : "name"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "hidden" : false,
         "dataType" : 25,
         "caption" : "名称",
         "allowEmpty" : false,
@@ -323,6 +322,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 80,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -332,19 +332,18 @@
         "detailStyle" : "DEFAULT",
         "name" : "name"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 30,
           "editorType" : "TEXTBOX",
           "name" : "short"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "SHORT",
           "codeName" : "IBizShort"
         },
-        "hidden" : false,
         "dataType" : 25,
         "caption" : "简称",
         "allowEmpty" : true,
@@ -353,6 +352,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 80,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -362,18 +362,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "short"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "TEXTBOX",
           "name" : "order"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ORDER",
           "codeName" : "Order"
         },
-        "hidden" : false,
         "dataType" : 9,
         "caption" : "排序值",
         "allowEmpty" : true,
@@ -382,6 +381,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 80,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -402,11 +402,11 @@
       "showCaption" : false,
       "name" : "group1"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

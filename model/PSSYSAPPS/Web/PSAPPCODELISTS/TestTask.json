@@ -1,11 +1,11 @@
 {
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchDefault"
-  },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+  },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

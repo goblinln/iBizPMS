@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -41,19 +41,18 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 200,
           "editorType" : "TEXTBOX",
           "name" : "ibz_report_role_configname"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "IBZ_REPORT_ROLE_CONFIGNAME",
           "codeName" : "IbzReportRoleConfigName"
         },
-        "hidden" : false,
         "dataType" : 25,
         "caption" : "名称",
         "allowEmpty" : true,
@@ -62,6 +61,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -82,7 +82,6 @@
       "showCaption" : false,
       "name" : "group1"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -93,12 +92,12 @@
         "name" : "type"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "类型",
@@ -108,6 +107,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -117,7 +117,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "type"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : false,
         "getPSAppCodeList" : {
@@ -128,12 +127,12 @@
         "name" : "report_role"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "REPORT_ROLE",
         "codeName" : "Report_role"
       },
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "角色",
@@ -143,6 +142,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -152,11 +152,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "report_role"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

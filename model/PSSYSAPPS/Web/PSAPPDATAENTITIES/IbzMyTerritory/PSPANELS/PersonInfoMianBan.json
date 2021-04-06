@@ -1,4 +1,8 @@
 {
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
       "getPSPanelItems" : [ {
@@ -51,15 +55,15 @@
             "showCaption" : true,
             "name" : "rawitem2"
           }, {
-            "viewFieldName" : "mytodocnt",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "mytodocnt"
             },
-            "hidden" : false,
+            "viewFieldName" : "mytodocnt",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -102,15 +106,15 @@
             "showCaption" : true,
             "name" : "rawitem3"
           }, {
-            "viewFieldName" : "mystorys",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "mystorys"
             },
-            "hidden" : false,
+            "viewFieldName" : "mystorys",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -153,15 +157,15 @@
             "showCaption" : true,
             "name" : "rawitem4"
           }, {
-            "viewFieldName" : "mytasks",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "mytasks"
             },
-            "hidden" : false,
+            "viewFieldName" : "mytasks",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -222,15 +226,15 @@
             "showCaption" : true,
             "name" : "rawitem5"
           }, {
-            "viewFieldName" : "mybugs",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "mybugs"
             },
-            "hidden" : false,
+            "viewFieldName" : "mybugs",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -273,15 +277,15 @@
             "showCaption" : true,
             "name" : "rawitem6"
           }, {
-            "viewFieldName" : "MYFAVORITEBUGS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "myfavoritebugs"
             },
-            "hidden" : false,
+            "viewFieldName" : "MYFAVORITEBUGS",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -366,10 +370,6 @@
     "modelref" : true,
     "id" : "myfavoritebugs"
   } ],
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
-  },
   "controlType" : "PANEL",
   "codeName" : "PersonInfoMianBan",
   "layoutMode" : "TABLE_24COL",

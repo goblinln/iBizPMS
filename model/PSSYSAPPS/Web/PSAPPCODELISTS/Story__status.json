@@ -6,24 +6,24 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "draft",
     "codeName" : "Draft",
     "text" : "草稿",
-    "color" : "rgba(185, 111, 241, 1)"
+    "color" : "rgba(185, 111, 241, 1)",
+    "value" : "draft"
   }, {
-    "value" : "active",
     "codeName" : "Active",
-    "text" : "激活"
+    "text" : "激活",
+    "value" : "active"
   }, {
-    "value" : "closed",
     "codeName" : "Closed",
     "text" : "已关闭",
-    "color" : "rgba(203, 198, 198, 0.84)"
+    "color" : "rgba(203, 198, 198, 0.84)",
+    "value" : "closed"
   }, {
-    "value" : "changed",
     "codeName" : "Changed",
     "text" : "已变更",
-    "color" : "rgba(217, 68, 68, 1)"
+    "color" : "rgba(217, 68, 68, 1)",
+    "value" : "changed"
   } ],
   "codeName" : "Story__status",
   "emptyText" : "未定义",

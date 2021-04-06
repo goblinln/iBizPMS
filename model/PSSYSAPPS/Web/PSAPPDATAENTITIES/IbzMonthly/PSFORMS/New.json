@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -41,18 +41,17 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "ibz_monthlyname"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "IBZ_MONTHLYNAME",
           "codeName" : "IbzMonthlyName"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "月报名称",
         "allowEmpty" : true,
@@ -62,6 +61,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -71,18 +71,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "ibz_monthlyname"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "date"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "DATE",
           "codeName" : "Date"
         },
-        "hidden" : true,
         "dataType" : 5,
         "caption" : "日期",
         "allowEmpty" : true,
@@ -92,6 +91,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -101,7 +101,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "date"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -112,12 +111,12 @@
           "name" : "reportto"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "REPORTTO",
           "codeName" : "Reportto"
         },
-        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "汇报给",
@@ -127,6 +126,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 12,
           "colMD" : 12,
@@ -137,7 +137,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "reportto"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : false,
           "getPSAppCodeList" : {
@@ -148,12 +147,12 @@
           "name" : "mailto"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "MAILTO",
           "codeName" : "Mailto"
         },
-        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "抄送给",
@@ -163,6 +162,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 12,
           "colMD" : 12,
@@ -173,7 +173,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "mailto"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : false,
           "getPSAppCodeList" : {
@@ -184,12 +183,12 @@
           "name" : "thismonthtask"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "THISMONTHTASK",
           "codeName" : "Thismonthtask"
         },
-        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "本月完成任务",
@@ -199,6 +198,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -208,7 +208,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "thismonthtask"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorParams" : {
             "uploadparams" : "{objecttype:\"monthly\",version:\"editor\"}",
@@ -218,12 +217,12 @@
           "name" : "workthismonth"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "WORKTHISMONTH",
           "codeName" : "Workthismonth"
         },
-        "hidden" : false,
         "dataType" : 21,
         "caption" : "本月工作",
         "allowEmpty" : true,
@@ -232,6 +231,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -241,7 +241,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "workthismonth"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : false,
           "getPSAppCodeList" : {
@@ -252,12 +251,12 @@
           "name" : "nextmonthplanstask"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "NEXTMONTHPLANSTASK",
           "codeName" : "Nextmonthplanstask"
         },
-        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "下月计划任务",
@@ -267,6 +266,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -276,7 +276,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "nextmonthplanstask"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorParams" : {
             "uploadparams" : "{objecttype:\"monthly\",version:\"editor\"}",
@@ -286,12 +285,12 @@
           "name" : "plansnextmonth"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PLANSNEXTMONTH",
           "codeName" : "Plansnextmonth"
         },
-        "hidden" : false,
         "dataType" : 21,
         "caption" : "下月计划",
         "allowEmpty" : true,
@@ -300,6 +299,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -309,7 +309,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "plansnextmonth"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorParams" : {
             "uploadparams" : "{objecttype:\"monthly\",version:\"editor\"}",
@@ -319,12 +318,12 @@
           "name" : "comment"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "COMMENT",
           "codeName" : "Comment"
         },
-        "hidden" : false,
         "dataType" : 21,
         "caption" : "其他事项",
         "allowEmpty" : true,
@@ -333,6 +332,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -342,10 +342,9 @@
         "detailStyle" : "DEFAULT",
         "name" : "comment"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
-          "maxFileCount" : -1,
           "minFileCount" : 0,
+          "maxFileCount" : -1,
           "maxFileSize" : -1,
           "editorParams" : {
             "uploadparams" : "{objecttype:\"monthly\",objectid:\"0\",version:\"1\"}",
@@ -359,12 +358,12 @@
           "name" : "files"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "FILES",
           "codeName" : "Files"
         },
-        "hidden" : false,
         "dataType" : 25,
         "caption" : "附件",
         "allowEmpty" : true,
@@ -373,6 +372,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -382,18 +382,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "files"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "ibz_monthlyid"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "IBZ_MONTHLYID",
           "codeName" : "IbzMonthlyId"
         },
-        "hidden" : true,
         "dataType" : 1,
         "caption" : "月报标识",
         "allowEmpty" : true,
@@ -402,6 +401,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -411,18 +411,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "ibz_monthlyid"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "account"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ACCOUNT",
           "codeName" : "Account"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "用户",
         "allowEmpty" : true,
@@ -433,6 +432,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -442,18 +442,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "account"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "issubmit"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ISSUBMIT",
           "codeName" : "Issubmit"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "是否提交",
         "allowEmpty" : true,
@@ -462,6 +461,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -482,11 +482,11 @@
       "showCaption" : false,
       "name" : "grouppanel1"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

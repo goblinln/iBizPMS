@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "errorCode" : 0,
     "errorInfo" : "状态[进行中_已置顶]拒绝[UpdateTempMajor]操作",
@@ -23,16 +24,17 @@
     "name" : "状态[进行中_未置顶]拒绝[UpdateTempMajor]操作"
   }, {
     "parallelOutput" : false,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "默认连接"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
     "parallelOutput" : false,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "默认连接"
@@ -52,7 +54,6 @@
       "srcFieldName" : "ID",
       "name" : "复制主键"
     } ],
-    "logicHolder" : 3,
     "codeName" : "PrepareTemp",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备临时参数"
@@ -98,6 +99,7 @@
       "modelref" : true,
       "id" : "Temp"
     },
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "状态[已关闭_未置顶]拒绝[UpdateTempMajor]操作"
@@ -123,7 +125,6 @@
       "modelref" : true,
       "id" : "状态[未开始_已置顶]拒绝[UpdateTempMajor]操作"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Get",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
@@ -477,20 +478,19 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Temp",
     "default" : false,
     "name" : "临时变量"
   }, {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "默认变量"
   } ],
-  "logicHolder" : 1,
   "codeName" : "UpdateTempMajor__MSDeny",
   "logicName" : "行为[UpdateTempMajor]主状态拒绝逻辑",
   "defaultParamName" : "Default",

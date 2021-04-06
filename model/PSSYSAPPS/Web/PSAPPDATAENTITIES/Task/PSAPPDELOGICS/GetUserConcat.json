@@ -5,8 +5,10 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 2,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
@@ -22,17 +24,16 @@
       "srcFieldName" : "MAILTOPK",
       "name" : "Default[MAILTOPK] ==> Default[MAILTO]"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备参数"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接5583"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -51,13 +52,12 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 2,
   "codeName" : "GetUserConcat",
   "logicName" : "获取联系人",
   "defaultParamName" : "Default",

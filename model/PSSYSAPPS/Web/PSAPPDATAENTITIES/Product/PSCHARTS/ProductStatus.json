@@ -88,12 +88,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
-  "height" : 300.0,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSCHARTS/ProductStatus.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSCHARTS/ProductStatus.json",
+  "height" : 300.0,
   "logicName" : "ProductStatusPie",
   "modelid" : "2b1d9d534cc4b8bc73b4e4721d39882a",
   "getUserParam" : {

@@ -6,18 +6,18 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "open",
     "codeName" : "Open",
     "text" : "默认设置(有产品视图权限，即可访问)",
-    "default" : true
+    "default" : true,
+    "value" : "open"
   }, {
-    "value" : "private",
     "codeName" : "Private",
-    "text" : "私有产品(相关负责人和项目团队成员才能访问)"
+    "text" : "私有产品(相关负责人和项目团队成员才能访问)",
+    "value" : "private"
   }, {
-    "value" : "custom",
     "codeName" : "Custom",
-    "text" : "自定义白名单(团队成员和白名单的成员可以访问)"
+    "text" : "自定义白名单(团队成员和白名单的成员可以访问)",
+    "value" : "custom"
   } ],
   "codeName" : "Product__acl",
   "emptyText" : "未定义",

@@ -4,15 +4,15 @@
   "expandSearchForm" : true,
   "enableFilter" : false,
   "xDataControlName" : "dataview",
-  "showCaptionBar" : true,
   "getPSDEViewCodeName" : "IndexPickupDataView",
+  "showCaptionBar" : true,
   "caption" : "索引检索",
   "title" : "索引检索索引关系选择数据视图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -23,36 +23,37 @@
     "controlStyle" : "APPDEINDEXPICKUPDATAVIEW_STYLE2",
     "name" : "layoutpanel"
   },
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
   "getPSControls" : [ {
-    "enableCardEdit" : false,
-    "enableCardEditOrder" : false,
-    "enableCardEditGroup" : false,
-    "enableCardNew" : false,
+    "singleSelect" : false,
     "noSort" : false,
     "hasWFDataItems" : false,
     "appendDEItems" : false,
-    "singleSelect" : false,
     "getPSDEDataViewDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "INDEXNAME",
         "codeName" : "Indexname"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     }, {
       "getPSAppDEField" : {
         "name" : "INDEXID",
         "codeName" : "Indexid"
       },
-      "name" : "srfkey",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfkey"
     } ],
-    "enablePagingBar" : false,
+    "enableCardEdit" : false,
+    "enableCardEditOrder" : false,
+    "enableCardEditGroup" : false,
+    "enableCardNew" : false,
     "controlType" : "DATAVIEW",
+    "enablePagingBar" : false,
     "codeName" : "IndexType",
     "enableGroup" : false,
     "pagingSize" : 1000,
@@ -89,63 +90,63 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchIndexDER"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
         "actionType" : "DEDATASET",
         "name" : "fetch"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -160,7 +161,6 @@
     "name" : "dataview",
     "modelid" : "b7809a0eed51ac1fa8687a2372b44e57"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "IbizproIndexIndexPickupDataView",
   "viewType" : "DEINDEXPICKUPDATAVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupDataView.json",

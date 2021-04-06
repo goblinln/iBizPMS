@@ -1,63 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "POSTID",
-      "codeName" : "PostId"
-    },
-    "name" : "postid",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TEAMID",
-      "codeName" : "TeamId"
-    },
-    "name" : "teamid",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TEAMNAME",
-      "codeName" : "TeamName"
-    },
-    "name" : "teamname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "USERID",
-      "codeName" : "UserId"
-    },
-    "name" : "userid",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PERSONNAME",
-      "codeName" : "PersonName"
-    },
-    "name" : "personname",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "TEAMMEMBERID",
-      "codeName" : "TeamMemberId"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TEAMMEMBERID",
-      "codeName" : "TeamMemberId"
-    },
-    "name" : "srfkey",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TEAMMEMBERID",
-      "codeName" : "TeamMemberId"
-    },
-    "name" : "teammemberid",
-    "dataType" : 25
-  } ],
+  "singleSelect" : false,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -77,33 +34,76 @@
     "caption" : "组成员标识",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : false,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
+  "hasWFDataItems" : false,
   "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "POSTID",
+      "codeName" : "PostId"
+    },
+    "dataType" : 25,
+    "name" : "postid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TEAMID",
+      "codeName" : "TeamId"
+    },
+    "dataType" : 25,
+    "name" : "teamid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TEAMNAME",
+      "codeName" : "TeamName"
+    },
+    "dataType" : 25,
+    "name" : "teamname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "USERID",
+      "codeName" : "UserId"
+    },
+    "dataType" : 25,
+    "name" : "userid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PERSONNAME",
+      "codeName" : "PersonName"
+    },
+    "dataType" : 25,
+    "name" : "personname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TEAMMEMBERID",
+      "codeName" : "TeamMemberId"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 25,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TEAMMEMBERID",
+      "codeName" : "TeamMemberId"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TEAMMEMBERID",
+      "codeName" : "TeamMemberId"
+    },
+    "dataType" : 25,
+    "name" : "teammemberid"
+  } ],
+  "enableRowEdit" : false,
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "用户标识",
     "getPSAppDEField" : {
       "name" : "USERID",
       "codeName" : "UserId"
     },
     "dataItemName" : "userid",
-    "excelCaption" : "用户标识",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -115,12 +115,12 @@
     "widthUnit" : "PX",
     "name" : "userid"
   }, {
+    "excelCaption" : "姓名",
     "getPSAppDEField" : {
       "name" : "PERSONNAME",
       "codeName" : "PersonName"
     },
     "dataItemName" : "personname",
-    "excelCaption" : "姓名",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -134,28 +134,28 @@
   } ],
   "codeName" : "MainExp",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 500,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getNavPSAppView" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
     "viewType" : "DEEDITVIEW"
   },
-  "getPSNavigateContexts" : [ {
-    "rawValue" : false,
-    "value" : "userid",
-    "key" : "SYSEMPLOYEE",
-    "name" : "SYSEMPLOYEE"
-  } ],
   "getPSNavigateParams" : [ {
     "rawValue" : false,
     "value" : "userid",
     "key" : "sysemployee",
     "name" : "sysemployee"
+  } ],
+  "getPSNavigateContexts" : [ {
+    "rawValue" : false,
+    "value" : "userid",
+    "key" : "SYSEMPLOYEE",
+    "name" : "SYSEMPLOYEE"
   } ],
   "getFetchPSControlAction" : {
     "modelref" : true,

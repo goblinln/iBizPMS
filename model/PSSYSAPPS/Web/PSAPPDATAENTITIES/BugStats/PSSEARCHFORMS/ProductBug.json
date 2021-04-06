@@ -1,8 +1,8 @@
 {
-  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -17,7 +17,6 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
           "editorParams" : {
@@ -28,8 +27,8 @@
           "name" : "openeddatelt"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
-        "hidden" : false,
         "dataType" : 25,
         "caption" : "Bug创建时间",
         "allowEmpty" : true,
@@ -38,6 +37,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 95,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 14,
           "colMD" : 14,
@@ -48,7 +48,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "openeddatelt"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
           "editorParams" : {
@@ -59,8 +58,8 @@
           "name" : "openeddategt"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
-        "hidden" : false,
         "dataType" : 25,
         "caption" : "至",
         "allowEmpty" : true,
@@ -69,6 +68,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 30,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 10,
           "colMD" : 10,
@@ -98,7 +98,6 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -109,12 +108,12 @@
           "name" : "producteq"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PRODUCT",
           "codeName" : "Product"
         },
-        "hidden" : false,
         "dataType" : 1,
         "needCodeListConfig" : true,
         "caption" : "产品",
@@ -124,6 +123,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 50,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 12,
           "colMD" : 12,
@@ -134,24 +134,23 @@
         "detailStyle" : "DEFAULT",
         "name" : "producteq"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectCodeList.json"
           },
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "producteq",
-            "key" : "PRODUCT",
-            "name" : "PRODUCT"
-          } ],
           "getPSNavigateParams" : [ {
             "rawValue" : false,
             "value" : "producteq",
             "key" : "product",
             "name" : "product"
+          } ],
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "producteq",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT"
           } ],
           "editorParams" : {
             "srfnavctx.product" : "%producteq%",
@@ -161,12 +160,12 @@
           "name" : "projecteq"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PROJECT",
           "codeName" : "Project"
         },
-        "hidden" : false,
         "dataType" : 1,
         "needCodeListConfig" : true,
         "caption" : "项目",
@@ -176,6 +175,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 50,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 12,
           "colMD" : 12,
@@ -198,11 +198,11 @@
       "showCaption" : false,
       "name" : "grouppanel2"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "常规条件",
     "detailType" : "FORMPAGE",

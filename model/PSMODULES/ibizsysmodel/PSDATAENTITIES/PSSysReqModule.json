@@ -1,10 +1,79 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "3fe71d0500bd9bbfff1ae5ff02b50c76",
-    "codeName" : "ModuleTag2",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "ModuleTag2",
     "logicName" : "模块标记2",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -48,15 +117,17 @@
       "autoIncrement" : false,
       "name" : "MODULETAG2"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
     "name" : "MODULETAG2"
   }, {
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "e97e8fd4cc0938b3ac867025fee0d642",
-    "codeName" : "PSSysReqModuleName",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "PSSysReqModuleName",
     "logicName" : "系统需求模块名称",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -100,17 +171,15 @@
       "autoIncrement" : false,
       "name" : "PSSYSREQMODULENAME"
     } ],
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
     "name" : "PSSYSREQMODULENAME"
   }, {
-    "length" : 8,
     "dataType" : "DATETIME",
     "deployId" : "514fbc9c6ef916fbc57ee9993c05cdc7",
-    "codeName" : "CreateDate",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
     "systemReserver" : true,
@@ -144,15 +213,15 @@
       "name" : "CREATEDATE"
     } ],
     "predefinedType" : "CREATEDATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
     "name" : "CREATEDATE"
   }, {
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "c3c3ba29227ab7a30cfeaeba390a71f0",
-    "codeName" : "UserTag2",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "UserTag2",
     "logicName" : "用户标记2",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -196,15 +265,15 @@
       "autoIncrement" : false,
       "name" : "USERTAG2"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
     "name" : "USERTAG2"
   }, {
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "3cf98932f629b4a95655fa3567f0a8f0",
-    "codeName" : "ModuleTag4",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "ModuleTag4",
     "logicName" : "模块标记4",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -248,15 +317,15 @@
       "autoIncrement" : false,
       "name" : "MODULETAG4"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
     "name" : "MODULETAG4"
   }, {
-    "length" : 4000,
     "dataType" : "LONGTEXT_1000",
     "deployId" : "2271004b75e95b130bb2e99b503afb99",
-    "codeName" : "Memo",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Memo",
     "logicName" : "备注",
     "stringLength" : 4000,
     "stdDataType" : 25,
@@ -300,15 +369,15 @@
       "autoIncrement" : false,
       "name" : "MEMO"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 4000,
     "name" : "MEMO"
   }, {
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "7ee3e874ee904b07775a903a67ea4f5f",
-    "codeName" : "ModuleTag3",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "ModuleTag3",
     "logicName" : "模块标记3",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -352,15 +421,15 @@
       "autoIncrement" : false,
       "name" : "MODULETAG3"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
     "name" : "MODULETAG3"
   }, {
-    "length" : 10,
     "dataType" : "SSCODELIST",
     "deployId" : "6e909134dba2afb593eea0323abd35ca",
-    "codeName" : "UserCat",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "UserCat",
     "logicName" : "用户分类",
     "stringLength" : 10,
     "stdDataType" : 25,
@@ -404,15 +473,15 @@
       "autoIncrement" : false,
       "name" : "USERCAT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 10,
     "name" : "USERCAT"
   }, {
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "5675345b11257a55eca7597455c52c63",
-    "codeName" : "ModuleTag",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "ModuleTag",
     "logicName" : "模块标记",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -456,15 +525,15 @@
       "autoIncrement" : false,
       "name" : "MODULETAG"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
     "name" : "MODULETAG"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "95cf327282f67d93280ddcba02c57e11",
-    "codeName" : "ModuleSN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "ModuleSN",
     "logicName" : "模块编号",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -509,15 +578,15 @@
       "autoIncrement" : false,
       "name" : "MODULESN"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "MODULESN"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "fa9d55d373e885977199c174390126e8",
-    "codeName" : "PSSystemId",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "PSSystemId",
     "logicName" : "系统",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -561,15 +630,15 @@
       "autoIncrement" : false,
       "name" : "PSSYSTEMID"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "PSSYSTEMID"
   }, {
-    "length" : 50,
     "dataType" : "TEXT",
     "deployId" : "6b74982a6316d57de977c39a4e9e58bc",
-    "codeName" : "UserTag3",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "UserTag3",
     "logicName" : "用户标记3",
     "stringLength" : 50,
     "stdDataType" : 25,
@@ -613,15 +682,15 @@
       "autoIncrement" : false,
       "name" : "USERTAG3"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 50,
     "name" : "USERTAG3"
   }, {
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "bf1e116421ec00e46726a4d88fdeda23",
-    "codeName" : "UserTag",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "UserTag",
     "logicName" : "用户标记",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -665,14 +734,15 @@
       "autoIncrement" : false,
       "name" : "USERTAG"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
     "name" : "USERTAG"
   }, {
     "dataType" : "INT",
     "deployId" : "7741ef295dfa3b7b40d8f96b200cdb7f",
-    "codeName" : "OrderValue",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "OrderValue",
     "logicName" : "排序值",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -704,15 +774,14 @@
       "name" : "ORDERVALUE"
     } ],
     "predefinedType" : "ORDERVALUE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "ORDERVALUE"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "dc787568f20a6ee0ced9e124a1494da9",
-    "codeName" : "PSSystemName",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "PSSystemName",
     "logicName" : "系统",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -756,15 +825,15 @@
       "autoIncrement" : false,
       "name" : "PSSYSTEMNAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "PSSYSTEMNAME"
   }, {
-    "length" : 50,
     "dataType" : "TEXT",
     "deployId" : "5eda137489a843e2d4d45881c45badb0",
-    "codeName" : "UserTag4",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "UserTag4",
     "logicName" : "用户标记4",
     "stringLength" : 50,
     "stdDataType" : 25,
@@ -808,15 +877,16 @@
       "autoIncrement" : false,
       "name" : "USERTAG4"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 50,
     "name" : "USERTAG4"
   }, {
-    "length" : 100,
     "dataType" : "GUID",
     "deployId" : "d38cf31ae27db65f7ae4f02079f1f66a",
-    "codeName" : "PSSysReqModuleId",
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "PSSysReqModuleId",
     "logicName" : "系统需求模块标识",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -862,20 +932,19 @@
       "autoIncrement" : false,
       "name" : "PSSYSREQMODULEID"
     } ],
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "PSSYSREQMODULEID"
   }, {
-    "length" : 60,
+    "dataType" : "TEXT",
+    "deployId" : "552501d934ce0479a4c34fb4563a0198",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "deployId" : "552501d934ce0479a4c34fb4563a0198",
     "codeName" : "UpdateMan",
-    "valueFormat" : "%1$s",
     "logicName" : "更新人",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -922,15 +991,15 @@
       "name" : "UPDATEMAN"
     } ],
     "predefinedType" : "UPDATEMAN",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "UPDATEMAN"
   }, {
-    "length" : 4000,
     "dataType" : "LONGTEXT",
     "deployId" : "35cf0940fe7f0ca2446248528a125290",
-    "codeName" : "Content",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Content",
     "logicName" : "内容",
     "stringLength" : 4000,
     "stdDataType" : 21,
@@ -975,15 +1044,15 @@
       "autoIncrement" : false,
       "name" : "CONTENT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 4000,
     "name" : "CONTENT"
   }, {
-    "length" : 8,
     "dataType" : "DATETIME",
     "deployId" : "7451aa842d22af564ea221bc7b502ff2",
-    "codeName" : "UpdateDate",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
     "systemReserver" : true,
@@ -1017,15 +1086,15 @@
       "name" : "UPDATEDATE"
     } ],
     "predefinedType" : "UPDATEDATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
     "name" : "UPDATEDATE"
   }, {
-    "length" : 50,
     "dataType" : "TEXT",
     "deployId" : "cee65a49fe5259a40597a1855e5b8887",
-    "codeName" : "CodeName",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "CodeName",
     "logicName" : "代码标识",
     "stringLength" : 50,
     "stdDataType" : 25,
@@ -1069,19 +1138,19 @@
       "autoIncrement" : false,
       "name" : "CODENAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 50,
     "name" : "CODENAME"
   }, {
-    "length" : 60,
+    "dataType" : "TEXT",
+    "deployId" : "01d4ffea6e1dc91e474ae97207018247",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "deployId" : "01d4ffea6e1dc91e474ae97207018247",
     "codeName" : "CreateMan",
-    "valueFormat" : "%1$s",
     "logicName" : "建立人",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -1128,8 +1197,7 @@
       "name" : "CREATEMAN"
     } ],
     "predefinedType" : "CREATEMAN",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "CREATEMAN"
   }, {
     "phisicalDEField" : false,
@@ -1143,9 +1211,10 @@
       "name" : "PSMODULENAME",
       "codeName" : "PSModuleName"
     },
-    "length" : 200,
     "dataType" : "PICKUPTEXT",
     "deployId" : "2e0ec08bb6cb8e48789b8e4dee73b042",
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "codeName" : "PSModuleName",
     "logicName" : "系统模块",
     "stringLength" : 200,
@@ -1190,8 +1259,7 @@
       "autoIncrement" : false,
       "name" : "PSMODULENAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 200,
     "name" : "PSMODULENAME"
   }, {
     "phisicalDEField" : false,
@@ -1205,9 +1273,10 @@
       "name" : "PSSYSREQMODULENAME",
       "codeName" : "PSSysReqModuleName"
     },
-    "length" : 200,
     "dataType" : "PICKUPTEXT",
     "deployId" : "35fa58078aab70f3753a939374bcc763",
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "codeName" : "PPSSysReqModuleName",
     "logicName" : "父需求模块",
     "stringLength" : 200,
@@ -1252,8 +1321,7 @@
       "autoIncrement" : false,
       "name" : "PPSSYSREQMODULENAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 200,
     "name" : "PPSSYSREQMODULENAME"
   }, {
     "getPSDER" : {
@@ -1266,9 +1334,10 @@
       "name" : "PSSYSREQMODULEID",
       "codeName" : "PSSysReqModuleId"
     },
-    "length" : 100,
     "dataType" : "PICKUP",
     "deployId" : "13c14d179251c360330f95de1d6c74f2",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "codeName" : "PPSSysReqModuleId",
     "logicName" : "父需求模块",
     "stringLength" : 100,
@@ -1313,8 +1382,7 @@
       "autoIncrement" : false,
       "name" : "PPSSYSREQMODULEID"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "PPSSYSREQMODULEID"
   }, {
     "getPSDER" : {
@@ -1327,9 +1395,10 @@
       "name" : "PSMODULEID",
       "codeName" : "PSModuleId"
     },
-    "length" : 100,
     "dataType" : "PICKUP",
     "deployId" : "4e4a10b653f90d412d17163cf2cc1acc",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "codeName" : "PSModuleId",
     "logicName" : "系统模块",
     "stringLength" : 100,
@@ -1374,88 +1443,14 @@
       "autoIncrement" : false,
       "name" : "PSMODULEID"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "PSMODULEID"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据集",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDEACTIONS/Save.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据查询",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
   "serviceAPIMode" : 0,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "a57ec574658b37e0d2d4b73af71f5892",
-  "codeName" : "PSSysReqModule",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1470,14 +1465,22 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 0,
+  "deployId" : "a57ec574658b37e0d2d4b73af71f5892",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "PSSysReqModule",
   "logicName" : "系统需求模块",
   "tableName" : "T_PSSYSREQMODULE",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : false,
+  "serviceCodeName" : "PSSysReqModule",
   "serviceAPIClientId" : "45ab5098498d2294128bca01585b9993",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1486,12 +1489,9 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "serviceCodeName" : "PSSysReqModule",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

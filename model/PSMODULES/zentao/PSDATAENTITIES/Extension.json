@@ -1,10 +1,79 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
-    "length" : 16777215,
     "dataType" : "LONGTEXT",
     "deployId" : "9ae7f09b9cbce6e4da52305599cb9735",
-    "codeName" : "Dirs",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Dirs",
     "logicName" : "dirs",
     "stringLength" : 16777215,
     "stdDataType" : 21,
@@ -49,14 +118,19 @@
       "autoIncrement" : false,
       "name" : "DIRS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 16777215,
     "name" : "DIRS"
   }, {
     "dataType" : "ACID",
     "deployId" : "cdfcb8ee58f94b51e7cbb1924cce1537",
-    "codeName" : "Id",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Id",
     "logicName" : "id",
     "stdDataType" : 1,
     "pasteReset" : true,
@@ -89,19 +163,14 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "enableDBAutoValue" : true,
-    "dEFType" : 1,
     "name" : "ID"
   }, {
-    "length" : 20,
     "dataType" : "TEXT",
     "deployId" : "2c56f804a869d8f0508ad12bbae4c046",
-    "codeName" : "Status",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Status",
     "logicName" : "status",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -145,15 +214,15 @@
       "autoIncrement" : false,
       "name" : "STATUS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "STATUS"
   }, {
-    "length" : 30,
     "dataType" : "TEXT",
     "deployId" : "f4df6b90d4fce3895f5c9e40e9315b04",
-    "codeName" : "Code",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Code",
     "logicName" : "code",
     "stringLength" : 30,
     "stdDataType" : 25,
@@ -197,15 +266,15 @@
       "autoIncrement" : false,
       "name" : "CODE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
     "name" : "CODE"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "36f58ae869ff0cb7ad9ac6627377fc54",
-    "codeName" : "Depends",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Depends",
     "logicName" : "depends",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -249,16 +318,15 @@
       "autoIncrement" : false,
       "name" : "DEPENDS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "DEPENDS"
   }, {
-    "length" : 20,
-    "defaultValue" : "extension",
     "dataType" : "TEXT",
     "deployId" : "45b612af75f9fa84b655f58366f6e301",
-    "codeName" : "Type",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Type",
     "logicName" : "type",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -302,15 +370,16 @@
       "autoIncrement" : false,
       "name" : "TYPE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
+    "defaultValue" : "extension",
     "name" : "TYPE"
   }, {
-    "length" : 16777215,
     "dataType" : "LONGTEXT",
     "deployId" : "4590cb968345cce8ad796394e0af48d8",
-    "codeName" : "Files",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Files",
     "logicName" : "files",
     "stringLength" : 16777215,
     "stdDataType" : 21,
@@ -355,15 +424,15 @@
       "autoIncrement" : false,
       "name" : "FILES"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 16777215,
     "name" : "FILES"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "4655a8b323a922a4405f52bf23dabbbf",
-    "codeName" : "ZentaoCompatible",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "ZentaoCompatible",
     "logicName" : "zentaoCompatible",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -407,15 +476,15 @@
       "autoIncrement" : false,
       "name" : "ZENTAOCOMPATIBLE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "ZENTAOCOMPATIBLE"
   }, {
-    "length" : 65535,
     "dataType" : "LONGTEXT",
     "deployId" : "7b6a12f857725a1ed1ccabebfddbef98",
-    "codeName" : "License",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "License",
     "logicName" : "license",
     "stringLength" : 65535,
     "stdDataType" : 21,
@@ -460,15 +529,17 @@
       "autoIncrement" : false,
       "name" : "LICENSE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 65535,
     "name" : "LICENSE"
   }, {
-    "length" : 150,
     "dataType" : "TEXT",
     "deployId" : "36e08e1a9b765491411923b921defdc6",
-    "codeName" : "Name",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Name",
     "logicName" : "name",
     "stringLength" : 150,
     "stdDataType" : 25,
@@ -513,16 +584,15 @@
       "autoIncrement" : false,
       "name" : "NAME"
     } ],
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 150,
     "name" : "NAME"
   }, {
     "dataType" : "DATETIME",
     "deployId" : "86dbaade97629108b7cc0cbe10be4d3b",
-    "codeName" : "InstalledTime",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "InstalledTime",
     "logicName" : "installedTime",
     "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -553,15 +623,14 @@
       "autoIncrement" : false,
       "name" : "INSTALLEDTIME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "INSTALLEDTIME"
   }, {
-    "length" : 150,
     "dataType" : "TEXT",
     "deployId" : "dfc8570e42aa80037a87404aa1313be6",
-    "codeName" : "Site",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Site",
     "logicName" : "site",
     "stringLength" : 150,
     "stdDataType" : 25,
@@ -605,15 +674,15 @@
       "autoIncrement" : false,
       "name" : "SITE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 150,
     "name" : "SITE"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "151ce6738e4f94298ca1211b5a1b6f2f",
-    "codeName" : "Author",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Author",
     "logicName" : "author",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -657,15 +726,15 @@
       "autoIncrement" : false,
       "name" : "AUTHOR"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "AUTHOR"
   }, {
-    "length" : 65535,
     "dataType" : "LONGTEXT",
     "deployId" : "d206989f2a7cfcb32aa14973366a88a0",
-    "codeName" : "Desc",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Desc",
     "logicName" : "desc",
     "stringLength" : 65535,
     "stdDataType" : 21,
@@ -710,15 +779,15 @@
       "autoIncrement" : false,
       "name" : "DESC"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 65535,
     "name" : "DESC"
   }, {
-    "length" : 50,
     "dataType" : "TEXT",
     "deployId" : "95fdc9249d555921afde96af7dc16c51",
-    "codeName" : "Version",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Version",
     "logicName" : "version",
     "stringLength" : 50,
     "stdDataType" : 25,
@@ -762,88 +831,14 @@
       "autoIncrement" : false,
       "name" : "VERSION"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 50,
     "name" : "VERSION"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension/PSDEACTIONS/Save.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
   "serviceAPIMode" : 1,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "3f66d87e93b5bfd525426416e315e374",
-  "codeName" : "Extension",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -858,13 +853,23 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "3f66d87e93b5bfd525426416e315e374",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "Extension",
   "logicName" : "extension",
   "tableName" : "zt_extension",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : true,
+  "serviceCodeName" : "Extension",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -873,14 +878,9 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "serviceCodeName" : "Extension",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

@@ -1,26 +1,26 @@
 {
   "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "orderValue" : 99999,
     "codeName" : "nsubmit",
     "logicName" : "未提交",
     "default" : false,
     "mSTag" : "0",
+    "stateValue" : "0",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "0",
     "name" : "未提交"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -39,15 +39,18 @@
     "logicName" : "已提交",
     "default" : false,
     "mSTag" : "1",
+    "stateValue" : "1",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "1",
     "name" : "已提交"
   } ],
   "enableUIActions" : 15,
-  "enableUIRemove" : true,
   "getAllPSAppDEUIActions" : [ {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyMyReceivedReportlyDetailEditView.json",
@@ -56,10 +59,6 @@
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
-    },
     "timeout" : 60000,
     "codeName" : "HaveRead",
     "caption" : "已读",
@@ -72,22 +71,22 @@
     "name" : "已读",
     "id" : "HaveRead@IbzReportly"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Submit"
-    },
-    "getNoPrivDisplayMode" : 6,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
     },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Submit"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 6,
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf00c@FontAwesome",
       "cssClass" : "fa fa-check"
     },
-    "timeout" : 60000,
     "codeName" : "CalendarShowSubmit",
     "caption" : "提交",
     "actionTarget" : "SINGLEKEY",
@@ -100,6 +99,10 @@
     "name" : "提交（日历显示）",
     "id" : "CalendarShowSubmit@IbzReportly"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCreateEditView.json",
@@ -108,15 +111,11 @@
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getNoPrivDisplayMode" : 6,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
-    "timeout" : 60000,
     "codeName" : "CalendarShowEdit",
     "caption" : "编辑",
     "actionTarget" : "SINGLEKEY",
@@ -129,22 +128,22 @@
     "name" : "编辑（日历显示）",
     "id" : "CalendarShowEdit@IbzReportly"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Submit"
-    },
-    "getNoPrivDisplayMode" : 1,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
     },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Submit"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 1,
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf00c@FontAwesome",
       "cssClass" : "fa fa-check"
     },
-    "timeout" : 60000,
     "codeName" : "Submit",
     "caption" : "提交",
     "actionTarget" : "SINGLEKEY",
@@ -157,6 +156,10 @@
     "name" : "提交",
     "id" : "Submit@IbzReportly"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCreateEditView.json",
@@ -165,15 +168,11 @@
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf067@FontAwesome",
       "cssClass" : "fa fa-plus"
     },
-    "timeout" : 60000,
     "codeName" : "Create",
     "caption" : "新建",
     "actionTarget" : "NONE",
@@ -185,6 +184,10 @@
     "name" : "新建",
     "id" : "Create@IbzReportly"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCreateEditView.json",
@@ -193,15 +196,11 @@
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getNoPrivDisplayMode" : 1,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
-    "timeout" : 60000,
     "codeName" : "Edit",
     "caption" : "编辑",
     "actionTarget" : "SINGLEKEY",
@@ -215,25 +214,25 @@
     "id" : "Edit@IbzReportly"
   } ],
   "major" : true,
+  "enableUIRemove" : true,
   "getAllPSAppDEMethods" : [ {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
     "builtinMethod" : false,
-    "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
+    "codeName" : "Select",
+    "methodType" : "SELECT"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZREPORTLY__DEACTION__CREATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -242,14 +241,14 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Create.json"
     },
-    "codeName" : "Create"
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZREPORTLY__DEACTION__UPDATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
@@ -258,14 +257,14 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Update.json"
     },
-    "codeName" : "Update"
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZREPORTLY__DEACTION__REMOVE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
@@ -274,14 +273,14 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Remove.json"
     },
-    "codeName" : "Remove"
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZREPORTLY__DEACTION__GET"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -290,14 +289,14 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Get.json"
     },
-    "codeName" : "Get"
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -306,62 +305,62 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/GetDraft.json"
     },
-    "codeName" : "GetDraft"
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "HaveRead"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/HaveRead.json"
     },
-    "codeName" : "HaveRead"
+    "codeName" : "HaveRead",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Submit"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Submit.json"
     },
-    "codeName" : "Submit"
+    "codeName" : "Submit",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -370,14 +369,14 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "codeName" : "FetchDefault"
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyAllReportly"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -386,14 +385,14 @@
       "modelref" : true,
       "id" : "MyAllReportly"
     },
-    "codeName" : "FetchMyAllReportly"
+    "codeName" : "FetchMyAllReportly",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyReceived"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -402,14 +401,14 @@
       "modelref" : true,
       "id" : "MyReceived"
     },
-    "codeName" : "FetchMyReceived"
+    "codeName" : "FetchMyReceived",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyReportlyMob"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -418,41 +417,42 @@
       "modelref" : true,
       "id" : "MyReportlyMob"
     },
-    "codeName" : "FetchMyReportlyMob"
+    "codeName" : "FetchMyReportlyMob",
+    "methodType" : "FETCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
@@ -474,8 +474,8 @@
     "stdDataType" : 25,
     "name" : "UPDATEMAN"
   }, {
-    "codeName" : "CreateDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
     "name" : "CREATEDATE"
@@ -493,11 +493,11 @@
     "name" : "IBZ_REPORTLYID"
   }, {
     "majorField" : true,
+    "enableQuickSearch" : true,
     "codeName" : "IbzReportlyName",
     "logicName" : "汇报名称",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "enableQuickSearch" : true,
     "name" : "IBZ_REPORTLYNAME"
   }, {
     "codeName" : "Reportstatus",
@@ -506,8 +506,8 @@
     "stdDataType" : 25,
     "name" : "REPORTSTATUS"
   }, {
-    "codeName" : "Submittime",
     "valueFormat" : "HH:mm:ss",
+    "codeName" : "Submittime",
     "logicName" : "提交时间",
     "stdDataType" : 5,
     "name" : "SUBMITTIME"
@@ -536,8 +536,8 @@
     "stdDataType" : 25,
     "name" : "ISSUBMIT"
   }, {
-    "codeName" : "UpdateDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
     "name" : "UPDATEDATE"
@@ -548,8 +548,8 @@
     "stdDataType" : 21,
     "name" : "CONTENT"
   }, {
-    "codeName" : "Date",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "Date",
     "logicName" : "汇报日期",
     "stdDataType" : 5,
     "name" : "DATE"
@@ -561,22 +561,22 @@
     "name" : "MAILTOPK"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
     "getPSDEACModeDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "IBZ_REPORTLYID",
         "codeName" : "IbzReportlyId"
       },
-      "name" : "value",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "value"
     }, {
       "getPSAppDEField" : {
         "name" : "IBZ_REPORTLYNAME",
         "codeName" : "IbzReportlyName"
       },
-      "name" : "text",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "text"
     } ],
-    "enablePagingBar" : false,
     "getValuePSAppDEField" : {
       "name" : "IBZ_REPORTLYID",
       "codeName" : "IbzReportlyId"
@@ -598,7 +598,6 @@
     "codeName" : "IbzReportlyName"
   } ],
   "getAllPSAppDEDataExports" : [ {
-    "maxRowCount" : 1000,
     "getPSDEDataExportItems" : [ {
       "getPSAppDEField" : {
         "name" : "IBZ_REPORTLYID",
@@ -660,15 +659,11 @@
       "caption" : "是否提交",
       "name" : "issubmit"
     } ],
+    "maxRowCount" : 1000,
     "codeName" : "DataExport",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly/PSAPPDEDATAEXPS/DataExport.json",
     "name" : "数据导出"
   } ],
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDESERVICEAPIS/IbzReportly.json"
-  },
-  "codeName" : "IbzReportly",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -682,12 +677,17 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDESERVICEAPIS/IbzReportly.json"
+  },
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "codeName" : "IbzReportly",
   "logicName" : "汇报",
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,
   "dataAccCtrlArch" : 1,
-  "enableUICreate" : true,
-  "enableUIModify" : true,
   "defaultMode" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json",
   "name" : "IBZ_REPORTLY"

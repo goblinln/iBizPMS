@@ -1,51 +1,51 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__type.json",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__type.json",
   "codeName" : "Bug__type",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "codeerror",
     "codeName" : "Codeerror",
-    "text" : "代码错误"
+    "text" : "代码错误",
+    "value" : "codeerror"
   }, {
-    "value" : "config",
     "codeName" : "Config",
-    "text" : "配置相关"
+    "text" : "配置相关",
+    "value" : "config"
   }, {
-    "value" : "install",
     "codeName" : "Install",
-    "text" : "安装部署"
+    "text" : "安装部署",
+    "value" : "install"
   }, {
-    "value" : "security",
     "codeName" : "Security",
-    "text" : "安全相关"
+    "text" : "安全相关",
+    "value" : "security"
   }, {
-    "value" : "performance",
     "codeName" : "Performance",
-    "text" : "性能问题"
+    "text" : "性能问题",
+    "value" : "performance"
   }, {
-    "value" : "standard",
     "codeName" : "Standard",
-    "text" : "标准规范"
+    "text" : "标准规范",
+    "value" : "standard"
   }, {
-    "value" : "automation",
     "codeName" : "Automation",
-    "text" : "测试脚本"
+    "text" : "测试脚本",
+    "value" : "automation"
   }, {
-    "value" : "designdefect",
     "codeName" : "Designdefect",
-    "text" : "设计缺陷"
+    "text" : "设计缺陷",
+    "value" : "designdefect"
   }, {
-    "value" : "others",
     "codeName" : "Others",
-    "text" : "其他"
+    "text" : "其他",
+    "value" : "others"
   } ]
 }

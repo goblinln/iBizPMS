@@ -1,8 +1,8 @@
 {
-  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -26,14 +26,13 @@
       "showCaption" : true,
       "name" : "rawitem1"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "CHECKBOX",
         "name" : "closed"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "关闭产品",
       "allowEmpty" : true,
@@ -42,6 +41,7 @@
       "labelPos" : "RIGHT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 3,
         "colMD" : 2,
@@ -52,7 +52,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "closed"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -63,12 +62,12 @@
         "name" : "n_id_eq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "hidden" : false,
       "dataType" : 1,
       "needCodeListConfig" : true,
       "caption" : "产品",
@@ -78,6 +77,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 50,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 6,
         "colMD" : 6,
@@ -88,11 +88,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_id_eq"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "常规条件",
     "detailType" : "FORMPAGE",

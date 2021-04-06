@@ -5,13 +5,14 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1938"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -21,6 +22,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -31,7 +33,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "查询测试用例数"
@@ -50,13 +51,12 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 1,
   "codeName" : "MobTestSuiteCount",
   "logicName" : "移动端测试套件计数器",
   "defaultParamName" : "Default",

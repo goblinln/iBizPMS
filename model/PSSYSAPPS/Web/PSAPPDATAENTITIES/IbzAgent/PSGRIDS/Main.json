@@ -1,58 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "AGENTUSER",
-      "codeName" : "Agentuser"
-    },
-    "name" : "agentuser",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "AGENTEND",
-      "codeName" : "Agentend"
-    },
-    "format" : "YYYY-MM-DD",
-    "name" : "agentend",
-    "dataType" : 5
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_AGENTID",
-      "codeName" : "IbzAgentId"
-    },
-    "name" : "ibz_agentid",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "AGENTBEGIN",
-      "codeName" : "Agentbegin"
-    },
-    "format" : "YYYY-MM-DD",
-    "name" : "agentbegin",
-    "dataType" : 5
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_AGENTNAME",
-      "codeName" : "IbzAgentName"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "IBZ_AGENTID",
-      "codeName" : "IbzAgentId"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_AGENTID",
-      "codeName" : "IbzAgentId"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  } ],
+  "singleSelect" : false,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -72,33 +34,71 @@
     "caption" : "代理标识",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : false,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
+  "hasWFDataItems" : false,
   "controlType" : "GRID",
+  "enablePagingBar" : true,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "AGENTUSER",
+      "codeName" : "Agentuser"
+    },
+    "dataType" : 25,
+    "name" : "agentuser"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "AGENTEND",
+      "codeName" : "Agentend"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "agentend"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "dataType" : 1,
+    "name" : "ibz_agentid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "AGENTBEGIN",
+      "codeName" : "Agentbegin"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "agentbegin"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTNAME",
+      "codeName" : "IbzAgentName"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  } ],
+  "enableRowEdit" : false,
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "代理标识",
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTID",
       "codeName" : "IbzAgentId"
     },
     "dataItemName" : "ibz_agentid",
-    "excelCaption" : "代理标识",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -110,6 +110,7 @@
     "widthUnit" : "PX",
     "name" : "ibz_agentid"
   }, {
+    "excelCaption" : "代理用户",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
@@ -119,7 +120,6 @@
       "codeName" : "Agentuser"
     },
     "dataItemName" : "agentuser",
-    "excelCaption" : "代理用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -131,12 +131,12 @@
     "widthUnit" : "STAR",
     "name" : "agentuser"
   }, {
+    "excelCaption" : "代理开始日期",
     "getPSAppDEField" : {
       "name" : "AGENTBEGIN",
       "codeName" : "Agentbegin"
     },
     "dataItemName" : "agentbegin",
-    "excelCaption" : "代理开始日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -149,12 +149,12 @@
     "widthUnit" : "PX",
     "name" : "agentbegin"
   }, {
+    "excelCaption" : "代理结束日期",
     "getPSAppDEField" : {
       "name" : "AGENTEND",
       "codeName" : "Agentend"
     },
     "dataItemName" : "agentend",
-    "excelCaption" : "代理结束日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -172,6 +172,10 @@
         "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+          },
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentCreateEditView.json",
@@ -179,15 +183,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 2,
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
-          },
+          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
-          "timeout" : 60000,
           "codeName" : "Edit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -216,12 +216,12 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

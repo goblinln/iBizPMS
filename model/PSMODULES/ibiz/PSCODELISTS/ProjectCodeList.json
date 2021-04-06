@@ -1,11 +1,11 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProjectCodeList.json",
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProjectCodeList.json",
   "codeName" : "ProjectCodeList",
   "userScope" : false,
   "emptyText" : "未定义",

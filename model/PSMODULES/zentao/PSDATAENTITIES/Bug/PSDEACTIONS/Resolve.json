@@ -1,4 +1,5 @@
 {
+  "transactionMode" : "DEFAULT",
   "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : false,
@@ -15,21 +16,20 @@
     "attachMode" : "AFTER",
     "name" : "附加逻辑"
   } ],
-  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
-  "orderValue" : 99999,
   "codeName" : "Resolve",
   "logicName" : "解决",
-  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Resolve.json",
-  "name" : "Resolve",
-  "userCat" : "CAT1"
+  "userCat" : "CAT1",
+  "name" : "Resolve"
 }

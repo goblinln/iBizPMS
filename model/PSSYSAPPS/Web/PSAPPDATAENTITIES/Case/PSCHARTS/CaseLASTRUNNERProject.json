@@ -76,12 +76,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
   },
-  "height" : 300.0,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseLASTRUNNERProject.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "tablechart"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseLASTRUNNERProject.json",
+  "height" : 300.0,
   "logicName" : "CaseLASTRUNNERProject",
   "modelid" : "d6647a6ed173d8cff11bd40fb0e98c89",
   "getUserParam" : {

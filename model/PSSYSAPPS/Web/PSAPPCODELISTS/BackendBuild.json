@@ -1,11 +1,11 @@
 {
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchBuild"
-  },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PSSysSFPub.json"
+  },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchBuild"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

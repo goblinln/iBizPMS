@@ -6,13 +6,13 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "doc",
     "codeName" : "Doc",
-    "text" : "文档"
+    "text" : "文档",
+    "value" : "doc"
   }, {
-    "value" : "file",
     "codeName" : "File",
-    "text" : "附件"
+    "text" : "附件",
+    "value" : "file"
   } ],
   "codeName" : "DOCLIBTYPE",
   "emptyText" : "未定义",

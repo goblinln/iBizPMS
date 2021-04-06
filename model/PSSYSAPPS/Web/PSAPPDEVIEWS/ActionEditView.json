@@ -2,17 +2,17 @@
   "showDataInfoBar" : true,
   "showCaptionBar" : false,
   "xDataControlName" : "form",
-  "getPSDEViewCodeName" : "EditView",
   "funcViewMode" : "EDITVIEW",
+  "getPSDEViewCodeName" : "EditView",
   "width" : 800,
-  "openMode" : "POPUPMODAL",
   "caption" : "备注",
+  "openMode" : "POPUPMODAL",
   "title" : "备注",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -27,20 +27,22 @@
     "engineType" : "EditView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "FORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "FORM"
     }, {
+      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0,
-      "paramType" : "VALUE"
+      "value" : 0
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
   },
   "getPSControls" : [ {
+    "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -65,7 +67,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "enableAutoSave" : false,
     "infoFormMode" : false,
     "showFormNavBar" : false,
     "controlType" : "FORM",
@@ -83,7 +84,6 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "emptyCaption" : true,
           "getPSEditor" : {
             "editorParams" : {
               "uploadparams" : "{objecttype:\"%objecttype%\",objectid: \"%objectid%\",version:\"editor\"}",
@@ -93,12 +93,12 @@
             "name" : "lastcomment"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : true,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "LASTCOMMENT",
             "codeName" : "Lastcomment"
           },
-          "hidden" : false,
           "dataType" : 25,
           "allowEmpty" : true,
           "enableCond" : 3,
@@ -106,6 +106,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 1,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -128,11 +129,11 @@
             },
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
+              "timeout" : 60000,
               "getPSSysImage" : {
                 "glyph" : "xf08b@FontAwesome",
                 "cssClass" : "fa fa-sign-out"
               },
-              "timeout" : 60000,
               "codeName" : "Exit",
               "caption" : "返回",
               "uIActionTag" : "Exit",
@@ -165,10 +166,10 @@
             },
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
+              "timeout" : 60000,
               "getPSSysImage" : {
                 "cssClass" : "sx-tb-saveandclose"
               },
-              "timeout" : 60000,
               "codeName" : "SaveAndExit",
               "caption" : "保存并关闭",
               "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
@@ -221,18 +222,17 @@
         "showCaption" : false,
         "name" : "grouppanel2"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "objectid"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "OBJECTID",
           "codeName" : "ObjectID"
         },
-        "hidden" : true,
         "dataType" : 1,
         "caption" : "对象ID",
         "allowEmpty" : true,
@@ -241,6 +241,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -250,18 +251,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "objectid"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "noticeusers"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "NOTICEUSERS",
           "codeName" : "Noticeusers"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "消息通知用户",
         "allowEmpty" : true,
@@ -270,6 +270,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -279,18 +280,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "noticeusers"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "objecttype"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "OBJECTTYPE",
           "codeName" : "ObjectType"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "对象类型",
         "allowEmpty" : true,
@@ -299,6 +299,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -308,11 +309,11 @@
         "detailStyle" : "DEFAULT",
         "name" : "objecttype"
       } ],
-      "infoGroupMode" : false,
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
+      "infoGroupMode" : false,
       "getPSSysCss" : {
         "cssName" : "form-padding"
       },
@@ -445,13 +446,13 @@
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "EditComment"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "EditComment"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "editComment",
@@ -467,52 +468,52 @@
         "actionType" : "DEACTION",
         "name" : "loaddraftfrom"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "name" : "loaddraft"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -527,7 +528,6 @@
     "name" : "form",
     "modelid" : "4b8e0e368790daafceba95dce55776ce"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "ActionEditView",
   "viewType" : "DEEDITVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",

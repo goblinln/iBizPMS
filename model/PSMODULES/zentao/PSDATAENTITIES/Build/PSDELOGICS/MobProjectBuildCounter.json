@@ -5,13 +5,14 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6385"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -21,6 +22,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接587"
@@ -35,7 +37,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取完成的需求数"
@@ -45,6 +46,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -55,7 +57,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall3",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取产生的bug"
@@ -65,6 +66,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8410"
@@ -79,7 +81,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取解决的bug"
@@ -120,13 +121,12 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 1,
   "codeName" : "MobProjectBuildCounter",
   "logicName" : "移动端项目版本计数器",
   "defaultParamName" : "Default",

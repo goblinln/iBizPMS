@@ -3,21 +3,15 @@
   "enableFilter" : false,
   "enableQuickSearch" : true,
   "xDataControlName" : "list",
-  "showCaptionBar" : true,
   "getPSDEViewCodeName" : "ProductTeamListView",
+  "showCaptionBar" : true,
   "caption" : "产品团队",
   "title" : "产品团队列表视图",
   "accUserMode" : 2,
   "enableDP" : true,
-  "getPSAppViewNavParams" : [ {
-    "rawValue" : false,
-    "value" : "product",
-    "key" : "n_root_eq",
-    "name" : "n_root_eq"
-  } ],
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -32,14 +26,14 @@
     "engineType" : "ListView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "LIST",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "LIST"
     }, {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     } ],
     "name" : "engine"
   } ],
@@ -77,6 +71,13 @@
     },
     "name" : "toolbar_deuiaction4"
   } ],
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "product",
+    "key" : "n_root_eq",
+    "name" : "n_root_eq"
+  } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
@@ -90,20 +91,15 @@
       },
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+        },
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMUsr2GridView.json",
           "viewType" : "DEGRIDVIEW"
         },
-        "frontProcessType" : "WIZARD",
-        "refreshMode" : 1,
-        "enableConfirm" : true,
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "product",
-          "key" : "PRODUCT",
-          "name" : "PRODUCT"
-        } ],
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Get"
@@ -114,16 +110,21 @@
           "key" : "product",
           "name" : "product"
         } ],
+        "frontProcessType" : "WIZARD",
+        "refreshMode" : 1,
+        "enableConfirm" : true,
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "product",
+          "key" : "PRODUCT",
+          "name" : "PRODUCT"
+        } ],
         "getNoPrivDisplayMode" : 2,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
-        },
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf0c0@FontAwesome",
           "cssClass" : "fa fa-users"
         },
-        "timeout" : 60000,
         "codeName" : "ManagerMember",
         "caption" : "团队管理",
         "actionTarget" : "NONE",
@@ -157,11 +158,11 @@
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
-        "timeout" : 60000,
         "codeName" : "Refresh",
         "caption" : "刷新",
         "uIActionTag" : "Refresh",
@@ -199,12 +200,14 @@
     "enableRowEditOrder" : false,
     "noSort" : false,
     "hasWFDataItems" : false,
-    "showHeader" : true,
     "getItemPSLayoutPanel" : {
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
       "getRootPSPanelItems" : [ {
         "getPSPanelItems" : [ {
           "getPSPanelItems" : [ {
-            "viewFieldName" : "account",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -215,9 +218,10 @@
               "editorType" : "SPAN",
               "name" : "account"
             },
-            "hidden" : false,
+            "viewFieldName" : "account",
             "convertToCodeItemText" : true,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -231,15 +235,19 @@
             "itemStyle" : "DEFAULT",
             "name" : "account"
           }, {
-            "viewFieldName" : "role",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "role"
             },
-            "hidden" : false,
+            "viewFieldName" : "role",
             "showCaption" : false,
+            "hidden" : false,
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
             "getPSPanelItemGroupLogics" : [ {
               "logicCat" : "PANELVISIBLE",
               "getPSPanelItemLogics" : [ {
@@ -253,10 +261,6 @@
               "logicType" : "GROUP",
               "name" : "面板成员[role][面板显示]逻辑"
             } ],
-            "getPSLayoutPos" : {
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "itemType" : "FIELD",
             "caption" : "角色",
             "itemStyle" : "DEFAULT",
@@ -264,6 +268,10 @@
           }, {
             "contentType" : "RAW",
             "rawContent" : "未设置角色",
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
             "getPSPanelItemGroupLogics" : [ {
               "logicCat" : "PANELVISIBLE",
               "getPSPanelItemLogics" : [ {
@@ -277,10 +285,6 @@
               "logicType" : "GROUP",
               "name" : "面板成员[rawitem5][面板显示]逻辑"
             } ],
-            "getPSLayoutPos" : {
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "getPSSysCss" : {
               "cssName" : "team-wszrole"
             },
@@ -318,20 +322,20 @@
             "showCaption" : true,
             "name" : "rawitem4"
           }, {
-            "viewFieldName" : "join",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "join"
             },
-            "hidden" : false,
+            "viewFieldName" : "join",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colLG" : 9,
+              "colMD" : 9,
               "colSM" : 9,
               "colXS" : 9,
-              "colMD" : 9,
               "layout" : "TABLE_24COL"
             },
             "itemType" : "FIELD",
@@ -351,15 +355,15 @@
             "showCaption" : true,
             "name" : "rawitem6"
           }, {
-            "viewFieldName" : "days",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "days"
             },
-            "hidden" : false,
+            "viewFieldName" : "days",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colLG" : 6,
               "colMD" : 24,
@@ -395,20 +399,20 @@
             "showCaption" : true,
             "name" : "rawitem7"
           }, {
-            "viewFieldName" : "hours",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "hours"
             },
-            "hidden" : false,
+            "viewFieldName" : "hours",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colLG" : 9,
+              "colMD" : 9,
               "colSM" : 9,
               "colXS" : 9,
-              "colMD" : 9,
               "layout" : "TABLE_24COL"
             },
             "itemType" : "FIELD",
@@ -427,20 +431,20 @@
             "showCaption" : true,
             "name" : "rawitem8"
           }, {
-            "viewFieldName" : "total",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "total"
             },
-            "hidden" : false,
+            "viewFieldName" : "total",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colLG" : 6,
+              "colMD" : 6,
               "colSM" : 6,
               "colXS" : 6,
-              "colMD" : 6,
               "layout" : "TABLE_24COL"
             },
             "itemType" : "FIELD",
@@ -464,9 +468,9 @@
           "rawContent" : "消耗",
           "getPSLayoutPos" : {
             "colLG" : 3,
+            "colMD" : 3,
             "colSM" : 3,
             "colXS" : 2,
-            "colMD" : 3,
             "layout" : "TABLE_24COL"
           },
           "itemType" : "RAWITEM",
@@ -474,20 +478,20 @@
           "showCaption" : true,
           "name" : "rawitem1"
         }, {
-          "viewFieldName" : "consumed",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
             "editorType" : "SPAN",
             "name" : "consumed"
           },
-          "hidden" : false,
+          "viewFieldName" : "consumed",
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 5,
+            "colMD" : 5,
             "colSM" : 5,
             "colXS" : 5,
-            "colMD" : 5,
             "layout" : "TABLE_24COL"
           },
           "itemType" : "FIELD",
@@ -499,9 +503,9 @@
           "rawContent" : "剩余",
           "getPSLayoutPos" : {
             "colLG" : 3,
+            "colMD" : 3,
             "colSM" : 3,
             "colXS" : 3,
-            "colMD" : 3,
             "layout" : "TABLE_24COL"
           },
           "itemType" : "RAWITEM",
@@ -509,20 +513,20 @@
           "showCaption" : true,
           "name" : "rawitem2"
         }, {
-          "viewFieldName" : "left",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
             "editorType" : "SPAN",
             "name" : "left"
           },
-          "hidden" : false,
+          "viewFieldName" : "left",
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 5,
+            "colMD" : 5,
             "colSM" : 5,
             "colXS" : 5,
-            "colMD" : 5,
             "layout" : "TABLE_24COL"
           },
           "itemType" : "FIELD",
@@ -534,9 +538,9 @@
           "rawContent" : "预计",
           "getPSLayoutPos" : {
             "colLG" : 3,
+            "colMD" : 3,
             "colSM" : 3,
             "colXS" : 3,
-            "colMD" : 3,
             "layout" : "TABLE_24COL"
           },
           "itemType" : "RAWITEM",
@@ -544,20 +548,20 @@
           "showCaption" : true,
           "name" : "rawitem3"
         }, {
-          "viewFieldName" : "estimate",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
             "editorType" : "SPAN",
             "name" : "estimate"
           },
-          "hidden" : false,
+          "viewFieldName" : "estimate",
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 5,
+            "colMD" : 5,
             "colSM" : 5,
             "colXS" : 5,
-            "colMD" : 5,
             "layout" : "TABLE_24COL"
           },
           "itemType" : "FIELD",
@@ -571,22 +575,22 @@
               "id" : "list_itempanel_button1"
             },
             "getPSUIAction" : {
-              "refreshMode" : 1,
-              "enableConfirm" : true,
-              "getPSAppDEMethod" : {
-                "modelref" : true,
-                "id" : "Remove"
-              },
-              "getNoPrivDisplayMode" : 1,
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
               },
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Remove"
+              },
+              "refreshMode" : 1,
+              "enableConfirm" : true,
+              "getNoPrivDisplayMode" : 1,
+              "timeout" : 60000,
               "getPSSysImage" : {
                 "glyph" : "xf127@FontAwesome",
                 "cssClass" : "fa fa-unlink"
               },
-              "timeout" : 60000,
               "codeName" : "RemoveMember",
               "caption" : "移除成员",
               "actionTarget" : "SINGLEKEY",
@@ -632,13 +636,13 @@
           "showCaption" : false,
           "name" : "container3"
         }, {
-          "viewFieldName" : "id",
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "id"
           },
-          "hidden" : true,
+          "viewFieldName" : "id",
           "showCaption" : false,
+          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -653,9 +657,9 @@
         },
         "getPSLayoutPos" : {
           "colLG" : 8,
+          "colMD" : 8,
           "colSM" : 8,
           "colXS" : 8,
-          "colMD" : 8,
           "layout" : "TABLE_24COL"
         },
         "itemType" : "CONTAINER",
@@ -694,10 +698,6 @@
         "modelref" : true,
         "id" : "id"
       } ],
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
       "controlType" : "PANEL",
       "codeName" : "ProductTeamPc",
       "layoutMode" : "TABLE_24COL",
@@ -735,67 +735,68 @@
     },
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "name" : "id",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "id"
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
-      "name" : "account",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "account"
     }, {
+      "dataType" : 5,
       "format" : "YYYY-MM-DD",
-      "name" : "join",
-      "dataType" : 5
+      "name" : "join"
     }, {
-      "name" : "role",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "role"
     }, {
-      "name" : "estimate",
-      "dataType" : 7
+      "dataType" : 7,
+      "name" : "estimate"
     }, {
-      "name" : "total",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "total"
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Team__type.json"
       },
-      "name" : "type",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "type"
     }, {
-      "name" : "consumed",
-      "dataType" : 7
+      "dataType" : 7,
+      "name" : "consumed"
     }, {
-      "name" : "hours",
-      "dataType" : 7
+      "dataType" : 7,
+      "name" : "hours"
     }, {
-      "name" : "days",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "days"
     }, {
-      "name" : "left",
-      "dataType" : 7
+      "dataType" : 7,
+      "name" : "left"
     }, {
-      "name" : "root",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "root"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfkey",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfkey"
     }, {
       "getPSAppDEField" : {
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     } ],
-    "enableRowEdit" : false,
+    "showHeader" : true,
     "controlType" : "LIST",
+    "enableRowEdit" : false,
     "codeName" : "ProductTeam",
     "enableGroup" : false,
     "pagingSize" : 1000,
@@ -833,63 +834,63 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchProductTeamInfo"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
-        },
         "actionType" : "DEDATASET",
         "name" : "fetch"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -904,7 +905,6 @@
     "name" : "list",
     "modelid" : "67016a59d567665bda8727456cd145da"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -923,45 +923,45 @@
     "name" : "EDITDATA"
   } ],
   "getPSAppViewLogics" : [ {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction3_managermember"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction3_managermember",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction3_managermember_click"
   }, {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction2"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction2",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction2_click"
   }, {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction1"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction1_click"
   }, {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction4"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction4",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
@@ -969,8 +969,8 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
       "batchAddOnly" : false,
+      "enableBatchAdd" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
@@ -1032,6 +1032,14 @@
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
     "enableCreateDataRS" : false,
     "enableUpdateDataRS" : false,
     "enableGetDataRS" : false,
@@ -1039,14 +1047,6 @@
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getParentPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
     },
     "codeName" : "PRODUCTTEAMs",
     "actionRSMode" : 1,

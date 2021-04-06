@@ -6,21 +6,21 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "All",
     "data" : "{}",
     "codeName" : "All",
     "text" : "所有",
-    "default" : true
+    "default" : true,
+    "value" : "All"
   }, {
-    "value" : "normal",
     "data" : "{\"n_status_eq\":\"normal\"}",
     "codeName" : "Normal",
-    "text" : "未关闭"
+    "text" : "未关闭",
+    "value" : "normal"
   }, {
-    "value" : "closed",
     "data" : "{\"n_status_eq\":\"closed\"}",
     "codeName" : "Closed",
-    "text" : "已关闭"
+    "text" : "已关闭",
+    "value" : "closed"
   } ],
   "codeName" : "ProductQuickpacket",
   "emptyText" : "未定义",

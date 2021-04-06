@@ -1,19 +1,18 @@
 {
   "enableUIActions" : 15,
-  "enableUIRemove" : true,
   "getAllPSAppPortletCats" : [ {
     "ungroup" : true,
     "codeName" : "Ungroup",
     "name" : "（未分类）"
   } ],
   "major" : true,
+  "enableUIRemove" : true,
   "getAllPSAppDEMethods" : [ {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRoadMapYear"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -23,6 +22,7 @@
       "id" : "RoadMapYear"
     },
     "codeName" : "FetchRoadMapYear",
+    "methodType" : "FETCH",
     "name" : "FetchRoadMapYear"
   }, {
     "getPSDEServiceAPIMethod" : {
@@ -30,7 +30,6 @@
       "id" : "FetchGetRoadmapS"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -40,6 +39,7 @@
       "id" : "GetRoadmapS"
     },
     "codeName" : "FetchGetRoadmapS",
+    "methodType" : "FETCH",
     "name" : "FetchGetRoadmapS"
   }, {
     "getPSDEServiceAPIMethod" : {
@@ -47,7 +47,6 @@
       "id" : "FetchGetRoadmap"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -57,6 +56,7 @@
       "id" : "GetRoadmap"
     },
     "codeName" : "FetchGetRoadmap",
+    "methodType" : "FETCH",
     "name" : "FetchGetRoadmap"
   }, {
     "getPSDEServiceAPIMethod" : {
@@ -64,15 +64,14 @@
       "id" : "Select"
     },
     "builtinMethod" : false,
-    "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
+    "codeName" : "Select",
+    "methodType" : "SELECT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -82,10 +81,10 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Create.json"
     },
     "codeName" : "Create",
+    "methodType" : "DEACTION",
     "name" : "Create"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
@@ -95,10 +94,10 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Update.json"
     },
     "codeName" : "Update",
+    "methodType" : "DEACTION",
     "name" : "Update"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
@@ -108,10 +107,10 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Remove.json"
     },
     "codeName" : "Remove",
+    "methodType" : "DEACTION",
     "name" : "Remove"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -121,10 +120,10 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Get.json"
     },
     "codeName" : "Get",
+    "methodType" : "DEACTION",
     "name" : "Get"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -134,68 +133,69 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/GetDraft.json"
     },
     "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
     "name" : "GetDraft"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/CheckKey.json"
     },
     "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
     "name" : "CheckKey"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Save.json"
     },
     "codeName" : "Save",
+    "methodType" : "DEACTION",
     "name" : "Save"
   }, {
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
     },
     "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
     "name" : "DEFAULT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
@@ -211,18 +211,18 @@
     "stdDataType" : 25,
     "name" : "CREATEMAN"
   }, {
-    "codeName" : "UpdateDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
     "name" : "UPDATEDATE"
   }, {
     "majorField" : true,
+    "enableQuickSearch" : true,
     "codeName" : "ProductLifeName",
     "logicName" : "产品生命周期名称",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "enableQuickSearch" : true,
     "name" : "IBZ_PRODUCTLIFENAME"
   }, {
     "codeName" : "Product",
@@ -230,8 +230,8 @@
     "stdDataType" : 9,
     "name" : "PRODUCT"
   }, {
-    "codeName" : "CreateDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
     "name" : "CREATEDATE"
@@ -265,8 +265,8 @@
     "stdDataType" : 9,
     "name" : "MARKER"
   }, {
-    "codeName" : "Begin",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "Begin",
     "logicName" : "开始日期",
     "stdDataType" : 5,
     "name" : "BEGIN"
@@ -278,29 +278,29 @@
     "stdDataType" : 25,
     "name" : "IBZ_PRODUCTLIFEID"
   }, {
-    "codeName" : "End",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "End",
     "logicName" : "结束日期",
     "stdDataType" : 5,
     "name" : "END"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
     "getPSDEACModeDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "IBZ_PRODUCTLIFEID",
         "codeName" : "ProductLifeId"
       },
-      "name" : "value",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "value"
     }, {
       "getPSAppDEField" : {
         "name" : "IBZ_PRODUCTLIFENAME",
         "codeName" : "ProductLifeName"
       },
-      "name" : "text",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "text"
     } ],
-    "enablePagingBar" : false,
     "getValuePSAppDEField" : {
       "name" : "IBZ_PRODUCTLIFEID",
       "codeName" : "ProductLifeId"
@@ -321,11 +321,6 @@
     "name" : "IBZ_PRODUCTLIFENAME",
     "codeName" : "ProductLifeName"
   } ],
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDESERVICEAPIS/ProductLife.json"
-  },
-  "codeName" : "ProductLife",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -339,12 +334,17 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDESERVICEAPIS/ProductLife.json"
+  },
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "codeName" : "ProductLife",
   "logicName" : "产品生命周期",
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,
   "dataAccCtrlArch" : 1,
-  "enableUICreate" : true,
-  "enableUIModify" : true,
   "defaultMode" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json",
   "name" : "IBZ_PRODUCTLIFE"

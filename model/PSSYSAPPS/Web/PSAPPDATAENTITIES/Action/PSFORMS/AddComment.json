@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -41,18 +41,17 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "objecttype"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "OBJECTTYPE",
           "codeName" : "ObjectType"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "对象类型",
         "allowEmpty" : true,
@@ -63,6 +62,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -72,18 +72,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "objecttype"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "objectid"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "OBJECTID",
           "codeName" : "ObjectID"
         },
-        "hidden" : true,
         "dataType" : 1,
         "caption" : "对象ID",
         "allowEmpty" : true,
@@ -94,6 +93,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -103,7 +103,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "objectid"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorParams" : {
             "uploadparams" : "{objecttype:\"%objecttype%\",objectid: \"%objectid%\",version:\"editor\"}",
@@ -113,12 +112,12 @@
           "name" : "comment"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "COMMENT",
           "codeName" : "Comment"
         },
-        "hidden" : false,
         "dataType" : 21,
         "caption" : "备注",
         "allowEmpty" : true,
@@ -127,6 +126,7 @@
         "labelPos" : "NONE",
         "labelWidth" : 0,
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -136,10 +136,9 @@
         "detailStyle" : "DEFAULT",
         "name" : "comment"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
-          "maxFileCount" : -1,
           "minFileCount" : 0,
+          "maxFileCount" : -1,
           "maxFileSize" : -1,
           "editorParams" : {
             "uploadparams" : "{objecttype:\"%objecttype%\",objectid: \"0\"}",
@@ -153,12 +152,12 @@
           "name" : "files"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "FILES",
           "codeName" : "Files"
         },
-        "hidden" : false,
         "dataType" : 21,
         "caption" : "文件",
         "allowEmpty" : true,
@@ -167,6 +166,7 @@
         "labelPos" : "NONE",
         "labelWidth" : 0,
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -176,18 +176,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "files"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "noticeusers"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "NOTICEUSERS",
           "codeName" : "Noticeusers"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "消息通知用户",
         "allowEmpty" : true,
@@ -196,6 +195,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -205,18 +205,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "noticeusers"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "extra"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "EXTRA",
           "codeName" : "Extra"
         },
-        "hidden" : true,
         "dataType" : 21,
         "caption" : "附加值",
         "allowEmpty" : true,
@@ -227,6 +226,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -250,11 +250,11 @@
       "showCaption" : false,
       "name" : "grouppanel2"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "getPSSysCss" : {
       "cssName" : "form-padding"
     },

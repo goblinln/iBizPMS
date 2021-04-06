@@ -1,74 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "ISSUBMIT",
-      "codeName" : "Issubmit"
-    },
-    "name" : "issubmit",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "name" : "account",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_DAILYID",
-      "codeName" : "IbzDailyId"
-    },
-    "name" : "ibz_dailyid",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
-    },
-    "format" : "YYYY-MM-DD",
-    "name" : "date",
-    "dataType" : 5
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_DAILYNAME",
-      "codeName" : "IbzDailyName"
-    },
-    "name" : "ibz_dailyname",
-    "dataType" : 25
-  }, {
-    "name" : "srfmstag",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_DAILYNAME",
-      "codeName" : "IbzDailyName"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "IBZ_DAILYID",
-      "codeName" : "IbzDailyId"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_DAILYID",
-      "codeName" : "IbzDailyId"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "REPORTTO",
-      "codeName" : "Reportto"
-    },
-    "name" : "reportto",
-    "dataType" : 25
-  } ],
+  "singleSelect" : true,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -88,44 +34,98 @@
     "caption" : "日报标识",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : true,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
   "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "ISSUBMIT",
+      "codeName" : "Issubmit"
+    },
+    "dataType" : 25,
+    "name" : "issubmit"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "dataType" : 25,
+    "name" : "account"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYID",
+      "codeName" : "IbzDailyId"
+    },
+    "dataType" : 1,
+    "name" : "ibz_dailyid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "date"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYNAME",
+      "codeName" : "IbzDailyName"
+    },
+    "dataType" : 25,
+    "name" : "ibz_dailyname"
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYNAME",
+      "codeName" : "IbzDailyName"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYID",
+      "codeName" : "IbzDailyId"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYID",
+      "codeName" : "IbzDailyId"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "REPORTTO",
+      "codeName" : "Reportto"
+    },
+    "dataType" : 25,
+    "name" : "reportto"
+  } ],
   "enableRowEdit" : false,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "linkValueItem" : "srfkey",
+    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "enableLinkView" : true,
+    "excelCaption" : "日报名称",
     "getPSAppDEField" : {
       "name" : "IBZ_DAILYNAME",
       "codeName" : "IbzDailyName"
     },
     "dataItemName" : "ibz_dailyname",
-    "excelCaption" : "日报名称",
+    "linkValueItem" : "srfkey",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -137,6 +137,7 @@
     "widthUnit" : "STAR",
     "name" : "ibz_dailyname"
   }, {
+    "excelCaption" : "用户",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -146,7 +147,6 @@
       "codeName" : "Account"
     },
     "dataItemName" : "account",
-    "excelCaption" : "用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -158,12 +158,12 @@
     "widthUnit" : "PX",
     "name" : "account"
   }, {
+    "excelCaption" : "日期",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
     "dataItemName" : "date",
-    "excelCaption" : "日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -176,6 +176,7 @@
     "widthUnit" : "PX",
     "name" : "date"
   }, {
+    "excelCaption" : "汇报给",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -185,7 +186,6 @@
       "codeName" : "Reportto"
     },
     "dataItemName" : "reportto",
-    "excelCaption" : "汇报给",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -200,12 +200,12 @@
   "codeName" : "ProductDailyMain",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 40,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

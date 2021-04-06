@@ -1,4 +1,8 @@
 {
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+  },
   "getValuePSAppDEField" : {
     "name" : "USERNAME",
     "codeName" : "UserName"
@@ -10,10 +14,6 @@
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchStoryProductTeamPK"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

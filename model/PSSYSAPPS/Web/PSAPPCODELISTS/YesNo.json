@@ -2,13 +2,13 @@
   "dynaInstMode" : 0,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "1",
     "codeName" : "Item_1",
-    "text" : "是"
+    "text" : "是",
+    "value" : "1"
   }, {
-    "value" : "0",
     "codeName" : "Item_0",
-    "text" : "否"
+    "text" : "否",
+    "value" : "0"
   } ],
   "codeName" : "YesNo",
   "emptyText" : "未定义",

@@ -6,21 +6,21 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "All",
     "data" : "{}",
     "codeName" : "All",
     "text" : "所有",
-    "default" : true
+    "default" : true,
+    "value" : "All"
   }, {
-    "value" : "UNEXPIRED",
     "data" : "{\"n_isexpired_eq\":0}",
     "codeName" : "Unexpired",
-    "text" : "未过期"
+    "text" : "未过期",
+    "value" : "UNEXPIRED"
   }, {
-    "value" : "ISEXPIRED",
     "data" : "{\"n_isexpired_eq\":1}",
     "codeName" : "Isexpired",
-    "text" : "已过期"
+    "text" : "已过期",
+    "value" : "ISEXPIRED"
   } ],
   "codeName" : "Zt__productplan",
   "emptyText" : "未定义",

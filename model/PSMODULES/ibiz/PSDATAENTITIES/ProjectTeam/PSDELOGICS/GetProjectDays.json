@@ -5,18 +5,20 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4176"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4776"
@@ -36,7 +38,6 @@
       "srcFieldName" : "ROOT",
       "name" : "Default[ROOT] ==> project[ID]"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置项目参数"
@@ -50,11 +51,11 @@
       "modelref" : true,
       "id" : "project"
     },
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3942"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Deaction1",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
@@ -64,6 +65,7 @@
     "name" : "获取项目详情"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
@@ -79,7 +81,6 @@
       "srcFieldName" : "DAYS",
       "name" : "project[DAYS] ==> Default[DAYS]"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Prepareparam2",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "回填"
@@ -120,20 +121,19 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "project",
     "default" : false,
     "name" : "项目"
   } ],
-  "logicHolder" : 1,
   "codeName" : "GetProjectDays",
   "logicName" : "获取项目的可用工日",
   "defaultParamName" : "Default",

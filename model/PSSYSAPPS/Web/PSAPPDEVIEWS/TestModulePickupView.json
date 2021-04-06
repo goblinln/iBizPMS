@@ -1,14 +1,14 @@
 {
-  "showCaptionBar" : false,
-  "getPSDEViewCodeName" : "PickupView",
   "funcViewMode" : "PICKUPVIEW",
+  "getPSDEViewCodeName" : "PickupView",
+  "showCaptionBar" : false,
   "caption" : "测试模块",
   "title" : "测试模块数据选择视图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -23,11 +23,12 @@
     "engineType" : "PickupView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "PICKUPVIEWPANEL",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "PICKUPVIEWPANEL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
@@ -40,19 +41,19 @@
       "enableImport" : true,
       "enableRowEdit" : false,
       "gridRowActiveMode" : 2,
-      "enableSearch" : true,
       "expandSearchForm" : true,
+      "enableSearch" : true,
       "enableFilter" : true,
       "xDataControlName" : "grid",
-      "showCaptionBar" : true,
       "getPSDEViewCodeName" : "PickupGridView",
+      "showCaptionBar" : true,
       "caption" : "测试模块",
       "title" : "测试模块选择表格视图",
       "accUserMode" : 2,
       "enableDP" : true,
       "getPSViewLayoutPanel" : {
-        "useDefaultLayout" : true,
         "layoutPanel" : true,
+        "useDefaultLayout" : true,
         "controlType" : "VIEWLAYOUTPANEL",
         "codeName" : "Layoutpanel",
         "getPSAppDataEntity" : {
@@ -67,57 +68,36 @@
         "engineType" : "PickupGridView",
         "engineCat" : "VIEW",
         "getPSUIEngineParams" : [ {
-          "name" : "GRID",
-          "paramType" : "CTRL"
+          "paramType" : "CTRL",
+          "name" : "GRID"
         }, {
-          "name" : "SEARCHFORM",
-          "paramType" : "CTRL"
+          "paramType" : "CTRL",
+          "name" : "SEARCHFORM"
         } ],
         "name" : "engine"
       } ],
+      "viewStyle" : "STYLE2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
       },
       "getPSControls" : [ {
-        "getPSDEGridDataItems" : [ {
-          "getPSAppDEField" : {
-            "name" : "ROOT",
-            "codeName" : "Root"
-          },
-          "name" : "root",
-          "dataType" : 1
-        }, {
-          "getPSAppDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
-          },
-          "name" : "parent",
-          "dataType" : 1
-        }, {
-          "getPSAppDEField" : {
-            "name" : "NAME",
-            "codeName" : "Name"
-          },
-          "name" : "srfmajortext",
-          "dataType" : 25
-        }, {
-          "dataAccessAction" : true,
-          "getPSAppDEField" : {
-            "name" : "ID",
-            "codeName" : "Id"
-          },
-          "name" : "srfdataaccaction",
-          "dataType" : 1
-        }, {
-          "getPSAppDEField" : {
-            "name" : "ID",
-            "codeName" : "Id"
-          },
-          "name" : "srfkey",
-          "dataType" : 1
-        } ],
+        "singleSelect" : false,
         "enableColFilter" : false,
+        "getRemovePSControlAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "dataAccessAction" : "DELETE",
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "name" : "remove"
+        },
         "enableRowNew" : false,
         "enableRowEditOrder" : false,
         "noSort" : false,
@@ -137,34 +117,56 @@
           "caption" : "id",
           "name" : "srfkey"
         } ],
-        "hasWFDataItems" : false,
         "columnEnableLink" : 2,
-        "getRemovePSControlAction" : {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
-          },
-          "dataAccessAction" : "DELETE",
-          "actionName" : "Remove",
-          "actionType" : "DEACTION",
-          "name" : "remove"
-        },
-        "singleSelect" : false,
-        "enablePagingBar" : true,
-        "enableRowEdit" : false,
+        "hasWFDataItems" : false,
         "controlType" : "GRID",
+        "enablePagingBar" : true,
+        "getPSDEGridDataItems" : [ {
+          "getPSAppDEField" : {
+            "name" : "ROOT",
+            "codeName" : "Root"
+          },
+          "dataType" : 1,
+          "name" : "root"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          },
+          "dataType" : 1,
+          "name" : "parent"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "NAME",
+            "codeName" : "Name"
+          },
+          "dataType" : 25,
+          "name" : "srfmajortext"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          },
+          "dataAccessAction" : true,
+          "dataType" : 1,
+          "name" : "srfdataaccaction"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          },
+          "dataType" : 1,
+          "name" : "srfkey"
+        } ],
+        "enableRowEdit" : false,
         "codeName" : "Main",
         "enableGroup" : false,
+        "hideHeader" : false,
+        "forceFit" : false,
         "pagingSize" : 20,
         "aggMode" : "NONE",
         "groupMode" : "NONE",
         "sortMode" : "REMOTE",
-        "hideHeader" : false,
-        "forceFit" : false,
         "getFetchPSControlAction" : {
           "modelref" : true,
           "id" : "fetch"
@@ -182,76 +184,76 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Update"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Update"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchDefault"
             },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
-            },
             "actionType" : "DEDATASET",
             "name" : "fetch"
           }, {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Remove"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Remove"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Get"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Get"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "GetDraft"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "GetDraft"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "GetDraft",
             "actionType" : "DEACTION",
             "name" : "loaddraft"
           }, {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Create"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Create"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -266,21 +268,21 @@
         "name" : "grid",
         "modelid" : "a0e4cd0e098c9028cd9ef7c71cd9424b"
       }, {
-        "searchButtonStyle" : "DEFAULT",
         "enableAdvanceSearch" : false,
         "enableAutoSearch" : false,
         "enableFilterSave" : false,
+        "searchButtonStyle" : "DEFAULT",
         "controlType" : "SEARCHFORM",
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
         },
         "getPSDEFormPages" : [ {
-          "infoGroupMode" : false,
           "getPSLayout" : {
             "layout" : "TABLE_24COL",
             "columnCount" : 24
           },
+          "infoGroupMode" : false,
           "codeName" : "formpage1",
           "caption" : "常规条件",
           "detailType" : "FORMPAGE",
@@ -302,35 +304,35 @@
         "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FilterSearch"
             },
+            "actionType" : "FILTERACTION",
+            "name" : "search"
+          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
             },
-            "actionType" : "FILTERACTION",
-            "name" : "search"
-          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FilterGet"
             },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
-            },
             "actionType" : "FILTERACTION",
             "name" : "load"
           }, {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "FilterGetDraft"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FilterGetDraft"
             },
             "actionType" : "FILTERACTION",
             "name" : "loaddraft"
@@ -343,7 +345,6 @@
         "name" : "searchform",
         "modelid" : "33dc9a4ef63b00d50731326bb1c75658"
       } ],
-      "viewStyle" : "STYLE2",
       "codeName" : "TestModulePickupGridView",
       "viewType" : "DEPICKUPGRIDVIEW",
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModulePickupGridView.json",
@@ -352,6 +353,14 @@
         "enableDEAction" : true,
         "enableSelect" : true,
         "enableDEDataSet" : true,
+        "getMinorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+        },
+        "getParentPSAppDEField" : {
+          "name" : "ROOT",
+          "codeName" : "Root"
+        },
         "enableCreateDataRS" : false,
         "enableUpdateDataRS" : false,
         "enableGetDataRS" : false,
@@ -359,14 +368,6 @@
         "getMajorPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-        },
-        "getParentPSAppDEField" : {
-          "name" : "ROOT",
-          "codeName" : "Root"
-        },
-        "getMinorPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
         },
         "codeName" : "TestModules",
         "actionRSMode" : 1,
@@ -387,7 +388,6 @@
     "codeName" : "PickupViewpickupviewpanel",
     "name" : "pickupviewpanel"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "TestModulePickupView",
   "viewType" : "DEPICKUPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModulePickupView.json",
@@ -396,6 +396,14 @@
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
     "enableCreateDataRS" : false,
     "enableUpdateDataRS" : false,
     "enableGetDataRS" : false,
@@ -403,14 +411,6 @@
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getParentPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
     },
     "codeName" : "TestModules",
     "actionRSMode" : 1,

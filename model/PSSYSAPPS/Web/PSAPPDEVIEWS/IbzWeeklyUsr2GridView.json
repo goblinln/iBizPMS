@@ -8,21 +8,15 @@
   "enableFilter" : true,
   "enableQuickSearch" : true,
   "xDataControlName" : "grid",
-  "showCaptionBar" : true,
   "getPSDEViewCodeName" : "Usr2GridView",
+  "showCaptionBar" : true,
   "caption" : "周报",
   "title" : "周报表格视图",
   "accUserMode" : 2,
   "enableDP" : true,
-  "getPSAppViewNavParams" : [ {
-    "rawValue" : false,
-    "value" : "srfloginname",
-    "key" : "n_account_eq",
-    "name" : "n_account_eq"
-  } ],
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -37,17 +31,17 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     }, {
-      "name" : "GRID",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRID"
     }, {
-      "name" : "SEARCHFORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "SEARCHFORM"
     } ],
     "name" : "engine"
   } ],
@@ -83,6 +77,13 @@
     },
     "name" : "toolbar_deuiaction7"
   } ],
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "srfloginname",
+    "key" : "n_account_eq",
+    "name" : "n_account_eq"
+  } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
@@ -96,14 +97,10 @@
       },
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "refreshMode" : 1,
-        "enableConfirm" : true,
-        "getPSNavigateContexts" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "IBZWEEKLY",
-          "name" : "IBZWEEKLY"
-        } ],
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "CreateEveryWeekReport"
@@ -114,11 +111,15 @@
           "key" : "ibzweekly",
           "name" : "ibzweekly"
         } ],
+        "refreshMode" : 1,
+        "enableConfirm" : true,
+        "getPSNavigateContexts" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "IBZWEEKLY",
+          "name" : "IBZWEEKLY"
+        } ],
         "getNoPrivDisplayMode" : 2,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-        },
         "timeout" : 60000,
         "codeName" : "createEveryWeekReport",
         "caption" : "生成周报",
@@ -146,6 +147,10 @@
       },
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+        },
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditView.json",
@@ -153,10 +158,6 @@
         },
         "frontProcessType" : "WIZARD",
         "getNoPrivDisplayMode" : 2,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-        },
         "timeout" : 60000,
         "codeName" : "create",
         "caption" : "新建",
@@ -183,11 +184,11 @@
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf1c3@FontAwesome",
           "cssClass" : "fa fa-file-excel-o"
         },
-        "timeout" : 60000,
         "codeName" : "ExportExcel",
         "caption" : "导出",
         "uIActionTag" : "ExportExcel",
@@ -221,76 +222,22 @@
     "name" : "toolbar",
     "modelid" : "a367f1c87484ad35865184abea15eece"
   }, {
-    "getPSDEGridDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "IBZ_WEEKLYID",
-        "codeName" : "IbzWeeklyId"
-      },
-      "name" : "ibz_weeklyid",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ISSUBMIT",
-        "codeName" : "Issubmit"
-      },
-      "name" : "issubmit",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZ_WEEKLYNAME",
-        "codeName" : "IbzWeeklyName"
-      },
-      "name" : "ibz_weeklyname",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
-      },
-      "name" : "account",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "DATE",
-        "codeName" : "Date"
-      },
-      "format" : "YYYY-MM-DD",
-      "name" : "date",
-      "dataType" : 5
-    }, {
-      "name" : "srfmstag",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZ_WEEKLYNAME",
-        "codeName" : "IbzWeeklyName"
-      },
-      "name" : "srfmajortext",
-      "dataType" : 25
-    }, {
-      "dataAccessAction" : true,
-      "getPSAppDEField" : {
-        "name" : "IBZ_WEEKLYID",
-        "codeName" : "IbzWeeklyId"
-      },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZ_WEEKLYID",
-        "codeName" : "IbzWeeklyId"
-      },
-      "name" : "srfkey",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "REPORTTO",
-        "codeName" : "Reportto"
-      },
-      "name" : "reportto",
-      "dataType" : 25
-    } ],
+    "singleSelect" : false,
     "enableColFilter" : false,
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -310,44 +257,98 @@
       "caption" : "周报标识",
       "name" : "srfkey"
     } ],
-    "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "getRemovePSControlAction" : {
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
-    "singleSelect" : false,
+    "hasWFDataItems" : false,
+    "controlType" : "GRID",
     "enablePagingBar" : true,
     "getMinorSortPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "getPSDEGridDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "IBZ_WEEKLYID",
+        "codeName" : "IbzWeeklyId"
+      },
+      "dataType" : 1,
+      "name" : "ibz_weeklyid"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ISSUBMIT",
+        "codeName" : "Issubmit"
+      },
+      "dataType" : 25,
+      "name" : "issubmit"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_WEEKLYNAME",
+        "codeName" : "IbzWeeklyName"
+      },
+      "dataType" : 25,
+      "name" : "ibz_weeklyname"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "dataType" : 25,
+      "name" : "account"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "date"
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_WEEKLYNAME",
+        "codeName" : "IbzWeeklyName"
+      },
+      "dataType" : 25,
+      "name" : "srfmajortext"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_WEEKLYID",
+        "codeName" : "IbzWeeklyId"
+      },
+      "dataAccessAction" : true,
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_WEEKLYID",
+        "codeName" : "IbzWeeklyId"
+      },
+      "dataType" : 1,
+      "name" : "srfkey"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "REPORTTO",
+        "codeName" : "Reportto"
+      },
+      "dataType" : 25,
+      "name" : "reportto"
+    } ],
     "enableRowEdit" : false,
-    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "linkValueItem" : "srfkey",
+      "enableLinkView" : true,
       "getLinkPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyUsr2EditView.json",
         "viewType" : "DEEDITVIEW"
       },
-      "enableLinkView" : true,
+      "excelCaption" : "周报名称",
       "getPSAppDEField" : {
         "name" : "IBZ_WEEKLYNAME",
         "codeName" : "IbzWeeklyName"
       },
       "dataItemName" : "ibz_weeklyname",
-      "excelCaption" : "周报名称",
+      "linkValueItem" : "srfkey",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -359,6 +360,7 @@
       "widthUnit" : "STAR",
       "name" : "ibz_weeklyname"
     }, {
+      "excelCaption" : "用户",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -368,7 +370,6 @@
         "codeName" : "Account"
       },
       "dataItemName" : "account",
-      "excelCaption" : "用户",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -380,12 +381,12 @@
       "widthUnit" : "PX",
       "name" : "account"
     }, {
+      "excelCaption" : "日期",
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
       },
       "dataItemName" : "date",
-      "excelCaption" : "日期",
       "valueFormat" : "YYYY-MM-DD",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -398,6 +399,7 @@
       "widthUnit" : "PX",
       "name" : "date"
     }, {
+      "excelCaption" : "汇报给",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -407,7 +409,6 @@
         "codeName" : "Reportto"
       },
       "dataItemName" : "reportto",
-      "excelCaption" : "汇报给",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -424,11 +425,21 @@
           "addSeparator" : false,
           "showIcon" : true,
           "getPSUIAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+            },
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditViewEdit.json",
               "viewType" : "DEEDITVIEW"
             },
+            "getPSNavigateParams" : [ {
+              "rawValue" : false,
+              "value" : "date",
+              "key" : "date",
+              "name" : "date"
+            } ],
             "frontProcessType" : "WIZARD",
             "getPSNavigateContexts" : [ {
               "rawValue" : false,
@@ -436,22 +447,12 @@
               "key" : "DATE",
               "name" : "DATE"
             } ],
-            "getPSNavigateParams" : [ {
-              "rawValue" : false,
-              "value" : "date",
-              "key" : "date",
-              "name" : "date"
-            } ],
             "getNoPrivDisplayMode" : 1,
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-            },
+            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
-            "timeout" : 60000,
             "codeName" : "edit",
             "caption" : "修改",
             "actionTarget" : "SINGLEKEY",
@@ -470,22 +471,22 @@
           "addSeparator" : false,
           "showIcon" : true,
           "getPSUIAction" : {
-            "refreshMode" : 1,
-            "enableConfirm" : true,
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Submit"
-            },
-            "getNoPrivDisplayMode" : 1,
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
             },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Submit"
+            },
+            "refreshMode" : 1,
+            "enableConfirm" : true,
+            "getNoPrivDisplayMode" : 1,
+            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf00c@FontAwesome",
               "cssClass" : "fa fa-check"
             },
-            "timeout" : 60000,
             "codeName" : "submitZZZ",
             "caption" : "提交",
             "actionTarget" : "SINGLEKEY",
@@ -518,12 +519,12 @@
     "codeName" : "Main",
     "minorSortDir" : "DESC",
     "enableGroup" : false,
+    "hideHeader" : false,
+    "forceFit" : false,
     "pagingSize" : 20,
     "aggMode" : "NONE",
     "groupMode" : "NONE",
     "sortMode" : "REMOTE",
-    "hideHeader" : false,
-    "forceFit" : false,
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -587,76 +588,76 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchDefault"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-        },
         "actionType" : "DEDATASET",
         "name" : "fetch"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "name" : "loaddraft"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -671,21 +672,21 @@
     "name" : "grid",
     "modelid" : "3d53ae517b297b564a398adcd3b526d3"
   }, {
-    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
+    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
     "getPSDEFormPages" : [ {
-      "infoGroupMode" : false,
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
+      "infoGroupMode" : false,
       "codeName" : "formpage1",
       "caption" : "常规条件",
       "detailType" : "FORMPAGE",
@@ -707,35 +708,35 @@
     "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterSearch"
         },
+        "actionType" : "FILTERACTION",
+        "name" : "search"
+      }, {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
         },
-        "actionType" : "FILTERACTION",
-        "name" : "search"
-      }, {
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterGet"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-        },
         "actionType" : "FILTERACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterGetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
         },
         "actionType" : "FILTERACTION",
         "name" : "loaddraft"
@@ -748,15 +749,14 @@
     "name" : "searchform",
     "modelid" : "4b843fc8c083cf654f21cfe76f058373"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "INDEXVIEWTAB",
     "realTitle" : "实体2编辑视图",
+    "realOpenMode" : "INDEXVIEWTAB",
     "name" : "NEWDATA"
   }, {
     "getRefPSAppView" : {
@@ -764,39 +764,39 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyUsr2EditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "周报编辑视图",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "EDITDATA"
   } ],
   "getPSAppViewLogics" : [ {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction1_createeveryweekreport"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction1_createeveryweekreport",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction1_createeveryweekreport_click"
   }, {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction2_create"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction2_create",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction2_create_click"
   }, {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction7"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction7",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
@@ -804,8 +804,8 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
       "batchAddOnly" : false,
+      "enableBatchAdd" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {

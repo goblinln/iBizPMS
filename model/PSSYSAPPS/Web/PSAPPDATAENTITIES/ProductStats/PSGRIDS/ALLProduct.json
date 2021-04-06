@@ -1,70 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "PRODUCTPLANCNT",
-      "codeName" : "ProductPlanCnt"
-    },
-    "name" : "productplancnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACTIVEBUGCNT",
-      "codeName" : "ActiveBugCnt"
-    },
-    "name" : "activebugcnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "RELEASECNT",
-      "codeName" : "ReleaseCnt"
-    },
-    "name" : "releasecnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACTIVESTORYCNT",
-      "codeName" : "ActiveStoryCnt"
-    },
-    "name" : "activestorycnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CURRPROJECT",
-      "codeName" : "Currproject"
-    },
-    "name" : "currproject",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "name",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  } ],
+  "singleSelect" : false,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -84,44 +34,94 @@
     "caption" : "产品编号",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : false,
+  "hasWFDataItems" : false,
+  "controlType" : "GRID",
   "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "PRODUCTPLANCNT",
+      "codeName" : "ProductPlanCnt"
+    },
+    "dataType" : 9,
+    "name" : "productplancnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACTIVEBUGCNT",
+      "codeName" : "ActiveBugCnt"
+    },
+    "dataType" : 9,
+    "name" : "activebugcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "RELEASECNT",
+      "codeName" : "ReleaseCnt"
+    },
+    "dataType" : 9,
+    "name" : "releasecnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACTIVESTORYCNT",
+      "codeName" : "ActiveStoryCnt"
+    },
+    "dataType" : 9,
+    "name" : "activestorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CURRPROJECT",
+      "codeName" : "Currproject"
+    },
+    "dataType" : 25,
+    "name" : "currproject"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  } ],
   "enableRowEdit" : false,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "linkValueItem" : "srfkey",
+    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "enableLinkView" : true,
+    "excelCaption" : "产品名称",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
     "dataItemName" : "name",
-    "excelCaption" : "产品名称",
+    "linkValueItem" : "srfkey",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -133,12 +133,12 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
+    "excelCaption" : "当前项目",
     "getPSAppDEField" : {
       "name" : "CURRPROJECT",
       "codeName" : "Currproject"
     },
     "dataItemName" : "currproject",
-    "excelCaption" : "当前项目",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -150,12 +150,12 @@
     "widthUnit" : "STAR",
     "name" : "currproject"
   }, {
+    "excelCaption" : "计划数",
     "getPSAppDEField" : {
       "name" : "PRODUCTPLANCNT",
       "codeName" : "ProductPlanCnt"
     },
     "dataItemName" : "productplancnt",
-    "excelCaption" : "计划数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -167,12 +167,12 @@
     "widthUnit" : "PX",
     "name" : "productplancnt"
   }, {
+    "excelCaption" : "发布数",
     "getPSAppDEField" : {
       "name" : "RELEASECNT",
       "codeName" : "ReleaseCnt"
     },
     "dataItemName" : "releasecnt",
-    "excelCaption" : "发布数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -184,12 +184,12 @@
     "widthUnit" : "PX",
     "name" : "releasecnt"
   }, {
+    "excelCaption" : "激活需求",
     "getPSAppDEField" : {
       "name" : "ACTIVESTORYCNT",
       "codeName" : "ActiveStoryCnt"
     },
     "dataItemName" : "activestorycnt",
-    "excelCaption" : "激活需求",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -201,12 +201,12 @@
     "widthUnit" : "PX",
     "name" : "activestorycnt"
   }, {
+    "excelCaption" : "未解决Bug",
     "getPSAppDEField" : {
       "name" : "ACTIVEBUGCNT",
       "codeName" : "ActiveBugCnt"
     },
     "dataItemName" : "activebugcnt",
-    "excelCaption" : "未解决Bug",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -221,12 +221,12 @@
   "codeName" : "ALLProduct",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : true,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : true,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

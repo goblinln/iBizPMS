@@ -5,12 +5,14 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 3,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8800"
@@ -21,7 +23,6 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取我的需求数"
@@ -31,23 +32,23 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall4",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "我的待办数"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6119"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -57,6 +58,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3922"
@@ -67,7 +69,6 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取我的Bug数"
@@ -77,6 +78,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7988"
@@ -87,7 +89,6 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall3",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取我的Bug数"
@@ -139,13 +140,12 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 3,
   "codeName" : "MyTerritoryCount",
   "logicName" : "我的地盘移动端计数器",
   "defaultParamName" : "Default",

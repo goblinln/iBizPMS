@@ -1,11 +1,11 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/PlanCodeList.json",
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/PlanCodeList.json",
   "codeName" : "PlanCodeList",
   "userScope" : false,
   "emptyText" : "未计划",

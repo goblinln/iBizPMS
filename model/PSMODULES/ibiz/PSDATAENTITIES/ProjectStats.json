@@ -1,13 +1,393 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/ProjectQualitySum.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "getAllPSDELogics" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDELOGICS/ProjectQualitySum.json"
+  } ],
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "minorSortDir" : "DESC",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "majorSortDir" : "DESC",
+    "name" : "DEFAULT"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "NoOpenProduct",
+    "logicName" : "未关闭产品",
+    "minorSortDir" : "DESC",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "majorSortDir" : "DESC",
+    "name" : "NOOpenProduct"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProjectBugType",
+    "logicName" : "项目bug类型统计",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProjectBugType"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProjectInputStats",
+    "logicName" : "项目投入统计",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProjectInputStats"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProjectProgress",
+    "logicName" : "项目进度",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProjectProgress"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProjectQuality",
+    "logicName" : "项目质量",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProjectQuality"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProjectStoryStageStats",
+    "logicName" : "项目需求阶段统计",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProjectStoryStageStats"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProjectStoryStatusStats",
+    "logicName" : "项目需求状态统计",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProjectStoryStatusStats"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProjectTaskCountByTaskStatus",
+    "logicName" : "项目任务统计(任务状态)",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProjectTaskCountByTaskStatus"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProjectTaskCountByType",
+    "logicName" : "项目任务类型统计",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProjectTaskCountByType"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "TaskTime",
+    "logicName" : "任务工时消耗剩余查询",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "TASKTIME"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "NoOpenProduct",
+    "logicName" : "未关闭产品",
+    "defaultMode" : false,
+    "name" : "NOOpenProduct"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProjectBugType",
+    "logicName" : "项目bug类型",
+    "defaultMode" : false,
+    "name" : "ProjectBugType"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProjectInputStats",
+    "logicName" : "项目投入统计",
+    "defaultMode" : false,
+    "name" : "ProjectInputStats"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProjectProgress",
+    "logicName" : "项目进度",
+    "defaultMode" : false,
+    "name" : "ProjectProgress"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProjectQuality",
+    "logicName" : "项目质量表查询",
+    "defaultMode" : false,
+    "name" : "ProjectQuality"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProjectStoryStageStats",
+    "logicName" : "项目需求阶段统计",
+    "defaultMode" : false,
+    "name" : "ProjectStoryStageStats"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProjectStoryStatusStats",
+    "logicName" : "项目需求状态统计",
+    "defaultMode" : false,
+    "name" : "ProjectStoryStatusStats"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProjectTaskCountByTaskStatus",
+    "logicName" : "项目任务统计(任务状态)",
+    "defaultMode" : false,
+    "name" : "ProjectTaskCountByTaskStatus"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProjectTaskCountByType",
+    "logicName" : "项目任务类型统计",
+    "defaultMode" : false,
+    "name" : "ProjectTaskCountByType"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "TaskTime",
+    "logicName" : "任务工时消耗剩余查询",
+    "defaultMode" : false,
+    "name" : "TASKTIME"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
     "dataType" : "INT",
     "deployId" : "4f4e0950c06cc80ceb2096b0114ca199",
-    "codeName" : "Standard",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Standard",
     "logicName" : "标准规范",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -28,20 +408,19 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "STANDARD"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "95652320eda90b68832837b7b169719d",
-    "codeName" : "Type",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Type",
     "logicName" : "工时类型",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -74,16 +453,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 100,
     "name" : "TYPE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "1f5603f219f3b6d58ce435a76cb8c77d",
-    "codeName" : "Emptystory",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Emptystory",
     "logicName" : "空需求",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -113,16 +494,16 @@
       "autoIncrement" : false,
       "name" : "EMPTYSTORY"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "EMPTYSTORY"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "53c04af690cf9b1214da39b18716f420",
-    "codeName" : "Draftstory",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Draftstory",
     "logicName" : "草稿需求",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -152,14 +533,14 @@
       "autoIncrement" : false,
       "name" : "DRAFTSTORY"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "DRAFTSTORY"
   }, {
     "dataType" : "DATE",
     "deployId" : "f423c4a036af5eb951eb8721e07d4363",
-    "codeName" : "End",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "codeName" : "End",
     "logicName" : "截止日期",
     "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -190,16 +571,16 @@
       "autoIncrement" : false,
       "name" : "END"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "END"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "b4bdcedcd6d63d63b3178e0fb08ad4c1",
-    "codeName" : "Releasedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Releasedstagestorycnt",
     "logicName" : "已发布阶段需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -229,18 +610,17 @@
       "autoIncrement" : false,
       "name" : "RELEASEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "RELEASEDSTAGESTORYCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "085d1ed3c08bc2bbc3dd66df1408ec0b",
-    "codeName" : "Importantbugcnt",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Importantbugcnt",
     "logicName" : "重要Bug数",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -261,18 +641,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "IMPORTANTBUGCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "dfc920a54f5bf06293562596437d225f",
-    "codeName" : "Canceltaskcnt",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Canceltaskcnt",
     "logicName" : "已取消任务数",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -293,14 +673,15 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "CANCELTASKCNT"
   }, {
     "dataType" : "DATE",
     "deployId" : "651461ca14e49255d94da049f8acfa23",
-    "codeName" : "Begin",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "codeName" : "Begin",
     "logicName" : "开始时间",
     "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -330,19 +711,18 @@
       "autoIncrement" : false,
       "name" : "BEGIN"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "BEGIN"
   }, {
-    "length" : 100,
+    "dataType" : "TEXT",
+    "deployId" : "7737d0774d44648e12b04912c258ef11",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Project__status.json"
     },
-    "dataType" : "TEXT",
-    "deployId" : "7737d0774d44648e12b04912c258ef11",
     "codeName" : "Status",
-    "valueFormat" : "%1$s",
     "logicName" : "状态",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -386,17 +766,17 @@
       "autoIncrement" : false,
       "name" : "STATUS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "STATUS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "c25d00d3615a42ac1f62557a90a0f532",
-    "codeName" : "Seriousbugproportion",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Seriousbugproportion",
     "logicName" : "严重Bug比率",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -439,18 +819,18 @@
       "autoIncrement" : false,
       "name" : "SERIOUSBUGPROPORTION"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "SERIOUSBUGPROPORTION"
   }, {
     "dataType" : "INT",
     "deployId" : "e31d725da72ad5921bf80bf3fb19336d",
-    "codeName" : "Doingtaskcnt",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Doingtaskcnt",
     "logicName" : "进行中任务数",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -471,16 +851,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "DOINGTASKCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "36bf6b6d2718e9e588c6fbcef04caf0e",
-    "codeName" : "UnDoneTaskCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "UnDoneTaskCnt",
     "logicName" : "未完成任务总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -511,18 +892,17 @@
       "autoIncrement" : false,
       "name" : "UNDONETASKCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "UNDONETASKCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "2f389cc4128436225f0a900e39b6c9e9",
-    "codeName" : "SERVETASKCNT",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "SERVETASKCNT",
     "logicName" : "服务类型任务",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -543,18 +923,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "SERVETASKCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "700761984bd5b385e1e5d9c6652cde39",
-    "codeName" : "Donetaskcnt",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Donetaskcnt",
     "logicName" : "已完成任务数",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -575,16 +955,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "DONETASKCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "e41b7b6ab9819c4b383a25c82160dc78",
-    "codeName" : "Totalwh",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Totalwh",
     "logicName" : "总工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -615,16 +996,16 @@
       "autoIncrement" : false,
       "name" : "TOTALWH"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TOTALWH"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "35be28c7c5c5f7913d8d8f0b26da790b",
-    "codeName" : "UnClosedStoryCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "UnClosedStoryCnt",
     "logicName" : "未关闭需求总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -655,18 +1036,17 @@
       "autoIncrement" : false,
       "name" : "UNCLOSEDSTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "UNCLOSEDSTORYCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "eb22545cccd0defc771c904297e3c610",
-    "codeName" : "MISCTASKCNT",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "MISCTASKCNT",
     "logicName" : "其他类型任务",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -687,18 +1067,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "MISCTASKCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "b85467237a8006b4089c992bbaf854f5",
-    "codeName" : "Leftstorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Leftstorycnt",
     "logicName" : "剩余需求数",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -719,18 +1099,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "LEFTSTORYCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "08127451f2e7e73fadb0f3ca5dec8e8a",
-    "codeName" : "Performance",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Performance",
     "logicName" : "性能问题",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -751,16 +1131,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "PERFORMANCE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "4cac9ac5395f0e403cb6eec3feebb4b8",
-    "codeName" : "Emptystagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Emptystagestorycnt",
     "logicName" : "空阶段需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -790,16 +1171,16 @@
       "autoIncrement" : false,
       "name" : "EMPTYSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "EMPTYSTAGESTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "fbefa6809d5650d5b48ad637625c49ed",
-    "codeName" : "Waitstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Waitstagestorycnt",
     "logicName" : "未开始阶段需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -829,16 +1210,16 @@
       "autoIncrement" : false,
       "name" : "WAITSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "WAITSTAGESTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "3dccddae7972ae671f50a3c42a4a19b5",
-    "codeName" : "Developingstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Developingstagestorycnt",
     "logicName" : "研发中阶段需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -868,18 +1249,17 @@
       "autoIncrement" : false,
       "name" : "DEVELOPINGSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "DEVELOPINGSTAGESTORYCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "8f3e58080e3319c948fad48b73f9d6fc",
-    "codeName" : "Istop",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Istop",
     "logicName" : "是否置顶",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -900,18 +1280,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "ISTOP"
   }, {
     "dataType" : "INT",
     "deployId" : "967c6fef41711a6a73db50ccff2a2661",
-    "codeName" : "Completestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Completestorycnt",
     "logicName" : "完成需求数",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -932,18 +1312,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "COMPLETESTORYCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "3b543f514086a0acf603fb295d403c3b",
-    "codeName" : "TESTTASKCNT",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "TESTTASKCNT",
     "logicName" : "测试类型任务",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -964,16 +1344,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "TESTTASKCNT"
   }, {
-    "length" : 1,
-    "defaultValue" : "0",
     "dataType" : "TEXT",
     "deployId" : "52dc49b90b05e4089aed919b5c6198da",
-    "codeName" : "Deleted",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Deleted",
     "logicName" : "已删除",
     "stringLength" : 1,
     "stdDataType" : 25,
@@ -1018,18 +1399,18 @@
       "name" : "DELETED"
     } ],
     "predefinedType" : "LOGICVALID",
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1,
+    "defaultValue" : "0",
     "name" : "DELETED"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "932719c7787f1c68cd70bf73da4c1094",
-    "codeName" : "StoryCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "StoryCnt",
     "logicName" : "需求总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1060,16 +1441,16 @@
       "autoIncrement" : false,
       "name" : "STORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "STORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "5aab210e84f95fe91f9855deff23a574",
-    "codeName" : "Projectedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Projectedstagestorycnt",
     "logicName" : "已立项阶段需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1099,18 +1480,17 @@
       "autoIncrement" : false,
       "name" : "PROJECTEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "PROJECTEDSTAGESTORYCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "e1f204267ee02c28a13d1cf12a64b79f",
-    "codeName" : "DiscussTASKCNT",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "DiscussTASKCNT",
     "logicName" : "讨论类型任务",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1131,18 +1511,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "DISCUSSTASKCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "7e97ce72a9ff4f5cd6946b92258dd8c1",
-    "codeName" : "Completetaskcnt",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Completetaskcnt",
     "logicName" : "完成任务数",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1163,16 +1543,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "COMPLETETASKCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "ae4e3ada39b1ff711f73b835df0e7451",
-    "codeName" : "Plannedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Plannedstagestorycnt",
     "logicName" : "已计划阶段需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1202,16 +1583,16 @@
       "autoIncrement" : false,
       "name" : "PLANNEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "PLANNEDSTAGESTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "e5d32eed23a4c6a468728fda918454b9",
-    "codeName" : "Testedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Testedstagestorycnt",
     "logicName" : "测试完毕阶段需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1241,15 +1622,16 @@
       "autoIncrement" : false,
       "name" : "TESTEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TESTEDSTAGESTORYCNT"
   }, {
-    "length" : 90,
     "dataType" : "TEXT",
     "deployId" : "9ff2df4ed510f5a683effdcfc7597ca1",
-    "codeName" : "Name",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Name",
     "logicName" : "项目名称",
     "stringLength" : 90,
     "stdDataType" : 25,
@@ -1294,18 +1676,17 @@
       "autoIncrement" : false,
       "name" : "NAME"
     } ],
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 90,
     "name" : "NAME"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "c7836b6fb872b2d6c1a988a019a1be0d",
-    "codeName" : "TaskCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "TaskCnt",
     "logicName" : "任务总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1336,16 +1717,16 @@
       "autoIncrement" : false,
       "name" : "TASKCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TASKCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "FLOAT",
     "deployId" : "4c03f445fbde59bdcc8a0f451d2b6064",
-    "codeName" : "TotalLeft",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "TotalLeft",
     "logicName" : "任务预计剩余总工时",
     "stdDataType" : 7,
     "getAllPSDEFValueRules" : [ {
@@ -1376,20 +1757,18 @@
       "autoIncrement" : false,
       "name" : "TOTALLEFT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TOTALLEFT"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "806e44ec8f252181354b65dffc985229",
-    "codeName" : "Timescale",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Timescale",
     "logicName" : "工期",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1422,16 +1801,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 100,
     "name" : "TIMESCALE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "ce2de5a5d9bf654c0a5105e930aab932",
-    "codeName" : "Activestory",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Activestory",
     "logicName" : "激活需求",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1461,17 +1842,16 @@
       "autoIncrement" : false,
       "name" : "ACTIVESTORY"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "ACTIVESTORY"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 8,
     "dataType" : "INT",
     "deployId" : "2714e004d4305c9c302692da88f29991",
-    "codeName" : "Order1",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Order1",
     "logicName" : "项目排序",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1501,16 +1881,17 @@
       "autoIncrement" : false,
       "name" : "ORDER1"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 8,
     "name" : "ORDER1"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "830b6900815961bfc47036cf1251a096",
-    "codeName" : "ActiveBugCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "ActiveBugCnt",
     "logicName" : "未解决Bug总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1541,18 +1922,17 @@
       "autoIncrement" : false,
       "name" : "ACTIVEBUGCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "ACTIVEBUGCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "af6ee997cf624f691b7373f0d128bba4",
-    "codeName" : "Designdefect",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Designdefect",
     "logicName" : "设计缺陷",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1573,18 +1953,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "DESIGNDEFECT"
   }, {
     "dataType" : "INT",
     "deployId" : "534804fe2ca72b88a370d6bbc858e699",
-    "codeName" : "Waittaskcnt",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Waittaskcnt",
     "logicName" : "未开始任务数",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1605,18 +1985,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "WAITTASKCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "1643300883155509233fbb8d064a8330",
-    "codeName" : "Pausetaskcnt",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Pausetaskcnt",
     "logicName" : "已暂停任务数",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1637,16 +2017,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "PAUSETASKCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "2d1cffeef518671b0a8fa0649a4809a2",
-    "codeName" : "Closedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Closedstagestorycnt",
     "logicName" : "已关闭阶段需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1676,8 +2057,6 @@
       "autoIncrement" : false,
       "name" : "CLOSEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "CLOSEDSTAGESTORYCNT"
   }, {
     "formulaDEField" : true,
@@ -1685,8 +2064,10 @@
     "precision" : 2,
     "dataType" : "FLOAT",
     "deployId" : "68fe4dfd9cf8962c59f03b76d8a6642d",
-    "codeName" : "TotalEstimate",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "TotalEstimate",
     "logicName" : "任务最初预计总工时",
     "stdDataType" : 7,
     "getAllPSDEFValueRules" : [ {
@@ -1717,16 +2098,16 @@
       "autoIncrement" : false,
       "name" : "TOTALESTIMATE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TOTALESTIMATE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "02bdc8f363daaf058509c3354d8aadba",
-    "codeName" : "Verifiedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Verifiedstagestorycnt",
     "logicName" : "已验收阶段需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1756,18 +2137,17 @@
       "autoIncrement" : false,
       "name" : "VERIFIEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "VERIFIEDSTAGESTORYCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "207ff8e9defd0c4bad56e4c2c79c7f6a",
-    "codeName" : "Install",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Install",
     "logicName" : "安装部署",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1788,15 +2168,19 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "INSTALL"
   }, {
-    "length" : 8,
     "dataType" : "ACID",
     "deployId" : "e6b6874cb7276a9dad3db4a05e4c3b87",
-    "codeName" : "Id",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Id",
     "logicName" : "项目编号",
     "stdDataType" : 1,
     "pasteReset" : true,
@@ -1829,22 +2213,18 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "enableDBAutoValue" : true,
-    "dEFType" : 1,
+    "length" : 8,
     "name" : "ID"
   }, {
     "dataType" : "INT",
     "deployId" : "f532f418ad5e858d6a2b7df9e44c02b6",
-    "codeName" : "DesignTASKCNT",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "DesignTASKCNT",
     "logicName" : "设计类型任务",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1865,18 +2245,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "DESIGNTASKCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "c0116f5df9d51e714ae8ff8d332cfd24",
-    "codeName" : "Security",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Security",
     "logicName" : "安全相关",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1897,18 +2277,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "SECURITY"
   }, {
     "dataType" : "INT",
     "deployId" : "3b4c7d7a78fe109592a45c4a594d4e02",
-    "codeName" : "Others",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Others",
     "logicName" : "其他",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1929,16 +2309,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "OTHERS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "478eb1f5b1134a7a6835a542a734e81b",
-    "codeName" : "BugCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "BugCnt",
     "logicName" : "Bug总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1969,16 +2350,16 @@
       "autoIncrement" : false,
       "name" : "BUGCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "BUGCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "9baebc569e3bf18de7d74228e3d573e8",
-    "codeName" : "UnclosedBugCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "UnclosedBugCnt",
     "logicName" : "未关闭Bug总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2009,16 +2390,16 @@
       "autoIncrement" : false,
       "name" : "UNCLOSEDBUGCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "UNCLOSEDBUGCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "d9be94f7d0d2ca2001f50feeee3bd6de",
-    "codeName" : "Yesterdayctaskcnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Yesterdayctaskcnt",
     "logicName" : "昨日完成任务数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2049,18 +2430,17 @@
       "autoIncrement" : false,
       "name" : "YESTERDAYCTASKCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "YESTERDAYCTASKCNT"
   }, {
     "dataType" : "FLOAT",
     "deployId" : "80f3166f6683b8b914f69aa23a3027cd",
-    "codeName" : "Time",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Time",
     "logicName" : "工时",
     "stdDataType" : 7,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2081,18 +2461,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "TIME"
   }, {
     "dataType" : "INT",
     "deployId" : "1b82e173abb4d55729aa2faf1107f6e8",
-    "codeName" : "Automation",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Automation",
     "logicName" : "测试脚本",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2113,16 +2493,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "AUTOMATION"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "635df64fae4c95e617ab9fa203e7b464",
-    "codeName" : "UnconfirmedBugCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "UnconfirmedBugCnt",
     "logicName" : "未确认Bug总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2153,16 +2534,16 @@
       "autoIncrement" : false,
       "name" : "UNCONFIRMEDBUGCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "UNCONFIRMEDBUGCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "7b23f1206b4802a2f8046316825dcecf",
-    "codeName" : "Developedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Developedstagestorycnt",
     "logicName" : "研发完毕阶段需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2192,16 +2573,16 @@
       "autoIncrement" : false,
       "name" : "DEVELOPEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "DEVELOPEDSTAGESTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "e2150ce49ccb57add38a94fda06db01b",
-    "codeName" : "Testingstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Testingstagestorycnt",
     "logicName" : "测试中阶段需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2231,16 +2612,16 @@
       "autoIncrement" : false,
       "name" : "TESTINGSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TESTINGSTAGESTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "2dfd0a804566b1d88dac4e2af8684fff",
-    "codeName" : "FinishTaskCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "FinishTaskCnt",
     "logicName" : "已结束任务总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2271,18 +2652,17 @@
       "autoIncrement" : false,
       "name" : "FINISHTASKCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "FINISHTASKCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "9ee48e3fa27e602a18cf983a7d356f12",
-    "codeName" : "Config",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Config",
     "logicName" : "配置相关",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2303,16 +2683,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "CONFIG"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "FLOAT",
     "deployId" : "49afb5d7e3d5c9d6c04a5688d0cad16f",
-    "codeName" : "TotalConsumed",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "TotalConsumed",
     "logicName" : "任务消耗总工时",
     "stdDataType" : 7,
     "getAllPSDEFValueRules" : [ {
@@ -2343,18 +2724,17 @@
       "autoIncrement" : false,
       "name" : "TOTALCONSUMED"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TOTALCONSUMED"
   }, {
     "dataType" : "INT",
     "deployId" : "ae7656ffdcd47afa26f3e8fe61a0c655",
-    "codeName" : "AFFAIRTASKCNT",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "AFFAIRTASKCNT",
     "logicName" : "事务类型任务",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2375,16 +2755,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "AFFAIRTASKCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "FLOAT",
     "deployId" : "b519589579c1a69c5baafd8190ab84e2",
-    "codeName" : "Projecttotalconsumed",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Projecttotalconsumed",
     "logicName" : "项目消耗总工时",
     "stdDataType" : 7,
     "getAllPSDEFValueRules" : [ {
@@ -2414,18 +2795,17 @@
       "autoIncrement" : false,
       "name" : "PROJECTTOTALCONSUMED"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "PROJECTTOTALCONSUMED"
   }, {
     "dataType" : "INT",
     "deployId" : "a8178f9f8c13c009ba0be6a425675493",
-    "codeName" : "UiTASKCNT",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "UiTASKCNT",
     "logicName" : "界面类型任务",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2446,18 +2826,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "UITASKCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "715dbb2e10ceb3753bdbd420d1b0bb81",
-    "codeName" : "Bugstory",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Bugstory",
     "logicName" : "Bug/完成需求",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2478,16 +2858,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "BUGSTORY"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "ee9d480f4bca8617fed51436302bd0df",
-    "codeName" : "Closedstory",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Closedstory",
     "logicName" : "已关闭需求",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2517,18 +2898,17 @@
       "autoIncrement" : false,
       "name" : "CLOSEDSTORY"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "CLOSEDSTORY"
   }, {
     "dataType" : "INT",
     "deployId" : "32b4ad0ae8b25a6a6a498d11ff21641b",
-    "codeName" : "Bugtask",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Bugtask",
     "logicName" : "Bug/完成任务",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2549,16 +2929,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "BUGTASK"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "2ec395044a40353d4230f11ef0bbe87e",
-    "codeName" : "ReleasedStoryCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "ReleasedStoryCnt",
     "logicName" : "已发布需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2589,18 +2970,17 @@
       "autoIncrement" : false,
       "name" : "RELEASEDSTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "RELEASEDSTORYCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "87a4f2e084d2685232e08570b678b6de",
-    "codeName" : "StudyTASKCNT",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "StudyTASKCNT",
     "logicName" : "研究类型任务",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2621,18 +3001,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "STUDYTASKCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "4e3a0ddf3ed62634514491615c39c692",
-    "codeName" : "Closedtaskcnt",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Closedtaskcnt",
     "logicName" : "已关闭任务数",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2653,18 +3033,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "CLOSEDTASKCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "ad823641301afe16cf7ea251eee48753",
-    "codeName" : "Codeerror",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Codeerror",
     "logicName" : "代码错误",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2685,16 +3065,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "CODEERROR"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "4b0e531d5f37b03fb487acd25cf4903f",
-    "codeName" : "ClosedStoryCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "ClosedStoryCnt",
     "logicName" : "关闭需求总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2725,16 +3106,16 @@
       "autoIncrement" : false,
       "name" : "CLOSEDSTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "CLOSEDSTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "84832929fd8648b31c1b2d4e5468bca7",
-    "codeName" : "FinishBugCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "FinishBugCnt",
     "logicName" : "已解决Bug总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2765,16 +3146,16 @@
       "autoIncrement" : false,
       "name" : "FINISHBUGCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "FINISHBUGCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "964ff599178a368abbfe3efbd4bf4400",
-    "codeName" : "Changedstory",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Changedstory",
     "logicName" : "已变更需求",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2804,18 +3185,17 @@
       "autoIncrement" : false,
       "name" : "CHANGEDSTORY"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "CHANGEDSTORY"
   }, {
     "dataType" : "INT",
     "deployId" : "185272e839b0ff8e58e5c8ed71f5d417",
-    "codeName" : "DEVELTASKCNT",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "DEVELTASKCNT",
     "logicName" : "开发类型任务",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2836,16 +3216,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "DEVELTASKCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "e7fa2bb95cde2304db494598ba73ca74",
-    "codeName" : "Membercnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Membercnt",
     "logicName" : "人数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2875,20 +3256,18 @@
       "autoIncrement" : false,
       "name" : "MEMBERCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "MEMBERCNT"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "74b7486feb295aebe78a2a8b66fcf0b1",
-    "codeName" : "Progress",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Progress",
     "logicName" : "进度",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2921,16 +3300,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 100,
     "name" : "PROGRESS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "c3a72e03aeee985a08d3280fca734fca",
-    "codeName" : "Yesterdayrbugcnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Yesterdayrbugcnt",
     "logicName" : "昨天解决Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -2961,389 +3342,8 @@
       "autoIncrement" : false,
       "name" : "YESTERDAYRBUGCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "YESTERDAYRBUGCNT"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "minorSortDir" : "DESC",
-    "pageSize" : -1,
-    "majorSortDir" : "DESC",
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "NoOpenProduct",
-    "logicName" : "未关闭产品",
-    "extendMode" : 0,
-    "minorSortDir" : "DESC",
-    "pageSize" : -1,
-    "majorSortDir" : "DESC",
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "NOOpenProduct"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProjectBugType",
-    "logicName" : "项目bug类型统计",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProjectBugType"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProjectInputStats",
-    "logicName" : "项目投入统计",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProjectInputStats"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProjectProgress",
-    "logicName" : "项目进度",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProjectProgress"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProjectQuality",
-    "logicName" : "项目质量",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProjectQuality"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProjectStoryStageStats",
-    "logicName" : "项目需求阶段统计",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProjectStoryStageStats"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProjectStoryStatusStats",
-    "logicName" : "项目需求状态统计",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProjectStoryStatusStats"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProjectTaskCountByTaskStatus",
-    "logicName" : "项目任务统计(任务状态)",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProjectTaskCountByTaskStatus"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProjectTaskCountByType",
-    "logicName" : "项目任务类型统计",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProjectTaskCountByType"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "TaskTime",
-    "logicName" : "任务工时消耗剩余查询",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "TASKTIME"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/ProjectQualitySum.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Save.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "NoOpenProduct",
-    "logicName" : "未关闭产品",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "NOOpenProduct"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProjectBugType",
-    "logicName" : "项目bug类型",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProjectBugType"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProjectInputStats",
-    "logicName" : "项目投入统计",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProjectInputStats"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProjectProgress",
-    "logicName" : "项目进度",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProjectProgress"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProjectQuality",
-    "logicName" : "项目质量表查询",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProjectQuality"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProjectStoryStageStats",
-    "logicName" : "项目需求阶段统计",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProjectStoryStageStats"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProjectStoryStatusStats",
-    "logicName" : "项目需求状态统计",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProjectStoryStatusStats"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProjectTaskCountByTaskStatus",
-    "logicName" : "项目任务统计(任务状态)",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProjectTaskCountByTaskStatus"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProjectTaskCountByType",
-    "logicName" : "项目任务类型统计",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProjectTaskCountByType"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "TaskTime",
-    "logicName" : "任务工时消耗剩余查询",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "TASKTIME"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "getAllPSDELogics" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDELOGICS/ProjectQualitySum.json"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
@@ -3351,11 +3351,6 @@
   "validLogicValue" : "0",
   "invalidLogicValue" : "1",
   "serviceAPIMode" : 1,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "487dd4ba2f9a0ab90874c6a42dcfa588",
-  "codeName" : "ProjectStats",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -3370,13 +3365,23 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "487dd4ba2f9a0ab90874c6a42dcfa588",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "ProjectStats",
   "logicName" : "项目统计",
   "tableName" : "zt_project",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : true,
+  "serviceCodeName" : "ProjectStats",
+  "enableRemove" : true,
   "logicValid" : true,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -3385,14 +3390,9 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "serviceCodeName" : "ProjectStats",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

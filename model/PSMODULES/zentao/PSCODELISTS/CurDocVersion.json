@@ -1,11 +1,11 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/CurDocVersion.json",
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/CurDocVersion.json",
   "codeName" : "CurDocVersion",
   "userScope" : false,
   "emptyText" : "未定义",

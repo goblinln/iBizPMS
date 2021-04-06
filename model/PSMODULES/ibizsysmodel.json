@@ -2,6 +2,7 @@
   "subSysAsCloud" : false,
   "subSysModule" : false,
   "defaultModule" : false,
+  "deployId" : "ed284836fd79cad06dda6fe074a0048e",
   "getAllPSDataEntities" : [ {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
@@ -58,7 +59,6 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/APPBuild.json"
   } ],
-  "deployId" : "ed284836fd79cad06dda6fe074a0048e",
   "codeName" : "ibizsysmodel",
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel.json",
   "name" : "iBiz系统模型"

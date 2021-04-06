@@ -6,17 +6,17 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "day",
     "codeName" : "Day",
-    "text" : "天"
+    "text" : "天",
+    "value" : "day"
   }, {
-    "value" : "week",
     "codeName" : "Week",
-    "text" : "周"
+    "text" : "周",
+    "value" : "week"
   }, {
-    "value" : "month",
     "codeName" : "Month",
-    "text" : "月度"
+    "text" : "月度",
+    "value" : "month"
   } ],
   "codeName" : "CycleType",
   "emptyText" : "未定义",

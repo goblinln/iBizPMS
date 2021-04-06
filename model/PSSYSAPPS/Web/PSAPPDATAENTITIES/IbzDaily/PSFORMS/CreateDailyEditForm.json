@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -41,18 +41,17 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "ibz_dailyname"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "IBZ_DAILYNAME",
           "codeName" : "IbzDailyName"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "日报名称",
         "allowEmpty" : true,
@@ -62,6 +61,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -71,18 +71,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "ibz_dailyname"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "date"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "DATE",
           "codeName" : "Date"
         },
-        "hidden" : true,
         "dataType" : 5,
         "caption" : "日期",
         "allowEmpty" : true,
@@ -92,6 +91,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -112,7 +112,6 @@
       "showCaption" : false,
       "name" : "group1"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -123,12 +122,12 @@
         "name" : "reportto"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "REPORTTO",
         "codeName" : "Reportto"
       },
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "汇报给",
@@ -138,6 +137,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 12,
         "colMD" : 24,
@@ -148,7 +148,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "reportto"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : false,
         "getPSAppCodeList" : {
@@ -159,12 +158,12 @@
         "name" : "mailto"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "MAILTO",
         "codeName" : "Mailto"
       },
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "抄送给",
@@ -174,6 +173,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 12,
         "colMD" : 24,
@@ -184,24 +184,23 @@
       "detailStyle" : "DEFAULT",
       "name" : "mailto"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : false,
         "getPSAppCodeList" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/MyCompleteTask.json"
         },
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "date",
-          "key" : "DATE",
-          "name" : "DATE"
-        } ],
         "getPSNavigateParams" : [ {
           "rawValue" : false,
           "value" : "date",
           "key" : "date",
           "name" : "date"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "date",
+          "key" : "DATE",
+          "name" : "DATE"
         } ],
         "editorParams" : {
           "SRFNAVPARAM.date" : "%date%",
@@ -211,12 +210,12 @@
         "name" : "todaytask"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "TODAYTASK",
         "codeName" : "Todaytask"
       },
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "完成任务",
@@ -226,6 +225,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -235,7 +235,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "todaytask"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorParams" : {
           "uploadparams" : "{objecttype:\"daily\",version:\"editor\"}",
@@ -245,12 +244,12 @@
         "name" : "worktoday"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "WORKTODAY",
         "codeName" : "Worktoday"
       },
-      "hidden" : false,
       "dataType" : 21,
       "caption" : "今日工作",
       "allowEmpty" : true,
@@ -259,6 +258,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -268,7 +268,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "worktoday"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : false,
         "getPSAppCodeList" : {
@@ -279,12 +278,12 @@
         "name" : "tomorrowplanstask"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "TOMORROWPLANSTASK",
         "codeName" : "Tomorrowplanstask"
       },
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "明日计划任务",
@@ -294,6 +293,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -303,7 +303,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "tomorrowplanstask"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorParams" : {
           "uploadparams" : "{objecttype:\"daily\",version:\"editor\"}",
@@ -313,12 +312,12 @@
         "name" : "planstomorrow"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PLANSTOMORROW",
         "codeName" : "Planstomorrow"
       },
-      "hidden" : false,
       "dataType" : 21,
       "caption" : "明日计划",
       "allowEmpty" : true,
@@ -327,6 +326,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -336,7 +336,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "planstomorrow"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorParams" : {
           "uploadparams" : "{objecttype:\"daily\",version:\"editor\"}",
@@ -346,12 +345,12 @@
         "name" : "comment"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "COMMENT",
         "codeName" : "Comment"
       },
-      "hidden" : false,
       "dataType" : 21,
       "caption" : "其他事项",
       "allowEmpty" : true,
@@ -360,6 +359,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -369,10 +369,9 @@
       "detailStyle" : "DEFAULT",
       "name" : "comment"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
-        "maxFileCount" : -1,
         "minFileCount" : 0,
+        "maxFileCount" : -1,
         "maxFileSize" : -1,
         "editorParams" : {
           "uploadparams" : "{objecttype:\"daily\",objectid:\"0\",version:\"1\"}",
@@ -386,12 +385,12 @@
         "name" : "files"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "FILES",
         "codeName" : "Files"
       },
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "附件",
       "allowEmpty" : true,
@@ -400,6 +399,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -409,18 +409,17 @@
       "detailStyle" : "DEFAULT",
       "name" : "files"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "ibz_dailyid"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "IBZ_DAILYID",
         "codeName" : "IbzDailyId"
       },
-      "hidden" : true,
       "dataType" : 1,
       "caption" : "日报标识",
       "allowEmpty" : true,
@@ -429,6 +428,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -438,18 +438,17 @@
       "detailStyle" : "DEFAULT",
       "name" : "ibz_dailyid"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "account"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
-      "hidden" : true,
       "dataType" : 25,
       "caption" : "用户",
       "allowEmpty" : true,
@@ -460,6 +459,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -469,18 +469,17 @@
       "detailStyle" : "DEFAULT",
       "name" : "account"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "issubmit"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ISSUBMIT",
         "codeName" : "Issubmit"
       },
-      "hidden" : true,
       "dataType" : 25,
       "caption" : "是否提交",
       "allowEmpty" : true,
@@ -489,6 +488,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 100,
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -498,11 +498,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "issubmit"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

@@ -1,12 +1,434 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DocLibModuleNFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DoclibModuleFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Fix.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Save.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/UnCollect.json"
+  } ],
+  "subSysAsCloud" : false,
+  "getAllPSDELogics" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/CurUserIsF.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DocLibModuleFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DoclibModuleNFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/FixPath.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/Update__MSDeny.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/Remove__MSDeny.json"
+  } ],
+  "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT"
+      },
+      "name" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "module_0",
+    "logicName" : "模块_未收藏",
+    "default" : false,
+    "mSTag" : "module__0",
+    "stateValue" : "module",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "name" : "模块_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT"
+      },
+      "name" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "module_1",
+    "logicName" : "模块_已收藏",
+    "default" : false,
+    "mSTag" : "module__1",
+    "stateValue" : "module",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "name" : "模块_已收藏"
+  } ],
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "AllDocLibModule_Custom",
+    "logicName" : "自定义文档库的模块",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "AllDocLibModule_Custom"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "AllDoclibModule",
+    "logicName" : "所有文档库模块",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "AllDoclibModule"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ChildModuleByParent",
+    "logicName" : "子模块目录",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ChildModuleByParent"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ChildModuleByRealParent",
+    "logicName" : "文档库分类子模块",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ChildModuleByRealParent"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "MyFavourites",
+    "logicName" : "我的收藏",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "MyFavourites"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ParentModule",
+    "logicName" : "父集合",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ParentModule"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "RootModuleMuLu",
+    "logicName" : "所有根模块目录",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "RootModuleMuLu"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "RootModuleMuLuByRoot",
+    "logicName" : "根模块目录",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "RootModuleMuLuByRoot"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "RootModuleMuLuBysrfparentkey",
+    "logicName" : "根模块目录动态",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "RootModuleMuLuBysrfparentkey"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "AllDoclibModule_Custom",
+    "logicName" : "数据查询",
+    "defaultMode" : false,
+    "name" : "AllDoclibModule_Custom"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ChildModuleByParent",
+    "logicName" : "子模块目录",
+    "defaultMode" : false,
+    "name" : "ChildModuleByParent"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ChildModuleByRealParent",
+    "logicName" : "文档库分类子模块",
+    "defaultMode" : false,
+    "name" : "ChildModuleByRealParent"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "DefaultDoclib",
+    "logicName" : "数据查询",
+    "defaultMode" : false,
+    "name" : "AllDoclibModule"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "MyFavourites",
+    "logicName" : "我的收藏",
+    "defaultMode" : false,
+    "name" : "MyFavourites"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ParentModule",
+    "logicName" : "父模块",
+    "defaultMode" : false,
+    "name" : "ParentModule"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "RootModuleMuLu",
+    "logicName" : "所有根模块目录",
+    "defaultMode" : false,
+    "name" : "RootModuleMuLu"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "RootModuleMuLuByRoot",
+    "logicName" : "根模块目录动态",
+    "defaultMode" : false,
+    "name" : "RootModuleMuLuByRoot"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "RootModuleMuLuBysrfparentkey",
+    "logicName" : "根模块目录动态",
+    "defaultMode" : false,
+    "name" : "RootModuleMuLuBysrfparentkey"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "a0002fedac31c23177e894a2c95fb3ea",
-    "codeName" : "Isfavourites",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Isfavourites",
     "logicName" : "是否已收藏",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -51,15 +473,15 @@
       "autoIncrement" : false,
       "name" : "ISFAVOURITES"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "ISFAVOURITES"
   }, {
-    "defaultValue" : "0",
     "dataType" : "INT",
     "deployId" : "2e3018f22d74942e3e2802830a9f66e3",
-    "codeName" : "Grade",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Grade",
     "logicName" : "grade",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -90,16 +512,15 @@
       "autoIncrement" : false,
       "name" : "GRADE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "defaultValue" : "0",
     "name" : "GRADE"
   }, {
-    "length" : 255,
-    "defaultValue" : ",",
     "dataType" : "TEXT",
     "deployId" : "eb2887f69d1c9d805cd46732ffdf1236",
-    "codeName" : "Path",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Path",
     "logicName" : "path",
     "stringLength" : 255,
     "stdDataType" : 25,
@@ -143,15 +564,16 @@
       "autoIncrement" : false,
       "name" : "PATH"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 255,
+    "defaultValue" : ",",
     "name" : "PATH"
   }, {
-    "defaultValue" : "0",
     "dataType" : "INT",
     "deployId" : "0e490ff37ece582f868321386fc56589",
-    "codeName" : "Order",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Order",
     "logicName" : "排序值",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -182,15 +604,17 @@
       "autoIncrement" : false,
       "name" : "ORDER"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "defaultValue" : "0",
     "name" : "ORDER"
   }, {
-    "length" : 60,
     "dataType" : "TEXT",
     "deployId" : "04e1e4405c6139faf8c1bbd71de9da60",
-    "codeName" : "Name",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Name",
     "logicName" : "名称",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -235,22 +659,19 @@
       "autoIncrement" : false,
       "name" : "NAME"
     } ],
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "NAME"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "a58aa640ca48f8d7ff22210a3a05a1ae",
-    "codeName" : "Docqtype",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Docqtype",
     "logicName" : "查询类型",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -284,16 +705,16 @@
       "name" : "默认规则"
     } ],
     "dEMSFieldMode" : "STATE1",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 100,
     "name" : "DOCQTYPE"
   }, {
-    "length" : 30,
-    "defaultValue" : "/",
     "dataType" : "TEXT",
     "deployId" : "ae0265e3c86ee95e8e6172b16501fd74",
-    "codeName" : "Owner",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Owner",
     "logicName" : "owner",
     "stringLength" : 30,
     "stdDataType" : 25,
@@ -337,19 +758,20 @@
       "autoIncrement" : false,
       "name" : "OWNER"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "/",
     "name" : "OWNER"
   }, {
-    "defaultValue" : "0",
+    "dataType" : "INT",
+    "deployId" : "3fbedd2b05cd5aba02a4edc6e0d1c5c6",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch_Cache.json"
     },
-    "dataType" : "INT",
-    "deployId" : "3fbedd2b05cd5aba02a4edc6e0d1c5c6",
     "codeName" : "Branch",
-    "valueFormat" : "%1$s",
     "logicName" : "branch",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -380,17 +802,17 @@
       "autoIncrement" : false,
       "name" : "BRANCH"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "defaultValue" : "0",
     "name" : "BRANCH"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "426c1df3735597ec297d3b798834f960",
-    "codeName" : "IsLeaf",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "IsLeaf",
     "logicName" : "叶子模块",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -434,16 +856,15 @@
       "autoIncrement" : false,
       "name" : "ISLEAF"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "ISLEAF"
   }, {
-    "length" : 30,
-    "defaultValue" : "doc",
     "dataType" : "TEXT",
     "deployId" : "abc0001620bc9e3affb0a5c5d7f80c0e",
-    "codeName" : "Type",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Type",
     "logicName" : "类型",
     "stringLength" : 30,
     "stdDataType" : 25,
@@ -487,16 +908,16 @@
       "autoIncrement" : false,
       "name" : "TYPE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "doc",
     "name" : "TYPE"
   }, {
-    "length" : 30,
-    "defaultValue" : "/",
     "dataType" : "TEXT",
     "deployId" : "d82ee171ba390447bb43d7cd6a89eb59",
-    "codeName" : "IBizShort",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "IBizShort",
     "logicName" : "简称",
     "stringLength" : 30,
     "stdDataType" : 25,
@@ -540,16 +961,18 @@
       "autoIncrement" : false,
       "name" : "SHORT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "/",
     "name" : "SHORT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "92b53c3d8dfe339dcad3b606bb045251",
-    "codeName" : "Doccnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Doccnt",
     "logicName" : "文档数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -580,16 +1003,14 @@
       "autoIncrement" : false,
       "name" : "DOCCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "DOCCNT"
   }, {
-    "length" : 65535,
-    "defaultValue" : "/",
     "dataType" : "LONGTEXT",
     "deployId" : "c57e5015c3d3f390f411bdb63818fd27",
-    "codeName" : "Collector",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Collector",
     "logicName" : "collector",
     "stringLength" : 65535,
     "stdDataType" : 21,
@@ -634,15 +1055,20 @@
       "autoIncrement" : false,
       "name" : "COLLECTOR"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 65535,
+    "defaultValue" : "/",
     "name" : "COLLECTOR"
   }, {
-    "length" : 20,
     "dataType" : "ACID",
     "deployId" : "3c5fde0e17e4a34479b60057317f7d97",
-    "codeName" : "Id",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Id",
     "logicName" : "id",
     "stdDataType" : 1,
     "pasteReset" : true,
@@ -675,20 +1101,17 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "enableDBAutoValue" : true,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "ID"
   }, {
-    "length" : 1,
-    "defaultValue" : "0",
     "dataType" : "TEXT",
     "deployId" : "2155799200e8c55a9cab2eaa7905e922",
-    "codeName" : "Deleted",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Deleted",
     "logicName" : "逻辑删除标志",
     "stringLength" : 1,
     "stdDataType" : 25,
@@ -733,10 +1156,8 @@
       "name" : "DELETED"
     } ],
     "predefinedType" : "LOGICVALID",
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1,
+    "defaultValue" : "0",
     "name" : "DELETED"
   }, {
     "phisicalDEField" : false,
@@ -750,9 +1171,10 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "length" : 60,
     "dataType" : "PICKUPTEXT",
     "deployId" : "8f015673efbae2024542aec4fcf400dc",
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "codeName" : "Modulename",
     "logicName" : "上级模块",
     "stringLength" : 60,
@@ -797,8 +1219,7 @@
       "autoIncrement" : false,
       "name" : "MODULENAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 60,
     "name" : "MODULENAME"
   }, {
     "phisicalDEField" : false,
@@ -812,9 +1233,10 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "length" : 60,
     "dataType" : "PICKUPTEXT",
     "deployId" : "c0fd836fd27e712653a6e9e3815a7a99",
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "codeName" : "Doclibname",
     "logicName" : "所属文档库",
     "stringLength" : 60,
@@ -859,8 +1281,7 @@
       "autoIncrement" : false,
       "name" : "DOCLIBNAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 60,
     "name" : "DOCLIBNAME"
   }, {
     "getPSDER" : {
@@ -873,9 +1294,10 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "length" : 20,
     "dataType" : "PICKUP",
     "deployId" : "91bdc3babf1a34952b02cbdf9badfcc0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "codeName" : "Parent",
     "logicName" : "id",
     "stdDataType" : 1,
@@ -907,8 +1329,7 @@
       "autoIncrement" : false,
       "name" : "PARENT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "PARENT"
   }, {
     "getPSDER" : {
@@ -921,9 +1342,10 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "length" : 8,
     "dataType" : "PICKUP",
     "deployId" : "3af2f4dea6356b6fd1741eb51ab77760",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "codeName" : "Root",
     "logicName" : "编号",
     "stdDataType" : 1,
@@ -955,431 +1377,9 @@
       "autoIncrement" : false,
       "name" : "ROOT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
     "name" : "ROOT"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "AllDocLibModule_Custom",
-    "logicName" : "自定义文档库的模块",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "AllDocLibModule_Custom"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "AllDoclibModule",
-    "logicName" : "所有文档库模块",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "AllDoclibModule"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ChildModuleByParent",
-    "logicName" : "子模块目录",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ChildModuleByParent"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ChildModuleByRealParent",
-    "logicName" : "文档库分类子模块",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ChildModuleByRealParent"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据集",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "MyFavourites",
-    "logicName" : "我的收藏",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "MyFavourites"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ParentModule",
-    "logicName" : "父集合",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ParentModule"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "RootModuleMuLu",
-    "logicName" : "所有根模块目录",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "RootModuleMuLu"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "RootModuleMuLuByRoot",
-    "logicName" : "根模块目录",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "RootModuleMuLuByRoot"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "RootModuleMuLuBysrfparentkey",
-    "logicName" : "根模块目录动态",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "RootModuleMuLuBysrfparentkey"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DocLibModuleNFavorite.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DoclibModuleFavorite.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Fix.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Save.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/UnCollect.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "AllDoclibModule_Custom",
-    "logicName" : "数据查询",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "AllDoclibModule_Custom"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ChildModuleByParent",
-    "logicName" : "子模块目录",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ChildModuleByParent"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ChildModuleByRealParent",
-    "logicName" : "文档库分类子模块",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ChildModuleByRealParent"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据查询",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "DefaultDoclib",
-    "logicName" : "数据查询",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "AllDoclibModule"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "MyFavourites",
-    "logicName" : "我的收藏",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "MyFavourites"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ParentModule",
-    "logicName" : "父模块",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ParentModule"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "RootModuleMuLu",
-    "logicName" : "所有根模块目录",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "RootModuleMuLu"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "RootModuleMuLuByRoot",
-    "logicName" : "根模块目录动态",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "RootModuleMuLuByRoot"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "RootModuleMuLuBysrfparentkey",
-    "logicName" : "根模块目录动态",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "RootModuleMuLuBysrfparentkey"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "getAllPSDELogics" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/CurUserIsF.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DocLibModuleFavorite.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DoclibModuleNFavorite.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/FixPath.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/Update__MSDeny.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/Remove__MSDeny.json"
-  } ],
-  "getAllPSDEMainStates" : [ {
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "0",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "actionAllowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT"
-      },
-      "name" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "module_0",
-    "logicName" : "模块_未收藏",
-    "default" : false,
-    "mSTag" : "module__0",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "module",
-    "name" : "模块_未收藏"
-  }, {
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "1",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "actionAllowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT"
-      },
-      "name" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "module_1",
-    "logicName" : "模块_已收藏",
-    "default" : false,
-    "mSTag" : "module__1",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "module",
-    "name" : "模块_已收藏"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
@@ -1394,11 +1394,6 @@
   "validLogicValue" : "0",
   "invalidLogicValue" : "1",
   "serviceAPIMode" : 1,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "c0ed14b3ed335ab7ed28fa0009d59b10",
-  "codeName" : "DocLibModule",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1413,13 +1408,23 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "c0ed14b3ed335ab7ed28fa0009d59b10",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "DocLibModule",
   "logicName" : "文档库分类",
   "tableName" : "zt_module",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : true,
+  "serviceCodeName" : "DocLibModule",
+  "enableRemove" : true,
   "logicValid" : true,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1428,14 +1433,9 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "serviceCodeName" : "DocLibModule",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

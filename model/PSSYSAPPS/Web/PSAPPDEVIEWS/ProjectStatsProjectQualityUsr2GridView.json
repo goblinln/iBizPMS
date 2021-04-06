@@ -6,15 +6,15 @@
   "gridRowActiveMode" : 0,
   "enableFilter" : false,
   "xDataControlName" : "grid",
-  "showCaptionBar" : true,
   "getPSDEViewCodeName" : "ProjectQualityUsr2GridView",
+  "showCaptionBar" : true,
   "caption" : "项目质量表",
   "title" : "项目质量表",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -29,14 +29,14 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     }, {
-      "name" : "GRID",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRID"
     } ],
     "name" : "engine"
   } ],
@@ -48,6 +48,7 @@
     },
     "name" : "toolbar_deuiaction1"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
@@ -62,11 +63,11 @@
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf1c3@FontAwesome",
           "cssClass" : "fa fa-file-excel-o"
         },
-        "timeout" : 60000,
         "codeName" : "ExportExcel",
         "caption" : "导出",
         "uIActionTag" : "ExportExcel",
@@ -100,114 +101,22 @@
     "name" : "toolbar",
     "modelid" : "c25092e001ee150ca27e240a79970400"
   }, {
-    "getPSDEGridDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "TASKCNT",
-        "codeName" : "TaskCnt"
-      },
-      "name" : "taskcnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "FINISHBUGCNT",
-        "codeName" : "FinishBugCnt"
-      },
-      "name" : "finishbugcnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IMPORTANTBUGCNT",
-        "codeName" : "Importantbugcnt"
-      },
-      "name" : "importantbugcnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGTASK",
-        "codeName" : "Bugtask"
-      },
-      "name" : "bugtask",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "STORYCNT",
-        "codeName" : "StoryCnt"
-      },
-      "name" : "storycnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "SERIOUSBUGPROPORTION",
-        "codeName" : "Seriousbugproportion"
-      },
-      "name" : "seriousbugproportion",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "name" : "srfmajortext",
-      "dataType" : 25
-    }, {
-      "dataAccessAction" : true,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "srfkey",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "id",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGCNT",
-        "codeName" : "BugCnt"
-      },
-      "name" : "bugcnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGSTORY",
-        "codeName" : "Bugstory"
-      },
-      "name" : "bugstory",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "name" : "name",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "COMPLETETASKCNT",
-        "codeName" : "Completetaskcnt"
-      },
-      "name" : "completetaskcnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "COMPLETESTORYCNT",
-        "codeName" : "Completestorycnt"
-      },
-      "name" : "completestorycnt",
-      "dataType" : 9
-    } ],
+    "singleSelect" : true,
     "enableColFilter" : false,
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : true,
@@ -227,40 +136,132 @@
       "caption" : "项目编号",
       "name" : "srfkey"
     } ],
-    "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "getRemovePSControlAction" : {
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
-    "singleSelect" : true,
-    "enablePagingBar" : false,
-    "enableRowEdit" : false,
+    "hasWFDataItems" : false,
     "controlType" : "GRID",
+    "enablePagingBar" : false,
+    "getPSDEGridDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "TASKCNT",
+        "codeName" : "TaskCnt"
+      },
+      "dataType" : 9,
+      "name" : "taskcnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "FINISHBUGCNT",
+        "codeName" : "FinishBugCnt"
+      },
+      "dataType" : 9,
+      "name" : "finishbugcnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IMPORTANTBUGCNT",
+        "codeName" : "Importantbugcnt"
+      },
+      "dataType" : 9,
+      "name" : "importantbugcnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGTASK",
+        "codeName" : "Bugtask"
+      },
+      "dataType" : 9,
+      "name" : "bugtask"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      },
+      "dataType" : 9,
+      "name" : "storycnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "SERIOUSBUGPROPORTION",
+        "codeName" : "Seriousbugproportion"
+      },
+      "dataType" : 25,
+      "name" : "seriousbugproportion"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "dataType" : 25,
+      "name" : "srfmajortext"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataAccessAction" : true,
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 1,
+      "name" : "srfkey"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 1,
+      "name" : "id"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
+      },
+      "dataType" : 9,
+      "name" : "bugcnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGSTORY",
+        "codeName" : "Bugstory"
+      },
+      "dataType" : 9,
+      "name" : "bugstory"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "dataType" : 25,
+      "name" : "name"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "COMPLETETASKCNT",
+        "codeName" : "Completetaskcnt"
+      },
+      "dataType" : 9,
+      "name" : "completetaskcnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "COMPLETESTORYCNT",
+        "codeName" : "Completestorycnt"
+      },
+      "dataType" : 9,
+      "name" : "completestorycnt"
+    } ],
+    "enableRowEdit" : false,
     "getPSDEGridColumns" : [ {
-      "linkValueItem" : "srfkey",
+      "enableLinkView" : true,
       "getLinkPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
         "viewType" : "DETABEXPVIEW"
       },
-      "enableLinkView" : true,
+      "excelCaption" : "项目名称",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
       "dataItemName" : "name",
-      "excelCaption" : "项目名称",
+      "linkValueItem" : "srfkey",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -272,12 +273,12 @@
       "widthUnit" : "STAR",
       "name" : "name"
     }, {
+      "excelCaption" : "需求总数",
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
       "dataItemName" : "storycnt",
-      "excelCaption" : "需求总数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -290,12 +291,12 @@
       "aggMode" : "SUM",
       "name" : "storycnt"
     }, {
+      "excelCaption" : "完成需求数",
       "getPSAppDEField" : {
         "name" : "COMPLETESTORYCNT",
         "codeName" : "Completestorycnt"
       },
       "dataItemName" : "completestorycnt",
-      "excelCaption" : "完成需求数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -308,12 +309,12 @@
       "aggMode" : "SUM",
       "name" : "completestorycnt"
     }, {
+      "excelCaption" : "任务总数",
       "getPSAppDEField" : {
         "name" : "TASKCNT",
         "codeName" : "TaskCnt"
       },
       "dataItemName" : "taskcnt",
-      "excelCaption" : "任务总数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -326,12 +327,12 @@
       "aggMode" : "SUM",
       "name" : "taskcnt"
     }, {
+      "excelCaption" : "完成任务数",
       "getPSAppDEField" : {
         "name" : "COMPLETETASKCNT",
         "codeName" : "Completetaskcnt"
       },
       "dataItemName" : "completetaskcnt",
-      "excelCaption" : "完成任务数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -344,12 +345,12 @@
       "aggMode" : "SUM",
       "name" : "completetaskcnt"
     }, {
+      "excelCaption" : "Bug数",
       "getPSAppDEField" : {
         "name" : "BUGCNT",
         "codeName" : "BugCnt"
       },
       "dataItemName" : "bugcnt",
-      "excelCaption" : "Bug数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -362,12 +363,12 @@
       "aggMode" : "SUM",
       "name" : "bugcnt"
     }, {
+      "excelCaption" : "解决Bug数",
       "getPSAppDEField" : {
         "name" : "FINISHBUGCNT",
         "codeName" : "FinishBugCnt"
       },
       "dataItemName" : "finishbugcnt",
-      "excelCaption" : "解决Bug数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -380,12 +381,12 @@
       "aggMode" : "SUM",
       "name" : "finishbugcnt"
     }, {
+      "excelCaption" : "Bug/完成需求",
       "getPSAppDEField" : {
         "name" : "BUGSTORY",
         "codeName" : "Bugstory"
       },
       "dataItemName" : "bugstory",
-      "excelCaption" : "Bug/完成需求",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -398,12 +399,12 @@
       "aggMode" : "SUM",
       "name" : "bugstory"
     }, {
+      "excelCaption" : "Bug/完成任务",
       "getPSAppDEField" : {
         "name" : "BUGTASK",
         "codeName" : "Bugtask"
       },
       "dataItemName" : "bugtask",
-      "excelCaption" : "Bug/完成任务",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -416,12 +417,12 @@
       "aggMode" : "SUM",
       "name" : "bugtask"
     }, {
+      "excelCaption" : "重要Bug数",
       "getPSAppDEField" : {
         "name" : "IMPORTANTBUGCNT",
         "codeName" : "Importantbugcnt"
       },
       "dataItemName" : "importantbugcnt",
-      "excelCaption" : "重要Bug数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -434,12 +435,12 @@
       "aggMode" : "SUM",
       "name" : "importantbugcnt"
     }, {
+      "excelCaption" : "严重Bug比率",
       "getPSAppDEField" : {
         "name" : "SERIOUSBUGPROPORTION",
         "codeName" : "Seriousbugproportion"
       },
       "dataItemName" : "seriousbugproportion",
-      "excelCaption" : "严重Bug比率",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -453,12 +454,12 @@
     } ],
     "codeName" : "ProjectQuality",
     "enableGroup" : false,
+    "hideHeader" : false,
+    "forceFit" : false,
     "pagingSize" : 1000,
     "aggMode" : "PAGE",
     "groupMode" : "NONE",
     "sortMode" : "REMOTE",
-    "hideHeader" : false,
-    "forceFit" : false,
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -476,76 +477,76 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchProjectQuality"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-        },
         "actionType" : "DEDATASET",
         "name" : "fetch"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "name" : "loaddraft"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -560,7 +561,6 @@
     "name" : "grid",
     "modelid" : "e3a0e1b94ef4497da5c713265dd7a0f5"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -579,12 +579,12 @@
     "name" : "EDITDATA"
   } ],
   "getPSAppViewLogics" : [ {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction1"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
@@ -592,8 +592,8 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
       "batchAddOnly" : false,
+      "enableBatchAdd" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {

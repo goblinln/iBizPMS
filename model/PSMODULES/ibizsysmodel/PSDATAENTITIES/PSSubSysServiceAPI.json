@@ -1,10 +1,81 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "867e8d526d9755349271474fb71aca45",
-    "codeName" : "PSSubSysServiceAPIName",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "PSSubSysServiceAPIName",
     "logicName" : "外部服务接口名称",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -48,21 +119,19 @@
       "autoIncrement" : false,
       "name" : "PSSUBSYSSERVICEAPINAME"
     } ],
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
     "name" : "PSSUBSYSSERVICEAPINAME"
   }, {
-    "length" : 60,
+    "dataType" : "TEXT",
+    "deployId" : "5d7785824c18fef2d06ff4bd68f4afee",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "deployId" : "5d7785824c18fef2d06ff4bd68f4afee",
     "codeName" : "CreateMan",
-    "valueFormat" : "%1$s",
     "logicName" : "建立人",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -109,15 +178,15 @@
       "name" : "CREATEMAN"
     } ],
     "predefinedType" : "CREATEMAN",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "CREATEMAN"
   }, {
-    "length" : 8,
     "dataType" : "DATETIME",
     "deployId" : "c3ee36a3985c978326f5d99c47b9b321",
-    "codeName" : "CreateDate",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
     "systemReserver" : true,
@@ -151,15 +220,15 @@
       "name" : "CREATEDATE"
     } ],
     "predefinedType" : "CREATEDATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
     "name" : "CREATEDATE"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "9cb53a4214a28c2f279de625dee02f81",
-    "codeName" : "PSSystemId",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "PSSystemId",
     "logicName" : "系统",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -203,15 +272,16 @@
       "autoIncrement" : false,
       "name" : "PSSYSTEMID"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "PSSYSTEMID"
   }, {
-    "length" : 100,
     "dataType" : "GUID",
     "deployId" : "d0e82efe36a5074fc34ae2814fbdbd93",
-    "codeName" : "PSSubSysServiceAPIId",
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "PSSubSysServiceAPIId",
     "logicName" : "外部服务接口标识",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -257,16 +327,15 @@
       "autoIncrement" : false,
       "name" : "PSSUBSYSSERVICEAPIID"
     } ],
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "PSSUBSYSSERVICEAPIID"
   }, {
-    "length" : 8,
     "dataType" : "DATETIME",
     "deployId" : "64a12b3f52a4bc759edcbf68315d8ef9",
-    "codeName" : "UpdateDate",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
     "systemReserver" : true,
@@ -300,19 +369,19 @@
       "name" : "UPDATEDATE"
     } ],
     "predefinedType" : "UPDATEDATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
     "name" : "UPDATEDATE"
   }, {
-    "length" : 60,
+    "dataType" : "TEXT",
+    "deployId" : "ff742cda74f8d197e1688a14dbced43c",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "deployId" : "ff742cda74f8d197e1688a14dbced43c",
     "codeName" : "UpdateMan",
-    "valueFormat" : "%1$s",
     "logicName" : "更新人",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -359,15 +428,15 @@
       "name" : "UPDATEMAN"
     } ],
     "predefinedType" : "UPDATEMAN",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "UPDATEMAN"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "7d2d4ed5252861529240b193e4480d81",
-    "codeName" : "PSSystemName",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "PSSystemName",
     "logicName" : "系统",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -411,8 +480,7 @@
       "autoIncrement" : false,
       "name" : "PSSYSTEMNAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "PSSYSTEMNAME"
   }, {
     "phisicalDEField" : false,
@@ -426,9 +494,10 @@
       "name" : "PSSYSSERVICEAPINAME",
       "codeName" : "PSSysServiceAPIName"
     },
-    "length" : 200,
     "dataType" : "PICKUPTEXT",
     "deployId" : "82a0cba82eda8f0af63660adb1a2025b",
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "codeName" : "PSSysServiceAPIName",
     "logicName" : "系统服务接口",
     "stringLength" : 200,
@@ -473,8 +542,7 @@
       "autoIncrement" : false,
       "name" : "PSSYSSERVICEAPINAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 200,
     "name" : "PSSYSSERVICEAPINAME"
   }, {
     "phisicalDEField" : false,
@@ -488,9 +556,10 @@
       "name" : "PSMODULENAME",
       "codeName" : "PSModuleName"
     },
-    "length" : 200,
     "dataType" : "PICKUPTEXT",
     "deployId" : "282541cf26995b5ddf6ecc30043fa980",
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "codeName" : "PSModuleName",
     "logicName" : "系统模块",
     "stringLength" : 200,
@@ -535,8 +604,7 @@
       "autoIncrement" : false,
       "name" : "PSMODULENAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 200,
     "name" : "PSMODULENAME"
   }, {
     "getPSDER" : {
@@ -549,9 +617,10 @@
       "name" : "PSMODULEID",
       "codeName" : "PSModuleId"
     },
-    "length" : 100,
     "dataType" : "PICKUP",
     "deployId" : "33242f8509a58b9490452e2104359b82",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "codeName" : "PSModuleId",
     "logicName" : "系统模块",
     "stringLength" : 100,
@@ -596,8 +665,7 @@
       "autoIncrement" : false,
       "name" : "PSMODULEID"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "PSMODULEID"
   }, {
     "getPSDER" : {
@@ -610,9 +678,10 @@
       "name" : "PSSYSSERVICEAPIID",
       "codeName" : "PSSysServiceAPIId"
     },
-    "length" : 100,
     "dataType" : "PICKUP",
     "deployId" : "8862d190546d696d9aeff01e6e70b687",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "codeName" : "PSSysServiceAPIId",
     "logicName" : "系统服务接口",
     "stringLength" : 100,
@@ -657,88 +726,14 @@
       "autoIncrement" : false,
       "name" : "PSSYSSERVICEAPIID"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "PSSYSSERVICEAPIID"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据集",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI/PSDEACTIONS/Save.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据查询",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
   "serviceAPIMode" : 0,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "2a7763426ba6207545831e4b44585c53",
-  "codeName" : "PSSubSysServiceAPI",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -753,14 +748,22 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 0,
+  "deployId" : "2a7763426ba6207545831e4b44585c53",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "PSSubSysServiceAPI",
   "logicName" : "外部服务接口",
   "tableName" : "T_PSSUBSYSSERVICEAPI",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : false,
+  "serviceCodeName" : "PSSubSysServiceAPI",
   "serviceAPIClientId" : "45ab5098498d2294128bca01585b9993",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -769,12 +772,9 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "serviceCodeName" : "PSSubSysServiceAPI",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

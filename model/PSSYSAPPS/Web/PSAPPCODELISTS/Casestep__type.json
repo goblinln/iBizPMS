@@ -6,17 +6,17 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "step",
     "codeName" : "Step",
-    "text" : "步骤"
+    "text" : "步骤",
+    "value" : "step"
   }, {
-    "value" : "group",
     "codeName" : "Group",
-    "text" : "分组"
+    "text" : "分组",
+    "value" : "group"
   }, {
-    "value" : "item",
     "codeName" : "Item",
-    "text" : "分组步骤"
+    "text" : "分组步骤",
+    "value" : "item"
   } ],
   "codeName" : "Casestep__type",
   "emptyText" : "未定义",

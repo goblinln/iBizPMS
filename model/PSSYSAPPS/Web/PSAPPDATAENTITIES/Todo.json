@@ -1,10 +1,10 @@
 {
   "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : true,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -29,17 +29,17 @@
     "logicName" : "closed",
     "default" : false,
     "mSTag" : "closed",
+    "stateValue" : "closed",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "closed",
     "name" : "closed"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : true,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -82,17 +82,17 @@
     "logicName" : "doing",
     "default" : false,
     "mSTag" : "doing",
+    "stateValue" : "doing",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "doing",
     "name" : "doing"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : true,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -123,17 +123,17 @@
     "logicName" : "done",
     "default" : false,
     "mSTag" : "done",
+    "stateValue" : "done",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "done",
     "name" : "done"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : true,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -176,20 +176,39 @@
     "logicName" : "wait",
     "default" : false,
     "mSTag" : "wait",
+    "stateValue" : "wait",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "wait",
     "name" : "wait"
   } ],
   "enableUIActions" : 15,
-  "enableUIRemove" : true,
   "getAllPSAppDEUIActions" : [ {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTodoEditView.json",
       "viewType" : "DEEDITVIEW"
     },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "assignedto",
+      "key" : "assignedto",
+      "name" : "assignedto"
+    }, {
+      "rawValue" : false,
+      "value" : "desc",
+      "key" : "desc",
+      "name" : "desc"
+    }, {
+      "rawValue" : false,
+      "value" : "name",
+      "key" : "name",
+      "name" : "name"
+    } ],
     "frontProcessType" : "WIZARD",
     "getPSNavigateContexts" : [ {
       "rawValue" : false,
@@ -207,32 +226,12 @@
       "key" : "DESC",
       "name" : "DESC"
     } ],
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "assignedto",
-      "key" : "assignedto",
-      "name" : "assignedto"
-    }, {
-      "rawValue" : false,
-      "value" : "desc",
-      "key" : "desc",
-      "name" : "desc"
-    }, {
-      "rawValue" : false,
-      "value" : "name",
-      "key" : "name",
-      "name" : "name"
-    } ],
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf188@FontAwesome",
       "cssClass" : "fa fa-bug"
     },
-    "timeout" : 60000,
     "codeName" : "toBug",
     "caption" : "转Bug",
     "actionTarget" : "SINGLEKEY",
@@ -244,22 +243,22 @@
     "name" : "转Bug",
     "id" : "toBug@Todo"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Activate"
-    },
-    "getNoPrivDisplayMode" : 1,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
     },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Activate"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 1,
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf0d0@FontAwesome",
       "cssClass" : "fa fa-magic"
     },
-    "timeout" : 60000,
     "codeName" : "activate",
     "caption" : "激活",
     "actionTarget" : "SINGLEKEY",
@@ -273,26 +272,26 @@
     "name" : "todo激活",
     "id" : "activate@Todo"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "frontProcessType" : "WIZARD",
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Update"
     },
+    "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
-    "timeout" : 60000,
     "codeName" : "edit1Cz",
     "caption" : "编辑",
     "actionTarget" : "SINGLEKEY",
@@ -304,6 +303,10 @@
     "name" : "todo编辑（操作栏）",
     "id" : "edit1Cz@Todo"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoTodoCreateView.json",
@@ -312,15 +315,11 @@
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf067@FontAwesome",
       "cssClass" : "fa fa-plus"
     },
-    "timeout" : 60000,
     "codeName" : "TodoCreate",
     "caption" : "新建",
     "actionTarget" : "NONE",
@@ -333,6 +332,10 @@
     "name" : "新建",
     "id" : "TodoCreate@Todo"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoAssignToView.json",
@@ -341,15 +344,11 @@
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getNoPrivDisplayMode" : 1,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf0a4@FontAwesome",
       "cssClass" : "fa fa-hand-o-right"
     },
-    "timeout" : 60000,
     "codeName" : "assignTo",
     "caption" : "指派",
     "actionTarget" : "SINGLEKEY",
@@ -362,6 +361,10 @@
     "name" : "todo指派",
     "id" : "assignTo@Todo"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoGridView.json",
@@ -369,10 +372,6 @@
     },
     "frontProcessType" : "TOP",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
     "timeout" : 60000,
     "codeName" : "More",
     "caption" : "MORE",
@@ -384,6 +383,10 @@
     "name" : "更多",
     "id" : "More@Todo"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoFinishView.json",
@@ -391,15 +394,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf046@FontAwesome",
       "cssClass" : "fa fa-check-square-o"
     },
-    "timeout" : 60000,
     "codeName" : "finishCz",
     "caption" : "完成",
     "actionTarget" : "SINGLEKEY",
@@ -411,22 +410,22 @@
     "name" : "todo完成（操作栏）",
     "id" : "finishCz@Todo"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getNoPrivDisplayMode" : 1,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
     },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 1,
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf1f8@FontAwesome",
       "cssClass" : "fa fa-trash"
     },
-    "timeout" : 60000,
     "codeName" : "delete",
     "caption" : "删除",
     "actionTarget" : "SINGLEKEY",
@@ -440,22 +439,22 @@
     "name" : "todo删除",
     "id" : "delete@Todo"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Close"
-    },
-    "getNoPrivDisplayMode" : 1,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
     },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Close"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 1,
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf00d@FontAwesome",
       "cssClass" : "fa fa-close"
     },
-    "timeout" : 60000,
     "codeName" : "close",
     "caption" : "关闭",
     "actionTarget" : "SINGLEKEY",
@@ -469,11 +468,31 @@
     "name" : "todo关闭",
     "id" : "close@Todo"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTodoEditView.json",
       "viewType" : "DEEDITVIEW"
     },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "assignedto",
+      "key" : "assignedto",
+      "name" : "assignedto"
+    }, {
+      "rawValue" : false,
+      "value" : "desc",
+      "key" : "desc",
+      "name" : "desc"
+    }, {
+      "rawValue" : false,
+      "value" : "name",
+      "key" : "name",
+      "name" : "name"
+    } ],
     "frontProcessType" : "WIZARD",
     "getPSNavigateContexts" : [ {
       "rawValue" : false,
@@ -491,32 +510,12 @@
       "key" : "DESC",
       "name" : "DESC"
     } ],
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "assignedto",
-      "key" : "assignedto",
-      "name" : "assignedto"
-    }, {
-      "rawValue" : false,
-      "value" : "desc",
-      "key" : "desc",
-      "name" : "desc"
-    }, {
-      "rawValue" : false,
-      "value" : "name",
-      "key" : "name",
-      "name" : "name"
-    } ],
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf0ae@FontAwesome",
       "cssClass" : "fa fa-tasks"
     },
-    "timeout" : 60000,
     "codeName" : "toTask",
     "caption" : "转任务",
     "actionTarget" : "SINGLEKEY",
@@ -528,6 +527,10 @@
     "name" : "转任务",
     "id" : "toTask@Todo"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCloseView.json",
@@ -535,15 +538,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf00d@FontAwesome",
       "cssClass" : "fa fa-close"
     },
-    "timeout" : 60000,
     "codeName" : "closeCz",
     "caption" : "关闭",
     "actionTarget" : "SINGLEKEY",
@@ -555,26 +554,26 @@
     "name" : "todo关闭（操作栏）",
     "id" : "closeCz@Todo"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
     "getNextPSUIAction" : {
       "modelref" : true,
       "id" : "Exit"
     },
     "refreshMode" : 1,
     "enableConfirm" : true,
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf00d@FontAwesome",
       "cssClass" : "fa fa-remove"
     },
-    "timeout" : 60000,
     "codeName" : "deleteCz",
     "caption" : "删除",
     "actionTarget" : "SINGLEKEY",
@@ -591,6 +590,10 @@
     "name" : "todo删除（操作栏）",
     "id" : "deleteCz@Todo"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoActiviteView.json",
@@ -598,15 +601,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf0d0@FontAwesome",
       "cssClass" : "fa fa-magic"
     },
-    "timeout" : 60000,
     "codeName" : "activateCz",
     "caption" : "激活",
     "actionTarget" : "SINGLEKEY",
@@ -618,6 +617,10 @@
     "name" : "todo激活（操作栏）",
     "id" : "activateCz@Todo"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoAssignToView.json",
@@ -626,15 +629,11 @@
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf0a4@FontAwesome",
       "cssClass" : "fa fa-hand-o-right"
     },
-    "timeout" : 60000,
     "codeName" : "assignToCz",
     "caption" : "指派",
     "actionTarget" : "SINGLEKEY",
@@ -647,26 +646,26 @@
     "name" : "todo指派（操作栏）",
     "id" : "assignToCz@Todo"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "frontProcessType" : "WIZARD",
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Update"
     },
+    "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 1,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
-    "timeout" : 60000,
     "codeName" : "edit1",
     "caption" : "编辑",
     "actionTarget" : "SINGLEKEY",
@@ -678,22 +677,22 @@
     "name" : "todo编辑",
     "id" : "edit1@Todo"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Finish"
-    },
-    "getNoPrivDisplayMode" : 1,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
     },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Finish"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 1,
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf046@FontAwesome",
       "cssClass" : "fa fa-check-square-o"
     },
-    "timeout" : 60000,
     "codeName" : "finish",
     "caption" : "完成",
     "actionTarget" : "SINGLEKEY",
@@ -713,25 +712,25 @@
     "name" : "（未分类）"
   } ],
   "major" : true,
+  "enableUIRemove" : true,
   "getAllPSAppDEMethods" : [ {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
     "builtinMethod" : false,
-    "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
+    "codeName" : "Select",
+    "methodType" : "SELECT"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__CREATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -740,14 +739,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Create.json"
     },
-    "codeName" : "Create"
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__UPDATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
@@ -756,14 +755,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Update.json"
     },
-    "codeName" : "Update"
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__REMOVE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
@@ -772,14 +771,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Remove.json"
     },
-    "codeName" : "Remove"
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__GET"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -788,14 +787,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Get.json"
     },
-    "codeName" : "Get"
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -804,62 +803,62 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/GetDraft.json"
     },
-    "codeName" : "GetDraft"
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Activate.json"
     },
-    "codeName" : "Activate"
+    "codeName" : "Activate",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "AssignTo"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/AssignTo.json"
     },
-    "codeName" : "AssignTo"
+    "codeName" : "AssignTo",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Close.json"
     },
-    "codeName" : "Close"
+    "codeName" : "Close",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CreateCycle"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -868,62 +867,62 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/CreateCycle.json"
     },
-    "codeName" : "CreateCycle"
+    "codeName" : "CreateCycle",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Finish"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Finish.json"
     },
-    "codeName" : "Finish"
+    "codeName" : "Finish",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMessage"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/SendMessage.json"
     },
-    "codeName" : "SendMessage"
+    "codeName" : "SendMessage",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMsgPreProcess"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/SendMsgPreProcess.json"
     },
-    "codeName" : "SendMsgPreProcess"
+    "codeName" : "SendMsgPreProcess",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -932,14 +931,14 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "codeName" : "FetchDefault"
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTodo"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -948,14 +947,14 @@
       "modelref" : true,
       "id" : "MyTodo"
     },
-    "codeName" : "FetchMyTodo"
+    "codeName" : "FetchMyTodo",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTodoPc"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -964,14 +963,14 @@
       "modelref" : true,
       "id" : "MyTodoPc"
     },
-    "codeName" : "FetchMyTodoPc"
+    "codeName" : "FetchMyTodoPc",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyUpcoming"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -980,41 +979,42 @@
       "modelref" : true,
       "id" : "MyUpcoming"
     },
-    "codeName" : "FetchMyUpcoming"
+    "codeName" : "FetchMyUpcoming",
+    "methodType" : "FETCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
@@ -1053,8 +1053,8 @@
     "stdDataType" : 25,
     "name" : "CONFIG_TYPE"
   }, {
-    "codeName" : "ClosedDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "ClosedDate",
     "logicName" : "关闭时间",
     "stdDataType" : 5,
     "name" : "CLOSEDDATE"
@@ -1128,8 +1128,8 @@
     "stdDataType" : 25,
     "name" : "BUG"
   }, {
-    "codeName" : "FinishedDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "FinishedDate",
     "logicName" : "完成时间",
     "stdDataType" : 5,
     "name" : "FINISHEDDATE"
@@ -1169,21 +1169,21 @@
     "name" : "CONFIG_BEFOREDAYS"
   }, {
     "majorField" : true,
+    "enableQuickSearch" : true,
     "codeName" : "Name",
     "logicName" : "待办名称",
     "stringLength" : 150,
     "stdDataType" : 25,
-    "enableQuickSearch" : true,
     "name" : "NAME"
   }, {
-    "codeName" : "AssignedDate",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "AssignedDate",
     "logicName" : "指派日期",
     "stdDataType" : 5,
     "name" : "ASSIGNEDDATE"
   }, {
-    "codeName" : "Config_end",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "Config_end",
     "logicName" : "过期时间",
     "stdDataType" : 5,
     "name" : "CONFIG_END"
@@ -1198,8 +1198,8 @@
     "stdDataType" : 9,
     "name" : "PRI"
   }, {
-    "codeName" : "Date",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "Date",
     "logicName" : "日期",
     "stdDataType" : 5,
     "name" : "DATE"
@@ -1223,22 +1223,22 @@
     "name" : "CONFIG"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
     "getPSDEACModeDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "value",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "value"
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "name" : "text",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "text"
     } ],
-    "enablePagingBar" : false,
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -1260,7 +1260,6 @@
     "codeName" : "Name"
   } ],
   "getAllPSAppDEDataExports" : [ {
-    "maxRowCount" : 1000,
     "getPSDEDataExportItems" : [ {
       "getPSAppDEField" : {
         "name" : "ID",
@@ -1346,15 +1345,11 @@
       "caption" : "状态",
       "name" : "status"
     } ],
+    "maxRowCount" : 1000,
     "codeName" : "DataExport",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo/PSAPPDEDATAEXPS/DataExport.json",
     "name" : "数据导出"
   } ],
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDESERVICEAPIS/Todo.json"
-  },
-  "codeName" : "Todo",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "激活",
     "name" : "ACTIVATE"
@@ -1386,12 +1381,17 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDESERVICEAPIS/Todo.json"
+  },
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "codeName" : "Todo",
   "logicName" : "待办事宜表",
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,
   "dataAccCtrlArch" : 1,
-  "enableUICreate" : true,
-  "enableUIModify" : true,
   "defaultMode" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json",
   "name" : "ZT_TODO"

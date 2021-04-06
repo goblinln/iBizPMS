@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -41,18 +41,17 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "createmanname"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "CREATEMANNAME",
           "codeName" : "CreateManName"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "创建人姓名",
         "allowEmpty" : true,
@@ -63,6 +62,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -72,7 +72,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "createmanname"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -83,12 +82,12 @@
           "name" : "agentuser"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "AGENTUSER",
           "codeName" : "Agentuser"
         },
-        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "代理用户",
@@ -98,6 +97,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 100,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -107,7 +107,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "agentuser"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
           "editorParams" : {
@@ -118,12 +117,12 @@
           "name" : "agentbegin"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "AGENTBEGIN",
           "codeName" : "Agentbegin"
         },
-        "hidden" : false,
         "dataType" : 5,
         "caption" : "代理开始日期",
         "allowEmpty" : true,
@@ -133,6 +132,7 @@
         "labelWidth" : 100,
         "itemWidth" : 200.0,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 12,
           "colMD" : 24,
@@ -143,7 +143,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "agentbegin"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
           "editorParams" : {
@@ -154,12 +153,12 @@
           "name" : "agentend"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "AGENTEND",
           "codeName" : "Agentend"
         },
-        "hidden" : false,
         "dataType" : 5,
         "caption" : "代理结束日期",
         "allowEmpty" : true,
@@ -169,6 +168,7 @@
         "labelWidth" : 100,
         "itemWidth" : 200.0,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 12,
           "colMD" : 24,
@@ -190,11 +190,11 @@
       "showCaption" : false,
       "name" : "group1"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

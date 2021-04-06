@@ -1,23 +1,23 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/SYS_UPDATE_BRANCH.json",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/SYS_UPDATE_BRANCH.json",
   "codeName" : "SYS_UPDATE_BRANCH",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "PC",
     "codeName" : "Pc",
-    "text" : "PC"
+    "text" : "PC",
+    "value" : "PC"
   }, {
-    "value" : "MOB",
     "codeName" : "Mob",
-    "text" : "MOB"
+    "text" : "MOB",
+    "value" : "MOB"
   } ]
 }

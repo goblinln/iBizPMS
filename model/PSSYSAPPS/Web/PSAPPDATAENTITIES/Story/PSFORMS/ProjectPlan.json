@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -41,18 +41,17 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "title"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TITLE",
           "codeName" : "Title"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "需求名称",
         "allowEmpty" : true,
@@ -61,6 +60,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -70,18 +70,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "title"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "project"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PROJECT",
           "codeName" : "Project"
         },
-        "hidden" : true,
         "dataType" : 1,
         "caption" : "项目",
         "allowEmpty" : true,
@@ -92,6 +91,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -101,24 +101,12 @@
         "detailStyle" : "DEFAULT",
         "name" : "project"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectProductPlan.json"
           },
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "PROJECT",
-            "name" : "PROJECT"
-          }, {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "SRFPARENTKEY",
-            "name" : "SRFPARENTKEY"
-          } ],
           "getPSNavigateParams" : [ {
             "rawValue" : false,
             "value" : "project",
@@ -130,6 +118,17 @@
             "key" : "project",
             "name" : "project"
           } ],
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "PROJECT",
+            "name" : "PROJECT"
+          }, {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "SRFPARENTKEY",
+            "name" : "SRFPARENTKEY"
+          } ],
           "editorParams" : {
             "SRFNAVCTX.project" : "%project%",
             "SRFNAVCTX.srfparentkey" : "%project%",
@@ -140,12 +139,12 @@
           "name" : "plan"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PLAN",
           "codeName" : "Plan"
         },
-        "hidden" : false,
         "dataType" : 21,
         "needCodeListConfig" : true,
         "allowEmpty" : true,
@@ -154,6 +153,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 1,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -163,18 +163,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "plan"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "id"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "hidden" : true,
         "dataType" : 1,
         "caption" : "编号",
         "allowEmpty" : true,
@@ -184,6 +183,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -204,11 +204,11 @@
       "showCaption" : true,
       "name" : "group1"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "按照计划关联",
     "detailType" : "FORMPAGE",

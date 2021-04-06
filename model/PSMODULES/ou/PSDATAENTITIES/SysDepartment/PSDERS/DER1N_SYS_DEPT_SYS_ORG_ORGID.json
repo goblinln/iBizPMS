@@ -1,14 +1,14 @@
 {
+  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "ORGID",
     "codeName" : "OrgId"
   },
-  "nestedRS" : true,
   "getPSPickupTextDEField" : {
     "name" : "ORGNAME",
     "codeName" : "OrgName"
   },
-  "masterOrder" : -1,
+  "nestedRS" : true,
   "removeActionType" : 3,
   "masterRS" : 8,
   "removeOrder" : 0,

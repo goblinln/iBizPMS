@@ -1,4 +1,5 @@
 {
+  "redirectView" : true,
   "getRedirectPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -13,8 +14,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "需求数据看板视图",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "EDITVIEW:STORY"
   }, {
     "getRefPSAppView" : {
@@ -22,8 +23,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "功能测试",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "EDITVIEW:CASE"
   }, {
     "getRefPSAppView" : {
@@ -31,8 +32,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "Bug数据看板视图",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "EDITVIEW:BUG"
   }, {
     "getRefPSAppView" : {
@@ -40,8 +41,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "任务主数据看板视图",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "EDITVIEW:TASK"
   }, {
     "getRefPSAppView" : {
@@ -49,8 +50,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "文档数据看板视图",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "EDITVIEW:DOC"
   }, {
     "getRefPSAppView" : {
@@ -62,18 +63,17 @@
     "name" : "EDITVIEW:PROJECT"
   } ],
   "enableCustomGetDataAction" : false,
-  "redirectView" : true,
   "enableWorkflow" : true,
-  "showCaptionBar" : true,
-  "getPSDEViewCodeName" : "RedirectView",
   "funcViewMode" : "REDIRECTVIEW",
+  "getPSDEViewCodeName" : "RedirectView",
+  "showCaptionBar" : true,
   "caption" : "索引检索",
   "title" : "索引检索数据重定向视图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -84,19 +84,19 @@
     "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
     "name" : "layoutpanel"
   },
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "文档数据看板视图",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "RDITEM:EDITVIEW:DOC"
   }, {
     "getRefPSAppView" : {
@@ -104,8 +104,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "任务主数据看板视图",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "RDITEM:EDITVIEW:TASK"
   }, {
     "getRefPSAppView" : {
@@ -129,8 +129,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "功能测试",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "RDITEM:EDITVIEW:CASE"
   }, {
     "getRefPSAppView" : {
@@ -138,8 +138,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "需求数据看板视图",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "RDITEM:EDITVIEW:STORY"
   }, {
     "getRefPSAppView" : {
@@ -147,8 +147,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "Bug数据看板视图",
+    "realOpenMode" : "DRAWER_TOP",
     "name" : "RDITEM:EDITVIEW:BUG"
   } ],
   "codeName" : "IbizproIndexRedirectView",

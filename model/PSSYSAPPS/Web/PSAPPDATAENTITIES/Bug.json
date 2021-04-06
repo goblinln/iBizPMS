@@ -1,12 +1,12 @@
 {
   "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -157,19 +157,19 @@
     "logicName" : "激活_未收藏_未确认",
     "default" : false,
     "mSTag" : "active__0__0",
+    "stateValue" : "active",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "active",
     "name" : "激活_未收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -206,19 +206,19 @@
     "logicName" : "激活_未收藏_已确认",
     "default" : false,
     "mSTag" : "active__0__1",
+    "stateValue" : "active",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "active",
     "name" : "激活_未收藏_已确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -249,19 +249,19 @@
     "logicName" : "激活_已收藏_未确认",
     "default" : false,
     "mSTag" : "active__1__0",
+    "stateValue" : "active",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "active",
     "name" : "激活_已收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -298,19 +298,19 @@
     "logicName" : "激活_已收藏_已确认",
     "default" : false,
     "mSTag" : "active__1__1",
+    "stateValue" : "active",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "active",
     "name" : "激活_已收藏_已确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -479,19 +479,19 @@
     "logicName" : "已关闭_未收藏_未确认",
     "default" : false,
     "mSTag" : "closed__0__0",
+    "stateValue" : "closed",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "closed",
     "name" : "已关闭_未收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -540,19 +540,19 @@
     "logicName" : "已关闭_未收藏_已确认",
     "default" : false,
     "mSTag" : "closed__0__1",
+    "stateValue" : "closed",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "closed",
     "name" : "已关闭_未收藏_已确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -601,19 +601,19 @@
     "logicName" : "已关闭_已收藏_未确认",
     "default" : false,
     "mSTag" : "closed__1__0",
+    "stateValue" : "closed",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "closed",
     "name" : "已关闭_已收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -662,19 +662,19 @@
     "logicName" : "已关闭_已收藏_已确认",
     "default" : false,
     "mSTag" : "closed__1__1",
+    "stateValue" : "closed",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "closed",
     "name" : "已关闭_已收藏_已确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -832,19 +832,19 @@
     "logicName" : "已解决_未收藏_未确认",
     "default" : false,
     "mSTag" : "resolved__0__0",
+    "stateValue" : "resolved",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "resolved",
     "name" : "已解决_未收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -875,19 +875,19 @@
     "logicName" : "已解决_未收藏_已确认",
     "default" : false,
     "mSTag" : "resolved__0__1",
+    "stateValue" : "resolved",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "resolved",
     "name" : "已解决_未收藏_已确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -918,19 +918,19 @@
     "logicName" : "已解决_已收藏_未确认",
     "default" : false,
     "mSTag" : "resolved__1__0",
+    "stateValue" : "resolved",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "resolved",
     "name" : "已解决_已收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -961,25 +961,24 @@
     "logicName" : "已解决_已收藏_已确认",
     "default" : false,
     "mSTag" : "resolved__1__1",
+    "stateValue" : "resolved",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "resolved",
     "name" : "已解决_已收藏_已确认"
   } ],
   "enableUIActions" : 15,
-  "enableUIRemove" : true,
   "getAllPSAppDEUIActions" : [ {
-    "frontProcessType" : "OTHER",
-    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
+    "frontProcessType" : "OTHER",
+    "getNoPrivDisplayMode" : 2,
+    "timeout" : 60000,
     "getPSSysImage" : {
       "cssClass" : "download"
     },
-    "timeout" : 60000,
     "codeName" : "BatchDownload",
     "caption" : "下载",
     "actionTarget" : "SINGLEKEY",
@@ -990,29 +989,15 @@
     "name" : "下载",
     "id" : "BatchDownload@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView5.json",
       "viewType" : "DEMPICKUPVIEW"
     },
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSNavigateContexts" : [ {
-      "rawValue" : true,
-      "value" : "0",
-      "key" : "BUG",
-      "name" : "BUG"
-    }, {
-      "rawValue" : false,
-      "value" : "srfparentkey",
-      "key" : "RELEASE",
-      "name" : "RELEASE"
-    }, {
-      "rawValue" : false,
-      "value" : "product",
-      "key" : "PRODUCT",
-      "name" : "PRODUCT"
-    } ],
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "ReleaseLinkBugbyLeftBug"
@@ -1033,16 +1018,30 @@
       "key" : "release",
       "name" : "release"
     } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : true,
+      "value" : "0",
+      "key" : "BUG",
+      "name" : "BUG"
+    }, {
+      "rawValue" : false,
+      "value" : "srfparentkey",
+      "key" : "RELEASE",
+      "name" : "RELEASE"
+    }, {
+      "rawValue" : false,
+      "value" : "product",
+      "key" : "PRODUCT",
+      "name" : "PRODUCT"
+    } ],
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf188@FontAwesome",
       "cssClass" : "fa fa-bug"
     },
-    "timeout" : 60000,
     "codeName" : "releaseLinkLeftBug",
     "caption" : "关联bug",
     "actionTarget" : "NONE",
@@ -1055,6 +1054,10 @@
     "name" : "关联遗留的bug（发布）",
     "id" : "releaseLinkLeftBug@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",
@@ -1062,15 +1065,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 1,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf06e@FontAwesome",
       "cssClass" : "fa fa-eye"
     },
-    "timeout" : 60000,
     "codeName" : "ConfirmBug",
     "caption" : "确认",
     "actionTarget" : "SINGLEKEY",
@@ -1083,11 +1082,36 @@
     "name" : "确认bug",
     "id" : "ConfirmBug@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugUsr2GridView.json",
       "viewType" : "DEGRIDVIEW"
     },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "product",
+      "key" : "product",
+      "name" : "product"
+    }, {
+      "rawValue" : false,
+      "value" : "project",
+      "key" : "project",
+      "name" : "project"
+    }, {
+      "rawValue" : false,
+      "value" : "srfloginname",
+      "key" : "srfloginname",
+      "name" : "srfloginname"
+    }, {
+      "rawValue" : false,
+      "value" : "srfparentkey",
+      "key" : "build",
+      "name" : "build"
+    } ],
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getPSNavigateContexts" : [ {
@@ -1116,37 +1140,12 @@
       "key" : "PRODUCT",
       "name" : "PRODUCT"
     } ],
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "product",
-      "key" : "product",
-      "name" : "product"
-    }, {
-      "rawValue" : false,
-      "value" : "project",
-      "key" : "project",
-      "name" : "project"
-    }, {
-      "rawValue" : false,
-      "value" : "srfloginname",
-      "key" : "srfloginname",
-      "name" : "srfloginname"
-    }, {
-      "rawValue" : false,
-      "value" : "srfparentkey",
-      "key" : "build",
-      "name" : "build"
-    } ],
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf0c1@FontAwesome",
       "cssClass" : "fa fa-link"
     },
-    "timeout" : 60000,
     "codeName" : "openBugGridView",
     "caption" : "关联bug",
     "actionTarget" : "NONE",
@@ -1159,24 +1158,15 @@
     "name" : "打开bug关联表格（操作列）",
     "id" : "openBugGridView@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView_4791.json",
       "viewType" : "DEEDITVIEW"
     },
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "project",
-      "key" : "PROJECT",
-      "name" : "PROJECT"
-    }, {
-      "rawValue" : false,
-      "value" : "product",
-      "key" : "PRODUCT",
-      "name" : "PRODUCT"
-    } ],
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Create"
@@ -1192,16 +1182,25 @@
       "key" : "project",
       "name" : "project"
     } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "project",
+      "key" : "PROJECT",
+      "name" : "PROJECT"
+    }, {
+      "rawValue" : false,
+      "value" : "product",
+      "key" : "PRODUCT",
+      "name" : "PRODUCT"
+    } ],
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf067@FontAwesome",
       "cssClass" : "fa fa-plus"
     },
-    "timeout" : 60000,
     "codeName" : "createBugByBuild",
     "caption" : "提Bug",
     "actionTarget" : "NONE",
@@ -1214,33 +1213,10 @@
     "name" : "新建Bug",
     "id" : "createBugByBuild@Bug"
   }, {
-    "getNextPSUIAction" : {
+    "getPSAppDataEntity" : {
       "modelref" : true,
-      "id" : "Refresh"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSNavigateContexts" : [ {
-      "rawValue" : true,
-      "value" : "0",
-      "key" : "BUG",
-      "name" : "BUG"
-    }, {
-      "rawValue" : false,
-      "value" : "product",
-      "key" : "PRODUCTS",
-      "name" : "PRODUCTS"
-    }, {
-      "rawValue" : false,
-      "value" : "project",
-      "key" : "PROJECTS",
-      "name" : "PROJECTS"
-    }, {
-      "rawValue" : false,
-      "value" : "build",
-      "key" : "BUILDS",
-      "name" : "BUILDS"
-    } ],
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "BuildLinkBug"
@@ -1296,16 +1272,39 @@
       "key" : "products",
       "name" : "products"
     } ],
-    "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
+    "getNextPSUIAction" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      "id" : "Refresh"
     },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : true,
+      "value" : "0",
+      "key" : "BUG",
+      "name" : "BUG"
+    }, {
+      "rawValue" : false,
+      "value" : "product",
+      "key" : "PRODUCTS",
+      "name" : "PRODUCTS"
+    }, {
+      "rawValue" : false,
+      "value" : "project",
+      "key" : "PROJECTS",
+      "name" : "PROJECTS"
+    }, {
+      "rawValue" : false,
+      "value" : "build",
+      "key" : "BUILDS",
+      "name" : "BUILDS"
+    } ],
+    "getNoPrivDisplayMode" : 2,
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf0c1@FontAwesome",
       "cssClass" : "fa fa-link"
     },
-    "timeout" : 60000,
     "codeName" : "buildlinkbugs",
     "caption" : "关联bug",
     "actionTarget" : "MULTIKEY",
@@ -1320,6 +1319,10 @@
     "name" : "版本批量关联已解决的bug",
     "id" : "buildlinkbugs@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
@@ -1327,15 +1330,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf00d@FontAwesome",
       "cssClass" : "fa fa-close"
     },
-    "timeout" : 60000,
     "codeName" : "CloseBugDash",
     "caption" : "关闭",
     "actionTarget" : "SINGLEKEY",
@@ -1347,6 +1346,10 @@
     "name" : "关闭bug（操作栏）",
     "id" : "CloseBugDash@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugAssingToView.json",
@@ -1354,15 +1357,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf0a4@FontAwesome",
       "cssClass" : "fa fa-hand-o-right"
     },
-    "timeout" : 60000,
     "codeName" : "AssingToBugCz",
     "caption" : "指派",
     "actionTarget" : "SINGLEKEY",
@@ -1374,6 +1373,10 @@
     "name" : "指派bug（操作栏）",
     "id" : "AssingToBugCz@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorytoStoryEditView.json",
@@ -1388,10 +1391,6 @@
       "name" : "MODULENAME"
     } ],
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
     "timeout" : 60000,
     "codeName" : "toStory",
     "caption" : "提需求",
@@ -1405,22 +1404,22 @@
     "name" : "转需求",
     "id" : "toStory@Bug"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "BugNFavorites"
-    },
-    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "BugNFavorites"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 2,
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf005@FontAwesome",
       "cssClass" : "fa fa-star"
     },
-    "timeout" : 60000,
     "codeName" : "BugNFavorites",
     "caption" : "取消收藏",
     "actionTarget" : "SINGLEKEY",
@@ -1433,6 +1432,10 @@
     "name" : "取消收藏",
     "id" : "BugNFavorites@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
@@ -1440,15 +1443,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 1,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf011@FontAwesome",
       "cssClass" : "fa fa-power-off"
     },
-    "timeout" : 60000,
     "codeName" : "CloseBug",
     "caption" : "关闭",
     "actionTarget" : "SINGLEKEY",
@@ -1460,14 +1459,10 @@
     "name" : "关闭bug",
     "id" : "CloseBug@Bug"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "release",
-      "key" : "RELEASE",
-      "name" : "RELEASE"
-    } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "ReleaseUnlinkBug"
@@ -1478,16 +1473,20 @@
       "key" : "release",
       "name" : "release"
     } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "release",
+      "key" : "RELEASE",
+      "name" : "RELEASE"
+    } ],
     "getNoPrivDisplayMode" : 1,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf127@FontAwesome",
       "cssClass" : "fa fa-unlink"
     },
-    "timeout" : 60000,
     "codeName" : "releaseUnlinkBug",
     "caption" : "移除bug",
     "actionTarget" : "SINGLEKEY",
@@ -1500,6 +1499,10 @@
     "name" : "移除解决bug（发布）",
     "id" : "releaseUnlinkBug@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
@@ -1508,15 +1511,11 @@
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf067@FontAwesome",
       "cssClass" : "fa fa-plus"
     },
-    "timeout" : 60000,
     "codeName" : "Create",
     "caption" : "新建",
     "actionTarget" : "NONE",
@@ -1529,14 +1528,10 @@
     "name" : "新建",
     "id" : "Create@Bug"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "srfparentkey",
-      "key" : "BUILD",
-      "name" : "BUILD"
-    } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "BuildUnlinkBug"
@@ -1547,16 +1542,20 @@
       "key" : "build",
       "name" : "build"
     } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "srfparentkey",
+      "key" : "BUILD",
+      "name" : "BUILD"
+    } ],
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf127@FontAwesome",
       "cssClass" : "fa fa-unlink"
     },
-    "timeout" : 60000,
     "codeName" : "unlinkBug_build",
     "caption" : "解除关联",
     "actionTarget" : "SINGLEKEY",
@@ -1570,6 +1569,10 @@
     "name" : "解除关联（版本-bug）",
     "id" : "unlinkBug_build@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugAssingToView.json",
@@ -1577,15 +1580,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 1,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf0a4@FontAwesome",
       "cssClass" : "fa fa-hand-o-right"
     },
-    "timeout" : 60000,
     "codeName" : "AssingToBug",
     "caption" : "指派",
     "actionTarget" : "SINGLEKEY",
@@ -1597,14 +1596,10 @@
     "name" : "指派bug",
     "id" : "AssingToBug@Bug"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "release",
-      "key" : "RELEASE",
-      "name" : "RELEASE"
-    } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "ReleaseUnLinkBugbyLeftBug"
@@ -1615,16 +1610,20 @@
       "key" : "release",
       "name" : "release"
     } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "release",
+      "key" : "RELEASE",
+      "name" : "RELEASE"
+    } ],
     "getNoPrivDisplayMode" : 1,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf127@FontAwesome",
       "cssClass" : "fa fa-unlink"
     },
-    "timeout" : 60000,
     "codeName" : "releaseUnlinkBugByLeftBug",
     "caption" : "移除bug",
     "actionTarget" : "SINGLEKEY",
@@ -1637,6 +1636,20 @@
     "name" : "移除遗留bug（发布）",
     "id" : "releaseUnlinkBugByLeftBug@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "UnlinkBug"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "productplan",
+      "key" : "productplan",
+      "name" : "productplan"
+    } ],
     "uIActionParamJO" : {
       "productplan" : "%productplan%"
     },
@@ -1648,26 +1661,12 @@
       "key" : "STORY",
       "name" : "STORY"
     } ],
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkBug"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "productplan",
-      "key" : "productplan",
-      "name" : "productplan"
-    } ],
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf127@FontAwesome",
       "cssClass" : "fa fa-unlink"
     },
-    "timeout" : 60000,
     "codeName" : "UnlinkBug",
     "caption" : "移除关联",
     "actionTarget" : "SINGLEKEY",
@@ -1682,6 +1681,10 @@
     "name" : "取消计划关联Bug",
     "id" : "UnlinkBug@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",
@@ -1689,15 +1692,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
-    "timeout" : 60000,
     "codeName" : "MainEditDash",
     "caption" : "编辑",
     "actionTarget" : "SINGLEKEY",
@@ -1709,6 +1708,10 @@
     "name" : "主信息编辑 (操作栏)",
     "id" : "MainEditDash@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",
@@ -1717,10 +1720,6 @@
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
     "timeout" : 60000,
     "codeName" : "BuildUseCase",
     "caption" : "建用例",
@@ -1734,6 +1733,10 @@
     "name" : "建用例",
     "id" : "BuildUseCase@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",
@@ -1741,15 +1744,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf06e@FontAwesome",
       "cssClass" : "fa fa-eye"
     },
-    "timeout" : 60000,
     "codeName" : "ConfirmBugDash",
     "caption" : "确认",
     "actionTarget" : "SINGLEKEY",
@@ -1762,6 +1761,10 @@
     "name" : "确认bug (操作栏)",
     "id" : "ConfirmBugDash@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainMyGridView.json",
@@ -1769,10 +1772,6 @@
     },
     "frontProcessType" : "TOP",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
     "timeout" : 60000,
     "codeName" : "More",
     "caption" : "MORE",
@@ -1784,29 +1783,15 @@
     "name" : "更多",
     "id" : "More@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView4.json",
       "viewType" : "DEMPICKUPVIEW"
     },
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSNavigateContexts" : [ {
-      "rawValue" : true,
-      "value" : "0",
-      "key" : "BUG",
-      "name" : "BUG"
-    }, {
-      "rawValue" : false,
-      "value" : "srfparentkey",
-      "key" : "RELEASE",
-      "name" : "RELEASE"
-    }, {
-      "rawValue" : false,
-      "value" : "product",
-      "key" : "PRODUCT",
-      "name" : "PRODUCT"
-    } ],
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "ReleaseLinkBugbyBug"
@@ -1827,11 +1812,25 @@
       "key" : "release",
       "name" : "release"
     } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : true,
+      "value" : "0",
+      "key" : "BUG",
+      "name" : "BUG"
+    }, {
+      "rawValue" : false,
+      "value" : "srfparentkey",
+      "key" : "RELEASE",
+      "name" : "RELEASE"
+    }, {
+      "rawValue" : false,
+      "value" : "product",
+      "key" : "PRODUCT",
+      "name" : "PRODUCT"
+    } ],
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
     "timeout" : 60000,
     "codeName" : "releaseLinkResolvedBug",
     "caption" : "关联bug",
@@ -1845,6 +1844,10 @@
     "name" : "关联已解决的bug（发布）",
     "id" : "releaseLinkResolvedBug@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugActivationView.json",
@@ -1852,15 +1855,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf0d0@FontAwesome",
       "cssClass" : "fa fa-magic"
     },
-    "timeout" : 60000,
     "codeName" : "Activation",
     "caption" : "激活",
     "actionTarget" : "SINGLEKEY",
@@ -1872,6 +1871,10 @@
     "name" : "激活bug",
     "id" : "Activation@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
@@ -1879,15 +1882,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 1,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf046@FontAwesome",
       "cssClass" : "fa fa-check-square-o"
     },
-    "timeout" : 60000,
     "codeName" : "ResolveBug",
     "caption" : "解决",
     "actionTarget" : "SINGLEKEY",
@@ -1899,22 +1898,22 @@
     "name" : "解决bug",
     "id" : "ResolveBug@Bug"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "BugFavorites"
-    },
-    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "BugFavorites"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 2,
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf006@FontAwesome",
       "cssClass" : "fa fa-star-o"
     },
-    "timeout" : 60000,
     "codeName" : "BugFavorites",
     "caption" : "收藏",
     "actionTarget" : "SINGLEKEY",
@@ -1927,6 +1926,10 @@
     "name" : "收藏",
     "id" : "BugFavorites@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",
@@ -1934,15 +1937,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 1,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
-    "timeout" : 60000,
     "codeName" : "MainEdit",
     "caption" : "编辑",
     "actionTarget" : "SINGLEKEY",
@@ -1954,17 +1953,17 @@
     "name" : "主信息编辑",
     "id" : "MainEdit@Bug"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
     "codeName" : "delete",
     "caption" : "删除",
@@ -1982,11 +1981,25 @@
     "name" : "删除",
     "id" : "delete@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView.json",
       "viewType" : "DEMPICKUPVIEW"
     },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "LinkBug"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "productplan",
+      "key" : "productplan",
+      "name" : "productplan"
+    } ],
     "frontProcessType" : "WIZARD",
     "uIActionParamJO" : {
       "productplan" : "%productplan%"
@@ -1999,26 +2012,12 @@
       "key" : "BUG",
       "name" : "BUG"
     } ],
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "LinkBug"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "productplan",
-      "key" : "productplan",
-      "name" : "productplan"
-    } ],
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf0c1@FontAwesome",
       "cssClass" : "fa fa-chain"
     },
-    "timeout" : 60000,
     "codeName" : "PlanRelationBug",
     "caption" : "关联Bug",
     "actionTarget" : "NONE",
@@ -2031,6 +2030,10 @@
     "name" : "计划关联Bug",
     "id" : "PlanRelationBug@Bug"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
@@ -2038,15 +2041,11 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf046@FontAwesome",
       "cssClass" : "fa fa-check-square-o"
     },
-    "timeout" : 60000,
     "codeName" : "ResolveBugDash",
     "caption" : "解决",
     "actionTarget" : "SINGLEKEY",
@@ -2064,25 +2063,25 @@
     "name" : "（未分类）"
   } ],
   "major" : true,
+  "enableUIRemove" : true,
   "getAllPSAppDEMethods" : [ {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
     "builtinMethod" : false,
-    "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
+    "codeName" : "Select",
+    "methodType" : "SELECT"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BUG__DEACTION__CREATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -2091,14 +2090,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Create.json"
     },
-    "codeName" : "Create"
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BUG__DEACTION__UPDATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
@@ -2107,14 +2106,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Update.json"
     },
-    "codeName" : "Update"
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BUG__DEACTION__REMOVE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
@@ -2123,14 +2122,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Remove.json"
     },
-    "codeName" : "Remove"
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BUG__DEACTION__GET"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2139,14 +2138,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Get.json"
     },
-    "codeName" : "Get"
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -2155,290 +2154,290 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/GetDraft.json"
     },
-    "codeName" : "GetDraft"
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Activate.json"
     },
-    "codeName" : "Activate"
+    "codeName" : "Activate",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "AssignTo"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/AssignTo.json"
     },
-    "codeName" : "AssignTo"
+    "codeName" : "AssignTo",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchUnlinkBug"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BatchUnlinkBug.json"
     },
-    "codeName" : "BatchUnlinkBug"
+    "codeName" : "BatchUnlinkBug",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BugFavorites"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BugFavorites.json"
     },
-    "codeName" : "BugFavorites"
+    "codeName" : "BugFavorites",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BugNFavorites"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BugNFavorites.json"
     },
-    "codeName" : "BugNFavorites"
+    "codeName" : "BugNFavorites",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BuildBatchUnlinkBug"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BuildBatchUnlinkBug.json"
     },
-    "codeName" : "BuildBatchUnlinkBug"
+    "codeName" : "BuildBatchUnlinkBug",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BuildLinkBug"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BuildLinkBug.json"
     },
-    "codeName" : "BuildLinkBug"
+    "codeName" : "BuildLinkBug",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BuildUnlinkBug"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BuildUnlinkBug.json"
     },
-    "codeName" : "BuildUnlinkBug"
+    "codeName" : "BuildUnlinkBug",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Close.json"
     },
-    "codeName" : "Close"
+    "codeName" : "Close",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Confirm"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Confirm.json"
     },
-    "codeName" : "Confirm"
+    "codeName" : "Confirm",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkBug"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/LinkBug.json"
     },
-    "codeName" : "LinkBug"
+    "codeName" : "LinkBug",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ReleaaseBatchUnlinkBug"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaaseBatchUnlinkBug.json"
     },
-    "codeName" : "ReleaaseBatchUnlinkBug"
+    "codeName" : "ReleaaseBatchUnlinkBug",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ReleaseLinkBugbyBug"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseLinkBugbyBug.json"
     },
-    "codeName" : "ReleaseLinkBugbyBug"
+    "codeName" : "ReleaseLinkBugbyBug",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ReleaseLinkBugbyLeftBug"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseLinkBugbyLeftBug.json"
     },
-    "codeName" : "ReleaseLinkBugbyLeftBug"
+    "codeName" : "ReleaseLinkBugbyLeftBug",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ReleaseUnLinkBugbyLeftBug"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseUnLinkBugbyLeftBug.json"
     },
-    "codeName" : "ReleaseUnLinkBugbyLeftBug"
+    "codeName" : "ReleaseUnLinkBugbyLeftBug",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ReleaseUnlinkBug"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseUnlinkBug.json"
     },
-    "codeName" : "ReleaseUnlinkBug"
+    "codeName" : "ReleaseUnlinkBug",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Resolve"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Resolve.json"
     },
-    "codeName" : "Resolve"
+    "codeName" : "Resolve",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMessage"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/SendMessage.json"
     },
-    "codeName" : "SendMessage"
+    "codeName" : "SendMessage",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMsgPreProcess"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/SendMsgPreProcess.json"
     },
-    "codeName" : "SendMsgPreProcess"
+    "codeName" : "SendMsgPreProcess",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ToStory"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ToStory.json"
     },
-    "codeName" : "ToStory"
+    "codeName" : "ToStory",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkBug"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/UnlinkBug.json"
     },
-    "codeName" : "UnlinkBug"
+    "codeName" : "UnlinkBug",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UpdateStoryVersion"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
@@ -2447,14 +2446,14 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/UpdateStoryVersion.json"
     },
-    "codeName" : "UpdateStoryVersion"
+    "codeName" : "UpdateStoryVersion",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAssignedToMyBug"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2463,14 +2462,14 @@
       "modelref" : true,
       "id" : "AssignedToMyBug"
     },
-    "codeName" : "FetchAssignedToMyBug"
+    "codeName" : "FetchAssignedToMyBug",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAssignedToMyBugPc"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2479,14 +2478,14 @@
       "modelref" : true,
       "id" : "AssignedToMyBugPc"
     },
-    "codeName" : "FetchAssignedToMyBugPc"
+    "codeName" : "FetchAssignedToMyBugPc",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugsByBuild"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2495,14 +2494,14 @@
       "modelref" : true,
       "id" : "BugsByBuild"
     },
-    "codeName" : "FetchBugsByBuild"
+    "codeName" : "FetchBugsByBuild",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildBugs"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2511,14 +2510,14 @@
       "modelref" : true,
       "id" : "BuildBugs"
     },
-    "codeName" : "FetchBuildBugs"
+    "codeName" : "FetchBuildBugs",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildLinkResolvedBugs"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2527,14 +2526,14 @@
       "modelref" : true,
       "id" : "BuildLinkResolvedBugs"
     },
-    "codeName" : "FetchBuildLinkResolvedBugs"
+    "codeName" : "FetchBuildLinkResolvedBugs",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildOpenBugs"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2543,14 +2542,14 @@
       "modelref" : true,
       "id" : "BuildOpenBugs"
     },
-    "codeName" : "FetchBuildOpenBugs"
+    "codeName" : "FetchBuildOpenBugs",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBug"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2559,14 +2558,14 @@
       "modelref" : true,
       "id" : "BuildProduceBug"
     },
-    "codeName" : "FetchBuildProduceBug"
+    "codeName" : "FetchBuildProduceBug",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBugModule"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2575,14 +2574,14 @@
       "modelref" : true,
       "id" : "BuildProduceBugModule"
     },
-    "codeName" : "FetchBuildProduceBugModule"
+    "codeName" : "FetchBuildProduceBugModule",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBugModule_Project"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2591,14 +2590,14 @@
       "modelref" : true,
       "id" : "BuildProduceBugModule_Project"
     },
-    "codeName" : "FetchBuildProduceBugModule_Project"
+    "codeName" : "FetchBuildProduceBugModule_Project",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBugOpenedBy"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2607,14 +2606,14 @@
       "modelref" : true,
       "id" : "BuildProduceBugOpenedBy"
     },
-    "codeName" : "FetchBuildProduceBugOpenedBy"
+    "codeName" : "FetchBuildProduceBugOpenedBy",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBugOpenedBy_Project"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2623,14 +2622,14 @@
       "modelref" : true,
       "id" : "BuildProduceBugOpenedBy_Project"
     },
-    "codeName" : "FetchBuildProduceBugOpenedBy_Project"
+    "codeName" : "FetchBuildProduceBugOpenedBy_Project",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBugRES"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2639,14 +2638,14 @@
       "modelref" : true,
       "id" : "BuildProduceBugRES"
     },
-    "codeName" : "FetchBuildProduceBugRES"
+    "codeName" : "FetchBuildProduceBugRES",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBugRESOLVEDBY"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2655,14 +2654,14 @@
       "modelref" : true,
       "id" : "BuildProduceBugRESOLVEDBY"
     },
-    "codeName" : "FetchBuildProduceBugRESOLVEDBY"
+    "codeName" : "FetchBuildProduceBugRESOLVEDBY",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBugRESOLVEDBY_Project"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2671,14 +2670,14 @@
       "modelref" : true,
       "id" : "BuildProduceBugRESOLVEDBY_Project"
     },
-    "codeName" : "FetchBuildProduceBugRESOLVEDBY_Project"
+    "codeName" : "FetchBuildProduceBugRESOLVEDBY_Project",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBugResolution_Project"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2687,14 +2686,14 @@
       "modelref" : true,
       "id" : "BuildProduceBugResolution_Project"
     },
-    "codeName" : "FetchBuildProduceBugResolution_Project"
+    "codeName" : "FetchBuildProduceBugResolution_Project",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBugSeverity_Project"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2703,14 +2702,14 @@
       "modelref" : true,
       "id" : "BuildProduceBugSeverity_Project"
     },
-    "codeName" : "FetchBuildProduceBugSeverity_Project"
+    "codeName" : "FetchBuildProduceBugSeverity_Project",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBugStatus_Project"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2719,14 +2718,14 @@
       "modelref" : true,
       "id" : "BuildProduceBugStatus_Project"
     },
-    "codeName" : "FetchBuildProduceBugStatus_Project"
+    "codeName" : "FetchBuildProduceBugStatus_Project",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildProduceBugType_Project"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2735,14 +2734,14 @@
       "modelref" : true,
       "id" : "BuildProduceBugType_Project"
     },
-    "codeName" : "FetchBuildProduceBugType_Project"
+    "codeName" : "FetchBuildProduceBugType_Project",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurUserResolve"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2751,14 +2750,14 @@
       "modelref" : true,
       "id" : "CurUserResolve"
     },
-    "codeName" : "FetchCurUserResolve"
+    "codeName" : "FetchCurUserResolve",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2767,14 +2766,14 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "codeName" : "FetchDefault"
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2783,14 +2782,14 @@
       "modelref" : true,
       "id" : "ESBulk"
     },
-    "codeName" : "FetchESBulk"
+    "codeName" : "FetchESBulk",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyAgentBug"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2799,14 +2798,14 @@
       "modelref" : true,
       "id" : "MyAgentBug"
     },
-    "codeName" : "FetchMyAgentBug"
+    "codeName" : "FetchMyAgentBug",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCurOpenedBug"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2815,14 +2814,14 @@
       "modelref" : true,
       "id" : "MyCurOpenedBug"
     },
-    "codeName" : "FetchMyCurOpenedBug"
+    "codeName" : "FetchMyCurOpenedBug",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyFavorites"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2831,14 +2830,14 @@
       "modelref" : true,
       "id" : "MyFavorites"
     },
-    "codeName" : "FetchMyFavorites"
+    "codeName" : "FetchMyFavorites",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNotCurPlanLinkBug"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2847,14 +2846,14 @@
       "modelref" : true,
       "id" : "NotCurPlanLinkBug"
     },
-    "codeName" : "FetchNotCurPlanLinkBug"
+    "codeName" : "FetchNotCurPlanLinkBug",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectBugs"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2863,14 +2862,14 @@
       "modelref" : true,
       "id" : "ProjectBugs"
     },
-    "codeName" : "FetchProjectBugs"
+    "codeName" : "FetchProjectBugs",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReleaseBugs"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2879,14 +2878,14 @@
       "modelref" : true,
       "id" : "ReleaseBugs"
     },
-    "codeName" : "FetchReleaseBugs"
+    "codeName" : "FetchReleaseBugs",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReleaseLeftBugs"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2895,14 +2894,14 @@
       "modelref" : true,
       "id" : "ReleaseLeftBugs"
     },
-    "codeName" : "FetchReleaseLeftBugs"
+    "codeName" : "FetchReleaseLeftBugs",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReleaseLinkableLeftBug"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2911,14 +2910,14 @@
       "modelref" : true,
       "id" : "ReleaseLinkableLeftBug"
     },
-    "codeName" : "FetchReleaseLinkableLeftBug"
+    "codeName" : "FetchReleaseLinkableLeftBug",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReleaseLinkableResolvedBug"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2927,14 +2926,14 @@
       "modelref" : true,
       "id" : "ReleaseLinkableResolvedBug"
     },
-    "codeName" : "FetchReleaseLinkableResolvedBug"
+    "codeName" : "FetchReleaseLinkableResolvedBug",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReportBugs"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2943,14 +2942,14 @@
       "modelref" : true,
       "id" : "ReportBugs"
     },
-    "codeName" : "FetchReportBugs"
+    "codeName" : "FetchReportBugs",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTaskRelatedBug"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2959,14 +2958,14 @@
       "modelref" : true,
       "id" : "TaskRelatedBug"
     },
-    "codeName" : "FetchTaskRelatedBug"
+    "codeName" : "FetchTaskRelatedBug",
+    "methodType" : "FETCH"
   }, {
+    "builtinMethod" : false,
     "getPSAppDELogic" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSAPPDELOGICS/GetCurUserConcat.json"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -2976,47 +2975,56 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/GetUserConcat.json"
     },
     "codeName" : "GetUserConcat",
+    "methodType" : "DEACTION",
     "name" : "GetUserConcat"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH"
   } ],
   "getMinorPSAppDERSs" : [ {
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
     "enableCreateDataRS" : false,
     "enableUpdateDataRS" : false,
     "enableGetDataRS" : false,
@@ -3024,14 +3032,6 @@
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
     "codeName" : "Bugs",
     "actionRSMode" : 1,
@@ -3042,6 +3042,14 @@
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    },
     "enableCreateDataRS" : false,
     "enableUpdateDataRS" : false,
     "enableGetDataRS" : false,
@@ -3049,14 +3057,6 @@
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getParentPSAppDEField" : {
-      "name" : "STORY",
-      "codeName" : "Story"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
     "codeName" : "Bugs",
     "actionRSMode" : 1,
@@ -3067,6 +3067,14 @@
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
     "enableCreateDataRS" : false,
     "enableUpdateDataRS" : false,
     "enableGetDataRS" : false,
@@ -3074,14 +3082,6 @@
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
     "codeName" : "Bugs",
     "actionRSMode" : 1,
@@ -3112,8 +3112,8 @@
     "stdDataType" : 25,
     "name" : "LINKBUG"
   }, {
-    "codeName" : "ActivatedDate",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "ActivatedDate",
     "logicName" : "激活日期",
     "stdDataType" : 5,
     "name" : "ACTIVATEDDATE"
@@ -3140,8 +3140,8 @@
     "stdDataType" : 25,
     "name" : "RESOLUTION"
   }, {
-    "codeName" : "LastEditedDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "LastEditedDate",
     "logicName" : "修改日期",
     "stdDataType" : 5,
     "name" : "LASTEDITEDDATE"
@@ -3227,14 +3227,14 @@
     "stdDataType" : 9,
     "name" : "ACTIVATEDCOUNT"
   }, {
-    "codeName" : "OpenedDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "OpenedDate",
     "logicName" : "创建日期",
     "stdDataType" : 5,
     "name" : "OPENEDDATE"
   }, {
-    "codeName" : "ClosedDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "ClosedDate",
     "logicName" : "关闭日期",
     "stdDataType" : 5,
     "name" : "CLOSEDDATE"
@@ -3245,14 +3245,14 @@
     "stdDataType" : 25,
     "name" : "MAILTO"
   }, {
-    "codeName" : "AssignedDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "AssignedDate",
     "logicName" : "指派日期",
     "stdDataType" : 5,
     "name" : "ASSIGNEDDATE"
   }, {
-    "codeName" : "Deadline",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "Deadline",
     "logicName" : "截止日期",
     "stdDataType" : 5,
     "name" : "DEADLINE"
@@ -3269,8 +3269,8 @@
     "stdDataType" : 21,
     "name" : "COMMENT"
   }, {
-    "codeName" : "ResolvedDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "ResolvedDate",
     "logicName" : "解决日期",
     "stdDataType" : 5,
     "name" : "RESOLVEDDATE"
@@ -3342,10 +3342,10 @@
     "name" : "BUILDPROJECT"
   }, {
     "keyField" : true,
+    "enableQuickSearch" : true,
     "codeName" : "Id",
     "logicName" : "Bug编号",
     "stdDataType" : 1,
-    "enableQuickSearch" : true,
     "name" : "ID"
   }, {
     "codeName" : "Delay",
@@ -3396,11 +3396,11 @@
     "name" : "LASTEDITEDBY"
   }, {
     "majorField" : true,
+    "enableQuickSearch" : true,
     "codeName" : "Title",
     "logicName" : "Bug标题",
     "stringLength" : 255,
     "stdDataType" : 25,
-    "enableQuickSearch" : true,
     "name" : "TITLE"
   }, {
     "codeName" : "ProductName",
@@ -3527,22 +3527,22 @@
     "name" : "TESTTASK"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
     "getPSDEACModeDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "value",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "value"
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "name" : "text",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "text"
     } ],
-    "enablePagingBar" : false,
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -3567,7 +3567,6 @@
     "codeName" : "Title"
   } ],
   "getAllPSAppDEDataExports" : [ {
-    "maxRowCount" : 1000,
     "getPSDEDataExportItems" : [ {
       "getPSAppDEField" : {
         "name" : "ID",
@@ -3705,19 +3704,11 @@
       "caption" : "项目",
       "name" : "projectname"
     } ],
+    "maxRowCount" : 1000,
     "codeName" : "DataExport",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSAPPDEDATAEXPS/DataExport.json",
     "name" : "数据导出"
   } ],
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDESERVICEAPIS/Bug.json"
-  },
-  "getPSSysImage" : {
-    "glyph" : "xf188@FontAwesome",
-    "cssClass" : "fa fa-bug"
-  },
-  "codeName" : "Bug",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -3731,12 +3722,21 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDESERVICEAPIS/Bug.json"
+  },
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "getPSSysImage" : {
+    "glyph" : "xf188@FontAwesome",
+    "cssClass" : "fa fa-bug"
+  },
+  "codeName" : "Bug",
   "logicName" : "Bug",
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,
   "dataAccCtrlArch" : 1,
-  "enableUICreate" : true,
-  "enableUIModify" : true,
   "defaultMode" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json",
   "name" : "ZT_BUG"

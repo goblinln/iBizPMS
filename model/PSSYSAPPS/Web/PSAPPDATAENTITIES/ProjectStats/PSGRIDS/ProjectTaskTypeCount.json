@@ -1,105 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "DESIGNTASKCNT",
-      "codeName" : "DesignTASKCNT"
-    },
-    "name" : "designtaskcnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "MISCTASKCNT",
-      "codeName" : "MISCTASKCNT"
-    },
-    "name" : "misctaskcnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TASKCNT",
-      "codeName" : "TaskCnt"
-    },
-    "name" : "taskcnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "SERVETASKCNT",
-      "codeName" : "SERVETASKCNT"
-    },
-    "name" : "servetaskcnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DISCUSSTASKCNT",
-      "codeName" : "DiscussTASKCNT"
-    },
-    "name" : "discusstaskcnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DEVELTASKCNT",
-      "codeName" : "DEVELTASKCNT"
-    },
-    "name" : "develtaskcnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "name",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "STUDYTASKCNT",
-      "codeName" : "StudyTASKCNT"
-    },
-    "name" : "studytaskcnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "AFFAIRTASKCNT",
-      "codeName" : "AFFAIRTASKCNT"
-    },
-    "name" : "affairtaskcnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TESTTASKCNT",
-      "codeName" : "TESTTASKCNT"
-    },
-    "name" : "testtaskcnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "UITASKCNT",
-      "codeName" : "UiTASKCNT"
-    },
-    "name" : "uitaskcnt",
-    "dataType" : 9
-  } ],
+  "singleSelect" : true,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -119,33 +34,118 @@
     "caption" : "项目编号",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : true,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
+  "hasWFDataItems" : false,
   "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "DESIGNTASKCNT",
+      "codeName" : "DesignTASKCNT"
+    },
+    "dataType" : 9,
+    "name" : "designtaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "MISCTASKCNT",
+      "codeName" : "MISCTASKCNT"
+    },
+    "dataType" : 9,
+    "name" : "misctaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    },
+    "dataType" : 9,
+    "name" : "taskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "SERVETASKCNT",
+      "codeName" : "SERVETASKCNT"
+    },
+    "dataType" : 9,
+    "name" : "servetaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DISCUSSTASKCNT",
+      "codeName" : "DiscussTASKCNT"
+    },
+    "dataType" : 9,
+    "name" : "discusstaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DEVELTASKCNT",
+      "codeName" : "DEVELTASKCNT"
+    },
+    "dataType" : 9,
+    "name" : "develtaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STUDYTASKCNT",
+      "codeName" : "StudyTASKCNT"
+    },
+    "dataType" : 9,
+    "name" : "studytaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "AFFAIRTASKCNT",
+      "codeName" : "AFFAIRTASKCNT"
+    },
+    "dataType" : 9,
+    "name" : "affairtaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TESTTASKCNT",
+      "codeName" : "TESTTASKCNT"
+    },
+    "dataType" : 9,
+    "name" : "testtaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "UITASKCNT",
+      "codeName" : "UiTASKCNT"
+    },
+    "dataType" : 9,
+    "name" : "uitaskcnt"
+  } ],
+  "enableRowEdit" : false,
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "项目名称",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
     "dataItemName" : "name",
-    "excelCaption" : "项目名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -157,12 +157,12 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
+    "excelCaption" : "设计",
     "getPSAppDEField" : {
       "name" : "DESIGNTASKCNT",
       "codeName" : "DesignTASKCNT"
     },
     "dataItemName" : "designtaskcnt",
-    "excelCaption" : "设计",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -175,12 +175,12 @@
     "aggMode" : "SUM",
     "name" : "designtaskcnt"
   }, {
+    "excelCaption" : "开发",
     "getPSAppDEField" : {
       "name" : "DEVELTASKCNT",
       "codeName" : "DEVELTASKCNT"
     },
     "dataItemName" : "develtaskcnt",
-    "excelCaption" : "开发",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -193,12 +193,12 @@
     "aggMode" : "SUM",
     "name" : "develtaskcnt"
   }, {
+    "excelCaption" : "测试",
     "getPSAppDEField" : {
       "name" : "TESTTASKCNT",
       "codeName" : "TESTTASKCNT"
     },
     "dataItemName" : "testtaskcnt",
-    "excelCaption" : "测试",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -211,12 +211,12 @@
     "aggMode" : "SUM",
     "name" : "testtaskcnt"
   }, {
+    "excelCaption" : "研究",
     "getPSAppDEField" : {
       "name" : "STUDYTASKCNT",
       "codeName" : "StudyTASKCNT"
     },
     "dataItemName" : "studytaskcnt",
-    "excelCaption" : "研究",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -229,12 +229,12 @@
     "aggMode" : "SUM",
     "name" : "studytaskcnt"
   }, {
+    "excelCaption" : "讨论",
     "getPSAppDEField" : {
       "name" : "DISCUSSTASKCNT",
       "codeName" : "DiscussTASKCNT"
     },
     "dataItemName" : "discusstaskcnt",
-    "excelCaption" : "讨论",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -247,12 +247,12 @@
     "aggMode" : "SUM",
     "name" : "discusstaskcnt"
   }, {
+    "excelCaption" : "界面",
     "getPSAppDEField" : {
       "name" : "UITASKCNT",
       "codeName" : "UiTASKCNT"
     },
     "dataItemName" : "uitaskcnt",
-    "excelCaption" : "界面",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -265,12 +265,12 @@
     "aggMode" : "SUM",
     "name" : "uitaskcnt"
   }, {
+    "excelCaption" : "事务",
     "getPSAppDEField" : {
       "name" : "AFFAIRTASKCNT",
       "codeName" : "AFFAIRTASKCNT"
     },
     "dataItemName" : "affairtaskcnt",
-    "excelCaption" : "事务",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -283,12 +283,12 @@
     "aggMode" : "SUM",
     "name" : "affairtaskcnt"
   }, {
+    "excelCaption" : "服务",
     "getPSAppDEField" : {
       "name" : "SERVETASKCNT",
       "codeName" : "SERVETASKCNT"
     },
     "dataItemName" : "servetaskcnt",
-    "excelCaption" : "服务",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -301,12 +301,12 @@
     "aggMode" : "SUM",
     "name" : "servetaskcnt"
   }, {
+    "excelCaption" : "其他",
     "getPSAppDEField" : {
       "name" : "MISCTASKCNT",
       "codeName" : "MISCTASKCNT"
     },
     "dataItemName" : "misctaskcnt",
-    "excelCaption" : "其他",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -319,12 +319,12 @@
     "aggMode" : "SUM",
     "name" : "misctaskcnt"
   }, {
+    "excelCaption" : "总计",
     "getPSAppDEField" : {
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
     "dataItemName" : "taskcnt",
-    "excelCaption" : "总计",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -339,12 +339,12 @@
   } ],
   "codeName" : "ProjectTaskTypeCount",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 500,
   "aggMode" : "PAGE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

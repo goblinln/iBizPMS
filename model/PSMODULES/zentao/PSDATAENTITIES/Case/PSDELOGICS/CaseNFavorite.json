@@ -5,8 +5,10 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
+    "logicHolder" : 1,
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "srcValueType" : "SESSION",
@@ -22,17 +24,16 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "CaseNFavrite",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "用例取消收藏"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接141"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -51,20 +52,19 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "IbzFavorite",
     "default" : false,
     "name" : "取消收藏"
   } ],
-  "logicHolder" : 1,
   "codeName" : "CaseNFavorite",
   "logicName" : "用例取消收藏",
   "defaultParamName" : "Default",

@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -34,19 +34,18 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "maxLength" : 255,
         "editorType" : "TEXTBOX",
         "name" : "name"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "名称",
       "allowEmpty" : false,
@@ -55,6 +54,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -64,18 +64,17 @@
       "detailStyle" : "DEFAULT",
       "name" : "name"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "type"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "hidden" : true,
       "dataType" : 25,
       "caption" : "类型",
       "allowEmpty" : true,
@@ -85,6 +84,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -94,7 +94,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "type"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "maxLength" : 65535,
         "editorParams" : {
@@ -105,12 +104,12 @@
         "name" : "desc"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "DESC",
         "codeName" : "Desc"
       },
-      "hidden" : false,
       "dataType" : 21,
       "caption" : "描述",
       "allowEmpty" : true,
@@ -120,6 +119,7 @@
       "labelWidth" : 130,
       "itemHeight" : 200.0,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -129,11 +129,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "desc"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

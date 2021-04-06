@@ -1,4 +1,5 @@
 {
+  "transactionMode" : "DEFAULT",
   "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : true,
@@ -25,8 +26,8 @@
     "attachMode" : "AFTER",
     "name" : "附加逻辑"
   } ],
-  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
@@ -34,7 +35,6 @@
   "orderValue" : 31,
   "codeName" : "Get",
   "logicName" : "Get",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "BUILTIN",
   "requestField" : "ID",

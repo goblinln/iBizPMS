@@ -1,77 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "CLOSEDSTORY",
-      "codeName" : "Closedstory"
-    },
-    "name" : "closedstory",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "name",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "EMPTYSTORY",
-      "codeName" : "Emptystory"
-    },
-    "name" : "emptystory",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DRAFTSTORY",
-      "codeName" : "Draftstory"
-    },
-    "name" : "draftstory",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CHANGEDSTORY",
-      "codeName" : "Changedstory"
-    },
-    "name" : "changedstory",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "STORYCNT",
-      "codeName" : "StoryCnt"
-    },
-    "name" : "storycnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACTIVESTORY",
-      "codeName" : "Activestory"
-    },
-    "name" : "activestory",
-    "dataType" : 9
-  } ],
+  "singleSelect" : true,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -91,33 +34,90 @@
     "caption" : "项目编号",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : true,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
+  "hasWFDataItems" : false,
   "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "CLOSEDSTORY",
+      "codeName" : "Closedstory"
+    },
+    "dataType" : 9,
+    "name" : "closedstory"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "EMPTYSTORY",
+      "codeName" : "Emptystory"
+    },
+    "dataType" : 9,
+    "name" : "emptystory"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DRAFTSTORY",
+      "codeName" : "Draftstory"
+    },
+    "dataType" : 9,
+    "name" : "draftstory"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CHANGEDSTORY",
+      "codeName" : "Changedstory"
+    },
+    "dataType" : 9,
+    "name" : "changedstory"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    },
+    "dataType" : 9,
+    "name" : "storycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACTIVESTORY",
+      "codeName" : "Activestory"
+    },
+    "dataType" : 9,
+    "name" : "activestory"
+  } ],
+  "enableRowEdit" : false,
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "项目名称",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
     "dataItemName" : "name",
-    "excelCaption" : "项目名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -129,12 +129,12 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
+    "excelCaption" : "空",
     "getPSAppDEField" : {
       "name" : "EMPTYSTORY",
       "codeName" : "Emptystory"
     },
     "dataItemName" : "emptystory",
-    "excelCaption" : "空",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -147,12 +147,12 @@
     "aggMode" : "SUM",
     "name" : "emptystory"
   }, {
+    "excelCaption" : "草稿",
     "getPSAppDEField" : {
       "name" : "DRAFTSTORY",
       "codeName" : "Draftstory"
     },
     "dataItemName" : "draftstory",
-    "excelCaption" : "草稿",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -165,12 +165,12 @@
     "aggMode" : "SUM",
     "name" : "draftstory"
   }, {
+    "excelCaption" : "激活",
     "getPSAppDEField" : {
       "name" : "ACTIVESTORY",
       "codeName" : "Activestory"
     },
     "dataItemName" : "activestory",
-    "excelCaption" : "激活",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -183,12 +183,12 @@
     "aggMode" : "SUM",
     "name" : "activestory"
   }, {
+    "excelCaption" : "已关闭",
     "getPSAppDEField" : {
       "name" : "CLOSEDSTORY",
       "codeName" : "Closedstory"
     },
     "dataItemName" : "closedstory",
-    "excelCaption" : "已关闭",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -201,12 +201,12 @@
     "aggMode" : "SUM",
     "name" : "closedstory"
   }, {
+    "excelCaption" : "已变更",
     "getPSAppDEField" : {
       "name" : "CHANGEDSTORY",
       "codeName" : "Changedstory"
     },
     "dataItemName" : "changedstory",
-    "excelCaption" : "已变更",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -219,12 +219,12 @@
     "aggMode" : "SUM",
     "name" : "changedstory"
   }, {
+    "excelCaption" : "总计",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
     "dataItemName" : "storycnt",
-    "excelCaption" : "总计",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -239,12 +239,12 @@
   } ],
   "codeName" : "ProjectStoryStatusStats",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 1000,
   "aggMode" : "PAGE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

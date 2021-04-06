@@ -1,11 +1,11 @@
 {
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchCurProductPlan"
-  },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+  },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchCurProductPlan"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

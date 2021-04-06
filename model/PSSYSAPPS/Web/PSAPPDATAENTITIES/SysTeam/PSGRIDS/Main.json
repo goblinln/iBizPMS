@@ -1,56 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "TEAMID",
-      "codeName" : "TeamId"
-    },
-    "name" : "teamid",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "MEMO",
-      "codeName" : "Memo"
-    },
-    "name" : "memo",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TEAMNAME",
-      "codeName" : "TeamName"
-    },
-    "name" : "teamname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DOMAINS",
-      "codeName" : "Domains"
-    },
-    "name" : "domains",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TEAMNAME",
-      "codeName" : "TeamName"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "TEAMID",
-      "codeName" : "TeamId"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TEAMID",
-      "codeName" : "TeamId"
-    },
-    "name" : "srfkey",
-    "dataType" : 25
-  } ],
+  "singleSelect" : false,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -70,33 +34,69 @@
     "caption" : "组标识",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : false,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
+  "hasWFDataItems" : false,
   "controlType" : "GRID",
+  "enablePagingBar" : true,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "TEAMID",
+      "codeName" : "TeamId"
+    },
+    "dataType" : 25,
+    "name" : "teamid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "MEMO",
+      "codeName" : "Memo"
+    },
+    "dataType" : 25,
+    "name" : "memo"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TEAMNAME",
+      "codeName" : "TeamName"
+    },
+    "dataType" : 25,
+    "name" : "teamname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DOMAINS",
+      "codeName" : "Domains"
+    },
+    "dataType" : 25,
+    "name" : "domains"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TEAMNAME",
+      "codeName" : "TeamName"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TEAMID",
+      "codeName" : "TeamId"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 25,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TEAMID",
+      "codeName" : "TeamId"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  } ],
+  "enableRowEdit" : false,
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "组标识",
     "getPSAppDEField" : {
       "name" : "TEAMID",
       "codeName" : "TeamId"
     },
     "dataItemName" : "teamid",
-    "excelCaption" : "组标识",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -108,19 +108,19 @@
     "widthUnit" : "PX",
     "name" : "teamid"
   }, {
-    "linkValueItem" : "srfkey",
+    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridView.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "enableLinkView" : true,
+    "excelCaption" : "组名称",
     "getPSAppDEField" : {
       "name" : "TEAMNAME",
       "codeName" : "TeamName"
     },
     "dataItemName" : "teamname",
-    "excelCaption" : "组名称",
+    "linkValueItem" : "srfkey",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -132,12 +132,12 @@
     "widthUnit" : "PX",
     "name" : "teamname"
   }, {
+    "excelCaption" : "区属",
     "getPSAppDEField" : {
       "name" : "DOMAINS",
       "codeName" : "Domains"
     },
     "dataItemName" : "domains",
-    "excelCaption" : "区属",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -149,12 +149,12 @@
     "widthUnit" : "PX",
     "name" : "domains"
   }, {
+    "excelCaption" : "备注",
     "getPSAppDEField" : {
       "name" : "MEMO",
       "codeName" : "Memo"
     },
     "dataItemName" : "memo",
-    "excelCaption" : "备注",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -168,12 +168,12 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

@@ -85,12 +85,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
-  "height" : 300.0,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugSTATUS.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "tablechart"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugSTATUS.json",
+  "height" : 300.0,
   "logicName" : "BugSTATUS",
   "modelid" : "342a4bf1a7c9b321029777b434c47023",
   "getUserParam" : {

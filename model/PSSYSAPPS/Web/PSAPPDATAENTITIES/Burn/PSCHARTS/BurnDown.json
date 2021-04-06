@@ -113,6 +113,26 @@
     }
   } ],
   "codeName" : "BurnDown",
+  "getPSChartXAxises" : [ {
+    "eChartsPos" : "xAxis",
+    "eChartsType" : "category",
+    "position" : "bottom",
+    "caption" : "日期",
+    "type" : "category",
+    "index" : 0,
+    "name" : "X",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "eChartsPos" : "yAxis",
+    "eChartsType" : "value",
+    "position" : "left",
+    "caption" : "消耗工时",
+    "type" : "numeric",
+    "index" : 0,
+    "name" : "Y",
+    "id" : "0"
+  } ],
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
       "groupField" : true,
@@ -144,14 +164,9 @@
     "name" : "est-ESTIMATEANDLEFT",
     "id" : "1"
   } ],
-  "getPSChartXAxises" : [ {
-    "eChartsType" : "category",
-    "eChartsPos" : "xAxis",
-    "position" : "bottom",
-    "type" : "category",
-    "caption" : "日期",
+  "getPSChartDataSetGroups" : [ {
     "index" : 0,
-    "name" : "X",
+    "name" : "ESTIMATEANDLEFT",
     "id" : "0"
   } ],
   "getPSChartGrids" : [ {
@@ -179,21 +194,6 @@
     "name" : "[real]直角坐标系[0]",
     "id" : "0"
   } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "position" : "left",
-    "type" : "numeric",
-    "caption" : "消耗工时",
-    "index" : 0,
-    "name" : "Y",
-    "id" : "0"
-  } ],
-  "getPSChartDataSetGroups" : [ {
-    "index" : 0,
-    "name" : "ESTIMATEANDLEFT",
-    "id" : "0"
-  } ],
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -203,12 +203,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
   },
-  "height" : 300.0,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn/PSCHARTS/BurnDown.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn/PSCHARTS/BurnDown.json",
+  "height" : 300.0,
   "logicName" : "BurnDown",
   "modelid" : "d66223de54fcf5e7b4a0aeb6acc93a87"
 }

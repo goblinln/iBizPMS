@@ -2,6 +2,7 @@
   "subSysAsCloud" : false,
   "subSysModule" : false,
   "defaultModule" : false,
+  "deployId" : "9707d1941d6d4eedd3abb424abe12f6e",
   "getAllPSDataEntities" : [ {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
@@ -244,7 +245,6 @@
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/Product.json"
   } ],
-  "deployId" : "9707d1941d6d4eedd3abb424abe12f6e",
   "codeName" : "ibiz",
   "dynaModelFilePath" : "PSMODULES/ibiz.json",
   "name" : "iBiz增强模块"

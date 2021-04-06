@@ -6,17 +6,17 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "step",
     "codeName" : "Step",
-    "text" : "计划"
+    "text" : "计划",
+    "value" : "step"
   }, {
-    "value" : "group",
     "codeName" : "Group",
-    "text" : "父计划"
+    "text" : "父计划",
+    "value" : "group"
   }, {
-    "value" : "item",
     "codeName" : "Item",
-    "text" : "子计划"
+    "text" : "子计划",
+    "value" : "item"
   } ],
   "codeName" : "PlantempletType",
   "emptyText" : "未定义",

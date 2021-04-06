@@ -2,13 +2,13 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "f",
     "codeName" : "F",
-    "text" : "女"
+    "text" : "女",
+    "value" : "f"
   }, {
-    "value" : "m",
     "codeName" : "M",
-    "text" : "男"
+    "text" : "男",
+    "value" : "m"
   } ],
   "codeName" : "User__gender",
   "emptyText" : "未定义",

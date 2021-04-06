@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : true,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -41,7 +41,6 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -53,13 +52,13 @@
           "name" : "pm"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PM",
           "codeName" : "PM"
         },
         "enableUnitName" : true,
-        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "allowEmpty" : true,
@@ -69,11 +68,19 @@
         "labelWidth" : 20,
         "unitName" : "（项目负责人）",
         "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "height" : 36,
+          "layout" : "TABLE_24COL"
+        },
+        "contentHeight" : 36.0,
         "getPSDEFDGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "ISNOTNULL",
             "dEFDName" : "pm",
+            "condOP" : "ISNOTNULL",
             "logicType" : "SINGLE",
             "name" : "pm 值不为空(NotNil)"
           } ],
@@ -82,20 +89,12 @@
           "logicType" : "GROUP",
           "name" : "表单成员[pm][面板显示]逻辑"
         } ],
-        "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 24,
-          "height" : 36,
-          "layout" : "TABLE_24COL"
-        },
-        "contentHeight" : 36.0,
         "height" : 36.0,
         "codeName" : "pm",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "pm"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -107,13 +106,13 @@
           "name" : "po"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PO",
           "codeName" : "PO"
         },
         "enableUnitName" : true,
-        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "allowEmpty" : true,
@@ -123,11 +122,19 @@
         "labelWidth" : 20,
         "unitName" : "（产品负责人）",
         "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "height" : 36,
+          "layout" : "TABLE_24COL"
+        },
+        "contentHeight" : 36.0,
         "getPSDEFDGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "ISNOTNULL",
             "dEFDName" : "po",
+            "condOP" : "ISNOTNULL",
             "logicType" : "SINGLE",
             "name" : "po 值不为空(NotNil)"
           } ],
@@ -136,20 +143,12 @@
           "logicType" : "GROUP",
           "name" : "表单成员[po][面板显示]逻辑"
         } ],
-        "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 24,
-          "height" : 36,
-          "layout" : "TABLE_24COL"
-        },
-        "contentHeight" : 36.0,
         "height" : 36.0,
         "codeName" : "po",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "po"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -161,13 +160,13 @@
           "name" : "qd"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "QD",
           "codeName" : "QD"
         },
         "enableUnitName" : true,
-        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "allowEmpty" : true,
@@ -177,11 +176,19 @@
         "labelWidth" : 20,
         "unitName" : "（测试负责人）",
         "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "height" : 36,
+          "layout" : "TABLE_24COL"
+        },
+        "contentHeight" : 36.0,
         "getPSDEFDGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "ISNOTNULL",
             "dEFDName" : "qd",
+            "condOP" : "ISNOTNULL",
             "logicType" : "SINGLE",
             "name" : "qd 值不为空(NotNil)"
           } ],
@@ -190,20 +197,12 @@
           "logicType" : "GROUP",
           "name" : "表单成员[qd][面板显示]逻辑"
         } ],
-        "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 24,
-          "height" : 36,
-          "layout" : "TABLE_24COL"
-        },
-        "contentHeight" : 36.0,
         "height" : 36.0,
         "codeName" : "qd",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "qd"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -215,13 +214,13 @@
           "name" : "rd"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "RD",
           "codeName" : "RD"
         },
         "enableUnitName" : true,
-        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "allowEmpty" : true,
@@ -231,11 +230,19 @@
         "labelWidth" : 20,
         "unitName" : "（发布负责人）",
         "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "height" : 36,
+          "layout" : "TABLE_24COL"
+        },
+        "contentHeight" : 36.0,
         "getPSDEFDGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "ISNOTNULL",
             "dEFDName" : "rd",
+            "condOP" : "ISNOTNULL",
             "logicType" : "SINGLE",
             "name" : "rd 值不为空(NotNil)"
           } ],
@@ -244,20 +251,12 @@
           "logicType" : "GROUP",
           "name" : "表单成员[rd][面板显示]逻辑"
         } ],
-        "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 24,
-          "height" : 36,
-          "layout" : "TABLE_24COL"
-        },
-        "contentHeight" : 36.0,
         "height" : 36.0,
         "codeName" : "rd",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "rd"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -269,12 +268,12 @@
           "name" : "fristmember"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "FRISTMEMBER",
           "codeName" : "Fristmember"
         },
-        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "allowEmpty" : true,
@@ -283,11 +282,19 @@
         "labelPos" : "LEFT",
         "labelWidth" : 20,
         "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "height" : 36,
+          "layout" : "TABLE_24COL"
+        },
+        "contentHeight" : 36.0,
         "getPSDEFDGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "ISNOTNULL",
             "dEFDName" : "fristmember",
+            "condOP" : "ISNOTNULL",
             "logicType" : "SINGLE",
             "name" : "fristmember 值不为空(NotNil)"
           } ],
@@ -296,20 +303,12 @@
           "logicType" : "GROUP",
           "name" : "表单成员[fristmember][面板显示]逻辑"
         } ],
-        "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 24,
-          "height" : 36,
-          "layout" : "TABLE_24COL"
-        },
-        "contentHeight" : 36.0,
         "height" : 36.0,
         "codeName" : "fristmember",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "fristmember"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -321,12 +320,12 @@
           "name" : "secondmember"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "SECONDMEMBER",
           "codeName" : "Secondmember"
         },
-        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "allowEmpty" : true,
@@ -335,11 +334,19 @@
         "labelPos" : "LEFT",
         "labelWidth" : 20,
         "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "height" : 36,
+          "layout" : "TABLE_24COL"
+        },
+        "contentHeight" : 36.0,
         "getPSDEFDGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "ISNOTNULL",
             "dEFDName" : "secondmember",
+            "condOP" : "ISNOTNULL",
             "logicType" : "SINGLE",
             "name" : "secondmember 值不为空(NotNil)"
           } ],
@@ -348,20 +355,12 @@
           "logicType" : "GROUP",
           "name" : "表单成员[secondmember][面板显示]逻辑"
         } ],
-        "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 24,
-          "height" : 36,
-          "layout" : "TABLE_24COL"
-        },
-        "contentHeight" : 36.0,
         "height" : 36.0,
         "codeName" : "secondmember",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "secondmember"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -373,12 +372,12 @@
           "name" : "thirdmember"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "THIRDMEMBER",
           "codeName" : "Thirdmember"
         },
-        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "allowEmpty" : true,
@@ -387,11 +386,19 @@
         "labelPos" : "LEFT",
         "labelWidth" : 20,
         "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "height" : 36,
+          "layout" : "TABLE_24COL"
+        },
+        "contentHeight" : 36.0,
         "getPSDEFDGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "ISNOTNULL",
             "dEFDName" : "thirdmember",
+            "condOP" : "ISNOTNULL",
             "logicType" : "SINGLE",
             "name" : "thirdmember 值不为空(NotNil)"
           } ],
@@ -400,20 +407,12 @@
           "logicType" : "GROUP",
           "name" : "表单成员[thirdmember][面板显示]逻辑"
         } ],
-        "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 24,
-          "height" : 36,
-          "layout" : "TABLE_24COL"
-        },
-        "contentHeight" : 36.0,
         "height" : 36.0,
         "codeName" : "thirdmember",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "thirdmember"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -425,12 +424,12 @@
           "name" : "fourthmember"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "FOURTHMEMBER",
           "codeName" : "Fourthmember"
         },
-        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "allowEmpty" : true,
@@ -439,11 +438,19 @@
         "labelPos" : "LEFT",
         "labelWidth" : 20,
         "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "height" : 36,
+          "layout" : "TABLE_24COL"
+        },
+        "contentHeight" : 36.0,
         "getPSDEFDGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "ISNOTNULL",
             "dEFDName" : "fourthmember",
+            "condOP" : "ISNOTNULL",
             "logicType" : "SINGLE",
             "name" : "fourthmember 值不为空(NotNil)"
           } ],
@@ -452,20 +459,12 @@
           "logicType" : "GROUP",
           "name" : "表单成员[fourthmember][面板显示]逻辑"
         } ],
-        "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 24,
-          "height" : 36,
-          "layout" : "TABLE_24COL"
-        },
-        "contentHeight" : 36.0,
         "height" : 36.0,
         "codeName" : "fourthmember",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "fourthmember"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -477,12 +476,12 @@
           "name" : "fifthmember"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "FIFTHMEMBER",
           "codeName" : "Fifthmember"
         },
-        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "allowEmpty" : true,
@@ -491,11 +490,19 @@
         "labelPos" : "LEFT",
         "labelWidth" : 20,
         "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "height" : 36,
+          "layout" : "TABLE_24COL"
+        },
+        "contentHeight" : 36.0,
         "getPSDEFDGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "ISNOTNULL",
             "dEFDName" : "fifthmember",
+            "condOP" : "ISNOTNULL",
             "logicType" : "SINGLE",
             "name" : "fifthmember 值不为空(NotNil)"
           } ],
@@ -504,20 +511,12 @@
           "logicType" : "GROUP",
           "name" : "表单成员[fifthmember][面板显示]逻辑"
         } ],
-        "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 24,
-          "height" : 36,
-          "layout" : "TABLE_24COL"
-        },
-        "contentHeight" : 36.0,
         "height" : 36.0,
         "codeName" : "fifthmember",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "fifthmember"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -529,12 +528,12 @@
           "name" : "sixthmember"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "SIXTHMEMBER",
           "codeName" : "Sixthmember"
         },
-        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "allowEmpty" : true,
@@ -543,11 +542,19 @@
         "labelPos" : "LEFT",
         "labelWidth" : 20,
         "showCaption" : true,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "height" : 36,
+          "layout" : "TABLE_24COL"
+        },
+        "contentHeight" : 36.0,
         "getPSDEFDGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "ISNOTNULL",
             "dEFDName" : "sixthmember",
+            "condOP" : "ISNOTNULL",
             "logicType" : "SINGLE",
             "name" : "sixthmember 值不为空(NotNil)"
           } ],
@@ -556,31 +563,23 @@
           "logicType" : "GROUP",
           "name" : "表单成员[sixthmember][面板显示]逻辑"
         } ],
-        "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 24,
-          "height" : 36,
-          "layout" : "TABLE_24COL"
-        },
-        "contentHeight" : 36.0,
         "height" : 36.0,
         "codeName" : "sixthmember",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "sixthmember"
       }, {
-        "emptyCaption" : true,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "id"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "hidden" : true,
         "dataType" : 1,
         "allowEmpty" : true,
         "enableCond" : 3,
@@ -588,6 +587,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -602,6 +602,10 @@
           "id" : "form_button1"
         },
         "getPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProjectMember.json"
+          },
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTeamMainGridView_EditRow.json",
@@ -610,15 +614,11 @@
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
           "getNoPrivDisplayMode" : 2,
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProjectMember.json"
-          },
+          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf067@FontAwesome",
             "cssClass" : "fa fa-plus"
           },
-          "timeout" : 60000,
           "codeName" : "TeamManagement",
           "caption" : "团队管理",
           "actionTarget" : "SINGLEKEY",
@@ -661,11 +661,11 @@
       "showCaption" : false,
       "name" : "group1"
     } ],
-    "infoGroupMode" : true,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : true,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

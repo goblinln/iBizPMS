@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -40,9 +40,9 @@
       "rawContent" : "您确定这条待办已经完成了吗？",
       "getPSLayoutPos" : {
         "colLG" : 20,
-        "colMDOffset" : 4,
         "colLGOffset" : 4,
         "colMD" : 20,
+        "colMDOffset" : 4,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "rawitem1",
@@ -51,11 +51,11 @@
       "showCaption" : true,
       "name" : "rawitem1"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

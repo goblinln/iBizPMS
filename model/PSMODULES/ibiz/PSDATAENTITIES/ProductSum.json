@@ -1,13 +1,262 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProductBugcnt_QA",
+    "logicName" : "产品创建bug数及占比",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProductBugcnt_QA"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProductCreateStory",
+    "logicName" : "产品创建需求占比",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProductCreateStory"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProductStoryHoursSum",
+    "logicName" : "产品需求工时汇总",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProductStoryHoursSum"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProductStorySum",
+    "logicName" : "产品需求汇总查询",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProductStorySum"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProductStorycntAndPlancnt",
+    "logicName" : "产品计划数和需求数",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProductStorycntAndPlancnt"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProductSumBugType",
+    "logicName" : "产品Bug类型统计",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProductSumBugType"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProductBugcnt_QA",
+    "logicName" : "产品创建bug数_测试人员",
+    "defaultMode" : false,
+    "name" : "ProductBugcnt_QA"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProductCreateStory",
+    "logicName" : "产品创建需求占比",
+    "defaultMode" : false,
+    "name" : "ProductCreateStory"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProductPlancntAndStorycnt_PO",
+    "logicName" : "产品计划数和需求数_产品经理",
+    "defaultMode" : false,
+    "name" : "ProductPlancntAndStorycnt_PO"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProductStoryHoursSum",
+    "logicName" : "产品需求工时汇总",
+    "defaultMode" : false,
+    "name" : "ProductStoryHoursSum"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProductStorySum",
+    "logicName" : "产品需求汇总查询",
+    "defaultMode" : false,
+    "name" : "ProductStorySum"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProductSumBugType",
+    "logicName" : "产品Bug类型统计",
+    "defaultMode" : false,
+    "name" : "ProductSumBugType"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
     "dataType" : "INT",
     "deployId" : "1b2fe67819ae8a9c383ca65b0f5297ba",
-    "codeName" : "Designdefect",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Designdefect",
     "logicName" : "设计缺陷",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -28,16 +277,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "DESIGNDEFECT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "b136d38f78aaf2dc227cf7a700c33c40",
-    "codeName" : "Changedstorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Changedstorycnt",
     "logicName" : "已变更",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -67,16 +317,16 @@
       "autoIncrement" : false,
       "name" : "CHANGEDSTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "CHANGEDSTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "0d06075441b9425cbbdea0f4efe7ace3",
-    "codeName" : "Developingstagestoryhours",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Developingstagestoryhours",
     "logicName" : "研发中阶段需求工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -106,16 +356,16 @@
       "autoIncrement" : false,
       "name" : "DEVELOPINGSTAGESTORYHOURS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "DEVELOPINGSTAGESTORYHOURS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "99d080be32132f374560c54f739892cd",
-    "codeName" : "StoryCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "StoryCnt",
     "logicName" : "总计",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -145,18 +395,17 @@
       "autoIncrement" : false,
       "name" : "STORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "STORYCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "4e915005433c2f54d8caff2f57013160",
-    "codeName" : "Others",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Others",
     "logicName" : "其他",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -177,18 +426,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "OTHERS"
   }, {
     "dataType" : "INT",
     "deployId" : "ffd19b2e8e77c5858cfe8bb3aae624fb",
-    "codeName" : "Config",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Config",
     "logicName" : "配置相关",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -209,18 +458,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "CONFIG"
   }, {
     "dataType" : "INT",
     "deployId" : "c662fa9bff1751367c527d17c2caad84",
-    "codeName" : "Codeerror",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Codeerror",
     "logicName" : "代码错误",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -241,18 +490,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "CODEERROR"
   }, {
     "dataType" : "INT",
     "deployId" : "cb54129cf8caa6d2273cfd1c84250c52",
-    "codeName" : "Bugsum",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Bugsum",
     "logicName" : "bug总计",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -273,18 +522,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "BUGSUM"
   }, {
     "dataType" : "INT",
     "deployId" : "bf1624d5f96dd52af46b85cfe939947c",
-    "codeName" : "Performance",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Performance",
     "logicName" : "性能问题",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -305,20 +554,19 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "PERFORMANCE"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "7a6da31b6998648a1d6c75e0d0ae3a1f",
-    "codeName" : "End",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "End",
     "logicName" : "结束日期",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -351,16 +599,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 100,
     "name" : "END"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "a0345f79500b02c5f33bf35f1162c4bc",
-    "codeName" : "ClosedStoryCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "ClosedStoryCnt",
     "logicName" : "已关闭",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -390,16 +640,16 @@
       "autoIncrement" : false,
       "name" : "CLOSEDSTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "CLOSEDSTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "5021246d95741440b528fbf9160b56ba",
-    "codeName" : "Closedstagestoryhours",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Closedstagestoryhours",
     "logicName" : "已关闭阶段需求工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -429,16 +679,16 @@
       "autoIncrement" : false,
       "name" : "CLOSEDSTAGESTORYHOURS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "CLOSEDSTAGESTORYHOURS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "c67aca599cb049866d5c2e5b33d09d7f",
-    "codeName" : "Testedstagestoryhours",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Testedstagestoryhours",
     "logicName" : "测试完毕阶段需求工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -468,16 +718,16 @@
       "autoIncrement" : false,
       "name" : "TESTEDSTAGESTORYHOURS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TESTEDSTAGESTORYHOURS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "906150e257722ca4eb058626eff5aace",
-    "codeName" : "Waitstagestoryhours",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Waitstagestoryhours",
     "logicName" : "未开始阶段需求工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -507,19 +757,18 @@
       "autoIncrement" : false,
       "name" : "WAITSTAGESTORYHOURS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "WAITSTAGESTORYHOURS"
   }, {
-    "length" : 60,
+    "dataType" : "SSCODELIST",
+    "deployId" : "cfe249a4aa42ee2290575e18b7bb10a4",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_Gird.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "cfe249a4aa42ee2290575e18b7bb10a4",
     "codeName" : "PO",
-    "valueFormat" : "%1$s",
     "logicName" : "产品负责人",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -562,16 +811,17 @@
       "autoIncrement" : false,
       "name" : "PO"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "PO"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "67371c7ccfb7ca7a603f32439dc99973",
-    "codeName" : "Testingstagestoryhours",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Testingstagestoryhours",
     "logicName" : "测试中阶段需求工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -601,16 +851,16 @@
       "autoIncrement" : false,
       "name" : "TESTINGSTAGESTORYHOURS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TESTINGSTAGESTORYHOURS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "48397098bd93bce7624391696f8df1c9",
-    "codeName" : "Projectedstagestoryhours",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Projectedstagestoryhours",
     "logicName" : "已立项阶段需求工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -640,16 +890,16 @@
       "autoIncrement" : false,
       "name" : "PROJECTEDSTAGESTORYHOURS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "PROJECTEDSTAGESTORYHOURS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "9d394e4bc5d806adea04305c86af5b09",
-    "codeName" : "Projectedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Projectedstagestorycnt",
     "logicName" : "已立项阶段需求数量",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -679,16 +929,16 @@
       "autoIncrement" : false,
       "name" : "PROJECTEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "PROJECTEDSTAGESTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "a578b5c277cb1f56a88ff07f4b851d03",
-    "codeName" : "Verifiedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Verifiedstagestorycnt",
     "logicName" : "已验收阶段需求数量",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -718,15 +968,16 @@
       "autoIncrement" : false,
       "name" : "VERIFIEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "VERIFIEDSTAGESTORYCNT"
   }, {
-    "length" : 20,
     "dataType" : "ACID",
     "deployId" : "ccb03dce11280f555b9011f636e46cf2",
-    "codeName" : "Id",
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Id",
     "logicName" : "主键标识",
     "stdDataType" : 1,
     "pasteReset" : true,
@@ -757,18 +1008,17 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "enableDBAutoValue" : true,
-    "dEFType" : 1,
+    "length" : 20,
     "name" : "ID"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "5aa386581c9a3898397b7788916c2385",
-    "codeName" : "Totalhours",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Totalhours",
     "logicName" : "总工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -798,16 +1048,16 @@
       "autoIncrement" : false,
       "name" : "TOTALHOURS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TOTALHOURS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "4e5354fb90556f49e23c10d535822c06",
-    "codeName" : "Planedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Planedstagestorycnt",
     "logicName" : "已计划阶段需求数量",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -837,16 +1087,16 @@
       "autoIncrement" : false,
       "name" : "PLANEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "PLANEDSTAGESTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "bd60dbb7552d4042af6077c7f0c400f2",
-    "codeName" : "Developingstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Developingstagestorycnt",
     "logicName" : "研发中阶段需求数量",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -876,16 +1126,16 @@
       "autoIncrement" : false,
       "name" : "DEVELOPINGSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "DEVELOPINGSTAGESTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "244926365b7a55a6d3edd86bcb3df31b",
-    "codeName" : "ActiveStoryCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "ActiveStoryCnt",
     "logicName" : "激活",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -915,16 +1165,16 @@
       "autoIncrement" : false,
       "name" : "ACTIVESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "ACTIVESTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "c568931a9137d51afda19dbb84f8fa64",
-    "codeName" : "BugCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "BugCnt",
     "logicName" : "Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -954,16 +1204,16 @@
       "autoIncrement" : false,
       "name" : "BUGCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "BUGCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "6398ca14044e47972bded7b6da1c4cb9",
-    "codeName" : "Waitstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Waitstagestorycnt",
     "logicName" : "未开始阶段需求数量",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -993,16 +1243,16 @@
       "autoIncrement" : false,
       "name" : "WAITSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "WAITSTAGESTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "9bbeec086548d22d6fc34f057460bcc5",
-    "codeName" : "Verifiedstagestoryhours",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Verifiedstagestoryhours",
     "logicName" : "已验收阶段需求工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1032,16 +1282,16 @@
       "autoIncrement" : false,
       "name" : "VERIFIEDSTAGESTORYHOURS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "VERIFIEDSTAGESTORYHOURS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "9b4759ebdc753a266cbb6aa4102a2c57",
-    "codeName" : "WaitStoryCnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "WaitStoryCnt",
     "logicName" : "草稿",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1071,16 +1321,16 @@
       "autoIncrement" : false,
       "name" : "WAITSTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "WAITSTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "e54fd482d66c1fbd60c1b2e5059c89f9",
-    "codeName" : "Testingstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Testingstagestorycnt",
     "logicName" : "测试中阶段需求数量",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1110,20 +1360,18 @@
       "autoIncrement" : false,
       "name" : "TESTINGSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TESTINGSTAGESTORYCNT"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "198449003705a64e232c86f0885220c7",
-    "codeName" : "Begin",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Begin",
     "logicName" : "开始日期",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1156,20 +1404,22 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 100,
     "name" : "BEGIN"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
+    "dataType" : "BIGINT",
+    "deployId" : "8d6c619b06493daef83190a661a0b25e",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/PlanCodeList.json"
     },
-    "dataType" : "BIGINT",
-    "deployId" : "8d6c619b06493daef83190a661a0b25e",
     "codeName" : "Plan",
-    "valueFormat" : "%1$s",
     "logicName" : "计划",
     "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1199,16 +1449,16 @@
       "autoIncrement" : false,
       "name" : "PLAN"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "PLAN"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "dfaa8ca9dc1445448f15b88aa33b1844",
-    "codeName" : "Releasedstagestoryhours",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Releasedstagestoryhours",
     "logicName" : "已发布阶段需求工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1238,16 +1488,16 @@
       "autoIncrement" : false,
       "name" : "RELEASEDSTAGESTORYHOURS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "RELEASEDSTAGESTORYHOURS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "f7bffa469732c7a78d08933dd58034e9",
-    "codeName" : "Developedstagestoryhours",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Developedstagestoryhours",
     "logicName" : "研发完毕阶段需求工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1277,15 +1527,16 @@
       "autoIncrement" : false,
       "name" : "DEVELOPEDSTAGESTORYHOURS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "DEVELOPEDSTAGESTORYHOURS"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "ba96a9d4f4654f107a3c4de791ecda66",
-    "codeName" : "Name",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Name",
     "logicName" : "产品名称",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -1328,18 +1579,17 @@
       "autoIncrement" : false,
       "name" : "NAME"
     } ],
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "NAME"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "59609f51954acdc5f547f63cfc5afdbb",
-    "codeName" : "Developedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Developedstagestorycnt",
     "logicName" : "研发完毕阶段需求数量",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1369,18 +1619,17 @@
       "autoIncrement" : false,
       "name" : "DEVELOPEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "DEVELOPEDSTAGESTORYCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "9a9dfefa372b0662ad83204de4eac991",
-    "codeName" : "Automation",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Automation",
     "logicName" : "测试脚本",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1401,16 +1650,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "AUTOMATION"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "98f2d464738eb3da0d00284af435360f",
-    "codeName" : "Planedstagestoryhours",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Planedstagestoryhours",
     "logicName" : "已计划阶段需求工时",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1440,18 +1690,17 @@
       "autoIncrement" : false,
       "name" : "PLANEDSTAGESTORYHOURS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "PLANEDSTAGESTORYHOURS"
   }, {
     "dataType" : "INT",
     "deployId" : "4d4fa80ade995ec713c1bb03b92b5fa0",
-    "codeName" : "Install",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Install",
     "logicName" : "安装部署",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1472,18 +1721,18 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "INSTALL"
   }, {
     "dataType" : "INT",
     "deployId" : "4b8fe1080232627d95d14c3148f8ca7b",
-    "codeName" : "Security",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Security",
     "logicName" : "安全相关",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1504,16 +1753,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "SECURITY"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "b6d987a59d24ef49e49b7c687fabedce",
-    "codeName" : "Releasedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Releasedstagestorycnt",
     "logicName" : "已发布阶段需求数量",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1543,16 +1793,16 @@
       "autoIncrement" : false,
       "name" : "RELEASEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "RELEASEDSTAGESTORYCNT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "99e2c5c9d9476f6ac18895c29219f313",
-    "codeName" : "Testedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Testedstagestorycnt",
     "logicName" : "测试完毕阶段需求数量",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1582,18 +1832,17 @@
       "autoIncrement" : false,
       "name" : "TESTEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "TESTEDSTAGESTORYCNT"
   }, {
     "dataType" : "INT",
     "deployId" : "8cc9f480c09c4a22cc290b1f919fe5be",
-    "codeName" : "Standard",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Standard",
     "logicName" : "标准规范",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1614,16 +1863,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "STANDARD"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
     "deployId" : "baaa585afc901fe44869f1b3572cca3c",
-    "codeName" : "Closedstagestorycnt",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Closedstagestorycnt",
     "logicName" : "已关闭阶段需求数量",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1653,268 +1903,13 @@
       "autoIncrement" : false,
       "name" : "CLOSEDSTAGESTORYCNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "CLOSEDSTAGESTORYCNT"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据集",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProductBugcnt_QA",
-    "logicName" : "产品创建bug数及占比",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProductBugcnt_QA"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProductCreateStory",
-    "logicName" : "产品创建需求占比",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProductCreateStory"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProductStoryHoursSum",
-    "logicName" : "产品需求工时汇总",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProductStoryHoursSum"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProductStorySum",
-    "logicName" : "产品需求汇总查询",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProductStorySum"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProductStorycntAndPlancnt",
-    "logicName" : "产品计划数和需求数",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProductStorycntAndPlancnt"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProductSumBugType",
-    "logicName" : "产品Bug类型统计",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProductSumBugType"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Save.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据查询",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProductBugcnt_QA",
-    "logicName" : "产品创建bug数_测试人员",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProductBugcnt_QA"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProductCreateStory",
-    "logicName" : "产品创建需求占比",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProductCreateStory"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProductPlancntAndStorycnt_PO",
-    "logicName" : "产品计划数和需求数_产品经理",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProductPlancntAndStorycnt_PO"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProductStoryHoursSum",
-    "logicName" : "产品需求工时汇总",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProductStoryHoursSum"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProductStorySum",
-    "logicName" : "产品需求汇总查询",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProductStorySum"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProductSumBugType",
-    "logicName" : "产品Bug类型统计",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProductSumBugType"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
   "serviceAPIMode" : 1,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "b89d05c483aa9801cfe506f8f9ac7706",
-  "codeName" : "ProductSum",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1929,13 +1924,23 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "b89d05c483aa9801cfe506f8f9ac7706",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "ProductSum",
   "logicName" : "产品汇总表",
   "tableName" : "zt_product",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : true,
+  "serviceCodeName" : "ProductSum",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1944,14 +1949,9 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "serviceCodeName" : "ProductSum",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

@@ -2,56 +2,56 @@
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
-  "hasWFDataItems" : false,
   "getGroupPSAppDEField" : {
     "name" : "BRANCH",
     "codeName" : "Branch"
   },
-  "showHeader" : true,
+  "hasWFDataItems" : false,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "name" : "year",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "year"
   }, {
-    "name" : "parent",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "parent"
   }, {
-    "name" : "type",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "type"
   }, {
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
     },
-    "name" : "marker",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "marker"
   }, {
+    "dataType" : 5,
     "format" : "YYYY-MM-DD",
-    "name" : "begin",
-    "dataType" : 5
+    "name" : "begin"
   }, {
-    "name" : "productlifeid",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "productlifeid"
   }, {
-    "name" : "branch",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "branch"
   }, {
-    "name" : "product",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "product"
   }, {
+    "dataType" : 5,
     "format" : "YYYY-MM-DD",
-    "name" : "end",
-    "dataType" : 5
+    "name" : "end"
   }, {
-    "name" : "productlifename",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "productlifename"
   } ],
+  "showHeader" : true,
+  "controlType" : "LIST",
   "getMinorSortPSAppDEField" : {
     "name" : "END",
     "codeName" : "End"
   },
   "enableRowEdit" : false,
-  "controlType" : "LIST",
   "codeName" : "GetRoadmap",
   "minorSortDir" : "ASC",
   "enableGroup" : true,

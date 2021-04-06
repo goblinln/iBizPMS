@@ -1,24 +1,24 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/IsAssigned.json",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/IsAssigned.json",
   "codeName" : "IsAssigned",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "assign",
     "codeName" : "Assign",
     "text" : "已指派",
-    "default" : true
+    "default" : true,
+    "value" : "assign"
   }, {
-    "value" : "noassign",
     "codeName" : "Noassign",
-    "text" : "未指派"
+    "text" : "未指派",
+    "value" : "noassign"
   } ]
 }

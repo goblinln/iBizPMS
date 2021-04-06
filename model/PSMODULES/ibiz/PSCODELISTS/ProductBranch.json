@@ -1,11 +1,11 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : true,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : true,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch.json",
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch.json",
   "codeName" : "ProductBranch",
   "userScope" : false,
   "emptyText" : "未定义",

@@ -1,8 +1,4 @@
 {
-  "treeGridMode" : 0,
-  "enableRootSelect" : false,
-  "outputIconDefault" : true,
-  "enableSearchDefault" : false,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -41,11 +37,11 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json"
     },
     "parentValueLevel" : 1,
-    "parentFilter" : "parent",
     "getParentPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
+    "parentFilter" : "parent",
     "searchMode" : 3,
     "name" : "子目录 - 子目录"
   }, {
@@ -62,49 +58,53 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json"
     },
     "parentValueLevel" : 1,
-    "parentFilter" : "parent",
     "getParentPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
+    "parentFilter" : "parent",
     "searchMode" : 3,
     "name" : "目录 - 子目录"
   } ],
+  "enableRootSelect" : false,
+  "outputIconDefault" : true,
+  "enableSearchDefault" : false,
+  "treeGridMode" : 0,
   "controlType" : "TREEVIEW",
   "getPSDETreeNodes" : [ {
     "nodeValue" : "root",
     "text" : "默认根节点",
-    "rootNode" : true,
-    "expandFirstOnly" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selectFirstOnly" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
     "enableQuickCreate" : false,
+    "rootNode" : true,
     "enableNewData" : false,
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "enableCheck" : false,
-    "nodeType" : "ROOT",
-    "disableSelect" : false,
     "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "ROOT",
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "默认根节点",
     "id" : "ROOT"
   }, {
+    "getIdPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "getChildCntPSAppDEField" : {
       "name" : "ISLEAF",
       "codeName" : "IsLeaf"
     },
     "textFormat" : "子目录",
     "appendCaption" : false,
-    "getIdPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -114,53 +114,58 @@
       "id" : "FetchChildModuleByParent"
     },
     "maxSize" : -1,
-    "rootNode" : false,
-    "expandFirstOnly" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selectFirstOnly" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
-    "enableQuickCreate" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
     "navFilter" : "n_parent_eq",
+    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleUsr2GridView.json",
       "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
     },
     "enableNewData" : false,
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
-    },
-    "enableCheck" : false,
-    "nodeType" : "ChileModule",
+    "enableQuickSearch" : false,
     "disableSelect" : false,
+    "nodeType" : "ChileModule",
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "子目录",
     "id" : "ChileModule"
   }, {
     "text" : "所有分类",
-    "rootNode" : false,
-    "expandFirstOnly" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selectFirstOnly" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleUsr2GridView.json",
       "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
     },
     "getPSNavigateParams" : [ {
       "rawValue" : false,
@@ -183,11 +188,11 @@
         "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
+          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
-          "timeout" : 60000,
           "codeName" : "RefreshAll",
           "caption" : "刷新",
           "uIActionTag" : "RefreshAll",
@@ -225,34 +230,29 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
-    },
-    "enableCheck" : false,
-    "nodeType" : "AllModule",
+    "enableQuickSearch" : false,
     "disableSelect" : false,
+    "nodeType" : "AllModule",
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : true,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : true,
     "name" : "所有分类",
     "id" : "AllModule"
   }, {
+    "getIdPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "getChildCntPSAppDEField" : {
       "name" : "ISLEAF",
       "codeName" : "IsLeaf"
     },
     "textFormat" : "目录",
     "appendCaption" : false,
-    "getIdPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -262,38 +262,38 @@
       "id" : "FetchChildModuleByRealParent"
     },
     "maxSize" : -1,
-    "rootNode" : false,
-    "expandFirstOnly" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selectFirstOnly" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
-    "enableQuickCreate" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
     "navFilter" : "n_parent_eq",
+    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleUsr2GridView.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
+    "rootNode" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
     },
-    "enableCheck" : false,
-    "nodeType" : "Module",
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
     "disableSelect" : false,
+    "nodeType" : "Module",
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "目录",
     "id" : "Module"
   } ],
@@ -337,11 +337,11 @@
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
-        "timeout" : 60000,
         "codeName" : "RefreshAll",
         "caption" : "刷新",
         "uIActionTag" : "RefreshAll",
@@ -376,12 +376,12 @@
     "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
   } ],
   "getPSAppViewLogics" : [ {
-    "getPSViewCtrlName" : "allmodule_cm",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "allmodule_cm_deuiaction1"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "allmodule_cm",
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",

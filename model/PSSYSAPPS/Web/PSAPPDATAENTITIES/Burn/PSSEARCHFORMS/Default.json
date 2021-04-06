@@ -1,8 +1,8 @@
 {
-  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -10,7 +10,6 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -22,8 +21,8 @@
         "name" : "isweekend"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "间隔",
@@ -35,11 +34,12 @@
       "labelWidth" : 50,
       "itemHeight" : 29.0,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 24,
+        "colMD" : 24,
         "colSM" : 24,
         "colXS" : 24,
-        "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
       "getPSSysCss" : {
@@ -50,11 +50,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "isweekend"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "常规条件",
     "detailType" : "FORMPAGE",

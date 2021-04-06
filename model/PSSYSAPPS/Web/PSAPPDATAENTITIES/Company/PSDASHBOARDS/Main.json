@@ -1,5 +1,9 @@
 {
   "codeName" : "Main",
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
   "enableCustomized" : false,
   "getPSControls" : [ {
     "getPSLayout" : {
@@ -11,8 +15,8 @@
       "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
-    "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "showTitleBar" : true,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
@@ -28,10 +32,6 @@
     "codeName" : "MainViewdashboard_companycontainer1",
     "name" : "dashboard_companycontainer1"
   } ],
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
-  },
   "controlType" : "DASHBOARD",
   "getPSAppDataEntity" : {
     "modelref" : true,

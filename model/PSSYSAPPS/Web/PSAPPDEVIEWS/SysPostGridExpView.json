@@ -1,17 +1,17 @@
 {
-  "sideBarLayout" : "LEFT",
   "showDataInfoBar" : true,
+  "sideBarLayout" : "LEFT",
   "enableFilter" : false,
   "enableQuickSearch" : true,
-  "showCaptionBar" : false,
   "getPSDEViewCodeName" : "GridExpView",
+  "showCaptionBar" : false,
   "caption" : "岗位",
   "title" : "岗位表格导航视图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -26,18 +26,18 @@
     "engineType" : "GridExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "GRIDEXPBAR",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRIDEXPBAR"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
   },
   "getPSControls" : [ {
     "controlType" : "GRIDEXPBAR",
-    "enableCounter" : true,
     "enableSearch" : false,
     "getXDataPSControl" : {
       "modelref" : true,
@@ -51,76 +51,76 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
           "actionType" : "DEACTION",
           "name" : "update"
         }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "FetchDefault"
           },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
-          },
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Get"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "GetDraft"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "GetDraft"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "GetDraft",
           "actionType" : "DEACTION",
           "name" : "loaddraft"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Create"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -132,53 +132,25 @@
       },
       "controlType" : "GRID"
     },
+    "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
-      "getPSDEGridDataItems" : [ {
-        "getPSAppDEField" : {
-          "name" : "POSTID",
-          "codeName" : "PostId"
-        },
-        "name" : "postid",
-        "dataType" : 25
-      }, {
-        "getPSAppDEField" : {
-          "name" : "MEMO",
-          "codeName" : "Memo"
-        },
-        "name" : "memo",
-        "dataType" : 25
-      }, {
-        "getPSAppDEField" : {
-          "name" : "POSTNAME",
-          "codeName" : "PostName"
-        },
-        "name" : "postname",
-        "dataType" : 25
-      }, {
-        "getPSAppDEField" : {
-          "name" : "POSTNAME",
-          "codeName" : "PostName"
-        },
-        "name" : "srfmajortext",
-        "dataType" : 25
-      }, {
-        "dataAccessAction" : true,
-        "getPSAppDEField" : {
-          "name" : "POSTID",
-          "codeName" : "PostId"
-        },
-        "name" : "srfdataaccaction",
-        "dataType" : 25
-      }, {
-        "getPSAppDEField" : {
-          "name" : "POSTID",
-          "codeName" : "PostId"
-        },
-        "name" : "srfkey",
-        "dataType" : 25
-      } ],
+      "singleSelect" : false,
       "enableColFilter" : false,
+      "getRemovePSControlAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      },
       "enableRowNew" : false,
       "enableRowEditOrder" : false,
       "noSort" : false,
@@ -198,33 +170,62 @@
         "caption" : "岗位标识",
         "name" : "srfkey"
       } ],
-      "hasWFDataItems" : false,
       "columnEnableLink" : 2,
-      "getRemovePSControlAction" : {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
-        },
-        "dataAccessAction" : "DELETE",
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "name" : "remove"
-      },
-      "singleSelect" : false,
-      "enablePagingBar" : true,
-      "enableRowEdit" : false,
+      "hasWFDataItems" : false,
       "controlType" : "GRID",
+      "enablePagingBar" : true,
+      "getPSDEGridDataItems" : [ {
+        "getPSAppDEField" : {
+          "name" : "POSTID",
+          "codeName" : "PostId"
+        },
+        "dataType" : 25,
+        "name" : "postid"
+      }, {
+        "getPSAppDEField" : {
+          "name" : "MEMO",
+          "codeName" : "Memo"
+        },
+        "dataType" : 25,
+        "name" : "memo"
+      }, {
+        "getPSAppDEField" : {
+          "name" : "POSTNAME",
+          "codeName" : "PostName"
+        },
+        "dataType" : 25,
+        "name" : "postname"
+      }, {
+        "getPSAppDEField" : {
+          "name" : "POSTNAME",
+          "codeName" : "PostName"
+        },
+        "dataType" : 25,
+        "name" : "srfmajortext"
+      }, {
+        "getPSAppDEField" : {
+          "name" : "POSTID",
+          "codeName" : "PostId"
+        },
+        "dataAccessAction" : true,
+        "dataType" : 25,
+        "name" : "srfdataaccaction"
+      }, {
+        "getPSAppDEField" : {
+          "name" : "POSTID",
+          "codeName" : "PostId"
+        },
+        "dataType" : 25,
+        "name" : "srfkey"
+      } ],
+      "enableRowEdit" : false,
       "getPSDEGridColumns" : [ {
+        "excelCaption" : "岗位标识",
         "getPSAppDEField" : {
           "name" : "POSTID",
           "codeName" : "PostId"
         },
         "dataItemName" : "postid",
-        "excelCaption" : "岗位标识",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -236,12 +237,12 @@
         "widthUnit" : "PX",
         "name" : "postid"
       }, {
+        "excelCaption" : "岗位名称",
         "getPSAppDEField" : {
           "name" : "POSTNAME",
           "codeName" : "PostName"
         },
         "dataItemName" : "postname",
-        "excelCaption" : "岗位名称",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -253,12 +254,12 @@
         "widthUnit" : "PX",
         "name" : "postname"
       }, {
+        "excelCaption" : "备注",
         "getPSAppDEField" : {
           "name" : "MEMO",
           "codeName" : "Memo"
         },
         "dataItemName" : "memo",
-        "excelCaption" : "备注",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -272,12 +273,12 @@
       } ],
       "codeName" : "MainConcat",
       "enableGroup" : false,
+      "hideHeader" : false,
+      "forceFit" : false,
       "pagingSize" : 20,
       "aggMode" : "NONE",
       "groupMode" : "NONE",
       "sortMode" : "REMOTE",
-      "hideHeader" : false,
-      "forceFit" : false,
       "getNavPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberGridExpView.json",
@@ -300,76 +301,76 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
           "actionType" : "DEACTION",
           "name" : "update"
         }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "FetchDefault"
           },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
-          },
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Get"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "GetDraft"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "GetDraft"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "GetDraft",
           "actionType" : "DEACTION",
           "name" : "loaddraft"
         }, {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Create"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -413,12 +414,11 @@
     "name" : "gridexpbar",
     "modelid" : "84ad1f110ad2f5100d78d5a23c67fd02_gridexpbar"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
       "batchAddOnly" : false,
+      "enableBatchAdd" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "viewLogicType" : "APP_NEWDATA",

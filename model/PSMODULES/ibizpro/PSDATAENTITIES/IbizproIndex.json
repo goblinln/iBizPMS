@@ -1,11 +1,134 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "getAllPSDEMaps" : [ {
+    "autoDEFieldMap" : false,
+    "autoDEActionMap" : false,
+    "autoDEDataQueryMap" : false,
+    "autoDEDataSetMap" : false,
+    "codeName" : "DEMap",
+    "getDstPSDE" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    },
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEMAPS/DEMap.json",
+    "name" : "实体映射"
+  } ],
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ESquery",
+    "logicName" : "全文检索",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ESquery"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "IndexDER",
+    "logicName" : "数据集2",
+    "predefinedType" : "INDEXDE",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "IndexDER"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "BIGINT",
     "deployId" : "1ec4a4f783eb607daa0002be2d5a1329",
-    "codeName" : "Indexid",
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Indexid",
     "logicName" : "主键",
     "stdDataType" : 1,
     "pasteReset" : true,
@@ -37,18 +160,16 @@
       "autoIncrement" : false,
       "name" : "INDEXID"
     } ],
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "INDEXID"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "57b93aa7ebc73d24c8d74d7bb289fa5f",
-    "codeName" : "Acl",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Acl",
     "logicName" : "权限",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -91,20 +212,19 @@
       "autoIncrement" : false,
       "name" : "ACL"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "ACL"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "59d69e257891ecdc79bbc8722d4b3f48",
-    "codeName" : "Docid",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Docid",
     "logicName" : "docid",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -137,18 +257,21 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
-    "name" : "DOCID",
-    "userTag" : "docid"
+    "phisicalDEField" : false,
+    "length" : 100,
+    "userTag" : "docid",
+    "name" : "DOCID"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "6bb64605e6d5bd201aa6d8413efb8391",
-    "codeName" : "Indexname",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Indexname",
     "logicName" : "标题[需求、任务等]",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -192,19 +315,17 @@
       "autoIncrement" : false,
       "name" : "INDEXNAME"
     } ],
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "INDEXNAME"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "cf59db790c3da34f50797a691966c4f5",
-    "codeName" : "Color",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Color",
     "logicName" : "颜色",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -247,17 +368,17 @@
       "autoIncrement" : false,
       "name" : "COLOR"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "COLOR"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "YESNO",
     "deployId" : "669bbc5c8a3eb20e7b6724ec11024435",
-    "codeName" : "Deleted",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Deleted",
     "logicName" : "逻辑标识",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -302,17 +423,17 @@
       "name" : "DELETED"
     } ],
     "predefinedType" : "LOGICVALID",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "DELETED"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "3f2e007ef4205df8471e447ee1a8d249",
-    "codeName" : "Acllist",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Acllist",
     "logicName" : "权限列表",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -355,17 +476,18 @@
       "autoIncrement" : false,
       "name" : "ACLLIST"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "ACLLIST"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "LONGTEXT",
     "deployId" : "1da35368ba6a230575abd6b13c017982",
-    "codeName" : "Indexdesc",
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Indexdesc",
     "logicName" : "内容[需求、任务等]",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -408,19 +530,18 @@
       "autoIncrement" : false,
       "name" : "INDEXDESC"
     } ],
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "INDEXDESC"
   }, {
     "dataType" : "BIGINT",
     "deployId" : "c144920e3739d71272ab8f255c16222a",
-    "codeName" : "Product",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Product",
     "logicName" : "产品",
     "stdDataType" : 1,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -441,21 +562,21 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "PRODUCT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
+    "dataType" : "SSCODELIST",
+    "deployId" : "8d1b5c04363556bb341feab2236a27ae",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSCODELISTS/IndexType.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "8d1b5c04363556bb341feab2236a27ae",
     "codeName" : "IndexType",
-    "valueFormat" : "%1$s",
     "logicName" : "类型",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -500,17 +621,17 @@
       "autoIncrement" : false,
       "name" : "INDEX_TYPE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "INDEX_TYPE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "a96cd817fd1f83969e2edde1fdc3f4db",
-    "codeName" : "MdeptId",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "MdeptId",
     "logicName" : "部门标识",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -554,16 +675,17 @@
       "autoIncrement" : false,
       "name" : "MDEPTID"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "MDEPTID"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "BIGINT",
     "deployId" : "6b8b00e45d3a10b43e2320aae6dcb84e",
-    "codeName" : "Project",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Project",
     "logicName" : "项目",
     "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -593,17 +715,16 @@
       "autoIncrement" : false,
       "name" : "PROJECT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "name" : "PROJECT"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "21b1277568bbe39925fcde3736dd94f2",
-    "codeName" : "OrgId",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "OrgId",
     "logicName" : "组织标识",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -648,140 +769,14 @@
       "name" : "ORGID"
     } ],
     "predefinedType" : "ORGID",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "ORGID"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据集",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ESquery",
-    "logicName" : "全文检索",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ESquery"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "IndexDER",
-    "logicName" : "数据集2",
-    "predefinedType" : "INDEXDE",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "IndexDER"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Save.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据查询",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "getAllPSDEMaps" : [ {
-    "autoDEFieldMap" : false,
-    "autoDEActionMap" : false,
-    "autoDEDataQueryMap" : false,
-    "autoDEDataSetMap" : false,
-    "codeName" : "DEMap",
-    "getDstPSDE" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
-    },
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEMAPS/DEMap.json",
-    "name" : "实体映射"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
   "serviceAPIMode" : 1,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "59e00bfe4af69fb5c13b079ab9014d9d",
-  "codeName" : "IbizproIndex",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -796,12 +791,22 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "59e00bfe4af69fb5c13b079ab9014d9d",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "IbizproIndex",
   "logicName" : "索引检索",
-  "subSysDE" : false,
-  "virtual" : true,
-  "enableViewLevel" : 0,
   "virtualMode" : 3,
   "enableSQLStorage" : true,
+  "serviceCodeName" : "IbizproIndex",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -810,14 +815,9 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "serviceCodeName" : "IbizproIndex",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : true,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "indexDEType" : "INDEX",
   "enableEntityCache" : false,
@@ -846,7 +846,7 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DERINDEX_ZT_TASK_IBIZPRO_INDEX.json"
   } ],
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json",
-  "name" : "IBIZPRO_INDEX",
   "userTag4" : "ESshortcut",
-  "userTag" : "elasticsearch"
+  "userTag" : "elasticsearch",
+  "name" : "IBIZPRO_INDEX"
 }

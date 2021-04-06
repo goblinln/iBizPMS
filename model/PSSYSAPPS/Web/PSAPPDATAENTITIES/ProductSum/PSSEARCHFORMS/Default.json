@@ -1,8 +1,8 @@
 {
-  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -26,14 +26,13 @@
       "showCaption" : true,
       "name" : "rawitem1"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "CHECKBOX",
         "name" : "closed"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "关闭产品",
       "allowEmpty" : true,
@@ -42,6 +41,7 @@
       "labelPos" : "RIGHT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 3,
         "colMD" : 2,
@@ -52,14 +52,13 @@
       "detailStyle" : "DEFAULT",
       "name" : "closed"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "CHECKBOX",
         "name" : "expired"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "过期计划",
       "allowEmpty" : true,
@@ -68,6 +67,7 @@
       "labelPos" : "RIGHT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 3,
         "colMD" : 2,
@@ -78,7 +78,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "expired"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -89,12 +88,12 @@
         "name" : "n_id_eq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "hidden" : false,
       "dataType" : 1,
       "needCodeListConfig" : true,
       "caption" : "产品",
@@ -104,6 +103,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 50,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 6,
         "colMD" : 6,
@@ -114,24 +114,23 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_id_eq"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanCodeList.json"
         },
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "n_id_eq",
-          "key" : "N_PRODUCT_EQ",
-          "name" : "N_PRODUCT_EQ"
-        } ],
         "getPSNavigateParams" : [ {
           "rawValue" : false,
           "value" : "n_id_eq",
           "key" : "n_product_eq",
           "name" : "n_product_eq"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "n_id_eq",
+          "key" : "N_PRODUCT_EQ",
+          "name" : "N_PRODUCT_EQ"
         } ],
         "editorParams" : {
           "SRFNAVPARAM.n_product_eq" : "%n_id_eq%",
@@ -141,12 +140,12 @@
         "name" : "n_plan_eq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PLAN",
         "codeName" : "Plan"
       },
-      "hidden" : false,
       "dataType" : 1,
       "needCodeListConfig" : true,
       "caption" : "计划",
@@ -156,6 +155,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 50,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 6,
         "colMD" : 24,
@@ -166,11 +166,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_plan_eq"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "常规条件",
     "detailType" : "FORMPAGE",

@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : true,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -49,18 +49,17 @@
         },
         "getPSDEFormDetails" : [ {
           "getPSDEFormItems" : [ {
-            "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "alldoccnt1"
             },
             "inputTipClosable" : false,
+            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ALLDOCCNT",
               "codeName" : "Alldoccnt"
             },
-            "hidden" : true,
             "dataType" : 9,
             "caption" : "所有文档数量",
             "allowEmpty" : true,
@@ -69,23 +68,23 @@
             "labelPos" : "LEFT",
             "labelWidth" : 130,
             "showCaption" : true,
+            "hidden" : true,
             "codeName" : "alldoccnt1",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "alldoccnt1"
           }, {
-            "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "recentupdatecnt"
             },
             "inputTipClosable" : false,
+            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "RECENTUPDATECNT",
               "codeName" : "Recentupdatecnt"
             },
-            "hidden" : true,
             "dataType" : 9,
             "caption" : "最近更新数量",
             "allowEmpty" : true,
@@ -94,13 +93,13 @@
             "labelPos" : "LEFT",
             "labelWidth" : 130,
             "showCaption" : true,
+            "hidden" : true,
             "codeName" : "recentupdatecnt",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "recentupdatecnt"
           } ],
           "compositeItem" : true,
-          "emptyCaption" : false,
           "getPSEditor" : {
             "getPSSysPFPlugin" : {
               "pluginType" : "EDITOR_CUSTOMSTYLE",
@@ -115,8 +114,8 @@
             "name" : "formitemex1"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "所有",
           "allowEmpty" : true,
@@ -126,6 +125,7 @@
           "labelWidth" : 0,
           "itemHeight" : 280.0,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "height" : 280,
@@ -253,18 +253,17 @@
           "name" : "rawitem1"
         }, {
           "getPSDEFormItems" : [ {
-            "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "alldoccnt2"
             },
             "inputTipClosable" : false,
+            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ALLDOCCNT",
               "codeName" : "Alldoccnt"
             },
-            "hidden" : true,
             "dataType" : 9,
             "caption" : "所有文档数量",
             "allowEmpty" : true,
@@ -273,23 +272,23 @@
             "labelPos" : "LEFT",
             "labelWidth" : 130,
             "showCaption" : true,
+            "hidden" : true,
             "codeName" : "alldoccnt2",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "alldoccnt2"
           }, {
-            "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "recentaddcnt"
             },
             "inputTipClosable" : false,
+            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "RECENTADDCNT",
               "codeName" : "Recentaddcnt"
             },
-            "hidden" : true,
             "dataType" : 9,
             "caption" : "最近添加数量",
             "allowEmpty" : true,
@@ -298,13 +297,13 @@
             "labelPos" : "LEFT",
             "labelWidth" : 130,
             "showCaption" : true,
+            "hidden" : true,
             "codeName" : "recentaddcnt",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "recentaddcnt"
           } ],
           "compositeItem" : true,
-          "emptyCaption" : false,
           "getPSEditor" : {
             "getPSSysPFPlugin" : {
               "pluginType" : "EDITOR_CUSTOMSTYLE",
@@ -318,8 +317,8 @@
             "name" : "formitemex2"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
-          "hidden" : false,
           "dataType" : 25,
           "allowEmpty" : true,
           "enableCond" : 3,
@@ -327,6 +326,7 @@
           "labelPos" : "NONE",
           "labelWidth" : 0,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 16,
             "colLGOffset" : 3,
@@ -372,18 +372,17 @@
           "name" : "rawitem2"
         }, {
           "getPSDEFormItems" : [ {
-            "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "alldoccnt3"
             },
             "inputTipClosable" : false,
+            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ALLDOCCNT",
               "codeName" : "Alldoccnt"
             },
-            "hidden" : true,
             "dataType" : 9,
             "caption" : "所有文档数量",
             "allowEmpty" : true,
@@ -392,23 +391,23 @@
             "labelPos" : "LEFT",
             "labelWidth" : 130,
             "showCaption" : true,
+            "hidden" : true,
             "codeName" : "alldoccnt3",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "alldoccnt3"
           }, {
-            "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "mydoccnt"
             },
             "inputTipClosable" : false,
+            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "MYDOCCNT",
               "codeName" : "Mydoccnt"
             },
-            "hidden" : true,
             "dataType" : 9,
             "caption" : "我的文档数量",
             "allowEmpty" : true,
@@ -417,13 +416,13 @@
             "labelPos" : "LEFT",
             "labelWidth" : 130,
             "showCaption" : true,
+            "hidden" : true,
             "codeName" : "mydoccnt",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "mydoccnt"
           } ],
           "compositeItem" : true,
-          "emptyCaption" : false,
           "getPSEditor" : {
             "getPSSysPFPlugin" : {
               "pluginType" : "EDITOR_CUSTOMSTYLE",
@@ -437,8 +436,8 @@
             "name" : "formitemex3"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
-          "hidden" : false,
           "dataType" : 25,
           "allowEmpty" : true,
           "enableCond" : 3,
@@ -446,6 +445,7 @@
           "labelPos" : "NONE",
           "labelWidth" : 0,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 16,
             "colLGOffset" : 3,
@@ -491,18 +491,17 @@
           "name" : "rawitem3"
         }, {
           "getPSDEFormItems" : [ {
-            "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "alldoccnt4"
             },
             "inputTipClosable" : false,
+            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ALLDOCCNT",
               "codeName" : "Alldoccnt"
             },
-            "hidden" : true,
             "dataType" : 9,
             "caption" : "所有文档数量",
             "allowEmpty" : true,
@@ -511,23 +510,23 @@
             "labelPos" : "LEFT",
             "labelWidth" : 130,
             "showCaption" : true,
+            "hidden" : true,
             "codeName" : "alldoccnt4",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "alldoccnt4"
           }, {
-            "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "myfavouritecnt"
             },
             "inputTipClosable" : false,
+            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "MYFAVOURITECNT",
               "codeName" : "Myfavouritecnt"
             },
-            "hidden" : true,
             "dataType" : 9,
             "caption" : "我的收藏数量",
             "allowEmpty" : true,
@@ -536,13 +535,13 @@
             "labelPos" : "LEFT",
             "labelWidth" : 130,
             "showCaption" : true,
+            "hidden" : true,
             "codeName" : "myfavouritecnt",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "myfavouritecnt"
           } ],
           "compositeItem" : true,
-          "emptyCaption" : false,
           "getPSEditor" : {
             "getPSSysPFPlugin" : {
               "pluginType" : "EDITOR_CUSTOMSTYLE",
@@ -556,8 +555,8 @@
             "name" : "formitemex4"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
-          "hidden" : false,
           "dataType" : 25,
           "allowEmpty" : true,
           "enableCond" : 3,
@@ -565,6 +564,7 @@
           "labelPos" : "NONE",
           "labelWidth" : 0,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 16,
             "colLGOffset" : 3,
@@ -598,11 +598,11 @@
       "showCaption" : false,
       "name" : "grouppanel2"
     } ],
-    "infoGroupMode" : true,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : true,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

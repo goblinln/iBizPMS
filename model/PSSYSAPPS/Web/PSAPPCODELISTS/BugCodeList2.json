@@ -6,16 +6,16 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "All",
     "data" : "{}",
     "codeName" : "All",
     "text" : "所有",
-    "default" : true
+    "default" : true,
+    "value" : "All"
   }, {
-    "value" : "active",
     "data" : "{\"n_status_eq\":\"active\"}",
     "codeName" : "Active",
-    "text" : "未解决"
+    "text" : "未解决",
+    "value" : "active"
   } ],
   "codeName" : "BugCodeList2",
   "emptyText" : "未定义",

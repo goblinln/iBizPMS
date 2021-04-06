@@ -1,29 +1,29 @@
 {
-  "enableCardEdit" : false,
-  "enableCardEditOrder" : false,
-  "enableCardEditGroup" : false,
-  "enableCardNew" : false,
+  "singleSelect" : false,
   "noSort" : false,
   "hasWFDataItems" : false,
   "appendDEItems" : false,
-  "singleSelect" : false,
   "getPSDEDataViewDataItems" : [ {
     "getPSAppDEField" : {
       "name" : "INDEXNAME",
       "codeName" : "Indexname"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "getPSAppDEField" : {
       "name" : "INDEXID",
       "codeName" : "Indexid"
     },
-    "name" : "srfkey",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfkey"
   } ],
-  "enablePagingBar" : false,
+  "enableCardEdit" : false,
+  "enableCardEditOrder" : false,
+  "enableCardEditGroup" : false,
+  "enableCardNew" : false,
   "controlType" : "DATAVIEW",
+  "enablePagingBar" : false,
   "codeName" : "IndexType",
   "enableGroup" : false,
   "pagingSize" : 1000,

@@ -1,63 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "ORGID",
-      "codeName" : "OrgId"
-    },
-    "name" : "orgid",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NICKNAME",
-      "codeName" : "NickName"
-    },
-    "name" : "nickname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "MDEPTID",
-      "codeName" : "MdeptId"
-    },
-    "name" : "mdeptid",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "USERID",
-      "codeName" : "UserId"
-    },
-    "name" : "userid",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PERSONNAME",
-      "codeName" : "PersonName"
-    },
-    "name" : "personname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PERSONNAME",
-      "codeName" : "PersonName"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "USERID",
-      "codeName" : "UserId"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "USERID",
-      "codeName" : "UserId"
-    },
-    "name" : "srfkey",
-    "dataType" : 25
-  } ],
+  "singleSelect" : false,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -77,33 +34,76 @@
     "caption" : "用户标识",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : false,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
+  "hasWFDataItems" : false,
   "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    },
+    "dataType" : 25,
+    "name" : "orgid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NICKNAME",
+      "codeName" : "NickName"
+    },
+    "dataType" : 25,
+    "name" : "nickname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "MDEPTID",
+      "codeName" : "MdeptId"
+    },
+    "dataType" : 25,
+    "name" : "mdeptid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "USERID",
+      "codeName" : "UserId"
+    },
+    "dataType" : 25,
+    "name" : "userid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PERSONNAME",
+      "codeName" : "PersonName"
+    },
+    "dataType" : 25,
+    "name" : "personname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PERSONNAME",
+      "codeName" : "PersonName"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "USERID",
+      "codeName" : "UserId"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 25,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "USERID",
+      "codeName" : "UserId"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  } ],
+  "enableRowEdit" : false,
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "用户标识",
     "getPSAppDEField" : {
       "name" : "USERID",
       "codeName" : "UserId"
     },
     "dataItemName" : "userid",
-    "excelCaption" : "用户标识",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -115,12 +115,12 @@
     "widthUnit" : "PX",
     "name" : "userid"
   }, {
+    "excelCaption" : "姓名",
     "getPSAppDEField" : {
       "name" : "PERSONNAME",
       "codeName" : "PersonName"
     },
     "dataItemName" : "personname",
-    "excelCaption" : "姓名",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -132,12 +132,12 @@
     "widthUnit" : "STAR",
     "name" : "personname"
   }, {
+    "excelCaption" : "昵称别名",
     "getPSAppDEField" : {
       "name" : "NICKNAME",
       "codeName" : "NickName"
     },
     "dataItemName" : "nickname",
-    "excelCaption" : "昵称别名",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -151,12 +151,12 @@
   } ],
   "codeName" : "ExpMainProjectMember",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 500,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getNavPSAppView" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",

@@ -1,14 +1,14 @@
 {
-  "showCaptionBar" : false,
-  "getPSDEViewCodeName" : "PickupView",
   "funcViewMode" : "PICKUPVIEW",
+  "getPSDEViewCodeName" : "PickupView",
+  "showCaptionBar" : false,
   "caption" : "文档库",
   "title" : "doclib数据选择视图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -23,11 +23,12 @@
     "engineType" : "PickupView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "PICKUPVIEWPANEL",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "PICKUPVIEWPANEL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -40,19 +41,19 @@
       "enableImport" : true,
       "enableRowEdit" : false,
       "gridRowActiveMode" : 2,
-      "enableSearch" : true,
       "expandSearchForm" : true,
+      "enableSearch" : true,
       "enableFilter" : true,
       "xDataControlName" : "grid",
-      "showCaptionBar" : true,
       "getPSDEViewCodeName" : "PickupGridView",
+      "showCaptionBar" : true,
       "caption" : "文档库",
       "title" : "doclib选择表格视图",
       "accUserMode" : 2,
       "enableDP" : true,
       "getPSViewLayoutPanel" : {
-        "useDefaultLayout" : true,
         "layoutPanel" : true,
+        "useDefaultLayout" : true,
         "controlType" : "VIEWLAYOUTPANEL",
         "codeName" : "Layoutpanel",
         "getPSAppDataEntity" : {
@@ -67,88 +68,36 @@
         "engineType" : "PickupGridView",
         "engineCat" : "VIEW",
         "getPSUIEngineParams" : [ {
-          "name" : "GRID",
-          "paramType" : "CTRL"
+          "paramType" : "CTRL",
+          "name" : "GRID"
         }, {
-          "name" : "SEARCHFORM",
-          "paramType" : "CTRL"
+          "paramType" : "CTRL",
+          "name" : "SEARCHFORM"
         } ],
         "name" : "engine"
       } ],
+      "viewStyle" : "STYLE2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
       },
       "getPSControls" : [ {
-        "getPSDEGridDataItems" : [ {
-          "getPSAppDEField" : {
-            "name" : "PRODUCT",
-            "codeName" : "Product"
-          },
-          "name" : "product",
-          "dataType" : 1
-        }, {
-          "getPSAppDEField" : {
-            "name" : "PROJECT",
-            "codeName" : "Project"
-          },
-          "name" : "project",
-          "dataType" : 1
-        }, {
-          "getPSAppDEField" : {
-            "name" : "DOCLIBTYPE",
-            "codeName" : "Doclibtype"
-          },
-          "name" : "doclibtype",
-          "dataType" : 25
-        }, {
-          "getPSAppDEField" : {
-            "name" : "NAME",
-            "codeName" : "Name"
-          },
-          "name" : "name",
-          "dataType" : 25
-        }, {
-          "getPSAppDEField" : {
-            "name" : "ISFAVOURITES",
-            "codeName" : "Isfavourites"
-          },
-          "name" : "isfavourites",
-          "dataType" : 25
-        }, {
-          "name" : "srfmstag",
-          "dataType" : 25
-        }, {
-          "getPSAppDEField" : {
-            "name" : "NAME",
-            "codeName" : "Name"
-          },
-          "name" : "srfmajortext",
-          "dataType" : 25
-        }, {
-          "dataAccessAction" : true,
-          "getPSAppDEField" : {
-            "name" : "ID",
-            "codeName" : "Id"
-          },
-          "name" : "srfdataaccaction",
-          "dataType" : 1
-        }, {
-          "getPSAppDEField" : {
-            "name" : "ID",
-            "codeName" : "Id"
-          },
-          "name" : "srfkey",
-          "dataType" : 1
-        }, {
-          "getPSAppDEField" : {
-            "name" : "DOCCNT",
-            "codeName" : "Doccnt"
-          },
-          "name" : "doccnt",
-          "dataType" : 9
-        } ],
+        "singleSelect" : false,
         "enableColFilter" : false,
+        "getRemovePSControlAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "dataAccessAction" : "DELETE",
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "name" : "remove"
+        },
         "enableRowNew" : false,
         "enableRowEditOrder" : false,
         "noSort" : false,
@@ -168,39 +117,102 @@
           "caption" : "编号",
           "name" : "srfkey"
         } ],
-        "hasWFDataItems" : false,
         "columnEnableLink" : 2,
-        "getRemovePSControlAction" : {
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "dataAccessAction" : "DELETE",
-          "actionName" : "Remove",
-          "actionType" : "DEACTION",
-          "name" : "remove"
-        },
-        "singleSelect" : false,
-        "enablePagingBar" : true,
-        "enableRowEdit" : false,
+        "hasWFDataItems" : false,
         "controlType" : "GRID",
+        "enablePagingBar" : true,
+        "getPSDEGridDataItems" : [ {
+          "getPSAppDEField" : {
+            "name" : "PRODUCT",
+            "codeName" : "Product"
+          },
+          "dataType" : 1,
+          "name" : "product"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "PROJECT",
+            "codeName" : "Project"
+          },
+          "dataType" : 1,
+          "name" : "project"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "DOCLIBTYPE",
+            "codeName" : "Doclibtype"
+          },
+          "dataType" : 25,
+          "name" : "doclibtype"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "NAME",
+            "codeName" : "Name"
+          },
+          "dataType" : 25,
+          "name" : "name"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "ISFAVOURITES",
+            "codeName" : "Isfavourites"
+          },
+          "dataType" : 25,
+          "name" : "isfavourites"
+        }, {
+          "dataType" : 25,
+          "name" : "srfmstag"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "NAME",
+            "codeName" : "Name"
+          },
+          "dataType" : 25,
+          "name" : "srfmajortext"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          },
+          "dataAccessAction" : true,
+          "dataType" : 1,
+          "name" : "srfdataaccaction"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          },
+          "dataType" : 1,
+          "name" : "srfkey"
+        }, {
+          "getPSAppDEField" : {
+            "name" : "DOCCNT",
+            "codeName" : "Doccnt"
+          },
+          "dataType" : 9,
+          "name" : "doccnt"
+        } ],
+        "enableRowEdit" : false,
         "getPSDEGridColumns" : [ {
+          "excelCaption" : "文档库名称",
           "getPSAppDEField" : {
             "name" : "NAME",
             "codeName" : "Name"
           },
           "dataItemName" : "name",
-          "excelCaption" : "文档库名称",
           "getPSDEUIAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+            },
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocGridViewLookDoc.json",
               "viewType" : "DEGRIDVIEW"
             },
+            "getPSNavigateParams" : [ {
+              "rawValue" : false,
+              "value" : "project",
+              "key" : "project",
+              "name" : "project"
+            } ],
             "frontProcessType" : "TOP",
             "getPSNavigateContexts" : [ {
               "rawValue" : false,
@@ -208,17 +220,7 @@
               "key" : "DOCLIBTYPE",
               "name" : "DOCLIBTYPE"
             } ],
-            "getPSNavigateParams" : [ {
-              "rawValue" : false,
-              "value" : "project",
-              "key" : "project",
-              "name" : "project"
-            } ],
             "getNoPrivDisplayMode" : 2,
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-            },
             "timeout" : 60000,
             "codeName" : "LookMainProjectDocLib",
             "caption" : "查看",
@@ -241,12 +243,12 @@
           "widthUnit" : "STAR",
           "name" : "name"
         }, {
+          "excelCaption" : "文档数量",
           "getPSAppDEField" : {
             "name" : "DOCCNT",
             "codeName" : "Doccnt"
           },
           "dataItemName" : "doccnt",
-          "excelCaption" : "文档数量",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -263,28 +265,28 @@
               "addSeparator" : false,
               "showIcon" : true,
               "getPSUIAction" : {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+                },
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
                   "viewType" : "DEEDITVIEW"
                 },
-                "frontProcessType" : "WIZARD",
                 "getPSNavigateParams" : [ {
                   "rawValue" : false,
                   "value" : "project",
                   "key" : "project",
                   "name" : "project"
                 } ],
+                "frontProcessType" : "WIZARD",
                 "getNoPrivDisplayMode" : 2,
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-                },
+                "timeout" : 60000,
                 "getPSSysImage" : {
                   "glyph" : "xf044@FontAwesome",
                   "cssClass" : "fa fa-edit"
                 },
-                "timeout" : 60000,
                 "codeName" : "EditProjectDoclib",
                 "caption" : "编辑",
                 "actionTarget" : "SINGLEKEY",
@@ -303,11 +305,31 @@
               "addSeparator" : false,
               "showIcon" : true,
               "getPSUIAction" : {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+                },
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleTreeExpView.json",
                   "viewType" : "DETREEEXPVIEW"
                 },
+                "getPSNavigateParams" : [ {
+                  "rawValue" : false,
+                  "value" : "product",
+                  "key" : "product",
+                  "name" : "product"
+                }, {
+                  "rawValue" : false,
+                  "value" : "project",
+                  "key" : "project",
+                  "name" : "project"
+                }, {
+                  "rawValue" : false,
+                  "value" : "doclib",
+                  "key" : "srfroot",
+                  "name" : "srfroot"
+                } ],
                 "frontProcessType" : "WIZARD",
                 "getPSNavigateContexts" : [ {
                   "rawValue" : false,
@@ -325,32 +347,12 @@
                   "key" : "PRODUCT",
                   "name" : "PRODUCT"
                 } ],
-                "getPSNavigateParams" : [ {
-                  "rawValue" : false,
-                  "value" : "product",
-                  "key" : "product",
-                  "name" : "product"
-                }, {
-                  "rawValue" : false,
-                  "value" : "project",
-                  "key" : "project",
-                  "name" : "project"
-                }, {
-                  "rawValue" : false,
-                  "value" : "doclib",
-                  "key" : "srfroot",
-                  "name" : "srfroot"
-                } ],
                 "getNoPrivDisplayMode" : 2,
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-                },
+                "timeout" : 60000,
                 "getPSSysImage" : {
                   "glyph" : "xf023@FontAwesome",
                   "cssClass" : "fa fa-lock"
                 },
-                "timeout" : 60000,
                 "codeName" : "WeiHuFenLei",
                 "caption" : "维护分类",
                 "actionTarget" : "SINGLEKEY",
@@ -369,22 +371,22 @@
               "addSeparator" : false,
               "showIcon" : true,
               "getPSUIAction" : {
-                "refreshMode" : 1,
-                "enableConfirm" : true,
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Collect"
-                },
-                "getNoPrivDisplayMode" : 2,
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
                 },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Collect"
+                },
+                "refreshMode" : 1,
+                "enableConfirm" : true,
+                "getNoPrivDisplayMode" : 2,
+                "timeout" : 60000,
                 "getPSSysImage" : {
                   "glyph" : "xf006@FontAwesome",
                   "cssClass" : "fa fa-star-o"
                 },
-                "timeout" : 60000,
                 "codeName" : "Collect",
                 "caption" : "收藏",
                 "actionTarget" : "SINGLEKEY",
@@ -404,22 +406,22 @@
               "addSeparator" : false,
               "showIcon" : true,
               "getPSUIAction" : {
-                "refreshMode" : 1,
-                "enableConfirm" : true,
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "UnCollect"
-                },
-                "getNoPrivDisplayMode" : 2,
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
                 },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "UnCollect"
+                },
+                "refreshMode" : 1,
+                "enableConfirm" : true,
+                "getNoPrivDisplayMode" : 2,
+                "timeout" : 60000,
                 "getPSSysImage" : {
                   "glyph" : "xf005@FontAwesome",
                   "cssClass" : "fa fa-star"
                 },
-                "timeout" : 60000,
                 "codeName" : "UnCollect",
                 "caption" : "取消收藏",
                 "actionTarget" : "SINGLEKEY",
@@ -450,12 +452,12 @@
         } ],
         "codeName" : "Main",
         "enableGroup" : false,
+        "hideHeader" : false,
+        "forceFit" : false,
         "pagingSize" : 20,
         "aggMode" : "NONE",
         "groupMode" : "NONE",
         "sortMode" : "REMOTE",
-        "hideHeader" : false,
-        "forceFit" : false,
         "getFetchPSControlAction" : {
           "modelref" : true,
           "id" : "fetch"
@@ -575,76 +577,76 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Update"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Update"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchDefault"
             },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-            },
             "actionType" : "DEDATASET",
             "name" : "fetch"
           }, {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Remove"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Remove"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Get"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Get"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "GetDraft"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "GetDraft"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "GetDraft",
             "actionType" : "DEACTION",
             "name" : "loaddraft"
           }, {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Create"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Create"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -659,21 +661,21 @@
         "name" : "grid",
         "modelid" : "8a2e059862ede341d722856e5b90fb67"
       }, {
-        "searchButtonStyle" : "DEFAULT",
         "enableAdvanceSearch" : false,
         "enableAutoSearch" : false,
         "enableFilterSave" : false,
+        "searchButtonStyle" : "DEFAULT",
         "controlType" : "SEARCHFORM",
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
           "columnCount" : 24
         },
         "getPSDEFormPages" : [ {
-          "infoGroupMode" : false,
           "getPSLayout" : {
             "layout" : "TABLE_24COL",
             "columnCount" : 24
           },
+          "infoGroupMode" : false,
           "codeName" : "formpage1",
           "caption" : "常规条件",
           "detailType" : "FORMPAGE",
@@ -695,35 +697,35 @@
         "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FilterSearch"
             },
+            "actionType" : "FILTERACTION",
+            "name" : "search"
+          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
             },
-            "actionType" : "FILTERACTION",
-            "name" : "search"
-          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FilterGet"
             },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-            },
             "actionType" : "FILTERACTION",
             "name" : "load"
           }, {
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "FilterGetDraft"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+            },
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FilterGetDraft"
             },
             "actionType" : "FILTERACTION",
             "name" : "loaddraft"
@@ -736,7 +738,6 @@
         "name" : "searchform",
         "modelid" : "ada34eb64f198967f428276915d7a84a"
       } ],
-      "viewStyle" : "STYLE2",
       "codeName" : "DocLibPickupGridView",
       "viewType" : "DEPICKUPGRIDVIEW",
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibPickupGridView.json",
@@ -754,7 +755,6 @@
     "codeName" : "PickupViewpickupviewpanel",
     "name" : "pickupviewpanel"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "DocLibPickupView",
   "viewType" : "DEPICKUPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibPickupView.json",

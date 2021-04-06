@@ -1,11 +1,223 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Activate.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/BatchUnlinkBug.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/ChangeStatus.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBug.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBugbyBug.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBugbyLeftBug.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkStory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/MobReleaseCounter.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/OneClickRelease.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Save.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Terminate.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/UnlinkBug.json"
+  } ],
+  "subSysAsCloud" : false,
+  "getAllPSDELogics" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDELOGICS/MobReleaseCounter.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDELOGICS/Update__MSDeny.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDELOGICS/Remove__MSDeny.json"
+  } ],
+  "getAllPSDEMaps" : [ {
+    "autoDEFieldMap" : false,
+    "autoDEActionMap" : false,
+    "autoDEDataQueryMap" : false,
+    "autoDEDataSetMap" : false,
+    "codeName" : "ProductReleaseMap",
+    "getDstPSDE" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
+    },
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEMAPS/ProductReleaseMap.json",
+    "name" : "产品发布映射"
+  } ],
+  "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__RELEASE_ACTIVE"
+      },
+      "name" : "SRFUR__RELEASE_ACTIVE"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal",
+    "logicName" : "正常",
+    "default" : false,
+    "mSTag" : "normal",
+    "stateValue" : "normal",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "name" : "正常"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__RELEASE_TERMINATE"
+      },
+      "name" : "SRFUR__RELEASE_TERMINATE"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "terminate",
+    "logicName" : "停止维护",
+    "default" : false,
+    "mSTag" : "terminate",
+    "stateValue" : "terminate",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "name" : "停止维护"
+  } ],
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ReportRelease",
+    "logicName" : "测试报告关联发布",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ReportRelease"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "GetList",
+    "logicName" : "获取产品发布",
+    "defaultMode" : false,
+    "name" : "GetList"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ReportRelease",
+    "logicName" : "测试报告关联发布",
+    "defaultMode" : false,
+    "name" : "ReportRelease"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
-    "length" : 65535,
-    "defaultValue" : "#EMPTY",
     "dataType" : "LONGTEXT",
     "deployId" : "4e132119bcdb5e0a4353c374cb0012a6",
-    "codeName" : "Stories",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Stories",
     "logicName" : "完成的需求",
     "stringLength" : 65535,
     "stdDataType" : 21,
@@ -50,20 +262,20 @@
       "autoIncrement" : false,
       "name" : "STORIES"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 65535,
+    "defaultValue" : "#EMPTY",
     "name" : "STORIES"
   }, {
-    "length" : 1,
-    "defaultValue" : "0",
+    "dataType" : "SSCODELIST",
+    "deployId" : "b1a9eb7ba4befd502c7c07c036079673",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/YesNo.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "b1a9eb7ba4befd502c7c07c036079673",
     "codeName" : "Marker",
-    "valueFormat" : "%1$s",
     "logicName" : "里程碑",
     "stringLength" : 1,
     "stdDataType" : 25,
@@ -107,15 +319,20 @@
       "autoIncrement" : false,
       "name" : "MARKER"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1,
+    "defaultValue" : "0",
     "name" : "MARKER"
   }, {
-    "length" : 8,
     "dataType" : "ACID",
     "deployId" : "7100400daee72c1d00c83ba069ad9dce",
-    "codeName" : "Id",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Id",
     "logicName" : "ID",
     "stdDataType" : 1,
     "pasteReset" : true,
@@ -148,28 +365,23 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "enableDBAutoValue" : true,
-    "dEFType" : 1,
+    "length" : 8,
     "name" : "ID"
   }, {
-    "length" : 200,
+    "dataType" : "SSCODELIST",
+    "deployId" : "d61aa0ab79b551229a353ddd912793ed",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/RunSQL.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "d61aa0ab79b551229a353ddd912793ed",
     "codeName" : "Sqlid",
-    "valueFormat" : "%1$s",
     "logicName" : "运行数据库",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -202,16 +414,16 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 200,
     "name" : "SQLID"
   }, {
-    "length" : 65535,
-    "defaultValue" : "#EMPTY",
     "dataType" : "LONGTEXT",
     "deployId" : "f1bab06e7367587110df158eb4546f5c",
-    "codeName" : "LeftBugs",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "LeftBugs",
     "logicName" : "遗留的Bug",
     "stringLength" : 65535,
     "stdDataType" : 21,
@@ -256,16 +468,16 @@
       "autoIncrement" : false,
       "name" : "LEFTBUGS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "name" : "LEFTBUGS"
-  }, {
     "length" : 65535,
     "defaultValue" : "#EMPTY",
+    "name" : "LEFTBUGS"
+  }, {
     "dataType" : "LONGTEXT",
     "deployId" : "a4d5145923da03ed6e6297d30fa8217f",
-    "codeName" : "Bugs",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Bugs",
     "logicName" : "解决的Bug",
     "stringLength" : 65535,
     "stdDataType" : 21,
@@ -310,16 +522,18 @@
       "autoIncrement" : false,
       "name" : "BUGS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 65535,
+    "defaultValue" : "#EMPTY",
     "name" : "BUGS"
   }, {
-    "length" : 1,
-    "defaultValue" : "0",
     "dataType" : "TEXT",
     "deployId" : "20c9c8d05f699c3ed4ad3f37fcf89177",
-    "codeName" : "Deleted",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Deleted",
     "logicName" : "已删除",
     "stringLength" : 1,
     "stdDataType" : 25,
@@ -364,22 +578,20 @@
       "name" : "DELETED"
     } ],
     "predefinedType" : "LOGICVALID",
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1,
+    "defaultValue" : "0",
     "name" : "DELETED"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "4b09be7d6b90705796a72a04b67d6aca",
-    "codeName" : "Noticeusers",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Noticeusers",
     "logicName" : "消息通知用户",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -412,22 +624,23 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 100,
     "name" : "NOTICEUSERS"
   }, {
+    "dataType" : "NSCODELIST",
+    "deployId" : "2dd9eb0d89dc34f002ff3f19eb55746c",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/RELEASE_rebuild.json"
     },
-    "dataType" : "NSCODELIST",
-    "deployId" : "2dd9eb0d89dc34f002ff3f19eb55746c",
     "codeName" : "Rebuild",
-    "valueFormat" : "%1$s",
     "logicName" : "重新构建",
     "stdDataType" : 9,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -448,15 +661,17 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
     "name" : "REBUILD"
   }, {
-    "length" : 255,
     "dataType" : "TEXT",
     "deployId" : "f54b4df5806e6194bd399daf37ba6394",
-    "codeName" : "Name",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Name",
     "logicName" : "发布名称",
     "stringLength" : 255,
     "stdDataType" : 25,
@@ -501,16 +716,15 @@
       "autoIncrement" : false,
       "name" : "NAME"
     } ],
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 255,
     "name" : "NAME"
   }, {
     "dataType" : "DATE",
     "deployId" : "fb23f861bd5d7342de5da2362f51c925",
-    "codeName" : "Date",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "codeName" : "Date",
     "logicName" : "发布日期",
     "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -570,20 +784,18 @@
       "autoIncrement" : false,
       "name" : "DATE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "DATE"
   }, {
-    "length" : 20,
-    "defaultValue" : "normal",
+    "dataType" : "SSCODELIST",
+    "deployId" : "7651d751e09b038767842b4377a2b473",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Release__status.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "7651d751e09b038767842b4377a2b473",
     "codeName" : "Status",
-    "valueFormat" : "%1$s",
     "logicName" : "状态",
     "stringLength" : 20,
     "stdDataType" : 25,
@@ -628,24 +840,24 @@
       "autoIncrement" : false,
       "name" : "STATUS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
+    "defaultValue" : "normal",
     "name" : "STATUS"
   }, {
-    "length" : 200,
+    "dataType" : "SSCODELIST",
+    "deployId" : "9666f44b5bfaba979f53d667d464e006",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/RELEASE_Type.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "9666f44b5bfaba979f53d667d464e006",
     "codeName" : "Releasetype",
-    "valueFormat" : "%1$s",
     "logicName" : "运行模式",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -678,16 +890,16 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 200,
     "name" : "RELEASETYPE"
   }, {
-    "length" : 30,
-    "defaultValue" : "#EMPTY",
     "dataType" : "TEXT",
     "deployId" : "7f012075aa0cb3e0d6c0c95726c56304",
-    "codeName" : "SubStatus",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "SubStatus",
     "logicName" : "子状态",
     "stringLength" : 30,
     "stdDataType" : 25,
@@ -731,24 +943,24 @@
       "autoIncrement" : false,
       "name" : "SUBSTATUS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
     "name" : "SUBSTATUS"
   }, {
-    "length" : 200,
+    "dataType" : "SSCODELIST",
+    "deployId" : "56357f5dd333e8a7c48a6f7c1cb8820e",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/Backendservicesystem.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "56357f5dd333e8a7c48a6f7c1cb8820e",
     "codeName" : "Backgroundid",
-    "valueFormat" : "%1$s",
     "logicName" : "后台体系",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -781,16 +993,16 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 200,
     "name" : "BACKGROUNDID"
   }, {
-    "length" : 65535,
-    "defaultValue" : "#EMPTY",
     "dataType" : "LONGTEXT",
     "deployId" : "2846e8c0cd155fa6ae50f65203629562",
-    "codeName" : "Desc",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Desc",
     "logicName" : "描述",
     "stringLength" : 65535,
     "stdDataType" : 21,
@@ -835,20 +1047,20 @@
       "autoIncrement" : false,
       "name" : "DESC"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 65535,
+    "defaultValue" : "#EMPTY",
     "name" : "DESC"
   }, {
-    "length" : 1000,
     "dataType" : "TEXT",
     "deployId" : "6fbc3e070da0c6acc82fc2133450ebc8",
-    "codeName" : "Files",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Files",
     "logicName" : "附件",
     "stringLength" : 1000,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -881,24 +1093,24 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 1000,
     "name" : "FILES"
   }, {
-    "length" : 200,
+    "dataType" : "SSCODELIST",
+    "deployId" : "66671e4232fcddc2264853c537f3fa07",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/SystemAPP.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "66671e4232fcddc2264853c537f3fa07",
     "codeName" : "Frontapplication",
-    "valueFormat" : "%1$s",
     "logicName" : "系统应用",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -931,8 +1143,8 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 200,
     "name" : "FRONTAPPLICATION"
   }, {
     "phisicalDEField" : false,
@@ -946,10 +1158,10 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "length" : 8,
-    "defaultValue" : "0",
     "dataType" : "PICKUPTEXT",
     "deployId" : "08047eb0b3ad103e8d57a19f6d65aa8e",
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "codeName" : "ProductName",
     "logicName" : "产品名称",
     "stringLength" : 8,
@@ -994,8 +1206,8 @@
       "autoIncrement" : false,
       "name" : "PRODUCTNAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 8,
+    "defaultValue" : "0",
     "name" : "PRODUCTNAME"
   }, {
     "phisicalDEField" : false,
@@ -1009,13 +1221,14 @@
       "name" : "BUILDER",
       "codeName" : "Builder"
     },
-    "length" : 30,
+    "dataType" : "PICKUPDATA",
+    "deployId" : "63efc68886ffd9e0a0813b64e8bf1dae",
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_Gird.json"
     },
-    "dataType" : "PICKUPDATA",
-    "deployId" : "63efc68886ffd9e0a0813b64e8bf1dae",
     "codeName" : "Builder",
     "logicName" : "构建者",
     "stringLength" : 30,
@@ -1060,8 +1273,7 @@
       "autoIncrement" : false,
       "name" : "BUILDER"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 30,
     "name" : "BUILDER"
   }, {
     "phisicalDEField" : false,
@@ -1075,9 +1287,10 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "length" : 150,
     "dataType" : "PICKUPTEXT",
     "deployId" : "debb105088efcecfe48130d38121a618",
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "codeName" : "Buildname",
     "logicName" : "版本",
     "stringLength" : 150,
@@ -1122,8 +1335,7 @@
       "autoIncrement" : false,
       "name" : "BUILDNAME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 150,
     "name" : "BUILDNAME"
   }, {
     "phisicalDEField" : false,
@@ -1139,6 +1351,8 @@
     },
     "dataType" : "PICKUPDATA",
     "deployId" : "15c6808c781986bf64f84cda45f109e8",
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "codeName" : "Builddate",
     "logicName" : "打包日期",
     "stdDataType" : 5,
@@ -1170,8 +1384,6 @@
       "autoIncrement" : false,
       "name" : "BUILDDATE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 3,
     "name" : "BUILDDATE"
   }, {
     "getPSDER" : {
@@ -1184,10 +1396,10 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "length" : 8,
-    "defaultValue" : "0",
     "dataType" : "PICKUP",
     "deployId" : "2ec92af3de937cfde706d34336df1261",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "codeName" : "Product",
     "logicName" : "产品",
     "stdDataType" : 1,
@@ -1219,8 +1431,8 @@
       "autoIncrement" : false,
       "name" : "PRODUCT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
     "name" : "PRODUCT"
   }, {
     "getPSDER" : {
@@ -1233,10 +1445,10 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "length" : 8,
-    "defaultValue" : "0",
     "dataType" : "PICKUP",
     "deployId" : "d5fc5a18a333a8714c0a15975e3b029f",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "codeName" : "Build",
     "logicName" : "版本",
     "stdDataType" : 1,
@@ -1268,8 +1480,8 @@
       "autoIncrement" : false,
       "name" : "BUILD"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
     "name" : "BUILD"
   }, {
     "getPSDER" : {
@@ -1282,10 +1494,10 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "length" : 8,
-    "defaultValue" : "0",
     "dataType" : "PICKUP",
     "deployId" : "c6c775d8fd952e8a6abf5582a947268c",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "codeName" : "Branch",
     "logicName" : "平台/分支",
     "stdDataType" : 1,
@@ -1317,222 +1529,10 @@
       "autoIncrement" : false,
       "name" : "BRANCH"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
     "name" : "BRANCH"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ReportRelease",
-    "logicName" : "测试报告关联发布",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ReportRelease"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Activate.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/BatchUnlinkBug.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/ChangeStatus.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBug.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBugbyBug.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBugbyLeftBug.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkStory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/MobReleaseCounter.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/OneClickRelease.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Save.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Terminate.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/UnlinkBug.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "GetList",
-    "logicName" : "获取产品发布",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "GetList"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ReportRelease",
-    "logicName" : "测试报告关联发布",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ReportRelease"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "getAllPSDELogics" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDELOGICS/MobReleaseCounter.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDELOGICS/Update__MSDeny.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDELOGICS/Remove__MSDeny.json"
-  } ],
-  "getAllPSDEMaps" : [ {
-    "autoDEFieldMap" : false,
-    "autoDEActionMap" : false,
-    "autoDEDataQueryMap" : false,
-    "autoDEDataSetMap" : false,
-    "codeName" : "ProductReleaseMap",
-    "getDstPSDE" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
-    },
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEMAPS/ProductReleaseMap.json",
-    "name" : "产品发布映射"
-  } ],
-  "getAllPSDEMainStates" : [ {
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "actionAllowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__RELEASE_ACTIVE"
-      },
-      "name" : "SRFUR__RELEASE_ACTIVE"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "normal",
-    "logicName" : "正常",
-    "default" : false,
-    "mSTag" : "normal",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "normal",
-    "name" : "正常"
-  }, {
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "actionAllowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__RELEASE_TERMINATE"
-      },
-      "name" : "SRFUR__RELEASE_TERMINATE"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "terminate",
-    "logicName" : "停止维护",
-    "default" : false,
-    "mSTag" : "terminate",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "terminate",
-    "name" : "停止维护"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
@@ -1544,15 +1544,6 @@
   "validLogicValue" : "0",
   "invalidLogicValue" : "1",
   "serviceAPIMode" : 1,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "getPSSysImage" : {
-    "glyph" : "xf11d@FontAwesome",
-    "cssClass" : "fa fa-flag-o"
-  },
-  "deployId" : "ac9ca89bb81ce2067149d12c4fa5a2f2",
-  "codeName" : "Release",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1567,13 +1558,27 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "ac9ca89bb81ce2067149d12c4fa5a2f2",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "getPSSysImage" : {
+    "glyph" : "xf11d@FontAwesome",
+    "cssClass" : "fa fa-flag-o"
+  },
+  "codeName" : "Release",
   "logicName" : "发布",
   "tableName" : "zt_release",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : true,
+  "serviceCodeName" : "Release",
+  "enableRemove" : true,
   "logicValid" : true,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1582,14 +1587,9 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "serviceCodeName" : "Release",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

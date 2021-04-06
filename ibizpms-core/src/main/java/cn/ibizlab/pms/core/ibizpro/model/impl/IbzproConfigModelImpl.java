@@ -1,10 +1,12 @@
 package cn.ibizlab.pms.core.ibizpro.model.impl;
 
+import cn.ibizlab.pms.core.ibizpro.domain.IbzproConfig;
 import cn.ibizlab.pms.core.ibizpro.filter.IbzproConfigSearchContext;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzproConfigService;
 import cn.ibizlab.pms.core.util.model.DataEntityModelGlobalHelper;
 import cn.ibizlab.pms.core.util.model.DataEntityModelImpl;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
+import cn.ibizlab.pms.util.security.SpringContextHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

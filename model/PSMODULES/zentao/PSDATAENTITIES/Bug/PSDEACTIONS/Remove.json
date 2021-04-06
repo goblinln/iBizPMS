@@ -1,4 +1,5 @@
 {
+  "transactionMode" : "DEFAULT",
   "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : true,
@@ -15,27 +16,26 @@
     "attachMode" : "AFTER",
     "name" : "附加逻辑"
   } ],
-  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTRemove"
-  },
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
   "orderValue" : 21,
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTRemove"
+  },
   "codeName" : "Remove",
   "logicName" : "Remove",
-  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "ID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Remove.json",
-  "name" : "Remove",
   "userTag4" : "remove",
-  "userCat" : "CAT1"
+  "userCat" : "CAT1",
+  "name" : "Remove"
 }

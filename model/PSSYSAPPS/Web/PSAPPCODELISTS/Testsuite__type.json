@@ -6,17 +6,17 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "library",
     "codeName" : "Library",
-    "text" : "用例库"
+    "text" : "用例库",
+    "value" : "library"
   }, {
-    "value" : "private",
     "codeName" : "Private",
-    "text" : "私有"
+    "text" : "私有",
+    "value" : "private"
   }, {
-    "value" : "public",
     "codeName" : "Public",
-    "text" : "公开"
+    "text" : "公开",
+    "value" : "public"
   } ],
   "codeName" : "Testsuite__type",
   "emptyText" : "未定义",

@@ -6,22 +6,22 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "all",
     "data" : "{}",
     "codeName" : "All",
-    "text" : "所有"
+    "text" : "所有",
+    "value" : "all"
   }, {
-    "value" : "normal",
     "data" : "{\"n_status_eq\":\"normal\"}",
     "codeName" : "Normal",
     "text" : "正常",
+    "color" : "rgba(13, 255, 0, 1)",
     "default" : true,
-    "color" : "rgba(13, 255, 0, 1)"
+    "value" : "normal"
   }, {
-    "value" : "terminate",
     "data" : "{\"n_status_eq\":\"terminate\"}",
     "codeName" : "Terminate",
-    "text" : "停止维护"
+    "text" : "停止维护",
+    "value" : "terminate"
   } ],
   "codeName" : "Realease_sort",
   "emptyText" : "未定义",

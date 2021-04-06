@@ -1,18 +1,17 @@
 {
+  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "STORY",
     "codeName" : "Story"
-  },
-  "getERMajorPSDEF" : {
-    "name" : "PRODUCT",
-    "codeName" : "Product"
   },
   "getPSPickupTextDEField" : {
     "name" : "STORYNAME",
     "codeName" : "Storyname"
   },
-  "enableExtRestrict" : true,
-  "masterOrder" : -1,
+  "getERMajorPSDEF" : {
+    "name" : "PRODUCT",
+    "codeName" : "Product"
+  },
   "getERMinorPSDEF" : {
     "name" : "PRODUCT",
     "codeName" : "Product"
@@ -26,6 +25,7 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
   },
+  "enableExtRestrict" : true,
   "removeActionType" : -1,
   "masterRS" : 0,
   "removeOrder" : 0,

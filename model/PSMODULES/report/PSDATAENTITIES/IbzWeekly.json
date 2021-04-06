@@ -1,14 +1,278 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateEveryWeekReport.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/EditGetLastWeekTaskAndComTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/JugThisWeekCreateWeekly.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Save.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Submit.json"
+  } ],
+  "subSysAsCloud" : false,
+  "getAllPSDELogics" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDELOGICS/Update__MSDeny.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDELOGICS/Remove__MSDeny.json"
+  } ],
+  "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__WEEKLY_NSUBMIT_BUT"
+      },
+      "name" : "SRFUR__WEEKLY_NSUBMIT_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "NSUNBMIT",
+    "logicName" : "未提交",
+    "default" : false,
+    "mSTag" : "0",
+    "stateValue" : "0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "name" : "未提交"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__WEEKLY_SUBMIT_BUT"
+      },
+      "name" : "SRFUR__WEEKLY_SUBMIT_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "SUBMIT",
+    "logicName" : "已提交",
+    "default" : false,
+    "mSTag" : "1",
+    "stateValue" : "1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "name" : "已提交"
+  } ],
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "MyNotSubmit",
+    "logicName" : "我的周报",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "MyNotSubmit"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "MyWeekly",
+    "logicName" : "我收到的周报",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "MyWeekly"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProductTeamMemberWeekly",
+    "logicName" : "产品团队成员周报",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProductTeamMemberWeekly"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProjectWeekly",
+    "logicName" : "项目周报",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProjectWeekly"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "MyNotSubmit",
+    "logicName" : "我的周报",
+    "defaultMode" : false,
+    "name" : "MyNotSubmit"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "MyWeekly",
+    "logicName" : "我收到的周报",
+    "defaultMode" : false,
+    "name" : "MyWeekly"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProductTeamMemberWeekly",
+    "logicName" : "产品团队成员周报",
+    "defaultMode" : false,
+    "name" : "ProductTeamMemberWeekly"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "ProjectWeekly",
+    "logicName" : "项目周报",
+    "defaultMode" : false,
+    "name" : "ProjectWeekly"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
-    "length" : 60,
+    "dataType" : "SSCODELIST",
+    "deployId" : "259a37dc88a3ecf2ed176fd559b6f660",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/YesNo.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "259a37dc88a3ecf2ed176fd559b6f660",
     "codeName" : "Issubmit",
-    "valueFormat" : "%1$s",
     "logicName" : "是否提交",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -53,15 +317,15 @@
       "autoIncrement" : false,
       "name" : "ISSUBMIT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "ISSUBMIT"
   }, {
-    "length" : 1048576,
     "dataType" : "HTMLTEXT",
     "deployId" : "3b1b949bf46e1b2b8ad4fb898a1580e2",
-    "codeName" : "Plannextweek",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Plannextweek",
     "logicName" : "下周计划",
     "stringLength" : 1048576,
     "stdDataType" : 21,
@@ -106,15 +370,17 @@
       "autoIncrement" : false,
       "name" : "PLANNEXTWEEK"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1048576,
     "name" : "PLANNEXTWEEK"
   }, {
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "7ef6cbce7da5e428f450645a20ba3946",
-    "codeName" : "IbzWeeklyName",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "IbzWeeklyName",
     "logicName" : "周报名称",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -158,21 +424,19 @@
       "autoIncrement" : false,
       "name" : "IBZ_WEEKLYNAME"
     } ],
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
     "name" : "IBZ_WEEKLYNAME"
   }, {
-    "length" : 2000,
+    "dataType" : "SMCODELIST",
+    "deployId" : "44b0522da8ff46e7ce541acfdc76c455",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_Gird.json"
     },
-    "dataType" : "SMCODELIST",
-    "deployId" : "44b0522da8ff46e7ce541acfdc76c455",
     "codeName" : "Mailto",
-    "valueFormat" : "%1$s",
     "logicName" : "抄送给",
     "stringLength" : 2000,
     "stdDataType" : 25,
@@ -216,17 +480,17 @@
       "autoIncrement" : false,
       "name" : "MAILTO"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 2000,
     "name" : "MAILTO"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "9aab69f855333400a384d23e20f687a7",
-    "codeName" : "Reporttopk",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Reporttopk",
     "logicName" : "汇报给(选择)",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -270,19 +534,19 @@
       "autoIncrement" : false,
       "name" : "REPORTTOPK"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "REPORTTOPK"
   }, {
-    "length" : 100,
+    "dataType" : "SMCODELIST",
+    "deployId" : "fa35e82550dc613f32a470e5114afd00",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/MyPlanTask.json"
     },
-    "dataType" : "SMCODELIST",
-    "deployId" : "fa35e82550dc613f32a470e5114afd00",
     "codeName" : "Nextweektask",
-    "valueFormat" : "%1$s",
     "logicName" : "下周计划任务",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -326,15 +590,17 @@
       "autoIncrement" : false,
       "name" : "NEXTWEEKTASK"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "NEXTWEEKTASK"
   }, {
-    "length" : 100,
     "dataType" : "ACID",
     "deployId" : "9ee4f8d795179ae35e64c4d085634105",
-    "codeName" : "IbzWeeklyId",
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "IbzWeeklyId",
     "logicName" : "周报标识",
     "stdDataType" : 1,
     "pasteReset" : true,
@@ -367,16 +633,15 @@
       "autoIncrement" : true,
       "name" : "IBZ_WEEKLYID"
     } ],
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "enableDBAutoValue" : true,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "IBZ_WEEKLYID"
   }, {
     "dataType" : "TIME",
     "deployId" : "ba1a60a2e113578c0d381cf37370d90e",
-    "codeName" : "Submittime",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tH:%1$tM:%1$tS",
+    "codeName" : "Submittime",
     "logicName" : "提交时间",
     "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -407,17 +672,16 @@
       "autoIncrement" : false,
       "name" : "SUBMITTIME"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "SUBMITTIME"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "8b5460edf836c302824d6bfcc4f276ac",
-    "codeName" : "Mailtopk",
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "codeName" : "Mailtopk",
     "logicName" : "抄送给(选择)",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -461,19 +725,19 @@
       "autoIncrement" : false,
       "name" : "MAILTOPK"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
     "name" : "MAILTOPK"
   }, {
-    "length" : 60,
+    "dataType" : "TEXT",
+    "deployId" : "df76a29932ad8e661f67099d8035156d",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "deployId" : "df76a29932ad8e661f67099d8035156d",
     "codeName" : "CreateMan",
-    "valueFormat" : "%1$s",
     "logicName" : "建立人",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -520,20 +784,19 @@
       "name" : "CREATEMAN"
     } ],
     "predefinedType" : "CREATEMAN",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "CREATEMAN"
   }, {
-    "length" : 60,
-    "defaultValue" : "0",
+    "dataType" : "SSCODELIST",
+    "deployId" : "2d211b6237310a299e2c300b133f2fef",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSCODELISTS/ReportStatus.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "2d211b6237310a299e2c300b133f2fef",
     "codeName" : "Reportstatus",
-    "valueFormat" : "%1$s",
     "logicName" : "状态",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -577,20 +840,20 @@
       "autoIncrement" : false,
       "name" : "REPORTSTATUS"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
+    "defaultValue" : "0",
     "name" : "REPORTSTATUS"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
     "deployId" : "a82763f574fa3f0121b5fd02ca9fb7d8",
-    "codeName" : "Files",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "codeName" : "Files",
     "logicName" : "附件",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -623,15 +886,16 @@
       },
       "name" : "默认规则"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "phisicalDEField" : false,
+    "length" : 100,
     "name" : "FILES"
   }, {
-    "length" : 1048576,
     "dataType" : "HTMLTEXT",
     "deployId" : "8d9398c25c823a893d5bd72467412c61",
-    "codeName" : "Workthisweek",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Workthisweek",
     "logicName" : "本周工作",
     "stringLength" : 1048576,
     "stdDataType" : 21,
@@ -676,19 +940,19 @@
       "autoIncrement" : false,
       "name" : "WORKTHISWEEK"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1048576,
     "name" : "WORKTHISWEEK"
   }, {
-    "length" : 60,
+    "dataType" : "SSCODELIST",
+    "deployId" : "be2e2a7f86cfe9a01b098c49f69d4539",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_Gird.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "be2e2a7f86cfe9a01b098c49f69d4539",
     "codeName" : "Reportto",
-    "valueFormat" : "%1$s",
     "logicName" : "汇报给",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -732,15 +996,15 @@
       "autoIncrement" : false,
       "name" : "REPORTTO"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "REPORTTO"
   }, {
-    "length" : 60,
     "dataType" : "TEXT",
     "deployId" : "de35cd0532fcb1b3a4a0a663ed960dc1",
-    "codeName" : "UpdateManName",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "UpdateManName",
     "logicName" : "更新人名称",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -787,19 +1051,19 @@
       "name" : "UPDATEMANNAME"
     } ],
     "predefinedType" : "UPDATEMANNAME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "UPDATEMANNAME"
   }, {
-    "length" : 60,
+    "dataType" : "SSCODELIST",
+    "deployId" : "8b9c1090bbecc9b467fa9a4a7f179bb5",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "8b9c1090bbecc9b467fa9a4a7f179bb5",
     "codeName" : "Account",
-    "valueFormat" : "%1$s",
     "logicName" : "用户",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -843,19 +1107,19 @@
       "autoIncrement" : false,
       "name" : "ACCOUNT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "ACCOUNT"
   }, {
-    "length" : 100,
+    "dataType" : "SMCODELIST",
+    "deployId" : "c000d8b897a1afe04954757d89f84964",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/CodeList.json"
     },
-    "dataType" : "SMCODELIST",
-    "deployId" : "c000d8b897a1afe04954757d89f84964",
     "codeName" : "Thisweektask",
-    "valueFormat" : "%1$s",
     "logicName" : "本周完成任务",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -899,15 +1163,15 @@
       "autoIncrement" : false,
       "name" : "THISWEEKTASK"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "THISWEEKTASK"
   }, {
-    "length" : 1048576,
     "dataType" : "HTMLTEXT",
     "deployId" : "b75b10440dc6386fc9d295fea751ee32",
-    "codeName" : "Comment",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Comment",
     "logicName" : "其他事项",
     "stringLength" : 1048576,
     "stdDataType" : 21,
@@ -952,14 +1216,15 @@
       "autoIncrement" : false,
       "name" : "COMMENT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1048576,
     "name" : "COMMENT"
   }, {
     "dataType" : "DATE",
     "deployId" : "4f81da7a11e22b301aea8d301fd70241",
-    "codeName" : "Date",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "codeName" : "Date",
     "logicName" : "日期",
     "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -990,19 +1255,18 @@
       "autoIncrement" : false,
       "name" : "DATE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "DATE"
   }, {
-    "length" : 60,
+    "dataType" : "TEXT",
+    "deployId" : "69029c29fef36bb614314d167bf98b63",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "deployId" : "69029c29fef36bb614314d167bf98b63",
     "codeName" : "UpdateMan",
-    "valueFormat" : "%1$s",
     "logicName" : "更新人",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -1049,15 +1313,15 @@
       "name" : "UPDATEMAN"
     } ],
     "predefinedType" : "UPDATEMAN",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "UPDATEMAN"
   }, {
-    "length" : 60,
     "dataType" : "TEXT",
     "deployId" : "9b8886bac13bb2e3d0a0156d26c212e2",
-    "codeName" : "CreateManName",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "CreateManName",
     "logicName" : "建立人名称",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -1104,15 +1368,15 @@
       "name" : "CREATEMANNAME"
     } ],
     "predefinedType" : "CREATEMANNAME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "CREATEMANNAME"
   }, {
-    "length" : 8,
     "dataType" : "DATETIME",
     "deployId" : "44d77871926fa4cfd99334308fcfd59a",
-    "codeName" : "CreateDate",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
     "systemReserver" : true,
@@ -1146,15 +1410,15 @@
       "name" : "CREATEDATE"
     } ],
     "predefinedType" : "CREATEDATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
     "name" : "CREATEDATE"
   }, {
-    "length" : 8,
     "dataType" : "DATETIME",
     "deployId" : "99b5bb4cfd572694c8b060eb7ccbdfbf",
-    "codeName" : "UpdateDate",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
     "systemReserver" : true,
@@ -1188,273 +1452,9 @@
       "name" : "UPDATEDATE"
     } ],
     "predefinedType" : "UPDATEDATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
     "name" : "UPDATEDATE"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据集",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "MyNotSubmit",
-    "logicName" : "我的周报",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "MyNotSubmit"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "MyWeekly",
-    "logicName" : "我收到的周报",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "MyWeekly"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProductTeamMemberWeekly",
-    "logicName" : "产品团队成员周报",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProductTeamMemberWeekly"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ProjectWeekly",
-    "logicName" : "项目周报",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ProjectWeekly"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateEveryWeekReport.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/EditGetLastWeekTaskAndComTask.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/JugThisWeekCreateWeekly.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Save.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Submit.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据查询",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "MyNotSubmit",
-    "logicName" : "我的周报",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "MyNotSubmit"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "MyWeekly",
-    "logicName" : "我收到的周报",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "MyWeekly"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProductTeamMemberWeekly",
-    "logicName" : "产品团队成员周报",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProductTeamMemberWeekly"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "ProjectWeekly",
-    "logicName" : "项目周报",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "ProjectWeekly"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "getAllPSDELogics" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDELOGICS/Update__MSDeny.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDELOGICS/Remove__MSDeny.json"
-  } ],
-  "getAllPSDEMainStates" : [ {
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "actionAllowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__WEEKLY_NSUBMIT_BUT"
-      },
-      "name" : "SRFUR__WEEKLY_NSUBMIT_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "NSUNBMIT",
-    "logicName" : "未提交",
-    "default" : false,
-    "mSTag" : "0",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "0",
-    "name" : "未提交"
-  }, {
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "actionAllowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__WEEKLY_SUBMIT_BUT"
-      },
-      "name" : "SRFUR__WEEKLY_SUBMIT_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "SUBMIT",
-    "logicName" : "已提交",
-    "default" : false,
-    "mSTag" : "1",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "1",
-    "name" : "已提交"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
@@ -1464,11 +1464,6 @@
     "codeName" : "Issubmit"
   } ],
   "serviceAPIMode" : 1,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "c45073622209b4e5d5b32335af99c925",
-  "codeName" : "IbzWeekly",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1483,13 +1478,23 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "c45073622209b4e5d5b32335af99c925",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "IbzWeekly",
   "logicName" : "周报",
   "tableName" : "T_IBZ_WEEKLY",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : true,
+  "serviceCodeName" : "IbzWeekly",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1498,14 +1503,9 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "serviceCodeName" : "IbzWeekly",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

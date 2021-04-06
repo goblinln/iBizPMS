@@ -1,22 +1,22 @@
 {
-  "enableSearch" : false,
-  "expandSearchForm" : false,
   "loadDefault" : true,
+  "expandSearchForm" : false,
+  "enableSearch" : false,
   "enableQuickGroup" : true,
   "getQuickGroupPSCodeList" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BurnQuickpacket.json"
   },
   "enableQuickSearch" : false,
-  "showCaptionBar" : false,
   "getPSDEViewCodeName" : "ChartView",
+  "showCaptionBar" : false,
   "caption" : "燃尽图",
   "title" : "燃尽图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -31,8 +31,8 @@
     "engineType" : "ChartView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "CHART",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "CHART"
     } ],
     "name" : "engine"
   } ],
@@ -48,15 +48,16 @@
     "uIActionTarget" : "SINGLEKEY",
     "name" : "toolbar_deuiaction1_computeburn"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
   },
   "getPSControls" : [ {
-    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
+    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -64,7 +65,6 @@
     },
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -76,8 +76,8 @@
           "name" : "isweekend"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
-        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "间隔",
@@ -89,11 +89,12 @@
         "labelWidth" : 50,
         "itemHeight" : 29.0,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 24,
+          "colMD" : 24,
           "colSM" : 24,
           "colXS" : 24,
-          "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
         "getPSSysCss" : {
@@ -104,11 +105,11 @@
         "detailStyle" : "DEFAULT",
         "name" : "isweekend"
       } ],
-      "infoGroupMode" : false,
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
+      "infoGroupMode" : false,
       "codeName" : "formpage1",
       "caption" : "常规条件",
       "detailType" : "FORMPAGE",
@@ -135,35 +136,35 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterSearch"
         },
+        "actionType" : "FILTERACTION",
+        "name" : "search"
+      }, {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
         },
-        "actionType" : "FILTERACTION",
-        "name" : "search"
-      }, {
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterGet"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
-        },
         "actionType" : "FILTERACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterGetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
         },
         "actionType" : "FILTERACTION",
         "name" : "loaddraft"
@@ -184,14 +185,10 @@
       },
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "refreshMode" : 1,
-        "enableConfirm" : true,
-        "getPSNavigateContexts" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "BURN",
-          "name" : "BURN"
-        } ],
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "ComputeBurn"
@@ -202,11 +199,15 @@
           "key" : "burn",
           "name" : "burn"
         } ],
+        "refreshMode" : 1,
+        "enableConfirm" : true,
+        "getPSNavigateContexts" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "BURN",
+          "name" : "BURN"
+        } ],
         "getNoPrivDisplayMode" : 2,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
-        },
         "timeout" : 60000,
         "codeName" : "ComputeBurn",
         "caption" : "更新燃尽图",
@@ -356,6 +357,26 @@
       }
     } ],
     "codeName" : "BurnDown2",
+    "getPSChartXAxises" : [ {
+      "eChartsPos" : "xAxis",
+      "eChartsType" : "category",
+      "position" : "bottom",
+      "caption" : "日期",
+      "type" : "category",
+      "index" : 0,
+      "name" : "X",
+      "id" : "0"
+    } ],
+    "getPSChartYAxises" : [ {
+      "eChartsPos" : "yAxis",
+      "eChartsType" : "value",
+      "position" : "left",
+      "caption" : "消耗工时",
+      "type" : "numeric",
+      "index" : 0,
+      "name" : "Y",
+      "id" : "0"
+    } ],
     "getPSChartDataSets" : [ {
       "getPSChartDataSetFields" : [ {
         "groupField" : true,
@@ -387,14 +408,9 @@
       "name" : "est-ESTIMATEANDLEFT",
       "id" : "1"
     } ],
-    "getPSChartXAxises" : [ {
-      "eChartsType" : "category",
-      "eChartsPos" : "xAxis",
-      "position" : "bottom",
-      "type" : "category",
-      "caption" : "日期",
+    "getPSChartDataSetGroups" : [ {
       "index" : 0,
-      "name" : "X",
+      "name" : "ESTIMATEANDLEFT",
       "id" : "0"
     } ],
     "getPSChartGrids" : [ {
@@ -422,21 +438,6 @@
       "name" : "[real]直角坐标系[0]",
       "id" : "0"
     } ],
-    "getPSChartYAxises" : [ {
-      "eChartsType" : "value",
-      "eChartsPos" : "yAxis",
-      "position" : "left",
-      "type" : "numeric",
-      "caption" : "消耗工时",
-      "index" : 0,
-      "name" : "Y",
-      "id" : "0"
-    } ],
-    "getPSChartDataSetGroups" : [ {
-      "index" : 0,
-      "name" : "ESTIMATEANDLEFT",
-      "id" : "0"
-    } ],
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -456,63 +457,63 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchESTIMATEANDLEFT"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
-        },
         "actionType" : "DEDATASET",
         "name" : "fetch"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -522,23 +523,22 @@
       "enableDEFieldPrivilege" : false,
       "id" : "图形控件处理器"
     },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn/PSCHARTS/BurnDown2.json",
     "getPSSysPFPlugin" : {
       "pluginType" : "CHART_RENDER",
       "pluginCode" : "NEW"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn/PSCHARTS/BurnDown2.json",
     "logicName" : "BurnDown2",
     "name" : "chart",
     "modelid" : "dde39a9842220d96c7f2a9bc8e0559ad"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
-    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction1_computeburn"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction1_computeburn",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
@@ -552,6 +552,14 @@
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
     "enableCreateDataRS" : false,
     "enableUpdateDataRS" : false,
     "enableGetDataRS" : false,
@@ -559,14 +567,6 @@
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
     },
     "codeName" : "Burns",
     "actionRSMode" : 1,

@@ -1,26 +1,26 @@
 {
   "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "orderValue" : 99999,
     "codeName" : "nsubmit",
     "logicName" : "未提交",
     "default" : false,
     "mSTag" : "0",
+    "stateValue" : "0",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "0",
     "name" : "未提交"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "modelref" : true,
@@ -39,20 +39,29 @@
     "logicName" : "已提交",
     "default" : false,
     "mSTag" : "1",
+    "stateValue" : "1",
     "viewActions" : 0,
     "enterStateMode" : "ANY",
     "wFStateMode" : 0,
-    "stateValue" : "1",
     "name" : "已提交"
   } ],
   "enableUIActions" : 15,
-  "enableUIRemove" : true,
   "getAllPSAppDEUIActions" : [ {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyEditMonthlyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "date",
+      "key" : "date",
+      "name" : "date"
+    } ],
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getPSNavigateContexts" : [ {
@@ -61,22 +70,12 @@
       "key" : "DATE",
       "name" : "DATE"
     } ],
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "date",
-      "key" : "date",
-      "name" : "date"
-    } ],
     "getNoPrivDisplayMode" : 1,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
-    "timeout" : 60000,
     "codeName" : "Edit",
     "caption" : "修改",
     "actionTarget" : "SINGLEKEY",
@@ -89,6 +88,10 @@
     "name" : "修改",
     "id" : "Edit@IbzMonthly"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMonthlyMainMsgEditView.json",
@@ -96,10 +99,6 @@
     },
     "frontProcessType" : "WIZARD",
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
-    },
     "timeout" : 60000,
     "codeName" : "ProjectMonthly",
     "caption" : "项目月报查看详情",
@@ -111,11 +110,21 @@
     "name" : "项目月报查看详情",
     "id" : "ProjectMonthly@IbzMonthly"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyNewMonthlyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "date",
+      "key" : "date",
+      "name" : "date"
+    } ],
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getPSNavigateContexts" : [ {
@@ -124,22 +133,12 @@
       "key" : "DATE",
       "name" : "DATE"
     } ],
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "date",
-      "key" : "date",
-      "name" : "date"
-    } ],
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
-    },
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf067@FontAwesome",
       "cssClass" : "fa fa-plus"
     },
-    "timeout" : 60000,
     "codeName" : "Create",
     "caption" : "新建",
     "actionTarget" : "NONE",
@@ -151,6 +150,10 @@
     "name" : "新建",
     "id" : "Create@IbzMonthly"
   }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+    },
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMyReceivedEditView.json",
@@ -159,10 +162,6 @@
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
     "getNoPrivDisplayMode" : 2,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
-    },
     "timeout" : 60000,
     "codeName" : "HaveRead",
     "caption" : "已读",
@@ -175,22 +174,22 @@
     "name" : "已读",
     "id" : "HaveRead@IbzMonthly"
   }, {
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Submit"
-    },
-    "getNoPrivDisplayMode" : 1,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
     },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Submit"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 1,
+    "timeout" : 60000,
     "getPSSysImage" : {
       "glyph" : "xf00c@FontAwesome",
       "cssClass" : "fa fa-check"
     },
-    "timeout" : 60000,
     "codeName" : "Submit",
     "caption" : "提交",
     "actionTarget" : "SINGLEKEY",
@@ -204,25 +203,25 @@
     "id" : "Submit@IbzMonthly"
   } ],
   "major" : true,
+  "enableUIRemove" : true,
   "getAllPSAppDEMethods" : [ {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
     "builtinMethod" : false,
-    "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
+    "codeName" : "Select",
+    "methodType" : "SELECT"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMONTHLY__DEACTION__CREATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -231,14 +230,14 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/Create.json"
     },
-    "codeName" : "Create"
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMONTHLY__DEACTION__UPDATE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
@@ -247,14 +246,14 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/Update.json"
     },
-    "codeName" : "Update"
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMONTHLY__DEACTION__REMOVE"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
@@ -263,14 +262,14 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/Remove.json"
     },
-    "codeName" : "Remove"
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMONTHLY__DEACTION__GET"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -279,14 +278,14 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/Get.json"
     },
-    "codeName" : "Get"
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -295,26 +294,26 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/GetDraft.json"
     },
-    "codeName" : "GetDraft"
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CreateGetInfo"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -323,14 +322,14 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/CreateGetInfo.json"
     },
-    "codeName" : "CreateGetInfo"
+    "codeName" : "CreateGetInfo",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CreateUserMonthly"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
@@ -339,74 +338,74 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/CreateUserMonthly.json"
     },
-    "codeName" : "CreateUserMonthly"
+    "codeName" : "CreateUserMonthly",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "EditGetCompleteTask"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/EditGetCompleteTask.json"
     },
-    "codeName" : "EditGetCompleteTask"
+    "codeName" : "EditGetCompleteTask",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "HaveRead"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/HaveRead.json"
     },
-    "codeName" : "HaveRead"
+    "codeName" : "HaveRead",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PushUserMonthly"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/PushUserMonthly.json"
     },
-    "codeName" : "PushUserMonthly"
+    "codeName" : "PushUserMonthly",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Submit"
     },
     "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/Submit.json"
     },
-    "codeName" : "Submit"
+    "codeName" : "Submit",
+    "methodType" : "DEACTION"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -415,14 +414,14 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "codeName" : "FetchDefault"
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyMonthly"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -431,14 +430,14 @@
       "modelref" : true,
       "id" : "MyMonthly"
     },
-    "codeName" : "FetchMyMonthly"
+    "codeName" : "FetchMyMonthly",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyMonthlyMob"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -447,14 +446,14 @@
       "modelref" : true,
       "id" : "MyMonthlyMob"
     },
-    "codeName" : "FetchMyMonthlyMob"
+    "codeName" : "FetchMyMonthlyMob",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyReceivedMonthly"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -463,14 +462,14 @@
       "modelref" : true,
       "id" : "MyReceivedMonthly"
     },
-    "codeName" : "FetchMyReceivedMonthly"
+    "codeName" : "FetchMyReceivedMonthly",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMySubmitMonthly"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -479,14 +478,14 @@
       "modelref" : true,
       "id" : "MySubmitMonthly"
     },
-    "codeName" : "FetchMySubmitMonthly"
+    "codeName" : "FetchMySubmitMonthly",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProductMonthly"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -495,14 +494,14 @@
       "modelref" : true,
       "id" : "ProductMonthly"
     },
-    "codeName" : "FetchProductMonthly"
+    "codeName" : "FetchProductMonthly",
+    "methodType" : "FETCH"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectMonthly"
     },
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -511,41 +510,42 @@
       "modelref" : true,
       "id" : "ProjectMonthly"
     },
-    "codeName" : "FetchProjectMonthly"
+    "codeName" : "FetchProjectMonthly",
+    "methodType" : "FETCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
@@ -561,8 +561,8 @@
     "stdDataType" : 25,
     "name" : "REPORTSTATUS"
   }, {
-    "codeName" : "UpdateDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
     "name" : "UPDATEDATE"
@@ -603,20 +603,20 @@
     "stdDataType" : 25,
     "name" : "UPDATEMAN"
   }, {
-    "codeName" : "Date",
     "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "Date",
     "logicName" : "日期",
     "stdDataType" : 5,
     "name" : "DATE"
   }, {
-    "codeName" : "Submittime",
     "valueFormat" : "HH:mm:ss",
+    "codeName" : "Submittime",
     "logicName" : "提交时间",
     "stdDataType" : 5,
     "name" : "SUBMITTIME"
   }, {
-    "codeName" : "CreateDate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
     "name" : "CREATEDATE"
@@ -670,11 +670,11 @@
     "name" : "REPORTTO"
   }, {
     "majorField" : true,
+    "enableQuickSearch" : true,
     "codeName" : "IbzMonthlyName",
     "logicName" : "月报名称",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "enableQuickSearch" : true,
     "name" : "IBZ_MONTHLYNAME"
   }, {
     "codeName" : "Comment",
@@ -690,22 +690,22 @@
     "name" : "MAILTO"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
     "getPSDEACModeDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "IBZ_MONTHLYID",
         "codeName" : "IbzMonthlyId"
       },
-      "name" : "value",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "value"
     }, {
       "getPSAppDEField" : {
         "name" : "IBZ_MONTHLYNAME",
         "codeName" : "IbzMonthlyName"
       },
-      "name" : "text",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "text"
     } ],
-    "enablePagingBar" : false,
     "getValuePSAppDEField" : {
       "name" : "IBZ_MONTHLYID",
       "codeName" : "IbzMonthlyId"
@@ -727,7 +727,6 @@
     "codeName" : "IbzMonthlyName"
   } ],
   "getAllPSAppDEDataExports" : [ {
-    "maxRowCount" : 1000,
     "getPSDEDataExportItems" : [ {
       "getPSAppDEField" : {
         "name" : "IBZ_MONTHLYID",
@@ -789,15 +788,11 @@
       "caption" : "是否提交",
       "name" : "issubmit"
     } ],
+    "maxRowCount" : 1000,
     "codeName" : "DataExport",
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly/PSAPPDEDATAEXPS/DataExport.json",
     "name" : "数据导出"
   } ],
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDESERVICEAPIS/IbzMonthly.json"
-  },
-  "codeName" : "IbzMonthly",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -811,12 +806,17 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDESERVICEAPIS/IbzMonthly.json"
+  },
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "codeName" : "IbzMonthly",
   "logicName" : "月报",
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,
   "dataAccCtrlArch" : 1,
-  "enableUICreate" : true,
-  "enableUIModify" : true,
   "defaultMode" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json",
   "name" : "IBZ_MONTHLY"

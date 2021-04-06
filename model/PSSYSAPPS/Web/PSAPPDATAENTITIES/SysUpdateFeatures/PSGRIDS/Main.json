@@ -1,78 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "SYS_UPDATE_LOGNAME",
-      "codeName" : "SysUpdateLogName"
-    },
-    "name" : "sys_update_logname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "UPDATEMAN",
-      "codeName" : "UpdateMan"
-    },
-    "name" : "updateman",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DISPLAYORDER",
-      "codeName" : "Displayorder"
-    },
-    "name" : "displayorder",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "SYS_UPDATE_LOGID",
-      "codeName" : "SysUpdateLogId"
-    },
-    "name" : "sys_update_logid",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "UPDATEDATE",
-      "codeName" : "UpdateDate"
-    },
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "name" : "updatedate",
-    "dataType" : 5
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    },
-    "name" : "type",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "UPFEATURES",
-      "codeName" : "Upfeatures"
-    },
-    "name" : "upfeatures",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "SYS_UPDATE_FEATURESNAME",
-      "codeName" : "SysUpdateFeaturesName"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "SYS_UPDATE_FEATURESID",
-      "codeName" : "SysUpdateFeaturesId"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "SYS_UPDATE_FEATURESID",
-      "codeName" : "SysUpdateFeaturesId"
-    },
-    "name" : "srfkey",
-    "dataType" : 25
-  } ],
+  "singleSelect" : false,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateFeatures.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -92,40 +34,98 @@
     "caption" : "系统更新功能标识",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateFeatures.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : false,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
+  "hasWFDataItems" : false,
   "controlType" : "GRID",
+  "enablePagingBar" : true,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "SYS_UPDATE_LOGNAME",
+      "codeName" : "SysUpdateLogName"
+    },
+    "dataType" : 25,
+    "name" : "sys_update_logname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    },
+    "dataType" : 25,
+    "name" : "updateman"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DISPLAYORDER",
+      "codeName" : "Displayorder"
+    },
+    "dataType" : 9,
+    "name" : "displayorder"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "SYS_UPDATE_LOGID",
+      "codeName" : "SysUpdateLogId"
+    },
+    "dataType" : 25,
+    "name" : "sys_update_logid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "updatedate"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "dataType" : 25,
+    "name" : "type"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "UPFEATURES",
+      "codeName" : "Upfeatures"
+    },
+    "dataType" : 25,
+    "name" : "upfeatures"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "SYS_UPDATE_FEATURESNAME",
+      "codeName" : "SysUpdateFeaturesName"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "SYS_UPDATE_FEATURESID",
+      "codeName" : "SysUpdateFeaturesId"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 25,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "SYS_UPDATE_FEATURESID",
+      "codeName" : "SysUpdateFeaturesId"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  } ],
+  "enableRowEdit" : false,
   "getPSDEGridColumns" : [ {
-    "linkValueItem" : "sys_update_logid",
+    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateLogTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "enableLinkView" : true,
+    "excelCaption" : "所属更新",
     "getPSAppDEField" : {
       "name" : "SYS_UPDATE_LOGNAME",
       "codeName" : "SysUpdateLogName"
     },
     "dataItemName" : "sys_update_logname",
-    "excelCaption" : "所属更新",
+    "linkValueItem" : "sys_update_logid",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -137,12 +137,12 @@
     "widthUnit" : "PX",
     "name" : "sys_update_logname"
   }, {
+    "excelCaption" : "更新功能",
     "getPSAppDEField" : {
       "name" : "UPFEATURES",
       "codeName" : "Upfeatures"
     },
     "dataItemName" : "upfeatures",
-    "excelCaption" : "更新功能",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -154,6 +154,7 @@
     "widthUnit" : "STAR",
     "name" : "upfeatures"
   }, {
+    "excelCaption" : "更新类型",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SYS_UPDATE_LOG_TYPE.json"
@@ -163,7 +164,6 @@
       "codeName" : "Type"
     },
     "dataItemName" : "type",
-    "excelCaption" : "更新类型",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -175,12 +175,12 @@
     "widthUnit" : "PX",
     "name" : "type"
   }, {
+    "excelCaption" : "展示顺序",
     "getPSAppDEField" : {
       "name" : "DISPLAYORDER",
       "codeName" : "Displayorder"
     },
     "dataItemName" : "displayorder",
-    "excelCaption" : "展示顺序",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -192,6 +192,7 @@
     "widthUnit" : "PX",
     "name" : "displayorder"
   }, {
+    "excelCaption" : "更新人",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
@@ -201,7 +202,6 @@
       "codeName" : "UpdateMan"
     },
     "dataItemName" : "updateman",
-    "excelCaption" : "更新人",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -213,12 +213,12 @@
     "widthUnit" : "PX",
     "name" : "updateman"
   }, {
+    "excelCaption" : "更新时间",
     "getPSAppDEField" : {
       "name" : "UPDATEDATE",
       "codeName" : "UpdateDate"
     },
     "dataItemName" : "updatedate",
-    "excelCaption" : "更新时间",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -233,12 +233,12 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

@@ -1,71 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "WORK",
-      "codeName" : "Work"
-    },
-    "name" : "work",
-    "dataType" : 21
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "id",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CONSUMED",
-      "codeName" : "Consumed"
-    },
-    "name" : "consumed",
-    "dataType" : 7
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DATES",
-      "codeName" : "Dates"
-    },
-    "format" : "YYYY-MM-DD",
-    "name" : "dates",
-    "dataType" : 5
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TASK",
-      "codeName" : "Task"
-    },
-    "name" : "task",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "LEFT",
-      "codeName" : "Left"
-    },
-    "name" : "left",
-    "dataType" : 7
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 1
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  } ],
+  "singleSelect" : true,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : true,
@@ -102,34 +51,85 @@
     "caption" : "编号",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : true,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
+  "hasWFDataItems" : false,
   "controlType" : "GRID",
-  "getPSDEGridColumns" : [ {
+  "enablePagingBar" : false,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "WORK",
+      "codeName" : "Work"
+    },
+    "dataType" : 21,
+    "name" : "work"
+  }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "enableRowEdit" : true,
-    "dataItemName" : "id",
+    "dataType" : 1,
+    "name" : "id"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    },
+    "dataType" : 7,
+    "name" : "consumed"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DATES",
+      "codeName" : "Dates"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "dates"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASK",
+      "codeName" : "Task"
+    },
+    "dataType" : 1,
+    "name" : "task"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    },
+    "dataType" : 7,
+    "name" : "left"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  } ],
+  "enableRowEdit" : false,
+  "getPSDEGridColumns" : [ {
     "excelCaption" : "ID",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataItemName" : "id",
+    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -141,12 +141,12 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
+    "excelCaption" : "日期",
     "getPSAppDEField" : {
       "name" : "DATES",
       "codeName" : "Dates"
     },
     "dataItemName" : "dates",
-    "excelCaption" : "日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -159,12 +159,12 @@
     "widthUnit" : "PX",
     "name" : "dates"
   }, {
+    "excelCaption" : "总计消耗",
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
     "dataItemName" : "consumed",
-    "excelCaption" : "总计消耗",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -176,12 +176,12 @@
     "widthUnit" : "PX",
     "name" : "consumed"
   }, {
+    "excelCaption" : "预计剩余",
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
     "dataItemName" : "left",
-    "excelCaption" : "预计剩余",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -193,12 +193,12 @@
     "widthUnit" : "PX",
     "name" : "left"
   }, {
+    "excelCaption" : "备注",
     "getPSAppDEField" : {
       "name" : "WORK",
       "codeName" : "Work"
     },
     "dataItemName" : "work",
-    "excelCaption" : "备注",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -212,12 +212,12 @@
   } ],
   "codeName" : "MainLook",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 500,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

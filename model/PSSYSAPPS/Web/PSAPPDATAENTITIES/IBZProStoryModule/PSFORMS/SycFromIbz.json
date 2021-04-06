@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -41,19 +41,18 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 100,
           "editorType" : "TEXTBOX",
           "name" : "ibiz_id"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "IBIZ_ID",
           "codeName" : "IBIZId"
         },
-        "hidden" : false,
         "dataType" : 25,
         "caption" : "IBIZ标识",
         "allowEmpty" : true,
@@ -62,6 +61,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -71,28 +71,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "ibiz_id"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
+          "enableLinkView" : false,
           "dropDownView" : false,
           "enablePickupView" : false,
-          "enableLinkView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
-          "getPSAppDEACMode" : {
+          "handlerType" : "PickupText",
+          "getPSAppDataEntity" : {
             "modelref" : true,
-            "id" : "Default"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct.json"
           },
           "getPSAppDEDataSet" : {
             "modelref" : true,
             "id" : "FetchDefault"
           },
-          "getPSAppDataEntity" : {
+          "getPSAppDEACMode" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct.json"
+            "id" : "Default"
           },
-          "handlerType" : "PickupText",
           "valueItemName" : "root",
           "editorParams" : {
             "AC" : "TRUE",
@@ -103,12 +102,12 @@
           "name" : "productname"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PRODUCTNAME",
           "codeName" : "ProductName"
         },
-        "hidden" : false,
         "dataType" : 25,
         "caption" : "产品",
         "allowEmpty" : true,
@@ -118,6 +117,7 @@
         "valueItemName" : "root",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -127,18 +127,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "productname"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "root"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ROOT",
           "codeName" : "Root"
         },
-        "hidden" : true,
         "dataType" : 1,
         "caption" : "编号",
         "allowEmpty" : true,
@@ -147,6 +146,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -156,18 +156,17 @@
         "detailStyle" : "DEFAULT",
         "name" : "root"
       }, {
-        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "type"
         },
         "inputTipClosable" : false,
+        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TYPE",
           "codeName" : "Type"
         },
-        "hidden" : true,
         "dataType" : 25,
         "caption" : "类型",
         "allowEmpty" : true,
@@ -177,6 +176,7 @@
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -197,11 +197,11 @@
       "showCaption" : true,
       "name" : "group1"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

@@ -1,15 +1,19 @@
 {
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
-      "viewFieldName" : "TITLE",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "title"
       },
-      "hidden" : false,
+      "viewFieldName" : "TITLE",
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -29,7 +33,6 @@
       "name" : "rawitem1"
     }, {
       "getPSPanelItems" : [ {
-        "viewFieldName" : "pri",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -40,9 +43,10 @@
           "editorType" : "SPAN",
           "name" : "pri"
         },
-        "hidden" : false,
+        "viewFieldName" : "pri",
         "convertToCodeItemText" : true,
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 3,
           "colMD" : 24,
@@ -52,7 +56,6 @@
         "itemStyle" : "DEFAULT",
         "name" : "pri"
       }, {
-        "viewFieldName" : "status",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -63,9 +66,10 @@
           "editorType" : "SPAN",
           "name" : "status"
         },
-        "hidden" : false,
+        "viewFieldName" : "status",
         "convertToCodeItemText" : true,
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 12,
           "colMD" : 24,
@@ -76,15 +80,15 @@
         "itemStyle" : "DEFAULT",
         "name" : "status"
       }, {
-        "viewFieldName" : "estimate",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
           "editorType" : "SPAN",
           "name" : "estimate"
         },
-        "hidden" : false,
+        "viewFieldName" : "estimate",
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colLG" : 4,
           "colMD" : 24,
@@ -112,14 +116,10 @@
           "id" : "itemlayoutpanel_button1"
         },
         "getPSUIAction" : {
-          "refreshMode" : 1,
-          "enableConfirm" : true,
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "PROJECT",
-            "name" : "PROJECT"
-          } ],
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "ProjectUnlinkStory"
@@ -130,16 +130,20 @@
             "key" : "project",
             "name" : "project"
           } ],
+          "refreshMode" : 1,
+          "enableConfirm" : true,
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "PROJECT",
+            "name" : "PROJECT"
+          } ],
           "getNoPrivDisplayMode" : 1,
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-          },
+          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf127@FontAwesome",
             "cssClass" : "fa fa-unlink"
           },
-          "timeout" : 60000,
           "codeName" : "ProjectUnlinkStory",
           "caption" : "移除",
           "actionTarget" : "SINGLEKEY",
@@ -201,13 +205,13 @@
     "name" : "container1"
   }, {
     "getPSPanelItems" : [ {
-      "viewFieldName" : "id",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "srfkey"
       },
-      "hidden" : true,
+      "viewFieldName" : "id",
       "showCaption" : false,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -216,13 +220,13 @@
       "itemStyle" : "DEFAULT",
       "name" : "srfkey"
     }, {
-      "viewFieldName" : "stage",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "stage"
       },
-      "hidden" : true,
+      "viewFieldName" : "stage",
       "showCaption" : false,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -231,13 +235,13 @@
       "itemStyle" : "DEFAULT",
       "name" : "stage"
     }, {
-      "viewFieldName" : "story",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "story"
       },
-      "hidden" : true,
+      "viewFieldName" : "story",
       "showCaption" : false,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -246,13 +250,13 @@
       "itemStyle" : "DEFAULT",
       "name" : "story"
     }, {
-      "viewFieldName" : "ISFAVORITES",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "isfavorites"
       },
-      "hidden" : true,
+      "viewFieldName" : "ISFAVORITES",
       "showCaption" : false,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -261,13 +265,13 @@
       "itemStyle" : "DEFAULT",
       "name" : "isfavorites"
     }, {
-      "viewFieldName" : "ISCHILD",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "ischild"
       },
-      "hidden" : true,
+      "viewFieldName" : "ISCHILD",
       "showCaption" : false,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -318,10 +322,6 @@
     "modelref" : true,
     "id" : "ischild"
   } ],
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
-  },
   "controlType" : "PANEL",
   "codeName" : "StoryKanBan",
   "layoutMode" : "TABLE_24COL",

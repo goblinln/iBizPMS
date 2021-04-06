@@ -1,6 +1,5 @@
 {
   "typeValue" : "task",
-  "virtual" : true,
   "inherit" : false,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
@@ -33,6 +32,7 @@
     },
     "name" : "PROJECT=PROJECT"
   } ],
+  "virtual" : true,
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"

@@ -1,11 +1,11 @@
 {
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchProjectTeam"
-  },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+  },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchProjectTeam"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

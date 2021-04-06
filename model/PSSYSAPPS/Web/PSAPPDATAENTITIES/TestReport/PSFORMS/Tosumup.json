@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -34,7 +34,6 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "emptyCaption" : true,
       "getPSEditor" : {
         "getPSSysPFPlugin" : {
           "pluginType" : "EDITOR_CUSTOMSTYLE",
@@ -45,12 +44,12 @@
         "name" : "report"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : true,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "REPORT",
         "codeName" : "Report"
       },
-      "hidden" : false,
       "dataType" : 21,
       "allowEmpty" : true,
       "enableCond" : 3,
@@ -58,11 +57,16 @@
       "labelPos" : "LEFT",
       "labelWidth" : 10,
       "showCaption" : true,
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
       "getPSDEFDGroupLogics" : [ {
         "logicCat" : "PANELVISIBLE",
         "getPSDEFDLogics" : [ {
-          "condOP" : "ISNOTNULL",
           "dEFDName" : "report",
+          "condOP" : "ISNOTNULL",
           "logicType" : "SINGLE",
           "name" : "report 值不为空(NotNil)"
         } ],
@@ -71,10 +75,6 @@
         "logicType" : "GROUP",
         "name" : "表单成员[report][面板显示]逻辑"
       } ],
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
       "codeName" : "report",
       "detailType" : "FORMITEM",
       "detailStyle" : "DEFAULT",
@@ -84,11 +84,15 @@
       "rawItemWidth" : -1.0,
       "contentType" : "RAW",
       "rawContent" : "无",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
       "getPSDEFDGroupLogics" : [ {
         "logicCat" : "PANELVISIBLE",
         "getPSDEFDLogics" : [ {
-          "condOP" : "ISNULL",
           "dEFDName" : "report",
+          "condOP" : "ISNULL",
           "logicType" : "SINGLE",
           "name" : "report 值为空(Nil)"
         } ],
@@ -97,21 +101,17 @@
         "logicType" : "GROUP",
         "name" : "表单成员[rawitem1][面板显示]逻辑"
       } ],
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
       "codeName" : "rawitem1",
       "detailType" : "RAWITEM",
       "detailStyle" : "DEFAULT",
       "showCaption" : true,
       "name" : "rawitem1"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

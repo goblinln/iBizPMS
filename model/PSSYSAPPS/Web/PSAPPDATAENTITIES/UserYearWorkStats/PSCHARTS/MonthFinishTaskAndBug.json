@@ -143,6 +143,28 @@
     "name" : "MONTESTIMATE"
   } ],
   "codeName" : "MonthFinishTaskAndBug",
+  "getPSChartXAxises" : [ {
+    "eChartsPos" : "xAxis",
+    "eChartsType" : "category",
+    "position" : "bottom",
+    "caption" : "月",
+    "type" : "category",
+    "index" : 0,
+    "name" : "月",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "eChartsPos" : "yAxis",
+    "eChartsType" : "value",
+    "position" : "left",
+    "maxValue" : 100.0,
+    "minValue" : 0.0,
+    "caption" : "数量",
+    "type" : "numeric",
+    "index" : 0,
+    "name" : "数量",
+    "id" : "0"
+  } ],
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
       "groupField" : true,
@@ -192,14 +214,9 @@
     "name" : "MONTESTIMATE-MonthFinishTaskAndBug",
     "id" : "2"
   } ],
-  "getPSChartXAxises" : [ {
-    "eChartsType" : "category",
-    "eChartsPos" : "xAxis",
-    "position" : "bottom",
-    "type" : "category",
-    "caption" : "月",
+  "getPSChartDataSetGroups" : [ {
     "index" : 0,
-    "name" : "月",
+    "name" : "MonthFinishTaskAndBug",
     "id" : "0"
   } ],
   "getPSChartGrids" : [ {
@@ -227,23 +244,6 @@
     "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
     "id" : "0"
   } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "maxValue" : 100.0,
-    "minValue" : 0.0,
-    "position" : "left",
-    "type" : "numeric",
-    "caption" : "数量",
-    "index" : 0,
-    "name" : "数量",
-    "id" : "0"
-  } ],
-  "getPSChartDataSetGroups" : [ {
-    "index" : 0,
-    "name" : "MonthFinishTaskAndBug",
-    "id" : "0"
-  } ],
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -253,12 +253,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
-  "height" : 300.0,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthFinishTaskAndBug.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthFinishTaskAndBug.json",
+  "height" : 300.0,
   "logicName" : "MonthFinishTaskAndBug",
   "modelid" : "8993ef48b185bc2433a52f2b3ccd5235",
   "getUserParam" : {

@@ -1,17 +1,14 @@
 {
   "quickSearchMode" : 1,
-  "mobileSearchBar" : false,
   "getPSSearchBarFilters" : [ {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "editorType" : "TEXTBOX",
       "editorWidth" : 100.0,
       "name" : "titlelike"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "caption" : "标题(%)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_TITLE_LIKE",
@@ -22,10 +19,12 @@
       },
       "name" : "N_TITLE_LIKE"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
@@ -33,7 +32,6 @@
     "itemType" : "FILTER",
     "name" : "titlelike"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
       "getPSAppCodeList" : {
@@ -44,11 +42,10 @@
       "editorWidth" : 100.0,
       "name" : "objecttypeeq"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "needCodeListConfig" : true,
     "caption" : "对象类型(=)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_OBJECTTYPE_EQ",
@@ -59,10 +56,12 @@
       },
       "name" : "N_OBJECTTYPE_EQ"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "OBJECTTYPE",
       "codeName" : "ObjectType"
@@ -70,26 +69,25 @@
     "itemType" : "FILTER",
     "name" : "objecttypeeq"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
+      "enableLinkView" : false,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
-      "getPSAppDEACMode" : {
+      "getPSAppDataEntity" : {
         "modelref" : true,
-        "id" : "Default"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
       },
       "getPSAppDEDataSet" : {
         "modelref" : true,
         "id" : "FetchDefault"
       },
-      "getPSAppDataEntity" : {
+      "getPSAppDEACMode" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "id" : "Default"
       },
       "editorParams" : {
         "AC" : "TRUE",
@@ -99,10 +97,9 @@
       "editorType" : "PICKEREX_TRIGGER",
       "name" : "productnameeq"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "caption" : "所属产品(=)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_PRODUCTNAME_EQ",
@@ -113,9 +110,11 @@
       },
       "name" : "N_PRODUCTNAME_EQ"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
@@ -123,26 +122,25 @@
     "itemType" : "FILTER",
     "name" : "productnameeq"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
+      "enableLinkView" : false,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
-      "getPSAppDEACMode" : {
+      "getPSAppDataEntity" : {
         "modelref" : true,
-        "id" : "Default"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
       },
       "getPSAppDEDataSet" : {
         "modelref" : true,
         "id" : "FetchDefault"
       },
-      "getPSAppDataEntity" : {
+      "getPSAppDEACMode" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "id" : "Default"
       },
       "editorParams" : {
         "AC" : "TRUE",
@@ -152,10 +150,9 @@
       "editorType" : "PICKEREX_TRIGGER",
       "name" : "productnamelike"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "caption" : "所属产品(%)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_PRODUCTNAME_LIKE",
@@ -166,9 +163,11 @@
       },
       "name" : "N_PRODUCTNAME_LIKE"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
@@ -176,26 +175,25 @@
     "itemType" : "FILTER",
     "name" : "productnamelike"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
+      "enableLinkView" : false,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
-      "getPSAppDEACMode" : {
+      "getPSAppDataEntity" : {
         "modelref" : true,
-        "id" : "Default"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
       "getPSAppDEDataSet" : {
         "modelref" : true,
         "id" : "FetchDefault"
       },
-      "getPSAppDataEntity" : {
+      "getPSAppDEACMode" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        "id" : "Default"
       },
       "editorParams" : {
         "AC" : "TRUE",
@@ -205,10 +203,9 @@
       "editorType" : "PICKEREX_TRIGGER",
       "name" : "projectnameeq"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "caption" : "所属项目(=)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_PROJECTNAME_EQ",
@@ -219,9 +216,11 @@
       },
       "name" : "N_PROJECTNAME_EQ"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
@@ -229,26 +228,25 @@
     "itemType" : "FILTER",
     "name" : "projectnameeq"
   }, {
-    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
+      "enableLinkView" : false,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
-      "getPSAppDEACMode" : {
+      "getPSAppDataEntity" : {
         "modelref" : true,
-        "id" : "Default"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
       "getPSAppDEDataSet" : {
         "modelref" : true,
         "id" : "FetchDefault"
       },
-      "getPSAppDataEntity" : {
+      "getPSAppDEACMode" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        "id" : "Default"
       },
       "editorParams" : {
         "AC" : "TRUE",
@@ -258,10 +256,9 @@
       "editorType" : "PICKEREX_TRIGGER",
       "name" : "projectnamelike"
     },
-    "hidden" : false,
+    "emptyCaption" : false,
     "dataType" : 25,
     "caption" : "所属项目(%)",
-    "allowEmpty" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_PROJECTNAME_LIKE",
@@ -272,9 +269,11 @@
       },
       "name" : "N_PROJECTNAME_LIKE"
     },
+    "allowEmpty" : true,
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
@@ -282,10 +281,11 @@
     "itemType" : "FILTER",
     "name" : "projectnamelike"
   } ],
-  "enableFilter" : true,
+  "mobileSearchBar" : false,
   "controlType" : "SEARCHBAR",
-  "codeName" : "Custom",
+  "enableFilter" : true,
   "enableQuickSearch" : true,
+  "codeName" : "Custom",
   "enableGroup" : false,
   "quickSearchWidth" : 0,
   "getPSAppDataEntity" : {

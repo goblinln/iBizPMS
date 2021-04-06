@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDataEntity" : {
@@ -25,6 +26,7 @@
     "name" : "执行重建模块路径行为"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7212"
@@ -170,17 +172,16 @@
       "srcFieldName" : "TYPE",
       "name" : "Default[TYPE] ==> ZT_Module[TYPE]"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备参数"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7754"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -210,20 +211,19 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "ZT_Module",
     "default" : false,
     "name" : "模块实体"
   }, {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 1,
   "codeName" : "FixPath",
   "logicName" : "重建模块路径",
   "defaultParamName" : "Default",

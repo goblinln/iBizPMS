@@ -6,21 +6,21 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "weekly",
     "codeName" : "Weekly",
-    "text" : "周报"
+    "text" : "周报",
+    "value" : "weekly"
   }, {
-    "value" : "daily",
     "codeName" : "Daily",
-    "text" : "日报"
+    "text" : "日报",
+    "value" : "daily"
   }, {
-    "value" : "monthly",
     "codeName" : "Monthly",
-    "text" : "月报"
+    "text" : "月报",
+    "value" : "monthly"
   }, {
-    "value" : "reportly",
     "codeName" : "Reportly",
-    "text" : "汇报"
+    "text" : "汇报",
+    "value" : "reportly"
   } ],
   "codeName" : "ReportType",
   "emptyText" : "未定义",

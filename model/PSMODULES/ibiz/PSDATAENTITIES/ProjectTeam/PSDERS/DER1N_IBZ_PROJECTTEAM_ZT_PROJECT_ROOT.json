@@ -1,14 +1,14 @@
 {
+  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "ROOT",
     "codeName" : "Root"
   },
-  "nestedRS" : true,
   "getPSPickupTextDEField" : {
     "name" : "PROJECTNAME",
     "codeName" : "ProjectName"
   },
-  "masterOrder" : -1,
+  "nestedRS" : true,
   "removeActionType" : -1,
   "masterRS" : 8,
   "removeOrder" : 0,

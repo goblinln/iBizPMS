@@ -5,18 +5,20 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7698"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6692"
@@ -78,7 +80,6 @@
       "srcFieldName" : "ID",
       "name" : "testrun[ID] ==> Default[ID]"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "重置ID"
@@ -106,6 +107,7 @@
       "modelref" : true,
       "id" : "testrun"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3329"
@@ -129,7 +131,6 @@
       "srcFieldName" : "TASK",
       "name" : "Default[TASK]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取数据"
@@ -170,20 +171,19 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "testrun",
     "default" : false,
     "name" : "testrun"
   } ],
-  "logicHolder" : 1,
   "codeName" : "testRunCases",
   "logicName" : "testRunCases",
   "defaultParamName" : "Default",

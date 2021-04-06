@@ -5,8 +5,10 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4196"
@@ -14,7 +16,6 @@
       "modelref" : true,
       "id" : "连接6511"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -24,6 +25,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -34,12 +36,12 @@
       "srcFieldName" : "STORY",
       "name" : "Default[STORY]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取需求版本"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
@@ -51,7 +53,6 @@
       "dstFieldName" : "STORYVERSION",
       "name" : "直接值[1] ==> Default[STORYVERSION]"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "重置需求版本"
@@ -139,13 +140,12 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 1,
   "codeName" : "UpdateStoryVersion",
   "logicName" : "更新需求版本",
   "defaultParamName" : "Default",

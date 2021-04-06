@@ -1,10 +1,10 @@
 {
   "codeName" : "Test",
-  "enableCustomized" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "enableCustomized" : false,
   "controlType" : "DASHBOARD",
   "getPSAppDataEntity" : {
     "modelref" : true,

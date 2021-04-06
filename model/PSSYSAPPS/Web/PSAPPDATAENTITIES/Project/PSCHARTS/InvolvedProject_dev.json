@@ -91,11 +91,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
   "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSCHARTS/InvolvedProject_dev.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSCHARTS/InvolvedProject_dev.json",
   "logicName" : "InvolvedProject_dev",
   "modelid" : "40d18c30ac5ff684513990fe3b683a29",
   "getUserParam" : {

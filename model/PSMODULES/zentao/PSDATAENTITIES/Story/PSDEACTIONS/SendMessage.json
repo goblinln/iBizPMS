@@ -1,19 +1,19 @@
 {
+  "transactionMode" : "DEFAULT",
   "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
   "builtinAction" : false,
-  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "SFPlugin"
   },
-  "orderValue" : 99999,
   "codeName" : "SendMessage",
   "logicName" : "行为",
-  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

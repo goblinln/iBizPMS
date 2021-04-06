@@ -1,10 +1,79 @@
 {
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Save.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : false,
+    "extendMode" : 0,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "extendMode" : 0,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDEFields" : [ {
-    "length" : 65535,
     "dataType" : "LONGTEXT",
     "deployId" : "d03e55e47cdb7ce10910538499082fd1",
-    "codeName" : "Content",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "Content",
     "logicName" : "模板内容",
     "stringLength" : 65535,
     "stdDataType" : 21,
@@ -49,19 +118,19 @@
       "autoIncrement" : false,
       "name" : "CONTENT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 65535,
     "name" : "CONTENT"
   }, {
-    "length" : 60,
+    "dataType" : "TEXT",
+    "deployId" : "e24982807ca7133dfd17e8f7fe41fd6a",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "deployId" : "e24982807ca7133dfd17e8f7fe41fd6a",
     "codeName" : "CreateMan",
-    "valueFormat" : "%1$s",
     "logicName" : "建立人",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -108,15 +177,16 @@
       "name" : "CREATEMAN"
     } ],
     "predefinedType" : "CREATEMAN",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "CREATEMAN"
   }, {
-    "length" : 100,
     "dataType" : "GUID",
     "deployId" : "16db13c6c058e7e5ce9926be96b9e050",
-    "codeName" : "IBZProSysTplId",
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "IBZProSysTplId",
     "logicName" : "系统模板标识",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -162,16 +232,15 @@
       "autoIncrement" : false,
       "name" : "IBZPRO_SYSTPLID"
     } ],
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "IBZPRO_SYSTPLID"
   }, {
-    "length" : 8,
     "dataType" : "DATETIME",
     "deployId" : "fee80e34c95aeddc26d5401d6c81a4fb",
-    "codeName" : "CreateDate",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
     "systemReserver" : true,
@@ -205,20 +274,19 @@
       "name" : "CREATEDATE"
     } ],
     "predefinedType" : "CREATEDATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
     "name" : "CREATEDATE"
   }, {
-    "length" : 1,
-    "defaultValue" : "0",
+    "dataType" : "SSCODELIST",
+    "deployId" : "852044958476a092d008099853810dee",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "852044958476a092d008099853810dee",
     "codeName" : "IBizPublic",
-    "valueFormat" : "%1$s",
     "logicName" : "是否公开",
     "stringLength" : 1,
     "stdDataType" : 25,
@@ -262,19 +330,20 @@
       "autoIncrement" : false,
       "name" : "PUBLIC"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1,
+    "defaultValue" : "0",
     "name" : "PUBLIC"
   }, {
-    "length" : 60,
+    "dataType" : "TEXT",
+    "deployId" : "50ca03629e96793f7c06c942a20248c2",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "deployId" : "50ca03629e96793f7c06c942a20248c2",
     "codeName" : "UpdateMan",
-    "valueFormat" : "%1$s",
     "logicName" : "更新人",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -321,15 +390,15 @@
       "name" : "UPDATEMAN"
     } ],
     "predefinedType" : "UPDATEMAN",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
     "name" : "UPDATEMAN"
   }, {
-    "length" : 8,
     "dataType" : "DATETIME",
     "deployId" : "96f98cbca7076f7cda6d681068def27a",
-    "codeName" : "UpdateDate",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
     "systemReserver" : true,
@@ -363,15 +432,17 @@
       "name" : "UPDATEDATE"
     } ],
     "predefinedType" : "UPDATEDATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
     "name" : "UPDATEDATE"
   }, {
-    "length" : 200,
     "dataType" : "TEXT",
     "deployId" : "43a5a5a9470d4b4296ed21507934c2b1",
-    "codeName" : "IBZProSysTplName",
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "codeName" : "IBZProSysTplName",
     "logicName" : "系统模板名称",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -415,22 +486,19 @@
       "autoIncrement" : false,
       "name" : "IBZPRO_SYSTPLNAME"
     } ],
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
     "name" : "IBZPRO_SYSTPLNAME"
   }, {
-    "length" : 60,
-    "defaultValue" : "freemarker",
+    "dataType" : "SSCODELIST",
+    "deployId" : "efe86297117682108f813925ca962515",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibz__systpl__type.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "efe86297117682108f813925ca962515",
     "codeName" : "Tpltype",
-    "valueFormat" : "%1$s",
     "logicName" : "IBIZ模板类型",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -474,19 +542,20 @@
       "autoIncrement" : false,
       "name" : "TPLTYPE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
+    "defaultValue" : "freemarker",
     "name" : "TPLTYPE"
   }, {
-    "length" : 100,
+    "dataType" : "SSCODELIST",
+    "deployId" : "d429ee96956edf0f75a0ccce47f21e0a",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibizpro_story__sourceobject.json"
     },
-    "dataType" : "SSCODELIST",
-    "deployId" : "d429ee96956edf0f75a0ccce47f21e0a",
     "codeName" : "Ibiz_sourceobject",
-    "valueFormat" : "%1$s",
     "logicName" : "来源对象",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -530,8 +599,7 @@
       "autoIncrement" : false,
       "name" : "IBIZ_SOURCEOBJECT"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
     "name" : "IBIZ_SOURCEOBJECT"
   }, {
     "getPSDER" : {
@@ -546,6 +614,8 @@
     },
     "dataType" : "PICKUP",
     "deployId" : "051f824d05f8700e2ba35cbc9120dcc5",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "codeName" : "File",
     "logicName" : "id",
     "stdDataType" : 1,
@@ -577,88 +647,13 @@
       "autoIncrement" : false,
       "name" : "FILE"
     } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "name" : "FILE"
   } ],
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据集",
-    "extendMode" : 0,
-    "pageSize" : -1,
-    "enableGroup" : false,
-    "userDRAction" : "READ",
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  } ],
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Save.json"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据查询",
-    "extendMode" : 0,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
   "serviceAPIMode" : 0,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "deployId" : "eb10869fed093847209e5ec2e7cc4af2",
-  "codeName" : "IBZProSysTpl",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -673,13 +668,23 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "eb10869fed093847209e5ec2e7cc4af2",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "codeName" : "IBZProSysTpl",
   "logicName" : "系统模板",
   "tableName" : "T_IBZPRO_SYSTPL",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
   "virtualMode" : 0,
   "enableSQLStorage" : true,
+  "serviceCodeName" : "IBZProSysTpl",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -688,14 +693,9 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "serviceCodeName" : "IBZProSysTpl",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

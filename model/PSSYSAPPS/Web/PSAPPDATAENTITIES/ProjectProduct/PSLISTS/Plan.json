@@ -3,18 +3,18 @@
   "enableRowEditOrder" : false,
   "noSort" : false,
   "hasWFDataItems" : false,
-  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "getPSAppDEField" : {
       "name" : "PLANNAME",
       "codeName" : "Planname"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   } ],
-  "enableRowEdit" : false,
+  "showHeader" : true,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "codeName" : "Plan",
   "enableGroup" : false,
   "pagingSize" : 1000,

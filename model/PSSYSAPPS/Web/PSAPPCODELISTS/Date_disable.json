@@ -6,9 +6,9 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "on",
     "codeName" : "On",
-    "text" : "待定"
+    "text" : "待定",
+    "value" : "on"
   } ],
   "codeName" : "Date_disable",
   "emptyText" : "未定义",

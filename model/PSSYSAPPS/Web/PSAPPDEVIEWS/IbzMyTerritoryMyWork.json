@@ -2,21 +2,15 @@
   "mDCtrlActiveMode" : 2,
   "enableFilter" : false,
   "xDataControlName" : "list",
-  "showCaptionBar" : false,
   "getPSDEViewCodeName" : "MyWork",
+  "showCaptionBar" : false,
   "caption" : "我的工作",
   "title" : "我的工作",
   "accUserMode" : 2,
   "enableDP" : true,
-  "getPSAppViewNavParams" : [ {
-    "rawValue" : false,
-    "value" : "srfloginname",
-    "key" : "n_account_eq",
-    "name" : "n_account_eq"
-  } ],
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -31,17 +25,24 @@
     "engineType" : "ListView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "LIST",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "LIST"
     }, {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     } ],
     "name" : "engine"
   } ],
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "srfloginname",
+    "key" : "n_account_eq",
+    "name" : "n_account_eq"
+  } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -51,12 +52,14 @@
     "enableRowEditOrder" : false,
     "noSort" : false,
     "hasWFDataItems" : false,
-    "showHeader" : true,
     "getItemPSLayoutPanel" : {
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
       "getRootPSPanelItems" : [ {
         "getPSPanelItems" : [ {
           "getPSPanelItems" : [ {
-            "viewFieldName" : "account",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -67,9 +70,10 @@
               "editorType" : "SPAN",
               "name" : "account"
             },
-            "hidden" : false,
+            "viewFieldName" : "account",
             "convertToCodeItemText" : true,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -97,8 +101,8 @@
           },
           "itemType" : "CONTAINER",
           "itemStyle" : "DEFAULT",
-          "contentWidth" : 230.0,
           "showCaption" : true,
+          "contentWidth" : 230.0,
           "name" : "container2"
         }, {
           "getPSPanelItems" : [ {
@@ -151,15 +155,15 @@
                 "showCaption" : true,
                 "name" : "rawitem2"
               }, {
-                "viewFieldName" : "MYTASKS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mytasks"
                 },
-                "hidden" : false,
+                "viewFieldName" : "MYTASKS",
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -171,15 +175,15 @@
                 "itemStyle" : "DEFAULT",
                 "name" : "mytasks"
               }, {
-                "viewFieldName" : "myetasks",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "myetasks"
                 },
-                "hidden" : false,
+                "viewFieldName" : "myetasks",
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -222,15 +226,15 @@
                 "showCaption" : true,
                 "name" : "rawitem3"
               }, {
-                "viewFieldName" : "MYBUGS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mybugs"
                 },
-                "hidden" : false,
+                "viewFieldName" : "MYBUGS",
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -242,15 +246,15 @@
                 "itemStyle" : "DEFAULT",
                 "name" : "mybugs"
               }, {
-                "viewFieldName" : "MYEBUGS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "myebugs"
                 },
-                "hidden" : false,
+                "viewFieldName" : "MYEBUGS",
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -293,15 +297,15 @@
                 "showCaption" : true,
                 "name" : "rawitem4"
               }, {
-                "viewFieldName" : "MYSTORYS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mystorys"
                 },
-                "hidden" : false,
+                "viewFieldName" : "MYSTORYS",
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -358,15 +362,15 @@
                 "showCaption" : true,
                 "name" : "rawitem5"
               }, {
-                "viewFieldName" : "PROJECTS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "projects"
                 },
-                "hidden" : false,
+                "viewFieldName" : "PROJECTS",
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -378,15 +382,15 @@
                 "itemStyle" : "DEFAULT",
                 "name" : "projects"
               }, {
-                "viewFieldName" : "EPROJECTS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "eprojects"
                 },
-                "hidden" : false,
+                "viewFieldName" : "EPROJECTS",
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -429,15 +433,15 @@
                 "showCaption" : true,
                 "name" : "rawitem6"
               }, {
-                "viewFieldName" : "PRODUCTS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "products"
                 },
-                "hidden" : false,
+                "viewFieldName" : "PRODUCTS",
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -551,10 +555,6 @@
         "modelref" : true,
         "id" : "products"
       } ],
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
       "controlType" : "PANEL",
       "codeName" : "MyWork2",
       "layoutMode" : "TABLE_24COL",
@@ -570,52 +570,53 @@
     },
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "name" : "projects",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "projects"
     }, {
-      "name" : "myebugs",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "myebugs"
     }, {
-      "name" : "account",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "account"
     }, {
-      "name" : "myetasks",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "myetasks"
     }, {
-      "name" : "mybugs",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "mybugs"
     }, {
-      "name" : "products",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "products"
     }, {
-      "name" : "mystorys",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "mystorys"
     }, {
-      "name" : "mytasks",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "mytasks"
     }, {
-      "name" : "eprojects",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "eprojects"
     }, {
-      "name" : "realname",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "realname"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfkey",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfkey"
     }, {
       "getPSAppDEField" : {
         "name" : "REALNAME",
         "codeName" : "Realname"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     } ],
-    "enableRowEdit" : false,
+    "showHeader" : true,
     "controlType" : "LIST",
+    "enableRowEdit" : false,
     "codeName" : "MyWork",
     "enableGroup" : false,
     "pagingSize" : 1000,
@@ -653,63 +654,63 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchMyWork"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-        },
         "actionType" : "DEDATASET",
         "name" : "fetch"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -724,7 +725,6 @@
     "name" : "list",
     "modelid" : "58dafe87c750d665463bd6357f644c98"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -745,8 +745,8 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
       "batchAddOnly" : false,
+      "enableBatchAdd" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {

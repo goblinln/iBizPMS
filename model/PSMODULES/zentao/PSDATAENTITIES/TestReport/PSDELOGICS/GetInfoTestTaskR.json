@@ -5,8 +5,10 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3676"
@@ -36,7 +38,6 @@
       "dstFieldName" : "OBJECTTYPE",
       "name" : "直接值[testtask] ==> Default[OBJECTTYPE]"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备参数"
@@ -46,6 +47,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7844"
@@ -60,7 +62,6 @@
       "srcFieldName" : "BUILDS",
       "name" : "Default[BUILDS]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall4",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取相应需求"
@@ -70,6 +71,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接502"
@@ -84,7 +86,6 @@
       "srcFieldName" : "TASKS",
       "name" : "Default[TASKS]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取测试单"
@@ -112,6 +113,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9632"
@@ -126,17 +128,16 @@
       "srcFieldName" : "TASKS",
       "name" : "Default[TASKS]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall6",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取项目和产品"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4268"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -146,6 +147,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8985"
@@ -196,7 +198,6 @@
       "srcFieldName" : "END",
       "name" : "Default[END]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall5",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取影响Bug"
@@ -206,6 +207,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4809"
@@ -220,7 +222,6 @@
       "srcFieldName" : "TASKS",
       "name" : "Default[TASKS]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall3",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取测试单周期"
@@ -230,6 +231,7 @@
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3605"
@@ -253,7 +255,6 @@
       "srcFieldName" : "TASKS",
       "name" : "Default[TASKS]"
     } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取数据"
@@ -349,20 +350,19 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "testtask",
     "default" : false,
     "name" : "测试版本"
   } ],
-  "logicHolder" : 1,
   "codeName" : "GetInfoTestTaskR",
   "logicName" : "根据测试单获取相应信息（项目报告）（单测试）",
   "defaultParamName" : "Default",

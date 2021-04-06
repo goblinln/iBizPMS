@@ -3,39 +3,39 @@
   "enableRowEditOrder" : false,
   "noSort" : false,
   "hasWFDataItems" : false,
-  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "name" : "parent",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "parent"
   }, {
-    "name" : "srfmstag",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
+  "showHeader" : true,
+  "controlType" : "LIST",
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
   "enableRowEdit" : false,
-  "controlType" : "LIST",
   "codeName" : "Exp",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
@@ -71,8 +71,8 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "controlStyle" : "LISTVIEW",
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSLISTS/Exp.json",
   "logicName" : "Exp",
   "modelid" : "2117568b84525320ec8ad1b8481bc912"

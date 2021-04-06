@@ -2,14 +2,14 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "assign",
     "codeName" : "Assign",
     "text" : "已指派",
-    "default" : true
+    "default" : true,
+    "value" : "assign"
   }, {
-    "value" : "noassign",
     "codeName" : "Noassign",
-    "text" : "未指派"
+    "text" : "未指派",
+    "value" : "noassign"
   } ],
   "codeName" : "IsAssigned",
   "emptyText" : "未定义",

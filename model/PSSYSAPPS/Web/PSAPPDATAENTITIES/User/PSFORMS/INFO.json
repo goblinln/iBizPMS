@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : true,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -48,7 +48,6 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -56,12 +55,12 @@
             "name" : "realname"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "REALNAME",
             "codeName" : "Realname"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "真实姓名",
           "allowEmpty" : true,
@@ -70,6 +69,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -80,7 +80,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "realname"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -88,12 +87,12 @@
             "name" : "join"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "JOIN",
             "codeName" : "Join"
           },
-          "hidden" : false,
           "dataType" : 5,
           "caption" : "入职日期",
           "allowEmpty" : true,
@@ -103,6 +102,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -113,7 +113,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "join"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -125,12 +124,12 @@
             "name" : "dept"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "DEPT",
             "codeName" : "Dept"
           },
-          "hidden" : false,
           "dataType" : 25,
           "convertToCodeItemText" : true,
           "caption" : "所属部门",
@@ -140,6 +139,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -150,7 +150,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "dept"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -162,12 +161,12 @@
             "name" : "role"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "ROLE",
             "codeName" : "Role"
           },
-          "hidden" : false,
           "dataType" : 25,
           "convertToCodeItemText" : true,
           "caption" : "职位",
@@ -177,6 +176,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -187,7 +187,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "role"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "getPSAppCodeList" : {
               "modelref" : true,
@@ -197,12 +196,12 @@
             "name" : "gender"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "GENDER",
             "codeName" : "Gender"
           },
-          "hidden" : false,
           "dataType" : 25,
           "needCodeListConfig" : true,
           "caption" : "性别",
@@ -212,6 +211,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -240,7 +240,6 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -248,12 +247,12 @@
             "name" : "account"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "ACCOUNT",
             "codeName" : "Account"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "账户",
           "allowEmpty" : true,
@@ -262,6 +261,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -272,7 +272,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "account"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -280,12 +279,12 @@
             "name" : "email"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "EMAIL",
             "codeName" : "Email"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "邮箱",
           "allowEmpty" : true,
@@ -294,6 +293,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -322,7 +322,6 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -330,12 +329,12 @@
             "name" : "mobile"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "MOBILE",
             "codeName" : "Mobile"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "手机",
           "allowEmpty" : true,
@@ -344,6 +343,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -354,7 +354,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "mobile"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -362,12 +361,12 @@
             "name" : "phone"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PHONE",
             "codeName" : "Phone"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "电话",
           "allowEmpty" : true,
@@ -376,6 +375,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -386,7 +386,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "phone"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -394,12 +393,12 @@
             "name" : "qq"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "QQ",
             "codeName" : "Qq"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "QQ",
           "allowEmpty" : true,
@@ -408,6 +407,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -418,7 +418,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "qq"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -426,12 +425,12 @@
             "name" : "dingding"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "DINGDING",
             "codeName" : "Dingding"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "钉钉",
           "allowEmpty" : true,
@@ -440,6 +439,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -450,7 +450,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "dingding"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -458,12 +457,12 @@
             "name" : "weixin"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "WEIXIN",
             "codeName" : "Weixin"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "微信",
           "allowEmpty" : true,
@@ -472,6 +471,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -482,7 +482,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "weixin"
         }, {
-          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -490,12 +489,12 @@
             "name" : "address"
           },
           "inputTipClosable" : false,
+          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "ADDRESS",
             "codeName" : "Address"
           },
-          "hidden" : false,
           "dataType" : 25,
           "caption" : "通讯地址",
           "allowEmpty" : true,
@@ -504,6 +503,7 @@
           "labelPos" : "LEFT",
           "labelWidth" : 100,
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colLG" : 12,
             "colMD" : 12,
@@ -536,11 +536,11 @@
       "showCaption" : false,
       "name" : "grouppanel3"
     } ],
-    "infoGroupMode" : true,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : true,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

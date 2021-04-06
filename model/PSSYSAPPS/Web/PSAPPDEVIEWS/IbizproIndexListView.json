@@ -4,15 +4,15 @@
   "enableFilter" : true,
   "enableQuickSearch" : true,
   "xDataControlName" : "list",
-  "showCaptionBar" : true,
   "getPSDEViewCodeName" : "ListView",
+  "showCaptionBar" : true,
   "caption" : "索引检索",
   "title" : "索引检索列表视图",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
     "layoutPanel" : true,
+    "useDefaultLayout" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -27,20 +27,21 @@
     "engineType" : "ListView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "LIST",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "LIST"
     }, {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     }, {
-      "name" : "SEARCHFORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "SEARCHFORM"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
@@ -50,7 +51,6 @@
     "enableRowEditOrder" : false,
     "noSort" : false,
     "hasWFDataItems" : false,
-    "showHeader" : true,
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
       "getPSAppDEField" : {
@@ -61,40 +61,40 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
       },
-      "name" : "indextype",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "indextype"
     }, {
-      "name" : "indexname",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "indexname"
     }, {
-      "name" : "orgid",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "orgid"
     }, {
-      "name" : "indexid",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "indexid"
     }, {
-      "name" : "indexdesc",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "indexdesc"
     }, {
-      "name" : "color",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "color"
     }, {
-      "name" : "mdeptid",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "mdeptid"
     }, {
       "getPSAppDEField" : {
         "name" : "INDEXID",
         "codeName" : "Indexid"
       },
-      "name" : "srfkey",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfkey"
     }, {
       "getPSAppDEField" : {
         "name" : "INDEXNAME",
         "codeName" : "Indexname"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     }, {
       "getPSAppDEField" : {
         "name" : "INDEX_TYPE",
@@ -104,8 +104,8 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
       },
-      "name" : "srfdatatype",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfdatatype"
     }, {
       "getPSAppDEField" : {
         "name" : "INDEX_TYPE",
@@ -115,11 +115,12 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
       },
-      "name" : "index_type",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "index_type"
     } ],
-    "enableRowEdit" : false,
+    "showHeader" : true,
     "controlType" : "LIST",
+    "enableRowEdit" : false,
     "codeName" : "IndexMob",
     "enableGroup" : false,
     "pagingSize" : 20,
@@ -153,67 +154,68 @@
       "showBusyIndicator" : true,
       "id" : "LIST"
     },
+    "controlStyle" : "FullTextSearch",
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchESquery"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
         "actionType" : "DEDATASET",
         "name" : "fetch"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -223,31 +225,30 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
-    "controlStyle" : "FullTextSearch",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSLISTS/IndexMob.json",
     "getPSSysPFPlugin" : {
       "pluginType" : "LIST_RENDER",
       "pluginCode" : "FullTextSearch"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSLISTS/IndexMob.json",
     "logicName" : "IndexMob",
     "name" : "list",
     "modelid" : "3d749efd9d96f3330022d35dfcdaaf60"
   }, {
-    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
+    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
     "getPSDEFormPages" : [ {
-      "infoGroupMode" : false,
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
+      "infoGroupMode" : false,
       "codeName" : "formpage1",
       "caption" : "常规条件",
       "detailType" : "FORMPAGE",
@@ -269,35 +270,35 @@
     "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterSearch"
         },
+        "actionType" : "FILTERACTION",
+        "name" : "search"
+      }, {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
         },
-        "actionType" : "FILTERACTION",
-        "name" : "search"
-      }, {
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterGet"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
         "actionType" : "FILTERACTION",
         "name" : "load"
       }, {
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterGetDraft"
-        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
         },
         "actionType" : "FILTERACTION",
         "name" : "loaddraft"
@@ -310,15 +311,14 @@
     "name" : "searchform",
     "modelid" : "edab1390abda9ac712f0a21d02c0b0e4"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_RIGHT",
     "realTitle" : "需求",
+    "realOpenMode" : "DRAWER_RIGHT",
     "name" : "NEWDATA:story"
   }, {
     "getRefPSAppView" : {
@@ -326,8 +326,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_LEFT",
     "realTitle" : "产品编辑视图",
+    "realOpenMode" : "DRAWER_LEFT",
     "name" : "NEWDATA:product"
   }, {
     "getRefPSAppView" : {
@@ -335,8 +335,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_LEFT",
     "realTitle" : "产品编辑视图",
+    "realOpenMode" : "DRAWER_LEFT",
     "name" : "EDITDATA:product"
   }, {
     "getRefPSAppView" : {
@@ -352,8 +352,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_LEFT",
     "realTitle" : "项目",
+    "realOpenMode" : "DRAWER_LEFT",
     "name" : "NEWDATA:project"
   }, {
     "getRefPSAppView" : {
@@ -361,8 +361,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_RIGHT",
     "realTitle" : "Bug",
+    "realOpenMode" : "DRAWER_RIGHT",
     "name" : "NEWDATA:bug"
   }, {
     "getRefPSAppView" : {
@@ -370,8 +370,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_LEFT",
     "realTitle" : "项目",
+    "realOpenMode" : "DRAWER_LEFT",
     "name" : "EDITDATA:project"
   }, {
     "getRefPSAppView" : {
@@ -379,8 +379,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_RIGHT",
     "realTitle" : "需求",
+    "realOpenMode" : "DRAWER_RIGHT",
     "name" : "EDITDATA:story"
   }, {
     "getRefPSAppView" : {
@@ -404,8 +404,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realOpenMode" : "DRAWER_RIGHT",
     "realTitle" : "Bug",
+    "realOpenMode" : "DRAWER_RIGHT",
     "name" : "EDITDATA:bug"
   }, {
     "getRefPSAppView" : {
@@ -419,8 +419,8 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
       "batchAddOnly" : false,
+      "enableBatchAdd" : false,
       "enableWizardAdd" : true,
       "actionAfterWizard" : "DEFAULT",
       "getWizardPSAppView" : {
@@ -529,6 +529,14 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json"
+      },
       "getOpenDataPSAppViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -570,14 +578,6 @@
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
         "refMode" : "bug"
       } ],
-      "getOpenDataPSAppView" : {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
-          "viewType" : "DEREDIRECTVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json"
-      },
       "viewLogicType" : "APP_OPENDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

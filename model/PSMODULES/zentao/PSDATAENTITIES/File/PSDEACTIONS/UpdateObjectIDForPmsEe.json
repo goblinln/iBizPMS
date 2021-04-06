@@ -1,28 +1,28 @@
 {
+  "transactionMode" : "DEFAULT",
   "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
   "builtinAction" : false,
-  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
   },
   "orderValue" : 99999,
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCommon"
+  },
   "codeName" : "UpdateObjectIDForPmsEe",
   "logicName" : "保存附件",
-  "extendMode" : 0,
   "actionMode" : "UPDATE",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/UpdateObjectIDForPmsEe.json",
-  "name" : "updateObjectIDForPmsEe",
-  "userCat" : "CAT1"
+  "userCat" : "CAT1",
+  "name" : "updateObjectIDForPmsEe"
 }

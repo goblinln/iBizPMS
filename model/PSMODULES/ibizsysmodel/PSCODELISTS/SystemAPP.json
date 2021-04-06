@@ -1,11 +1,11 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSCODELISTS/SystemAPP.json",
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
-  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSCODELISTS/SystemAPP.json",
   "codeName" : "SystemAPP",
   "userScope" : false,
   "emptyText" : "未定义",

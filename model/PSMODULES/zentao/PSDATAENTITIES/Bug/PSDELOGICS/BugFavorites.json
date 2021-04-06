@@ -5,8 +5,10 @@
     "modelref" : true,
     "id" : "Begin"
   },
+  "logicHolder" : 1,
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1062"
@@ -46,7 +48,6 @@
       "dstFieldName" : "TYPE",
       "name" : "直接值[bug] ==> IbzFavorites[TYPE]"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置收藏参数"
@@ -70,11 +71,11 @@
     "name" : "创建收藏信息"
   }, {
     "parallelOutput" : true,
+    "logicHolder" : 3,
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7343"
     } ],
-    "logicHolder" : 3,
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
@@ -104,20 +105,19 @@
   } ],
   "getPSDELogicParams" : [ {
     "sessionParam" : true,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "IbzFavorites",
     "default" : false,
     "name" : "收藏"
   }, {
     "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "logicHolder" : 1,
   "codeName" : "BugFavorites",
   "logicName" : "Bug收藏",
   "defaultParamName" : "Default",

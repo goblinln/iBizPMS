@@ -1,8 +1,8 @@
 {
-  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -10,24 +10,23 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RealDept.json"
         },
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "srforgid",
-          "key" : "N_ORGID_EQ",
-          "name" : "N_ORGID_EQ"
-        } ],
         "getPSNavigateParams" : [ {
           "rawValue" : false,
           "value" : "srforgid",
           "key" : "n_orgid_eq",
           "name" : "n_orgid_eq"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "srforgid",
+          "key" : "N_ORGID_EQ",
+          "name" : "N_ORGID_EQ"
         } ],
         "editorParams" : {
           "SRFNAVPARAM.n_orgid_eq" : "%srforgid%",
@@ -37,8 +36,8 @@
         "name" : "dept"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "部门",
@@ -48,6 +47,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 45,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 3,
         "colMD" : 3,
@@ -58,11 +58,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "dept"
     }, {
-      "getPSDEFormItemUpdate" : {
-        "modelref" : true,
-        "id" : "UpdateTime"
-      },
-      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
         "editorParams" : {
@@ -72,13 +67,17 @@
         "editorWidth" : 100.0,
         "name" : "begin"
       },
+      "getPSDEFormItemUpdate" : {
+        "modelref" : true,
+        "id" : "UpdateTime"
+      },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "hidden" : false,
       "dataType" : 5,
       "caption" : "起止时间",
       "allowEmpty" : true,
@@ -88,6 +87,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 80,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 4,
         "colMD" : 4,
@@ -98,11 +98,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "begin"
     }, {
-      "getPSDEFormItemUpdate" : {
-        "modelref" : true,
-        "id" : "UpdateTime"
-      },
-      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
         "editorParams" : {
@@ -112,13 +107,17 @@
         "editorWidth" : 100.0,
         "name" : "end"
       },
+      "getPSDEFormItemUpdate" : {
+        "modelref" : true,
+        "id" : "UpdateTime"
+      },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "hidden" : false,
       "dataType" : 5,
       "caption" : "至",
       "allowEmpty" : true,
@@ -127,11 +126,12 @@
       "labelPos" : "LEFT",
       "labelWidth" : 30,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 3,
-        "colMDOffset" : 1,
         "colLGOffset" : 1,
         "colMD" : 3,
+        "colMDOffset" : 1,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "end",
@@ -139,18 +139,17 @@
       "detailStyle" : "DEFAULT",
       "name" : "end"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "NUMBER",
         "name" : "workday"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "WORKDAY",
         "codeName" : "Workday"
       },
-      "hidden" : false,
       "dataType" : 9,
       "caption" : "工作天数",
       "allowEmpty" : true,
@@ -160,6 +159,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 60,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 4,
         "colLGOffset" : 1,
@@ -171,14 +171,13 @@
       "detailStyle" : "DEFAULT",
       "name" : "workday"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "NUMBER",
         "name" : "everydaytime"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "每天工时",
       "allowEmpty" : true,
@@ -188,12 +187,13 @@
       "labelPos" : "LEFT",
       "labelWidth" : 60,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 4,
-        "colXSOffset" : 5,
-        "colSMOffset" : 5,
-        "colMDOffset" : 5,
         "colMD" : 3,
+        "colMDOffset" : 5,
+        "colSMOffset" : 5,
+        "colXSOffset" : 5,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "everydaytime",
@@ -201,7 +201,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "everydaytime"
     }, {
-      "emptyCaption" : true,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -213,12 +212,12 @@
         "name" : "assign"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : true,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ASSIGN",
         "codeName" : "Assign"
       },
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "allowEmpty" : true,
@@ -227,6 +226,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 5,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 3,
         "colMD" : 3,
@@ -237,11 +237,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "assign"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "表单分页",
     "detailType" : "FORMPAGE",

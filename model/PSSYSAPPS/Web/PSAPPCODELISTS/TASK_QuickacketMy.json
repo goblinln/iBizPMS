@@ -6,31 +6,31 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "TOME",
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "codeName" : "Tome",
     "text" : "指派给我",
-    "default" : true
+    "default" : true,
+    "value" : "TOME"
   }, {
-    "value" : "CANCELLED",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "codeName" : "Cancelled",
-    "text" : "由我创建"
+    "text" : "由我创建",
+    "value" : "CANCELLED"
   }, {
-    "value" : "IFINISHED",
     "data" : "{\"n_finishedby_eq\":\"%srfloginname%\"}",
     "codeName" : "Ifinished",
-    "text" : "由我完成"
+    "text" : "由我完成",
+    "value" : "IFINISHED"
   }, {
-    "value" : "COMPLETED",
     "data" : "{\"n_closedby_eq\":\"%srfloginname%\"}",
     "codeName" : "Completed",
-    "text" : "由我关闭"
+    "text" : "由我关闭",
+    "value" : "COMPLETED"
   }, {
-    "value" : "CLOSED",
     "data" : "{\"n_canceledby_eq\":\"%srfloginname%\"}",
     "codeName" : "Closed",
-    "text" : "由我取消"
+    "text" : "由我取消",
+    "value" : "CLOSED"
   } ],
   "codeName" : "TASK_QuickacketMy",
   "emptyText" : "未定义",

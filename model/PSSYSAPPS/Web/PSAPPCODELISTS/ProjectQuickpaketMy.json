@@ -6,11 +6,11 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "All",
     "data" : "{\"n_account_eq\":\"%srfloginname%\"}",
     "codeName" : "All",
     "text" : "我的项目",
-    "default" : true
+    "default" : true,
+    "value" : "All"
   } ],
   "codeName" : "ProjectQuickpaketMy",
   "emptyText" : "未定义",

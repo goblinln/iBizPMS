@@ -1,98 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "FILES",
-      "codeName" : "Files"
-    },
-    "name" : "files",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DESC",
-      "codeName" : "Desc"
-    },
-    "name" : "desc",
-    "dataType" : 21
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    },
-    "name" : "parent",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "STEPS",
-      "codeName" : "Steps"
-    },
-    "name" : "steps",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    },
-    "name" : "type",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "EXPECT",
-      "codeName" : "Expect"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 21
-  }, {
-    "getPSAppDEField" : {
-      "name" : "REALS",
-      "codeName" : "Reals"
-    },
-    "name" : "reals",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "VERSION",
-      "codeName" : "Version"
-    },
-    "name" : "version",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "id",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "EXPECT",
-      "codeName" : "Expect"
-    },
-    "name" : "expect",
-    "dataType" : 21
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CASE",
-      "codeName" : "IBizCase"
-    },
-    "name" : "case",
-    "dataType" : 1
-  } ],
+  "singleSelect" : true,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : true,
@@ -112,37 +34,115 @@
     "caption" : "编号",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : true,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
+  "hasWFDataItems" : false,
   "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "FILES",
+      "codeName" : "Files"
+    },
+    "dataType" : 25,
+    "name" : "files"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DESC",
+      "codeName" : "Desc"
+    },
+    "dataType" : 21,
+    "name" : "desc"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "dataType" : 1,
+    "name" : "parent"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STEPS",
+      "codeName" : "Steps"
+    },
+    "dataType" : 25,
+    "name" : "steps"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "dataType" : 25,
+    "name" : "type"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "EXPECT",
+      "codeName" : "Expect"
+    },
+    "dataType" : 21,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "REALS",
+      "codeName" : "Reals"
+    },
+    "dataType" : 25,
+    "name" : "reals"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "VERSION",
+      "codeName" : "Version"
+    },
+    "dataType" : 9,
+    "name" : "version"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "id"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "EXPECT",
+      "codeName" : "Expect"
+    },
+    "dataType" : 21,
+    "name" : "expect"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    },
+    "dataType" : 1,
+    "name" : "case"
+  } ],
+  "enableRowEdit" : false,
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "编号",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "dataItemName" : "id",
-    "excelCaption" : "编号",
     "cLConvertMode" : "NONE",
-    "hideDefault" : true,
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
+    "hideDefault" : true,
     "width" : 100,
     "codeName" : "id",
     "caption" : "编号",
@@ -151,12 +151,12 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
+    "excelCaption" : "步骤",
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
     "dataItemName" : "desc",
-    "excelCaption" : "步骤",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -168,6 +168,7 @@
     "widthUnit" : "PX",
     "name" : "desc"
   }, {
+    "excelCaption" : "类型",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Casestep__type.json"
@@ -177,11 +178,10 @@
       "codeName" : "Type"
     },
     "dataItemName" : "type",
-    "excelCaption" : "类型",
     "cLConvertMode" : "FRONT",
-    "hideDefault" : true,
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
+    "hideDefault" : true,
     "width" : 100,
     "codeName" : "type",
     "caption" : "类型",
@@ -190,6 +190,7 @@
     "widthUnit" : "PX",
     "name" : "type"
   }, {
+    "excelCaption" : "预期",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testresult__result.json"
@@ -199,7 +200,6 @@
       "codeName" : "Expect"
     },
     "dataItemName" : "expect",
-    "excelCaption" : "预期",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -211,6 +211,7 @@
     "widthUnit" : "STAR",
     "name" : "expect"
   }, {
+    "excelCaption" : "测试结果",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testresult__result.json"
@@ -220,7 +221,6 @@
       "codeName" : "Steps"
     },
     "dataItemName" : "steps",
-    "excelCaption" : "测试结果",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -232,12 +232,12 @@
     "widthUnit" : "PX",
     "name" : "steps"
   }, {
+    "excelCaption" : "实际情况",
     "getPSAppDEField" : {
       "name" : "REALS",
       "codeName" : "Reals"
     },
     "dataItemName" : "reals",
-    "excelCaption" : "实际情况",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -251,12 +251,12 @@
   } ],
   "codeName" : "MainR",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 500,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -266,11 +266,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
   },
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep/PSGRIDS/MainR.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "GRID_RENDER",
     "pluginCode" : "StepTable"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep/PSGRIDS/MainR.json",
   "logicName" : "主表格（结果）",
   "modelid" : "97e7f2b1b29c2e57b2550b37bbcdabe6"
 }

@@ -2,14 +2,14 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "0",
     "codeName" : "Item_0",
     "text" : "未读",
-    "color" : "rgba(244, 15, 15, 1)"
+    "color" : "rgba(244, 15, 15, 1)",
+    "value" : "0"
   }, {
-    "value" : "1",
     "codeName" : "Item_1",
-    "text" : "已读"
+    "text" : "已读",
+    "value" : "1"
   } ],
   "codeName" : "ReportStatus",
   "emptyText" : "未定义",

@@ -1,4 +1,8 @@
 {
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+  },
   "getValuePSAppDEField" : {
     "name" : "IDS",
     "codeName" : "Ids"
@@ -10,10 +14,6 @@
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchBugProductBuild"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

@@ -1,70 +1,20 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "VAILD",
-      "codeName" : "Vaild"
-    },
-    "name" : "vaild",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZPRO_CONFIGNAME",
-      "codeName" : "IbzproConfigName"
-    },
-    "name" : "ibzpro_configname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "SCOPE",
-      "codeName" : "Scope"
-    },
-    "name" : "scope",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "MEMO",
-      "codeName" : "Memo"
-    },
-    "name" : "memo",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "MANAGEMENTSTATUS",
-      "codeName" : "Managementstatus"
-    },
-    "name" : "managementstatus",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    },
-    "name" : "type",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZPRO_CONFIGNAME",
-      "codeName" : "IbzproConfigName"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "IBZPRO_CONFIGID",
-      "codeName" : "IbzproConfigId"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZPRO_CONFIGID",
-      "codeName" : "IbzproConfigId"
-    },
-    "name" : "srfkey",
-    "dataType" : 25
-  } ],
+  "singleSelect" : false,
   "enableColFilter" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproConfig.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -84,33 +34,83 @@
     "caption" : "系统配置表标识",
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "getRemovePSControlAction" : {
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproConfig.json"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "singleSelect" : false,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
+  "hasWFDataItems" : false,
   "controlType" : "GRID",
+  "enablePagingBar" : true,
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "VAILD",
+      "codeName" : "Vaild"
+    },
+    "dataType" : 25,
+    "name" : "vaild"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZPRO_CONFIGNAME",
+      "codeName" : "IbzproConfigName"
+    },
+    "dataType" : 25,
+    "name" : "ibzpro_configname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "SCOPE",
+      "codeName" : "Scope"
+    },
+    "dataType" : 25,
+    "name" : "scope"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "MEMO",
+      "codeName" : "Memo"
+    },
+    "dataType" : 25,
+    "name" : "memo"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "MANAGEMENTSTATUS",
+      "codeName" : "Managementstatus"
+    },
+    "dataType" : 25,
+    "name" : "managementstatus"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "dataType" : 25,
+    "name" : "type"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZPRO_CONFIGNAME",
+      "codeName" : "IbzproConfigName"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZPRO_CONFIGID",
+      "codeName" : "IbzproConfigId"
+    },
+    "dataAccessAction" : true,
+    "dataType" : 25,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZPRO_CONFIGID",
+      "codeName" : "IbzproConfigId"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  } ],
+  "enableRowEdit" : false,
   "getPSDEGridColumns" : [ {
+    "excelCaption" : "名称",
     "getPSAppDEField" : {
       "name" : "IBZPRO_CONFIGNAME",
       "codeName" : "IbzproConfigName"
     },
     "dataItemName" : "ibzpro_configname",
-    "excelCaption" : "名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -122,6 +122,7 @@
     "widthUnit" : "PX",
     "name" : "ibzpro_configname"
   }, {
+    "excelCaption" : "范围",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ConfigScope.json"
@@ -131,7 +132,6 @@
       "codeName" : "Scope"
     },
     "dataItemName" : "scope",
-    "excelCaption" : "范围",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -143,6 +143,7 @@
     "widthUnit" : "PX",
     "name" : "scope"
   }, {
+    "excelCaption" : "类型",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ConfigGroup.json"
@@ -152,7 +153,6 @@
       "codeName" : "Type"
     },
     "dataItemName" : "type",
-    "excelCaption" : "类型",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -164,6 +164,7 @@
     "widthUnit" : "PX",
     "name" : "type"
   }, {
+    "excelCaption" : "是否启用",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo.json"
@@ -173,7 +174,6 @@
       "codeName" : "Vaild"
     },
     "dataItemName" : "vaild",
-    "excelCaption" : "是否启用",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -185,6 +185,7 @@
     "widthUnit" : "PX",
     "name" : "vaild"
   }, {
+    "excelCaption" : "管理现状",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ConfigManagementstatus.json"
@@ -194,7 +195,6 @@
       "codeName" : "Managementstatus"
     },
     "dataItemName" : "managementstatus",
-    "excelCaption" : "管理现状",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -206,12 +206,12 @@
     "widthUnit" : "PX",
     "name" : "managementstatus"
   }, {
+    "excelCaption" : "描述",
     "getPSAppDEField" : {
       "name" : "MEMO",
       "codeName" : "Memo"
     },
     "dataItemName" : "memo",
-    "excelCaption" : "描述",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -225,12 +225,12 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
-  "hideHeader" : false,
-  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

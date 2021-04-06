@@ -1,8 +1,8 @@
 {
-  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -10,18 +10,17 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
         "name" : "n_acl_eq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ACL",
         "codeName" : "Acl"
       },
-      "hidden" : false,
       "dataType" : 25,
       "convertToCodeItemText" : true,
       "caption" : "访问控制(等于(=))",
@@ -31,6 +30,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 8,
         "colMD" : 24,
@@ -41,18 +41,17 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_acl_eq"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
         "name" : "n_line_eq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "LINE",
         "codeName" : "Line"
       },
-      "hidden" : false,
       "dataType" : 1,
       "caption" : "产品线(等于(=))",
       "allowEmpty" : true,
@@ -61,6 +60,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 8,
         "colMD" : 24,
@@ -71,19 +71,18 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_line_eq"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
         "editorWidth" : 100.0,
         "name" : "n_linename_like"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "LINENAME",
         "codeName" : "LineName"
       },
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "产品线(文本包含(%))",
       "allowEmpty" : true,
@@ -92,6 +91,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 8,
         "colMD" : 24,
@@ -102,18 +102,17 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_linename_like"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
         "name" : "n_linename_eq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "LINENAME",
         "codeName" : "LineName"
       },
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "产品线(等于(=))",
       "allowEmpty" : true,
@@ -122,6 +121,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 8,
         "colMD" : 24,
@@ -132,19 +132,18 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_linename_eq"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
         "editorWidth" : 100.0,
         "name" : "n_name_like"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "产品名称(文本包含(%))",
       "allowEmpty" : true,
@@ -153,6 +152,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 130,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 8,
         "colMD" : 24,
@@ -163,11 +163,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_name_like"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "常规条件",
     "detailType" : "FORMPAGE",

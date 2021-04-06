@@ -1,7 +1,15 @@
 {
   "codeName" : "MainPanel_EditMode",
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
   "enableCustomized" : false,
   "getPSControls" : [ {
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "getPSControls" : [ {
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
@@ -12,8 +20,8 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
-      "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "showTitleBar" : true,
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -29,17 +37,13 @@
       "codeName" : "MainView_EditModedashboard_container3",
       "name" : "dashboard_container3"
     } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
       "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
-    "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "showTitleBar" : true,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -55,10 +59,6 @@
     "codeName" : "MainView_EditModedashboard_container1",
     "name" : "dashboard_container1"
   } ],
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
-  },
   "controlType" : "DASHBOARD",
   "getPSAppDataEntity" : {
     "modelref" : true,

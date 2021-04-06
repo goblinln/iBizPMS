@@ -108,6 +108,28 @@
     "name" : "FinishTask"
   } ],
   "codeName" : "MonthOpenedBugAndCase",
+  "getPSChartXAxises" : [ {
+    "eChartsPos" : "xAxis",
+    "eChartsType" : "category",
+    "position" : "bottom",
+    "caption" : "月",
+    "type" : "category",
+    "index" : 0,
+    "name" : "月",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "eChartsPos" : "yAxis",
+    "eChartsType" : "value",
+    "position" : "left",
+    "maxValue" : 200.0,
+    "minValue" : 0.0,
+    "caption" : "数量",
+    "type" : "numeric",
+    "index" : 0,
+    "name" : "数量",
+    "id" : "0"
+  } ],
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
       "groupField" : true,
@@ -141,14 +163,9 @@
     "name" : "FinishTask-MonthOpenedBugAndCase",
     "id" : "1"
   } ],
-  "getPSChartXAxises" : [ {
-    "eChartsType" : "category",
-    "eChartsPos" : "xAxis",
-    "position" : "bottom",
-    "type" : "category",
-    "caption" : "月",
+  "getPSChartDataSetGroups" : [ {
     "index" : 0,
-    "name" : "月",
+    "name" : "MonthOpenedBugAndCase",
     "id" : "0"
   } ],
   "getPSChartGrids" : [ {
@@ -176,23 +193,6 @@
     "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
     "id" : "0"
   } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "maxValue" : 200.0,
-    "minValue" : 0.0,
-    "position" : "left",
-    "type" : "numeric",
-    "caption" : "数量",
-    "index" : 0,
-    "name" : "数量",
-    "id" : "0"
-  } ],
-  "getPSChartDataSetGroups" : [ {
-    "index" : 0,
-    "name" : "MonthOpenedBugAndCase",
-    "id" : "0"
-  } ],
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -202,12 +202,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
-  "height" : 300.0,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedBugAndCase.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedBugAndCase.json",
+  "height" : 300.0,
   "logicName" : "MonthOpenedBugAndCase",
   "modelid" : "419cfd8e4688bd7a4d507d481bb24879",
   "getUserParam" : {

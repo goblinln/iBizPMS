@@ -1,8 +1,4 @@
 {
-  "treeGridMode" : 0,
-  "enableRootSelect" : false,
-  "outputIconDefault" : true,
-  "enableSearchDefault" : false,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -88,13 +84,17 @@
     "searchMode" : 3,
     "name" : "文档库 - 根模块"
   } ],
+  "enableRootSelect" : false,
+  "outputIconDefault" : true,
+  "enableSearchDefault" : false,
+  "treeGridMode" : 0,
   "controlType" : "TREEVIEW",
   "getPSDETreeNodes" : [ {
-    "appendCaption" : false,
     "getIdPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "appendCaption" : false,
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -104,46 +104,46 @@
       "id" : "FetchAllDocLibModule_Custom"
     },
     "maxSize" : -1,
-    "rootNode" : false,
-    "expandFirstOnly" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selectFirstOnly" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibCustomDocLibChildTreeView.json",
       "viewType" : "DETREEVIEW"
     },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
+    "rootNode" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
     },
-    "enableCheck" : false,
-    "nodeType" : "DocRoot",
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
     "disableSelect" : false,
+    "nodeType" : "DocRoot",
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "根模块",
     "id" : "DocRoot"
   }, {
-    "textFormat" : "文档库",
-    "appendCaption" : false,
     "getIdPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "textFormat" : "文档库",
+    "appendCaption" : false,
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -153,17 +153,22 @@
       "id" : "FetchByCustom"
     },
     "maxSize" : -1,
-    "rootNode" : false,
-    "expandFirstOnly" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selectFirstOnly" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibCustomDocLibRootTreeView.json",
       "viewType" : "DETREEVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
@@ -174,6 +179,10 @@
         },
         "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+          },
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -181,15 +190,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 2,
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
+          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
-          "timeout" : 60000,
           "codeName" : "EditCustomDocLib",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -220,11 +225,11 @@
         "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
+          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
-          "timeout" : 60000,
           "codeName" : "RefreshAll",
           "caption" : "刷新",
           "uIActionTag" : "RefreshAll",
@@ -251,11 +256,31 @@
         },
         "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+          },
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleTreeExpView.json",
             "viewType" : "DETREEEXPVIEW"
           },
+          "getPSNavigateParams" : [ {
+            "rawValue" : false,
+            "value" : "product",
+            "key" : "product",
+            "name" : "product"
+          }, {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "project",
+            "name" : "project"
+          }, {
+            "rawValue" : false,
+            "value" : "doclib",
+            "key" : "srfroot",
+            "name" : "srfroot"
+          } ],
           "frontProcessType" : "WIZARD",
           "getPSNavigateContexts" : [ {
             "rawValue" : false,
@@ -273,32 +298,12 @@
             "key" : "PRODUCT",
             "name" : "PRODUCT"
           } ],
-          "getPSNavigateParams" : [ {
-            "rawValue" : false,
-            "value" : "product",
-            "key" : "product",
-            "name" : "product"
-          }, {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "project",
-            "name" : "project"
-          }, {
-            "rawValue" : false,
-            "value" : "doclib",
-            "key" : "srfroot",
-            "name" : "srfroot"
-          } ],
           "getNoPrivDisplayMode" : 2,
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
+          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf023@FontAwesome",
             "cssClass" : "fa fa-lock"
           },
-          "timeout" : 60000,
           "codeName" : "WeiHuFenLei",
           "caption" : "维护分类",
           "actionTarget" : "SINGLEKEY",
@@ -339,36 +344,36 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-    },
-    "enableCheck" : false,
-    "nodeType" : "Doclib",
+    "enableQuickSearch" : false,
     "disableSelect" : false,
+    "nodeType" : "Doclib",
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "文档库",
     "id" : "Doclib"
   }, {
     "text" : "所有文档库",
-    "rootNode" : false,
-    "expandFirstOnly" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selectFirstOnly" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibProductTreeViewCust.json",
       "viewType" : "DETREEVIEW"
+    },
+    "rootNode" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
@@ -380,11 +385,11 @@
         "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
+          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
-          "timeout" : 60000,
           "codeName" : "RefreshAll",
           "caption" : "刷新",
           "uIActionTag" : "RefreshAll",
@@ -422,25 +427,20 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-    },
-    "enableCheck" : false,
-    "nodeType" : "ALL",
-    "disableSelect" : false,
     "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "ALL",
+    "expanded" : true,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : true,
     "name" : "所有文档库",
     "id" : "ALL"
   }, {
-    "appendCaption" : false,
     "getIdPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "appendCaption" : false,
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -450,60 +450,60 @@
       "id" : "FetchAllDoclibModule"
     },
     "maxSize" : -1,
-    "rootNode" : false,
-    "expandFirstOnly" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selectFirstOnly" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibCustomDocLibChildTreeView.json",
       "viewType" : "DETREEVIEW"
     },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
+    "rootNode" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
     },
-    "enableCheck" : false,
-    "nodeType" : "DocLibModule",
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableQuickSearch" : false,
     "disableSelect" : false,
+    "nodeType" : "DocLibModule",
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "文档库模块",
     "id" : "DocLibModule"
   }, {
     "nodeValue" : "root",
     "text" : "默认根节点",
-    "rootNode" : true,
-    "expandFirstOnly" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selectFirstOnly" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
     "enableQuickCreate" : false,
+    "rootNode" : true,
     "enableNewData" : false,
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "enableCheck" : false,
-    "nodeType" : "ROOT",
-    "disableSelect" : false,
     "enableQuickSearch" : false,
+    "disableSelect" : false,
+    "nodeType" : "ROOT",
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "默认根节点",
     "id" : "ROOT"
   } ],
@@ -577,6 +577,10 @@
       },
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+        },
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -584,15 +588,11 @@
         },
         "frontProcessType" : "WIZARD",
         "getNoPrivDisplayMode" : 2,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-        },
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf044@FontAwesome",
           "cssClass" : "fa fa-edit"
         },
-        "timeout" : 60000,
         "codeName" : "EditCustomDocLib",
         "caption" : "编辑",
         "actionTarget" : "SINGLEKEY",
@@ -623,11 +623,11 @@
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
-        "timeout" : 60000,
         "codeName" : "RefreshAll",
         "caption" : "刷新",
         "uIActionTag" : "RefreshAll",
@@ -654,11 +654,31 @@
       },
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+        },
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleTreeExpView.json",
           "viewType" : "DETREEEXPVIEW"
         },
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "product",
+          "key" : "product",
+          "name" : "product"
+        }, {
+          "rawValue" : false,
+          "value" : "project",
+          "key" : "project",
+          "name" : "project"
+        }, {
+          "rawValue" : false,
+          "value" : "doclib",
+          "key" : "srfroot",
+          "name" : "srfroot"
+        } ],
         "frontProcessType" : "WIZARD",
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
@@ -676,32 +696,12 @@
           "key" : "PRODUCT",
           "name" : "PRODUCT"
         } ],
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "product",
-          "key" : "product",
-          "name" : "product"
-        }, {
-          "rawValue" : false,
-          "value" : "project",
-          "key" : "project",
-          "name" : "project"
-        }, {
-          "rawValue" : false,
-          "value" : "doclib",
-          "key" : "srfroot",
-          "name" : "srfroot"
-        } ],
         "getNoPrivDisplayMode" : 2,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-        },
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf023@FontAwesome",
           "cssClass" : "fa fa-lock"
         },
-        "timeout" : 60000,
         "codeName" : "WeiHuFenLei",
         "caption" : "维护分类",
         "actionTarget" : "SINGLEKEY",
@@ -747,11 +747,11 @@
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
-        "timeout" : 60000,
         "codeName" : "RefreshAll",
         "caption" : "刷新",
         "uIActionTag" : "RefreshAll",
@@ -786,45 +786,45 @@
     "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
   } ],
   "getPSAppViewLogics" : [ {
-    "getPSViewCtrlName" : "doclib_cm",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "doclib_cm_deuiaction1"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "doclib_cm",
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "doclib_cm_deuiaction1_click"
   }, {
-    "getPSViewCtrlName" : "doclib_cm",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "doclib_cm_deuiaction2"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "doclib_cm",
     "eventArg" : "deuiaction2",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "doclib_cm_deuiaction2_click"
   }, {
-    "getPSViewCtrlName" : "doclib_cm",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "doclib_cm_deuiaction3"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "doclib_cm",
     "eventArg" : "deuiaction3",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "doclib_cm_deuiaction3_click"
   }, {
-    "getPSViewCtrlName" : "all_cm",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "all_cm_deuiaction1"
     },
     "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "all_cm",
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",

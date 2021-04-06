@@ -1,7 +1,11 @@
 {
+  "mobilePanel" : true,
+  "getPSLayout" : {
+    "layout" : "TABLE_12COL",
+    "columnCount" : 12
+  },
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
-      "viewFieldName" : "pri",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -12,9 +16,10 @@
         "editorType" : "SPAN",
         "name" : "pri"
       },
-      "hidden" : false,
+      "viewFieldName" : "pri",
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 2,
         "colMD" : 2,
@@ -24,15 +29,15 @@
       "itemStyle" : "DEFAULT",
       "name" : "pri"
     }, {
-      "viewFieldName" : "name",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "name"
       },
-      "hidden" : false,
+      "viewFieldName" : "name",
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 10,
         "colMD" : 10,
@@ -42,15 +47,15 @@
       "itemStyle" : "DEFAULT",
       "name" : "name"
     }, {
-      "viewFieldName" : "date1",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "date1"
       },
-      "hidden" : false,
+      "viewFieldName" : "date1",
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 3,
         "colMD" : 3,
@@ -60,7 +65,6 @@
       "itemStyle" : "DEFAULT",
       "name" : "date1"
     }, {
-      "viewFieldName" : "begin",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -71,9 +75,10 @@
         "editorType" : "SPAN",
         "name" : "begin"
       },
-      "hidden" : false,
+      "viewFieldName" : "begin",
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 3,
         "colMD" : 3,
@@ -83,7 +88,6 @@
       "itemStyle" : "DEFAULT",
       "name" : "begin"
     }, {
-      "viewFieldName" : "status",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -94,14 +98,15 @@
         "editorType" : "SPAN",
         "name" : "status"
       },
-      "hidden" : false,
+      "viewFieldName" : "status",
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 3,
-        "colMDOffset" : 3,
         "colLGOffset" : 3,
         "colMD" : 3,
+        "colMDOffset" : 3,
         "layout" : "TABLE_12COL"
       },
       "itemType" : "FIELD",
@@ -140,11 +145,6 @@
     "modelref" : true,
     "id" : "status"
   } ],
-  "mobilePanel" : true,
-  "getPSLayout" : {
-    "layout" : "TABLE_12COL",
-    "columnCount" : 12
-  },
   "controlType" : "PANEL",
   "codeName" : "Mob",
   "layoutMode" : "TABLE_12COL",

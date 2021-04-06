@@ -1,14 +1,14 @@
 {
+  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "TASK",
     "codeName" : "Task"
   },
-  "nestedRS" : true,
   "getPSPickupTextDEField" : {
     "name" : "TASKNAME",
     "codeName" : "TaskName"
   },
-  "masterOrder" : -1,
+  "nestedRS" : true,
   "removeActionType" : -1,
   "masterRS" : 8,
   "removeOrder" : 0,

@@ -6,9 +6,9 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "on",
     "codeName" : "On",
-    "text" : "暂时不设定时间"
+    "text" : "暂时不设定时间",
+    "value" : "on"
   } ],
   "codeName" : "Beginend_disable",
   "emptyText" : "未定义",

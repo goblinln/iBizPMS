@@ -2,13 +2,13 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "0",
     "codeName" : "Item_0",
-    "text" : "0"
+    "text" : "0",
+    "value" : "0"
   }, {
-    "value" : "1",
     "codeName" : "Item_1",
-    "text" : "1"
+    "text" : "1",
+    "value" : "1"
   } ],
   "codeName" : "Action__read",
   "emptyText" : "未定义",

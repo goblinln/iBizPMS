@@ -1,12 +1,14 @@
 {
+  "transactionMode" : "DEFAULT",
   "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
   "builtinAction" : true,
   "tempDataMode" : 1,
-  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
+  "extendMode" : 0,
+  "enableTempData" : true,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
@@ -14,8 +16,6 @@
   "orderValue" : 23,
   "codeName" : "RemoveTempMajor",
   "logicName" : "RemoveTempMajor",
-  "enableTempData" : true,
-  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "ID",

@@ -1,4 +1,5 @@
 {
+  "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -23,7 +24,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : true,
   "showFormNavBar" : false,
   "controlType" : "FORM",
@@ -34,9 +34,9 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
+        "enableLinkView" : true,
         "getLinkPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr2GridView.json",
@@ -44,21 +44,20 @@
         },
         "dropDownView" : false,
         "enablePickupView" : false,
-        "enableLinkView" : true,
         "enableAC" : false,
         "forceSelection" : true,
         "showTrigger" : false,
-        "getPSAppDEACMode" : {
+        "getPSAppDataEntity" : {
           "modelref" : true,
-          "id" : "Default"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
           "id" : "FetchDefault"
         },
-        "getPSAppDataEntity" : {
+        "getPSAppDEACMode" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
+          "id" : "Default"
         },
         "valueItemName" : "orgid",
         "editable" : false,
@@ -73,12 +72,12 @@
         "name" : "orgname"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ORGNAME",
         "codeName" : "OrgName"
       },
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "单位",
       "allowEmpty" : true,
@@ -88,6 +87,7 @@
       "valueItemName" : "orgid",
       "labelWidth" : 70,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -97,7 +97,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "orgname"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -105,12 +104,12 @@
         "name" : "mdeptname"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "MDEPTNAME",
         "codeName" : "MDeptName"
       },
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "部门",
       "allowEmpty" : true,
@@ -119,6 +118,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 70,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -128,7 +128,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "mdeptname"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -136,12 +135,12 @@
         "name" : "personname"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PERSONNAME",
         "codeName" : "PersonName"
       },
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "姓名",
       "allowEmpty" : true,
@@ -150,6 +149,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 70,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -159,7 +159,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "personname"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -167,12 +166,12 @@
         "name" : "nickname"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "NICKNAME",
         "codeName" : "NickName"
       },
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "别名",
       "allowEmpty" : true,
@@ -181,6 +180,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 70,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -190,7 +190,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "nickname"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -198,12 +197,12 @@
         "name" : "sex"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "SEX",
         "codeName" : "Sex"
       },
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "性别",
       "allowEmpty" : true,
@@ -212,6 +211,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 70,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -221,7 +221,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "sex"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -229,12 +228,12 @@
         "name" : "phone"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PHONE",
         "codeName" : "Phone"
       },
-      "hidden" : false,
       "dataType" : 25,
       "caption" : "电话",
       "allowEmpty" : true,
@@ -243,6 +242,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 70,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -252,11 +252,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "phone"
     } ],
-    "infoGroupMode" : true,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : true,
     "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",

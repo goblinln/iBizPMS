@@ -1,24 +1,24 @@
 {
+  "transactionMode" : "DEFAULT",
   "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
   "builtinAction" : false,
-  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
+  "extendMode" : 0,
+  "orderValue" : 99999,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
-  "orderValue" : 99999,
   "codeName" : "Submit",
   "logicName" : "提交",
-  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Submit.json",
-  "name" : "Submit",
-  "userCat" : "CAT1"
+  "userCat" : "CAT1",
+  "name" : "Submit"
 }

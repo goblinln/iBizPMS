@@ -6,41 +6,41 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "wait",
     "codeName" : "Wait",
     "text" : "未开始",
+    "color" : "rgba(131, 138, 157, 1)",
     "default" : true,
-    "color" : "rgba(131, 138, 157, 1)"
+    "value" : "wait"
   }, {
-    "value" : "doing",
     "codeName" : "Doing",
     "text" : "进行中",
-    "color" : "rgba(255, 93, 93, 1)"
+    "color" : "rgba(255, 93, 93, 1)",
+    "value" : "doing"
   }, {
-    "value" : "done",
     "codeName" : "Done",
     "text" : "已完成",
-    "color" : "rgba(67, 160, 71, 1)"
+    "color" : "rgba(67, 160, 71, 1)",
+    "value" : "done"
   }, {
-    "value" : "pause",
     "codeName" : "Pause",
     "text" : "已暂停",
-    "color" : "rgba(255, 152, 0, 1)"
+    "color" : "rgba(255, 152, 0, 1)",
+    "value" : "pause"
   }, {
-    "value" : "cancel",
     "codeName" : "Cancel",
     "text" : "已取消",
-    "color" : "rgba(131, 138, 157, 1)"
+    "color" : "rgba(131, 138, 157, 1)",
+    "value" : "cancel"
   }, {
-    "value" : "closed",
     "codeName" : "Closed",
     "text" : "已关闭",
-    "color" : "rgba(131, 138, 157, 1)"
+    "color" : "rgba(131, 138, 157, 1)",
+    "value" : "closed"
   }, {
-    "value" : "storychange",
     "codeName" : "Storychange",
     "text" : "需求变更",
-    "color" : "rgba(245, 8, 8, 1)"
+    "color" : "rgba(245, 8, 8, 1)",
+    "value" : "storychange"
   } ],
   "codeName" : "TaskStatusCK",
   "emptyText" : "未定义",

@@ -3,28 +3,28 @@
   "enableRowEditOrder" : false,
   "noSort" : false,
   "hasWFDataItems" : false,
-  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "name" : "realname",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "realname"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "REALNAME",
       "codeName" : "Realname"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   } ],
-  "enableRowEdit" : false,
+  "showHeader" : true,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "codeName" : "Welcome",
   "enableGroup" : false,
   "pagingSize" : 1000,

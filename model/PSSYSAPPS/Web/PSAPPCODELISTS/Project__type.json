@@ -6,18 +6,18 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "sprint",
     "codeName" : "Sprint",
     "text" : "短期项目",
-    "default" : true
+    "default" : true,
+    "value" : "sprint"
   }, {
-    "value" : "waterfall",
     "codeName" : "Waterfall",
-    "text" : "长期项目"
+    "text" : "长期项目",
+    "value" : "waterfall"
   }, {
-    "value" : "ops",
     "codeName" : "Ops",
-    "text" : "运维项目"
+    "text" : "运维项目",
+    "value" : "ops"
   } ],
   "codeName" : "Project__type",
   "emptyText" : "未定义",

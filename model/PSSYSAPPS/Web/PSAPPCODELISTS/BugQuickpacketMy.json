@@ -6,26 +6,26 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "TOME",
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "codeName" : "Tome",
     "text" : "指派给我",
-    "default" : true
+    "default" : true,
+    "value" : "TOME"
   }, {
-    "value" : "ICREATE",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "codeName" : "Icreate",
-    "text" : "由我创建"
+    "text" : "由我创建",
+    "value" : "ICREATE"
   }, {
-    "value" : "BYME",
     "data" : "{\"n_resolvedby_eq\":\"%srfloginname%\"}",
     "codeName" : "Byme",
-    "text" : "由我解决"
+    "text" : "由我解决",
+    "value" : "BYME"
   }, {
-    "value" : "WAITCLOSED",
     "data" : "{\"n_closedby_eq\":\"%srfloginname%\"}",
     "codeName" : "Waitclosed",
-    "text" : "由我关闭"
+    "text" : "由我关闭",
+    "value" : "WAITCLOSED"
   } ],
   "codeName" : "BugQuickpacketMy",
   "emptyText" : "未定义",

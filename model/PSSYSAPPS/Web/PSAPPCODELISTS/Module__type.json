@@ -6,29 +6,29 @@
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
-    "value" : "line",
     "codeName" : "Line",
-    "text" : "产品线"
+    "text" : "产品线",
+    "value" : "line"
   }, {
-    "value" : "story",
     "codeName" : "Story",
-    "text" : "需求"
+    "text" : "需求",
+    "value" : "story"
   }, {
-    "value" : "task",
     "codeName" : "Task",
-    "text" : "任务"
+    "text" : "任务",
+    "value" : "task"
   }, {
-    "value" : "doc",
     "codeName" : "Doc",
-    "text" : "文档目录"
+    "text" : "文档目录",
+    "value" : "doc"
   }, {
-    "value" : "case",
     "codeName" : "Case",
-    "text" : "测试用例"
+    "text" : "测试用例",
+    "value" : "case"
   }, {
-    "value" : "bug",
     "codeName" : "Bug",
-    "text" : "Bug"
+    "text" : "Bug",
+    "value" : "bug"
   } ],
   "codeName" : "Module__type",
   "emptyText" : "未定义",

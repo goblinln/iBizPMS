@@ -1,8 +1,8 @@
 {
-  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -10,24 +10,23 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RealDept.json"
         },
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "srforgid",
-          "key" : "N_ORGID_EQ",
-          "name" : "N_ORGID_EQ"
-        } ],
         "getPSNavigateParams" : [ {
           "rawValue" : false,
           "value" : "srforgid",
           "key" : "n_orgid_eq",
           "name" : "n_orgid_eq"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "srforgid",
+          "key" : "N_ORGID_EQ",
+          "name" : "N_ORGID_EQ"
         } ],
         "editorParams" : {
           "SRFNAVPARAM.n_orgid_eq" : "%srforgid%",
@@ -38,12 +37,12 @@
         "name" : "n_dept_eq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "DEPT",
         "codeName" : "Dept"
       },
-      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "部门",
@@ -55,6 +54,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 45,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 3,
         "colMD" : 3,
@@ -65,7 +65,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_dept_eq"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
         "editorParams" : {
@@ -76,12 +75,12 @@
         "name" : "n_begin_gtandeq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "hidden" : false,
       "dataType" : 5,
       "caption" : "完成时间",
       "allowEmpty" : true,
@@ -90,6 +89,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 80,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 5,
         "colMD" : 5,
@@ -100,7 +100,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_begin_gtandeq"
     }, {
-      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
         "editorParams" : {
@@ -111,12 +110,12 @@
         "name" : "n_end_ltandeq"
       },
       "inputTipClosable" : false,
+      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "hidden" : false,
       "dataType" : 5,
       "caption" : "至",
       "allowEmpty" : true,
@@ -125,6 +124,7 @@
       "labelPos" : "LEFT",
       "labelWidth" : 15,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colLG" : 4,
         "colMD" : 4,
@@ -135,11 +135,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_end_ltandeq"
     } ],
-    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "表单分页",
     "detailType" : "FORMPAGE",

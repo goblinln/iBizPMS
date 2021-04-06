@@ -1,43 +1,43 @@
 {
   "subSysAsCloud" : false,
-  "codeItemValueNumber" : false,
   "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Zt__delta.json",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Zt__delta.json",
   "codeName" : "Zt__delta",
   "userScope" : false,
   "emptyText" : "按时间段",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "7",
     "codeName" : "Item_7",
-    "text" : "一星期"
+    "text" : "一星期",
+    "value" : "7"
   }, {
-    "value" : "14",
     "codeName" : "Item_14",
-    "text" : "两星期"
+    "text" : "两星期",
+    "value" : "14"
   }, {
-    "value" : "31",
     "codeName" : "Item_31",
-    "text" : "一个月"
+    "text" : "一个月",
+    "value" : "31"
   }, {
-    "value" : "62",
     "codeName" : "Item_62",
-    "text" : "两个月"
+    "text" : "两个月",
+    "value" : "62"
   }, {
-    "value" : "93",
     "codeName" : "Item_93",
-    "text" : "三个月"
+    "text" : "三个月",
+    "value" : "93"
   }, {
-    "value" : "186",
     "codeName" : "Item_186",
-    "text" : "半年"
+    "text" : "半年",
+    "value" : "186"
   }, {
-    "value" : "365",
     "codeName" : "Item_365",
-    "text" : "一年"
+    "text" : "一年",
+    "value" : "365"
   } ]
 }

@@ -1,11 +1,12 @@
 {
+  "transactionMode" : "DEFAULT",
   "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
   "builtinAction" : false,
-  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
@@ -13,7 +14,6 @@
   "orderValue" : 99999,
   "codeName" : "CreateCycleTasks",
   "logicName" : "创建周期任务",
-  "extendMode" : 0,
   "actionMode" : "CREATE",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

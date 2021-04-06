@@ -1,4 +1,8 @@
 {
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+  },
   "getValuePSAppDEField" : {
     "name" : "ROLE",
     "codeName" : "Role"
@@ -10,10 +14,6 @@
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchDefault"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

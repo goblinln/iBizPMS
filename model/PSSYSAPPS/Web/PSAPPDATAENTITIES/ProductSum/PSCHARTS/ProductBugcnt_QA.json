@@ -81,11 +81,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
   },
   "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSCHARTS/ProductBugcnt_QA.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSCHARTS/ProductBugcnt_QA.json",
   "logicName" : "ProductBugcnt_QA",
   "modelid" : "e37961cc37e96752f436ef141b9d80c1",
   "getUserParam" : {
