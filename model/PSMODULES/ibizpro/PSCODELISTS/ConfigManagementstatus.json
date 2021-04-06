@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,24 +12,24 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "product_project",
     "codeName" : "Product_project",
-    "text" : "产品 - 项目",
-    "value" : "product_project"
+    "text" : "产品 - 项目"
   }, {
+    "value" : "product_iteration",
     "codeName" : "Product_iteration",
-    "text" : "产品 - 迭代",
-    "value" : "product_iteration"
+    "text" : "产品 - 迭代"
   }, {
+    "value" : "project_iteration",
     "codeName" : "Project_iteration",
-    "text" : "项目 - 迭代",
-    "value" : "project_iteration"
+    "text" : "项目 - 迭代"
   }, {
+    "value" : "product_sprint",
     "codeName" : "Product_sprint",
-    "text" : "产品 - 冲刺",
-    "value" : "product_sprint"
+    "text" : "产品 - 冲刺"
   }, {
+    "value" : "project_sprint",
     "codeName" : "Project_sprint",
-    "text" : "项目 - 冲刺",
-    "value" : "project_sprint"
+    "text" : "项目 - 冲刺"
   } ]
 }

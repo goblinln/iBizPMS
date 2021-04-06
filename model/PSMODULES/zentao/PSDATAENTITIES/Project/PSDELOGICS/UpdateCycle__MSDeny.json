@@ -173,21 +173,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "closed",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[closed]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "0",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",
@@ -211,21 +211,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "closed",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[closed]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",
@@ -249,21 +249,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "doing",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[doing]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "0",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",
@@ -287,21 +287,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "doing",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[doing]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",
@@ -325,21 +325,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "suspended",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[suspended]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "0",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",
@@ -363,21 +363,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "suspended",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[suspended]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",
@@ -401,21 +401,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "wait",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[wait]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "0",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",
@@ -439,21 +439,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "wait",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[wait]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",

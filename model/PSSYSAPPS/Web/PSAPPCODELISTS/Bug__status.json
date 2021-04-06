@@ -3,25 +3,25 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
+    "value" : "active",
     "codeName" : "Active",
     "text" : "激活",
     "default" : true,
-    "color" : "rgba(0, 157, 255, 1)",
-    "value" : "active"
+    "color" : "rgba(0, 157, 255, 1)"
   }, {
+    "value" : "resolved",
     "codeName" : "Resolved",
     "text" : "已解决",
-    "color" : "rgba(1, 217, 19, 1)",
-    "value" : "resolved"
+    "color" : "rgba(1, 217, 19, 1)"
   }, {
+    "value" : "closed",
     "codeName" : "Closed",
     "text" : "已关闭",
-    "color" : "rgba(151, 152, 141, 1)",
-    "value" : "closed"
+    "color" : "rgba(151, 152, 141, 1)"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
   "codeName" : "Bug__status",
   "emptyText" : "未定义",
   "enableCache" : true,

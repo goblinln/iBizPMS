@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,8 +12,8 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "0",
     "codeName" : "Item_0",
-    "text" : "不需要评审",
-    "value" : "0"
+    "text" : "不需要评审"
   } ]
 }

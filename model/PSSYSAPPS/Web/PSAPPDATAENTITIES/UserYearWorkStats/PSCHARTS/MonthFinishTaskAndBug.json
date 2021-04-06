@@ -5,6 +5,11 @@
     "index" : 0,
     "id" : "0"
   },
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
   "getPSChartCoordinateSystems" : [ {
     "getPSChartGrid" : {
       "getPSChartGridXAxis0" : {
@@ -30,11 +35,6 @@
     "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
     "id" : "0"
   } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "index" : 0,
-    "id" : "0"
-  },
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
@@ -143,53 +143,6 @@
     "name" : "MONTESTIMATE"
   } ],
   "codeName" : "MonthFinishTaskAndBug",
-  "getPSChartXAxises" : [ {
-    "eChartsType" : "category",
-    "eChartsPos" : "xAxis",
-    "position" : "bottom",
-    "caption" : "月",
-    "type" : "category",
-    "index" : 0,
-    "name" : "月",
-    "id" : "0"
-  } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "maxValue" : 100.0,
-    "minValue" : 0.0,
-    "position" : "left",
-    "caption" : "数量",
-    "type" : "numeric",
-    "index" : 0,
-    "name" : "数量",
-    "id" : "0"
-  } ],
-  "getPSChartGrids" : [ {
-    "getPSChartGridXAxis0" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "getPSChartGridYAxis0" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "getPSChartCoordinateSystem" : {
-      "getPSChartGrid" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "eChartsType" : "cartesian2d",
-      "type" : "XY",
-      "index" : 0,
-      "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
-      "id" : "0"
-    },
-    "type" : "grid",
-    "index" : 0,
-    "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
-    "id" : "0"
-  } ],
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
       "groupField" : true,
@@ -239,6 +192,53 @@
     "name" : "MONTESTIMATE-MonthFinishTaskAndBug",
     "id" : "2"
   } ],
+  "getPSChartXAxises" : [ {
+    "eChartsType" : "category",
+    "eChartsPos" : "xAxis",
+    "position" : "bottom",
+    "type" : "category",
+    "caption" : "月",
+    "index" : 0,
+    "name" : "月",
+    "id" : "0"
+  } ],
+  "getPSChartGrids" : [ {
+    "getPSChartGridXAxis0" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartGridYAxis0" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartCoordinateSystem" : {
+      "getPSChartGrid" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "eChartsType" : "cartesian2d",
+      "type" : "XY",
+      "index" : 0,
+      "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+      "id" : "0"
+    },
+    "type" : "grid",
+    "index" : 0,
+    "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "eChartsType" : "value",
+    "eChartsPos" : "yAxis",
+    "maxValue" : 100.0,
+    "minValue" : 0.0,
+    "position" : "left",
+    "type" : "numeric",
+    "caption" : "数量",
+    "index" : 0,
+    "name" : "数量",
+    "id" : "0"
+  } ],
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "MonthFinishTaskAndBug",
@@ -254,11 +254,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
   "height" : 300.0,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthFinishTaskAndBug.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthFinishTaskAndBug.json",
   "logicName" : "MonthFinishTaskAndBug",
   "modelid" : "8993ef48b185bc2433a52f2b3ccd5235",
   "getUserParam" : {

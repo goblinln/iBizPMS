@@ -8,166 +8,166 @@
       "id" : "Select"
     },
     "builtinMethod" : false,
+    "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select",
-    "methodType" : "SELECT"
+    "codeName" : "Select"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCTLINE__DEACTION__CREATE"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Create.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "Create",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCTLINE__DEACTION__UPDATE"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Update.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "codeName" : "Update",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCTLINE__DEACTION__REMOVE"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Remove.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
     },
-    "codeName" : "Remove",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCTLINE__DEACTION__GET"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Get.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Get",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/GetDraft.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey",
-    "methodType" : "DEACTION"
+    "codeName" : "CheckKey"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save",
-    "methodType" : "DEACTION"
+    "codeName" : "Save"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
     "builtinMethod" : false,
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
+    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH"
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterUpdate",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterSearch",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterGet",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterCreate",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterGetDraft",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterGetDraft",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterRemove",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterRemove",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterFetch",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
@@ -192,14 +192,14 @@
     "stdDataType" : 25,
     "name" : "UPDATEMAN"
   }, {
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "codeName" : "UpdateDate",
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "logicName" : "更新时间",
     "stdDataType" : 5,
     "name" : "UPDATEDATE"
   }, {
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "codeName" : "CreateDate",
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "logicName" : "建立时间",
     "stdDataType" : 5,
     "name" : "CREATEDATE"
@@ -216,24 +216,24 @@
         "name" : "IBZ_PRODUCTLINEID",
         "codeName" : "ProductLineId"
       },
-      "dataType" : 25,
-      "name" : "value"
+      "name" : "value",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "IBZ_PRODUCTLINENAME",
         "codeName" : "ProductLineName"
       },
-      "dataType" : 25,
-      "name" : "text"
+      "name" : "text",
+      "dataType" : 25
     } ],
     "enablePagingBar" : false,
-    "getTextPSAppDEField" : {
-      "name" : "IBZ_PRODUCTLINENAME",
-      "codeName" : "ProductLineName"
-    },
     "getValuePSAppDEField" : {
       "name" : "IBZ_PRODUCTLINEID",
       "codeName" : "ProductLineId"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "IBZ_PRODUCTLINENAME",
+      "codeName" : "ProductLineName"
     },
     "codeName" : "Default",
     "logicName" : "DEFAULT",
@@ -247,6 +247,11 @@
     "name" : "IBZ_PRODUCTLINENAME",
     "codeName" : "ProductLineName"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDESERVICEAPIS/ProductLine.json"
+  },
+  "codeName" : "ProductLine",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -260,11 +265,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDESERVICEAPIS/ProductLine.json"
-  },
-  "codeName" : "ProductLine",
   "logicName" : "产品线",
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,

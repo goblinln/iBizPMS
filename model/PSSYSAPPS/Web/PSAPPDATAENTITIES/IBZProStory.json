@@ -8,178 +8,178 @@
       "id" : "Select"
     },
     "builtinMethod" : false,
+    "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select",
-    "methodType" : "SELECT"
+    "codeName" : "Select"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPROSTORY__DEACTION__CREATE"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/Create.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "Create",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPROSTORY__DEACTION__UPDATE"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/Update.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "codeName" : "Update",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPROSTORY__DEACTION__REMOVE"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/Remove.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
     },
-    "codeName" : "Remove",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPROSTORY__DEACTION__GET"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/Get.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Get",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/GetDraft.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey",
-    "methodType" : "DEACTION"
+    "codeName" : "CheckKey"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save",
-    "methodType" : "DEACTION"
+    "codeName" : "Save"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SyncFromIBIZ"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/SyncFromIBIZ.json"
     },
-    "codeName" : "SyncFromIBIZ",
-    "methodType" : "DEACTION"
+    "codeName" : "SyncFromIBIZ"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
     "builtinMethod" : false,
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
+    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH"
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterUpdate",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterSearch",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterGet",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterCreate",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterGetDraft",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterGetDraft",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterRemove",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterRemove",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterFetch",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
@@ -241,8 +241,8 @@
     "stdDataType" : 25,
     "name" : "SPEC"
   }, {
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "codeName" : "ClosedDate",
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "logicName" : "关闭日期\t",
     "stdDataType" : 5,
     "name" : "CLOSEDDATE"
@@ -281,8 +281,8 @@
     "stdDataType" : 25,
     "name" : "CHILDSTORIES"
   }, {
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "codeName" : "OpenedDate",
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "logicName" : "创建日期",
     "stdDataType" : 5,
     "name" : "OPENEDDATE"
@@ -327,8 +327,8 @@
     "stdDataType" : 25,
     "name" : "LASTEDITEDBY"
   }, {
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "codeName" : "AssignedDate",
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "logicName" : "指派日期",
     "stdDataType" : 5,
     "name" : "ASSIGNEDDATE"
@@ -353,8 +353,8 @@
     "enableQuickSearch" : true,
     "name" : "TITLE"
   }, {
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "codeName" : "LastEditedDate",
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "logicName" : "最后修改日期",
     "stdDataType" : 5,
     "name" : "LASTEDITEDDATE"
@@ -406,8 +406,8 @@
     "stdDataType" : 25,
     "name" : "OPENEDBY"
   }, {
-    "valueFormat" : "YYYY-MM-DD",
     "codeName" : "ReviewedDate",
+    "valueFormat" : "YYYY-MM-DD",
     "logicName" : "评审时间",
     "stdDataType" : 5,
     "name" : "REVIEWEDDATE"
@@ -440,24 +440,24 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 25,
-      "name" : "value"
+      "name" : "value",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "dataType" : 25,
-      "name" : "text"
+      "name" : "text",
+      "dataType" : 25
     } ],
     "enablePagingBar" : false,
-    "getTextPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    },
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
     },
     "codeName" : "Default",
     "logicName" : "DEFAULT",
@@ -471,6 +471,11 @@
     "name" : "TITLE",
     "codeName" : "Title"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDESERVICEAPIS/IBZProStory.json"
+  },
+  "codeName" : "IBZProStory",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -484,11 +489,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDESERVICEAPIS/IBZProStory.json"
-  },
-  "codeName" : "IBZProStory",
   "logicName" : "需求",
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,

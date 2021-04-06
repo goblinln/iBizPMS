@@ -4,39 +4,38 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "LISTNAME",
       "codeName" : "ListName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "LISTNAME",
       "codeName" : "ListName"
     },
-    "dataType" : 25,
-    "name" : "listname"
+    "name" : "listname",
+    "dataType" : 25
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -58,30 +57,31 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : false,
+  "enablePagingBar" : false,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
     "excelCaption" : "编号",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -94,11 +94,11 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "dataItemName" : "listname",
     "getPSAppDEField" : {
       "name" : "LISTNAME",
       "codeName" : "ListName"
     },
+    "dataItemName" : "listname",
     "excelCaption" : "标题",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -113,12 +113,12 @@
   } ],
   "codeName" : "MainExp",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 500,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getNavPSAppView" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeGridExpView.json",
@@ -128,11 +128,11 @@
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact/PSGRIDS/MainExp.json",
   "logicName" : "主表格_通讯录",
   "modelid" : "1c0be5b2904f415c1e569081594cdbfc"

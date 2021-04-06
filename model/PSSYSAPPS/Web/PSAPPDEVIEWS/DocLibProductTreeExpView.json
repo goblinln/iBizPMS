@@ -9,29 +9,35 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppViewEngines" : [ {
     "engineType" : "TreeExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "TREEEXPBAR"
+      "name" : "TREEEXPBAR",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+  },
   "getPSControls" : [ {
     "controlType" : "TREEEXPBAR",
+    "enableCounter" : true,
+    "enableSearch" : false,
     "getXDataPSControl" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib/PSTREEVIEWS/LooProductDocLibTree.json",
@@ -44,13 +50,13 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
@@ -64,39 +70,39 @@
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -108,11 +114,12 @@
       },
       "controlType" : "TREEVIEW"
     },
-    "enableSearch" : false,
-    "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
       "treeGridMode" : 0,
+      "enableRootSelect" : false,
+      "outputIconDefault" : true,
+      "enableSearchDefault" : false,
       "getPSDETreeNodeRSs" : [ {
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -235,52 +242,49 @@
         "searchMode" : 3,
         "name" : "产品 - 附件库"
       } ],
-      "enableRootSelect" : false,
-      "outputIconDefault" : true,
-      "enableSearchDefault" : false,
       "controlType" : "TREEVIEW",
       "getPSDETreeNodes" : [ {
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
-        },
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchAllDoclibModule"
         },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchAllDoclibModule"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeView.json",
           "viewType" : "DETREEVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
         },
+        "enableCheck" : false,
         "nodeType" : "ChildDocLibModule",
+        "disableSelect" : false,
         "getPSSysImage" : {
           "glyph" : "xf114@FontAwesome",
           "cssClass" : "fa fa-folder-o"
         },
-        "disableSelect" : false,
         "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
@@ -290,18 +294,18 @@
       }, {
         "nodeValue" : "root",
         "text" : "默认根节点",
-        "enableQuickCreate" : false,
         "rootNode" : true,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
         "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
+        "selected" : false,
+        "enableQuickCreate" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "enableCheck" : false,
         "nodeType" : "ROOT",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -311,21 +315,27 @@
         "name" : "默认根节点",
         "id" : "ROOT"
       }, {
+        "textFormat" : "产品",
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
-        },
-        "textFormat" : "产品",
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchCurUer"
         },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchCurUer"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "navFilter" : "n_product_eq",
         "getNavPSAppView" : {
@@ -333,27 +343,21 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibProductTreeView.json",
           "viewType" : "DETREEVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
         },
+        "enableCheck" : false,
         "nodeType" : "Product",
+        "disableSelect" : false,
         "getPSSysImage" : {
           "glyph" : "xf1b2@FontAwesome",
           "cssClass" : "fa fa-cube"
         },
-        "disableSelect" : false,
         "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
@@ -361,48 +365,48 @@
         "name" : "产品",
         "id" : "Product"
       }, {
+        "textFormat" : "文档库",
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
-        },
-        "textFormat" : "文档库",
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
         },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeViewProductRoot.json",
           "viewType" : "DETREEVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
         },
+        "enableCheck" : false,
         "nodeType" : "DocLib",
+        "disableSelect" : false,
         "getPSSysImage" : {
           "glyph" : "xf114@FontAwesome",
           "cssClass" : "fa fa-folder-o"
         },
-        "disableSelect" : false,
         "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
@@ -411,26 +415,17 @@
         "id" : "DocLib"
       }, {
         "text" : "附件库",
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : false,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProductGridView.json",
           "viewType" : "DEGRIDVIEW"
-        },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : false,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
         },
         "getPSNavigateParams" : [ {
           "rawValue" : false,
@@ -438,12 +433,21 @@
           "key" : "product",
           "name" : "product"
         } ],
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+        },
+        "enableCheck" : false,
         "nodeType" : "Files",
+        "disableSelect" : false,
         "getPSSysImage" : {
           "glyph" : "xf0c6@FontAwesome",
           "cssClass" : "fa fa-paperclip"
         },
-        "disableSelect" : false,
         "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
@@ -451,47 +455,47 @@
         "name" : "附件库",
         "id" : "Files"
       }, {
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
-        },
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchRootModuleMuLu"
         },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchRootModuleMuLu"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeView.json",
           "viewType" : "DETREEVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
         },
+        "enableCheck" : false,
         "nodeType" : "DoclibModule",
+        "disableSelect" : false,
         "getPSSysImage" : {
           "glyph" : "xf114@FontAwesome",
           "cssClass" : "fa fa-folder-o"
         },
-        "disableSelect" : false,
         "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
@@ -500,22 +504,22 @@
         "id" : "DoclibModule"
       }, {
         "text" : "所有产品",
-        "enableQuickCreate" : false,
         "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
         "expandFirstOnly" : true,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
         "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
+        "selected" : false,
+        "enableQuickCreate" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
         },
+        "enableCheck" : false,
         "nodeType" : "AllProduct",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -527,6 +531,10 @@
       } ],
       "codeName" : "LooProductDocLibTree",
       "rootVisible" : false,
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
       "getCreatePSControlAction" : {
         "modelref" : true,
         "id" : "create"
@@ -543,9 +551,9 @@
         "modelref" : true,
         "id" : "load"
       },
-      "getFetchPSControlAction" : {
+      "getPSAppDataEntity" : {
         "modelref" : true,
-        "id" : "fetch"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
@@ -556,13 +564,13 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
@@ -576,39 +584,39 @@
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -617,10 +625,6 @@
         } ],
         "enableDEFieldPrivilege" : false,
         "id" : "树视图处理器"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
       },
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib/PSTREEVIEWS/LooProductDocLibTree.json",
       "logicName" : "文档库（产品）（查看）",
@@ -673,6 +677,10 @@
       "realTitle" : "文档库树视图",
       "name" : "EXPITEM:DocLib"
     } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -683,18 +691,10 @@
       "enableDEFieldPrivilege" : false,
       "id" : "treeexpbar"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-    },
     "codeName" : "ProductTreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "modelid" : "ea1c50ed94209eae6a5cbd3ffa5a8d17_treeexpbar"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-  },
   "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",

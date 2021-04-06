@@ -3,11 +3,11 @@
     "name" : "SYS_ROLEID",
     "codeName" : "RoleId"
   },
-  "masterOrder" : 100,
   "getPSPickupTextDEField" : {
     "name" : "SYS_ROLENAME",
     "codeName" : "RoleName"
   },
+  "masterOrder" : 100,
   "removeActionType" : 1,
   "masterRS" : 3,
   "removeOrder" : 0,

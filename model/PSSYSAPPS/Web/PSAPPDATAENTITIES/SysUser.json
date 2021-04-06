@@ -8,178 +8,178 @@
       "id" : "Select"
     },
     "builtinMethod" : false,
+    "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select",
-    "methodType" : "SELECT"
+    "codeName" : "Select"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SYSUSER__DEACTION__CREATE"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/Create.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "Create",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SYSUSER__DEACTION__UPDATE"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/Update.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "codeName" : "Update",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SYSUSER__DEACTION__REMOVE"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/Remove.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
     },
-    "codeName" : "Remove",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SYSUSER__DEACTION__GET"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/Get.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Get",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
     "builtinMethod" : false,
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/GetDraft.json"
-    },
+    "methodType" : "DEACTION",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION"
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ChangePwd"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/ChangePwd.json"
     },
-    "codeName" : "ChangePwd",
-    "methodType" : "DEACTION"
+    "codeName" : "ChangePwd"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey",
-    "methodType" : "DEACTION"
+    "codeName" : "CheckKey"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save",
-    "methodType" : "DEACTION"
+    "codeName" : "Save"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
     "builtinMethod" : false,
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
+    "methodType" : "FETCH",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH"
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterUpdate",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterSearch",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterGet",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterCreate",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterGetDraft",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterGetDraft",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterRemove",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterRemove",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterFetch",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
@@ -300,8 +300,8 @@
     "stdDataType" : 25,
     "name" : "SEX"
   }, {
-    "valueFormat" : "YYYY-MM-DD",
     "codeName" : "Birthday",
+    "valueFormat" : "YYYY-MM-DD",
     "logicName" : "出生日期",
     "stdDataType" : 5,
     "name" : "BIRTHDAY"
@@ -401,24 +401,24 @@
         "name" : "USERID",
         "codeName" : "UserId"
       },
-      "dataType" : 25,
-      "name" : "value"
+      "name" : "value",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PERSONNAME",
         "codeName" : "PersonName"
       },
-      "dataType" : 25,
-      "name" : "text"
+      "name" : "text",
+      "dataType" : 25
     } ],
     "enablePagingBar" : false,
-    "getTextPSAppDEField" : {
-      "name" : "PERSONNAME",
-      "codeName" : "PersonName"
-    },
     "getValuePSAppDEField" : {
       "name" : "USERID",
       "codeName" : "UserId"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "PERSONNAME",
+      "codeName" : "PersonName"
     },
     "codeName" : "Default",
     "logicName" : "DEFAULT",
@@ -432,6 +432,11 @@
     "name" : "PERSONNAME",
     "codeName" : "PersonName"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDESERVICEAPIS/SysUser.json"
+  },
+  "codeName" : "SysUser",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -445,11 +450,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDESERVICEAPIS/SysUser.json"
-  },
-  "codeName" : "SysUser",
   "logicName" : "系统用户",
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,

@@ -3,16 +3,16 @@
     "name" : "TASK",
     "codeName" : "Task"
   },
-  "masterOrder" : -1,
+  "getERMajorPSDEF" : {
+    "name" : "PROJECT",
+    "codeName" : "Project"
+  },
   "getPSPickupTextDEField" : {
     "name" : "TASKNAME",
     "codeName" : "TaskName"
   },
   "enableExtRestrict" : true,
-  "getERMajorPSDEF" : {
-    "name" : "PROJECT",
-    "codeName" : "Project"
-  },
+  "masterOrder" : -1,
   "getERMinorPSDEF" : {
     "name" : "PROJECT",
     "codeName" : "Project"

@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,25 +12,25 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "wait",
     "codeName" : "Wait",
     "text" : "未开始",
     "default" : true,
-    "color" : "rgba(220, 214, 214, 1)",
-    "value" : "wait"
+    "color" : "rgba(220, 214, 214, 1)"
   }, {
+    "value" : "doing",
     "codeName" : "Doing",
     "text" : "进行中",
-    "color" : "rgba(208, 20, 20, 1)",
-    "value" : "doing"
+    "color" : "rgba(208, 20, 20, 1)"
   }, {
+    "value" : "done",
     "codeName" : "Done",
     "text" : "已完成",
-    "color" : "rgba(30, 234, 12, 1)",
-    "value" : "done"
+    "color" : "rgba(30, 234, 12, 1)"
   }, {
+    "value" : "blocked",
     "codeName" : "Blocked",
     "text" : "被阻塞",
-    "color" : "rgba(221, 217, 10, 1)",
-    "value" : "blocked"
+    "color" : "rgba(221, 217, 10, 1)"
   } ]
 }

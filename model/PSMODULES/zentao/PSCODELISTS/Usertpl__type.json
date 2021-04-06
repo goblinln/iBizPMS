@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,16 +12,16 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "story",
     "codeName" : "Story",
-    "text" : "story",
-    "value" : "story"
+    "text" : "story"
   }, {
+    "value" : "task",
     "codeName" : "Task",
-    "text" : "task",
-    "value" : "task"
+    "text" : "task"
   }, {
+    "value" : "bug",
     "codeName" : "Bug",
-    "text" : "bug",
-    "value" : "bug"
+    "text" : "bug"
   } ]
 }

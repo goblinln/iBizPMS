@@ -23,15 +23,46 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
+  "enableAutoSave" : false,
   "infoFormMode" : true,
   "showFormNavBar" : false,
-  "enableAutoSave" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "infoGroupMode" : true,
+      "actionGroupExtractMode" : "ITEM",
+      "titleBarCloseMode" : 1,
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "grouppanel1",
+      "caption" : "文档摘要",
+      "detailType" : "GROUPPANEL",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "grouppanel1"
+    } ],
+    "infoGroupMode" : true,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srforikey",
     "hidden" : true,
@@ -78,44 +109,13 @@
     }
   } ],
   "noTabHeader" : true,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "infoGroupMode" : true,
-      "actionGroupExtractMode" : "ITEM",
-      "titleBarCloseMode" : 1,
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "showCaption" : true,
-      "codeName" : "grouppanel1",
-      "caption" : "文档摘要",
-      "detailType" : "GROUPPANEL",
-      "detailStyle" : "DEFAULT",
-      "name" : "grouppanel1"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : true,
-    "codeName" : "formpage1",
-    "caption" : "基本信息",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "codeName" : "DocSummary",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
   },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc/PSFORMS/DocSummary.json",
   "logicName" : "文档摘要",
   "modelid" : "108065873af63856e66ae8b17f9f2a16"

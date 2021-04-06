@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,40 +12,40 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "All",
     "data" : "{}",
     "codeName" : "All",
-    "text" : "所有",
-    "value" : "All"
+    "text" : "所有"
   }, {
+    "value" : "today",
     "data" : "{\"n_today_eq\":1}",
     "codeName" : "Today",
     "text" : "今天",
-    "default" : true,
-    "value" : "today"
+    "default" : true
   }, {
+    "value" : "yesterday",
     "data" : "{\"n_yesterday_eq\":1}",
     "codeName" : "Yesterday",
-    "text" : "昨天",
-    "value" : "yesterday"
+    "text" : "昨天"
   }, {
+    "value" : "thisweek",
     "data" : "{\"n_thisweek_eq\":1}",
     "codeName" : "Thisweek",
-    "text" : "本周",
-    "value" : "thisweek"
+    "text" : "本周"
   }, {
+    "value" : "lastweek",
     "data" : "{\"n_lastweek_eq\":1}",
     "codeName" : "Lastweek",
-    "text" : "上周",
-    "value" : "lastweek"
+    "text" : "上周"
   }, {
+    "value" : "thismonth",
     "data" : "{\"n_thismonth_eq\":1}",
     "codeName" : "Thismonth",
-    "text" : "本月",
-    "value" : "thismonth"
+    "text" : "本月"
   }, {
+    "value" : "lastmonth",
     "data" : "{\"n_lastmonth_eq\":1}",
     "codeName" : "Lastmonth",
-    "text" : "上月",
-    "value" : "lastmonth"
+    "text" : "上月"
   } ]
 }

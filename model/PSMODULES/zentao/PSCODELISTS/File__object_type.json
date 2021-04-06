@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,112 +12,112 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "product",
     "codeName" : "Product",
-    "text" : "产品",
-    "value" : "product"
+    "text" : "产品"
   }, {
+    "value" : "story",
     "codeName" : "Story",
-    "text" : "需求",
-    "value" : "story"
+    "text" : "需求"
   }, {
+    "value" : "productplan",
     "codeName" : "Productplan",
-    "text" : "计划",
-    "value" : "productplan"
+    "text" : "计划"
   }, {
+    "value" : "release",
     "codeName" : "Release",
-    "text" : "发布",
-    "value" : "release"
+    "text" : "发布"
   }, {
+    "value" : "project",
     "codeName" : "Project",
-    "text" : "项目",
-    "value" : "project"
+    "text" : "项目"
   }, {
+    "value" : "task",
     "codeName" : "Task",
-    "text" : "任务",
-    "value" : "task"
+    "text" : "任务"
   }, {
+    "value" : "build",
     "codeName" : "Build",
-    "text" : "版本",
-    "value" : "build"
+    "text" : "版本"
   }, {
+    "value" : "bug",
     "codeName" : "Bug",
-    "text" : "Bug",
-    "value" : "bug"
+    "text" : "Bug"
   }, {
+    "value" : "case",
     "codeName" : "Case",
-    "text" : "用例",
-    "value" : "case"
+    "text" : "用例"
   }, {
+    "value" : "caseresult",
     "codeName" : "Caseresult",
-    "text" : "用例结果",
-    "value" : "caseresult"
+    "text" : "用例结果"
   }, {
+    "value" : "stepresult",
     "codeName" : "Stepresult",
-    "text" : "用例步骤",
-    "value" : "stepresult"
+    "text" : "用例步骤"
   }, {
+    "value" : "testtask",
     "codeName" : "Testtask",
-    "text" : "测试单",
-    "value" : "testtask"
+    "text" : "测试单"
   }, {
+    "value" : "user",
     "codeName" : "User",
-    "text" : "用户",
-    "value" : "user"
+    "text" : "用户"
   }, {
+    "value" : "doc",
     "codeName" : "Doc",
-    "text" : "文档",
-    "value" : "doc"
+    "text" : "文档"
   }, {
+    "value" : "doclib",
     "codeName" : "Doclib",
-    "text" : "文档库",
-    "value" : "doclib"
+    "text" : "文档库"
   }, {
+    "value" : "todo",
     "codeName" : "Todo",
-    "text" : "待办",
-    "value" : "todo"
+    "text" : "待办"
   }, {
+    "value" : "branch",
     "codeName" : "Branch",
-    "text" : "分支",
-    "value" : "branch"
+    "text" : "分支"
   }, {
+    "value" : "module",
     "codeName" : "Module",
-    "text" : "模块",
-    "value" : "module"
+    "text" : "模块"
   }, {
+    "value" : "testsuite",
     "codeName" : "Testsuite",
-    "text" : "套件",
-    "value" : "testsuite"
+    "text" : "套件"
   }, {
+    "value" : "caselib",
     "codeName" : "Caselib",
-    "text" : "用例库",
-    "value" : "caselib"
+    "text" : "用例库"
   }, {
+    "value" : "testreport",
     "codeName" : "Testreport",
-    "text" : "报告",
-    "value" : "testreport"
+    "text" : "报告"
   }, {
+    "value" : "entry",
     "codeName" : "Entry",
-    "text" : "应用",
-    "value" : "entry"
+    "text" : "应用"
   }, {
+    "value" : "webhook",
     "codeName" : "Webhook",
-    "text" : "Webhook",
-    "value" : "webhook"
+    "text" : "Webhook"
   }, {
+    "value" : "daily",
     "codeName" : "Daily",
-    "text" : "日报",
-    "value" : "daily"
+    "text" : "日报"
   }, {
+    "value" : "weekly",
     "codeName" : "Weekly",
-    "text" : "周报",
-    "value" : "weekly"
+    "text" : "周报"
   }, {
+    "value" : "monthly",
     "codeName" : "Monthly",
-    "text" : "月报",
-    "value" : "monthly"
+    "text" : "月报"
   }, {
+    "value" : "reportly",
     "codeName" : "Reportly",
-    "text" : "汇报",
-    "value" : "reportly"
+    "text" : "汇报"
   } ]
 }

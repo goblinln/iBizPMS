@@ -4,67 +4,66 @@
       "name" : "ORGID",
       "codeName" : "OrgId"
     },
-    "dataType" : 25,
-    "name" : "orgid"
+    "name" : "orgid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ORGNAME",
       "codeName" : "OrgName"
     },
-    "dataType" : 25,
-    "name" : "orgname"
+    "name" : "orgname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PORGID",
       "codeName" : "ParentOrgId"
     },
-    "dataType" : 25,
-    "name" : "porgid"
+    "name" : "porgid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ORGLEVEL",
       "codeName" : "OrgLevel"
     },
-    "dataType" : 9,
-    "name" : "orglevel"
+    "name" : "orglevel",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "DOMAINS",
       "codeName" : "Domains"
     },
-    "dataType" : 25,
-    "name" : "domains"
+    "name" : "domains",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "SHORTNAME",
       "codeName" : "ShortName"
     },
-    "dataType" : 25,
-    "name" : "shortname"
+    "name" : "shortname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ORGNAME",
       "codeName" : "OrgName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ORGID",
       "codeName" : "OrgId"
     },
-    "dataType" : 25,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ORGID",
       "codeName" : "OrgId"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -86,30 +85,31 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : false,
+  "enablePagingBar" : true,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "orgid",
     "getPSAppDEField" : {
       "name" : "ORGID",
       "codeName" : "OrgId"
     },
+    "dataItemName" : "orgid",
     "excelCaption" : "单位标识",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -122,11 +122,11 @@
     "widthUnit" : "PX",
     "name" : "orgid"
   }, {
-    "dataItemName" : "shortname",
     "getPSAppDEField" : {
       "name" : "SHORTNAME",
       "codeName" : "ShortName"
     },
+    "dataItemName" : "shortname",
     "excelCaption" : "单位简称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -139,11 +139,11 @@
     "widthUnit" : "PX",
     "name" : "shortname"
   }, {
-    "dataItemName" : "domains",
     "getPSAppDEField" : {
       "name" : "DOMAINS",
       "codeName" : "Domains"
     },
+    "dataItemName" : "domains",
     "excelCaption" : "区属",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -157,17 +157,17 @@
     "name" : "domains"
   }, {
     "linkValueItem" : "srfkey",
-    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr2GridView.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "dataItemName" : "orgname",
+    "enableLinkView" : true,
     "getPSAppDEField" : {
       "name" : "ORGNAME",
       "codeName" : "OrgName"
     },
+    "dataItemName" : "orgname",
     "excelCaption" : "名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -180,11 +180,11 @@
     "widthUnit" : "PX",
     "name" : "orgname"
   }, {
-    "dataItemName" : "orglevel",
     "getPSAppDEField" : {
       "name" : "ORGLEVEL",
       "codeName" : "OrgLevel"
     },
+    "dataItemName" : "orglevel",
     "excelCaption" : "单位级别",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -199,21 +199,21 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization/PSGRIDS/Main.json",
   "logicName" : "主表格",
   "modelid" : "c5c8428ad8704c0567b5c34707a80fed"

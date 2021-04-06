@@ -4,39 +4,38 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -58,30 +57,31 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : false,
+  "enablePagingBar" : true,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
     "excelCaption" : "编号",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -95,17 +95,17 @@
     "name" : "id"
   }, {
     "linkValueItem" : "srfkey",
-    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "dataItemName" : "name",
+    "enableLinkView" : true,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
     "excelCaption" : "名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -120,18 +120,20 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
+        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 1,
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
-          },
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibEditView.json",
             "viewType" : "DEEDITVIEW"
           },
           "frontProcessType" : "WIZARD",
+          "getNoPrivDisplayMode" : 1,
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+          },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
@@ -148,24 +150,24 @@
           "name" : "编辑",
           "id" : "Editlib@IbzLib"
         },
-        "showIcon" : true,
-        "addSeparator" : false,
-        "showCaption" : false,
         "detailType" : "DEUIACTION",
+        "showCaption" : false,
         "name" : "uadedd49"
       }, {
+        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
+          "refreshMode" : 1,
+          "enableConfirm" : true,
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
           "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
           },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "refreshMode" : 1,
-          "enableConfirm" : true,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
@@ -184,10 +186,8 @@
           "name" : "删除",
           "id" : "Delete@IbzLib"
         },
-        "showIcon" : true,
-        "addSeparator" : false,
-        "showCaption" : false,
         "detailType" : "DEUIACTION",
+        "showCaption" : false,
         "name" : "ue16a62b"
       } ],
       "name" : "操作列"
@@ -204,12 +204,12 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -240,27 +240,27 @@
     "name" : "删除"
   } ],
   "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "编辑"
     },
+    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_uadedd49_click"
   }, {
-    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "删除"
     },
+    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_ue16a62b_click"
   } ],
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib/PSGRIDS/Main.json",
   "logicName" : "主表格",
   "modelid" : "7c5d5ca1029488c2186a372f84f8ea3f"

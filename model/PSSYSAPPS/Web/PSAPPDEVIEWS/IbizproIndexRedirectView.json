@@ -1,5 +1,4 @@
 {
-  "redirectView" : true,
   "getRedirectPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -14,8 +13,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realTitle" : "需求数据看板视图",
     "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "需求数据看板视图",
     "name" : "EDITVIEW:STORY"
   }, {
     "getRefPSAppView" : {
@@ -23,8 +22,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realTitle" : "功能测试",
     "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "功能测试",
     "name" : "EDITVIEW:CASE"
   }, {
     "getRefPSAppView" : {
@@ -32,8 +31,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realTitle" : "Bug数据看板视图",
     "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "Bug数据看板视图",
     "name" : "EDITVIEW:BUG"
   }, {
     "getRefPSAppView" : {
@@ -41,8 +40,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realTitle" : "任务主数据看板视图",
     "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "任务主数据看板视图",
     "name" : "EDITVIEW:TASK"
   }, {
     "getRefPSAppView" : {
@@ -50,8 +49,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realTitle" : "文档数据看板视图",
     "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "文档数据看板视图",
     "name" : "EDITVIEW:DOC"
   }, {
     "getRefPSAppView" : {
@@ -63,6 +62,7 @@
     "name" : "EDITVIEW:PROJECT"
   } ],
   "enableCustomGetDataAction" : false,
+  "redirectView" : true,
   "enableWorkflow" : true,
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "RedirectView",
@@ -72,16 +72,16 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppDataEntity" : {
@@ -95,8 +95,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realTitle" : "文档数据看板视图",
     "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "文档数据看板视图",
     "name" : "RDITEM:EDITVIEW:DOC"
   }, {
     "getRefPSAppView" : {
@@ -104,8 +104,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realTitle" : "任务主数据看板视图",
     "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "任务主数据看板视图",
     "name" : "RDITEM:EDITVIEW:TASK"
   }, {
     "getRefPSAppView" : {
@@ -129,8 +129,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realTitle" : "功能测试",
     "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "功能测试",
     "name" : "RDITEM:EDITVIEW:CASE"
   }, {
     "getRefPSAppView" : {
@@ -138,8 +138,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realTitle" : "需求数据看板视图",
     "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "需求数据看板视图",
     "name" : "RDITEM:EDITVIEW:STORY"
   }, {
     "getRefPSAppView" : {
@@ -147,8 +147,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "realTitle" : "Bug数据看板视图",
     "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "Bug数据看板视图",
     "name" : "RDITEM:EDITVIEW:BUG"
   } ],
   "codeName" : "IbizproIndexRedirectView",

@@ -1,8 +1,8 @@
 {
   "rowEditDefault" : false,
+  "enableExport" : true,
   "enableImport" : true,
   "enableRowEdit" : false,
-  "enableExport" : true,
   "gridRowActiveMode" : 2,
   "enableSearch" : true,
   "enableFilter" : true,
@@ -16,33 +16,33 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEGRIDVIEW_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEGRIDVIEW_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppViewEngines" : [ {
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "CTRL",
-      "name" : "SEARCHFORM"
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -143,6 +143,10 @@
     },
     "name" : "toolbar_tbitem18"
   } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+  },
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -150,6 +154,7 @@
         "modelref" : true,
         "id" : "toolbar_tbitem3"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "getPSSysImage" : {
@@ -166,7 +171,6 @@
         "fullCodeName" : "New",
         "name" : "表格界面_新建操作"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf0f6@FontAwesome",
         "cssClass" : "fa fa-file-text-o"
@@ -174,15 +178,16 @@
       "tooltip" : "新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
-      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "新建",
+      "showCaption" : true,
       "name" : "tbitem3"
     }, {
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "toolbar_tbitem4"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "getPSSysImage" : {
@@ -199,7 +204,6 @@
         "fullCodeName" : "Edit",
         "name" : "表格界面_编辑操作"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf044@FontAwesome",
         "cssClass" : "fa fa-edit"
@@ -207,15 +211,16 @@
       "tooltip" : "编辑",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
-      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "编辑",
+      "showCaption" : true,
       "name" : "tbitem4"
     }, {
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "toolbar_tbitem6"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "getPSSysImage" : {
@@ -233,7 +238,6 @@
         "fullCodeName" : "Copy",
         "name" : "表格界面_拷贝操作"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf0c5@FontAwesome",
         "cssClass" : "fa fa-copy"
@@ -241,9 +245,9 @@
       "tooltip" : "拷贝",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
-      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "拷贝",
+      "showCaption" : true,
       "name" : "tbitem6"
     }, {
       "spanMode" : false,
@@ -254,6 +258,7 @@
         "modelref" : true,
         "id" : "toolbar_tbitem8"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "getPSSysImage" : {
@@ -271,7 +276,6 @@
         "fullCodeName" : "Remove",
         "name" : "表格界面_删除操作"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf00d@FontAwesome",
         "cssClass" : "fa fa-remove"
@@ -279,9 +283,9 @@
       "tooltip" : "删除",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
-      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "删除",
+      "showCaption" : true,
       "name" : "tbitem8"
     }, {
       "spanMode" : false,
@@ -292,6 +296,7 @@
         "modelref" : true,
         "id" : "toolbar_tbitem13"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "getPSSysImage" : {
@@ -307,7 +312,6 @@
         "fullCodeName" : "ExportExcel",
         "name" : "表格界面_导出操作（Excel）"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf1c3@FontAwesome",
         "cssClass" : "fa fa-file-excel-o"
@@ -315,9 +319,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
-      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
+      "showCaption" : true,
       "name" : "tbitem13"
     }, {
       "spanMode" : false,
@@ -329,6 +333,7 @@
           "modelref" : true,
           "id" : "toolbar_tbitem21"
         },
+        "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
           "getPSSysImage" : {
@@ -344,7 +349,6 @@
           "fullCodeName" : "ExportModel",
           "name" : "表格界面_导出数据模型"
         },
-        "noPrivDisplayMode" : 2,
         "getPSSysImage" : {
           "glyph" : "xf019@FontAwesome",
           "cssClass" : "fa fa-download"
@@ -352,15 +356,16 @@
         "tooltip" : "导出数据模型",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
-        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "导出数据模型",
+        "showCaption" : true,
         "name" : "tbitem21"
       }, {
         "getPSAppViewUIAction" : {
           "modelref" : true,
           "id" : "toolbar_tbitem23"
         },
+        "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
           "getPSSysImage" : {
@@ -376,7 +381,6 @@
           "fullCodeName" : "Import",
           "name" : "表格界面_数据导入栏"
         },
-        "noPrivDisplayMode" : 2,
         "getPSSysImage" : {
           "glyph" : "xf093@FontAwesome",
           "cssClass" : "fa fa-upload"
@@ -384,16 +388,16 @@
         "tooltip" : "数据导入",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
-        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "数据导入",
+        "showCaption" : true,
         "name" : "tbitem23"
       } ],
       "showIcon" : true,
-      "showCaption" : true,
       "itemType" : "ITEMS",
       "caption" : "其它",
       "tooltip" : "其它",
+      "showCaption" : true,
       "name" : "tbitem16"
     }, {
       "spanMode" : false,
@@ -404,6 +408,8 @@
         "modelref" : true,
         "id" : "toolbar_tbitem19"
       },
+      "enableToggleMode" : true,
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "enableToggleMode" : true,
         "getNoPrivDisplayMode" : 2,
@@ -420,8 +426,6 @@
         "fullCodeName" : "ToggleFilter",
         "name" : "表格界面_搜索栏"
       },
-      "enableToggleMode" : true,
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf0b0@FontAwesome",
         "cssClass" : "fa fa-filter"
@@ -429,15 +433,16 @@
       "tooltip" : "过滤",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
-      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "过滤",
+      "showCaption" : true,
       "name" : "tbitem19"
     }, {
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "toolbar_tbitem18"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "getPSSysImage" : {
@@ -453,7 +458,6 @@
         "fullCodeName" : "Help",
         "name" : "表格界面_帮助操作"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf128@FontAwesome",
         "cssClass" : "fa fa-question"
@@ -461,19 +465,19 @@
       "tooltip" : "帮助",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
-      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "帮助",
+      "showCaption" : true,
       "name" : "tbitem18"
     } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "hookEventNames" : [ "CLICK" ],
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
     },
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "hookEventNames" : [ "CLICK" ],
     "codeName" : "GridViewtoolbar",
     "logicName" : "工具栏模板（版本）_编辑_提交测试_查看Bug_删除",
     "name" : "toolbar",
@@ -484,71 +488,70 @@
         "name" : "IBZ_WEEKLYID",
         "codeName" : "IbzWeeklyId"
       },
-      "dataType" : 1,
-      "name" : "ibz_weeklyid"
+      "name" : "ibz_weeklyid",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ISSUBMIT",
         "codeName" : "Issubmit"
       },
-      "dataType" : 25,
-      "name" : "issubmit"
+      "name" : "issubmit",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "IBZ_WEEKLYNAME",
         "codeName" : "IbzWeeklyName"
       },
-      "dataType" : 25,
-      "name" : "ibz_weeklyname"
+      "name" : "ibz_weeklyname",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
-      "dataType" : 25,
-      "name" : "account"
+      "name" : "account",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
       },
       "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "date"
+      "name" : "date",
+      "dataType" : 5
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "srfmstag",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "IBZ_WEEKLYNAME",
         "codeName" : "IbzWeeklyName"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "IBZ_WEEKLYID",
         "codeName" : "IbzWeeklyId"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "IBZ_WEEKLYID",
         "codeName" : "IbzWeeklyId"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "REPORTTO",
         "codeName" : "Reportto"
       },
-      "dataType" : 25,
-      "name" : "reportto"
+      "name" : "reportto",
+      "dataType" : 25
     } ],
-    "singleSelect" : false,
     "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
@@ -570,41 +573,42 @@
       "name" : "srfkey"
     } ],
     "hasWFDataItems" : false,
+    "columnEnableLink" : 2,
     "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-      },
       "getPSAppDEMethod" : {
         "modelref" : true,
         "id" : "Remove"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
       },
       "dataAccessAction" : "DELETE",
       "actionName" : "Remove",
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "columnEnableLink" : 2,
-    "enableRowEdit" : false,
-    "controlType" : "GRID",
+    "singleSelect" : false,
     "enablePagingBar" : true,
     "getMinorSortPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "linkValueItem" : "srfkey",
-      "enableLinkView" : true,
       "getLinkPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyUsr2EditView.json",
         "viewType" : "DEEDITVIEW"
       },
-      "dataItemName" : "ibz_weeklyname",
+      "enableLinkView" : true,
       "getPSAppDEField" : {
         "name" : "IBZ_WEEKLYNAME",
         "codeName" : "IbzWeeklyName"
       },
+      "dataItemName" : "ibz_weeklyname",
       "excelCaption" : "周报名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -617,7 +621,6 @@
       "widthUnit" : "STAR",
       "name" : "ibz_weeklyname"
     }, {
-      "dataItemName" : "account",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -626,6 +629,7 @@
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
+      "dataItemName" : "account",
       "excelCaption" : "用户",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
@@ -638,11 +642,11 @@
       "widthUnit" : "PX",
       "name" : "account"
     }, {
-      "dataItemName" : "date",
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
       },
+      "dataItemName" : "date",
       "excelCaption" : "日期",
       "valueFormat" : "YYYY-MM-DD",
       "cLConvertMode" : "NONE",
@@ -656,7 +660,6 @@
       "widthUnit" : "PX",
       "name" : "date"
     }, {
-      "dataItemName" : "reportto",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -665,6 +668,7 @@
         "name" : "REPORTTO",
         "codeName" : "Reportto"
       },
+      "dataItemName" : "reportto",
       "excelCaption" : "汇报给",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
@@ -679,23 +683,14 @@
     }, {
       "getPSDEUIActionGroup" : {
         "getPSUIActionGroupDetails" : [ {
+          "addSeparator" : false,
+          "showIcon" : true,
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 1,
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-            },
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditViewEdit.json",
               "viewType" : "DEEDITVIEW"
             },
-            "getPSNavigateParams" : [ {
-              "rawValue" : false,
-              "value" : "date",
-              "key" : "date",
-              "name" : "date"
-            } ],
             "frontProcessType" : "WIZARD",
             "getPSNavigateContexts" : [ {
               "rawValue" : false,
@@ -703,6 +698,17 @@
               "key" : "DATE",
               "name" : "DATE"
             } ],
+            "getPSNavigateParams" : [ {
+              "rawValue" : false,
+              "value" : "date",
+              "key" : "date",
+              "name" : "date"
+            } ],
+            "getNoPrivDisplayMode" : 1,
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+            },
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
@@ -719,24 +725,24 @@
             "name" : "修改（操作列）",
             "id" : "edit@IbzWeekly"
           },
-          "showIcon" : true,
-          "addSeparator" : false,
-          "showCaption" : false,
           "detailType" : "DEUIACTION",
+          "showCaption" : false,
           "name" : "u31efdd1"
         }, {
+          "addSeparator" : false,
+          "showIcon" : true,
           "getPSUIAction" : {
+            "refreshMode" : 1,
+            "enableConfirm" : true,
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Submit"
+            },
             "getNoPrivDisplayMode" : 1,
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
             },
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Submit"
-            },
-            "refreshMode" : 1,
-            "enableConfirm" : true,
             "getPSSysImage" : {
               "glyph" : "xf00c@FontAwesome",
               "cssClass" : "fa fa-check"
@@ -755,10 +761,8 @@
             "name" : "提交(操作列)",
             "id" : "submitZZZ@IbzWeekly"
           },
-          "showIcon" : true,
-          "addSeparator" : false,
-          "showCaption" : false,
           "detailType" : "DEUIACTION",
+          "showCaption" : false,
           "name" : "ufd17a6f"
         } ],
         "name" : "周报修改工具栏"
@@ -776,12 +780,12 @@
     "codeName" : "Main",
     "minorSortDir" : "DESC",
     "enableGroup" : false,
-    "hideHeader" : false,
-    "forceFit" : false,
     "pagingSize" : 20,
     "aggMode" : "NONE",
     "groupMode" : "NONE",
     "sortMode" : "REMOTE",
+    "hideHeader" : false,
+    "forceFit" : false,
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -812,22 +816,26 @@
       "name" : "提交(操作列)"
     } ],
     "getPSAppViewLogics" : [ {
-      "logicTrigger" : "CUSTOM",
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "修改（操作列）"
       },
+      "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
       "name" : "grid_uagridcolumn1_u31efdd1_click"
     }, {
-      "logicTrigger" : "CUSTOM",
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "提交(操作列)"
       },
+      "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
       "name" : "grid_uagridcolumn1_ufd17a6f_click"
     } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -837,76 +845,76 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchDefault"
         },
-        "actionType" : "DEDATASET",
-        "name" : "fetch"
-      }, {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
         },
+        "actionType" : "DEDATASET",
+        "name" : "fetch"
+      }, {
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "name" : "loaddraft"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -916,39 +924,39 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-    },
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY/PSGRIDS/Main.json",
     "logicName" : "主表格(主表格)",
     "name" : "grid",
     "modelid" : "3d53ae517b297b564a398adcd3b526d3"
   }, {
     "searchButtonStyle" : "DEFAULT",
-    "enableFilterSave" : false,
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
+    "enableFilterSave" : false,
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
+      "infoGroupMode" : false,
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
         "columnCount" : 24
       },
-      "infoGroupMode" : false,
       "codeName" : "formpage1",
       "caption" : "常规条件",
       "detailType" : "FORMPAGE",
       "detailStyle" : "DEFAULT",
       "name" : "formpage1"
     } ],
+    "noTabHeader" : true,
     "codeName" : "Default",
     "tabHeaderPos" : "TOP",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -957,35 +965,35 @@
     "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterSearch"
         },
-        "actionType" : "FILTERACTION",
-        "name" : "search"
-      }, {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
         },
+        "actionType" : "FILTERACTION",
+        "name" : "search"
+      }, {
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterGet"
         },
-        "actionType" : "FILTERACTION",
-        "name" : "load"
-      }, {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
         },
+        "actionType" : "FILTERACTION",
+        "name" : "load"
+      }, {
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
         },
         "actionType" : "FILTERACTION",
         "name" : "loaddraft"
@@ -993,19 +1001,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-    },
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY/PSSEARCHFORMS/Default.json",
     "logicName" : "默认搜索表单",
     "name" : "searchform",
     "modelid" : "4b843fc8c083cf654f21cfe76f058373"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-  },
   "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
@@ -1013,8 +1013,8 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realTitle" : "实体2编辑视图",
     "realOpenMode" : "INDEXVIEWTAB",
+    "realTitle" : "实体2编辑视图",
     "name" : "NEWDATA"
   }, {
     "getRefPSAppView" : {
@@ -1022,149 +1022,149 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "realTitle" : "实体2编辑视图",
     "realOpenMode" : "INDEXVIEWTAB",
+    "realTitle" : "实体2编辑视图",
     "name" : "EDITDATA"
   } ],
   "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem3"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem3",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem3_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem4"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem4",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem4_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem5"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem5",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem5_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem6"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem6",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem6_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem24"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem24",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem24_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem25"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem25",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem25_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem8"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem8",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem8_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem13"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem13",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem13_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem11"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem11",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem11_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem21"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem21",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem21_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem23"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem23",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem23_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem19"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem19",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem19_click"
   }, {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_tbitem18"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "tbitem18",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",

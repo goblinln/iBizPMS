@@ -1,10 +1,10 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
   "builtinAction" : false,
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
@@ -19,6 +19,6 @@
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Activate.json",
-  "userCat" : "CAT1",
-  "name" : "activate"
+  "name" : "activate",
+  "userCat" : "CAT1"
 }

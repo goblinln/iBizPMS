@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,20 +12,20 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "waiting",
     "codeName" : "Waiting",
-    "text" : "waiting",
-    "value" : "waiting"
+    "text" : "waiting"
   }, {
+    "value" : "sent",
     "codeName" : "Sent",
-    "text" : "sent",
-    "value" : "sent"
+    "text" : "sent"
   }, {
+    "value" : "readed",
     "codeName" : "Readed",
-    "text" : "readed",
-    "value" : "readed"
+    "text" : "readed"
   }, {
+    "value" : "deleted",
     "codeName" : "Deleted",
-    "text" : "deleted",
-    "value" : "deleted"
+    "text" : "deleted"
   } ]
 }

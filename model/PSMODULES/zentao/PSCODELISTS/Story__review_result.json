@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,22 +12,22 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "pass",
     "codeName" : "Pass",
-    "text" : "确认通过",
-    "value" : "pass"
+    "text" : "确认通过"
   }, {
+    "value" : "revert",
     "codeName" : "Revert",
-    "text" : "撤销变更",
-    "value" : "revert"
+    "text" : "撤销变更"
   }, {
+    "value" : "clarify",
     "codeName" : "Clarify",
     "text" : "有待明确",
     "default" : true,
-    "color" : "rgba(49, 27, 146, 1)",
-    "value" : "clarify"
+    "color" : "rgba(49, 27, 146, 1)"
   }, {
+    "value" : "reject",
     "codeName" : "Reject",
-    "text" : "拒绝",
-    "value" : "reject"
+    "text" : "拒绝"
   } ]
 }

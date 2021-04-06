@@ -23,15 +23,184 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
+  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
-  "enableAutoSave" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "infoGroupMode" : false,
+      "actionGroupExtractMode" : "ITEM",
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "createmanname"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CREATEMANNAME",
+          "codeName" : "CreateManName"
+        },
+        "hidden" : true,
+        "dataType" : 25,
+        "caption" : "创建人姓名",
+        "allowEmpty" : true,
+        "createDV" : "srfloginname",
+        "createDVT" : "SESSION",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "createmanname",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "createmanname"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "agentuser"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "AGENTUSER",
+          "codeName" : "Agentuser"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "caption" : "代理用户",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "agentuser",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "agentuser"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD",
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD"
+          },
+          "editorType" : "DATEPICKEREX_NOTIME",
+          "editorWidth" : 100.0,
+          "name" : "agentbegin"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "AGENTBEGIN",
+          "codeName" : "Agentbegin"
+        },
+        "hidden" : false,
+        "dataType" : 5,
+        "caption" : "代理开始日期",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "itemWidth" : 200.0,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "agentbegin",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "agentbegin"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD",
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD"
+          },
+          "editorType" : "DATEPICKEREX_NOTIME",
+          "editorWidth" : 100.0,
+          "name" : "agentend"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "AGENTEND",
+          "codeName" : "Agentend"
+        },
+        "hidden" : false,
+        "dataType" : 5,
+        "caption" : "代理结束日期",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "itemWidth" : 200.0,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "agentend",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "agentend"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "group1",
+      "caption" : "代理基本信息",
+      "detailType" : "GROUPPANEL",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : false,
+      "name" : "group1"
+    } ],
+    "infoGroupMode" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srfupdatedate",
     "hidden" : true,
@@ -117,182 +286,13 @@
     }
   } ],
   "noTabHeader" : true,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "infoGroupMode" : false,
-      "actionGroupExtractMode" : "ITEM",
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
-      "getPSDEFormDetails" : [ {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "editorType" : "HIDDEN",
-          "name" : "createmanname"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "CREATEMANNAME",
-          "codeName" : "CreateManName"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "caption" : "创建人姓名",
-        "allowEmpty" : true,
-        "createDV" : "srfloginname",
-        "createDVT" : "SESSION",
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 3,
-        "labelPos" : "LEFT",
-        "hidden" : true,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "createmanname",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "createmanname"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "singleSelect" : true,
-          "getPSAppCodeList" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-          },
-          "editorType" : "DROPDOWNLIST",
-          "name" : "agentuser"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "AGENTUSER",
-          "codeName" : "Agentuser"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "needCodeListConfig" : true,
-        "caption" : "代理用户",
-        "allowEmpty" : true,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "agentuser",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "agentuser"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "dateTimeFormat" : "YYYY-MM-DD",
-          "editorType" : "DATEPICKEREX_NOTIME",
-          "editorWidth" : 100.0,
-          "editorParams" : {
-            "TIMEFMT" : "YYYY-MM-DD"
-          },
-          "name" : "agentbegin"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "AGENTBEGIN",
-          "codeName" : "Agentbegin"
-        },
-        "showCaption" : true,
-        "dataType" : 5,
-        "caption" : "代理开始日期",
-        "allowEmpty" : true,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "itemWidth" : 200.0,
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "colLG" : 12,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "agentbegin",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "agentbegin"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "dateTimeFormat" : "YYYY-MM-DD",
-          "editorType" : "DATEPICKEREX_NOTIME",
-          "editorWidth" : 100.0,
-          "editorParams" : {
-            "TIMEFMT" : "YYYY-MM-DD"
-          },
-          "name" : "agentend"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "AGENTEND",
-          "codeName" : "Agentend"
-        },
-        "showCaption" : true,
-        "dataType" : 5,
-        "caption" : "代理结束日期",
-        "allowEmpty" : true,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "itemWidth" : 200.0,
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "colLG" : 12,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "agentend",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "agentend"
-      } ],
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "showCaption" : false,
-      "codeName" : "group1",
-      "caption" : "代理基本信息",
-      "detailType" : "GROUPPANEL",
-      "detailStyle" : "DEFAULT",
-      "name" : "group1"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "基本信息",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "codeName" : "CreateForm",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
   },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent/PSFORMS/CreateForm.json",
   "logicName" : "新建表单",
   "modelid" : "a57431506b9ae3c8cce0e3a03ebe788e"

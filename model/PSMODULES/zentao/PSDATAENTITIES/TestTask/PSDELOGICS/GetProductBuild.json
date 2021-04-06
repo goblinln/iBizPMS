@@ -72,11 +72,11 @@
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "PRODUCT",
         "logicType" : "SINGLE",
         "name" : "Default[PRODUCT] 值不为空(NotNil)"
@@ -99,11 +99,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "PROJECT",
         "logicType" : "SINGLE",
         "name" : "Default[PROJECT] 值不为空(NotNil)"

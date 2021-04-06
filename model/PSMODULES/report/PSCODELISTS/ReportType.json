@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,20 +12,20 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "weekly",
     "codeName" : "Weekly",
-    "text" : "周报",
-    "value" : "weekly"
+    "text" : "周报"
   }, {
+    "value" : "daily",
     "codeName" : "Daily",
-    "text" : "日报",
-    "value" : "daily"
+    "text" : "日报"
   }, {
+    "value" : "monthly",
     "codeName" : "Monthly",
-    "text" : "月报",
-    "value" : "monthly"
+    "text" : "月报"
   }, {
+    "value" : "reportly",
     "codeName" : "Reportly",
-    "text" : "汇报",
-    "value" : "reportly"
+    "text" : "汇报"
   } ]
 }

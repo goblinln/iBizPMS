@@ -3,11 +3,11 @@
     "name" : "BUILD",
     "codeName" : "Build"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "BUILDNAME",
     "codeName" : "Buildname"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "masterRS" : 0,
   "removeOrder" : 0,

@@ -2,6 +2,7 @@
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
       "getPSPanelItems" : [ {
+        "viewFieldName" : "account",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -12,10 +13,9 @@
           "editorType" : "SPAN",
           "name" : "account"
         },
-        "viewFieldName" : "account",
-        "showCaption" : false,
-        "convertToCodeItemText" : true,
         "hidden" : false,
+        "convertToCodeItemText" : true,
+        "showCaption" : false,
         "getPSLayoutPos" : {
           "grow" : -1,
           "layout" : "FLEX"
@@ -37,14 +37,14 @@
         "width" : 230,
         "layout" : "FLEX"
       },
-      "contentWidth" : 230.0,
-      "showCaption" : true,
       "width" : 230.0,
       "getPSSysCss" : {
         "cssName" : "container-lefttop-margin"
       },
       "itemType" : "CONTAINER",
       "itemStyle" : "DEFAULT",
+      "contentWidth" : 230.0,
+      "showCaption" : true,
       "name" : "container2"
     }, {
       "getPSPanelItems" : [ {
@@ -52,16 +52,16 @@
           "rawItemHeight" : 40.0,
           "contentType" : "RAW",
           "rawContent" : "今天剩余工作总计",
-          "contentHeight" : 40.0,
           "getPSLayoutPos" : {
             "grow" : -1,
             "height" : 40,
             "layout" : "FLEX"
           },
-          "showCaption" : true,
+          "contentHeight" : 40.0,
           "height" : 40.0,
           "itemType" : "RAWITEM",
           "itemStyle" : "DEFAULT",
+          "showCaption" : true,
           "name" : "rawitem1"
         } ],
         "getPSLayout" : {
@@ -72,12 +72,12 @@
           "grow" : -1,
           "layout" : "FLEX"
         },
-        "showCaption" : true,
         "getPSSysCss" : {
           "cssName" : "container-updown-margin"
         },
         "itemType" : "CONTAINER",
         "itemStyle" : "DEFAULT",
+        "showCaption" : true,
         "name" : "container9"
       }, {
         "getPSPanelItems" : [ {
@@ -85,27 +85,27 @@
             "rawItemHeight" : 30.0,
             "contentType" : "RAW",
             "rawContent" : "我的任务",
-            "contentHeight" : 30.0,
             "getPSLayoutPos" : {
               "grow" : -1,
               "height" : 30,
               "layout" : "FLEX"
             },
-            "showCaption" : true,
+            "contentHeight" : 30.0,
             "height" : 30.0,
             "itemType" : "RAWITEM",
             "itemStyle" : "DEFAULT",
+            "showCaption" : true,
             "name" : "rawitem2"
           }, {
+            "viewFieldName" : "MYTASKS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "mytasks"
             },
-            "viewFieldName" : "MYTASKS",
-            "showCaption" : false,
             "hidden" : false,
+            "showCaption" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -117,15 +117,15 @@
             "itemStyle" : "DEFAULT",
             "name" : "mytasks"
           }, {
+            "viewFieldName" : "myetasks",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "myetasks"
             },
-            "viewFieldName" : "myetasks",
-            "showCaption" : false,
             "hidden" : false,
+            "showCaption" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -147,36 +147,36 @@
             "grow" : -1,
             "layout" : "FLEX"
           },
-          "showCaption" : true,
           "itemType" : "CONTAINER",
           "itemStyle" : "DEFAULT",
+          "showCaption" : true,
           "name" : "container4"
         }, {
           "getPSPanelItems" : [ {
             "rawItemHeight" : 30.0,
             "contentType" : "RAW",
             "rawContent" : "我的bug",
-            "contentHeight" : 30.0,
             "getPSLayoutPos" : {
               "grow" : -1,
               "height" : 30,
               "layout" : "FLEX"
             },
-            "showCaption" : true,
+            "contentHeight" : 30.0,
             "height" : 30.0,
             "itemType" : "RAWITEM",
             "itemStyle" : "DEFAULT",
+            "showCaption" : true,
             "name" : "rawitem3"
           }, {
+            "viewFieldName" : "MYBUGS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "mybugs"
             },
-            "viewFieldName" : "MYBUGS",
-            "showCaption" : false,
             "hidden" : false,
+            "showCaption" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -188,15 +188,15 @@
             "itemStyle" : "DEFAULT",
             "name" : "mybugs"
           }, {
+            "viewFieldName" : "MYEBUGS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "myebugs"
             },
-            "viewFieldName" : "MYEBUGS",
-            "showCaption" : false,
             "hidden" : false,
+            "showCaption" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -218,36 +218,36 @@
             "grow" : -1,
             "layout" : "FLEX"
           },
-          "showCaption" : true,
           "itemType" : "CONTAINER",
           "itemStyle" : "DEFAULT",
+          "showCaption" : true,
           "name" : "container5"
         }, {
           "getPSPanelItems" : [ {
             "rawItemHeight" : 30.0,
             "contentType" : "RAW",
             "rawContent" : "我的需求",
-            "contentHeight" : 30.0,
             "getPSLayoutPos" : {
               "grow" : -1,
               "height" : 30,
               "layout" : "FLEX"
             },
-            "showCaption" : true,
+            "contentHeight" : 30.0,
             "height" : 30.0,
             "itemType" : "RAWITEM",
             "itemStyle" : "DEFAULT",
+            "showCaption" : true,
             "name" : "rawitem4"
           }, {
+            "viewFieldName" : "MYSTORYS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "mystorys"
             },
-            "viewFieldName" : "MYSTORYS",
-            "showCaption" : false,
             "hidden" : false,
+            "showCaption" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -265,12 +265,12 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
-            "showCaption" : true,
             "getPSSysCss" : {
               "cssName" : "text-center-red"
             },
             "itemType" : "RAWITEM",
             "itemStyle" : "DEFAULT",
+            "showCaption" : true,
             "name" : "rawitem7"
           } ],
           "getPSLayout" : {
@@ -283,36 +283,36 @@
             "grow" : -1,
             "layout" : "FLEX"
           },
-          "showCaption" : true,
           "itemType" : "CONTAINER",
           "itemStyle" : "DEFAULT",
+          "showCaption" : true,
           "name" : "container6"
         }, {
           "getPSPanelItems" : [ {
             "rawItemHeight" : 30.0,
             "contentType" : "RAW",
             "rawContent" : "未关闭的项目",
-            "contentHeight" : 30.0,
             "getPSLayoutPos" : {
               "grow" : -1,
               "height" : 30,
               "layout" : "FLEX"
             },
-            "showCaption" : true,
+            "contentHeight" : 30.0,
             "height" : 30.0,
             "itemType" : "RAWITEM",
             "itemStyle" : "DEFAULT",
+            "showCaption" : true,
             "name" : "rawitem5"
           }, {
+            "viewFieldName" : "PROJECTS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "projects"
             },
-            "viewFieldName" : "PROJECTS",
-            "showCaption" : false,
             "hidden" : false,
+            "showCaption" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -324,15 +324,15 @@
             "itemStyle" : "DEFAULT",
             "name" : "projects"
           }, {
+            "viewFieldName" : "EPROJECTS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "eprojects"
             },
-            "viewFieldName" : "EPROJECTS",
-            "showCaption" : false,
             "hidden" : false,
+            "showCaption" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -354,36 +354,36 @@
             "grow" : -1,
             "layout" : "FLEX"
           },
-          "showCaption" : true,
           "itemType" : "CONTAINER",
           "itemStyle" : "DEFAULT",
+          "showCaption" : true,
           "name" : "container7"
         }, {
           "getPSPanelItems" : [ {
             "rawItemHeight" : 30.0,
             "contentType" : "RAW",
             "rawContent" : "未关闭的产品",
-            "contentHeight" : 30.0,
             "getPSLayoutPos" : {
               "grow" : -1,
               "height" : 30,
               "layout" : "FLEX"
             },
-            "showCaption" : true,
+            "contentHeight" : 30.0,
             "height" : 30.0,
             "itemType" : "RAWITEM",
             "itemStyle" : "DEFAULT",
+            "showCaption" : true,
             "name" : "rawitem6"
           }, {
+            "viewFieldName" : "PRODUCTS",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "products"
             },
-            "viewFieldName" : "PRODUCTS",
-            "showCaption" : false,
             "hidden" : false,
+            "showCaption" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -401,12 +401,12 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
-            "showCaption" : true,
             "getPSSysCss" : {
               "cssName" : "text-center-red"
             },
             "itemType" : "RAWITEM",
             "itemStyle" : "DEFAULT",
+            "showCaption" : true,
             "name" : "rawitem8"
           } ],
           "getPSLayout" : {
@@ -419,9 +419,9 @@
             "grow" : -1,
             "layout" : "FLEX"
           },
-          "showCaption" : true,
           "itemType" : "CONTAINER",
           "itemStyle" : "DEFAULT",
+          "showCaption" : true,
           "name" : "container8"
         } ],
         "getPSLayout" : {
@@ -433,12 +433,12 @@
           "grow" : 1,
           "layout" : "FLEX"
         },
-        "showCaption" : true,
         "getPSSysCss" : {
           "cssName" : "container-left-border"
         },
         "itemType" : "CONTAINER",
         "itemStyle" : "DEFAULT",
+        "showCaption" : true,
         "name" : "container10"
       } ],
       "getPSLayout" : {
@@ -449,9 +449,9 @@
         "grow" : 1,
         "layout" : "FLEX"
       },
-      "showCaption" : true,
       "itemType" : "CONTAINER",
       "itemStyle" : "DEFAULT",
+      "showCaption" : true,
       "name" : "container3"
     } ],
     "getPSLayout" : {
@@ -461,12 +461,12 @@
       "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
-    "showCaption" : true,
     "getPSSysCss" : {
       "cssName" : "container-margin-top-7px"
     },
     "itemType" : "CONTAINER",
     "itemStyle" : "DEFAULT",
+    "showCaption" : true,
     "name" : "container1"
   } ],
   "getAllPSPanelFields" : [ {

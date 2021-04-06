@@ -4,55 +4,54 @@
       "name" : "AGENTUSER",
       "codeName" : "Agentuser"
     },
-    "dataType" : 25,
-    "name" : "agentuser"
+    "name" : "agentuser",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "AGENTEND",
       "codeName" : "Agentend"
     },
     "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "agentend"
+    "name" : "agentend",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTID",
       "codeName" : "IbzAgentId"
     },
-    "dataType" : 1,
-    "name" : "ibz_agentid"
+    "name" : "ibz_agentid",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "AGENTBEGIN",
       "codeName" : "Agentbegin"
     },
     "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "agentbegin"
+    "name" : "agentbegin",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTNAME",
       "codeName" : "IbzAgentName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTID",
       "codeName" : "IbzAgentId"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTID",
       "codeName" : "IbzAgentId"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -74,30 +73,31 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : false,
+  "enablePagingBar" : true,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "ibz_agentid",
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTID",
       "codeName" : "IbzAgentId"
     },
+    "dataItemName" : "ibz_agentid",
     "excelCaption" : "代理标识",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -110,7 +110,6 @@
     "widthUnit" : "PX",
     "name" : "ibz_agentid"
   }, {
-    "dataItemName" : "agentuser",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
@@ -119,6 +118,7 @@
       "name" : "AGENTUSER",
       "codeName" : "Agentuser"
     },
+    "dataItemName" : "agentuser",
     "excelCaption" : "代理用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -131,11 +131,11 @@
     "widthUnit" : "STAR",
     "name" : "agentuser"
   }, {
-    "dataItemName" : "agentbegin",
     "getPSAppDEField" : {
       "name" : "AGENTBEGIN",
       "codeName" : "Agentbegin"
     },
+    "dataItemName" : "agentbegin",
     "excelCaption" : "代理开始日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
@@ -149,11 +149,11 @@
     "widthUnit" : "PX",
     "name" : "agentbegin"
   }, {
-    "dataItemName" : "agentend",
     "getPSAppDEField" : {
       "name" : "AGENTEND",
       "codeName" : "Agentend"
     },
+    "dataItemName" : "agentend",
     "excelCaption" : "代理结束日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
@@ -169,18 +169,20 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
+        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
-          },
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentCreateEditView.json",
             "viewType" : "DEEDITVIEW"
           },
           "frontProcessType" : "WIZARD",
+          "getNoPrivDisplayMode" : 2,
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+          },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
@@ -196,10 +198,8 @@
           "name" : "编辑",
           "id" : "Edit@IbzAgent"
         },
-        "showIcon" : true,
-        "addSeparator" : false,
-        "showCaption" : false,
         "detailType" : "DEUIACTION",
+        "showCaption" : false,
         "name" : "uef4000f"
       } ],
       "name" : "代理操作列行为组"
@@ -216,12 +216,12 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -240,19 +240,19 @@
     "name" : "编辑"
   } ],
   "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "编辑"
     },
+    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_uef4000f_click"
   } ],
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent/PSGRIDS/Main.json",
   "logicName" : "主表格",
   "modelid" : "1d69f6323e6c7616bc2445444476b835"

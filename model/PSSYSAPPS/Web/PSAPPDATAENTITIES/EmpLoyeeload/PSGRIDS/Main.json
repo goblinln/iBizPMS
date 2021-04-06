@@ -4,81 +4,80 @@
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
-    "dataType" : 9,
-    "name" : "taskcnt"
+    "name" : "taskcnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "WORKLOAD",
       "codeName" : "Workload"
     },
-    "dataType" : 25,
-    "name" : "workload"
+    "name" : "workload",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "dataType" : 25,
-    "name" : "assignedto"
+    "name" : "assignedto",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALLEFT",
       "codeName" : "TotalLeft"
     },
-    "dataType" : 9,
-    "name" : "totalleft"
+    "name" : "totalleft",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALTASKCNT",
       "codeName" : "Totaltaskcnt"
     },
-    "dataType" : 9,
-    "name" : "totaltaskcnt"
+    "name" : "totaltaskcnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
-    "dataType" : 9,
-    "name" : "left"
+    "name" : "left",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataType" : 25,
-    "name" : "projectname"
+    "name" : "projectname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
-  "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -100,26 +99,26 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "assignedto",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -128,6 +127,7 @@
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
+    "dataItemName" : "assignedto",
     "excelCaption" : "姓名",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -141,17 +141,17 @@
     "name" : "assignedto"
   }, {
     "linkValueItem" : "project",
-    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "dataItemName" : "projectname",
+    "enableLinkView" : true,
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
+    "dataItemName" : "projectname",
     "excelCaption" : "项目",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -164,11 +164,11 @@
     "widthUnit" : "STAR",
     "name" : "projectname"
   }, {
-    "dataItemName" : "taskcnt",
     "getPSAppDEField" : {
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
+    "dataItemName" : "taskcnt",
     "excelCaption" : "任务数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -181,11 +181,11 @@
     "widthUnit" : "PX",
     "name" : "taskcnt"
   }, {
-    "dataItemName" : "left",
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
+    "dataItemName" : "left",
     "excelCaption" : "剩余工时",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -198,11 +198,11 @@
     "widthUnit" : "PX",
     "name" : "left"
   }, {
-    "dataItemName" : "totaltaskcnt",
     "getPSAppDEField" : {
       "name" : "TOTALTASKCNT",
       "codeName" : "Totaltaskcnt"
     },
+    "dataItemName" : "totaltaskcnt",
     "excelCaption" : "总任务数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -215,11 +215,11 @@
     "widthUnit" : "PX",
     "name" : "totaltaskcnt"
   }, {
-    "dataItemName" : "totalleft",
     "getPSAppDEField" : {
       "name" : "TOTALLEFT",
       "codeName" : "TotalLeft"
     },
+    "dataItemName" : "totalleft",
     "excelCaption" : "总工时",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -232,11 +232,11 @@
     "widthUnit" : "PX",
     "name" : "totalleft"
   }, {
-    "dataItemName" : "workload",
     "getPSAppDEField" : {
       "name" : "WORKLOAD",
       "codeName" : "Workload"
     },
+    "dataItemName" : "workload",
     "excelCaption" : "工作负载",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -251,21 +251,21 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 100,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload/PSGRIDS/Main.json",
   "logicName" : "主表格",
   "modelid" : "28855a1e04578f54464e3aac9ebd98e2"

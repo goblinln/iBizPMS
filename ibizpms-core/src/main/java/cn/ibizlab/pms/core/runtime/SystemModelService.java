@@ -3,9 +3,7 @@ package cn.ibizlab.pms.core.runtime;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import net.ibizsys.model.PSModelServiceImpl;
-import org.springframework.stereotype.Component;
 
-@Component
 public class SystemModelService extends PSModelServiceImpl{
 
 	private boolean bFromJar = false;
@@ -18,7 +16,6 @@ public class SystemModelService extends PSModelServiceImpl{
 		}
 		return super.getObjectNode(strPath);
 	}
-
 	
 	public void setFromJar(boolean bFromJar) {
 		this.bFromJar = bFromJar;

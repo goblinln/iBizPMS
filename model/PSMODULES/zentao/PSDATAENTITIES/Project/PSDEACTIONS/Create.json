@@ -1,18 +1,18 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : true,
   "customParam" : false,
   "builtinAction" : true,
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "CREATE"
-  },
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCreate"
+  },
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
   },
   "orderValue" : 1,
   "codeName" : "Create",
@@ -23,7 +23,7 @@
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Create.json",
+  "name" : "Create",
   "userTag4" : "create",
-  "userCat" : "CAT1",
-  "name" : "Create"
+  "userCat" : "CAT1"
 }

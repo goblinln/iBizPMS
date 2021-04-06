@@ -10,8 +10,8 @@
       "name" : "PLANNAME",
       "codeName" : "Planname"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   } ],
   "enableRowEdit" : false,
   "controlType" : "LIST",
@@ -19,6 +19,10 @@
   "enableGroup" : false,
   "pagingSize" : 1000,
   "groupMode" : "NONE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -35,15 +39,11 @@
     "modelref" : true,
     "id" : "load"
   },
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectProduct.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectProduct/PSLISTS/Plan.json",
   "logicName" : "Plan",
   "modelid" : "ed7b1fa3c40c0986f3e219ccd0ce947e"

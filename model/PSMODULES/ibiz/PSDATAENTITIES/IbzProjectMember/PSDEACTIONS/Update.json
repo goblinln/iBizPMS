@@ -1,10 +1,10 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : true,
   "customParam" : false,
   "builtinAction" : true,
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
   "getPSDEOPPriv" : {
     "modelref" : true,

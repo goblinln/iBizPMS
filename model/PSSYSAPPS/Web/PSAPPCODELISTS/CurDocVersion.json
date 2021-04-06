@@ -1,11 +1,7 @@
 {
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchCurVersion"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocContent.json"
+  "getValuePSAppDEField" : {
+    "name" : "VERSION",
+    "codeName" : "Version"
   },
   "getTextPSAppDEField" : {
     "name" : "TITLE",
@@ -15,9 +11,13 @@
     "name" : "VERSION",
     "codeName" : "Version"
   },
-  "getValuePSAppDEField" : {
-    "name" : "VERSION",
-    "codeName" : "Version"
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchCurVersion"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocContent.json"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

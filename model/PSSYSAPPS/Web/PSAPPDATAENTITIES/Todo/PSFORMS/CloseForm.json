@@ -23,15 +23,45 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
+  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
-  "enableAutoSave" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "contentType" : "RAW",
+      "rawContent" : "您确定要关闭这条待办吗？",
+      "getPSLayoutPos" : {
+        "colLG" : 20,
+        "colMDOffset" : 4,
+        "colLGOffset" : 4,
+        "colMD" : 20,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "rawitem1",
+      "detailType" : "RAWITEM",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "rawitem1"
+    } ],
+    "infoGroupMode" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srforikey",
     "hidden" : true,
@@ -78,43 +108,13 @@
     }
   } ],
   "noTabHeader" : true,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "rawItemHeight" : -1.0,
-      "rawItemWidth" : -1.0,
-      "contentType" : "RAW",
-      "rawContent" : "您确定要关闭这条待办吗？",
-      "getPSLayoutPos" : {
-        "colMD" : 20,
-        "colLG" : 20,
-        "colMDOffset" : 4,
-        "colLGOffset" : 4,
-        "layout" : "TABLE_24COL"
-      },
-      "showCaption" : true,
-      "codeName" : "rawitem1",
-      "detailType" : "RAWITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "rawitem1"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "基本信息",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "codeName" : "CloseForm",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
   },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo/PSFORMS/CloseForm.json",
   "logicName" : "关闭表单",
   "modelid" : "7b00f4000410083649f964b0d8b48564"

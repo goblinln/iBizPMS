@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,15 +12,15 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "TOME",
     "data" : "{\"n_lastrunner_eq\":\"%srfloginname%\"}",
     "codeName" : "Tome",
     "text" : "给我的用例",
-    "default" : true,
-    "value" : "TOME"
+    "default" : true
   }, {
+    "value" : "ICREATE",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "codeName" : "Icreate",
-    "text" : "我建的用例",
-    "value" : "ICREATE"
+    "text" : "我建的用例"
   } ]
 }

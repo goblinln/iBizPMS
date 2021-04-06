@@ -4,60 +4,59 @@
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
-    "dataType" : 21,
-    "name" : "expect"
+    "name" : "expect",
+    "dataType" : 21
   }, {
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
-    "dataType" : 21,
-    "name" : "desc"
+    "name" : "desc",
+    "dataType" : 21
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "dataType" : 1,
-    "name" : "parent"
+    "name" : "parent",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "CASE",
       "codeName" : "IBizCase"
     },
-    "dataType" : 1,
-    "name" : "case"
+    "name" : "case",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataType" : 25,
-    "name" : "type"
+    "name" : "type",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
-    "dataType" : 21,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 21
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
-  "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : true,
   "enableRowEditOrder" : false,
@@ -148,14 +147,15 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getCreatePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "CreateTemp"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
     },
     "dataAccessAction" : "CREATE",
     "actionName" : "CreateTemp",
@@ -163,13 +163,13 @@
     "name" : "create"
   },
   "getUpdatePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "UpdateTemp"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
     },
     "dataAccessAction" : "UPDATE",
     "actionName" : "UpdateTemp",
@@ -177,13 +177,13 @@
     "name" : "update"
   },
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "RemoveTemp"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "RemoveTemp",
@@ -191,13 +191,13 @@
     "name" : "remove"
   },
   "getGetPSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "GetTemp"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
     },
     "dataAccessAction" : "READ",
     "actionName" : "GetTemp",
@@ -205,34 +205,34 @@
     "name" : "load"
   },
   "getGetDraftPSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "GetDraftTemp"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
     },
     "dataAccessAction" : "CREATE",
     "actionName" : "GetDraftTemp",
     "actionType" : "DEACTION",
     "name" : "loaddraft"
   },
-  "columnEnableLink" : 2,
-  "enableRowEdit" : true,
-  "controlType" : "GRID",
+  "singleSelect" : true,
   "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enableRowEdit" : true,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "enableRowEdit" : true,
-    "dataItemName" : "desc",
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
+    "enableRowEdit" : true,
+    "dataItemName" : "desc",
     "excelCaption" : "步骤",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -245,8 +245,6 @@
     "widthUnit" : "PX",
     "name" : "desc"
   }, {
-    "enableRowEdit" : true,
-    "dataItemName" : "type",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Casestep__type.json"
@@ -255,6 +253,8 @@
       "name" : "TYPE",
       "codeName" : "Type"
     },
+    "enableRowEdit" : true,
+    "dataItemName" : "type",
     "excelCaption" : "类型",
     "cLConvertMode" : "FRONT",
     "hideDefault" : true,
@@ -268,12 +268,12 @@
     "widthUnit" : "PX",
     "name" : "type"
   }, {
-    "enableRowEdit" : true,
-    "dataItemName" : "expect",
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
+    "enableRowEdit" : true,
+    "dataItemName" : "expect",
     "excelCaption" : "预期",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -289,26 +289,26 @@
   "codeName" : "Main_RowEdit",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 500,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep/PSGRIDS/Main_RowEdit.json",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSSysPFPlugin" : {
     "pluginType" : "GRID_RENDER",
     "pluginCode" : "StepTable"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep/PSGRIDS/Main_RowEdit.json",
   "logicName" : "主表格_行编辑",
   "modelid" : "209902a44ba7126955ed2e3d4c7e07e1"
 }

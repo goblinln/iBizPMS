@@ -23,15 +23,63 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
+  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
-  "enableAutoSave" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "singleSelect" : true,
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanTemplet.json"
+        },
+        "editorType" : "DROPDOWNLIST",
+        "name" : "plantemplet"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PLANTEMPLET",
+        "codeName" : "Plantemplet"
+      },
+      "hidden" : false,
+      "dataType" : 25,
+      "needCodeListConfig" : true,
+      "caption" : "计划模板",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "NONE",
+      "labelWidth" : 0,
+      "showCaption" : false,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "plantemplet",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "plantemplet"
+    } ],
+    "infoGroupMode" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srforikey",
     "hidden" : true,
@@ -85,61 +133,13 @@
     }
   } ],
   "noTabHeader" : true,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "singleSelect" : true,
-        "getPSAppCodeList" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanTemplet.json"
-        },
-        "editorType" : "DROPDOWNLIST",
-        "name" : "plantemplet"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "PLANTEMPLET",
-        "codeName" : "Plantemplet"
-      },
-      "showCaption" : false,
-      "dataType" : 25,
-      "needCodeListConfig" : true,
-      "caption" : "计划模板",
-      "allowEmpty" : true,
-      "labelWidth" : 0,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "NONE",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "plantemplet",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "plantemplet"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "基本信息",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "codeName" : "ImportPlanTemplet",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
   },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan/PSFORMS/ImportPlanTemplet.json",
   "logicName" : "导入模板",
   "modelid" : "ea0be066a66ffd26ed12db324d2b06fe"

@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,16 +12,16 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "doc",
     "codeName" : "Doc",
-    "text" : "文档",
-    "value" : "doc"
+    "text" : "文档"
   }, {
+    "value" : "doclib",
     "codeName" : "Doclib",
-    "text" : "文档库",
-    "value" : "doclib"
+    "text" : "文档库"
   }, {
+    "value" : "module",
     "codeName" : "Module",
-    "text" : "文档库分类",
-    "value" : "module"
+    "text" : "文档库分类"
   } ]
 }

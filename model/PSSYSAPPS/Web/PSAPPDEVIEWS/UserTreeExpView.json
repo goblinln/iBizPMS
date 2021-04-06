@@ -9,29 +9,35 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppViewEngines" : [ {
     "engineType" : "TreeExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "TREEEXPBAR"
+      "name" : "TREEEXPBAR",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+  },
   "getPSControls" : [ {
     "controlType" : "TREEEXPBAR",
+    "enableCounter" : true,
+    "enableSearch" : false,
     "getXDataPSControl" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User/PSTREEVIEWS/UserExp.json",
@@ -44,13 +50,13 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
@@ -64,39 +70,39 @@
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -108,11 +114,12 @@
       },
       "controlType" : "TREEVIEW"
     },
-    "enableSearch" : false,
-    "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
       "treeGridMode" : 0,
+      "enableRootSelect" : false,
+      "outputIconDefault" : false,
+      "enableSearchDefault" : true,
       "getPSDETreeNodeRSs" : [ {
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -178,30 +185,33 @@
         "searchMode" : 3,
         "name" : "部门根节点 - 子部门"
       } ],
-      "enableRootSelect" : false,
-      "outputIconDefault" : false,
-      "enableSearchDefault" : true,
       "controlType" : "TREEVIEW",
       "getPSDETreeNodes" : [ {
-        "getIdPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
         "getLeafFlagPSAppDEField" : {
           "name" : "ISLEAF",
           "codeName" : "IsLeaf"
         },
         "textFormat" : "子部门",
         "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
+        "getIdPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
         },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "navFilter" : "n_dept_eq",
         "getNavPSAppView" : {
@@ -209,33 +219,27 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserMainGridView.json",
           "viewType" : "DEGRIDVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
-        },
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "dept",
-          "key" : "dept",
-          "name" : "dept"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "dept",
           "key" : "DEPT",
           "name" : "DEPT"
         } ],
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "dept",
+          "key" : "dept",
+          "name" : "dept"
+        } ],
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+        },
+        "enableCheck" : false,
         "nodeType" : "ChildDept",
         "disableSelect" : false,
         "enableQuickSearch" : true,
@@ -245,36 +249,45 @@
         "name" : "子部门",
         "id" : "ChildDept"
       }, {
+        "textFormat" : "公司",
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
-        },
-        "textFormat" : "公司",
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
         },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : true,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserMainGridView.json",
           "viewType" : "DEGRIDVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : true,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
+        "getPSNavigateContexts" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "DEPT",
+          "name" : "DEPT"
+        } ],
+        "getPSNavigateParams" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "dept",
+          "name" : "dept"
+        } ],
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
           "getPSDEToolbarItems" : [ {
@@ -282,6 +295,7 @@
               "modelref" : true,
               "id" : "company_cm_deuiaction1"
             },
+            "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
               "getPSSysImage" : {
@@ -297,7 +311,6 @@
               "fullCodeName" : "RefreshAll",
               "name" : "树界面_刷新全部操作"
             },
-            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
@@ -305,21 +318,17 @@
             "tooltip" : "刷新",
             "groupExtractMode" : "ITEM",
             "showIcon" : true,
-            "showCaption" : true,
             "itemType" : "DEUIACTION",
             "caption" : "刷新",
+            "showCaption" : true,
             "name" : "deuiaction1"
           }, {
             "getPSAppViewUIAction" : {
               "modelref" : true,
               "id" : "company_cm_deuiaction2"
             },
+            "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
-              },
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptMainGridView.json",
@@ -327,6 +336,11 @@
               },
               "frontProcessType" : "TOP",
               "refreshMode" : 1,
+              "getNoPrivDisplayMode" : 2,
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+              },
               "timeout" : 60000,
               "codeName" : "EditDept",
               "caption" : "维护部门",
@@ -339,23 +353,22 @@
               "name" : "维护部门",
               "id" : "EditDept@Company"
             },
-            "noPrivDisplayMode" : 2,
             "tooltip" : "维护部门",
             "groupExtractMode" : "ITEM",
             "showIcon" : true,
-            "showCaption" : true,
             "itemType" : "DEUIACTION",
             "caption" : "维护部门",
+            "showCaption" : true,
             "name" : "deuiaction2"
           } ],
-          "getPSControlParam" : {
-            "id" : "company_cm"
-          },
-          "hookEventNames" : [ "CLICK" ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
           },
+          "getPSControlParam" : {
+            "id" : "company_cm"
+          },
+          "hookEventNames" : [ "CLICK" ],
           "codeName" : "TreeExpViewcompany_cm",
           "logicName" : "树工具栏",
           "name" : "company_cm",
@@ -363,22 +376,13 @@
         },
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
         },
-        "getPSNavigateParams" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "dept",
-          "name" : "dept"
-        } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "DEPT",
-          "name" : "DEPT"
-        } ],
+        "enableCheck" : false,
         "nodeType" : "Company",
         "disableSelect" : false,
         "enableQuickSearch" : true,
@@ -388,25 +392,31 @@
         "name" : "公司",
         "id" : "Company"
       }, {
-        "getIdPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
         "getLeafFlagPSAppDEField" : {
           "name" : "ISLEAF",
           "codeName" : "IsLeaf"
         },
         "textFormat" : "部门",
         "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchRoot"
+        "getIdPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
         },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchRoot"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "navFilter" : "n_dept_eq",
         "getNavPSAppView" : {
@@ -414,33 +424,27 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserMainGridView.json",
           "viewType" : "DEGRIDVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
-        },
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "dept",
-          "key" : "dept",
-          "name" : "dept"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "dept",
           "key" : "DEPT",
           "name" : "DEPT"
         } ],
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "dept",
+          "key" : "dept",
+          "name" : "dept"
+        } ],
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+        },
+        "enableCheck" : false,
         "nodeType" : "deptroot",
         "disableSelect" : false,
         "enableQuickSearch" : true,
@@ -452,18 +456,18 @@
       }, {
         "nodeValue" : "root",
         "text" : "默认根节点",
-        "enableQuickCreate" : false,
         "rootNode" : true,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
         "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
+        "selected" : false,
+        "enableQuickCreate" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "enableCheck" : false,
         "nodeType" : "ROOT",
         "disableSelect" : false,
         "enableQuickSearch" : true,
@@ -475,6 +479,10 @@
       } ],
       "codeName" : "UserExp",
       "rootVisible" : false,
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
       "getCreatePSControlAction" : {
         "modelref" : true,
         "id" : "create"
@@ -490,10 +498,6 @@
       "getGetPSControlAction" : {
         "modelref" : true,
         "id" : "load"
-      },
-      "getFetchPSControlAction" : {
-        "modelref" : true,
-        "id" : "fetch"
       },
       "getPSAppViewUIActions" : [ {
         "xDataControlName" : "treeexpbar_tree",
@@ -522,6 +526,7 @@
             "modelref" : true,
             "id" : "company_cm_deuiaction1"
           },
+          "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
             "getPSSysImage" : {
@@ -537,7 +542,6 @@
             "fullCodeName" : "RefreshAll",
             "name" : "树界面_刷新全部操作"
           },
-          "noPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
@@ -545,21 +549,17 @@
           "tooltip" : "刷新",
           "groupExtractMode" : "ITEM",
           "showIcon" : true,
-          "showCaption" : true,
           "itemType" : "DEUIACTION",
           "caption" : "刷新",
+          "showCaption" : true,
           "name" : "deuiaction1"
         }, {
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "company_cm_deuiaction2"
           },
+          "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
-            },
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptMainGridView.json",
@@ -567,6 +567,11 @@
             },
             "frontProcessType" : "TOP",
             "refreshMode" : 1,
+            "getNoPrivDisplayMode" : 2,
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+            },
             "timeout" : 60000,
             "codeName" : "EditDept",
             "caption" : "维护部门",
@@ -579,51 +584,54 @@
             "name" : "维护部门",
             "id" : "EditDept@Company"
           },
-          "noPrivDisplayMode" : 2,
           "tooltip" : "维护部门",
           "groupExtractMode" : "ITEM",
           "showIcon" : true,
-          "showCaption" : true,
           "itemType" : "DEUIACTION",
           "caption" : "维护部门",
+          "showCaption" : true,
           "name" : "deuiaction2"
         } ],
-        "getPSControlParam" : {
-          "id" : "company_cm"
-        },
-        "hookEventNames" : [ "CLICK" ],
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
         },
+        "getPSControlParam" : {
+          "id" : "company_cm"
+        },
+        "hookEventNames" : [ "CLICK" ],
         "codeName" : "TreeExpViewcompany_cm",
         "logicName" : "树工具栏",
         "name" : "company_cm",
         "modelid" : "040e17a872f9b422d3cba7598adea41b"
       } ],
       "getPSAppViewLogics" : [ {
-        "logicTrigger" : "CTRLEVENT",
         "getPSViewCtrlName" : "company_cm",
         "getPSAppViewUIAction" : {
           "modelref" : true,
           "id" : "company_cm_deuiaction1"
         },
+        "logicTrigger" : "CTRLEVENT",
         "eventArg" : "deuiaction1",
         "eventNames" : "CLICK",
         "logicType" : "APPVIEWUIACTION",
         "name" : "company_cm_deuiaction1_click"
       }, {
-        "logicTrigger" : "CTRLEVENT",
         "getPSViewCtrlName" : "company_cm",
         "getPSAppViewUIAction" : {
           "modelref" : true,
           "id" : "company_cm_deuiaction2"
         },
+        "logicTrigger" : "CTRLEVENT",
         "eventArg" : "deuiaction2",
         "eventNames" : "CLICK",
         "logicType" : "APPVIEWUIACTION",
         "name" : "company_cm_deuiaction2_click"
       } ],
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -633,13 +641,13 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
@@ -653,39 +661,39 @@
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -694,10 +702,6 @@
         } ],
         "enableDEFieldPrivilege" : false,
         "id" : "树视图处理器"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
       },
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User/PSTREEVIEWS/UserExp.json",
       "logicName" : "用户树",
@@ -735,6 +739,10 @@
       },
       "name" : "EXPITEM:ChildDept"
     } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -745,18 +753,10 @@
       "enableDEFieldPrivilege" : false,
       "id" : "treeexpbar"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-    },
     "codeName" : "TreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "modelid" : "dd7fc6839d2e1f024028a23ae1f53489_treeexpbar"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
-  },
   "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",

@@ -62,11 +62,11 @@
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "MULTIPLE",
         "logicType" : "SINGLE",
@@ -90,11 +90,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "NOTEQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "NOTEQ",
         "paramValue" : "1",
         "dstFieldName" : "MULTIPLE",
         "logicType" : "SINGLE",

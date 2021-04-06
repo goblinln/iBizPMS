@@ -3,11 +3,11 @@
     "name" : "PPSSYSSFPUBID",
     "codeName" : "PPSSysSFPubId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PPSSYSSFPUBNAME",
     "codeName" : "PPSSysSFPubName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "masterRS" : 0,
   "removeOrder" : 0,

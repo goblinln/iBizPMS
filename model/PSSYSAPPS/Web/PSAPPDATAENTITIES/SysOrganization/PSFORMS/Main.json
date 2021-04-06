@@ -23,15 +23,45 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
+  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
-  "enableAutoSave" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "infoGroupMode" : false,
+      "actionGroupExtractMode" : "ITEM",
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "group1",
+      "caption" : "单位基本信息",
+      "detailType" : "GROUPPANEL",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "group1"
+    } ],
+    "infoGroupMode" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srfupdatedate",
     "hidden" : true,
@@ -86,43 +116,13 @@
     }
   } ],
   "noTabHeader" : true,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "infoGroupMode" : false,
-      "actionGroupExtractMode" : "ITEM",
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "showCaption" : true,
-      "codeName" : "group1",
-      "caption" : "单位基本信息",
-      "detailType" : "GROUPPANEL",
-      "detailStyle" : "DEFAULT",
-      "name" : "group1"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "基本信息",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
   },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization/PSFORMS/Main.json",
   "logicName" : "主编辑表单",
   "modelid" : "c5c8428ad8704c0567b5c34707a80fed"

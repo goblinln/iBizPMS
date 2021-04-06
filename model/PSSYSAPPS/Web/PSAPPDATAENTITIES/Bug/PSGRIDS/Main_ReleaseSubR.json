@@ -4,190 +4,189 @@
       "name" : "TOSTORY",
       "codeName" : "ToStory"
     },
-    "dataType" : 1,
-    "name" : "tostory"
+    "name" : "tostory",
+    "dataType" : 1
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
-    "dataType" : 25,
-    "name" : "openedby"
+    "name" : "openedby",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DUPLICATEBUG",
       "codeName" : "DuplicateBug"
     },
-    "dataType" : 1,
-    "name" : "duplicatebug"
+    "name" : "duplicatebug",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "dataType" : 25,
-    "name" : "assignedto"
+    "name" : "assignedto",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "dataType" : 1,
-    "name" : "story"
+    "name" : "story",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "title"
+    "name" : "title",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "CONFIRMED",
       "codeName" : "Confirmed"
     },
-    "dataType" : 9,
-    "name" : "confirmed"
+    "name" : "confirmed",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "REPO",
       "codeName" : "Repo"
     },
-    "dataType" : 1,
-    "name" : "repo"
+    "name" : "repo",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TOTASK",
       "codeName" : "ToTask"
     },
-    "dataType" : 1,
-    "name" : "totask"
+    "name" : "totask",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
     },
-    "dataType" : 1,
-    "name" : "module"
+    "name" : "module",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "OPENEDDATE",
       "codeName" : "OpenedDate"
     },
     "format" : "YYYY-MM-DD HH:mm:ss",
-    "dataType" : 5,
-    "name" : "openeddate"
+    "name" : "openeddate",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataType" : 25,
-    "name" : "status"
+    "name" : "status",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TASK",
       "codeName" : "Task"
     },
-    "dataType" : 1,
-    "name" : "task"
+    "name" : "task",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TESTTASK",
       "codeName" : "Testtask"
     },
-    "dataType" : 1,
-    "name" : "testtask"
+    "name" : "testtask",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "dataType" : 1,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "dataType" : 9,
-    "name" : "pri"
+    "name" : "pri",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "PLAN",
       "codeName" : "Plan"
     },
-    "dataType" : 1,
-    "name" : "plan"
+    "name" : "plan",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "RESOLVEDBY",
       "codeName" : "ResolvedBy"
     },
-    "dataType" : 25,
-    "name" : "resolvedby"
+    "name" : "resolvedby",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ENTRY",
       "codeName" : "Entry"
     },
-    "dataType" : 1,
-    "name" : "entry"
+    "name" : "entry",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
-    "dataType" : 1,
-    "name" : "branch"
+    "name" : "branch",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "CASE",
       "codeName" : "IBizCase"
     },
-    "dataType" : 1,
-    "name" : "case"
+    "name" : "case",
+    "dataType" : 1
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -209,34 +208,35 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
-  "enableRowEdit" : false,
-  "controlType" : "GRID",
+  "singleSelect" : false,
   "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
     "excelCaption" : "ID",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -249,7 +249,6 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "dataItemName" : "pri",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
@@ -258,6 +257,7 @@
       "name" : "PRI",
       "codeName" : "Pri"
     },
+    "dataItemName" : "pri",
     "excelCaption" : "P",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -271,17 +271,17 @@
     "name" : "pri"
   }, {
     "linkValueItem" : "srfkey",
-    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "dataItemName" : "title",
+    "enableLinkView" : true,
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
+    "dataItemName" : "title",
     "excelCaption" : "Bug标题",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -294,7 +294,6 @@
     "widthUnit" : "STAR",
     "name" : "title"
   }, {
-    "dataItemName" : "status",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
@@ -303,6 +302,7 @@
       "name" : "STATUS",
       "codeName" : "Status"
     },
+    "dataItemName" : "status",
     "excelCaption" : "Bug状态",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -315,7 +315,6 @@
     "widthUnit" : "PX",
     "name" : "status"
   }, {
-    "dataItemName" : "openedby",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -324,6 +323,7 @@
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
+    "dataItemName" : "openedby",
     "excelCaption" : "由谁创建",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -336,11 +336,11 @@
     "widthUnit" : "PX",
     "name" : "openedby"
   }, {
-    "dataItemName" : "openeddate",
     "getPSAppDEField" : {
       "name" : "OPENEDDATE",
       "codeName" : "OpenedDate"
     },
+    "dataItemName" : "openeddate",
     "excelCaption" : "创建日期",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
@@ -354,7 +354,6 @@
     "widthUnit" : "PX",
     "name" : "openeddate"
   }, {
-    "dataItemName" : "assignedto",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameUnAssignTo_Gird.json"
@@ -363,6 +362,7 @@
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
+    "dataItemName" : "assignedto",
     "excelCaption" : "指派给",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -377,12 +377,17 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
+        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 1,
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-          },
+          "refreshMode" : 1,
+          "enableConfirm" : true,
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "release",
+            "key" : "RELEASE",
+            "name" : "RELEASE"
+          } ],
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "ReleaseUnlinkBug"
@@ -393,14 +398,11 @@
             "key" : "release",
             "name" : "release"
           } ],
-          "refreshMode" : 1,
-          "enableConfirm" : true,
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "release",
-            "key" : "RELEASE",
-            "name" : "RELEASE"
-          } ],
+          "getNoPrivDisplayMode" : 1,
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          },
           "getPSSysImage" : {
             "glyph" : "xf127@FontAwesome",
             "cssClass" : "fa fa-unlink"
@@ -418,10 +420,8 @@
           "name" : "移除解决bug（发布）",
           "id" : "releaseUnlinkBug@Bug"
         },
-        "showIcon" : true,
-        "addSeparator" : false,
-        "showCaption" : false,
         "detailType" : "DEUIACTION",
+        "showCaption" : false,
         "name" : "u876f801"
       } ],
       "name" : "移除解决bug（发布）"
@@ -439,12 +439,12 @@
   "codeName" : "Main_ReleaseSubR",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -467,19 +467,19 @@
     "name" : "移除解决bug（发布）"
   } ],
   "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "移除解决bug（发布）"
     },
+    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_u876f801_click"
   } ],
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSGRIDS/Main_ReleaseSubR.json",
   "logicName" : "主表格（发布下属）（解决Bug）",
   "modelid" : "52970277f789e0b5d8d0b4a45ac2d9cd"

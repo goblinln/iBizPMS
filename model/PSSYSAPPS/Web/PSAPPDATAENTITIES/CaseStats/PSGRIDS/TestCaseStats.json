@@ -4,88 +4,87 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "dataType" : 1,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "MODULENAME",
       "codeName" : "Modulename"
     },
-    "dataType" : 25,
-    "name" : "modulename"
+    "name" : "modulename",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
     },
-    "dataType" : 1,
-    "name" : "module"
+    "name" : "module",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "FAILCASE",
       "codeName" : "Failcase"
     },
-    "dataType" : 9,
-    "name" : "failcase"
+    "name" : "failcase",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "BLOCKEDCASE",
       "codeName" : "Blockedcase"
     },
-    "dataType" : 9,
-    "name" : "blockedcase"
+    "name" : "blockedcase",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALCASE",
       "codeName" : "Totalcase"
     },
-    "dataType" : 9,
-    "name" : "totalcase"
+    "name" : "totalcase",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALRUNCASE",
       "codeName" : "Totalruncase"
     },
-    "dataType" : 9,
-    "name" : "totalruncase"
+    "name" : "totalruncase",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "PASSRATE",
       "codeName" : "Passrate"
     },
-    "dataType" : 25,
-    "name" : "passrate"
+    "name" : "passrate",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PASSCASE",
       "codeName" : "Passcase"
     },
-    "dataType" : 9,
-    "name" : "passcase"
+    "name" : "passcase",
+    "dataType" : 9
   } ],
-  "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -107,30 +106,31 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "modulename",
     "getPSAppDEField" : {
       "name" : "MODULENAME",
       "codeName" : "Modulename"
     },
+    "dataItemName" : "modulename",
     "excelCaption" : "模块名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -143,11 +143,11 @@
     "widthUnit" : "STAR",
     "name" : "modulename"
   }, {
-    "dataItemName" : "totalcase",
     "getPSAppDEField" : {
       "name" : "TOTALCASE",
       "codeName" : "Totalcase"
     },
+    "dataItemName" : "totalcase",
     "excelCaption" : "总用例数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -161,11 +161,11 @@
     "aggMode" : "SUM",
     "name" : "totalcase"
   }, {
-    "dataItemName" : "passcase",
     "getPSAppDEField" : {
       "name" : "PASSCASE",
       "codeName" : "Passcase"
     },
+    "dataItemName" : "passcase",
     "excelCaption" : "通过",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -179,11 +179,11 @@
     "aggMode" : "SUM",
     "name" : "passcase"
   }, {
-    "dataItemName" : "failcase",
     "getPSAppDEField" : {
       "name" : "FAILCASE",
       "codeName" : "Failcase"
     },
+    "dataItemName" : "failcase",
     "excelCaption" : "失败",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -197,11 +197,11 @@
     "aggMode" : "SUM",
     "name" : "failcase"
   }, {
-    "dataItemName" : "blockedcase",
     "getPSAppDEField" : {
       "name" : "BLOCKEDCASE",
       "codeName" : "Blockedcase"
     },
+    "dataItemName" : "blockedcase",
     "excelCaption" : "阻塞",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -215,11 +215,11 @@
     "aggMode" : "SUM",
     "name" : "blockedcase"
   }, {
-    "dataItemName" : "totalruncase",
     "getPSAppDEField" : {
       "name" : "TOTALRUNCASE",
       "codeName" : "Totalruncase"
     },
+    "dataItemName" : "totalruncase",
     "excelCaption" : "总执行数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -233,11 +233,11 @@
     "aggMode" : "SUM",
     "name" : "totalruncase"
   }, {
-    "dataItemName" : "passrate",
     "getPSAppDEField" : {
       "name" : "PASSRATE",
       "codeName" : "Passrate"
     },
+    "dataItemName" : "passrate",
     "excelCaption" : "用例通过率",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -252,21 +252,21 @@
   } ],
   "codeName" : "TestCaseStats",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 1000,
   "aggMode" : "PAGE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats/PSGRIDS/TestCaseStats.json",
   "logicName" : "用例统计表",
   "modelid" : "a856b2b57e47d4d2896ab1e2902eb136"

@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,22 +12,22 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "wait",
     "codeName" : "Wait",
-    "text" : "未开始",
-    "value" : "wait"
+    "text" : "未开始"
   }, {
+    "value" : "doing",
     "codeName" : "Doing",
     "text" : "进行中",
-    "color" : "rgba(245, 18, 18, 1)",
-    "value" : "doing"
+    "color" : "rgba(245, 18, 18, 1)"
   }, {
+    "value" : "done",
     "codeName" : "Done",
     "text" : "已完成",
-    "color" : "rgba(4, 251, 17, 1)",
-    "value" : "done"
+    "color" : "rgba(4, 251, 17, 1)"
   }, {
+    "value" : "closed",
     "codeName" : "Closed",
-    "text" : "已关闭",
-    "value" : "closed"
+    "text" : "已关闭"
   } ]
 }

@@ -1,15 +1,7 @@
 {
   "codeName" : "MainPanel_EditMode",
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
-  },
   "enableCustomized" : false,
   "getPSControls" : [ {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
@@ -22,6 +14,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true
@@ -30,13 +26,13 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_container3"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-      },
       "codeName" : "MainView_EditModedashboard_container3",
       "name" : "dashboard_container3"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
       "colMD" : 24,
@@ -44,6 +40,10 @@
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -52,19 +52,19 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container1"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
     "codeName" : "MainView_EditModedashboard_container1",
     "name" : "dashboard_container1"
   } ],
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
   "controlType" : "DASHBOARD",
-  "hookEventNames" : [ "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
+  "hookEventNames" : [ "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSDASHBOARDS/MainPanel_EditMode.json",
   "logicName" : "需求主数据看板_编辑模式",
   "modelid" : "7e14015af219d302f7d81ff40cdcc418"

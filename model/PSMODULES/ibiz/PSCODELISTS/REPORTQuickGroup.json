@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,25 +12,25 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "All",
     "data" : "{}",
     "codeName" : "ALLCNT",
-    "text" : "所有",
-    "value" : "All"
+    "text" : "所有"
   }, {
+    "value" : "daily",
     "data" : "{\"n_type_eq\":\"daily\"}",
     "codeName" : "DAILYCNT",
     "text" : "日报",
-    "default" : true,
-    "value" : "daily"
+    "default" : true
   }, {
+    "value" : "weekly",
     "data" : "{\"n_type_eq\":\"weekly\"}",
     "codeName" : "WEEKLYCNT",
-    "text" : "周报",
-    "value" : "weekly"
+    "text" : "周报"
   }, {
+    "value" : "monthly",
     "data" : "{\"n_type_eq\":\"monthly\"}",
     "codeName" : "MONTHLYCNT",
-    "text" : "月报",
-    "value" : "monthly"
+    "text" : "月报"
   } ]
 }

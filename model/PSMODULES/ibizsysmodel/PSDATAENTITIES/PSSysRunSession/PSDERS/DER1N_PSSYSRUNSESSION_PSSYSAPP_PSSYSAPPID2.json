@@ -3,11 +3,11 @@
     "name" : "PSSYSAPPID2",
     "codeName" : "PSSysAppId2"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PSSYSAPPNAME2",
     "codeName" : "PSSysAppName2"
   },
+  "masterOrder" : -1,
   "removeActionType" : 0,
   "masterRS" : 0,
   "removeOrder" : 0,

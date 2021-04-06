@@ -6,6 +6,11 @@
     "index" : 0,
     "id" : "0"
   },
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
     "type" : "NONE",
@@ -13,11 +18,6 @@
     "name" : "[Caseresult]无坐标系[0]",
     "id" : "0"
   } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "index" : 0,
-    "id" : "0"
-  },
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "LASTRUNNER",
@@ -77,11 +77,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
   },
   "height" : 300.0,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseLASTRUNNERProject.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "tablechart"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseLASTRUNNERProject.json",
   "logicName" : "CaseLASTRUNNERProject",
   "modelid" : "d6647a6ed173d8cff11bd40fb0e98c89",
   "getUserParam" : {

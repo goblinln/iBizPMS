@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,16 +12,16 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "step",
     "codeName" : "Step",
-    "text" : "步骤",
-    "value" : "step"
+    "text" : "步骤"
   }, {
+    "value" : "group",
     "codeName" : "Group",
-    "text" : "分组",
-    "value" : "group"
+    "text" : "分组"
   }, {
+    "value" : "item",
     "codeName" : "Item",
-    "text" : "分组步骤",
-    "value" : "item"
+    "text" : "分组步骤"
   } ]
 }

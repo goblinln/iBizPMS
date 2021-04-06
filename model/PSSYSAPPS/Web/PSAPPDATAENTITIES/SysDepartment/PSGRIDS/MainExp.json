@@ -4,53 +4,52 @@
       "name" : "PDEPTID",
       "codeName" : "ParentDeptid"
     },
-    "dataType" : 25,
-    "name" : "pdeptid"
+    "name" : "pdeptid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
-    "dataType" : 25,
-    "name" : "deptid"
+    "name" : "deptid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ORGID",
       "codeName" : "OrgId"
     },
-    "dataType" : 25,
-    "name" : "orgid"
+    "name" : "orgid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTNAME",
       "codeName" : "DeptName"
     },
-    "dataType" : 25,
-    "name" : "deptname"
+    "name" : "deptname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTNAME",
       "codeName" : "DeptName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
-    "dataType" : 25,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -72,30 +71,31 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : false,
+  "enablePagingBar" : false,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "deptid",
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
+    "dataItemName" : "deptid",
     "excelCaption" : "部门标识",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -108,11 +108,11 @@
     "widthUnit" : "PX",
     "name" : "deptid"
   }, {
-    "dataItemName" : "deptname",
     "getPSAppDEField" : {
       "name" : "DEPTNAME",
       "codeName" : "DeptName"
     },
+    "dataItemName" : "deptname",
     "excelCaption" : "部门名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -127,12 +127,12 @@
   } ],
   "codeName" : "MainExp",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 500,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getNavPSAppView" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeGridExpViewDept.json",
@@ -142,11 +142,11 @@
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment/PSGRIDS/MainExp.json",
   "logicName" : "主表格_通讯录",
   "modelid" : "9828069a5060222d3d25e519532666e4"

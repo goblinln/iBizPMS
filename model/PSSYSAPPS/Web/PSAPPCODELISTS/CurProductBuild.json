@@ -1,4 +1,12 @@
 {
+  "getValuePSAppDEField" : {
+    "name" : "IDS",
+    "codeName" : "Ids"
+  },
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchBugProductBuild"
@@ -6,14 +14,6 @@
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
-  },
-  "getMinorSortPSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
-  },
-  "getValuePSAppDEField" : {
-    "name" : "IDS",
-    "codeName" : "Ids"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

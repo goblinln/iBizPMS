@@ -3,11 +3,11 @@
     "name" : "PSSYSREQITEMID",
     "codeName" : "PSSysReqItemId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PSSYSREQITEMNAME",
     "codeName" : "PSSysReqItemName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "masterRS" : 0,
   "removeOrder" : 0,

@@ -1,9 +1,5 @@
 {
   "codeName" : "Main",
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
-  },
   "enableCustomized" : false,
   "getPSControls" : [ {
     "getPSLayout" : {
@@ -17,6 +13,10 @@
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -25,19 +25,19 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_companycontainer1"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
-    },
     "codeName" : "MainViewdashboard_companycontainer1",
     "name" : "dashboard_companycontainer1"
   } ],
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
   "controlType" : "DASHBOARD",
-  "hookEventNames" : [ "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
   },
+  "hookEventNames" : [ "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company/PSDASHBOARDS/Main.json",
   "logicName" : "公司主数据看板",
   "modelid" : "b293e263c81ae9f040fd871f38287bca"

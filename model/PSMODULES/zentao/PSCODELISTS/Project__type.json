@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,17 +12,17 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "sprint",
     "codeName" : "Sprint",
     "text" : "短期项目",
-    "default" : true,
-    "value" : "sprint"
+    "default" : true
   }, {
+    "value" : "waterfall",
     "codeName" : "Waterfall",
-    "text" : "长期项目",
-    "value" : "waterfall"
+    "text" : "长期项目"
   }, {
+    "value" : "ops",
     "codeName" : "Ops",
-    "text" : "运维项目",
-    "value" : "ops"
+    "text" : "运维项目"
   } ]
 }

@@ -1,33 +1,37 @@
 {
-  "singleSelect" : false,
+  "enableCardEdit" : false,
+  "enableCardEditOrder" : false,
+  "enableCardEditGroup" : false,
+  "enableCardNew" : false,
   "noSort" : false,
   "hasWFDataItems" : false,
+  "appendDEItems" : false,
+  "singleSelect" : false,
   "getPSDEDataViewDataItems" : [ {
     "getPSAppDEField" : {
       "name" : "INDEXNAME",
       "codeName" : "Indexname"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "INDEXID",
       "codeName" : "Indexid"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   } ],
-  "appendDEItems" : false,
-  "enableCardNew" : false,
-  "enableCardEdit" : false,
-  "enableCardEditOrder" : false,
-  "enableCardEditGroup" : false,
-  "controlType" : "DATAVIEW",
   "enablePagingBar" : false,
+  "controlType" : "DATAVIEW",
   "codeName" : "IndexType",
   "enableGroup" : false,
   "pagingSize" : 1000,
   "groupMode" : "NONE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -43,10 +47,6 @@
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
-  },
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

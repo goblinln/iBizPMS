@@ -4,78 +4,77 @@
       "name" : "ISSUBMIT",
       "codeName" : "Issubmit"
     },
-    "dataType" : 25,
-    "name" : "issubmit"
+    "name" : "issubmit",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "account"
+    "name" : "account",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "REPORTSTATUS",
       "codeName" : "Reportstatus"
     },
-    "dataType" : 25,
-    "name" : "reportstatus"
+    "name" : "reportstatus",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
     "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "date"
+    "name" : "date",
+    "dataType" : 5
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYID",
       "codeName" : "IbzMonthlyId"
     },
-    "dataType" : 1,
-    "name" : "ibz_monthlyid"
+    "name" : "ibz_monthlyid",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYNAME",
       "codeName" : "IbzMonthlyName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYID",
       "codeName" : "IbzMonthlyId"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYID",
       "codeName" : "IbzMonthlyId"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "REPORTTO",
       "codeName" : "Reportto"
     },
-    "dataType" : 25,
-    "name" : "reportto"
+    "name" : "reportto",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYNAME",
       "codeName" : "IbzMonthlyName"
     },
-    "dataType" : 25,
-    "name" : "ibz_monthlyname"
+    "name" : "ibz_monthlyname",
+    "dataType" : 25
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -97,34 +96,35 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
-  "enableRowEdit" : false,
-  "controlType" : "GRID",
+  "singleSelect" : false,
   "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "ibz_monthlyid",
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYID",
       "codeName" : "IbzMonthlyId"
     },
+    "dataItemName" : "ibz_monthlyid",
     "excelCaption" : "编号",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -137,18 +137,13 @@
     "widthUnit" : "PX",
     "name" : "ibz_monthlyid"
   }, {
-    "dataItemName" : "ibz_monthlyname",
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYNAME",
       "codeName" : "IbzMonthlyName"
     },
+    "dataItemName" : "ibz_monthlyname",
     "excelCaption" : "月报名称",
     "getPSDEUIAction" : {
-      "getNoPrivDisplayMode" : 2,
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
-      },
       "getFrontPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMyReceivedEditView.json",
@@ -156,6 +151,11 @@
       },
       "frontProcessType" : "WIZARD",
       "refreshMode" : 1,
+      "getNoPrivDisplayMode" : 2,
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+      },
       "timeout" : 60000,
       "codeName" : "HaveRead",
       "caption" : "已读",
@@ -179,7 +179,6 @@
     "widthUnit" : "STAR",
     "name" : "ibz_monthlyname"
   }, {
-    "dataItemName" : "account",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -188,6 +187,7 @@
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
+    "dataItemName" : "account",
     "excelCaption" : "用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -200,11 +200,11 @@
     "widthUnit" : "PX",
     "name" : "account"
   }, {
-    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "dataItemName" : "date",
     "excelCaption" : "日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
@@ -218,7 +218,6 @@
     "widthUnit" : "PX",
     "name" : "date"
   }, {
-    "dataItemName" : "reportto",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -227,6 +226,7 @@
       "name" : "REPORTTO",
       "codeName" : "Reportto"
     },
+    "dataItemName" : "reportto",
     "excelCaption" : "汇报给",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -239,7 +239,6 @@
     "widthUnit" : "PX",
     "name" : "reportto"
   }, {
-    "dataItemName" : "reportstatus",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ReportStatus.json"
@@ -248,6 +247,7 @@
       "name" : "REPORTSTATUS",
       "codeName" : "Reportstatus"
     },
+    "dataItemName" : "reportstatus",
     "excelCaption" : "状态",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -263,12 +263,12 @@
   "codeName" : "MyReceived",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -287,19 +287,19 @@
     "name" : "已读"
   } ],
   "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "已读"
     },
+    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_ibz_monthlyname_click"
   } ],
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly/PSGRIDS/MyReceived.json",
   "logicName" : "我收到的月报",
   "modelid" : "d15300357d68a04081fff5786e80a94b"

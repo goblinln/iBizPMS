@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,15 +12,15 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "exWeek",
     "data" : "{\"n_isweekend_in\":\"1;2;3;4;5\"}",
     "codeName" : "Exweek",
     "text" : "去除周末",
-    "default" : true,
-    "value" : "exWeek"
+    "default" : true
   }, {
+    "value" : "Week",
     "data" : "{}",
     "codeName" : "Week",
-    "text" : "显示周末",
-    "value" : "Week"
+    "text" : "显示周末"
   } ]
 }

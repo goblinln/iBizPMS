@@ -3,11 +3,11 @@
     "name" : "BRANCH",
     "codeName" : "Branch"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "BRANCHNAME",
     "codeName" : "Branchname"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "masterRS" : 0,
   "removeOrder" : 0,

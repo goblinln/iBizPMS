@@ -3,11 +3,11 @@
     "name" : "PSDEID",
     "codeName" : "PSDEId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PSDENAME",
     "codeName" : "PSDEName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 1,
   "masterRS" : 0,
   "removeOrder" : 0,

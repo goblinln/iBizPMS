@@ -1,36 +1,36 @@
 {
   "showDataInfoBar" : true,
+  "enableSearch" : false,
+  "expandSearchForm" : true,
   "loadDefault" : true,
   "enableQuickGroup" : false,
-  "expandSearchForm" : true,
-  "enableSearch" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "MainView_EditMode",
+  "openMode" : "DRAWER_TOP",
   "caption" : "需求",
   "title" : "需求数据看板视图",
-  "openMode" : "DRAWER_TOP",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEPORTALVIEW_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEPORTALVIEW_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppViewEngines" : [ {
     "engineType" : "PortalView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "DASHBOARD"
+      "name" : "DASHBOARD",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -45,18 +45,14 @@
     "key" : "SRFPARENTKEY",
     "name" : "SRFPARENTKEY"
   } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+  },
   "getPSControls" : [ {
     "codeName" : "MainPanel_EditMode",
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "enableCustomized" : false,
     "getPSControls" : [ {
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
       "getPSControls" : [ {
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
@@ -69,6 +65,10 @@
         },
         "showTitleBar" : true,
         "controlType" : "PORTLET",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true
@@ -77,13 +77,13 @@
           "enableDEFieldPrivilege" : false,
           "id" : "dashboard_container3"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-        },
         "codeName" : "MainView_EditModedashboard_container3",
         "name" : "dashboard_container3"
       } ],
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
       "portletType" : "CONTAINER",
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -91,6 +91,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true
@@ -99,14 +103,18 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_container1"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-      },
       "codeName" : "MainView_EditModedashboard_container1",
       "name" : "dashboard_container1"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "controlType" : "DASHBOARD",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -117,19 +125,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSDASHBOARDS/MainPanel_EditMode.json",
     "logicName" : "需求主数据看板_编辑模式",
     "name" : "dashboard",
     "modelid" : "7e14015af219d302f7d81ff40cdcc418"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-  },
   "viewStyle" : "STYLE2",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
@@ -151,18 +151,18 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
     "codeName" : "Stories",
-    "rSMode" : 2,
     "actionRSMode" : 1,
     "dataRSMode" : 0,
+    "rSMode" : 2,
     "name" : "产品需求"
   } ] ]
 }

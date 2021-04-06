@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,20 +12,20 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "product",
     "codeName" : "Product",
-    "text" : "产品",
-    "value" : "product"
+    "text" : "产品"
   }, {
+    "value" : "project",
     "codeName" : "Project",
-    "text" : "项目",
-    "value" : "project"
+    "text" : "项目"
   }, {
+    "value" : "qa",
     "codeName" : "Qa",
-    "text" : "测试",
-    "value" : "qa"
+    "text" : "测试"
   }, {
+    "value" : "todo",
     "codeName" : "Todo",
-    "text" : "待办",
-    "value" : "todo"
+    "text" : "待办"
   } ]
 }

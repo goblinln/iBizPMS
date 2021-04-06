@@ -3,11 +3,11 @@
     "name" : "SYS_UPDATE_LOGID",
     "codeName" : "SysUpdateLogId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "SYS_UPDATE_LOGNAME",
     "codeName" : "SysUpdateLogName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 1,
   "masterRS" : 0,
   "removeOrder" : 0,

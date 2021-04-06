@@ -3,11 +3,11 @@
     "name" : "PORGID",
     "codeName" : "ParentOrgId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PORGNAME",
     "codeName" : "ParentOrgName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "masterRS" : 0,
   "removeOrder" : 0,

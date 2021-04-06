@@ -1,13 +1,151 @@
 {
   "searchButtonStyle" : "DEFAULT",
-  "enableFilterSave" : false,
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
+  "enableFilterSave" : false,
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "singleSelect" : true,
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RealDept.json"
+        },
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "srforgid",
+          "key" : "N_ORGID_EQ",
+          "name" : "N_ORGID_EQ"
+        } ],
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "srforgid",
+          "key" : "n_orgid_eq",
+          "name" : "n_orgid_eq"
+        } ],
+        "editorParams" : {
+          "SRFNAVPARAM.n_orgid_eq" : "%srforgid%",
+          "SRFNAVCTX.n_orgid_eq" : "%srforgid%"
+        },
+        "editorType" : "DROPDOWNLIST",
+        "editorWidth" : 100.0,
+        "name" : "n_dept_eq"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "hidden" : false,
+      "dataType" : 25,
+      "needCodeListConfig" : true,
+      "caption" : "部门",
+      "allowEmpty" : true,
+      "createDV" : "srforgsectorid",
+      "createDVT" : "SESSION",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 45,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colMD" : 3,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "n_dept_eq",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "n_dept_eq"
+    }, {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "editorWidth" : 100.0,
+        "name" : "n_begin_gtandeq"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "hidden" : false,
+      "dataType" : 5,
+      "caption" : "完成时间",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 80,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colLG" : 5,
+        "colMD" : 5,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "n_begin_gtandeq",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "n_begin_gtandeq"
+    }, {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "editorWidth" : 100.0,
+        "name" : "n_end_ltandeq"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "hidden" : false,
+      "dataType" : 5,
+      "caption" : "至",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 15,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colLG" : 4,
+        "colMD" : 4,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "n_end_ltandeq",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "n_end_ltandeq"
+    } ],
+    "infoGroupMode" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "表单分页",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "n_dept_eq",
     "dataType" : 25,
@@ -33,151 +171,13 @@
     }
   } ],
   "noTabHeader" : true,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "singleSelect" : true,
-        "getPSAppCodeList" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RealDept.json"
-        },
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "srforgid",
-          "key" : "n_orgid_eq",
-          "name" : "n_orgid_eq"
-        } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "srforgid",
-          "key" : "N_ORGID_EQ",
-          "name" : "N_ORGID_EQ"
-        } ],
-        "editorType" : "DROPDOWNLIST",
-        "editorWidth" : 100.0,
-        "editorParams" : {
-          "SRFNAVPARAM.n_orgid_eq" : "%srforgid%",
-          "SRFNAVCTX.n_orgid_eq" : "%srforgid%"
-        },
-        "name" : "n_dept_eq"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "DEPT",
-        "codeName" : "Dept"
-      },
-      "showCaption" : true,
-      "dataType" : 25,
-      "needCodeListConfig" : true,
-      "caption" : "部门",
-      "allowEmpty" : true,
-      "createDV" : "srforgsectorid",
-      "createDVT" : "SESSION",
-      "labelWidth" : 45,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 3,
-        "colLG" : 3,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "n_dept_eq",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "n_dept_eq"
-    }, {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "dateTimeFormat" : "YYYY-MM-DD",
-        "editorType" : "DATEPICKEREX_NOTIME",
-        "editorWidth" : 100.0,
-        "editorParams" : {
-          "TIMEFMT" : "YYYY-MM-DD"
-        },
-        "name" : "n_begin_gtandeq"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      },
-      "showCaption" : true,
-      "dataType" : 5,
-      "caption" : "完成时间",
-      "allowEmpty" : true,
-      "labelWidth" : 80,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 5,
-        "colLG" : 5,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "n_begin_gtandeq",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "n_begin_gtandeq"
-    }, {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "dateTimeFormat" : "YYYY-MM-DD",
-        "editorType" : "DATEPICKEREX_NOTIME",
-        "editorWidth" : 100.0,
-        "editorParams" : {
-          "TIMEFMT" : "YYYY-MM-DD"
-        },
-        "name" : "n_end_ltandeq"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "END",
-        "codeName" : "End"
-      },
-      "showCaption" : true,
-      "dataType" : 5,
-      "caption" : "至",
-      "allowEmpty" : true,
-      "labelWidth" : 15,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 4,
-        "colLG" : 4,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "n_end_ltandeq",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "n_end_ltandeq"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "表单分页",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "codeName" : "TaskFinshSearchGird",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
   },
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats/PSSEARCHFORMS/TaskFinshSearchGird.json",
   "logicName" : "任务完成汇总表搜索表单",
   "modelid" : "497f162549be9f6c019a3ca31ace3f74"

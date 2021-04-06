@@ -3,11 +3,11 @@
     "name" : "PLAN",
     "codeName" : "Plan"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PLANNAME",
     "codeName" : "Planname"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "masterRS" : 0,
   "removeOrder" : 0,

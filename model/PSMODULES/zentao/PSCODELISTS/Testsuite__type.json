@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,16 +12,16 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "library",
     "codeName" : "Library",
-    "text" : "用例库",
-    "value" : "library"
+    "text" : "用例库"
   }, {
+    "value" : "private",
     "codeName" : "Private",
-    "text" : "私有",
-    "value" : "private"
+    "text" : "私有"
   }, {
+    "value" : "public",
     "codeName" : "Public",
-    "text" : "公开",
-    "value" : "public"
+    "text" : "公开"
   } ]
 }

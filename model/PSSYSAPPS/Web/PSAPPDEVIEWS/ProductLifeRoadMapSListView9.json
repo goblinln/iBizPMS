@@ -15,33 +15,37 @@
     "name" : "product"
   } ],
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDELISTVIEW9_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDELISTVIEW9_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppViewEngines" : [ {
     "engineType" : "ListView9",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "LIST"
+      "name" : "LIST",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     } ],
     "name" : "engine"
   } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
+  },
   "getPSControls" : [ {
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
@@ -54,49 +58,53 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
       },
-      "dataType" : 9,
-      "name" : "marker"
+      "name" : "marker",
+      "dataType" : 9
     }, {
-      "dataType" : 25,
-      "name" : "productlifeid"
+      "name" : "productlifeid",
+      "dataType" : 25
     }, {
-      "dataType" : 9,
-      "name" : "product"
+      "name" : "product",
+      "dataType" : 9
     }, {
-      "dataType" : 25,
-      "name" : "type"
+      "name" : "type",
+      "dataType" : 25
     }, {
-      "dataType" : 5,
       "format" : "YYYY-MM-DD",
-      "name" : "end"
+      "name" : "end",
+      "dataType" : 5
     }, {
-      "dataType" : 25,
-      "name" : "parent"
+      "name" : "parent",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "year"
+      "name" : "year",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "branch"
+      "name" : "branch",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "productlifename"
+      "name" : "productlifename",
+      "dataType" : 25
     }, {
-      "dataType" : 5,
       "format" : "YYYY-MM-DD",
-      "name" : "begin"
+      "name" : "begin",
+      "dataType" : 5
     } ],
-    "enableRowEdit" : false,
-    "controlType" : "LIST",
     "getMinorSortPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
+    "enableRowEdit" : false,
+    "controlType" : "LIST",
     "codeName" : "GetRoadmapS",
     "minorSortDir" : "DESC",
     "enableGroup" : false,
     "pagingSize" : 1000,
     "groupMode" : "NONE",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -113,9 +121,9 @@
       "modelref" : true,
       "id" : "load"
     },
-    "getFetchPSControlAction" : {
+    "getPSAppDataEntity" : {
       "modelref" : true,
-      "id" : "fetch"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
     },
     "getPSControlParam" : {
       "autoLoad" : true,
@@ -125,63 +133,63 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchGetRoadmapS"
         },
-        "actionType" : "DEDATASET",
-        "name" : "fetch"
-      }, {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
         },
+        "actionType" : "DEDATASET",
+        "name" : "fetch"
+      }, {
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -190,10 +198,6 @@
       } ],
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
     },
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife/PSLISTS/GetRoadmapS.json",
     "logicName" : "GetRoadmapS",
@@ -207,53 +211,57 @@
     "showHeader" : true,
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "dataType" : 25,
-      "name" : "type"
+      "name" : "type",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "productlifeid"
+      "name" : "productlifeid",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "parent"
+      "name" : "parent",
+      "dataType" : 25
     }, {
-      "dataType" : 5,
       "format" : "YYYY-MM-DD",
-      "name" : "end"
+      "name" : "end",
+      "dataType" : 5
     }, {
-      "dataType" : 25,
-      "name" : "productlifename"
+      "name" : "productlifename",
+      "dataType" : 25
     }, {
-      "dataType" : 5,
       "format" : "YYYY-MM-DD",
-      "name" : "begin"
+      "name" : "begin",
+      "dataType" : 5
     }, {
-      "dataType" : 25,
-      "name" : "branch"
+      "name" : "branch",
+      "dataType" : 25
     }, {
-      "dataType" : 9,
-      "name" : "product"
+      "name" : "product",
+      "dataType" : 9
     }, {
-      "dataType" : 25,
-      "name" : "year"
+      "name" : "year",
+      "dataType" : 25
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
       },
-      "dataType" : 9,
-      "name" : "marker"
+      "name" : "marker",
+      "dataType" : 9
     } ],
-    "enableRowEdit" : false,
-    "controlType" : "LIST",
     "getMinorSortPSAppDEField" : {
       "name" : "YEAR",
       "codeName" : "Year"
     },
+    "enableRowEdit" : false,
+    "controlType" : "LIST",
     "codeName" : "GetRoadmapYearS",
     "minorSortDir" : "DESC",
     "enableGroup" : false,
     "pagingSize" : 1000,
     "groupMode" : "NONE",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -270,9 +278,9 @@
       "modelref" : true,
       "id" : "load"
     },
-    "getFetchPSControlAction" : {
+    "getPSAppDataEntity" : {
       "modelref" : true,
-      "id" : "fetch"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
     },
     "getPSControlParam" : {
       "autoLoad" : true,
@@ -283,63 +291,63 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchRoadMapYear"
         },
-        "actionType" : "DEDATASET",
-        "name" : "fetch"
-      }, {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
         },
+        "actionType" : "DEDATASET",
+        "name" : "fetch"
+      }, {
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -349,23 +357,15 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
-    },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife/PSLISTS/GetRoadmapYearS.json",
     "getPSSysPFPlugin" : {
       "pluginType" : "CUSTOM",
       "pluginCode" : "RoadMap"
     },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife/PSLISTS/GetRoadmapYearS.json",
     "logicName" : "GetRoadmapYearS",
     "name" : "list",
     "modelid" : "1f23a4ba710a8b45f1cf253adbfd3762"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
-  },
   "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA"

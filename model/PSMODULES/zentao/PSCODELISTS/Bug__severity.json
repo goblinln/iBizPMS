@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : true,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,24 +12,24 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "1",
     "codeName" : "Item_1",
     "text" : "致命",
-    "color" : "rgba(241, 11, 11, 1)",
-    "value" : "1"
+    "color" : "rgba(241, 11, 11, 1)"
   }, {
+    "value" : "2",
     "codeName" : "Item_2",
     "text" : "严重",
-    "color" : "rgba(239, 155, 18, 1)",
-    "value" : "2"
+    "color" : "rgba(239, 155, 18, 1)"
   }, {
+    "value" : "3",
     "codeName" : "Item_3",
     "text" : "一般",
-    "color" : "rgba(58, 149, 247, 1)",
-    "value" : "3"
+    "color" : "rgba(58, 149, 247, 1)"
   }, {
+    "value" : "4",
     "codeName" : "Item_4",
     "text" : "轻微",
-    "color" : "rgba(11, 228, 87, 1)",
-    "value" : "4"
+    "color" : "rgba(11, 228, 87, 1)"
   } ]
 }

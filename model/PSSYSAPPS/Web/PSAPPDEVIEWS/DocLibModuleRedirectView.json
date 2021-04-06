@@ -1,5 +1,4 @@
 {
-  "redirectView" : true,
   "getRedirectPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -18,6 +17,7 @@
     "name" : "IBZ_DOCLIBMODULE:EDITVIEW"
   } ],
   "enableCustomGetDataAction" : false,
+  "redirectView" : true,
   "enableWorkflow" : true,
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "RedirectView",
@@ -27,16 +27,16 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppDataEntity" : {

@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,16 +12,16 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "product",
     "codeName" : "Product",
-    "text" : "产品文档库",
-    "value" : "product"
+    "text" : "产品文档库"
   }, {
+    "value" : "project",
     "codeName" : "Project",
-    "text" : "项目文档库",
-    "value" : "project"
+    "text" : "项目文档库"
   }, {
+    "value" : "custom",
     "codeName" : "Custom",
-    "text" : "自定义文档库",
-    "value" : "custom"
+    "text" : "自定义文档库"
   } ]
 }

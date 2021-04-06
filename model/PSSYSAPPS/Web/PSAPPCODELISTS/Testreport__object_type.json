@@ -3,17 +3,17 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
   },
-  "getPSCodeItems" : [ {
-    "codeName" : "Testtask",
-    "text" : "测试单",
-    "value" : "testtask"
-  }, {
-    "codeName" : "Project",
-    "text" : "项目",
-    "value" : "project"
-  } ],
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "getPSCodeItems" : [ {
+    "value" : "testtask",
+    "codeName" : "Testtask",
+    "text" : "测试单"
+  }, {
+    "value" : "project",
+    "codeName" : "Project",
+    "text" : "项目"
+  } ],
   "codeName" : "Testreport__object_type",
   "emptyText" : "未定义",
   "enableCache" : true,

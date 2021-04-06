@@ -1,33 +1,33 @@
 {
   "searchButtonStyle" : "DEFAULT",
-  "enableFilterSave" : false,
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
+  "enableFilterSave" : false,
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
+    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "常规条件",
     "detailType" : "FORMPAGE",
     "detailStyle" : "DEFAULT",
     "name" : "formpage1"
   } ],
+  "noTabHeader" : true,
   "codeName" : "Default",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
   },
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User/PSSEARCHFORMS/Default.json",
   "logicName" : "默认搜索表单",
   "modelid" : "9b792bbd199dba01a0dabf6e77003be9"

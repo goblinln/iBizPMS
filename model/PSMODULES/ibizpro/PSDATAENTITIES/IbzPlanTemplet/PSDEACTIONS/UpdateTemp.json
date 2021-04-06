@@ -1,11 +1,11 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
   "builtinAction" : true,
   "tempDataMode" : 2,
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
   "getPSDEOPPriv" : {
     "modelref" : true,
@@ -14,8 +14,8 @@
   "orderValue" : 12,
   "codeName" : "UpdateTemp",
   "logicName" : "UpdateTemp",
-  "extendMode" : 0,
   "enableTempData" : true,
+  "extendMode" : 0,
   "actionMode" : "UPDATE",
   "actionType" : "BUILTIN",
   "requestParamType" : "ENTITY",

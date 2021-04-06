@@ -23,15 +23,269 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
+  "enableAutoSave" : false,
   "infoFormMode" : true,
   "showFormNavBar" : false,
-  "enableAutoSave" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "postid"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "POSTID",
+        "codeName" : "PostId"
+      },
+      "hidden" : true,
+      "dataType" : 25,
+      "caption" : "岗位标识",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 70,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "postid",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "postid"
+    }, {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "teamid"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "TEAMID",
+        "codeName" : "TeamId"
+      },
+      "hidden" : true,
+      "dataType" : 25,
+      "caption" : "组标识",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 70,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "teamid",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "teamid"
+    }, {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "userid"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "USERID",
+        "codeName" : "UserId"
+      },
+      "hidden" : true,
+      "dataType" : 25,
+      "caption" : "用户标识",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 70,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "userid",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "userid"
+    }, {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "enableLinkView" : false,
+        "editable" : false,
+        "editorType" : "SPAN",
+        "name" : "personname"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PERSONNAME",
+        "codeName" : "PersonName"
+      },
+      "hidden" : false,
+      "dataType" : 25,
+      "caption" : "姓名",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 70,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "personname",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "personname"
+    }, {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "enableLinkView" : false,
+        "editable" : false,
+        "editorType" : "SPAN",
+        "name" : "username"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "USERNAME",
+        "codeName" : "UserName"
+      },
+      "hidden" : false,
+      "dataType" : 25,
+      "caption" : "账号",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 70,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "username",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "username"
+    }, {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "singleSelect" : true,
+        "getLinkPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridViewPostMembers.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "dropDownView" : false,
+        "enablePickupView" : false,
+        "enableLinkView" : true,
+        "enableAC" : false,
+        "forceSelection" : true,
+        "showTrigger" : false,
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+        },
+        "valueItemName" : "postid",
+        "editable" : false,
+        "editorParams" : {
+          "EDITABLE" : "FALSE",
+          "LINKVIEW" : "TRUE",
+          "AC" : "FALSE",
+          "TRIGGER" : "FALSE",
+          "PICKUPVIEW" : "FALSE"
+        },
+        "editorType" : "PICKEREX_LINKONLY",
+        "name" : "postname"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "POSTNAME",
+        "codeName" : "PostName"
+      },
+      "hidden" : false,
+      "dataType" : 25,
+      "caption" : "岗位",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "valueItemName" : "postid",
+      "labelWidth" : 70,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "postname",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "postname"
+    }, {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "teammemberid"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "TEAMMEMBERID",
+        "codeName" : "TeamMemberId"
+      },
+      "hidden" : true,
+      "dataType" : 25,
+      "caption" : "组成员标识",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 70,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "teammemberid",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "teammemberid"
+    } ],
+    "infoGroupMode" : true,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srforikey",
     "hidden" : true,
@@ -115,267 +369,13 @@
     }
   } ],
   "noTabHeader" : true,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "postid"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "POSTID",
-        "codeName" : "PostId"
-      },
-      "showCaption" : true,
-      "dataType" : 25,
-      "caption" : "岗位标识",
-      "allowEmpty" : true,
-      "labelWidth" : 70,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : true,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "postid",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "postid"
-    }, {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "teamid"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "TEAMID",
-        "codeName" : "TeamId"
-      },
-      "showCaption" : true,
-      "dataType" : 25,
-      "caption" : "组标识",
-      "allowEmpty" : true,
-      "labelWidth" : 70,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : true,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "teamid",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "teamid"
-    }, {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "userid"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "USERID",
-        "codeName" : "UserId"
-      },
-      "showCaption" : true,
-      "dataType" : 25,
-      "caption" : "用户标识",
-      "allowEmpty" : true,
-      "labelWidth" : 70,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : true,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "userid",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "userid"
-    }, {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "enableLinkView" : false,
-        "editable" : false,
-        "editorType" : "SPAN",
-        "name" : "personname"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "PERSONNAME",
-        "codeName" : "PersonName"
-      },
-      "showCaption" : true,
-      "dataType" : 25,
-      "caption" : "姓名",
-      "allowEmpty" : true,
-      "labelWidth" : 70,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "personname",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "personname"
-    }, {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "enableLinkView" : false,
-        "editable" : false,
-        "editorType" : "SPAN",
-        "name" : "username"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "USERNAME",
-        "codeName" : "UserName"
-      },
-      "showCaption" : true,
-      "dataType" : 25,
-      "caption" : "账号",
-      "allowEmpty" : true,
-      "labelWidth" : 70,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "username",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "username"
-    }, {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "singleSelect" : true,
-        "enableLinkView" : true,
-        "getLinkPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridViewPostMembers.json",
-          "viewType" : "DEGRIDVIEW"
-        },
-        "enablePickupView" : false,
-        "dropDownView" : false,
-        "enableAC" : false,
-        "forceSelection" : true,
-        "showTrigger" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
-        },
-        "getPSAppDEACMode" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "valueItemName" : "postid",
-        "editorType" : "PICKEREX_LINKONLY",
-        "editable" : false,
-        "editorParams" : {
-          "EDITABLE" : "FALSE",
-          "LINKVIEW" : "TRUE",
-          "AC" : "FALSE",
-          "TRIGGER" : "FALSE",
-          "PICKUPVIEW" : "FALSE"
-        },
-        "name" : "postname"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "POSTNAME",
-        "codeName" : "PostName"
-      },
-      "showCaption" : true,
-      "dataType" : 25,
-      "caption" : "岗位",
-      "allowEmpty" : true,
-      "labelWidth" : 70,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "valueItemName" : "postid",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "postname",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "postname"
-    }, {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "teammemberid"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "TEAMMEMBERID",
-        "codeName" : "TeamMemberId"
-      },
-      "showCaption" : true,
-      "dataType" : 25,
-      "caption" : "组成员标识",
-      "allowEmpty" : true,
-      "labelWidth" : 70,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : true,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "teammemberid",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "teammemberid"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : true,
-    "codeName" : "formpage1",
-    "caption" : "基本信息",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "codeName" : "ExpMainEdit",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
   },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember/PSFORMS/ExpMainEdit.json",
   "logicName" : "通讯录编辑表单",
   "modelid" : "c450bf3821904779e69343c936dbd66c"

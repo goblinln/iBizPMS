@@ -4,53 +4,52 @@
       "name" : "TEAMID",
       "codeName" : "TeamId"
     },
-    "dataType" : 25,
-    "name" : "teamid"
+    "name" : "teamid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "MEMO",
       "codeName" : "Memo"
     },
-    "dataType" : 25,
-    "name" : "memo"
+    "name" : "memo",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TEAMNAME",
       "codeName" : "TeamName"
     },
-    "dataType" : 25,
-    "name" : "teamname"
+    "name" : "teamname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DOMAINS",
       "codeName" : "Domains"
     },
-    "dataType" : 25,
-    "name" : "domains"
+    "name" : "domains",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TEAMNAME",
       "codeName" : "TeamName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "TEAMID",
       "codeName" : "TeamId"
     },
-    "dataType" : 25,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TEAMID",
       "codeName" : "TeamId"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -72,30 +71,31 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : false,
+  "enablePagingBar" : true,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "teamid",
     "getPSAppDEField" : {
       "name" : "TEAMID",
       "codeName" : "TeamId"
     },
+    "dataItemName" : "teamid",
     "excelCaption" : "组标识",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -109,17 +109,17 @@
     "name" : "teamid"
   }, {
     "linkValueItem" : "srfkey",
-    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridView.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "dataItemName" : "teamname",
+    "enableLinkView" : true,
     "getPSAppDEField" : {
       "name" : "TEAMNAME",
       "codeName" : "TeamName"
     },
+    "dataItemName" : "teamname",
     "excelCaption" : "组名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -132,11 +132,11 @@
     "widthUnit" : "PX",
     "name" : "teamname"
   }, {
-    "dataItemName" : "domains",
     "getPSAppDEField" : {
       "name" : "DOMAINS",
       "codeName" : "Domains"
     },
+    "dataItemName" : "domains",
     "excelCaption" : "区属",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -149,11 +149,11 @@
     "widthUnit" : "PX",
     "name" : "domains"
   }, {
-    "dataItemName" : "memo",
     "getPSAppDEField" : {
       "name" : "MEMO",
       "codeName" : "Memo"
     },
+    "dataItemName" : "memo",
     "excelCaption" : "备注",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -168,21 +168,21 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam/PSGRIDS/Main.json",
   "logicName" : "主表格",
   "modelid" : "88375a2da07af07bc3caa04003b11b39"

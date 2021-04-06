@@ -1,6 +1,5 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
@@ -26,6 +25,7 @@
     "attachMode" : "AFTER",
     "name" : "附加逻辑"
   } ],
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
@@ -40,6 +40,6 @@
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/AssignTo.json",
-  "userCat" : "CAT1",
-  "name" : "assignTo"
+  "name" : "assignTo",
+  "userCat" : "CAT1"
 }

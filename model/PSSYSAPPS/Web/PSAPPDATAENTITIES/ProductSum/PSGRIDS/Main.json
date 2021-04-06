@@ -4,95 +4,94 @@
       "name" : "ACTIVESTORYCNT",
       "codeName" : "ActiveStoryCnt"
     },
-    "dataType" : 9,
-    "name" : "activestorycnt"
+    "name" : "activestorycnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "CLOSEDSTORYCNT",
       "codeName" : "ClosedStoryCnt"
     },
-    "dataType" : 9,
-    "name" : "closedstorycnt"
+    "name" : "closedstorycnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "CHANGEDSTORYCNT",
       "codeName" : "Changedstorycnt"
     },
-    "dataType" : 9,
-    "name" : "changedstorycnt"
+    "name" : "changedstorycnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "dataType" : 9,
-    "name" : "storycnt"
+    "name" : "storycnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
-    "dataType" : 25,
-    "name" : "begin"
+    "name" : "begin",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PLAN",
       "codeName" : "Plan"
     },
-    "dataType" : 1,
-    "name" : "plan"
+    "name" : "plan",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "WAITSTORYCNT",
       "codeName" : "WaitStoryCnt"
     },
-    "dataType" : 9,
-    "name" : "waitstorycnt"
+    "name" : "waitstorycnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PO",
       "codeName" : "PO"
     },
-    "dataType" : 25,
-    "name" : "po"
+    "name" : "po",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
-    "dataType" : 25,
-    "name" : "end"
+    "name" : "end",
+    "dataType" : 25
   } ],
-  "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -114,30 +113,31 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
     "excelCaption" : "产品名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -150,7 +150,6 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
-    "dataItemName" : "po",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -159,6 +158,7 @@
       "name" : "PO",
       "codeName" : "PO"
     },
+    "dataItemName" : "po",
     "excelCaption" : "产品负责人",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -171,7 +171,6 @@
     "widthUnit" : "PX",
     "name" : "po"
   }, {
-    "dataItemName" : "plan",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanCodeList.json"
@@ -180,6 +179,7 @@
       "name" : "PLAN",
       "codeName" : "Plan"
     },
+    "dataItemName" : "plan",
     "excelCaption" : "计划",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -192,11 +192,11 @@
     "widthUnit" : "PX",
     "name" : "plan"
   }, {
-    "dataItemName" : "begin",
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
+    "dataItemName" : "begin",
     "excelCaption" : "开始日期",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -209,11 +209,11 @@
     "widthUnit" : "PX",
     "name" : "begin"
   }, {
-    "dataItemName" : "end",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
+    "dataItemName" : "end",
     "excelCaption" : "结束日期",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -226,11 +226,11 @@
     "widthUnit" : "PX",
     "name" : "end"
   }, {
-    "dataItemName" : "waitstorycnt",
     "getPSAppDEField" : {
       "name" : "WAITSTORYCNT",
       "codeName" : "WaitStoryCnt"
     },
+    "dataItemName" : "waitstorycnt",
     "excelCaption" : "草稿",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -243,11 +243,11 @@
     "widthUnit" : "PX",
     "name" : "waitstorycnt"
   }, {
-    "dataItemName" : "activestorycnt",
     "getPSAppDEField" : {
       "name" : "ACTIVESTORYCNT",
       "codeName" : "ActiveStoryCnt"
     },
+    "dataItemName" : "activestorycnt",
     "excelCaption" : "激活",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -260,11 +260,11 @@
     "widthUnit" : "PX",
     "name" : "activestorycnt"
   }, {
-    "dataItemName" : "changedstorycnt",
     "getPSAppDEField" : {
       "name" : "CHANGEDSTORYCNT",
       "codeName" : "Changedstorycnt"
     },
+    "dataItemName" : "changedstorycnt",
     "excelCaption" : "已变更",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -277,11 +277,11 @@
     "widthUnit" : "PX",
     "name" : "changedstorycnt"
   }, {
-    "dataItemName" : "closedstorycnt",
     "getPSAppDEField" : {
       "name" : "CLOSEDSTORYCNT",
       "codeName" : "ClosedStoryCnt"
     },
+    "dataItemName" : "closedstorycnt",
     "excelCaption" : "已关闭",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -294,11 +294,11 @@
     "widthUnit" : "PX",
     "name" : "closedstorycnt"
   }, {
-    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
+    "dataItemName" : "storycnt",
     "excelCaption" : "总计",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -313,21 +313,21 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 100,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSGRIDS/Main.json",
   "logicName" : "主表格",
   "modelid" : "bd99d9b9f4c78df348f70179d5a8bb59"

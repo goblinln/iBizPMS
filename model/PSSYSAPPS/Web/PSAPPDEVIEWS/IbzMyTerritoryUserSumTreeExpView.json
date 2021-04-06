@@ -9,29 +9,35 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppViewEngines" : [ {
     "engineType" : "TreeExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "TREEEXPBAR"
+      "name" : "TREEEXPBAR",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+  },
   "getPSControls" : [ {
     "controlType" : "TREEEXPBAR",
+    "enableCounter" : true,
+    "enableSearch" : false,
     "getXDataPSControl" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSTREEVIEWS/UserSum.json",
@@ -44,13 +50,13 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
@@ -64,39 +70,39 @@
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -108,11 +114,12 @@
       },
       "controlType" : "TREEVIEW"
     },
-    "enableSearch" : false,
-    "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
       "treeGridMode" : 0,
+      "enableRootSelect" : false,
+      "outputIconDefault" : true,
+      "enableSearchDefault" : false,
       "getPSDETreeNodeRSs" : [ {
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -126,25 +133,22 @@
         "searchMode" : 3,
         "name" : "默认根节点 - 用户完成任务汇总表"
       } ],
-      "enableRootSelect" : false,
-      "outputIconDefault" : true,
-      "enableSearchDefault" : false,
       "controlType" : "TREEVIEW",
       "getPSDETreeNodes" : [ {
         "nodeValue" : "root",
         "text" : "默认根节点",
-        "enableQuickCreate" : false,
         "rootNode" : true,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
         "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
+        "selected" : false,
+        "enableQuickCreate" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "enableCheck" : false,
         "nodeType" : "ROOT",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -155,27 +159,27 @@
         "id" : "ROOT"
       }, {
         "text" : "用户完成任务汇总表",
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : false,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStatsUserFinishTaskSumGridView.json",
           "viewType" : "DEGRIDVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : false,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
         },
+        "enableCheck" : false,
         "nodeType" : "UserFinashTaskSum",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -187,6 +191,10 @@
       } ],
       "codeName" : "UserSum",
       "rootVisible" : false,
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
       "getCreatePSControlAction" : {
         "modelref" : true,
         "id" : "create"
@@ -203,9 +211,9 @@
         "modelref" : true,
         "id" : "load"
       },
-      "getFetchPSControlAction" : {
+      "getPSAppDataEntity" : {
         "modelref" : true,
-        "id" : "fetch"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
@@ -216,13 +224,13 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
@@ -236,39 +244,39 @@
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -277,10 +285,6 @@
         } ],
         "enableDEFieldPrivilege" : false,
         "id" : "树视图处理器"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
       },
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSTREEVIEWS/UserSum.json",
       "logicName" : "用户汇总表",
@@ -296,6 +300,10 @@
       "realTitle" : "任务统计表格视图",
       "name" : "EXPITEM:UserFinashTaskSum"
     } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -306,18 +314,10 @@
       "enableDEFieldPrivilege" : false,
       "id" : "treeexpbar"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-    },
     "codeName" : "UserSumTreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "modelid" : "754505eb2d18f5f8cfa4e41911ce79ef_treeexpbar"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-  },
   "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",

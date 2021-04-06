@@ -1,18 +1,18 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
   "builtinAction" : false,
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "CREATE"
-  },
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
+  },
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
   },
   "orderValue" : 99999,
   "codeName" : "CreateEveryWeekReport",
@@ -23,6 +23,6 @@
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateEveryWeekReport.json",
-  "userCat" : "CAT1",
-  "name" : "createEveryWeekReport"
+  "name" : "createEveryWeekReport",
+  "userCat" : "CAT1"
 }

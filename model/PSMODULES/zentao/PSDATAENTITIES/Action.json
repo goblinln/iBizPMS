@@ -1,12 +1,12 @@
 {
-  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "length" : 200,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "630144803e0b0acc3010b3f14f0ab01e",
     "codeName" : "Thismonth",
+    "valueFormat" : "%1$s",
     "logicName" : "本月",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -42,17 +42,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "THISMONTH",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "THISMONTH"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
-    "length" : 200,
     "name" : "THISMONTH"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "length" : 200,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "630cc5b6b0cae5e7dff23c9dbffc110e",
     "codeName" : "Yesterday",
+    "valueFormat" : "%1$s",
     "logicName" : "昨天",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -88,18 +95,26 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "YESTERDAY",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "YESTERDAY"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
-    "length" : 200,
     "name" : "YESTERDAY"
   }, {
+    "length" : 65535,
     "dataType" : "LONGTEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "b36ec54003987121eb26537901921775",
     "codeName" : "Extra",
+    "valueFormat" : "%1$s",
     "logicName" : "附加值",
     "stringLength" : 65535,
     "stdDataType" : 21,
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -132,20 +147,29 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`EXTRA`",
+      "columnName" : "EXTRA",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "EXTRA"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "queryColumn" : false,
-    "length" : 65535,
     "name" : "EXTRA"
   }, {
+    "length" : 1048576,
     "dataType" : "LONGTEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "437352a27c7722846c0c323bff7dd897",
     "codeName" : "Files",
+    "valueFormat" : "%1$s",
     "logicName" : "文件",
     "stringLength" : 1048576,
     "stdDataType" : 21,
+    "queryColumn" : false,
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -180,17 +204,15 @@
     } ],
     "importOrder" : 1000,
     "dEFType" : 5,
-    "uIAssistDEField" : true,
-    "queryColumn" : false,
-    "length" : 1048576,
     "name" : "FILES"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "length" : 200,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "af7f96ab1e6139276360f5e20c501143",
     "codeName" : "Lastmonth",
+    "valueFormat" : "%1$s",
     "logicName" : "上月",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -226,17 +248,23 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "LASTMONTH",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "LASTMONTH"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
-    "length" : 200,
     "name" : "LASTMONTH"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "BIGINT",
-    "valueFormat" : "%1$s",
     "deployId" : "d7c509add2f1c477175582b9d5dbe43d",
     "codeName" : "Isactorss",
+    "valueFormat" : "%1$s",
     "logicName" : "当前用户",
     "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -259,16 +287,25 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "0",
+      "columnName" : "ISACTORSS",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ISACTORSS"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "ISACTORSS"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "length" : 200,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "5b8f3202afe2c7bf4e9cd21e9dcecca5",
     "codeName" : "Thisweek",
+    "valueFormat" : "%1$s",
     "logicName" : "本周",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -304,17 +341,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "THISWEEK",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "THISWEEK"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
-    "length" : 200,
     "name" : "THISWEEK"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "length" : 200,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "195da14152d0b401c2afa50b31c35349",
     "codeName" : "Today",
+    "valueFormat" : "%1$s",
     "logicName" : "今天",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -350,17 +394,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "TODAY",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TODAY"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
-    "length" : 200,
     "name" : "TODAY"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "length" : 200,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "44196cd88a9240e67e9fd048af458326",
     "codeName" : "Date1",
+    "valueFormat" : "%1$s",
     "logicName" : "显示日期",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -396,19 +447,26 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "DATE1",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DATE1"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
-    "length" : 200,
     "name" : "DATE1"
   }, {
-    "dataType" : "SSCODELIST",
+    "length" : 30,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Action__object_type.json"
     },
-    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "475d59038a5b76a9c9fcee2c0dc6bf11",
     "codeName" : "ObjectType",
+    "valueFormat" : "%1$s",
     "logicName" : "对象类型",
     "stringLength" : 30,
     "stdDataType" : 25,
@@ -444,17 +502,25 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`OBJECTTYPE`",
+      "columnName" : "OBJECTTYPE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "OBJECTTYPE"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 30,
     "name" : "OBJECTTYPE"
   }, {
     "dataType" : "ACID",
-    "valueFormat" : "%1$s",
     "deployId" : "b485149cd78715cea1fd61045108215c",
     "codeName" : "Id",
+    "valueFormat" : "%1$s",
     "logicName" : "id",
     "stdDataType" : 1,
+    "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -476,7 +542,14 @@
       },
       "name" : "默认规则"
     } ],
-    "pasteReset" : true,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ID`",
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : true,
+      "name" : "ID"
+    } ],
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -485,14 +558,16 @@
     "dEFType" : 1,
     "name" : "ID"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "9e84966a48f4ca179faf509067fff577",
     "codeName" : "Noticeusers",
+    "valueFormat" : "%1$s",
     "logicName" : "消息通知用户",
     "stringLength" : 100,
     "stdDataType" : 25,
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -527,14 +602,13 @@
     } ],
     "importOrder" : 1000,
     "dEFType" : 5,
-    "uIAssistDEField" : true,
-    "length" : 100,
     "name" : "NOTICEUSERS"
   }, {
+    "length" : 65535,
     "dataType" : "LONGTEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "22cab82aba4277a76cee2217edd93c19",
     "codeName" : "Comment",
+    "valueFormat" : "%1$s",
     "logicName" : "备注",
     "stringLength" : 65535,
     "stdDataType" : 21,
@@ -570,20 +644,29 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`COMMENT`",
+      "columnName" : "COMMENT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "COMMENT"
+    } ],
     "majorDEField" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 65535,
     "name" : "COMMENT"
   }, {
-    "dataType" : "SSCODELIST",
+    "length" : 1,
+    "defaultValue" : "0",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Action__read.json"
     },
-    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "eab63d8997605a97747566674d5fdccb",
     "codeName" : "Read",
+    "valueFormat" : "%1$s",
     "logicName" : "已读",
     "stringLength" : 1,
     "stdDataType" : 25,
@@ -619,20 +702,27 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`READ`",
+      "columnName" : "READ",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "READ"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 1,
-    "defaultValue" : "0",
     "name" : "READ"
   }, {
-    "dataType" : "SSCODELIST",
+    "length" : 30,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Action__type.json"
     },
-    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "64d0788d5fd0338ee29b5d3c586e2427",
     "codeName" : "Action",
+    "valueFormat" : "%1$s",
     "logicName" : "动作",
     "stringLength" : 30,
     "stdDataType" : 25,
@@ -668,17 +758,25 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ACTION`",
+      "columnName" : "ACTION",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ACTION"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 30,
     "name" : "ACTION"
   }, {
     "dataType" : "DATETIME",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
     "deployId" : "6e74425c8045cd3b71fac3ea396261f3",
     "codeName" : "Date",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
     "logicName" : "日期",
     "stdDataType" : 5,
+    "systemReserver" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -699,16 +797,24 @@
       },
       "name" : "默认规则"
     } ],
-    "systemReserver" : true,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`DATE`",
+      "columnName" : "DATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DATE"
+    } ],
     "predefinedType" : "CREATEDATE",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "DATE"
   }, {
+    "length" : 255,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "262bc87494708895bb55d37092094409",
     "codeName" : "Product",
+    "valueFormat" : "%1$s",
     "logicName" : "产品",
     "stringLength" : 255,
     "stdDataType" : 25,
@@ -744,17 +850,25 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`PRODUCT`",
+      "columnName" : "PRODUCT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PRODUCT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 255,
     "name" : "PRODUCT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "length" : 200,
     "dataType" : "HTMLTEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "812c30c2e1f0a1ad069e3a8a26022f18",
     "codeName" : "Lastcomment",
+    "valueFormat" : "%1$s",
     "logicName" : "备注",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -790,17 +904,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`comment`",
+      "columnName" : "LASTCOMMENT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "LASTCOMMENT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
-    "length" : 200,
     "name" : "LASTCOMMENT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "BIGINT",
-    "valueFormat" : "%1$s",
     "deployId" : "80e834fc1780001bbbdbd34fd0549a13",
     "codeName" : "Srfkey",
+    "valueFormat" : "%1$s",
     "logicName" : "前端键值",
     "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -823,20 +944,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "SRFKEY",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "SRFKEY"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "SRFKEY"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
-    "dataType" : "SSCODELIST",
+    "phisicalDEField" : false,
+    "length" : 200,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/ActionManner.json"
     },
-    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "1bb11b7708a9f6b64c4e04e0f8b9fb61",
     "codeName" : "Actionmanner",
+    "valueFormat" : "%1$s",
     "logicName" : "操作方式",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -872,17 +1001,25 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end)",
+      "columnName" : "ACTIONMANNER",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ACTIONMANNER"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
-    "length" : 200,
     "name" : "ACTIONMANNER"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "length" : 200,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "bd3894aa2e1788e8babc1dae17f00e14",
     "codeName" : "Lastweek",
+    "valueFormat" : "%1$s",
     "logicName" : "上周",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -918,15 +1055,22 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "LASTWEEK",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "LASTWEEK"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
-    "length" : 200,
     "name" : "LASTWEEK"
   }, {
+    "defaultValue" : "0",
     "dataType" : "BIGINT",
-    "valueFormat" : "%1$s",
     "deployId" : "4e15c0dce2f39fdd320a699f175ebf96",
     "codeName" : "ObjectID",
+    "valueFormat" : "%1$s",
     "logicName" : "对象ID",
     "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -949,19 +1093,27 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`OBJECTID`",
+      "columnName" : "OBJECTID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "OBJECTID"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "defaultValue" : "0",
     "name" : "OBJECTID"
   }, {
-    "dataType" : "TEXT",
+    "length" : 100,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
-    "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "e7ff0a989cac3e13543a63f6c7474513",
     "codeName" : "Actor",
+    "valueFormat" : "%1$s",
     "logicName" : "操作者",
     "stringLength" : 100,
     "stdDataType" : 25,
@@ -997,10 +1149,17 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ACTOR`",
+      "columnName" : "ACTOR",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ACTOR"
+    } ],
     "enableQuickSearch" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 100,
     "name" : "ACTOR"
   }, {
     "getPSDER" : {
@@ -1013,6 +1172,7 @@
       "name" : "ID",
       "codeName" : "Id"
     },
+    "length" : 9,
     "dataType" : "PICKUP",
     "deployId" : "74ca2ee694696fe01ab7714126fe3c97",
     "codeName" : "Project",
@@ -1038,10 +1198,152 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`PROJECT`",
+      "columnName" : "PROJECT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PROJECT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 9,
     "name" : "PROJECT"
+  } ],
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "extendMode" : 0,
+    "pageSize" : -1,
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "MobType",
+    "logicName" : "MobType",
+    "extendMode" : 0,
+    "pageSize" : -1,
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "MobType"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "MyTrends",
+    "logicName" : "项目动态(我的)",
+    "extendMode" : 0,
+    "pageSize" : -1,
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "MyTrends"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProductTrends",
+    "logicName" : "ProductTrends",
+    "extendMode" : 0,
+    "pageSize" : -1,
+    "majorSortDir" : "DESC",
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProductTrends"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProjectTrends",
+    "logicName" : "项目动态(项目相关所有)",
+    "extendMode" : 0,
+    "pageSize" : -1,
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProjectTrends"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "QueryUserYEAR",
+    "logicName" : "查询用户使用年",
+    "extendMode" : 0,
+    "pageSize" : -1,
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "QueryUserYEAR"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Type",
+    "logicName" : "Type",
+    "extendMode" : 0,
+    "pageSize" : -1,
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "Type"
   } ],
   "getAllPSDEActions" : [ {
     "modelref" : true,
@@ -1074,6 +1376,106 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Save.json"
   } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "BianGengLineHistory",
+    "logicName" : "项目立项变更线路操作历史记录",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "BianGengLineHistory"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "extendMode" : 0,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "MobType",
+    "logicName" : "动态(根据类型过滤)",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "MobType"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "MyTrends",
+    "logicName" : "项目动态(我的)",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "MyTrends"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "ProductTrends",
+    "logicName" : "产品动态(产品相关所有)",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "ProductTrends"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "ProjectTrends",
+    "logicName" : "项目动态(项目相关所有)",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "ProjectTrends"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "QueryUserYEAR",
+    "logicName" : "查询用户使用年",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "QueryUserYEAR"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Type",
+    "logicName" : "动态(根据类型过滤)",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "Type"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDELogics" : [ {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDELOGICS/Comment.json"
@@ -1085,6 +1487,12 @@
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
+  "serviceAPIMode" : 1,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "deployId" : "03436a54b10400b92f79f62e01c165b0",
+  "codeName" : "Action",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1099,14 +1507,13 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
-  "dynaInstMode" : 1,
-  "dSLink" : "DEFAULT",
-  "orderValue" : 99999,
-  "deployId" : "03436a54b10400b92f79f62e01c165b0",
-  "codeName" : "Action",
   "logicName" : "系统日志",
   "tableName" : "zt_action",
-  "enableRemove" : true,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1115,18 +1522,14 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
+  "enableRemove" : true,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "serviceCodeName" : "Action",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
   "extendMode" : 0,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

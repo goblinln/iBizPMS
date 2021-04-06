@@ -3,11 +3,11 @@
     "name" : "MODULE",
     "codeName" : "Module"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "MODULENAME",
     "codeName" : "Modulename"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "masterRS" : 0,
   "removeOrder" : 0,

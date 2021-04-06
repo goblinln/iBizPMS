@@ -3,12 +3,12 @@
     "name" : "ORGID",
     "codeName" : "OrgId"
   },
-  "masterOrder" : -1,
+  "nestedRS" : true,
   "getPSPickupTextDEField" : {
     "name" : "ORGNAME",
     "codeName" : "OrgName"
   },
-  "nestedRS" : true,
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "masterRS" : 8,
   "removeOrder" : 0,

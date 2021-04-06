@@ -4,67 +4,66 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "dataType" : 1,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "dataType" : 25,
-    "name" : "assignedto"
+    "name" : "assignedto",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
-    "dataType" : 9,
-    "name" : "bugcnt"
+    "name" : "bugcnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "BUGTOTAL",
       "codeName" : "Bugtotal"
     },
-    "dataType" : 9,
-    "name" : "bugtotal"
+    "name" : "bugtotal",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
-    "dataType" : 25,
-    "name" : "productname"
+    "name" : "productname",
+    "dataType" : 25
   } ],
-  "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -86,20 +85,6 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
   "getGroupPSAppDEField" : {
     "name" : "ASSIGNEDTO",
@@ -109,11 +94,25 @@
     "name" : "ASSIGNEDTO",
     "codeName" : "AssignedTo"
   },
+  "getRemovePSControlAction" : {
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "assignedto",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -122,6 +121,7 @@
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
+    "dataItemName" : "assignedto",
     "excelCaption" : "姓名",
     "cLConvertMode" : "FRONT",
     "groupItem" : "GROUP1",
@@ -136,17 +136,17 @@
     "name" : "assignedto"
   }, {
     "linkValueItem" : "product",
-    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "dataItemName" : "productname",
+    "enableLinkView" : true,
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
+    "dataItemName" : "productname",
     "excelCaption" : "产品",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -159,11 +159,11 @@
     "widthUnit" : "STAR",
     "name" : "productname"
   }, {
-    "dataItemName" : "bugcnt",
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
+    "dataItemName" : "bugcnt",
     "excelCaption" : "Bug",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -176,11 +176,11 @@
     "widthUnit" : "PX",
     "name" : "bugcnt"
   }, {
-    "dataItemName" : "bugtotal",
     "getPSAppDEField" : {
       "name" : "BUGTOTAL",
       "codeName" : "Bugtotal"
     },
+    "dataItemName" : "bugtotal",
     "excelCaption" : "总计",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -195,8 +195,6 @@
   } ],
   "codeName" : "BugassignedTo",
   "enableGroup" : true,
-  "hideHeader" : false,
-  "forceFit" : false,
   "getGroupPSCodeList" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
@@ -205,15 +203,17 @@
   "aggMode" : "NONE",
   "groupMode" : "AUTO",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSGRIDS/BugassignedTo.json",
   "logicName" : "Bug指派表",
   "modelid" : "e1af988897b52fb5d625ce76ddeb1945"

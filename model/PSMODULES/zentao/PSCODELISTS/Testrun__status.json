@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,21 +12,21 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "wait",
     "codeName" : "Wait",
     "text" : "未开始",
-    "default" : true,
-    "value" : "wait"
+    "default" : true
   }, {
+    "value" : "doing",
     "codeName" : "Doing",
-    "text" : "进行中",
-    "value" : "doing"
+    "text" : "进行中"
   }, {
+    "value" : "done",
     "codeName" : "Done",
-    "text" : "已完成",
-    "value" : "done"
+    "text" : "已完成"
   }, {
+    "value" : "blocked",
     "codeName" : "Blocked",
-    "text" : "被阻塞",
-    "value" : "blocked"
+    "text" : "被阻塞"
   } ]
 }

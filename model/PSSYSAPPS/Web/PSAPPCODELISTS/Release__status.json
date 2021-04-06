@@ -3,19 +3,19 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
   },
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
+    "value" : "normal",
     "codeName" : "Normal",
     "text" : "正常",
     "default" : true,
-    "color" : "rgba(13, 255, 0, 1)",
-    "value" : "normal"
+    "color" : "rgba(13, 255, 0, 1)"
   }, {
+    "value" : "terminate",
     "codeName" : "Terminate",
-    "text" : "停止维护",
-    "value" : "terminate"
+    "text" : "停止维护"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
   "codeName" : "Release__status",
   "emptyText" : "未定义",
   "enableCache" : true,

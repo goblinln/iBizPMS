@@ -1,4 +1,12 @@
 {
+  "getValuePSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  },
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchDefault"
@@ -6,14 +14,6 @@
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-  },
-  "getTextPSAppDEField" : {
-    "name" : "TITLE",
-    "codeName" : "Title"
-  },
-  "getValuePSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

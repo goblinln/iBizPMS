@@ -6,6 +6,11 @@
     "index" : 0,
     "id" : "0"
   },
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
     "type" : "NONE",
@@ -13,20 +18,15 @@
     "name" : "[BugStatus]无坐标系[0]",
     "id" : "0"
   } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "index" : 0,
-    "id" : "0"
-  },
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "Status",
     "seriesType" : "pie",
-    "eChartsType" : "pie",
     "getCatalogPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
     },
+    "eChartsType" : "pie",
     "getPSChartCoordinateSystem" : {
       "modelref" : true,
       "id" : "0"
@@ -87,11 +87,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
   "height" : 300.0,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugStatus_Project.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "tablechart"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugStatus_Project.json",
   "logicName" : "BugStatus_Project",
   "modelid" : "e3811e4748ec81725f9d4784b0e5ca1b",
   "getUserParam" : {

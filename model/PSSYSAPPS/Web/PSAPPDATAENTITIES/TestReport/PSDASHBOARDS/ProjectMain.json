@@ -1,15 +1,7 @@
 {
   "codeName" : "ProjectMain",
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
-  },
   "enableCustomized" : false,
   "getPSControls" : [ {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getContentPSControl" : {
         "name" : "dashboard_sysportlet1_chart"
@@ -22,6 +14,11 @@
           "index" : 0,
           "id" : "0"
         },
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -29,11 +26,6 @@
           "name" : "[Caseresult]无坐标系[0]",
           "id" : "0"
         } ],
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "controlType" : "CHART",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "LASTRUNRESULT1",
@@ -88,6 +80,10 @@
           "id" : "fetch"
         },
         "readOnly" : true,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -96,63 +92,63 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchRunRePortCase_Project"
             },
-            "actionType" : "DEDATASET",
-            "name" : "fetch"
-          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
+            "actionType" : "DEDATASET",
+            "name" : "fetch"
+          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -162,16 +158,12 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-        },
         "height" : 300.0,
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseresultProject.json",
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseresultProject.json",
         "logicName" : "CaseresultProject",
         "name" : "dashboard_sysportlet1_chart",
         "modelid" : "107dcf7800f65c0807d16a81914d5f6c",
@@ -190,6 +182,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -199,23 +195,27 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_sysportlet1"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-      },
       "name" : "dashboard_sysportlet1",
       "modelid" : "2bf9b21407bcb3dd3b61553b782019b0"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colMD" : 22,
       "colLG" : 22,
       "colMDOffset" : 1,
       "colLGOffset" : 1,
+      "colMD" : 22,
       "layout" : "TABLE_24COL"
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -224,17 +224,9 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container1"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
     "codeName" : "projectDashboardViewdashboard_container1",
     "name" : "dashboard_container1"
   }, {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getContentPSControl" : {
         "name" : "dashboard_sysportlet2_chart"
@@ -247,6 +239,11 @@
           "index" : 0,
           "id" : "0"
         },
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -254,11 +251,6 @@
           "name" : "[Caseresult]无坐标系[0]",
           "id" : "0"
         } ],
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "controlType" : "CHART",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "TYPE",
@@ -313,6 +305,10 @@
           "id" : "fetch"
         },
         "readOnly" : true,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -321,63 +317,63 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchRePortCase_Project"
             },
-            "actionType" : "DEDATASET",
-            "name" : "fetch"
-          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
+            "actionType" : "DEDATASET",
+            "name" : "fetch"
+          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -387,16 +383,12 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-        },
         "height" : 300.0,
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseTypeProject.json",
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseTypeProject.json",
         "logicName" : "CaseTypeProject",
         "name" : "dashboard_sysportlet2_chart",
         "modelid" : "ddd1b509a21a63d6819b7dbcae8f44c5",
@@ -418,6 +410,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -427,23 +423,27 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_sysportlet2"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-      },
       "name" : "dashboard_sysportlet2",
       "modelid" : "0cea03926c34d16d8751989777eddb0c"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colMD" : 22,
       "colLG" : 22,
       "colMDOffset" : 1,
       "colLGOffset" : 1,
+      "colMD" : 22,
       "layout" : "TABLE_24COL"
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -452,17 +452,9 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container2"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
     "codeName" : "projectDashboardViewdashboard_container2",
     "name" : "dashboard_container2"
   }, {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getContentPSControl" : {
         "name" : "dashboard_sysportlet3_chart"
@@ -475,6 +467,11 @@
           "index" : 0,
           "id" : "0"
         },
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -482,11 +479,6 @@
           "name" : "[Caseresult]无坐标系[0]",
           "id" : "0"
         } ],
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "controlType" : "CHART",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "MODULENAME",
@@ -541,6 +533,10 @@
           "id" : "fetch"
         },
         "readOnly" : true,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -549,63 +545,63 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchModuleRePortCase_Project"
             },
-            "actionType" : "DEDATASET",
-            "name" : "fetch"
-          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
+            "actionType" : "DEDATASET",
+            "name" : "fetch"
+          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -615,16 +611,12 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-        },
         "height" : 300.0,
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseModuleProject.json",
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseModuleProject.json",
         "logicName" : "CaseModuleProject",
         "name" : "dashboard_sysportlet3_chart",
         "modelid" : "153c853e5379ec9d269e963613e2f260",
@@ -643,6 +635,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -652,23 +648,27 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_sysportlet3"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-      },
       "name" : "dashboard_sysportlet3",
       "modelid" : "da080e48178460445e28e6820c5ca65d"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colMD" : 22,
       "colLG" : 22,
       "colMDOffset" : 1,
       "colLGOffset" : 1,
+      "colMD" : 22,
       "layout" : "TABLE_24COL"
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -677,17 +677,9 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container3"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
     "codeName" : "projectDashboardViewdashboard_container3",
     "name" : "dashboard_container3"
   }, {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getContentPSControl" : {
         "name" : "dashboard_sysportlet4_chart"
@@ -700,6 +692,11 @@
           "index" : 0,
           "id" : "0"
         },
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -707,11 +704,6 @@
           "name" : "[Caseresult]无坐标系[0]",
           "id" : "0"
         } ],
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "controlType" : "CHART",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "LASTRUNNER",
@@ -766,6 +758,10 @@
           "id" : "fetch"
         },
         "readOnly" : true,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -774,63 +770,63 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchRunERRePortCase_Project"
             },
-            "actionType" : "DEDATASET",
-            "name" : "fetch"
-          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
+            "actionType" : "DEDATASET",
+            "name" : "fetch"
+          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -840,16 +836,12 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-        },
         "height" : 300.0,
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseLASTRUNNERProject.json",
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseLASTRUNNERProject.json",
         "logicName" : "CaseLASTRUNNERProject",
         "name" : "dashboard_sysportlet4_chart",
         "modelid" : "d6647a6ed173d8cff11bd40fb0e98c89",
@@ -871,6 +863,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -880,23 +876,27 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_sysportlet4"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-      },
       "name" : "dashboard_sysportlet4",
       "modelid" : "37e9625909ffaea67369e88ff4068db8"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colMD" : 22,
       "colLG" : 22,
       "colMDOffset" : 1,
       "colLGOffset" : 1,
+      "colMD" : 22,
       "layout" : "TABLE_24COL"
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -905,17 +905,9 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container4"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
     "codeName" : "projectDashboardViewdashboard_container4",
     "name" : "dashboard_container4"
   }, {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getContentPSControl" : {
         "name" : "dashboard_bugseverity_chart"
@@ -928,6 +920,11 @@
           "index" : 0,
           "id" : "0"
         },
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -935,20 +932,15 @@
           "name" : "[BugSeverity_Project]无坐标系[0]",
           "id" : "0"
         } ],
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "controlType" : "CHART",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "SEVERITY",
           "seriesType" : "pie",
-          "eChartsType" : "pie",
           "getCatalogPSCodeList" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
           },
+          "eChartsType" : "pie",
           "getPSChartCoordinateSystem" : {
             "modelref" : true,
             "id" : "0"
@@ -1004,6 +996,10 @@
           "id" : "fetch"
         },
         "readOnly" : true,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -1012,63 +1008,63 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchBuildProduceBugSeverity_Project"
             },
-            "actionType" : "DEDATASET",
-            "name" : "fetch"
-          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
+            "actionType" : "DEDATASET",
+            "name" : "fetch"
+          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -1078,16 +1074,12 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
         "height" : 300.0,
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugSeverity_Project.json",
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugSeverity_Project.json",
         "logicName" : "BugSeverity_Project",
         "name" : "dashboard_bugseverity_chart",
         "modelid" : "288d42bfc9487f885fbaee666dbf3041",
@@ -1106,6 +1098,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -1115,23 +1111,27 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_BugSeverity"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-      },
       "name" : "dashboard_BugSeverity",
       "modelid" : "07ef746fa127ef585142cf8434a9e748"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colMD" : 22,
       "colLG" : 22,
       "colMDOffset" : 1,
       "colLGOffset" : 1,
+      "colMD" : 22,
       "layout" : "TABLE_24COL"
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -1140,17 +1140,9 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container5"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
     "codeName" : "projectDashboardViewdashboard_container5",
     "name" : "dashboard_container5"
   }, {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getContentPSControl" : {
         "name" : "dashboard_bugtypeproject_chart"
@@ -1163,6 +1155,11 @@
           "index" : 0,
           "id" : "0"
         },
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -1170,11 +1167,6 @@
           "name" : "[BugType_Project]无坐标系[0]",
           "id" : "0"
         } ],
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "controlType" : "CHART",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "TYPE",
@@ -1228,6 +1220,10 @@
           "id" : "fetch"
         },
         "readOnly" : true,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -1236,63 +1232,63 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchBuildProduceBugType_Project"
             },
-            "actionType" : "DEDATASET",
-            "name" : "fetch"
-          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
+            "actionType" : "DEDATASET",
+            "name" : "fetch"
+          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -1302,16 +1298,12 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
         "height" : 300.0,
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugType_Project.json",
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugType_Project.json",
         "logicName" : "BugType_Project",
         "name" : "dashboard_bugtypeproject_chart",
         "modelid" : "273b4c306ff899b963ec7c426513b751",
@@ -1330,6 +1322,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -1339,22 +1335,26 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_BugTypeProject"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-      },
       "name" : "dashboard_BugTypeProject",
       "modelid" : "7b3b1a95e4926ec7392036f81e7caff7"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
+      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -1363,17 +1363,9 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container6"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
     "codeName" : "projectDashboardViewdashboard_container6",
     "name" : "dashboard_container6"
   }, {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getContentPSControl" : {
         "name" : "dashboard_bugstatusproject_chart"
@@ -1386,6 +1378,11 @@
           "index" : 0,
           "id" : "0"
         },
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -1393,20 +1390,15 @@
           "name" : "[BugStatus]无坐标系[0]",
           "id" : "0"
         } ],
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "controlType" : "CHART",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "Status",
           "seriesType" : "pie",
-          "eChartsType" : "pie",
           "getCatalogPSCodeList" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
           },
+          "eChartsType" : "pie",
           "getPSChartCoordinateSystem" : {
             "modelref" : true,
             "id" : "0"
@@ -1462,6 +1454,10 @@
           "id" : "fetch"
         },
         "readOnly" : true,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -1470,63 +1466,63 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchBuildProduceBugStatus_Project"
             },
-            "actionType" : "DEDATASET",
-            "name" : "fetch"
-          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
+            "actionType" : "DEDATASET",
+            "name" : "fetch"
+          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -1536,16 +1532,12 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
         "height" : 300.0,
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugStatus_Project.json",
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugStatus_Project.json",
         "logicName" : "BugStatus_Project",
         "name" : "dashboard_bugstatusproject_chart",
         "modelid" : "e3811e4748ec81725f9d4784b0e5ca1b",
@@ -1564,6 +1556,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -1573,22 +1569,26 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_BugStatusProject"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-      },
       "name" : "dashboard_BugStatusProject",
       "modelid" : "4b6b9402f26d07446355cffc4336ce44"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
+      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -1597,17 +1597,9 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container7"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
     "codeName" : "projectDashboardViewdashboard_container7",
     "name" : "dashboard_container7"
   }, {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getContentPSControl" : {
         "name" : "dashboard_bugresolutionproject_chart"
@@ -1620,6 +1612,11 @@
           "index" : 0,
           "id" : "0"
         },
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -1627,20 +1624,15 @@
           "name" : "[BugResolution_Project]无坐标系[0]",
           "id" : "0"
         } ],
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "controlType" : "CHART",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "RESOLUTION",
           "seriesType" : "pie",
-          "eChartsType" : "pie",
           "getCatalogPSCodeList" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
           },
+          "eChartsType" : "pie",
           "getPSChartCoordinateSystem" : {
             "modelref" : true,
             "id" : "0"
@@ -1696,6 +1688,10 @@
           "id" : "fetch"
         },
         "readOnly" : true,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -1704,63 +1700,63 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchBuildProduceBugResolution_Project"
             },
-            "actionType" : "DEDATASET",
-            "name" : "fetch"
-          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
+            "actionType" : "DEDATASET",
+            "name" : "fetch"
+          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -1770,16 +1766,12 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
         "height" : 300.0,
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugResolution_Project.json",
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugResolution_Project.json",
         "logicName" : "BugResolution_Project",
         "name" : "dashboard_bugresolutionproject_chart",
         "modelid" : "5176ec1ae8f7b14238220d4fd0bc4ed9",
@@ -1798,6 +1790,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -1807,22 +1803,26 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_BugResolutionProject"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-      },
       "name" : "dashboard_BugResolutionProject",
       "modelid" : "23be2fbba05349f3904b0caae06f0f64"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
+      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -1831,17 +1831,9 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container8"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
     "codeName" : "projectDashboardViewdashboard_container8",
     "name" : "dashboard_container8"
   }, {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getContentPSControl" : {
         "name" : "dashboard_sysportlet13_chart"
@@ -1854,6 +1846,11 @@
           "index" : 0,
           "id" : "0"
         },
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -1861,11 +1858,6 @@
           "name" : "[BugOpenedBy_Project]无坐标系[0]",
           "id" : "0"
         } ],
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "controlType" : "CHART",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "OPENEDBY",
@@ -1919,6 +1911,10 @@
           "id" : "fetch"
         },
         "readOnly" : true,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -1927,63 +1923,63 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchBuildProduceBugOpenedBy_Project"
             },
-            "actionType" : "DEDATASET",
-            "name" : "fetch"
-          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
+            "actionType" : "DEDATASET",
+            "name" : "fetch"
+          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -1993,16 +1989,12 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
         "height" : 300.0,
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugOpenedBy_Project.json",
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugOpenedBy_Project.json",
         "logicName" : "BugOpenedBy_Project",
         "name" : "dashboard_sysportlet13_chart",
         "modelid" : "39a339f11202bfa1cd8bfff50a3d1d95",
@@ -2021,6 +2013,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -2030,22 +2026,26 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_sysportlet13"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-      },
       "name" : "dashboard_sysportlet13",
       "modelid" : "5eb45fe47581d1d1f53de66e95fa3566"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
+      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -2054,17 +2054,9 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container9"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
     "codeName" : "projectDashboardViewdashboard_container9",
     "name" : "dashboard_container9"
   }, {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getContentPSControl" : {
         "name" : "dashboard_bugmoduleproject_chart"
@@ -2077,6 +2069,11 @@
           "index" : 0,
           "id" : "0"
         },
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -2084,11 +2081,6 @@
           "name" : "[BugModule_Project]无坐标系[0]",
           "id" : "0"
         } ],
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "controlType" : "CHART",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "MODULENAME",
@@ -2143,6 +2135,10 @@
           "id" : "fetch"
         },
         "readOnly" : true,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -2151,63 +2147,63 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchBuildProduceBugModule_Project"
             },
-            "actionType" : "DEDATASET",
-            "name" : "fetch"
-          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
+            "actionType" : "DEDATASET",
+            "name" : "fetch"
+          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -2217,16 +2213,12 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
         "height" : 300.0,
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugModule_Project.json",
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugModule_Project.json",
         "logicName" : "BugModule_Project",
         "name" : "dashboard_bugmoduleproject_chart",
         "modelid" : "5e392cf90e2d5411a5fcbfa2379e94ac",
@@ -2245,6 +2237,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -2254,22 +2250,26 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_BugModuleProject"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-      },
       "name" : "dashboard_BugModuleProject",
       "modelid" : "9ac1ec7d0ce5e49a40dc0e0aa0054262"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
+      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -2278,17 +2278,9 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container10"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
     "codeName" : "projectDashboardViewdashboard_container10",
     "name" : "dashboard_container10"
   }, {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getPSControls" : [ {
       "getContentPSControl" : {
         "name" : "dashboard_sysportlet15_chart"
@@ -2301,6 +2293,11 @@
           "index" : 0,
           "id" : "0"
         },
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -2308,11 +2305,6 @@
           "name" : "[BugResolvedBy_Project]无坐标系[0]",
           "id" : "0"
         } ],
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "controlType" : "CHART",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "RESOLVEDBY",
@@ -2367,6 +2359,10 @@
           "id" : "fetch"
         },
         "readOnly" : true,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -2375,63 +2371,63 @@
         "getPSControlHandler" : {
           "userDRAction" : "READ",
           "getPSHandlerActions" : [ {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "UPDATE",
             "actionName" : "Update",
             "actionType" : "DEACTION",
             "name" : "update"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "FetchBuildProduceBugRESOLVEDBY_Project"
             },
-            "actionType" : "DEDATASET",
-            "name" : "fetch"
-          }, {
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
+            "actionType" : "DEDATASET",
+            "name" : "fetch"
+          }, {
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "DELETE",
             "actionName" : "Remove",
             "actionType" : "DEACTION",
             "name" : "remove"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "READ",
             "actionName" : "Get",
             "actionType" : "DEACTION",
             "name" : "load"
           }, {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             },
             "dataAccessAction" : "CREATE",
             "actionName" : "Create",
@@ -2441,16 +2437,12 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
         "height" : 300.0,
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugResolvedBy_Project.json",
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugResolvedBy_Project.json",
         "logicName" : "BugResolvedBy_Project",
         "name" : "dashboard_sysportlet15_chart",
         "modelid" : "701eb1331183798c32e947cfac7ddbf9",
@@ -2469,6 +2461,10 @@
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -2478,22 +2474,26 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_sysportlet15"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-      },
       "name" : "dashboard_sysportlet15",
       "modelid" : "494c74e95e638723935489ec5f14e18e"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
+      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
     "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
@@ -2502,19 +2502,19 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container11"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
     "codeName" : "projectDashboardViewdashboard_container11",
     "name" : "dashboard_container11"
   } ],
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
   "controlType" : "DASHBOARD",
-  "hookEventNames" : [ "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
   },
+  "hookEventNames" : [ "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport/PSDASHBOARDS/ProjectMain.json",
   "logicName" : "报告（项目）",
   "modelid" : "ae03acf710d901c5b781d7b9615c2dc4"

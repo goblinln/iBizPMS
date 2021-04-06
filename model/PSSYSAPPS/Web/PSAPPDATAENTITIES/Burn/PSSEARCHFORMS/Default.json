@@ -1,22 +1,16 @@
 {
   "searchButtonStyle" : "DEFAULT",
-  "enableFilterSave" : false,
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
+  "enableFilterSave" : false,
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "getPSDEFormItems" : [ {
-    "id" : "isweekend",
-    "dataType" : 25,
-    "createDV" : "5"
-  } ],
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "inputTipClosable" : false,
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -27,25 +21,25 @@
         "editorHeight" : 29.0,
         "name" : "isweekend"
       },
-      "emptyCaption" : false,
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "showCaption" : true,
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "间隔",
       "allowEmpty" : true,
       "createDV" : "5",
-      "labelWidth" : 50,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 50,
       "itemHeight" : 29.0,
-      "hidden" : false,
+      "showCaption" : true,
       "getPSLayoutPos" : {
+        "colLG" : 24,
         "colSM" : 24,
         "colXS" : 24,
         "colMD" : 24,
-        "colLG" : 24,
         "layout" : "TABLE_24COL"
       },
       "getPSSysCss" : {
@@ -56,17 +50,23 @@
       "detailStyle" : "DEFAULT",
       "name" : "isweekend"
     } ],
+    "infoGroupMode" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "infoGroupMode" : false,
     "codeName" : "formpage1",
     "caption" : "常规条件",
     "detailType" : "FORMPAGE",
     "detailStyle" : "DEFAULT",
     "name" : "formpage1"
   } ],
+  "getPSDEFormItems" : [ {
+    "id" : "isweekend",
+    "dataType" : 25,
+    "createDV" : "5"
+  } ],
+  "noTabHeader" : true,
   "codeName" : "Default",
   "formStyle" : "SEARCHBAR",
   "tabHeaderPos" : "TOP",

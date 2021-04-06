@@ -23,15 +23,101 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
+  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
-  "enableAutoSave" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "emptyCaption" : true,
+      "getPSEditor" : {
+        "getPSSysPFPlugin" : {
+          "pluginType" : "EDITOR_CUSTOMSTYLE",
+          "pluginCode" : "INFO"
+        },
+        "editorType" : "HTMLEDITOR",
+        "editorStyle" : "INFO",
+        "name" : "report"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "REPORT",
+        "codeName" : "Report"
+      },
+      "hidden" : false,
+      "dataType" : 21,
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 10,
+      "showCaption" : true,
+      "getPSDEFDGroupLogics" : [ {
+        "logicCat" : "PANELVISIBLE",
+        "getPSDEFDLogics" : [ {
+          "condOP" : "ISNOTNULL",
+          "dEFDName" : "report",
+          "logicType" : "SINGLE",
+          "name" : "report 值不为空(NotNil)"
+        } ],
+        "notMode" : false,
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "name" : "表单成员[report][面板显示]逻辑"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "report",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "report"
+    }, {
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "contentType" : "RAW",
+      "rawContent" : "无",
+      "getPSDEFDGroupLogics" : [ {
+        "logicCat" : "PANELVISIBLE",
+        "getPSDEFDLogics" : [ {
+          "condOP" : "ISNULL",
+          "dEFDName" : "report",
+          "logicType" : "SINGLE",
+          "name" : "report 值为空(Nil)"
+        } ],
+        "notMode" : false,
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "name" : "表单成员[rawitem1][面板显示]逻辑"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "rawitem1",
+      "detailType" : "RAWITEM",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "rawitem1"
+    } ],
+    "infoGroupMode" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srforikey",
     "hidden" : true,
@@ -85,99 +171,13 @@
     }
   } ],
   "noTabHeader" : true,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "editorType" : "HTMLEDITOR",
-        "getPSSysPFPlugin" : {
-          "pluginType" : "EDITOR_CUSTOMSTYLE",
-          "pluginCode" : "INFO"
-        },
-        "editorStyle" : "INFO",
-        "name" : "report"
-      },
-      "emptyCaption" : true,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "REPORT",
-        "codeName" : "Report"
-      },
-      "showCaption" : true,
-      "dataType" : 21,
-      "allowEmpty" : true,
-      "labelWidth" : 10,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSDEFDGroupLogics" : [ {
-        "logicCat" : "PANELVISIBLE",
-        "getPSDEFDLogics" : [ {
-          "dEFDName" : "report",
-          "condOP" : "ISNOTNULL",
-          "logicType" : "SINGLE",
-          "name" : "report 值不为空(NotNil)"
-        } ],
-        "notMode" : false,
-        "groupOP" : "AND",
-        "logicType" : "GROUP",
-        "name" : "表单成员[report][面板显示]逻辑"
-      } ],
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "report",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "report"
-    }, {
-      "rawItemHeight" : -1.0,
-      "rawItemWidth" : -1.0,
-      "contentType" : "RAW",
-      "rawContent" : "无",
-      "getPSDEFDGroupLogics" : [ {
-        "logicCat" : "PANELVISIBLE",
-        "getPSDEFDLogics" : [ {
-          "dEFDName" : "report",
-          "condOP" : "ISNULL",
-          "logicType" : "SINGLE",
-          "name" : "report 值为空(Nil)"
-        } ],
-        "notMode" : false,
-        "groupOP" : "AND",
-        "logicType" : "GROUP",
-        "name" : "表单成员[rawitem1][面板显示]逻辑"
-      } ],
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "showCaption" : true,
-      "codeName" : "rawitem1",
-      "detailType" : "RAWITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "rawitem1"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "基本信息",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "codeName" : "Tosumup",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
   },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport/PSFORMS/Tosumup.json",
   "logicName" : "总结",
   "modelid" : "4fa1d84ddfd765a8b4dfd70c816fea17"

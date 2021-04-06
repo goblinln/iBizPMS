@@ -4,109 +4,108 @@
       "name" : "INSTALL",
       "codeName" : "Install"
     },
-    "dataType" : 9,
-    "name" : "install"
+    "name" : "install",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "DESIGNDEFECT",
       "codeName" : "Designdefect"
     },
-    "dataType" : 9,
-    "name" : "designdefect"
+    "name" : "designdefect",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "OTHERS",
       "codeName" : "Others"
     },
-    "dataType" : 9,
-    "name" : "others"
+    "name" : "others",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "STANDARD",
       "codeName" : "Standard"
     },
-    "dataType" : 9,
-    "name" : "standard"
+    "name" : "standard",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "AUTOMATION",
       "codeName" : "Automation"
     },
-    "dataType" : 9,
-    "name" : "automation"
+    "name" : "automation",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "SECURITY",
       "codeName" : "Security"
     },
-    "dataType" : 9,
-    "name" : "security"
+    "name" : "security",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "CODEERROR",
       "codeName" : "Codeerror"
     },
-    "dataType" : 9,
-    "name" : "codeerror"
+    "name" : "codeerror",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
-    "dataType" : 9,
-    "name" : "bugcnt"
+    "name" : "bugcnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "PERFORMANCE",
       "codeName" : "Performance"
     },
-    "dataType" : 9,
-    "name" : "performance"
+    "name" : "performance",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "CONFIG",
       "codeName" : "Config"
     },
-    "dataType" : 9,
-    "name" : "config"
+    "name" : "config",
+    "dataType" : 9
   } ],
-  "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -128,37 +127,38 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "linkValueItem" : "srfkey",
-    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "dataItemName" : "name",
+    "enableLinkView" : true,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
     "excelCaption" : "项目名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -171,11 +171,11 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
-    "dataItemName" : "codeerror",
     "getPSAppDEField" : {
       "name" : "CODEERROR",
       "codeName" : "Codeerror"
     },
+    "dataItemName" : "codeerror",
     "excelCaption" : "代码错误",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -189,11 +189,11 @@
     "aggMode" : "SUM",
     "name" : "codeerror"
   }, {
-    "dataItemName" : "config",
     "getPSAppDEField" : {
       "name" : "CONFIG",
       "codeName" : "Config"
     },
+    "dataItemName" : "config",
     "excelCaption" : "配置相关",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -207,11 +207,11 @@
     "aggMode" : "SUM",
     "name" : "config"
   }, {
-    "dataItemName" : "designdefect",
     "getPSAppDEField" : {
       "name" : "DESIGNDEFECT",
       "codeName" : "Designdefect"
     },
+    "dataItemName" : "designdefect",
     "excelCaption" : "设计缺陷",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -225,11 +225,11 @@
     "aggMode" : "SUM",
     "name" : "designdefect"
   }, {
-    "dataItemName" : "install",
     "getPSAppDEField" : {
       "name" : "INSTALL",
       "codeName" : "Install"
     },
+    "dataItemName" : "install",
     "excelCaption" : "安装部署",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -243,11 +243,11 @@
     "aggMode" : "SUM",
     "name" : "install"
   }, {
-    "dataItemName" : "performance",
     "getPSAppDEField" : {
       "name" : "PERFORMANCE",
       "codeName" : "Performance"
     },
+    "dataItemName" : "performance",
     "excelCaption" : "性能问题",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -261,11 +261,11 @@
     "aggMode" : "SUM",
     "name" : "performance"
   }, {
-    "dataItemName" : "security",
     "getPSAppDEField" : {
       "name" : "SECURITY",
       "codeName" : "Security"
     },
+    "dataItemName" : "security",
     "excelCaption" : "安全相关",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -279,11 +279,11 @@
     "aggMode" : "SUM",
     "name" : "security"
   }, {
-    "dataItemName" : "standard",
     "getPSAppDEField" : {
       "name" : "STANDARD",
       "codeName" : "Standard"
     },
+    "dataItemName" : "standard",
     "excelCaption" : "标准规范",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -297,11 +297,11 @@
     "aggMode" : "SUM",
     "name" : "standard"
   }, {
-    "dataItemName" : "automation",
     "getPSAppDEField" : {
       "name" : "AUTOMATION",
       "codeName" : "Automation"
     },
+    "dataItemName" : "automation",
     "excelCaption" : "测试脚本",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -315,11 +315,11 @@
     "aggMode" : "SUM",
     "name" : "automation"
   }, {
-    "dataItemName" : "others",
     "getPSAppDEField" : {
       "name" : "OTHERS",
       "codeName" : "Others"
     },
+    "dataItemName" : "others",
     "excelCaption" : "其他",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -333,11 +333,11 @@
     "aggMode" : "SUM",
     "name" : "others"
   }, {
-    "dataItemName" : "bugcnt",
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
+    "dataItemName" : "bugcnt",
     "excelCaption" : "Bug总数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -353,21 +353,21 @@
   } ],
   "codeName" : "ProjectBugTypeSum",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 1000,
   "aggMode" : "PAGE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectBugTypeSum.json",
   "logicName" : "项目bug类型统计",
   "modelid" : "1226cd87815a2a0b461bf3a561e6b0c3"

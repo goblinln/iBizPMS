@@ -3,11 +3,11 @@
     "name" : "TEAMID",
     "codeName" : "TeamId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "TEAMNAME",
     "codeName" : "TeamName"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "masterRS" : 0,
   "removeOrder" : 0,

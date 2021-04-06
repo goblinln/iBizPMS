@@ -1,4 +1,12 @@
 {
+  "getValuePSAppDEField" : {
+    "name" : "SYS_ROLEID",
+    "codeName" : "RoleId"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "SYS_ROLENAME",
+    "codeName" : "RoleName"
+  },
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchDefault"
@@ -6,14 +14,6 @@
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysRole.json"
-  },
-  "getTextPSAppDEField" : {
-    "name" : "SYS_ROLENAME",
-    "codeName" : "RoleName"
-  },
-  "getValuePSAppDEField" : {
-    "name" : "SYS_ROLEID",
-    "codeName" : "RoleId"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

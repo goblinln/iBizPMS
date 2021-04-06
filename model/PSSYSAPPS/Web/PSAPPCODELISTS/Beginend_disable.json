@@ -3,13 +3,13 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
   },
-  "getPSCodeItems" : [ {
-    "codeName" : "On",
-    "text" : "暂时不设定时间",
-    "value" : "on"
-  } ],
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "getPSCodeItems" : [ {
+    "value" : "on",
+    "codeName" : "On",
+    "text" : "暂时不设定时间"
+  } ],
   "codeName" : "Beginend_disable",
   "emptyText" : "未定义",
   "enableCache" : true,

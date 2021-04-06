@@ -5,6 +5,11 @@
     "index" : 0,
     "id" : "0"
   },
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
     "type" : "NONE",
@@ -12,20 +17,15 @@
     "name" : "[Caseresult]无坐标系[0]",
     "id" : "0"
   } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "index" : 0,
-    "id" : "0"
-  },
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "PRI",
     "seriesType" : "pie",
-    "eChartsType" : "pie",
     "getCatalogPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
     },
+    "eChartsType" : "pie",
     "getPSChartCoordinateSystem" : {
       "modelref" : true,
       "id" : "0"
@@ -89,11 +89,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
   },
   "height" : 300.0,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CurOpenedCase.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CurOpenedCase.json",
   "logicName" : "CurOpenedCase",
   "modelid" : "5b60ad4bb21c7faf9c631c8c13e42149",
   "getUserParam" : {

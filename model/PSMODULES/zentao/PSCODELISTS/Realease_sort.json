@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,21 +12,21 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "all",
     "data" : "{}",
     "codeName" : "All",
-    "text" : "所有",
-    "value" : "all"
+    "text" : "所有"
   }, {
+    "value" : "normal",
     "data" : "{\"n_status_eq\":\"normal\"}",
     "codeName" : "Normal",
     "text" : "正常",
     "default" : true,
-    "color" : "rgba(13, 255, 0, 1)",
-    "value" : "normal"
+    "color" : "rgba(13, 255, 0, 1)"
   }, {
+    "value" : "terminate",
     "data" : "{\"n_status_eq\":\"terminate\"}",
     "codeName" : "Terminate",
-    "text" : "停止维护",
-    "value" : "terminate"
+    "text" : "停止维护"
   } ]
 }

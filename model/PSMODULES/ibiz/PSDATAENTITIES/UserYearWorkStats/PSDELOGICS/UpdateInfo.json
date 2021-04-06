@@ -112,11 +112,11 @@
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "qa",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -140,11 +140,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "dev",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -168,11 +168,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "po",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",

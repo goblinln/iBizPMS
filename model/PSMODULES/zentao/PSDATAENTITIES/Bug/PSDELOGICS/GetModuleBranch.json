@@ -98,11 +98,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "MODULE",
         "logicType" : "SINGLE",
         "name" : "Default[MODULE] 值不为空(NotNil)"

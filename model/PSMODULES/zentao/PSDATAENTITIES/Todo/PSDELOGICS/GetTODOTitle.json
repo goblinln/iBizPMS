@@ -48,11 +48,11 @@
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "NOTEQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "NOTEQ",
         "paramValue" : "custom",
         "dstFieldName" : "TYPE",
         "logicType" : "SINGLE",

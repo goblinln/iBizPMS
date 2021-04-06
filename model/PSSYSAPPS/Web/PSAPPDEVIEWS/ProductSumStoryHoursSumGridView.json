@@ -1,11 +1,11 @@
 {
   "rowEditDefault" : false,
+  "enableExport" : true,
   "enableImport" : true,
   "enableRowEdit" : false,
-  "enableExport" : true,
   "gridRowActiveMode" : 0,
-  "expandSearchForm" : true,
   "enableSearch" : true,
+  "expandSearchForm" : true,
   "enableFilter" : true,
   "xDataControlName" : "grid",
   "showCaptionBar" : true,
@@ -15,33 +15,33 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEGRIDVIEW_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEGRIDVIEW_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppViewEngines" : [ {
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "CTRL",
-      "name" : "SEARCHFORM"
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -53,6 +53,10 @@
     },
     "name" : "toolbar_deuiaction2"
   } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+  },
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -60,6 +64,7 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction2"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "getPSSysImage" : {
@@ -75,7 +80,6 @@
         "fullCodeName" : "ExportExcel",
         "name" : "表格界面_导出操作（Excel）"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf1c3@FontAwesome",
         "cssClass" : "fa fa-file-excel-o"
@@ -83,19 +87,19 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
-      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
+      "showCaption" : true,
       "name" : "deuiaction2"
     } ],
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "hookEventNames" : [ "CLICK" ],
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
     },
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "hookEventNames" : [ "CLICK" ],
     "codeName" : "StoryHoursSumGridViewtoolbar",
     "logicName" : "产品汇总表操作栏",
     "name" : "toolbar",
@@ -106,116 +110,115 @@
         "name" : "RELEASEDSTAGESTORYHOURS",
         "codeName" : "Releasedstagestoryhours"
       },
-      "dataType" : 9,
-      "name" : "releasedstagestoryhours"
+      "name" : "releasedstagestoryhours",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "TOTALHOURS",
         "codeName" : "Totalhours"
       },
-      "dataType" : 9,
-      "name" : "totalhours"
+      "name" : "totalhours",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "DEVELOPEDSTAGESTORYHOURS",
         "codeName" : "Developedstagestoryhours"
       },
-      "dataType" : 9,
-      "name" : "developedstagestoryhours"
+      "name" : "developedstagestoryhours",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "WAITSTAGESTORYHOURS",
         "codeName" : "Waitstagestoryhours"
       },
-      "dataType" : 9,
-      "name" : "waitstagestoryhours"
+      "name" : "waitstagestoryhours",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "CLOSEDSTAGESTORYHOURS",
         "codeName" : "Closedstagestoryhours"
       },
-      "dataType" : 9,
-      "name" : "closedstagestoryhours"
+      "name" : "closedstagestoryhours",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "TESTINGSTAGESTORYHOURS",
         "codeName" : "Testingstagestoryhours"
       },
-      "dataType" : 9,
-      "name" : "testingstagestoryhours"
+      "name" : "testingstagestoryhours",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "TESTEDSTAGESTORYHOURS",
         "codeName" : "Testedstagestoryhours"
       },
-      "dataType" : 9,
-      "name" : "testedstagestoryhours"
+      "name" : "testedstagestoryhours",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "VERIFIEDSTAGESTORYHOURS",
         "codeName" : "Verifiedstagestoryhours"
       },
-      "dataType" : 9,
-      "name" : "verifiedstagestoryhours"
+      "name" : "verifiedstagestoryhours",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "PROJECTEDSTAGESTORYHOURS",
         "codeName" : "Projectedstagestoryhours"
       },
-      "dataType" : 9,
-      "name" : "projectedstagestoryhours"
+      "name" : "projectedstagestoryhours",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "DEVELOPINGSTAGESTORYHOURS",
         "codeName" : "Developingstagestoryhours"
       },
-      "dataType" : 9,
-      "name" : "developingstagestoryhours"
+      "name" : "developingstagestoryhours",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PLANEDSTAGESTORYHOURS",
         "codeName" : "Planedstagestoryhours"
       },
-      "dataType" : 9,
-      "name" : "planedstagestoryhours"
+      "name" : "planedstagestoryhours",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "PO",
         "codeName" : "PO"
       },
-      "dataType" : 25,
-      "name" : "po"
+      "name" : "po",
+      "dataType" : 25
     } ],
-    "singleSelect" : true,
     "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
@@ -237,30 +240,31 @@
       "name" : "srfkey"
     } ],
     "hasWFDataItems" : false,
+    "columnEnableLink" : 2,
     "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-      },
       "getPSAppDEMethod" : {
         "modelref" : true,
         "id" : "Remove"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
       },
       "dataAccessAction" : "DELETE",
       "actionName" : "Remove",
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "columnEnableLink" : 2,
+    "singleSelect" : true,
+    "enablePagingBar" : false,
     "enableRowEdit" : false,
     "controlType" : "GRID",
-    "enablePagingBar" : false,
     "getPSDEGridColumns" : [ {
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
       "excelCaption" : "产品名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -273,7 +277,6 @@
       "widthUnit" : "STAR",
       "name" : "name"
     }, {
-      "dataItemName" : "po",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -282,6 +285,7 @@
         "name" : "PO",
         "codeName" : "PO"
       },
+      "dataItemName" : "po",
       "excelCaption" : "产品负责人",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
@@ -294,11 +298,11 @@
       "widthUnit" : "PX",
       "name" : "po"
     }, {
-      "dataItemName" : "waitstagestoryhours",
       "getPSAppDEField" : {
         "name" : "WAITSTAGESTORYHOURS",
         "codeName" : "Waitstagestoryhours"
       },
+      "dataItemName" : "waitstagestoryhours",
       "excelCaption" : "未开始",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -312,11 +316,11 @@
       "aggMode" : "SUM",
       "name" : "waitstagestoryhours"
     }, {
-      "dataItemName" : "planedstagestoryhours",
       "getPSAppDEField" : {
         "name" : "PLANEDSTAGESTORYHOURS",
         "codeName" : "Planedstagestoryhours"
       },
+      "dataItemName" : "planedstagestoryhours",
       "excelCaption" : "已计划",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -330,11 +334,11 @@
       "aggMode" : "SUM",
       "name" : "planedstagestoryhours"
     }, {
-      "dataItemName" : "projectedstagestoryhours",
       "getPSAppDEField" : {
         "name" : "PROJECTEDSTAGESTORYHOURS",
         "codeName" : "Projectedstagestoryhours"
       },
+      "dataItemName" : "projectedstagestoryhours",
       "excelCaption" : "已立项",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -348,11 +352,11 @@
       "aggMode" : "SUM",
       "name" : "projectedstagestoryhours"
     }, {
-      "dataItemName" : "developingstagestoryhours",
       "getPSAppDEField" : {
         "name" : "DEVELOPINGSTAGESTORYHOURS",
         "codeName" : "Developingstagestoryhours"
       },
+      "dataItemName" : "developingstagestoryhours",
       "excelCaption" : "研发中",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -366,11 +370,11 @@
       "aggMode" : "SUM",
       "name" : "developingstagestoryhours"
     }, {
-      "dataItemName" : "developedstagestoryhours",
       "getPSAppDEField" : {
         "name" : "DEVELOPEDSTAGESTORYHOURS",
         "codeName" : "Developedstagestoryhours"
       },
+      "dataItemName" : "developedstagestoryhours",
       "excelCaption" : "研发完毕",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -384,11 +388,11 @@
       "aggMode" : "SUM",
       "name" : "developedstagestoryhours"
     }, {
-      "dataItemName" : "testingstagestoryhours",
       "getPSAppDEField" : {
         "name" : "TESTINGSTAGESTORYHOURS",
         "codeName" : "Testingstagestoryhours"
       },
+      "dataItemName" : "testingstagestoryhours",
       "excelCaption" : "测试中",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -402,11 +406,11 @@
       "aggMode" : "SUM",
       "name" : "testingstagestoryhours"
     }, {
-      "dataItemName" : "testedstagestoryhours",
       "getPSAppDEField" : {
         "name" : "TESTEDSTAGESTORYHOURS",
         "codeName" : "Testedstagestoryhours"
       },
+      "dataItemName" : "testedstagestoryhours",
       "excelCaption" : "测试完毕",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -420,11 +424,11 @@
       "aggMode" : "SUM",
       "name" : "testedstagestoryhours"
     }, {
-      "dataItemName" : "verifiedstagestoryhours",
       "getPSAppDEField" : {
         "name" : "VERIFIEDSTAGESTORYHOURS",
         "codeName" : "Verifiedstagestoryhours"
       },
+      "dataItemName" : "verifiedstagestoryhours",
       "excelCaption" : "已验收",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -438,11 +442,11 @@
       "aggMode" : "SUM",
       "name" : "verifiedstagestoryhours"
     }, {
-      "dataItemName" : "releasedstagestoryhours",
       "getPSAppDEField" : {
         "name" : "RELEASEDSTAGESTORYHOURS",
         "codeName" : "Releasedstagestoryhours"
       },
+      "dataItemName" : "releasedstagestoryhours",
       "excelCaption" : "已发布",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -456,11 +460,11 @@
       "aggMode" : "SUM",
       "name" : "releasedstagestoryhours"
     }, {
-      "dataItemName" : "closedstagestoryhours",
       "getPSAppDEField" : {
         "name" : "CLOSEDSTAGESTORYHOURS",
         "codeName" : "Closedstagestoryhours"
       },
+      "dataItemName" : "closedstagestoryhours",
       "excelCaption" : "已关闭",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -474,11 +478,11 @@
       "aggMode" : "SUM",
       "name" : "closedstagestoryhours"
     }, {
-      "dataItemName" : "totalhours",
       "getPSAppDEField" : {
         "name" : "TOTALHOURS",
         "codeName" : "Totalhours"
       },
+      "dataItemName" : "totalhours",
       "excelCaption" : "总工时",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -494,15 +498,19 @@
     } ],
     "codeName" : "ProductStoryHoursSum",
     "enableGroup" : false,
-    "hideHeader" : false,
-    "forceFit" : false,
     "pagingSize" : 10,
     "aggMode" : "PAGE",
     "groupMode" : "NONE",
     "sortMode" : "REMOTE",
+    "hideHeader" : false,
+    "forceFit" : false,
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
     },
     "getPSControlParam" : {
       "autoLoad" : true,
@@ -513,76 +521,76 @@
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
         "actionType" : "DEACTION",
         "name" : "update"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FetchProductStoryHoursSum"
         },
-        "actionType" : "DEDATASET",
-        "name" : "fetch"
-      }, {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
         },
+        "actionType" : "DEDATASET",
+        "name" : "fetch"
+      }, {
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
         },
         "dataAccessAction" : "READ",
         "actionName" : "Get",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "name" : "loaddraft"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -592,24 +600,111 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-    },
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSGRIDS/ProductStoryHoursSum.json",
     "logicName" : "产品需求工时汇总表格",
     "name" : "grid",
     "modelid" : "be8fc1081990f972d23b82ca7eaa7f24"
   }, {
     "searchButtonStyle" : "DEFAULT",
-    "enableFilterSave" : false,
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
+    "enableFilterSave" : false,
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "getPSDEFormPages" : [ {
+      "getPSDEFormDetails" : [ {
+        "rawItemHeight" : -1.0,
+        "rawItemWidth" : -1.0,
+        "contentType" : "RAW",
+        "rawContent" : "<div style=\" padding-top: 6px;  padding-left: 20px;\"> 筛选条件： </div>",
+        "getPSLayoutPos" : {
+          "colLG" : 2,
+          "colLGOffset" : 2,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "rawitem1",
+        "detailType" : "RAWITEM",
+        "detailStyle" : "DEFAULT",
+        "showCaption" : true,
+        "name" : "rawitem1"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "editorType" : "CHECKBOX",
+          "name" : "closed"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "hidden" : false,
+        "dataType" : 25,
+        "caption" : "关闭产品",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "RIGHT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colLG" : 3,
+          "colMD" : 2,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "closed",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "closed"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product.json"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "n_id_eq"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "hidden" : false,
+        "dataType" : 1,
+        "needCodeListConfig" : true,
+        "caption" : "产品",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 50,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colLG" : 6,
+          "colMD" : 6,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "n_id_eq",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "n_id_eq"
+      } ],
+      "infoGroupMode" : false,
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "codeName" : "formpage1",
+      "caption" : "常规条件",
+      "detailType" : "FORMPAGE",
+      "detailStyle" : "DEFAULT",
+      "name" : "formpage1"
+    } ],
     "getPSDEFormItems" : [ {
       "id" : "closed",
       "dataType" : 25
@@ -622,99 +717,12 @@
       }
     } ],
     "noTabHeader" : true,
-    "getPSDEFormPages" : [ {
-      "getPSDEFormDetails" : [ {
-        "rawItemHeight" : -1.0,
-        "rawItemWidth" : -1.0,
-        "contentType" : "RAW",
-        "rawContent" : "<div style=\" padding-top: 6px;  padding-left: 20px;\"> 筛选条件： </div>",
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "colLG" : 2,
-          "colLGOffset" : 2,
-          "layout" : "TABLE_24COL"
-        },
-        "showCaption" : true,
-        "codeName" : "rawitem1",
-        "detailType" : "RAWITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "rawitem1"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "editorType" : "CHECKBOX",
-          "name" : "closed"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "showCaption" : true,
-        "dataType" : 25,
-        "caption" : "关闭产品",
-        "allowEmpty" : true,
-        "labelWidth" : 130,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "RIGHT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 2,
-          "colLG" : 3,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "closed",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "closed"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "singleSelect" : true,
-          "getPSAppCodeList" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product.json"
-          },
-          "editorType" : "DROPDOWNLIST",
-          "name" : "n_id_eq"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
-        "showCaption" : true,
-        "dataType" : 1,
-        "needCodeListConfig" : true,
-        "caption" : "产品",
-        "allowEmpty" : true,
-        "labelWidth" : 50,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 6,
-          "colLG" : 6,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "n_id_eq",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "n_id_eq"
-      } ],
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
-      "infoGroupMode" : false,
-      "codeName" : "formpage1",
-      "caption" : "常规条件",
-      "detailType" : "FORMPAGE",
-      "detailStyle" : "DEFAULT",
-      "name" : "formpage1"
-    } ],
     "codeName" : "ProductStorySum",
     "tabHeaderPos" : "TOP",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -723,35 +731,35 @@
     "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterSearch"
         },
-        "actionType" : "FILTERACTION",
-        "name" : "search"
-      }, {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
         },
+        "actionType" : "FILTERACTION",
+        "name" : "search"
+      }, {
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterGet"
         },
-        "actionType" : "FILTERACTION",
-        "name" : "load"
-      }, {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
         },
+        "actionType" : "FILTERACTION",
+        "name" : "load"
+      }, {
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
         },
         "actionType" : "FILTERACTION",
         "name" : "loaddraft"
@@ -759,19 +767,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-    },
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSSEARCHFORMS/ProductStorySum.json",
     "logicName" : "搜索表单（产品需求汇总下）",
     "name" : "searchform",
     "modelid" : "7f666c41d1c111c3f7c65b3bd6160800"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-  },
   "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
@@ -791,12 +791,12 @@
     "name" : "EDITDATA"
   } ],
   "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction2"
     },
+    "logicTrigger" : "CTRLEVENT",
     "eventArg" : "deuiaction2",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",

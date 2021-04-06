@@ -3,11 +3,11 @@
     "name" : "CASE",
     "codeName" : "IBizCase"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "CASENAME",
     "codeName" : "Casename"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "masterRS" : 0,
   "removeOrder" : 0,

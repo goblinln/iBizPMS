@@ -4,81 +4,80 @@
       "name" : "IMPORTANTBUGCNT",
       "codeName" : "IMPORtantBUGCNT"
     },
-    "dataType" : 9,
-    "name" : "importantbugcnt"
+    "name" : "importantbugcnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "BUGSTORY",
       "codeName" : "BugStory"
     },
-    "dataType" : 9,
-    "name" : "bugstory"
+    "name" : "bugstory",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
-    "dataType" : 9,
-    "name" : "bugcnt"
+    "name" : "bugcnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "FINISHEDSTORYCNT",
       "codeName" : "FinishedStoryCNT"
     },
-    "dataType" : 9,
-    "name" : "finishedstorycnt"
+    "name" : "finishedstorycnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "RESOLVEDBUGCNT",
       "codeName" : "RESOLVEDBUGCNT"
     },
-    "dataType" : 9,
-    "name" : "resolvedbugcnt"
+    "name" : "resolvedbugcnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "dataType" : 9,
-    "name" : "storycnt"
+    "name" : "storycnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "IMPORTANTBUGPERCENT",
       "codeName" : "Importantbugpercent"
     },
-    "dataType" : 25,
-    "name" : "importantbugpercent"
+    "name" : "importantbugpercent",
+    "dataType" : 25
   } ],
-  "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -100,30 +99,31 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
     "excelCaption" : "产品名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -136,11 +136,11 @@
     "widthUnit" : "PX",
     "name" : "name"
   }, {
-    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
+    "dataItemName" : "storycnt",
     "excelCaption" : "需求总数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -154,11 +154,11 @@
     "aggMode" : "SUM",
     "name" : "storycnt"
   }, {
-    "dataItemName" : "finishedstorycnt",
     "getPSAppDEField" : {
       "name" : "FINISHEDSTORYCNT",
       "codeName" : "FinishedStoryCNT"
     },
+    "dataItemName" : "finishedstorycnt",
     "excelCaption" : "已完成的需求数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -172,11 +172,11 @@
     "aggMode" : "SUM",
     "name" : "finishedstorycnt"
   }, {
-    "dataItemName" : "bugcnt",
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
+    "dataItemName" : "bugcnt",
     "excelCaption" : "所有Bug数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -190,11 +190,11 @@
     "aggMode" : "SUM",
     "name" : "bugcnt"
   }, {
-    "dataItemName" : "resolvedbugcnt",
     "getPSAppDEField" : {
       "name" : "RESOLVEDBUGCNT",
       "codeName" : "RESOLVEDBUGCNT"
     },
+    "dataItemName" : "resolvedbugcnt",
     "excelCaption" : "解决Bug数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -208,11 +208,11 @@
     "aggMode" : "SUM",
     "name" : "resolvedbugcnt"
   }, {
-    "dataItemName" : "bugstory",
     "getPSAppDEField" : {
       "name" : "BUGSTORY",
       "codeName" : "BugStory"
     },
+    "dataItemName" : "bugstory",
     "excelCaption" : "需求所提bug数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -226,11 +226,11 @@
     "aggMode" : "SUM",
     "name" : "bugstory"
   }, {
-    "dataItemName" : "importantbugcnt",
     "getPSAppDEField" : {
       "name" : "IMPORTANTBUGCNT",
       "codeName" : "IMPORtantBUGCNT"
     },
+    "dataItemName" : "importantbugcnt",
     "excelCaption" : "重要的Bug数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -244,11 +244,11 @@
     "aggMode" : "SUM",
     "name" : "importantbugcnt"
   }, {
-    "dataItemName" : "importantbugpercent",
     "getPSAppDEField" : {
       "name" : "IMPORTANTBUGPERCENT",
       "codeName" : "Importantbugpercent"
     },
+    "dataItemName" : "importantbugpercent",
     "excelCaption" : "严重bug比",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -264,21 +264,21 @@
   } ],
   "codeName" : "ProductQuantityGird",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 500,
   "aggMode" : "PAGE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats/PSGRIDS/ProductQuantityGird.json",
   "logicName" : "产品质量表主表格",
   "modelid" : "0c41bff6aa9e6544196d87a53def7d04"

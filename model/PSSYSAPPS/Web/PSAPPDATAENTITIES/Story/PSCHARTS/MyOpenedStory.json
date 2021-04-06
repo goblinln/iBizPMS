@@ -5,6 +5,12 @@
     "index" : 0,
     "id" : "0"
   },
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "legendPos" : "BOTTOM",
+    "index" : 0,
+    "id" : "0"
+  },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
     "type" : "NONE",
@@ -12,21 +18,15 @@
     "name" : "[Pri]无坐标系[0]",
     "id" : "0"
   } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "legendPos" : "BOTTOM",
-    "index" : 0,
-    "id" : "0"
-  },
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "PRI",
     "seriesType" : "pie",
-    "eChartsType" : "pie",
     "getCatalogPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json"
     },
+    "eChartsType" : "pie",
     "getPSChartCoordinateSystem" : {
       "modelref" : true,
       "id" : "0"
@@ -89,11 +89,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
   "height" : 300.0,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory.json",
   "logicName" : "MyOpenedStory",
   "modelid" : "96894e73f66dfc1bf9d4cb2b2b6f52e3",
   "getUserParam" : {

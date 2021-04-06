@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,36 +12,36 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "junit",
     "codeName" : "Junit",
-    "text" : "JUnit",
-    "value" : "junit"
+    "text" : "JUnit"
   }, {
+    "value" : "testng",
     "codeName" : "Testng",
-    "text" : "TestNG",
-    "value" : "testng"
+    "text" : "TestNG"
   }, {
+    "value" : "phpunit",
     "codeName" : "Phpunit",
-    "text" : "PHPUnit",
-    "value" : "phpunit"
+    "text" : "PHPUnit"
   }, {
+    "value" : "pytest",
     "codeName" : "Pytest",
-    "text" : "Pytest",
-    "value" : "pytest"
+    "text" : "Pytest"
   }, {
+    "value" : "jtest",
     "codeName" : "Jtest",
-    "text" : "JTest",
-    "value" : "jtest"
+    "text" : "JTest"
   }, {
+    "value" : "cppunit",
     "codeName" : "Cppunit",
-    "text" : "CppUnit",
-    "value" : "cppunit"
+    "text" : "CppUnit"
   }, {
+    "value" : "gtest",
     "codeName" : "Gtest",
-    "text" : "GTest",
-    "value" : "gtest"
+    "text" : "GTest"
   }, {
+    "value" : "qtest",
     "codeName" : "Qtest",
-    "text" : "QTest",
-    "value" : "qtest"
+    "text" : "QTest"
   } ]
 }

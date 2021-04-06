@@ -4,68 +4,67 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "WORK",
       "codeName" : "Work"
     },
-    "dataType" : 21,
-    "name" : "work"
+    "name" : "work",
+    "dataType" : 21
   }, {
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
-    "dataType" : 7,
-    "name" : "consumed"
+    "name" : "consumed",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "DATES",
       "codeName" : "Dates"
     },
     "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "dates"
+    "name" : "dates",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "TASK",
       "codeName" : "Task"
     },
-    "dataType" : 1,
-    "name" : "task"
+    "name" : "task",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
-    "dataType" : 7,
-    "name" : "left"
+    "name" : "left",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 1
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
-  "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : true,
   "enableRowEditOrder" : false,
@@ -122,10 +121,10 @@
   }, {
     "getPSEditor" : {
       "dateTimeFormat" : "YYYY-MM-DD",
-      "editorType" : "DATEPICKEREX_NOTIME",
       "editorParams" : {
         "TIMEFMT" : "YYYY-MM-DD"
       },
+      "editorType" : "DATEPICKEREX_NOTIME",
       "name" : "dates"
     },
     "getPSAppDEField" : {
@@ -172,14 +171,15 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getCreatePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Create"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
     },
     "dataAccessAction" : "CREATE",
     "actionName" : "Create",
@@ -187,13 +187,13 @@
     "name" : "create"
   },
   "getUpdatePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
     },
     "dataAccessAction" : "UPDATE",
     "actionName" : "Update",
@@ -201,13 +201,13 @@
     "name" : "update"
   },
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
@@ -215,13 +215,13 @@
     "name" : "remove"
   },
   "getGetPSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Get"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
     },
     "dataAccessAction" : "READ",
     "actionName" : "Get",
@@ -229,23 +229,23 @@
     "name" : "load"
   },
   "getGetDraftPSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
     },
     "dataAccessAction" : "CREATE",
     "actionName" : "GetDraft",
     "actionType" : "DEACTION",
     "name" : "loaddraft"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : true,
+  "enablePagingBar" : true,
   "enableRowEdit" : true,
   "controlType" : "GRID",
-  "enablePagingBar" : true,
   "getPSDEGridEditItemVRs" : [ {
     "getPSDEGridEditItemName" : "consumed",
     "valueRuleType" : "DEFVALUERULE",
@@ -320,12 +320,12 @@
     "name" : "编辑项值规则"
   } ],
   "getPSDEGridColumns" : [ {
-    "enableRowEdit" : true,
-    "dataItemName" : "dates",
     "getPSAppDEField" : {
       "name" : "DATES",
       "codeName" : "Dates"
     },
+    "enableRowEdit" : true,
+    "dataItemName" : "dates",
     "excelCaption" : "日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
@@ -339,12 +339,12 @@
     "widthUnit" : "PX",
     "name" : "dates"
   }, {
-    "enableRowEdit" : true,
-    "dataItemName" : "consumed",
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
+    "enableRowEdit" : true,
+    "dataItemName" : "consumed",
     "excelCaption" : "总计消耗",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -357,12 +357,12 @@
     "widthUnit" : "PX",
     "name" : "consumed"
   }, {
-    "enableRowEdit" : true,
-    "dataItemName" : "left",
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
+    "enableRowEdit" : true,
+    "dataItemName" : "left",
     "excelCaption" : "预计剩余",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -375,12 +375,12 @@
     "widthUnit" : "PX",
     "name" : "left"
   }, {
-    "enableRowEdit" : true,
-    "dataItemName" : "work",
     "getPSAppDEField" : {
       "name" : "WORK",
       "codeName" : "Work"
     },
+    "enableRowEdit" : true,
+    "dataItemName" : "work",
     "excelCaption" : "备注",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -395,26 +395,26 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate/PSGRIDS/Main.json",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSSysPFPlugin" : {
     "pluginType" : "GRID_RENDER",
     "pluginCode" : "StepTable"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate/PSGRIDS/Main.json",
   "logicName" : "主表格",
   "modelid" : "6796831e2f83bf0954848155004b3698"
 }

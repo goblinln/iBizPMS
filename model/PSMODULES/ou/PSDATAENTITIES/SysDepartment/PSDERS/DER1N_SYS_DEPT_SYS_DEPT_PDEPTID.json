@@ -3,11 +3,11 @@
     "name" : "PDEPTID",
     "codeName" : "ParentDeptid"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PDEPTNAME",
     "codeName" : "ParentDeptName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "masterRS" : 0,
   "removeOrder" : 0,

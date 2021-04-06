@@ -3,11 +3,11 @@
     "name" : "LIB",
     "codeName" : "Lib"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "LIBNAME",
     "codeName" : "Libname"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "masterRS" : 0,
   "removeOrder" : 0,

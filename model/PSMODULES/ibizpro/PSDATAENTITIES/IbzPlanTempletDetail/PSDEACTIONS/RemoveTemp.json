@@ -1,11 +1,11 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
   "builtinAction" : true,
   "tempDataMode" : 2,
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
   "getPSDEOPPriv" : {
     "modelref" : true,
@@ -14,8 +14,8 @@
   "orderValue" : 22,
   "codeName" : "RemoveTemp",
   "logicName" : "RemoveTemp",
-  "extendMode" : 0,
   "enableTempData" : true,
+  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "IBZ_PLANTEMPLETDETAILID",

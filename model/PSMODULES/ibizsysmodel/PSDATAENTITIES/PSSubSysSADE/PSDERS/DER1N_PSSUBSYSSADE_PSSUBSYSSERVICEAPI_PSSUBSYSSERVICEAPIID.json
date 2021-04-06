@@ -3,11 +3,11 @@
     "name" : "PSSUBSYSSERVICEAPIID",
     "codeName" : "PSSubSysServiceAPIId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PSSUBSYSSERVICEAPINAME",
     "codeName" : "PSSubSysServiceAPIName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "masterRS" : 0,
   "removeOrder" : 0,

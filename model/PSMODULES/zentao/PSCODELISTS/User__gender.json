@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,12 +12,12 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "f",
     "codeName" : "F",
-    "text" : "女",
-    "value" : "f"
+    "text" : "女"
   }, {
+    "value" : "m",
     "codeName" : "M",
-    "text" : "男",
-    "value" : "m"
+    "text" : "男"
   } ]
 }

@@ -1,10 +1,10 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
   "builtinAction" : false,
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
   "orderValue" : 99999,
   "codeName" : "BugCreateCase",

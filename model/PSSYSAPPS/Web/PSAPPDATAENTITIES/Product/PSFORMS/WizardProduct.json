@@ -7,9 +7,6 @@
     "modelref" : true,
     "id" : "load"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
-  "enableAutoSave" : false,
   "getPSDEWizardForm" : {
     "firstForm" : true,
     "getPSDEWizardStep" : {
@@ -21,12 +18,47 @@
     "stepActions" : [ "NEXT" ],
     "name" : "产品"
   },
+  "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "formFuncMode" : "WIZARDFORM",
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "contentType" : "RAW",
+      "rawContent" : "<p>添加产品路径：产品→新建</p>\n    <p><img src=\"../../../assets/img/productadd.png\" referrerpolicy=\"no-referrer\" alt=\"show1\"></p>",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf17a@FontAwesome",
+        "cssClass" : "fa fa-windows"
+      },
+      "codeName" : "rawitem1",
+      "detailType" : "RAWITEM",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "rawitem1"
+    } ],
+    "infoGroupMode" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srforikey",
     "hidden" : true,
@@ -72,46 +104,14 @@
       "codeName" : "Id"
     }
   } ],
-  "formFuncMode" : "WIZARDFORM",
   "noTabHeader" : true,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "rawItemHeight" : -1.0,
-      "rawItemWidth" : -1.0,
-      "contentType" : "RAW",
-      "rawContent" : "<p>添加产品路径：产品→新建</p>\n    <p><img src=\"../../../assets/img/productadd.png\" referrerpolicy=\"no-referrer\" alt=\"show1\"></p>",
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "showCaption" : true,
-      "getPSSysImage" : {
-        "glyph" : "xf17a@FontAwesome",
-        "cssClass" : "fa fa-windows"
-      },
-      "codeName" : "rawitem1",
-      "detailType" : "RAWITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "rawitem1"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "基本信息",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "codeName" : "WizardProduct",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
+  "hookEventNames" : [ "SAVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSFORMS/WizardProduct.json",
   "logicName" : "向导使用（产品）",
   "modelid" : "bc6a3654a68c8ca1e8468ad4bd121ca9"

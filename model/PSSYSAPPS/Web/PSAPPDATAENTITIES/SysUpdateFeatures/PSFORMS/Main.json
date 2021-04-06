@@ -23,15 +23,393 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
+  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
-  "enableAutoSave" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "infoGroupMode" : false,
+      "actionGroupExtractMode" : "ITEM",
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "dropDownView" : false,
+          "enablePickupView" : false,
+          "enableLinkView" : false,
+          "enableAC" : true,
+          "forceSelection" : true,
+          "showTrigger" : true,
+          "getPSAppDEACMode" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "getPSAppDEDataSet" : {
+            "modelref" : true,
+            "id" : "FetchDefault"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
+          },
+          "handlerType" : "PickupText",
+          "valueItemName" : "sys_update_logid",
+          "editorParams" : {
+            "AC" : "TRUE",
+            "TRIGGER" : "TRUE",
+            "PICKUPVIEW" : "FALSE"
+          },
+          "editorType" : "PICKEREX_TRIGGER",
+          "name" : "sys_update_logname"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "SYS_UPDATE_LOGNAME",
+          "codeName" : "SysUpdateLogName"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "caption" : "所属更新",
+        "allowEmpty" : false,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "valueItemName" : "sys_update_logid",
+        "labelWidth" : 100,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "sys_update_logname",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "sys_update_logname"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SYS_UPDATE_LOG_TYPE.json"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "type"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "TYPE",
+          "codeName" : "Type"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "caption" : "更新类型",
+        "allowEmpty" : false,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "type",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "type"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "maxLength" : 100,
+          "editorType" : "TEXTBOX",
+          "name" : "upfeatures"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "UPFEATURES",
+          "codeName" : "Upfeatures"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "caption" : "更新功能",
+        "allowEmpty" : false,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "upfeatures",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "upfeatures"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "editorType" : "NUMBER",
+          "name" : "displayorder"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DISPLAYORDER",
+          "codeName" : "Displayorder"
+        },
+        "hidden" : false,
+        "dataType" : 9,
+        "caption" : "展示顺序",
+        "allowEmpty" : false,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "displayorder",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "displayorder"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "editorParams" : {
+            "uploadparams" : "{objecttype:\"updatefeatures\",objectid: 0,version:\"editor\"}",
+            "exportparams" : "{objecttype:\"updatefeatures\",objectid: 0,version:\"editor\"}"
+          },
+          "editorType" : "HTMLEDITOR",
+          "name" : "featuresdesc"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "FEATURESDESC",
+          "codeName" : "Featuresdesc"
+        },
+        "hidden" : false,
+        "dataType" : 21,
+        "caption" : "功能描述",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "featuresdesc",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "featuresdesc"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "group1",
+      "caption" : "系统更新功能基本信息",
+      "detailType" : "GROUPPANEL",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : false,
+      "name" : "group1"
+    } ],
+    "infoGroupMode" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  }, {
+    "getPSDEFormDetails" : [ {
+      "infoGroupMode" : false,
+      "actionGroupExtractMode" : "ITEM",
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "enableLinkView" : false,
+          "editable" : false,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
+          },
+          "editorType" : "SPAN",
+          "name" : "createman"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CREATEMAN",
+          "codeName" : "CreateMan"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "convertToCodeItemText" : true,
+        "caption" : "建立人",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "createman",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "createman"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "enableLinkView" : false,
+          "editable" : false,
+          "editorType" : "SPAN",
+          "name" : "createdate"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CREATEDATE",
+          "codeName" : "CreateDate"
+        },
+        "hidden" : false,
+        "dataType" : 5,
+        "caption" : "建立时间",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "createdate",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "createdate"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "enableLinkView" : false,
+          "editable" : false,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
+          },
+          "editorType" : "SPAN",
+          "name" : "updateman"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "UPDATEMAN",
+          "codeName" : "UpdateMan"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "convertToCodeItemText" : true,
+        "caption" : "更新人",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "updateman",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "updateman"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "enableLinkView" : false,
+          "editable" : false,
+          "editorType" : "SPAN",
+          "name" : "updatedate"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "UPDATEDATE",
+          "codeName" : "UpdateDate"
+        },
+        "hidden" : false,
+        "dataType" : 5,
+        "caption" : "更新时间",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "updatedate",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "updatedate"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "group2",
+      "caption" : "操作信息",
+      "detailType" : "GROUPPANEL",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "group2"
+    } ],
+    "infoGroupMode" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage2",
+    "caption" : "其它",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage2"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srfupdatedate",
     "hidden" : true,
@@ -157,391 +535,13 @@
     }
   } ],
   "noTabHeader" : false,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "infoGroupMode" : false,
-      "actionGroupExtractMode" : "ITEM",
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
-      "getPSDEFormDetails" : [ {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "singleSelect" : true,
-          "enableLinkView" : false,
-          "enablePickupView" : false,
-          "dropDownView" : false,
-          "enableAC" : true,
-          "forceSelection" : true,
-          "showTrigger" : true,
-          "getPSAppDEDataSet" : {
-            "modelref" : true,
-            "id" : "FetchDefault"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
-          },
-          "getPSAppDEACMode" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "handlerType" : "PickupText",
-          "valueItemName" : "sys_update_logid",
-          "editorType" : "PICKEREX_TRIGGER",
-          "editorParams" : {
-            "AC" : "TRUE",
-            "TRIGGER" : "TRUE",
-            "PICKUPVIEW" : "FALSE"
-          },
-          "name" : "sys_update_logname"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "SYS_UPDATE_LOGNAME",
-          "codeName" : "SysUpdateLogName"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "caption" : "所属更新",
-        "allowEmpty" : false,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "valueItemName" : "sys_update_logid",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "sys_update_logname",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "sys_update_logname"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "singleSelect" : true,
-          "getPSAppCodeList" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SYS_UPDATE_LOG_TYPE.json"
-          },
-          "editorType" : "DROPDOWNLIST",
-          "name" : "type"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "TYPE",
-          "codeName" : "Type"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "needCodeListConfig" : true,
-        "caption" : "更新类型",
-        "allowEmpty" : false,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "type",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "type"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "maxLength" : 100,
-          "editorType" : "TEXTBOX",
-          "name" : "upfeatures"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "UPFEATURES",
-          "codeName" : "Upfeatures"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "caption" : "更新功能",
-        "allowEmpty" : false,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "upfeatures",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "upfeatures"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "editorType" : "NUMBER",
-          "name" : "displayorder"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "DISPLAYORDER",
-          "codeName" : "Displayorder"
-        },
-        "showCaption" : true,
-        "dataType" : 9,
-        "caption" : "展示顺序",
-        "allowEmpty" : false,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "displayorder",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "displayorder"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "editorType" : "HTMLEDITOR",
-          "editorParams" : {
-            "uploadparams" : "{objecttype:\"updatefeatures\",objectid: 0,version:\"editor\"}",
-            "exportparams" : "{objecttype:\"updatefeatures\",objectid: 0,version:\"editor\"}"
-          },
-          "name" : "featuresdesc"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "FEATURESDESC",
-          "codeName" : "Featuresdesc"
-        },
-        "showCaption" : true,
-        "dataType" : 21,
-        "caption" : "功能描述",
-        "allowEmpty" : true,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "featuresdesc",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "featuresdesc"
-      } ],
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "showCaption" : false,
-      "codeName" : "group1",
-      "caption" : "系统更新功能基本信息",
-      "detailType" : "GROUPPANEL",
-      "detailStyle" : "DEFAULT",
-      "name" : "group1"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "基本信息",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  }, {
-    "getPSDEFormDetails" : [ {
-      "infoGroupMode" : false,
-      "actionGroupExtractMode" : "ITEM",
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
-      "getPSDEFormDetails" : [ {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "enableLinkView" : false,
-          "editable" : false,
-          "getPSAppCodeList" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
-          },
-          "editorType" : "SPAN",
-          "name" : "createman"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "CREATEMAN",
-          "codeName" : "CreateMan"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "convertToCodeItemText" : true,
-        "caption" : "建立人",
-        "allowEmpty" : true,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 3,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "createman",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "createman"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "enableLinkView" : false,
-          "editable" : false,
-          "editorType" : "SPAN",
-          "name" : "createdate"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "CREATEDATE",
-          "codeName" : "CreateDate"
-        },
-        "showCaption" : true,
-        "dataType" : 5,
-        "caption" : "建立时间",
-        "allowEmpty" : true,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 3,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "createdate",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "createdate"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "enableLinkView" : false,
-          "editable" : false,
-          "getPSAppCodeList" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
-          },
-          "editorType" : "SPAN",
-          "name" : "updateman"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "UPDATEMAN",
-          "codeName" : "UpdateMan"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "convertToCodeItemText" : true,
-        "caption" : "更新人",
-        "allowEmpty" : true,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 3,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "updateman",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "updateman"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "enableLinkView" : false,
-          "editable" : false,
-          "editorType" : "SPAN",
-          "name" : "updatedate"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "UPDATEDATE",
-          "codeName" : "UpdateDate"
-        },
-        "showCaption" : true,
-        "dataType" : 5,
-        "caption" : "更新时间",
-        "allowEmpty" : true,
-        "labelWidth" : 100,
-        "enableCond" : 3,
-        "ignoreInput" : 3,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "updatedate",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "updatedate"
-      } ],
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "showCaption" : true,
-      "codeName" : "group2",
-      "caption" : "操作信息",
-      "detailType" : "GROUPPANEL",
-      "detailStyle" : "DEFAULT",
-      "name" : "group2"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage2",
-    "caption" : "其它",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage2"
-  } ],
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateFeatures.json"
   },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateFeatures/PSFORMS/Main.json",
   "logicName" : "主编辑表单",
   "modelid" : "65db5f69e105ebc42ffc2fb1e0c39736"

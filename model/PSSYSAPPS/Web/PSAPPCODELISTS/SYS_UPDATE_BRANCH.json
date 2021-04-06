@@ -3,17 +3,17 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
   },
-  "getPSCodeItems" : [ {
-    "codeName" : "Pc",
-    "text" : "PC",
-    "value" : "PC"
-  }, {
-    "codeName" : "Mob",
-    "text" : "MOB",
-    "value" : "MOB"
-  } ],
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "getPSCodeItems" : [ {
+    "value" : "PC",
+    "codeName" : "Pc",
+    "text" : "PC"
+  }, {
+    "value" : "MOB",
+    "codeName" : "Mob",
+    "text" : "MOB"
+  } ],
   "codeName" : "SYS_UPDATE_BRANCH",
   "emptyText" : "未定义",
   "enableCache" : true,

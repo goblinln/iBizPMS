@@ -3,11 +3,11 @@
     "name" : "ORGID",
     "codeName" : "OrgId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "ORGNAME",
     "codeName" : "OrgName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 2,
   "masterRS" : 0,
   "removeOrder" : 0,

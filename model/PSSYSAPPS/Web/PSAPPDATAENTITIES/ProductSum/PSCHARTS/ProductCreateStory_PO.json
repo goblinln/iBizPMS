@@ -5,6 +5,12 @@
     "index" : 0,
     "id" : "0"
   },
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "legendPos" : "RIGHT",
+    "index" : 0,
+    "id" : "0"
+  },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
     "type" : "NONE",
@@ -12,12 +18,6 @@
     "name" : "[productcreatestory]无坐标系[0]",
     "id" : "0"
   } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "legendPos" : "RIGHT",
-    "index" : 0,
-    "id" : "0"
-  },
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "name",
@@ -76,16 +76,16 @@
     "id" : "fetch"
   },
   "readOnly" : true,
-  "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSCHARTS/ProductCreateStory_PO.json",
+  "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSCHARTS/ProductCreateStory_PO.json",
   "logicName" : "ProductCreateStory_PO",
   "modelid" : "3ac8297cb629de3b538b053ea7f40855",
   "getUserParam" : {

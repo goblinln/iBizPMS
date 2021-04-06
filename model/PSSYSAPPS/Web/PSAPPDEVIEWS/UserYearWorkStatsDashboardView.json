@@ -1,15 +1,15 @@
 {
   "showDataInfoBar" : true,
+  "enableSearch" : false,
+  "expandSearchForm" : true,
   "loadDefault" : true,
   "enableQuickGroup" : false,
-  "expandSearchForm" : true,
-  "enableSearch" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "DashboardView",
+  "openMode" : "DRAWER_TOP",
   "caption" : "用户年度工作内容统计",
   "title" : "用户年度工作内容统计数据看板视图",
-  "openMode" : "DRAWER_TOP",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSAppViewNavParams" : [ {
@@ -19,24 +19,24 @@
     "name" : "curyear"
   } ],
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEPORTALVIEW_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEPORTALVIEW_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppViewEngines" : [ {
     "engineType" : "PortalView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "DASHBOARD"
+      "name" : "DASHBOARD",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -46,23 +46,15 @@
     "key" : "CURYEAR",
     "name" : "CURYEAR"
   } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+  },
   "getPSControls" : [ {
     "codeName" : "DEVY",
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "enableCustomized" : false,
     "getPSControls" : [ {
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
       "getPSControls" : [ {
-        "getPSLayout" : {
-          "layout" : "TABLE_24COL",
-          "columnCount" : 24
-        },
         "getPSControls" : [ {
           "getContentPSControl" : {
             "name" : "dashboard_sysportlet3_chart"
@@ -74,6 +66,12 @@
               "index" : 0,
               "id" : "0"
             },
+            "getPSDEChartLegend" : {
+              "showLegend" : true,
+              "legendPos" : "BOTTOM",
+              "index" : 0,
+              "id" : "0"
+            },
             "getPSChartCoordinateSystems" : [ {
               "eChartsType" : "none",
               "type" : "NONE",
@@ -81,12 +79,6 @@
               "name" : "[MyFinishedbyTask]无坐标系[0]",
               "id" : "0"
             } ],
-            "getPSDEChartLegend" : {
-              "showLegend" : true,
-              "legendPos" : "BOTTOM",
-              "index" : 0,
-              "id" : "0"
-            },
             "controlType" : "CHART",
             "getPSDEChartSerieses" : [ {
               "catalogField" : "PRI",
@@ -146,6 +138,10 @@
               "id" : "fetch"
             },
             "readOnly" : true,
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            },
             "getPSControlParam" : {
               "autoLoad" : true,
               "showBusyIndicator" : true,
@@ -154,63 +150,63 @@
             "getPSControlHandler" : {
               "userDRAction" : "READ",
               "getPSHandlerActions" : [ {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Update"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
                 "dataAccessAction" : "UPDATE",
                 "actionName" : "Update",
                 "actionType" : "DEACTION",
                 "name" : "update"
               }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "FetchCurFinishTask"
                 },
-                "actionType" : "DEDATASET",
-                "name" : "fetch"
-              }, {
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
+                "actionType" : "DEDATASET",
+                "name" : "fetch"
+              }, {
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Remove"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
                 "dataAccessAction" : "DELETE",
                 "actionName" : "Remove",
                 "actionType" : "DEACTION",
                 "name" : "remove"
               }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Get"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
                 "dataAccessAction" : "READ",
                 "actionName" : "Get",
                 "actionType" : "DEACTION",
                 "name" : "load"
               }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Create"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
                 "dataAccessAction" : "CREATE",
                 "actionName" : "Create",
@@ -220,16 +216,12 @@
               "enableDEFieldPrivilege" : false,
               "id" : "图形控件处理器"
             },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-            },
             "height" : 300.0,
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSCHARTS/MyFinishedbyTask.json",
             "getPSSysPFPlugin" : {
               "pluginType" : "CHART_RENDER",
               "pluginCode" : "piePlugin"
             },
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSCHARTS/MyFinishedbyTask.json",
             "logicName" : "MyFinishedbyTask",
             "name" : "dashboard_sysportlet3_chart",
             "modelid" : "a182b142d83d08eab8fb43e1bdcd0150",
@@ -243,13 +235,17 @@
           "title" : "完成的任务",
           "portletType" : "CHART",
           "getPSLayoutPos" : {
-            "colMD" : 12,
             "colLG" : 12,
+            "colMD" : 12,
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
           "showTitleBar" : false,
           "controlType" : "PORTLET",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          },
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
@@ -258,10 +254,6 @@
           "getPSControlHandler" : {
             "enableDEFieldPrivilege" : false,
             "id" : "dashboard_sysportlet3"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           },
           "name" : "dashboard_sysportlet3",
           "modelid" : "8e0229cd3791ade7bf1a00994c31c5e0"
@@ -276,6 +268,12 @@
               "index" : 0,
               "id" : "0"
             },
+            "getPSDEChartLegend" : {
+              "showLegend" : true,
+              "legendPos" : "BOTTOM",
+              "index" : 0,
+              "id" : "0"
+            },
             "getPSChartCoordinateSystems" : [ {
               "eChartsType" : "none",
               "type" : "NONE",
@@ -283,12 +281,6 @@
               "name" : "[ResolveBug]无坐标系[0]",
               "id" : "0"
             } ],
-            "getPSDEChartLegend" : {
-              "showLegend" : true,
-              "legendPos" : "BOTTOM",
-              "index" : 0,
-              "id" : "0"
-            },
             "controlType" : "CHART",
             "getPSDEChartSerieses" : [ {
               "catalogField" : "pri",
@@ -349,6 +341,10 @@
               "id" : "fetch"
             },
             "readOnly" : true,
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+            },
             "getPSControlParam" : {
               "autoLoad" : true,
               "showBusyIndicator" : true,
@@ -357,63 +353,63 @@
             "getPSControlHandler" : {
               "userDRAction" : "READ",
               "getPSHandlerActions" : [ {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Update"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                 },
                 "dataAccessAction" : "UPDATE",
                 "actionName" : "Update",
                 "actionType" : "DEACTION",
                 "name" : "update"
               }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "FetchCurUserResolve"
                 },
-                "actionType" : "DEDATASET",
-                "name" : "fetch"
-              }, {
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                 },
+                "actionType" : "DEDATASET",
+                "name" : "fetch"
+              }, {
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Remove"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                 },
                 "dataAccessAction" : "DELETE",
                 "actionName" : "Remove",
                 "actionType" : "DEACTION",
                 "name" : "remove"
               }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Get"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                 },
                 "dataAccessAction" : "READ",
                 "actionName" : "Get",
                 "actionType" : "DEACTION",
                 "name" : "load"
               }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Create"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                 },
                 "dataAccessAction" : "CREATE",
                 "actionName" : "Create",
@@ -423,16 +419,12 @@
               "enableDEFieldPrivilege" : false,
               "id" : "图形控件处理器"
             },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-            },
             "height" : 300.0,
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/CurUserResolveBug.json",
             "getPSSysPFPlugin" : {
               "pluginType" : "CHART_RENDER",
               "pluginCode" : "piePlugin"
             },
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/CurUserResolveBug.json",
             "logicName" : "CurUserResolveBug",
             "name" : "dashboard_sysportlet4_chart",
             "modelid" : "1d4451e6a31305f54bf7644de1075592",
@@ -446,13 +438,17 @@
           "title" : "解决的Bug",
           "portletType" : "CHART",
           "getPSLayoutPos" : {
-            "colMD" : 12,
             "colLG" : 12,
+            "colMD" : 12,
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
           "showTitleBar" : false,
           "controlType" : "PORTLET",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          },
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
@@ -462,22 +458,26 @@
             "enableDEFieldPrivilege" : false,
             "id" : "dashboard_sysportlet4"
           },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-          },
           "name" : "dashboard_sysportlet4",
           "modelid" : "91a8d4ab8f3898e615a559ab995ddc13"
         } ],
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
         "portletType" : "CONTAINER",
         "getPSLayoutPos" : {
-          "colMD" : 12,
           "colLG" : 14,
+          "colMD" : 12,
           "layout" : "TABLE_24COL"
         },
         "showTitleBar" : true,
         "controlType" : "PORTLET",
         "title" : "完成任务数和解决Bug数",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true
@@ -486,17 +486,9 @@
           "enableDEFieldPrivilege" : false,
           "id" : "dashboard_container4"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-        },
         "codeName" : "DashboardViewdashboard_container4",
         "name" : "dashboard_container4"
       }, {
-        "getPSLayout" : {
-          "layout" : "TABLE_24COL",
-          "columnCount" : 24
-        },
         "getPSControls" : [ {
           "getContentPSControl" : {
             "name" : "dashboard_sysportlet5_chart"
@@ -505,6 +497,11 @@
             "getPSDEChartTitle" : {
               "showTitle" : false,
               "title" : "月完成任务数及累计工时和解决Bug数",
+              "index" : 0,
+              "id" : "0"
+            },
+            "getPSDEChartLegend" : {
+              "showLegend" : true,
               "index" : 0,
               "id" : "0"
             },
@@ -533,11 +530,6 @@
               "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
               "id" : "0"
             } ],
-            "getPSDEChartLegend" : {
-              "showLegend" : true,
-              "index" : 0,
-              "id" : "0"
-            },
             "controlType" : "CHART",
             "getPSDEChartSerieses" : [ {
               "stack" : false,
@@ -646,53 +638,6 @@
               "name" : "MONTESTIMATE"
             } ],
             "codeName" : "MonthFinishTaskAndBug",
-            "getPSChartXAxises" : [ {
-              "eChartsType" : "category",
-              "eChartsPos" : "xAxis",
-              "position" : "bottom",
-              "caption" : "月",
-              "type" : "category",
-              "index" : 0,
-              "name" : "月",
-              "id" : "0"
-            } ],
-            "getPSChartYAxises" : [ {
-              "eChartsType" : "value",
-              "eChartsPos" : "yAxis",
-              "maxValue" : 100.0,
-              "minValue" : 0.0,
-              "position" : "left",
-              "caption" : "数量",
-              "type" : "numeric",
-              "index" : 0,
-              "name" : "数量",
-              "id" : "0"
-            } ],
-            "getPSChartGrids" : [ {
-              "getPSChartGridXAxis0" : {
-                "modelref" : true,
-                "id" : "0"
-              },
-              "getPSChartGridYAxis0" : {
-                "modelref" : true,
-                "id" : "0"
-              },
-              "getPSChartCoordinateSystem" : {
-                "getPSChartGrid" : {
-                  "modelref" : true,
-                  "id" : "0"
-                },
-                "eChartsType" : "cartesian2d",
-                "type" : "XY",
-                "index" : 0,
-                "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
-                "id" : "0"
-              },
-              "type" : "grid",
-              "index" : 0,
-              "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
-              "id" : "0"
-            } ],
             "getPSChartDataSets" : [ {
               "getPSChartDataSetFields" : [ {
                 "groupField" : true,
@@ -742,6 +687,53 @@
               "name" : "MONTESTIMATE-MonthFinishTaskAndBug",
               "id" : "2"
             } ],
+            "getPSChartXAxises" : [ {
+              "eChartsType" : "category",
+              "eChartsPos" : "xAxis",
+              "position" : "bottom",
+              "type" : "category",
+              "caption" : "月",
+              "index" : 0,
+              "name" : "月",
+              "id" : "0"
+            } ],
+            "getPSChartGrids" : [ {
+              "getPSChartGridXAxis0" : {
+                "modelref" : true,
+                "id" : "0"
+              },
+              "getPSChartGridYAxis0" : {
+                "modelref" : true,
+                "id" : "0"
+              },
+              "getPSChartCoordinateSystem" : {
+                "getPSChartGrid" : {
+                  "modelref" : true,
+                  "id" : "0"
+                },
+                "eChartsType" : "cartesian2d",
+                "type" : "XY",
+                "index" : 0,
+                "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+                "id" : "0"
+              },
+              "type" : "grid",
+              "index" : 0,
+              "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+              "id" : "0"
+            } ],
+            "getPSChartYAxises" : [ {
+              "eChartsType" : "value",
+              "eChartsPos" : "yAxis",
+              "maxValue" : 100.0,
+              "minValue" : 0.0,
+              "position" : "left",
+              "type" : "numeric",
+              "caption" : "数量",
+              "index" : 0,
+              "name" : "数量",
+              "id" : "0"
+            } ],
             "getPSChartDataSetGroups" : [ {
               "index" : 0,
               "name" : "MonthFinishTaskAndBug",
@@ -752,6 +744,10 @@
               "id" : "fetch"
             },
             "readOnly" : true,
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+            },
             "getPSControlParam" : {
               "autoLoad" : true,
               "showBusyIndicator" : true,
@@ -760,63 +756,63 @@
             "getPSControlHandler" : {
               "userDRAction" : "READ",
               "getPSHandlerActions" : [ {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Update"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
                 },
                 "dataAccessAction" : "UPDATE",
                 "actionName" : "Update",
                 "actionType" : "DEACTION",
                 "name" : "update"
               }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "FetchMonthFinishTaskAndBug"
                 },
-                "actionType" : "DEDATASET",
-                "name" : "fetch"
-              }, {
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
                 },
+                "actionType" : "DEDATASET",
+                "name" : "fetch"
+              }, {
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Remove"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
                 },
                 "dataAccessAction" : "DELETE",
                 "actionName" : "Remove",
                 "actionType" : "DEACTION",
                 "name" : "remove"
               }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Get"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
                 },
                 "dataAccessAction" : "READ",
                 "actionName" : "Get",
                 "actionType" : "DEACTION",
                 "name" : "load"
               }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-                },
                 "getPSAppDEMethod" : {
                   "modelref" : true,
                   "id" : "Create"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
                 },
                 "dataAccessAction" : "CREATE",
                 "actionName" : "Create",
@@ -826,16 +822,12 @@
               "enableDEFieldPrivilege" : false,
               "id" : "图形控件处理器"
             },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-            },
             "height" : 300.0,
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthFinishTaskAndBug.json",
             "getPSSysPFPlugin" : {
               "pluginType" : "CHART_RENDER",
               "pluginCode" : "NEW"
             },
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthFinishTaskAndBug.json",
             "logicName" : "MonthFinishTaskAndBug",
             "name" : "dashboard_sysportlet5_chart",
             "modelid" : "8993ef48b185bc2433a52f2b3ccd5235",
@@ -854,6 +846,10 @@
           },
           "showTitleBar" : false,
           "controlType" : "PORTLET",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+          },
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
@@ -863,22 +859,26 @@
             "enableDEFieldPrivilege" : false,
             "id" : "dashboard_sysportlet5"
           },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-          },
           "name" : "dashboard_sysportlet5",
           "modelid" : "fc795c604763892b6b243b4db6b133ef"
         } ],
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
         "portletType" : "CONTAINER",
         "getPSLayoutPos" : {
-          "colMD" : 24,
           "colLG" : 10,
+          "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
         "showTitleBar" : true,
         "controlType" : "PORTLET",
         "title" : "月完成任务数及累计工时和解决Bug数",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true
@@ -887,23 +887,27 @@
           "enableDEFieldPrivilege" : false,
           "id" : "dashboard_container5"
         },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-        },
         "codeName" : "DashboardViewdashboard_container5",
         "name" : "dashboard_container5"
       } ],
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
       "portletType" : "CONTAINER",
       "getPSLayoutPos" : {
-        "colMD" : 22,
         "colLG" : 22,
         "colMDOffset" : 1,
         "colLGOffset" : 1,
+        "colMD" : 22,
         "layout" : "TABLE_24COL"
       },
       "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true
@@ -912,14 +916,18 @@
         "enableDEFieldPrivilege" : false,
         "id" : "dashboard_container3"
       },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-      },
       "codeName" : "DashboardViewdashboard_container3",
       "name" : "dashboard_container3"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "controlType" : "DASHBOARD",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -930,19 +938,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-    },
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSDASHBOARDS/DEVY.json",
     "logicName" : "年度工作统计（研发）",
     "name" : "dashboard",
     "modelid" : "35452fdae20ad8f9a786c708744662b4"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-  },
   "viewStyle" : "STYLE2",
   "codeName" : "UserYearWorkStatsDashboardView",
   "viewType" : "DEPORTALVIEW",

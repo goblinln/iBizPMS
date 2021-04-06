@@ -3,11 +3,11 @@
     "name" : "ROOT",
     "codeName" : "Root"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "DOCLIBNAME",
     "codeName" : "Doclibname"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "masterRS" : 0,
   "removeOrder" : 0,

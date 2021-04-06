@@ -3,23 +3,23 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "getPSCodeItems" : [ {
+    "value" : "normal",
     "codeName" : "Normal",
     "text" : "正常",
     "default" : true,
-    "color" : "blue",
-    "value" : "normal"
+    "color" : "blue"
   }, {
+    "value" : "branch",
     "codeName" : "Branch",
-    "text" : "多分支",
-    "value" : "branch"
+    "text" : "多分支"
   }, {
+    "value" : "platform",
     "codeName" : "Platform",
-    "text" : "多平台",
-    "value" : "platform"
+    "text" : "多平台"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
   "codeName" : "Product__type",
   "emptyText" : "未定义",
   "enableCache" : true,

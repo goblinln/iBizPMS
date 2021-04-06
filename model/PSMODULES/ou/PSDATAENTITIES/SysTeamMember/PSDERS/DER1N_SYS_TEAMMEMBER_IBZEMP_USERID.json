@@ -3,11 +3,11 @@
     "name" : "USERID",
     "codeName" : "UserId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PERSONNAME",
     "codeName" : "PersonName"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "masterRS" : 0,
   "removeOrder" : 0,

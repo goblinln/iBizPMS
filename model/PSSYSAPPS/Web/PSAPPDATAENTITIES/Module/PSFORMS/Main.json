@@ -23,15 +23,239 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
+  "enableAutoSave" : false,
   "infoFormMode" : false,
   "showFormNavBar" : false,
-  "enableAutoSave" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "infoGroupMode" : false,
+      "actionGroupExtractMode" : "ITEM",
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "maxLength" : 60,
+          "editorType" : "TEXTBOX",
+          "name" : "name"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "caption" : "模块名称",
+        "allowEmpty" : false,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colSM" : 12,
+          "colXS" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "name",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "name"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "maxLength" : 30,
+          "editorType" : "TEXTBOX",
+          "name" : "short"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "SHORT",
+          "codeName" : "IBizShort"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "caption" : "简称",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colSM" : 12,
+          "colXS" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "short",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "short"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "dropDownView" : false,
+          "enablePickupView" : true,
+          "enableLinkView" : false,
+          "enableAC" : true,
+          "forceSelection" : true,
+          "showTrigger" : true,
+          "getPickupPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ModulePickupView.json",
+            "viewType" : "DEPICKUPVIEW"
+          },
+          "getPSAppDEACMode" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "getPSAppDEDataSet" : {
+            "modelref" : true,
+            "id" : "FetchDefault"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
+          },
+          "handlerType" : "PickupText",
+          "valueItemName" : "parent",
+          "editorParams" : {
+            "AC" : "TRUE",
+            "PICKUPVIEW" : "TRUE"
+          },
+          "editorType" : "PICKER",
+          "name" : "parentname"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PARENTNAME",
+          "codeName" : "ParentName"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "caption" : "上级模块",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "valueItemName" : "parent",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colSM" : 12,
+          "colXS" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "parentname",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "parentname"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "parent"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "hidden" : true,
+        "dataType" : 1,
+        "caption" : "上级模块",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colSM" : 12,
+          "colXS" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "parent",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "parent"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "editorType" : "NUMBER",
+          "name" : "order"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ORDER",
+          "codeName" : "Order"
+        },
+        "hidden" : false,
+        "dataType" : 9,
+        "caption" : "排序",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colSM" : 12,
+          "colXS" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "order",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "order"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "group1",
+      "caption" : "module基本信息",
+      "detailType" : "GROUPPANEL",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : false,
+      "name" : "group1"
+    } ],
+    "infoGroupMode" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srforikey",
     "hidden" : true,
@@ -114,237 +338,13 @@
     }
   } ],
   "noTabHeader" : true,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "infoGroupMode" : false,
-      "actionGroupExtractMode" : "ITEM",
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
-      "getPSDEFormDetails" : [ {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "maxLength" : 60,
-          "editorType" : "TEXTBOX",
-          "name" : "name"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "caption" : "模块名称",
-        "allowEmpty" : false,
-        "labelWidth" : 130,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colSM" : 12,
-          "colXS" : 12,
-          "colMD" : 12,
-          "colLG" : 12,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "name",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "name"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "maxLength" : 30,
-          "editorType" : "TEXTBOX",
-          "name" : "short"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "SHORT",
-          "codeName" : "IBizShort"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "caption" : "简称",
-        "allowEmpty" : true,
-        "labelWidth" : 130,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colSM" : 12,
-          "colXS" : 12,
-          "colMD" : 12,
-          "colLG" : 12,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "short",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "short"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "singleSelect" : true,
-          "enableLinkView" : false,
-          "enablePickupView" : true,
-          "dropDownView" : false,
-          "enableAC" : true,
-          "forceSelection" : true,
-          "showTrigger" : true,
-          "getPSAppDEDataSet" : {
-            "modelref" : true,
-            "id" : "FetchDefault"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-          },
-          "getPickupPSAppView" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ModulePickupView.json",
-            "viewType" : "DEPICKUPVIEW"
-          },
-          "getPSAppDEACMode" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "handlerType" : "PickupText",
-          "valueItemName" : "parent",
-          "editorType" : "PICKER",
-          "editorParams" : {
-            "AC" : "TRUE",
-            "PICKUPVIEW" : "TRUE"
-          },
-          "name" : "parentname"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "PARENTNAME",
-          "codeName" : "ParentName"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "caption" : "上级模块",
-        "allowEmpty" : true,
-        "labelWidth" : 130,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "valueItemName" : "parent",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colSM" : 12,
-          "colXS" : 12,
-          "colMD" : 12,
-          "colLG" : 12,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "parentname",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "parentname"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "editorType" : "HIDDEN",
-          "name" : "parent"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "PARENT",
-          "codeName" : "Parent"
-        },
-        "showCaption" : true,
-        "dataType" : 1,
-        "caption" : "上级模块",
-        "allowEmpty" : true,
-        "labelWidth" : 130,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : true,
-        "getPSLayoutPos" : {
-          "colSM" : 12,
-          "colXS" : 12,
-          "colMD" : 12,
-          "colLG" : 12,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "parent",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "parent"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "editorType" : "NUMBER",
-          "name" : "order"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "ORDER",
-          "codeName" : "Order"
-        },
-        "showCaption" : true,
-        "dataType" : 9,
-        "caption" : "排序",
-        "allowEmpty" : true,
-        "labelWidth" : 130,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colSM" : 12,
-          "colXS" : 12,
-          "colMD" : 12,
-          "colLG" : 12,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "order",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "order"
-      } ],
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "showCaption" : false,
-      "codeName" : "group1",
-      "caption" : "module基本信息",
-      "detailType" : "GROUPPANEL",
-      "detailStyle" : "DEFAULT",
-      "name" : "group1"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "基本信息",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
   },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module/PSFORMS/Main.json",
   "logicName" : "主编辑表单",
   "modelid" : "deaaeb73ae64b50998f3c0667971ada6"

@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,12 +12,12 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "released",
     "codeName" : "Released",
-    "text" : "released",
-    "value" : "released"
+    "text" : "released"
   }, {
+    "value" : "wait",
     "codeName" : "Wait",
-    "text" : "wait",
-    "value" : "wait"
+    "text" : "wait"
   } ]
 }

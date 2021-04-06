@@ -5,6 +5,11 @@
     "index" : 0,
     "id" : "0"
   },
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
   "getPSChartCoordinateSystems" : [ {
     "getPSChartGrid" : {
       "getPSChartGridXAxis0" : {
@@ -30,11 +35,6 @@
     "name" : "[BurnDown]直角坐标系[0]",
     "id" : "0"
   } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "index" : 0,
-    "id" : "0"
-  },
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
@@ -72,24 +72,31 @@
     "name" : "BurnDown"
   } ],
   "codeName" : "BurnDown",
+  "getPSChartDataSets" : [ {
+    "getPSChartDataSetFields" : [ {
+      "groupField" : true,
+      "groupMode" : "DAY",
+      "index" : 0,
+      "name" : "BEGIN",
+      "id" : "0"
+    }, {
+      "groupField" : false,
+      "index" : 1,
+      "name" : "ID",
+      "id" : "1"
+    } ],
+    "index" : 0,
+    "name" : "BurnDown-DEFAULT",
+    "id" : "0"
+  } ],
   "getPSChartXAxises" : [ {
     "eChartsType" : "category",
     "eChartsPos" : "xAxis",
     "position" : "bottom",
-    "caption" : "日期",
     "type" : "category",
+    "caption" : "日期",
     "index" : 0,
     "name" : "X",
-    "id" : "0"
-  } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "position" : "left",
-    "caption" : "工时",
-    "type" : "numeric",
-    "index" : 0,
-    "name" : "Y",
     "id" : "0"
   } ],
   "getPSChartGrids" : [ {
@@ -117,21 +124,14 @@
     "name" : "[BurnDown]直角坐标系[0]",
     "id" : "0"
   } ],
-  "getPSChartDataSets" : [ {
-    "getPSChartDataSetFields" : [ {
-      "groupField" : true,
-      "groupMode" : "DAY",
-      "index" : 0,
-      "name" : "BEGIN",
-      "id" : "0"
-    }, {
-      "groupField" : false,
-      "index" : 1,
-      "name" : "ID",
-      "id" : "1"
-    } ],
+  "getPSChartYAxises" : [ {
+    "eChartsType" : "value",
+    "eChartsPos" : "yAxis",
+    "position" : "left",
+    "type" : "numeric",
+    "caption" : "工时",
     "index" : 0,
-    "name" : "BurnDown-DEFAULT",
+    "name" : "Y",
     "id" : "0"
   } ],
   "getPSChartDataSetGroups" : [ {
@@ -144,11 +144,11 @@
     "id" : "fetch"
   },
   "readOnly" : true,
-  "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
+  "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSCHARTS/BurnDown.json",
   "logicName" : "BurnDown",
   "modelid" : "b09f35e51d613eb6892615d2cdbeb77d"

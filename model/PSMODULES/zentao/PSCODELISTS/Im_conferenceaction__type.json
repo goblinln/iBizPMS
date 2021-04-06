@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,20 +12,20 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "create",
     "codeName" : "Create",
-    "text" : "create",
-    "value" : "create"
+    "text" : "create"
   }, {
+    "value" : "join",
     "codeName" : "Join",
-    "text" : "join",
-    "value" : "join"
+    "text" : "join"
   }, {
+    "value" : "leave",
     "codeName" : "Leave",
-    "text" : "leave",
-    "value" : "leave"
+    "text" : "leave"
   }, {
+    "value" : "close",
     "codeName" : "Close",
-    "text" : "close",
-    "value" : "close"
+    "text" : "close"
   } ]
 }

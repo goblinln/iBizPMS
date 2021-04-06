@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,14 +12,14 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "10",
     "codeName" : "Item_10",
     "text" : "功能增强",
-    "color" : "rgba(217, 4, 4, 1)",
-    "value" : "10"
+    "color" : "rgba(217, 4, 4, 1)"
   }, {
+    "value" : "20",
     "codeName" : "Item_20",
     "text" : "优化",
-    "color" : "rgba(97, 207, 13, 1)",
-    "value" : "20"
+    "color" : "rgba(97, 207, 13, 1)"
   } ]
 }

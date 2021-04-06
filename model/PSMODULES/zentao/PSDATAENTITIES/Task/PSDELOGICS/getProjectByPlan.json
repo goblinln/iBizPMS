@@ -71,20 +71,20 @@
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNULL",
         "dstFieldName" : "PLAN",
         "logicType" : "SINGLE",
         "name" : "Default[PLAN] 值为空(Nil)"
       }, {
+        "condOP" : "ISNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNULL",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
         "name" : "Default[STORY] 值为空(Nil)"
@@ -107,11 +107,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
         "name" : "Default[STORY] 值不为空(NotNil)"
@@ -134,11 +134,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "PLAN",
         "logicType" : "SINGLE",
         "name" : "Default[PLAN] 值不为空(NotNil)"

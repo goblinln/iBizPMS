@@ -3,22 +3,22 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
-  "getPSCodeItems" : [ {
-    "codeName" : "Sprint",
-    "text" : "短期项目",
-    "default" : true,
-    "value" : "sprint"
-  }, {
-    "codeName" : "Waterfall",
-    "text" : "长期项目",
-    "value" : "waterfall"
-  }, {
-    "codeName" : "Ops",
-    "text" : "运维项目",
-    "value" : "ops"
-  } ],
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "getPSCodeItems" : [ {
+    "value" : "sprint",
+    "codeName" : "Sprint",
+    "text" : "短期项目",
+    "default" : true
+  }, {
+    "value" : "waterfall",
+    "codeName" : "Waterfall",
+    "text" : "长期项目"
+  }, {
+    "value" : "ops",
+    "codeName" : "Ops",
+    "text" : "运维项目"
+  } ],
   "codeName" : "Project__type",
   "emptyText" : "未定义",
   "enableCache" : true,

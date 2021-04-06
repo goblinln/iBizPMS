@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,32 +12,32 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "7",
     "codeName" : "Item_7",
-    "text" : "一星期",
-    "value" : "7"
+    "text" : "一星期"
   }, {
+    "value" : "14",
     "codeName" : "Item_14",
-    "text" : "两星期",
-    "value" : "14"
+    "text" : "两星期"
   }, {
+    "value" : "31",
     "codeName" : "Item_31",
-    "text" : "一个月",
-    "value" : "31"
+    "text" : "一个月"
   }, {
+    "value" : "62",
     "codeName" : "Item_62",
-    "text" : "两个月",
-    "value" : "62"
+    "text" : "两个月"
   }, {
+    "value" : "93",
     "codeName" : "Item_93",
-    "text" : "三个月",
-    "value" : "93"
+    "text" : "三个月"
   }, {
+    "value" : "186",
     "codeName" : "Item_186",
-    "text" : "半年",
-    "value" : "186"
+    "text" : "半年"
   }, {
+    "value" : "365",
     "codeName" : "Item_365",
-    "text" : "一年",
-    "value" : "365"
+    "text" : "一年"
   } ]
 }

@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,88 +12,88 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "all",
     "codeName" : "All",
-    "text" : "全部",
-    "value" : "all"
+    "text" : "全部"
   }, {
+    "value" : "ie",
     "codeName" : "Ie",
-    "text" : "IE系列",
-    "value" : "ie"
+    "text" : "IE系列"
   }, {
+    "value" : "ie11",
     "codeName" : "Ie11",
-    "text" : "IE11",
-    "value" : "ie11"
+    "text" : "IE11"
   }, {
+    "value" : "ie10",
     "codeName" : "Ie10",
-    "text" : "IE10",
-    "value" : "ie10"
+    "text" : "IE10"
   }, {
+    "value" : "ie9",
     "codeName" : "Ie9",
-    "text" : "IE9",
-    "value" : "ie9"
+    "text" : "IE9"
   }, {
+    "value" : "ie8",
     "codeName" : "Ie8",
-    "text" : "IE8",
-    "value" : "ie8"
+    "text" : "IE8"
   }, {
+    "value" : "ie7",
     "codeName" : "Ie7",
-    "text" : "IE7",
-    "value" : "ie7"
+    "text" : "IE7"
   }, {
+    "value" : "ie6",
     "codeName" : "Ie6",
-    "text" : "IE6",
-    "value" : "ie6"
+    "text" : "IE6"
   }, {
+    "value" : "chrome",
     "codeName" : "Chrome",
-    "text" : "chrome",
-    "value" : "chrome"
+    "text" : "chrome"
   }, {
+    "value" : "firefox",
     "codeName" : "Firefox",
-    "text" : "firefox系列",
-    "value" : "firefox"
+    "text" : "firefox系列"
   }, {
+    "value" : "firefox4",
     "codeName" : "Firefox4",
-    "text" : "firefox4",
-    "value" : "firefox4"
+    "text" : "firefox4"
   }, {
+    "value" : "firefox3",
     "codeName" : "Firefox3",
-    "text" : "firefox3",
-    "value" : "firefox3"
+    "text" : "firefox3"
   }, {
+    "value" : "firefox2",
     "codeName" : "Firefox2",
-    "text" : "firefox2",
-    "value" : "firefox2"
+    "text" : "firefox2"
   }, {
+    "value" : "opera",
     "codeName" : "Opera",
-    "text" : "opera系列",
-    "value" : "opera"
+    "text" : "opera系列"
   }, {
+    "value" : "opera11",
     "codeName" : "Opera11",
-    "text" : "opera11",
-    "value" : "opera11"
+    "text" : "opera11"
   }, {
+    "value" : "oprea10",
     "codeName" : "Oprea10",
-    "text" : "oprea10",
-    "value" : "oprea10"
+    "text" : "oprea10"
   }, {
+    "value" : "opera9",
     "codeName" : "Opera9",
-    "text" : "opera9",
-    "value" : "opera9"
+    "text" : "opera9"
   }, {
+    "value" : "safari",
     "codeName" : "Safari",
-    "text" : "safari",
-    "value" : "safari"
+    "text" : "safari"
   }, {
+    "value" : "maxthon",
     "codeName" : "Maxthon",
-    "text" : "傲游",
-    "value" : "maxthon"
+    "text" : "傲游"
   }, {
+    "value" : "uc",
     "codeName" : "Uc",
-    "text" : "UC",
-    "value" : "uc"
+    "text" : "UC"
   }, {
+    "value" : "others",
     "codeName" : "Others",
-    "text" : "其他",
-    "value" : "others"
+    "text" : "其他"
   } ]
 }

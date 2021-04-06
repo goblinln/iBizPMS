@@ -44,11 +44,11 @@
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "待定",
         "dstFieldName" : "BEGINSTR",
         "logicType" : "SINGLE",

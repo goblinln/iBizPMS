@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,64 +12,64 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "customer",
     "codeName" : "Customer",
-    "text" : "客户",
-    "value" : "customer"
+    "text" : "客户"
   }, {
+    "value" : "user",
     "codeName" : "User",
-    "text" : "用户",
-    "value" : "user"
+    "text" : "用户"
   }, {
+    "value" : "po",
     "codeName" : "Po",
-    "text" : "产品经理",
-    "value" : "po"
+    "text" : "产品经理"
   }, {
+    "value" : "market",
     "codeName" : "Market",
-    "text" : "市场",
-    "value" : "market"
+    "text" : "市场"
   }, {
+    "value" : "service",
     "codeName" : "Service",
-    "text" : "客服",
-    "value" : "service"
+    "text" : "客服"
   }, {
+    "value" : "operation",
     "codeName" : "Operation",
-    "text" : "运营",
-    "value" : "operation"
+    "text" : "运营"
   }, {
+    "value" : "support",
     "codeName" : "Support",
-    "text" : "技术支持",
-    "value" : "support"
+    "text" : "技术支持"
   }, {
+    "value" : "competitor",
     "codeName" : "Competitor",
-    "text" : "竞争对手",
-    "value" : "competitor"
+    "text" : "竞争对手"
   }, {
+    "value" : "partner",
     "codeName" : "Partner",
-    "text" : "合作伙伴",
-    "value" : "partner"
+    "text" : "合作伙伴"
   }, {
+    "value" : "dev",
     "codeName" : "Dev",
-    "text" : "开发人员",
-    "value" : "dev"
+    "text" : "开发人员"
   }, {
+    "value" : "tester",
     "codeName" : "Tester",
-    "text" : "测试人员",
-    "value" : "tester"
+    "text" : "测试人员"
   }, {
+    "value" : "bug",
     "codeName" : "Bug",
-    "text" : "Bug",
-    "value" : "bug"
+    "text" : "Bug"
   }, {
+    "value" : "forum",
     "codeName" : "Forum",
-    "text" : "论坛",
-    "value" : "forum"
+    "text" : "论坛"
   }, {
+    "value" : "other",
     "codeName" : "Other",
-    "text" : "其它",
-    "value" : "other"
+    "text" : "其它"
   }, {
+    "value" : "iBiz",
     "codeName" : "Ibiz",
-    "text" : "iBiz",
-    "value" : "iBiz"
+    "text" : "iBiz"
   } ]
 }

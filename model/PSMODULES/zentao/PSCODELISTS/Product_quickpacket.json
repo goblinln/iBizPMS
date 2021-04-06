@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,35 +12,35 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "All",
     "data" : "{}",
     "codeName" : "All",
-    "text" : "所有",
-    "value" : "All"
+    "text" : "所有"
   }, {
+    "value" : "normal",
     "data" : "{\"n_status_eq\":\"normal\"}",
     "codeName" : "Normal",
     "text" : "正常",
-    "default" : true,
-    "value" : "normal"
+    "default" : true
   }, {
+    "value" : "MORE",
     "getPSCodeItems" : [ {
+      "value" : "closed",
       "data" : "{\"n_status_eq\":\"closed\"}",
       "codeName" : "Closed",
-      "text" : "结束",
-      "value" : "closed"
+      "text" : "结束"
     }, {
+      "value" : "branch",
       "data" : "{\"n_type_eq\":\"platform\"}",
       "codeName" : "Branch",
-      "text" : "多平台",
-      "value" : "branch"
+      "text" : "多平台"
     }, {
+      "value" : "platform",
       "data" : "{\"n_type_eq\":\"branch\"}",
       "codeName" : "Platform",
-      "text" : "多分支",
-      "value" : "platform"
+      "text" : "多分支"
     } ],
     "codeName" : "More",
-    "text" : "更多",
-    "value" : "MORE"
+    "text" : "更多"
   } ]
 }

@@ -4,61 +4,60 @@
       "name" : "UPDATEMAN",
       "codeName" : "UpdateMan"
     },
-    "dataType" : 25,
-    "name" : "updateman"
+    "name" : "updateman",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_REPORT_ROLE_CONFIGNAME",
       "codeName" : "IbzReportRoleConfigName"
     },
-    "dataType" : 25,
-    "name" : "ibz_report_role_configname"
+    "name" : "ibz_report_role_configname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "UPDATEDATE",
       "codeName" : "UpdateDate"
     },
     "format" : "YYYY-MM-DD HH:mm:ss",
-    "dataType" : 5,
-    "name" : "updatedate"
+    "name" : "updatedate",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataType" : 25,
-    "name" : "type"
+    "name" : "type",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "REPORT_ROLE",
       "codeName" : "Report_role"
     },
-    "dataType" : 25,
-    "name" : "report_role"
+    "name" : "report_role",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_REPORT_ROLE_CONFIGNAME",
       "codeName" : "IbzReportRoleConfigName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "IBZ_REPORT_ROLE_CONFIGID",
       "codeName" : "IbzReportRoleConfigId"
     },
-    "dataType" : 25,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_REPORT_ROLE_CONFIGID",
       "codeName" : "IbzReportRoleConfigId"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -80,30 +79,31 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportRoleConfig.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportRoleConfig.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
+  "singleSelect" : false,
+  "enablePagingBar" : true,
   "enableRowEdit" : false,
   "controlType" : "GRID",
-  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "ibz_report_role_configname",
     "getPSAppDEField" : {
       "name" : "IBZ_REPORT_ROLE_CONFIGNAME",
       "codeName" : "IbzReportRoleConfigName"
     },
+    "dataItemName" : "ibz_report_role_configname",
     "excelCaption" : "名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -116,7 +116,6 @@
     "widthUnit" : "PX",
     "name" : "ibz_report_role_configname"
   }, {
-    "dataItemName" : "type",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ReportType.json"
@@ -125,6 +124,7 @@
       "name" : "TYPE",
       "codeName" : "Type"
     },
+    "dataItemName" : "type",
     "excelCaption" : "类型",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -137,7 +137,6 @@
     "widthUnit" : "PX",
     "name" : "type"
   }, {
-    "dataItemName" : "report_role",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/AllRole.json"
@@ -146,6 +145,7 @@
       "name" : "REPORT_ROLE",
       "codeName" : "Report_role"
     },
+    "dataItemName" : "report_role",
     "excelCaption" : "角色",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -158,7 +158,6 @@
     "widthUnit" : "STAR",
     "name" : "report_role"
   }, {
-    "dataItemName" : "updateman",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
@@ -167,6 +166,7 @@
       "name" : "UPDATEMAN",
       "codeName" : "UpdateMan"
     },
+    "dataItemName" : "updateman",
     "excelCaption" : "更新人",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -179,11 +179,11 @@
     "widthUnit" : "PX",
     "name" : "updateman"
   }, {
-    "dataItemName" : "updatedate",
     "getPSAppDEField" : {
       "name" : "UPDATEDATE",
       "codeName" : "UpdateDate"
     },
+    "dataItemName" : "updatedate",
     "excelCaption" : "更新时间",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
@@ -199,21 +199,21 @@
   } ],
   "codeName" : "Main",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportRoleConfig.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportRoleConfig/PSGRIDS/Main.json",
   "logicName" : "主表格",
   "modelid" : "a141a260b71bb94519fd4e9d6a6e2bf3"

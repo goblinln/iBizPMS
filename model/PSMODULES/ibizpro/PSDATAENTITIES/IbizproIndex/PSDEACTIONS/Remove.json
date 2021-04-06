@@ -1,22 +1,22 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 2,
   "generateTestUnit" : true,
   "customParam" : true,
   "builtinAction" : true,
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
+  "getPSDEActionParams" : [ {
+    "name" : "INDEXID",
+    "orderValue" : 0,
+    "codeName" : "INDEXID",
+    "stdDataType" : 1,
+    "valueType" : "INPUTVALUE"
+  } ],
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
-  "getPSDEActionParams" : [ {
-    "orderValue" : 0,
-    "codeName" : "INDEXID",
-    "stdDataType" : 1,
-    "valueType" : "INPUTVALUE",
-    "name" : "INDEXID"
-  } ],
   "orderValue" : 21,
   "codeName" : "Remove",
   "logicName" : "Remove",

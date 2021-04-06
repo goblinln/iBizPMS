@@ -3,16 +3,16 @@
     "name" : "STORY",
     "codeName" : "Story"
   },
-  "masterOrder" : -1,
+  "getERMajorPSDEF" : {
+    "name" : "PRODUCT",
+    "codeName" : "Product"
+  },
   "getPSPickupTextDEField" : {
     "name" : "STORYNAME",
     "codeName" : "Storyname"
   },
   "enableExtRestrict" : true,
-  "getERMajorPSDEF" : {
-    "name" : "PRODUCT",
-    "codeName" : "Product"
-  },
+  "masterOrder" : -1,
   "getERMinorPSDEF" : {
     "name" : "PRODUCT",
     "codeName" : "Product"

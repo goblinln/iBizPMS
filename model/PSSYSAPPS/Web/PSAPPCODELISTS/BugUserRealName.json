@@ -1,4 +1,12 @@
 {
+  "getValuePSAppDEField" : {
+    "name" : "USERNAME",
+    "codeName" : "UserName"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "PERSONNAME",
+    "codeName" : "PersonName"
+  },
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchBugUser"
@@ -10,14 +18,6 @@
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-  },
-  "getTextPSAppDEField" : {
-    "name" : "PERSONNAME",
-    "codeName" : "PersonName"
-  },
-  "getValuePSAppDEField" : {
-    "name" : "USERNAME",
-    "codeName" : "UserName"
   },
   "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",

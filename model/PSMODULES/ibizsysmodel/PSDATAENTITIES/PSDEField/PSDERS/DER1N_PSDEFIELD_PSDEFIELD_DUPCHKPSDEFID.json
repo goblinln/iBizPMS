@@ -3,11 +3,11 @@
     "name" : "DUPCHKPSDEFID",
     "codeName" : "DupCheckPSDEFId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "DUPCHKPSDEFNAME",
     "codeName" : "DupCheckPSDEFName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "masterRS" : 0,
   "removeOrder" : 0,

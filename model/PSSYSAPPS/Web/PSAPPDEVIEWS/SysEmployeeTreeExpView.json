@@ -9,29 +9,35 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppViewEngines" : [ {
     "engineType" : "TreeExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "TREEEXPBAR"
+      "name" : "TREEEXPBAR",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+  },
   "getPSControls" : [ {
     "controlType" : "TREEEXPBAR",
+    "enableCounter" : true,
+    "enableSearch" : false,
     "getXDataPSControl" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee/PSTREEVIEWS/EmpTreeMenuZS.json",
@@ -44,13 +50,13 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
@@ -64,39 +70,39 @@
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -108,11 +114,12 @@
       },
       "controlType" : "TREEVIEW"
     },
-    "enableSearch" : false,
-    "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
       "treeGridMode" : 0,
+      "enableRootSelect" : false,
+      "outputIconDefault" : true,
+      "enableSearchDefault" : false,
       "getPSDETreeNodeRSs" : [ {
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -359,33 +366,30 @@
         "searchMode" : 3,
         "name" : "默认根节点 - 联系人"
       } ],
-      "enableRootSelect" : false,
-      "outputIconDefault" : true,
-      "enableSearchDefault" : false,
       "controlType" : "TREEVIEW",
       "getPSDETreeNodes" : [ {
         "text" : "项目团队",
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectGridExpView.json",
           "viewType" : "DEGRIDEXPVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
         },
+        "enableCheck" : false,
         "nodeType" : "project",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -396,6 +400,12 @@
         "id" : "project"
       }, {
         "text" : "岗位",
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "navFilter" : "postid",
         "getNavPSAppView" : {
@@ -403,21 +413,15 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysPostGridExpView.json",
           "viewType" : "DEGRIDEXPVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
         },
+        "enableCheck" : false,
         "nodeType" : "post",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -427,42 +431,42 @@
         "name" : "岗位",
         "id" : "post"
       }, {
+        "textFormat" : "联系列表",
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
-        },
-        "textFormat" : "联系列表",
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchMyUSERCONTACT"
         },
         "getTextPSAppDEField" : {
           "name" : "LISTNAME",
           "codeName" : "ListName"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchMyUSERCONTACT"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeGridExpView.json",
           "viewType" : "DEGRIDEXPVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
         },
+        "enableCheck" : false,
         "nodeType" : "UserContact",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -472,21 +476,27 @@
         "name" : "联系列表",
         "id" : "UserContact"
       }, {
+        "textFormat" : "岗位（动态）",
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "POSTID",
           "codeName" : "PostId"
-        },
-        "textFormat" : "岗位（动态）",
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
         },
         "getTextPSAppDEField" : {
           "name" : "POSTNAME",
           "codeName" : "PostName"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "navFilter" : "postid",
         "getNavPSAppView" : {
@@ -494,33 +504,27 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberGridExpView.json",
           "viewType" : "DEGRIDEXPVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
-        },
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "syspost",
-          "key" : "srfparentkey",
-          "name" : "srfparentkey"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "syspost",
           "key" : "SRFPARENTKEY",
           "name" : "SRFPARENTKEY"
         } ],
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "syspost",
+          "key" : "srfparentkey",
+          "name" : "srfparentkey"
+        } ],
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+        },
+        "enableCheck" : false,
         "nodeType" : "SysPost",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -530,21 +534,27 @@
         "name" : "岗位（动态）",
         "id" : "SysPost"
       }, {
+        "textFormat" : "项目团队",
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
-        },
-        "textFormat" : "项目团队",
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchProjectTeam"
         },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchProjectTeam"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "navFilter" : "project",
         "getNavPSAppView" : {
@@ -552,33 +562,27 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeGridExpViewProjectMember.json",
           "viewType" : "DEGRIDEXPVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "project",
-          "key" : "srfparentkey",
-          "name" : "srfparentkey"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "project",
           "key" : "SRFPARENTKEY",
           "name" : "SRFPARENTKEY"
         } ],
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "project",
+          "key" : "srfparentkey",
+          "name" : "srfparentkey"
+        } ],
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        },
+        "enableCheck" : false,
         "nodeType" : "ProjectTeam",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -588,41 +592,41 @@
         "name" : "项目",
         "id" : "ProjectTeam"
       }, {
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "ORGID",
           "codeName" : "OrgId"
-        },
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
         },
         "getTextPSAppDEField" : {
           "name" : "ORGNAME",
           "codeName" : "OrgName"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysDepartmentGridExpView.json",
           "viewType" : "DEGRIDEXPVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
         },
+        "enableCheck" : false,
         "nodeType" : "Org",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -632,42 +636,42 @@
         "name" : "组织",
         "id" : "Org"
       }, {
+        "textFormat" : "联系用户",
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "USERNAME",
           "codeName" : "UserName"
-        },
-        "textFormat" : "联系用户",
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchContActList"
         },
         "getTextPSAppDEField" : {
           "name" : "PERSONNAME",
           "codeName" : "PersonName"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchContActList"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : false,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : false,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
         },
+        "enableCheck" : false,
         "nodeType" : "ContActUser",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -679,18 +683,18 @@
       }, {
         "nodeValue" : "root",
         "text" : "默认根节点",
-        "enableQuickCreate" : false,
         "rootNode" : true,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
         "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
+        "selected" : false,
+        "enableQuickCreate" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "enableCheck" : false,
         "nodeType" : "ROOT",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -701,27 +705,27 @@
         "id" : "ROOT"
       }, {
         "text" : "组织人员",
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationGridExpView.json",
           "viewType" : "DEGRIDEXPVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
         },
+        "enableCheck" : false,
         "nodeType" : "OrgEmp",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -731,42 +735,42 @@
         "name" : "组织机构",
         "id" : "OrgEmp"
       }, {
+        "textFormat" : "项目人员",
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "USERNAME",
           "codeName" : "UserName"
-        },
-        "textFormat" : "项目人员",
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchProjectteamPk"
         },
         "getTextPSAppDEField" : {
           "name" : "PERSONNAME",
           "codeName" : "PersonName"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchProjectteamPk"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : false,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : false,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
         },
+        "enableCheck" : false,
         "nodeType" : "ProjectEmp",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -776,54 +780,54 @@
         "name" : "项目人员",
         "id" : "ProjectEmp"
       }, {
+        "textFormat" : "部门",
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "DEPTID",
           "codeName" : "DeptId"
-        },
-        "textFormat" : "部门",
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
         },
         "getTextPSAppDEField" : {
           "name" : "DEPTNAME",
           "codeName" : "DeptName"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeGridExpViewDept.json",
           "viewType" : "DEGRIDEXPVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
-        },
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "sysdept",
-          "key" : "srfparentkey",
-          "name" : "srfparentkey"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "sysdept",
           "key" : "SRFPARENTKEY",
           "name" : "SRFPARENTKEY"
         } ],
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "sysdept",
+          "key" : "srfparentkey",
+          "name" : "srfparentkey"
+        } ],
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
+        },
+        "enableCheck" : false,
         "nodeType" : "Depart",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -834,27 +838,27 @@
         "id" : "Depart"
       }, {
         "text" : "联系人",
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserContactGridExpView.json",
           "viewType" : "DEGRIDEXPVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
         },
+        "enableCheck" : false,
         "nodeType" : "ConcatList",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -864,21 +868,27 @@
         "name" : "联系人",
         "id" : "ConcatList"
       }, {
+        "textFormat" : "团队",
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "TEAMID",
           "codeName" : "TeamId"
-        },
-        "textFormat" : "团队",
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
         },
         "getTextPSAppDEField" : {
           "name" : "TEAMNAME",
           "codeName" : "TeamName"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "navFilter" : "teamid",
         "getNavPSAppView" : {
@@ -886,33 +896,27 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberGridExpViewTeam.json",
           "viewType" : "DEGRIDEXPVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
-        },
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "systeam",
-          "key" : "srfparentkey",
-          "name" : "srfparentkey"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "systeam",
           "key" : "SRFPARENTKEY",
           "name" : "SRFPARENTKEY"
         } ],
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "systeam",
+          "key" : "srfparentkey",
+          "name" : "srfparentkey"
+        } ],
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
+        },
+        "enableCheck" : false,
         "nodeType" : "SysTeam",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -922,6 +926,7 @@
         "name" : "团队",
         "id" : "SysTeam"
       }, {
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "USERNAME",
           "codeName" : "UserName"
@@ -930,37 +935,36 @@
           "name" : "USERICON",
           "codeName" : "UserIcon"
         },
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
-        },
         "getTextPSAppDEField" : {
           "name" : "PERSONNAME",
           "codeName" : "PersonName"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : false,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : false,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
         },
+        "enableCheck" : false,
         "nodeType" : "IBZEMP",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -970,54 +974,54 @@
         "name" : "人员",
         "id" : "IBZEMP"
       }, {
+        "textFormat" : "组员",
+        "appendCaption" : false,
         "getIdPSAppDEField" : {
           "name" : "USERID",
           "codeName" : "UserId"
-        },
-        "textFormat" : "组员",
-        "appendCaption" : false,
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
         },
         "getTextPSAppDEField" : {
           "name" : "PERSONNAME",
           "codeName" : "PersonName"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
         "maxSize" : -1,
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : false,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : false,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-        },
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "userid",
-          "key" : "sysemployee",
-          "name" : "sysemployee"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "userid",
           "key" : "SYSEMPLOYEE",
           "name" : "SYSEMPLOYEE"
         } ],
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "userid",
+          "key" : "sysemployee",
+          "name" : "sysemployee"
+        } ],
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
+        },
+        "enableCheck" : false,
         "nodeType" : "Teammember",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -1028,27 +1032,27 @@
         "id" : "Teammember"
       }, {
         "text" : "团队",
+        "rootNode" : false,
+        "expandFirstOnly" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selectFirstOnly" : false,
+        "appendPNodeId" : false,
+        "selected" : false,
         "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamGridExpView.json",
           "viewType" : "DEGRIDEXPVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
         "enableNewData" : false,
         "enableEditData" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
         },
+        "enableCheck" : false,
         "nodeType" : "Team",
         "disableSelect" : false,
         "enableQuickSearch" : false,
@@ -1060,6 +1064,10 @@
       } ],
       "codeName" : "EmpTreeMenuZS",
       "rootVisible" : false,
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
       "getCreatePSControlAction" : {
         "modelref" : true,
         "id" : "create"
@@ -1076,9 +1084,9 @@
         "modelref" : true,
         "id" : "load"
       },
-      "getFetchPSControlAction" : {
+      "getPSAppDataEntity" : {
         "modelref" : true,
-        "id" : "fetch"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
@@ -1089,13 +1097,13 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
@@ -1109,39 +1117,39 @@
           "actionType" : "DEDATASET",
           "name" : "fetch"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -1150,10 +1158,6 @@
         } ],
         "enableDEFieldPrivilege" : false,
         "id" : "树视图处理器"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
       },
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee/PSTREEVIEWS/EmpTreeMenuZS.json",
       "logicName" : "人员_PC端菜单栏展示",
@@ -1293,6 +1297,10 @@
       "realTitle" : "人员编辑视图",
       "name" : "EXPITEM:ProjectEmp"
     } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -1303,18 +1311,10 @@
       "enableDEFieldPrivilege" : false,
       "id" : "treeexpbar"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-    },
     "codeName" : "TreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "modelid" : "c311fbb0b39f9771f7d71d4d61f57f31_treeexpbar"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-  },
   "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",

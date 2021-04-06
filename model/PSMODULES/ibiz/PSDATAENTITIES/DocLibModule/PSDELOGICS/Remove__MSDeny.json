@@ -107,21 +107,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "module",
         "dstFieldName" : "DOCQTYPE",
         "logicType" : "SINGLE",
         "name" : "属性[DOCQTYPE]等于[module]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "0",
         "dstFieldName" : "ISFAVOURITES",
         "logicType" : "SINGLE",
@@ -145,21 +145,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "module",
         "dstFieldName" : "DOCQTYPE",
         "logicType" : "SINGLE",
         "name" : "属性[DOCQTYPE]等于[module]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISFAVOURITES",
         "logicType" : "SINGLE",

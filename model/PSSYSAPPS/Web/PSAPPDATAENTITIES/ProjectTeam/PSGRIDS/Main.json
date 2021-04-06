@@ -4,82 +4,81 @@
       "name" : "TOTAL",
       "codeName" : "Total"
     },
-    "dataType" : 9,
-    "name" : "total"
+    "name" : "total",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "LIMITED",
       "codeName" : "Limited"
     },
-    "dataType" : 25,
-    "name" : "limited"
+    "name" : "limited",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DAYS",
       "codeName" : "Days"
     },
-    "dataType" : 9,
-    "name" : "days"
+    "name" : "days",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
     },
-    "dataType" : 1,
-    "name" : "root"
+    "name" : "root",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "HOURS",
       "codeName" : "Hours"
     },
-    "dataType" : 7,
-    "name" : "hours"
+    "name" : "hours",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "ROLE",
       "codeName" : "Role"
     },
-    "dataType" : 25,
-    "name" : "role"
+    "name" : "role",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "account"
+    "name" : "account",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "JOIN",
       "codeName" : "Join"
     },
     "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "join"
+    "name" : "join",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -101,30 +100,30 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
-  "enableRowEdit" : false,
-  "controlType" : "GRID",
+  "singleSelect" : false,
   "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "account",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
@@ -133,6 +132,7 @@
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
+    "dataItemName" : "account",
     "excelCaption" : "用户",
     "cLConvertMode" : "FRONT",
     "getPSSysPFPlugin" : {
@@ -149,11 +149,11 @@
     "widthUnit" : "PX",
     "name" : "account"
   }, {
-    "dataItemName" : "role",
     "getPSAppDEField" : {
       "name" : "ROLE",
       "codeName" : "Role"
     },
+    "dataItemName" : "role",
     "excelCaption" : "角色",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -166,11 +166,11 @@
     "widthUnit" : "STAR",
     "name" : "role"
   }, {
-    "dataItemName" : "join",
     "getPSAppDEField" : {
       "name" : "JOIN",
       "codeName" : "Join"
     },
+    "dataItemName" : "join",
     "excelCaption" : "加盟日",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
@@ -184,11 +184,11 @@
     "widthUnit" : "PX",
     "name" : "join"
   }, {
-    "dataItemName" : "days",
     "getPSAppDEField" : {
       "name" : "DAYS",
       "codeName" : "Days"
     },
+    "dataItemName" : "days",
     "excelCaption" : "可用工日",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -201,11 +201,11 @@
     "widthUnit" : "PX",
     "name" : "days"
   }, {
-    "dataItemName" : "hours",
     "getPSAppDEField" : {
       "name" : "HOURS",
       "codeName" : "Hours"
     },
+    "dataItemName" : "hours",
     "excelCaption" : "可用工时/天",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -218,11 +218,11 @@
     "widthUnit" : "PX",
     "name" : "hours"
   }, {
-    "dataItemName" : "total",
     "getPSAppDEField" : {
       "name" : "TOTAL",
       "codeName" : "Total"
     },
+    "dataItemName" : "total",
     "excelCaption" : "总计可用",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -235,7 +235,6 @@
     "widthUnit" : "PX",
     "name" : "total"
   }, {
-    "dataItemName" : "limited",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
@@ -244,6 +243,7 @@
       "name" : "LIMITED",
       "codeName" : "Limited"
     },
+    "dataItemName" : "limited",
     "excelCaption" : "受限用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -258,18 +258,20 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
+        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
+          "refreshMode" : 1,
+          "enableConfirm" : true,
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
           "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
           },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "refreshMode" : 1,
-          "enableConfirm" : true,
           "getPSSysImage" : {
             "glyph" : "xf127@FontAwesome",
             "cssClass" : "fa fa-unlink"
@@ -289,10 +291,8 @@
           "name" : "移除成员",
           "id" : "RemoveMember@ProjectTeam"
         },
-        "showIcon" : true,
-        "addSeparator" : false,
-        "showCaption" : false,
         "detailType" : "DEUIACTION",
+        "showCaption" : false,
         "name" : "uf5bde76"
       } ],
       "name" : "项目团队主数据表格操作栏"
@@ -310,12 +310,12 @@
   "codeName" : "Main",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -338,19 +338,19 @@
     "name" : "移除成员"
   } ],
   "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "移除成员"
     },
+    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_uf5bde76_click"
   } ],
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam/PSGRIDS/Main.json",
   "logicName" : "主表格",
   "modelid" : "ff207ed61aa3a0af33df0df9c013c616"

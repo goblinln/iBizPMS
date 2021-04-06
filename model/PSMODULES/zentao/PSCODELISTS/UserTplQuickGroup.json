@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,25 +12,25 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "all",
     "data" : "{}",
     "codeName" : "All",
-    "text" : "所有",
-    "value" : "all"
+    "text" : "所有"
   }, {
+    "value" : "story",
     "data" : "{\"n_type_eq\":\"story\"}",
     "codeName" : "Story",
     "text" : "需求",
-    "default" : true,
-    "value" : "story"
+    "default" : true
   }, {
+    "value" : "task",
     "data" : "{\"n_type_eq\":\"task\"}",
     "codeName" : "Task",
-    "text" : "任务",
-    "value" : "task"
+    "text" : "任务"
   }, {
+    "value" : "bug",
     "data" : "{\"n_type_eq\":\"bug\"}",
     "codeName" : "Bug",
-    "text" : "Bug",
-    "value" : "bug"
+    "text" : "Bug"
   } ]
 }

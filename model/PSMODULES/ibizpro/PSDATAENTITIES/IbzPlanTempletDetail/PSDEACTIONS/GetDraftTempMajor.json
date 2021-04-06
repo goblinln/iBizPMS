@@ -1,11 +1,11 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
   "builtinAction" : true,
   "tempDataMode" : 1,
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
   "getPSDEOPPriv" : {
     "modelref" : true,
@@ -14,8 +14,8 @@
   "orderValue" : 45,
   "codeName" : "GetDraftTempMajor",
   "logicName" : "GetDraftTempMajor",
-  "extendMode" : 0,
   "enableTempData" : true,
+  "extendMode" : 0,
   "actionMode" : "GETDRAFT",
   "actionType" : "BUILTIN",
   "requestField" : "IBZ_PLANTEMPLETDETAILID",

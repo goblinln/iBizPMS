@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,13 +12,13 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "0",
     "codeName" : "Item_0",
     "text" : "未读",
-    "color" : "rgba(244, 15, 15, 1)",
-    "value" : "0"
+    "color" : "rgba(244, 15, 15, 1)"
   }, {
+    "value" : "1",
     "codeName" : "Item_1",
-    "text" : "已读",
-    "value" : "1"
+    "text" : "已读"
   } ]
 }

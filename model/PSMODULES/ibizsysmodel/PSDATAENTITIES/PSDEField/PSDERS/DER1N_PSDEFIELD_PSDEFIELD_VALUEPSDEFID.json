@@ -3,11 +3,11 @@
     "name" : "VALUEPSDEFID",
     "codeName" : "ValuePSDEFId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "VALUEPSDEFNAME",
     "codeName" : "ValuePSDEFName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "masterRS" : 0,
   "removeOrder" : 0,

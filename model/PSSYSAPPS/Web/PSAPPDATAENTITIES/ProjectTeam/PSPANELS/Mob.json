@@ -3,15 +3,16 @@
     "getPSPanelItems" : [ {
       "htmlContent" : "<ion-icon name=\"person-add-sharp\" style=\"font-size: 18px;\"></ion-icon>",
       "getPSLayoutPos" : {
-        "colMD" : 1,
         "colLG" : 1,
+        "colMD" : 1,
         "layout" : "TABLE_12COL"
       },
-      "showCaption" : true,
       "itemType" : "RAWITEM",
       "itemStyle" : "DEFAULT",
+      "showCaption" : true,
       "name" : "rawitem1"
     }, {
+      "viewFieldName" : "account",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -22,33 +23,32 @@
         "editorType" : "SPAN",
         "name" : "account"
       },
-      "viewFieldName" : "account",
-      "showCaption" : false,
-      "convertToCodeItemText" : true,
       "hidden" : false,
+      "convertToCodeItemText" : true,
+      "showCaption" : false,
       "getPSLayoutPos" : {
-        "colMD" : 6,
         "colLG" : 6,
+        "colMD" : 6,
         "layout" : "TABLE_12COL"
       },
       "itemType" : "FIELD",
       "itemStyle" : "DEFAULT",
       "name" : "account"
     }, {
+      "viewFieldName" : "role",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "role"
       },
-      "viewFieldName" : "role",
-      "showCaption" : false,
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
-        "colMD" : 4,
         "colLG" : 4,
         "colMDOffset" : 1,
         "colLGOffset" : 1,
+        "colMD" : 4,
         "layout" : "TABLE_12COL"
       },
       "itemType" : "FIELD",
@@ -63,12 +63,12 @@
       "colMD" : 12,
       "layout" : "TABLE_12COL"
     },
-    "showCaption" : true,
     "getPSSysCss" : {
       "cssName" : "mob_list_card"
     },
     "itemType" : "CONTAINER",
     "itemStyle" : "DEFAULT",
+    "showCaption" : true,
     "name" : "container1"
   } ],
   "getAllPSPanelFields" : [ {

@@ -1,10 +1,10 @@
 {
-  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
+    "length" : 45,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "dd490558277eacab836321e48b89ebba",
     "codeName" : "Code",
+    "valueFormat" : "%1$s",
     "logicName" : "产品代号",
     "stringLength" : 45,
     "stdDataType" : 25,
@@ -40,17 +40,26 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`CODE`",
+      "columnName" : "CODE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CODE"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 45,
     "name" : "CODE"
   }, {
+    "length" : 8,
     "dataType" : "ACID",
-    "valueFormat" : "%1$s",
     "deployId" : "8715e5dc46880a5560835faa8ac81a6f",
     "codeName" : "Id",
+    "valueFormat" : "%1$s",
     "logicName" : "产品编号",
     "stdDataType" : 1,
+    "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -72,23 +81,30 @@
       },
       "name" : "默认规则"
     } ],
-    "pasteReset" : true,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ID`",
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : true,
+      "name" : "ID"
+    } ],
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
     "importOrder" : 1000,
     "enableDBAutoValue" : true,
     "dEFType" : 1,
-    "length" : 8,
     "name" : "ID"
   }, {
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "4da7717fddae15817f3a4782203c38b9",
     "codeName" : "FinishedStoryCNT",
+    "valueFormat" : "%1$s",
     "logicName" : "已完成的需求数",
     "stdDataType" : 9,
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -111,15 +127,14 @@
     } ],
     "importOrder" : 1000,
     "dEFType" : 5,
-    "uIAssistDEField" : true,
     "name" : "FINISHEDSTORYCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "c8cbabfa641b58d721805677b2f7d9cb",
     "codeName" : "ReleasedStoryCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "已发布需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -142,18 +157,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'released' AND DELETED = '0')",
+      "columnName" : "RELEASEDSTORYCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RELEASEDSTORYCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "RELEASEDSTORYCNT"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "dff89674e0a233d2b990878d14170de3",
     "codeName" : "Importantbugpercent",
+    "valueFormat" : "%1$s",
     "logicName" : "严重bug比",
     "stringLength" : 100,
     "stdDataType" : 25,
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -188,16 +213,14 @@
     } ],
     "importOrder" : 1000,
     "dEFType" : 5,
-    "uIAssistDEField" : true,
-    "length" : 100,
     "name" : "IMPORTANTBUGPERCENT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "d47156ba42c307a2296cf04f5b90e23d",
     "codeName" : "UnDoneResProjectCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "未完成关联项目数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -220,16 +243,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PROJECT LEFT JOIN ZT_PROJECTPRODUCT ON  ZT_PROJECT.ID = ZT_PROJECTPRODUCT.project WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0')",
+      "columnName" : "UNDONERESPROJECTCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UNDONERESPROJECTCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "UNDONERESPROJECTCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "3504ea613e181201767a3e794521b34c",
     "codeName" : "AssignToMeBugCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "指派给我的Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -252,14 +283,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "1",
+      "columnName" : "ASSIGNTOMEBUGCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ASSIGNTOMEBUGCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "ASSIGNTOMEBUGCNT"
   }, {
+    "length" : 1,
+    "defaultValue" : "0",
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "f21f17bed4733c8939a735b055694dc4",
     "codeName" : "Deleted",
+    "valueFormat" : "%1$s",
     "logicName" : "已删除",
     "stringLength" : 1,
     "stdDataType" : 25,
@@ -295,22 +336,29 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`DELETED`",
+      "columnName" : "DELETED",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DELETED"
+    } ],
     "predefinedType" : "LOGICVALID",
     "enableUICreate" : false,
     "enableUIModify" : false,
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 1,
-    "defaultValue" : "0",
     "name" : "DELETED"
   }, {
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "5328fc5dc25f1fb4a3425b954215534c",
     "codeName" : "Istop",
+    "valueFormat" : "%1$s",
     "logicName" : "是否置顶",
     "stdDataType" : 9,
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -333,15 +381,14 @@
     } ],
     "importOrder" : 1000,
     "dEFType" : 5,
-    "uIAssistDEField" : true,
     "name" : "ISTOP"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "23d9a0174185d1505b5e95632d329f46",
     "codeName" : "ResProjectCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "关联项目数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -364,16 +411,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PROJECT LEFT JOIN ZT_PROJECTPRODUCT ON  ZT_PROJECT.ID = ZT_PROJECTPRODUCT.project WHERE PRODUCT = t1.`ID` AND DELETED = '0')",
+      "columnName" : "RESPROJECTCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RESPROJECTCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "RESPROJECTCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "89faa603be57437e73175bb3f3ea8628",
     "codeName" : "BugCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "所有Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -396,17 +451,26 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0')",
+      "columnName" : "BUGCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "BUGCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "BUGCNT"
   }, {
     "dataType" : "FLOAT",
-    "valueFormat" : "%1$s",
     "deployId" : "bc41e860c981fb2449577e021ea40a2e",
     "codeName" : "Haveconsumed",
+    "valueFormat" : "%1$s",
     "logicName" : "已消耗工时",
     "stdDataType" : 7,
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -429,17 +493,17 @@
     } ],
     "importOrder" : 1000,
     "dEFType" : 5,
-    "uIAssistDEField" : true,
     "name" : "HAVECONSUMED"
   }, {
-    "dataType" : "SSCODELIST",
+    "length" : 60,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Product__type.json"
     },
-    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "9c242cb33ab8563f16a855dcef3ada53",
     "codeName" : "Type",
+    "valueFormat" : "%1$s",
     "logicName" : "产品类型",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -475,17 +539,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`TYPE`",
+      "columnName" : "TYPE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TYPE"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 60,
     "name" : "TYPE"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "15413cdde89a7beca3bb4e6583051f72",
     "codeName" : "WaitStoryCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "未开始需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -508,17 +579,26 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'wait' AND DELETED = '0')",
+      "columnName" : "WAITSTORYCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "WAITSTORYCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "WAITSTORYCNT"
   }, {
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "2d0a64d1422aa0a3d0a85a8a07c20d8b",
     "codeName" : "BugStory",
+    "valueFormat" : "%1$s",
     "logicName" : "需求所提bug数",
     "stdDataType" : 9,
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -541,15 +621,14 @@
     } ],
     "importOrder" : 1000,
     "dEFType" : 5,
-    "uIAssistDEField" : true,
     "name" : "BUGSTORY"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "8ec537909cb802eadbeabfc5c2086359",
     "codeName" : "StoryCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "需求总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -572,14 +651,23 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND DELETED = '0')",
+      "columnName" : "STORYCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "STORYCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "STORYCNT"
   }, {
+    "length" : 90,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "bdd3f46757d2df8fbd4885ca97f1cbbe",
     "codeName" : "Name",
+    "valueFormat" : "%1$s",
     "logicName" : "产品名称",
     "stringLength" : 90,
     "stdDataType" : 25,
@@ -616,20 +704,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`NAME`",
+      "columnName" : "NAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "NAME"
+    } ],
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 90,
     "name" : "NAME"
   }, {
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "4955057f1904c8e71df8a1af97e9522e",
     "codeName" : "IMPORtantBUGCNT",
+    "valueFormat" : "%1$s",
     "logicName" : "重要的Bug数",
     "stdDataType" : 9,
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -652,15 +748,14 @@
     } ],
     "importOrder" : 1000,
     "dEFType" : 5,
-    "uIAssistDEField" : true,
     "name" : "IMPORTANTBUGCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "cf8981bcd49179236b56147d63d17e6d",
     "codeName" : "YesterdayClosedBugCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "昨天关闭Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -683,18 +778,27 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID`  AND DELETED = '0' and resolvedDate BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59'))",
+      "columnName" : "YESTERDAYCLOSEDBUGCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "YESTERDAYCLOSEDBUGCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "YESTERDAYCLOSEDBUGCNT"
   }, {
-    "dataType" : "SSCODELIST",
+    "length" : 60,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Product__status.json"
     },
-    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "001a88c763ffc5d54d36f5fc367cc3ab",
     "codeName" : "Status",
+    "valueFormat" : "%1$s",
     "logicName" : "状态",
     "stringLength" : 60,
     "stdDataType" : 25,
@@ -730,17 +834,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`STATUS`",
+      "columnName" : "STATUS",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "STATUS"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 60,
     "name" : "STATUS"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "5c60e3d63999e2c0c8457c74ea6829a6",
     "codeName" : "Yesterdayresolvedbugcnt",
+    "valueFormat" : "%1$s",
     "logicName" : "昨天解决Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -763,16 +874,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'closed' AND DELETED = '0' and CLOSEDDATE BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59'))",
+      "columnName" : "YESTERDAYRESOLVEDBUGCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "YESTERDAYRESOLVEDBUGCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "YESTERDAYRESOLVEDBUGCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "4a5788db4cce8ea3620df07217f701e4",
     "codeName" : "DevelopingStoryCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "开发中需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -795,16 +914,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'developing' AND DELETED = '0')",
+      "columnName" : "DEVELOPINGSTORYCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DEVELOPINGSTORYCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "DEVELOPINGSTORYCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "b044392be15b64cffc2d8c4e33554660",
     "codeName" : "ActiveStoryCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "激活需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -827,16 +954,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0')",
+      "columnName" : "ACTIVESTORYCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ACTIVESTORYCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "ACTIVESTORYCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "0c657aaed097a0123ba2f56720d304d3",
     "codeName" : "NotClosedBugCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "未关闭Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -859,16 +994,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0')",
+      "columnName" : "NOTCLOSEDBUGCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "NOTCLOSEDBUGCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "NOTCLOSEDBUGCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "75068df9bbe82bb5ec8bcc14af5acf58",
     "codeName" : "NormalReleaseCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "维护中发布数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -891,16 +1034,25 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND  `STATUS`= 'normal' AND DELETED = '0')",
+      "columnName" : "NORMALRELEASECNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "NORMALRELEASECNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "NORMALRELEASECNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "length" : 8,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "ed147f463626d147514750586a60e929",
     "codeName" : "Order1",
+    "valueFormat" : "%1$s",
     "logicName" : "产品排序",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -923,17 +1075,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "ORDER1",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ORDER1"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
-    "length" : 8,
     "name" : "ORDER1"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
+    "length" : 200,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "ad6b6767e219777c332328e3af60e3bf",
     "codeName" : "Currproject",
+    "valueFormat" : "%1$s",
     "logicName" : "当前项目",
     "stringLength" : 200,
     "stdDataType" : 25,
@@ -969,17 +1128,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT t.name FROM zt_project t,zt_projectproduct t2 WHERE t.id=t2.project and t2.product = t1.id limit 1)",
+      "columnName" : "CURRPROJECT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CURRPROJECT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
-    "length" : 200,
     "name" : "CURRPROJECT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "9065bb7bec014f31735a2dc0b8dbafff",
     "codeName" : "TestingStoryCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "测试中需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1002,16 +1168,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'testing' AND DELETED = '0')",
+      "columnName" : "TESTINGSTORYCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TESTINGSTORYCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "TESTINGSTORYCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "74c448938d101091999cd460d7c292f2",
     "codeName" : "ProductPlanCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "计划总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1034,16 +1208,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0')",
+      "columnName" : "PRODUCTPLANCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PRODUCTPLANCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "PRODUCTPLANCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "290afb8fd0a8bd5c0786c1d05b38a3c6",
     "codeName" : "ReleaseCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "发布总数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1066,16 +1248,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0')",
+      "columnName" : "RELEASECNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RELEASECNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "RELEASECNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "6f4d93178a26829e54719304a0544525",
     "codeName" : "Yesterdayconfirmbugcnt",
+    "valueFormat" : "%1$s",
     "logicName" : "昨天确认Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1098,16 +1288,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "5",
+      "columnName" : "YESTERDAYCONFIRMBUGCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "YESTERDAYCONFIRMBUGCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "YESTERDAYCONFIRMBUGCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "491bff9eaf371ca2550569dbd1eb47e4",
     "codeName" : "Postponedprojectcnt",
+    "valueFormat" : "%1$s",
     "logicName" : "已延期",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1130,16 +1328,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PROJECT t2 LEFT JOIN ZT_PROJECTPRODUCT t ON t2.ID = t.project WHERE t.PRODUCT = t1.id AND t2.DELETED = '0' and t2.`status` in( 'wait','doing') and t2.`END` < now() )",
+      "columnName" : "POSTPONEDPROJECTCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "POSTPONEDPROJECTCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "POSTPONEDPROJECTCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "07ac26c336e855427aeafdec5b514efd",
     "codeName" : "UnEndProductPlanCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "未过期计划数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1162,17 +1368,26 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID`  AND `END` > CURDATE() AND DELETED = '0')",
+      "columnName" : "UNENDPRODUCTPLANCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UNENDPRODUCTPLANCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "UNENDPRODUCTPLANCNT"
   }, {
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "e1cdd0cc80a7dd37af43cb6402af28e3",
     "codeName" : "RESOLVEDBUGCNT",
+    "valueFormat" : "%1$s",
     "logicName" : "解决Bug数",
     "stdDataType" : 9,
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1195,15 +1410,14 @@
     } ],
     "importOrder" : 1000,
     "dEFType" : 5,
-    "uIAssistDEField" : true,
     "name" : "RESOLVEDBUGCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "9d08312b354be76fefc459a0cfa4512b",
     "codeName" : "PlannedStoryCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "已计划需求数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1226,16 +1440,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'planned' AND DELETED ='0')",
+      "columnName" : "PLANNEDSTORYCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PLANNEDSTORYCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "PLANNEDSTORYCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "7414da2e54990408ba39c22f13fb406b",
     "codeName" : "UnconfirmBugCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "未确认Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1258,16 +1480,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0')",
+      "columnName" : "UNCONFIRMBUGCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UNCONFIRMBUGCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "UNCONFIRMBUGCNT"
   }, {
-    "phisicalDEField" : false,
     "formulaDEField" : true,
+    "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "2325c471bef93c8da102321b00342939",
     "codeName" : "ActiveBugCnt",
+    "valueFormat" : "%1$s",
     "logicName" : "未解决Bug数",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -1290,9 +1520,117 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED ='0')",
+      "columnName" : "ACTIVEBUGCNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ACTIVEBUGCNT"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "ACTIVEBUGCNT"
+  } ],
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "extendMode" : 0,
+    "minorSortDir" : "DESC",
+    "pageSize" : -1,
+    "majorSortDir" : "DESC",
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "NoOpenProduct",
+    "logicName" : "未关闭产品",
+    "extendMode" : 0,
+    "minorSortDir" : "DESC",
+    "pageSize" : -1,
+    "majorSortDir" : "DESC",
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "NoOpenProduct"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProdctQuantiGird",
+    "logicName" : "产品质量表",
+    "extendMode" : 0,
+    "pageSize" : -1,
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProdctQuantiGird"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "ProductInputTable",
+    "logicName" : "产品投入表",
+    "extendMode" : 0,
+    "pageSize" : -1,
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "ProductInputTable"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Productcompletionstatistics",
+    "logicName" : "产品完成统计表",
+    "extendMode" : 0,
+    "pageSize" : -1,
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "name" : "Productcompletionstatistics"
   } ],
   "getAllPSDEActions" : [ {
     "modelref" : true,
@@ -1319,6 +1657,73 @@
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/Save.json"
   } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "extendMode" : 0,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "NoOpenProduct",
+    "logicName" : "未关闭产品",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "NoOpenProduct"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "ProdctQuantiGird",
+    "logicName" : "产品质量表",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "ProdctQuantiGird"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "ProductInputTable",
+    "logicName" : "产品投入表",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "ProductInputTable"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Productcompletionstatistics",
+    "logicName" : "产品完成统计表",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "Productcompletionstatistics"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "getAllPSDELogics" : [ {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDELOGICS/GetCurUserBugCnt.json"
@@ -1332,6 +1737,12 @@
   "enableAPIStorage" : false,
   "validLogicValue" : "0",
   "invalidLogicValue" : "1",
+  "serviceAPIMode" : 1,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "deployId" : "5641161ed189fba53f4abe516f2e03ae",
+  "codeName" : "ProductStats",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1346,14 +1757,13 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
-  "dynaInstMode" : 1,
-  "dSLink" : "DEFAULT",
-  "orderValue" : 99999,
-  "deployId" : "5641161ed189fba53f4abe516f2e03ae",
-  "codeName" : "ProductStats",
   "logicName" : "产品统计",
   "tableName" : "zt_product",
-  "enableRemove" : true,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
   "logicValid" : true,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1362,18 +1772,14 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
+  "enableRemove" : true,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "serviceCodeName" : "ProductStats",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
   "extendMode" : 0,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

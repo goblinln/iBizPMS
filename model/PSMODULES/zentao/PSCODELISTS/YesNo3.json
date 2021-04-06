@@ -1,24 +1,24 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
-  "getPSCodeListTemplId" : "CODELIST_00052",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json",
   "codeName" : "YesNo3",
+  "getPSCodeListTemplId" : "CODELIST_00052",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "yes",
     "codeName" : "Yes",
-    "text" : "是",
-    "value" : "yes"
+    "text" : "是"
   }, {
+    "value" : "no",
     "codeName" : "No",
-    "text" : "否",
-    "value" : "no"
+    "text" : "否"
   } ]
 }

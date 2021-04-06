@@ -4,87 +4,86 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATES",
       "codeName" : "Totalestimates"
     },
-    "dataType" : 7,
-    "name" : "totalestimates"
+    "name" : "totalestimates",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTDAILYNAME",
       "codeName" : "IbizproProjectDailyName"
     },
-    "dataType" : 25,
-    "name" : "ibizpro_projectdailyname"
+    "name" : "ibizpro_projectdailyname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PM",
       "codeName" : "PM"
     },
-    "dataType" : 25,
-    "name" : "pm"
+    "name" : "pm",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataType" : 25,
-    "name" : "projectname"
+    "name" : "projectname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
     "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "date"
+    "name" : "date",
+    "dataType" : 5
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTDAILYNAME",
       "codeName" : "IbizproProjectDailyName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTDAILYID",
       "codeName" : "IbizproProjectDailyId"
     },
-    "dataType" : 25,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTDAILYID",
       "codeName" : "IbizproProjectDailyId"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
     "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "end"
+    "name" : "end",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
     "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "begin"
+    "name" : "begin",
+    "dataType" : 5
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -106,41 +105,42 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
-  "enableRowEdit" : false,
-  "controlType" : "GRID",
+  "singleSelect" : false,
   "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "linkValueItem" : "srfkey",
-    "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProjectDailyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "dataItemName" : "ibizpro_projectdailyname",
+    "enableLinkView" : true,
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTDAILYNAME",
       "codeName" : "IbizproProjectDailyName"
     },
+    "dataItemName" : "ibizpro_projectdailyname",
     "excelCaption" : "项目日报名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -153,11 +153,11 @@
     "widthUnit" : "STAR",
     "name" : "ibizpro_projectdailyname"
   }, {
-    "dataItemName" : "projectname",
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
+    "dataItemName" : "projectname",
     "excelCaption" : "项目名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -170,7 +170,6 @@
     "widthUnit" : "PX",
     "name" : "projectname"
   }, {
-    "dataItemName" : "pm",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -179,6 +178,7 @@
       "name" : "PM",
       "codeName" : "PM"
     },
+    "dataItemName" : "pm",
     "excelCaption" : "项目负责人",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -191,11 +191,11 @@
     "widthUnit" : "PX",
     "name" : "pm"
   }, {
-    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "dataItemName" : "date",
     "excelCaption" : "日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
@@ -209,11 +209,11 @@
     "widthUnit" : "PX",
     "name" : "date"
   }, {
-    "dataItemName" : "begin",
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
+    "dataItemName" : "begin",
     "excelCaption" : "开始日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
@@ -227,11 +227,11 @@
     "widthUnit" : "PX",
     "name" : "begin"
   }, {
-    "dataItemName" : "end",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
+    "dataItemName" : "end",
     "excelCaption" : "结束日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
@@ -245,11 +245,11 @@
     "widthUnit" : "PX",
     "name" : "end"
   }, {
-    "dataItemName" : "totalestimates",
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATES",
       "codeName" : "Totalestimates"
     },
+    "dataItemName" : "totalestimates",
     "excelCaption" : "总工时",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -265,21 +265,21 @@
   "codeName" : "Main",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily/PSGRIDS/Main.json",
   "logicName" : "主表格",
   "modelid" : "4073952481b2a0ca4cdba0ec4c4ffb3f"

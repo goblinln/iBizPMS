@@ -1,6 +1,6 @@
 {
-  "showCaptionBar" : false,
   "showDataInfoBar" : false,
+  "showCaptionBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "InfoEditView9",
   "caption" : "基础信息",
@@ -29,28 +29,28 @@
     "name" : "srfkey"
   } ],
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEEDITVIEW9_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEEDITVIEW9_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppViewEngines" : [ {
     "engineType" : "EditView9",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
@@ -75,6 +75,10 @@
     "key" : "USERYEARWORKSTATS",
     "name" : "USERYEARWORKSTATS"
   } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+  },
   "getPSControls" : [ {
     "getCreatePSControlAction" : {
       "modelref" : true,
@@ -100,15 +104,586 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
+    "enableAutoSave" : false,
     "infoFormMode" : true,
     "showFormNavBar" : false,
-    "enableAutoSave" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "getPSDEFormPages" : [ {
+      "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "role"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ROLE",
+          "codeName" : "Role"
+        },
+        "hidden" : true,
+        "dataType" : 25,
+        "caption" : "角色",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "role",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "role"
+      }, {
+        "infoGroupMode" : true,
+        "actionGroupExtractMode" : "ITEM",
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
+        "getPSDEFormDetails" : [ {
+          "infoGroupMode" : true,
+          "actionGroupExtractMode" : "ITEM",
+          "getPSLayout" : {
+            "layout" : "TABLE_24COL",
+            "columnCount" : 24
+          },
+          "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "yearvisits"
+            },
+            "inputTipClosable" : false,
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "YEARVISITS",
+              "codeName" : "Yearvisits"
+            },
+            "hidden" : true,
+            "dataType" : 9,
+            "caption" : "累计登录次数",
+            "allowEmpty" : true,
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "showCaption" : true,
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "codeName" : "yearvisits",
+            "detailType" : "FORMITEM",
+            "detailStyle" : "DEFAULT",
+            "name" : "yearvisits"
+          }, {
+            "emptyCaption" : false,
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "yearactioncnt"
+            },
+            "inputTipClosable" : false,
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "YEARACTIONCNT",
+              "codeName" : "Yearactioncnt"
+            },
+            "hidden" : true,
+            "dataType" : 9,
+            "caption" : "累计动态数",
+            "allowEmpty" : true,
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "showCaption" : true,
+            "getPSDEFDGroupLogics" : [ {
+              "logicCat" : "PANELVISIBLE",
+              "getPSDEFDLogics" : [ {
+                "condOP" : "NOTEQ",
+                "dEFDName" : "judgerole",
+                "value" : "po",
+                "logicType" : "SINGLE",
+                "name" : "judgerole 不等于(<>) (po)"
+              } ],
+              "notMode" : false,
+              "groupOP" : "AND",
+              "logicType" : "GROUP",
+              "name" : "表单成员[yearactioncnt][面板显示]逻辑"
+            } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "codeName" : "yearactioncnt",
+            "detailType" : "FORMITEM",
+            "detailStyle" : "DEFAULT",
+            "name" : "yearactioncnt"
+          }, {
+            "infoGroupMode" : true,
+            "actionGroupExtractMode" : "ITEM",
+            "getPSLayout" : {
+              "layout" : "TABLE_24COL",
+              "columnCount" : 24
+            },
+            "getPSDEFormDetails" : [ {
+              "emptyCaption" : false,
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "yearlogcnt"
+              },
+              "inputTipClosable" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "YEARLOGCNT",
+                "codeName" : "Yearlogcnt"
+              },
+              "hidden" : true,
+              "dataType" : 9,
+              "caption" : "累计日志数",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "showCaption" : true,
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "yearlogcnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "yearlogcnt"
+            }, {
+              "emptyCaption" : false,
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "yearestimatecnt"
+              },
+              "inputTipClosable" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "YEARESTIMATECNT",
+                "codeName" : "Yearestimatecnt"
+              },
+              "hidden" : true,
+              "dataType" : 9,
+              "caption" : "累计工时数",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "showCaption" : true,
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "yearestimatecnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "yearestimatecnt"
+            } ],
+            "getPSDEFDGroupLogics" : [ {
+              "logicCat" : "PANELVISIBLE",
+              "getPSDEFDLogics" : [ {
+                "condOP" : "EQ",
+                "dEFDName" : "judgerole",
+                "value" : "dev",
+                "logicType" : "SINGLE",
+                "name" : "judgerole 等于(=) (dev)"
+              } ],
+              "notMode" : false,
+              "groupOP" : "AND",
+              "logicType" : "GROUP",
+              "name" : "表单成员[grouppanel1][面板显示]逻辑"
+            } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "codeName" : "grouppanel1",
+            "caption" : "研发",
+            "detailType" : "GROUPPANEL",
+            "detailStyle" : "DEFAULT",
+            "showCaption" : false,
+            "name" : "grouppanel1"
+          }, {
+            "infoGroupMode" : true,
+            "actionGroupExtractMode" : "ITEM",
+            "getPSLayout" : {
+              "layout" : "TABLE_24COL",
+              "columnCount" : 24
+            },
+            "getPSDEFormDetails" : [ {
+              "emptyCaption" : false,
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "yearcasecnt"
+              },
+              "inputTipClosable" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "YEARCASECNT",
+                "codeName" : "Yearcasecnt"
+              },
+              "hidden" : true,
+              "dataType" : 9,
+              "caption" : "累计创建用例数",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "showCaption" : true,
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "yearcasecnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "yearcasecnt"
+            }, {
+              "emptyCaption" : false,
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "yearbugcnt"
+              },
+              "inputTipClosable" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "YEARBUGCNT",
+                "codeName" : "Yearbugcnt"
+              },
+              "hidden" : true,
+              "dataType" : 9,
+              "caption" : "累计创建Bug数",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "showCaption" : true,
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "yearbugcnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "yearbugcnt"
+            } ],
+            "getPSDEFDGroupLogics" : [ {
+              "logicCat" : "PANELVISIBLE",
+              "getPSDEFDLogics" : [ {
+                "condOP" : "EQ",
+                "dEFDName" : "judgerole",
+                "value" : "qa",
+                "logicType" : "SINGLE",
+                "name" : "judgerole 等于(=) (qa)"
+              } ],
+              "notMode" : false,
+              "groupOP" : "AND",
+              "logicType" : "GROUP",
+              "name" : "表单成员[grouppanel2][面板显示]逻辑"
+            } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "codeName" : "grouppanel2",
+            "caption" : "测试",
+            "detailType" : "GROUPPANEL",
+            "detailStyle" : "DEFAULT",
+            "showCaption" : false,
+            "name" : "grouppanel2"
+          }, {
+            "infoGroupMode" : true,
+            "actionGroupExtractMode" : "ITEM",
+            "getPSLayout" : {
+              "layout" : "TABLE_24COL",
+              "columnCount" : 24
+            },
+            "getPSDEFormDetails" : [ {
+              "emptyCaption" : false,
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "yearproductcnt"
+              },
+              "inputTipClosable" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "YEARPRODUCTCNT",
+                "codeName" : "Yearproductcnt"
+              },
+              "hidden" : true,
+              "dataType" : 9,
+              "caption" : "累计参与产品数",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "showCaption" : true,
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "yearproductcnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "yearproductcnt"
+            }, {
+              "emptyCaption" : false,
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "yearplancnt"
+              },
+              "inputTipClosable" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "YEARPLANCNT",
+                "codeName" : "Yearplancnt"
+              },
+              "hidden" : true,
+              "dataType" : 9,
+              "caption" : "累计创建计划数",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "showCaption" : true,
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "yearplancnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "yearplancnt"
+            }, {
+              "emptyCaption" : false,
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "yearstorycnt"
+              },
+              "inputTipClosable" : false,
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "YEARSTORYCNT",
+                "codeName" : "Yearstorycnt"
+              },
+              "hidden" : true,
+              "dataType" : 9,
+              "caption" : "累计创建需求数",
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "showCaption" : true,
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "codeName" : "yearstorycnt",
+              "detailType" : "FORMITEM",
+              "detailStyle" : "DEFAULT",
+              "name" : "yearstorycnt"
+            } ],
+            "getPSDEFDGroupLogics" : [ {
+              "logicCat" : "PANELVISIBLE",
+              "getPSDEFDLogics" : [ {
+                "condOP" : "EQ",
+                "dEFDName" : "judgerole",
+                "value" : "po",
+                "logicType" : "SINGLE",
+                "name" : "judgerole 等于(=) (po)"
+              } ],
+              "notMode" : false,
+              "groupOP" : "AND",
+              "logicType" : "GROUP",
+              "name" : "表单成员[grouppanel3][面板显示]逻辑"
+            } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "codeName" : "grouppanel3",
+            "caption" : "产品经理",
+            "detailType" : "GROUPPANEL",
+            "detailStyle" : "DEFAULT",
+            "showCaption" : false,
+            "name" : "grouppanel3"
+          } ],
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "group1",
+          "caption" : "基本数据信息",
+          "detailType" : "GROUPPANEL",
+          "detailStyle" : "DEFAULT",
+          "showCaption" : false,
+          "name" : "group1"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "grouppanel9",
+        "caption" : "基本信息",
+        "detailType" : "GROUPPANEL",
+        "detailStyle" : "DEFAULT",
+        "showCaption" : false,
+        "name" : "grouppanel9"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "judgerole"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "JUDGEROLE",
+          "codeName" : "Judgerole"
+        },
+        "hidden" : true,
+        "dataType" : 25,
+        "caption" : "判断角色",
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "judgerole",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "judgerole"
+      }, {
+        "rawItemHeight" : -1.0,
+        "rawItemWidth" : -1.0,
+        "contentType" : "RAW",
+        "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计日志数 <strong>{{data.yearlogcnt ? data.yearlogcnt: 0}}</strong></li><li >累计工时数 <strong>{{data.yearestimatecnt ? data.yearestimatecnt: 0}}</strong></li></ul></div>",
+        "getPSDEFDGroupLogics" : [ {
+          "logicCat" : "PANELVISIBLE",
+          "getPSDEFDLogics" : [ {
+            "condOP" : "EQ",
+            "dEFDName" : "judgerole",
+            "value" : "dev",
+            "logicType" : "SINGLE",
+            "name" : "judgerole 等于(=) (dev)"
+          } ],
+          "notMode" : false,
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "name" : "表单成员[rawitem1][面板显示]逻辑"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "year-stats-info-css"
+        },
+        "codeName" : "rawitem1",
+        "detailType" : "RAWITEM",
+        "detailStyle" : "DEFAULT",
+        "showCaption" : true,
+        "name" : "rawitem1"
+      }, {
+        "rawItemHeight" : -1.0,
+        "rawItemWidth" : -1.0,
+        "contentType" : "RAW",
+        "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li>累计参与产品数 <strong>{{data.yearproductcnt ? data.yearproductcnt: 0}}</strong></li><li >累计创建计划数 <strong>{{data.yearplancnt ? data.yearplancnt: 0}}</strong></li><li >累计创建需求数 <strong>{{data.yearstorycnt ? data.yearstorycnt: 0}}</strong></li></ul></div>",
+        "getPSDEFDGroupLogics" : [ {
+          "logicCat" : "PANELVISIBLE",
+          "getPSDEFDLogics" : [ {
+            "condOP" : "EQ",
+            "dEFDName" : "judgerole",
+            "value" : "po",
+            "logicType" : "SINGLE",
+            "name" : "judgerole 等于(=) (po)"
+          } ],
+          "notMode" : false,
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "name" : "表单成员[rawitem2][面板显示]逻辑"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "year-stats-info-css"
+        },
+        "codeName" : "rawitem2",
+        "detailType" : "RAWITEM",
+        "detailStyle" : "DEFAULT",
+        "showCaption" : true,
+        "name" : "rawitem2"
+      }, {
+        "rawItemHeight" : -1.0,
+        "rawItemWidth" : -1.0,
+        "contentType" : "RAW",
+        "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计创建用例数 <strong>{{data.yearcasecnt ? data.yearcasecnt: 0}}</strong></li><li >累计创建Bug数 <strong>{{data.yearbugcnt ? data.yearbugcnt: 0}}</strong></li></ul></div>",
+        "getPSDEFDGroupLogics" : [ {
+          "logicCat" : "PANELVISIBLE",
+          "getPSDEFDLogics" : [ {
+            "condOP" : "EQ",
+            "dEFDName" : "judgerole",
+            "value" : "qa",
+            "logicType" : "SINGLE",
+            "name" : "judgerole 等于(=) (qa)"
+          } ],
+          "notMode" : false,
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "name" : "表单成员[rawitem3][面板显示]逻辑"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "year-stats-info-css"
+        },
+        "codeName" : "rawitem3",
+        "detailType" : "RAWITEM",
+        "detailStyle" : "DEFAULT",
+        "showCaption" : true,
+        "name" : "rawitem3"
+      } ],
+      "infoGroupMode" : true,
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "codeName" : "formpage1",
+      "caption" : "基本信息",
+      "detailType" : "FORMPAGE",
+      "detailStyle" : "DEFAULT",
+      "name" : "formpage1"
+    } ],
     "getPSDEFormItems" : [ {
       "id" : "srforikey",
       "hidden" : true,
@@ -243,579 +818,12 @@
       }
     } ],
     "noTabHeader" : true,
-    "getPSDEFormPages" : [ {
-      "getPSDEFormDetails" : [ {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "editorType" : "HIDDEN",
-          "name" : "role"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "ROLE",
-          "codeName" : "Role"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "caption" : "角色",
-        "allowEmpty" : true,
-        "labelWidth" : 130,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : true,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "role",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "role"
-      }, {
-        "infoGroupMode" : true,
-        "actionGroupExtractMode" : "ITEM",
-        "getPSLayout" : {
-          "layout" : "TABLE_24COL",
-          "columnCount" : 24
-        },
-        "getPSDEFormDetails" : [ {
-          "infoGroupMode" : true,
-          "actionGroupExtractMode" : "ITEM",
-          "getPSLayout" : {
-            "layout" : "TABLE_24COL",
-            "columnCount" : 24
-          },
-          "getPSDEFormDetails" : [ {
-            "inputTipClosable" : false,
-            "getPSEditor" : {
-              "editorType" : "HIDDEN",
-              "name" : "yearvisits"
-            },
-            "emptyCaption" : false,
-            "noPrivDisplayMode" : 1,
-            "getPSAppDEField" : {
-              "name" : "YEARVISITS",
-              "codeName" : "Yearvisits"
-            },
-            "showCaption" : true,
-            "dataType" : 9,
-            "caption" : "累计登录次数",
-            "allowEmpty" : true,
-            "labelWidth" : 130,
-            "enableCond" : 3,
-            "ignoreInput" : 0,
-            "labelPos" : "LEFT",
-            "hidden" : true,
-            "getPSLayoutPos" : {
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
-            "codeName" : "yearvisits",
-            "detailType" : "FORMITEM",
-            "detailStyle" : "DEFAULT",
-            "name" : "yearvisits"
-          }, {
-            "inputTipClosable" : false,
-            "getPSEditor" : {
-              "editorType" : "HIDDEN",
-              "name" : "yearactioncnt"
-            },
-            "emptyCaption" : false,
-            "noPrivDisplayMode" : 1,
-            "getPSAppDEField" : {
-              "name" : "YEARACTIONCNT",
-              "codeName" : "Yearactioncnt"
-            },
-            "showCaption" : true,
-            "dataType" : 9,
-            "caption" : "累计动态数",
-            "allowEmpty" : true,
-            "labelWidth" : 130,
-            "enableCond" : 3,
-            "ignoreInput" : 0,
-            "labelPos" : "LEFT",
-            "hidden" : true,
-            "getPSDEFDGroupLogics" : [ {
-              "logicCat" : "PANELVISIBLE",
-              "getPSDEFDLogics" : [ {
-                "dEFDName" : "judgerole",
-                "condOP" : "NOTEQ",
-                "value" : "po",
-                "logicType" : "SINGLE",
-                "name" : "judgerole 不等于(<>) (po)"
-              } ],
-              "notMode" : false,
-              "groupOP" : "AND",
-              "logicType" : "GROUP",
-              "name" : "表单成员[yearactioncnt][面板显示]逻辑"
-            } ],
-            "getPSLayoutPos" : {
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
-            "codeName" : "yearactioncnt",
-            "detailType" : "FORMITEM",
-            "detailStyle" : "DEFAULT",
-            "name" : "yearactioncnt"
-          }, {
-            "infoGroupMode" : true,
-            "actionGroupExtractMode" : "ITEM",
-            "getPSLayout" : {
-              "layout" : "TABLE_24COL",
-              "columnCount" : 24
-            },
-            "getPSDEFormDetails" : [ {
-              "inputTipClosable" : false,
-              "getPSEditor" : {
-                "editorType" : "HIDDEN",
-                "name" : "yearlogcnt"
-              },
-              "emptyCaption" : false,
-              "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "YEARLOGCNT",
-                "codeName" : "Yearlogcnt"
-              },
-              "showCaption" : true,
-              "dataType" : 9,
-              "caption" : "累计日志数",
-              "allowEmpty" : true,
-              "labelWidth" : 130,
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "labelPos" : "LEFT",
-              "hidden" : true,
-              "getPSLayoutPos" : {
-                "colMD" : 24,
-                "layout" : "TABLE_24COL"
-              },
-              "codeName" : "yearlogcnt",
-              "detailType" : "FORMITEM",
-              "detailStyle" : "DEFAULT",
-              "name" : "yearlogcnt"
-            }, {
-              "inputTipClosable" : false,
-              "getPSEditor" : {
-                "editorType" : "HIDDEN",
-                "name" : "yearestimatecnt"
-              },
-              "emptyCaption" : false,
-              "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "YEARESTIMATECNT",
-                "codeName" : "Yearestimatecnt"
-              },
-              "showCaption" : true,
-              "dataType" : 9,
-              "caption" : "累计工时数",
-              "allowEmpty" : true,
-              "labelWidth" : 130,
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "labelPos" : "LEFT",
-              "hidden" : true,
-              "getPSLayoutPos" : {
-                "colMD" : 24,
-                "layout" : "TABLE_24COL"
-              },
-              "codeName" : "yearestimatecnt",
-              "detailType" : "FORMITEM",
-              "detailStyle" : "DEFAULT",
-              "name" : "yearestimatecnt"
-            } ],
-            "getPSDEFDGroupLogics" : [ {
-              "logicCat" : "PANELVISIBLE",
-              "getPSDEFDLogics" : [ {
-                "dEFDName" : "judgerole",
-                "condOP" : "EQ",
-                "value" : "dev",
-                "logicType" : "SINGLE",
-                "name" : "judgerole 等于(=) (dev)"
-              } ],
-              "notMode" : false,
-              "groupOP" : "AND",
-              "logicType" : "GROUP",
-              "name" : "表单成员[grouppanel1][面板显示]逻辑"
-            } ],
-            "getPSLayoutPos" : {
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
-            "showCaption" : false,
-            "codeName" : "grouppanel1",
-            "caption" : "研发",
-            "detailType" : "GROUPPANEL",
-            "detailStyle" : "DEFAULT",
-            "name" : "grouppanel1"
-          }, {
-            "infoGroupMode" : true,
-            "actionGroupExtractMode" : "ITEM",
-            "getPSLayout" : {
-              "layout" : "TABLE_24COL",
-              "columnCount" : 24
-            },
-            "getPSDEFormDetails" : [ {
-              "inputTipClosable" : false,
-              "getPSEditor" : {
-                "editorType" : "HIDDEN",
-                "name" : "yearcasecnt"
-              },
-              "emptyCaption" : false,
-              "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "YEARCASECNT",
-                "codeName" : "Yearcasecnt"
-              },
-              "showCaption" : true,
-              "dataType" : 9,
-              "caption" : "累计创建用例数",
-              "allowEmpty" : true,
-              "labelWidth" : 130,
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "labelPos" : "LEFT",
-              "hidden" : true,
-              "getPSLayoutPos" : {
-                "colMD" : 24,
-                "layout" : "TABLE_24COL"
-              },
-              "codeName" : "yearcasecnt",
-              "detailType" : "FORMITEM",
-              "detailStyle" : "DEFAULT",
-              "name" : "yearcasecnt"
-            }, {
-              "inputTipClosable" : false,
-              "getPSEditor" : {
-                "editorType" : "HIDDEN",
-                "name" : "yearbugcnt"
-              },
-              "emptyCaption" : false,
-              "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "YEARBUGCNT",
-                "codeName" : "Yearbugcnt"
-              },
-              "showCaption" : true,
-              "dataType" : 9,
-              "caption" : "累计创建Bug数",
-              "allowEmpty" : true,
-              "labelWidth" : 130,
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "labelPos" : "LEFT",
-              "hidden" : true,
-              "getPSLayoutPos" : {
-                "colMD" : 24,
-                "layout" : "TABLE_24COL"
-              },
-              "codeName" : "yearbugcnt",
-              "detailType" : "FORMITEM",
-              "detailStyle" : "DEFAULT",
-              "name" : "yearbugcnt"
-            } ],
-            "getPSDEFDGroupLogics" : [ {
-              "logicCat" : "PANELVISIBLE",
-              "getPSDEFDLogics" : [ {
-                "dEFDName" : "judgerole",
-                "condOP" : "EQ",
-                "value" : "qa",
-                "logicType" : "SINGLE",
-                "name" : "judgerole 等于(=) (qa)"
-              } ],
-              "notMode" : false,
-              "groupOP" : "AND",
-              "logicType" : "GROUP",
-              "name" : "表单成员[grouppanel2][面板显示]逻辑"
-            } ],
-            "getPSLayoutPos" : {
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
-            "showCaption" : false,
-            "codeName" : "grouppanel2",
-            "caption" : "测试",
-            "detailType" : "GROUPPANEL",
-            "detailStyle" : "DEFAULT",
-            "name" : "grouppanel2"
-          }, {
-            "infoGroupMode" : true,
-            "actionGroupExtractMode" : "ITEM",
-            "getPSLayout" : {
-              "layout" : "TABLE_24COL",
-              "columnCount" : 24
-            },
-            "getPSDEFormDetails" : [ {
-              "inputTipClosable" : false,
-              "getPSEditor" : {
-                "editorType" : "HIDDEN",
-                "name" : "yearproductcnt"
-              },
-              "emptyCaption" : false,
-              "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "YEARPRODUCTCNT",
-                "codeName" : "Yearproductcnt"
-              },
-              "showCaption" : true,
-              "dataType" : 9,
-              "caption" : "累计参与产品数",
-              "allowEmpty" : true,
-              "labelWidth" : 130,
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "labelPos" : "LEFT",
-              "hidden" : true,
-              "getPSLayoutPos" : {
-                "colMD" : 24,
-                "layout" : "TABLE_24COL"
-              },
-              "codeName" : "yearproductcnt",
-              "detailType" : "FORMITEM",
-              "detailStyle" : "DEFAULT",
-              "name" : "yearproductcnt"
-            }, {
-              "inputTipClosable" : false,
-              "getPSEditor" : {
-                "editorType" : "HIDDEN",
-                "name" : "yearplancnt"
-              },
-              "emptyCaption" : false,
-              "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "YEARPLANCNT",
-                "codeName" : "Yearplancnt"
-              },
-              "showCaption" : true,
-              "dataType" : 9,
-              "caption" : "累计创建计划数",
-              "allowEmpty" : true,
-              "labelWidth" : 130,
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "labelPos" : "LEFT",
-              "hidden" : true,
-              "getPSLayoutPos" : {
-                "colMD" : 24,
-                "layout" : "TABLE_24COL"
-              },
-              "codeName" : "yearplancnt",
-              "detailType" : "FORMITEM",
-              "detailStyle" : "DEFAULT",
-              "name" : "yearplancnt"
-            }, {
-              "inputTipClosable" : false,
-              "getPSEditor" : {
-                "editorType" : "HIDDEN",
-                "name" : "yearstorycnt"
-              },
-              "emptyCaption" : false,
-              "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "YEARSTORYCNT",
-                "codeName" : "Yearstorycnt"
-              },
-              "showCaption" : true,
-              "dataType" : 9,
-              "caption" : "累计创建需求数",
-              "allowEmpty" : true,
-              "labelWidth" : 130,
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "labelPos" : "LEFT",
-              "hidden" : true,
-              "getPSLayoutPos" : {
-                "colMD" : 24,
-                "layout" : "TABLE_24COL"
-              },
-              "codeName" : "yearstorycnt",
-              "detailType" : "FORMITEM",
-              "detailStyle" : "DEFAULT",
-              "name" : "yearstorycnt"
-            } ],
-            "getPSDEFDGroupLogics" : [ {
-              "logicCat" : "PANELVISIBLE",
-              "getPSDEFDLogics" : [ {
-                "dEFDName" : "judgerole",
-                "condOP" : "EQ",
-                "value" : "po",
-                "logicType" : "SINGLE",
-                "name" : "judgerole 等于(=) (po)"
-              } ],
-              "notMode" : false,
-              "groupOP" : "AND",
-              "logicType" : "GROUP",
-              "name" : "表单成员[grouppanel3][面板显示]逻辑"
-            } ],
-            "getPSLayoutPos" : {
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
-            "showCaption" : false,
-            "codeName" : "grouppanel3",
-            "caption" : "产品经理",
-            "detailType" : "GROUPPANEL",
-            "detailStyle" : "DEFAULT",
-            "name" : "grouppanel3"
-          } ],
-          "getPSLayoutPos" : {
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
-          "showCaption" : false,
-          "codeName" : "group1",
-          "caption" : "基本数据信息",
-          "detailType" : "GROUPPANEL",
-          "detailStyle" : "DEFAULT",
-          "name" : "group1"
-        } ],
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "showCaption" : false,
-        "codeName" : "grouppanel9",
-        "caption" : "基本信息",
-        "detailType" : "GROUPPANEL",
-        "detailStyle" : "DEFAULT",
-        "name" : "grouppanel9"
-      }, {
-        "inputTipClosable" : false,
-        "getPSEditor" : {
-          "editorType" : "HIDDEN",
-          "name" : "judgerole"
-        },
-        "emptyCaption" : false,
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "JUDGEROLE",
-          "codeName" : "Judgerole"
-        },
-        "showCaption" : true,
-        "dataType" : 25,
-        "caption" : "判断角色",
-        "allowEmpty" : true,
-        "labelWidth" : 130,
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "hidden" : true,
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "codeName" : "judgerole",
-        "detailType" : "FORMITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "judgerole"
-      }, {
-        "rawItemHeight" : -1.0,
-        "rawItemWidth" : -1.0,
-        "contentType" : "RAW",
-        "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计日志数 <strong>{{data.yearlogcnt ? data.yearlogcnt: 0}}</strong></li><li >累计工时数 <strong>{{data.yearestimatecnt ? data.yearestimatecnt: 0}}</strong></li></ul></div>",
-        "getPSDEFDGroupLogics" : [ {
-          "logicCat" : "PANELVISIBLE",
-          "getPSDEFDLogics" : [ {
-            "dEFDName" : "judgerole",
-            "condOP" : "EQ",
-            "value" : "dev",
-            "logicType" : "SINGLE",
-            "name" : "judgerole 等于(=) (dev)"
-          } ],
-          "notMode" : false,
-          "groupOP" : "AND",
-          "logicType" : "GROUP",
-          "name" : "表单成员[rawitem1][面板显示]逻辑"
-        } ],
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "showCaption" : true,
-        "getPSSysCss" : {
-          "cssName" : "year-stats-info-css"
-        },
-        "codeName" : "rawitem1",
-        "detailType" : "RAWITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "rawitem1"
-      }, {
-        "rawItemHeight" : -1.0,
-        "rawItemWidth" : -1.0,
-        "contentType" : "RAW",
-        "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li>累计参与产品数 <strong>{{data.yearproductcnt ? data.yearproductcnt: 0}}</strong></li><li >累计创建计划数 <strong>{{data.yearplancnt ? data.yearplancnt: 0}}</strong></li><li >累计创建需求数 <strong>{{data.yearstorycnt ? data.yearstorycnt: 0}}</strong></li></ul></div>",
-        "getPSDEFDGroupLogics" : [ {
-          "logicCat" : "PANELVISIBLE",
-          "getPSDEFDLogics" : [ {
-            "dEFDName" : "judgerole",
-            "condOP" : "EQ",
-            "value" : "po",
-            "logicType" : "SINGLE",
-            "name" : "judgerole 等于(=) (po)"
-          } ],
-          "notMode" : false,
-          "groupOP" : "AND",
-          "logicType" : "GROUP",
-          "name" : "表单成员[rawitem2][面板显示]逻辑"
-        } ],
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "showCaption" : true,
-        "getPSSysCss" : {
-          "cssName" : "year-stats-info-css"
-        },
-        "codeName" : "rawitem2",
-        "detailType" : "RAWITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "rawitem2"
-      }, {
-        "rawItemHeight" : -1.0,
-        "rawItemWidth" : -1.0,
-        "contentType" : "RAW",
-        "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计创建用例数 <strong>{{data.yearcasecnt ? data.yearcasecnt: 0}}</strong></li><li >累计创建Bug数 <strong>{{data.yearbugcnt ? data.yearbugcnt: 0}}</strong></li></ul></div>",
-        "getPSDEFDGroupLogics" : [ {
-          "logicCat" : "PANELVISIBLE",
-          "getPSDEFDLogics" : [ {
-            "dEFDName" : "judgerole",
-            "condOP" : "EQ",
-            "value" : "qa",
-            "logicType" : "SINGLE",
-            "name" : "judgerole 等于(=) (qa)"
-          } ],
-          "notMode" : false,
-          "groupOP" : "AND",
-          "logicType" : "GROUP",
-          "name" : "表单成员[rawitem3][面板显示]逻辑"
-        } ],
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "showCaption" : true,
-        "getPSSysCss" : {
-          "cssName" : "year-stats-info-css"
-        },
-        "codeName" : "rawitem3",
-        "detailType" : "RAWITEM",
-        "detailStyle" : "DEFAULT",
-        "name" : "rawitem3"
-      } ],
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
-      "infoGroupMode" : true,
-      "codeName" : "formpage1",
-      "caption" : "基本信息",
-      "detailType" : "FORMPAGE",
-      "detailStyle" : "DEFAULT",
-      "name" : "formpage1"
-    } ],
     "codeName" : "MainInfo",
     "tabHeaderPos" : "TOP",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -824,13 +832,13 @@
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
         },
         "dataAccessAction" : "UPDATE",
         "actionName" : "Update",
@@ -846,52 +854,52 @@
         "actionType" : "DEACTION",
         "name" : "loaddraftfrom"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "name" : "loaddraft"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "GetUserYearAction"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
         },
         "dataAccessAction" : "READ",
         "actionName" : "GetUserYearAction",
         "actionType" : "DEACTION",
         "name" : "load"
       }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
         },
         "dataAccessAction" : "CREATE",
         "actionName" : "Create",
@@ -901,19 +909,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器（获取年度动作）"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-    },
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSFORMS/MainInfo.json",
     "logicName" : "基础信息",
     "name" : "form",
     "modelid" : "86f3c8807047a419832d73fa0c4cc50c"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-  },
   "viewStyle" : "STYLE2",
   "codeName" : "UserYearWorkStatsInfoEditView9",
   "viewType" : "DEEDITVIEW9",

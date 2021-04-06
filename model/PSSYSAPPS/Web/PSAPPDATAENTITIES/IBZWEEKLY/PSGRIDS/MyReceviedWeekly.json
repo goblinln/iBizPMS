@@ -4,78 +4,77 @@
       "name" : "IBZ_WEEKLYID",
       "codeName" : "IbzWeeklyId"
     },
-    "dataType" : 1,
-    "name" : "ibz_weeklyid"
+    "name" : "ibz_weeklyid",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ISSUBMIT",
       "codeName" : "Issubmit"
     },
-    "dataType" : 25,
-    "name" : "issubmit"
+    "name" : "issubmit",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_WEEKLYNAME",
       "codeName" : "IbzWeeklyName"
     },
-    "dataType" : 25,
-    "name" : "ibz_weeklyname"
+    "name" : "ibz_weeklyname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "account"
+    "name" : "account",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "REPORTSTATUS",
       "codeName" : "Reportstatus"
     },
-    "dataType" : 25,
-    "name" : "reportstatus"
+    "name" : "reportstatus",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
     "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "date"
+    "name" : "date",
+    "dataType" : 5
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_WEEKLYNAME",
       "codeName" : "IbzWeeklyName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "IBZ_WEEKLYID",
       "codeName" : "IbzWeeklyId"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_WEEKLYID",
       "codeName" : "IbzWeeklyId"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "REPORTTO",
       "codeName" : "Reportto"
     },
-    "dataType" : 25,
-    "name" : "reportto"
+    "name" : "reportto",
+    "dataType" : 25
   } ],
-  "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
@@ -97,34 +96,35 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "Remove",
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "columnEnableLink" : 2,
-  "enableRowEdit" : false,
-  "controlType" : "GRID",
+  "singleSelect" : false,
   "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "dataItemName" : "ibz_weeklyid",
     "getPSAppDEField" : {
       "name" : "IBZ_WEEKLYID",
       "codeName" : "IbzWeeklyId"
     },
+    "dataItemName" : "ibz_weeklyid",
     "excelCaption" : "编号",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -137,28 +137,28 @@
     "widthUnit" : "PX",
     "name" : "ibz_weeklyid"
   }, {
-    "dataItemName" : "ibz_weeklyname",
     "getPSAppDEField" : {
       "name" : "IBZ_WEEKLYNAME",
       "codeName" : "IbzWeeklyName"
     },
+    "dataItemName" : "ibz_weeklyname",
     "excelCaption" : "周报名称",
     "getPSDEUIAction" : {
-      "getNoPrivDisplayMode" : 2,
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-      },
       "getFrontPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditViewMainMyweekly.json",
         "viewType" : "DEEDITVIEW"
       },
+      "frontProcessType" : "WIZARD",
       "getPSAppDEMethod" : {
         "modelref" : true,
         "id" : "HaveRead"
       },
-      "frontProcessType" : "WIZARD",
+      "getNoPrivDisplayMode" : 2,
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+      },
       "timeout" : 60000,
       "codeName" : "haveRead",
       "caption" : "已读",
@@ -181,7 +181,6 @@
     "widthUnit" : "STAR",
     "name" : "ibz_weeklyname"
   }, {
-    "dataItemName" : "account",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -190,6 +189,7 @@
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
+    "dataItemName" : "account",
     "excelCaption" : "用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -202,11 +202,11 @@
     "widthUnit" : "PX",
     "name" : "account"
   }, {
-    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "dataItemName" : "date",
     "excelCaption" : "日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
@@ -220,7 +220,6 @@
     "widthUnit" : "PX",
     "name" : "date"
   }, {
-    "dataItemName" : "reportto",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -229,6 +228,7 @@
       "name" : "REPORTTO",
       "codeName" : "Reportto"
     },
+    "dataItemName" : "reportto",
     "excelCaption" : "汇报给",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -241,7 +241,6 @@
     "widthUnit" : "PX",
     "name" : "reportto"
   }, {
-    "dataItemName" : "reportstatus",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ReportStatus.json"
@@ -250,6 +249,7 @@
       "name" : "REPORTSTATUS",
       "codeName" : "Reportstatus"
     },
+    "dataItemName" : "reportstatus",
     "excelCaption" : "状态",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -265,12 +265,12 @@
   "codeName" : "MyReceviedWeekly",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 20,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -289,19 +289,19 @@
     "name" : "已读"
   } ],
   "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "已读"
     },
+    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_ibz_weeklyname_click"
   } ],
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
   },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY/PSGRIDS/MyReceviedWeekly.json",
   "logicName" : "我收到的周报",
   "modelid" : "e65983ee6e0e1aef604060074cab19ed"

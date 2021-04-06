@@ -1,6 +1,5 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
@@ -9,6 +8,7 @@
     "name" : "行为[UpdateProjectCycle]主状态拒绝逻辑",
     "id" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/UpdateProjectCycle__MSDeny.json"
   } ],
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
   "getPSDEOPPriv" : {
     "modelref" : true,

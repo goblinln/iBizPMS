@@ -1,6 +1,5 @@
 {
   "pubServiceDefault" : true,
-  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : true,
   "customParam" : false,
@@ -9,14 +8,15 @@
     "name" : "行为[Remove]主状态拒绝逻辑",
     "id" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDELOGICS/Remove__MSDeny.json"
   } ],
+  "transactionMode" : "DEFAULT",
   "timeOut" : -1,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "DELETE"
-  },
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTRemove"
+  },
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "DELETE"
   },
   "orderValue" : 21,
   "codeName" : "Remove",
@@ -28,7 +28,7 @@
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json",
+  "name" : "Remove",
   "userTag4" : "remove",
-  "userCat" : "CAT1",
-  "name" : "Remove"
+  "userCat" : "CAT1"
 }

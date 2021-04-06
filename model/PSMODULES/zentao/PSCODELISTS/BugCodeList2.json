@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "subSysAsCloud" : false,
   "systemTag" : "iBizPMS",
   "dynaInstMode" : 1,
   "codeListType" : "STATIC",
@@ -12,15 +12,15 @@
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "All",
     "data" : "{}",
     "codeName" : "All",
     "text" : "所有",
-    "default" : true,
-    "value" : "All"
+    "default" : true
   }, {
+    "value" : "active",
     "data" : "{\"n_status_eq\":\"active\"}",
     "codeName" : "Active",
-    "text" : "未解决",
-    "value" : "active"
+    "text" : "未解决"
   } ]
 }

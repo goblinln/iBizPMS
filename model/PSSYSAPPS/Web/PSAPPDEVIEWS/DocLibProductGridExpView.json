@@ -1,6 +1,6 @@
 {
-  "showDataInfoBar" : true,
   "sideBarLayout" : "LEFT",
+  "showDataInfoBar" : true,
   "enableFilter" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
@@ -10,29 +10,35 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEGRIDEXPVIEW_STYLE2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEGRIDEXPVIEW_STYLE2",
     "name" : "layoutpanel"
   },
   "getPSAppViewEngines" : [ {
     "engineType" : "GridExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "GRIDEXPBAR"
+      "name" : "GRIDEXPBAR",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+  },
   "getPSControls" : [ {
     "controlType" : "GRIDEXPBAR",
+    "enableCounter" : true,
+    "enableSearch" : false,
     "getXDataPSControl" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib/PSGRIDS/ExpProductMain.json",
@@ -45,76 +51,76 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
           "actionType" : "DEACTION",
           "name" : "update"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "FetchDefault"
           },
-          "actionType" : "DEDATASET",
-          "name" : "fetch"
-        }, {
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
+          "actionType" : "DEDATASET",
+          "name" : "fetch"
+        }, {
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "GetDraft"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "GetDraft",
           "actionType" : "DEACTION",
           "name" : "loaddraft"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -126,8 +132,6 @@
       },
       "controlType" : "GRID"
     },
-    "enableSearch" : false,
-    "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
       "getPSDEGridDataItems" : [ {
@@ -135,63 +139,62 @@
           "name" : "PRODUCT",
           "codeName" : "Product"
         },
-        "dataType" : 1,
-        "name" : "product"
+        "name" : "product",
+        "dataType" : 1
       }, {
         "getPSAppDEField" : {
           "name" : "PROJECT",
           "codeName" : "Project"
         },
-        "dataType" : 1,
-        "name" : "project"
+        "name" : "project",
+        "dataType" : 1
       }, {
         "getPSAppDEField" : {
           "name" : "DOCLIBTYPE",
           "codeName" : "Doclibtype"
         },
-        "dataType" : 25,
-        "name" : "doclibtype"
+        "name" : "doclibtype",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataType" : 25,
-        "name" : "name"
+        "name" : "name",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "ISFAVOURITES",
           "codeName" : "Isfavourites"
         },
-        "dataType" : 25,
-        "name" : "isfavourites"
+        "name" : "isfavourites",
+        "dataType" : 25
       }, {
-        "dataType" : 25,
-        "name" : "srfmstag"
+        "name" : "srfmstag",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataType" : 25,
-        "name" : "srfmajortext"
+        "name" : "srfmajortext",
+        "dataType" : 25
       }, {
         "dataAccessAction" : true,
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 1,
-        "name" : "srfdataaccaction"
+        "name" : "srfdataaccaction",
+        "dataType" : 1
       }, {
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 1,
-        "name" : "srfkey"
+        "name" : "srfkey",
+        "dataType" : 1
       } ],
-      "singleSelect" : false,
       "enableColFilter" : false,
       "enableRowNew" : false,
       "enableRowEditOrder" : false,
@@ -213,30 +216,31 @@
         "name" : "srfkey"
       } ],
       "hasWFDataItems" : false,
+      "columnEnableLink" : 2,
       "getRemovePSControlAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-        },
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
         },
         "dataAccessAction" : "DELETE",
         "actionName" : "Remove",
         "actionType" : "DEACTION",
         "name" : "remove"
       },
-      "columnEnableLink" : 2,
+      "singleSelect" : false,
+      "enablePagingBar" : true,
       "enableRowEdit" : false,
       "controlType" : "GRID",
-      "enablePagingBar" : true,
       "getPSDEGridColumns" : [ {
-        "dataItemName" : "name",
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "dataItemName" : "name",
         "excelCaption" : "文档库名称",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
@@ -251,29 +255,18 @@
       } ],
       "codeName" : "ExpProductMain",
       "enableGroup" : false,
-      "hideHeader" : false,
-      "forceFit" : false,
       "pagingSize" : 20,
       "aggMode" : "NONE",
       "groupMode" : "NONE",
       "sortMode" : "REMOTE",
+      "hideHeader" : false,
+      "forceFit" : false,
       "navFilter" : "srfroot",
       "getNavPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocGridViewLookDoc.json",
         "viewType" : "DEGRIDVIEW"
       },
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "product",
-        "key" : "product",
-        "name" : "product"
-      }, {
-        "rawValue" : true,
-        "value" : "0",
-        "key" : "parent",
-        "name" : "parent"
-      } ],
       "getPSNavigateContexts" : [ {
         "rawValue" : false,
         "value" : "doclibtype",
@@ -290,9 +283,24 @@
         "key" : "PRODUCT",
         "name" : "PRODUCT"
       } ],
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "product",
+        "key" : "product",
+        "name" : "product"
+      }, {
+        "rawValue" : true,
+        "value" : "0",
+        "key" : "parent",
+        "name" : "parent"
+      } ],
       "getFetchPSControlAction" : {
         "modelref" : true,
         "id" : "fetch"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
@@ -303,76 +311,76 @@
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "UPDATE",
           "actionName" : "Update",
           "actionType" : "DEACTION",
           "name" : "update"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "FetchDefault"
           },
-          "actionType" : "DEDATASET",
-          "name" : "fetch"
-        }, {
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
+          "actionType" : "DEDATASET",
+          "name" : "fetch"
+        }, {
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "DELETE",
           "actionName" : "Remove",
           "actionType" : "DEACTION",
           "name" : "remove"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "READ",
           "actionName" : "Get",
           "actionType" : "DEACTION",
           "name" : "load"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "GetDraft"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "GetDraft",
           "actionType" : "DEACTION",
           "name" : "loaddraft"
         }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
           "getPSAppDEMethod" : {
             "modelref" : true,
             "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "dataAccessAction" : "CREATE",
           "actionName" : "Create",
@@ -381,10 +389,6 @@
         } ],
         "enableDEFieldPrivilege" : false,
         "id" : "数据表格处理器"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
       },
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib/PSGRIDS/ExpProductMain.json",
       "logicName" : "主表格（产品文档库）（导航）",
@@ -405,6 +409,10 @@
       },
       "name" : "EXPITEM:DEFAULT"
     } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -416,19 +424,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "gridexpbar"
     },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-    },
     "width" : 300.0,
     "codeName" : "ProductGridExpViewgridexpbar",
     "name" : "gridexpbar",
     "modelid" : "a53c40aac05dc376d8fb26e320ba4efb_gridexpbar"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-  },
   "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",

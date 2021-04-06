@@ -1,14 +1,14 @@
 {
-  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "dataType" : "SSCODELIST",
+    "length" : 6,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Im_conference__status.json"
     },
-    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "21904ff1208fcec1bc59ed4f8007a469",
     "codeName" : "Status",
+    "valueFormat" : "%1$s",
     "logicName" : "status",
     "stringLength" : 6,
     "stdDataType" : 25,
@@ -44,15 +44,23 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`STATUS`",
+      "columnName" : "STATUS",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "STATUS"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 6,
     "name" : "STATUS"
   }, {
+    "length" : 40,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "dff66ddbc58b8f50a5b4e79cfb00f677",
     "codeName" : "Cgid",
+    "valueFormat" : "%1$s",
     "logicName" : "cgid",
     "stringLength" : 40,
     "stdDataType" : 25,
@@ -88,15 +96,23 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`CGID`",
+      "columnName" : "CGID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CGID"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 40,
     "name" : "CGID"
   }, {
+    "defaultValue" : "0",
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
     "deployId" : "67337005aecf585af26aa21601c2d260",
     "codeName" : "OpenedBy",
+    "valueFormat" : "%1$s",
     "logicName" : "openedBy",
     "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
@@ -119,15 +135,23 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`OPENEDBY`",
+      "columnName" : "OPENEDBY",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "OPENEDBY"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "defaultValue" : "0",
     "name" : "OPENEDBY"
   }, {
+    "defaultValue" : "0000-00-00 00:00:00",
     "dataType" : "DATETIME",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
     "deployId" : "ebd37c23667ada8eb020c1ed630b7ece",
     "codeName" : "OpenedDate",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
     "logicName" : "openedDate",
     "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -150,17 +174,25 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`OPENEDDATE`",
+      "columnName" : "OPENEDDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "OPENEDDATE"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "defaultValue" : "0000-00-00 00:00:00",
     "name" : "OPENEDDATE"
   }, {
     "dataType" : "ACID",
-    "valueFormat" : "%1$s",
     "deployId" : "9ef19ab8bfa08951e1b01d3de57d6f07",
     "codeName" : "Id",
+    "valueFormat" : "%1$s",
     "logicName" : "id",
     "stdDataType" : 1,
+    "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -182,7 +214,14 @@
       },
       "name" : "默认规则"
     } ],
-    "pasteReset" : true,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ID`",
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : true,
+      "name" : "ID"
+    } ],
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -191,10 +230,11 @@
     "dEFType" : 1,
     "name" : "ID"
   }, {
+    "length" : 24,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "e120746b30b9c53a83753c565870b11f",
     "codeName" : "Rid",
+    "valueFormat" : "%1$s",
     "logicName" : "rid",
     "stringLength" : 24,
     "stdDataType" : 25,
@@ -230,18 +270,27 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`RID`",
+      "columnName" : "RID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RID"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "length" : 24,
     "name" : "RID"
   }, {
+    "length" : 65535,
     "dataType" : "LONGTEXT",
-    "valueFormat" : "%1$s",
     "deployId" : "736df2f78f993e69fd1e5b5e36cac40c",
     "codeName" : "Participants",
+    "valueFormat" : "%1$s",
     "logicName" : "participants",
     "stringLength" : 65535,
     "stdDataType" : 21,
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -274,11 +323,37 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`PARTICIPANTS`",
+      "columnName" : "PARTICIPANTS",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PARTICIPANTS"
+    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "queryColumn" : false,
-    "length" : 65535,
     "name" : "PARTICIPANTS"
+  } ],
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "extendMode" : 0,
+    "pageSize" : -1,
+    "enableGroup" : false,
+    "userDRAction" : "READ",
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
   } ],
   "getAllPSDEActions" : [ {
     "modelref" : true,
@@ -302,6 +377,29 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/ImConference/PSDEACTIONS/Save.json"
   } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "extendMode" : 0,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
   "subSysAsCloud" : false,
   "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
@@ -309,6 +407,12 @@
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
+  "serviceAPIMode" : 1,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "deployId" : "327bb29a390139fd438c69efc754b8d8",
+  "codeName" : "ImConference",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -323,14 +427,13 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
-  "dynaInstMode" : 1,
-  "dSLink" : "DEFAULT",
-  "orderValue" : 99999,
-  "deployId" : "327bb29a390139fd438c69efc754b8d8",
-  "codeName" : "ImConference",
   "logicName" : "ImConference",
   "tableName" : "zt_im_conference",
-  "enableRemove" : true,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -339,18 +442,14 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
+  "enableRemove" : true,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "serviceCodeName" : "ImConference",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
   "extendMode" : 0,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

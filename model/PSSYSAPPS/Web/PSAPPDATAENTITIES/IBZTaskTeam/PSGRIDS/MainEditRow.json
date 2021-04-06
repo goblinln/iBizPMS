@@ -4,60 +4,59 @@
       "name" : "ROOT",
       "codeName" : "Root"
     },
-    "dataType" : 1,
-    "name" : "root"
+    "name" : "root",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "account_text"
+    "name" : "account_text",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "account"
+    "name" : "account",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataType" : 25,
-    "name" : "type"
+    "name" : "type",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
-    "dataType" : 7,
-    "name" : "estimate"
+    "name" : "estimate",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
-  "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : true,
   "enableRowEditOrder" : false,
@@ -69,27 +68,27 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
       },
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "project",
-        "key" : "project",
-        "name" : "project"
-      } ],
       "getPSNavigateContexts" : [ {
         "rawValue" : false,
         "value" : "project",
         "key" : "PROJECT",
         "name" : "PROJECT"
       } ],
-      "editorType" : "DROPDOWNLIST",
-      "editorParams" : {
-        "SRFNAVCTX.project" : "%project%",
-        "SRFNAVPARAM.project" : "%project%"
-      },
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "project",
+        "key" : "project",
+        "name" : "project"
+      } ],
       "getPSSysPFPlugin" : {
         "pluginType" : "EDITOR_CUSTOMSTYLE",
         "pluginCode" : "GridRowEditExtend"
       },
+      "editorParams" : {
+        "SRFNAVCTX.project" : "%project%",
+        "SRFNAVPARAM.project" : "%project%"
+      },
+      "editorType" : "DROPDOWNLIST",
       "editorStyle" : "RowEditExtend",
       "name" : "account"
     },
@@ -112,10 +111,10 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Team__type.json"
       },
-      "editorType" : "DROPDOWNLIST",
       "editorParams" : {
         "task" : ""
       },
+      "editorType" : "DROPDOWNLIST",
       "name" : "type"
     },
     "getPSAppDEField" : {
@@ -162,14 +161,15 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
   "getCreatePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "CreateTemp"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
     },
     "dataAccessAction" : "CREATE",
     "actionName" : "CreateTemp",
@@ -177,13 +177,13 @@
     "name" : "create"
   },
   "getUpdatePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "UpdateTemp"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
     },
     "dataAccessAction" : "UPDATE",
     "actionName" : "UpdateTemp",
@@ -191,13 +191,13 @@
     "name" : "update"
   },
   "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "RemoveTemp"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
     },
     "dataAccessAction" : "DELETE",
     "actionName" : "RemoveTemp",
@@ -205,13 +205,13 @@
     "name" : "remove"
   },
   "getGetPSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "GetTemp"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
     },
     "dataAccessAction" : "READ",
     "actionName" : "GetTemp",
@@ -219,27 +219,27 @@
     "name" : "load"
   },
   "getGetDraftPSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
-    },
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "GetDraftTemp"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
     },
     "dataAccessAction" : "CREATE",
     "actionName" : "GetDraftTemp",
     "actionType" : "DEACTION",
     "name" : "loaddraft"
   },
-  "columnEnableLink" : 2,
-  "enableRowEdit" : true,
-  "controlType" : "GRID",
+  "singleSelect" : true,
   "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enableRowEdit" : true,
+  "controlType" : "GRID",
   "getPSDEGridEditItemVRs" : [ {
     "getPSDEGridEditItemName" : "estimate",
     "valueRuleType" : "DEFVALUERULE",
@@ -275,8 +275,6 @@
     "name" : "编辑项值规则"
   } ],
   "getPSDEGridColumns" : [ {
-    "enableRowEdit" : true,
-    "dataItemName" : "account_text",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
@@ -285,6 +283,8 @@
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
+    "enableRowEdit" : true,
+    "dataItemName" : "account_text",
     "excelCaption" : "用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
@@ -297,12 +297,12 @@
     "widthUnit" : "PX",
     "name" : "account"
   }, {
-    "enableRowEdit" : true,
-    "dataItemName" : "estimate",
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
+    "enableRowEdit" : true,
+    "dataItemName" : "estimate",
     "excelCaption" : "预计",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -318,26 +318,26 @@
   "codeName" : "MainEditRow",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
   "pagingSize" : 100,
   "aggMode" : "NONE",
   "groupMode" : "NONE",
   "sortMode" : "REMOTE",
+  "hideHeader" : false,
+  "forceFit" : false,
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam/PSGRIDS/MainEditRow.json",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSSysPFPlugin" : {
     "pluginType" : "GRID_RENDER",
     "pluginCode" : "StepTable"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam/PSGRIDS/MainEditRow.json",
   "logicName" : "主表格（启用行编辑-新建模式）",
   "modelid" : "02eacc0363236c0d653148d1b8a20451"
 }

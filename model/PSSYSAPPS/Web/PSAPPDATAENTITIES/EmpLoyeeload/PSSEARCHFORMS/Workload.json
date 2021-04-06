@@ -1,13 +1,253 @@
 {
   "searchButtonStyle" : "DEFAULT",
-  "enableFilterSave" : false,
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
+  "enableFilterSave" : false,
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "singleSelect" : true,
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RealDept.json"
+        },
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "srforgid",
+          "key" : "N_ORGID_EQ",
+          "name" : "N_ORGID_EQ"
+        } ],
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "srforgid",
+          "key" : "n_orgid_eq",
+          "name" : "n_orgid_eq"
+        } ],
+        "editorParams" : {
+          "SRFNAVPARAM.n_orgid_eq" : "%srforgid%",
+          "SRFNAVCTX.n_orgid_eq" : "%srforgid%"
+        },
+        "editorType" : "DROPDOWNLIST",
+        "name" : "dept"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "hidden" : false,
+      "dataType" : 25,
+      "needCodeListConfig" : true,
+      "caption" : "部门",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 45,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colMD" : 3,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "dept",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "dept"
+    }, {
+      "getPSDEFormItemUpdate" : {
+        "modelref" : true,
+        "id" : "UpdateTime"
+      },
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "editorWidth" : 100.0,
+        "name" : "begin"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "hidden" : false,
+      "dataType" : 5,
+      "caption" : "起止时间",
+      "allowEmpty" : true,
+      "createDVT" : "CURTIME",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 80,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colLG" : 4,
+        "colMD" : 4,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "begin",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "begin"
+    }, {
+      "getPSDEFormItemUpdate" : {
+        "modelref" : true,
+        "id" : "UpdateTime"
+      },
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "editorWidth" : 100.0,
+        "name" : "end"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "hidden" : false,
+      "dataType" : 5,
+      "caption" : "至",
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 30,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colMDOffset" : 1,
+        "colLGOffset" : 1,
+        "colMD" : 3,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "end",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "end"
+    }, {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "editorType" : "NUMBER",
+        "name" : "workday"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "WORKDAY",
+        "codeName" : "Workday"
+      },
+      "hidden" : false,
+      "dataType" : 9,
+      "caption" : "工作天数",
+      "allowEmpty" : true,
+      "createDV" : "6",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 60,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colLG" : 4,
+        "colLGOffset" : 1,
+        "colMD" : 3,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "workday",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "workday"
+    }, {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "editorType" : "NUMBER",
+        "name" : "everydaytime"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "hidden" : false,
+      "dataType" : 25,
+      "caption" : "每天工时",
+      "allowEmpty" : true,
+      "createDV" : "7",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 60,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colLG" : 4,
+        "colXSOffset" : 5,
+        "colSMOffset" : 5,
+        "colMDOffset" : 5,
+        "colMD" : 3,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "everydaytime",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "everydaytime"
+    }, {
+      "emptyCaption" : true,
+      "getPSEditor" : {
+        "singleSelect" : true,
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IsAssigned.json"
+        },
+        "editorType" : "DROPDOWNLIST",
+        "editorWidth" : 100.0,
+        "name" : "assign"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "ASSIGN",
+        "codeName" : "Assign"
+      },
+      "hidden" : false,
+      "dataType" : 25,
+      "needCodeListConfig" : true,
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 5,
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colMD" : 3,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "assign",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "assign"
+    } ],
+    "infoGroupMode" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "codeName" : "formpage1",
+    "caption" : "表单分页",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "dept",
     "dataType" : 25
@@ -46,6 +286,7 @@
       "codeName" : "Assign"
     }
   } ],
+  "noTabHeader" : true,
   "getPSDEFormItemUpdates" : [ {
     "getPSDEFIUpdateDetails" : [ {
       "name" : "workday"
@@ -57,254 +298,13 @@
     "codeName" : "UpdateTime",
     "name" : "UpdateTime"
   } ],
-  "noTabHeader" : true,
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "singleSelect" : true,
-        "getPSAppCodeList" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RealDept.json"
-        },
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "srforgid",
-          "key" : "n_orgid_eq",
-          "name" : "n_orgid_eq"
-        } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "srforgid",
-          "key" : "N_ORGID_EQ",
-          "name" : "N_ORGID_EQ"
-        } ],
-        "editorType" : "DROPDOWNLIST",
-        "editorParams" : {
-          "SRFNAVPARAM.n_orgid_eq" : "%srforgid%",
-          "SRFNAVCTX.n_orgid_eq" : "%srforgid%"
-        },
-        "name" : "dept"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "showCaption" : true,
-      "dataType" : 25,
-      "needCodeListConfig" : true,
-      "caption" : "部门",
-      "allowEmpty" : true,
-      "labelWidth" : 45,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 3,
-        "colLG" : 3,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "dept",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "dept"
-    }, {
-      "getPSDEFormItemUpdate" : {
-        "modelref" : true,
-        "id" : "UpdateTime"
-      },
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "dateTimeFormat" : "YYYY-MM-DD",
-        "editorType" : "DATEPICKEREX_NOTIME",
-        "editorWidth" : 100.0,
-        "editorParams" : {
-          "TIMEFMT" : "YYYY-MM-DD"
-        },
-        "name" : "begin"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      },
-      "showCaption" : true,
-      "dataType" : 5,
-      "caption" : "起止时间",
-      "allowEmpty" : true,
-      "createDVT" : "CURTIME",
-      "labelWidth" : 80,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 4,
-        "colLG" : 4,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "begin",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "begin"
-    }, {
-      "getPSDEFormItemUpdate" : {
-        "modelref" : true,
-        "id" : "UpdateTime"
-      },
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "dateTimeFormat" : "YYYY-MM-DD",
-        "editorType" : "DATEPICKEREX_NOTIME",
-        "editorWidth" : 100.0,
-        "editorParams" : {
-          "TIMEFMT" : "YYYY-MM-DD"
-        },
-        "name" : "end"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "END",
-        "codeName" : "End"
-      },
-      "showCaption" : true,
-      "dataType" : 5,
-      "caption" : "至",
-      "allowEmpty" : true,
-      "labelWidth" : 30,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 3,
-        "colLG" : 3,
-        "colMDOffset" : 1,
-        "colLGOffset" : 1,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "end",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "end"
-    }, {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "editorType" : "NUMBER",
-        "name" : "workday"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "WORKDAY",
-        "codeName" : "Workday"
-      },
-      "showCaption" : true,
-      "dataType" : 9,
-      "caption" : "工作天数",
-      "allowEmpty" : true,
-      "createDV" : "6",
-      "labelWidth" : 60,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 3,
-        "colLG" : 4,
-        "colLGOffset" : 1,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "workday",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "workday"
-    }, {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "editorType" : "NUMBER",
-        "name" : "everydaytime"
-      },
-      "emptyCaption" : false,
-      "noPrivDisplayMode" : 1,
-      "showCaption" : true,
-      "dataType" : 25,
-      "caption" : "每天工时",
-      "allowEmpty" : true,
-      "createDV" : "7",
-      "labelWidth" : 60,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 3,
-        "colLG" : 4,
-        "colXSOffset" : 5,
-        "colSMOffset" : 5,
-        "colMDOffset" : 5,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "everydaytime",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "everydaytime"
-    }, {
-      "inputTipClosable" : false,
-      "getPSEditor" : {
-        "singleSelect" : true,
-        "getPSAppCodeList" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IsAssigned.json"
-        },
-        "editorType" : "DROPDOWNLIST",
-        "editorWidth" : 100.0,
-        "name" : "assign"
-      },
-      "emptyCaption" : true,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "ASSIGN",
-        "codeName" : "Assign"
-      },
-      "showCaption" : true,
-      "dataType" : 25,
-      "needCodeListConfig" : true,
-      "allowEmpty" : true,
-      "labelWidth" : 5,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 3,
-        "colLG" : 3,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "assign",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "assign"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "表单分页",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "codeName" : "Workload",
   "tabHeaderPos" : "TOP",
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
   },
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload/PSSEARCHFORMS/Workload.json",
   "logicName" : "员工负载",
   "modelid" : "450d04ce1f9a311b18f9c137ea7b311d"
