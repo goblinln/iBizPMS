@@ -1,13 +1,23 @@
 package cn.ibizlab.pms.core.ibiz.runtime;
 
 import cn.ibizlab.pms.core.ibiz.domain.IbiLogin;
+import cn.ibizlab.pms.core.ibiz.service.IIbiLoginService;
+import cn.ibizlab.pms.core.ibiz.filter.IbiLoginSearchContext;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
 import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.beans.factory.annotation.Autowired;
 
+@Aspect
 @Component("IbiLoginRuntime")
 public class IbiLoginRuntime extends DataEntityRuntime {
+
+    @Autowired
+    IIbiLoginService ibiloginService;
 
     @Override
     protected Object getSimpleEntity(Object o) {
@@ -16,12 +26,12 @@ public class IbiLoginRuntime extends DataEntityRuntime {
 
     @Override
     public String getId() {
-        return null;
+        return "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin.json";
     }
 
     @Override
     public String getName() {
-        return null;
+        return "IBZ_LOGIN";
     }
 
     @Override
@@ -58,6 +68,23 @@ public class IbiLoginRuntime extends DataEntityRuntime {
     @Override
     public Object executeAction(IPSDEAction ipsdeAction, Object[] objects) throws Throwable {
         return null;
+    }
+
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.IbiLoginServiceImpl.*(..))")
+    public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
+        String action = point.getSignature().getName();
+        if (action.equals("getUser")) {
+            return aroundAction("getUser", point);
+        }
+        if (action.equals("ztlogin")) {
+            return aroundAction("ztlogin", point);
+        }
+
+    //
+        if (action.equals("searchDefault")) {
+            return aroundAction("DEFAULT", point);
+        }
+        return point.proceed();
     }
 
 }

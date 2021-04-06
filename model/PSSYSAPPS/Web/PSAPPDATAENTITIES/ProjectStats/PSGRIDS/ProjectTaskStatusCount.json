@@ -1,0 +1,285 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    },
+    "dataType" : 9,
+    "name" : "taskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CANCELTASKCNT",
+      "codeName" : "Canceltaskcnt"
+    },
+    "dataType" : 9,
+    "name" : "canceltaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "WAITTASKCNT",
+      "codeName" : "Waittaskcnt"
+    },
+    "dataType" : 9,
+    "name" : "waittaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DONETASKCNT",
+      "codeName" : "Donetaskcnt"
+    },
+    "dataType" : 9,
+    "name" : "donetaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DOINGTASKCNT",
+      "codeName" : "Doingtaskcnt"
+    },
+    "dataType" : 9,
+    "name" : "doingtaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CLOSEDTASKCNT",
+      "codeName" : "Closedtaskcnt"
+    },
+    "dataType" : 9,
+    "name" : "closedtaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PAUSETASKCNT",
+      "codeName" : "Pausetaskcnt"
+    },
+    "dataType" : 9,
+    "name" : "pausetaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  } ],
+  "singleSelect" : true,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "项目编号",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridColumns" : [ {
+    "dataItemName" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "excelCaption" : "项目名称",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "name",
+    "caption" : "项目名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "name"
+  }, {
+    "dataItemName" : "doingtaskcnt",
+    "getPSAppDEField" : {
+      "name" : "DOINGTASKCNT",
+      "codeName" : "Doingtaskcnt"
+    },
+    "excelCaption" : "进行中",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "doingtaskcnt",
+    "caption" : "进行中",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "doingtaskcnt"
+  }, {
+    "dataItemName" : "waittaskcnt",
+    "getPSAppDEField" : {
+      "name" : "WAITTASKCNT",
+      "codeName" : "Waittaskcnt"
+    },
+    "excelCaption" : "未开始",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "waittaskcnt",
+    "caption" : "未开始",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "waittaskcnt"
+  }, {
+    "dataItemName" : "pausetaskcnt",
+    "getPSAppDEField" : {
+      "name" : "PAUSETASKCNT",
+      "codeName" : "Pausetaskcnt"
+    },
+    "excelCaption" : "已暂停",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "pausetaskcnt",
+    "caption" : "已暂停",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "pausetaskcnt"
+  }, {
+    "dataItemName" : "closedtaskcnt",
+    "getPSAppDEField" : {
+      "name" : "CLOSEDTASKCNT",
+      "codeName" : "Closedtaskcnt"
+    },
+    "excelCaption" : "已关闭",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "closedtaskcnt",
+    "caption" : "已关闭",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "closedtaskcnt"
+  }, {
+    "dataItemName" : "canceltaskcnt",
+    "getPSAppDEField" : {
+      "name" : "CANCELTASKCNT",
+      "codeName" : "Canceltaskcnt"
+    },
+    "excelCaption" : "已取消",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "canceltaskcnt",
+    "caption" : "已取消",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "canceltaskcnt"
+  }, {
+    "dataItemName" : "donetaskcnt",
+    "getPSAppDEField" : {
+      "name" : "DONETASKCNT",
+      "codeName" : "Donetaskcnt"
+    },
+    "excelCaption" : "已完成",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "donetaskcnt",
+    "caption" : "已完成",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "donetaskcnt"
+  }, {
+    "dataItemName" : "taskcnt",
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    },
+    "excelCaption" : "总计",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskcnt",
+    "caption" : "总计",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "taskcnt"
+  } ],
+  "codeName" : "ProjectTaskStatusCount",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 20,
+  "aggMode" : "PAGE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectTaskStatusCount.json",
+  "logicName" : "项目任务状态统计",
+  "modelid" : "75708c00cfcc27596c0e82571c8dcaf3"
+}

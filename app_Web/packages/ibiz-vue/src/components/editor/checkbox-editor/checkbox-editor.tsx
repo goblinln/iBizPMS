@@ -22,7 +22,6 @@ export default class CheckboxEditor extends EditorBase {
         switch (this.editorInstance?.editorType) {
             // 单选框列表
             case 'RADIOBUTTONLIST':
-                Object.assign(this.customProps,{item: this.value})
                 break;
             // 选项框
             case 'CHECKBOX':
@@ -66,6 +65,7 @@ export default class CheckboxEditor extends EditorBase {
             props: {
                 name: this.editorInstance.name,
                 value: this.value,
+                item: this.value,
                 disabled: this.disabled,
                 context: this.context,
                 data: this.contextData,

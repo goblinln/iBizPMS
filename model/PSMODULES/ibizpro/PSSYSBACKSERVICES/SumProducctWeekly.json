@@ -1,0 +1,9 @@
+{
+  "serviceOrder" : 0,
+  "serviceHandler" : "PushProductWeekly",
+  "codeName" : "SumProducctWeekly",
+  "serviceContainer" : "SC01",
+  "startMode" : "MANUAL",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumProducctWeekly.json",
+  "name" : "定时生成汇总产品周报"
+}

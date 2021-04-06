@@ -349,6 +349,9 @@ export class WizardPanelControlBase extends MDControlBase {
      * @memberof WizardPanelControlBase
      */
     public onClickNext() {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         if (this.activeForm) {
             if (this.$refs && (this.$refs[this.activeForm] as any)?.ctrl) {
                 let form: any = (this.$refs[this.activeForm] as any).ctrl;

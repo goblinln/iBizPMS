@@ -141,6 +141,9 @@ export class CalendarExpBarControlBase extends ExpBarControlBase {
      * @memberof CalendarExpBarControlBase
      */
     public onSearch($event: any) {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         if (this.$xDataControl) {
             const calendarContainer: any = (this.$refs[this.$xDataControl.name] as any).$refs.ctrl;
             calendarContainer.searchEvents({ query: this.searchText });

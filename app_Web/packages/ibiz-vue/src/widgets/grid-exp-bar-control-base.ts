@@ -45,6 +45,9 @@ export class GridExpBarControlBase extends ExpBarControlBase {
     }
 
     public onSearch() {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         let grid: any = (this.$refs[`${this.$xDataControl?.name?.toLowerCase()}`] as any).$refs.ctrl;
         if(grid) {
             grid.load({ query: this.searchText });

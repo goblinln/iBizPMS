@@ -1,0 +1,404 @@
+{
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
+  "enableAutoSave" : false,
+  "controlType" : "FORM",
+  "readOnly" : false,
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "assignto",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "ASSIGNEDTO",
+      "codeName" : "AssignedTo"
+    }
+  }, {
+    "id" : "date",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    }
+  }, {
+    "id" : "future",
+    "dataType" : 25
+  }, {
+    "id" : "begin",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "BEGIN",
+      "codeName" : "Begin"
+    }
+  }, {
+    "id" : "end",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "END",
+      "codeName" : "End"
+    }
+  }, {
+    "id" : "lbldisabledate",
+    "dataType" : 25
+  }, {
+    "id" : "id",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "noTabHeader" : true,
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "infoGroupMode" : false,
+      "actionGroupExtractMode" : "ITEM",
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "assignto"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ASSIGNEDTO",
+          "codeName" : "AssignedTo"
+        },
+        "showCaption" : true,
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "caption" : "指派给",
+        "allowEmpty" : false,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "colLG" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "assignto",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "assignto"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD",
+          "editorType" : "DATEPICKEREX_NOTIME",
+          "editorWidth" : 100.0,
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD"
+          },
+          "name" : "date"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DATE",
+          "codeName" : "Date"
+        },
+        "showCaption" : true,
+        "dataType" : 5,
+        "caption" : "日期",
+        "allowEmpty" : true,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "itemWidth" : 230.0,
+        "hidden" : false,
+        "getPSDEFDGroupLogics" : [ {
+          "logicCat" : "ITEMENABLE",
+          "getPSDEFDLogics" : [ {
+            "dEFDName" : "future",
+            "condOP" : "NOTEQ",
+            "value" : "on",
+            "logicType" : "SINGLE",
+            "name" : "future 不等于(<>) (on)"
+          } ],
+          "notMode" : false,
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "name" : "表单成员[date][表单项启用]逻辑"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "colLG" : 16,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "date",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "date"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Date_disable.json"
+          },
+          "editorType" : "CHECKBOXLIST",
+          "name" : "future"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "showCaption" : false,
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "allowEmpty" : true,
+        "labelWidth" : 0,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "NONE",
+        "valueItemName" : "future",
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "colLG" : 8,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "future",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "future"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "begin"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "BEGIN",
+          "codeName" : "Begin"
+        },
+        "showCaption" : true,
+        "dataType" : 9,
+        "needCodeListConfig" : true,
+        "caption" : "起止时间",
+        "allowEmpty" : true,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : false,
+        "getPSDEFDGroupLogics" : [ {
+          "logicCat" : "ITEMENABLE",
+          "getPSDEFDLogics" : [ {
+            "dEFDName" : "lblDisableDate",
+            "condOP" : "NOTEQ",
+            "value" : "on",
+            "logicType" : "SINGLE",
+            "name" : "lblDisableDate 不等于(<>) (on)"
+          } ],
+          "notMode" : false,
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "name" : "表单成员[begin][表单项启用]逻辑"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "colLG" : 10,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "begin",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "begin"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "end"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "END",
+          "codeName" : "End"
+        },
+        "showCaption" : true,
+        "dataType" : 9,
+        "needCodeListConfig" : true,
+        "caption" : "~",
+        "allowEmpty" : true,
+        "labelWidth" : 10,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : false,
+        "getPSDEFDGroupLogics" : [ {
+          "logicCat" : "ITEMENABLE",
+          "getPSDEFDLogics" : [ {
+            "dEFDName" : "lblDisableDate",
+            "condOP" : "NOTEQ",
+            "value" : "on",
+            "logicType" : "SINGLE",
+            "name" : "lblDisableDate 不等于(<>) (on)"
+          } ],
+          "notMode" : false,
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "name" : "表单成员[end][表单项启用]逻辑"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "colLG" : 6,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "end",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "end"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Beginend_disable.json"
+          },
+          "editorType" : "CHECKBOXLIST",
+          "name" : "lbldisabledate"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "showCaption" : false,
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "allowEmpty" : true,
+        "labelWidth" : 0,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "NONE",
+        "valueItemName" : "lblDisableDate",
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "colLG" : 8,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "lbldisabledate",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "lbldisabledate"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "showCaption" : true,
+      "codeName" : "group1",
+      "caption" : "指派给",
+      "detailType" : "GROUPPANEL",
+      "detailStyle" : "DEFAULT",
+      "name" : "group1"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "infoGroupMode" : false,
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
+  "codeName" : "AssigntoForm",
+  "tabHeaderPos" : "TOP",
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo/PSFORMS/AssigntoForm.json",
+  "logicName" : "指派表单",
+  "modelid" : "6eb440ecf003b49c5c7b9917d190288b"
+}

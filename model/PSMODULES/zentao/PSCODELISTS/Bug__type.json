@@ -1,0 +1,51 @@
+{
+  "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__type.json",
+  "codeName" : "Bug__type",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "codeName" : "Codeerror",
+    "text" : "代码错误",
+    "value" : "codeerror"
+  }, {
+    "codeName" : "Config",
+    "text" : "配置相关",
+    "value" : "config"
+  }, {
+    "codeName" : "Install",
+    "text" : "安装部署",
+    "value" : "install"
+  }, {
+    "codeName" : "Security",
+    "text" : "安全相关",
+    "value" : "security"
+  }, {
+    "codeName" : "Performance",
+    "text" : "性能问题",
+    "value" : "performance"
+  }, {
+    "codeName" : "Standard",
+    "text" : "标准规范",
+    "value" : "standard"
+  }, {
+    "codeName" : "Automation",
+    "text" : "测试脚本",
+    "value" : "automation"
+  }, {
+    "codeName" : "Designdefect",
+    "text" : "设计缺陷",
+    "value" : "designdefect"
+  }, {
+    "codeName" : "Others",
+    "text" : "其他",
+    "value" : "others"
+  } ]
+}

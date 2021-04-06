@@ -100,6 +100,9 @@ export class DataViewBase extends MDViewBase {
      * @memberof DataViewBase
      */
     public onSearch($event: any): void {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         const refs: any = this.$refs;
         if (refs[this.dataViewInstance?.name]) {
             refs[this.dataViewInstance?.name].refresh();

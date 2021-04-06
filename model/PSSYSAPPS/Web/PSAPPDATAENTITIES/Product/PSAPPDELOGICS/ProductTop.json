@@ -1,0 +1,158 @@
+{
+  "enableBackend" : true,
+  "enableFront" : true,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "ibzTop"
+    },
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接9397"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "srcValueType" : "SESSION",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname]"
+    } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取置顶最大排序值"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "ibzTop"
+    },
+    "logicHolder" : 3,
+    "codeName" : "Deaction1",
+    "logicNodeType" : "DEACTION",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop/PSDEACTIONS/Create.json"
+    },
+    "name" : "save置顶"
+  }, {
+    "parallelOutput" : true,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接7552"
+    } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  }, {
+    "parallelOutput" : true,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接4446"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "ibzTop"
+      },
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "dstFieldName" : "OBJECTID",
+      "srcFieldName" : "ID",
+      "name" : "Default[ID] ==> ibzTop[OBJECTID]"
+    }, {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "ibzTop"
+      },
+      "srcValueType" : "SESSION",
+      "dstFieldName" : "ACCOUNT",
+      "srcFieldName" : "srfloginname",
+      "name" : "用户全局对象[srfloginname] ==> ibzTop[ACCOUNT]"
+    }, {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "ibzTop"
+      },
+      "srcValueType" : "SRCVALUE",
+      "srcValue" : "product",
+      "dstFieldName" : "TYPE",
+      "name" : "直接值[product] ==> ibzTop[TYPE]"
+    } ],
+    "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置置顶数据"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接4446"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接7552"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接9397"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : true,
+    "lastParam" : false,
+    "envParam" : false,
+    "codeName" : "ibzTop",
+    "default" : false,
+    "name" : "置顶"
+  }, {
+    "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "logicHolder" : 3,
+  "codeName" : "ProductTop",
+  "logicName" : "置顶",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSAPPDELOGICS/ProductTop.json",
+  "name" : "置顶"
+}

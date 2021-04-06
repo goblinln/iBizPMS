@@ -42,13 +42,10 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
      * @memberof TreeExpBarControlBase
      */
     public getExpItemView(arg: any = {}) {
-        let expmode = arg.nodetype.toUpperCase();
-        if (!expmode) {
-            expmode = '';
-        }
+        let expmode = 'EXPITEM:' + arg.nodetype.toUpperCase();
         let view = null;
         this.controlInstance?.appViewRefs?.forEach((viewRef: any) => {
-            if (viewRef.name.indexOf('EXPITEM:') > -1 && new RegExp(`${expmode}`, 'i').test(viewRef.name)) {
+            if (Object.is(expmode, viewRef.name.toUpperCase())) {
                 view = {
                     viewpath: viewRef.getRefPSAppView?.dynaModelFilePath,
                     parentdata: viewRef.parentDataJO || {},
@@ -151,6 +148,9 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
      * @memberof TreeExpBarControlBase
      */
     public onSearch(): void {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         let tree = this.controlInstance.getXDataControl();
         if (this.viewState && tree) {
             this.viewState.next({ tag: tree.name, action: 'filter', data: { srfnodefilter: this.searchText } });

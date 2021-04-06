@@ -1,0 +1,457 @@
+{
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "getItemPSLayoutPanel" : {
+    "getRootPSPanelItems" : [ {
+      "getPSPanelItems" : [ {
+        "getPSPanelItems" : [ {
+          "getPSPanelItems" : [ {
+            "rawItemHeight" : 40.0,
+            "contentType" : "RAW",
+            "rawContent" : "个人贡献",
+            "contentHeight" : 40.0,
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 40,
+              "layout" : "FLEX"
+            },
+            "showCaption" : true,
+            "height" : 40.0,
+            "itemType" : "RAWITEM",
+            "itemStyle" : "DEFAULT",
+            "name" : "rawitem1"
+          } ],
+          "getPSLayout" : {
+            "dir" : "row",
+            "layout" : "FLEX"
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "showCaption" : true,
+          "getPSSysCss" : {
+            "cssName" : "container-updown-margin"
+          },
+          "itemType" : "CONTAINER",
+          "itemStyle" : "DEFAULT",
+          "name" : "container9"
+        }, {
+          "getPSPanelItems" : [ {
+            "getPSPanelItems" : [ {
+              "rawItemHeight" : 30.0,
+              "contentType" : "RAW",
+              "rawContent" : "创建的待办数",
+              "contentHeight" : 30.0,
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "height" : 30,
+                "layout" : "FLEX"
+              },
+              "showCaption" : true,
+              "height" : 30.0,
+              "itemType" : "RAWITEM",
+              "itemStyle" : "DEFAULT",
+              "name" : "rawitem2"
+            }, {
+              "getPSEditor" : {
+                "enableLinkView" : false,
+                "editable" : false,
+                "editorType" : "SPAN",
+                "name" : "mytodocnt"
+              },
+              "viewFieldName" : "mytodocnt",
+              "showCaption" : false,
+              "hidden" : false,
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "layout" : "FLEX"
+              },
+              "getPSSysCss" : {
+                "cssName" : "text-center-marginupdown"
+              },
+              "itemType" : "FIELD",
+              "itemStyle" : "DEFAULT",
+              "name" : "mytodocnt"
+            } ],
+            "getPSLayout" : {
+              "dir" : "column",
+              "layout" : "FLEX",
+              "align" : "center",
+              "vAlign" : "center"
+            },
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "layout" : "FLEX"
+            },
+            "showCaption" : true,
+            "itemType" : "CONTAINER",
+            "itemStyle" : "DEFAULT",
+            "name" : "container4"
+          }, {
+            "getPSPanelItems" : [ {
+              "rawItemHeight" : 30.0,
+              "contentType" : "RAW",
+              "rawContent" : "创建的需求数",
+              "contentHeight" : 30.0,
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "height" : 30,
+                "layout" : "FLEX"
+              },
+              "showCaption" : true,
+              "height" : 30.0,
+              "itemType" : "RAWITEM",
+              "itemStyle" : "DEFAULT",
+              "name" : "rawitem3"
+            }, {
+              "getPSEditor" : {
+                "enableLinkView" : false,
+                "editable" : false,
+                "editorType" : "SPAN",
+                "name" : "mystorys"
+              },
+              "viewFieldName" : "mystorys",
+              "showCaption" : false,
+              "hidden" : false,
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "layout" : "FLEX"
+              },
+              "getPSSysCss" : {
+                "cssName" : "text-center-marginupdown"
+              },
+              "itemType" : "FIELD",
+              "itemStyle" : "DEFAULT",
+              "name" : "mystorys"
+            } ],
+            "getPSLayout" : {
+              "dir" : "column",
+              "layout" : "FLEX",
+              "align" : "center",
+              "vAlign" : "center"
+            },
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "layout" : "FLEX"
+            },
+            "showCaption" : true,
+            "itemType" : "CONTAINER",
+            "itemStyle" : "DEFAULT",
+            "name" : "container5"
+          }, {
+            "getPSPanelItems" : [ {
+              "rawItemHeight" : 30.0,
+              "contentType" : "RAW",
+              "rawContent" : "完成的任务数",
+              "contentHeight" : 30.0,
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "height" : 30,
+                "layout" : "FLEX"
+              },
+              "showCaption" : true,
+              "height" : 30.0,
+              "itemType" : "RAWITEM",
+              "itemStyle" : "DEFAULT",
+              "name" : "rawitem4"
+            }, {
+              "getPSEditor" : {
+                "enableLinkView" : false,
+                "editable" : false,
+                "editorType" : "SPAN",
+                "name" : "mytasks"
+              },
+              "viewFieldName" : "mytasks",
+              "showCaption" : false,
+              "hidden" : false,
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "layout" : "FLEX"
+              },
+              "getPSSysCss" : {
+                "cssName" : "text-center-marginupdown"
+              },
+              "itemType" : "FIELD",
+              "itemStyle" : "DEFAULT",
+              "name" : "mytasks"
+            } ],
+            "getPSLayout" : {
+              "dir" : "column",
+              "layout" : "FLEX",
+              "align" : "center",
+              "vAlign" : "center"
+            },
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "layout" : "FLEX"
+            },
+            "showCaption" : true,
+            "itemType" : "CONTAINER",
+            "itemStyle" : "DEFAULT",
+            "name" : "container6"
+          } ],
+          "getPSLayout" : {
+            "layout" : "FLEX",
+            "align" : "space-around",
+            "vAlign" : "flex-start"
+          },
+          "getPSLayoutPos" : {
+            "grow" : 1,
+            "layout" : "FLEX"
+          },
+          "showCaption" : true,
+          "getPSSysCss" : {
+            "cssName" : "container-left-border"
+          },
+          "itemType" : "CONTAINER",
+          "itemStyle" : "DEFAULT",
+          "name" : "container10"
+        }, {
+          "getPSPanelItems" : [ {
+            "getPSPanelItems" : [ {
+              "rawItemHeight" : 30.0,
+              "contentType" : "RAW",
+              "rawContent" : "解决的bug数",
+              "contentHeight" : 30.0,
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "height" : 30,
+                "layout" : "FLEX"
+              },
+              "showCaption" : true,
+              "height" : 30.0,
+              "itemType" : "RAWITEM",
+              "itemStyle" : "DEFAULT",
+              "name" : "rawitem5"
+            }, {
+              "getPSEditor" : {
+                "enableLinkView" : false,
+                "editable" : false,
+                "editorType" : "SPAN",
+                "name" : "mybugs"
+              },
+              "viewFieldName" : "mybugs",
+              "showCaption" : false,
+              "hidden" : false,
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "layout" : "FLEX"
+              },
+              "getPSSysCss" : {
+                "cssName" : "text-center-marginupdown"
+              },
+              "itemType" : "FIELD",
+              "itemStyle" : "DEFAULT",
+              "name" : "mybugs"
+            } ],
+            "getPSLayout" : {
+              "dir" : "column",
+              "layout" : "FLEX",
+              "align" : "center",
+              "vAlign" : "center"
+            },
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "layout" : "FLEX"
+            },
+            "showCaption" : true,
+            "itemType" : "CONTAINER",
+            "itemStyle" : "DEFAULT",
+            "name" : "container7"
+          }, {
+            "getPSPanelItems" : [ {
+              "rawItemHeight" : 30.0,
+              "contentType" : "RAW",
+              "rawContent" : "创建的用例数",
+              "contentHeight" : 30.0,
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "height" : 30,
+                "layout" : "FLEX"
+              },
+              "showCaption" : true,
+              "height" : 30.0,
+              "itemType" : "RAWITEM",
+              "itemStyle" : "DEFAULT",
+              "name" : "rawitem6"
+            }, {
+              "getPSEditor" : {
+                "enableLinkView" : false,
+                "editable" : false,
+                "editorType" : "SPAN",
+                "name" : "myfavoritebugs"
+              },
+              "viewFieldName" : "MYFAVORITEBUGS",
+              "showCaption" : false,
+              "hidden" : false,
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "layout" : "FLEX"
+              },
+              "getPSSysCss" : {
+                "cssName" : "text-center-marginupdown"
+              },
+              "itemType" : "FIELD",
+              "itemStyle" : "DEFAULT",
+              "name" : "myfavoritebugs"
+            } ],
+            "getPSLayout" : {
+              "dir" : "column",
+              "layout" : "FLEX",
+              "align" : "center",
+              "vAlign" : "center"
+            },
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "layout" : "FLEX"
+            },
+            "showCaption" : true,
+            "itemType" : "CONTAINER",
+            "itemStyle" : "DEFAULT",
+            "name" : "container8"
+          } ],
+          "getPSLayout" : {
+            "layout" : "FLEX",
+            "align" : "space-around",
+            "vAlign" : "flex-start"
+          },
+          "getPSLayoutPos" : {
+            "grow" : 1,
+            "layout" : "FLEX"
+          },
+          "showCaption" : true,
+          "itemType" : "CONTAINER",
+          "itemStyle" : "DEFAULT",
+          "name" : "container11"
+        } ],
+        "getPSLayout" : {
+          "dir" : "column",
+          "layout" : "FLEX"
+        },
+        "getPSLayoutPos" : {
+          "grow" : 1,
+          "layout" : "FLEX"
+        },
+        "showCaption" : true,
+        "itemType" : "CONTAINER",
+        "itemStyle" : "DEFAULT",
+        "name" : "container3"
+      } ],
+      "getPSLayout" : {
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "showCaption" : true,
+      "getPSSysCss" : {
+        "cssName" : "container-margin-top-7px"
+      },
+      "itemType" : "CONTAINER",
+      "itemStyle" : "DEFAULT",
+      "name" : "container1"
+    } ],
+    "getAllPSPanelFields" : [ {
+      "modelref" : true,
+      "id" : "mytodocnt"
+    }, {
+      "modelref" : true,
+      "id" : "mystorys"
+    }, {
+      "modelref" : true,
+      "id" : "mytasks"
+    }, {
+      "modelref" : true,
+      "id" : "mybugs"
+    }, {
+      "modelref" : true,
+      "id" : "myfavoritebugs"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "controlType" : "PANEL",
+    "codeName" : "PersonInfoMianBan",
+    "layoutMode" : "TABLE_24COL",
+    "getPSControlParam" : { },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSPANELS/PersonInfoMianBan.json",
+    "logicName" : "个人信息个人贡献项布局面板",
+    "name" : "list_itempanel",
+    "modelid" : "c6bb9e7ace35f2d2ef0a9cf787f4fbd7"
+  },
+  "showHeader" : true,
+  "enableRowEditGroup" : false,
+  "getPSDEListDataItems" : [ {
+    "dataType" : 9,
+    "name" : "myfavoritebugs"
+  }, {
+    "dataType" : 9,
+    "name" : "mybugs"
+  }, {
+    "dataType" : 9,
+    "name" : "mytasks"
+  }, {
+    "dataType" : 9,
+    "name" : "mytodocnt"
+  }, {
+    "dataType" : 9,
+    "name" : "mystorys"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "REALNAME",
+      "codeName" : "Realname"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  } ],
+  "enableRowEdit" : false,
+  "controlType" : "LIST",
+  "codeName" : "PersonInfoMyWork",
+  "enableGroup" : false,
+  "pagingSize" : 1000,
+  "groupMode" : "NONE",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSLISTS/PersonInfoMyWork.json",
+  "logicName" : "PersonInfoMyWork",
+  "modelid" : "4dd517f089050019617f247c2be7bb2b"
+}

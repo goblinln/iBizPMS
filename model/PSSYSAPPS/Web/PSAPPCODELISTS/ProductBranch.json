@@ -1,0 +1,25 @@
+{
+  "codeItemValueNumber" : true,
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchCurProduct"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "NAME",
+    "codeName" : "Name"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "ProductBranch",
+  "emptyText" : "未定义",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch.json",
+  "name" : "产品平台（动态）"
+}

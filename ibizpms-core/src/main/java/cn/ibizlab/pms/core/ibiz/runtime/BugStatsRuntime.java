@@ -1,13 +1,23 @@
 package cn.ibizlab.pms.core.ibiz.runtime;
 
 import cn.ibizlab.pms.core.ibiz.domain.BugStats;
+import cn.ibizlab.pms.core.ibiz.service.IBugStatsService;
+import cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
 import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.beans.factory.annotation.Autowired;
 
+@Aspect
 @Component("BugStatsRuntime")
 public class BugStatsRuntime extends DataEntityRuntime {
+
+    @Autowired
+    IBugStatsService bugstatsService;
 
     @Override
     protected Object getSimpleEntity(Object o) {
@@ -16,12 +26,12 @@ public class BugStatsRuntime extends DataEntityRuntime {
 
     @Override
     public String getId() {
-        return null;
+        return "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json";
     }
 
     @Override
     public String getName() {
-        return null;
+        return "IBZ_BUGSTATS";
     }
 
     @Override
@@ -58,6 +68,62 @@ public class BugStatsRuntime extends DataEntityRuntime {
     @Override
     public Object executeAction(IPSDEAction ipsdeAction, Object[] objects) throws Throwable {
         return null;
+    }
+
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.BugStatsServiceImpl.*(..))")
+    public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
+        String action = point.getSignature().getName();
+        if (action.equals("create")) {
+            return aroundAction("Create", point);
+        }
+        if (action.equals("update")) {
+            return aroundAction("Update", point);
+        }
+        if (action.equals("remove")) {
+            return aroundAction("Remove", point);
+        }
+        if (action.equals("get")) {
+            return aroundAction("Get", point);
+        }
+        if (action.equals("getDraft")) {
+            return aroundAction("GetDraft", point);
+        }
+        if (action.equals("checkKey")) {
+            return aroundAction("CheckKey", point);
+        }
+        if (action.equals("save")) {
+            return aroundAction("Save", point);
+        }
+
+    //
+        if (action.equals("searchBugCountInResolution")) {
+            return aroundAction("BugCountInResolution", point);
+        }
+        if (action.equals("searchBugResolvedBy")) {
+            return aroundAction("BugResolvedBy", point);
+        }
+        if (action.equals("searchBugResolvedGird")) {
+            return aroundAction("BugResolvedGird", point);
+        }
+        if (action.equals("searchBugassignedTo")) {
+            return aroundAction("BugassignedTo", point);
+        }
+        if (action.equals("searchDefault")) {
+            return aroundAction("DEFAULT", point);
+        }
+        if (action.equals("searchProductBugResolutionStats")) {
+            return aroundAction("ProductBugResolutionStats", point);
+        }
+        if (action.equals("searchProductBugStatusSum")) {
+            return aroundAction("ProductBugStatusSum", point);
+        }
+        if (action.equals("searchProductCreateBug")) {
+            return aroundAction("ProductCreateBug", point);
+        }
+        if (action.equals("searchProjectBugStatusCount")) {
+            return aroundAction("ProjectBugStatusCount", point);
+        }
+        return point.proceed();
     }
 
 }

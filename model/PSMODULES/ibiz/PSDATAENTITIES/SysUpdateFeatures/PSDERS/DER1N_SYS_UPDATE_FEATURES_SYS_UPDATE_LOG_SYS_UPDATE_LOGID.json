@@ -1,0 +1,28 @@
+{
+  "getPSPickupDEField" : {
+    "name" : "SYS_UPDATE_LOGID",
+    "codeName" : "SysUpdateLogId"
+  },
+  "masterOrder" : -1,
+  "getPSPickupTextDEField" : {
+    "name" : "SYS_UPDATE_LOGNAME",
+    "codeName" : "SysUpdateLogName"
+  },
+  "removeActionType" : 1,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "SysUpdateLog",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateFeatures.json"
+  },
+  "minorCodeName" : "sysUpdateFeatures",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateFeatures/PSDERS/DER1N_SYS_UPDATE_FEATURES_SYS_UPDATE_LOG_SYS_UPDATE_LOGID.json",
+  "name" : "DER1N_SYS_UPDATE_FEATURES_SYS_UPDATE_LOG_SYS_UPDATE_LOGID"
+}

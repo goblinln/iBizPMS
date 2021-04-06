@@ -1,0 +1,527 @@
+{
+  "showDataInfoBar" : true,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "DeptTreeExpView",
+  "caption" : "公司",
+  "title" : "组织部门树导航视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+    },
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "TreeExpView",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "paramType" : "CTRL",
+      "name" : "TREEEXPBAR"
+    } ],
+    "name" : "engine"
+  } ],
+  "getPSControls" : [ {
+    "controlType" : "TREEEXPBAR",
+    "getXDataPSControl" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company/PSTREEVIEWS/DeptExp.json",
+      "name" : "treeexpbar_tree",
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "treeexpbar_tree"
+      },
+      "getPSControlHandler" : {
+        "userDRAction" : "READ",
+        "getPSHandlerActions" : [ {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "dataAccessAction" : "UPDATE",
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "name" : "update"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+          },
+          "actionType" : "DEDATASET",
+          "name" : "fetch"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "dataAccessAction" : "DELETE",
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "name" : "remove"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
+          },
+          "dataAccessAction" : "READ",
+          "actionName" : "Get",
+          "actionType" : "DEACTION",
+          "name" : "load"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
+          },
+          "dataAccessAction" : "CREATE",
+          "actionName" : "Create",
+          "actionType" : "DEACTION",
+          "name" : "create"
+        } ],
+        "enableDEFieldPrivilege" : false,
+        "id" : "树视图处理器"
+      },
+      "controlType" : "TREEVIEW"
+    },
+    "enableSearch" : false,
+    "enableCounter" : true,
+    "showTitleBar" : false,
+    "getPSControls" : [ {
+      "treeGridMode" : 0,
+      "getPSDETreeNodeRSs" : [ {
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "SubDept"
+        },
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "SubDept"
+        },
+        "getParentPSDER1N" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept/PSDERS/DER1N__ZT_DEPT__ZT_DEPT__PARENT.json"
+        },
+        "parentValueLevel" : 1,
+        "parentFilter" : "parent",
+        "getParentPSAppDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "searchMode" : 3,
+        "name" : "子部门 - 子部门"
+      }, {
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
+        },
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "AllDept"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3,
+        "name" : "默认根节点 - 所有部门"
+      }, {
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "AllDept"
+        },
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "RootDept"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3,
+        "name" : "所有部门 - 根部门"
+      }, {
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "RootDept"
+        },
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "SubDept"
+        },
+        "getParentPSDER1N" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept/PSDERS/DER1N__ZT_DEPT__ZT_DEPT__PARENT.json"
+        },
+        "parentValueLevel" : 1,
+        "parentFilter" : "parent",
+        "getParentPSAppDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "searchMode" : 3,
+        "name" : "根部门 - 子部门"
+      } ],
+      "enableRootSelect" : false,
+      "outputIconDefault" : false,
+      "enableSearchDefault" : false,
+      "controlType" : "TREEVIEW",
+      "getPSDETreeNodes" : [ {
+        "getIdPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "getLeafFlagPSAppDEField" : {
+          "name" : "ISLEAF",
+          "codeName" : "IsLeaf"
+        },
+        "appendCaption" : false,
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchRoot"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        },
+        "maxSize" : -1,
+        "enableQuickCreate" : false,
+        "navFilter" : "n_parent_eq",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptMainGridView.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "rootNode" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selected" : false,
+        "selectFirstOnly" : false,
+        "expandFirstOnly" : false,
+        "appendPNodeId" : false,
+        "enableCheck" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+        },
+        "nodeType" : "RootDept",
+        "disableSelect" : false,
+        "enableQuickSearch" : false,
+        "counterMode" : 0,
+        "treeNodeType" : "DE",
+        "expanded" : false,
+        "name" : "根部门",
+        "id" : "RootDept"
+      }, {
+        "nodeValue" : "root",
+        "text" : "默认根节点",
+        "enableQuickCreate" : false,
+        "rootNode" : true,
+        "hasPSDETreeNodeRSs" : true,
+        "selected" : false,
+        "selectFirstOnly" : false,
+        "expandFirstOnly" : false,
+        "appendPNodeId" : false,
+        "enableCheck" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "nodeType" : "ROOT",
+        "disableSelect" : false,
+        "enableQuickSearch" : false,
+        "counterMode" : 0,
+        "treeNodeType" : "STATIC",
+        "expanded" : false,
+        "name" : "默认根节点",
+        "id" : "ROOT"
+      }, {
+        "getIdPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "getLeafFlagPSAppDEField" : {
+          "name" : "ISLEAF",
+          "codeName" : "IsLeaf"
+        },
+        "appendCaption" : false,
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        },
+        "maxSize" : -1,
+        "enableQuickCreate" : false,
+        "navFilter" : "n_parent_eq",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptMainGridView.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "rootNode" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selected" : false,
+        "selectFirstOnly" : false,
+        "expandFirstOnly" : false,
+        "appendPNodeId" : false,
+        "enableCheck" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+        },
+        "nodeType" : "SubDept",
+        "disableSelect" : false,
+        "enableQuickSearch" : false,
+        "counterMode" : 0,
+        "treeNodeType" : "DE",
+        "expanded" : false,
+        "name" : "子部门",
+        "id" : "SubDept"
+      }, {
+        "text" : "所有部门",
+        "enableQuickCreate" : false,
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptMainGridView.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "rootNode" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selected" : false,
+        "selectFirstOnly" : false,
+        "expandFirstOnly" : false,
+        "appendPNodeId" : false,
+        "enableCheck" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "enableNewData" : false,
+        "enableEditData" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+        },
+        "nodeType" : "AllDept",
+        "disableSelect" : false,
+        "enableQuickSearch" : false,
+        "counterMode" : 0,
+        "treeNodeType" : "STATIC",
+        "expanded" : true,
+        "name" : "所有部门",
+        "id" : "AllDept"
+      } ],
+      "codeName" : "DeptExp",
+      "rootVisible" : false,
+      "getCreatePSControlAction" : {
+        "modelref" : true,
+        "id" : "create"
+      },
+      "getUpdatePSControlAction" : {
+        "modelref" : true,
+        "id" : "update"
+      },
+      "getRemovePSControlAction" : {
+        "modelref" : true,
+        "id" : "remove"
+      },
+      "getGetPSControlAction" : {
+        "modelref" : true,
+        "id" : "load"
+      },
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "treeexpbar_tree"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+      "getPSControlHandler" : {
+        "userDRAction" : "READ",
+        "getPSHandlerActions" : [ {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "dataAccessAction" : "UPDATE",
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "name" : "update"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+          },
+          "actionType" : "DEDATASET",
+          "name" : "fetch"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "dataAccessAction" : "DELETE",
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "name" : "remove"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
+          },
+          "dataAccessAction" : "READ",
+          "actionName" : "Get",
+          "actionType" : "DEACTION",
+          "name" : "load"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
+          },
+          "dataAccessAction" : "CREATE",
+          "actionName" : "Create",
+          "actionType" : "DEACTION",
+          "name" : "create"
+        } ],
+        "enableDEFieldPrivilege" : false,
+        "id" : "树视图处理器"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+      },
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company/PSTREEVIEWS/DeptExp.json",
+      "logicName" : "组织部门导航树",
+      "name" : "treeexpbar_tree",
+      "modelid" : "7efd12d4d3b2a08961f6d2566da41285"
+    } ],
+    "getPSAppViewRefs" : [ {
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptMainGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      },
+      "realTitle" : "部门",
+      "parentDataJO" : {
+        "srfparentdefname" : "n_parent_eq",
+        "srfparentdename" : "ZT_DEPT",
+        "srfparentmode" : "DER1N__ZT_DEPT__ZT_DEPT__PARENT"
+      },
+      "name" : "EXPITEM:SubDept"
+    }, {
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptMainGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      },
+      "realTitle" : "部门",
+      "parentDataJO" : {
+        "srfparentdefname" : "n_parent_eq",
+        "srfparentdename" : "ZT_DEPT",
+        "srfparentmode" : "DER1N__ZT_DEPT__ZT_DEPT__PARENT"
+      },
+      "name" : "EXPITEM:RootDept"
+    }, {
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptMainGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      },
+      "realTitle" : "部门",
+      "name" : "EXPITEM:AllDept"
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "TREEEXPBAR"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "treeexpbar"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+    },
+    "codeName" : "DeptTreeExpViewtreeexpbar",
+    "name" : "treeexpbar",
+    "modelid" : "a5d4b15e7801d61357c56c91136faed7_treeexpbar"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+  },
+  "viewStyle" : "STYLE2",
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppUILogic" : {
+      "enableBatchAdd" : false,
+      "batchAddOnly" : false,
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
+      "viewLogicType" : "APP_NEWDATA",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据"
+    },
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppUILogic" : {
+      "viewLogicType" : "APP_OPENDATA",
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据"
+    },
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata"
+  } ],
+  "codeName" : "CompanyDeptTreeExpView",
+  "viewType" : "DETREEEXPVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CompanyDeptTreeExpView.json",
+  "name" : "CompanyDeptTreeExpView"
+}

@@ -1,0 +1,544 @@
+{
+  "quickSearchMode" : 1,
+  "mobileSearchBar" : false,
+  "getPSSearchBarFilters" : [ {
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "editorWidth" : 100.0,
+      "name" : "namelike"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 25,
+    "caption" : "待办名称(%)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "LIKE",
+      "codeName" : "N_NAME_LIKE",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "N_NAME_LIKE"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "itemType" : "FILTER",
+    "name" : "namelike"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Type.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "name" : "typeeq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "类型(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_TYPE_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "name" : "N_TYPE_EQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "itemType" : "FILTER",
+    "name" : "typeeq"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Type.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "name" : "typenoteq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "类型(<>)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "NOTEQ",
+      "codeName" : "N_TYPE_NOTEQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "name" : "N_TYPE_NOTEQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "itemType" : "FILTER",
+    "name" : "typenoteq"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Todo__status.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "statuseq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "状态(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_STATUS_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "name" : "N_STATUS_EQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    },
+    "itemType" : "FILTER",
+    "name" : "statuseq"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Todo__status.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "statusnoteq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "状态(<>)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "NOTEQ",
+      "codeName" : "N_STATUS_NOTEQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "name" : "N_STATUS_NOTEQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    },
+    "itemType" : "FILTER",
+    "name" : "statusnoteq"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "name" : "accounteq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "所有者(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_ACCOUNT_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "name" : "N_ACCOUNT_EQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "itemType" : "FILTER",
+    "name" : "accounteq"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "begineq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 9,
+    "needCodeListConfig" : true,
+    "caption" : "开始(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_BEGIN_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "name" : "N_BEGIN_EQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "BEGIN",
+      "codeName" : "Begin"
+    },
+    "itemType" : "FILTER",
+    "name" : "begineq"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CycleType.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "config_typeeq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "周期类型(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_CONFIG_TYPE_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "CONFIG_TYPE",
+        "codeName" : "Config_type"
+      },
+      "name" : "N_CONFIG_TYPE_EQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "CONFIG_TYPE",
+      "codeName" : "Config_type"
+    },
+    "itemType" : "FILTER",
+    "name" : "config_typeeq"
+  }, {
+    "getPSEditor" : {
+      "editorType" : "NUMBER",
+      "name" : "cycleeq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 9,
+    "caption" : "周期(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_CYCLE_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "CYCLE",
+        "codeName" : "Cycle"
+      },
+      "name" : "N_CYCLE_EQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "CYCLE",
+      "codeName" : "Cycle"
+    },
+    "itemType" : "FILTER",
+    "name" : "cycleeq"
+  }, {
+    "getPSEditor" : {
+      "dateTimeFormat" : "YYYY-MM-DD",
+      "editorType" : "DATEPICKEREX_NOTIME",
+      "editorWidth" : 100.0,
+      "editorParams" : {
+        "TIMEFMT" : "YYYY-MM-DD"
+      },
+      "name" : "dateeq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 5,
+    "caption" : "日期(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_DATE_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "name" : "N_DATE_EQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "itemType" : "FILTER",
+    "name" : "dateeq"
+  }, {
+    "getPSEditor" : {
+      "dateTimeFormat" : "YYYY-MM-DD",
+      "editorType" : "DATEPICKEREX_NOTIME",
+      "editorWidth" : 100.0,
+      "editorParams" : {
+        "TIMEFMT" : "YYYY-MM-DD"
+      },
+      "name" : "dategteq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 5,
+    "caption" : "日期(>=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "GTANDEQ",
+      "codeName" : "N_DATE_GTANDEQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "name" : "N_DATE_GTANDEQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "itemType" : "FILTER",
+    "name" : "dategteq"
+  }, {
+    "getPSEditor" : {
+      "dateTimeFormat" : "YYYY-MM-DD",
+      "editorType" : "DATEPICKEREX_NOTIME",
+      "editorWidth" : 100.0,
+      "editorParams" : {
+        "TIMEFMT" : "YYYY-MM-DD"
+      },
+      "name" : "datelteq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 5,
+    "caption" : "日期(<=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "LTANDEQ",
+      "codeName" : "N_DATE_LTANDEQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "name" : "N_DATE_LTANDEQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "itemType" : "FILTER",
+    "name" : "datelteq"
+  }, {
+    "getPSEditor" : {
+      "dateTimeFormat" : "YYYY-MM-DD",
+      "editorType" : "DATEPICKEREX_NOTIME",
+      "editorWidth" : 100.0,
+      "editorParams" : {
+        "TIMEFMT" : "YYYY-MM-DD"
+      },
+      "name" : "datenoteq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 5,
+    "caption" : "日期(<>)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "NOTEQ",
+      "codeName" : "N_DATE_NOTEQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      },
+      "name" : "N_DATE_NOTEQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "itemType" : "FILTER",
+    "name" : "datenoteq"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "endeq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 9,
+    "needCodeListConfig" : true,
+    "caption" : "结束(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_END_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "name" : "N_END_EQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "END",
+      "codeName" : "End"
+    },
+    "itemType" : "FILTER",
+    "name" : "endeq"
+  }, {
+    "getPSEditor" : {
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Private_choose.json"
+      },
+      "editorType" : "CHECKBOXLIST",
+      "editorWidth" : 100.0,
+      "name" : "privateeq"
+    },
+    "emptyCaption" : false,
+    "showCaption" : false,
+    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "caption" : "私人事务(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_PRIVATE_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "PRIVATE",
+        "codeName" : "IBizPrivate"
+      },
+      "name" : "N_PRIVATE_EQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "hidden" : false,
+    "getPSAppDEField" : {
+      "name" : "PRIVATE",
+      "codeName" : "IBizPrivate"
+    },
+    "itemType" : "FILTER",
+    "name" : "privateeq"
+  } ],
+  "enableFilter" : true,
+  "controlType" : "SEARCHBAR",
+  "codeName" : "Custom",
+  "enableQuickSearch" : true,
+  "enableGroup" : false,
+  "quickSearchWidth" : 0,
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo/PSSEARCHBARS/Custom.json",
+  "logicName" : "待办自定义搜索栏",
+  "modelid" : "de54a707c447e1e3d12c1a7a69ee1db1"
+}

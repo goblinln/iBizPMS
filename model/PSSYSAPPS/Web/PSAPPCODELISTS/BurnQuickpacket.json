@@ -1,0 +1,25 @@
+{
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+  },
+  "getPSCodeItems" : [ {
+    "data" : "{\"n_isweekend_in\":\"1;2;3;4;5\"}",
+    "codeName" : "Exweek",
+    "text" : "去除周末",
+    "default" : true,
+    "value" : "exWeek"
+  }, {
+    "data" : "{}",
+    "codeName" : "Week",
+    "text" : "显示周末",
+    "value" : "Week"
+  } ],
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "codeName" : "BurnQuickpacket",
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/BurnQuickpacket.json",
+  "name" : "燃尽图快速分组"
+}

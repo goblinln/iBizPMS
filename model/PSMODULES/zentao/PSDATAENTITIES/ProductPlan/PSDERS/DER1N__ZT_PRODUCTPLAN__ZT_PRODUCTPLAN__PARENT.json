@@ -1,0 +1,27 @@
+{
+  "getPSPickupDEField" : {
+    "name" : "PARENT",
+    "codeName" : "Parent"
+  },
+  "masterOrder" : -1,
+  "getPSPickupTextDEField" : {
+    "name" : "PARENTNAME",
+    "codeName" : "ParentName"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "IBizParent",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N__ZT_PRODUCTPLAN__ZT_PRODUCTPLAN__PARENT.json",
+  "name" : "DER1N__ZT_PRODUCTPLAN__ZT_PRODUCTPLAN__PARENT"
+}

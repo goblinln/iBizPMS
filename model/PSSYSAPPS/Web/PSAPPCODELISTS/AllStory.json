@@ -1,0 +1,26 @@
+{
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "AllStory",
+  "emptyText" : "未定义",
+  "cacheTimeout" : 600,
+  "enableCache" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/AllStory.json",
+  "name" : "所有需求"
+}

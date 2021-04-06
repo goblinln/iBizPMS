@@ -1,0 +1,9 @@
+{
+  "serviceOrder" : 0,
+  "serviceHandler" : "SumPorjectDaily",
+  "codeName" : "SumPorjectDaily",
+  "serviceContainer" : "SC01",
+  "startMode" : "AUTO",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectDaily.json",
+  "name" : "汇总项目日报"
+}

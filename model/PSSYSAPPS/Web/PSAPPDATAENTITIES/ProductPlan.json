@@ -1,0 +1,1314 @@
+{
+  "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__PROP_CHILD_BUT"
+      },
+      "name" : "SRFUR__PROP_CHILD_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "chlid",
+    "logicName" : "子计划",
+    "default" : false,
+    "mSTag" : "chlid",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "chlid",
+    "name" : "子计划"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "orderValue" : 99999,
+    "codeName" : "normal",
+    "logicName" : "正常",
+    "default" : false,
+    "mSTag" : "normal",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__PROP_DELETE_BUT"
+      },
+      "name" : "SRFUR__PROP_DELETE_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "parent",
+    "logicName" : "父计划",
+    "default" : false,
+    "mSTag" : "parent",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "parent",
+    "name" : "父计划"
+  } ],
+  "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "getAllPSAppDEUIActions" : [ {
+    "getNoPrivDisplayMode" : 2,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSSysImage" : {
+      "glyph" : "xf00d@FontAwesome",
+      "cssClass" : "fa fa-remove"
+    },
+    "timeout" : 60000,
+    "codeName" : "DeleteCz",
+    "caption" : "删除",
+    "actionTarget" : "SINGLEKEY",
+    "reloadData" : true,
+    "dataAccessAction" : "SRFUR__PROP_DELETE_BUT",
+    "uIActionTag" : "DeleteCz",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "successMsg" : "已删除",
+    "confirmMsg" : "您确认删除该计划吗？",
+    "fullCodeName" : "ProductPlan_DeleteCz",
+    "name" : "删除（操作栏）",
+    "id" : "DeleteCz@ProductPlan"
+  }, {
+    "getNoPrivDisplayMode" : 1,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "getPSSysImage" : {
+      "glyph" : "xf044@FontAwesome",
+      "cssClass" : "fa fa-edit"
+    },
+    "timeout" : 60000,
+    "codeName" : "MainEdit",
+    "caption" : "编辑",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__PROP_EDIT_BUT",
+    "uIActionTag" : "MainEdit",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductPlan_MainEdit",
+    "name" : "编辑",
+    "id" : "MainEdit@ProductPlan"
+  }, {
+    "getNoPrivDisplayMode" : 2,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanSubPlanCreateView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "getPSSysImage" : {
+      "glyph" : "xf0e8@FontAwesome",
+      "cssClass" : "fa fa-sitemap"
+    },
+    "timeout" : 60000,
+    "codeName" : "NewSubPlanCz",
+    "caption" : "子计划",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__PROP_CHILD_BUT",
+    "uIActionTag" : "NewSubPlanCz",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductPlan_NewSubPlanCz",
+    "name" : "新建子计划（操作栏）",
+    "id" : "NewSubPlanCz@ProductPlan"
+  }, {
+    "getNoPrivDisplayMode" : 1,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSSysImage" : {
+      "glyph" : "xf00d@FontAwesome",
+      "cssClass" : "fa fa-remove"
+    },
+    "timeout" : 60000,
+    "codeName" : "Delete",
+    "caption" : "删除",
+    "actionTarget" : "SINGLEKEY",
+    "reloadData" : true,
+    "dataAccessAction" : "SRFUR__PROP_DELETE_BUT",
+    "uIActionTag" : "Delete",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "successMsg" : "已删除",
+    "confirmMsg" : "您确认删除该计划吗？",
+    "fullCodeName" : "ProductPlan_Delete",
+    "name" : "删除",
+    "id" : "Delete@ProductPlan"
+  }, {
+    "getNoPrivDisplayMode" : 2,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanOptionView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "product",
+      "key" : "product",
+      "name" : "product"
+    } ],
+    "frontProcessType" : "WIZARD",
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "product",
+      "key" : "PRODUCT",
+      "name" : "PRODUCT"
+    } ],
+    "getPSSysImage" : {
+      "glyph" : "xf0ed@FontAwesome",
+      "cssClass" : "fa fa-cloud-download"
+    },
+    "timeout" : 60000,
+    "codeName" : "AddPlanTemplet",
+    "caption" : "导入模板",
+    "actionTarget" : "NONE",
+    "dataAccessAction" : "SRFUR__PROP_CREATE_BUT",
+    "uIActionTag" : "AddPlanTemplet",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductPlan_AddPlanTemplet",
+    "name" : "导入模板",
+    "id" : "AddPlanTemplet@ProductPlan"
+  }, {
+    "getNoPrivDisplayMode" : 2,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "refreshMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf067@FontAwesome",
+      "cssClass" : "fa fa-plus"
+    },
+    "timeout" : 60000,
+    "codeName" : "Create",
+    "caption" : "创建计划",
+    "actionTarget" : "NONE",
+    "reloadData" : true,
+    "dataAccessAction" : "SRFUR__PROP_CREATE_BUT",
+    "uIActionTag" : "Create",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductPlan_Create",
+    "name" : "新建",
+    "id" : "Create@ProductPlan"
+  }, {
+    "getNoPrivDisplayMode" : 1,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
+      "viewType" : "DEMPICKUPVIEW"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "LinkStory"
+    },
+    "enableConfirm" : true,
+    "getPSSysImage" : {
+      "glyph" : "xf0c1@FontAwesome",
+      "cssClass" : "fa fa-link"
+    },
+    "timeout" : 60000,
+    "codeName" : "RelationStory",
+    "caption" : "关联需求",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__PROP_LSTORY_BUT",
+    "uIActionTag" : "RelationStory",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "fullCodeName" : "ProductPlan_RelationStory",
+    "name" : "关联需求",
+    "id" : "RelationStory@ProductPlan"
+  }, {
+    "getNoPrivDisplayMode" : 1,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectPlanAddEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "product",
+      "key" : "product",
+      "name" : "product"
+    }, {
+      "rawValue" : false,
+      "value" : "id",
+      "key" : "planid",
+      "name" : "planid"
+    }, {
+      "rawValue" : false,
+      "value" : "branch",
+      "key" : "branch",
+      "name" : "branch"
+    }, {
+      "rawValue" : false,
+      "value" : "end",
+      "key" : "end",
+      "name" : "end"
+    }, {
+      "rawValue" : false,
+      "value" : "begin",
+      "key" : "begin",
+      "name" : "begin"
+    } ],
+    "frontProcessType" : "WIZARD",
+    "refreshMode" : 1,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "id",
+      "key" : "PLANID",
+      "name" : "PLANID"
+    }, {
+      "rawValue" : false,
+      "value" : "end",
+      "key" : "END",
+      "name" : "END"
+    }, {
+      "rawValue" : false,
+      "value" : "product",
+      "key" : "PRODUCT",
+      "name" : "PRODUCT"
+    }, {
+      "rawValue" : false,
+      "value" : "begin",
+      "key" : "BEGIN",
+      "name" : "BEGIN"
+    }, {
+      "rawValue" : false,
+      "value" : "branch",
+      "key" : "BRANCH",
+      "name" : "BRANCH"
+    } ],
+    "getPSSysImage" : {
+      "glyph" : "xf067@FontAwesome",
+      "cssClass" : "fa fa-plus"
+    },
+    "timeout" : 60000,
+    "codeName" : "AddProject",
+    "caption" : "添加项目",
+    "actionTarget" : "SINGLEKEY",
+    "reloadData" : true,
+    "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
+    "uIActionTag" : "AddProject",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductPlan_AddProject",
+    "name" : "添加项目",
+    "id" : "AddProject@ProductPlan"
+  }, {
+    "getNoPrivDisplayMode" : 1,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView.json",
+      "viewType" : "DEMPICKUPVIEW"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "LinkBug"
+    },
+    "frontProcessType" : "WIZARD",
+    "enableConfirm" : true,
+    "getPSSysImage" : {
+      "glyph" : "xf188@FontAwesome",
+      "cssClass" : "fa fa-bug"
+    },
+    "timeout" : 60000,
+    "codeName" : "RelationBug",
+    "caption" : "关联Bug",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__PROP_LBUG_BUT",
+    "uIActionTag" : "RelationBug",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "fullCodeName" : "ProductPlan_RelationBug",
+    "name" : "关联Bug",
+    "id" : "RelationBug@ProductPlan"
+  }, {
+    "getNoPrivDisplayMode" : 1,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanSubPlanCreateView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "getPSSysImage" : {
+      "glyph" : "xf0e8@FontAwesome",
+      "cssClass" : "fa fa-sitemap"
+    },
+    "timeout" : 60000,
+    "codeName" : "NewSubPlan",
+    "caption" : "子计划",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__PROP_CHILD_BUT",
+    "uIActionTag" : "NewSubPlan",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductPlan_NewSubPlan",
+    "name" : "新建子计划",
+    "id" : "NewSubPlan@ProductPlan"
+  } ],
+  "major" : true,
+  "getAllPSAppDEMethods" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "Select",
+    "methodType" : "SELECT"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTPLAN__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTPLAN__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTPLAN__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTPLAN__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "BatchUnlinkBug"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/BatchUnlinkBug.json"
+    },
+    "codeName" : "BatchUnlinkBug",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "BatchUnlinkStory"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/BatchUnlinkStory.json"
+    },
+    "codeName" : "BatchUnlinkStory",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "EeActivePlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeActivePlan.json"
+    },
+    "codeName" : "EeActivePlan",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "EeCancelPlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeCancelPlan.json"
+    },
+    "codeName" : "EeCancelPlan",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "EeClosePlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeClosePlan.json"
+    },
+    "codeName" : "EeClosePlan",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "EeFinishPlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeFinishPlan.json"
+    },
+    "codeName" : "EeFinishPlan",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "EePausePlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EePausePlan.json"
+    },
+    "codeName" : "EePausePlan",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "EeRestartPlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeRestartPlan.json"
+    },
+    "codeName" : "EeRestartPlan",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "EeStartPlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeStartPlan.json"
+    },
+    "codeName" : "EeStartPlan",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetOldPlanName"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/GetOldPlanName.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "GetOldPlanName",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ImportPlanTemplet"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/ImportPlanTemplet.json"
+    },
+    "codeName" : "ImportPlanTemplet",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LinkBug"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkBug.json"
+    },
+    "codeName" : "LinkBug",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LinkStory"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkStory.json"
+    },
+    "codeName" : "LinkStory",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LinkTask"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkTask.json"
+    },
+    "codeName" : "LinkTask",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "MobProductPlanCounter"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/MobProductPlanCounter.json"
+    },
+    "codeName" : "MobProductPlanCounter",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "UnlinkBug"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkBug.json"
+    },
+    "codeName" : "UnlinkBug",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "UnlinkStory"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkStory.json"
+    },
+    "codeName" : "UnlinkStory",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchChildPlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildPlan"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchChildPlan",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurProductPlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurProductPlan"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchCurProductPlan",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefaultParent"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DefaultParent"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchDefaultParent",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchPlanCodeList"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PlanCodeList"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchPlanCodeList",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchPlanTasks"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PlanTasks"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchPlanTasks",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectApp"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectApp"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchProjectApp",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectPlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectPlan"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchProjectPlan",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchRootPlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RootPlan"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchRootPlan",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTaskPlan"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskPlan"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchTaskPlan",
+    "methodType" : "FETCH"
+  }, {
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/GetPlanEnd.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "GetPlanEnd",
+    "methodType" : "DEACTION",
+    "name" : "GetPlanEnd"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH"
+  } ],
+  "getMinorPSAppDERSs" : [ {
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "codeName" : "ProductPlans",
+    "rSMode" : 2,
+    "actionRSMode" : 1,
+    "dataRSMode" : 0,
+    "name" : "产品计划"
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "Taskscnt",
+    "logicName" : "总任务数",
+    "stdDataType" : 9,
+    "name" : "TASKSCNT"
+  }, {
+    "codeName" : "Estimatecnt",
+    "logicName" : "工时数",
+    "stdDataType" : 9,
+    "name" : "ESTIMATECNT"
+  }, {
+    "codeName" : "Comment",
+    "logicName" : "备注",
+    "stringLength" : 1048576,
+    "stdDataType" : 21,
+    "name" : "COMMENT"
+  }, {
+    "majorField" : true,
+    "codeName" : "Title",
+    "logicName" : "名称",
+    "stringLength" : 90,
+    "stdDataType" : 25,
+    "enableQuickSearch" : true,
+    "name" : "TITLE"
+  }, {
+    "codeName" : "DelayTaskscnt",
+    "logicName" : "延迟任务数",
+    "stdDataType" : 9,
+    "name" : "DELAYTASKSCNT"
+  }, {
+    "codeName" : "Oldtitle",
+    "logicName" : "上一次计划名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "OLDTITLE"
+  }, {
+    "keyField" : true,
+    "codeName" : "Id",
+    "logicName" : "编号",
+    "stdDataType" : 1,
+    "name" : "ID"
+  }, {
+    "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "Begin",
+    "logicName" : "开始日期",
+    "stdDataType" : 5,
+    "name" : "BEGIN"
+  }, {
+    "codeName" : "Statuss",
+    "logicName" : "状态",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "name" : "STATUSS"
+  }, {
+    "codeName" : "Desc",
+    "logicName" : "描述",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
+    "name" : "DESC"
+  }, {
+    "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "End",
+    "logicName" : "结束日期",
+    "stdDataType" : 5,
+    "name" : "END"
+  }, {
+    "codeName" : "Delay",
+    "logicName" : "延期",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "name" : "DELAY"
+  }, {
+    "codeName" : "Duration",
+    "logicName" : "持续时间",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "name" : "DURATION"
+  }, {
+    "codeName" : "Beginstr",
+    "logicName" : "开始日期",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "name" : "BEGINSTR"
+  }, {
+    "precision" : 2,
+    "codeName" : "Leftestimate",
+    "logicName" : "剩余工时",
+    "stdDataType" : 7,
+    "name" : "LEFTESTIMATE"
+  }, {
+    "codeName" : "Plantemplet",
+    "logicName" : "计划模板",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "name" : "PLANTEMPLET"
+  }, {
+    "codeName" : "UnFinishedTaskscnt",
+    "logicName" : "未完成任务数",
+    "stdDataType" : 9,
+    "name" : "UNFINISHEDTASKSCNT"
+  }, {
+    "codeName" : "Endstr",
+    "logicName" : "结束日期",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "name" : "ENDSTR"
+  }, {
+    "codeName" : "Status",
+    "logicName" : "计划状态",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "STATUS"
+  }, {
+    "codeName" : "Isexpired",
+    "logicName" : "是否过期",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "name" : "ISEXPIRED"
+  }, {
+    "codeName" : "Deleted",
+    "logicName" : "已删除",
+    "stringLength" : 1,
+    "stdDataType" : 25,
+    "name" : "DELETED"
+  }, {
+    "precision" : 2,
+    "codeName" : "Consumedestimate",
+    "logicName" : "消耗工时",
+    "stdDataType" : 7,
+    "name" : "CONSUMEDESTIMATE"
+  }, {
+    "codeName" : "Order",
+    "logicName" : "排序",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
+    "name" : "ORDER"
+  }, {
+    "codeName" : "IsLeaf",
+    "logicName" : "叶子节点",
+    "stdDataType" : 9,
+    "name" : "ISLEAF"
+  }, {
+    "codeName" : "Future",
+    "logicName" : "待定",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "name" : "FUTURE"
+  }, {
+    "codeName" : "StoryCnt",
+    "logicName" : "需求数",
+    "stdDataType" : 9,
+    "name" : "STORYCNT"
+  }, {
+    "codeName" : "Delta",
+    "logicName" : "周期",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "name" : "DELTA"
+  }, {
+    "codeName" : "FinishedTaskscnt",
+    "logicName" : "完成任务数",
+    "stdDataType" : 9,
+    "name" : "FINISHEDTASKSCNT"
+  }, {
+    "codeName" : "BugCnt",
+    "logicName" : "bug数",
+    "stdDataType" : 9,
+    "name" : "BUGCNT"
+  }, {
+    "codeName" : "ParentName",
+    "logicName" : "父计划名称",
+    "stringLength" : 90,
+    "stdDataType" : 25,
+    "name" : "PARENTNAME"
+  }, {
+    "codeName" : "Branch",
+    "logicName" : "平台/分支",
+    "stdDataType" : 1,
+    "name" : "BRANCH"
+  }, {
+    "codeName" : "Parent",
+    "logicName" : "父计划",
+    "stdDataType" : 1,
+    "name" : "PARENT"
+  }, {
+    "codeName" : "Product",
+    "logicName" : "产品",
+    "stdDataType" : 1,
+    "name" : "PRODUCT"
+  } ],
+  "getAllPSAppDEACModes" : [ {
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "enablePagingBar" : false,
+    "getTextPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "pagingSize" : 50,
+    "name" : "DEFAULT"
+  } ],
+  "enableFilterActions" : true,
+  "enableWFActions" : false,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  } ],
+  "getAllPSAppDEDataExports" : [ {
+    "maxRowCount" : 1000,
+    "getPSDEDataExportItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "format" : "%1$s",
+      "caption" : "编号",
+      "name" : "id"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "format" : "%1$s",
+      "caption" : "名称",
+      "name" : "title"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BEGINSTR",
+        "codeName" : "Beginstr"
+      },
+      "format" : "%1$s",
+      "caption" : "开始日期",
+      "name" : "beginstr"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "format" : "%1$s",
+      "caption" : "开始日期",
+      "name" : "begin"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "format" : "%1$s",
+      "caption" : "结束日期",
+      "name" : "end"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ENDSTR",
+        "codeName" : "Endstr"
+      },
+      "format" : "%1$s",
+      "caption" : "结束日期",
+      "name" : "endstr"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      },
+      "format" : "%1$s",
+      "caption" : "需求数",
+      "name" : "storycnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
+      },
+      "format" : "%1$s",
+      "caption" : "bug数",
+      "name" : "bugcnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "STATUSS",
+        "codeName" : "Statuss"
+      },
+      "format" : "%1$s",
+      "caption" : "状态",
+      "name" : "statuss"
+    } ],
+    "codeName" : "DataExport",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan/PSAPPDEDATAEXPS/DataExport.json",
+    "name" : "数据导出"
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDESERVICEAPIS/ProductPlan.json"
+  },
+  "codeName" : "ProductPlan",
+  "logicName" : "产品计划",
+  "dataAccCtrlMode" : 1,
+  "storageMode" : 0,
+  "dataAccCtrlArch" : 1,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "defaultMode" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json",
+  "name" : "ZT_PRODUCTPLAN"
+}

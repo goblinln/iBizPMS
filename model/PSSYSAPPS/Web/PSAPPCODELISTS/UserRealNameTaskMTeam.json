@@ -1,0 +1,31 @@
+{
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchTaskMTeam"
+  },
+  "getIconPathPSAppDEField" : {
+    "name" : "USERICON",
+    "codeName" : "UserIcon"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "PERSONNAME",
+    "codeName" : "PersonName"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "USERNAME",
+    "codeName" : "UserName"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "orMode" : "STR",
+  "textSeparator" : ",",
+  "codeName" : "UserRealNameTaskMTeam",
+  "emptyText" : "未定义",
+  "valueSeparator" : ",",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameTaskMTeam.json",
+  "name" : "用户真实名称（任务多人团队）"
+}

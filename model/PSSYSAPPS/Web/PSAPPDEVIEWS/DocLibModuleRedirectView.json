@@ -1,0 +1,51 @@
+{
+  "redirectView" : true,
+  "getRedirectPSAppViewRefs" : [ {
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "realTitle" : "文档库分类编辑视图",
+    "name" : "EDITVIEW"
+  }, {
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "realTitle" : "文档库分类编辑视图",
+    "name" : "IBZ_DOCLIBMODULE:EDITVIEW"
+  } ],
+  "enableCustomGetDataAction" : false,
+  "enableWorkflow" : true,
+  "showCaptionBar" : true,
+  "getPSDEViewCodeName" : "RedirectView",
+  "funcViewMode" : "REDIRECTVIEW",
+  "caption" : "文档库分类",
+  "title" : "文档库分类数据重定向视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
+    },
+    "name" : "layoutpanel"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
+  },
+  "viewStyle" : "STYLE2",
+  "codeName" : "DocLibModuleRedirectView",
+  "viewType" : "DEREDIRECTVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleRedirectView.json",
+  "name" : "DocLibModuleRedirectView"
+}

@@ -1,0 +1,60 @@
+{
+  "typeValue" : "story",
+  "virtual" : true,
+  "inherit" : false,
+  "getPSDERIndexDEFieldMaps" : [ {
+    "getMajorPSDEField" : {
+      "name" : "DELETED",
+      "codeName" : "Deleted"
+    },
+    "getMinorPSDEField" : {
+      "name" : "DELETED",
+      "codeName" : "Deleted"
+    },
+    "name" : "deleted=deleted"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "COLOR",
+      "codeName" : "Color"
+    },
+    "getMinorPSDEField" : {
+      "name" : "COLOR",
+      "codeName" : "Color"
+    },
+    "name" : "color=color"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "getMinorPSDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "name" : "PRODUCT=PRODUCT"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "INDEXDESC",
+      "codeName" : "Indexdesc"
+    },
+    "getMinorPSDEField" : {
+      "name" : "SPEC",
+      "codeName" : "Spec"
+    },
+    "name" : "indexdesc=spec"
+  } ],
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "Story",
+  "logicName" : "需求",
+  "dERType" : "DERINDEX",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERINDEX_ZT_STORY_IBIZPRO_INDEX.json",
+  "name" : "DERINDEX_ZT_STORY_IBIZPRO_INDEX"
+}

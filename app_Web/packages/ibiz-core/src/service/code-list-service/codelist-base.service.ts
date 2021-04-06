@@ -126,21 +126,32 @@ export class CodeListServiceBase {
     /**
      * 格式化静态代码表
      *
-     * @param {string} items 代码表集合
+     * @param {*} items 代码表集合
+     * @param {string} pValue 父代码项值
      * @returns {Promise<any[]>}
      * @memberof CodeListServiceBase
      */
-    public formatStaticItems(items: any) {
+     public formatStaticItems(items: any, pValue?: string) {
         let targetArray: Array<any> = [];
         items.forEach((element: any) => {
-            targetArray.push({
+            const codelistItem = {
                 label: element.text,
                 text: element.text,
                 value: element.value,
                 id: element.value,
                 codename: element.codeName,
                 data: eval('(' + element.data + ')')
-            })
+            }
+            if(pValue){
+                Object.assign(codelistItem,{
+                    pvalue: pValue,
+                })
+            }
+            targetArray.push(codelistItem);
+            if(element.getPSCodeItems){
+                const children = this.formatStaticItems(element.getPSCodeItems,element.value);
+                targetArray.push(...children);
+            }
         });
         return targetArray;
     }

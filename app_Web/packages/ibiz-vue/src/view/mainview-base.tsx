@@ -148,6 +148,9 @@ export class MainViewBase extends ViewBase {
      * @memberof MainViewBase
      */
     public handleItemClick(data: any, $event: any) {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         AppViewLogicService.getInstance().executeViewLogic(`toolbar_${data.tag}_click`, $event, this, undefined, this.viewInstance?.getPSAppViewLogics);
     }
 
@@ -260,6 +263,12 @@ export class MainViewBase extends ViewBase {
             if (fullargs && (fullargs.length > 0) && fullargs[0]['srfprocessdefinitionkey'] && fullargs[0]['srftaskdefinitionkey']) {
                 Object.assign(data, { 'processDefinitionKey': fullargs[0]['srfprocessdefinitionkey'] });
                 Object.assign(data, { 'taskDefinitionKey': fullargs[0]['srftaskdefinitionkey'] });
+                // 将待办任务标记为已读准备参数
+                const that:any = this;
+                if (that.quickGroupData && that.quickGroupData.hasOwnProperty("srfwf") && fullargs[0]['srftaskid']) {
+                    Object.assign(data, { 'srfwf': that.quickGroupData['srfwf'] });
+                    Object.assign(data, { 'srftaskid': fullargs[0]['srftaskid'] });
+                }
             }
             let deResParameters: any[] = [];
             let parameters: any[] = [];

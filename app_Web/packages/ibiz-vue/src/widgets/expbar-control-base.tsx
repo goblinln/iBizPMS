@@ -483,6 +483,9 @@ export class ExpBarControlBase extends MainControlBase {
      * @memberof ExpBarControlBase
      */
     public handleItemClick(data: any, $event: any) {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         AppViewLogicService.getInstance().executeViewLogic(`${this.controlInstance.name?.toLowerCase()}_toolbar_${data.tag}_click`, $event, this, undefined, this.controlInstance.getPSAppViewLogics);
     }
 
@@ -492,6 +495,9 @@ export class ExpBarControlBase extends MainControlBase {
      * @memberof ExpBarControlBase
      */
     public quickGroupValueChange($event: any) {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         if ($event && $event.data) {
             if (this.quickGroupData) {
                 for (let key in this.quickGroupData) {

@@ -188,18 +188,20 @@ export class ControlServiceBase {
         let item: any = {};
         let dataItems: any[] = model.getDataItems();
         dataItems.forEach(dataitem => {
-            let val = data.hasOwnProperty(dataitem.prop) ? data[dataitem.prop] : null;
-            if (val === null) {
-                val = data.hasOwnProperty(dataitem.name) ? data[dataitem.name] : null;
-            }
-            if ((isCreate === undefined || isCreate === null) && Object.is(dataitem.dataType, 'GUID') && Object.is(dataitem.name, 'srfkey') && (val && !Object.is(val, ''))) {
-                isCreate = true;
-            }
-            item[dataitem.name] = val;
-            // 转化代码表
-            if (codelistArray && dataitem.codelist) {
-                if (codelistArray.get(dataitem.codelist.tag) && codelistArray.get(dataitem.codelist.tag).get(val)) {
-                    item[dataitem.name] = codelistArray.get(dataitem.codelist.tag).get(val);
+            if (dataitem && (dataitem?.dataType !== "QUERYPARAM")) {
+                let val = data.hasOwnProperty(dataitem.prop) ? data[dataitem.prop] : null;
+                if (val === null) {
+                    val = data.hasOwnProperty(dataitem.name) ? data[dataitem.name] : null;
+                }
+                if ((isCreate === undefined || isCreate === null) && Object.is(dataitem.dataType, 'GUID') && Object.is(dataitem.name, 'srfkey') && (val && !Object.is(val, ''))) {
+                    isCreate = true;
+                }
+                item[dataitem.name] = val;
+                // 转化代码表
+                if (codelistArray && dataitem.codelist) {
+                    if (codelistArray.get(dataitem.codelist.tag) && codelistArray.get(dataitem.codelist.tag).get(val)) {
+                        item[dataitem.name] = codelistArray.get(dataitem.codelist.tag).get(val);
+                    }
                 }
             }
         });

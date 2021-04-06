@@ -1,0 +1,126 @@
+{
+  "searchButtonStyle" : "DEFAULT",
+  "enableFilterSave" : false,
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "controlType" : "SEARCHFORM",
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "dept",
+    "dataType" : 25
+  }, {
+    "id" : "teams",
+    "dataType" : 25
+  } ],
+  "noTabHeader" : true,
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "inputTipClosable" : false,
+      "resetItemNames" : [ "teams" ],
+      "getPSEditor" : {
+        "singleSelect" : true,
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RealDept.json"
+        },
+        "editorType" : "DROPDOWNLIST",
+        "placeHolder" : "选择一个部门的成员",
+        "name" : "dept"
+      },
+      "emptyCaption" : false,
+      "noPrivDisplayMode" : 1,
+      "showCaption" : true,
+      "dataType" : 25,
+      "needCodeListConfig" : true,
+      "caption" : "选择部门",
+      "allowEmpty" : true,
+      "labelWidth" : 80,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "resetItemName" : "teams",
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colMD" : 6,
+        "colLG" : 6,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "dept",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "dept"
+    }, {
+      "inputTipClosable" : false,
+      "getPSEditor" : {
+        "singleSelect" : true,
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectTeam.json"
+        },
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "project",
+          "key" : "n_id_noteq",
+          "name" : "n_id_noteq"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "project",
+          "key" : "N_ID_NOTEQ",
+          "name" : "N_ID_NOTEQ"
+        } ],
+        "editorType" : "DROPDOWNLIST",
+        "editorParams" : {
+          "SRFNAVPARAM.n_id_noteq" : "%project%",
+          "SRFNAVCTX.n_id_noteq" : "%project%"
+        },
+        "placeHolder" : "选择一个团队",
+        "name" : "teams"
+      },
+      "emptyCaption" : false,
+      "noPrivDisplayMode" : 1,
+      "showCaption" : true,
+      "dataType" : 25,
+      "needCodeListConfig" : true,
+      "caption" : "复制团队",
+      "allowEmpty" : true,
+      "labelWidth" : 80,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colMD" : 6,
+        "colLG" : 6,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "teams",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "teams"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "infoGroupMode" : false,
+    "codeName" : "formpage1",
+    "caption" : "常规条件",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
+  "codeName" : "Default",
+  "tabHeaderPos" : "TOP",
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam/PSSEARCHFORMS/Default.json",
+  "logicName" : "默认搜索表单",
+  "modelid" : "0ac976dfa685fda49fe3e6f81a2854b4"
+}

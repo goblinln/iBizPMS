@@ -1,0 +1,28 @@
+{
+  "getPSPickupDEField" : {
+    "name" : "MODULE",
+    "codeName" : "Module"
+  },
+  "masterOrder" : -1,
+  "getPSPickupTextDEField" : {
+    "name" : "MODULENAME",
+    "codeName" : "Modulename"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ZTModule",
+  "logicName" : "模块",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats/PSDERS/DER1N_IBZ_CASESTATS_ZT_MODULE_MODULE.json",
+  "name" : "DER1N_IBZ_CASESTATS_ZT_MODULE_MODULE"
+}

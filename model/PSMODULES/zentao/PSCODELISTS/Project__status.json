@@ -1,0 +1,31 @@
+{
+  "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Project__status.json",
+  "codeName" : "Project__status",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "codeName" : "Wait",
+    "text" : "未开始",
+    "value" : "wait"
+  }, {
+    "codeName" : "Doing",
+    "text" : "进行中",
+    "value" : "doing"
+  }, {
+    "codeName" : "Suspended",
+    "text" : "已挂起",
+    "value" : "suspended"
+  }, {
+    "codeName" : "Closed",
+    "text" : "已关闭",
+    "value" : "closed"
+  } ]
+}

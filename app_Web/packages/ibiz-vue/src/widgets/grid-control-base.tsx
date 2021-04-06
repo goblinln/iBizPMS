@@ -2484,6 +2484,9 @@ export class GridControlBase extends MDControlBase {
      * @memberof GridControlBase
      */
     public handleActionClick(data: any, event: any, column: any, detail: any) {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         AppViewLogicService.getInstance().executeViewLogic(this.getViewLogicTag(this.controlInstance.name, column.codeName, detail.name), event, this, data, this.controlInstance.getPSAppViewLogics);
     }
 
@@ -2496,6 +2499,9 @@ export class GridControlBase extends MDControlBase {
      * @memberof GridControlBase
      */
     public columnUIAction(data: any, event: any, column: any) {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         const tag = `grid_${column.codeName.toLowerCase()}_click`;
         AppViewLogicService.getInstance().executeViewLogic(tag, event, this, data, this.controlInstance.getPSAppViewLogics);
     }

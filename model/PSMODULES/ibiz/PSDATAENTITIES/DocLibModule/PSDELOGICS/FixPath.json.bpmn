@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:g="http://www.jboss.org/drools/flow/gpd" xmlns:tns="http://www.jboss.org/drools" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.mvel.org/2.0" id="Definition" name="" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+        <process id="cn.ibizlab.pms.core.ibiz.service.logic.doclibmodulefixpath" isClosed="false" isExecutable="true" name="ibiz_doclibmodule_fixpath_ruleFlow" processType="Private" tns:packageName="cn.ibizlab.pms.core.ibiz.service.logic.doclibmodulefixpath">
+            <extensionElements>
+                <tns:import name="java.util.Map" />
+                <tns:import name="org.springframework.util.StringUtils"/>
+                <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
+                                <tns:metaData express="" name="doclibmodulefixpathdefault" type="entity"/>
+                                <tns:metaData express="new cn.ibizlab.pms.core.zentao.domain.Module()" name="doclibmodulefixpathzt_module" type="refentity"/>
+                                    <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.IModuleService))" name="moduleservice" type="service"/>
+                    <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.ibiz.service.IDocLibModuleService))" name="iBzSysDoclibmoduleDefaultService" type="service"/>
+                    <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
+                            <tns:global identifier="doclibmodulefixpathdefault" type="cn.ibizlab.pms.core.ibiz.domain.DocLibModule" />
+                            <tns:global identifier="doclibmodulefixpathzt_module" type="cn.ibizlab.pms.core.zentao.domain.Module" />
+            </extensionElements>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="doclibmodulefixpathprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="准备参数"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="doclibmodulefixpathdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="执行重建模型路径"/>
+                        <endEvent id="deaction1_end" name="end"/>
+                        <sequenceFlow id="deaction1_end_line" sourceRef="deaction1" targetRef="deaction1_end"/>
+                        <startEvent id="begin" isInterrupting="true"/>
+                    <sequenceFlow id="prepareparam1_deaction1" sourceRef="prepareparam1" targetRef="deaction1">
+                    </sequenceFlow>
+                    <sequenceFlow id="begin_prepareparam1" sourceRef="begin" targetRef="prepareparam1">
+                    </sequenceFlow>
+        </process>
+    </definitions>

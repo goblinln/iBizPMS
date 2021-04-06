@@ -1,0 +1,29 @@
+{
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchVersion"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/StorySpec.json"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  },
+  "getMinorSortPSAppDEField" : {
+    "name" : "VERSION",
+    "codeName" : "Version"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "VERSION",
+    "codeName" : "Version"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "CurStory",
+  "emptyText" : "未定义",
+  "minorSortDir" : "DESC",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurStory.json",
+  "name" : "当前需求版本（动态）"
+}

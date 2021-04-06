@@ -1,0 +1,28 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : true,
+  "customParam" : false,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCreate"
+  },
+  "orderValue" : 1,
+  "codeName" : "Create",
+  "logicName" : "Create",
+  "extendMode" : 0,
+  "actionMode" : "CREATE",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Create.json",
+  "userCat" : "CAT1",
+  "name" : "Create"
+}

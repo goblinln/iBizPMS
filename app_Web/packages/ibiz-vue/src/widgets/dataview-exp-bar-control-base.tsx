@@ -37,6 +37,9 @@ export class DataViewExpBarControlBase extends ExpBarControlBase {
     * @memberof DataViewExpBarControlBase
     */
    public onSearch($event: any) {
+    if (this.Environment && this.Environment.isPreviewMode) {
+        return;
+    }
     const dataview: any = (this.$refs[`${this.$xDataControl.name.toLowerCase()}`] as any).ctrl;
     if(dataview) {
         this.viewState.next({ tag: this.$xDataControl.name, action: "filter", data: {query : this.searchText}});

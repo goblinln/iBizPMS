@@ -92,6 +92,7 @@ export default class DataPickerEditor extends EditorBase {
             // 地址框（选择）
             case 'ADDRESSPICKUP':
                 this.initPickupViewParams();
+                this.initAcParams();
                 break;
             // 地址框（支持选择、AC）
             case 'ADDRESSPICKUP_AC':
@@ -354,7 +355,7 @@ export default class DataPickerEditor extends EditorBase {
             valueitem: this.editorInstance.valueItemName,
             multiple: this.editorInstance.getEditorParam('multiple') ? JSON.parse(this.editorInstance.getEditorParam('multiple')) : false,
             url: this.editorInstance.getEditorParam('url'),
-            fillMap: this.editorInstance.getEditorParam('fillMap') ? this.editorInstance.getEditorParam('fillMap') : { id: this.editorInstance.valueItemName, label: this.editorInstance.name },
+            fillMap: this.editorInstance.getEditorParam('fillMap') ? eval('(' +this.editorInstance.getEditorParam('fillMap') + ')') : { id: this.editorInstance.valueItemName, label: this.editorInstance.name },
             disabled: this.disabled,
             data: this.contextData,
             context: this.context,

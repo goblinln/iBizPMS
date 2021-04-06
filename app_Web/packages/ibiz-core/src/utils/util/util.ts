@@ -386,6 +386,7 @@ export class Util {
         if (!appDERSPaths || appDERSPaths.length === 0) {
             return [];
         }
+        let counter:number = 0;
         for (const appDERSPath of appDERSPaths) {
             let tempData: any = { isInclude: true, data: [] };
             for (const singleAppDERSPath of appDERSPath) {
@@ -395,10 +396,13 @@ export class Util {
                     tempData.data.push({ pathName: this.srfpluralize(majorPSAppDataEntity.codeName).toLowerCase(), parameterName: majorPSAppDataEntity.codeName.toLowerCase() });
                 }
             }
+            counter ++;
             if (tempData.isInclude) {
                 return tempData.data;
             } else {
-                return [];
+                if(counter === appDERSPaths.length){
+                    return [];
+                }
             }
         }
     }

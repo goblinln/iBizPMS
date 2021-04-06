@@ -137,6 +137,9 @@ export class AppGridBase extends GridControlBase {
         }
         //  支持排序
         if (!this.controlInstance?.noSort) {
+            if (this.Environment && this.Environment.isPreviewMode) {
+                return;
+            }
             Object.assign(events, {
                 "sort-change": ({ column, prop, order }: any) => this.onSortChange({ column, prop, order })
             })

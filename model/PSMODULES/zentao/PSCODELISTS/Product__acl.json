@@ -1,0 +1,28 @@
+{
+  "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Product__acl.json",
+  "codeName" : "Product__acl",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "codeName" : "Open",
+    "text" : "默认设置(有产品视图权限，即可访问)",
+    "default" : true,
+    "value" : "open"
+  }, {
+    "codeName" : "Private",
+    "text" : "私有产品(相关负责人和项目团队成员才能访问)",
+    "value" : "private"
+  }, {
+    "codeName" : "Custom",
+    "text" : "自定义白名单(团队成员和白名单的成员可以访问)",
+    "value" : "custom"
+  } ]
+}

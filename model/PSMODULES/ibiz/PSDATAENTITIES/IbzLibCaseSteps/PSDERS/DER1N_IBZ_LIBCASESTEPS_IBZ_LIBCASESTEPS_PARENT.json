@@ -1,0 +1,23 @@
+{
+  "getPSPickupDEField" : {
+    "name" : "PARENT",
+    "codeName" : "Parent"
+  },
+  "masterOrder" : -1,
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "IbzlibCaseStepcS",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDERS/DER1N_IBZ_LIBCASESTEPS_IBZ_LIBCASESTEPS_PARENT.json",
+  "name" : "DER1N_IBZ_LIBCASESTEPS_IBZ_LIBCASESTEPS_PARENT"
+}
