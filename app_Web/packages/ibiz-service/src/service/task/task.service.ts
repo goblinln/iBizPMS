@@ -222,5 +222,112 @@ export class TaskService extends TaskBaseService {
         }
         return this.http.post(`/tasks`,data);
     }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+     public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule && context.task){
+            data = await this.obtainMinor(context, data);
+            return this.http.put(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/${context.task}`,data,isloading);
+        }
+        if(context.product && context.story && context.task){
+            data = await this.obtainMinor(context, data);
+            return this.http.put(`/products/${context.product}/stories/${context.story}/tasks/${context.task}`,data,isloading);
+        }
+        if(context.product && context.productplan && context.task){
+            data = await this.obtainMinor(context, data);
+            return this.http.put(`/products/${context.product}/productplans/${context.productplan}/tasks/${context.task}`,data,isloading);
+        }
+        if(context.project && context.task){
+            data = await this.obtainMinor(context, data);
+            return this.http.put(`/projects/${context.project}/tasks/${context.task}`,data,isloading);
+        }
+        if(context.story && context.task){
+            data = await this.obtainMinor(context, data);
+            return this.http.put(`/stories/${context.story}/tasks/${context.task}`,data,isloading);
+        }
+        if(context.productplan && context.task){
+            data = await this.obtainMinor(context, data);
+            return this.http.put(`/productplans/${context.productplan}/tasks/${context.task}`,data,isloading);
+        }
+        if(context.projectmodule && context.task){
+            data = await this.obtainMinor(context, data);
+            return this.http.put(`/projectmodules/${context.projectmodule}/tasks/${context.task}`,data,isloading);
+        }
+        const minorIBZTaskTeamService: any = await ___ibz___.gs[`getIBZTaskTeamService`]();
+        data = await this.obtainMinor(context, data);
+        //删除从实体【ibztaskestimate】数据主键
+        let ibztaskestimatesData:any = data.ibztaskestimates;
+        if (ibztaskestimatesData && ibztaskestimatesData.length > 0) {
+            ibztaskestimatesData.forEach((item: any) => {
+                if (item.id) {
+                    item.id = null;
+                    if(item.hasOwnProperty('id') && item.id) delete item.id;
+                }
+            })
+            data.ibztaskestimates = ibztaskestimatesData;
+        }
+        //删除从实体【ibztaskteam】数据主键
+        let ibztaskteamsData:any = data.ibztaskteams;
+        if (ibztaskteamsData && ibztaskteamsData.length > 0) {
+            for (const item of ibztaskteamsData) {
+                if (item.id) {
+                    if (minorIBZTaskTeamService) {
+                        await minorIBZTaskTeamService.removeLocal(context, item.id);
+                    }
+                    item.id = null;
+                    if(item.hasOwnProperty('id') && item.id) delete item.id;
+                }
+            }
+            data.ibztaskteams = ibztaskteamsData;
+        }
+        //删除从实体【subtask】数据主键
+        let subtasksData:any = data.subtasks;
+        if (subtasksData && subtasksData.length > 0) {
+            subtasksData.forEach((item: any) => {
+                if (item.id) {
+                    item.id = null;
+                    if(item.hasOwnProperty('id') && item.id) delete item.id;
+                }
+            })
+            data.subtasks = subtasksData;
+        }
+        //删除从实体【taskestimate】数据主键
+        let taskestimatesData:any = data.taskestimates;
+        if (taskestimatesData && taskestimatesData.length > 0) {
+            taskestimatesData.forEach((item: any) => {
+                if (item.id) {
+                    item.id = null;
+                    if(item.hasOwnProperty('id') && item.id) delete item.id;
+                }
+            })
+            data.taskestimates = taskestimatesData;
+        }
+        //删除从实体【ibztaskteam】数据主键
+        let taskteamsData:any = data.taskteams;
+        if (taskteamsData && taskteamsData.length > 0) {
+            taskteamsData.forEach((item: any) => {
+                if (item.id) {
+                    item.id = null;
+                    if(item.hasOwnProperty('id') && item.id) delete item.id;
+                }
+            })
+            data.taskteams = taskteamsData;
+        }
+        if(!data.srffrontuf || data.srffrontuf !== "1"){
+            data[this.APPDEKEY] = null;
+        }
+        if(data.srffrontuf){
+            delete data.srffrontuf;
+        }
+        return this.http.put(`/tasks/${context.task}`,data,isloading);
+    }
 }
 export default TaskService;
