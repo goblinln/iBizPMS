@@ -31,7 +31,7 @@ public class RelationRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_RELATION;
+        return "ZT_RELATION";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class RelationRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.RelationServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.RelationServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

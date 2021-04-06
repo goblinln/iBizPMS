@@ -31,7 +31,7 @@ public class ProjectProductRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_PROJECTPRODUCT;
+        return "ZT_PROJECTPRODUCT";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class ProjectProductRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.ProjectProductServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.ProjectProductServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

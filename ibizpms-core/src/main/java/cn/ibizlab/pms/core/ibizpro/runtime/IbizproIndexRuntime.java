@@ -31,7 +31,7 @@ public class IbizproIndexRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBIZPRO_INDEX;
+        return "IBIZPRO_INDEX";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class IbizproIndexRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibizpro.service.IbizproIndexServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibizpro.service.impl.IbizproIndexServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

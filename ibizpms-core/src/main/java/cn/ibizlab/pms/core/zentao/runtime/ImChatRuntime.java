@@ -31,7 +31,7 @@ public class ImChatRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_IM_CHAT;
+        return "ZT_IM_CHAT";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class ImChatRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.ImChatServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.ImChatServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

@@ -31,7 +31,7 @@ public class ImQueueRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_IM_QUEUE;
+        return "ZT_IM_QUEUE";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class ImQueueRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.ImQueueServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.ImQueueServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

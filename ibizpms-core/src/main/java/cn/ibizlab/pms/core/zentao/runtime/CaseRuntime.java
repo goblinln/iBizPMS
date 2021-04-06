@@ -31,7 +31,7 @@ public class CaseRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_CASE;
+        return "ZT_CASE";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class CaseRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.CaseServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.CaseServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

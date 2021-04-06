@@ -31,7 +31,7 @@ public class UserQueryRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_USERQUERY;
+        return "ZT_USERQUERY";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class UserQueryRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.UserQueryServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.UserQueryServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

@@ -31,7 +31,7 @@ public class UserGroupRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_USERGROUP;
+        return "ZT_USERGROUP";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class UserGroupRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.UserGroupServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.UserGroupServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

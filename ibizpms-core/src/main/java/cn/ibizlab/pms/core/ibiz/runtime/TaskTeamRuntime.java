@@ -31,7 +31,7 @@ public class TaskTeamRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZ_TASKTEAM;
+        return "IBZ_TASKTEAM";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class TaskTeamRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.TaskTeamServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.TaskTeamServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

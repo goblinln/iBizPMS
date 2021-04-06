@@ -31,7 +31,7 @@ public class UserYearWorkStatsRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZ_USERYEARWORKSTATS;
+        return "IBZ_USERYEARWORKSTATS";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class UserYearWorkStatsRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.UserYearWorkStatsServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.UserYearWorkStatsServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

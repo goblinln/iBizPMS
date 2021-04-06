@@ -31,7 +31,7 @@ public class ProductLifeRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZ_PRODUCTLIFE;
+        return "IBZ_PRODUCTLIFE";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class ProductLifeRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.ProductLifeServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.ProductLifeServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

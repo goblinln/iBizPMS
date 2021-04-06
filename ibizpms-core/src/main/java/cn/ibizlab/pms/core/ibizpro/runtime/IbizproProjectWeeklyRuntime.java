@@ -31,7 +31,7 @@ public class IbizproProjectWeeklyRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZPRO_PROJECTWEEKLY;
+        return "IBZPRO_PROJECTWEEKLY";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class IbizproProjectWeeklyRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibizpro.service.IbizproProjectWeeklyServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibizpro.service.impl.IbizproProjectWeeklyServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

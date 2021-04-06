@@ -31,7 +31,7 @@ public class BugRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_BUG;
+        return "ZT_BUG";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class BugRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.BugServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.BugServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

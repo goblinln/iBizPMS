@@ -31,7 +31,7 @@ public class SysUpdateLogRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return SYS_UPDATE_LOG;
+        return "SYS_UPDATE_LOG";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class SysUpdateLogRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.SysUpdateLogServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.SysUpdateLogServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

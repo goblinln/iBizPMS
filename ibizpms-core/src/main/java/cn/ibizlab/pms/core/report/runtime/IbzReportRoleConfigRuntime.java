@@ -31,7 +31,7 @@ public class IbzReportRoleConfigRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZ_REPORT_ROLE_CONFIG;
+        return "IBZ_REPORT_ROLE_CONFIG";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class IbzReportRoleConfigRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.report.service.IbzReportRoleConfigServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.report.service.impl.IbzReportRoleConfigServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

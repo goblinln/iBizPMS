@@ -31,7 +31,7 @@ public class SuiteCaseRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_SUITECASE;
+        return "ZT_SUITECASE";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class SuiteCaseRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.SuiteCaseServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.SuiteCaseServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

@@ -31,7 +31,7 @@ public class TestReportRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_TESTREPORT;
+        return "ZT_TESTREPORT";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class TestReportRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.TestReportServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.TestReportServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

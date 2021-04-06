@@ -31,7 +31,7 @@ public class IBZProSystemRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZPRO_SYSTEM;
+        return "IBZPRO_SYSTEM";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class IBZProSystemRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibizpro.service.IBZProSystemServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibizpro.service.impl.IBZProSystemServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

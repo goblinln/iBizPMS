@@ -31,7 +31,7 @@ public class CronRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_CRON;
+        return "ZT_CRON";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class CronRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.CronServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.CronServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

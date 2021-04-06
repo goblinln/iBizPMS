@@ -31,7 +31,7 @@ public class HistoryRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_HISTORY;
+        return "ZT_HISTORY";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class HistoryRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.HistoryServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.HistoryServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

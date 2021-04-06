@@ -31,7 +31,7 @@ public class TodoRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_TODO;
+        return "ZT_TODO";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class TodoRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.TodoServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.TodoServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

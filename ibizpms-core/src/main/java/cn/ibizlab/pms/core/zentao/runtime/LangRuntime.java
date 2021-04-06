@@ -31,7 +31,7 @@ public class LangRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_LANG;
+        return "ZT_LANG";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class LangRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.LangServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.LangServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

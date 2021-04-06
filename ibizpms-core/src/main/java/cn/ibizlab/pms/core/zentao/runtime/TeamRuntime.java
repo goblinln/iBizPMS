@@ -31,7 +31,7 @@ public class TeamRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_TEAM;
+        return "ZT_TEAM";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class TeamRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.TeamServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.TeamServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

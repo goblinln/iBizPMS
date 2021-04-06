@@ -31,7 +31,7 @@ public class CompileRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_COMPILE;
+        return "ZT_COMPILE";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class CompileRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.CompileServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.CompileServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

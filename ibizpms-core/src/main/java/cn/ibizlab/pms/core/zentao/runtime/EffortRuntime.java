@@ -31,7 +31,7 @@ public class EffortRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_EFFORT;
+        return "ZT_EFFORT";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class EffortRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.EffortServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.EffortServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

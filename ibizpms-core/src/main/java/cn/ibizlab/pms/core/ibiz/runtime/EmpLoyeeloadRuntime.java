@@ -31,7 +31,7 @@ public class EmpLoyeeloadRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZ_EMPLOYEELOAD;
+        return "IBZ_EMPLOYEELOAD";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class EmpLoyeeloadRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.EmpLoyeeloadServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.EmpLoyeeloadServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

@@ -31,7 +31,7 @@ public class RepoBranchRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_REPOBRANCH;
+        return "ZT_REPOBRANCH";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class RepoBranchRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.RepoBranchServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.RepoBranchServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

@@ -31,7 +31,7 @@ public class ProductSumRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZ_PRODUCTSUM;
+        return "IBZ_PRODUCTSUM";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class ProductSumRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.ProductSumServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.ProductSumServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

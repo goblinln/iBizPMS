@@ -31,7 +31,7 @@ public class TaskRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_TASK;
+        return "ZT_TASK";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class TaskRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.TaskServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.TaskServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

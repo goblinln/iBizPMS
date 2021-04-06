@@ -31,7 +31,7 @@ public class WebHookRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_WEBHOOK;
+        return "ZT_WEBHOOK";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class WebHookRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.WebHookServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.WebHookServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

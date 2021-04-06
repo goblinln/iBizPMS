@@ -31,7 +31,7 @@ public class ConfigRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_CONFIG;
+        return "ZT_CONFIG";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class ConfigRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.ConfigServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.ConfigServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

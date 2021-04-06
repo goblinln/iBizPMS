@@ -31,7 +31,7 @@ public class FileRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_FILE;
+        return "ZT_FILE";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class FileRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.FileServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.FileServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

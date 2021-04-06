@@ -31,7 +31,7 @@ public class LogRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_LOG;
+        return "ZT_LOG";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class LogRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.LogServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.LogServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

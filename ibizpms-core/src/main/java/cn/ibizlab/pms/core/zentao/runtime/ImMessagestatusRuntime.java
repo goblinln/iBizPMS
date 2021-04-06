@@ -31,7 +31,7 @@ public class ImMessagestatusRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_IM_MESSAGESTATUS;
+        return "ZT_IM_MESSAGESTATUS";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class ImMessagestatusRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.ImMessagestatusServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.ImMessagestatusServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

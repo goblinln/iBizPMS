@@ -31,7 +31,7 @@ public class IbzproProjectUserTaskRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBIZPRO_PROJECTUSERTASK;
+        return "IBIZPRO_PROJECTUSERTASK";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class IbzproProjectUserTaskRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibizpro.service.IbzproProjectUserTaskServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibizpro.service.impl.IbzproProjectUserTaskServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

@@ -31,7 +31,7 @@ public class BurnRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_BURN;
+        return "ZT_BURN";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class BurnRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.BurnServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.BurnServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

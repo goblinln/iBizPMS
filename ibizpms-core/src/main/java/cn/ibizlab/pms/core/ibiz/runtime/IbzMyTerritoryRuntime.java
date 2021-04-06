@@ -31,7 +31,7 @@ public class IbzMyTerritoryRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZ_MYTERRITORY;
+        return "IBZ_MYTERRITORY";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class IbzMyTerritoryRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.IbzMyTerritoryServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.IbzMyTerritoryServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

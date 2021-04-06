@@ -31,7 +31,7 @@ public class ImConferenceRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_IM_CONFERENCE;
+        return "ZT_IM_CONFERENCE";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class ImConferenceRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.ImConferenceServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.ImConferenceServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

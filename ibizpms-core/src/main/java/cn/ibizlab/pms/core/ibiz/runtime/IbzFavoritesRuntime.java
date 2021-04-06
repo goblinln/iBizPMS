@@ -31,7 +31,7 @@ public class IbzFavoritesRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZ_FAVORITES;
+        return "IBZ_FAVORITES";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class IbzFavoritesRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.IbzFavoritesServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.IbzFavoritesServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

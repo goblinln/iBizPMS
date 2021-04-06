@@ -31,7 +31,7 @@ public class IbiLoginRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZ_LOGIN;
+        return "IBZ_LOGIN";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class IbiLoginRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.IbiLoginServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.IbiLoginServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("getUser")) {

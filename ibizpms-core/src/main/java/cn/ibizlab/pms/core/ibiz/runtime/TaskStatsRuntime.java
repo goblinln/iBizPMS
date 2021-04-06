@@ -31,7 +31,7 @@ public class TaskStatsRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return IBZ_TASKSTATS;
+        return "IBZ_TASKSTATS";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class TaskStatsRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.TaskStatsServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.TaskStatsServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

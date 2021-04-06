@@ -31,7 +31,7 @@ public class NotifyRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_NOTIFY;
+        return "ZT_NOTIFY";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class NotifyRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.NotifyServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.NotifyServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

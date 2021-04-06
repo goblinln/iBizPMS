@@ -31,7 +31,7 @@ public class DeptRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_DEPT;
+        return "ZT_DEPT";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class DeptRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.DeptServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.DeptServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

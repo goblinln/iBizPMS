@@ -31,7 +31,7 @@ public class StoryStageRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return ZT_STORYSTAGE;
+        return "ZT_STORYSTAGE";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class StoryStageRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.StoryStageServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.StoryStageServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

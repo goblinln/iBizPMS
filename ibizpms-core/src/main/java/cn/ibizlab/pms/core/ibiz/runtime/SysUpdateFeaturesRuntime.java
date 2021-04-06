@@ -31,7 +31,7 @@ public class SysUpdateFeaturesRuntime extends DataEntityRuntime {
 
     @Override
     public String getName() {
-        return SYS_UPDATE_FEATURES;
+        return "SYS_UPDATE_FEATURES";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class SysUpdateFeaturesRuntime extends DataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.SysUpdateFeaturesServiceImpl.*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.SysUpdateFeaturesServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {
