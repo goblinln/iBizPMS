@@ -40,11 +40,17 @@ public class ImConferenceactionModelImpl extends DataEntityModelImpl {
         context.getSelectCond().eq(this.pkey, key);
         addAuthorityConditions(context, action);
 
-        if (imconferenceactionService.searchDefault(context).getTotalElements() == 0) {
+        List<ImConferenceaction> domains = imconferenceactionService.searchDefault(context).getContent();
+        if (domains.size() == 0) {
             return false;
         }
 
-        return true;
+        try {
+            return SpringContextHolder.getBean(cn.ibizlab.pms.core.zentao.runtime.ImConferenceactionRuntime.class).testDataAccessAction(domains.get(0),action);
+        } catch (Exception e) {
+            return false;
+        }
+        
     }
 
     @Override
@@ -62,11 +68,23 @@ public class ImConferenceactionModelImpl extends DataEntityModelImpl {
         context.getSelectCond().in(this.pkey, keys);
         addAuthorityConditions(context, action);
 
-        if (imconferenceactionService.searchDefault(context).getTotalElements() != keys.size()) {
+        List<ImConferenceaction> domains = imconferenceactionService.searchDefault(context).getContent();
+        if (domains.size() != keys.size()) {
+            return false;
+        }
+
+        try {
+            for(ImConferenceaction domain : domains){
+                if(SpringContextHolder.getBean(cn.ibizlab.pms.core.zentao.runtime.ImConferenceactionRuntime.class).testDataAccessAction(domain,action)){
+                    return false;
+                }
+            }
+        } catch (Exception e) {
             return false;
         }
 
         return true;
+
     }
 
 }

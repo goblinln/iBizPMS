@@ -40,11 +40,17 @@ public class LogModelImpl extends DataEntityModelImpl {
         context.getSelectCond().eq(this.pkey, key);
         addAuthorityConditions(context, action);
 
-        if (logService.searchDefault(context).getTotalElements() == 0) {
+        List<Log> domains = logService.searchDefault(context).getContent();
+        if (domains.size() == 0) {
             return false;
         }
 
-        return true;
+        try {
+            return SpringContextHolder.getBean(cn.ibizlab.pms.core.zentao.runtime.LogRuntime.class).testDataAccessAction(domains.get(0),action);
+        } catch (Exception e) {
+            return false;
+        }
+        
     }
 
     @Override
@@ -62,11 +68,23 @@ public class LogModelImpl extends DataEntityModelImpl {
         context.getSelectCond().in(this.pkey, keys);
         addAuthorityConditions(context, action);
 
-        if (logService.searchDefault(context).getTotalElements() != keys.size()) {
+        List<Log> domains = logService.searchDefault(context).getContent();
+        if (domains.size() != keys.size()) {
+            return false;
+        }
+
+        try {
+            for(Log domain : domains){
+                if(SpringContextHolder.getBean(cn.ibizlab.pms.core.zentao.runtime.LogRuntime.class).testDataAccessAction(domain,action)){
+                    return false;
+                }
+            }
+        } catch (Exception e) {
             return false;
         }
 
         return true;
+
     }
 
 }

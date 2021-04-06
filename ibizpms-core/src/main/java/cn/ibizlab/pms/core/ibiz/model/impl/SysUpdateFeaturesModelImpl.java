@@ -40,11 +40,17 @@ public class SysUpdateFeaturesModelImpl extends DataEntityModelImpl {
         context.getSelectCond().eq(this.pkey, key);
         addAuthorityConditions(context, action);
 
-        if (sysupdatefeaturesService.searchDefault(context).getTotalElements() == 0) {
+        List<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault(context).getContent();
+        if (domains.size() == 0) {
             return false;
         }
 
-        return true;
+        try {
+            return SpringContextHolder.getBean(cn.ibizlab.pms.core.ibiz.runtime.SysUpdateFeaturesRuntime.class).testDataAccessAction(domains.get(0),action);
+        } catch (Exception e) {
+            return false;
+        }
+        
     }
 
     @Override
@@ -62,11 +68,23 @@ public class SysUpdateFeaturesModelImpl extends DataEntityModelImpl {
         context.getSelectCond().in(this.pkey, keys);
         addAuthorityConditions(context, action);
 
-        if (sysupdatefeaturesService.searchDefault(context).getTotalElements() != keys.size()) {
+        List<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault(context).getContent();
+        if (domains.size() != keys.size()) {
+            return false;
+        }
+
+        try {
+            for(SysUpdateFeatures domain : domains){
+                if(SpringContextHolder.getBean(cn.ibizlab.pms.core.ibiz.runtime.SysUpdateFeaturesRuntime.class).testDataAccessAction(domain,action)){
+                    return false;
+                }
+            }
+        } catch (Exception e) {
             return false;
         }
 
         return true;
+
     }
 
 }

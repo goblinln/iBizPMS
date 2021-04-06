@@ -40,11 +40,17 @@ public class IbiLoginModelImpl extends DataEntityModelImpl {
         context.getSelectCond().eq(this.pkey, key);
         addAuthorityConditions(context, action);
 
-        if (ibiloginService.searchDefault(context).getTotalElements() == 0) {
+        List<IbiLogin> domains = ibiloginService.searchDefault(context).getContent();
+        if (domains.size() == 0) {
             return false;
         }
 
-        return true;
+        try {
+            return SpringContextHolder.getBean(cn.ibizlab.pms.core.ibiz.runtime.IbiLoginRuntime.class).testDataAccessAction(domains.get(0),action);
+        } catch (Exception e) {
+            return false;
+        }
+        
     }
 
     @Override
@@ -62,11 +68,23 @@ public class IbiLoginModelImpl extends DataEntityModelImpl {
         context.getSelectCond().in(this.pkey, keys);
         addAuthorityConditions(context, action);
 
-        if (ibiloginService.searchDefault(context).getTotalElements() != keys.size()) {
+        List<IbiLogin> domains = ibiloginService.searchDefault(context).getContent();
+        if (domains.size() != keys.size()) {
+            return false;
+        }
+
+        try {
+            for(IbiLogin domain : domains){
+                if(SpringContextHolder.getBean(cn.ibizlab.pms.core.ibiz.runtime.IbiLoginRuntime.class).testDataAccessAction(domain,action)){
+                    return false;
+                }
+            }
+        } catch (Exception e) {
             return false;
         }
 
         return true;
+
     }
 
 }

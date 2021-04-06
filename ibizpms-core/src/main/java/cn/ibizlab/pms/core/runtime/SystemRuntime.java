@@ -8,6 +8,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class SystemRuntime extends SystemImplBase {
 
+	@Override
+	public String getName() {
+		return "iBiz软件生产管理";
+	}
+
     @Override
     protected IPSDynaInstService createPSDynaInstService() throws Exception {
         AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();

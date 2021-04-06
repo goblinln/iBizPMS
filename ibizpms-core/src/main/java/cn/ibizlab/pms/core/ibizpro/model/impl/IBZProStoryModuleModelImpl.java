@@ -40,11 +40,17 @@ public class IBZProStoryModuleModelImpl extends DataEntityModelImpl {
         context.getSelectCond().eq(this.pkey, key);
         addAuthorityConditions(context, action);
 
-        if (ibzprostorymoduleService.searchDefault(context).getTotalElements() == 0) {
+        List<IBZProStoryModule> domains = ibzprostorymoduleService.searchDefault(context).getContent();
+        if (domains.size() == 0) {
             return false;
         }
 
-        return true;
+        try {
+            return SpringContextHolder.getBean(cn.ibizlab.pms.core.ibizpro.runtime.IBZProStoryModuleRuntime.class).testDataAccessAction(domains.get(0),action);
+        } catch (Exception e) {
+            return false;
+        }
+        
     }
 
     @Override
@@ -62,11 +68,23 @@ public class IBZProStoryModuleModelImpl extends DataEntityModelImpl {
         context.getSelectCond().in(this.pkey, keys);
         addAuthorityConditions(context, action);
 
-        if (ibzprostorymoduleService.searchDefault(context).getTotalElements() != keys.size()) {
+        List<IBZProStoryModule> domains = ibzprostorymoduleService.searchDefault(context).getContent();
+        if (domains.size() != keys.size()) {
+            return false;
+        }
+
+        try {
+            for(IBZProStoryModule domain : domains){
+                if(SpringContextHolder.getBean(cn.ibizlab.pms.core.ibizpro.runtime.IBZProStoryModuleRuntime.class).testDataAccessAction(domain,action)){
+                    return false;
+                }
+            }
+        } catch (Exception e) {
             return false;
         }
 
         return true;
+
     }
 
 }
