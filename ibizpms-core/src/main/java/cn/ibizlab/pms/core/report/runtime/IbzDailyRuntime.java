@@ -1,13 +1,23 @@
 package cn.ibizlab.pms.core.report.runtime;
 
 import cn.ibizlab.pms.core.report.domain.IbzDaily;
+import cn.ibizlab.pms.core.report.service.IIbzDailyService;
+import cn.ibizlab.pms.core.report.filter.IbzDailySearchContext;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
 import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.beans.factory.annotation.Autowired;
 
+@Aspect
 @Component("IbzDailyRuntime")
 public class IbzDailyRuntime extends DataEntityRuntime {
+
+    @Autowired
+    IIbzDailyService ibzdailyService;
 
     @Override
     protected Object getSimpleEntity(Object o) {
@@ -16,12 +26,12 @@ public class IbzDailyRuntime extends DataEntityRuntime {
 
     @Override
     public String getId() {
-        return null;
+        return "PSMODULES/report/PSDATAENTITIES/IbzDaily.json";
     }
 
     @Override
     public String getName() {
-        return null;
+        return IBZ_DAILY;
     }
 
     @Override
@@ -58,6 +68,77 @@ public class IbzDailyRuntime extends DataEntityRuntime {
     @Override
     public Object executeAction(IPSDEAction ipsdeAction, Object[] objects) throws Throwable {
         return null;
+    }
+
+    @Around("execution(* cn.ibizlab.pms.core.report.service.IbzDailyServiceImpl.*(..))")
+    public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
+        String action = point.getSignature().getName();
+        if (action.equals("create")) {
+            return aroundAction("Create", point);
+        }
+        if (action.equals("update")) {
+            return aroundAction("Update", point);
+        }
+        if (action.equals("remove")) {
+            return aroundAction("Remove", point);
+        }
+        if (action.equals("get")) {
+            return aroundAction("Get", point);
+        }
+        if (action.equals("getDraft")) {
+            return aroundAction("GetDraft", point);
+        }
+        if (action.equals("checkKey")) {
+            return aroundAction("CheckKey", point);
+        }
+        if (action.equals("createUserDaily")) {
+            return aroundAction("CreateUserDaily", point);
+        }
+        if (action.equals("getYeaterdayDailyPlansTaskEdit")) {
+            return aroundAction("getYeaterdayDailyPlansTaskEdit", point);
+        }
+        if (action.equals("getYesterdayDailyPlansTask")) {
+            return aroundAction("getYesterdayDailyPlansTask", point);
+        }
+        if (action.equals("haveRead")) {
+            return aroundAction("HaveRead", point);
+        }
+        if (action.equals("linkCompleteTask")) {
+            return aroundAction("LinkCompleteTask", point);
+        }
+        if (action.equals("pushUserDaily")) {
+            return aroundAction("PushUserDaily", point);
+        }
+        if (action.equals("save")) {
+            return aroundAction("Save", point);
+        }
+        if (action.equals("submit")) {
+            return aroundAction("submit", point);
+        }
+
+    //
+        if (action.equals("searchDefault")) {
+            return aroundAction("DEFAULT", point);
+        }
+        if (action.equals("searchMyAllDaily")) {
+            return aroundAction("MyAllDaily", point);
+        }
+        if (action.equals("searchMyDaily")) {
+            return aroundAction("MyDaily", point);
+        }
+        if (action.equals("searchMyNotSubmit")) {
+            return aroundAction("MyNotSubmit", point);
+        }
+        if (action.equals("searchMySubmitDaily")) {
+            return aroundAction("MySubmitDaily", point);
+        }
+        if (action.equals("searchProductDaily")) {
+            return aroundAction("ProductDaily", point);
+        }
+        if (action.equals("searchProjectDaily")) {
+            return aroundAction("ProjectDaily", point);
+        }
+        return point.proceed();
     }
 
 }

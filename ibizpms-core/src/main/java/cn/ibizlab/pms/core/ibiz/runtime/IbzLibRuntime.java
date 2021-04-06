@@ -1,13 +1,23 @@
 package cn.ibizlab.pms.core.ibiz.runtime;
 
 import cn.ibizlab.pms.core.ibiz.domain.IbzLib;
+import cn.ibizlab.pms.core.ibiz.service.IIbzLibService;
+import cn.ibizlab.pms.core.ibiz.filter.IbzLibSearchContext;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
 import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.beans.factory.annotation.Autowired;
 
+@Aspect
 @Component("IbzLibRuntime")
 public class IbzLibRuntime extends DataEntityRuntime {
+
+    @Autowired
+    IIbzLibService ibzlibService;
 
     @Override
     protected Object getSimpleEntity(Object o) {
@@ -16,12 +26,12 @@ public class IbzLibRuntime extends DataEntityRuntime {
 
     @Override
     public String getId() {
-        return null;
+        return "PSMODULES/ibiz/PSDATAENTITIES/IbzLib.json";
     }
 
     @Override
     public String getName() {
-        return null;
+        return IBZ_LIB;
     }
 
     @Override
@@ -58,6 +68,38 @@ public class IbzLibRuntime extends DataEntityRuntime {
     @Override
     public Object executeAction(IPSDEAction ipsdeAction, Object[] objects) throws Throwable {
         return null;
+    }
+
+    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.IbzLibServiceImpl.*(..))")
+    public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
+        String action = point.getSignature().getName();
+        if (action.equals("create")) {
+            return aroundAction("Create", point);
+        }
+        if (action.equals("update")) {
+            return aroundAction("Update", point);
+        }
+        if (action.equals("remove")) {
+            return aroundAction("Remove", point);
+        }
+        if (action.equals("get")) {
+            return aroundAction("Get", point);
+        }
+        if (action.equals("getDraft")) {
+            return aroundAction("GetDraft", point);
+        }
+        if (action.equals("checkKey")) {
+            return aroundAction("CheckKey", point);
+        }
+        if (action.equals("save")) {
+            return aroundAction("Save", point);
+        }
+
+    //
+        if (action.equals("searchDefault")) {
+            return aroundAction("DEFAULT", point);
+        }
+        return point.proceed();
     }
 
 }
