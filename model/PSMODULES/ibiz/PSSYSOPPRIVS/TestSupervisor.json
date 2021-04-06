@@ -1,7 +1,0 @@
-{
-  "codeName" : "TestSupervisor",
-  "roleTag" : "TestSupervisor",
-  "roleType" : "CUSTOM",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/TestSupervisor.json",
-  "name" : "测试主管"
-}

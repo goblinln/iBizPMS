@@ -1,7 +1,0 @@
-{
-  "codeName" : "ProductManger",
-  "roleTag" : "ProductManger",
-  "roleType" : "CUSTOM",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductManger.json",
-  "name" : "产品经理"
-}

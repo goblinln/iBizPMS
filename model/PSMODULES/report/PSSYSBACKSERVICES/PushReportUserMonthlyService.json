@@ -1,9 +1,0 @@
-{
-  "serviceOrder" : 0,
-  "serviceHandler" : "PushReportUserMonthlyService",
-  "codeName" : "PushReportUserMonthlyService",
-  "serviceContainer" : "SC01",
-  "startMode" : "MANUAL",
-  "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserMonthlyService.json",
-  "name" : "定时推送待阅提醒用户月报"
-}
