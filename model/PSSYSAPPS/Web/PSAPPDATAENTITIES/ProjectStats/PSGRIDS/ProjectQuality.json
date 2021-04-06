@@ -1,0 +1,373 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    },
+    "dataType" : 9,
+    "name" : "taskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "FINISHBUGCNT",
+      "codeName" : "FinishBugCnt"
+    },
+    "dataType" : 9,
+    "name" : "finishbugcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IMPORTANTBUGCNT",
+      "codeName" : "Importantbugcnt"
+    },
+    "dataType" : 9,
+    "name" : "importantbugcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGTASK",
+      "codeName" : "Bugtask"
+    },
+    "dataType" : 9,
+    "name" : "bugtask"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    },
+    "dataType" : 9,
+    "name" : "storycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "SERIOUSBUGPROPORTION",
+      "codeName" : "Seriousbugproportion"
+    },
+    "dataType" : 25,
+    "name" : "seriousbugproportion"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "id"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGCNT",
+      "codeName" : "BugCnt"
+    },
+    "dataType" : 9,
+    "name" : "bugcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGSTORY",
+      "codeName" : "Bugstory"
+    },
+    "dataType" : 9,
+    "name" : "bugstory"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "COMPLETETASKCNT",
+      "codeName" : "Completetaskcnt"
+    },
+    "dataType" : 9,
+    "name" : "completetaskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "COMPLETESTORYCNT",
+      "codeName" : "Completestorycnt"
+    },
+    "dataType" : 9,
+    "name" : "completestorycnt"
+  } ],
+  "singleSelect" : true,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : true,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "项目编号",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridColumns" : [ {
+    "linkValueItem" : "srfkey",
+    "enableLinkView" : true,
+    "getLinkPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    },
+    "dataItemName" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "excelCaption" : "项目名称",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 200,
+    "codeName" : "name",
+    "caption" : "项目名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "name"
+  }, {
+    "dataItemName" : "storycnt",
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    },
+    "excelCaption" : "需求总数",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "storycnt",
+    "caption" : "需求总数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "storycnt"
+  }, {
+    "dataItemName" : "completestorycnt",
+    "getPSAppDEField" : {
+      "name" : "COMPLETESTORYCNT",
+      "codeName" : "Completestorycnt"
+    },
+    "excelCaption" : "完成需求数",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 120,
+    "codeName" : "completestorycnt",
+    "caption" : "完成需求数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "completestorycnt"
+  }, {
+    "dataItemName" : "taskcnt",
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    },
+    "excelCaption" : "任务总数",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskcnt",
+    "caption" : "任务总数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "taskcnt"
+  }, {
+    "dataItemName" : "completetaskcnt",
+    "getPSAppDEField" : {
+      "name" : "COMPLETETASKCNT",
+      "codeName" : "Completetaskcnt"
+    },
+    "excelCaption" : "完成任务数",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 120,
+    "codeName" : "completetaskcnt",
+    "caption" : "完成任务数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "completetaskcnt"
+  }, {
+    "dataItemName" : "bugcnt",
+    "getPSAppDEField" : {
+      "name" : "BUGCNT",
+      "codeName" : "BugCnt"
+    },
+    "excelCaption" : "Bug数",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "bugcnt",
+    "caption" : "Bug数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugcnt"
+  }, {
+    "dataItemName" : "finishbugcnt",
+    "getPSAppDEField" : {
+      "name" : "FINISHBUGCNT",
+      "codeName" : "FinishBugCnt"
+    },
+    "excelCaption" : "解决Bug数",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 120,
+    "codeName" : "finishbugcnt",
+    "caption" : "解决Bug数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "finishbugcnt"
+  }, {
+    "dataItemName" : "bugstory",
+    "getPSAppDEField" : {
+      "name" : "BUGSTORY",
+      "codeName" : "Bugstory"
+    },
+    "excelCaption" : "Bug/完成需求",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 130,
+    "codeName" : "bugstory",
+    "caption" : "Bug/完成需求",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugstory"
+  }, {
+    "dataItemName" : "bugtask",
+    "getPSAppDEField" : {
+      "name" : "BUGTASK",
+      "codeName" : "Bugtask"
+    },
+    "excelCaption" : "Bug/完成任务",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 130,
+    "codeName" : "bugtask",
+    "caption" : "Bug/完成任务",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugtask"
+  }, {
+    "dataItemName" : "importantbugcnt",
+    "getPSAppDEField" : {
+      "name" : "IMPORTANTBUGCNT",
+      "codeName" : "Importantbugcnt"
+    },
+    "excelCaption" : "重要Bug数",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 120,
+    "codeName" : "importantbugcnt",
+    "caption" : "重要Bug数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "importantbugcnt"
+  }, {
+    "dataItemName" : "seriousbugproportion",
+    "getPSAppDEField" : {
+      "name" : "SERIOUSBUGPROPORTION",
+      "codeName" : "Seriousbugproportion"
+    },
+    "excelCaption" : "严重Bug比率",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 130,
+    "codeName" : "seriousbugproportion",
+    "caption" : "严重Bug比率",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "seriousbugproportion"
+  } ],
+  "codeName" : "ProjectQuality",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 1000,
+  "aggMode" : "PAGE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectQuality.json",
+  "logicName" : "项目质量表",
+  "modelid" : "e3a0e1b94ef4497da5c713265dd7a0f5"
+}

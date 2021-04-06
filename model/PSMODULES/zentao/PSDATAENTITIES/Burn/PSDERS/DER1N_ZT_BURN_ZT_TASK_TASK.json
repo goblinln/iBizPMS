@@ -1,0 +1,23 @@
+{
+  "getPSPickupDEField" : {
+    "name" : "TASK",
+    "codeName" : "Task"
+  },
+  "masterOrder" : -1,
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ZTTask",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDERS/DER1N_ZT_BURN_ZT_TASK_TASK.json",
+  "name" : "DER1N_ZT_BURN_ZT_TASK_TASK"
+}

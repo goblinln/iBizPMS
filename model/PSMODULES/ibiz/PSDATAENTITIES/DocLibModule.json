@@ -1,0 +1,1002 @@
+{
+  "serviceAPIMode" : 1,
+  "getAllPSDEFields" : [ {
+    "phisicalDEField" : false,
+    "formulaDEField" : true,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "a0002fedac31c23177e894a2c95fb3ea",
+    "codeName" : "Isfavourites",
+    "logicName" : "是否已收藏",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "ISFAVOURITES",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ISFAVOURITES",
+        "codeName" : "Isfavourites"
+      },
+      "name" : "默认规则"
+    } ],
+    "dEMSFieldMode" : "STATE2",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "length" : 200,
+    "name" : "ISFAVOURITES"
+  }, {
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "2e3018f22d74942e3e2802830a9f66e3",
+    "codeName" : "Grade",
+    "logicName" : "grade",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "GRADE",
+        "codeName" : "Grade"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0",
+    "name" : "GRADE"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "eb2887f69d1c9d805cd46732ffdf1236",
+    "codeName" : "Path",
+    "logicName" : "path",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "PATH",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PATH",
+        "codeName" : "Path"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 255,
+    "defaultValue" : ",",
+    "name" : "PATH"
+  }, {
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "0e490ff37ece582f868321386fc56589",
+    "codeName" : "Order",
+    "logicName" : "排序值",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ORDER",
+        "codeName" : "Order"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0",
+    "name" : "ORDER"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "04e1e4405c6139faf8c1bbd71de9da60",
+    "codeName" : "Name",
+    "logicName" : "名称",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 60,
+          "dEFName" : "NAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[60]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "默认规则"
+    } ],
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 60,
+    "name" : "NAME"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "a58aa640ca48f8d7ff22210a3a05a1ae",
+    "codeName" : "Docqtype",
+    "logicName" : "查询类型",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "DOCQTYPE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DOCQTYPE",
+        "codeName" : "Docqtype"
+      },
+      "name" : "默认规则"
+    } ],
+    "dEMSFieldMode" : "STATE1",
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "length" : 100,
+    "name" : "DOCQTYPE"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "ae0265e3c86ee95e8e6172b16501fd74",
+    "codeName" : "Owner",
+    "logicName" : "owner",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "OWNER",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "OWNER",
+        "codeName" : "Owner"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "/",
+    "name" : "OWNER"
+  }, {
+    "dataType" : "INT",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch_Cache.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "3fbedd2b05cd5aba02a4edc6e0d1c5c6",
+    "codeName" : "Branch",
+    "logicName" : "branch",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "BRANCH",
+        "codeName" : "Branch"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0",
+    "name" : "BRANCH"
+  }, {
+    "phisicalDEField" : false,
+    "formulaDEField" : true,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "426c1df3735597ec297d3b798834f960",
+    "codeName" : "IsLeaf",
+    "logicName" : "叶子模块",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "ISLEAF",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ISLEAF",
+        "codeName" : "IsLeaf"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "length" : 200,
+    "name" : "ISLEAF"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "abc0001620bc9e3affb0a5c5d7f80c0e",
+    "codeName" : "Type",
+    "logicName" : "类型",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "TYPE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "doc",
+    "name" : "TYPE"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "d82ee171ba390447bb43d7cd6a89eb59",
+    "codeName" : "IBizShort",
+    "logicName" : "简称",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "SHORT",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SHORT",
+        "codeName" : "IBizShort"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "/",
+    "name" : "SHORT"
+  }, {
+    "phisicalDEField" : false,
+    "formulaDEField" : true,
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "92b53c3d8dfe339dcad3b606bb045251",
+    "codeName" : "Doccnt",
+    "logicName" : "文档数",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DOCCNT",
+        "codeName" : "Doccnt"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "name" : "DOCCNT"
+  }, {
+    "dataType" : "LONGTEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "c57e5015c3d3f390f411bdb63818fd27",
+    "codeName" : "Collector",
+    "logicName" : "collector",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 65535,
+          "dEFName" : "COLLECTOR",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[65535]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[65535]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[65535]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "COLLECTOR",
+        "codeName" : "Collector"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "queryColumn" : false,
+    "length" : 65535,
+    "defaultValue" : "/",
+    "name" : "COLLECTOR"
+  }, {
+    "dataType" : "ACID",
+    "valueFormat" : "%1$s",
+    "deployId" : "3c5fde0e17e4a34479b60057317f7d97",
+    "codeName" : "Id",
+    "logicName" : "id",
+    "stdDataType" : 1,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "默认规则"
+    } ],
+    "pasteReset" : true,
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
+    "length" : 20,
+    "name" : "ID"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "2155799200e8c55a9cab2eaa7905e922",
+    "codeName" : "Deleted",
+    "logicName" : "逻辑删除标志",
+    "stringLength" : 1,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 1,
+          "dEFName" : "DELETED",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[1]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[1]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[1]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "name" : "默认规则"
+    } ],
+    "predefinedType" : "LOGICVALID",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 1,
+    "defaultValue" : "0",
+    "name" : "DELETED"
+  }, {
+    "phisicalDEField" : false,
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : "PICKUPTEXT",
+    "deployId" : "8f015673efbae2024542aec4fcf400dc",
+    "codeName" : "Modulename",
+    "logicName" : "上级模块",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 60,
+          "dEFName" : "MODULENAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[60]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "MODULENAME",
+        "codeName" : "Modulename"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 3,
+    "length" : 60,
+    "name" : "MODULENAME"
+  }, {
+    "phisicalDEField" : false,
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : "PICKUPTEXT",
+    "deployId" : "c0fd836fd27e712653a6e9e3815a7a99",
+    "codeName" : "Doclibname",
+    "logicName" : "所属文档库",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 60,
+          "dEFName" : "DOCLIBNAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[60]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DOCLIBNAME",
+        "codeName" : "Doclibname"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 3,
+    "length" : 60,
+    "name" : "DOCLIBNAME"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : "PICKUP",
+    "deployId" : "91bdc3babf1a34952b02cbdf9badfcc0",
+    "codeName" : "Parent",
+    "logicName" : "id",
+    "stdDataType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 20,
+    "name" : "PARENT"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : "PICKUP",
+    "deployId" : "3af2f4dea6356b6fd1741eb51ab77760",
+    "codeName" : "Root",
+    "logicName" : "编号",
+    "stdDataType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ROOT",
+        "codeName" : "Root"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 8,
+    "name" : "ROOT"
+  } ],
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DocLibModuleNFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DoclibModuleFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Fix.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Save.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/UnCollect.json"
+  } ],
+  "getAllPSDELogics" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/CurUserIsF.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DocLibModuleFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DoclibModuleNFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/FixPath.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/Update__MSDeny.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/Remove__MSDeny.json"
+  } ],
+  "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT"
+      },
+      "name" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "module_0",
+    "logicName" : "模块_未收藏",
+    "default" : false,
+    "mSTag" : "module__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "module",
+    "name" : "模块_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT"
+      },
+      "name" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "module_1",
+    "logicName" : "模块_已收藏",
+    "default" : false,
+    "mSTag" : "module__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "module",
+    "name" : "模块_已收藏"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "enableDataVer" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableAPIStorage" : false,
+  "getMainStatePSDEFields" : [ {
+    "name" : "DOCQTYPE",
+    "codeName" : "Docqtype"
+  }, {
+    "name" : "ISFAVOURITES",
+    "codeName" : "Isfavourites"
+  } ],
+  "validLogicValue" : "0",
+  "invalidLogicValue" : "1",
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "saaSMode" : 4,
+  "dynaInstMode" : 1,
+  "dSLink" : "DEFAULT",
+  "orderValue" : 99999,
+  "deployId" : "c0ed14b3ed335ab7ed28fa0009d59b10",
+  "codeName" : "DocLibModule",
+  "logicName" : "文档库分类",
+  "tableName" : "zt_module",
+  "enableRemove" : true,
+  "logicValid" : true,
+  "enableMultiDS" : false,
+  "dataAccCtrlMode" : 1,
+  "auditMode" : 0,
+  "dataChangeLogMode" : 0,
+  "storageMode" : 1,
+  "dataImpExpMode" : 3,
+  "dataAccCtrlArch" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "serviceCodeName" : "DocLibModule",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "enableMultiForm" : false,
+  "enableEntityCache" : false,
+  "dEType" : 1,
+  "getMinorPSDERs" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
+  } ],
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "getMajorPSDERs" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json"
+  } ],
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json",
+  "name" : "IBZ_DOCLIBMODULE"
+}

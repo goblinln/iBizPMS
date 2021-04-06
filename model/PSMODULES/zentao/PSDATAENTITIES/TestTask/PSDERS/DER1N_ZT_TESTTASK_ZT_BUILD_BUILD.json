@@ -1,0 +1,27 @@
+{
+  "getPSPickupDEField" : {
+    "name" : "BUILD",
+    "codeName" : "Build"
+  },
+  "masterOrder" : -1,
+  "getPSPickupTextDEField" : {
+    "name" : "BUILDNAME",
+    "codeName" : "BuildName"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ZTBuild",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_BUILD_BUILD.json",
+  "name" : "DER1N_ZT_TESTTASK_ZT_BUILD_BUILD"
+}

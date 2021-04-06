@@ -1,0 +1,19 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "orderValue" : 99999,
+  "codeName" : "CheckKey",
+  "logicName" : "CheckKey",
+  "extendMode" : 0,
+  "actionMode" : "UNKNOWN",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Jenkins/PSDEACTIONS/CheckKey.json",
+  "name" : "CheckKey"
+}

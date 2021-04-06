@@ -1,0 +1,23 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "SFPlugin"
+  },
+  "orderValue" : 99999,
+  "codeName" : "SendMsgPreProcess",
+  "logicName" : "发送消息前置处理",
+  "extendMode" : 0,
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/SendMsgPreProcess.json",
+  "name" : "sendMsgPreProcess"
+}

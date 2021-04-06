@@ -1,0 +1,1482 @@
+{
+  "serviceAPIMode" : 1,
+  "getAllPSDEFields" : [ {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "91a37936e741729c50948dcab02f7ea9",
+    "codeName" : "Password",
+    "logicName" : "密码",
+    "stringLength" : 32,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 32,
+          "dEFName" : "PASSWORD",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[32]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[32]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[32]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PASSWORD",
+        "codeName" : "Password"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 32,
+    "name" : "PASSWORD"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "176ae6abcb0201e8207905a7f9a9a1e3",
+    "codeName" : "Address",
+    "logicName" : "通讯地址",
+    "stringLength" : 120,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 120,
+          "dEFName" : "ADDRESS",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[120]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[120]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[120]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ADDRESS",
+        "codeName" : "Address"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 120,
+    "name" : "ADDRESS"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "76a51fd4b8522108fd26c698c9a51132",
+    "codeName" : "Weixin",
+    "logicName" : "微信",
+    "stringLength" : 90,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 90,
+          "dEFName" : "WEIXIN",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[90]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[90]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[90]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "WEIXIN",
+        "codeName" : "Weixin"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 90,
+    "name" : "WEIXIN"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "c4af009825541dfaec0f32b10af39a4c",
+    "codeName" : "Dingding",
+    "logicName" : "钉钉",
+    "stringLength" : 90,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 90,
+          "dEFName" : "DINGDING",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[90]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[90]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[90]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DINGDING",
+        "codeName" : "Dingding"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 90,
+    "name" : "DINGDING"
+  }, {
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "d124204ec35e3a32383f010e56d11398",
+    "codeName" : "Fails",
+    "logicName" : "fails",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "FAILS",
+        "codeName" : "Fails"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0",
+    "name" : "FAILS"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "1d5149d371ee2599c2aa241326d6d219",
+    "codeName" : "Slack",
+    "logicName" : "slack",
+    "stringLength" : 90,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 90,
+          "dEFName" : "SLACK",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[90]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[90]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[90]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SLACK",
+        "codeName" : "Slack"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 90,
+    "name" : "SLACK"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "91d4e594a15081dea0197d4e49217e10",
+    "codeName" : "Ranzhi",
+    "logicName" : "ranzhi",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "RANZHI",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "RANZHI",
+        "codeName" : "Ranzhi"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "name" : "RANZHI"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "ce6cc353d7767fcff6822bd7df9f3659",
+    "codeName" : "Account",
+    "logicName" : "账户",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "ACCOUNT",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "name" : "ACCOUNT"
+  }, {
+    "dataType" : "DATETIME",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "e34a7e926b03815cb59b14735bc14655",
+    "codeName" : "Locked",
+    "logicName" : "locked",
+    "stdDataType" : 5,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "LOCKED",
+        "codeName" : "Locked"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0000-00-00 00:00:00",
+    "name" : "LOCKED"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "4dd460c8de814e7307b930024c2c49af",
+    "codeName" : "Avatar",
+    "logicName" : "avatar",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "AVATAR",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "AVATAR",
+        "codeName" : "Avatar"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "name" : "AVATAR"
+  }, {
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "029a56816be101a841b014f71647569e",
+    "codeName" : "ScoreLevel",
+    "logicName" : "scoreLevel",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SCORELEVEL",
+        "codeName" : "ScoreLevel"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0",
+    "name" : "SCORELEVEL"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "d2f9d47a693268f38dc65682aeb61fea",
+    "codeName" : "Realname",
+    "logicName" : "真实姓名",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "REALNAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "REALNAME",
+        "codeName" : "Realname"
+      },
+      "name" : "默认规则"
+    } ],
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 100,
+    "name" : "REALNAME"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "741268678c5f02792eed56dd903a5745",
+    "codeName" : "Zipcode",
+    "logicName" : "zipcode",
+    "stringLength" : 10,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 10,
+          "dEFName" : "ZIPCODE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[10]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[10]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[10]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ZIPCODE",
+        "codeName" : "Zipcode"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 10,
+    "name" : "ZIPCODE"
+  }, {
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "55ef7a28b03fd139650146cdc9942f78",
+    "codeName" : "Dept",
+    "logicName" : "所属部门",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0",
+    "name" : "DEPT"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "a0745741510659c39bede56337b4148d",
+    "codeName" : "Commiter",
+    "logicName" : "源代码账户",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "COMMITER",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "COMMITER",
+        "codeName" : "Commiter"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 100,
+    "name" : "COMMITER"
+  }, {
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Role.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "3688b863404683322c51dccc3aaccec5",
+    "codeName" : "Role",
+    "logicName" : "职位",
+    "stringLength" : 10,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 10,
+          "dEFName" : "ROLE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[10]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[10]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[10]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ROLE",
+        "codeName" : "Role"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 10,
+    "name" : "ROLE"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "7fad5d18940e117a3a1360cdfe0672b8",
+    "codeName" : "Deleted",
+    "logicName" : "逻辑删除标志",
+    "stringLength" : 1,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 1,
+          "dEFName" : "DELETED",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[1]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[1]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[1]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "name" : "默认规则"
+    } ],
+    "predefinedType" : "LOGICVALID",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 1,
+    "defaultValue" : "0",
+    "name" : "DELETED"
+  }, {
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "6e04e2243fa8e2a23395ddfa64a9a52c",
+    "codeName" : "Last",
+    "logicName" : "最后登录",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "LAST",
+        "codeName" : "Last"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0",
+    "name" : "LAST"
+  }, {
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/User__clientStatus.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "7ab84732ae9e951dd3c7988f499f3b2d",
+    "codeName" : "ClientStatus",
+    "logicName" : "clientStatus",
+    "stringLength" : 7,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 7,
+          "dEFName" : "CLIENTSTATUS",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[7]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[7]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[7]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "CLIENTSTATUS",
+        "codeName" : "ClientStatus"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 7,
+    "name" : "CLIENTSTATUS"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "351c28c67c99550ae0c2e6ef0d409bba",
+    "codeName" : "Skype",
+    "logicName" : "skype",
+    "stringLength" : 90,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 90,
+          "dEFName" : "SKYPE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[90]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[90]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[90]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SKYPE",
+        "codeName" : "Skype"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 90,
+    "name" : "SKYPE"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "c55ebddf33c5ec5822437456138f42f9",
+    "codeName" : "Whatsapp",
+    "logicName" : "whatsapp",
+    "stringLength" : 90,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 90,
+          "dEFName" : "WHATSAPP",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[90]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[90]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[90]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "WHATSAPP",
+        "codeName" : "Whatsapp"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 90,
+    "name" : "WHATSAPP"
+  }, {
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "201aa00e1212f829fc5c684ec5cf7f0e",
+    "codeName" : "Score",
+    "logicName" : "score",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SCORE",
+        "codeName" : "Score"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0",
+    "name" : "SCORE"
+  }, {
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/User__gender.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "0b79df1468871c17b4847628a67b209e",
+    "codeName" : "Gender",
+    "logicName" : "性别",
+    "stringLength" : 1,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 1,
+          "dEFName" : "GENDER",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[1]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[1]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[1]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "GENDER",
+        "codeName" : "Gender"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 1,
+    "name" : "GENDER"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "3543b1f60a5368918476528a5621a1b1",
+    "codeName" : "Mobile",
+    "logicName" : "手机",
+    "stringLength" : 11,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 11,
+          "dEFName" : "MOBILE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[11]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[11]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[11]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "MOBILE",
+        "codeName" : "Mobile"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 11,
+    "name" : "MOBILE"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "4c8e75509313d47e32547e9f32fa0aa8",
+    "codeName" : "ClientLang",
+    "logicName" : "clientLang",
+    "stringLength" : 10,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 10,
+          "dEFName" : "CLIENTLANG",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[10]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[10]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[10]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "CLIENTLANG",
+        "codeName" : "ClientLang"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 10,
+    "defaultValue" : "zh-cn",
+    "name" : "CLIENTLANG"
+  }, {
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "43146bc22ad107320e5b843fea41e60c",
+    "codeName" : "Visits",
+    "logicName" : "访问次数",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "VISITS",
+        "codeName" : "Visits"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0",
+    "name" : "VISITS"
+  }, {
+    "dataType" : "DATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "a4a0a915c13b699d131ca73bfbf86b84",
+    "codeName" : "Join",
+    "logicName" : "入职日期",
+    "stdDataType" : 5,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "JOIN",
+        "codeName" : "Join"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0000-00-00",
+    "name" : "JOIN"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "610a2670ce55a5e74685dab3b4451096",
+    "codeName" : "Email",
+    "logicName" : "邮箱",
+    "stringLength" : 90,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 90,
+          "dEFName" : "EMAIL",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[90]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[90]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[90]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "EMAIL",
+        "codeName" : "Email"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 90,
+    "name" : "EMAIL"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "ef294fe1889569eab76c130c0553187b",
+    "codeName" : "Ip",
+    "logicName" : "ip",
+    "stringLength" : 15,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 15,
+          "dEFName" : "IP",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[15]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[15]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[15]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "IP",
+        "codeName" : "Ip"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 15,
+    "name" : "IP"
+  }, {
+    "dataType" : "DATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "22832b09ec48c4a5cf475d7b66aef935",
+    "codeName" : "Birthday",
+    "logicName" : "birthday",
+    "stdDataType" : 5,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "BIRTHDAY",
+        "codeName" : "Birthday"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0000-00-00",
+    "name" : "BIRTHDAY"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "db88122ff733efda32e05891c7f34f8f",
+    "codeName" : "Nickname",
+    "logicName" : "nickname",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 60,
+          "dEFName" : "NICKNAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[60]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "NICKNAME",
+        "codeName" : "Nickname"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 60,
+    "name" : "NICKNAME"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "2e3eb674b20aba087924b8031ce43ea5",
+    "codeName" : "Phone",
+    "logicName" : "电话",
+    "stringLength" : 20,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 20,
+          "dEFName" : "PHONE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[20]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[20]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[20]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PHONE",
+        "codeName" : "Phone"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 20,
+    "name" : "PHONE"
+  }, {
+    "dataType" : "ACID",
+    "valueFormat" : "%1$s",
+    "deployId" : "4bb4e0f0c49675159d9501a5b3b7f622",
+    "codeName" : "Id",
+    "logicName" : "ID",
+    "stdDataType" : 1,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "默认规则"
+    } ],
+    "pasteReset" : true,
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
+    "name" : "ID"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "fe370830e5d30c8aabaa6597328693dd",
+    "codeName" : "Qq",
+    "logicName" : "QQ",
+    "stringLength" : 20,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 20,
+          "dEFName" : "QQ",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[20]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[20]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[20]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "QQ",
+        "codeName" : "Qq"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 20,
+    "name" : "QQ"
+  } ],
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/GetByCommiter.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/Save.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/SyncAccount.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "enableDataVer" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableAPIStorage" : false,
+  "validLogicValue" : "0",
+  "invalidLogicValue" : "1",
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "saaSMode" : 4,
+  "dynaInstMode" : 1,
+  "dSLink" : "DEFAULT",
+  "orderValue" : 99999,
+  "deployId" : "6523852fef107b74a4072b97cfb0ebec",
+  "codeName" : "User",
+  "logicName" : "用户",
+  "tableName" : "zt_user",
+  "enableRemove" : true,
+  "logicValid" : true,
+  "enableMultiDS" : false,
+  "dataAccCtrlMode" : 1,
+  "auditMode" : 0,
+  "dataChangeLogMode" : 0,
+  "storageMode" : 1,
+  "dataImpExpMode" : 3,
+  "dataAccCtrlArch" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "serviceCodeName" : "User",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "enableMultiForm" : false,
+  "enableEntityCache" : false,
+  "dEType" : 1,
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/User.json",
+  "name" : "ZT_USER"
+}

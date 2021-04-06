@@ -1,0 +1,16 @@
+{
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchProjectTeam"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "ProjectTeam",
+  "emptyText" : "未定义",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectTeam.json",
+  "name" : "项目团队"
+}

@@ -1,0 +1,31 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 2,
+  "generateTestUnit" : true,
+  "customParam" : true,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "DELETE"
+  },
+  "getPSDEActionParams" : [ {
+    "orderValue" : 0,
+    "codeName" : "INDEXID",
+    "stdDataType" : 1,
+    "valueType" : "INPUTVALUE",
+    "name" : "INDEXID"
+  } ],
+  "orderValue" : 21,
+  "codeName" : "Remove",
+  "logicName" : "Remove",
+  "extendMode" : 0,
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "requestField" : "INDEXID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Remove.json",
+  "name" : "Remove"
+}

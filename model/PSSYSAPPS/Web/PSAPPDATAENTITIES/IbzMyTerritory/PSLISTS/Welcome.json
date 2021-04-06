@@ -1,0 +1,60 @@
+{
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "showHeader" : true,
+  "enableRowEditGroup" : false,
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "name" : "realname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "REALNAME",
+      "codeName" : "Realname"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  } ],
+  "enableRowEdit" : false,
+  "controlType" : "LIST",
+  "codeName" : "Welcome",
+  "enableGroup" : false,
+  "pagingSize" : 1000,
+  "groupMode" : "NONE",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSLISTS/Welcome.json",
+  "logicName" : "welcome",
+  "modelid" : "7dc13556e84ad8ff996d25e962c678e4"
+}

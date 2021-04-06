@@ -1,0 +1,23 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "UPDATE"
+  },
+  "orderValue" : 99999,
+  "codeName" : "UpdateTime",
+  "logicName" : "UpdateTime",
+  "extendMode" : 0,
+  "actionMode" : "UPDATE",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/UpdateTime.json",
+  "name" : "UpdateTime"
+}

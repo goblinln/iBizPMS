@@ -1,0 +1,622 @@
+{
+  "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "getAllPSAppPortletCats" : [ {
+    "ungroup" : true,
+    "codeName" : "Ungroup",
+    "name" : "（未分类）"
+  } ],
+  "major" : true,
+  "getAllPSAppDEMethods" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "Select",
+    "methodType" : "SELECT"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSEMPLOYEE__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSEMPLOYEE__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSEMPLOYEE__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSEMPLOYEE__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchBugUser"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "BugUser"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchBugUser",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchContActList"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ContActList"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchContActList",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductTeamM"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductTeamM"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchProductTeamM",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTeamM"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTeamM"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchProjectTeamM",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTeamMProduct"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTeamMProduct"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchProjectTeamMProduct",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTeamTaskUserTemp"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTeamTaskUserTemp"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchProjectTeamTaskUserTemp",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTeamUser"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTeamUser"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchProjectTeamUser",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTeamUserTask"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTeamUserTask"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchProjectTeamUserTask",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectteamPk"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectteamPk"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchProjectteamPk",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchStoryProductTeamPK"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "StoryProductTeamPK"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchStoryProductTeamPK",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTaskMTeam"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskMTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchTaskMTeam",
+    "methodType" : "FETCH"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTaskTeam"
+    },
+    "builtinMethod" : false,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "codeName" : "FetchTaskTeam",
+    "methodType" : "FETCH"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE"
+  }, {
+    "builtinMethod" : true,
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH"
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "keyField" : true,
+    "codeName" : "UserId",
+    "logicName" : "用户标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "USERID"
+  }, {
+    "codeName" : "UserName",
+    "logicName" : "用户全局名",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "USERNAME"
+  }, {
+    "majorField" : true,
+    "codeName" : "PersonName",
+    "logicName" : "姓名",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "enableQuickSearch" : true,
+    "name" : "PERSONNAME"
+  }, {
+    "codeName" : "UserCode",
+    "logicName" : "用户工号",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "USERCODE"
+  }, {
+    "codeName" : "LoginName",
+    "logicName" : "登录名",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "LOGINNAME"
+  }, {
+    "codeName" : "Password",
+    "logicName" : "密码",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "PASSWORD"
+  }, {
+    "codeName" : "Domains",
+    "logicName" : "区属",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "DOMAINS"
+  }, {
+    "codeName" : "MdeptId",
+    "logicName" : "主部门",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "MDEPTID"
+  }, {
+    "codeName" : "MDeptCode",
+    "logicName" : "主部门代码",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "MDEPTCODE"
+  }, {
+    "codeName" : "MDeptName",
+    "logicName" : "主部门名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "MDEPTNAME"
+  }, {
+    "codeName" : "BCode",
+    "logicName" : "业务编码",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "BCODE"
+  }, {
+    "codeName" : "OrgId",
+    "logicName" : "单位",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "ORGID"
+  }, {
+    "codeName" : "OrgCode",
+    "logicName" : "单位代码",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "ORGCODE"
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "单位名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "ORGNAME"
+  }, {
+    "codeName" : "NickName",
+    "logicName" : "昵称别名",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "NICKNAME"
+  }, {
+    "codeName" : "Sex",
+    "logicName" : "性别",
+    "stringLength" : 20,
+    "stdDataType" : 25,
+    "name" : "SEX"
+  }, {
+    "codeName" : "Phone",
+    "logicName" : "联系方式",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "PHONE"
+  }, {
+    "codeName" : "Email",
+    "logicName" : "邮件",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "EMAIL"
+  }, {
+    "codeName" : "Avatar",
+    "logicName" : "社交账号",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "AVATAR"
+  }, {
+    "codeName" : "Addr",
+    "logicName" : "地址",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "name" : "ADDR"
+  }, {
+    "codeName" : "UserIcon",
+    "logicName" : "照片",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "name" : "USERICON"
+  }, {
+    "codeName" : "IPAddr",
+    "logicName" : "ip地址",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "IPADDR"
+  }, {
+    "codeName" : "Lang",
+    "logicName" : "语言",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "LANG"
+  }, {
+    "codeName" : "Memo",
+    "logicName" : "备注",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "name" : "MEMO"
+  }, {
+    "codeName" : "Reserver",
+    "logicName" : "保留",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "name" : "RESERVER"
+  }, {
+    "codeName" : "ShowOrder",
+    "logicName" : "排序",
+    "stdDataType" : 9,
+    "name" : "SHOWORDER"
+  }, {
+    "codeName" : "Enable",
+    "logicName" : "逻辑有效",
+    "stdDataType" : 9,
+    "name" : "ENABLE"
+  }, {
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "CreateDate",
+    "logicName" : "创建时间",
+    "stdDataType" : 5,
+    "name" : "CREATEDATE"
+  }, {
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "stdDataType" : 5,
+    "name" : "UPDATEDATE"
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "name" : "UPDATEMAN"
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "name" : "CREATEMAN"
+  } ],
+  "getAllPSAppDEACModes" : [ {
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "USERNAME",
+        "codeName" : "UserName"
+      },
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "PERSONNAME",
+        "codeName" : "PersonName"
+      },
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "enablePagingBar" : false,
+    "getTextPSAppDEField" : {
+      "name" : "PERSONNAME",
+      "codeName" : "PersonName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "USERNAME",
+      "codeName" : "UserName"
+    },
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "pagingSize" : 50,
+    "name" : "DEFAULT"
+  } ],
+  "enableFilterActions" : true,
+  "enableWFActions" : false,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "PERSONNAME",
+    "codeName" : "PersonName"
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDESERVICEAPIS/SysEmployee.json"
+  },
+  "codeName" : "SysEmployee",
+  "logicName" : "人员",
+  "dataAccCtrlMode" : 1,
+  "storageMode" : 0,
+  "dataAccCtrlArch" : 1,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "defaultMode" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json",
+  "name" : "IBZEMP"
+}

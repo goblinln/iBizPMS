@@ -1,0 +1,83 @@
+{
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "showHeader" : true,
+  "enableRowEditGroup" : false,
+  "getPSDEListDataItems" : [ {
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
+    },
+    "dataType" : 9,
+    "name" : "marker"
+  }, {
+    "dataType" : 25,
+    "name" : "productlifeid"
+  }, {
+    "dataType" : 9,
+    "name" : "product"
+  }, {
+    "dataType" : 25,
+    "name" : "type"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "end"
+  }, {
+    "dataType" : 25,
+    "name" : "parent"
+  }, {
+    "dataType" : 25,
+    "name" : "year"
+  }, {
+    "dataType" : 25,
+    "name" : "branch"
+  }, {
+    "dataType" : 25,
+    "name" : "productlifename"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "begin"
+  } ],
+  "enableRowEdit" : false,
+  "controlType" : "LIST",
+  "getMinorSortPSAppDEField" : {
+    "name" : "BEGIN",
+    "codeName" : "Begin"
+  },
+  "codeName" : "GetRoadmapS",
+  "minorSortDir" : "DESC",
+  "enableGroup" : false,
+  "pagingSize" : 1000,
+  "groupMode" : "NONE",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife/PSLISTS/GetRoadmapS.json",
+  "logicName" : "GetRoadmapS",
+  "modelid" : "c057777628758f32a5379205aca5e81c"
+}

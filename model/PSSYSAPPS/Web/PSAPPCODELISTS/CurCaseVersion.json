@@ -1,0 +1,29 @@
+{
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchVersions"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "EXPECT",
+    "codeName" : "Expect"
+  },
+  "getMinorSortPSAppDEField" : {
+    "name" : "VERSION",
+    "codeName" : "Version"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "VERSION",
+    "codeName" : "Version"
+  },
+  "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "CurCaseVersion",
+  "emptyText" : "未定义",
+  "minorSortDir" : "DESC",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurCaseVersion.json",
+  "name" : "当前用例版本（动态）"
+}

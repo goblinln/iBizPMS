@@ -1,0 +1,306 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    },
+    "dataType" : 9,
+    "name" : "taskcnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PROGRESS",
+      "codeName" : "Progress"
+    },
+    "dataType" : 25,
+    "name" : "progress"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TOTALLEFT",
+      "codeName" : "TotalLeft"
+    },
+    "dataType" : 7,
+    "name" : "totalleft"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    },
+    "dataType" : 25,
+    "name" : "status"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    },
+    "dataType" : 9,
+    "name" : "storycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "LEFTSTORYCNT",
+      "codeName" : "Leftstorycnt"
+    },
+    "dataType" : 9,
+    "name" : "leftstorycnt"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "id"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TOTALCONSUMED",
+      "codeName" : "TotalConsumed"
+    },
+    "dataType" : 7,
+    "name" : "totalconsumed"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "UNDONETASKCNT",
+      "codeName" : "UnDoneTaskCnt"
+    },
+    "dataType" : 9,
+    "name" : "undonetaskcnt"
+  } ],
+  "singleSelect" : true,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "项目编号",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridColumns" : [ {
+    "linkValueItem" : "srfkey",
+    "enableLinkView" : true,
+    "getLinkPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    },
+    "dataItemName" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "excelCaption" : "项目名称",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "name",
+    "caption" : "项目名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "name"
+  }, {
+    "dataItemName" : "storycnt",
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    },
+    "excelCaption" : "需求数",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "storycnt",
+    "caption" : "需求数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "storycnt"
+  }, {
+    "dataItemName" : "leftstorycnt",
+    "getPSAppDEField" : {
+      "name" : "LEFTSTORYCNT",
+      "codeName" : "Leftstorycnt"
+    },
+    "excelCaption" : "剩余需求数",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 60,
+    "codeName" : "leftstorycnt",
+    "caption" : "剩余需求数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "aggMode" : "SUM",
+    "name" : "leftstorycnt"
+  }, {
+    "dataItemName" : "taskcnt",
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    },
+    "excelCaption" : "任务数",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "taskcnt",
+    "caption" : "任务数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "taskcnt"
+  }, {
+    "dataItemName" : "undonetaskcnt",
+    "getPSAppDEField" : {
+      "name" : "UNDONETASKCNT",
+      "codeName" : "UnDoneTaskCnt"
+    },
+    "excelCaption" : "剩余任务数",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 60,
+    "codeName" : "undonetaskcnt",
+    "caption" : "剩余任务数",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "aggMode" : "SUM",
+    "name" : "undonetaskcnt"
+  }, {
+    "dataItemName" : "totalleft",
+    "getPSAppDEField" : {
+      "name" : "TOTALLEFT",
+      "codeName" : "TotalLeft"
+    },
+    "excelCaption" : "剩余工时",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "totalleft",
+    "caption" : "剩余工时",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "totalleft"
+  }, {
+    "dataItemName" : "totalconsumed",
+    "getPSAppDEField" : {
+      "name" : "TOTALCONSUMED",
+      "codeName" : "TotalConsumed"
+    },
+    "excelCaption" : "已消耗工时",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 60,
+    "codeName" : "totalconsumed",
+    "caption" : "已消耗工时",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "aggMode" : "SUM",
+    "name" : "totalconsumed"
+  }, {
+    "dataItemName" : "progress",
+    "getPSAppDEField" : {
+      "name" : "PROGRESS",
+      "codeName" : "Progress"
+    },
+    "excelCaption" : "进度",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "progress",
+    "caption" : "进度",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "progress"
+  } ],
+  "codeName" : "ProjectProgress",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 1000,
+  "aggMode" : "PAGE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectProgress.json",
+  "logicName" : "项目进度表",
+  "modelid" : "b5e418862c288c069533706e52215eb2"
+}

@@ -1,0 +1,402 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "BUGEFFICIENT",
+      "codeName" : "Bugefficient"
+    },
+    "dataType" : 25,
+    "name" : "bugefficient"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGFIXED",
+      "codeName" : "Bugfixed"
+    },
+    "dataType" : 9,
+    "name" : "bugfixed"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGWJJ",
+      "codeName" : "Bugwjj"
+    },
+    "dataType" : 9,
+    "name" : "bugwjj"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGNOTREPRO",
+      "codeName" : "Bugnotrepro"
+    },
+    "dataType" : 9,
+    "name" : "bugnotrepro"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGBYDESIGN",
+      "codeName" : "Bugbydesign"
+    },
+    "dataType" : 9,
+    "name" : "bugbydesign"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "OPENEDBY",
+      "codeName" : "OpenedBy"
+    },
+    "dataType" : 25,
+    "name" : "openedby"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGTOSTORY",
+      "codeName" : "Bugtostory"
+    },
+    "dataType" : 9,
+    "name" : "bugtostory"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "dataType" : 1,
+    "name" : "product"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "dataType" : 1,
+    "name" : "project"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGEXTERNAL",
+      "codeName" : "Bugexternal"
+    },
+    "dataType" : 9,
+    "name" : "bugexternal"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGPOSTPONED",
+      "codeName" : "Bugpostponed"
+    },
+    "dataType" : 9,
+    "name" : "bugpostponed"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGDUPLICATE",
+      "codeName" : "Bugduplicate"
+    },
+    "dataType" : 9,
+    "name" : "bugduplicate"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGTOTAL",
+      "codeName" : "Bugtotal"
+    },
+    "dataType" : 9,
+    "name" : "bugtotal"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGWILLNOTFIX",
+      "codeName" : "Bugwillnotfix"
+    },
+    "dataType" : 9,
+    "name" : "bugwillnotfix"
+  } ],
+  "singleSelect" : true,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : true,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "标识",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridColumns" : [ {
+    "dataItemName" : "openedby",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "OPENEDBY",
+      "codeName" : "OpenedBy"
+    },
+    "excelCaption" : "由谁创建",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "openedby",
+    "caption" : "由谁创建",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "STAR",
+    "name" : "openedby"
+  }, {
+    "dataItemName" : "bugwjj",
+    "getPSAppDEField" : {
+      "name" : "BUGWJJ",
+      "codeName" : "Bugwjj"
+    },
+    "excelCaption" : "未解决",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 101,
+    "codeName" : "bugwjj",
+    "caption" : "未解决",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugwjj"
+  }, {
+    "dataItemName" : "bugbydesign",
+    "getPSAppDEField" : {
+      "name" : "BUGBYDESIGN",
+      "codeName" : "Bugbydesign"
+    },
+    "excelCaption" : "设计如此",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 101,
+    "codeName" : "bugbydesign",
+    "caption" : "设计如此",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugbydesign"
+  }, {
+    "dataItemName" : "bugduplicate",
+    "getPSAppDEField" : {
+      "name" : "BUGDUPLICATE",
+      "codeName" : "Bugduplicate"
+    },
+    "excelCaption" : "重复Bug",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 101,
+    "codeName" : "bugduplicate",
+    "caption" : "重复Bug",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugduplicate"
+  }, {
+    "dataItemName" : "bugexternal",
+    "getPSAppDEField" : {
+      "name" : "BUGEXTERNAL",
+      "codeName" : "Bugexternal"
+    },
+    "excelCaption" : "外部原因",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 101,
+    "codeName" : "bugexternal",
+    "caption" : "外部原因",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugexternal"
+  }, {
+    "dataItemName" : "bugfixed",
+    "getPSAppDEField" : {
+      "name" : "BUGFIXED",
+      "codeName" : "Bugfixed"
+    },
+    "excelCaption" : "已解决",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 101,
+    "codeName" : "bugfixed",
+    "caption" : "已解决",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugfixed"
+  }, {
+    "dataItemName" : "bugnotrepro",
+    "getPSAppDEField" : {
+      "name" : "BUGNOTREPRO",
+      "codeName" : "Bugnotrepro"
+    },
+    "excelCaption" : "无法重现",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 101,
+    "codeName" : "bugnotrepro",
+    "caption" : "无法重现",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugnotrepro"
+  }, {
+    "dataItemName" : "bugpostponed",
+    "getPSAppDEField" : {
+      "name" : "BUGPOSTPONED",
+      "codeName" : "Bugpostponed"
+    },
+    "excelCaption" : "延期处理",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 101,
+    "codeName" : "bugpostponed",
+    "caption" : "延期处理",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugpostponed"
+  }, {
+    "dataItemName" : "bugwillnotfix",
+    "getPSAppDEField" : {
+      "name" : "BUGWILLNOTFIX",
+      "codeName" : "Bugwillnotfix"
+    },
+    "excelCaption" : "不予解决",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 101,
+    "codeName" : "bugwillnotfix",
+    "caption" : "不予解决",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugwillnotfix"
+  }, {
+    "dataItemName" : "bugtostory",
+    "getPSAppDEField" : {
+      "name" : "BUGTOSTORY",
+      "codeName" : "Bugtostory"
+    },
+    "excelCaption" : "转为需求",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 101,
+    "codeName" : "bugtostory",
+    "caption" : "转为需求",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugtostory"
+  }, {
+    "dataItemName" : "bugefficient",
+    "getPSAppDEField" : {
+      "name" : "BUGEFFICIENT",
+      "codeName" : "Bugefficient"
+    },
+    "excelCaption" : "有效率",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 101,
+    "codeName" : "bugefficient",
+    "caption" : "有效率",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "name" : "bugefficient"
+  }, {
+    "dataItemName" : "bugtotal",
+    "getPSAppDEField" : {
+      "name" : "BUGTOTAL",
+      "codeName" : "Bugtotal"
+    },
+    "excelCaption" : "总计",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 101,
+    "codeName" : "bugtotal",
+    "caption" : "总计",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugtotal"
+  } ],
+  "codeName" : "Main",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 100,
+  "aggMode" : "PAGE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSGRIDS/Main.json",
+  "logicName" : "主表格",
+  "modelid" : "a47b2c93b98406d2b66378c93196ca2b"
+}

@@ -57,7 +57,8 @@ export class WFDynaEditViewBase extends MainViewBase {
      */
     public wfAddiFeatureRef: any = {
         "transfer": { featureTag: "ADDSTEPAFTER", action: "TransFerTask" },
-        "addstepbefore": { featureTag: "ADDSTEPBEFORE", action: "BeforeSign" }
+        "addstepbefore": { featureTag: "ADDSTEPBEFORE", action: "BeforeSign" },
+        "sendback": { featureTag: "SENDBACK", action: "SendBack" }
     };
 
     /**
@@ -332,6 +333,24 @@ export class WFDynaEditViewBase extends MainViewBase {
         }).catch((error: any) => {
             const { data: data } = error;
             this.$Notice.error({ title: '错误', desc: data?.message ? data.message : '提交数据异常' });
+        })
+    }
+
+    /**
+     * 将待办任务标记为已读
+     * 
+     * @param data 业务数据
+     * @memberof WFDynaEditViewBase                
+     */
+     public readTask(data: any) {
+        this.appEntityService.ReadTask(this.context, data).then((response:any) =>{
+            if (!response || response.status !== 200) {
+                console.warn("将待办任务标记为已读失败");
+                return;
+            }
+            AppCenterService.notifyMessage({ name: this.viewInstance?.appDataEntity?.codeName, action: 'appRefresh', data: data });
+        }).catch((error: any) => {
+            console.warn("将待办任务标记为已读失败");
         })
     }
 }

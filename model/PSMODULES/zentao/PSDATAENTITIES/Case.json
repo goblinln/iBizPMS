@@ -1,0 +1,6556 @@
+{
+  "serviceAPIMode" : 1,
+  "getAllPSDEFields" : [ {
+    "dataType" : "DATETIME",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "442394f2d9b872fde885f9712677267f",
+    "codeName" : "LastEditedDate",
+    "logicName" : "修改日期",
+    "stdDataType" : 5,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "LASTEDITEDDATE",
+        "codeName" : "LastEditedDate"
+      },
+      "name" : "默认规则"
+    } ],
+    "systemReserver" : true,
+    "predefinedType" : "UPDATEDATE",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "name" : "LASTEDITEDDATE"
+  }, {
+    "dataType" : "DATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "08d511b860188ee3220c8e7428571fe8",
+    "codeName" : "ScriptedDate",
+    "logicName" : "scriptedDate",
+    "stdDataType" : 5,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SCRIPTEDDATE",
+        "codeName" : "ScriptedDate"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "name" : "SCRIPTEDDATE"
+  }, {
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__color.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "761ed12e02d7a10f1de2741077db91bf",
+    "codeName" : "Color",
+    "logicName" : "标题颜色",
+    "stringLength" : 7,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 7,
+          "dEFName" : "COLOR",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[7]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[7]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[7]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "COLOR",
+        "codeName" : "Color"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 7,
+    "defaultValue" : "#EMPTY",
+    "name" : "COLOR"
+  }, {
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "ea6137b3a8f7b607f0520e870ec69b7b",
+    "codeName" : "Path",
+    "logicName" : "path",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PATH",
+        "codeName" : "Path"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0",
+    "name" : "PATH"
+  }, {
+    "dataType" : "DATETIME",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "ec1f2e975de14a317aaf5e84aa6784bd",
+    "codeName" : "OpenedDate",
+    "logicName" : "创建日期",
+    "stdDataType" : 5,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "OPENEDDATE",
+        "codeName" : "OpenedDate"
+      },
+      "name" : "默认规则"
+    } ],
+    "systemReserver" : true,
+    "predefinedType" : "CREATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "name" : "OPENEDDATE"
+  }, {
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__result.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "3b075db1f2c0a0601276ca6f21e056c7",
+    "codeName" : "LastRunResult",
+    "logicName" : "结果",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "LASTRUNRESULT",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "LASTRUNRESULT",
+        "codeName" : "LastRunResult"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "name" : "LASTRUNRESULT"
+  }, {
+    "phisicalDEField" : false,
+    "formulaDEField" : true,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "b7b01e893d3ab53aeb1408460210283c",
+    "codeName" : "Modulename1",
+    "logicName" : "模块名称",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "MODULENAME1",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "MODULENAME1",
+        "codeName" : "Modulename1"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "length" : 200,
+    "name" : "MODULENAME1"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "ed9a44408e5d943a4dfe5dc43131ecf9",
+    "codeName" : "LinkCase",
+    "logicName" : "相关用例",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "LINKCASE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "LINKCASE",
+        "codeName" : "LinkCase"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 255,
+    "defaultValue" : "#EMPTY",
+    "name" : "LINKCASE"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json"
+    },
+    "dataType" : "ONE2MANYDATA",
+    "valueFormat" : "%1$s",
+    "deployId" : "e7300cd0e7e4309d32b8f1540bce86ae",
+    "codeName" : "CaseSteps",
+    "logicName" : "用例步骤集合",
+    "stringLength" : 1048576,
+    "stdDataType" : 21,
+    "phisicalDEField" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 1048576,
+          "dEFName" : "CASESTEPS",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[1048576]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[1048576]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[1048576]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "CASESTEPS",
+        "codeName" : "CaseSteps"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "queryColumn" : false,
+    "length" : 1048576,
+    "name" : "CASESTEPS"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "f0b925fe0a9cf706b92579ce7408328b",
+    "codeName" : "Task",
+    "logicName" : "属性",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "TASK",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "TASK",
+        "codeName" : "Task"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "length" : 100,
+    "name" : "TASK"
+  }, {
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "4d4677854a9f83fcbdf1ce8573df7d6f",
+    "codeName" : "Order",
+    "logicName" : "排序",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ORDER",
+        "codeName" : "Order"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "0",
+    "name" : "ORDER"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "5a045f743a52054a74ddc79721cdc098",
+    "codeName" : "HowRun",
+    "logicName" : "howRun",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "HOWRUN",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "HOWRUN",
+        "codeName" : "HowRun"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "name" : "HOWRUN"
+  }, {
+    "phisicalDEField" : false,
+    "formulaDEField" : true,
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "17008545ece4b0c33fb1a566aee73e91",
+    "codeName" : "ResultCNT",
+    "logicName" : "测试结果数",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "RESULTCNT",
+        "codeName" : "ResultCNT"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "name" : "RESULTCNT"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "b622d27457dcdad85d2457ff7c74504e",
+    "codeName" : "Noticeusers",
+    "logicName" : "消息通知用户",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "NOTICEUSERS",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "NOTICEUSERS",
+        "codeName" : "Noticeusers"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "length" : 100,
+    "name" : "NOTICEUSERS"
+  }, {
+    "dataType" : "INT",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/CurCaseVersion.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "09ab90bbf7064f051033936f6f67ab79",
+    "codeName" : "Version",
+    "logicName" : "用例版本",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "VERSION",
+        "codeName" : "Version"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 3,
+    "defaultValue" : "1",
+    "name" : "VERSION"
+  }, {
+    "dataType" : "TEXT",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "37484c5021c98dd00093cb0ef665285e",
+    "codeName" : "ScriptedBy",
+    "logicName" : "scriptedBy",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "SCRIPTEDBY",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SCRIPTEDBY",
+        "codeName" : "ScriptedBy"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "name" : "SCRIPTEDBY"
+  }, {
+    "dataType" : "TEXT",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_Gird.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "ce5e594a8d65a0abd51b92585734dc7e",
+    "codeName" : "OpenedBy",
+    "logicName" : "由谁创建",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "OPENEDBY",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "OPENEDBY",
+        "codeName" : "OpenedBy"
+      },
+      "name" : "默认规则"
+    } ],
+    "systemReserver" : true,
+    "predefinedType" : "CREATEMANNAME",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "name" : "OPENEDBY"
+  }, {
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__type.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "4d509e31c8f6dd2db46e2fedad1ff5b9",
+    "codeName" : "Type",
+    "logicName" : "用例类型",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "TYPE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "feature",
+    "name" : "TYPE"
+  }, {
+    "phisicalDEField" : false,
+    "formulaDEField" : true,
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "3f71dadea9c444bb1af906b3e5d0a90f",
+    "codeName" : "Resultfalicnt",
+    "logicName" : "测试失败数",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "RESULTFALICNT",
+        "codeName" : "Resultfalicnt"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "name" : "RESULTFALICNT"
+  }, {
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__status.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "c72b785ec943543b87ba9eae76284661",
+    "codeName" : "Status",
+    "logicName" : "用例状态",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "STATUS",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "normal",
+    "name" : "STATUS"
+  }, {
+    "dataType" : "HTMLTEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "99a6d38c0160b230815441f843f0fa76",
+    "codeName" : "Comment",
+    "logicName" : "备注",
+    "stringLength" : 1048576,
+    "stdDataType" : 21,
+    "phisicalDEField" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 1048576,
+          "dEFName" : "COMMENT",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[1048576]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[1048576]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[1048576]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "queryColumn" : false,
+    "length" : 1048576,
+    "name" : "COMMENT"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "54ed2f4b6816da039474b3bb61bd2bb9",
+    "codeName" : "Auto",
+    "logicName" : "auto",
+    "stringLength" : 10,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 10,
+          "dEFName" : "AUTO",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[10]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[10]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[10]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "AUTO",
+        "codeName" : "Auto"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 10,
+    "defaultValue" : "no",
+    "name" : "AUTO"
+  }, {
+    "phisicalDEField" : false,
+    "formulaDEField" : true,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "07aa531288862d16b1ba6eea4a1e64f2",
+    "codeName" : "Isfavorites",
+    "logicName" : "是否收藏",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "ISFAVORITES",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ISFAVORITES",
+        "codeName" : "Isfavorites"
+      },
+      "name" : "默认规则"
+    } ],
+    "dEMSFieldMode" : "STATE3",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "length" : 200,
+    "name" : "ISFAVORITES"
+  }, {
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Case__frequency.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "4b2d8f6c6a147dfe0f863a44d3fd9baa",
+    "codeName" : "Frequency",
+    "logicName" : "frequency",
+    "stringLength" : 1,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 1,
+          "dEFName" : "FREQUENCY",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[1]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[1]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[1]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "FREQUENCY",
+        "codeName" : "Frequency"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 1,
+    "defaultValue" : "1",
+    "name" : "FREQUENCY"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "c17d97a6986e22876854d697fa784b0e",
+    "codeName" : "Title",
+    "logicName" : "用例标题",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "TITLE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "name" : "默认规则"
+    } ],
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 255,
+    "name" : "TITLE"
+  }, {
+    "dataType" : "TEXT",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "489357f91342afa147861b1eb5adf3c3",
+    "codeName" : "LastEditedBy",
+    "logicName" : "最后修改者",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "LASTEDITEDBY",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "LASTEDITEDBY",
+        "codeName" : "LastEditedBy"
+      },
+      "name" : "默认规则"
+    } ],
+    "systemReserver" : true,
+    "predefinedType" : "UPDATEMANNAME",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "name" : "LASTEDITEDBY"
+  }, {
+    "dataType" : "TEXT",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "ff5ec383b1611d7b998dfc6129149c27",
+    "codeName" : "ReviewedBy",
+    "logicName" : "由谁评审",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "REVIEWEDBY",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "REVIEWEDBY",
+        "codeName" : "ReviewedBy"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 255,
+    "defaultValue" : "#EMPTY",
+    "name" : "REVIEWEDBY"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "0f45091e43b633dfe613792bc245bc2e",
+    "codeName" : "Files",
+    "logicName" : "附件",
+    "stringLength" : 1000,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 1000,
+          "dEFName" : "FILES",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[1000]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[1000]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[1000]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "FILES",
+        "codeName" : "Files"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "length" : 1000,
+    "name" : "FILES"
+  }, {
+    "phisicalDEField" : false,
+    "formulaDEField" : true,
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "13b86c008b50b6a8886198f2d3f1b77f",
+    "codeName" : "ToBugCNT",
+    "logicName" : "转bug数",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "TOBUGCNT",
+        "codeName" : "ToBugCNT"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "name" : "TOBUGCNT"
+  }, {
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "4394b8dcc312c4228ebaa4acc3b8ddb9",
+    "codeName" : "AssignedTo",
+    "logicName" : "指派给",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "ASSIGNEDTO",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ASSIGNEDTO",
+        "codeName" : "AssignedTo"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
+    "length" : 200,
+    "name" : "ASSIGNEDTO"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "8a25ba48943ad638fb6d73c3609b2a6a",
+    "codeName" : "Deleted",
+    "logicName" : "已删除",
+    "stringLength" : 1,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 1,
+          "dEFName" : "DELETED",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[1]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[1]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[1]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "name" : "默认规则"
+    } ],
+    "predefinedType" : "LOGICVALID",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 1,
+    "defaultValue" : "0",
+    "name" : "DELETED"
+  }, {
+    "dataType" : "DATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "37574800c27d97a3d91cc5a65ad6a2ae",
+    "codeName" : "ReviewedDate",
+    "logicName" : "评审时间",
+    "stdDataType" : 5,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "REVIEWEDDATE",
+        "codeName" : "ReviewedDate"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "name" : "REVIEWEDDATE"
+  }, {
+    "dataType" : "NSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__pri.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "aad2b44813156be2e6740b5cddbf0f15",
+    "codeName" : "Pri",
+    "logicName" : "优先级",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "3",
+    "name" : "PRI"
+  }, {
+    "dataType" : "SMCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__stage.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "08c544b3e083b92dc7606421bf95dfb5",
+    "codeName" : "Stage",
+    "logicName" : "适用阶段",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "STAGE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "STAGE",
+        "codeName" : "Stage"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 255,
+    "defaultValue" : "#EMPTY",
+    "name" : "STAGE"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "f5f84afcf262ceb16820e56d2f398e89",
+    "codeName" : "ScriptLocation",
+    "logicName" : "scriptLocation",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "SCRIPTLOCATION",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SCRIPTLOCATION",
+        "codeName" : "ScriptLocation"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 255,
+    "defaultValue" : "#EMPTY",
+    "name" : "SCRIPTLOCATION"
+  }, {
+    "phisicalDEField" : false,
+    "formulaDEField" : true,
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/TestCaseStatusGrid.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "c36edc32895b25c6d01dde2f6e9e20cb",
+    "codeName" : "Status1",
+    "logicName" : "用例状态",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "STATUS1",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "STATUS1",
+        "codeName" : "Status1"
+      },
+      "name" : "默认规则"
+    } ],
+    "dEMSFieldMode" : "STATE1",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "length" : 200,
+    "name" : "STATUS1"
+  }, {
+    "dataType" : "DATETIME",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "ceb59879263d95456772f0a47a438bb7",
+    "codeName" : "LastRunDate",
+    "logicName" : "执行时间",
+    "stdDataType" : 5,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "LASTRUNDATE",
+        "codeName" : "LastRunDate"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "name" : "LASTRUNDATE"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "caa0395453a53b6e02282a39a9453aa6",
+    "codeName" : "Keywords",
+    "logicName" : "关键词",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "KEYWORDS",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "KEYWORDS",
+        "codeName" : "Keywords"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 255,
+    "defaultValue" : "#EMPTY",
+    "name" : "KEYWORDS"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "d6c1207ef8dfce7bebc5b1c765f53378",
+    "codeName" : "ScriptStatus",
+    "logicName" : "scriptStatus",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "SCRIPTSTATUS",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SCRIPTSTATUS",
+        "codeName" : "ScriptStatus"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "name" : "SCRIPTSTATUS"
+  }, {
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__frame.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "435964f8bbed8f5d8760f9f4ccae8b2b",
+    "codeName" : "Frame",
+    "logicName" : "工具/框架",
+    "stringLength" : 10,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 10,
+          "dEFName" : "FRAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[10]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[10]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[10]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "FRAME",
+        "codeName" : "Frame"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 10,
+    "defaultValue" : "#EMPTY",
+    "name" : "FRAME"
+  }, {
+    "phisicalDEField" : false,
+    "formulaDEField" : true,
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__result.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "f9891acd3eaad83d1b2587a3910c695e",
+    "codeName" : "Lastrunresult1",
+    "logicName" : "测试用例结果",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "LASTRUNRESULT1",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "LASTRUNRESULT1",
+        "codeName" : "Lastrunresult1"
+      },
+      "name" : "默认规则"
+    } ],
+    "dEMSFieldMode" : "STATE2",
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "length" : 200,
+    "name" : "LASTRUNRESULT1"
+  }, {
+    "phisicalDEField" : false,
+    "formulaDEField" : true,
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "1f2aabad48be29eb8e29deb73e6bbdeb",
+    "codeName" : "StepCNT",
+    "logicName" : "用例步骤数",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "STEPCNT",
+        "codeName" : "StepCNT"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 2,
+    "name" : "STEPCNT"
+  }, {
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "7c45641ef6e0b29b7c5dd098a724522e",
+    "codeName" : "SubStatus",
+    "logicName" : "子状态",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "SUBSTATUS",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SUBSTATUS",
+        "codeName" : "SubStatus"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "name" : "SUBSTATUS"
+  }, {
+    "dataType" : "ACID",
+    "valueFormat" : "%1$s",
+    "deployId" : "288011d19774cf9aa9f9a9e8487c8cd4",
+    "codeName" : "Id",
+    "logicName" : "用例编号",
+    "stdDataType" : 1,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "默认规则"
+    } ],
+    "pasteReset" : true,
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
+    "length" : 8,
+    "name" : "ID"
+  }, {
+    "dataType" : "LONGTEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "ebd2201e6d3d263be00e4f46e4996965",
+    "codeName" : "Precondition",
+    "logicName" : "前置条件",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 65535,
+          "dEFName" : "PRECONDITION",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[65535]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[65535]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[65535]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PRECONDITION",
+        "codeName" : "Precondition"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "queryColumn" : false,
+    "length" : 65535,
+    "defaultValue" : "#EMPTY",
+    "name" : "PRECONDITION"
+  }, {
+    "dataType" : "TEXT",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_Gird.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "97d850b719139b9d2b100feaf97f39ed",
+    "codeName" : "LastRunner",
+    "logicName" : "执行人",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "LASTRUNNER",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "LASTRUNNER",
+        "codeName" : "LastRunner"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "name" : "LASTRUNNER"
+  }, {
+    "phisicalDEField" : false,
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_TESTSUITE_LIB.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : "PICKUPTEXT",
+    "deployId" : "a2a69da201a6abea37fc0ab4ead2597c",
+    "codeName" : "Libname",
+    "logicName" : "用例库",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "LIBNAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "LIBNAME",
+        "codeName" : "Libname"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 3,
+    "length" : 255,
+    "name" : "LIBNAME"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_CASE_FROMCAEID.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "VERSION",
+      "codeName" : "Version"
+    },
+    "dataType" : "PICKUPDATA",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/CurCaseVersion.json"
+    },
+    "deployId" : "4a1fe408a0e14e56630e77bcc8532bbf",
+    "codeName" : "FromCaseVersion",
+    "logicName" : "来源用例版本",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "FROMCASEVERSION",
+        "codeName" : "FromCaseVersion"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "name" : "FROMCASEVERSION"
+  }, {
+    "phisicalDEField" : false,
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_STORY_STORY.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "dataType" : "PICKUPTEXT",
+    "deployId" : "34f08118ccf5c6de06d285da5f787ded",
+    "codeName" : "Storyname",
+    "logicName" : "需求名称",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "STORYNAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "STORYNAME",
+        "codeName" : "Storyname"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 3,
+    "length" : 255,
+    "name" : "STORYNAME"
+  }, {
+    "phisicalDEField" : false,
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_MODULE_MODULE.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : "PICKUPTEXT",
+    "deployId" : "f5c236e0ab9bb188b7a4e5a3e7965fc4",
+    "codeName" : "Modulename",
+    "logicName" : "模块名称",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 60,
+          "dEFName" : "MODULENAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[60]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "MODULENAME",
+        "codeName" : "Modulename"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 3,
+    "length" : 60,
+    "name" : "MODULENAME"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_STORY_STORY.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "VERSION",
+      "codeName" : "Version"
+    },
+    "dataType" : "PICKUPDATA",
+    "deployId" : "853a6951ea0e58824e2aa66e17cfa06a",
+    "codeName" : "StoryVersion",
+    "logicName" : "需求版本",
+    "stdDataType" : 9,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "STORYVERSION",
+        "codeName" : "StoryVersion"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 6,
+    "defaultValue" : "1",
+    "name" : "STORYVERSION"
+  }, {
+    "phisicalDEField" : false,
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : "PICKUPTEXT",
+    "deployId" : "4bc55351a5541c76adf5d6d6fd2ef234",
+    "codeName" : "ProductName",
+    "logicName" : "产品名称",
+    "stringLength" : 90,
+    "stdDataType" : 25,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 90,
+          "dEFName" : "PRODUCTNAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[90]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[90]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[90]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 3,
+    "length" : 90,
+    "name" : "PRODUCTNAME"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_CASE_FROMCAEID.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : "PICKUP",
+    "deployId" : "2bc6c941599b18dcdf1f131fb3df7cd0",
+    "codeName" : "FromCaseId",
+    "logicName" : "来源用例",
+    "stdDataType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "FROMCASEID",
+        "codeName" : "FromCaseId"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "name" : "FROMCASEID"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_BRANCH_BRANCH.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : "PICKUP",
+    "deployId" : "f2c34a90e7ac1cd1c85481cb50106285",
+    "codeName" : "Branch",
+    "logicName" : "平台/分支",
+    "stdDataType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "BRANCH",
+        "codeName" : "Branch"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "name" : "BRANCH"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_BUG_FROMBUG.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : "PICKUP",
+    "deployId" : "059de754161c9cf2367d0a980eb30d47",
+    "codeName" : "FromBug",
+    "logicName" : "来源Bug",
+    "stdDataType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "FROMBUG",
+        "codeName" : "FromBug"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "name" : "FROMBUG"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_STORY_STORY.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : "PICKUP",
+    "deployId" : "cc088582afce58cb79077ff5da668ca0",
+    "codeName" : "Story",
+    "logicName" : "相关需求",
+    "stdDataType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "STORY",
+        "codeName" : "Story"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "name" : "STORY"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : "PICKUP",
+    "deployId" : "fdbd3cd940f976013992a36e52b00ea0",
+    "codeName" : "Product",
+    "logicName" : "所属产品",
+    "stdDataType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "name" : "PRODUCT"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_TESTSUITE_LIB.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : "PICKUP",
+    "deployId" : "0338cddd5aa2349cd8cc816bbae4dad8",
+    "codeName" : "Lib",
+    "logicName" : "所属库",
+    "stdDataType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "LIB",
+        "codeName" : "Lib"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "name" : "LIB"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_MODULE_MODULE.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : "PICKUP",
+    "deployId" : "4f8cb22e76a204adc1411faedcbab7df",
+    "codeName" : "Module",
+    "logicName" : "所属模块",
+    "stdDataType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "MODULE",
+        "codeName" : "Module"
+      },
+      "name" : "默认规则"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "defaultValue" : "0",
+    "name" : "MODULE"
+  } ],
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CreateTemp.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CreateTempMajor.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UpdateTemp.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UpdateTempMajor.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RemoveTemp.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RemoveTempMajor.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetTemp.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetTempMajor.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetDraftTemp.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetDraftTempMajor.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/BugCreateCase.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseNFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/ConfirmChange.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Confirmstorychange.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetByTestTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetTestTaskCntRun.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/LinkCase.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/MobLinkCase.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RunCase.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RunCases.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Save.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCase.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCases.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestsuitelinkCase.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkCase.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkCases.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCases.json"
+  } ],
+  "getAllPSDELogics" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/CaseNFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/GetCaseStepByIdVersion.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/caseFavorite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/runCases.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/testRunCases.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/unlinkCases.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/unlinkSuiteCases.json"
+  } ],
+  "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "blocked_blocked_0",
+    "logicName" : "被阻塞_阻塞_未收藏",
+    "default" : false,
+    "mSTag" : "blocked__blocked__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "blocked",
+    "name" : "被阻塞_阻塞_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "blocked_blocked_1",
+    "logicName" : "被阻塞_阻塞_已收藏",
+    "default" : false,
+    "mSTag" : "blocked__blocked__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "blocked",
+    "name" : "被阻塞_阻塞_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "blocked_fail_0",
+    "logicName" : "被阻塞_失败_未收藏",
+    "default" : false,
+    "mSTag" : "blocked__fail__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "blocked",
+    "name" : "被阻塞_失败_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "blocked_fail_1",
+    "logicName" : "被阻塞_失败_已收藏",
+    "default" : false,
+    "mSTag" : "blocked__fail__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "blocked",
+    "name" : "被阻塞_失败_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "blocked_na_0",
+    "logicName" : "被阻塞_忽略_未收藏",
+    "default" : false,
+    "mSTag" : "blocked__n/a__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "blocked",
+    "name" : "被阻塞_忽略_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "blocked_na_1",
+    "logicName" : "被阻塞_忽略_已收藏",
+    "default" : false,
+    "mSTag" : "blocked__n/a__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "blocked",
+    "name" : "被阻塞_忽略_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "blocked_no_0",
+    "logicName" : "被阻塞_未执行_未收藏",
+    "default" : false,
+    "mSTag" : "blocked__no__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "blocked",
+    "name" : "被阻塞_未执行_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "blocked_no_1",
+    "logicName" : "被阻塞_未执行_已收藏",
+    "default" : false,
+    "mSTag" : "blocked__no__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "blocked",
+    "name" : "被阻塞_未执行_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "blocked_pass_0",
+    "logicName" : "被阻塞_通过_未收藏",
+    "default" : false,
+    "mSTag" : "blocked__pass__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "blocked",
+    "name" : "被阻塞_通过_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "blocked_pass_1",
+    "logicName" : "被阻塞_通过_已收藏",
+    "default" : false,
+    "mSTag" : "blocked__pass__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "blocked",
+    "name" : "被阻塞_通过_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_DELETE_BUT"
+      },
+      "name" : "SRFUR__CASE_DELETE_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "casechange_blocked_0",
+    "logicName" : "原用例更新_阻塞_未收藏",
+    "default" : false,
+    "mSTag" : "casechange__blocked__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "casechange",
+    "name" : "原用例更新_阻塞_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_DELETE_BUT"
+      },
+      "name" : "SRFUR__CASE_DELETE_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "casechange_blocked_1",
+    "logicName" : "原用例更新_阻塞_已收藏",
+    "default" : false,
+    "mSTag" : "casechange__blocked__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "casechange",
+    "name" : "原用例更新_阻塞_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "casechange_fail_0",
+    "logicName" : "原用例更新_失败_未收藏",
+    "default" : false,
+    "mSTag" : "casechange__fail__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "casechange",
+    "name" : "原用例更新_失败_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "casechange_fail_1",
+    "logicName" : "原用例更新_失败_已收藏",
+    "default" : false,
+    "mSTag" : "casechange__fail__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "casechange",
+    "name" : "原用例更新_失败_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "casechange_na_0",
+    "logicName" : "原用例更新_忽略_未收藏",
+    "default" : false,
+    "mSTag" : "casechange__n/a__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "casechange",
+    "name" : "原用例更新_忽略_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "casechange_na_1",
+    "logicName" : "原用例更新_忽略_已收藏",
+    "default" : false,
+    "mSTag" : "casechange__n/a__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "casechange",
+    "name" : "原用例更新_忽略_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_DELETE_BUT"
+      },
+      "name" : "SRFUR__CASE_DELETE_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "casechange_no_0",
+    "logicName" : "原用例更新_未执行_未收藏",
+    "default" : false,
+    "mSTag" : "casechange__no__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "casechange",
+    "name" : "原用例更新_未执行_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_DELETE_BUT"
+      },
+      "name" : "SRFUR__CASE_DELETE_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "casechange_no_1",
+    "logicName" : "原用例更新_未执行_已收藏",
+    "default" : false,
+    "mSTag" : "casechange__no__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "casechange",
+    "name" : "原用例更新_未执行_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "casechange_pass_0",
+    "logicName" : "原用例更新_通过_未收藏",
+    "default" : false,
+    "mSTag" : "casechange__pass__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "casechange",
+    "name" : "原用例更新_通过_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "casechange_pass_1",
+    "logicName" : "原用例更新_通过_已收藏",
+    "default" : false,
+    "mSTag" : "casechange__pass__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "casechange",
+    "name" : "原用例更新_通过_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "done_blocked_0",
+    "logicName" : "已完成_阻塞_未收藏",
+    "default" : false,
+    "mSTag" : "done__blocked__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "done",
+    "name" : "已完成_阻塞_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "done_blocked_1",
+    "logicName" : "已完成_阻塞_已收藏",
+    "default" : false,
+    "mSTag" : "done__blocked__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "done",
+    "name" : "已完成_阻塞_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "done_fail_0",
+    "logicName" : "已完成_失败_未收藏",
+    "default" : false,
+    "mSTag" : "done__fail__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "done",
+    "name" : "已完成_失败_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "done_fail_1",
+    "logicName" : "已完成_失败_已收藏",
+    "default" : false,
+    "mSTag" : "done__fail__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "done",
+    "name" : "已完成_失败_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "done_na_0",
+    "logicName" : "已完成_忽略_未收藏",
+    "default" : false,
+    "mSTag" : "done__n/a__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "done",
+    "name" : "已完成_忽略_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "done_na_1",
+    "logicName" : "已完成_忽略_已收藏",
+    "default" : false,
+    "mSTag" : "done__n/a__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "done",
+    "name" : "已完成_忽略_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "done_no_0",
+    "logicName" : "已完成_未执行_未收藏",
+    "default" : false,
+    "mSTag" : "done__no__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "done",
+    "name" : "已完成_未执行_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "done_no_1",
+    "logicName" : "已完成_未执行_已收藏",
+    "default" : false,
+    "mSTag" : "done__no__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "done",
+    "name" : "已完成_未执行_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "done_pass_0",
+    "logicName" : "已完成_通过_未收藏",
+    "default" : false,
+    "mSTag" : "done__pass__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "done",
+    "name" : "已完成_通过_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "done_pass_1",
+    "logicName" : "已完成_通过_已收藏",
+    "default" : false,
+    "mSTag" : "done__pass__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "done",
+    "name" : "已完成_通过_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : true,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "investigate_blocked_0",
+    "logicName" : "研究中_阻塞_未收藏",
+    "default" : false,
+    "mSTag" : "investigate__blocked__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "investigate",
+    "name" : "研究中_阻塞_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : true,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "investigate_blocked_1",
+    "logicName" : "研究中_阻塞_已收藏",
+    "default" : false,
+    "mSTag" : "investigate__blocked__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "investigate",
+    "name" : "研究中_阻塞_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "investigate_fail_0",
+    "logicName" : "研究中_失败_未收藏",
+    "default" : false,
+    "mSTag" : "investigate__fail__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "investigate",
+    "name" : "研究中_失败_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "investigate_fail_1",
+    "logicName" : "研究中_失败_已收藏",
+    "default" : false,
+    "mSTag" : "investigate__fail__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "investigate",
+    "name" : "研究中_失败_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "investigate_na_0",
+    "logicName" : "研究中_忽略_未收藏",
+    "default" : false,
+    "mSTag" : "investigate__n/a__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "investigate",
+    "name" : "研究中_忽略_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "investigate_na_1",
+    "logicName" : "研究中_忽略_已收藏",
+    "default" : false,
+    "mSTag" : "investigate__n/a__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "investigate",
+    "name" : "研究中_忽略_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "investigate_no_0",
+    "logicName" : "研究中_未执行_未收藏",
+    "default" : false,
+    "mSTag" : "investigate__no__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "investigate",
+    "name" : "研究中_未执行_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "investigate_no_1",
+    "logicName" : "研究中_未执行_已收藏",
+    "default" : false,
+    "mSTag" : "investigate__no__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "investigate",
+    "name" : "研究中_未执行_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "investigate_pass_0",
+    "logicName" : "研究中_通过_未收藏",
+    "default" : false,
+    "mSTag" : "investigate__pass__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "investigate",
+    "name" : "研究中_通过_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "investigate_pass_1",
+    "logicName" : "研究中_通过_已收藏",
+    "default" : false,
+    "mSTag" : "investigate__pass__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "investigate",
+    "name" : "研究中_通过_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_blocked_0",
+    "logicName" : "正常_阻塞_未收藏",
+    "default" : false,
+    "mSTag" : "normal__blocked__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_阻塞_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_blocked_1",
+    "logicName" : "正常_阻塞_已收藏",
+    "default" : false,
+    "mSTag" : "normal__blocked__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_阻塞_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_fail_0",
+    "logicName" : "正常_失败_未收藏",
+    "default" : false,
+    "mSTag" : "normal__fail__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_失败_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_fail_1",
+    "logicName" : "正常_失败_已收藏",
+    "default" : false,
+    "mSTag" : "normal__fail__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_失败_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_na_0",
+    "logicName" : "正常_忽略_未收藏",
+    "default" : false,
+    "mSTag" : "normal__n/a__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_忽略_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_na_1",
+    "logicName" : "正常_忽略_已收藏",
+    "default" : false,
+    "mSTag" : "normal__n/a__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_忽略_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_no_0",
+    "logicName" : "正常_未执行_未收藏",
+    "default" : false,
+    "mSTag" : "normal__no__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_未执行_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_no_1",
+    "logicName" : "正常_未执行_已收藏",
+    "default" : false,
+    "mSTag" : "normal__no__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_未执行_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_pass_0",
+    "logicName" : "正常_通过_未收藏",
+    "default" : false,
+    "mSTag" : "normal__pass__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_通过_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_pass_1",
+    "logicName" : "正常_通过_已收藏",
+    "default" : false,
+    "mSTag" : "normal__pass__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_通过_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "storychange_blocked_0",
+    "logicName" : "需求变更_阻塞_未收藏",
+    "default" : false,
+    "mSTag" : "storychange__blocked__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "storychange",
+    "name" : "需求变更_阻塞_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "storychange_blocked_1",
+    "logicName" : "需求变更_阻塞_已收藏",
+    "default" : false,
+    "mSTag" : "storychange__blocked__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "storychange",
+    "name" : "需求变更_阻塞_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "storychange_fail_0",
+    "logicName" : "需求变更_失败_未收藏",
+    "default" : false,
+    "mSTag" : "storychange__fail__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "storychange",
+    "name" : "需求变更_失败_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "storychange_fail_1",
+    "logicName" : "需求变更_失败_已收藏",
+    "default" : false,
+    "mSTag" : "storychange__fail__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "storychange",
+    "name" : "需求变更_失败_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "storychange_na_0",
+    "logicName" : "需求变更_忽略_未收藏",
+    "default" : false,
+    "mSTag" : "storychange__n/a__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "storychange",
+    "name" : "需求变更_忽略_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "storychange_na_1",
+    "logicName" : "需求变更_忽略_已收藏",
+    "default" : false,
+    "mSTag" : "storychange__n/a__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "storychange",
+    "name" : "需求变更_忽略_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "storychange_no_0",
+    "logicName" : "需求变更_未执行_未收藏",
+    "default" : false,
+    "mSTag" : "storychange__no__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "storychange",
+    "name" : "需求变更_未执行_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "storychange_no_1",
+    "logicName" : "需求变更_未执行_已收藏",
+    "default" : false,
+    "mSTag" : "storychange__no__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "storychange",
+    "name" : "需求变更_未执行_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "storychange_pass_0",
+    "logicName" : "需求变更_通过_未收藏",
+    "default" : false,
+    "mSTag" : "storychange__pass__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "storychange",
+    "name" : "需求变更_通过_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_UNLINK_BUT"
+      },
+      "name" : "SRFUR__CASE_UNLINK_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RESULT_BUT"
+      },
+      "name" : "SRFUR__CASE_RESULT_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASERUN_BUT"
+      },
+      "name" : "SRFUR__CASE_CASERUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASETOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_CASETOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_RUN_BUT"
+      },
+      "name" : "SRFUR__CASE_RUN_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_EDIT_BUT"
+      },
+      "name" : "SRFUR__CASE_EDIT_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "storychange_pass_1",
+    "logicName" : "需求变更_通过_已收藏",
+    "default" : false,
+    "mSTag" : "storychange__pass__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "storychange",
+    "name" : "需求变更_通过_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_blocked_0",
+    "logicName" : "未开始_阻塞_未收藏",
+    "default" : false,
+    "mSTag" : "wait__blocked__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_阻塞_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "blocked",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_blocked_1",
+    "logicName" : "未开始_阻塞_已收藏",
+    "default" : false,
+    "mSTag" : "wait__blocked__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_阻塞_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_fail_0",
+    "logicName" : "未开始_失败_未收藏",
+    "default" : false,
+    "mSTag" : "wait__fail__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_失败_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "fail",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_fail_1",
+    "logicName" : "未开始_失败_已收藏",
+    "default" : false,
+    "mSTag" : "wait__fail__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_失败_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_na_0",
+    "logicName" : "未开始_忽略_未收藏",
+    "default" : false,
+    "mSTag" : "wait__n/a__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_忽略_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "n/a",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_na_1",
+    "logicName" : "未开始_忽略_已收藏",
+    "default" : false,
+    "mSTag" : "wait__n/a__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_忽略_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_no_0",
+    "logicName" : "未开始_未执行_未收藏",
+    "default" : false,
+    "mSTag" : "wait__no__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_未执行_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "no",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_no_1",
+    "logicName" : "未开始_未执行_已收藏",
+    "default" : false,
+    "mSTag" : "wait__no__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_未执行_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "0",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_FAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_FAVOR_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_pass_0",
+    "logicName" : "未开始_通过_未收藏",
+    "default" : false,
+    "mSTag" : "wait__pass__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_通过_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "pass",
+    "state3Value" : "1",
+    "fieldAllowMode" : false,
+    "allowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_TOBUG_BUT"
+      },
+      "name" : "SRFUR__CASE_TOBUG_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CONFIRM_BUT"
+      },
+      "name" : "SRFUR__CASE_CONFIRM_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_NFAVOR_BUT"
+      },
+      "name" : "SRFUR__CASE_NFAVOR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SRFUR__CASE_CASECOF_BUT"
+      },
+      "name" : "SRFUR__CASE_CASECOF_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_pass_1",
+    "logicName" : "未开始_通过_已收藏",
+    "default" : false,
+    "mSTag" : "wait__pass__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_通过_已收藏"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "enableDataVer" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableAPIStorage" : false,
+  "tempDataHolder" : 2,
+  "enableTempDataFront" : true,
+  "getMainStatePSDEFields" : [ {
+    "name" : "STATUS1",
+    "codeName" : "Status1"
+  }, {
+    "name" : "LASTRUNRESULT1",
+    "codeName" : "Lastrunresult1"
+  }, {
+    "name" : "ISFAVORITES",
+    "codeName" : "Isfavorites"
+  } ],
+  "validLogicValue" : "0",
+  "invalidLogicValue" : "1",
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "用例确认",
+    "name" : "CASECOF"
+  }, {
+    "logicName" : "用例结果",
+    "name" : "CASERESULT"
+  }, {
+    "logicName" : "用例执行",
+    "name" : "CASERUN"
+  }, {
+    "logicName" : "用例转bug",
+    "name" : "CASETOBUG"
+  }, {
+    "logicName" : "确认",
+    "name" : "CONFIRM"
+  }, {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "编辑",
+    "name" : "EDIT"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "结果",
+    "name" : "RESULT"
+  }, {
+    "logicName" : "执行",
+    "name" : "RUN"
+  }, {
+    "logicName" : "转bug",
+    "name" : "TOBUG"
+  }, {
+    "logicName" : "移除",
+    "name" : "UNLINK"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "saaSMode" : 4,
+  "getPSSysImage" : {
+    "glyph" : "xf006@FontAwesome",
+    "cssClass" : "fa fa-star-o"
+  },
+  "dynaInstMode" : 1,
+  "dSLink" : "DEFAULT",
+  "orderValue" : 99999,
+  "deployId" : "2daa15fd03c9fe93a9de4449eb87169d",
+  "codeName" : "Case",
+  "logicName" : "测试用例",
+  "tableName" : "zt_case",
+  "enableRemove" : true,
+  "logicValid" : true,
+  "enableMultiDS" : false,
+  "dataAccCtrlMode" : 1,
+  "auditMode" : 0,
+  "dataChangeLogMode" : 0,
+  "storageMode" : 1,
+  "dataImpExpMode" : 3,
+  "dataAccCtrlArch" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "serviceCodeName" : "Case",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "enableTempData" : true,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "enableMultiForm" : false,
+  "enableEntityCache" : false,
+  "dEType" : 1,
+  "getMinorPSDERs" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_BRANCH_BRANCH.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_BUG_FROMBUG.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_CASE_FROMCAEID.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_MODULE_MODULE.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_STORY_STORY.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_TESTSUITE_LIB.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DERINDEX_ZT_CASE_IBIZPRO_INDEX.json"
+  } ],
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "getMajorPSDERs" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_CASE_CASEID.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_CASE_FROMCAEID.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_CASE_CASE.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDERS/DER1N_ZT_TESTRESULT_ZT_CASE_CASE.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDERS/DER1N_ZT_TESTRUN_ZT_CASE_CASE.json"
+  } ],
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case.json",
+  "name" : "ZT_CASE"
+}

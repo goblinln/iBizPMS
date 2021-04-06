@@ -327,6 +327,9 @@ export default class AppMpicker extends Vue {
             }
             _context = Object.assign(_context, { srfparentdata: { srfparentkey: this.data[this.deKeyField] }, });
             _viewparams = Object.assign(_viewparams,{ selectedData: [..._selectItems]});
+            if (view && view.viewpath) {
+              _context.viewpath = view.viewpath;
+            }
             let formdata = this.data;
             const modal: Subject<any> = this.$appmodal.openModal(view, _context, _viewparams)
             modal.subscribe((result: any) => {

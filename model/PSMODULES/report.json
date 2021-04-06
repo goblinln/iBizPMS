@@ -1,0 +1,35 @@
+{
+  "subSysAsCloud" : false,
+  "subSysModule" : false,
+  "defaultModule" : false,
+  "getAllPSDataEntities" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportRoleConfig.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+  } ],
+  "getAllPSCodeLists" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSCODELISTS/ReportStatus.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSCODELISTS/ReportType.json"
+  } ],
+  "deployId" : "7d94da88bc37af4628e3c0f10ba411f9",
+  "codeName" : "report",
+  "dynaModelFilePath" : "PSMODULES/report.json",
+  "name" : "汇报模块"
+}

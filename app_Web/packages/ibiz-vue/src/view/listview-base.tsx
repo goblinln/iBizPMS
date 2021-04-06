@@ -101,6 +101,9 @@ export class ListViewBase extends MDViewBase {
      * @memberof ListViewBase
      */
     public onSearch($event: any): void {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         const refs: any = this.$refs;
         if (refs[this.listInstance?.name]?.ctrl) {
             refs[this.listInstance?.name].ctrl.load({});

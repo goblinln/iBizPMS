@@ -1,0 +1,348 @@
+{
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
+  "enableAutoSave" : false,
+  "controlType" : "FORM",
+  "readOnly" : false,
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "date",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    }
+  }, {
+    "id" : "consumed",
+    "dataType" : 7,
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    }
+  }, {
+    "id" : "left",
+    "dataType" : 7,
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    }
+  }, {
+    "id" : "work",
+    "dataType" : 21,
+    "getPSAppDEField" : {
+      "name" : "WORK",
+      "codeName" : "Work"
+    }
+  }, {
+    "id" : "id",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "noTabHeader" : true,
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "infoGroupMode" : false,
+      "actionGroupExtractMode" : "ITEM",
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD",
+          "editorType" : "DATEPICKEREX_NOTIME",
+          "editorWidth" : 100.0,
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD"
+          },
+          "name" : "date"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DATE",
+          "codeName" : "Date"
+        },
+        "showCaption" : true,
+        "dataType" : 5,
+        "caption" : "日期",
+        "allowEmpty" : false,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "itemWidth" : 230.0,
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "date",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "date"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "precision" : 2,
+          "editorType" : "TEXTBOX",
+          "name" : "consumed"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CONSUMED",
+          "codeName" : "Consumed"
+        },
+        "showCaption" : true,
+        "dataType" : 7,
+        "caption" : "工时",
+        "allowEmpty" : false,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "consumed",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "consumed"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "precision" : 2,
+          "editorType" : "TEXTBOX",
+          "name" : "left"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "LEFT",
+          "codeName" : "Left"
+        },
+        "showCaption" : true,
+        "dataType" : 7,
+        "caption" : "剩余",
+        "allowEmpty" : false,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "left",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "left"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "maxLength" : 65535,
+          "editorType" : "TEXTAREA",
+          "name" : "work"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "WORK",
+          "codeName" : "Work"
+        },
+        "showCaption" : true,
+        "dataType" : 21,
+        "caption" : "备注",
+        "allowEmpty" : true,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "work",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "work"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "showCaption" : false,
+      "codeName" : "group1",
+      "caption" : "taskestimate基本信息",
+      "detailType" : "GROUPPANEL",
+      "detailStyle" : "DEFAULT",
+      "name" : "group1"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "infoGroupMode" : false,
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
+  "getPSDEFormItemVRs" : [ {
+    "getPSDEFormItemName" : "left",
+    "valueRuleType" : "DEFVALUERULE",
+    "getPSDEFValueRule" : {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : false,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : true,
+          "includeMaxValue" : false,
+          "minValue" : 0.0,
+          "dEFName" : "CONSUMED",
+          "tryMode" : false,
+          "condType" : "VALUERANGE2",
+          "ruleInfo" : "总计消耗大于等于0",
+          "name" : "[数值范围] 大于等于 0.0"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "总计消耗大于等于0",
+        "name" : "默认组"
+      },
+      "codeName" : "ValueRule2",
+      "ruleInfo" : "总计消耗大于等于0",
+      "defaultMode" : false,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "CONSUMED",
+        "codeName" : "Consumed"
+      },
+      "name" : "总计消耗大于等于0"
+    },
+    "checkMode" : 3,
+    "name" : "表单项值规则"
+  }, {
+    "getPSDEFormItemName" : "consumed",
+    "valueRuleType" : "DEFVALUERULE",
+    "getPSDEFValueRule" : {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : false,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : true,
+          "includeMaxValue" : false,
+          "minValue" : 0.0,
+          "dEFName" : "CONSUMED",
+          "tryMode" : false,
+          "condType" : "VALUERANGE2",
+          "ruleInfo" : "总计消耗大于等于0",
+          "name" : "[数值范围] 大于等于 0.0"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "总计消耗大于等于0",
+        "name" : "默认组"
+      },
+      "codeName" : "ValueRule2",
+      "ruleInfo" : "总计消耗大于等于0",
+      "defaultMode" : false,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "CONSUMED",
+        "codeName" : "Consumed"
+      },
+      "name" : "总计消耗大于等于0"
+    },
+    "checkMode" : 3,
+    "name" : "表单项值规则"
+  } ],
+  "codeName" : "Main",
+  "tabHeaderPos" : "TOP",
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate/PSFORMS/Main.json",
+  "logicName" : "主编辑表单",
+  "modelid" : "6796831e2f83bf0954848155004b3698"
+}

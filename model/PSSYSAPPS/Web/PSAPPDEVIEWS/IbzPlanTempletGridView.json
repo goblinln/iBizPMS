@@ -1,0 +1,727 @@
+{
+  "rowEditDefault" : false,
+  "enableImport" : true,
+  "enableRowEdit" : false,
+  "enableExport" : true,
+  "gridRowActiveMode" : 2,
+  "enableSearch" : true,
+  "enableFilter" : true,
+  "enableQuickSearch" : true,
+  "xDataControlName" : "grid",
+  "showCaptionBar" : true,
+  "getPSDEViewCodeName" : "GridView",
+  "funcViewMode" : "MDATAVIEW",
+  "caption" : "计划模板",
+  "title" : "产品计划模板表格视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "srfloginname",
+    "key" : "n_createmanname_eq",
+    "name" : "n_createmanname_eq"
+  } ],
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEGRIDVIEW_STYLE2",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+    },
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "GridView",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
+    }, {
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
+    }, {
+      "paramType" : "CTRL",
+      "name" : "GRID"
+    }, {
+      "paramType" : "CTRL",
+      "name" : "SEARCHFORM"
+    } ],
+    "name" : "engine"
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "New"
+    },
+    "name" : "toolbar_deuiaction1"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "uIActionTarget" : "MULTIKEY",
+    "name" : "toolbar_deuiaction4"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Refresh"
+    },
+    "name" : "toolbar_deuiaction2"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "ExportExcel"
+    },
+    "name" : "toolbar_deuiaction5"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "ToggleFilter"
+    },
+    "name" : "toolbar_deuiaction7"
+  } ],
+  "getPSControls" : [ {
+    "controlType" : "TOOLBAR",
+    "getPSDEToolbarItems" : [ {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "timeout" : 60000,
+        "codeName" : "New",
+        "caption" : "新建",
+        "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
+        "uIActionTag" : "New",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "New",
+        "name" : "表格界面_新建操作"
+      },
+      "noPrivDisplayMode" : 2,
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "tooltip" : "新建",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "showCaption" : true,
+      "itemType" : "DEUIACTION",
+      "caption" : "新建",
+      "name" : "deuiaction1"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "getPSSysImage" : {
+          "glyph" : "xf00d@FontAwesome",
+          "cssClass" : "fa fa-remove"
+        },
+        "timeout" : 60000,
+        "codeName" : "Remove",
+        "caption" : "删除",
+        "actionTarget" : "MULTIKEY",
+        "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
+        "uIActionTag" : "Remove",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "Remove",
+        "name" : "表格界面_删除操作"
+      },
+      "noPrivDisplayMode" : 2,
+      "getPSSysImage" : {
+        "glyph" : "xf00d@FontAwesome",
+        "cssClass" : "fa fa-remove"
+      },
+      "tooltip" : "删除",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "showCaption" : true,
+      "itemType" : "DEUIACTION",
+      "caption" : "删除",
+      "name" : "deuiaction4"
+    }, {
+      "spanMode" : false,
+      "itemType" : "SEPERATOR",
+      "name" : "seperator1"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "timeout" : 60000,
+        "codeName" : "Refresh",
+        "caption" : "刷新",
+        "uIActionTag" : "Refresh",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "Refresh",
+        "name" : "表格界面_刷新操作"
+      },
+      "noPrivDisplayMode" : 2,
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "tooltip" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "showCaption" : true,
+      "itemType" : "DEUIACTION",
+      "caption" : "刷新",
+      "name" : "deuiaction2"
+    }, {
+      "spanMode" : false,
+      "itemType" : "SEPERATOR",
+      "name" : "seperator3"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction5"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "timeout" : 60000,
+        "codeName" : "ExportExcel",
+        "caption" : "导出",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）"
+      },
+      "noPrivDisplayMode" : 2,
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "tooltip" : "导出",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "showCaption" : true,
+      "itemType" : "DEUIACTION",
+      "caption" : "导出",
+      "name" : "deuiaction5"
+    }, {
+      "spanMode" : false,
+      "itemType" : "SEPERATOR",
+      "name" : "seperator4"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction7"
+      },
+      "getPSUIAction" : {
+        "enableToggleMode" : true,
+        "getNoPrivDisplayMode" : 2,
+        "getPSSysImage" : {
+          "glyph" : "xf0b0@FontAwesome",
+          "cssClass" : "fa fa-filter"
+        },
+        "timeout" : 60000,
+        "codeName" : "ToggleFilter",
+        "caption" : "过滤",
+        "uIActionTag" : "ToggleFilter",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "ToggleFilter",
+        "name" : "表格界面_搜索栏"
+      },
+      "enableToggleMode" : true,
+      "noPrivDisplayMode" : 2,
+      "getPSSysImage" : {
+        "glyph" : "xf0b0@FontAwesome",
+        "cssClass" : "fa fa-filter"
+      },
+      "tooltip" : "过滤",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "showCaption" : true,
+      "itemType" : "DEUIACTION",
+      "caption" : "过滤",
+      "name" : "deuiaction7"
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "hookEventNames" : [ "CLICK" ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+    },
+    "codeName" : "GridViewtoolbar",
+    "logicName" : "表格界面（新建、删除、刷新、导出）",
+    "name" : "toolbar",
+    "modelid" : "fabf7f1d3c7e790a7cde8db06d1ff66f"
+  }, {
+    "getPSDEGridDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETNAME",
+        "codeName" : "IbzPlanTempletName"
+      },
+      "dataType" : 25,
+      "name" : "ibz_plantempletname"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "updatedate"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETNAME",
+        "codeName" : "IbzPlanTempletName"
+      },
+      "dataType" : 25,
+      "name" : "srfmajortext"
+    }, {
+      "dataAccessAction" : true,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "dataType" : 25,
+      "name" : "srfdataaccaction"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "dataType" : 25,
+      "name" : "srfkey"
+    } ],
+    "singleSelect" : false,
+    "enableColFilter" : false,
+    "enableRowNew" : false,
+    "enableRowEditOrder" : false,
+    "noSort" : false,
+    "getPSDEGridEditItems" : [ {
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      },
+      "allowEmpty" : true,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "codeName" : "srfkey",
+      "caption" : "产品计划模板标识",
+      "name" : "srfkey"
+    } ],
+    "hasWFDataItems" : false,
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
+    "columnEnableLink" : 2,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
+    "enablePagingBar" : true,
+    "getPSDEGridColumns" : [ {
+      "dataItemName" : "ibz_plantempletname",
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETNAME",
+        "codeName" : "IbzPlanTempletName"
+      },
+      "excelCaption" : "模板名称",
+      "cLConvertMode" : "NONE",
+      "noPrivDisplayMode" : 1,
+      "enableSort" : true,
+      "width" : 150,
+      "codeName" : "ibz_plantempletname",
+      "caption" : "模板名称",
+      "columnType" : "DEFGRIDCOLUMN",
+      "align" : "LEFT",
+      "widthUnit" : "STAR",
+      "name" : "ibz_plantempletname"
+    }, {
+      "dataItemName" : "updatedate",
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "excelCaption" : "更新时间",
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+      "cLConvertMode" : "NONE",
+      "noPrivDisplayMode" : 1,
+      "enableSort" : true,
+      "width" : 150,
+      "codeName" : "updatedate",
+      "caption" : "更新时间",
+      "columnType" : "DEFGRIDCOLUMN",
+      "align" : "LEFT",
+      "widthUnit" : "PX",
+      "name" : "updatedate"
+    } ],
+    "codeName" : "Main",
+    "enableGroup" : false,
+    "hideHeader" : false,
+    "forceFit" : false,
+    "pagingSize" : 20,
+    "aggMode" : "NONE",
+    "groupMode" : "NONE",
+    "sortMode" : "REMOTE",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getPSDEDataExport" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet/PSAPPDEDATAEXPS/DataExport.json"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "getPSControlHandler" : {
+      "userDRAction" : "READ",
+      "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "dataAccessAction" : "UPDATE",
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "name" : "update"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "actionType" : "DEDATASET",
+        "name" : "fetch"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "dataAccessAction" : "READ",
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "name" : "load"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "name" : "loaddraft"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "name" : "create"
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet/PSGRIDS/Main.json",
+    "logicName" : "主表格",
+    "name" : "grid",
+    "modelid" : "2d7b0cbca66ad197036a53386c256530"
+  }, {
+    "searchButtonStyle" : "DEFAULT",
+    "enableFilterSave" : false,
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "controlType" : "SEARCHFORM",
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "noTabHeader" : true,
+    "getPSDEFormPages" : [ {
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "infoGroupMode" : false,
+      "codeName" : "formpage1",
+      "caption" : "常规条件",
+      "detailType" : "FORMPAGE",
+      "detailStyle" : "DEFAULT",
+      "name" : "formpage1"
+    } ],
+    "codeName" : "Default",
+    "tabHeaderPos" : "TOP",
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "actionType" : "FILTERACTION",
+        "name" : "search"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "actionType" : "FILTERACTION",
+        "name" : "load"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft"
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet/PSSEARCHFORMS/Default.json",
+    "logicName" : "默认搜索表单",
+    "name" : "searchform",
+    "modelid" : "7d591042db0c301f7261a1be699887ae"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+  },
+  "viewStyle" : "STYLE2",
+  "getPSAppViewRefs" : [ {
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "realTitle" : "产品计划模板编辑视图",
+    "realOpenMode" : "DRAWER_TOP",
+    "name" : "NEWDATA"
+  }, {
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "realTitle" : "产品计划模板编辑视图",
+    "realOpenMode" : "DRAWER_TOP",
+    "name" : "EDITDATA"
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction1"
+    },
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction1_click"
+  }, {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction4"
+    },
+    "eventArg" : "deuiaction4",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction4_click"
+  }, {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction2"
+    },
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction2_click"
+  }, {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction5"
+    },
+    "eventArg" : "deuiaction5",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction5_click"
+  }, {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction7"
+    },
+    "eventArg" : "deuiaction7",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction7_click"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppUILogic" : {
+      "enableBatchAdd" : false,
+      "batchAddOnly" : false,
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json"
+      },
+      "viewLogicType" : "APP_NEWDATA",
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json"
+      } ],
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据"
+    },
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppUILogic" : {
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json"
+      },
+      "viewLogicType" : "APP_OPENDATA",
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json"
+      } ],
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据"
+    },
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata"
+  } ],
+  "codeName" : "IbzPlanTempletGridView",
+  "viewType" : "DEGRIDVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletGridView.json",
+  "name" : "IbzPlanTempletGridView"
+}

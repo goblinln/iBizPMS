@@ -1,0 +1,34 @@
+{
+  "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__status.json",
+  "codeName" : "Story__status",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "codeName" : "Draft",
+    "text" : "草稿",
+    "color" : "rgba(185, 111, 241, 1)",
+    "value" : "draft"
+  }, {
+    "codeName" : "Active",
+    "text" : "激活",
+    "value" : "active"
+  }, {
+    "codeName" : "Closed",
+    "text" : "已关闭",
+    "color" : "rgba(203, 198, 198, 0.84)",
+    "value" : "closed"
+  }, {
+    "codeName" : "Changed",
+    "text" : "已变更",
+    "color" : "rgba(217, 68, 68, 1)",
+    "value" : "changed"
+  } ]
+}

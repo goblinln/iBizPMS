@@ -400,6 +400,9 @@ export class SearchBarControlBase extends MDControlBase {
      * @memberof SearchBarControlBase
      */
     public onOk() {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         let propip: any = this.$refs.propip;
         propip.handleMouseleave();
         this.onSave(this.saveItemName);
@@ -412,6 +415,9 @@ export class SearchBarControlBase extends MDControlBase {
      * @memberof SearchBarControlBase
      */
     public onCancel() {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         let propip: any = this.$refs.propip;
         propip.handleMouseleave();
         this.onSave();

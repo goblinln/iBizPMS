@@ -141,6 +141,7 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
         }
         return (
             <split
+                ref={`${this.controlInstance.appDataEntity?.codeName}-${this.controlInstance.codeName?.toLowerCase()}`}
                 id={this.controlInstance?.codeName?.toLowerCase()}
                 class={[`app-tree-exp-bar`, this.renderOptions?.controlClassNames]}
                 v-model={this.split}

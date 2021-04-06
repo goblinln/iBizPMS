@@ -1,0 +1,67 @@
+{
+  "enableBackend" : false,
+  "enableFront" : true,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "dstFieldName" : "MAILTO",
+      "srcFieldName" : "MAILTOPK",
+      "name" : "Default[MAILTOPK] ==> Default[MAILTO]"
+    } ],
+    "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "获取参数"
+  }, {
+    "parallelOutput" : true,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接7428"
+    } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接7428"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "logicHolder" : 2,
+  "codeName" : "GetCurUserConcat",
+  "logicName" : "获取联系人",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory/PSAPPDELOGICS/GetCurUserConcat.json",
+  "name" : "获取联系人"
+}

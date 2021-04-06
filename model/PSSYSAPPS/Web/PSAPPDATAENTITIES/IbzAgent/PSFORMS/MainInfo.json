@@ -1,0 +1,251 @@
+{
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "infoFormMode" : true,
+  "showFormNavBar" : false,
+  "enableAutoSave" : false,
+  "controlType" : "FORM",
+  "readOnly" : false,
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTNAME",
+      "codeName" : "IbzAgentName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "agentuser",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "AGENTUSER",
+      "codeName" : "Agentuser"
+    }
+  }, {
+    "id" : "agentbegin",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "AGENTBEGIN",
+      "codeName" : "Agentbegin"
+    }
+  }, {
+    "id" : "agentend",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "AGENTEND",
+      "codeName" : "Agentend"
+    }
+  }, {
+    "id" : "ibz_agentid",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    }
+  } ],
+  "noTabHeader" : true,
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "infoGroupMode" : true,
+      "actionGroupExtractMode" : "ITEM",
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "enableLinkView" : false,
+          "editable" : false,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+          },
+          "editorType" : "SPAN",
+          "name" : "agentuser"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "AGENTUSER",
+          "codeName" : "Agentuser"
+        },
+        "showCaption" : true,
+        "dataType" : 25,
+        "convertToCodeItemText" : true,
+        "caption" : "代理用户",
+        "allowEmpty" : true,
+        "labelWidth" : 100,
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "agentuser",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "agentuser"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "enableLinkView" : false,
+          "editable" : false,
+          "editorType" : "SPAN",
+          "name" : "agentbegin"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "AGENTBEGIN",
+          "codeName" : "Agentbegin"
+        },
+        "showCaption" : true,
+        "dataType" : 5,
+        "caption" : "代理开始日期",
+        "allowEmpty" : true,
+        "labelWidth" : 100,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "colLG" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "agentbegin",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "agentbegin"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "enableLinkView" : false,
+          "editable" : false,
+          "editorType" : "SPAN",
+          "name" : "agentend"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "AGENTEND",
+          "codeName" : "Agentend"
+        },
+        "showCaption" : true,
+        "dataType" : 5,
+        "caption" : "代理结束日期",
+        "allowEmpty" : true,
+        "labelWidth" : 100,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "colLG" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "agentend",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "agentend"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "showCaption" : false,
+      "codeName" : "group1",
+      "caption" : "代理基本信息",
+      "detailType" : "GROUPPANEL",
+      "detailStyle" : "DEFAULT",
+      "name" : "group1"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "infoGroupMode" : true,
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
+  "codeName" : "MainInfo",
+  "tabHeaderPos" : "TOP",
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent/PSFORMS/MainInfo.json",
+  "logicName" : "主信息表单",
+  "modelid" : "f1f412e400ea01026f5a7267f67193c8"
+}

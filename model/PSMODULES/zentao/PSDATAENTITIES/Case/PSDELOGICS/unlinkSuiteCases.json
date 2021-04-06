@@ -1,0 +1,114 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接3011"
+    } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  }, {
+    "parallelOutput" : true,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接6987"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "dstFieldName" : "case",
+      "srcFieldName" : "ID",
+      "name" : "Default[ID] ==> Default[case]"
+    }, {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "dstFieldName" : "ID",
+      "srcFieldName" : "suite",
+      "name" : "Default[suite] ==> Default[ID]"
+    } ],
+    "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "准备参数"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 3,
+    "codeName" : "Deaction1",
+    "logicNodeType" : "DEACTION",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json"
+    },
+    "name" : "移除用例"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接6987"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接3011"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "logicHolder" : 1,
+  "codeName" : "unlinkSuiteCases",
+  "logicName" : "unlinkSuiteCases",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/unlinkSuiteCases.json",
+  "name" : "unlinkSuiteCases"
+}

@@ -1,0 +1,26 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : true,
+  "tempDataMode" : 1,
+  "timeOut" : -1,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "orderValue" : 33,
+  "codeName" : "GetTempMajor",
+  "logicName" : "GetTempMajor",
+  "extendMode" : 0,
+  "enableTempData" : true,
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase/PSDEACTIONS/GetTempMajor.json",
+  "name" : "GetTempMajor"
+}

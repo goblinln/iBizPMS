@@ -1,0 +1,19 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "NONE",
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : true,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "orderValue" : 99999,
+  "codeName" : "Ztlogin",
+  "logicName" : "\bZT登录\b",
+  "extendMode" : 0,
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin/PSDEACTIONS/Ztlogin.json",
+  "name" : "ztlogin"
+}

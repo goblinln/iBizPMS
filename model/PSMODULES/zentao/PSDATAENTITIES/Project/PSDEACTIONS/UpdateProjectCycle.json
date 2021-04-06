@@ -1,0 +1,27 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "getCheckPSDEActionLogics" : [ {
+    "name" : "行为[UpdateProjectCycle]主状态拒绝逻辑",
+    "id" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/UpdateProjectCycle__MSDeny.json"
+  } ],
+  "timeOut" : -1,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "UPDATE"
+  },
+  "orderValue" : 99999,
+  "codeName" : "UpdateProjectCycle",
+  "logicName" : "更新项目周期及可用工作日",
+  "extendMode" : 0,
+  "actionMode" : "UPDATE",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UpdateProjectCycle.json",
+  "name" : "UpdateProjectCycle"
+}

@@ -1,0 +1,25 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : true,
+  "tempDataMode" : 1,
+  "timeOut" : -1,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "UPDATE"
+  },
+  "orderValue" : 13,
+  "codeName" : "UpdateTempMajor",
+  "logicName" : "UpdateTempMajor",
+  "extendMode" : 0,
+  "enableTempData" : true,
+  "actionMode" : "UPDATE",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDEACTIONS/UpdateTempMajor.json",
+  "name" : "UpdateTempMajor"
+}

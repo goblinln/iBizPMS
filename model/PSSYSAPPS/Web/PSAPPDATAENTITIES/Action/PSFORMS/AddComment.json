@@ -1,0 +1,375 @@
+{
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
+  "enableAutoSave" : false,
+  "controlType" : "FORM",
+  "readOnly" : false,
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 21,
+    "getPSAppDEField" : {
+      "name" : "COMMENT",
+      "codeName" : "Comment"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "objecttype",
+    "hidden" : true,
+    "dataType" : 25,
+    "createDVT" : "CONTEXT",
+    "createDV" : "objecttype",
+    "getPSAppDEField" : {
+      "name" : "OBJECTTYPE",
+      "codeName" : "ObjectType"
+    }
+  }, {
+    "id" : "objectid",
+    "hidden" : true,
+    "dataType" : 1,
+    "createDVT" : "CONTEXT",
+    "createDV" : "objectid",
+    "getPSAppDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    }
+  }, {
+    "id" : "comment",
+    "dataType" : 21,
+    "getPSAppDEField" : {
+      "name" : "COMMENT",
+      "codeName" : "Comment"
+    }
+  }, {
+    "id" : "files",
+    "dataType" : 21,
+    "getPSAppDEField" : {
+      "name" : "FILES",
+      "codeName" : "Files"
+    }
+  }, {
+    "id" : "noticeusers",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "NOTICEUSERS",
+      "codeName" : "Noticeusers"
+    }
+  }, {
+    "id" : "extra",
+    "hidden" : true,
+    "dataType" : 21,
+    "createDVT" : "CONTEXT",
+    "createDV" : "version",
+    "getPSAppDEField" : {
+      "name" : "EXTRA",
+      "codeName" : "Extra"
+    }
+  }, {
+    "id" : "id",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "noTabHeader" : true,
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "infoGroupMode" : false,
+      "actionGroupExtractMode" : "ITEM",
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "objecttype"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "OBJECTTYPE",
+          "codeName" : "ObjectType"
+        },
+        "showCaption" : true,
+        "dataType" : 25,
+        "caption" : "对象类型",
+        "allowEmpty" : true,
+        "createDV" : "objecttype",
+        "createDVT" : "CONTEXT",
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "objecttype",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "objecttype"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "objectid"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "OBJECTID",
+          "codeName" : "ObjectID"
+        },
+        "showCaption" : true,
+        "dataType" : 1,
+        "caption" : "对象ID",
+        "allowEmpty" : true,
+        "createDV" : "objectid",
+        "createDVT" : "CONTEXT",
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "objectid",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "objectid"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "editorType" : "HTMLEDITOR",
+          "editorParams" : {
+            "uploadparams" : "{objecttype:\"%objecttype%\",objectid: \"%objectid%\",version:\"editor\"}",
+            "exportparams" : "{objecttype:\"%objecttype%\",objectid: \"%objectid%\",version:\"editor\"}"
+          },
+          "name" : "comment"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "COMMENT",
+          "codeName" : "Comment"
+        },
+        "showCaption" : false,
+        "dataType" : 21,
+        "caption" : "备注",
+        "allowEmpty" : true,
+        "labelWidth" : 0,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "NONE",
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "comment",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "comment"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "maxFileCount" : -1,
+          "minFileCount" : 0,
+          "maxFileSize" : -1,
+          "editorType" : "FILEUPLOADER",
+          "editorParams" : {
+            "uploadparams" : "{objecttype:\"%objecttype%\",objectid: \"0\"}",
+            "FILEEXTS" : "",
+            "exportparams" : "{objecttype:\"%objecttype%\",objectid: \"0\"}",
+            "MAXFILESIZE" : "",
+            "MINFILECNT" : "",
+            "MAXFILECNT" : ""
+          },
+          "name" : "files"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "FILES",
+          "codeName" : "Files"
+        },
+        "showCaption" : false,
+        "dataType" : 21,
+        "caption" : "文件",
+        "allowEmpty" : true,
+        "labelWidth" : 0,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "NONE",
+        "hidden" : false,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "files",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "files"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "noticeusers"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "NOTICEUSERS",
+          "codeName" : "Noticeusers"
+        },
+        "showCaption" : true,
+        "dataType" : 25,
+        "caption" : "消息通知用户",
+        "allowEmpty" : true,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "noticeusers",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "noticeusers"
+      }, {
+        "inputTipClosable" : false,
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "extra"
+        },
+        "emptyCaption" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "EXTRA",
+          "codeName" : "Extra"
+        },
+        "showCaption" : true,
+        "dataType" : 21,
+        "caption" : "附加值",
+        "allowEmpty" : true,
+        "createDV" : "version",
+        "createDVT" : "CONTEXT",
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "hidden" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "extra",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "extra"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "showCaption" : false,
+      "getPSSysCss" : {
+        "cssName" : "form-padding"
+      },
+      "codeName" : "grouppanel2",
+      "caption" : "分组面板",
+      "detailType" : "GROUPPANEL",
+      "detailStyle" : "DEFAULT",
+      "name" : "grouppanel2"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "infoGroupMode" : false,
+    "getPSSysCss" : {
+      "cssName" : "form-padding"
+    },
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
+  "codeName" : "AddComment",
+  "tabHeaderPos" : "TOP",
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action/PSFORMS/AddComment.json",
+  "logicName" : "添加备注",
+  "modelid" : "248c5f0a09754acb52fc8431f956de0d"
+}

@@ -1,0 +1,23 @@
+{
+  "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Company__guest.json",
+  "codeName" : "Company__guest",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "codeName" : "Item_1",
+    "text" : "允许",
+    "value" : "1"
+  }, {
+    "codeName" : "Item_0",
+    "text" : "不允许",
+    "value" : "0"
+  } ]
+}

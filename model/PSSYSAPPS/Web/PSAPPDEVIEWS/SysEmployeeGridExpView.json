@@ -1,0 +1,458 @@
+{
+  "showDataInfoBar" : true,
+  "sideBarLayout" : "LEFT",
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "GridExpView",
+  "caption" : "人员",
+  "title" : "人员表格导航视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEGRIDEXPVIEW_STYLE2",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+    },
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "GridExpView",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "paramType" : "CTRL",
+      "name" : "GRIDEXPBAR"
+    } ],
+    "name" : "engine"
+  } ],
+  "getPSControls" : [ {
+    "controlType" : "GRIDEXPBAR",
+    "getXDataPSControl" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee/PSGRIDS/ExpMain.json",
+      "name" : "gridexpbar_grid",
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "gridexpbar_grid"
+      },
+      "getPSControlHandler" : {
+        "userDRAction" : "READ",
+        "getPSHandlerActions" : [ {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "dataAccessAction" : "UPDATE",
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "name" : "update"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "FetchContActList"
+          },
+          "actionType" : "DEDATASET",
+          "name" : "fetch"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "dataAccessAction" : "DELETE",
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "name" : "remove"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
+          },
+          "dataAccessAction" : "READ",
+          "actionName" : "Get",
+          "actionType" : "DEACTION",
+          "name" : "load"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "GetDraft"
+          },
+          "dataAccessAction" : "CREATE",
+          "actionName" : "GetDraft",
+          "actionType" : "DEACTION",
+          "name" : "loaddraft"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
+          },
+          "dataAccessAction" : "CREATE",
+          "actionName" : "Create",
+          "actionType" : "DEACTION",
+          "name" : "create"
+        } ],
+        "enableDEFieldPrivilege" : false,
+        "id" : "数据表格处理器"
+      },
+      "controlType" : "GRID"
+    },
+    "enableSearch" : false,
+    "enableCounter" : true,
+    "showTitleBar" : false,
+    "getPSControls" : [ {
+      "getPSDEGridDataItems" : [ {
+        "getPSAppDEField" : {
+          "name" : "ORGID",
+          "codeName" : "OrgId"
+        },
+        "dataType" : 25,
+        "name" : "orgid"
+      }, {
+        "getPSAppDEField" : {
+          "name" : "NICKNAME",
+          "codeName" : "NickName"
+        },
+        "dataType" : 25,
+        "name" : "nickname"
+      }, {
+        "getPSAppDEField" : {
+          "name" : "MDEPTID",
+          "codeName" : "MdeptId"
+        },
+        "dataType" : 25,
+        "name" : "mdeptid"
+      }, {
+        "getPSAppDEField" : {
+          "name" : "USERID",
+          "codeName" : "UserId"
+        },
+        "dataType" : 25,
+        "name" : "userid"
+      }, {
+        "getPSAppDEField" : {
+          "name" : "PERSONNAME",
+          "codeName" : "PersonName"
+        },
+        "dataType" : 25,
+        "name" : "personname"
+      }, {
+        "getPSAppDEField" : {
+          "name" : "PERSONNAME",
+          "codeName" : "PersonName"
+        },
+        "dataType" : 25,
+        "name" : "srfmajortext"
+      }, {
+        "dataAccessAction" : true,
+        "getPSAppDEField" : {
+          "name" : "USERID",
+          "codeName" : "UserId"
+        },
+        "dataType" : 25,
+        "name" : "srfdataaccaction"
+      }, {
+        "getPSAppDEField" : {
+          "name" : "USERID",
+          "codeName" : "UserId"
+        },
+        "dataType" : 25,
+        "name" : "srfkey"
+      } ],
+      "singleSelect" : false,
+      "enableColFilter" : false,
+      "enableRowNew" : false,
+      "enableRowEditOrder" : false,
+      "noSort" : false,
+      "getPSDEGridEditItems" : [ {
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "srfkey"
+        },
+        "getPSAppDEField" : {
+          "name" : "USERID",
+          "codeName" : "UserId"
+        },
+        "allowEmpty" : true,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "codeName" : "srfkey",
+        "caption" : "用户标识",
+        "name" : "srfkey"
+      } ],
+      "hasWFDataItems" : false,
+      "getRemovePSControlAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      },
+      "columnEnableLink" : 2,
+      "enableRowEdit" : false,
+      "controlType" : "GRID",
+      "enablePagingBar" : false,
+      "getPSDEGridColumns" : [ {
+        "dataItemName" : "userid",
+        "getPSAppDEField" : {
+          "name" : "USERID",
+          "codeName" : "UserId"
+        },
+        "excelCaption" : "用户标识",
+        "cLConvertMode" : "NONE",
+        "noPrivDisplayMode" : 1,
+        "enableSort" : true,
+        "width" : 100,
+        "codeName" : "userid",
+        "caption" : "用户标识",
+        "columnType" : "DEFGRIDCOLUMN",
+        "align" : "LEFT",
+        "widthUnit" : "PX",
+        "name" : "userid"
+      }, {
+        "dataItemName" : "personname",
+        "getPSAppDEField" : {
+          "name" : "PERSONNAME",
+          "codeName" : "PersonName"
+        },
+        "excelCaption" : "姓名",
+        "cLConvertMode" : "NONE",
+        "noPrivDisplayMode" : 1,
+        "enableSort" : true,
+        "width" : 100,
+        "codeName" : "personname",
+        "caption" : "姓名",
+        "columnType" : "DEFGRIDCOLUMN",
+        "align" : "LEFT",
+        "widthUnit" : "STAR",
+        "name" : "personname"
+      }, {
+        "dataItemName" : "nickname",
+        "getPSAppDEField" : {
+          "name" : "NICKNAME",
+          "codeName" : "NickName"
+        },
+        "excelCaption" : "昵称别名",
+        "cLConvertMode" : "NONE",
+        "noPrivDisplayMode" : 1,
+        "enableSort" : true,
+        "width" : 100,
+        "codeName" : "nickname",
+        "caption" : "昵称别名",
+        "columnType" : "DEFGRIDCOLUMN",
+        "align" : "LEFT",
+        "widthUnit" : "PX",
+        "name" : "nickname"
+      } ],
+      "codeName" : "ExpMain",
+      "enableGroup" : false,
+      "hideHeader" : false,
+      "forceFit" : false,
+      "pagingSize" : 500,
+      "aggMode" : "NONE",
+      "groupMode" : "NONE",
+      "sortMode" : "REMOTE",
+      "getNavPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
+        "viewType" : "DEEDITVIEW"
+      },
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "gridexpbar_grid"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+      "getPSControlHandler" : {
+        "userDRAction" : "READ",
+        "getPSHandlerActions" : [ {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "dataAccessAction" : "UPDATE",
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "name" : "update"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "FetchContActList"
+          },
+          "actionType" : "DEDATASET",
+          "name" : "fetch"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "dataAccessAction" : "DELETE",
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "name" : "remove"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
+          },
+          "dataAccessAction" : "READ",
+          "actionName" : "Get",
+          "actionType" : "DEACTION",
+          "name" : "load"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "GetDraft"
+          },
+          "dataAccessAction" : "CREATE",
+          "actionName" : "GetDraft",
+          "actionType" : "DEACTION",
+          "name" : "loaddraft"
+        }, {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
+          },
+          "dataAccessAction" : "CREATE",
+          "actionName" : "Create",
+          "actionType" : "DEACTION",
+          "name" : "create"
+        } ],
+        "enableDEFieldPrivilege" : false,
+        "id" : "数据表格处理器"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+      },
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee/PSGRIDS/ExpMain.json",
+      "logicName" : "主表格（通讯录用户联系人）",
+      "name" : "gridexpbar_grid",
+      "modelid" : "766cfb095df7862d22d3f8c9511ec6a6"
+    } ],
+    "getPSAppViewRefs" : [ {
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
+        "viewType" : "DEEDITVIEW"
+      },
+      "realTitle" : "人员编辑视图",
+      "name" : "EXPITEM:DEFAULT"
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "width" : 300.0,
+      "id" : "GRIDEXPBAR"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "gridexpbar"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+    },
+    "width" : 300.0,
+    "codeName" : "GridExpViewgridexpbar",
+    "name" : "gridexpbar",
+    "modelid" : "8d065762f9a42000dcacecc196aabb7b_gridexpbar"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+  },
+  "viewStyle" : "STYLE2",
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppUILogic" : {
+      "enableBatchAdd" : false,
+      "batchAddOnly" : false,
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
+      "viewLogicType" : "APP_NEWDATA",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据"
+    },
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppUILogic" : {
+      "viewLogicType" : "APP_OPENDATA",
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据"
+    },
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata"
+  } ],
+  "codeName" : "SysEmployeeGridExpView",
+  "viewType" : "DEGRIDEXPVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeGridExpView.json",
+  "name" : "SysEmployeeGridExpView"
+}

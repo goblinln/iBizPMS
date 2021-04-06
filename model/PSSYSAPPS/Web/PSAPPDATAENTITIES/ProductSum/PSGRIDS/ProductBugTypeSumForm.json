@@ -1,0 +1,367 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "INSTALL",
+      "codeName" : "Install"
+    },
+    "dataType" : 9,
+    "name" : "install"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DESIGNDEFECT",
+      "codeName" : "Designdefect"
+    },
+    "dataType" : 9,
+    "name" : "designdefect"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "OTHERS",
+      "codeName" : "Others"
+    },
+    "dataType" : 9,
+    "name" : "others"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STANDARD",
+      "codeName" : "Standard"
+    },
+    "dataType" : 9,
+    "name" : "standard"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "AUTOMATION",
+      "codeName" : "Automation"
+    },
+    "dataType" : 9,
+    "name" : "automation"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "SECURITY",
+      "codeName" : "Security"
+    },
+    "dataType" : 9,
+    "name" : "security"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CODEERROR",
+      "codeName" : "Codeerror"
+    },
+    "dataType" : 9,
+    "name" : "codeerror"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "id"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BUGSUM",
+      "codeName" : "Bugsum"
+    },
+    "dataType" : 9,
+    "name" : "bugsum"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PERFORMANCE",
+      "codeName" : "Performance"
+    },
+    "dataType" : 9,
+    "name" : "performance"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CONFIG",
+      "codeName" : "Config"
+    },
+    "dataType" : 9,
+    "name" : "config"
+  } ],
+  "singleSelect" : true,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : true,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "主键标识",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridColumns" : [ {
+    "dataItemName" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "excelCaption" : "产品名称",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "name",
+    "caption" : "产品名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "name"
+  }, {
+    "dataItemName" : "codeerror",
+    "getPSAppDEField" : {
+      "name" : "CODEERROR",
+      "codeName" : "Codeerror"
+    },
+    "excelCaption" : "代码错误",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "codeerror",
+    "caption" : "代码错误",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "codeerror"
+  }, {
+    "dataItemName" : "config",
+    "getPSAppDEField" : {
+      "name" : "CONFIG",
+      "codeName" : "Config"
+    },
+    "excelCaption" : "配置相关",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "config",
+    "caption" : "配置相关",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "config"
+  }, {
+    "dataItemName" : "install",
+    "getPSAppDEField" : {
+      "name" : "INSTALL",
+      "codeName" : "Install"
+    },
+    "excelCaption" : "安装部署",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "install",
+    "caption" : "安装部署",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "install"
+  }, {
+    "dataItemName" : "security",
+    "getPSAppDEField" : {
+      "name" : "SECURITY",
+      "codeName" : "Security"
+    },
+    "excelCaption" : "安全相关",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "security",
+    "caption" : "安全相关",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "security"
+  }, {
+    "dataItemName" : "performance",
+    "getPSAppDEField" : {
+      "name" : "PERFORMANCE",
+      "codeName" : "Performance"
+    },
+    "excelCaption" : "性能问题",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "performance",
+    "caption" : "性能问题",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "performance"
+  }, {
+    "dataItemName" : "standard",
+    "getPSAppDEField" : {
+      "name" : "STANDARD",
+      "codeName" : "Standard"
+    },
+    "excelCaption" : "标准规范",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "standard",
+    "caption" : "标准规范",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "standard"
+  }, {
+    "dataItemName" : "automation",
+    "getPSAppDEField" : {
+      "name" : "AUTOMATION",
+      "codeName" : "Automation"
+    },
+    "excelCaption" : "测试脚本",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "automation",
+    "caption" : "测试脚本",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "automation"
+  }, {
+    "dataItemName" : "designdefect",
+    "getPSAppDEField" : {
+      "name" : "DESIGNDEFECT",
+      "codeName" : "Designdefect"
+    },
+    "excelCaption" : "设计缺陷",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "designdefect",
+    "caption" : "设计缺陷",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "designdefect"
+  }, {
+    "dataItemName" : "others",
+    "getPSAppDEField" : {
+      "name" : "OTHERS",
+      "codeName" : "Others"
+    },
+    "excelCaption" : "其他",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "others",
+    "caption" : "其他",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "others"
+  }, {
+    "dataItemName" : "bugsum",
+    "getPSAppDEField" : {
+      "name" : "BUGSUM",
+      "codeName" : "Bugsum"
+    },
+    "excelCaption" : "bug总计",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "bugsum",
+    "caption" : "bug总计",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "aggMode" : "SUM",
+    "name" : "bugsum"
+  } ],
+  "codeName" : "ProductBugTypeSumForm",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 1000,
+  "aggMode" : "PAGE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSGRIDS/ProductBugTypeSumForm.json",
+  "logicName" : "产品Bug类型统计表格",
+  "modelid" : "a2e6af3651bb0375e1ff0b79ac5fddc9"
+}

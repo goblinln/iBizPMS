@@ -114,6 +114,9 @@ export class GridViewBase extends MDViewBase {
      * @memberof GridViewBase
      */
     public onSearch($event: any): void {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         const refs: any = this.$refs;
         if (refs[this.gridInstance?.name] && refs[this.gridInstance.name].ctrl) {
             refs[this.gridInstance?.name].ctrl.load(this.context, true);

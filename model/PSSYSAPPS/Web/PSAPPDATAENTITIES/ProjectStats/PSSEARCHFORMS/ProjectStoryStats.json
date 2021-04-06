@@ -1,0 +1,82 @@
+{
+  "searchButtonStyle" : "DEFAULT",
+  "enableFilterSave" : false,
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "controlType" : "SEARCHFORM",
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "n_status_eq",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    }
+  } ],
+  "noTabHeader" : true,
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "inputTipClosable" : false,
+      "getPSEditor" : {
+        "singleSelect" : true,
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
+        },
+        "editorType" : "DROPDOWNLIST",
+        "name" : "n_status_eq"
+      },
+      "emptyCaption" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "showCaption" : true,
+      "dataType" : 25,
+      "needCodeListConfig" : true,
+      "caption" : "项目状态",
+      "allowEmpty" : true,
+      "labelWidth" : 80,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "hidden" : false,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "colLG" : 8,
+        "width" : 320,
+        "layout" : "TABLE_24COL"
+      },
+      "contentWidth" : 320.0,
+      "width" : 320.0,
+      "codeName" : "n_status_eq",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "n_status_eq"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "infoGroupMode" : false,
+    "codeName" : "formpage1",
+    "caption" : "表单分页",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
+  "codeName" : "ProjectStoryStats",
+  "tabHeaderPos" : "TOP",
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSSEARCHFORMS/ProjectStoryStats.json",
+  "logicName" : "项目需求统计多用",
+  "modelid" : "a68ca214bdd67b0f293221ea411522ef"
+}

@@ -1,0 +1,25 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : true,
+  "tempDataMode" : 2,
+  "timeOut" : -1,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "orderValue" : 43,
+  "codeName" : "GetDraftTemp",
+  "logicName" : "GetDraftTemp",
+  "extendMode" : 0,
+  "enableTempData" : true,
+  "actionMode" : "GETDRAFT",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "NONE",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTemp.json",
+  "name" : "GetDraftTemp"
+}

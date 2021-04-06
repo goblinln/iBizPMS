@@ -1,0 +1,39 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : true,
+  "customParam" : false,
+  "builtinAction" : true,
+  "getBeforePSDEActionLogics" : [ {
+    "internalLogic" : true,
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDELOGICS/Comment.json"
+    },
+    "ignoreException" : false,
+    "cloneParam" : false,
+    "attachMode" : "BEFORE",
+    "name" : "附加逻辑"
+  } ],
+  "timeOut" : -1,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCreate"
+  },
+  "orderValue" : 1,
+  "codeName" : "Create",
+  "logicName" : "Create",
+  "extendMode" : 0,
+  "actionMode" : "CREATE",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Create.json",
+  "userCat" : "CAT1",
+  "name" : "Create"
+}

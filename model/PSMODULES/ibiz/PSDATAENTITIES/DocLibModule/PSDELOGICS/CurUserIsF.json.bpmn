@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:g="http://www.jboss.org/drools/flow/gpd" xmlns:tns="http://www.jboss.org/drools" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.mvel.org/2.0" id="Definition" name="" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+        <process id="cn.ibizlab.pms.core.ibiz.service.logic.doclibmodulecuruserisf" isClosed="false" isExecutable="true" name="ibiz_doclibmodule_curuserisf_ruleFlow" processType="Private" tns:packageName="cn.ibizlab.pms.core.ibiz.service.logic.doclibmodulecuruserisf">
+            <extensionElements>
+                <tns:import name="java.util.Map" />
+                <tns:import name="org.springframework.util.StringUtils"/>
+                <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
+                                <tns:metaData express="" name="doclibmodulecuruserisfdefault" type="entity"/>
+                    <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.ibiz.service.IDocLibModuleService))" name="iBzSysDoclibmoduleDefaultService" type="service"/>
+                    <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
+                            <tns:global identifier="doclibmodulecuruserisfdefault" type="cn.ibizlab.pms.core.ibiz.domain.DocLibModule" />
+            </extensionElements>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="doclibmodulecuruserisfrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="设置查询类型"/>
+                        <endEvent id="rawsqlcall2_end" name="end"/>
+                        <sequenceFlow id="rawsqlcall2_end_line" sourceRef="rawsqlcall2" targetRef="rawsqlcall2_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="doclibmodulecuruserisfrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="查询是否收藏"/>
+                        <startEvent id="begin" isInterrupting="true"/>
+                    <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+                    </sequenceFlow>
+                    <sequenceFlow id="rawsqlcall1_rawsqlcall2" sourceRef="rawsqlcall1" targetRef="rawsqlcall2">
+                    </sequenceFlow>
+        </process>
+    </definitions>

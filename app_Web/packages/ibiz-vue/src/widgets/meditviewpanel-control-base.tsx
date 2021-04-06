@@ -225,6 +225,9 @@ export class MEditViewPanelControlBase extends MDControlBase {
      * @memberof MEditViewPanelControlBase
      */
     public handleAdd(){
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         if(!this.loaddraftAction){
             this.$Notice.error({ title: '错误', desc: '多表单编辑视图loaddraftAction行为不存在' });
             return;

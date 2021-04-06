@@ -1,0 +1,320 @@
+{
+  "treeGridMode" : 0,
+  "getPSDETreeNodeRSs" : [ {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "BugOpenendBy"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - Bug创建表"
+  }, {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "BugassignedTo"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - Bug指派表"
+  }, {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "BugResolvedBy"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - Bug完成表"
+  }, {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ProductBugStatusSum"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - 产品Bug状态汇总表"
+  }, {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ProductBugResolutionStats"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - 产品Bug解决方案汇总表"
+  }, {
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "TestCaseStats"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3,
+    "name" : "默认根节点 - 用例统计表"
+  } ],
+  "enableRootSelect" : false,
+  "outputIconDefault" : false,
+  "enableSearchDefault" : false,
+  "controlType" : "TREEVIEW",
+  "getPSDETreeNodes" : [ {
+    "text" : "用例统计表",
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseStatsTestCaseStatsGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "nodeType" : "TestCaseStats",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "用例统计表",
+    "id" : "TestCaseStats"
+  }, {
+    "text" : "Bug创建表",
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "nodeType" : "BugOpenendBy",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "Bug创建表",
+    "id" : "BugOpenendBy"
+  }, {
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "enableQuickCreate" : false,
+    "rootNode" : true,
+    "hasPSDETreeNodeRSs" : true,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "nodeType" : "ROOT",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "默认根节点",
+    "id" : "ROOT"
+  }, {
+    "text" : "产品Bug解决方案汇总表",
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsProductBugResolutionGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "nodeType" : "ProductBugResolutionStats",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "产品Bug解决方案汇总表",
+    "id" : "ProductBugResolutionStats"
+  }, {
+    "text" : "Bug完成表",
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsBugResolvedByGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "nodeType" : "BugResolvedBy",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "Bug完成表",
+    "id" : "BugResolvedBy"
+  }, {
+    "text" : "产品Bug状态汇总表",
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsProductBugStatusGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "nodeType" : "ProductBugStatusSum",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "产品Bug状态汇总表",
+    "id" : "ProductBugStatusSum"
+  }, {
+    "text" : "Bug指派表",
+    "enableQuickCreate" : false,
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsAssigntoGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "rootNode" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "nodeType" : "BugassignedTo",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "Bug指派表",
+    "id" : "BugassignedTo"
+  } ],
+  "codeName" : "Test",
+  "rootVisible" : false,
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSTREEVIEWS/Test.json",
+  "logicName" : "测试统计",
+  "modelid" : "98560ac1e63e418a2eb6824ddbabd69d"
+}

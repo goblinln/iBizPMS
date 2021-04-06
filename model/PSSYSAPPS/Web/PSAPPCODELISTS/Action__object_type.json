@@ -1,0 +1,122 @@
+{
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Product",
+    "text" : "产品",
+    "value" : "product"
+  }, {
+    "codeName" : "Story",
+    "text" : "需求",
+    "value" : "story"
+  }, {
+    "codeName" : "Productplan",
+    "text" : "计划",
+    "value" : "productplan"
+  }, {
+    "codeName" : "Release",
+    "text" : "发布",
+    "value" : "release"
+  }, {
+    "codeName" : "Project",
+    "text" : "项目",
+    "value" : "project"
+  }, {
+    "codeName" : "Task",
+    "text" : "任务",
+    "value" : "task"
+  }, {
+    "codeName" : "Build",
+    "text" : "版本",
+    "value" : "build"
+  }, {
+    "codeName" : "Bug",
+    "text" : "Bug",
+    "value" : "bug"
+  }, {
+    "codeName" : "Case",
+    "text" : "用例",
+    "value" : "case"
+  }, {
+    "codeName" : "Caseresult",
+    "text" : "用例结果",
+    "value" : "caseresult"
+  }, {
+    "codeName" : "Stepresult",
+    "text" : "用例步骤",
+    "value" : "stepresult"
+  }, {
+    "codeName" : "Testtask",
+    "text" : "测试单",
+    "value" : "testtask"
+  }, {
+    "codeName" : "User",
+    "text" : "用户",
+    "value" : "user"
+  }, {
+    "codeName" : "Doc",
+    "text" : "文档",
+    "value" : "doc"
+  }, {
+    "codeName" : "Doclib",
+    "text" : "文档库",
+    "value" : "doclib"
+  }, {
+    "codeName" : "Todo",
+    "text" : "待办",
+    "value" : "todo"
+  }, {
+    "codeName" : "Branch",
+    "text" : "分支",
+    "value" : "branch"
+  }, {
+    "codeName" : "Module",
+    "text" : "模块",
+    "value" : "module"
+  }, {
+    "codeName" : "Testsuite",
+    "text" : "套件",
+    "value" : "testsuite"
+  }, {
+    "codeName" : "Caselib",
+    "text" : "用例库",
+    "value" : "caselib"
+  }, {
+    "codeName" : "Testreport",
+    "text" : "报告",
+    "value" : "testreport"
+  }, {
+    "codeName" : "Entry",
+    "text" : "应用",
+    "value" : "entry"
+  }, {
+    "codeName" : "Webhook",
+    "text" : "Webhook",
+    "value" : "webhook"
+  }, {
+    "codeName" : "Daily",
+    "text" : "日报",
+    "value" : "daily"
+  }, {
+    "codeName" : "Weekly",
+    "text" : "周报",
+    "value" : "weekly"
+  }, {
+    "codeName" : "Monthly",
+    "text" : "月报",
+    "value" : "monthly"
+  }, {
+    "codeName" : "Reportly",
+    "text" : "汇报",
+    "value" : "reportly"
+  } ],
+  "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
+  "codeName" : "Action__object_type",
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Action__object_type.json",
+  "name" : "系统日志对象类型"
+}

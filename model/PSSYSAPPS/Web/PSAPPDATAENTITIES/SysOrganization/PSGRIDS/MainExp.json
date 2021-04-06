@@ -1,0 +1,160 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    },
+    "dataType" : 25,
+    "name" : "orgid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ORGNAME",
+      "codeName" : "OrgName"
+    },
+    "dataType" : 25,
+    "name" : "orgname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PORGID",
+      "codeName" : "ParentOrgId"
+    },
+    "dataType" : 25,
+    "name" : "porgid"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ORGLEVEL",
+      "codeName" : "OrgLevel"
+    },
+    "dataType" : 9,
+    "name" : "orglevel"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "SHORTNAME",
+      "codeName" : "ShortName"
+    },
+    "dataType" : 25,
+    "name" : "shortname"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ORGNAME",
+      "codeName" : "OrgName"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    },
+    "dataType" : 25,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    },
+    "dataType" : 25,
+    "name" : "srfkey"
+  } ],
+  "singleSelect" : false,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 1,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "单位标识",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getPSDEGridColumns" : [ {
+    "dataItemName" : "orgname",
+    "getPSAppDEField" : {
+      "name" : "ORGNAME",
+      "codeName" : "OrgName"
+    },
+    "excelCaption" : "名称",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "orgname",
+    "caption" : "名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "orgname"
+  }, {
+    "dataItemName" : "shortname",
+    "getPSAppDEField" : {
+      "name" : "SHORTNAME",
+      "codeName" : "ShortName"
+    },
+    "excelCaption" : "单位简称",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "shortname",
+    "caption" : "单位简称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "shortname"
+  } ],
+  "codeName" : "MainExp",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 500,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getNavPSAppView" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysDepartmentGridExpView.json",
+    "viewType" : "DEGRIDEXPVIEW"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization/PSGRIDS/MainExp.json",
+  "logicName" : "主表格_通讯录",
+  "modelid" : "b33c6dc29d479ed07cfdc9d5d85d9bfa"
+}

@@ -32,6 +32,9 @@ export class ListExpBarControlBase extends ExpBarControlBase {
     * @memberof ListExpBarControlBase
     */
     public onSearch($event: any) {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         const list: any = (this.$refs[`${this.$xDataControl.name.toLowerCase()}`] as any).ctrl;
         if(list) {
             this.viewState.next({ tag: this.$xDataControl.name, action: "load", data: {query : this.searchText}});

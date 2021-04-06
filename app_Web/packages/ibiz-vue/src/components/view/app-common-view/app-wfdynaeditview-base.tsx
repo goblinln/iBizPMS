@@ -81,6 +81,7 @@ export class AppWFDynaEditViewBase extends WFDynaEditViewBase {
         return h(targetViewLayoutComponent, {
             props: { viewInstance: this.viewInstance, viewparams: this.viewparams, context: this.context }
         }, [
+            this.renderCaptionInfo(),
             this.renderToolBar(),
             this.renderMainContent()
         ]);

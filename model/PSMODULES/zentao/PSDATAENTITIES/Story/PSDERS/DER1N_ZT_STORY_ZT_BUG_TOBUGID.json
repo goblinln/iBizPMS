@@ -1,0 +1,23 @@
+{
+  "getPSPickupDEField" : {
+    "name" : "TOBUG",
+    "codeName" : "ToBug"
+  },
+  "masterOrder" : -1,
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ZTToBug",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_BUG_TOBUGID.json",
+  "name" : "DER1N_ZT_STORY_ZT_BUG_TOBUGID"
+}

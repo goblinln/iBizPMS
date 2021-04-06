@@ -356,6 +356,9 @@ export class MPickUpViewBase extends MainViewBase {
      * @memberof MPickUpViewBase
      */
     public onCLickAllLeft():void {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         this.viewSelections = [];
         this.containerModel.view_leftbtn.disabled = true;
         this.engine.onCtrlEvent('pickupviewpanel', 'selectionchange', []);
@@ -368,6 +371,9 @@ export class MPickUpViewBase extends MainViewBase {
      * @memberof MPickUpViewBase
      */
     public onCLickAllRight():void {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
         Object.values(this.containerModel).forEach((model: any) => {
             if (!Object.is(model.type, 'PICKUPVIEWPANEL')) {
                 return;

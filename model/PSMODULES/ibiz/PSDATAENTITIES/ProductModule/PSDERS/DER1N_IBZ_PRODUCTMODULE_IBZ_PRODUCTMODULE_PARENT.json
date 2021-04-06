@@ -1,0 +1,27 @@
+{
+  "getPSPickupDEField" : {
+    "name" : "PARENT",
+    "codeName" : "Parent"
+  },
+  "masterOrder" : -1,
+  "getPSPickupTextDEField" : {
+    "name" : "PARENTNAME",
+    "codeName" : "ParentName"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ParentModule",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
+  "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT"
+}

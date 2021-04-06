@@ -1,0 +1,641 @@
+{
+  "rowEditDefault" : false,
+  "enableImport" : true,
+  "enableRowEdit" : false,
+  "enableExport" : true,
+  "gridRowActiveMode" : 2,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "xDataControlName" : "grid",
+  "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "MainGridView",
+  "caption" : "群组",
+  "title" : "群组表格视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEGRIDVIEW_STYLE2",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+    },
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "GridView",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
+    }, {
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
+    }, {
+      "paramType" : "CTRL",
+      "name" : "GRID"
+    } ],
+    "name" : "engine"
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "New"
+    },
+    "name" : "toolbar_deuiaction1"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Refresh"
+    },
+    "name" : "toolbar_deuiaction2"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "ExportExcel"
+    },
+    "name" : "toolbar_deuiaction4"
+  } ],
+  "getPSControls" : [ {
+    "controlType" : "TOOLBAR",
+    "getPSDEToolbarItems" : [ {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "timeout" : 60000,
+        "codeName" : "New",
+        "caption" : "新建",
+        "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
+        "uIActionTag" : "New",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "New",
+        "name" : "表格界面_新建操作"
+      },
+      "noPrivDisplayMode" : 2,
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "tooltip" : "新建",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "showCaption" : false,
+      "itemType" : "DEUIACTION",
+      "caption" : "新建",
+      "name" : "deuiaction1"
+    }, {
+      "spanMode" : false,
+      "itemType" : "SEPERATOR",
+      "name" : "seperator1"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "timeout" : 60000,
+        "codeName" : "Refresh",
+        "caption" : "刷新",
+        "uIActionTag" : "Refresh",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "Refresh",
+        "name" : "表格界面_刷新操作"
+      },
+      "noPrivDisplayMode" : 2,
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "tooltip" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "showCaption" : false,
+      "itemType" : "DEUIACTION",
+      "caption" : "刷新",
+      "name" : "deuiaction2"
+    }, {
+      "spanMode" : false,
+      "itemType" : "SEPERATOR",
+      "name" : "seperator3"
+    }, {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "timeout" : 60000,
+        "codeName" : "ExportExcel",
+        "caption" : "导出",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）"
+      },
+      "noPrivDisplayMode" : 2,
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "tooltip" : "导出",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "showCaption" : true,
+      "itemType" : "DEUIACTION",
+      "caption" : "导出",
+      "name" : "deuiaction4"
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "hookEventNames" : [ "CLICK" ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+    },
+    "codeName" : "MainGridViewtoolbar",
+    "logicName" : "表格界面（只新建，刷新）",
+    "name" : "toolbar",
+    "modelid" : "24ddc68b1717d44d1ea610d438f930f6"
+  }, {
+    "getPSDEGridDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 1,
+      "name" : "id"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "dataType" : 25,
+      "name" : "desc"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "dataType" : 25,
+      "name" : "name"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "dataType" : 25,
+      "name" : "srfmajortext"
+    }, {
+      "dataAccessAction" : true,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataType" : 1,
+      "name" : "srfkey"
+    } ],
+    "singleSelect" : false,
+    "enableColFilter" : false,
+    "enableRowNew" : false,
+    "enableRowEditOrder" : false,
+    "noSort" : false,
+    "getPSDEGridEditItems" : [ {
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "allowEmpty" : true,
+      "enableCond" : 0,
+      "ignoreInput" : 0,
+      "codeName" : "srfkey",
+      "caption" : "ID",
+      "name" : "srfkey"
+    } ],
+    "hasWFDataItems" : false,
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
+    "columnEnableLink" : 2,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
+    "enablePagingBar" : true,
+    "getPSDEGridColumns" : [ {
+      "dataItemName" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "excelCaption" : "ID",
+      "cLConvertMode" : "NONE",
+      "noPrivDisplayMode" : 1,
+      "enableSort" : true,
+      "width" : 70,
+      "codeName" : "id",
+      "caption" : "ID",
+      "columnType" : "DEFGRIDCOLUMN",
+      "align" : "LEFT",
+      "widthUnit" : "PX",
+      "name" : "id"
+    }, {
+      "dataItemName" : "name",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "excelCaption" : "分组名称",
+      "cLConvertMode" : "NONE",
+      "noPrivDisplayMode" : 1,
+      "enableSort" : true,
+      "width" : 150,
+      "codeName" : "name",
+      "caption" : "分组名称",
+      "columnType" : "DEFGRIDCOLUMN",
+      "align" : "LEFT",
+      "widthUnit" : "PX",
+      "name" : "name"
+    }, {
+      "dataItemName" : "desc",
+      "getPSAppDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "excelCaption" : "分组描述",
+      "cLConvertMode" : "NONE",
+      "noPrivDisplayMode" : 1,
+      "enableSort" : true,
+      "width" : 1,
+      "codeName" : "desc",
+      "caption" : "分组描述",
+      "columnType" : "DEFGRIDCOLUMN",
+      "align" : "LEFT",
+      "widthUnit" : "STAR",
+      "name" : "desc"
+    }, {
+      "getPSDEUIActionGroup" : {
+        "getPSUIActionGroupDetails" : [ {
+          "getPSUIAction" : {
+            "getNoPrivDisplayMode" : 2,
+            "getPSSysImage" : {
+              "glyph" : "xf044@FontAwesome",
+              "cssClass" : "fa fa-edit"
+            },
+            "timeout" : 60000,
+            "codeName" : "Edit",
+            "caption" : "编辑",
+            "actionTarget" : "SINGLEKEY",
+            "uIActionTag" : "Edit",
+            "uIActionType" : "DEUIACTION",
+            "uIActionMode" : "SYS",
+            "fullCodeName" : "Edit",
+            "name" : "表格界面_编辑操作"
+          },
+          "showIcon" : true,
+          "addSeparator" : false,
+          "showCaption" : true,
+          "detailType" : "DEUIACTION",
+          "name" : "ud6e0c52"
+        }, {
+          "getPSUIAction" : {
+            "getNoPrivDisplayMode" : 2,
+            "getPSSysImage" : {
+              "glyph" : "xf00d@FontAwesome",
+              "cssClass" : "fa fa-remove"
+            },
+            "timeout" : 60000,
+            "codeName" : "Remove",
+            "caption" : "删除",
+            "actionTarget" : "MULTIKEY",
+            "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
+            "uIActionTag" : "Remove",
+            "uIActionType" : "DEUIACTION",
+            "uIActionMode" : "SYS",
+            "fullCodeName" : "Remove",
+            "name" : "表格界面_删除操作"
+          },
+          "showIcon" : true,
+          "addSeparator" : false,
+          "showCaption" : true,
+          "detailType" : "DEUIACTION",
+          "name" : "uf4eeb77"
+        } ],
+        "name" : "群组表格操作列"
+      },
+      "noPrivDisplayMode" : 1,
+      "enableSort" : false,
+      "width" : 300,
+      "codeName" : "uagridcolumn1",
+      "caption" : "操作",
+      "columnType" : "UAGRIDCOLUMN",
+      "align" : "CENTER",
+      "widthUnit" : "PX",
+      "name" : "uagridcolumn1"
+    } ],
+    "codeName" : "Main",
+    "enableGroup" : false,
+    "hideHeader" : false,
+    "forceFit" : false,
+    "pagingSize" : 20,
+    "aggMode" : "NONE",
+    "groupMode" : "NONE",
+    "sortMode" : "REMOTE",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getPSAppViewUIActions" : [ {
+      "xDataControlName" : "grid",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Edit"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "name" : "表格界面_编辑操作"
+    }, {
+      "xDataControlName" : "grid",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "uIActionTarget" : "MULTIKEY",
+      "name" : "表格界面_删除操作"
+    } ],
+    "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "表格界面_编辑操作"
+      },
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "grid_uagridcolumn1_ud6e0c52_click"
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "表格界面_删除操作"
+      },
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "grid_uagridcolumn1_uf4eeb77_click"
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "getPSControlHandler" : {
+      "userDRAction" : "READ",
+      "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "dataAccessAction" : "UPDATE",
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "name" : "update"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "actionType" : "DEDATASET",
+        "name" : "fetch"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "dataAccessAction" : "READ",
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "name" : "load"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "name" : "loaddraft"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "name" : "create"
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group/PSGRIDS/Main.json",
+    "logicName" : "主表格",
+    "name" : "grid",
+    "modelid" : "a813b0da34be74b92d86c1364b7ac61a"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+  },
+  "viewStyle" : "STYLE2",
+  "getPSAppViewRefs" : [ {
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "realTitle" : "群组编辑视图",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "name" : "NEWDATA"
+  }, {
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "realTitle" : "群组编辑视图",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "name" : "EDITDATA"
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction1"
+    },
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction1_click"
+  }, {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction2"
+    },
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction2_click"
+  }, {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction4"
+    },
+    "eventArg" : "deuiaction4",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction4_click"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppUILogic" : {
+      "enableBatchAdd" : false,
+      "batchAddOnly" : false,
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json"
+      },
+      "viewLogicType" : "APP_NEWDATA",
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json"
+      } ],
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据"
+    },
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppUILogic" : {
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json"
+      },
+      "viewLogicType" : "APP_OPENDATA",
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupEditView.json"
+      } ],
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据"
+    },
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata"
+  } ],
+  "codeName" : "GroupMainGridView",
+  "viewType" : "DEGRIDVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/GroupMainGridView.json",
+  "name" : "GroupMainGridView"
+}

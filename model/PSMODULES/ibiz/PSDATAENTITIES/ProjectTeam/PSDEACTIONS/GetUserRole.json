@@ -1,0 +1,20 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "orderValue" : 99999,
+  "codeName" : "GetUserRole",
+  "logicName" : "获取成员角色",
+  "extendMode" : 0,
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetUserRole.json",
+  "name" : "GetUserRole"
+}

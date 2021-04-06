@@ -1,0 +1,134 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "PROJECT",
+      "name" : "Default[PROJECT]"
+    } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "项目团队"
+  }, {
+    "parallelOutput" : true,
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接9577"
+    }, {
+      "modelref" : true,
+      "id" : "连接6464"
+    } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "srcFieldName" : "ID",
+      "name" : "Default[ID]"
+    } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "任务团队"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "1",
+        "dstFieldName" : "MULTIPLE",
+        "logicType" : "SINGLE",
+        "name" : "Default[MULTIPLE] 等于(=) (1)"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "0aa8a79016044ceb90ec1fc7b10c60aa"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接9577"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "condOP" : "NOTEQ",
+        "paramValue" : "1",
+        "dstFieldName" : "MULTIPLE",
+        "logicType" : "SINGLE",
+        "name" : "Default[MULTIPLE] 不等于(<>) (1)"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "676b2d3b2979982e113415e78823df1f"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接6464"
+  } ],
+  "getPSDELogicParams" : [ {
+    "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "logicHolder" : 1,
+  "codeName" : "getUsernames",
+  "logicName" : "获取团队成员",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/getUsernames.json",
+  "name" : "获取团队成员"
+}

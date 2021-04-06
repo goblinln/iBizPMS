@@ -1,0 +1,97 @@
+{
+  "getEmbeddedPSAppView" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestRunEditView9.json",
+    "viewType" : "DEEDITVIEW9"
+  },
+  "controlType" : "MULTIEDITVIEWPANEL",
+  "panelStyle" : "ROW",
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "TASK",
+      "codeName" : "Task"
+    },
+    "dataType" : 1,
+    "name" : "task"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    },
+    "dataType" : 1,
+    "name" : "case"
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  } ],
+  "singleSelect" : false,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "编号",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestRun.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
+  "codeName" : "Main",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 20,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestRun.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestRun/PSMULTIEDITVIEWPANELS/Main.json",
+  "logicName" : "主表格",
+  "modelid" : "977147515ebb4a979c732f6334152fb8"
+}

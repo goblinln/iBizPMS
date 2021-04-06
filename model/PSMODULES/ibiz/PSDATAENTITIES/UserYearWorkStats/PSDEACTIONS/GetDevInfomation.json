@@ -1,0 +1,24 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "orderValue" : 99999,
+  "codeName" : "GetDevInfomation",
+  "logicName" : "获取研发人员相关数据",
+  "extendMode" : 0,
+  "actionMode" : "READ",
+  "actionType" : "DELOGIC",
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetDevInfomation.json",
+  "name" : "GetDevInfomation"
+}

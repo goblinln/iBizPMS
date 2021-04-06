@@ -1,0 +1,294 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "TOTALLEFT",
+      "codeName" : "TotalLeft"
+    },
+    "dataType" : 7,
+    "name" : "totalleft"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    },
+    "dataType" : 25,
+    "name" : "status"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TOTALCONSUMED",
+      "codeName" : "TotalConsumed"
+    },
+    "dataType" : 7,
+    "name" : "totalconsumed"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATE",
+      "codeName" : "TotalEstimate"
+    },
+    "dataType" : 7,
+    "name" : "totalestimate"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataType" : 25,
+    "name" : "srfmajortext"
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "END",
+      "codeName" : "End"
+    },
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "end"
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TOTALWH",
+      "codeName" : "Totalwh"
+    },
+    "dataType" : 9,
+    "name" : "totalwh"
+  } ],
+  "singleSelect" : true,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "项目编号",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
+  "enablePagingBar" : false,
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "getPSDEGridColumns" : [ {
+    "linkValueItem" : "srfkey",
+    "enableLinkView" : true,
+    "getLinkPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    },
+    "dataItemName" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "excelCaption" : "项目名称",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "name",
+    "caption" : "项目名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "name"
+  }, {
+    "dataItemName" : "end",
+    "getPSAppDEField" : {
+      "name" : "END",
+      "codeName" : "End"
+    },
+    "excelCaption" : "截至日期",
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "end",
+    "caption" : "截至日期",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "end"
+  }, {
+    "dataItemName" : "status",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    },
+    "excelCaption" : "状态",
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 80,
+    "codeName" : "status",
+    "caption" : "状态",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "status"
+  }, {
+    "dataItemName" : "totalestimate",
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATE",
+      "codeName" : "TotalEstimate"
+    },
+    "excelCaption" : "预计",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 80,
+    "codeName" : "totalestimate",
+    "caption" : "预计",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "totalestimate"
+  }, {
+    "dataItemName" : "totalconsumed",
+    "getPSAppDEField" : {
+      "name" : "TOTALCONSUMED",
+      "codeName" : "TotalConsumed"
+    },
+    "excelCaption" : "消耗",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 80,
+    "codeName" : "totalconsumed",
+    "caption" : "消耗",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "totalconsumed"
+  }, {
+    "dataItemName" : "totalleft",
+    "getPSAppDEField" : {
+      "name" : "TOTALLEFT",
+      "codeName" : "TotalLeft"
+    },
+    "excelCaption" : "剩余",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 80,
+    "codeName" : "totalleft",
+    "caption" : "剩余",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "totalleft"
+  }, {
+    "dataItemName" : "totalwh",
+    "getPSAppDEField" : {
+      "name" : "TOTALWH",
+      "codeName" : "Totalwh"
+    },
+    "excelCaption" : "总工时",
+    "cLConvertMode" : "NONE",
+    "hideDefault" : true,
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 80,
+    "codeName" : "totalwh",
+    "caption" : "总工时",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "totalwh"
+  }, {
+    "dataItemName" : "totalconsumed",
+    "getPSAppDEField" : {
+      "name" : "TOTALCONSUMED",
+      "codeName" : "TotalConsumed"
+    },
+    "excelCaption" : "进度",
+    "cLConvertMode" : "NONE",
+    "getPSSysPFPlugin" : {
+      "pluginType" : "GRID_COLRENDER",
+      "pluginCode" : "gridProgress"
+    },
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 150,
+    "codeName" : "progress",
+    "caption" : "进度",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "name" : "progress"
+  } ],
+  "codeName" : "NotCloseProject",
+  "minorSortDir" : "DESC",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 100,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/NotCloseProject.json",
+  "logicName" : "未关闭的项目",
+  "modelid" : "a7487b1db9a457d737f46ec58e11b916"
+}

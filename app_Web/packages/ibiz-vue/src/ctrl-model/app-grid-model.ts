@@ -81,6 +81,11 @@ export class AppGridModel {
                 name:'srftaskdefinitionkey',
                 prop: 'srftaskdefinitionkey',
                 dataType: 'TEXT'
+              },
+              {
+                name:'srftaskid',
+                prop: 'srftaskid',
+                dataType: 'TEXT'
               }
         ]
         const { allDataItems, appDataEntity } = this.gridInstance;

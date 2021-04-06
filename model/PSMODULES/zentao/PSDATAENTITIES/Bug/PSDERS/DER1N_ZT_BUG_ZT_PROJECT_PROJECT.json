@@ -1,0 +1,28 @@
+{
+  "getPSPickupDEField" : {
+    "name" : "PROJECT",
+    "codeName" : "Project"
+  },
+  "masterOrder" : -1,
+  "getPSPickupTextDEField" : {
+    "name" : "PROJECTNAME",
+    "codeName" : "ProjectName"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ZTProject",
+  "logicName" : "项目",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json",
+  "name" : "DER1N_ZT_BUG_ZT_PROJECT_PROJECT"
+}

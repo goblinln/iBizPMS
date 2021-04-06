@@ -1,0 +1,29 @@
+{
+  "pubServiceDefault" : true,
+  "transactionMode" : "DEFAULT",
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "builtinAction" : true,
+  "tempDataMode" : 1,
+  "getCheckPSDEActionLogics" : [ {
+    "name" : "行为[UpdateTempMajor]主状态拒绝逻辑",
+    "id" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/UpdateTempMajor__MSDeny.json"
+  } ],
+  "timeOut" : -1,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "UPDATE"
+  },
+  "orderValue" : 13,
+  "codeName" : "UpdateTempMajor",
+  "logicName" : "UpdateTempMajor",
+  "extendMode" : 0,
+  "enableTempData" : true,
+  "actionMode" : "UPDATE",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateTempMajor.json",
+  "name" : "UpdateTempMajor"
+}

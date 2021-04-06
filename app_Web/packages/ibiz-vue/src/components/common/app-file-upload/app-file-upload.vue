@@ -397,7 +397,7 @@ export default class AppFileUpload extends Vue {
         arr.push(data);
 
         let value: any = arr.length > 0 ? JSON.stringify(arr) : null;
-        this.$emit('change', { name: this.name, value: value });
+        this.$emit('formitemvaluechange', { name: this.name, value: value });
     }
 
     /**
@@ -430,7 +430,7 @@ export default class AppFileUpload extends Vue {
         if(arr.length == 0){
             this.dialogVisible = false;
         }
-        this.$emit('change', { name: this.name, value: value });
+        this.$emit('formitemvaluechange', { name: this.name, value: value });
     }
 
     /**
