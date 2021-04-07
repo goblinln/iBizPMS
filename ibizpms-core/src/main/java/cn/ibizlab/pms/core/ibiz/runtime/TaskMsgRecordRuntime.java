@@ -35,48 +35,6 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     }
 
     @Override
-    public Object getFieldValue(Object o, IPSDEField ipsdeField) {
-        TaskMsgRecord domain = (TaskMsgRecord) o;
-        try {
-            return domain.get(ipsdeField.getCodeName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null ;
-    }
-
-    @Override
-    public void setFieldValue(Object o, IPSDEField ipsdeField, Object o1) {
-        TaskMsgRecord domain = (TaskMsgRecord) o;
-        try {
-            domain.set(ipsdeField.getCodeName(),o1);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
-        TaskMsgRecord domain = (TaskMsgRecord) o;
-        try {
-            return domain.contains(ipsdeField.getCodeName().toLowerCase());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    @Override
-    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
-        TaskMsgRecord domain = (TaskMsgRecord) o;
-        try {
-            domain.reset(ipsdeField.getCodeName().toLowerCase());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public Object createEntity() {
         return new TaskMsgRecord();
     }

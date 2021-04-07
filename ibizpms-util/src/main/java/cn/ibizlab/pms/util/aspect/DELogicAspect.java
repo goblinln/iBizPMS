@@ -228,7 +228,7 @@ public class DELogicAspect {
             }
             kieSession.startProcess(mainProcess.getId());
             log.debug("实体处理逻辑[{}:{}:{}:{}]执行结束", entity.getClass().getSimpleName(), action, bpmnFile.getFilename(), logicMode);
-        } catch (IOException e) {
+        } catch (Exception e) {
             log.error("执行实体处理逻辑[{}:{}:{}:{}]发生异常" + e.getMessage(), entity.getClass().getSimpleName(), action, bpmnFile.getFilename(), logicMode);
             throw new BadRequestAlertException("执行实体处理逻辑发生异常"+ e.getMessage(), "DELogicAspect", "executeLogic");
         }
