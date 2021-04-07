@@ -33,7 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.TaskEstimateStats;
 import cn.ibizlab.pms.core.zentao.service.ITaskEstimateStatsService;
 import cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
-import cn.ibizlab.pms.core.zentao.model.impl.taskestimatestatsModelImpl;
+import cn.ibizlab.pms.core.zentao.model.impl.TaskEstimateStatsModelImpl;
 
 @Slf4j
 @Api(tags = {"任务工时统计" })
@@ -45,7 +45,7 @@ public class taskestimatestatsResource {
     public ITaskEstimateStatsService taskestimatestatsService;
 
     @Autowired
-    public taskestimatestatsModelImpl taskestimatestatsModelImpl;
+    public TaskEstimateStatsModelImpl taskestimatestatsModelImpl;
 
     @Autowired
     @Lazy

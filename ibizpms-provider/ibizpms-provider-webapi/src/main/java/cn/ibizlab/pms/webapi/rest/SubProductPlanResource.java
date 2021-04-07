@@ -33,7 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.ProductPlan;
 import cn.ibizlab.pms.core.zentao.service.IProductPlanService;
 import cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
-import cn.ibizlab.pms.core.zentao.model.impl.SubProductPlanModelImpl;
+import cn.ibizlab.pms.core.zentao.model.impl.ProductPlanModelImpl;
 
 @Slf4j
 @Api(tags = {"产品计划" })
@@ -45,7 +45,7 @@ public class SubProductPlanResource {
     public IProductPlanService productplanService;
 
     @Autowired
-    public SubProductPlanModelImpl subproductplanModelImpl;
+    public ProductPlanModelImpl productplanModelImpl;
 
     @Autowired
     @Lazy

@@ -33,7 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbiLogin;
 import cn.ibizlab.pms.core.ibiz.service.IIbiLoginService;
 import cn.ibizlab.pms.core.ibiz.filter.IbiLoginSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
-import cn.ibizlab.pms.core.ibiz.model.impl.IbzLoginModelImpl;
+import cn.ibizlab.pms.core.ibiz.model.impl.IbiLoginModelImpl;
 
 @Slf4j
 @Api(tags = {"实体" })
@@ -45,7 +45,7 @@ public class IbzLoginResource {
     public IIbiLoginService ibiloginService;
 
     @Autowired
-    public IbzLoginModelImpl ibzloginModelImpl;
+    public IbiLoginModelImpl ibiloginModelImpl;
 
     @Autowired
     @Lazy
