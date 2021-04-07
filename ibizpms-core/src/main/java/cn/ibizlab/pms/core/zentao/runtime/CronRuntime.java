@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("CronRuntime")
-public class CronRuntime extends SystemDataEntityRuntime {
+public class CronRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
 
     @Autowired
     ICronService cronService;
@@ -36,7 +36,7 @@ public class CronRuntime extends SystemDataEntityRuntime {
 
     @Override
     public Object getFieldValue(Object o, IPSDEField ipsdeField) {
-        Cron domain = (Cron)o;
+        Cron domain = (Cron) o;
         try {
             return domain.get(ipsdeField.getCodeName());
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class CronRuntime extends SystemDataEntityRuntime {
 
     @Override
     public void setFieldValue(Object o, IPSDEField ipsdeField, Object o1) {
-        Cron domain = (Cron)o;
+        Cron domain = (Cron) o;
         try {
             domain.set(ipsdeField.getCodeName(),o1);
         } catch (Exception e) {
@@ -57,12 +57,23 @@ public class CronRuntime extends SystemDataEntityRuntime {
 
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
+        Cron domain = (Cron) o;
+        try {
+            return domain.contains(ipsdeField.getCodeName().toLowerCase());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public void resetFieldValue(Object o, IPSDEField ipsdeField) {
-        
+        Cron domain = (Cron) o;
+        try {
+            domain.reset(ipsdeField.getCodeName().toLowerCase());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -75,7 +86,7 @@ public class CronRuntime extends SystemDataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.CronServiceImpl.*(..))")
+    //@Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.CronServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

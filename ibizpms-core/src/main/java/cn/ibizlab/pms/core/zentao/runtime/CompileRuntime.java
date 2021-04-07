@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("CompileRuntime")
-public class CompileRuntime extends SystemDataEntityRuntime {
+public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
 
     @Autowired
     ICompileService compileService;
@@ -36,7 +36,7 @@ public class CompileRuntime extends SystemDataEntityRuntime {
 
     @Override
     public Object getFieldValue(Object o, IPSDEField ipsdeField) {
-        Compile domain = (Compile)o;
+        Compile domain = (Compile) o;
         try {
             return domain.get(ipsdeField.getCodeName());
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class CompileRuntime extends SystemDataEntityRuntime {
 
     @Override
     public void setFieldValue(Object o, IPSDEField ipsdeField, Object o1) {
-        Compile domain = (Compile)o;
+        Compile domain = (Compile) o;
         try {
             domain.set(ipsdeField.getCodeName(),o1);
         } catch (Exception e) {
@@ -57,12 +57,23 @@ public class CompileRuntime extends SystemDataEntityRuntime {
 
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
+        Compile domain = (Compile) o;
+        try {
+            return domain.contains(ipsdeField.getCodeName().toLowerCase());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public void resetFieldValue(Object o, IPSDEField ipsdeField) {
-        
+        Compile domain = (Compile) o;
+        try {
+            domain.reset(ipsdeField.getCodeName().toLowerCase());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -75,7 +86,7 @@ public class CompileRuntime extends SystemDataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.CompileServiceImpl.*(..))")
+    //@Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.CompileServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

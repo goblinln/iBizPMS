@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("ProductPlanRuntime")
-public class ProductPlanRuntime extends SystemDataEntityRuntime {
+public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
 
     @Autowired
     IProductPlanService productplanService;
@@ -36,7 +36,7 @@ public class ProductPlanRuntime extends SystemDataEntityRuntime {
 
     @Override
     public Object getFieldValue(Object o, IPSDEField ipsdeField) {
-        ProductPlan domain = (ProductPlan)o;
+        ProductPlan domain = (ProductPlan) o;
         try {
             return domain.get(ipsdeField.getCodeName());
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class ProductPlanRuntime extends SystemDataEntityRuntime {
 
     @Override
     public void setFieldValue(Object o, IPSDEField ipsdeField, Object o1) {
-        ProductPlan domain = (ProductPlan)o;
+        ProductPlan domain = (ProductPlan) o;
         try {
             domain.set(ipsdeField.getCodeName(),o1);
         } catch (Exception e) {
@@ -57,12 +57,23 @@ public class ProductPlanRuntime extends SystemDataEntityRuntime {
 
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
+        ProductPlan domain = (ProductPlan) o;
+        try {
+            return domain.contains(ipsdeField.getCodeName().toLowerCase());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public void resetFieldValue(Object o, IPSDEField ipsdeField) {
-        
+        ProductPlan domain = (ProductPlan) o;
+        try {
+            domain.reset(ipsdeField.getCodeName().toLowerCase());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -75,7 +86,7 @@ public class ProductPlanRuntime extends SystemDataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.ProductPlanServiceImpl.*(..))")
+    //@Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.ProductPlanServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

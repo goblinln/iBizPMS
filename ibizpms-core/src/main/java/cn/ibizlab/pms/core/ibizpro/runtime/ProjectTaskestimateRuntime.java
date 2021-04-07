@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("ProjectTaskestimateRuntime")
-public class ProjectTaskestimateRuntime extends SystemDataEntityRuntime {
+public class ProjectTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
 
     @Autowired
     IProjectTaskestimateService projecttaskestimateService;
@@ -36,7 +36,7 @@ public class ProjectTaskestimateRuntime extends SystemDataEntityRuntime {
 
     @Override
     public Object getFieldValue(Object o, IPSDEField ipsdeField) {
-        ProjectTaskestimate domain = (ProjectTaskestimate)o;
+        ProjectTaskestimate domain = (ProjectTaskestimate) o;
         try {
             return domain.get(ipsdeField.getCodeName());
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class ProjectTaskestimateRuntime extends SystemDataEntityRuntime {
 
     @Override
     public void setFieldValue(Object o, IPSDEField ipsdeField, Object o1) {
-        ProjectTaskestimate domain = (ProjectTaskestimate)o;
+        ProjectTaskestimate domain = (ProjectTaskestimate) o;
         try {
             domain.set(ipsdeField.getCodeName(),o1);
         } catch (Exception e) {
@@ -57,12 +57,23 @@ public class ProjectTaskestimateRuntime extends SystemDataEntityRuntime {
 
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
+        ProjectTaskestimate domain = (ProjectTaskestimate) o;
+        try {
+            return domain.contains(ipsdeField.getCodeName().toLowerCase());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public void resetFieldValue(Object o, IPSDEField ipsdeField) {
-        
+        ProjectTaskestimate domain = (ProjectTaskestimate) o;
+        try {
+            domain.reset(ipsdeField.getCodeName().toLowerCase());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -75,7 +86,7 @@ public class ProjectTaskestimateRuntime extends SystemDataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibizpro.service.impl.ProjectTaskestimateServiceImpl.*(..))")
+    //@Around("execution(* cn.ibizlab.pms.core.ibizpro.service.impl.ProjectTaskestimateServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {

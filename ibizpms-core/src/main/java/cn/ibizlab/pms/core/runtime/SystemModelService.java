@@ -2,9 +2,7 @@ package cn.ibizlab.pms.core.runtime;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import net.ibizsys.model.PSModelServiceImpl;
-
-public class SystemModelService extends PSModelServiceImpl{
+public class SystemModelService extends net.ibizsys.model.PSModelServiceImpl{
 
 	private boolean bFromJar = true;
 	

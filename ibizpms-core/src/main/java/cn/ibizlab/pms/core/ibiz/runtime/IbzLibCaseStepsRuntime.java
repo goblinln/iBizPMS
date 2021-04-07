@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("IbzLibCaseStepsRuntime")
-public class IbzLibCaseStepsRuntime extends SystemDataEntityRuntime {
+public class IbzLibCaseStepsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
 
     @Autowired
     IIbzLibCaseStepsService ibzlibcasestepsService;
@@ -36,7 +36,7 @@ public class IbzLibCaseStepsRuntime extends SystemDataEntityRuntime {
 
     @Override
     public Object getFieldValue(Object o, IPSDEField ipsdeField) {
-        IbzLibCaseSteps domain = (IbzLibCaseSteps)o;
+        IbzLibCaseSteps domain = (IbzLibCaseSteps) o;
         try {
             return domain.get(ipsdeField.getCodeName());
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class IbzLibCaseStepsRuntime extends SystemDataEntityRuntime {
 
     @Override
     public void setFieldValue(Object o, IPSDEField ipsdeField, Object o1) {
-        IbzLibCaseSteps domain = (IbzLibCaseSteps)o;
+        IbzLibCaseSteps domain = (IbzLibCaseSteps) o;
         try {
             domain.set(ipsdeField.getCodeName(),o1);
         } catch (Exception e) {
@@ -57,12 +57,23 @@ public class IbzLibCaseStepsRuntime extends SystemDataEntityRuntime {
 
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
+        IbzLibCaseSteps domain = (IbzLibCaseSteps) o;
+        try {
+            return domain.contains(ipsdeField.getCodeName().toLowerCase());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public void resetFieldValue(Object o, IPSDEField ipsdeField) {
-        
+        IbzLibCaseSteps domain = (IbzLibCaseSteps) o;
+        try {
+            domain.reset(ipsdeField.getCodeName().toLowerCase());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -75,7 +86,7 @@ public class IbzLibCaseStepsRuntime extends SystemDataEntityRuntime {
         return null;
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.IbzLibCaseStepsServiceImpl.*(..))")
+    //@Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.IbzLibCaseStepsServiceImpl.*(..))")
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         String action = point.getSignature().getName();
         if (action.equals("create")) {
