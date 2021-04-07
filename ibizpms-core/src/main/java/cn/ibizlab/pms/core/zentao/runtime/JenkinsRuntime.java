@@ -3,7 +3,7 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Jenkins;
 import cn.ibizlab.pms.core.zentao.service.IJenkinsService;
 import cn.ibizlab.pms.core.zentao.filter.JenkinsSearchContext;
-import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("JenkinsRuntime")
-public class JenkinsRuntime extends DataEntityRuntime {
+public class JenkinsRuntime extends SystemDataEntityRuntime {
 
     @Autowired
     IJenkinsService jenkinsService;
@@ -58,6 +58,11 @@ public class JenkinsRuntime extends DataEntityRuntime {
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
         return false;
+    }
+
+    @Override
+    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
+        
     }
 
     @Override

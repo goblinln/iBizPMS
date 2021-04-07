@@ -3,7 +3,7 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.TaskTeam;
 import cn.ibizlab.pms.core.ibiz.service.ITaskTeamService;
 import cn.ibizlab.pms.core.ibiz.filter.TaskTeamSearchContext;
-import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("TaskTeamRuntime")
-public class TaskTeamRuntime extends DataEntityRuntime {
+public class TaskTeamRuntime extends SystemDataEntityRuntime {
 
     @Autowired
     ITaskTeamService taskteamService;
@@ -58,6 +58,11 @@ public class TaskTeamRuntime extends DataEntityRuntime {
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
         return false;
+    }
+
+    @Override
+    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
+        
     }
 
     @Override

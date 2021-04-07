@@ -46,7 +46,6 @@ public class SysUpdateLogModelImpl extends DataEntityModelImpl {
         if (domains.size() == 0) {
             return false;
         }
-
         try {
             return SpringContextHolder.getBean(cn.ibizlab.pms.core.ibiz.runtime.SysUpdateLogRuntime.class).testDataAccessAction(domains.get(0),action);
         } catch (Exception e) {
@@ -74,7 +73,6 @@ public class SysUpdateLogModelImpl extends DataEntityModelImpl {
         if (domains.size() != keys.size()) {
             return false;
         }
-
         try {
             for(SysUpdateLog domain : domains){
                 if(SpringContextHolder.getBean(cn.ibizlab.pms.core.ibiz.runtime.SysUpdateLogRuntime.class).testDataAccessAction(domain,action)){

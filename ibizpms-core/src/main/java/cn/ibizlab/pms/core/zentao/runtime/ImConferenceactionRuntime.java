@@ -3,7 +3,7 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.ImConferenceaction;
 import cn.ibizlab.pms.core.zentao.service.IImConferenceactionService;
 import cn.ibizlab.pms.core.zentao.filter.ImConferenceactionSearchContext;
-import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("ImConferenceactionRuntime")
-public class ImConferenceactionRuntime extends DataEntityRuntime {
+public class ImConferenceactionRuntime extends SystemDataEntityRuntime {
 
     @Autowired
     IImConferenceactionService imconferenceactionService;
@@ -58,6 +58,11 @@ public class ImConferenceactionRuntime extends DataEntityRuntime {
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
         return false;
+    }
+
+    @Override
+    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
+        
     }
 
     @Override

@@ -46,7 +46,6 @@ public class ScoreModelImpl extends DataEntityModelImpl {
         if (domains.size() == 0) {
             return false;
         }
-
         try {
             return SpringContextHolder.getBean(cn.ibizlab.pms.core.zentao.runtime.ScoreRuntime.class).testDataAccessAction(domains.get(0),action);
         } catch (Exception e) {
@@ -74,7 +73,6 @@ public class ScoreModelImpl extends DataEntityModelImpl {
         if (domains.size() != keys.size()) {
             return false;
         }
-
         try {
             for(Score domain : domains){
                 if(SpringContextHolder.getBean(cn.ibizlab.pms.core.zentao.runtime.ScoreRuntime.class).testDataAccessAction(domain,action)){

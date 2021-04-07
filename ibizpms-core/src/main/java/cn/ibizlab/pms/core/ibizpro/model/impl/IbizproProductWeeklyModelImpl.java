@@ -46,7 +46,6 @@ public class IbizproProductWeeklyModelImpl extends DataEntityModelImpl {
         if (domains.size() == 0) {
             return false;
         }
-
         try {
             return SpringContextHolder.getBean(cn.ibizlab.pms.core.ibizpro.runtime.IbizproProductWeeklyRuntime.class).testDataAccessAction(domains.get(0),action);
         } catch (Exception e) {
@@ -74,7 +73,6 @@ public class IbizproProductWeeklyModelImpl extends DataEntityModelImpl {
         if (domains.size() != keys.size()) {
             return false;
         }
-
         try {
             for(IbizproProductWeekly domain : domains){
                 if(SpringContextHolder.getBean(cn.ibizlab.pms.core.ibizpro.runtime.IbizproProductWeeklyRuntime.class).testDataAccessAction(domain,action)){

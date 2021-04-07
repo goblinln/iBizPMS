@@ -46,7 +46,6 @@ public class RepoModelImpl extends DataEntityModelImpl {
         if (domains.size() == 0) {
             return false;
         }
-
         try {
             return SpringContextHolder.getBean(cn.ibizlab.pms.core.zentao.runtime.RepoRuntime.class).testDataAccessAction(domains.get(0),action);
         } catch (Exception e) {
@@ -74,7 +73,6 @@ public class RepoModelImpl extends DataEntityModelImpl {
         if (domains.size() != keys.size()) {
             return false;
         }
-
         try {
             for(Repo domain : domains){
                 if(SpringContextHolder.getBean(cn.ibizlab.pms.core.zentao.runtime.RepoRuntime.class).testDataAccessAction(domain,action)){

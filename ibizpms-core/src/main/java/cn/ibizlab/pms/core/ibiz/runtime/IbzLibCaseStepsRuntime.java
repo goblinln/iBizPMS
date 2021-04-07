@@ -3,7 +3,7 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.IbzLibCaseSteps;
 import cn.ibizlab.pms.core.ibiz.service.IIbzLibCaseStepsService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzLibCaseStepsSearchContext;
-import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("IbzLibCaseStepsRuntime")
-public class IbzLibCaseStepsRuntime extends DataEntityRuntime {
+public class IbzLibCaseStepsRuntime extends SystemDataEntityRuntime {
 
     @Autowired
     IIbzLibCaseStepsService ibzlibcasestepsService;
@@ -58,6 +58,11 @@ public class IbzLibCaseStepsRuntime extends DataEntityRuntime {
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
         return false;
+    }
+
+    @Override
+    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
+        
     }
 
     @Override

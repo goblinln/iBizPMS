@@ -3,7 +3,7 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.BugStats;
 import cn.ibizlab.pms.core.ibiz.service.IBugStatsService;
 import cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext;
-import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("BugStatsRuntime")
-public class BugStatsRuntime extends DataEntityRuntime {
+public class BugStatsRuntime extends SystemDataEntityRuntime {
 
     @Autowired
     IBugStatsService bugstatsService;
@@ -58,6 +58,11 @@ public class BugStatsRuntime extends DataEntityRuntime {
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
         return false;
+    }
+
+    @Override
+    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
+        
     }
 
     @Override

@@ -46,7 +46,6 @@ public class ProductPlanModelImpl extends DataEntityModelImpl {
         if (domains.size() == 0) {
             return false;
         }
-
         try {
             return SpringContextHolder.getBean(cn.ibizlab.pms.core.zentao.runtime.ProductPlanRuntime.class).testDataAccessAction(domains.get(0),action);
         } catch (Exception e) {
@@ -74,7 +73,6 @@ public class ProductPlanModelImpl extends DataEntityModelImpl {
         if (domains.size() != keys.size()) {
             return false;
         }
-
         try {
             for(ProductPlan domain : domains){
                 if(SpringContextHolder.getBean(cn.ibizlab.pms.core.zentao.runtime.ProductPlanRuntime.class).testDataAccessAction(domain,action)){

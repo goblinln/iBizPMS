@@ -3,7 +3,7 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.ImMessagestatus;
 import cn.ibizlab.pms.core.zentao.service.IImMessagestatusService;
 import cn.ibizlab.pms.core.zentao.filter.ImMessagestatusSearchContext;
-import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("ImMessagestatusRuntime")
-public class ImMessagestatusRuntime extends DataEntityRuntime {
+public class ImMessagestatusRuntime extends SystemDataEntityRuntime {
 
     @Autowired
     IImMessagestatusService immessagestatusService;
@@ -58,6 +58,11 @@ public class ImMessagestatusRuntime extends DataEntityRuntime {
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
         return false;
+    }
+
+    @Override
+    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
+        
     }
 
     @Override

@@ -3,7 +3,7 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.DocLibModule;
 import cn.ibizlab.pms.core.ibiz.service.IDocLibModuleService;
 import cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext;
-import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("DocLibModuleRuntime")
-public class DocLibModuleRuntime extends DataEntityRuntime {
+public class DocLibModuleRuntime extends SystemDataEntityRuntime {
 
     @Autowired
     IDocLibModuleService doclibmoduleService;
@@ -58,6 +58,11 @@ public class DocLibModuleRuntime extends DataEntityRuntime {
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
         return false;
+    }
+
+    @Override
+    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
+        
     }
 
     @Override

@@ -3,7 +3,7 @@ package cn.ibizlab.pms.core.ibizpro.runtime;
 import cn.ibizlab.pms.core.ibizpro.domain.IbizproProductDaily;
 import cn.ibizlab.pms.core.ibizpro.service.IIbizproProductDailyService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbizproProductDailySearchContext;
-import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("IbizproProductDailyRuntime")
-public class IbizproProductDailyRuntime extends DataEntityRuntime {
+public class IbizproProductDailyRuntime extends SystemDataEntityRuntime {
 
     @Autowired
     IIbizproProductDailyService ibizproproductdailyService;
@@ -58,6 +58,11 @@ public class IbizproProductDailyRuntime extends DataEntityRuntime {
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
         return false;
+    }
+
+    @Override
+    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
+        
     }
 
     @Override

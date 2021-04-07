@@ -3,7 +3,7 @@ package cn.ibizlab.pms.core.report.runtime;
 import cn.ibizlab.pms.core.report.domain.IbzMonthly;
 import cn.ibizlab.pms.core.report.service.IIbzMonthlyService;
 import cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext;
-import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("IbzMonthlyRuntime")
-public class IbzMonthlyRuntime extends DataEntityRuntime {
+public class IbzMonthlyRuntime extends SystemDataEntityRuntime {
 
     @Autowired
     IIbzMonthlyService ibzmonthlyService;
@@ -58,6 +58,11 @@ public class IbzMonthlyRuntime extends DataEntityRuntime {
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
         return false;
+    }
+
+    @Override
+    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
+        
     }
 
     @Override

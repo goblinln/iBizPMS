@@ -3,7 +3,7 @@ package cn.ibizlab.pms.core.report.runtime;
 import cn.ibizlab.pms.core.report.domain.IbzReportly;
 import cn.ibizlab.pms.core.report.service.IIbzReportlyService;
 import cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext;
-import cn.ibizlab.pms.core.runtime.DataEntityRuntime;
+import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @Aspect
 @Component("IbzReportlyRuntime")
-public class IbzReportlyRuntime extends DataEntityRuntime {
+public class IbzReportlyRuntime extends SystemDataEntityRuntime {
 
     @Autowired
     IIbzReportlyService ibzreportlyService;
@@ -58,6 +58,11 @@ public class IbzReportlyRuntime extends DataEntityRuntime {
     @Override
     public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
         return false;
+    }
+
+    @Override
+    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
+        
     }
 
     @Override

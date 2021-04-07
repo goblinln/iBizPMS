@@ -46,7 +46,6 @@ public class IbzLibModuleModelImpl extends DataEntityModelImpl {
         if (domains.size() == 0) {
             return false;
         }
-
         try {
             return SpringContextHolder.getBean(cn.ibizlab.pms.core.ibiz.runtime.IbzLibModuleRuntime.class).testDataAccessAction(domains.get(0),action);
         } catch (Exception e) {
@@ -74,7 +73,6 @@ public class IbzLibModuleModelImpl extends DataEntityModelImpl {
         if (domains.size() != keys.size()) {
             return false;
         }
-
         try {
             for(IbzLibModule domain : domains){
                 if(SpringContextHolder.getBean(cn.ibizlab.pms.core.ibiz.runtime.IbzLibModuleRuntime.class).testDataAccessAction(domain,action)){
