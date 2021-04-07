@@ -43,6 +43,7 @@ public class SysPostResource {
     @Autowired
     public ISysPostService syspostService;
 
+
     @Autowired
     @Lazy
     public SysPostMapping syspostMapping;

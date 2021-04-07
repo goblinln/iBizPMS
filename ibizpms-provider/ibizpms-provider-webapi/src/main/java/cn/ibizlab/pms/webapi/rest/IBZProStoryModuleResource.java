@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IBZProStoryModule;
 import cn.ibizlab.pms.core.ibizpro.service.IIBZProStoryModuleService;
 import cn.ibizlab.pms.core.ibizpro.filter.IBZProStoryModuleSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.IBZProStoryModuleModelImpl;
 
 @Slf4j
 @Api(tags = {"需求模块" })
@@ -42,6 +43,9 @@ public class IBZProStoryModuleResource {
 
     @Autowired
     public IIBZProStoryModuleService ibzprostorymoduleService;
+
+    @Autowired
+    public IBZProStoryModuleModelImpl ibzprostorymoduleModelImpl;
 
     @Autowired
     @Lazy
@@ -158,6 +162,7 @@ public class IBZProStoryModuleResource {
 	@ApiOperation(value = "获取数据集", tags = {"需求模块" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzprostorymodules/fetchdefault")
 	public ResponseEntity<List<IBZProStoryModuleDTO>> fetchDefault(IBZProStoryModuleSearchContext context) {
+        ibzprostorymoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<IBZProStoryModule> domains = ibzprostorymoduleService.searchDefault(context) ;
         List<IBZProStoryModuleDTO> list = ibzprostorymoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -171,6 +176,7 @@ public class IBZProStoryModuleResource {
 	@ApiOperation(value = "查询数据集", tags = {"需求模块" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprostorymodules/searchdefault")
 	public ResponseEntity<Page<IBZProStoryModuleDTO>> searchDefault(@RequestBody IBZProStoryModuleSearchContext context) {
+        ibzprostorymoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<IBZProStoryModule> domains = ibzprostorymoduleService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzprostorymoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

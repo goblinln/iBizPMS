@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.SysUpdateFeatures;
 import cn.ibizlab.pms.core.ibiz.service.ISysUpdateFeaturesService;
 import cn.ibizlab.pms.core.ibiz.filter.SysUpdateFeaturesSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.SysUpdateFeaturesModelImpl;
 
 @Slf4j
 @Api(tags = {"系统更新功能" })
@@ -42,6 +43,9 @@ public class SysUpdateFeaturesResource {
 
     @Autowired
     public ISysUpdateFeaturesService sysupdatefeaturesService;
+
+    @Autowired
+    public SysUpdateFeaturesModelImpl sysupdatefeaturesModelImpl;
 
     @Autowired
     @Lazy
@@ -141,6 +145,7 @@ public class SysUpdateFeaturesResource {
 	@ApiOperation(value = "获取数据集", tags = {"系统更新功能" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysupdatefeatures/fetchdefault")
 	public ResponseEntity<List<SysUpdateFeaturesDTO>> fetchDefault(SysUpdateFeaturesSearchContext context) {
+        sysupdatefeaturesModelImpl.addAuthorityConditions(context,"READ");
         Page<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault(context) ;
         List<SysUpdateFeaturesDTO> list = sysupdatefeaturesMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -154,6 +159,7 @@ public class SysUpdateFeaturesResource {
 	@ApiOperation(value = "查询数据集", tags = {"系统更新功能" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatefeatures/searchdefault")
 	public ResponseEntity<Page<SysUpdateFeaturesDTO>> searchDefault(@RequestBody SysUpdateFeaturesSearchContext context) {
+        sysupdatefeaturesModelImpl.addAuthorityConditions(context,"READ");
         Page<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(sysupdatefeaturesMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.DynaDashboard;
 import cn.ibizlab.pms.core.ibiz.service.IDynaDashboardService;
 import cn.ibizlab.pms.core.ibiz.filter.DynaDashboardSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.DynaDashboardModelImpl;
 
 @Slf4j
 @Api(tags = {"动态数据看板" })
@@ -42,6 +43,9 @@ public class DynaDashboardResource {
 
     @Autowired
     public IDynaDashboardService dynadashboardService;
+
+    @Autowired
+    public DynaDashboardModelImpl dynadashboardModelImpl;
 
     @Autowired
     @Lazy
@@ -141,6 +145,7 @@ public class DynaDashboardResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"动态数据看板" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/dynadashboards/fetchdefault")
 	public ResponseEntity<List<DynaDashboardDTO>> fetchDefault(DynaDashboardSearchContext context) {
+        dynadashboardModelImpl.addAuthorityConditions(context,"READ");
         Page<DynaDashboard> domains = dynadashboardService.searchDefault(context) ;
         List<DynaDashboardDTO> list = dynadashboardMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -154,6 +159,7 @@ public class DynaDashboardResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"动态数据看板" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/dynadashboards/searchdefault")
 	public ResponseEntity<Page<DynaDashboardDTO>> searchDefault(@RequestBody DynaDashboardSearchContext context) {
+        dynadashboardModelImpl.addAuthorityConditions(context,"READ");
         Page<DynaDashboard> domains = dynadashboardService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(dynadashboardMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

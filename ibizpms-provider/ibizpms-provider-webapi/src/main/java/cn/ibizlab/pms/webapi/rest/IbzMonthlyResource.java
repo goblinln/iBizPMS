@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.report.domain.IbzMonthly;
 import cn.ibizlab.pms.core.report.service.IIbzMonthlyService;
 import cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.report.model.impl.IbzMonthlyModelImpl;
 
 @Slf4j
 @Api(tags = {"月报" })
@@ -42,6 +43,9 @@ public class IbzMonthlyResource {
 
     @Autowired
     public IIbzMonthlyService ibzmonthlyService;
+
+    @Autowired
+    public IbzMonthlyModelImpl ibzmonthlyModelImpl;
 
     @Autowired
     @Lazy
@@ -251,6 +255,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "获取数据集", tags = {"月报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzmonthlies/fetchdefault")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchDefault(IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchDefault(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -264,6 +269,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "查询数据集", tags = {"月报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchdefault")
 	public ResponseEntity<Page<IbzMonthlyDTO>> searchDefault(@RequestBody IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -273,6 +279,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "获取我的月报", tags = {"月报" } ,notes = "获取我的月报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzmonthlies/fetchmymonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchMyMonthly(IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMyMonthly(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -286,6 +293,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "查询我的月报", tags = {"月报" } ,notes = "查询我的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchmymonthly")
 	public ResponseEntity<Page<IbzMonthlyDTO>> searchMyMonthly(@RequestBody IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMyMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -295,6 +303,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "获取我的月报（移动端）", tags = {"月报" } ,notes = "获取我的月报（移动端）")
     @RequestMapping(method= RequestMethod.GET , value="/ibzmonthlies/fetchmymonthlymob")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchMyMonthlyMob(IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMyMonthlyMob(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -308,6 +317,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "查询我的月报（移动端）", tags = {"月报" } ,notes = "查询我的月报（移动端）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchmymonthlymob")
 	public ResponseEntity<Page<IbzMonthlyDTO>> searchMyMonthlyMob(@RequestBody IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMyMonthlyMob(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -317,6 +327,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "获取我收到的月报", tags = {"月报" } ,notes = "获取我收到的月报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzmonthlies/fetchmyreceivedmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchMyReceivedMonthly(IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMyReceivedMonthly(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -330,6 +341,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "查询我收到的月报", tags = {"月报" } ,notes = "查询我收到的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchmyreceivedmonthly")
 	public ResponseEntity<Page<IbzMonthlyDTO>> searchMyReceivedMonthly(@RequestBody IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMyReceivedMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -339,6 +351,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "获取我提交的月报", tags = {"月报" } ,notes = "获取我提交的月报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzmonthlies/fetchmysubmitmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchMySubmitMonthly(IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMySubmitMonthly(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -352,6 +365,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "查询我提交的月报", tags = {"月报" } ,notes = "查询我提交的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchmysubmitmonthly")
 	public ResponseEntity<Page<IbzMonthlyDTO>> searchMySubmitMonthly(@RequestBody IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMySubmitMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -361,6 +375,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "获取产品月报", tags = {"月报" } ,notes = "获取产品月报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzmonthlies/fetchproductmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchProductMonthly(IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchProductMonthly(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -374,6 +389,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "查询产品月报", tags = {"月报" } ,notes = "查询产品月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchproductmonthly")
 	public ResponseEntity<Page<IbzMonthlyDTO>> searchProductMonthly(@RequestBody IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchProductMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -383,6 +399,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "获取项目月报", tags = {"月报" } ,notes = "获取项目月报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzmonthlies/fetchprojectmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchProjectMonthly(IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchProjectMonthly(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -396,6 +413,7 @@ public class IbzMonthlyResource {
 	@ApiOperation(value = "查询项目月报", tags = {"月报" } ,notes = "查询项目月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchprojectmonthly")
 	public ResponseEntity<Page<IbzMonthlyDTO>> searchProjectMonthly(@RequestBody IbzMonthlySearchContext context) {
+        ibzmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchProjectMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

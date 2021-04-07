@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.CaseStats;
 import cn.ibizlab.pms.core.ibiz.service.ICaseStatsService;
 import cn.ibizlab.pms.core.ibiz.filter.CaseStatsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.CaseStatsModelImpl;
 
 @Slf4j
 @Api(tags = {"测试用例统计" })
@@ -42,6 +43,9 @@ public class CaseStatsResource {
 
     @Autowired
     public ICaseStatsService casestatsService;
+
+    @Autowired
+    public CaseStatsModelImpl casestatsModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class CaseStatsResource {
 	@ApiOperation(value = "获取数据集", tags = {"测试用例统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/casestats/fetchdefault")
 	public ResponseEntity<List<CaseStatsDTO>> fetchDefault(CaseStatsSearchContext context) {
+        casestatsModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchDefault(context) ;
         List<CaseStatsDTO> list = casestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class CaseStatsResource {
 	@ApiOperation(value = "查询数据集", tags = {"测试用例统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/searchdefault")
 	public ResponseEntity<Page<CaseStatsDTO>> searchDefault(@RequestBody CaseStatsSearchContext context) {
+        casestatsModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class CaseStatsResource {
 	@ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" } ,notes = "获取测试用例统计")
     @RequestMapping(method= RequestMethod.GET , value="/casestats/fetchtestcasestats")
 	public ResponseEntity<List<CaseStatsDTO>> fetchTestCaseStats(CaseStatsSearchContext context) {
+        casestatsModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchTestCaseStats(context) ;
         List<CaseStatsDTO> list = casestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class CaseStatsResource {
 	@ApiOperation(value = "查询测试用例统计", tags = {"测试用例统计" } ,notes = "查询测试用例统计")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/searchtestcasestats")
 	public ResponseEntity<Page<CaseStatsDTO>> searchTestCaseStats(@RequestBody CaseStatsSearchContext context) {
+        casestatsModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchTestCaseStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

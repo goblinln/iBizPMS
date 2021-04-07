@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbizproProductWeekly;
 import cn.ibizlab.pms.core.ibizpro.service.IIbizproProductWeeklyService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbizproProductWeeklySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.IbizproProductWeeklyModelImpl;
 
 @Slf4j
 @Api(tags = {"产品周报" })
@@ -42,6 +43,9 @@ public class IbizproProductWeeklyResource {
 
     @Autowired
     public IIbizproProductWeeklyService ibizproproductweeklyService;
+
+    @Autowired
+    public IbizproProductWeeklyModelImpl ibizproproductweeklyModelImpl;
 
     @Autowired
     @Lazy
@@ -159,6 +163,7 @@ public class IbizproProductWeeklyResource {
 	@ApiOperation(value = "获取数据集", tags = {"产品周报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproproductweeklies/fetchdefault")
 	public ResponseEntity<List<IbizproProductWeeklyDTO>> fetchDefault(IbizproProductWeeklySearchContext context) {
+        ibizproproductweeklyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproProductWeekly> domains = ibizproproductweeklyService.searchDefault(context) ;
         List<IbizproProductWeeklyDTO> list = ibizproproductweeklyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -172,6 +177,7 @@ public class IbizproProductWeeklyResource {
 	@ApiOperation(value = "查询数据集", tags = {"产品周报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductweeklies/searchdefault")
 	public ResponseEntity<Page<IbizproProductWeeklyDTO>> searchDefault(@RequestBody IbizproProductWeeklySearchContext context) {
+        ibizproproductweeklyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproProductWeekly> domains = ibizproproductweeklyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproproductweeklyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

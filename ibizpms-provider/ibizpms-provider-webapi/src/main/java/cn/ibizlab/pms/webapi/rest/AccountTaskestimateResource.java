@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.AccountTaskestimate;
 import cn.ibizlab.pms.core.ibizpro.service.IAccountTaskestimateService;
 import cn.ibizlab.pms.core.ibizpro.filter.AccountTaskestimateSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.AccountTaskestimateModelImpl;
 
 @Slf4j
 @Api(tags = {"用户工时统计" })
@@ -42,6 +43,9 @@ public class AccountTaskestimateResource {
 
     @Autowired
     public IAccountTaskestimateService accounttaskestimateService;
+
+    @Autowired
+    public AccountTaskestimateModelImpl accounttaskestimateModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class AccountTaskestimateResource {
 	@ApiOperation(value = "获取所有用户工时", tags = {"用户工时统计" } ,notes = "获取所有用户工时")
     @RequestMapping(method= RequestMethod.GET , value="/accounttaskestimates/fetchallaccountestimate")
 	public ResponseEntity<List<AccountTaskestimateDTO>> fetchAllAccountEstimate(AccountTaskestimateSearchContext context) {
+        accounttaskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<AccountTaskestimate> domains = accounttaskestimateService.searchAllAccountEstimate(context) ;
         List<AccountTaskestimateDTO> list = accounttaskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class AccountTaskestimateResource {
 	@ApiOperation(value = "查询所有用户工时", tags = {"用户工时统计" } ,notes = "查询所有用户工时")
     @RequestMapping(method= RequestMethod.POST , value="/accounttaskestimates/searchallaccountestimate")
 	public ResponseEntity<Page<AccountTaskestimateDTO>> searchAllAccountEstimate(@RequestBody AccountTaskestimateSearchContext context) {
+        accounttaskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<AccountTaskestimate> domains = accounttaskestimateService.searchAllAccountEstimate(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(accounttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class AccountTaskestimateResource {
 	@ApiOperation(value = "获取数据集", tags = {"用户工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/accounttaskestimates/fetchdefault")
 	public ResponseEntity<List<AccountTaskestimateDTO>> fetchDefault(AccountTaskestimateSearchContext context) {
+        accounttaskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<AccountTaskestimate> domains = accounttaskestimateService.searchDefault(context) ;
         List<AccountTaskestimateDTO> list = accounttaskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class AccountTaskestimateResource {
 	@ApiOperation(value = "查询数据集", tags = {"用户工时统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/accounttaskestimates/searchdefault")
 	public ResponseEntity<Page<AccountTaskestimateDTO>> searchDefault(@RequestBody AccountTaskestimateSearchContext context) {
+        accounttaskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<AccountTaskestimate> domains = accounttaskestimateService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(accounttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

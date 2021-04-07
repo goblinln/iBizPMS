@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Release;
 import cn.ibizlab.pms.core.zentao.service.IReleaseService;
 import cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.ReleaseModelImpl;
 
 @Slf4j
 @Api(tags = {"发布" })
@@ -42,6 +43,9 @@ public class ReleaseResource {
 
     @Autowired
     public IReleaseService releaseService;
+
+    @Autowired
+    public ReleaseModelImpl releaseModelImpl;
 
     @Autowired
     @Lazy
@@ -330,6 +334,7 @@ public class ReleaseResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"发布" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/releases/fetchdefault")
 	public ResponseEntity<List<ReleaseDTO>> fetchDefault(@RequestBody ReleaseSearchContext context) {
+        releaseModelImpl.addAuthorityConditions(context,"READ");
         Page<Release> domains = releaseService.searchDefault(context) ;
         List<ReleaseDTO> list = releaseMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -343,6 +348,7 @@ public class ReleaseResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"发布" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/releases/searchdefault")
 	public ResponseEntity<Page<ReleaseDTO>> searchDefault(@RequestBody ReleaseSearchContext context) {
+        releaseModelImpl.addAuthorityConditions(context,"READ");
         Page<Release> domains = releaseService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(releaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -352,6 +358,7 @@ public class ReleaseResource {
 	@ApiOperation(value = "获取测试报告关联发布", tags = {"发布" } ,notes = "获取测试报告关联发布")
     @RequestMapping(method= RequestMethod.GET , value="/releases/fetchreportrelease")
 	public ResponseEntity<List<ReleaseDTO>> fetchReportRelease(ReleaseSearchContext context) {
+        releaseModelImpl.addAuthorityConditions(context,"READ");
         Page<Release> domains = releaseService.searchReportRelease(context) ;
         List<ReleaseDTO> list = releaseMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -365,6 +372,7 @@ public class ReleaseResource {
 	@ApiOperation(value = "查询测试报告关联发布", tags = {"发布" } ,notes = "查询测试报告关联发布")
     @RequestMapping(method= RequestMethod.POST , value="/releases/searchreportrelease")
 	public ResponseEntity<Page<ReleaseDTO>> searchReportRelease(@RequestBody ReleaseSearchContext context) {
+        releaseModelImpl.addAuthorityConditions(context,"READ");
         Page<Release> domains = releaseService.searchReportRelease(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(releaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

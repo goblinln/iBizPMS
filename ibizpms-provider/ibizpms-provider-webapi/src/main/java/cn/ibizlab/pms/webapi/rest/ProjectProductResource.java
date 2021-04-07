@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.ProjectProduct;
 import cn.ibizlab.pms.core.zentao.service.IProjectProductService;
 import cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.ProjectProductModelImpl;
 
 @Slf4j
 @Api(tags = {"项目产品" })
@@ -42,6 +43,9 @@ public class ProjectProductResource {
 
     @Autowired
     public IProjectProductService projectproductService;
+
+    @Autowired
+    public ProjectProductModelImpl projectproductModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class ProjectProductResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目产品" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/projectproducts/fetchdefault")
 	public ResponseEntity<List<ProjectProductDTO>> fetchDefault(ProjectProductSearchContext context) {
+        projectproductModelImpl.addAuthorityConditions(context,"READ");
         Page<ProjectProduct> domains = projectproductService.searchDefault(context) ;
         List<ProjectProductDTO> list = projectproductMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class ProjectProductResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"项目产品" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectproducts/searchdefault")
 	public ResponseEntity<Page<ProjectProductDTO>> searchDefault(@RequestBody ProjectProductSearchContext context) {
+        projectproductModelImpl.addAuthorityConditions(context,"READ");
         Page<ProjectProduct> domains = projectproductService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectproductMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class ProjectProductResource {
 	@ApiOperation(value = "获取关联计划", tags = {"项目产品" } ,notes = "获取关联计划")
     @RequestMapping(method= RequestMethod.GET , value="/projectproducts/fetchrelationplan")
 	public ResponseEntity<List<ProjectProductDTO>> fetchRelationPlan(ProjectProductSearchContext context) {
+        projectproductModelImpl.addAuthorityConditions(context,"READ");
         Page<ProjectProduct> domains = projectproductService.searchRelationPlan(context) ;
         List<ProjectProductDTO> list = projectproductMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class ProjectProductResource {
 	@ApiOperation(value = "查询关联计划", tags = {"项目产品" } ,notes = "查询关联计划")
     @RequestMapping(method= RequestMethod.POST , value="/projectproducts/searchrelationplan")
 	public ResponseEntity<Page<ProjectProductDTO>> searchRelationPlan(@RequestBody ProjectProductSearchContext context) {
+        projectproductModelImpl.addAuthorityConditions(context,"READ");
         Page<ProjectProduct> domains = projectproductService.searchRelationPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectproductMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.CompanyStats;
 import cn.ibizlab.pms.core.ibiz.service.ICompanyStatsService;
 import cn.ibizlab.pms.core.ibiz.filter.CompanyStatsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.CompanyStatsModelImpl;
 
 @Slf4j
 @Api(tags = {"公司动态汇总" })
@@ -42,6 +43,9 @@ public class CompanyStatsResource {
 
     @Autowired
     public ICompanyStatsService companystatsService;
+
+    @Autowired
+    public CompanyStatsModelImpl companystatsModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class CompanyStatsResource {
 	@ApiOperation(value = "获取公司动态统计", tags = {"公司动态汇总" } ,notes = "获取公司动态统计")
     @RequestMapping(method= RequestMethod.GET , value="/companystats/fetchcompanydynamicstats")
 	public ResponseEntity<List<CompanyStatsDTO>> fetchCompanyDynamicStats(CompanyStatsSearchContext context) {
+        companystatsModelImpl.addAuthorityConditions(context,"READ");
         Page<CompanyStats> domains = companystatsService.searchCompanyDynamicStats(context) ;
         List<CompanyStatsDTO> list = companystatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class CompanyStatsResource {
 	@ApiOperation(value = "查询公司动态统计", tags = {"公司动态汇总" } ,notes = "查询公司动态统计")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/searchcompanydynamicstats")
 	public ResponseEntity<Page<CompanyStatsDTO>> searchCompanyDynamicStats(@RequestBody CompanyStatsSearchContext context) {
+        companystatsModelImpl.addAuthorityConditions(context,"READ");
         Page<CompanyStats> domains = companystatsService.searchCompanyDynamicStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(companystatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class CompanyStatsResource {
 	@ApiOperation(value = "获取数据集", tags = {"公司动态汇总" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/companystats/fetchdefault")
 	public ResponseEntity<List<CompanyStatsDTO>> fetchDefault(CompanyStatsSearchContext context) {
+        companystatsModelImpl.addAuthorityConditions(context,"READ");
         Page<CompanyStats> domains = companystatsService.searchDefault(context) ;
         List<CompanyStatsDTO> list = companystatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class CompanyStatsResource {
 	@ApiOperation(value = "查询数据集", tags = {"公司动态汇总" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/searchdefault")
 	public ResponseEntity<Page<CompanyStatsDTO>> searchDefault(@RequestBody CompanyStatsSearchContext context) {
+        companystatsModelImpl.addAuthorityConditions(context,"READ");
         Page<CompanyStats> domains = companystatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(companystatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

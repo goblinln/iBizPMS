@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Bug;
 import cn.ibizlab.pms.core.zentao.service.IBugService;
 import cn.ibizlab.pms.core.zentao.filter.BugSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.BugModelImpl;
 
 @Slf4j
 @Api(tags = {"Bug" })
@@ -42,6 +43,9 @@ public class BugResource {
 
     @Autowired
     public IBugService bugService;
+
+    @Autowired
+    public BugModelImpl bugModelImpl;
 
     @Autowired
     @Lazy
@@ -514,6 +518,7 @@ public class BugResource {
 	@ApiOperation(value = "获取指派给我Bug", tags = {"Bug" } ,notes = "获取指派给我Bug")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchassignedtomybug")
 	public ResponseEntity<List<BugDTO>> fetchAssignedToMyBug(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchAssignedToMyBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -527,6 +532,7 @@ public class BugResource {
 	@ApiOperation(value = "查询指派给我Bug", tags = {"Bug" } ,notes = "查询指派给我Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchassignedtomybug")
 	public ResponseEntity<Page<BugDTO>> searchAssignedToMyBug(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchAssignedToMyBug(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -536,6 +542,7 @@ public class BugResource {
 	@ApiOperation(value = "获取指派给我Bug（PC）", tags = {"Bug" } ,notes = "获取指派给我Bug（PC）")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchassignedtomybugpc")
 	public ResponseEntity<List<BugDTO>> fetchAssignedToMyBugPc(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchAssignedToMyBugPc(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -549,6 +556,7 @@ public class BugResource {
 	@ApiOperation(value = "查询指派给我Bug（PC）", tags = {"Bug" } ,notes = "查询指派给我Bug（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchassignedtomybugpc")
 	public ResponseEntity<Page<BugDTO>> searchAssignedToMyBugPc(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchAssignedToMyBugPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -558,6 +566,7 @@ public class BugResource {
 	@ApiOperation(value = "获取版本关联bug(遗留的)", tags = {"Bug" } ,notes = "获取版本关联bug(遗留的)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbugsbybuild")
 	public ResponseEntity<List<BugDTO>> fetchBugsByBuild(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBugsByBuild(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -571,6 +580,7 @@ public class BugResource {
 	@ApiOperation(value = "查询版本关联bug(遗留的)", tags = {"Bug" } ,notes = "查询版本关联bug(遗留的)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbugsbybuild")
 	public ResponseEntity<Page<BugDTO>> searchBugsByBuild(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBugsByBuild(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -580,6 +590,7 @@ public class BugResource {
 	@ApiOperation(value = "获取版本关联Bug（已解决）", tags = {"Bug" } ,notes = "获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildbugs")
 	public ResponseEntity<List<BugDTO>> fetchBuildBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -593,6 +604,7 @@ public class BugResource {
 	@ApiOperation(value = "查询版本关联Bug（已解决）", tags = {"Bug" } ,notes = "查询版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildbugs")
 	public ResponseEntity<Page<BugDTO>> searchBuildBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildBugs(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -602,6 +614,7 @@ public class BugResource {
 	@ApiOperation(value = "获取版本可关联的已解决的Bugs集合", tags = {"Bug" } ,notes = "获取版本可关联的已解决的Bugs集合")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildlinkresolvedbugs")
 	public ResponseEntity<List<BugDTO>> fetchBuildLinkResolvedBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildLinkResolvedBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -615,6 +628,7 @@ public class BugResource {
 	@ApiOperation(value = "查询版本可关联的已解决的Bugs集合", tags = {"Bug" } ,notes = "查询版本可关联的已解决的Bugs集合")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildlinkresolvedbugs")
 	public ResponseEntity<Page<BugDTO>> searchBuildLinkResolvedBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildLinkResolvedBugs(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -624,6 +638,7 @@ public class BugResource {
 	@ApiOperation(value = "获取版本关联Bug（已解决）", tags = {"Bug" } ,notes = "获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildopenbugs")
 	public ResponseEntity<List<BugDTO>> fetchBuildOpenBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildOpenBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -637,6 +652,7 @@ public class BugResource {
 	@ApiOperation(value = "查询版本关联Bug（已解决）", tags = {"Bug" } ,notes = "查询版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildopenbugs")
 	public ResponseEntity<Page<BugDTO>> searchBuildOpenBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildOpenBugs(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -646,6 +662,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug", tags = {"Bug" } ,notes = "获取Build产生的Bug")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebug")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBug(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -659,6 +676,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug", tags = {"Bug" } ,notes = "查询Build产生的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebug")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBug(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBug(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -668,6 +686,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug", tags = {"Bug" } ,notes = "获取Build产生的Bug")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebugmodule")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugModule(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugModule(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -681,6 +700,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug", tags = {"Bug" } ,notes = "查询Build产生的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugmodule")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugModule(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -690,6 +710,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-创建者分布(项目)")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebugmodule_project")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugModule_Project(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugModule_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -703,6 +724,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-创建者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugmodule_project")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugModule_Project(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugModule_Project(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -712,6 +734,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug-创建分类", tags = {"Bug" } ,notes = "获取Build产生的Bug-创建分类")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebugopenedby")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugOpenedBy(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugOpenedBy(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -725,6 +748,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug-创建分类", tags = {"Bug" } ,notes = "查询Build产生的Bug-创建分类")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugopenedby")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugOpenedBy(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugOpenedBy(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -734,6 +758,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-创建者分布(项目)")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebugopenedby_project")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugOpenedBy_Project(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugOpenedBy_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -747,6 +772,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-创建者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugopenedby_project")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugOpenedBy_Project(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugOpenedBy_Project(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -756,6 +782,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug（已解决）", tags = {"Bug" } ,notes = "获取Build产生的Bug（已解决）")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebugres")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugRES(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugRES(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -769,6 +796,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug（已解决）", tags = {"Bug" } ,notes = "查询Build产生的Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugres")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugRES(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugRES(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -778,6 +806,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug-解决者分布", tags = {"Bug" } ,notes = "获取Build产生的Bug-解决者分布")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebugresolvedby")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugRESOLVEDBY(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugRESOLVEDBY(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -791,6 +820,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug-解决者分布", tags = {"Bug" } ,notes = "查询Build产生的Bug-解决者分布")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugresolvedby")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugRESOLVEDBY(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugRESOLVEDBY(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -800,6 +830,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug-解决者分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-解决者分布(项目)")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebugresolvedby_project")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugRESOLVEDBY_Project(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugRESOLVEDBY_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -813,6 +844,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug-解决者分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-解决者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugresolvedby_project")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugRESOLVEDBY_Project(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugRESOLVEDBY_Project(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -822,6 +854,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug-解决方案分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-解决方案分布(项目)")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebugresolution_project")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugResolution_Project(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugResolution_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -835,6 +868,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug-解决方案分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-解决方案分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugresolution_project")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugResolution_Project(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugResolution_Project(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -844,6 +878,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug-严重程度分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-严重程度分布(项目)")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebugseverity_project")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugSeverity_Project(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugSeverity_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -857,6 +892,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug-严重程度分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-严重程度分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugseverity_project")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugSeverity_Project(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugSeverity_Project(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -866,6 +902,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug-状态分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-状态分布(项目)")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebugstatus_project")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugStatus_Project(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugStatus_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -879,6 +916,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug-状态分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-状态分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugstatus_project")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugStatus_Project(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugStatus_Project(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -888,6 +926,7 @@ public class BugResource {
 	@ApiOperation(value = "获取Build产生的Bug-类型分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-类型分布(项目)")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchbuildproducebugtype_project")
 	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugType_Project(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugType_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -901,6 +940,7 @@ public class BugResource {
 	@ApiOperation(value = "查询Build产生的Bug-类型分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-类型分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugtype_project")
 	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugType_Project(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugType_Project(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -910,6 +950,7 @@ public class BugResource {
 	@ApiOperation(value = "获取当前用户解决的Bug", tags = {"Bug" } ,notes = "获取当前用户解决的Bug")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchcuruserresolve")
 	public ResponseEntity<List<BugDTO>> fetchCurUserResolve(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchCurUserResolve(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -923,6 +964,7 @@ public class BugResource {
 	@ApiOperation(value = "查询当前用户解决的Bug", tags = {"Bug" } ,notes = "查询当前用户解决的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchcuruserresolve")
 	public ResponseEntity<Page<BugDTO>> searchCurUserResolve(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchCurUserResolve(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -932,6 +974,7 @@ public class BugResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"Bug" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchdefault")
 	public ResponseEntity<List<BugDTO>> fetchDefault(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchDefault(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -945,6 +988,7 @@ public class BugResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"Bug" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchdefault")
 	public ResponseEntity<Page<BugDTO>> searchDefault(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -954,6 +998,7 @@ public class BugResource {
 	@ApiOperation(value = "获取ES批量的导入", tags = {"Bug" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchesbulk")
 	public ResponseEntity<List<BugDTO>> fetchESBulk(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchESBulk(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -967,6 +1012,7 @@ public class BugResource {
 	@ApiOperation(value = "查询ES批量的导入", tags = {"Bug" } ,notes = "查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchesbulk")
 	public ResponseEntity<Page<BugDTO>> searchESBulk(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -976,6 +1022,7 @@ public class BugResource {
 	@ApiOperation(value = "获取我代理的Bug", tags = {"Bug" } ,notes = "获取我代理的Bug")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchmyagentbug")
 	public ResponseEntity<List<BugDTO>> fetchMyAgentBug(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchMyAgentBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -989,6 +1036,7 @@ public class BugResource {
 	@ApiOperation(value = "查询我代理的Bug", tags = {"Bug" } ,notes = "查询我代理的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchmyagentbug")
 	public ResponseEntity<Page<BugDTO>> searchMyAgentBug(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchMyAgentBug(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -998,6 +1046,7 @@ public class BugResource {
 	@ApiOperation(value = "获取累计创建的Bug数", tags = {"Bug" } ,notes = "获取累计创建的Bug数")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchmycuropenedbug")
 	public ResponseEntity<List<BugDTO>> fetchMyCurOpenedBug(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchMyCurOpenedBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1011,6 +1060,7 @@ public class BugResource {
 	@ApiOperation(value = "查询累计创建的Bug数", tags = {"Bug" } ,notes = "查询累计创建的Bug数")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchmycuropenedbug")
 	public ResponseEntity<Page<BugDTO>> searchMyCurOpenedBug(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchMyCurOpenedBug(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1020,6 +1070,7 @@ public class BugResource {
 	@ApiOperation(value = "获取我的收藏", tags = {"Bug" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchmyfavorites")
 	public ResponseEntity<List<BugDTO>> fetchMyFavorites(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchMyFavorites(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1033,6 +1084,7 @@ public class BugResource {
 	@ApiOperation(value = "查询我的收藏", tags = {"Bug" } ,notes = "查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchmyfavorites")
 	public ResponseEntity<Page<BugDTO>> searchMyFavorites(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchMyFavorites(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1042,6 +1094,7 @@ public class BugResource {
 	@ApiOperation(value = "获取计划关联bug（去除已关联）", tags = {"Bug" } ,notes = "获取计划关联bug（去除已关联）")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchnotcurplanlinkbug")
 	public ResponseEntity<List<BugDTO>> fetchNotCurPlanLinkBug(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchNotCurPlanLinkBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1055,6 +1108,7 @@ public class BugResource {
 	@ApiOperation(value = "查询计划关联bug（去除已关联）", tags = {"Bug" } ,notes = "查询计划关联bug（去除已关联）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchnotcurplanlinkbug")
 	public ResponseEntity<Page<BugDTO>> searchNotCurPlanLinkBug(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchNotCurPlanLinkBug(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1064,6 +1118,7 @@ public class BugResource {
 	@ApiOperation(value = "获取遗留得Bug(项目)", tags = {"Bug" } ,notes = "获取遗留得Bug(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchprojectbugs")
 	public ResponseEntity<List<BugDTO>> fetchProjectBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchProjectBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1077,6 +1132,7 @@ public class BugResource {
 	@ApiOperation(value = "查询遗留得Bug(项目)", tags = {"Bug" } ,notes = "查询遗留得Bug(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchprojectbugs")
 	public ResponseEntity<Page<BugDTO>> searchProjectBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchProjectBugs(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1086,6 +1142,7 @@ public class BugResource {
 	@ApiOperation(value = "获取发布关联Bug（已解决）", tags = {"Bug" } ,notes = "获取发布关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleasebugs")
 	public ResponseEntity<List<BugDTO>> fetchReleaseBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1099,6 +1156,7 @@ public class BugResource {
 	@ApiOperation(value = "查询发布关联Bug（已解决）", tags = {"Bug" } ,notes = "查询发布关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchreleasebugs")
 	public ResponseEntity<Page<BugDTO>> searchReleaseBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseBugs(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1108,6 +1166,7 @@ public class BugResource {
 	@ApiOperation(value = "获取发布关联Bug（已解决）", tags = {"Bug" } ,notes = "获取发布关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleaseleftbugs")
 	public ResponseEntity<List<BugDTO>> fetchReleaseLeftBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseLeftBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1121,6 +1180,7 @@ public class BugResource {
 	@ApiOperation(value = "查询发布关联Bug（已解决）", tags = {"Bug" } ,notes = "查询发布关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchreleaseleftbugs")
 	public ResponseEntity<Page<BugDTO>> searchReleaseLeftBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseLeftBugs(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1130,6 +1190,7 @@ public class BugResource {
 	@ApiOperation(value = "获取发布可关联的bug（遗留）", tags = {"Bug" } ,notes = "获取发布可关联的bug（遗留）")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchreleaselinkableleftbug")
 	public ResponseEntity<List<BugDTO>> fetchReleaseLinkableLeftBug(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseLinkableLeftBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1143,6 +1204,7 @@ public class BugResource {
 	@ApiOperation(value = "查询发布可关联的bug（遗留）", tags = {"Bug" } ,notes = "查询发布可关联的bug（遗留）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchreleaselinkableleftbug")
 	public ResponseEntity<Page<BugDTO>> searchReleaseLinkableLeftBug(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseLinkableLeftBug(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1152,6 +1214,7 @@ public class BugResource {
 	@ApiOperation(value = "获取发布可关联的bug（已解决）", tags = {"Bug" } ,notes = "获取发布可关联的bug（已解决）")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchreleaselinkableresolvedbug")
 	public ResponseEntity<List<BugDTO>> fetchReleaseLinkableResolvedBug(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseLinkableResolvedBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1165,6 +1228,7 @@ public class BugResource {
 	@ApiOperation(value = "查询发布可关联的bug（已解决）", tags = {"Bug" } ,notes = "查询发布可关联的bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchreleaselinkableresolvedbug")
 	public ResponseEntity<Page<BugDTO>> searchReleaseLinkableResolvedBug(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseLinkableResolvedBug(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1174,6 +1238,7 @@ public class BugResource {
 	@ApiOperation(value = "获取发布关联Bug（未解决）", tags = {"Bug" } ,notes = "获取发布关联Bug（未解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreportbugs")
 	public ResponseEntity<List<BugDTO>> fetchReportBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReportBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1187,6 +1252,7 @@ public class BugResource {
 	@ApiOperation(value = "查询发布关联Bug（未解决）", tags = {"Bug" } ,notes = "查询发布关联Bug（未解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchreportbugs")
 	public ResponseEntity<Page<BugDTO>> searchReportBugs(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReportBugs(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1196,6 +1262,7 @@ public class BugResource {
 	@ApiOperation(value = "获取任务相关bug", tags = {"Bug" } ,notes = "获取任务相关bug")
     @RequestMapping(method= RequestMethod.GET , value="/bugs/fetchtaskrelatedbug")
 	public ResponseEntity<List<BugDTO>> fetchTaskRelatedBug(BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchTaskRelatedBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1209,6 +1276,7 @@ public class BugResource {
 	@ApiOperation(value = "查询任务相关bug", tags = {"Bug" } ,notes = "查询任务相关bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/searchtaskrelatedbug")
 	public ResponseEntity<Page<BugDTO>> searchTaskRelatedBug(@RequestBody BugSearchContext context) {
+        bugModelImpl.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchTaskRelatedBug(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

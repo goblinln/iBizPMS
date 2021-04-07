@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Product;
 import cn.ibizlab.pms.core.zentao.service.IProductService;
 import cn.ibizlab.pms.core.zentao.filter.ProductSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.ProductModelImpl;
 
 @Slf4j
 @Api(tags = {"产品" })
@@ -42,6 +43,9 @@ public class ProductResource {
 
     @Autowired
     public IProductService productService;
+
+    @Autowired
+    public ProductModelImpl productModelImpl;
 
     @Autowired
     @Lazy
@@ -198,6 +202,7 @@ public class ProductResource {
 	@ApiOperation(value = "获取全部产品", tags = {"产品" } ,notes = "获取全部产品")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchalllist")
 	public ResponseEntity<List<ProductDTO>> fetchAllList(ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchAllList(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -211,6 +216,7 @@ public class ProductResource {
 	@ApiOperation(value = "查询全部产品", tags = {"产品" } ,notes = "查询全部产品")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchalllist")
 	public ResponseEntity<Page<ProductDTO>> searchAllList(@RequestBody ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchAllList(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -220,6 +226,7 @@ public class ProductResource {
 	@ApiOperation(value = "获取所有产品", tags = {"产品" } ,notes = "获取所有产品")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchallproduct")
 	public ResponseEntity<List<ProductDTO>> fetchAllProduct(ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchAllProduct(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -233,6 +240,7 @@ public class ProductResource {
 	@ApiOperation(value = "查询所有产品", tags = {"产品" } ,notes = "查询所有产品")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchallproduct")
 	public ResponseEntity<Page<ProductDTO>> searchAllProduct(@RequestBody ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchAllProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -242,6 +250,7 @@ public class ProductResource {
 	@ApiOperation(value = "获取校验产品名称或产品代号是否已经存在", tags = {"产品" } ,notes = "获取校验产品名称或产品代号是否已经存在")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchchecknameorcode")
 	public ResponseEntity<List<ProductDTO>> fetchCheckNameOrCode(ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCheckNameOrCode(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -255,6 +264,7 @@ public class ProductResource {
 	@ApiOperation(value = "查询校验产品名称或产品代号是否已经存在", tags = {"产品" } ,notes = "查询校验产品名称或产品代号是否已经存在")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchchecknameorcode")
 	public ResponseEntity<Page<ProductDTO>> searchCheckNameOrCode(@RequestBody ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCheckNameOrCode(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -264,6 +274,7 @@ public class ProductResource {
 	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchcurproject")
 	public ResponseEntity<List<ProductDTO>> fetchCurProject(ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCurProject(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -277,6 +288,7 @@ public class ProductResource {
 	@ApiOperation(value = "查询当前项目", tags = {"产品" } ,notes = "查询当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchcurproject")
 	public ResponseEntity<Page<ProductDTO>> searchCurProject(@RequestBody ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCurProject(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -286,6 +298,7 @@ public class ProductResource {
 	@ApiOperation(value = "获取当前用户", tags = {"产品" } ,notes = "获取当前用户")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchcuruer")
 	public ResponseEntity<List<ProductDTO>> fetchCurUer(@RequestBody ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCurUer(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -299,6 +312,7 @@ public class ProductResource {
 	@ApiOperation(value = "查询当前用户", tags = {"产品" } ,notes = "查询当前用户")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchcuruer")
 	public ResponseEntity<Page<ProductDTO>> searchCurUer(@RequestBody ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCurUer(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -308,6 +322,7 @@ public class ProductResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchdefault")
 	public ResponseEntity<List<ProductDTO>> fetchDefault(ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchDefault(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -321,6 +336,7 @@ public class ProductResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"产品" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchdefault")
 	public ResponseEntity<Page<ProductDTO>> searchDefault(@RequestBody ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -330,6 +346,7 @@ public class ProductResource {
 	@ApiOperation(value = "获取ES批量的导入", tags = {"产品" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchesbulk")
 	public ResponseEntity<List<ProductDTO>> fetchESBulk(ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchESBulk(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -343,6 +360,7 @@ public class ProductResource {
 	@ApiOperation(value = "查询ES批量的导入", tags = {"产品" } ,notes = "查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchesbulk")
 	public ResponseEntity<Page<ProductDTO>> searchESBulk(@RequestBody ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -352,6 +370,7 @@ public class ProductResource {
 	@ApiOperation(value = "获取产品总览", tags = {"产品" } ,notes = "获取产品总览")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchproductpm")
 	public ResponseEntity<List<ProductDTO>> fetchProductPM(ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchProductPM(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -365,6 +384,7 @@ public class ProductResource {
 	@ApiOperation(value = "查询产品总览", tags = {"产品" } ,notes = "查询产品总览")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchproductpm")
 	public ResponseEntity<Page<ProductDTO>> searchProductPM(@RequestBody ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchProductPM(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -374,6 +394,7 @@ public class ProductResource {
 	@ApiOperation(value = "获取产品团队", tags = {"产品" } ,notes = "获取产品团队")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchproductteam")
 	public ResponseEntity<List<ProductDTO>> fetchProductTeam(ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchProductTeam(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -387,6 +408,7 @@ public class ProductResource {
 	@ApiOperation(value = "查询产品团队", tags = {"产品" } ,notes = "查询产品团队")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchproductteam")
 	public ResponseEntity<Page<ProductDTO>> searchProductTeam(@RequestBody ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchProductTeam(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -396,6 +418,7 @@ public class ProductResource {
 	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchstorycurproject")
 	public ResponseEntity<List<ProductDTO>> fetchStoryCurProject(ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchStoryCurProject(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -409,6 +432,7 @@ public class ProductResource {
 	@ApiOperation(value = "查询当前项目", tags = {"产品" } ,notes = "查询当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchstorycurproject")
 	public ResponseEntity<Page<ProductDTO>> searchStoryCurProject(@RequestBody ProductSearchContext context) {
+        productModelImpl.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchStoryCurProject(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

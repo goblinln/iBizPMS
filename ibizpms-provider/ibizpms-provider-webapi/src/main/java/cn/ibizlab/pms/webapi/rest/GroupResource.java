@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Group;
 import cn.ibizlab.pms.core.zentao.service.IGroupService;
 import cn.ibizlab.pms.core.zentao.filter.GroupSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.GroupModelImpl;
 
 @Slf4j
 @Api(tags = {"群组" })
@@ -42,6 +43,9 @@ public class GroupResource {
 
     @Autowired
     public IGroupService groupService;
+
+    @Autowired
+    public GroupModelImpl groupModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class GroupResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"群组" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/groups/fetchdefault")
 	public ResponseEntity<List<GroupDTO>> fetchDefault(GroupSearchContext context) {
+        groupModelImpl.addAuthorityConditions(context,"READ");
         Page<Group> domains = groupService.searchDefault(context) ;
         List<GroupDTO> list = groupMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class GroupResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"群组" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/groups/searchdefault")
 	public ResponseEntity<Page<GroupDTO>> searchDefault(@RequestBody GroupSearchContext context) {
+        groupModelImpl.addAuthorityConditions(context,"READ");
         Page<Group> domains = groupService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(groupMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

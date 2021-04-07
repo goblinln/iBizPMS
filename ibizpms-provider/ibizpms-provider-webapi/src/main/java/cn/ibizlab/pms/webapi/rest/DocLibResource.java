@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.DocLib;
 import cn.ibizlab.pms.core.zentao.service.IDocLibService;
 import cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.DocLibModelImpl;
 
 @Slf4j
 @Api(tags = {"文档库" })
@@ -42,6 +43,9 @@ public class DocLibResource {
 
     @Autowired
     public IDocLibService doclibService;
+
+    @Autowired
+    public DocLibModelImpl doclibModelImpl;
 
     @Autowired
     @Lazy
@@ -176,6 +180,7 @@ public class DocLibResource {
 	@ApiOperation(value = "获取自定义文档库", tags = {"文档库" } ,notes = "获取自定义文档库")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchbycustom")
 	public ResponseEntity<List<DocLibDTO>> fetchByCustom(DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByCustom(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -189,6 +194,7 @@ public class DocLibResource {
 	@ApiOperation(value = "查询自定义文档库", tags = {"文档库" } ,notes = "查询自定义文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbycustom")
 	public ResponseEntity<Page<DocLibDTO>> searchByCustom(@RequestBody DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByCustom(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -198,6 +204,7 @@ public class DocLibResource {
 	@ApiOperation(value = "获取产品文档库", tags = {"文档库" } ,notes = "获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproduct")
 	public ResponseEntity<List<DocLibDTO>> fetchByProduct(@RequestBody DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProduct(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -211,6 +218,7 @@ public class DocLibResource {
 	@ApiOperation(value = "查询产品文档库", tags = {"文档库" } ,notes = "查询产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyproduct")
 	public ResponseEntity<Page<DocLibDTO>> searchByProduct(@RequestBody DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -220,6 +228,7 @@ public class DocLibResource {
 	@ApiOperation(value = "获取产品文档库", tags = {"文档库" } ,notes = "获取产品文档库")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchbyproductnotfiles")
 	public ResponseEntity<List<DocLibDTO>> fetchByProductNotFiles(DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProductNotFiles(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -233,6 +242,7 @@ public class DocLibResource {
 	@ApiOperation(value = "查询产品文档库", tags = {"文档库" } ,notes = "查询产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyproductnotfiles")
 	public ResponseEntity<Page<DocLibDTO>> searchByProductNotFiles(@RequestBody DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProductNotFiles(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -242,6 +252,7 @@ public class DocLibResource {
 	@ApiOperation(value = "获取项目文件库", tags = {"文档库" } ,notes = "获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproject")
 	public ResponseEntity<List<DocLibDTO>> fetchByProject(@RequestBody DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProject(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -255,6 +266,7 @@ public class DocLibResource {
 	@ApiOperation(value = "查询项目文件库", tags = {"文档库" } ,notes = "查询项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyproject")
 	public ResponseEntity<Page<DocLibDTO>> searchByProject(@RequestBody DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProject(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -264,6 +276,7 @@ public class DocLibResource {
 	@ApiOperation(value = "获取项目文件库", tags = {"文档库" } ,notes = "获取项目文件库")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchbyprojectnotfiles")
 	public ResponseEntity<List<DocLibDTO>> fetchByProjectNotFiles(DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProjectNotFiles(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -277,6 +290,7 @@ public class DocLibResource {
 	@ApiOperation(value = "查询项目文件库", tags = {"文档库" } ,notes = "查询项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyprojectnotfiles")
 	public ResponseEntity<Page<DocLibDTO>> searchByProjectNotFiles(@RequestBody DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProjectNotFiles(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -286,6 +300,7 @@ public class DocLibResource {
 	@ApiOperation(value = "获取所属文档库", tags = {"文档库" } ,notes = "获取所属文档库")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchcurdoclib")
 	public ResponseEntity<List<DocLibDTO>> fetchCurDocLib(DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchCurDocLib(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -299,6 +314,7 @@ public class DocLibResource {
 	@ApiOperation(value = "查询所属文档库", tags = {"文档库" } ,notes = "查询所属文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchcurdoclib")
 	public ResponseEntity<Page<DocLibDTO>> searchCurDocLib(@RequestBody DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchCurDocLib(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -308,6 +324,7 @@ public class DocLibResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"文档库" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchdefault")
 	public ResponseEntity<List<DocLibDTO>> fetchDefault(DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchDefault(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -321,6 +338,7 @@ public class DocLibResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"文档库" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchdefault")
 	public ResponseEntity<Page<DocLibDTO>> searchDefault(@RequestBody DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -330,6 +348,7 @@ public class DocLibResource {
 	@ApiOperation(value = "获取我的收藏", tags = {"文档库" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchmyfavourites")
 	public ResponseEntity<List<DocLibDTO>> fetchMyFavourites(DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchMyFavourites(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -343,6 +362,7 @@ public class DocLibResource {
 	@ApiOperation(value = "查询我的收藏", tags = {"文档库" } ,notes = "查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchmyfavourites")
 	public ResponseEntity<Page<DocLibDTO>> searchMyFavourites(@RequestBody DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchMyFavourites(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -352,6 +372,7 @@ public class DocLibResource {
 	@ApiOperation(value = "获取根目录", tags = {"文档库" } ,notes = "获取根目录")
     @RequestMapping(method= RequestMethod.GET , value="/doclibs/fetchrootmodulemulu")
 	public ResponseEntity<List<DocLibDTO>> fetchRootModuleMuLu(DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchRootModuleMuLu(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -365,6 +386,7 @@ public class DocLibResource {
 	@ApiOperation(value = "查询根目录", tags = {"文档库" } ,notes = "查询根目录")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchrootmodulemulu")
 	public ResponseEntity<Page<DocLibDTO>> searchRootModuleMuLu(@RequestBody DocLibSearchContext context) {
+        doclibModelImpl.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchRootModuleMuLu(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

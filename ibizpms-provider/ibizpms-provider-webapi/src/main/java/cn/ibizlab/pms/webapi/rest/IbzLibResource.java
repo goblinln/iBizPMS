@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzLib;
 import cn.ibizlab.pms.core.ibiz.service.IIbzLibService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzLibSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.IbzLibModelImpl;
 
 @Slf4j
 @Api(tags = {"用例库" })
@@ -42,6 +43,9 @@ public class IbzLibResource {
 
     @Autowired
     public IIbzLibService ibzlibService;
+
+    @Autowired
+    public IbzLibModelImpl ibzlibModelImpl;
 
     @Autowired
     @Lazy
@@ -141,6 +145,7 @@ public class IbzLibResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例库" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/ibzlibs/fetchdefault")
 	public ResponseEntity<List<IbzLibDTO>> fetchDefault(IbzLibSearchContext context) {
+        ibzlibModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzLib> domains = ibzlibService.searchDefault(context) ;
         List<IbzLibDTO> list = ibzlibMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -154,6 +159,7 @@ public class IbzLibResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"用例库" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/searchdefault")
 	public ResponseEntity<Page<IbzLibDTO>> searchDefault(@RequestBody IbzLibSearchContext context) {
+        ibzlibModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzLib> domains = ibzlibService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzlibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

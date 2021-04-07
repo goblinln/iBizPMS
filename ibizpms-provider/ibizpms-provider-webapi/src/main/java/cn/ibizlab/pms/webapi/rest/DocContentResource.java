@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.DocContent;
 import cn.ibizlab.pms.core.zentao.service.IDocContentService;
 import cn.ibizlab.pms.core.zentao.filter.DocContentSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.DocContentModelImpl;
 
 @Slf4j
 @Api(tags = {"文档内容" })
@@ -42,6 +43,9 @@ public class DocContentResource {
 
     @Autowired
     public IDocContentService doccontentService;
+
+    @Autowired
+    public DocContentModelImpl doccontentModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class DocContentResource {
 	@ApiOperation(value = "获取当前版本", tags = {"文档内容" } ,notes = "获取当前版本")
     @RequestMapping(method= RequestMethod.GET , value="/doccontents/fetchcurversion")
 	public ResponseEntity<List<DocContentDTO>> fetchCurVersion(DocContentSearchContext context) {
+        doccontentModelImpl.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchCurVersion(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class DocContentResource {
 	@ApiOperation(value = "查询当前版本", tags = {"文档内容" } ,notes = "查询当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/doccontents/searchcurversion")
 	public ResponseEntity<Page<DocContentDTO>> searchCurVersion(@RequestBody DocContentSearchContext context) {
+        doccontentModelImpl.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchCurVersion(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doccontentMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class DocContentResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"文档内容" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/doccontents/fetchdefault")
 	public ResponseEntity<List<DocContentDTO>> fetchDefault(DocContentSearchContext context) {
+        doccontentModelImpl.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchDefault(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class DocContentResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"文档内容" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doccontents/searchdefault")
 	public ResponseEntity<Page<DocContentDTO>> searchDefault(@RequestBody DocContentSearchContext context) {
+        doccontentModelImpl.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doccontentMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

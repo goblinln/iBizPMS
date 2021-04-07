@@ -43,6 +43,7 @@ public class IBIZProKeywordResource {
     @Autowired
     public IIBIZProKeywordService ibizprokeywordService;
 
+
     @Autowired
     @Lazy
     public IBIZProKeywordMapping ibizprokeywordMapping;

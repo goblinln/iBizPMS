@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.report.domain.IbzReportly;
 import cn.ibizlab.pms.core.report.service.IIbzReportlyService;
 import cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.report.model.impl.IbzReportlyModelImpl;
 
 @Slf4j
 @Api(tags = {"汇报" })
@@ -42,6 +43,9 @@ public class IbzReportlyResource {
 
     @Autowired
     public IIbzReportlyService ibzreportlyService;
+
+    @Autowired
+    public IbzReportlyModelImpl ibzreportlyModelImpl;
 
     @Autowired
     @Lazy
@@ -177,6 +181,7 @@ public class IbzReportlyResource {
 	@ApiOperation(value = "获取数据集", tags = {"汇报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchdefault")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchDefault(IbzReportlySearchContext context) {
+        ibzreportlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchDefault(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -190,6 +195,7 @@ public class IbzReportlyResource {
 	@ApiOperation(value = "查询数据集", tags = {"汇报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchdefault")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchDefault(@RequestBody IbzReportlySearchContext context) {
+        ibzreportlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -199,6 +205,7 @@ public class IbzReportlyResource {
 	@ApiOperation(value = "获取我所有的汇报", tags = {"汇报" } ,notes = "获取我所有的汇报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchmyallreportly")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchMyAllReportly(IbzReportlySearchContext context) {
+        ibzreportlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyAllReportly(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -212,6 +219,7 @@ public class IbzReportlyResource {
 	@ApiOperation(value = "查询我所有的汇报", tags = {"汇报" } ,notes = "查询我所有的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyallreportly")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchMyAllReportly(@RequestBody IbzReportlySearchContext context) {
+        ibzreportlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyAllReportly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -221,6 +229,7 @@ public class IbzReportlyResource {
 	@ApiOperation(value = "获取我收到的汇报", tags = {"汇报" } ,notes = "获取我收到的汇报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchmyreceived")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReceived(IbzReportlySearchContext context) {
+        ibzreportlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyReceived(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -234,6 +243,7 @@ public class IbzReportlyResource {
 	@ApiOperation(value = "查询我收到的汇报", tags = {"汇报" } ,notes = "查询我收到的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyreceived")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchMyReceived(@RequestBody IbzReportlySearchContext context) {
+        ibzreportlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyReceived(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -243,6 +253,7 @@ public class IbzReportlyResource {
 	@ApiOperation(value = "获取我的未提交汇报", tags = {"汇报" } ,notes = "获取我的未提交汇报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchmyreportlymob")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReportlyMob(IbzReportlySearchContext context) {
+        ibzreportlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyReportlyMob(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -256,6 +267,7 @@ public class IbzReportlyResource {
 	@ApiOperation(value = "查询我的未提交汇报", tags = {"汇报" } ,notes = "查询我的未提交汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyreportlymob")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchMyReportlyMob(@RequestBody IbzReportlySearchContext context) {
+        ibzreportlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyReportlyMob(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

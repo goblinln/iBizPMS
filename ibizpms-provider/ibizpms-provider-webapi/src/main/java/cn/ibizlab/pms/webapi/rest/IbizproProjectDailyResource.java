@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbizproProjectDaily;
 import cn.ibizlab.pms.core.ibizpro.service.IIbizproProjectDailyService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbizproProjectDailySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.IbizproProjectDailyModelImpl;
 
 @Slf4j
 @Api(tags = {"项目日报" })
@@ -42,6 +43,9 @@ public class IbizproProjectDailyResource {
 
     @Autowired
     public IIbizproProjectDailyService ibizproprojectdailyService;
+
+    @Autowired
+    public IbizproProjectDailyModelImpl ibizproprojectdailyModelImpl;
 
     @Autowired
     @Lazy
@@ -159,6 +163,7 @@ public class IbizproProjectDailyResource {
 	@ApiOperation(value = "获取数据集", tags = {"项目日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproprojectdailies/fetchdefault")
 	public ResponseEntity<List<IbizproProjectDailyDTO>> fetchDefault(IbizproProjectDailySearchContext context) {
+        ibizproprojectdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproProjectDaily> domains = ibizproprojectdailyService.searchDefault(context) ;
         List<IbizproProjectDailyDTO> list = ibizproprojectdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -172,6 +177,7 @@ public class IbizproProjectDailyResource {
 	@ApiOperation(value = "查询数据集", tags = {"项目日报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectdailies/searchdefault")
 	public ResponseEntity<Page<IbizproProjectDailyDTO>> searchDefault(@RequestBody IbizproProjectDailySearchContext context) {
+        ibizproprojectdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproProjectDaily> domains = ibizproprojectdailyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproprojectdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

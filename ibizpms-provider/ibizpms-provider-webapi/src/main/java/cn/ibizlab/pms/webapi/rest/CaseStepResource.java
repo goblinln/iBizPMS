@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.CaseStep;
 import cn.ibizlab.pms.core.zentao.service.ICaseStepService;
 import cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.CaseStepModelImpl;
 
 @Slf4j
 @Api(tags = {"用例步骤" })
@@ -42,6 +43,9 @@ public class CaseStepResource {
 
     @Autowired
     public ICaseStepService casestepService;
+
+    @Autowired
+    public CaseStepModelImpl casestepModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "获取当前测试步骤", tags = {"用例步骤" } ,notes = "获取当前测试步骤")
     @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchcurtest")
 	public ResponseEntity<List<CaseStepDTO>> fetchCurTest(CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchCurTest(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "查询当前测试步骤", tags = {"用例步骤" } ,notes = "查询当前测试步骤")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchcurtest")
 	public ResponseEntity<Page<CaseStepDTO>> searchCurTest(@RequestBody CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchCurTest(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例步骤" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchdefault")
 	public ResponseEntity<List<CaseStepDTO>> fetchDefault(CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchDefault(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"用例步骤" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchdefault")
 	public ResponseEntity<Page<CaseStepDTO>> searchDefault(@RequestBody CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -184,6 +192,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "获取DEFAULT1", tags = {"用例步骤" } ,notes = "获取DEFAULT1")
     @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchdefault1")
 	public ResponseEntity<List<CaseStepDTO>> fetchDefault1(CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchDefault1(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -197,6 +206,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "查询DEFAULT1", tags = {"用例步骤" } ,notes = "查询DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchdefault1")
 	public ResponseEntity<Page<CaseStepDTO>> searchDefault1(@RequestBody CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchDefault1(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -206,6 +216,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "获取Mob", tags = {"用例步骤" } ,notes = "获取Mob")
     @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchmob")
 	public ResponseEntity<List<CaseStepDTO>> fetchMob(CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchMob(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -219,6 +230,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "查询Mob", tags = {"用例步骤" } ,notes = "查询Mob")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchmob")
 	public ResponseEntity<Page<CaseStepDTO>> searchMob(@RequestBody CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchMob(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -228,6 +240,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "获取版本", tags = {"用例步骤" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchversion")
 	public ResponseEntity<List<CaseStepDTO>> fetchVersion(CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchVersion(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -241,6 +254,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "查询版本", tags = {"用例步骤" } ,notes = "查询版本")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchversion")
 	public ResponseEntity<Page<CaseStepDTO>> searchVersion(@RequestBody CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchVersion(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -250,6 +264,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "获取版本1", tags = {"用例步骤" } ,notes = "获取版本1")
     @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchversions")
 	public ResponseEntity<List<CaseStepDTO>> fetchVersions(CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchVersions(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -263,6 +278,7 @@ public class CaseStepResource {
 	@ApiOperation(value = "查询版本1", tags = {"用例步骤" } ,notes = "查询版本1")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchversions")
 	public ResponseEntity<Page<CaseStepDTO>> searchVersions(@RequestBody CaseStepSearchContext context) {
+        casestepModelImpl.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchVersions(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

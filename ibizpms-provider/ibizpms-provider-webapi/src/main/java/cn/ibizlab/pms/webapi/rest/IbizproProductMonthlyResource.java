@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbizproProductMonthly;
 import cn.ibizlab.pms.core.ibizpro.service.IIbizproProductMonthlyService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbizproProductMonthlySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.IbizproProductMonthlyModelImpl;
 
 @Slf4j
 @Api(tags = {"产品月报" })
@@ -42,6 +43,9 @@ public class IbizproProductMonthlyResource {
 
     @Autowired
     public IIbizproProductMonthlyService ibizproproductmonthlyService;
+
+    @Autowired
+    public IbizproProductMonthlyModelImpl ibizproproductmonthlyModelImpl;
 
     @Autowired
     @Lazy
@@ -177,6 +181,7 @@ public class IbizproProductMonthlyResource {
 	@ApiOperation(value = "获取数据集", tags = {"产品月报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproproductmonthlies/fetchdefault")
 	public ResponseEntity<List<IbizproProductMonthlyDTO>> fetchDefault(IbizproProductMonthlySearchContext context) {
+        ibizproproductmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproProductMonthly> domains = ibizproproductmonthlyService.searchDefault(context) ;
         List<IbizproProductMonthlyDTO> list = ibizproproductmonthlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -190,6 +195,7 @@ public class IbizproProductMonthlyResource {
 	@ApiOperation(value = "查询数据集", tags = {"产品月报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductmonthlies/searchdefault")
 	public ResponseEntity<Page<IbizproProductMonthlyDTO>> searchDefault(@RequestBody IbizproProductMonthlySearchContext context) {
+        ibizproproductmonthlyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproProductMonthly> domains = ibizproproductmonthlyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproproductmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

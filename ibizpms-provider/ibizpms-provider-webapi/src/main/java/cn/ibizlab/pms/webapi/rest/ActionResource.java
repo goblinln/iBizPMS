@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Action;
 import cn.ibizlab.pms.core.zentao.service.IActionService;
 import cn.ibizlab.pms.core.zentao.filter.ActionSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.ActionModelImpl;
 
 @Slf4j
 @Api(tags = {"系统日志" })
@@ -42,6 +43,9 @@ public class ActionResource {
 
     @Autowired
     public IActionService actionService;
+
+    @Autowired
+    public ActionModelImpl actionModelImpl;
 
     @Autowired
     @Lazy
@@ -186,6 +190,7 @@ public class ActionResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"系统日志" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/actions/fetchdefault")
 	public ResponseEntity<List<ActionDTO>> fetchDefault(ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchDefault(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -199,6 +204,7 @@ public class ActionResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"系统日志" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/actions/searchdefault")
 	public ResponseEntity<Page<ActionDTO>> searchDefault(@RequestBody ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -208,6 +214,7 @@ public class ActionResource {
 	@ApiOperation(value = "获取MobType", tags = {"系统日志" } ,notes = "获取MobType")
     @RequestMapping(method= RequestMethod.GET , value="/actions/fetchmobtype")
 	public ResponseEntity<List<ActionDTO>> fetchMobType(ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchMobType(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -221,6 +228,7 @@ public class ActionResource {
 	@ApiOperation(value = "查询MobType", tags = {"系统日志" } ,notes = "查询MobType")
     @RequestMapping(method= RequestMethod.POST , value="/actions/searchmobtype")
 	public ResponseEntity<Page<ActionDTO>> searchMobType(@RequestBody ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchMobType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -230,6 +238,7 @@ public class ActionResource {
 	@ApiOperation(value = "获取项目动态(我的)", tags = {"系统日志" } ,notes = "获取项目动态(我的)")
     @RequestMapping(method= RequestMethod.GET , value="/actions/fetchmytrends")
 	public ResponseEntity<List<ActionDTO>> fetchMyTrends(ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -243,6 +252,7 @@ public class ActionResource {
 	@ApiOperation(value = "查询项目动态(我的)", tags = {"系统日志" } ,notes = "查询项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/actions/searchmytrends")
 	public ResponseEntity<Page<ActionDTO>> searchMyTrends(@RequestBody ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchMyTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -252,6 +262,7 @@ public class ActionResource {
 	@ApiOperation(value = "获取ProductTrends", tags = {"系统日志" } ,notes = "获取ProductTrends")
     @RequestMapping(method= RequestMethod.GET , value="/actions/fetchproducttrends")
 	public ResponseEntity<List<ActionDTO>> fetchProductTrends(ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchProductTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -265,6 +276,7 @@ public class ActionResource {
 	@ApiOperation(value = "查询ProductTrends", tags = {"系统日志" } ,notes = "查询ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/actions/searchproducttrends")
 	public ResponseEntity<Page<ActionDTO>> searchProductTrends(@RequestBody ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchProductTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -274,6 +286,7 @@ public class ActionResource {
 	@ApiOperation(value = "获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.GET , value="/actions/fetchprojecttrends")
 	public ResponseEntity<List<ActionDTO>> fetchProjectTrends(ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchProjectTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -287,6 +300,7 @@ public class ActionResource {
 	@ApiOperation(value = "查询项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "查询项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/actions/searchprojecttrends")
 	public ResponseEntity<Page<ActionDTO>> searchProjectTrends(@RequestBody ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchProjectTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -296,6 +310,7 @@ public class ActionResource {
 	@ApiOperation(value = "获取查询用户使用年", tags = {"系统日志" } ,notes = "获取查询用户使用年")
     @RequestMapping(method= RequestMethod.GET , value="/actions/fetchqueryuseryear")
 	public ResponseEntity<List<ActionDTO>> fetchQueryUserYEAR(ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -309,6 +324,7 @@ public class ActionResource {
 	@ApiOperation(value = "查询查询用户使用年", tags = {"系统日志" } ,notes = "查询查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/actions/searchqueryuseryear")
 	public ResponseEntity<Page<ActionDTO>> searchQueryUserYEAR(@RequestBody ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -318,6 +334,7 @@ public class ActionResource {
 	@ApiOperation(value = "获取Type", tags = {"系统日志" } ,notes = "获取Type")
     @RequestMapping(method= RequestMethod.GET , value="/actions/fetchtype")
 	public ResponseEntity<List<ActionDTO>> fetchType(ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchType(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -331,6 +348,7 @@ public class ActionResource {
 	@ApiOperation(value = "查询Type", tags = {"系统日志" } ,notes = "查询Type")
     @RequestMapping(method= RequestMethod.POST , value="/actions/searchtype")
 	public ResponseEntity<Page<ActionDTO>> searchType(@RequestBody ActionSearchContext context) {
+        actionModelImpl.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

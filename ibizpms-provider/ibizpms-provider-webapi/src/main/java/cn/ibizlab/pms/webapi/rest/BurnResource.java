@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Burn;
 import cn.ibizlab.pms.core.zentao.service.IBurnService;
 import cn.ibizlab.pms.core.zentao.filter.BurnSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.BurnModelImpl;
 
 @Slf4j
 @Api(tags = {"burn" })
@@ -42,6 +43,9 @@ public class BurnResource {
 
     @Autowired
     public IBurnService burnService;
+
+    @Autowired
+    public BurnModelImpl burnModelImpl;
 
     @Autowired
     @Lazy
@@ -158,6 +162,7 @@ public class BurnResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"burn" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/burns/fetchdefault")
 	public ResponseEntity<List<BurnDTO>> fetchDefault(BurnSearchContext context) {
+        burnModelImpl.addAuthorityConditions(context,"READ");
         Page<Burn> domains = burnService.searchDefault(context) ;
         List<BurnDTO> list = burnMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -171,6 +176,7 @@ public class BurnResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"burn" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/burns/searchdefault")
 	public ResponseEntity<Page<BurnDTO>> searchDefault(@RequestBody BurnSearchContext context) {
+        burnModelImpl.addAuthorityConditions(context,"READ");
         Page<Burn> domains = burnService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(burnMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -180,6 +186,7 @@ public class BurnResource {
 	@ApiOperation(value = "获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "获取燃尽图预计（含周末）")
     @RequestMapping(method= RequestMethod.GET , value="/burns/fetchestimateandleft")
 	public ResponseEntity<List<BurnDTO>> fetchESTIMATEANDLEFT(BurnSearchContext context) {
+        burnModelImpl.addAuthorityConditions(context,"READ");
         Page<Burn> domains = burnService.searchESTIMATEANDLEFT(context) ;
         List<BurnDTO> list = burnMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -193,6 +200,7 @@ public class BurnResource {
 	@ApiOperation(value = "查询燃尽图预计（含周末）", tags = {"burn" } ,notes = "查询燃尽图预计（含周末）")
     @RequestMapping(method= RequestMethod.POST , value="/burns/searchestimateandleft")
 	public ResponseEntity<Page<BurnDTO>> searchESTIMATEANDLEFT(@RequestBody BurnSearchContext context) {
+        burnModelImpl.addAuthorityConditions(context,"READ");
         Page<Burn> domains = burnService.searchESTIMATEANDLEFT(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(burnMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

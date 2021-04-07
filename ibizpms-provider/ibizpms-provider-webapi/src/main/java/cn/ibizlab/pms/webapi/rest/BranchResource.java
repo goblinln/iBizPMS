@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Branch;
 import cn.ibizlab.pms.core.zentao.service.IBranchService;
 import cn.ibizlab.pms.core.zentao.filter.BranchSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.BranchModelImpl;
 
 @Slf4j
 @Api(tags = {"产品的分支和平台信息" })
@@ -42,6 +43,9 @@ public class BranchResource {
 
     @Autowired
     public IBranchService branchService;
+
+    @Autowired
+    public BranchModelImpl branchModelImpl;
 
     @Autowired
     @Lazy
@@ -158,6 +162,7 @@ public class BranchResource {
 	@ApiOperation(value = "获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "获取CurProduct")
     @RequestMapping(method= RequestMethod.GET , value="/branches/fetchcurproduct")
 	public ResponseEntity<List<BranchDTO>> fetchCurProduct(BranchSearchContext context) {
+        branchModelImpl.addAuthorityConditions(context,"READ");
         Page<Branch> domains = branchService.searchCurProduct(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -171,6 +176,7 @@ public class BranchResource {
 	@ApiOperation(value = "查询CurProduct", tags = {"产品的分支和平台信息" } ,notes = "查询CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/branches/searchcurproduct")
 	public ResponseEntity<Page<BranchDTO>> searchCurProduct(@RequestBody BranchSearchContext context) {
+        branchModelImpl.addAuthorityConditions(context,"READ");
         Page<Branch> domains = branchService.searchCurProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -180,6 +186,7 @@ public class BranchResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/branches/fetchdefault")
 	public ResponseEntity<List<BranchDTO>> fetchDefault(@RequestBody BranchSearchContext context) {
+        branchModelImpl.addAuthorityConditions(context,"READ");
         Page<Branch> domains = branchService.searchDefault(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -193,6 +200,7 @@ public class BranchResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/branches/searchdefault")
 	public ResponseEntity<Page<BranchDTO>> searchDefault(@RequestBody BranchSearchContext context) {
+        branchModelImpl.addAuthorityConditions(context,"READ");
         Page<Branch> domains = branchService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

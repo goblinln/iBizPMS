@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.TaskTeam;
 import cn.ibizlab.pms.core.ibiz.service.ITaskTeamService;
 import cn.ibizlab.pms.core.ibiz.filter.TaskTeamSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.TaskTeamModelImpl;
 
 @Slf4j
 @Api(tags = {"任务团队" })
@@ -42,6 +43,9 @@ public class TaskTeamResource {
 
     @Autowired
     public ITaskTeamService taskteamService;
+
+    @Autowired
+    public TaskTeamModelImpl taskteamModelImpl;
 
     @Autowired
     @Lazy

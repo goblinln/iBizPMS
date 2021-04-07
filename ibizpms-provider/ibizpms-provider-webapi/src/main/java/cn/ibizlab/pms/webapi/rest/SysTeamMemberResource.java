@@ -43,6 +43,7 @@ public class SysTeamMemberResource {
     @Autowired
     public ISysTeamMemberService systeammemberService;
 
+
     @Autowired
     @Lazy
     public SysTeamMemberMapping systeammemberMapping;

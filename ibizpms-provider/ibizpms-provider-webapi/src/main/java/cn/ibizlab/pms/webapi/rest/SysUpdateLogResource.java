@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.SysUpdateLog;
 import cn.ibizlab.pms.core.ibiz.service.ISysUpdateLogService;
 import cn.ibizlab.pms.core.ibiz.filter.SysUpdateLogSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.SysUpdateLogModelImpl;
 
 @Slf4j
 @Api(tags = {"更新日志" })
@@ -42,6 +43,9 @@ public class SysUpdateLogResource {
 
     @Autowired
     public ISysUpdateLogService sysupdatelogService;
+
+    @Autowired
+    public SysUpdateLogModelImpl sysupdatelogModelImpl;
 
     @Autowired
     @Lazy
@@ -160,6 +164,7 @@ public class SysUpdateLogResource {
 	@ApiOperation(value = "获取数据集", tags = {"更新日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysupdatelogs/fetchdefault")
 	public ResponseEntity<List<SysUpdateLogDTO>> fetchDefault(SysUpdateLogSearchContext context) {
+        sysupdatelogModelImpl.addAuthorityConditions(context,"READ");
         Page<SysUpdateLog> domains = sysupdatelogService.searchDefault(context) ;
         List<SysUpdateLogDTO> list = sysupdatelogMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -173,6 +178,7 @@ public class SysUpdateLogResource {
 	@ApiOperation(value = "查询数据集", tags = {"更新日志" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/searchdefault")
 	public ResponseEntity<Page<SysUpdateLogDTO>> searchDefault(@RequestBody SysUpdateLogSearchContext context) {
+        sysupdatelogModelImpl.addAuthorityConditions(context,"READ");
         Page<SysUpdateLog> domains = sysupdatelogService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(sysupdatelogMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

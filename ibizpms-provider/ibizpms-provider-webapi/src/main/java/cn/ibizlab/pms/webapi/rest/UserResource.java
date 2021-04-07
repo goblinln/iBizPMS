@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.User;
 import cn.ibizlab.pms.core.zentao.service.IUserService;
 import cn.ibizlab.pms.core.zentao.filter.UserSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.UserModelImpl;
 
 @Slf4j
 @Api(tags = {"用户" })
@@ -42,6 +43,9 @@ public class UserResource {
 
     @Autowired
     public IUserService userService;
+
+    @Autowired
+    public UserModelImpl userModelImpl;
 
     @Autowired
     @Lazy
@@ -169,6 +173,7 @@ public class UserResource {
 	@ApiOperation(value = "获取Bug用户", tags = {"用户" } ,notes = "获取Bug用户")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchbuguser")
 	public ResponseEntity<List<UserDTO>> fetchBugUser(UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchBugUser(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -182,6 +187,7 @@ public class UserResource {
 	@ApiOperation(value = "查询Bug用户", tags = {"用户" } ,notes = "查询Bug用户")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchbuguser")
 	public ResponseEntity<Page<UserDTO>> searchBugUser(@RequestBody UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchBugUser(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -191,6 +197,7 @@ public class UserResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchdefault")
 	public ResponseEntity<List<UserDTO>> fetchDefault(UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchDefault(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -204,6 +211,7 @@ public class UserResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"用户" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchdefault")
 	public ResponseEntity<Page<UserDTO>> searchDefault(@RequestBody UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -213,6 +221,7 @@ public class UserResource {
 	@ApiOperation(value = "获取根据源代码账户获取登录名", tags = {"用户" } ,notes = "获取根据源代码账户获取登录名")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchgetbycommiter")
 	public ResponseEntity<List<UserDTO>> fetchGetByCommiter(UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchGetByCommiter(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -226,6 +235,7 @@ public class UserResource {
 	@ApiOperation(value = "查询根据源代码账户获取登录名", tags = {"用户" } ,notes = "查询根据源代码账户获取登录名")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchgetbycommiter")
 	public ResponseEntity<Page<UserDTO>> searchGetByCommiter(@RequestBody UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchGetByCommiter(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -235,6 +245,7 @@ public class UserResource {
 	@ApiOperation(value = "获取项目团队管理", tags = {"用户" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchprojectteamm")
 	public ResponseEntity<List<UserDTO>> fetchProjectTeamM(UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchProjectTeamM(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -248,6 +259,7 @@ public class UserResource {
 	@ApiOperation(value = "查询项目团队管理", tags = {"用户" } ,notes = "查询项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchprojectteamm")
 	public ResponseEntity<Page<UserDTO>> searchProjectTeamM(@RequestBody UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchProjectTeamM(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -257,6 +269,7 @@ public class UserResource {
 	@ApiOperation(value = "获取项目团队成员", tags = {"用户" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchprojectteamuser")
 	public ResponseEntity<List<UserDTO>> fetchProjectTeamUser(UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchProjectTeamUser(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -270,6 +283,7 @@ public class UserResource {
 	@ApiOperation(value = "查询项目团队成员", tags = {"用户" } ,notes = "查询项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchprojectteamuser")
 	public ResponseEntity<Page<UserDTO>> searchProjectTeamUser(@RequestBody UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchProjectTeamUser(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -279,6 +293,7 @@ public class UserResource {
 	@ApiOperation(value = "获取项目团队成员", tags = {"用户" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchprojectteamusertask")
 	public ResponseEntity<List<UserDTO>> fetchProjectTeamUserTask(UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchProjectTeamUserTask(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -292,6 +307,7 @@ public class UserResource {
 	@ApiOperation(value = "查询项目团队成员", tags = {"用户" } ,notes = "查询项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchprojectteamusertask")
 	public ResponseEntity<Page<UserDTO>> searchProjectTeamUserTask(@RequestBody UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchProjectTeamUserTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -301,6 +317,7 @@ public class UserResource {
 	@ApiOperation(value = "获取TASKTEAM", tags = {"用户" } ,notes = "获取TASKTEAM")
     @RequestMapping(method= RequestMethod.GET , value="/users/fetchtaskteam")
 	public ResponseEntity<List<UserDTO>> fetchTaskTeam(UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchTaskTeam(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -314,6 +331,7 @@ public class UserResource {
 	@ApiOperation(value = "查询TASKTEAM", tags = {"用户" } ,notes = "查询TASKTEAM")
     @RequestMapping(method= RequestMethod.POST , value="/users/searchtaskteam")
 	public ResponseEntity<Page<UserDTO>> searchTaskTeam(@RequestBody UserSearchContext context) {
+        userModelImpl.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchTaskTeam(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

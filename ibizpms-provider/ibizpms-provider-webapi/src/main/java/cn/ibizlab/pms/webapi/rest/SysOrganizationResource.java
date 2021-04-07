@@ -43,6 +43,7 @@ public class SysOrganizationResource {
     @Autowired
     public ISysOrganizationService sysorganizationService;
 
+
     @Autowired
     @Lazy
     public SysOrganizationMapping sysorganizationMapping;

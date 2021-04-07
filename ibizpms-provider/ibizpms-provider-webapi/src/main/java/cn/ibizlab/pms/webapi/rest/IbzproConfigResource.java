@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbzproConfig;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzproConfigService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbzproConfigSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.IbzproConfigModelImpl;
 
 @Slf4j
 @Api(tags = {"系统配置表" })
@@ -42,6 +43,9 @@ public class IbzproConfigResource {
 
     @Autowired
     public IIbzproConfigService ibzproconfigService;
+
+    @Autowired
+    public IbzproConfigModelImpl ibzproconfigModelImpl;
 
     @Autowired
     @Lazy
@@ -160,6 +164,7 @@ public class IbzproConfigResource {
 	@ApiOperation(value = "获取数据集", tags = {"系统配置表" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproconfigs/fetchdefault")
 	public ResponseEntity<List<IbzproConfigDTO>> fetchDefault(IbzproConfigSearchContext context) {
+        ibzproconfigModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzproConfig> domains = ibzproconfigService.searchDefault(context) ;
         List<IbzproConfigDTO> list = ibzproconfigMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -173,6 +178,7 @@ public class IbzproConfigResource {
 	@ApiOperation(value = "查询数据集", tags = {"系统配置表" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproconfigs/searchdefault")
 	public ResponseEntity<Page<IbzproConfigDTO>> searchDefault(@RequestBody IbzproConfigSearchContext context) {
+        ibzproconfigModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzproConfig> domains = ibzproconfigService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproconfigMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.UserYearWorkStats;
 import cn.ibizlab.pms.core.ibiz.service.IUserYearWorkStatsService;
 import cn.ibizlab.pms.core.ibiz.filter.UserYearWorkStatsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.UserYearWorkStatsModelImpl;
 
 @Slf4j
 @Api(tags = {"用户年度工作内容统计" })
@@ -42,6 +43,9 @@ public class UserYearWorkStatsResource {
 
     @Autowired
     public IUserYearWorkStatsService useryearworkstatsService;
+
+    @Autowired
+    public UserYearWorkStatsModelImpl useryearworkstatsModelImpl;
 
     @Autowired
     @Lazy
@@ -211,6 +215,7 @@ public class UserYearWorkStatsResource {
 	@ApiOperation(value = "获取数据集", tags = {"用户年度工作内容统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/useryearworkstats/fetchdefault")
 	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchDefault(UserYearWorkStatsSearchContext context) {
+        useryearworkstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchDefault(context) ;
         List<UserYearWorkStatsDTO> list = useryearworkstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -224,6 +229,7 @@ public class UserYearWorkStatsResource {
 	@ApiOperation(value = "查询数据集", tags = {"用户年度工作内容统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/searchdefault")
 	public ResponseEntity<Page<UserYearWorkStatsDTO>> searchDefault(@RequestBody UserYearWorkStatsSearchContext context) {
+        useryearworkstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(useryearworkstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -233,6 +239,7 @@ public class UserYearWorkStatsResource {
 	@ApiOperation(value = "获取月完成任务数及累计工时和解决Bug数", tags = {"用户年度工作内容统计" } ,notes = "获取月完成任务数及累计工时和解决Bug数")
     @RequestMapping(method= RequestMethod.GET , value="/useryearworkstats/fetchmonthfinishtaskandbug")
 	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchMonthFinishTaskAndBug(UserYearWorkStatsSearchContext context) {
+        useryearworkstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchMonthFinishTaskAndBug(context) ;
         List<UserYearWorkStatsDTO> list = useryearworkstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -246,6 +253,7 @@ public class UserYearWorkStatsResource {
 	@ApiOperation(value = "查询月完成任务数及累计工时和解决Bug数", tags = {"用户年度工作内容统计" } ,notes = "查询月完成任务数及累计工时和解决Bug数")
     @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/searchmonthfinishtaskandbug")
 	public ResponseEntity<Page<UserYearWorkStatsDTO>> searchMonthFinishTaskAndBug(@RequestBody UserYearWorkStatsSearchContext context) {
+        useryearworkstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchMonthFinishTaskAndBug(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(useryearworkstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -255,6 +263,7 @@ public class UserYearWorkStatsResource {
 	@ApiOperation(value = "获取月创建Bug数和创建用例数", tags = {"用户年度工作内容统计" } ,notes = "获取月创建Bug数和创建用例数")
     @RequestMapping(method= RequestMethod.GET , value="/useryearworkstats/fetchmonthopenedbugandcase")
 	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchMonthOpenedBugAndCase(UserYearWorkStatsSearchContext context) {
+        useryearworkstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchMonthOpenedBugAndCase(context) ;
         List<UserYearWorkStatsDTO> list = useryearworkstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -268,6 +277,7 @@ public class UserYearWorkStatsResource {
 	@ApiOperation(value = "查询月创建Bug数和创建用例数", tags = {"用户年度工作内容统计" } ,notes = "查询月创建Bug数和创建用例数")
     @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/searchmonthopenedbugandcase")
 	public ResponseEntity<Page<UserYearWorkStatsDTO>> searchMonthOpenedBugAndCase(@RequestBody UserYearWorkStatsSearchContext context) {
+        useryearworkstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchMonthOpenedBugAndCase(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(useryearworkstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -277,6 +287,7 @@ public class UserYearWorkStatsResource {
 	@ApiOperation(value = "获取月创建需求数", tags = {"用户年度工作内容统计" } ,notes = "获取月创建需求数")
     @RequestMapping(method= RequestMethod.GET , value="/useryearworkstats/fetchmonthopenedstory")
 	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchMonthOpenedStory(UserYearWorkStatsSearchContext context) {
+        useryearworkstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchMonthOpenedStory(context) ;
         List<UserYearWorkStatsDTO> list = useryearworkstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -290,6 +301,7 @@ public class UserYearWorkStatsResource {
 	@ApiOperation(value = "查询月创建需求数", tags = {"用户年度工作内容统计" } ,notes = "查询月创建需求数")
     @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/searchmonthopenedstory")
 	public ResponseEntity<Page<UserYearWorkStatsDTO>> searchMonthOpenedStory(@RequestBody UserYearWorkStatsSearchContext context) {
+        useryearworkstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchMonthOpenedStory(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(useryearworkstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

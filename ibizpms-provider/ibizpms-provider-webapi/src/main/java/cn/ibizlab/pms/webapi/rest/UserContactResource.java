@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.UserContact;
 import cn.ibizlab.pms.core.zentao.service.IUserContactService;
 import cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.UserContactModelImpl;
 
 @Slf4j
 @Api(tags = {"用户联系方式" })
@@ -42,6 +43,9 @@ public class UserContactResource {
 
     @Autowired
     public IUserContactService usercontactService;
+
+    @Autowired
+    public UserContactModelImpl usercontactModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class UserContactResource {
 	@ApiOperation(value = "获取抄送联系人", tags = {"用户联系方式" } ,notes = "获取抄送联系人")
     @RequestMapping(method= RequestMethod.GET , value="/usercontacts/fetchcurusercontact")
 	public ResponseEntity<List<UserContactDTO>> fetchCurUSERCONTACT(UserContactSearchContext context) {
+        usercontactModelImpl.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchCurUSERCONTACT(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class UserContactResource {
 	@ApiOperation(value = "查询抄送联系人", tags = {"用户联系方式" } ,notes = "查询抄送联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/searchcurusercontact")
 	public ResponseEntity<Page<UserContactDTO>> searchCurUSERCONTACT(@RequestBody UserContactSearchContext context) {
+        usercontactModelImpl.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchCurUSERCONTACT(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(usercontactMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class UserContactResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户联系方式" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/usercontacts/fetchdefault")
 	public ResponseEntity<List<UserContactDTO>> fetchDefault(UserContactSearchContext context) {
+        usercontactModelImpl.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchDefault(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class UserContactResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"用户联系方式" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/searchdefault")
 	public ResponseEntity<Page<UserContactDTO>> searchDefault(@RequestBody UserContactSearchContext context) {
+        usercontactModelImpl.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(usercontactMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -184,6 +192,7 @@ public class UserContactResource {
 	@ApiOperation(value = "获取我的联系人", tags = {"用户联系方式" } ,notes = "获取我的联系人")
     @RequestMapping(method= RequestMethod.GET , value="/usercontacts/fetchmyusercontact")
 	public ResponseEntity<List<UserContactDTO>> fetchMyUSERCONTACT(UserContactSearchContext context) {
+        usercontactModelImpl.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchMyUSERCONTACT(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -197,6 +206,7 @@ public class UserContactResource {
 	@ApiOperation(value = "查询我的联系人", tags = {"用户联系方式" } ,notes = "查询我的联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/searchmyusercontact")
 	public ResponseEntity<Page<UserContactDTO>> searchMyUSERCONTACT(@RequestBody UserContactSearchContext context) {
+        usercontactModelImpl.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchMyUSERCONTACT(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(usercontactMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

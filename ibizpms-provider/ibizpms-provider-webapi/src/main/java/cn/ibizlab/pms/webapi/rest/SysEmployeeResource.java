@@ -43,6 +43,7 @@ public class SysEmployeeResource {
     @Autowired
     public ISysEmployeeService sysemployeeService;
 
+
     @Autowired
     @Lazy
     public SysEmployeeMapping sysemployeeMapping;

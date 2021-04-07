@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.History;
 import cn.ibizlab.pms.core.zentao.service.IHistoryService;
 import cn.ibizlab.pms.core.zentao.filter.HistorySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.HistoryModelImpl;
 
 @Slf4j
 @Api(tags = {"操作历史" })
@@ -42,6 +43,9 @@ public class HistoryResource {
 
     @Autowired
     public IHistoryService historyService;
+
+    @Autowired
+    public HistoryModelImpl historyModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class HistoryResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"操作历史" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefault(HistorySearchContext context) {
+        historyModelImpl.addAuthorityConditions(context,"READ");
         Page<History> domains = historyService.searchDefault(context) ;
         List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class HistoryResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"操作历史" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/histories/searchdefault")
 	public ResponseEntity<Page<HistoryDTO>> searchDefault(@RequestBody HistorySearchContext context) {
+        historyModelImpl.addAuthorityConditions(context,"READ");
         Page<History> domains = historyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

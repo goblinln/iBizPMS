@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Dept;
 import cn.ibizlab.pms.core.zentao.service.IDeptService;
 import cn.ibizlab.pms.core.zentao.filter.DeptSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.DeptModelImpl;
 
 @Slf4j
 @Api(tags = {"部门" })
@@ -42,6 +43,9 @@ public class DeptResource {
 
     @Autowired
     public IDeptService deptService;
+
+    @Autowired
+    public DeptModelImpl deptModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class DeptResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"部门" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/depts/fetchdefault")
 	public ResponseEntity<List<DeptDTO>> fetchDefault(DeptSearchContext context) {
+        deptModelImpl.addAuthorityConditions(context,"READ");
         Page<Dept> domains = deptService.searchDefault(context) ;
         List<DeptDTO> list = deptMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class DeptResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"部门" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/depts/searchdefault")
 	public ResponseEntity<Page<DeptDTO>> searchDefault(@RequestBody DeptSearchContext context) {
+        deptModelImpl.addAuthorityConditions(context,"READ");
         Page<Dept> domains = deptService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(deptMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class DeptResource {
 	@ApiOperation(value = "获取根部门", tags = {"部门" } ,notes = "获取根部门")
     @RequestMapping(method= RequestMethod.GET , value="/depts/fetchroot")
 	public ResponseEntity<List<DeptDTO>> fetchRoot(DeptSearchContext context) {
+        deptModelImpl.addAuthorityConditions(context,"READ");
         Page<Dept> domains = deptService.searchRoot(context) ;
         List<DeptDTO> list = deptMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class DeptResource {
 	@ApiOperation(value = "查询根部门", tags = {"部门" } ,notes = "查询根部门")
     @RequestMapping(method= RequestMethod.POST , value="/depts/searchroot")
 	public ResponseEntity<Page<DeptDTO>> searchRoot(@RequestBody DeptSearchContext context) {
+        deptModelImpl.addAuthorityConditions(context,"READ");
         Page<Dept> domains = deptService.searchRoot(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(deptMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

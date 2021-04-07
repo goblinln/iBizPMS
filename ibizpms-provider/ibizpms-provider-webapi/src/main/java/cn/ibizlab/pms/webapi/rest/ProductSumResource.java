@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.ProductSum;
 import cn.ibizlab.pms.core.ibiz.service.IProductSumService;
 import cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.ProductSumModelImpl;
 
 @Slf4j
 @Api(tags = {"产品汇总表" })
@@ -42,6 +43,9 @@ public class ProductSumResource {
 
     @Autowired
     public IProductSumService productsumService;
+
+    @Autowired
+    public ProductSumModelImpl productsumModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "获取数据集", tags = {"产品汇总表" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchdefault")
 	public ResponseEntity<List<ProductSumDTO>> fetchDefault(ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchDefault(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "查询数据集", tags = {"产品汇总表" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/searchdefault")
 	public ResponseEntity<Page<ProductSumDTO>> searchDefault(@RequestBody ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "获取产品创建bug数及占比", tags = {"产品汇总表" } ,notes = "获取产品创建bug数及占比")
     @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductbugcnt_qa")
 	public ResponseEntity<List<ProductSumDTO>> fetchProductBugcnt_QA(ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductBugcnt_QA(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "查询产品创建bug数及占比", tags = {"产品汇总表" } ,notes = "查询产品创建bug数及占比")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductbugcnt_qa")
 	public ResponseEntity<Page<ProductSumDTO>> searchProductBugcnt_QA(@RequestBody ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductBugcnt_QA(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -184,6 +192,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "获取产品创建需求占比", tags = {"产品汇总表" } ,notes = "获取产品创建需求占比")
     @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductcreatestory")
 	public ResponseEntity<List<ProductSumDTO>> fetchProductCreateStory(ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductCreateStory(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -197,6 +206,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "查询产品创建需求占比", tags = {"产品汇总表" } ,notes = "查询产品创建需求占比")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductcreatestory")
 	public ResponseEntity<Page<ProductSumDTO>> searchProductCreateStory(@RequestBody ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductCreateStory(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -206,6 +216,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "获取产品需求工时汇总", tags = {"产品汇总表" } ,notes = "获取产品需求工时汇总")
     @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductstoryhourssum")
 	public ResponseEntity<List<ProductSumDTO>> fetchProductStoryHoursSum(ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductStoryHoursSum(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -219,6 +230,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "查询产品需求工时汇总", tags = {"产品汇总表" } ,notes = "查询产品需求工时汇总")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductstoryhourssum")
 	public ResponseEntity<Page<ProductSumDTO>> searchProductStoryHoursSum(@RequestBody ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductStoryHoursSum(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -228,6 +240,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "获取产品需求汇总查询", tags = {"产品汇总表" } ,notes = "获取产品需求汇总查询")
     @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductstorysum")
 	public ResponseEntity<List<ProductSumDTO>> fetchProductStorySum(ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductStorySum(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -241,6 +254,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "查询产品需求汇总查询", tags = {"产品汇总表" } ,notes = "查询产品需求汇总查询")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductstorysum")
 	public ResponseEntity<Page<ProductSumDTO>> searchProductStorySum(@RequestBody ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductStorySum(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -250,6 +264,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "获取产品计划数和需求数", tags = {"产品汇总表" } ,notes = "获取产品计划数和需求数")
     @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductstorycntandplancnt")
 	public ResponseEntity<List<ProductSumDTO>> fetchProductStorycntAndPlancnt(ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductStorycntAndPlancnt(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -263,6 +278,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "查询产品计划数和需求数", tags = {"产品汇总表" } ,notes = "查询产品计划数和需求数")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductstorycntandplancnt")
 	public ResponseEntity<Page<ProductSumDTO>> searchProductStorycntAndPlancnt(@RequestBody ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductStorycntAndPlancnt(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -272,6 +288,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "获取产品Bug类型统计", tags = {"产品汇总表" } ,notes = "获取产品Bug类型统计")
     @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductsumbugtype")
 	public ResponseEntity<List<ProductSumDTO>> fetchProductSumBugType(ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductSumBugType(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -285,6 +302,7 @@ public class ProductSumResource {
 	@ApiOperation(value = "查询产品Bug类型统计", tags = {"产品汇总表" } ,notes = "查询产品Bug类型统计")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductsumbugtype")
 	public ResponseEntity<Page<ProductSumDTO>> searchProductSumBugType(@RequestBody ProductSumSearchContext context) {
+        productsumModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductSumBugType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

@@ -43,6 +43,7 @@ public class IBIZProTagResource {
     @Autowired
     public IIBIZProTagService ibizprotagService;
 
+
     @Autowired
     @Lazy
     public IBIZProTagMapping ibizprotagMapping;

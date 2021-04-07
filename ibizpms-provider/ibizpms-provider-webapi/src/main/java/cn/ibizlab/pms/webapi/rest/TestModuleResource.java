@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.TestModule;
 import cn.ibizlab.pms.core.ibiz.service.ITestModuleService;
 import cn.ibizlab.pms.core.ibiz.filter.TestModuleSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.TestModuleModelImpl;
 
 @Slf4j
 @Api(tags = {"测试模块" })
@@ -42,6 +43,9 @@ public class TestModuleResource {
 
     @Autowired
     public ITestModuleService testmoduleService;
+
+    @Autowired
+    public TestModuleModelImpl testmoduleModelImpl;
 
     @Autowired
     @Lazy
@@ -161,6 +165,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "获取BYPATH", tags = {"测试模块" } ,notes = "获取BYPATH")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchbypath")
 	public ResponseEntity<List<TestModuleDTO>> fetchByPath(TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchByPath(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -174,6 +179,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "查询BYPATH", tags = {"测试模块" } ,notes = "查询BYPATH")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchbypath")
 	public ResponseEntity<Page<TestModuleDTO>> searchByPath(@RequestBody TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchByPath(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -183,6 +189,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchdefault")
 	public ResponseEntity<List<TestModuleDTO>> fetchDefault(TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchDefault(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -196,6 +203,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"测试模块" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchdefault")
 	public ResponseEntity<Page<TestModuleDTO>> searchDefault(@RequestBody TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -205,6 +213,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "获取父模块", tags = {"测试模块" } ,notes = "获取父模块")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchparentmodule")
 	public ResponseEntity<List<TestModuleDTO>> fetchParentModule(TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchParentModule(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -218,6 +227,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "查询父模块", tags = {"测试模块" } ,notes = "查询父模块")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchparentmodule")
 	public ResponseEntity<Page<TestModuleDTO>> searchParentModule(@RequestBody TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchParentModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -227,6 +237,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "获取根模块", tags = {"测试模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchroot")
 	public ResponseEntity<List<TestModuleDTO>> fetchRoot(TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchRoot(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -240,6 +251,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "查询根模块", tags = {"测试模块" } ,notes = "查询根模块")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchroot")
 	public ResponseEntity<Page<TestModuleDTO>> searchRoot(@RequestBody TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchRoot(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -249,6 +261,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "获取根模块_无分支", tags = {"测试模块" } ,notes = "获取根模块_无分支")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchroot_nobranch")
 	public ResponseEntity<List<TestModuleDTO>> fetchRoot_NoBranch(TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchRoot_NoBranch(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -262,6 +275,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "查询根模块_无分支", tags = {"测试模块" } ,notes = "查询根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchroot_nobranch")
 	public ResponseEntity<Page<TestModuleDTO>> searchRoot_NoBranch(@RequestBody TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchRoot_NoBranch(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -271,6 +285,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "获取TestModule", tags = {"测试模块" } ,notes = "获取TestModule")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchtestmodule")
 	public ResponseEntity<List<TestModuleDTO>> fetchTestModule(TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchTestModule(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -284,6 +299,7 @@ public class TestModuleResource {
 	@ApiOperation(value = "查询TestModule", tags = {"测试模块" } ,notes = "查询TestModule")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchtestmodule")
 	public ResponseEntity<Page<TestModuleDTO>> searchTestModule(@RequestBody TestModuleSearchContext context) {
+        testmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchTestModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

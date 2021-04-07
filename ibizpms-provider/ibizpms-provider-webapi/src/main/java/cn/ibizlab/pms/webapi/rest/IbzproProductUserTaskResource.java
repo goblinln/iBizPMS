@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbzproProductUserTask;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzproProductUserTaskService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbzproProductUserTaskSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.IbzproProductUserTaskModelImpl;
 
 @Slf4j
 @Api(tags = {"产品汇报用户任务" })
@@ -42,6 +43,9 @@ public class IbzproProductUserTaskResource {
 
     @Autowired
     public IIbzproProductUserTaskService ibzproproductusertaskService;
+
+    @Autowired
+    public IbzproProductUserTaskModelImpl ibzproproductusertaskModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class IbzproProductUserTaskResource {
 	@ApiOperation(value = "获取数据集", tags = {"产品汇报用户任务" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproproductusertasks/fetchdefault")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchDefault(IbzproProductUserTaskSearchContext context) {
+        ibzproproductusertaskModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchDefault(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class IbzproProductUserTaskResource {
 	@ApiOperation(value = "查询数据集", tags = {"产品汇报用户任务" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchdefault")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchDefault(@RequestBody IbzproProductUserTaskSearchContext context) {
+        ibzproproductusertaskModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproproductusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class IbzproProductUserTaskResource {
 	@ApiOperation(value = "获取产品日报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品日报用户任务统计")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproproductusertasks/fetchproductdailyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductDailyUserTaskStats(IbzproProductUserTaskSearchContext context) {
+        ibzproproductusertaskModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductDailyUserTaskStats(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class IbzproProductUserTaskResource {
 	@ApiOperation(value = "查询产品日报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "查询产品日报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchproductdailyusertaskstats")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchProductDailyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
+        ibzproproductusertaskModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductDailyUserTaskStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproproductusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -184,6 +192,7 @@ public class IbzproProductUserTaskResource {
 	@ApiOperation(value = "获取产品月报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品月报用户任务统计")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproproductusertasks/fetchproductmonthlyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductMonthlyUserTaskStats(IbzproProductUserTaskSearchContext context) {
+        ibzproproductusertaskModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductMonthlyUserTaskStats(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -197,6 +206,7 @@ public class IbzproProductUserTaskResource {
 	@ApiOperation(value = "查询产品月报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "查询产品月报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchproductmonthlyusertaskstats")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchProductMonthlyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
+        ibzproproductusertaskModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductMonthlyUserTaskStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproproductusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -206,6 +216,7 @@ public class IbzproProductUserTaskResource {
 	@ApiOperation(value = "获取产品周报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品周报用户任务统计")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproproductusertasks/fetchproductweeklyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductWeeklyUserTaskStats(IbzproProductUserTaskSearchContext context) {
+        ibzproproductusertaskModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductWeeklyUserTaskStats(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -219,6 +230,7 @@ public class IbzproProductUserTaskResource {
 	@ApiOperation(value = "查询产品周报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "查询产品周报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchproductweeklyusertaskstats")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchProductWeeklyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
+        ibzproproductusertaskModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductWeeklyUserTaskStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproproductusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

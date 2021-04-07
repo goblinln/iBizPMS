@@ -6,12 +6,13 @@ import net.ibizsys.model.PSModelServiceImpl;
 
 public class SystemModelService extends PSModelServiceImpl{
 
-	private boolean bFromJar = false;
+	private boolean bFromJar = true;
 	
 	@Override
 	protected ObjectNode getObjectNode(String strPath) throws Exception {
 		//替换模型，例如从类中获取
 		if(isFromJar()) {
+			strPath = strPath.replace("\\", "/");
 			return (ObjectNode) MAPPER.readTree(this.getClass().getClassLoader().getResourceAsStream(strPath));
 		}
 		return super.getObjectNode(strPath);

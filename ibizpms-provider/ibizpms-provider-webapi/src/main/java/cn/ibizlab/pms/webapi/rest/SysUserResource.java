@@ -43,6 +43,7 @@ public class SysUserResource {
     @Autowired
     public ISysUserService sysuserService;
 
+
     @Autowired
     @Lazy
     public SysUserMapping sysuserMapping;

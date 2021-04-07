@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzTop;
 import cn.ibizlab.pms.core.ibiz.service.IIbzTopService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzTopSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.IbzTopModelImpl;
 
 @Slf4j
 @Api(tags = {"置顶" })
@@ -42,6 +43,9 @@ public class IbzTopResource {
 
     @Autowired
     public IIbzTopService ibztopService;
+
+    @Autowired
+    public IbzTopModelImpl ibztopModelImpl;
 
     @Autowired
     @Lazy
@@ -141,6 +145,7 @@ public class IbzTopResource {
 	@ApiOperation(value = "获取数据集", tags = {"置顶" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibztops/fetchdefault")
 	public ResponseEntity<List<IbzTopDTO>> fetchDefault(IbzTopSearchContext context) {
+        ibztopModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzTop> domains = ibztopService.searchDefault(context) ;
         List<IbzTopDTO> list = ibztopMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -154,6 +159,7 @@ public class IbzTopResource {
 	@ApiOperation(value = "查询数据集", tags = {"置顶" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibztops/searchdefault")
 	public ResponseEntity<Page<IbzTopDTO>> searchDefault(@RequestBody IbzTopSearchContext context) {
+        ibztopModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzTop> domains = ibztopService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibztopMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

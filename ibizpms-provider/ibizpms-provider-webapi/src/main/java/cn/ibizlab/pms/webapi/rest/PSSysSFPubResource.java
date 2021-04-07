@@ -43,6 +43,7 @@ public class PSSysSFPubResource {
     @Autowired
     public IPSSysSFPubService pssyssfpubService;
 
+
     @Autowired
     @Lazy
     public PSSysSFPubMapping pssyssfpubMapping;

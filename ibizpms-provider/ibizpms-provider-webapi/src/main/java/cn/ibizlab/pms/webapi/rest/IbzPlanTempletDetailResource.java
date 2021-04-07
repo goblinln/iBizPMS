@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbzPlanTempletDetail;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzPlanTempletDetailService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletDetailSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.IbzPlanTempletDetailModelImpl;
 
 @Slf4j
 @Api(tags = {"计划模板详情" })
@@ -42,6 +43,9 @@ public class IbzPlanTempletDetailResource {
 
     @Autowired
     public IIbzPlanTempletDetailService ibzplantempletdetailService;
+
+    @Autowired
+    public IbzPlanTempletDetailModelImpl ibzplantempletdetailModelImpl;
 
     @Autowired
     @Lazy

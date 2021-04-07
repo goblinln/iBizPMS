@@ -43,6 +43,7 @@ public class IBIZProPluginResource {
     @Autowired
     public IIBIZProPluginService ibizpropluginService;
 
+
     @Autowired
     @Lazy
     public IBIZProPluginMapping ibizpropluginMapping;

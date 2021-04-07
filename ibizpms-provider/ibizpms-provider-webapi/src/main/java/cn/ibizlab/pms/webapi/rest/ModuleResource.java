@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Module;
 import cn.ibizlab.pms.core.zentao.service.IModuleService;
 import cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.ModuleModelImpl;
 
 @Slf4j
 @Api(tags = {"模块" })
@@ -42,6 +43,9 @@ public class ModuleResource {
 
     @Autowired
     public IModuleService moduleService;
+
+    @Autowired
+    public ModuleModelImpl moduleModelImpl;
 
     @Autowired
     @Lazy
@@ -158,6 +162,7 @@ public class ModuleResource {
 	@ApiOperation(value = "获取BugModule", tags = {"模块" } ,notes = "获取BugModule")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchbugmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchBugModule(ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchBugModule(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -171,6 +176,7 @@ public class ModuleResource {
 	@ApiOperation(value = "查询BugModule", tags = {"模块" } ,notes = "查询BugModule")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchbugmodule")
 	public ResponseEntity<Page<ModuleDTO>> searchBugModule(@RequestBody ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchBugModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -180,6 +186,7 @@ public class ModuleResource {
 	@ApiOperation(value = "获取数据集", tags = {"模块" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchbugmodulecodelist")
 	public ResponseEntity<List<ModuleDTO>> fetchBugModuleCodeList(ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchBugModuleCodeList(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -193,6 +200,7 @@ public class ModuleResource {
 	@ApiOperation(value = "查询数据集", tags = {"模块" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchbugmodulecodelist")
 	public ResponseEntity<Page<ModuleDTO>> searchBugModuleCodeList(@RequestBody ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchBugModuleCodeList(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -202,6 +210,7 @@ public class ModuleResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchdefault")
 	public ResponseEntity<List<ModuleDTO>> fetchDefault(ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchDefault(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -215,6 +224,7 @@ public class ModuleResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"模块" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchdefault")
 	public ResponseEntity<Page<ModuleDTO>> searchDefault(@RequestBody ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -224,6 +234,7 @@ public class ModuleResource {
 	@ApiOperation(value = "获取文档目录", tags = {"模块" } ,notes = "获取文档目录")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchdocmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchDocModule(ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchDocModule(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -237,6 +248,7 @@ public class ModuleResource {
 	@ApiOperation(value = "查询文档目录", tags = {"模块" } ,notes = "查询文档目录")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchdocmodule")
 	public ResponseEntity<Page<ModuleDTO>> searchDocModule(@RequestBody ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchDocModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -246,6 +258,7 @@ public class ModuleResource {
 	@ApiOperation(value = "获取产品线", tags = {"模块" } ,notes = "获取产品线")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchline")
 	public ResponseEntity<List<ModuleDTO>> fetchLine(ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchLine(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -259,6 +272,7 @@ public class ModuleResource {
 	@ApiOperation(value = "查询产品线", tags = {"模块" } ,notes = "查询产品线")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchline")
 	public ResponseEntity<Page<ModuleDTO>> searchLine(@RequestBody ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchLine(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -268,6 +282,7 @@ public class ModuleResource {
 	@ApiOperation(value = "获取需求模块", tags = {"模块" } ,notes = "获取需求模块")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchstorymodule")
 	public ResponseEntity<List<ModuleDTO>> fetchStoryModule(ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchStoryModule(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -281,6 +296,7 @@ public class ModuleResource {
 	@ApiOperation(value = "查询需求模块", tags = {"模块" } ,notes = "查询需求模块")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchstorymodule")
 	public ResponseEntity<Page<ModuleDTO>> searchStoryModule(@RequestBody ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchStoryModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -290,6 +306,7 @@ public class ModuleResource {
 	@ApiOperation(value = "获取任务模块", tags = {"模块" } ,notes = "获取任务模块")
     @RequestMapping(method= RequestMethod.GET , value="/modules/fetchtaskmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchTaskModule(ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchTaskModule(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -303,6 +320,7 @@ public class ModuleResource {
 	@ApiOperation(value = "查询任务模块", tags = {"模块" } ,notes = "查询任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchtaskmodule")
 	public ResponseEntity<Page<ModuleDTO>> searchTaskModule(@RequestBody ModuleSearchContext context) {
+        moduleModelImpl.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchTaskModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

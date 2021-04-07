@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.ProductStats;
 import cn.ibizlab.pms.core.ibiz.service.IProductStatsService;
 import cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.ProductStatsModelImpl;
 
 @Slf4j
 @Api(tags = {"产品统计" })
@@ -42,6 +43,9 @@ public class ProductStatsResource {
 
     @Autowired
     public IProductStatsService productstatsService;
+
+    @Autowired
+    public ProductStatsModelImpl productstatsModelImpl;
 
     @Autowired
     @Lazy
@@ -151,6 +155,7 @@ public class ProductStatsResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品统计" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/productstats/fetchdefault")
 	public ResponseEntity<List<ProductStatsDTO>> fetchDefault(ProductStatsSearchContext context) {
+        productstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchDefault(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -164,6 +169,7 @@ public class ProductStatsResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"产品统计" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/searchdefault")
 	public ResponseEntity<Page<ProductStatsDTO>> searchDefault(@RequestBody ProductStatsSearchContext context) {
+        productstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -173,6 +179,7 @@ public class ProductStatsResource {
 	@ApiOperation(value = "获取未关闭产品", tags = {"产品统计" } ,notes = "获取未关闭产品")
     @RequestMapping(method= RequestMethod.GET , value="/productstats/fetchnoopenproduct")
 	public ResponseEntity<List<ProductStatsDTO>> fetchNoOpenProduct(ProductStatsSearchContext context) {
+        productstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchNoOpenProduct(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -186,6 +193,7 @@ public class ProductStatsResource {
 	@ApiOperation(value = "查询未关闭产品", tags = {"产品统计" } ,notes = "查询未关闭产品")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/searchnoopenproduct")
 	public ResponseEntity<Page<ProductStatsDTO>> searchNoOpenProduct(@RequestBody ProductStatsSearchContext context) {
+        productstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchNoOpenProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -195,6 +203,7 @@ public class ProductStatsResource {
 	@ApiOperation(value = "获取产品质量表", tags = {"产品统计" } ,notes = "获取产品质量表")
     @RequestMapping(method= RequestMethod.GET , value="/productstats/fetchprodctquantigird")
 	public ResponseEntity<List<ProductStatsDTO>> fetchProdctQuantiGird(ProductStatsSearchContext context) {
+        productstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchProdctQuantiGird(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -208,6 +217,7 @@ public class ProductStatsResource {
 	@ApiOperation(value = "查询产品质量表", tags = {"产品统计" } ,notes = "查询产品质量表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/searchprodctquantigird")
 	public ResponseEntity<Page<ProductStatsDTO>> searchProdctQuantiGird(@RequestBody ProductStatsSearchContext context) {
+        productstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchProdctQuantiGird(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -217,6 +227,7 @@ public class ProductStatsResource {
 	@ApiOperation(value = "获取产品投入表", tags = {"产品统计" } ,notes = "获取产品投入表")
     @RequestMapping(method= RequestMethod.GET , value="/productstats/fetchproductinputtable")
 	public ResponseEntity<List<ProductStatsDTO>> fetchProductInputTable(ProductStatsSearchContext context) {
+        productstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchProductInputTable(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -230,6 +241,7 @@ public class ProductStatsResource {
 	@ApiOperation(value = "查询产品投入表", tags = {"产品统计" } ,notes = "查询产品投入表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/searchproductinputtable")
 	public ResponseEntity<Page<ProductStatsDTO>> searchProductInputTable(@RequestBody ProductStatsSearchContext context) {
+        productstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchProductInputTable(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -239,6 +251,7 @@ public class ProductStatsResource {
 	@ApiOperation(value = "获取产品完成统计表", tags = {"产品统计" } ,notes = "获取产品完成统计表")
     @RequestMapping(method= RequestMethod.GET , value="/productstats/fetchproductcompletionstatistics")
 	public ResponseEntity<List<ProductStatsDTO>> fetchProductcompletionstatistics(ProductStatsSearchContext context) {
+        productstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchProductcompletionstatistics(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -252,6 +265,7 @@ public class ProductStatsResource {
 	@ApiOperation(value = "查询产品完成统计表", tags = {"产品统计" } ,notes = "查询产品完成统计表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/searchproductcompletionstatistics")
 	public ResponseEntity<Page<ProductStatsDTO>> searchProductcompletionstatistics(@RequestBody ProductStatsSearchContext context) {
+        productstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchProductcompletionstatistics(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Todo;
 import cn.ibizlab.pms.core.zentao.service.ITodoService;
 import cn.ibizlab.pms.core.zentao.filter.TodoSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.TodoModelImpl;
 
 @Slf4j
 @Api(tags = {"待办" })
@@ -42,6 +43,9 @@ public class TodoResource {
 
     @Autowired
     public ITodoService todoService;
+
+    @Autowired
+    public TodoModelImpl todoModelImpl;
 
     @Autowired
     @Lazy
@@ -267,6 +271,7 @@ public class TodoResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"待办" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchdefault")
 	public ResponseEntity<List<TodoDTO>> fetchDefault(@RequestBody TodoSearchContext context) {
+        todoModelImpl.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchDefault(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -280,6 +285,7 @@ public class TodoResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"待办" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/todos/searchdefault")
 	public ResponseEntity<Page<TodoDTO>> searchDefault(@RequestBody TodoSearchContext context) {
+        todoModelImpl.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(todoMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -289,6 +295,7 @@ public class TodoResource {
 	@ApiOperation(value = "获取我的待办", tags = {"待办" } ,notes = "获取我的待办")
     @RequestMapping(method= RequestMethod.GET , value="/todos/fetchmytodo")
 	public ResponseEntity<List<TodoDTO>> fetchMyTodo(TodoSearchContext context) {
+        todoModelImpl.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyTodo(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -302,6 +309,7 @@ public class TodoResource {
 	@ApiOperation(value = "查询我的待办", tags = {"待办" } ,notes = "查询我的待办")
     @RequestMapping(method= RequestMethod.POST , value="/todos/searchmytodo")
 	public ResponseEntity<Page<TodoDTO>> searchMyTodo(@RequestBody TodoSearchContext context) {
+        todoModelImpl.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyTodo(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(todoMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -311,6 +319,7 @@ public class TodoResource {
 	@ApiOperation(value = "获取我的待办", tags = {"待办" } ,notes = "获取我的待办")
     @RequestMapping(method= RequestMethod.GET , value="/todos/fetchmytodopc")
 	public ResponseEntity<List<TodoDTO>> fetchMyTodoPc(TodoSearchContext context) {
+        todoModelImpl.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyTodoPc(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -324,6 +333,7 @@ public class TodoResource {
 	@ApiOperation(value = "查询我的待办", tags = {"待办" } ,notes = "查询我的待办")
     @RequestMapping(method= RequestMethod.POST , value="/todos/searchmytodopc")
 	public ResponseEntity<Page<TodoDTO>> searchMyTodoPc(@RequestBody TodoSearchContext context) {
+        todoModelImpl.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyTodoPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(todoMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -333,6 +343,7 @@ public class TodoResource {
 	@ApiOperation(value = "获取MyUpcoming", tags = {"待办" } ,notes = "获取MyUpcoming")
     @RequestMapping(method= RequestMethod.GET , value="/todos/fetchmyupcoming")
 	public ResponseEntity<List<TodoDTO>> fetchMyUpcoming(TodoSearchContext context) {
+        todoModelImpl.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyUpcoming(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -346,6 +357,7 @@ public class TodoResource {
 	@ApiOperation(value = "查询MyUpcoming", tags = {"待办" } ,notes = "查询MyUpcoming")
     @RequestMapping(method= RequestMethod.POST , value="/todos/searchmyupcoming")
 	public ResponseEntity<Page<TodoDTO>> searchMyUpcoming(@RequestBody TodoSearchContext context) {
+        todoModelImpl.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyUpcoming(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(todoMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

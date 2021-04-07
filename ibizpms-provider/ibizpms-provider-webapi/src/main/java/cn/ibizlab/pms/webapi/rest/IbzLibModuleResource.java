@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzLibModule;
 import cn.ibizlab.pms.core.ibiz.service.IIbzLibModuleService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzLibModuleSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.IbzLibModuleModelImpl;
 
 @Slf4j
 @Api(tags = {"用例库模块" })
@@ -42,6 +43,9 @@ public class IbzLibModuleResource {
 
     @Autowired
     public IIbzLibModuleService ibzlibmoduleService;
+
+    @Autowired
+    public IbzLibModuleModelImpl ibzlibmoduleModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class IbzLibModuleResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例库模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/ibzlibmodules/fetchdefault")
 	public ResponseEntity<List<IbzLibModuleDTO>> fetchDefault(IbzLibModuleSearchContext context) {
+        ibzlibmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzLibModule> domains = ibzlibmoduleService.searchDefault(context) ;
         List<IbzLibModuleDTO> list = ibzlibmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class IbzLibModuleResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"用例库模块" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibmodules/searchdefault")
 	public ResponseEntity<Page<IbzLibModuleDTO>> searchDefault(@RequestBody IbzLibModuleSearchContext context) {
+        ibzlibmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzLibModule> domains = ibzlibmoduleService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzlibmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class IbzLibModuleResource {
 	@ApiOperation(value = "获取无枝叶", tags = {"用例库模块" } ,notes = "获取无枝叶")
     @RequestMapping(method= RequestMethod.GET , value="/ibzlibmodules/fetchroot_nobranch")
 	public ResponseEntity<List<IbzLibModuleDTO>> fetchRoot_NoBranch(IbzLibModuleSearchContext context) {
+        ibzlibmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzLibModule> domains = ibzlibmoduleService.searchRoot_NoBranch(context) ;
         List<IbzLibModuleDTO> list = ibzlibmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class IbzLibModuleResource {
 	@ApiOperation(value = "查询无枝叶", tags = {"用例库模块" } ,notes = "查询无枝叶")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibmodules/searchroot_nobranch")
 	public ResponseEntity<Page<IbzLibModuleDTO>> searchRoot_NoBranch(@RequestBody IbzLibModuleSearchContext context) {
+        ibzlibmoduleModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzLibModule> domains = ibzlibmoduleService.searchRoot_NoBranch(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzlibmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

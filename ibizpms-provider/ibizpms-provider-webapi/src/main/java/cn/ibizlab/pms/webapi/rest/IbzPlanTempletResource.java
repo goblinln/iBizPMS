@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbzPlanTemplet;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzPlanTempletService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.IbzPlanTempletModelImpl;
 import cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletDetailSearchContext;
 import cn.ibizlab.pms.core.ibizpro.domain.IbzPlanTempletDetail;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzPlanTempletDetailService;
@@ -45,6 +46,9 @@ public class IbzPlanTempletResource {
 
     @Autowired
     public IIbzPlanTempletService ibzplantempletService;
+
+    @Autowired
+    public IbzPlanTempletModelImpl ibzplantempletModelImpl;
 
     @Autowired
     @Lazy
@@ -166,6 +170,7 @@ public class IbzPlanTempletResource {
 	@ApiOperation(value = "获取CurUserTemplet", tags = {"计划模板" } ,notes = "获取CurUserTemplet")
     @RequestMapping(method= RequestMethod.GET , value="/ibzplantemplets/fetchcurusertemplet")
 	public ResponseEntity<List<IbzPlanTempletDTO>> fetchCurUserTemplet(IbzPlanTempletSearchContext context) {
+        ibzplantempletModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzPlanTemplet> domains = ibzplantempletService.searchCurUserTemplet(context) ;
         List<IbzPlanTempletDTO> list = ibzplantempletMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -179,6 +184,7 @@ public class IbzPlanTempletResource {
 	@ApiOperation(value = "查询CurUserTemplet", tags = {"计划模板" } ,notes = "查询CurUserTemplet")
     @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/searchcurusertemplet")
 	public ResponseEntity<Page<IbzPlanTempletDTO>> searchCurUserTemplet(@RequestBody IbzPlanTempletSearchContext context) {
+        ibzplantempletModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzPlanTemplet> domains = ibzplantempletService.searchCurUserTemplet(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzplantempletMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -188,6 +194,7 @@ public class IbzPlanTempletResource {
 	@ApiOperation(value = "获取数据集", tags = {"计划模板" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzplantemplets/fetchdefault")
 	public ResponseEntity<List<IbzPlanTempletDTO>> fetchDefault(IbzPlanTempletSearchContext context) {
+        ibzplantempletModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzPlanTemplet> domains = ibzplantempletService.searchDefault(context) ;
         List<IbzPlanTempletDTO> list = ibzplantempletMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -201,6 +208,7 @@ public class IbzPlanTempletResource {
 	@ApiOperation(value = "查询数据集", tags = {"计划模板" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/searchdefault")
 	public ResponseEntity<Page<IbzPlanTempletDTO>> searchDefault(@RequestBody IbzPlanTempletSearchContext context) {
+        ibzplantempletModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzPlanTemplet> domains = ibzplantempletService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzplantempletMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

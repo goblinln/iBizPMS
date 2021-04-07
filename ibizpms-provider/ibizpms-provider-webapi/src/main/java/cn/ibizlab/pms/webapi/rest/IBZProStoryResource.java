@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IBZProStory;
 import cn.ibizlab.pms.core.ibizpro.service.IIBZProStoryService;
 import cn.ibizlab.pms.core.ibizpro.filter.IBZProStorySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.IBZProStoryModelImpl;
 
 @Slf4j
 @Api(tags = {"需求" })
@@ -42,6 +43,9 @@ public class IBZProStoryResource {
 
     @Autowired
     public IIBZProStoryService ibzprostoryService;
+
+    @Autowired
+    public IBZProStoryModelImpl ibzprostoryModelImpl;
 
     @Autowired
     @Lazy
@@ -158,6 +162,7 @@ public class IBZProStoryResource {
 	@ApiOperation(value = "获取数据集", tags = {"需求" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzprostories/fetchdefault")
 	public ResponseEntity<List<IBZProStoryDTO>> fetchDefault(IBZProStorySearchContext context) {
+        ibzprostoryModelImpl.addAuthorityConditions(context,"READ");
         Page<IBZProStory> domains = ibzprostoryService.searchDefault(context) ;
         List<IBZProStoryDTO> list = ibzprostoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -171,6 +176,7 @@ public class IBZProStoryResource {
 	@ApiOperation(value = "查询数据集", tags = {"需求" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprostories/searchdefault")
 	public ResponseEntity<Page<IBZProStoryDTO>> searchDefault(@RequestBody IBZProStorySearchContext context) {
+        ibzprostoryModelImpl.addAuthorityConditions(context,"READ");
         Page<IBZProStory> domains = ibzprostoryService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzprostoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

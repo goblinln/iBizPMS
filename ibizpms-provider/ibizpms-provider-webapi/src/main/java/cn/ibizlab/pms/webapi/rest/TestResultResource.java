@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.TestResult;
 import cn.ibizlab.pms.core.zentao.service.ITestResultService;
 import cn.ibizlab.pms.core.zentao.filter.TestResultSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.TestResultModelImpl;
 
 @Slf4j
 @Api(tags = {"测试结果" })
@@ -42,6 +43,9 @@ public class TestResultResource {
 
     @Autowired
     public ITestResultService testresultService;
+
+    @Autowired
+    public TestResultModelImpl testresultModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class TestResultResource {
 	@ApiOperation(value = "获取CurTestRun", tags = {"测试结果" } ,notes = "获取CurTestRun")
     @RequestMapping(method= RequestMethod.GET , value="/testresults/fetchcurtestrun")
 	public ResponseEntity<List<TestResultDTO>> fetchCurTestRun(TestResultSearchContext context) {
+        testresultModelImpl.addAuthorityConditions(context,"READ");
         Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class TestResultResource {
 	@ApiOperation(value = "查询CurTestRun", tags = {"测试结果" } ,notes = "查询CurTestRun")
     @RequestMapping(method= RequestMethod.POST , value="/testresults/searchcurtestrun")
 	public ResponseEntity<Page<TestResultDTO>> searchCurTestRun(@RequestBody TestResultSearchContext context) {
+        testresultModelImpl.addAuthorityConditions(context,"READ");
         Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class TestResultResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试结果" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/testresults/fetchdefault")
 	public ResponseEntity<List<TestResultDTO>> fetchDefault(TestResultSearchContext context) {
+        testresultModelImpl.addAuthorityConditions(context,"READ");
         Page<TestResult> domains = testresultService.searchDefault(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class TestResultResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"测试结果" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testresults/searchdefault")
 	public ResponseEntity<Page<TestResultDTO>> searchDefault(@RequestBody TestResultSearchContext context) {
+        testresultModelImpl.addAuthorityConditions(context,"READ");
         Page<TestResult> domains = testresultService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

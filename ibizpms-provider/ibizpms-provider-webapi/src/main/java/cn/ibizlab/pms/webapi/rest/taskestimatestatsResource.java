@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.TaskEstimateStats;
 import cn.ibizlab.pms.core.zentao.service.ITaskEstimateStatsService;
 import cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.taskestimatestatsModelImpl;
 
 @Slf4j
 @Api(tags = {"任务工时统计" })
@@ -42,6 +43,9 @@ public class taskestimatestatsResource {
 
     @Autowired
     public ITaskEstimateStatsService taskestimatestatsService;
+
+    @Autowired
+    public taskestimatestatsModelImpl taskestimatestatsModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class taskestimatestatsResource {
 	@ApiOperation(value = "获取日志月", tags = {"任务工时统计" } ,notes = "获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimatestats/fetchactionmonth")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchActionMonth(TaskEstimateStatsSearchContext context) {
+        taskestimatestatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionMonth(context) ;
         List<taskestimatestatsDTO> list = taskestimatestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class taskestimatestatsResource {
 	@ApiOperation(value = "查询日志月", tags = {"任务工时统计" } ,notes = "查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchactionmonth")
 	public ResponseEntity<Page<taskestimatestatsDTO>> searchActionMonth(@RequestBody TaskEstimateStatsSearchContext context) {
+        taskestimatestatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionMonth(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimatestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class taskestimatestatsResource {
 	@ApiOperation(value = "获取日志年", tags = {"任务工时统计" } ,notes = "获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimatestats/fetchactionyear")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchActionYear(TaskEstimateStatsSearchContext context) {
+        taskestimatestatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionYear(context) ;
         List<taskestimatestatsDTO> list = taskestimatestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class taskestimatestatsResource {
 	@ApiOperation(value = "查询日志年", tags = {"任务工时统计" } ,notes = "查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchactionyear")
 	public ResponseEntity<Page<taskestimatestatsDTO>> searchActionYear(@RequestBody TaskEstimateStatsSearchContext context) {
+        taskestimatestatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionYear(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimatestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -184,6 +192,7 @@ public class taskestimatestatsResource {
 	@ApiOperation(value = "获取数据集", tags = {"任务工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimatestats/fetchdefault")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchDefault(TaskEstimateStatsSearchContext context) {
+        taskestimatestatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchDefault(context) ;
         List<taskestimatestatsDTO> list = taskestimatestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -197,6 +206,7 @@ public class taskestimatestatsResource {
 	@ApiOperation(value = "查询数据集", tags = {"任务工时统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchdefault")
 	public ResponseEntity<Page<taskestimatestatsDTO>> searchDefault(@RequestBody TaskEstimateStatsSearchContext context) {
+        taskestimatestatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimatestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

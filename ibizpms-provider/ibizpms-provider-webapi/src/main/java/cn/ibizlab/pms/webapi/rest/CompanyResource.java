@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Company;
 import cn.ibizlab.pms.core.zentao.service.ICompanyService;
 import cn.ibizlab.pms.core.zentao.filter.CompanySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.CompanyModelImpl;
 
 @Slf4j
 @Api(tags = {"公司" })
@@ -42,6 +43,9 @@ public class CompanyResource {
 
     @Autowired
     public ICompanyService companyService;
+
+    @Autowired
+    public CompanyModelImpl companyModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class CompanyResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"公司" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/companies/fetchdefault")
 	public ResponseEntity<List<CompanyDTO>> fetchDefault(CompanySearchContext context) {
+        companyModelImpl.addAuthorityConditions(context,"READ");
         Page<Company> domains = companyService.searchDefault(context) ;
         List<CompanyDTO> list = companyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class CompanyResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"公司" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/companies/searchdefault")
 	public ResponseEntity<Page<CompanyDTO>> searchDefault(@RequestBody CompanySearchContext context) {
+        companyModelImpl.addAuthorityConditions(context,"READ");
         Page<Company> domains = companyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(companyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

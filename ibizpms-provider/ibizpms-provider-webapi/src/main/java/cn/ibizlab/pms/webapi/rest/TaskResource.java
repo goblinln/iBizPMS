@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Task;
 import cn.ibizlab.pms.core.zentao.service.ITaskService;
 import cn.ibizlab.pms.core.zentao.filter.TaskSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.TaskModelImpl;
 import cn.ibizlab.pms.core.zentao.filter.TaskEstimateSearchContext;
 import cn.ibizlab.pms.core.zentao.domain.TaskEstimate;
 import cn.ibizlab.pms.core.zentao.service.ITaskEstimateService;
@@ -48,6 +49,9 @@ public class TaskResource {
 
     @Autowired
     public ITaskService taskService;
+
+    @Autowired
+    public TaskModelImpl taskModelImpl;
 
     @Autowired
     @Lazy
@@ -577,6 +581,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取指派给我任务", tags = {"任务" } ,notes = "获取指派给我任务")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchassignedtomytask")
 	public ResponseEntity<List<TaskDTO>> fetchAssignedToMyTask(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -590,6 +595,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询指派给我任务", tags = {"任务" } ,notes = "查询指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchassignedtomytask")
 	public ResponseEntity<Page<TaskDTO>> searchAssignedToMyTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -599,6 +605,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取指派给我任务（PC）", tags = {"任务" } ,notes = "获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchassignedtomytaskpc")
 	public ResponseEntity<List<TaskDTO>> fetchAssignedToMyTaskPc(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -612,6 +619,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询指派给我任务（PC）", tags = {"任务" } ,notes = "查询指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchassignedtomytaskpc")
 	public ResponseEntity<Page<TaskDTO>> searchAssignedToMyTaskPc(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -621,6 +629,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取Bug相关任务", tags = {"任务" } ,notes = "获取Bug相关任务")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchbugtask")
 	public ResponseEntity<List<TaskDTO>> fetchBugTask(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -634,6 +643,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询Bug相关任务", tags = {"任务" } ,notes = "查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchbugtask")
 	public ResponseEntity<Page<TaskDTO>> searchBugTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -643,6 +653,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取通过模块查询", tags = {"任务" } ,notes = "获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchbymodule")
 	public ResponseEntity<List<TaskDTO>> fetchByModule(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -656,6 +667,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询通过模块查询", tags = {"任务" } ,notes = "查询通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchbymodule")
 	public ResponseEntity<Page<TaskDTO>> searchByModule(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -665,6 +677,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取子任务", tags = {"任务" } ,notes = "获取子任务")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchchildtask")
 	public ResponseEntity<List<TaskDTO>> fetchChildTask(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -678,6 +691,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询子任务", tags = {"任务" } ,notes = "查询子任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchchildtask")
 	public ResponseEntity<Page<TaskDTO>> searchChildTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -687,6 +701,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取子任务（树）", tags = {"任务" } ,notes = "获取子任务（树）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchchildtasktree")
 	public ResponseEntity<List<TaskDTO>> fetchChildTaskTree(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -700,6 +715,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询子任务（树）", tags = {"任务" } ,notes = "查询子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchchildtasktree")
 	public ResponseEntity<Page<TaskDTO>> searchChildTaskTree(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -709,6 +725,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取用户年度完成任务", tags = {"任务" } ,notes = "获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchcurfinishtask")
 	public ResponseEntity<List<TaskDTO>> fetchCurFinishTask(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -722,6 +739,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询用户年度完成任务", tags = {"任务" } ,notes = "查询用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchcurfinishtask")
 	public ResponseEntity<Page<TaskDTO>> searchCurFinishTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -731,6 +749,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"任务" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchdefault")
 	public ResponseEntity<List<TaskDTO>> fetchDefault(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -744,6 +763,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"任务" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchdefault")
 	public ResponseEntity<Page<TaskDTO>> searchDefault(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -753,6 +773,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取DefaultRow", tags = {"任务" } ,notes = "获取DefaultRow")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchdefaultrow")
 	public ResponseEntity<List<TaskDTO>> fetchDefaultRow(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -766,6 +787,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询DefaultRow", tags = {"任务" } ,notes = "查询DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchdefaultrow")
 	public ResponseEntity<Page<TaskDTO>> searchDefaultRow(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -775,6 +797,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取ES批量的导入", tags = {"任务" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchesbulk")
 	public ResponseEntity<List<TaskDTO>> fetchESBulk(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -788,6 +811,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询ES批量的导入", tags = {"任务" } ,notes = "查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchesbulk")
 	public ResponseEntity<Page<TaskDTO>> searchESBulk(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -797,6 +821,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我代理的任务", tags = {"任务" } ,notes = "获取我代理的任务")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchmyagenttask")
 	public ResponseEntity<List<TaskDTO>> fetchMyAgentTask(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -810,6 +835,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我代理的任务", tags = {"任务" } ,notes = "查询我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmyagenttask")
 	public ResponseEntity<Page<TaskDTO>> searchMyAgentTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -819,6 +845,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我相关的任务", tags = {"任务" } ,notes = "获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmyalltask")
 	public ResponseEntity<List<TaskDTO>> fetchMyAllTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -832,6 +859,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我相关的任务", tags = {"任务" } ,notes = "查询我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmyalltask")
 	public ResponseEntity<Page<TaskDTO>> searchMyAllTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -841,6 +869,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我完成的任务（汇报）", tags = {"任务" } ,notes = "获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchmycompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchMyCompleteTask(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -854,6 +883,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我完成的任务（汇报）", tags = {"任务" } ,notes = "查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmycompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchMyCompleteTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -863,6 +893,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchmycompletetaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchMyCompleteTaskMobDaily(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -876,6 +907,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我完成的任务（移动端日报）", tags = {"任务" } ,notes = "查询我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmycompletetaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchMyCompleteTaskMobDaily(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -885,6 +917,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "获取我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchmycompletetaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchMyCompleteTaskMobMonthly(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -898,6 +931,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我完成的任务（移动端月报）", tags = {"任务" } ,notes = "查询我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmycompletetaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchMyCompleteTaskMobMonthly(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -907,6 +941,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchmycompletetaskmonthlyzs")
 	public ResponseEntity<List<TaskDTO>> fetchMyCompleteTaskMonthlyZS(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -920,6 +955,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我完成的任务（月报展示）", tags = {"任务" } ,notes = "查询我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmycompletetaskmonthlyzs")
 	public ResponseEntity<Page<TaskDTO>> searchMyCompleteTaskMonthlyZS(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -929,6 +965,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我完成的任务（汇报）", tags = {"任务" } ,notes = "获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchmycompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchMyCompleteTaskZS(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -942,6 +979,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我完成的任务（汇报）", tags = {"任务" } ,notes = "查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmycompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchMyCompleteTaskZS(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -951,6 +989,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我的收藏", tags = {"任务" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmyfavorites")
 	public ResponseEntity<List<TaskDTO>> fetchMyFavorites(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -964,6 +1003,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我的收藏", tags = {"任务" } ,notes = "查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmyfavorites")
 	public ResponseEntity<Page<TaskDTO>> searchMyFavorites(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -973,6 +1013,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "获取我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchmyplanstaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchMyPlansTaskMobMonthly(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -986,6 +1027,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "查询我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmyplanstaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchMyPlansTaskMobMonthly(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -995,6 +1037,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchmytomorrowplantask")
 	public ResponseEntity<List<TaskDTO>> fetchMyTomorrowPlanTask(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1008,6 +1051,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmytomorrowplantask")
 	public ResponseEntity<Page<TaskDTO>> searchMyTomorrowPlanTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1017,6 +1061,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchmytomorrowplantaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchMyTomorrowPlanTaskMobDaily(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1030,6 +1075,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmytomorrowplantaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchMyTomorrowPlanTaskMobDaily(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1039,6 +1085,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchnextweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchNextWeekCompleteTaskMobZS(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1052,6 +1099,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "查询移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchnextweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchNextWeekCompleteTaskMobZS(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1061,6 +1109,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchnextweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchNextWeekCompleteTaskZS(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1074,6 +1123,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchnextweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchNextWeekCompleteTaskZS(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1083,6 +1133,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchnextweekplancompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchNextWeekPlanCompleteTask(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1096,6 +1147,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询下周计划完成任务(汇报)", tags = {"任务" } ,notes = "查询下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchnextweekplancompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchNextWeekPlanCompleteTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1105,6 +1157,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取相关任务（计划）", tags = {"任务" } ,notes = "获取相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchplantask")
 	public ResponseEntity<List<TaskDTO>> fetchPlanTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1118,6 +1171,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询相关任务（计划）", tags = {"任务" } ,notes = "查询相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchplantask")
 	public ResponseEntity<Page<TaskDTO>> searchPlanTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1127,6 +1181,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取项目任务（项目立项）", tags = {"任务" } ,notes = "获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchprojectapptask")
 	public ResponseEntity<List<TaskDTO>> fetchProjectAppTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1140,6 +1195,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询项目任务（项目立项）", tags = {"任务" } ,notes = "查询项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchprojectapptask")
 	public ResponseEntity<Page<TaskDTO>> searchProjectAppTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1149,6 +1205,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取项目任务", tags = {"任务" } ,notes = "获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchprojecttask")
 	public ResponseEntity<List<TaskDTO>> fetchProjectTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1162,6 +1219,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询项目任务", tags = {"任务" } ,notes = "查询项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchprojecttask")
 	public ResponseEntity<Page<TaskDTO>> searchProjectTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1171,6 +1229,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取根任务", tags = {"任务" } ,notes = "获取根任务")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchroottask")
 	public ResponseEntity<List<TaskDTO>> fetchRootTask(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1184,6 +1243,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询根任务", tags = {"任务" } ,notes = "查询根任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchroottask")
 	public ResponseEntity<Page<TaskDTO>> searchRootTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1193,6 +1253,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "获取关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchtasklinkplan")
 	public ResponseEntity<List<TaskDTO>> fetchTaskLinkPlan(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1206,6 +1267,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询关联计划（当前项目未关联）", tags = {"任务" } ,notes = "查询关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchtasklinkplan")
 	public ResponseEntity<Page<TaskDTO>> searchTaskLinkPlan(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1215,6 +1277,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchthismonthcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchThisMonthCompleteTaskChoice(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1228,6 +1291,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "查询我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchthismonthcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchThisMonthCompleteTaskChoice(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1237,6 +1301,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchthisweekcompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchThisWeekCompleteTask(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1250,6 +1315,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchthisweekcompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchThisWeekCompleteTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1259,6 +1325,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchthisweekcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchThisWeekCompleteTaskChoice(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1272,6 +1339,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "查询本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchthisweekcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchThisWeekCompleteTaskChoice(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1281,6 +1349,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "获取移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchthisweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchThisWeekCompleteTaskMobZS(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1294,6 +1363,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "查询移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchthisweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchThisWeekCompleteTaskMobZS(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1303,6 +1373,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchthisweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchThisWeekCompleteTaskZS(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1316,6 +1387,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchthisweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchThisWeekCompleteTaskZS(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1325,6 +1397,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取todo列表查询", tags = {"任务" } ,notes = "获取todo列表查询")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchtodolisttask")
 	public ResponseEntity<List<TaskDTO>> fetchTodoListTask(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1338,6 +1411,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询todo列表查询", tags = {"任务" } ,notes = "查询todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchtodolisttask")
 	public ResponseEntity<Page<TaskDTO>> searchTodoListTask(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1347,6 +1421,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取任务类型分组", tags = {"任务" } ,notes = "获取任务类型分组")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchtypegroup")
 	public ResponseEntity<List<Map>> fetchTypeGroup(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1359,6 +1434,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询任务类型分组", tags = {"任务" } ,notes = "查询任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchtypegroup")
 	public ResponseEntity<Page<Map>> searchTypeGroup(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
@@ -1368,6 +1444,7 @@ public class TaskResource {
 	@ApiOperation(value = "获取任务类型分组（计划）", tags = {"任务" } ,notes = "获取任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/fetchtypegroupplan")
 	public ResponseEntity<List<Map>> fetchTypeGroupPlan(TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1380,6 +1457,7 @@ public class TaskResource {
 	@ApiOperation(value = "查询任务类型分组（计划）", tags = {"任务" } ,notes = "查询任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchtypegroupplan")
 	public ResponseEntity<Page<Map>> searchTypeGroupPlan(@RequestBody TaskSearchContext context) {
+        taskModelImpl.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));

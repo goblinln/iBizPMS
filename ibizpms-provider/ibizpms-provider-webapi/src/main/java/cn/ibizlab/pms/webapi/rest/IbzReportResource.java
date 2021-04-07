@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.report.domain.IbzReport;
 import cn.ibizlab.pms.core.report.service.IIbzReportService;
 import cn.ibizlab.pms.core.report.filter.IbzReportSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.report.model.impl.IbzReportModelImpl;
 
 @Slf4j
 @Api(tags = {"汇报汇总" })
@@ -42,6 +43,9 @@ public class IbzReportResource {
 
     @Autowired
     public IIbzReportService ibzreportService;
+
+    @Autowired
+    public IbzReportModelImpl ibzreportModelImpl;
 
     @Autowired
     @Lazy
@@ -161,6 +165,7 @@ public class IbzReportResource {
 	@ApiOperation(value = "获取汇报汇总", tags = {"汇报汇总" } ,notes = "获取汇报汇总")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreports/fetchallreport")
 	public ResponseEntity<List<IbzReportDTO>> fetchAllReport(IbzReportSearchContext context) {
+        ibzreportModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReport> domains = ibzreportService.searchAllReport(context) ;
         List<IbzReportDTO> list = ibzreportMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -174,6 +179,7 @@ public class IbzReportResource {
 	@ApiOperation(value = "查询汇报汇总", tags = {"汇报汇总" } ,notes = "查询汇报汇总")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreports/searchallreport")
 	public ResponseEntity<Page<IbzReportDTO>> searchAllReport(@RequestBody IbzReportSearchContext context) {
+        ibzreportModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReport> domains = ibzreportService.searchAllReport(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -183,6 +189,7 @@ public class IbzReportResource {
 	@ApiOperation(value = "获取数据集", tags = {"汇报汇总" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreports/fetchdefault")
 	public ResponseEntity<List<IbzReportDTO>> fetchDefault(IbzReportSearchContext context) {
+        ibzreportModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReport> domains = ibzreportService.searchDefault(context) ;
         List<IbzReportDTO> list = ibzreportMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -196,6 +203,7 @@ public class IbzReportResource {
 	@ApiOperation(value = "查询数据集", tags = {"汇报汇总" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreports/searchdefault")
 	public ResponseEntity<Page<IbzReportDTO>> searchDefault(@RequestBody IbzReportSearchContext context) {
+        ibzreportModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReport> domains = ibzreportService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -205,6 +213,7 @@ public class IbzReportResource {
 	@ApiOperation(value = "获取汇报汇总（我收到的）", tags = {"汇报汇总" } ,notes = "获取汇报汇总（我收到的）")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreports/fetchmyreallreport")
 	public ResponseEntity<List<IbzReportDTO>> fetchMyReAllReport(IbzReportSearchContext context) {
+        ibzreportModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReport> domains = ibzreportService.searchMyReAllReport(context) ;
         List<IbzReportDTO> list = ibzreportMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -218,6 +227,7 @@ public class IbzReportResource {
 	@ApiOperation(value = "查询汇报汇总（我收到的）", tags = {"汇报汇总" } ,notes = "查询汇报汇总（我收到的）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreports/searchmyreallreport")
 	public ResponseEntity<Page<IbzReportDTO>> searchMyReAllReport(@RequestBody IbzReportSearchContext context) {
+        ibzreportModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReport> domains = ibzreportService.searchMyReAllReport(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

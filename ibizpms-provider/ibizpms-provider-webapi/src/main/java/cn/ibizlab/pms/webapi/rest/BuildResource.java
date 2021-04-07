@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.Build;
 import cn.ibizlab.pms.core.zentao.service.IBuildService;
 import cn.ibizlab.pms.core.zentao.filter.BuildSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.BuildModelImpl;
 
 @Slf4j
 @Api(tags = {"版本" })
@@ -42,6 +43,9 @@ public class BuildResource {
 
     @Autowired
     public IBuildService buildService;
+
+    @Autowired
+    public BuildModelImpl buildModelImpl;
 
     @Autowired
     @Lazy
@@ -186,6 +190,7 @@ public class BuildResource {
 	@ApiOperation(value = "获取Bug产品版本", tags = {"版本" } ,notes = "获取Bug产品版本")
     @RequestMapping(method= RequestMethod.GET , value="/builds/fetchbugproductbuild")
 	public ResponseEntity<List<BuildDTO>> fetchBugProductBuild(BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchBugProductBuild(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -199,6 +204,7 @@ public class BuildResource {
 	@ApiOperation(value = "查询Bug产品版本", tags = {"版本" } ,notes = "查询Bug产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/searchbugproductbuild")
 	public ResponseEntity<Page<BuildDTO>> searchBugProductBuild(@RequestBody BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchBugProductBuild(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -208,6 +214,7 @@ public class BuildResource {
 	@ApiOperation(value = "获取产品版本", tags = {"版本" } ,notes = "获取产品版本")
     @RequestMapping(method= RequestMethod.GET , value="/builds/fetchcurproduct")
 	public ResponseEntity<List<BuildDTO>> fetchCurProduct(BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchCurProduct(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -221,6 +228,7 @@ public class BuildResource {
 	@ApiOperation(value = "查询产品版本", tags = {"版本" } ,notes = "查询产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/searchcurproduct")
 	public ResponseEntity<Page<BuildDTO>> searchCurProduct(@RequestBody BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchCurProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -230,6 +238,7 @@ public class BuildResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"版本" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchdefault")
 	public ResponseEntity<List<BuildDTO>> fetchDefault(@RequestBody BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchDefault(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -243,6 +252,7 @@ public class BuildResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"版本" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/builds/searchdefault")
 	public ResponseEntity<Page<BuildDTO>> searchDefault(@RequestBody BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -252,6 +262,7 @@ public class BuildResource {
 	@ApiOperation(value = "获取测试版本", tags = {"版本" } ,notes = "获取测试版本")
     @RequestMapping(method= RequestMethod.GET , value="/builds/fetchtestbuild")
 	public ResponseEntity<List<BuildDTO>> fetchTestBuild(BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchTestBuild(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -265,6 +276,7 @@ public class BuildResource {
 	@ApiOperation(value = "查询测试版本", tags = {"版本" } ,notes = "查询测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/searchtestbuild")
 	public ResponseEntity<Page<BuildDTO>> searchTestBuild(@RequestBody BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchTestBuild(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -274,6 +286,7 @@ public class BuildResource {
 	@ApiOperation(value = "获取测试轮次", tags = {"版本" } ,notes = "获取测试轮次")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchtestrounds")
 	public ResponseEntity<List<BuildDTO>> fetchTestRounds(@RequestBody BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchTestRounds(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -287,6 +300,7 @@ public class BuildResource {
 	@ApiOperation(value = "查询测试轮次", tags = {"版本" } ,notes = "查询测试轮次")
     @RequestMapping(method= RequestMethod.POST , value="/builds/searchtestrounds")
 	public ResponseEntity<Page<BuildDTO>> searchTestRounds(@RequestBody BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchTestRounds(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -296,6 +310,7 @@ public class BuildResource {
 	@ApiOperation(value = "获取更新日志", tags = {"版本" } ,notes = "获取更新日志")
     @RequestMapping(method= RequestMethod.GET , value="/builds/fetchupdatelog")
 	public ResponseEntity<List<BuildDTO>> fetchUpdateLog(BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchUpdateLog(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -309,6 +324,7 @@ public class BuildResource {
 	@ApiOperation(value = "查询更新日志", tags = {"版本" } ,notes = "查询更新日志")
     @RequestMapping(method= RequestMethod.POST , value="/builds/searchupdatelog")
 	public ResponseEntity<Page<BuildDTO>> searchUpdateLog(@RequestBody BuildSearchContext context) {
+        buildModelImpl.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchUpdateLog(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

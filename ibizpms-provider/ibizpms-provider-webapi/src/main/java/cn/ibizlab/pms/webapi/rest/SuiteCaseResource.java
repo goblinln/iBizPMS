@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.SuiteCase;
 import cn.ibizlab.pms.core.zentao.service.ISuiteCaseService;
 import cn.ibizlab.pms.core.zentao.filter.SuiteCaseSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.SuiteCaseModelImpl;
 
 @Slf4j
 @Api(tags = {"套件用例" })
@@ -42,6 +43,9 @@ public class SuiteCaseResource {
 
     @Autowired
     public ISuiteCaseService suitecaseService;
+
+    @Autowired
+    public SuiteCaseModelImpl suitecaseModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class SuiteCaseResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"套件用例" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/suitecases/fetchdefault")
 	public ResponseEntity<List<SuiteCaseDTO>> fetchDefault(SuiteCaseSearchContext context) {
+        suitecaseModelImpl.addAuthorityConditions(context,"READ");
         Page<SuiteCase> domains = suitecaseService.searchDefault(context) ;
         List<SuiteCaseDTO> list = suitecaseMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class SuiteCaseResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"套件用例" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/suitecases/searchdefault")
 	public ResponseEntity<Page<SuiteCaseDTO>> searchDefault(@RequestBody SuiteCaseSearchContext context) {
+        suitecaseModelImpl.addAuthorityConditions(context,"READ");
         Page<SuiteCase> domains = suitecaseService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(suitecaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

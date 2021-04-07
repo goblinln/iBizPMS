@@ -43,6 +43,7 @@ public class SysDepartmentResource {
     @Autowired
     public ISysDepartmentService sysdepartmentService;
 
+
     @Autowired
     @Lazy
     public SysDepartmentMapping sysdepartmentMapping;

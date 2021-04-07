@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbizproProductDaily;
 import cn.ibizlab.pms.core.ibizpro.service.IIbizproProductDailyService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbizproProductDailySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.IbizproProductDailyModelImpl;
 
 @Slf4j
 @Api(tags = {"产品日报" })
@@ -42,6 +43,9 @@ public class IbizproProductDailyResource {
 
     @Autowired
     public IIbizproProductDailyService ibizproproductdailyService;
+
+    @Autowired
+    public IbizproProductDailyModelImpl ibizproproductdailyModelImpl;
 
     @Autowired
     @Lazy
@@ -177,6 +181,7 @@ public class IbizproProductDailyResource {
 	@ApiOperation(value = "获取数据集", tags = {"产品日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproproductdailies/fetchdefault")
 	public ResponseEntity<List<IbizproProductDailyDTO>> fetchDefault(IbizproProductDailySearchContext context) {
+        ibizproproductdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchDefault(context) ;
         List<IbizproProductDailyDTO> list = ibizproproductdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -190,6 +195,7 @@ public class IbizproProductDailyResource {
 	@ApiOperation(value = "查询数据集", tags = {"产品日报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/searchdefault")
 	public ResponseEntity<Page<IbizproProductDailyDTO>> searchDefault(@RequestBody IbizproProductDailySearchContext context) {
+        ibizproproductdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproproductdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -199,6 +205,7 @@ public class IbizproProductDailyResource {
 	@ApiOperation(value = "获取产品日报", tags = {"产品日报" } ,notes = "获取产品日报")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproproductdailies/fetchproductdaily")
 	public ResponseEntity<List<IbizproProductDailyDTO>> fetchProductDaily(IbizproProductDailySearchContext context) {
+        ibizproproductdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchProductDaily(context) ;
         List<IbizproProductDailyDTO> list = ibizproproductdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -212,6 +219,7 @@ public class IbizproProductDailyResource {
 	@ApiOperation(value = "查询产品日报", tags = {"产品日报" } ,notes = "查询产品日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/searchproductdaily")
 	public ResponseEntity<Page<IbizproProductDailyDTO>> searchProductDaily(@RequestBody IbizproProductDailySearchContext context) {
+        ibizproproductdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchProductDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproproductdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

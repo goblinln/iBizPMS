@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.BugStats;
 import cn.ibizlab.pms.core.ibiz.service.IBugStatsService;
 import cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.BugStatsModelImpl;
 
 @Slf4j
 @Api(tags = {"Bug统计" })
@@ -42,6 +43,9 @@ public class BugStatsResource {
 
     @Autowired
     public IBugStatsService bugstatsService;
+
+    @Autowired
+    public BugStatsModelImpl bugstatsModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "获取Bug在每个解决方案的Bug数", tags = {"Bug统计" } ,notes = "获取Bug在每个解决方案的Bug数")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugcountinresolution")
 	public ResponseEntity<List<BugStatsDTO>> fetchBugCountInResolution(BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugCountInResolution(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "查询Bug在每个解决方案的Bug数", tags = {"Bug统计" } ,notes = "查询Bug在每个解决方案的Bug数")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchbugcountinresolution")
 	public ResponseEntity<Page<BugStatsDTO>> searchBugCountInResolution(@RequestBody BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugCountInResolution(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "获取Bug完成表", tags = {"Bug统计" } ,notes = "获取Bug完成表")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugresolvedby")
 	public ResponseEntity<List<BugStatsDTO>> fetchBugResolvedBy(BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugResolvedBy(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "查询Bug完成表", tags = {"Bug统计" } ,notes = "查询Bug完成表")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchbugresolvedby")
 	public ResponseEntity<Page<BugStatsDTO>> searchBugResolvedBy(@RequestBody BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugResolvedBy(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -184,6 +192,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "获取bug解决汇总表", tags = {"Bug统计" } ,notes = "获取bug解决汇总表")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugresolvedgird")
 	public ResponseEntity<List<BugStatsDTO>> fetchBugResolvedGird(BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugResolvedGird(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -197,6 +206,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "查询bug解决汇总表", tags = {"Bug统计" } ,notes = "查询bug解决汇总表")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchbugresolvedgird")
 	public ResponseEntity<Page<BugStatsDTO>> searchBugResolvedGird(@RequestBody BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugResolvedGird(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -206,6 +216,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "获取Bug指派表", tags = {"Bug统计" } ,notes = "获取Bug指派表")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugassignedto")
 	public ResponseEntity<List<BugStatsDTO>> fetchBugassignedTo(BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugassignedTo(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -219,6 +230,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "查询Bug指派表", tags = {"Bug统计" } ,notes = "查询Bug指派表")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchbugassignedto")
 	public ResponseEntity<Page<BugStatsDTO>> searchBugassignedTo(@RequestBody BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugassignedTo(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -228,6 +240,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "获取数据集", tags = {"Bug统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchdefault")
 	public ResponseEntity<List<BugStatsDTO>> fetchDefault(BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchDefault(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -241,6 +254,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "查询数据集", tags = {"Bug统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchdefault")
 	public ResponseEntity<Page<BugStatsDTO>> searchDefault(@RequestBody BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -250,6 +264,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "获取产品Bug解决方案汇总", tags = {"Bug统计" } ,notes = "获取产品Bug解决方案汇总")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchproductbugresolutionstats")
 	public ResponseEntity<List<BugStatsDTO>> fetchProductBugResolutionStats(BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProductBugResolutionStats(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -263,6 +278,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "查询产品Bug解决方案汇总", tags = {"Bug统计" } ,notes = "查询产品Bug解决方案汇总")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchproductbugresolutionstats")
 	public ResponseEntity<Page<BugStatsDTO>> searchProductBugResolutionStats(@RequestBody BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProductBugResolutionStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -272,6 +288,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "获取产品Bug状态汇总", tags = {"Bug统计" } ,notes = "获取产品Bug状态汇总")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchproductbugstatussum")
 	public ResponseEntity<List<BugStatsDTO>> fetchProductBugStatusSum(BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProductBugStatusSum(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -285,6 +302,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "查询产品Bug状态汇总", tags = {"Bug统计" } ,notes = "查询产品Bug状态汇总")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchproductbugstatussum")
 	public ResponseEntity<Page<BugStatsDTO>> searchProductBugStatusSum(@RequestBody BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProductBugStatusSum(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -294,6 +312,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "获取产品创建bug占比", tags = {"Bug统计" } ,notes = "获取产品创建bug占比")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchproductcreatebug")
 	public ResponseEntity<List<BugStatsDTO>> fetchProductCreateBug(BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProductCreateBug(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -307,6 +326,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "查询产品创建bug占比", tags = {"Bug统计" } ,notes = "查询产品创建bug占比")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchproductcreatebug")
 	public ResponseEntity<Page<BugStatsDTO>> searchProductCreateBug(@RequestBody BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProductCreateBug(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -316,6 +336,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "获取项目bug状态统计", tags = {"Bug统计" } ,notes = "获取项目bug状态统计")
     @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchprojectbugstatuscount")
 	public ResponseEntity<List<BugStatsDTO>> fetchProjectBugStatusCount(BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProjectBugStatusCount(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -329,6 +350,7 @@ public class BugStatsResource {
 	@ApiOperation(value = "查询项目bug状态统计", tags = {"Bug统计" } ,notes = "查询项目bug状态统计")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/searchprojectbugstatuscount")
 	public ResponseEntity<Page<BugStatsDTO>> searchProjectBugStatusCount(@RequestBody BugStatsSearchContext context) {
+        bugstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProjectBugStatusCount(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(bugstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

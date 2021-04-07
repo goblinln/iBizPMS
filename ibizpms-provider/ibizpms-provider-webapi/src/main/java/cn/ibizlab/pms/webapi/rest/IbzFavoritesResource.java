@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzFavorites;
 import cn.ibizlab.pms.core.ibiz.service.IIbzFavoritesService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzFavoritesSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.IbzFavoritesModelImpl;
 
 @Slf4j
 @Api(tags = {"收藏" })
@@ -42,6 +43,9 @@ public class IbzFavoritesResource {
 
     @Autowired
     public IIbzFavoritesService ibzfavoritesService;
+
+    @Autowired
+    public IbzFavoritesModelImpl ibzfavoritesModelImpl;
 
     @Autowired
     @Lazy
@@ -141,6 +145,7 @@ public class IbzFavoritesResource {
 	@ApiOperation(value = "获取数据集", tags = {"收藏" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzfavorites/fetchdefault")
 	public ResponseEntity<List<IbzFavoritesDTO>> fetchDefault(IbzFavoritesSearchContext context) {
+        ibzfavoritesModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzFavorites> domains = ibzfavoritesService.searchDefault(context) ;
         List<IbzFavoritesDTO> list = ibzfavoritesMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -154,6 +159,7 @@ public class IbzFavoritesResource {
 	@ApiOperation(value = "查询数据集", tags = {"收藏" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzfavorites/searchdefault")
 	public ResponseEntity<Page<IbzFavoritesDTO>> searchDefault(@RequestBody IbzFavoritesSearchContext context) {
+        ibzfavoritesModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzFavorites> domains = ibzfavoritesService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzfavoritesMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

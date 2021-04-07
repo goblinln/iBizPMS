@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.StorySpec;
 import cn.ibizlab.pms.core.zentao.service.IStorySpecService;
 import cn.ibizlab.pms.core.zentao.filter.StorySpecSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.StorySpecModelImpl;
 
 @Slf4j
 @Api(tags = {"需求描述" })
@@ -42,6 +43,9 @@ public class StorySpecResource {
 
     @Autowired
     public IStorySpecService storyspecService;
+
+    @Autowired
+    public StorySpecModelImpl storyspecModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class StorySpecResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"需求描述" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/storyspecs/fetchdefault")
 	public ResponseEntity<List<StorySpecDTO>> fetchDefault(StorySpecSearchContext context) {
+        storyspecModelImpl.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchDefault(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class StorySpecResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"需求描述" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/storyspecs/searchdefault")
 	public ResponseEntity<Page<StorySpecDTO>> searchDefault(@RequestBody StorySpecSearchContext context) {
+        storyspecModelImpl.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(storyspecMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class StorySpecResource {
 	@ApiOperation(value = "获取版本", tags = {"需求描述" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.GET , value="/storyspecs/fetchversion")
 	public ResponseEntity<List<StorySpecDTO>> fetchVersion(StorySpecSearchContext context) {
+        storyspecModelImpl.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchVersion(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class StorySpecResource {
 	@ApiOperation(value = "查询版本", tags = {"需求描述" } ,notes = "查询版本")
     @RequestMapping(method= RequestMethod.POST , value="/storyspecs/searchversion")
 	public ResponseEntity<Page<StorySpecDTO>> searchVersion(@RequestBody StorySpecSearchContext context) {
+        storyspecModelImpl.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchVersion(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(storyspecMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

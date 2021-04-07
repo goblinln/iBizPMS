@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbizproIndex;
 import cn.ibizlab.pms.core.ibizpro.service.IIbizproIndexService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbizproIndexSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.IbizproIndexModelImpl;
 
 @Slf4j
 @Api(tags = {"索引检索" })
@@ -42,6 +43,9 @@ public class IbizproIndexResource {
 
     @Autowired
     public IIbizproIndexService ibizproindexService;
+
+    @Autowired
+    public IbizproIndexModelImpl ibizproindexModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class IbizproIndexResource {
 	@ApiOperation(value = "获取数据集", tags = {"索引检索" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproindices/fetchdefault")
 	public ResponseEntity<List<IbizproIndexDTO>> fetchDefault(IbizproIndexSearchContext context) {
+        ibizproindexModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproIndex> domains = ibizproindexService.searchDefault(context) ;
         List<IbizproIndexDTO> list = ibizproindexMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class IbizproIndexResource {
 	@ApiOperation(value = "查询数据集", tags = {"索引检索" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/searchdefault")
 	public ResponseEntity<Page<IbizproIndexDTO>> searchDefault(@RequestBody IbizproIndexSearchContext context) {
+        ibizproindexModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproIndex> domains = ibizproindexService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproindexMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class IbizproIndexResource {
 	@ApiOperation(value = "获取全文检索", tags = {"索引检索" } ,notes = "获取全文检索")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproindices/fetchesquery")
 	public ResponseEntity<List<IbizproIndexDTO>> fetchESquery(IbizproIndexSearchContext context) {
+        ibizproindexModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproIndex> domains = ibizproindexService.searchESquery(context) ;
         List<IbizproIndexDTO> list = ibizproindexMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class IbizproIndexResource {
 	@ApiOperation(value = "查询全文检索", tags = {"索引检索" } ,notes = "查询全文检索")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/searchesquery")
 	public ResponseEntity<Page<IbizproIndexDTO>> searchESquery(@RequestBody IbizproIndexSearchContext context) {
+        ibizproindexModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproIndex> domains = ibizproindexService.searchESquery(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproindexMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -184,6 +192,7 @@ public class IbizproIndexResource {
 	@ApiOperation(value = "获取数据集2", tags = {"索引检索" } ,notes = "获取数据集2")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproindices/fetchindexder")
 	public ResponseEntity<List<IbizproIndexDTO>> fetchIndexDER(IbizproIndexSearchContext context) {
+        ibizproindexModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproIndex> domains = ibizproindexService.searchIndexDER(context) ;
         List<IbizproIndexDTO> list = ibizproindexMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -197,6 +206,7 @@ public class IbizproIndexResource {
 	@ApiOperation(value = "查询数据集2", tags = {"索引检索" } ,notes = "查询数据集2")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/searchindexder")
 	public ResponseEntity<Page<IbizproIndexDTO>> searchIndexDER(@RequestBody IbizproIndexSearchContext context) {
+        ibizproindexModelImpl.addAuthorityConditions(context,"READ");
         Page<IbizproIndex> domains = ibizproindexService.searchIndexDER(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproindexMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

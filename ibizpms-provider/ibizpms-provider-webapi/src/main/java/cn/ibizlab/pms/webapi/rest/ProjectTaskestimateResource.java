@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.ProjectTaskestimate;
 import cn.ibizlab.pms.core.ibizpro.service.IProjectTaskestimateService;
 import cn.ibizlab.pms.core.ibizpro.filter.ProjectTaskestimateSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.model.impl.ProjectTaskestimateModelImpl;
 
 @Slf4j
 @Api(tags = {"项目工时统计" })
@@ -42,6 +43,9 @@ public class ProjectTaskestimateResource {
 
     @Autowired
     public IProjectTaskestimateService projecttaskestimateService;
+
+    @Autowired
+    public ProjectTaskestimateModelImpl projecttaskestimateModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class ProjectTaskestimateResource {
 	@ApiOperation(value = "获取用户月工时详情", tags = {"项目工时统计" } ,notes = "获取用户月工时详情")
     @RequestMapping(method= RequestMethod.GET , value="/projecttaskestimates/fetchaccountdetail")
 	public ResponseEntity<List<ProjectTaskestimateDTO>> fetchAccountDetail(ProjectTaskestimateSearchContext context) {
+        projecttaskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<ProjectTaskestimate> domains = projecttaskestimateService.searchAccountDetail(context) ;
         List<ProjectTaskestimateDTO> list = projecttaskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class ProjectTaskestimateResource {
 	@ApiOperation(value = "查询用户月工时详情", tags = {"项目工时统计" } ,notes = "查询用户月工时详情")
     @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/searchaccountdetail")
 	public ResponseEntity<Page<ProjectTaskestimateDTO>> searchAccountDetail(@RequestBody ProjectTaskestimateSearchContext context) {
+        projecttaskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<ProjectTaskestimate> domains = projecttaskestimateService.searchAccountDetail(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projecttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class ProjectTaskestimateResource {
 	@ApiOperation(value = "获取数据集", tags = {"项目工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/projecttaskestimates/fetchdefault")
 	public ResponseEntity<List<ProjectTaskestimateDTO>> fetchDefault(ProjectTaskestimateSearchContext context) {
+        projecttaskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<ProjectTaskestimate> domains = projecttaskestimateService.searchDefault(context) ;
         List<ProjectTaskestimateDTO> list = projecttaskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class ProjectTaskestimateResource {
 	@ApiOperation(value = "查询数据集", tags = {"项目工时统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/searchdefault")
 	public ResponseEntity<Page<ProjectTaskestimateDTO>> searchDefault(@RequestBody ProjectTaskestimateSearchContext context) {
+        projecttaskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<ProjectTaskestimate> domains = projecttaskestimateService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projecttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

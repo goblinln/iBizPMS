@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.EmpLoyeeload;
 import cn.ibizlab.pms.core.ibiz.service.IEmpLoyeeloadService;
 import cn.ibizlab.pms.core.ibiz.filter.EmpLoyeeloadSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.EmpLoyeeloadModelImpl;
 
 @Slf4j
 @Api(tags = {"员工负载表" })
@@ -42,6 +43,9 @@ public class EmpLoyeeloadResource {
 
     @Autowired
     public IEmpLoyeeloadService employeeloadService;
+
+    @Autowired
+    public EmpLoyeeloadModelImpl employeeloadModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class EmpLoyeeloadResource {
 	@ApiOperation(value = "获取数据集", tags = {"员工负载表" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/employeeloads/fetchdefault")
 	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchDefault(EmpLoyeeloadSearchContext context) {
+        employeeloadModelImpl.addAuthorityConditions(context,"READ");
         Page<EmpLoyeeload> domains = employeeloadService.searchDefault(context) ;
         List<EmpLoyeeloadDTO> list = employeeloadMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class EmpLoyeeloadResource {
 	@ApiOperation(value = "查询数据集", tags = {"员工负载表" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/searchdefault")
 	public ResponseEntity<Page<EmpLoyeeloadDTO>> searchDefault(@RequestBody EmpLoyeeloadSearchContext context) {
+        employeeloadModelImpl.addAuthorityConditions(context,"READ");
         Page<EmpLoyeeload> domains = employeeloadService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(employeeloadMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class EmpLoyeeloadResource {
 	@ApiOperation(value = "获取获取员工负载表", tags = {"员工负载表" } ,notes = "获取获取员工负载表")
     @RequestMapping(method= RequestMethod.GET , value="/employeeloads/fetchgetwoerkload")
 	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchGETWOERKLOAD(EmpLoyeeloadSearchContext context) {
+        employeeloadModelImpl.addAuthorityConditions(context,"READ");
         Page<EmpLoyeeload> domains = employeeloadService.searchGETWOERKLOAD(context) ;
         List<EmpLoyeeloadDTO> list = employeeloadMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class EmpLoyeeloadResource {
 	@ApiOperation(value = "查询获取员工负载表", tags = {"员工负载表" } ,notes = "查询获取员工负载表")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/searchgetwoerkload")
 	public ResponseEntity<Page<EmpLoyeeloadDTO>> searchGETWOERKLOAD(@RequestBody EmpLoyeeloadSearchContext context) {
+        employeeloadModelImpl.addAuthorityConditions(context,"READ");
         Page<EmpLoyeeload> domains = employeeloadService.searchGETWOERKLOAD(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(employeeloadMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

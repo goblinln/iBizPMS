@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.TestRun;
 import cn.ibizlab.pms.core.zentao.service.ITestRunService;
 import cn.ibizlab.pms.core.zentao.filter.TestRunSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.TestRunModelImpl;
 
 @Slf4j
 @Api(tags = {"测试运行" })
@@ -42,6 +43,9 @@ public class TestRunResource {
 
     @Autowired
     public ITestRunService testrunService;
+
+    @Autowired
+    public TestRunModelImpl testrunModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class TestRunResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试运行" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/testruns/fetchdefault")
 	public ResponseEntity<List<TestRunDTO>> fetchDefault(TestRunSearchContext context) {
+        testrunModelImpl.addAuthorityConditions(context,"READ");
         Page<TestRun> domains = testrunService.searchDefault(context) ;
         List<TestRunDTO> list = testrunMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class TestRunResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"测试运行" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testruns/searchdefault")
 	public ResponseEntity<Page<TestRunDTO>> searchDefault(@RequestBody TestRunSearchContext context) {
+        testrunModelImpl.addAuthorityConditions(context,"READ");
         Page<TestRun> domains = testrunService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testrunMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

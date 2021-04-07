@@ -43,6 +43,7 @@ public class IBIZProMessageResource {
     @Autowired
     public IIBIZProMessageService ibizpromessageService;
 
+
     @Autowired
     @Lazy
     public IBIZProMessageMapping ibizpromessageMapping;

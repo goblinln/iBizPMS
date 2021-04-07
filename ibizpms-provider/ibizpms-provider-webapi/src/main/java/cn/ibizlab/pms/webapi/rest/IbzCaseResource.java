@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzCase;
 import cn.ibizlab.pms.core.ibiz.service.IIbzCaseService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzCaseSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.IbzCaseModelImpl;
 import cn.ibizlab.pms.core.ibiz.filter.IbzLibCaseStepsSearchContext;
 import cn.ibizlab.pms.core.ibiz.domain.IbzLibCaseSteps;
 import cn.ibizlab.pms.core.ibiz.service.IIbzLibCaseStepsService;
@@ -45,6 +46,9 @@ public class IbzCaseResource {
 
     @Autowired
     public IIbzCaseService ibzcaseService;
+
+    @Autowired
+    public IbzCaseModelImpl ibzcaseModelImpl;
 
     @Autowired
     @Lazy
@@ -146,6 +150,7 @@ public class IbzCaseResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试用例" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/ibzcases/fetchdefault")
 	public ResponseEntity<List<IbzCaseDTO>> fetchDefault(IbzCaseSearchContext context) {
+        ibzcaseModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzCase> domains = ibzcaseService.searchDefault(context) ;
         List<IbzCaseDTO> list = ibzcaseMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -159,6 +164,7 @@ public class IbzCaseResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"测试用例" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzcases/searchdefault")
 	public ResponseEntity<Page<IbzCaseDTO>> searchDefault(@RequestBody IbzCaseSearchContext context) {
+        ibzcaseModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzCase> domains = ibzcaseService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzcaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

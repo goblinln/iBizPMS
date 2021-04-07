@@ -43,6 +43,7 @@ public class SysUserRoleResource {
     @Autowired
     public ISysUserRoleService sysuserroleService;
 
+
     @Autowired
     @Lazy
     public SysUserRoleMapping sysuserroleMapping;

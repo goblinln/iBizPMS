@@ -43,6 +43,7 @@ public class PSSysAppResource {
     @Autowired
     public IPSSysAppService pssysappService;
 
+
     @Autowired
     @Lazy
     public PSSysAppMapping pssysappMapping;

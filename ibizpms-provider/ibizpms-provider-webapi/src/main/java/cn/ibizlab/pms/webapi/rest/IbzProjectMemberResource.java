@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzProjectMember;
 import cn.ibizlab.pms.core.ibiz.service.IIbzProjectMemberService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.IbzProjectMemberModelImpl;
 
 @Slf4j
 @Api(tags = {"项目相关成员" })
@@ -42,6 +43,9 @@ public class IbzProjectMemberResource {
 
     @Autowired
     public IIbzProjectMemberService ibzprojectmemberService;
+
+    @Autowired
+    public IbzProjectMemberModelImpl ibzprojectmemberModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class IbzProjectMemberResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目相关成员" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/ibzprojectmembers/fetchdefault")
 	public ResponseEntity<List<IbzProjectMemberDTO>> fetchDefault(IbzProjectMemberSearchContext context) {
+        ibzprojectmemberModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzProjectMember> domains = ibzprojectmemberService.searchDefault(context) ;
         List<IbzProjectMemberDTO> list = ibzprojectmemberMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class IbzProjectMemberResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"项目相关成员" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/searchdefault")
 	public ResponseEntity<Page<IbzProjectMemberDTO>> searchDefault(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzProjectMember> domains = ibzprojectmemberService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzprojectmemberMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

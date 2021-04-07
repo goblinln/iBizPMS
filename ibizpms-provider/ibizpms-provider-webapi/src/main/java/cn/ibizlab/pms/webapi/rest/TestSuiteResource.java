@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.TestSuite;
 import cn.ibizlab.pms.core.zentao.service.ITestSuiteService;
 import cn.ibizlab.pms.core.zentao.filter.TestSuiteSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.TestSuiteModelImpl;
 
 @Slf4j
 @Api(tags = {"测试套件" })
@@ -42,6 +43,9 @@ public class TestSuiteResource {
 
     @Autowired
     public ITestSuiteService testsuiteService;
+
+    @Autowired
+    public TestSuiteModelImpl testsuiteModelImpl;
 
     @Autowired
     @Lazy
@@ -151,6 +155,7 @@ public class TestSuiteResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试套件" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/testsuites/fetchdefault")
 	public ResponseEntity<List<TestSuiteDTO>> fetchDefault(TestSuiteSearchContext context) {
+        testsuiteModelImpl.addAuthorityConditions(context,"READ");
         Page<TestSuite> domains = testsuiteService.searchDefault(context) ;
         List<TestSuiteDTO> list = testsuiteMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -164,6 +169,7 @@ public class TestSuiteResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"测试套件" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/searchdefault")
 	public ResponseEntity<Page<TestSuiteDTO>> searchDefault(@RequestBody TestSuiteSearchContext context) {
+        testsuiteModelImpl.addAuthorityConditions(context,"READ");
         Page<TestSuite> domains = testsuiteService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testsuiteMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -173,6 +179,7 @@ public class TestSuiteResource {
 	@ApiOperation(value = "获取公开套件", tags = {"测试套件" } ,notes = "获取公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/fetchpublictestsuite")
 	public ResponseEntity<List<TestSuiteDTO>> fetchPublicTestSuite(@RequestBody TestSuiteSearchContext context) {
+        testsuiteModelImpl.addAuthorityConditions(context,"READ");
         Page<TestSuite> domains = testsuiteService.searchPublicTestSuite(context) ;
         List<TestSuiteDTO> list = testsuiteMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -186,6 +193,7 @@ public class TestSuiteResource {
 	@ApiOperation(value = "查询公开套件", tags = {"测试套件" } ,notes = "查询公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/searchpublictestsuite")
 	public ResponseEntity<Page<TestSuiteDTO>> searchPublicTestSuite(@RequestBody TestSuiteSearchContext context) {
+        testsuiteModelImpl.addAuthorityConditions(context,"READ");
         Page<TestSuite> domains = testsuiteService.searchPublicTestSuite(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testsuiteMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.TaskEstimate;
 import cn.ibizlab.pms.core.zentao.service.ITaskEstimateService;
 import cn.ibizlab.pms.core.zentao.filter.TaskEstimateSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.TaskEstimateModelImpl;
 
 @Slf4j
 @Api(tags = {"任务预计" })
@@ -42,6 +43,9 @@ public class TaskEstimateResource {
 
     @Autowired
     public ITaskEstimateService taskestimateService;
+
+    @Autowired
+    public TaskEstimateModelImpl taskestimateModelImpl;
 
     @Autowired
     @Lazy
@@ -158,6 +162,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "获取日志月", tags = {"任务预计" } ,notes = "获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchActionMonth(TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -171,6 +176,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "查询日志月", tags = {"任务预计" } ,notes = "查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchActionMonth(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -180,6 +186,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "获取日志年", tags = {"任务预计" } ,notes = "获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchActionYear(TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -193,6 +200,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "查询日志年", tags = {"任务预计" } ,notes = "查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchActionYear(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -202,6 +210,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"任务预计" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchdefault")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchDefault(TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -215,6 +224,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"任务预计" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchdefault")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchDefault(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -224,6 +234,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "获取DEFAULT1", tags = {"任务预计" } ,notes = "获取DEFAULT1")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchdefaults")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchDefaults(TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -237,6 +248,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "查询DEFAULT1", tags = {"任务预计" } ,notes = "查询DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchdefaults")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchDefaults(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -246,6 +258,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "获取日志月（项目）", tags = {"任务预计" } ,notes = "获取日志月（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchprojectactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectActionMonth(TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -259,6 +272,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "查询日志月（项目）", tags = {"任务预计" } ,notes = "查询日志月（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchprojectactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchProjectActionMonth(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -268,6 +282,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "获取日志年（项目）", tags = {"任务预计" } ,notes = "获取日志年（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchprojectactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectActionYear(TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -281,6 +296,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "查询日志年（项目）", tags = {"任务预计" } ,notes = "查询日志年（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchprojectactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchProjectActionYear(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -290,6 +306,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "获取项目日志", tags = {"任务预计" } ,notes = "获取项目日志")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchprojecttaskestimate")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectTaskEstimate(TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -303,6 +320,7 @@ public class TaskEstimateResource {
 	@ApiOperation(value = "查询项目日志", tags = {"任务预计" } ,notes = "查询项目日志")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchprojecttaskestimate")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchProjectTaskEstimate(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

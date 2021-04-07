@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.TestTask;
 import cn.ibizlab.pms.core.zentao.service.ITestTaskService;
 import cn.ibizlab.pms.core.zentao.filter.TestTaskSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.TestTaskModelImpl;
 
 @Slf4j
 @Api(tags = {"测试版本" })
@@ -42,6 +43,9 @@ public class TestTaskResource {
 
     @Autowired
     public ITestTaskService testtaskService;
+
+    @Autowired
+    public TestTaskModelImpl testtaskModelImpl;
 
     @Autowired
     @Lazy
@@ -258,6 +262,7 @@ public class TestTaskResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试版本" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchDefault(@RequestBody TestTaskSearchContext context) {
+        testtaskModelImpl.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -271,6 +276,7 @@ public class TestTaskResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"测试版本" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/searchdefault")
 	public ResponseEntity<Page<TestTaskDTO>> searchDefault(@RequestBody TestTaskSearchContext context) {
+        testtaskModelImpl.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -280,6 +286,7 @@ public class TestTaskResource {
 	@ApiOperation(value = "获取我的测试单", tags = {"测试版本" } ,notes = "获取我的测试单")
     @RequestMapping(method= RequestMethod.GET , value="/testtasks/fetchmytesttaskpc")
 	public ResponseEntity<List<TestTaskDTO>> fetchMyTestTaskPc(TestTaskSearchContext context) {
+        testtaskModelImpl.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -293,6 +300,7 @@ public class TestTaskResource {
 	@ApiOperation(value = "查询我的测试单", tags = {"测试版本" } ,notes = "查询我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/searchmytesttaskpc")
 	public ResponseEntity<Page<TestTaskDTO>> searchMyTestTaskPc(@RequestBody TestTaskSearchContext context) {
+        testtaskModelImpl.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

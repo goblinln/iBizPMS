@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.UserTpl;
 import cn.ibizlab.pms.core.zentao.service.IUserTplService;
 import cn.ibizlab.pms.core.zentao.filter.UserTplSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.UserTplModelImpl;
 
 @Slf4j
 @Api(tags = {"用户模板" })
@@ -42,6 +43,9 @@ public class UserTplResource {
 
     @Autowired
     public IUserTplService usertplService;
+
+    @Autowired
+    public UserTplModelImpl usertplModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class UserTplResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户模板" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/usertpls/fetchdefault")
 	public ResponseEntity<List<UserTplDTO>> fetchDefault(UserTplSearchContext context) {
+        usertplModelImpl.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchDefault(context) ;
         List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class UserTplResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"用户模板" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/usertpls/searchdefault")
 	public ResponseEntity<Page<UserTplDTO>> searchDefault(@RequestBody UserTplSearchContext context) {
+        usertplModelImpl.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(usertplMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class UserTplResource {
 	@ApiOperation(value = "获取我的模板", tags = {"用户模板" } ,notes = "获取我的模板")
     @RequestMapping(method= RequestMethod.GET , value="/usertpls/fetchmyusertpl")
 	public ResponseEntity<List<UserTplDTO>> fetchMyUserTpl(UserTplSearchContext context) {
+        usertplModelImpl.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchMyUserTpl(context) ;
         List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class UserTplResource {
 	@ApiOperation(value = "查询我的模板", tags = {"用户模板" } ,notes = "查询我的模板")
     @RequestMapping(method= RequestMethod.POST , value="/usertpls/searchmyusertpl")
 	public ResponseEntity<Page<UserTplDTO>> searchMyUserTpl(@RequestBody UserTplSearchContext context) {
+        usertplModelImpl.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchMyUserTpl(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(usertplMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

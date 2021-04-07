@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzAgent;
 import cn.ibizlab.pms.core.ibiz.service.IIbzAgentService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzAgentSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.IbzAgentModelImpl;
 
 @Slf4j
 @Api(tags = {"代理" })
@@ -42,6 +43,9 @@ public class IbzAgentResource {
 
     @Autowired
     public IIbzAgentService ibzagentService;
+
+    @Autowired
+    public IbzAgentModelImpl ibzagentModelImpl;
 
     @Autowired
     @Lazy
@@ -141,6 +145,7 @@ public class IbzAgentResource {
 	@ApiOperation(value = "获取数据集", tags = {"代理" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzagents/fetchdefault")
 	public ResponseEntity<List<IbzAgentDTO>> fetchDefault(IbzAgentSearchContext context) {
+        ibzagentModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzAgent> domains = ibzagentService.searchDefault(context) ;
         List<IbzAgentDTO> list = ibzagentMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -154,6 +159,7 @@ public class IbzAgentResource {
 	@ApiOperation(value = "查询数据集", tags = {"代理" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzagents/searchdefault")
 	public ResponseEntity<Page<IbzAgentDTO>> searchDefault(@RequestBody IbzAgentSearchContext context) {
+        ibzagentModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzAgent> domains = ibzagentService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzagentMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

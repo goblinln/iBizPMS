@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.report.domain.IbzReportRoleConfig;
 import cn.ibizlab.pms.core.report.service.IIbzReportRoleConfigService;
 import cn.ibizlab.pms.core.report.filter.IbzReportRoleConfigSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.report.model.impl.IbzReportRoleConfigModelImpl;
 
 @Slf4j
 @Api(tags = {"汇报角色配置" })
@@ -42,6 +43,9 @@ public class IbzReportRoleConfigResource {
 
     @Autowired
     public IIbzReportRoleConfigService ibzreportroleconfigService;
+
+    @Autowired
+    public IbzReportRoleConfigModelImpl ibzreportroleconfigModelImpl;
 
     @Autowired
     @Lazy
@@ -141,6 +145,7 @@ public class IbzReportRoleConfigResource {
 	@ApiOperation(value = "获取数据集", tags = {"汇报角色配置" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzreportroleconfigs/fetchdefault")
 	public ResponseEntity<List<IbzReportRoleConfigDTO>> fetchDefault(IbzReportRoleConfigSearchContext context) {
+        ibzreportroleconfigModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReportRoleConfig> domains = ibzreportroleconfigService.searchDefault(context) ;
         List<IbzReportRoleConfigDTO> list = ibzreportroleconfigMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -154,6 +159,7 @@ public class IbzReportRoleConfigResource {
 	@ApiOperation(value = "查询数据集", tags = {"汇报角色配置" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportroleconfigs/searchdefault")
 	public ResponseEntity<Page<IbzReportRoleConfigDTO>> searchDefault(@RequestBody IbzReportRoleConfigSearchContext context) {
+        ibzreportroleconfigModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzReportRoleConfig> domains = ibzreportroleconfigService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportroleconfigMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

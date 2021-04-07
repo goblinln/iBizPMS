@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.TaskStats;
 import cn.ibizlab.pms.core.ibiz.service.ITaskStatsService;
 import cn.ibizlab.pms.core.ibiz.filter.TaskStatsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.TaskStatsModelImpl;
 
 @Slf4j
 @Api(tags = {"任务统计" })
@@ -42,6 +43,9 @@ public class TaskStatsResource {
 
     @Autowired
     public ITaskStatsService taskstatsService;
+
+    @Autowired
+    public TaskStatsModelImpl taskstatsModelImpl;
 
     @Autowired
     @Lazy
@@ -140,6 +144,7 @@ public class TaskStatsResource {
 	@ApiOperation(value = "获取数据集", tags = {"任务统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/taskstats/fetchdefault")
 	public ResponseEntity<List<TaskStatsDTO>> fetchDefault(TaskStatsSearchContext context) {
+        taskstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchDefault(context) ;
         List<TaskStatsDTO> list = taskstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -153,6 +158,7 @@ public class TaskStatsResource {
 	@ApiOperation(value = "查询数据集", tags = {"任务统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchdefault")
 	public ResponseEntity<Page<TaskStatsDTO>> searchDefault(@RequestBody TaskStatsSearchContext context) {
+        taskstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -162,6 +168,7 @@ public class TaskStatsResource {
 	@ApiOperation(value = "获取任务完成汇总表", tags = {"任务统计" } ,notes = "获取任务完成汇总表")
     @RequestMapping(method= RequestMethod.GET , value="/taskstats/fetchtaskfinishhuizong")
 	public ResponseEntity<List<TaskStatsDTO>> fetchTaskFinishHuiZong(TaskStatsSearchContext context) {
+        taskstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchTaskFinishHuiZong(context) ;
         List<TaskStatsDTO> list = taskstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,6 +182,7 @@ public class TaskStatsResource {
 	@ApiOperation(value = "查询任务完成汇总表", tags = {"任务统计" } ,notes = "查询任务完成汇总表")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchtaskfinishhuizong")
 	public ResponseEntity<Page<TaskStatsDTO>> searchTaskFinishHuiZong(@RequestBody TaskStatsSearchContext context) {
+        taskstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchTaskFinishHuiZong(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -184,6 +192,7 @@ public class TaskStatsResource {
 	@ApiOperation(value = "获取用户完成任务统计", tags = {"任务统计" } ,notes = "获取用户完成任务统计")
     @RequestMapping(method= RequestMethod.GET , value="/taskstats/fetchuserfinishtasksum")
 	public ResponseEntity<List<TaskStatsDTO>> fetchUserFinishTaskSum(TaskStatsSearchContext context) {
+        taskstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchUserFinishTaskSum(context) ;
         List<TaskStatsDTO> list = taskstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -197,6 +206,7 @@ public class TaskStatsResource {
 	@ApiOperation(value = "查询用户完成任务统计", tags = {"任务统计" } ,notes = "查询用户完成任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchuserfinishtasksum")
 	public ResponseEntity<Page<TaskStatsDTO>> searchUserFinishTaskSum(@RequestBody TaskStatsSearchContext context) {
+        taskstatsModelImpl.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchUserFinishTaskSum(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

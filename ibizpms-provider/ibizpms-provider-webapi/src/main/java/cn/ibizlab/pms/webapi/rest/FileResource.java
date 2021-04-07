@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.zentao.domain.File;
 import cn.ibizlab.pms.core.zentao.service.IFileService;
 import cn.ibizlab.pms.core.zentao.filter.FileSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.model.impl.FileModelImpl;
 
 @Slf4j
 @Api(tags = {"附件" })
@@ -42,6 +43,9 @@ public class FileResource {
 
     @Autowired
     public IFileService fileService;
+
+    @Autowired
+    public FileModelImpl fileModelImpl;
 
     @Autowired
     @Lazy
@@ -159,6 +163,7 @@ public class FileResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"附件" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/files/fetchdefault")
 	public ResponseEntity<List<FileDTO>> fetchDefault(FileSearchContext context) {
+        fileModelImpl.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDefault(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -172,6 +177,7 @@ public class FileResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"附件" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/files/searchdefault")
 	public ResponseEntity<Page<FileDTO>> searchDefault(@RequestBody FileSearchContext context) {
+        fileModelImpl.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -181,6 +187,7 @@ public class FileResource {
 	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
     @RequestMapping(method= RequestMethod.GET , value="/files/fetchdoclibfile")
 	public ResponseEntity<List<FileDTO>> fetchDocLibFile(FileSearchContext context) {
+        fileModelImpl.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -194,6 +201,7 @@ public class FileResource {
 	@ApiOperation(value = "查询文件库查询", tags = {"附件" } ,notes = "查询文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/files/searchdoclibfile")
 	public ResponseEntity<Page<FileDTO>> searchDocLibFile(@RequestBody FileSearchContext context) {
+        fileModelImpl.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -203,6 +211,7 @@ public class FileResource {
 	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
     @RequestMapping(method= RequestMethod.GET , value="/files/fetchproductdoclibfile")
 	public ResponseEntity<List<FileDTO>> fetchProductDocLibFile(FileSearchContext context) {
+        fileModelImpl.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -216,6 +225,7 @@ public class FileResource {
 	@ApiOperation(value = "查询文件库查询", tags = {"附件" } ,notes = "查询文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/files/searchproductdoclibfile")
 	public ResponseEntity<Page<FileDTO>> searchProductDocLibFile(@RequestBody FileSearchContext context) {
+        fileModelImpl.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -225,6 +235,7 @@ public class FileResource {
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"附件" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.GET , value="/files/fetchtype")
 	public ResponseEntity<List<FileDTO>> fetchType(FileSearchContext context) {
+        fileModelImpl.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchType(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -238,6 +249,7 @@ public class FileResource {
 	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"附件" } ,notes = "查询动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/files/searchtype")
 	public ResponseEntity<Page<FileDTO>> searchType(@RequestBody FileSearchContext context) {
+        fileModelImpl.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -247,6 +259,7 @@ public class FileResource {
 	@ApiOperation(value = "获取查询附件", tags = {"附件" } ,notes = "获取查询附件")
     @RequestMapping(method= RequestMethod.GET , value="/files/fetchtypenotbysrfparentkey")
 	public ResponseEntity<List<FileDTO>> fetchTypeNotBySrfparentkey(FileSearchContext context) {
+        fileModelImpl.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchTypeNotBySrfparentkey(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -260,6 +273,7 @@ public class FileResource {
 	@ApiOperation(value = "查询查询附件", tags = {"附件" } ,notes = "查询查询附件")
     @RequestMapping(method= RequestMethod.POST , value="/files/searchtypenotbysrfparentkey")
 	public ResponseEntity<Page<FileDTO>> searchTypeNotBySrfparentkey(@RequestBody FileSearchContext context) {
+        fileModelImpl.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchTypeNotBySrfparentkey(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

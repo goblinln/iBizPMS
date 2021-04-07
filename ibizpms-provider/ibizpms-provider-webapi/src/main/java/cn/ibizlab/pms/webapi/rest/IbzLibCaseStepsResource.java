@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzLibCaseSteps;
 import cn.ibizlab.pms.core.ibiz.service.IIbzLibCaseStepsService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzLibCaseStepsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.model.impl.IbzLibCaseStepsModelImpl;
 
 @Slf4j
 @Api(tags = {"用例库用例步骤" })
@@ -42,6 +43,9 @@ public class IbzLibCaseStepsResource {
 
     @Autowired
     public IIbzLibCaseStepsService ibzlibcasestepsService;
+
+    @Autowired
+    public IbzLibCaseStepsModelImpl ibzlibcasestepsModelImpl;
 
     @Autowired
     @Lazy

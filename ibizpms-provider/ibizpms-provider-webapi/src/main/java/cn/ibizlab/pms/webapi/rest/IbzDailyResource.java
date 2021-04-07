@@ -33,6 +33,7 @@ import cn.ibizlab.pms.core.report.domain.IbzDaily;
 import cn.ibizlab.pms.core.report.service.IIbzDailyService;
 import cn.ibizlab.pms.core.report.filter.IbzDailySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.report.model.impl.IbzDailyModelImpl;
 
 @Slf4j
 @Api(tags = {"日报" })
@@ -42,6 +43,9 @@ public class IbzDailyResource {
 
     @Autowired
     public IIbzDailyService ibzdailyService;
+
+    @Autowired
+    public IbzDailyModelImpl ibzdailyModelImpl;
 
     @Autowired
     @Lazy
@@ -270,6 +274,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "获取数据集", tags = {"日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchdefault")
 	public ResponseEntity<List<IbzDailyDTO>> fetchDefault(IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchDefault(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -283,6 +288,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "查询数据集", tags = {"日报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchdefault")
 	public ResponseEntity<Page<IbzDailyDTO>> searchDefault(@RequestBody IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -292,6 +298,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "获取我的日报（已提交和未提交）", tags = {"日报" } ,notes = "获取我的日报（已提交和未提交）")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmyalldaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchMyAllDaily(IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMyAllDaily(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -305,6 +312,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "查询我的日报（已提交和未提交）", tags = {"日报" } ,notes = "查询我的日报（已提交和未提交）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchmyalldaily")
 	public ResponseEntity<Page<IbzDailyDTO>> searchMyAllDaily(@RequestBody IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMyAllDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -314,6 +322,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "获取我收到的日报", tags = {"日报" } ,notes = "获取我收到的日报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmydaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchMyDaily(IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMyDaily(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -327,6 +336,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "查询我收到的日报", tags = {"日报" } ,notes = "查询我收到的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchmydaily")
 	public ResponseEntity<Page<IbzDailyDTO>> searchMyDaily(@RequestBody IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMyDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -336,6 +346,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "获取我的日报", tags = {"日报" } ,notes = "获取我的日报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmynotsubmit")
 	public ResponseEntity<List<IbzDailyDTO>> fetchMyNotSubmit(IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMyNotSubmit(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -349,6 +360,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "查询我的日报", tags = {"日报" } ,notes = "查询我的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchmynotsubmit")
 	public ResponseEntity<Page<IbzDailyDTO>> searchMyNotSubmit(@RequestBody IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMyNotSubmit(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -358,6 +370,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "获取我提交的日报", tags = {"日报" } ,notes = "获取我提交的日报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmysubmitdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchMySubmitDaily(IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMySubmitDaily(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -371,6 +384,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "查询我提交的日报", tags = {"日报" } ,notes = "查询我提交的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchmysubmitdaily")
 	public ResponseEntity<Page<IbzDailyDTO>> searchMySubmitDaily(@RequestBody IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMySubmitDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -380,6 +394,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "获取产品日报", tags = {"日报" } ,notes = "获取产品日报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchproductdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchProductDaily(IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchProductDaily(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -393,6 +408,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "查询产品日报", tags = {"日报" } ,notes = "查询产品日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchproductdaily")
 	public ResponseEntity<Page<IbzDailyDTO>> searchProductDaily(@RequestBody IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchProductDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -402,6 +418,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "获取项目日报", tags = {"日报" } ,notes = "获取项目日报")
     @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchprojectdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchProjectDaily(IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchProjectDaily(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -415,6 +432,7 @@ public class IbzDailyResource {
 	@ApiOperation(value = "查询项目日报", tags = {"日报" } ,notes = "查询项目日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/searchprojectdaily")
 	public ResponseEntity<Page<IbzDailyDTO>> searchProjectDaily(@RequestBody IbzDailySearchContext context) {
+        ibzdailyModelImpl.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchProjectDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
