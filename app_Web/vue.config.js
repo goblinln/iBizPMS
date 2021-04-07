@@ -14,7 +14,7 @@ module.exports = {
         port: 8111,
         compress: true,
         disableHostCheck: true,
-        // proxy: "http://127.0.0.1:8080/",
+        // proxy: "http://ibizpmspc.ibizlab.cn/",
         historyApiFallback: {
             rewrites: [
             ]
@@ -39,6 +39,10 @@ module.exports = {
     // 多核打包
     parallel: os.cpus().length > 1,
     chainWebpack: (config) => {
+        // 删除自动计算预加载资源
+        config.plugins.delete('preload')
+        // 删除预加载资源
+        config.plugins.delete('prefetch-ibizpms')
         config.resolve.alias
             .set('@ibizsys', resolve('src/ibizsys'))
             .set('@pages', resolve('src/pages'))
