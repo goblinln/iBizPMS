@@ -5,6 +5,7 @@
                 style="color:red;"
                 :value="value" 
                 :tag="tag" 
+                :codeList="codeList"
                 :codelistType="codelistType" 
                 :renderMode="renderMode" 
                 :valueSeparator="valueSeparator" 
@@ -14,6 +15,7 @@
                 v-else
                 :value="value"  
                 :tag="tag" 
+                :codeList="codeList"
                 :codelistType="codelistType" 
                 :renderMode="renderMode" 
                 :valueSeparator="valueSeparator" 
@@ -59,6 +61,14 @@ export default class AppUserSpan extends Vue{
      * @memberof AppUserSpan
      */
     @Prop() public tag!: string;
+
+    /**
+     * 代码表模型
+     *
+     * @type {string}
+     * @memberof CodeList
+     */
+    @Prop() public codeList!: any;
 
     /**
      * 代码表类型
