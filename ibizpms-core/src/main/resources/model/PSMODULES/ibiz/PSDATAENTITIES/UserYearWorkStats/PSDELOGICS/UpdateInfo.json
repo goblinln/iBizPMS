@@ -6,6 +6,7 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "UpdateInfo",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDataEntity" : {
@@ -27,11 +28,11 @@
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6657"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -77,6 +78,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7399"
@@ -106,18 +108,17 @@
       "srcFieldName" : "REALNAME",
       "name" : "Default[REALNAME]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取标题"
   } ],
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "qa",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -141,11 +142,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "dev",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -169,11 +170,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "po",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -207,14 +208,13 @@
     "name" : "连接6657"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "UpdateInfo",
   "logicName" : "更新相关信息",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

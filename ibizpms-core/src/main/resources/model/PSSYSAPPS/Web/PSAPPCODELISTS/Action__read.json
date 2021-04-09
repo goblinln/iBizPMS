@@ -1,16 +1,16 @@
 {
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "getPSCodeItems" : [ {
-    "codeName" : "Item_0",
-    "text" : "0",
-    "value" : "0"
-  }, {
-    "codeName" : "Item_1",
-    "text" : "1",
-    "value" : "1"
-  } ],
+  "dynaInstMode" : 1,
   "codeName" : "Action__read",
+  "getPSCodeItems" : [ {
+    "value" : "0",
+    "codeName" : "Item_0",
+    "text" : "0"
+  }, {
+    "value" : "1",
+    "codeName" : "Item_1",
+    "text" : "1"
+  } ],
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Action__read.json",

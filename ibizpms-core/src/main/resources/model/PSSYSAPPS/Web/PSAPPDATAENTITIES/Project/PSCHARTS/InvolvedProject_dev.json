@@ -5,12 +5,6 @@
     "index" : 0,
     "id" : "0"
   },
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "legendPos" : "RIGHT",
-    "index" : 0,
-    "id" : "0"
-  },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
     "type" : "NONE",
@@ -18,7 +12,14 @@
     "name" : "[Involved]无坐标系[0]",
     "id" : "0"
   } ],
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "legendPos" : "RIGHT",
+    "index" : 0,
+    "id" : "0"
+  },
   "controlType" : "CHART",
+  "codeName" : "InvolvedProject_dev",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "STATUS",
     "seriesType" : "pie",
@@ -54,7 +55,6 @@
       "EC.radius" : "['60%', '70%']"
     }
   } ],
-  "codeName" : "InvolvedProject_dev",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
       "groupField" : true,

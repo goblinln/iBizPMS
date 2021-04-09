@@ -4,12 +4,12 @@
   "enableImport" : true,
   "enableRowEdit" : false,
   "gridRowActiveMode" : 0,
-  "expandSearchForm" : true,
   "enableSearch" : true,
+  "expandSearchForm" : true,
   "enableFilter" : true,
   "xDataControlName" : "grid",
-  "getPSDEViewCodeName" : "CompanyDynamicStatsGridView",
   "showCaptionBar" : true,
+  "getPSDEViewCodeName" : "CompanyDynamicStatsGridView",
   "caption" : "公司动态统计表",
   "title" : "公司动态汇总表格视图",
   "accUserMode" : 2,
@@ -31,17 +31,17 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "CTRL",
-      "name" : "SEARCHFORM"
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -53,7 +53,6 @@
     },
     "name" : "toolbar_deuiaction7"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats.json"
@@ -65,15 +64,26 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction7"
       },
-      "noPrivDisplayMode" : 2,
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT",
+        "id" : "工具栏按钮文本[*.EXPORT]"
+      },
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT",
+          "id" : "工具栏按钮文本[*.EXPORT]"
+        },
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+          "id" : "工具栏按钮提示[*.EXPORT]"
+        },
         "timeout" : 60000,
+        "codeName" : "ExportExcel",
         "getPSSysImage" : {
           "glyph" : "xf1c3@FontAwesome",
           "cssClass" : "fa fa-file-excel-o"
         },
-        "codeName" : "ExportExcel",
         "caption" : "导出",
         "uIActionTag" : "ExportExcel",
         "uIActionType" : "DEUIACTION",
@@ -81,6 +91,11 @@
         "fullCodeName" : "ExportExcel",
         "name" : "表格界面_导出操作（Excel）"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+        "id" : "工具栏按钮提示[*.EXPORT]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf1c3@FontAwesome",
         "cssClass" : "fa fa-file-excel-o"
@@ -106,22 +121,102 @@
     "name" : "toolbar",
     "modelid" : "a367f1c87484ad35865184abea15eece"
   }, {
+    "getPSDEGridDataItems" : [ {
+      "format" : "YYYY-MM-DD",
+      "getPSAppDEField" : {
+        "name" : "ZTDATE",
+        "codeName" : "Ztdate"
+      },
+      "name" : "ztdate",
+      "dataType" : 5
+    }, {
+      "getPSAppDEField" : {
+        "name" : "CLOSEDSTORYCNT",
+        "codeName" : "ClosedStoryCnt"
+      },
+      "name" : "closedstorycnt",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "LOGHOURS",
+        "codeName" : "Loghours"
+      },
+      "name" : "loghours",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "FINISHEDTASKCNT",
+        "codeName" : "Finishedtaskcnt"
+      },
+      "name" : "finishedtaskcnt",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "RESOLVEDBUGCNT",
+        "codeName" : "RESOLVEDBUGCNT"
+      },
+      "name" : "resolvedbugcnt",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
+      },
+      "name" : "srfmajortext",
+      "dataType" : 21
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "srfkey",
+      "dataType" : 1
+    }, {
+      "dataAccessAction" : true,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "srfdataaccaction",
+      "dataType" : 1
+    }, {
+      "getPSAppDEField" : {
+        "name" : "OPENEDBUGCNT",
+        "codeName" : "Openedbugcnt"
+      },
+      "name" : "openedbugcnt",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "OPENEDTASKCNT",
+        "codeName" : "Openedtaskcnt"
+      },
+      "name" : "openedtaskcnt",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "OPENEDSTORYCNT",
+        "codeName" : "Openedstorycnt"
+      },
+      "name" : "openedstorycnt",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "DYNAMICCNT",
+        "codeName" : "Dynamiccnt"
+      },
+      "name" : "dynamiccnt",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "LOGINCNT",
+        "codeName" : "Logincnt"
+      },
+      "name" : "logincnt",
+      "dataType" : 9
+    } ],
     "singleSelect" : true,
     "enableColFilter" : false,
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -141,116 +236,36 @@
       "caption" : "标识",
       "name" : "srfkey"
     } ],
-    "columnEnableLink" : 2,
     "hasWFDataItems" : false,
-    "controlType" : "GRID",
-    "enablePagingBar" : true,
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
+    "columnEnableLink" : 2,
+    "enableRowEdit" : false,
     "getMinorSortPSAppDEField" : {
       "name" : "ZTDATE",
       "codeName" : "Ztdate"
     },
-    "getPSDEGridDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ZTDATE",
-        "codeName" : "Ztdate"
-      },
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "ztdate"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "CLOSEDSTORYCNT",
-        "codeName" : "ClosedStoryCnt"
-      },
-      "dataType" : 9,
-      "name" : "closedstorycnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "LOGHOURS",
-        "codeName" : "Loghours"
-      },
-      "dataType" : 9,
-      "name" : "loghours"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "FINISHEDTASKCNT",
-        "codeName" : "Finishedtaskcnt"
-      },
-      "dataType" : 9,
-      "name" : "finishedtaskcnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "RESOLVEDBUGCNT",
-        "codeName" : "RESOLVEDBUGCNT"
-      },
-      "dataType" : 9,
-      "name" : "resolvedbugcnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "COMMENT",
-        "codeName" : "Comment"
-      },
-      "dataType" : 21,
-      "name" : "srfmajortext"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 1,
-      "name" : "srfkey"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataAccessAction" : true,
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "OPENEDBUGCNT",
-        "codeName" : "Openedbugcnt"
-      },
-      "dataType" : 9,
-      "name" : "openedbugcnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "OPENEDTASKCNT",
-        "codeName" : "Openedtaskcnt"
-      },
-      "dataType" : 9,
-      "name" : "openedtaskcnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "OPENEDSTORYCNT",
-        "codeName" : "Openedstorycnt"
-      },
-      "dataType" : 9,
-      "name" : "openedstorycnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "DYNAMICCNT",
-        "codeName" : "Dynamiccnt"
-      },
-      "dataType" : 9,
-      "name" : "dynamiccnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "LOGINCNT",
-        "codeName" : "Logincnt"
-      },
-      "dataType" : 9,
-      "name" : "logincnt"
-    } ],
-    "enableRowEdit" : false,
+    "enablePagingBar" : true,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "excelCaption" : "日期",
+      "dataItemName" : "ztdate",
       "getPSAppDEField" : {
         "name" : "ZTDATE",
         "codeName" : "Ztdate"
       },
-      "dataItemName" : "ztdate",
       "valueFormat" : "YYYY-MM-DD",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -264,11 +279,11 @@
       "name" : "ztdate"
     }, {
       "excelCaption" : "登录次数",
+      "dataItemName" : "logincnt",
       "getPSAppDEField" : {
         "name" : "LOGINCNT",
         "codeName" : "Logincnt"
       },
-      "dataItemName" : "logincnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -282,11 +297,11 @@
       "name" : "logincnt"
     }, {
       "excelCaption" : "日志工时",
+      "dataItemName" : "loghours",
       "getPSAppDEField" : {
         "name" : "LOGHOURS",
         "codeName" : "Loghours"
       },
-      "dataItemName" : "loghours",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -300,11 +315,11 @@
       "name" : "loghours"
     }, {
       "excelCaption" : "新增需求数",
+      "dataItemName" : "openedstorycnt",
       "getPSAppDEField" : {
         "name" : "OPENEDSTORYCNT",
         "codeName" : "Openedstorycnt"
       },
-      "dataItemName" : "openedstorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -318,11 +333,11 @@
       "name" : "openedstorycnt"
     }, {
       "excelCaption" : "关闭需求数",
+      "dataItemName" : "closedstorycnt",
       "getPSAppDEField" : {
         "name" : "CLOSEDSTORYCNT",
         "codeName" : "ClosedStoryCnt"
       },
-      "dataItemName" : "closedstorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -336,11 +351,11 @@
       "name" : "closedstorycnt"
     }, {
       "excelCaption" : "新增任务数",
+      "dataItemName" : "openedtaskcnt",
       "getPSAppDEField" : {
         "name" : "OPENEDTASKCNT",
         "codeName" : "Openedtaskcnt"
       },
-      "dataItemName" : "openedtaskcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -354,11 +369,11 @@
       "name" : "openedtaskcnt"
     }, {
       "excelCaption" : "完成任务数",
+      "dataItemName" : "finishedtaskcnt",
       "getPSAppDEField" : {
         "name" : "FINISHEDTASKCNT",
         "codeName" : "Finishedtaskcnt"
       },
-      "dataItemName" : "finishedtaskcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -372,11 +387,11 @@
       "name" : "finishedtaskcnt"
     }, {
       "excelCaption" : "新增Bug数",
+      "dataItemName" : "openedbugcnt",
       "getPSAppDEField" : {
         "name" : "OPENEDBUGCNT",
         "codeName" : "Openedbugcnt"
       },
-      "dataItemName" : "openedbugcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -390,11 +405,11 @@
       "name" : "openedbugcnt"
     }, {
       "excelCaption" : "解决Bug数",
+      "dataItemName" : "resolvedbugcnt",
       "getPSAppDEField" : {
         "name" : "RESOLVEDBUGCNT",
         "codeName" : "RESOLVEDBUGCNT"
       },
-      "dataItemName" : "resolvedbugcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -408,11 +423,11 @@
       "name" : "resolvedbugcnt"
     }, {
       "excelCaption" : "动态数",
+      "dataItemName" : "dynamiccnt",
       "getPSAppDEField" : {
         "name" : "DYNAMICCNT",
         "codeName" : "Dynamiccnt"
       },
-      "dataItemName" : "dynamiccnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -442,12 +457,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -530,6 +539,12 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats/PSGRIDS/CompanyDynamicStats.json",
     "logicName" : "公司动态统计表",
     "name" : "grid",
@@ -544,33 +559,34 @@
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
+          "editorWidth" : 100.0,
+          "editorType" : "DATEPICKEREX_NOTIME",
           "editorParams" : {
             "TIMEFMT" : "YYYY-MM-DD"
           },
-          "editorType" : "DATEPICKEREX_NOTIME",
-          "editorWidth" : 100.0,
           "name" : "begin"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "起始日期",
         "allowEmpty" : true,
+        "labelWidth" : 80,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 80,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
+          "colMD" : 24,
           "colLG" : 6,
           "colLGOffset" : 1,
-          "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "begin",
@@ -578,30 +594,30 @@
         "detailStyle" : "DEFAULT",
         "name" : "begin"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
+          "editorWidth" : 100.0,
+          "editorType" : "DATEPICKEREX_NOTIME",
           "editorParams" : {
             "TIMEFMT" : "YYYY-MM-DD"
           },
-          "editorType" : "DATEPICKEREX_NOTIME",
-          "editorWidth" : 100.0,
           "name" : "end"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "结束日期",
         "allowEmpty" : true,
+        "labelWidth" : 80,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 80,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 6,
           "colMD" : 24,
+          "colLG" : 6,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "end",
@@ -627,19 +643,12 @@
       "id" : "end",
       "dataType" : 25
     } ],
-    "noTabHeader" : true,
     "codeName" : "CompanyDynamicStatic",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -678,23 +687,31 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats/PSSEARCHFORMS/CompanyDynamicStatic.json",
     "logicName" : "公司动态统计专用",
     "name" : "searchform",
     "modelid" : "998be256746fc1cca97786857670f156"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA"
   }, {
     "name" : "EDITDATA"
   } ],
+  "codeName" : "CompanyStatsCompanyDynamicStatsGridView",
   "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction7"
     },
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction7",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
@@ -702,8 +719,8 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "batchAddOnly" : false,
       "enableBatchAdd" : false,
+      "batchAddOnly" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "viewLogicType" : "APP_NEWDATA",
@@ -722,7 +739,6 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
-  "codeName" : "CompanyStatsCompanyDynamicStatsGridView",
   "viewType" : "DEGRIDVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CompanyStatsCompanyDynamicStatsGridView.json",
   "name" : "CompanyStatsCompanyDynamicStatsGridView"

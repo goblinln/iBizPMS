@@ -1,117 +1,26 @@
 {
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/ComputeBurn.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/Save.json"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "extendMode" : 0,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "enableGroup" : false,
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "extendMode" : 0,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "ESTIMATEANDLEFT",
-    "logicName" : "燃尽图预计（含周末）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "enableGroup" : false,
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "ESTIMATEANDLEFT"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "extendMode" : 0,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "extendMode" : 0,
-    "orderValue" : 99999,
-    "codeName" : "ESTIMATEANDLEFT",
-    "logicName" : "燃尽图预计（含周末）",
-    "defaultMode" : false,
-    "name" : "ESTIMATEANDLEFT"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "extendMode" : 0,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
+  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
     "formulaDEField" : true,
     "phisicalDEField" : false,
+    "length" : 200,
     "dataType" : "TEXT",
-    "deployId" : "f61caf1f7b611608f83307cfb35b68f5",
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "deployId" : "f61caf1f7b611608f83307cfb35b68f5",
     "codeName" : "Isweekend",
     "logicName" : "周末",
     "stringLength" : 200,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "1",
+      "valueAutoGen" : false,
+      "columnName" : "ISWEEKEND",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ISWEEKEND"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -144,27 +53,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "1",
-      "columnName" : "ISWEEKEND",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ISWEEKEND"
-    } ],
-    "length" : 200,
     "name" : "ISWEEKEND"
   }, {
     "dataType" : "DATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
     "deployId" : "7f067a3f7867901169771b0c2364dfac",
+    "codeName" : "Date",
+    "logicName" : "日期",
+    "stdDataType" : 5,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`DATE`",
+      "valueAutoGen" : false,
+      "columnName" : "DATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DATE"
+    } ],
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
-    "valueFormat" : "%1$tY-%1$tm-%1$td",
-    "codeName" : "Date",
-    "logicName" : "日期",
-    "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -185,28 +93,29 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`DATE`",
-      "columnName" : "DATE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "DATE"
-    } ],
     "name" : "DATE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
+    "length" : 200,
     "dataType" : "TEXT",
-    "deployId" : "fd6122a21197d74a59d37ef9fce7e3a0",
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 2,
     "valueFormat" : "%1$s",
+    "deployId" : "fd6122a21197d74a59d37ef9fce7e3a0",
     "codeName" : "Id",
     "logicName" : "虚拟主键",
     "stringLength" : 200,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`)",
+      "valueAutoGen" : false,
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ID"
+    } ],
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -241,15 +150,6 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`)",
-      "columnName" : "ID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ID"
-    } ],
-    "length" : 200,
     "name" : "ID"
   }, {
     "getPSDER" : {
@@ -265,11 +165,19 @@
     "precision" : 2,
     "dataType" : "PICKUPDATA",
     "deployId" : "3736c5111076da6e2e9bf530f7088c1c",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "codeName" : "Consumed",
     "logicName" : "总计消耗",
     "stdDataType" : 7,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`CONSUMED`",
+      "valueAutoGen" : false,
+      "columnName" : "CONSUMED",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CONSUMED"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -290,14 +198,6 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`CONSUMED`",
-      "columnName" : "CONSUMED",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CONSUMED"
-    } ],
     "name" : "CONSUMED"
   }, {
     "getPSDER" : {
@@ -313,11 +213,19 @@
     "precision" : 2,
     "dataType" : "PICKUPDATA",
     "deployId" : "31fba8ddced5f84e1cf17c5e405c74cc",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "codeName" : "Left",
     "logicName" : "预计剩余",
     "stdDataType" : 7,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`LEFT`",
+      "valueAutoGen" : false,
+      "columnName" : "LEFT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "LEFT"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -338,14 +246,6 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`LEFT`",
-      "columnName" : "LEFT",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "LEFT"
-    } ],
     "name" : "LEFT"
   }, {
     "getPSDER" : {
@@ -360,11 +260,19 @@
     },
     "dataType" : "PICKUPDATA",
     "deployId" : "552688819bbfd74818bca6f27d16e81c",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "codeName" : "Estimate",
     "logicName" : "最初预计",
     "stdDataType" : 7,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`ESTIMATE`",
+      "valueAutoGen" : false,
+      "columnName" : "ESTIMATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ESTIMATE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -385,14 +293,6 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`ESTIMATE`",
-      "columnName" : "ESTIMATE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ESTIMATE"
-    } ],
     "name" : "ESTIMATE"
   }, {
     "getPSDER" : {
@@ -405,13 +305,22 @@
       "name" : "ID",
       "codeName" : "Id"
     },
+    "length" : 8,
     "dataType" : "PICKUP",
     "deployId" : "824326e0305cef3b10ed00d786d80733",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "codeName" : "Project",
     "logicName" : "所属项目",
     "stdDataType" : 1,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PROJECT`",
+      "valueAutoGen" : false,
+      "columnName" : "PROJECT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PROJECT"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -432,15 +341,6 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PROJECT`",
-      "columnName" : "PROJECT",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PROJECT"
-    } ],
-    "length" : 8,
     "name" : "PROJECT"
   }, {
     "getPSDER" : {
@@ -453,13 +353,22 @@
       "name" : "ID",
       "codeName" : "Id"
     },
+    "length" : 8,
     "dataType" : "PICKUP",
     "deployId" : "9a08649265db03edc8bec7c7b7dcd1cc",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "codeName" : "Task",
     "logicName" : "任务",
     "stdDataType" : 1,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`TASK`",
+      "valueAutoGen" : false,
+      "columnName" : "TASK",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TASK"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -480,22 +389,113 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`TASK`",
-      "columnName" : "TASK",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "TASK"
-    } ],
-    "length" : 8,
     "name" : "TASK"
   } ],
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "logicName" : "DEFAULT",
+    "extendMode" : 0,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "pageSize" : -1,
+    "name" : "DEFAULT"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "orderValue" : 99999,
+    "codeName" : "ESTIMATEANDLEFT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "logicName" : "燃尽图预计（含周末）",
+    "extendMode" : 0,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "pageSize" : -1,
+    "name" : "ESTIMATEANDLEFT"
+  } ],
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/ComputeBurn.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/Save.json"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "extendMode" : 0,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "ESTIMATEANDLEFT",
+    "logicName" : "燃尽图预计（含周末）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "ESTIMATEANDLEFT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "serviceAPIMode" : 1,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -511,22 +511,19 @@
   } ],
   "saaSMode" : 4,
   "deployId" : "e5a47ed011760d2702ca93fc30e86183",
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "codeName" : "Burn",
+  "logicName" : "burn",
+  "tableName" : "zt_burn",
+  "serviceCodeName" : "Burn",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
   "extendMode" : 0,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "codeName" : "Burn",
-  "logicName" : "burn",
-  "tableName" : "zt_burn",
   "virtualMode" : 0,
   "enableSQLStorage" : true,
-  "serviceCodeName" : "Burn",
-  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -535,9 +532,12 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
+  "enableRemove" : true,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

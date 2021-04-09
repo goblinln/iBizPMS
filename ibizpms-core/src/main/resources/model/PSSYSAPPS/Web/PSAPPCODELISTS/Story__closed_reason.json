@@ -3,38 +3,38 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "getPSCodeItems" : [ {
-    "codeName" : "Done",
-    "text" : "已完成",
-    "value" : "done"
-  }, {
-    "codeName" : "Subdivided",
-    "text" : "已细分",
-    "value" : "subdivided"
-  }, {
-    "codeName" : "Duplicate",
-    "text" : "重复",
-    "value" : "duplicate"
-  }, {
-    "codeName" : "Postponed",
-    "text" : "延期",
-    "value" : "postponed"
-  }, {
-    "codeName" : "Willnotdo",
-    "text" : "不做",
-    "value" : "willnotdo"
-  }, {
-    "codeName" : "Cancel",
-    "text" : "已取消",
-    "value" : "cancel"
-  }, {
-    "codeName" : "Bydesign",
-    "text" : "设计如此",
-    "value" : "bydesign"
-  } ],
+  "dynaInstMode" : 1,
   "codeName" : "Story__closed_reason",
+  "getPSCodeItems" : [ {
+    "value" : "done",
+    "codeName" : "Done",
+    "text" : "已完成"
+  }, {
+    "value" : "subdivided",
+    "codeName" : "Subdivided",
+    "text" : "已细分"
+  }, {
+    "value" : "duplicate",
+    "codeName" : "Duplicate",
+    "text" : "重复"
+  }, {
+    "value" : "postponed",
+    "codeName" : "Postponed",
+    "text" : "延期"
+  }, {
+    "value" : "willnotdo",
+    "codeName" : "Willnotdo",
+    "text" : "不做"
+  }, {
+    "value" : "cancel",
+    "codeName" : "Cancel",
+    "text" : "已取消"
+  }, {
+    "value" : "bydesign",
+    "codeName" : "Bydesign",
+    "text" : "设计如此"
+  } ],
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__closed_reason.json",

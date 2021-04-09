@@ -7,8 +7,8 @@
   "enableFilter" : false,
   "enableQuickSearch" : true,
   "xDataControlName" : "grid",
-  "getPSDEViewCodeName" : "ProductBugTypeSumUsr4GridView",
   "showCaptionBar" : true,
+  "getPSDEViewCodeName" : "ProductBugTypeSumUsr4GridView",
   "caption" : "产品汇总表",
   "title" : "产品Bug类型统计表格视图",
   "accUserMode" : 2,
@@ -30,14 +30,14 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -49,7 +49,6 @@
     },
     "name" : "toolbar_deuiaction2"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
@@ -61,15 +60,26 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction2"
       },
-      "noPrivDisplayMode" : 2,
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT",
+        "id" : "工具栏按钮文本[*.EXPORT]"
+      },
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT",
+          "id" : "工具栏按钮文本[*.EXPORT]"
+        },
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+          "id" : "工具栏按钮提示[*.EXPORT]"
+        },
         "timeout" : 60000,
+        "codeName" : "ExportExcel",
         "getPSSysImage" : {
           "glyph" : "xf1c3@FontAwesome",
           "cssClass" : "fa fa-file-excel-o"
         },
-        "codeName" : "ExportExcel",
         "caption" : "导出",
         "uIActionTag" : "ExportExcel",
         "uIActionType" : "DEUIACTION",
@@ -77,6 +87,11 @@
         "fullCodeName" : "ExportExcel",
         "name" : "表格界面_导出操作（Excel）"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+        "id" : "工具栏按钮提示[*.EXPORT]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf1c3@FontAwesome",
         "cssClass" : "fa fa-file-excel-o"
@@ -102,22 +117,115 @@
     "name" : "toolbar",
     "modelid" : "a6ad61fc7b57b6887e853b936d9c57cc"
   }, {
+    "getPSDEGridDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "INSTALL",
+        "codeName" : "Install"
+      },
+      "name" : "install",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "DESIGNDEFECT",
+        "codeName" : "Designdefect"
+      },
+      "name" : "designdefect",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "OTHERS",
+        "codeName" : "Others"
+      },
+      "name" : "others",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "STANDARD",
+        "codeName" : "Standard"
+      },
+      "name" : "standard",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "AUTOMATION",
+        "codeName" : "Automation"
+      },
+      "name" : "automation",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "SECURITY",
+        "codeName" : "Security"
+      },
+      "name" : "security",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "srfmajortext",
+      "dataType" : 25
+    }, {
+      "dataAccessAction" : true,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "srfdataaccaction",
+      "dataType" : 1
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "srfkey",
+      "dataType" : 1
+    }, {
+      "getPSAppDEField" : {
+        "name" : "CODEERROR",
+        "codeName" : "Codeerror"
+      },
+      "name" : "codeerror",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "id",
+      "dataType" : 1
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGSUM",
+        "codeName" : "Bugsum"
+      },
+      "name" : "bugsum",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "PERFORMANCE",
+        "codeName" : "Performance"
+      },
+      "name" : "performance",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "name",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "CONFIG",
+        "codeName" : "Config"
+      },
+      "name" : "config",
+      "dataType" : 9
+    } ],
     "singleSelect" : true,
     "enableColFilter" : false,
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : true,
@@ -137,125 +245,32 @@
       "caption" : "主键标识",
       "name" : "srfkey"
     } ],
-    "columnEnableLink" : 2,
     "hasWFDataItems" : false,
-    "controlType" : "GRID",
-    "enablePagingBar" : false,
-    "getPSDEGridDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "INSTALL",
-        "codeName" : "Install"
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
       },
-      "dataType" : 9,
-      "name" : "install"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "DESIGNDEFECT",
-        "codeName" : "Designdefect"
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
-      "dataType" : 9,
-      "name" : "designdefect"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "OTHERS",
-        "codeName" : "Others"
-      },
-      "dataType" : 9,
-      "name" : "others"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "STANDARD",
-        "codeName" : "Standard"
-      },
-      "dataType" : 9,
-      "name" : "standard"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "AUTOMATION",
-        "codeName" : "Automation"
-      },
-      "dataType" : 9,
-      "name" : "automation"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "SECURITY",
-        "codeName" : "Security"
-      },
-      "dataType" : 9,
-      "name" : "security"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "dataType" : 25,
-      "name" : "srfmajortext"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataAccessAction" : true,
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 1,
-      "name" : "srfkey"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "CODEERROR",
-        "codeName" : "Codeerror"
-      },
-      "dataType" : 9,
-      "name" : "codeerror"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 1,
-      "name" : "id"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGSUM",
-        "codeName" : "Bugsum"
-      },
-      "dataType" : 9,
-      "name" : "bugsum"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "PERFORMANCE",
-        "codeName" : "Performance"
-      },
-      "dataType" : 9,
-      "name" : "performance"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "dataType" : 25,
-      "name" : "name"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "CONFIG",
-        "codeName" : "Config"
-      },
-      "dataType" : 9,
-      "name" : "config"
-    } ],
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
+    "columnEnableLink" : 2,
     "enableRowEdit" : false,
+    "enablePagingBar" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "excelCaption" : "产品名称",
+      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataItemName" : "name",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -268,11 +283,11 @@
       "name" : "name"
     }, {
       "excelCaption" : "代码错误",
+      "dataItemName" : "codeerror",
       "getPSAppDEField" : {
         "name" : "CODEERROR",
         "codeName" : "Codeerror"
       },
-      "dataItemName" : "codeerror",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -286,11 +301,11 @@
       "name" : "codeerror"
     }, {
       "excelCaption" : "配置相关",
+      "dataItemName" : "config",
       "getPSAppDEField" : {
         "name" : "CONFIG",
         "codeName" : "Config"
       },
-      "dataItemName" : "config",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -304,11 +319,11 @@
       "name" : "config"
     }, {
       "excelCaption" : "安装部署",
+      "dataItemName" : "install",
       "getPSAppDEField" : {
         "name" : "INSTALL",
         "codeName" : "Install"
       },
-      "dataItemName" : "install",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -322,11 +337,11 @@
       "name" : "install"
     }, {
       "excelCaption" : "安全相关",
+      "dataItemName" : "security",
       "getPSAppDEField" : {
         "name" : "SECURITY",
         "codeName" : "Security"
       },
-      "dataItemName" : "security",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -340,11 +355,11 @@
       "name" : "security"
     }, {
       "excelCaption" : "性能问题",
+      "dataItemName" : "performance",
       "getPSAppDEField" : {
         "name" : "PERFORMANCE",
         "codeName" : "Performance"
       },
-      "dataItemName" : "performance",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -358,11 +373,11 @@
       "name" : "performance"
     }, {
       "excelCaption" : "标准规范",
+      "dataItemName" : "standard",
       "getPSAppDEField" : {
         "name" : "STANDARD",
         "codeName" : "Standard"
       },
-      "dataItemName" : "standard",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -376,11 +391,11 @@
       "name" : "standard"
     }, {
       "excelCaption" : "测试脚本",
+      "dataItemName" : "automation",
       "getPSAppDEField" : {
         "name" : "AUTOMATION",
         "codeName" : "Automation"
       },
-      "dataItemName" : "automation",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -394,11 +409,11 @@
       "name" : "automation"
     }, {
       "excelCaption" : "设计缺陷",
+      "dataItemName" : "designdefect",
       "getPSAppDEField" : {
         "name" : "DESIGNDEFECT",
         "codeName" : "Designdefect"
       },
-      "dataItemName" : "designdefect",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -412,11 +427,11 @@
       "name" : "designdefect"
     }, {
       "excelCaption" : "其他",
+      "dataItemName" : "others",
       "getPSAppDEField" : {
         "name" : "OTHERS",
         "codeName" : "Others"
       },
-      "dataItemName" : "others",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -430,11 +445,11 @@
       "name" : "others"
     }, {
       "excelCaption" : "bug总计",
+      "dataItemName" : "bugsum",
       "getPSAppDEField" : {
         "name" : "BUGSUM",
         "codeName" : "Bugsum"
       },
-      "dataItemName" : "bugsum",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -463,12 +478,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -551,11 +560,18 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSGRIDS/ProductBugTypeSumForm.json",
     "logicName" : "产品Bug类型统计表格",
     "name" : "grid",
     "modelid" : "a2e6af3651bb0375e1ff0b79ac5fddc9"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -573,13 +589,14 @@
     "realTitle" : "产品汇总表编辑视图",
     "name" : "EDITDATA"
   } ],
+  "codeName" : "ProductSumProductBugTypeSumUsr4GridView",
   "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction2"
     },
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction2",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
@@ -587,8 +604,8 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "batchAddOnly" : false,
       "enableBatchAdd" : false,
+      "batchAddOnly" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
@@ -639,7 +656,6 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
-  "codeName" : "ProductSumProductBugTypeSumUsr4GridView",
   "viewType" : "DEGRIDVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumProductBugTypeSumUsr4GridView.json",
   "name" : "ProductSumProductBugTypeSumUsr4GridView"

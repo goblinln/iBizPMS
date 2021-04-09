@@ -1,11 +1,11 @@
 {
   "loadDefault" : true,
-  "expandSearchForm" : false,
   "enableSearch" : false,
   "enableQuickGroup" : false,
+  "expandSearchForm" : false,
   "enableQuickSearch" : false,
-  "getPSDEViewCodeName" : "ChartView",
   "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "ChartView",
   "caption" : "产品",
   "title" : "产品图表视图",
   "accUserMode" : 2,
@@ -27,8 +27,8 @@
     "engineType" : "ChartView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "CHART"
+      "name" : "CHART",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -37,7 +37,6 @@
     "key" : "n_status_isnotnull",
     "name" : "n_status_isnotnull"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -49,12 +48,6 @@
       "index" : 0,
       "id" : "0"
     },
-    "getPSDEChartLegend" : {
-      "showLegend" : true,
-      "legendPos" : "RIGHT",
-      "index" : 0,
-      "id" : "0"
-    },
     "getPSChartCoordinateSystems" : [ {
       "eChartsType" : "none",
       "type" : "NONE",
@@ -62,7 +55,14 @@
       "name" : "[ProductStatus]无坐标系[0]",
       "id" : "0"
     } ],
+    "getPSDEChartLegend" : {
+      "showLegend" : true,
+      "legendPos" : "RIGHT",
+      "index" : 0,
+      "id" : "0"
+    },
     "controlType" : "CHART",
+    "codeName" : "ProductStatus",
     "getPSDEChartSerieses" : [ {
       "catalogField" : "STATUS",
       "seriesType" : "pie",
@@ -96,7 +96,6 @@
         "EC.radius" : "['60%', '70%']"
       }
     } ],
-    "codeName" : "ProductStatus",
     "getPSChartDataSets" : [ {
       "getPSChartDataSetFields" : [ {
         "groupField" : true,
@@ -132,12 +131,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "CHART"
-    },
-    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -207,6 +200,12 @@
       "enableDEFieldPrivilege" : false,
       "id" : "图形控件处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CHART"
+    },
+    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSCHARTS/ProductStatus.json",
     "getPSSysPFPlugin" : {
       "pluginType" : "CHART_RENDER",
@@ -219,6 +218,7 @@
       "EC.color" : "[\"#f69f54\",\"#42B3FF\",\"#aa00ff\",\"#884bff\",'#00ffa9','#85B3FF','#A1FFFF']"
     }
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "ProductChartView",
   "viewType" : "DECHARTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductChartView.json",

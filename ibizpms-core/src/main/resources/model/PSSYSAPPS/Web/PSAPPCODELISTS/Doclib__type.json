@@ -3,22 +3,22 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "getPSCodeItems" : [ {
-    "codeName" : "Product",
-    "text" : "产品文档库",
-    "value" : "product"
-  }, {
-    "codeName" : "Project",
-    "text" : "项目文档库",
-    "value" : "project"
-  }, {
-    "codeName" : "Custom",
-    "text" : "自定义文档库",
-    "value" : "custom"
-  } ],
+  "dynaInstMode" : 1,
   "codeName" : "Doclib__type",
+  "getPSCodeItems" : [ {
+    "value" : "product",
+    "codeName" : "Product",
+    "text" : "产品文档库"
+  }, {
+    "value" : "project",
+    "codeName" : "Project",
+    "text" : "项目文档库"
+  }, {
+    "value" : "custom",
+    "codeName" : "Custom",
+    "text" : "自定义文档库"
+  } ],
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Doclib__type.json",

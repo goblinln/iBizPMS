@@ -6,6 +6,7 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "MobProductCounter",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
@@ -13,6 +14,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall3",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6010"
@@ -27,7 +29,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall3",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "计划数"
   }, {
@@ -37,6 +38,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall4",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -47,7 +49,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall4",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "发布数"
   }, {
@@ -57,6 +58,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7373"
@@ -71,17 +73,16 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取相关BUG数"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1090"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -91,6 +92,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9158"
@@ -105,7 +107,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取需求数"
   } ],
@@ -155,14 +156,13 @@
     "name" : "连接9158"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "MobProductCounter",
   "logicName" : "移动端产品计数器",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

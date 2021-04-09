@@ -1,5 +1,4 @@
 {
-  "typeValue" : "product",
   "inherit" : false,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
@@ -32,6 +31,7 @@
     },
     "name" : "PRODUCT=ID"
   } ],
+  "typeValue" : "product",
   "virtual" : true,
   "getMajorPSDataEntity" : {
     "modelref" : true,

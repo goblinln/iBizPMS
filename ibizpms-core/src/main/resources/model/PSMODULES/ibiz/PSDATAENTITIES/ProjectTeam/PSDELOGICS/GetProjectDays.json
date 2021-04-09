@@ -6,19 +6,21 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "GetProjectDays",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4176"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4776"
@@ -38,7 +40,6 @@
       "srcFieldName" : "ROOT",
       "name" : "Default[ROOT] ==> project[ID]"
     } ],
-    "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置项目参数"
   }, {
@@ -52,11 +53,11 @@
       "id" : "project"
     },
     "logicHolder" : 3,
+    "codeName" : "Deaction1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3942"
     } ],
-    "codeName" : "Deaction1",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
@@ -66,6 +67,7 @@
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Prepareparam2",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
@@ -81,7 +83,6 @@
       "srcFieldName" : "DAYS",
       "name" : "project[DAYS] ==> Default[DAYS]"
     } ],
-    "codeName" : "Prepareparam2",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "回填"
   } ],
@@ -120,21 +121,20 @@
     "name" : "连接4776"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "project",
     "default" : false,
     "name" : "项目"
   } ],
-  "codeName" : "GetProjectDays",
   "logicName" : "获取项目的可用工日",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

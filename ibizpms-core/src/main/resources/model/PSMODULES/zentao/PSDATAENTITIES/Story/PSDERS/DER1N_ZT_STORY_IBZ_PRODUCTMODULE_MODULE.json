@@ -10,6 +10,7 @@
   },
   "removeActionType" : -1,
   "masterRS" : 0,
+  "pickupDEFName" : "MODULE",
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

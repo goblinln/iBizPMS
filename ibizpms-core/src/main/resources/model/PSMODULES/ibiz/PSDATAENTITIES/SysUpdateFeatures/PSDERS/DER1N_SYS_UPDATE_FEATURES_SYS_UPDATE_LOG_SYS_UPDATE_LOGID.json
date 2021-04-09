@@ -10,6 +10,7 @@
   },
   "removeActionType" : 1,
   "masterRS" : 0,
+  "pickupDEFName" : "SYS_UPDATE_LOGID",
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

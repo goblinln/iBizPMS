@@ -10,6 +10,7 @@
   },
   "removeActionType" : 2,
   "masterRS" : 0,
+  "pickupDEFName" : "MDEPTID",
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

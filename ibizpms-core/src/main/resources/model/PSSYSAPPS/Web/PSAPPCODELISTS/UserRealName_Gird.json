@@ -15,10 +15,10 @@
     "modelref" : true,
     "id" : "FetchDefault"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
   "orMode" : "STR",
   "textSeparator" : ",",
+  "dynaInstMode" : 1,
   "codeName" : "UserRealName_Gird",
   "emptyText" : "未定义",
   "valueSeparator" : ",",

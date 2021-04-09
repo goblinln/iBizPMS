@@ -1,12 +1,12 @@
 {
-  "showDataInfoBar" : true,
   "showCaptionBar" : true,
+  "showDataInfoBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "ActiviteView",
+  "openMode" : "POPUPMODAL",
   "height" : 200,
   "width" : 400,
   "caption" : "激活",
-  "openMode" : "POPUPMODAL",
   "title" : "激活",
   "accUserMode" : 2,
   "enableDP" : true,
@@ -27,21 +27,21 @@
     "engineType" : "OptionView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
   },
   "getPSControls" : [ {
+    "showFormNavBar" : false,
     "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
@@ -68,13 +68,13 @@
       "id" : "loaddraftfrom"
     },
     "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "rawItemHeight" : -1.0,
@@ -82,10 +82,10 @@
         "contentType" : "RAW",
         "rawContent" : "您确定要激活这条待办吗？",
         "getPSLayoutPos" : {
-          "colLG" : 20,
-          "colLGOffset" : 4,
           "colMD" : 20,
+          "colLG" : 20,
           "colMDOffset" : 4,
+          "colLGOffset" : 4,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "rawitem1",
@@ -150,19 +150,12 @@
         "codeName" : "Id"
       }
     } ],
-    "noTabHeader" : true,
     "codeName" : "ActiviteFROM",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -242,11 +235,18 @@
       "enableDEFieldPrivilege" : false,
       "id" : "选项表单处理器（todo激活）"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo/PSFORMS/ActiviteFROM.json",
     "logicName" : "激活",
     "name" : "form",
     "modelid" : "e9bfd3da59aa22ebef1b06a3d5d17249"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "TodoActiviteView",
   "viewType" : "DEOPTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoActiviteView.json",

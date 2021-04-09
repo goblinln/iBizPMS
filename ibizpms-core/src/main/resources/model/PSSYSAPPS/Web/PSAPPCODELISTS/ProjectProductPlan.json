@@ -7,8 +7,8 @@
     "modelref" : true,
     "id" : "FetchProjectPlan"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
+  "dynaInstMode" : 1,
   "codeName" : "ProjectProductPlan",
   "emptyText" : "未定义",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectProductPlan.json",

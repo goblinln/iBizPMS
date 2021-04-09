@@ -6,6 +6,7 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "GetModuleBranch",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDataEntity" : {
@@ -17,11 +18,11 @@
       "id" : "Module"
     },
     "logicHolder" : 3,
+    "codeName" : "Deaction1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9306"
     } ],
-    "codeName" : "Deaction1",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
@@ -31,6 +32,7 @@
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6882"
@@ -50,22 +52,22 @@
       "srcFieldName" : "MODULE",
       "name" : "Default[MODULE] ==> Module[ID]"
     } ],
-    "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置模块参数"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1496"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Prepareparam2",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
@@ -81,7 +83,6 @@
       "srcFieldName" : "BRANCH",
       "name" : "Module[BRANCH] ==> Default[BRANCH]"
     } ],
-    "codeName" : "Prepareparam2",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置bug平台值"
   } ],
@@ -99,11 +100,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNOTNULL",
         "dstFieldName" : "MODULE",
         "logicType" : "SINGLE",
         "name" : "Default[MODULE] 值不为空(NotNil)"
@@ -136,21 +137,20 @@
     "name" : "连接9306"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Module",
     "default" : false,
     "name" : "模块"
   }, {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "GetModuleBranch",
   "logicName" : "获取模块的平台",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

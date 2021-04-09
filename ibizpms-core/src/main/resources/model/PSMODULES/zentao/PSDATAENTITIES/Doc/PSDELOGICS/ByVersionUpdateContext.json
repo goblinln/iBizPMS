@@ -6,6 +6,7 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "ByVersionUpdateContext",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
@@ -13,6 +14,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -32,17 +34,16 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取正文信息"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接2516"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   } ],
@@ -59,14 +60,13 @@
     "name" : "连接2516"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "ByVersionUpdateContext",
   "logicName" : "根据版本更新正文信息",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

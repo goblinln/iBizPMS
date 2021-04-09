@@ -1,139 +1,6 @@
 {
-  "getAllPSDEMainStates" : [ {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "0",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__DOCLIB_NFAVOUR_BUT"
-      },
-      "name" : "SRFUR__DOCLIB_NFAVOUR_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "FILE"
-      },
-      "name" : "FILE"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "doc_0",
-    "logicName" : "文档库_未收藏",
-    "default" : false,
-    "mSTag" : "doc__0",
-    "stateValue" : "doc",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "name" : "文档库_未收藏"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "1",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__DOCLIB_FAVOUR_BUT"
-      },
-      "name" : "SRFUR__DOCLIB_FAVOUR_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "FILE"
-      },
-      "name" : "FILE"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "doc_1",
-    "logicName" : "文档库_已收藏",
-    "default" : false,
-    "mSTag" : "doc__1",
-    "stateValue" : "doc",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "name" : "文档库_已收藏"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "0",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__DOCLIB_FAVOUR_BUT"
-      },
-      "name" : "SRFUR__DOCLIB_FAVOUR_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DOC"
-      },
-      "name" : "DOC"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__DOCLIB_NFAVOUR_BUT"
-      },
-      "name" : "SRFUR__DOCLIB_NFAVOUR_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "file_0",
-    "logicName" : "附件库_未收藏",
-    "default" : false,
-    "mSTag" : "file__0",
-    "stateValue" : "file",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "name" : "附件库_未收藏"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "1",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DOC"
-      },
-      "name" : "DOC"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__DOCLIB_NFAVOUR_BUT"
-      },
-      "name" : "SRFUR__DOCLIB_NFAVOUR_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "SRFUR__DOCLIB_FAVOUR_BUT"
-      },
-      "name" : "SRFUR__DOCLIB_FAVOUR_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "file_1",
-    "logicName" : "附件库_已收藏",
-    "default" : false,
-    "mSTag" : "file__1",
-    "stateValue" : "file",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "name" : "附件库_已收藏"
-  } ],
-  "enableUIActions" : 15,
   "getAllPSAppDEUIActions" : [ {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -145,13 +12,12 @@
     },
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
+    "codeName" : "Create",
     "getPSSysImage" : {
       "glyph" : "xf067@FontAwesome",
       "cssClass" : "fa fa-plus"
     },
-    "codeName" : "Create",
     "caption" : "创建文档库",
     "actionTarget" : "NONE",
     "reloadData" : true,
@@ -164,6 +30,7 @@
     "name" : "创建文档库",
     "id" : "Create@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -175,13 +42,12 @@
     },
     "frontProcessType" : "WIZARD",
     "refreshMode" : 1,
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
+    "codeName" : "CreateFile",
     "getPSSysImage" : {
       "glyph" : "xf067@FontAwesome",
       "cssClass" : "fa fa-plus"
     },
-    "codeName" : "CreateFile",
     "caption" : "创建文档",
     "actionTarget" : "NONE",
     "reloadData" : true,
@@ -194,6 +60,7 @@
     "name" : "创建文档",
     "id" : "CreateFile@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -215,13 +82,12 @@
       "name" : "project"
     } ],
     "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
+    "codeName" : "EditDocLib",
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
-    "codeName" : "EditDocLib",
     "caption" : "编辑",
     "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
@@ -232,6 +98,7 @@
     "name" : "编辑(产品文档库)",
     "id" : "EditDocLib@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -274,13 +141,12 @@
       "key" : "PRODUCT",
       "name" : "PRODUCT"
     } ],
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
+    "codeName" : "WeiHuFenLei",
     "getPSSysImage" : {
       "glyph" : "xf023@FontAwesome",
       "cssClass" : "fa fa-lock"
     },
-    "codeName" : "WeiHuFenLei",
     "caption" : "维护分类",
     "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "SRFUR__DOCLIBMODULE_MAINTENANCE_BUT",
@@ -291,6 +157,7 @@
     "name" : "维护分类",
     "id" : "WeiHuFenLei@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -318,7 +185,6 @@
       "key" : "PRODUCT",
       "name" : "PRODUCT"
     } ],
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
     "codeName" : "LookMainProductDocLib",
     "caption" : "查看",
@@ -330,6 +196,7 @@
     "name" : "查看(主产品文档库)",
     "id" : "LookMainProductDocLib@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -352,7 +219,6 @@
       "key" : "DOCLIBTYPE",
       "name" : "DOCLIBTYPE"
     } ],
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
     "codeName" : "LookMainProjectDocLib",
     "caption" : "查看",
@@ -364,6 +230,7 @@
     "name" : "查看(主项目文档库)",
     "id" : "LookMainProjectDocLib@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -374,7 +241,6 @@
       "viewType" : "DETREEVIEW"
     },
     "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
     "codeName" : "RecentUpdateQuickAccess",
     "caption" : "最近更新",
@@ -386,6 +252,7 @@
     "name" : "快速访问（最近更新）",
     "id" : "RecentUpdateQuickAccess@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -396,7 +263,6 @@
       "viewType" : "DETREEVIEW"
     },
     "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
     "codeName" : "MyFavouriteQuickAccess",
     "caption" : "我的收藏",
@@ -408,6 +274,7 @@
     "name" : "快速访问（我的收藏）",
     "id" : "MyFavouriteQuickAccess@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -424,13 +291,12 @@
       "name" : "project"
     } ],
     "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
+    "codeName" : "EditProjectDoclib",
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
-    "codeName" : "EditProjectDoclib",
     "caption" : "编辑",
     "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
@@ -441,6 +307,7 @@
     "name" : "编辑(项目文档库)",
     "id" : "EditProjectDoclib@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -451,13 +318,12 @@
     },
     "refreshMode" : 1,
     "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
+    "codeName" : "Collect",
     "getPSSysImage" : {
       "glyph" : "xf006@FontAwesome",
       "cssClass" : "fa fa-star-o"
     },
-    "codeName" : "Collect",
     "caption" : "收藏",
     "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
@@ -469,6 +335,7 @@
     "name" : "收藏",
     "id" : "Collect@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -479,7 +346,6 @@
       "viewType" : "DETREEVIEW"
     },
     "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
     "codeName" : "MyDocQuickAccess",
     "caption" : "我的文档",
@@ -491,6 +357,7 @@
     "name" : "快速访问（我的文档）",
     "id" : "MyDocQuickAccess@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -501,13 +368,12 @@
     },
     "refreshMode" : 1,
     "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
+    "codeName" : "UnCollect",
     "getPSSysImage" : {
       "glyph" : "xf005@FontAwesome",
       "cssClass" : "fa fa-star"
     },
-    "codeName" : "UnCollect",
     "caption" : "取消收藏",
     "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
@@ -519,6 +385,7 @@
     "name" : "取消收藏",
     "id" : "UnCollect@DocLib"
   }, {
+    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -529,13 +396,12 @@
       "viewType" : "DEEDITVIEW"
     },
     "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
+    "codeName" : "EditCustomDocLib",
     "getPSSysImage" : {
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
-    "codeName" : "EditCustomDocLib",
     "caption" : "编辑",
     "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
@@ -547,6 +413,176 @@
     "id" : "EditCustomDocLib@DocLib"
   } ],
   "major" : true,
+  "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "state2Value" : "0",
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "orderValue" : 99999,
+    "codeName" : "doc_0",
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "DOCLIB_NFAVOUR_BUT",
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__DOCLIB_NFAVOUR_BUT"
+        },
+        "logicName" : "取消收藏文档库",
+        "name" : "SRFUR__DOCLIB_NFAVOUR_BUT"
+      },
+      "name" : "SRFUR__DOCLIB_NFAVOUR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "附件库",
+        "name" : "FILE"
+      },
+      "name" : "FILE"
+    } ],
+    "logicName" : "文档库_未收藏",
+    "default" : false,
+    "mSTag" : "doc__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "doc",
+    "name" : "文档库_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "state2Value" : "1",
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "orderValue" : 99999,
+    "codeName" : "doc_1",
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "DOCLIB_FAVOUR_BUT",
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__DOCLIB_FAVOUR_BUT"
+        },
+        "logicName" : "收藏文档库",
+        "name" : "SRFUR__DOCLIB_FAVOUR_BUT"
+      },
+      "name" : "SRFUR__DOCLIB_FAVOUR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "附件库",
+        "name" : "FILE"
+      },
+      "name" : "FILE"
+    } ],
+    "logicName" : "文档库_已收藏",
+    "default" : false,
+    "mSTag" : "doc__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "doc",
+    "name" : "文档库_已收藏"
+  }, {
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "state2Value" : "0",
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "orderValue" : 99999,
+    "codeName" : "file_0",
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "DOCLIB_FAVOUR_BUT",
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__DOCLIB_FAVOUR_BUT"
+        },
+        "logicName" : "收藏文档库",
+        "name" : "SRFUR__DOCLIB_FAVOUR_BUT"
+      },
+      "name" : "SRFUR__DOCLIB_FAVOUR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "文档库维护",
+        "name" : "DOC"
+      },
+      "name" : "DOC"
+    }, {
+      "getPSDEOPPriv" : {
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "DOCLIB_NFAVOUR_BUT",
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__DOCLIB_NFAVOUR_BUT"
+        },
+        "logicName" : "取消收藏文档库",
+        "name" : "SRFUR__DOCLIB_NFAVOUR_BUT"
+      },
+      "name" : "SRFUR__DOCLIB_NFAVOUR_BUT"
+    } ],
+    "logicName" : "附件库_未收藏",
+    "default" : false,
+    "mSTag" : "file__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "file",
+    "name" : "附件库_未收藏"
+  }, {
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "state2Value" : "1",
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "orderValue" : 99999,
+    "codeName" : "file_1",
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "文档库维护",
+        "name" : "DOC"
+      },
+      "name" : "DOC"
+    }, {
+      "getPSDEOPPriv" : {
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "DOCLIB_NFAVOUR_BUT",
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__DOCLIB_NFAVOUR_BUT"
+        },
+        "logicName" : "取消收藏文档库",
+        "name" : "SRFUR__DOCLIB_NFAVOUR_BUT"
+      },
+      "name" : "SRFUR__DOCLIB_NFAVOUR_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "DOCLIB_FAVOUR_BUT",
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__DOCLIB_FAVOUR_BUT"
+        },
+        "logicName" : "收藏文档库",
+        "name" : "SRFUR__DOCLIB_FAVOUR_BUT"
+      },
+      "name" : "SRFUR__DOCLIB_FAVOUR_BUT"
+    } ],
+    "logicName" : "附件库_已收藏",
+    "default" : false,
+    "mSTag" : "file__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "file",
+    "name" : "附件库_已收藏"
+  } ],
+  "enableUIActions" : 15,
   "enableUIRemove" : true,
   "getAllPSAppDEMethods" : [ {
     "getPSDEServiceAPIMethod" : {
@@ -554,318 +590,318 @@
       "id" : "Select"
     },
     "builtinMethod" : false,
+    "methodType" : "SELECT",
+    "codeName" : "Select",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    },
-    "codeName" : "Select",
-    "methodType" : "SELECT"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "DOCLIB__DEACTION__CREATE"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Create.json"
     },
     "codeName" : "Create",
-    "methodType" : "DEACTION"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "DOCLIB__DEACTION__UPDATE"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Update.json"
     },
     "codeName" : "Update",
-    "methodType" : "DEACTION"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "DOCLIB__DEACTION__REMOVE"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Remove.json"
     },
     "codeName" : "Remove",
-    "methodType" : "DEACTION"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "DOCLIB__DEACTION__GET"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Get.json"
     },
     "codeName" : "Get",
-    "methodType" : "DEACTION"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/GetDraft.json"
     },
     "codeName" : "GetDraft",
-    "methodType" : "DEACTION"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey",
-    "methodType" : "DEACTION"
+    "codeName" : "CheckKey"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Collect"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Collect.json"
     },
-    "codeName" : "Collect",
-    "methodType" : "DEACTION"
+    "codeName" : "Collect"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save",
-    "methodType" : "DEACTION"
+    "codeName" : "Save"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnCollect"
     },
     "builtinMethod" : false,
+    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/UnCollect.json"
     },
-    "codeName" : "UnCollect",
-    "methodType" : "DEACTION"
+    "codeName" : "UnCollect"
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchByCustom"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
+    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ByCustom"
     },
     "codeName" : "FetchByCustom",
-    "methodType" : "FETCH"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchByProduct"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
+    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ByProduct"
     },
     "codeName" : "FetchByProduct",
-    "methodType" : "FETCH"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchByProductNotFiles"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
+    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ByProductNotFiles"
     },
     "codeName" : "FetchByProductNotFiles",
-    "methodType" : "FETCH"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchByProject"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
+    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ByProject"
     },
     "codeName" : "FetchByProject",
-    "methodType" : "FETCH"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchByProjectNotFiles"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
+    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ByProjectNotFiles"
     },
     "codeName" : "FetchByProjectNotFiles",
-    "methodType" : "FETCH"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurDocLib"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
+    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "CurDocLib"
     },
     "codeName" : "FetchCurDocLib",
-    "methodType" : "FETCH"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
+    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
     },
     "codeName" : "FetchDefault",
-    "methodType" : "FETCH"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyFavourites"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
+    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyFavourites"
     },
     "codeName" : "FetchMyFavourites",
-    "methodType" : "FETCH"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRootModuleMuLu"
     },
     "builtinMethod" : false,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
+    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RootModuleMuLu"
     },
     "codeName" : "FetchRootModuleMuLu",
-    "methodType" : "FETCH"
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterUpdate",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterSearch",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterGet",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterCreate",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterGetDraft",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterGetDraft",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterRemove",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterRemove",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
+    "codeName" : "FilterFetch",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
@@ -953,11 +989,11 @@
     "name" : "MAIN"
   }, {
     "majorField" : true,
-    "enableQuickSearch" : true,
     "codeName" : "Name",
     "logicName" : "文档库名称",
     "stringLength" : 60,
     "stdDataType" : 25,
+    "enableQuickSearch" : true,
     "name" : "NAME"
   }, {
     "codeName" : "Modulecnt",
@@ -999,22 +1035,6 @@
     "name" : "PRODUCT"
   } ],
   "getAllPSAppDEACModes" : [ {
-    "enablePagingBar" : false,
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -1023,6 +1043,22 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -1034,6 +1070,280 @@
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "NAME",
     "codeName" : "Name"
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "DOCLIB__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "DOCLIB__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "DOCLIB__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "DOCLIB__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Collect"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Collect.json"
+    },
+    "codeName" : "Collect"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "UnCollect"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/UnCollect.json"
+    },
+    "codeName" : "UnCollect"
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchByCustom"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ByCustom"
+    },
+    "codeName" : "FetchByCustom",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchByProduct"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ByProduct"
+    },
+    "codeName" : "FetchByProduct",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchByProductNotFiles"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ByProductNotFiles"
+    },
+    "codeName" : "FetchByProductNotFiles",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchByProject"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ByProject"
+    },
+    "codeName" : "FetchByProject",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchByProjectNotFiles"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ByProjectNotFiles"
+    },
+    "codeName" : "FetchByProjectNotFiles",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurDocLib"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDocLib"
+    },
+    "codeName" : "FetchCurDocLib",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMyFavourites"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyFavourites"
+    },
+    "codeName" : "FetchMyFavourites",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchRootModuleMuLu"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RootModuleMuLu"
+    },
+    "codeName" : "FetchRootModuleMuLu",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -1052,10 +1362,10 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDESERVICEAPIS/DocLib.json"
   },
-  "enableUICreate" : true,
-  "enableUIModify" : true,
   "codeName" : "DocLib",
   "logicName" : "文档库",
+  "enableUICreate" : true,
+  "enableUIModify" : true,
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,
   "dataAccCtrlArch" : 1,

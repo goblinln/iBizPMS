@@ -4,13 +4,10 @@
   "noSort" : false,
   "hasWFDataItems" : false,
   "getItemPSLayoutPanel" : {
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
     "getRootPSPanelItems" : [ {
       "getPSPanelItems" : [ {
         "getPSPanelItems" : [ {
+          "viewFieldName" : "account",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -21,10 +18,9 @@
             "editorType" : "SPAN",
             "name" : "account"
           },
-          "viewFieldName" : "account",
+          "hidden" : false,
           "convertToCodeItemText" : true,
           "showCaption" : false,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "grow" : -1,
             "layout" : "FLEX"
@@ -52,8 +48,8 @@
         },
         "itemType" : "CONTAINER",
         "itemStyle" : "DEFAULT",
-        "showCaption" : true,
         "contentWidth" : 230.0,
+        "showCaption" : true,
         "name" : "container2"
       }, {
         "getPSPanelItems" : [ {
@@ -61,12 +57,12 @@
             "rawItemHeight" : 40.0,
             "contentType" : "RAW",
             "rawContent" : "今天剩余工作总计",
+            "contentHeight" : 40.0,
             "getPSLayoutPos" : {
               "grow" : -1,
               "height" : 40,
               "layout" : "FLEX"
             },
-            "contentHeight" : 40.0,
             "height" : 40.0,
             "itemType" : "RAWITEM",
             "itemStyle" : "DEFAULT",
@@ -94,27 +90,27 @@
               "rawItemHeight" : 30.0,
               "contentType" : "RAW",
               "rawContent" : "我的任务",
+              "contentHeight" : 30.0,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "height" : 30,
                 "layout" : "FLEX"
               },
-              "contentHeight" : 30.0,
               "height" : 30.0,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
               "showCaption" : true,
               "name" : "rawitem2"
             }, {
+              "viewFieldName" : "MYTASKS",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "mytasks"
               },
-              "viewFieldName" : "MYTASKS",
-              "showCaption" : false,
               "hidden" : false,
+              "showCaption" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -126,15 +122,15 @@
               "itemStyle" : "DEFAULT",
               "name" : "mytasks"
             }, {
+              "viewFieldName" : "myetasks",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "myetasks"
               },
-              "viewFieldName" : "myetasks",
-              "showCaption" : false,
               "hidden" : false,
+              "showCaption" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -165,27 +161,27 @@
               "rawItemHeight" : 30.0,
               "contentType" : "RAW",
               "rawContent" : "我的bug",
+              "contentHeight" : 30.0,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "height" : 30,
                 "layout" : "FLEX"
               },
-              "contentHeight" : 30.0,
               "height" : 30.0,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
               "showCaption" : true,
               "name" : "rawitem3"
             }, {
+              "viewFieldName" : "MYBUGS",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "mybugs"
               },
-              "viewFieldName" : "MYBUGS",
-              "showCaption" : false,
               "hidden" : false,
+              "showCaption" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -197,15 +193,15 @@
               "itemStyle" : "DEFAULT",
               "name" : "mybugs"
             }, {
+              "viewFieldName" : "MYEBUGS",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "myebugs"
               },
-              "viewFieldName" : "MYEBUGS",
-              "showCaption" : false,
               "hidden" : false,
+              "showCaption" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -236,27 +232,27 @@
               "rawItemHeight" : 30.0,
               "contentType" : "RAW",
               "rawContent" : "我的需求",
+              "contentHeight" : 30.0,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "height" : 30,
                 "layout" : "FLEX"
               },
-              "contentHeight" : 30.0,
               "height" : 30.0,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
               "showCaption" : true,
               "name" : "rawitem4"
             }, {
+              "viewFieldName" : "MYSTORYS",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "mystorys"
               },
-              "viewFieldName" : "MYSTORYS",
-              "showCaption" : false,
               "hidden" : false,
+              "showCaption" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -301,27 +297,27 @@
               "rawItemHeight" : 30.0,
               "contentType" : "RAW",
               "rawContent" : "未关闭的项目",
+              "contentHeight" : 30.0,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "height" : 30,
                 "layout" : "FLEX"
               },
-              "contentHeight" : 30.0,
               "height" : 30.0,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
               "showCaption" : true,
               "name" : "rawitem5"
             }, {
+              "viewFieldName" : "PROJECTS",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "projects"
               },
-              "viewFieldName" : "PROJECTS",
-              "showCaption" : false,
               "hidden" : false,
+              "showCaption" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -333,15 +329,15 @@
               "itemStyle" : "DEFAULT",
               "name" : "projects"
             }, {
+              "viewFieldName" : "EPROJECTS",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "eprojects"
               },
-              "viewFieldName" : "EPROJECTS",
-              "showCaption" : false,
               "hidden" : false,
+              "showCaption" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -372,27 +368,27 @@
               "rawItemHeight" : 30.0,
               "contentType" : "RAW",
               "rawContent" : "未关闭的产品",
+              "contentHeight" : 30.0,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "height" : 30,
                 "layout" : "FLEX"
               },
-              "contentHeight" : 30.0,
               "height" : 30.0,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
               "showCaption" : true,
               "name" : "rawitem6"
             }, {
+              "viewFieldName" : "PRODUCTS",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "products"
               },
-              "viewFieldName" : "PRODUCTS",
-              "showCaption" : false,
               "hidden" : false,
+              "showCaption" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -506,6 +502,10 @@
       "modelref" : true,
       "id" : "products"
     } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
     "controlType" : "PANEL",
     "codeName" : "MyWork2",
     "layoutMode" : "TABLE_24COL",
@@ -521,61 +521,57 @@
   },
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "dataType" : 9,
-    "name" : "projects"
+    "name" : "projects",
+    "dataType" : 9
   }, {
-    "dataType" : 25,
-    "name" : "myebugs"
+    "name" : "myebugs",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "account"
+    "name" : "account",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "myetasks"
+    "name" : "myetasks",
+    "dataType" : 25
   }, {
-    "dataType" : 9,
-    "name" : "mybugs"
+    "name" : "mybugs",
+    "dataType" : 9
   }, {
-    "dataType" : 9,
-    "name" : "products"
+    "name" : "products",
+    "dataType" : 9
   }, {
-    "dataType" : 9,
-    "name" : "mystorys"
+    "name" : "mystorys",
+    "dataType" : 9
   }, {
-    "dataType" : 9,
-    "name" : "mytasks"
+    "name" : "mytasks",
+    "dataType" : 9
   }, {
-    "dataType" : 25,
-    "name" : "eprojects"
+    "name" : "eprojects",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "realname"
+    "name" : "realname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "REALNAME",
       "codeName" : "Realname"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   } ],
   "showHeader" : true,
-  "controlType" : "LIST",
   "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "MyWork",
   "enableGroup" : false,
   "pagingSize" : 1000,
   "groupMode" : "NONE",
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -591,6 +587,10 @@
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

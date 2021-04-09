@@ -1,12 +1,14 @@
 {
   "quickSearchMode" : 1,
+  "mobileSearchBar" : false,
   "getPSSearchBarFilters" : [ {
+    "emptyCaption" : false,
     "getPSEditor" : {
-      "editorType" : "TEXTBOX",
       "editorWidth" : 100.0,
+      "editorType" : "TEXTBOX",
       "name" : "namelike"
     },
-    "emptyCaption" : false,
+    "hidden" : false,
     "dataType" : 25,
     "caption" : "产品名称(%)",
     "getPSDEFSearchMode" : {
@@ -20,11 +22,10 @@
       "name" : "N_NAME_LIKE"
     },
     "allowEmpty" : true,
-    "labelPos" : "NONE",
     "labelWidth" : 0,
+    "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -32,17 +33,18 @@
     "itemType" : "FILTER",
     "name" : "namelike"
   }, {
+    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
       },
-      "editorType" : "DROPDOWNLIST",
       "editorWidth" : 100.0,
+      "editorType" : "DROPDOWNLIST",
       "name" : "statuseq"
     },
-    "emptyCaption" : false,
+    "hidden" : false,
     "dataType" : 25,
     "needCodeListConfig" : true,
     "caption" : "状态(=)",
@@ -57,11 +59,10 @@
       "name" : "N_STATUS_EQ"
     },
     "allowEmpty" : true,
-    "labelPos" : "NONE",
     "labelWidth" : 0,
+    "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
@@ -69,17 +70,18 @@
     "itemType" : "FILTER",
     "name" : "statuseq"
   }, {
+    "emptyCaption" : false,
     "getPSEditor" : {
       "singleSelect" : true,
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__type.json"
       },
-      "editorType" : "DROPDOWNLIST",
       "editorWidth" : 100.0,
+      "editorType" : "DROPDOWNLIST",
       "name" : "typeeq"
     },
-    "emptyCaption" : false,
+    "hidden" : false,
     "dataType" : 25,
     "needCodeListConfig" : true,
     "caption" : "产品类型(=)",
@@ -94,11 +96,10 @@
       "name" : "N_TYPE_EQ"
     },
     "allowEmpty" : true,
-    "labelPos" : "NONE",
     "labelWidth" : 0,
+    "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
@@ -106,11 +107,10 @@
     "itemType" : "FILTER",
     "name" : "typeeq"
   } ],
-  "mobileSearchBar" : false,
-  "controlType" : "SEARCHBAR",
   "enableFilter" : true,
-  "enableQuickSearch" : true,
+  "controlType" : "SEARCHBAR",
   "codeName" : "Custom",
+  "enableQuickSearch" : true,
   "enableGroup" : false,
   "quickSearchWidth" : 0,
   "getPSAppDataEntity" : {

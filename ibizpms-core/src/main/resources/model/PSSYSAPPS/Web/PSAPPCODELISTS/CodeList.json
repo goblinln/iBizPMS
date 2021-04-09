@@ -15,8 +15,8 @@
     "modelref" : true,
     "id" : "FetchThisWeekCompleteTaskChoice"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
+  "dynaInstMode" : 1,
   "codeName" : "CodeList",
   "emptyText" : "未定义",
   "cacheTimeout" : 600,

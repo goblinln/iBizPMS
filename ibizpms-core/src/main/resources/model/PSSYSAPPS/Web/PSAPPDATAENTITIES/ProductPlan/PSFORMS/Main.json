@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,13 +26,24 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormItemUpdates" : [ {
+    "getPSDEFIUpdateDetails" : [ {
+      "name" : "end"
+    } ],
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "GetPlanEnd"
+    },
+    "codeName" : "GetPlanEnd",
+    "name" : "获取计划结束时间"
+  } ],
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -48,26 +60,26 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "product"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PRODUCT",
             "codeName" : "Product"
           },
+          "hidden" : true,
           "dataType" : 1,
           "caption" : "产品",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -77,6 +89,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "product"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "getPSAppCodeList" : {
@@ -95,34 +108,33 @@
               "key" : "PRODUCT",
               "name" : "PRODUCT"
             } ],
+            "editorType" : "DROPDOWNLIST",
             "editorParams" : {
               "SRFNAVPARAM.product" : "%product%",
               "valFormat" : "{0: '/'}",
               "SRFNAVCTX.product" : "%product%"
             },
-            "editorType" : "DROPDOWNLIST",
             "name" : "branch"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "BRANCH",
             "codeName" : "Branch"
           },
+          "hidden" : false,
           "dataType" : 1,
           "needCodeListConfig" : true,
           "caption" : "平台/分支",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
-            "colLG" : 16,
             "colMD" : 24,
+            "colLG" : 16,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "branch",
@@ -130,30 +142,30 @@
           "detailStyle" : "DEFAULT",
           "name" : "branch"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "maxLength" : 90,
             "editorType" : "TEXTBOX",
             "name" : "title"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "TITLE",
             "codeName" : "Title"
           },
+          "hidden" : false,
           "dataType" : 25,
           "caption" : "名称",
           "allowEmpty" : false,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
-            "colLG" : 16,
             "colMD" : 24,
+            "colLG" : 16,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "title",
@@ -161,6 +173,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "title"
         }, {
+          "emptyCaption" : true,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -168,26 +181,21 @@
             "name" : "oldtitle"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : true,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "OLDTITLE",
             "codeName" : "Oldtitle"
           },
+          "hidden" : false,
           "dataType" : 25,
           "allowEmpty" : true,
+          "labelWidth" : 10,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 10,
           "showCaption" : true,
-          "hidden" : false,
-          "getPSLayoutPos" : {
-            "colLG" : 8,
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
           "getPSDEFDGroupLogics" : [ {
+            "relatedDetailNames" : [ "oldtitle" ],
             "logicCat" : "PANELVISIBLE",
             "getPSDEFDLogics" : [ {
               "dEFDName" : "oldtitle",
@@ -200,6 +208,11 @@
             "logicType" : "GROUP",
             "name" : "表单成员[oldtitle][面板显示]逻辑"
           } ],
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "colLG" : 8,
+            "layout" : "TABLE_24COL"
+          },
           "codeName" : "oldtitle",
           "detailType" : "FORMITEM",
           "detailStyle" : "DEFAULT",
@@ -212,14 +225,15 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "resetItemNames" : [ "future" ],
             "getPSEditor" : {
               "dateTimeFormat" : "YYYY-MM-DD",
+              "editorWidth" : 100.0,
+              "editorType" : "DATEPICKEREX_NOTIME",
               "editorParams" : {
                 "TIMEFMT" : "YYYY-MM-DD"
               },
-              "editorType" : "DATEPICKEREX_NOTIME",
-              "editorWidth" : 100.0,
               "name" : "begin"
             },
             "getPSDEFormItemUpdate" : {
@@ -227,29 +241,24 @@
               "id" : "GetPlanEnd"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "BEGIN",
               "codeName" : "Begin"
             },
+            "hidden" : false,
             "dataType" : 5,
             "caption" : "开始日期",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "resetItemName" : "future",
-            "labelWidth" : 100,
             "itemWidth" : 200.0,
             "showCaption" : true,
-            "hidden" : false,
-            "getPSLayoutPos" : {
-              "colLG" : 8,
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "getPSDEFDGroupLogics" : [ {
+              "relatedDetailNames" : [ "future" ],
               "logicCat" : "ITEMENABLE",
               "getPSDEFDLogics" : [ {
                 "dEFDName" : "future",
@@ -262,11 +271,17 @@
               "logicType" : "GROUP",
               "name" : "表单成员[begin][表单项启用]逻辑"
             } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "colLG" : 8,
+              "layout" : "TABLE_24COL"
+            },
             "codeName" : "begin",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "begin"
           }, {
+            "emptyCaption" : true,
             "getPSEditor" : {
               "getPSAppCodeList" : {
                 "modelref" : true,
@@ -276,24 +291,23 @@
               "name" : "future"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : true,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "FUTURE",
               "codeName" : "Future"
             },
+            "hidden" : false,
             "dataType" : 25,
             "needCodeListConfig" : true,
             "allowEmpty" : true,
+            "labelWidth" : 16,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 16,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 16,
               "colMD" : 24,
+              "colLG" : 16,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "future",
@@ -301,40 +315,36 @@
             "detailStyle" : "DEFAULT",
             "name" : "future"
           }, {
+            "emptyCaption" : false,
             "resetItemNames" : [ "future" ],
             "getPSEditor" : {
               "dateTimeFormat" : "YYYY-MM-DD",
+              "editorWidth" : 100.0,
+              "editorType" : "DATEPICKEREX_NOTIME",
               "editorParams" : {
                 "TIMEFMT" : "YYYY-MM-DD"
               },
-              "editorType" : "DATEPICKEREX_NOTIME",
-              "editorWidth" : 100.0,
               "name" : "end"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "END",
               "codeName" : "End"
             },
+            "hidden" : false,
             "dataType" : 5,
             "caption" : "结束日期",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "resetItemName" : "future",
-            "labelWidth" : 100,
             "itemWidth" : 200.0,
             "showCaption" : true,
-            "hidden" : false,
-            "getPSLayoutPos" : {
-              "colLG" : 8,
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "getPSDEFDGroupLogics" : [ {
+              "relatedDetailNames" : [ "future" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
                 "dEFDName" : "future",
@@ -347,11 +357,17 @@
               "logicType" : "GROUP",
               "name" : "表单成员[end][面板显示]逻辑"
             } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "colLG" : 8,
+              "layout" : "TABLE_24COL"
+            },
             "codeName" : "end",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "end"
           }, {
+            "emptyCaption" : true,
             "resetItemNames" : [ "future" ],
             "getPSEditor" : {
               "getPSAppCodeList" : {
@@ -366,28 +382,23 @@
               "id" : "GetPlanEnd"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : true,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "DELTA",
               "codeName" : "Delta"
             },
+            "hidden" : false,
             "dataType" : 25,
             "needCodeListConfig" : true,
             "allowEmpty" : true,
+            "labelWidth" : 16,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "resetItemName" : "future",
-            "labelWidth" : 16,
             "showCaption" : true,
-            "hidden" : false,
-            "getPSLayoutPos" : {
-              "colLG" : 16,
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "getPSDEFDGroupLogics" : [ {
+              "relatedDetailNames" : [ "future" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
                 "dEFDName" : "future",
@@ -400,6 +411,11 @@
               "logicType" : "GROUP",
               "name" : "表单成员[delta][面板显示]逻辑"
             } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "colLG" : 16,
+              "layout" : "TABLE_24COL"
+            },
             "codeName" : "delta",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
@@ -417,8 +433,8 @@
           "name" : "grouppanel2"
         } ],
         "getPSLayoutPos" : {
-          "colLG" : 24,
           "colMD" : 24,
+          "colLG" : 24,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "grouppanel1",
@@ -428,30 +444,30 @@
         "showCaption" : false,
         "name" : "grouppanel1"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
+          "editorType" : "HTMLEDITOR",
           "editorParams" : {
             "uploadparams" : "{objecttype:\"productplan\",version:\"editor\"}",
             "exportparams" : "{objecttype:\"productplan\",version:\"editor\"}"
           },
-          "editorType" : "HTMLEDITOR",
           "name" : "desc"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "DESC",
           "codeName" : "Desc"
         },
+        "hidden" : false,
         "dataType" : 21,
         "caption" : "描述",
         "allowEmpty" : true,
+        "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 100,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -591,18 +607,6 @@
       "name" : "ID",
       "codeName" : "Id"
     }
-  } ],
-  "noTabHeader" : true,
-  "getPSDEFormItemUpdates" : [ {
-    "getPSDEFIUpdateDetails" : [ {
-      "name" : "end"
-    } ],
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "GetPlanEnd"
-    },
-    "codeName" : "GetPlanEnd",
-    "name" : "获取计划结束时间"
   } ],
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",

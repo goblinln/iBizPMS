@@ -1,11 +1,11 @@
 {
-  "showDataInfoBar" : true,
   "showCaptionBar" : true,
+  "showDataInfoBar" : true,
   "xDataControlName" : "form",
-  "funcViewMode" : "EDITVIEW",
   "getPSDEViewCodeName" : "EditView",
-  "caption" : "测试套件",
+  "funcViewMode" : "EDITVIEW",
   "openMode" : "DRAWER_RIGHT",
+  "caption" : "测试套件",
   "title" : "测试套件编辑视图",
   "accUserMode" : 2,
   "enableDP" : true,
@@ -26,12 +26,12 @@
     "engineType" : "EditView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
@@ -55,7 +55,6 @@
     "key" : "PRODUCT",
     "name" : "PRODUCT"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
@@ -67,14 +66,25 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction1"
       },
-      "noPrivDisplayMode" : 2,
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+      },
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+        },
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+        },
         "timeout" : 60000,
+        "codeName" : "SaveAndExit",
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
-        "codeName" : "SaveAndExit",
         "caption" : "保存并关闭",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "uIActionTag" : "SaveAndExit",
@@ -83,6 +93,11 @@
         "fullCodeName" : "SaveAndExit",
         "name" : "编辑界面_保存并退出操作"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "cssClass" : "sx-tb-saveandclose"
       },
@@ -107,6 +122,7 @@
     "name" : "toolbar",
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
+    "showFormNavBar" : false,
     "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
@@ -133,13 +149,13 @@
       "id" : "loaddraftfrom"
     },
     "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : false,
@@ -149,30 +165,30 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "maxLength" : 255,
             "editorType" : "TEXTBOX",
             "name" : "name"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "NAME",
             "codeName" : "Name"
           },
+          "hidden" : false,
           "dataType" : 25,
           "caption" : "名称",
           "allowEmpty" : false,
+          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
-            "colLG" : 16,
             "colMD" : 24,
+            "colLG" : 16,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "name",
@@ -180,30 +196,30 @@
           "detailStyle" : "DEFAULT",
           "name" : "name"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
+            "editorType" : "HTMLEDITOR",
             "editorParams" : {
               "uploadparams" : "{objecttype:\"testsuite\",objectid: 0,version:\"editor\"}",
               "exportparams" : "{objecttype:\"testsuite\",objectid: 0,version:\"editor\"}"
             },
-            "editorType" : "HTMLEDITOR",
             "name" : "desc"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "DESC",
             "codeName" : "Desc"
           },
+          "hidden" : false,
           "dataType" : 21,
           "caption" : "描述",
           "allowEmpty" : true,
+          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -213,6 +229,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "desc"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "getPSAppCodeList" : {
               "modelref" : true,
@@ -222,26 +239,25 @@
             "name" : "type"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "TYPE",
             "codeName" : "Type"
           },
+          "hidden" : false,
           "dataType" : 25,
           "needCodeListConfig" : true,
           "caption" : "类型",
           "allowEmpty" : true,
           "createDV" : "private",
+          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
-            "colLG" : 16,
             "colMD" : 24,
+            "colLG" : 16,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "type",
@@ -346,19 +362,12 @@
         "codeName" : "Id"
       }
     } ],
-    "noTabHeader" : true,
     "codeName" : "Main",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -438,18 +447,26 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite/PSFORMS/Main.json",
     "logicName" : "主编辑表单",
     "name" : "form",
     "modelid" : "461f2726d577f1a7d0d2a871b028bfc3"
   } ],
+  "viewStyle" : "STYLE2",
+  "codeName" : "TestSuiteEditView",
   "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction1"
     },
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
@@ -459,14 +476,21 @@
     "glyph" : "xf0f2@FontAwesome",
     "cssClass" : "fa fa-suitcase"
   },
-  "codeName" : "TestSuiteEditView",
   "viewType" : "DEEDITVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestSuiteEditView.json",
   "name" : "TestSuiteEditView",
   "getPSAppDERSPaths" : [ [ {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
@@ -474,14 +498,6 @@
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
-    },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "codeName" : "TestSuites",
     "actionRSMode" : 1,

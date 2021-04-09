@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,13 +26,13 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : true,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : true,
@@ -41,6 +42,7 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "enableLinkView" : true,
@@ -49,8 +51,8 @@
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibTabExpView.json",
             "viewType" : "DETABEXPVIEW"
           },
-          "dropDownView" : false,
           "enablePickupView" : false,
+          "dropDownView" : false,
           "enableAC" : false,
           "forceSelection" : true,
           "showTrigger" : false,
@@ -67,6 +69,7 @@
             "id" : "Default"
           },
           "valueItemName" : "lib",
+          "editorType" : "PICKEREX_LINKONLY",
           "editable" : false,
           "editorParams" : {
             "EDITABLE" : "FALSE",
@@ -75,26 +78,24 @@
             "TRIGGER" : "FALSE",
             "PICKUPVIEW" : "FALSE"
           },
-          "editorType" : "PICKEREX_LINKONLY",
           "name" : "libname"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "LIBNAME",
           "codeName" : "Libname"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "用例库",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "valueItemName" : "lib",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -104,6 +105,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "libname"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -111,21 +113,20 @@
           "name" : "modulename"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "MODULENAME",
           "codeName" : "Modulename"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "所属模块",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -135,6 +136,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "modulename"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -146,22 +148,21 @@
           "name" : "type"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TYPE",
           "codeName" : "Type"
         },
+        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "caption" : "用例类型",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -171,6 +172,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "type"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -182,22 +184,21 @@
           "name" : "stage"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "STAGE",
           "codeName" : "Stage"
         },
+        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "caption" : "适用阶段",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -207,6 +208,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "stage"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -218,22 +220,21 @@
           "name" : "pri"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PRI",
           "codeName" : "Pri"
         },
+        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "caption" : "优先级",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -243,6 +244,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "pri"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -254,22 +256,21 @@
           "name" : "status"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "STATUS",
           "codeName" : "Status"
         },
+        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "caption" : "状态",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -279,6 +280,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "status"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -286,21 +288,20 @@
           "name" : "keywords"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "KEYWORDS",
           "codeName" : "Keywords"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "关键词",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -434,7 +435,6 @@
       "codeName" : "Lib"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "JBInfo",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

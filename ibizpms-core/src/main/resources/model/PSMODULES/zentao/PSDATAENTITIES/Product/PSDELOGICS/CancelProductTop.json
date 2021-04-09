@@ -6,19 +6,21 @@
     "id" : "Begin"
   },
   "logicHolder" : 3,
+  "codeName" : "CancelProductTop",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8487"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -34,7 +36,6 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "删除置顶"
   } ],
@@ -51,14 +52,13 @@
     "name" : "连接8487"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "CancelProductTop",
   "logicName" : "取消置顶",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

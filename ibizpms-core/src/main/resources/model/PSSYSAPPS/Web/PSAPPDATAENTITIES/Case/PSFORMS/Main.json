@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,13 +26,13 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : false,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -41,35 +42,35 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 255,
+          "editorType" : "TEXTBOX",
+          "editorParams" : {
+            "color" : "color"
+          },
           "getPSSysPFPlugin" : {
             "pluginType" : "EDITOR_CUSTOMSTYLE",
             "pluginCode" : "COLORPICKER"
           },
-          "editorParams" : {
-            "color" : "color"
-          },
-          "editorType" : "TEXTBOX",
           "editorStyle" : "COLORPICKER",
           "name" : "title"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TITLE",
           "codeName" : "Title"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "用例标题",
         "allowEmpty" : false,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -90,26 +91,26 @@
       "showCaption" : true,
       "name" : "group1"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "color"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "COLOR",
         "codeName" : "Color"
       },
+      "hidden" : true,
       "dataType" : 25,
       "caption" : "标题颜色",
       "allowEmpty" : true,
+      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -227,7 +228,6 @@
       "codeName" : "Id"
     }
   } ],
-  "noTabHeader" : false,
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

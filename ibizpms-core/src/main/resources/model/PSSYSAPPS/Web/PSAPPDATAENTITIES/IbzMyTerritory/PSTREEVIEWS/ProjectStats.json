@@ -125,14 +125,9 @@
   "enableSearchDefault" : false,
   "treeGridMode" : 0,
   "controlType" : "TREEVIEW",
+  "codeName" : "ProjectStats",
   "getPSDETreeNodes" : [ {
     "text" : "bug类型统计",
-    "appendPNodeId" : false,
-    "enableCheck" : false,
-    "hasPSDETreeNodeRSs" : false,
-    "selected" : false,
-    "selectFirstOnly" : false,
-    "expandFirstOnly" : false,
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
@@ -140,30 +135,30 @@
       "viewType" : "DEGRIDVIEW"
     },
     "rootNode" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-    },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "enableQuickSearch" : false,
-    "disableSelect" : false,
-    "nodeType" : "BugType",
-    "expanded" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "name" : "bug类型统计",
-    "id" : "BugType"
-  }, {
-    "text" : "项目任务类型统计",
     "appendPNodeId" : false,
     "enableCheck" : false,
     "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "nodeType" : "BugType",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "bug类型统计",
+    "id" : "BugType"
+  }, {
+    "text" : "项目任务类型统计",
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
@@ -171,30 +166,30 @@
       "viewType" : "DEGRIDVIEW"
     },
     "rootNode" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-    },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "enableQuickSearch" : false,
-    "disableSelect" : false,
-    "nodeType" : "TaskTypeCount",
-    "expanded" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "name" : "任务类型统计",
-    "id" : "TaskTypeCount"
-  }, {
-    "text" : "bug状态统计",
     "appendPNodeId" : false,
     "enableCheck" : false,
     "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "nodeType" : "TaskTypeCount",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "任务类型统计",
+    "id" : "TaskTypeCount"
+  }, {
+    "text" : "bug状态统计",
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
@@ -202,30 +197,30 @@
       "viewType" : "DEGRIDVIEW"
     },
     "rootNode" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-    },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "enableQuickSearch" : false,
-    "disableSelect" : false,
-    "nodeType" : "BugStatusCount",
-    "expanded" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "name" : "bug状态统计",
-    "id" : "BugStatusCount"
-  }, {
-    "text" : "项目任务状态统计",
     "appendPNodeId" : false,
     "enableCheck" : false,
     "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "nodeType" : "BugStatusCount",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "bug状态统计",
+    "id" : "BugStatusCount"
+  }, {
+    "text" : "项目任务状态统计",
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
@@ -233,30 +228,30 @@
       "viewType" : "DEGRIDVIEW"
     },
     "rootNode" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-    },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "enableQuickSearch" : false,
-    "disableSelect" : false,
-    "nodeType" : "TaskStatusCount",
-    "expanded" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "name" : "任务状态统计",
-    "id" : "TaskStatusCount"
-  }, {
-    "text" : "项目质量表",
     "appendPNodeId" : false,
     "enableCheck" : false,
     "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "nodeType" : "TaskStatusCount",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "任务状态统计",
+    "id" : "TaskStatusCount"
+  }, {
+    "text" : "项目质量表",
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
@@ -264,30 +259,30 @@
       "viewType" : "DEGRIDVIEW"
     },
     "rootNode" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-    },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "enableQuickSearch" : false,
-    "disableSelect" : false,
-    "nodeType" : "ProjectQuality",
-    "expanded" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "name" : "项目质量表",
-    "id" : "ProjectQuality"
-  }, {
-    "text" : "项目需求阶段分布表",
     "appendPNodeId" : false,
     "enableCheck" : false,
     "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "nodeType" : "ProjectQuality",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "项目质量表",
+    "id" : "ProjectQuality"
+  }, {
+    "text" : "项目需求阶段分布表",
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
@@ -295,30 +290,30 @@
       "viewType" : "DEGRIDVIEW"
     },
     "rootNode" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-    },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "enableQuickSearch" : false,
-    "disableSelect" : false,
-    "nodeType" : "ProjectStoryStageStats",
-    "expanded" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "name" : "项目需求阶段分布表",
-    "id" : "ProjectStoryStageStats"
-  }, {
-    "text" : "项目投入统计表",
     "appendPNodeId" : false,
     "enableCheck" : false,
     "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "nodeType" : "ProjectStoryStageStats",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "项目需求阶段分布表",
+    "id" : "ProjectStoryStageStats"
+  }, {
+    "text" : "项目投入统计表",
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
@@ -326,30 +321,30 @@
       "viewType" : "DEGRIDVIEW"
     },
     "rootNode" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-    },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "enableQuickSearch" : false,
-    "disableSelect" : false,
-    "nodeType" : "ProjectInputStats",
-    "expanded" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "name" : "项目投入统计表",
-    "id" : "ProjectInputStats"
-  }, {
-    "text" : "项目进展表",
     "appendPNodeId" : false,
     "enableCheck" : false,
     "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "nodeType" : "ProjectInputStats",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "项目投入统计表",
+    "id" : "ProjectInputStats"
+  }, {
+    "text" : "项目进展表",
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
@@ -357,53 +352,53 @@
       "viewType" : "DEGRIDVIEW"
     },
     "rootNode" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-    },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "enableQuickSearch" : false,
-    "disableSelect" : false,
-    "nodeType" : "ProjectProgress",
-    "expanded" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "name" : "项目进展表",
-    "id" : "ProjectProgress"
-  }, {
-    "nodeValue" : "root",
-    "text" : "默认根节点",
-    "appendPNodeId" : false,
-    "enableCheck" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selected" : false,
-    "selectFirstOnly" : false,
-    "expandFirstOnly" : false,
-    "enableQuickCreate" : false,
-    "rootNode" : true,
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "enableQuickSearch" : false,
-    "disableSelect" : false,
-    "nodeType" : "ROOT",
-    "expanded" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "name" : "默认根节点",
-    "id" : "ROOT"
-  }, {
-    "text" : "bug解决方案统计",
     "appendPNodeId" : false,
     "enableCheck" : false,
     "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "nodeType" : "ProjectProgress",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "项目进展表",
+    "id" : "ProjectProgress"
+  }, {
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "enableQuickCreate" : false,
+    "rootNode" : true,
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "nodeType" : "ROOT",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "默认根节点",
+    "id" : "ROOT"
+  }, {
+    "text" : "bug解决方案统计",
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
@@ -411,30 +406,30 @@
       "viewType" : "DEGRIDVIEW"
     },
     "rootNode" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-    },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "enableQuickSearch" : false,
-    "disableSelect" : false,
-    "nodeType" : "BugResolutionCount",
-    "expanded" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "name" : "bug解决方案统计",
-    "id" : "BugResolutionCount"
-  }, {
-    "text" : "项目需求状态分布表",
     "appendPNodeId" : false,
     "enableCheck" : false,
     "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "nodeType" : "BugResolutionCount",
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
+    "counterMode" : 0,
+    "treeNodeType" : "STATIC",
+    "expanded" : false,
+    "name" : "bug解决方案统计",
+    "id" : "BugResolutionCount"
+  }, {
+    "text" : "项目需求状态分布表",
     "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
@@ -442,29 +437,30 @@
       "viewType" : "DEGRIDVIEW"
     },
     "rootNode" : false,
+    "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
+    "selected" : false,
+    "selectFirstOnly" : false,
+    "expandFirstOnly" : false,
+    "enableNewData" : false,
+    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
-    "enableNewData" : false,
-    "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "enableQuickSearch" : false,
-    "disableSelect" : false,
     "nodeType" : "ProjectStoryStatusStats",
-    "expanded" : false,
+    "disableSelect" : false,
+    "enableQuickSearch" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
+    "expanded" : false,
     "name" : "项目需求状态分布表",
     "id" : "ProjectStoryStatusStats"
   } ],
-  "codeName" : "ProjectStats",
   "rootVisible" : false,
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -480,6 +476,10 @@
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

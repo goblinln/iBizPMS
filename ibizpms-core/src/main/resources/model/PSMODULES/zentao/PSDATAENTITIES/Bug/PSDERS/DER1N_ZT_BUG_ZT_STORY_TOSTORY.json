@@ -6,6 +6,7 @@
   },
   "removeActionType" : -1,
   "masterRS" : 0,
+  "pickupDEFName" : "TOSTORY",
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

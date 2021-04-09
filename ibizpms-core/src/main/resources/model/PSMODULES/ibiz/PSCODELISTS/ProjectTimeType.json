@@ -1,22 +1,22 @@
 {
   "subSysAsCloud" : false,
-  "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProjectTimeType.json",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
   "codeName" : "ProjectTimeType",
   "userScope" : false,
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "CONSUMED",
     "codeName" : "Consumed",
-    "text" : "消耗时间",
-    "value" : "CONSUMED"
+    "text" : "消耗时间"
   }, {
+    "value" : "LEFT",
     "codeName" : "Left",
-    "text" : "剩余时间",
-    "value" : "LEFT"
+    "text" : "剩余时间"
   } ]
 }

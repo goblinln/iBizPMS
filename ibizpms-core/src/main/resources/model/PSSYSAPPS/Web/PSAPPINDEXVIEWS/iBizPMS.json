@@ -13,7 +13,6 @@
     "controlStyle" : "APPINDEXVIEW_STYLE2",
     "name" : "layoutpanel"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "enableCustomize" : false,
     "controlType" : "APPMENU",
@@ -234,13 +233,13 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "hidden" : true,
         "getPSAppFunc" : {
           "modelref" : true,
           "id" : "AppFunc9"
         },
         "itemType" : "MENUITEM",
         "accUserMode" : 2,
-        "hidden" : true,
         "caption" : "全文检索",
         "tooltip" : "全文检索",
         "name" : "menuitem27"
@@ -402,6 +401,10 @@
         },
         "itemType" : "MENUITEM",
         "accUserMode" : 4,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "MENUITEM.CAPTION.MENUITEM.CAPTION.LEFT_PRODUCT",
+          "id" : "菜单项文本[MENUITEM.CAPTION.LEFT_PRODUCT]"
+        },
         "caption" : "产品",
         "tooltip" : "产品",
         "name" : "menuitem4"
@@ -492,13 +495,13 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "hidden" : true,
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto26"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
-      "hidden" : true,
       "caption" : "bug菜单项",
       "tooltip" : "bug菜单项",
       "name" : "menuitem13"
@@ -511,13 +514,13 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "hidden" : true,
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto26"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
-      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem14"
@@ -530,13 +533,13 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "hidden" : true,
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto27"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
-      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem15"
@@ -549,13 +552,13 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "hidden" : true,
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto29"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
-      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem18"
@@ -568,31 +571,32 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "hidden" : true,
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto32"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
-      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem20"
     } ],
     "codeName" : "zentao",
     "layoutMode" : "TABLE_24COL",
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "appmenu"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "logicName" : "禅道首页默认菜单",
     "name" : "appmenu",
     "modelid" : "0a4e485b6222864606f7d7e77325ee2d"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "iBizPMS",
   "caption" : "iBiz软件生产管理",
   "title" : "iBiz软件生产管理",

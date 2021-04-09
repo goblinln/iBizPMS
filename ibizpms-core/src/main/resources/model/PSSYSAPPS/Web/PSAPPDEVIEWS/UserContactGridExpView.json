@@ -1,10 +1,10 @@
 {
-  "showDataInfoBar" : true,
   "sideBarLayout" : "LEFT",
+  "showDataInfoBar" : true,
   "enableFilter" : false,
   "enableQuickSearch" : true,
-  "getPSDEViewCodeName" : "GridExpView",
   "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "GridExpView",
   "caption" : "用户联系方式",
   "title" : "用户联系方式表格导航视图",
   "accUserMode" : 2,
@@ -26,12 +26,11 @@
     "engineType" : "GridExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "GRIDEXPBAR"
+      "name" : "GRIDEXPBAR",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
@@ -135,22 +134,45 @@
     "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
+      "getPSDEGridDataItems" : [ {
+        "getPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "name" : "id",
+        "dataType" : 1
+      }, {
+        "getPSAppDEField" : {
+          "name" : "LISTNAME",
+          "codeName" : "ListName"
+        },
+        "name" : "srfmajortext",
+        "dataType" : 25
+      }, {
+        "dataAccessAction" : true,
+        "getPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "name" : "srfdataaccaction",
+        "dataType" : 1
+      }, {
+        "getPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "name" : "srfkey",
+        "dataType" : 1
+      }, {
+        "getPSAppDEField" : {
+          "name" : "LISTNAME",
+          "codeName" : "ListName"
+        },
+        "name" : "listname",
+        "dataType" : 25
+      } ],
       "singleSelect" : false,
       "enableColFilter" : false,
-      "getRemovePSControlAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "dataAccessAction" : "DELETE",
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "name" : "remove"
-      },
       "enableRowNew" : false,
       "enableRowEditOrder" : false,
       "noSort" : false,
@@ -170,55 +192,32 @@
         "caption" : "id",
         "name" : "srfkey"
       } ],
-      "columnEnableLink" : 2,
       "hasWFDataItems" : false,
-      "controlType" : "GRID",
-      "enablePagingBar" : false,
-      "getPSDEGridDataItems" : [ {
-        "getPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
+      "getRemovePSControlAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
         },
-        "dataType" : 1,
-        "name" : "id"
-      }, {
-        "getPSAppDEField" : {
-          "name" : "LISTNAME",
-          "codeName" : "ListName"
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
-        "dataType" : 25,
-        "name" : "srfmajortext"
-      }, {
-        "getPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
-        "dataAccessAction" : true,
-        "dataType" : 1,
-        "name" : "srfdataaccaction"
-      }, {
-        "getPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
-        "dataType" : 1,
-        "name" : "srfkey"
-      }, {
-        "getPSAppDEField" : {
-          "name" : "LISTNAME",
-          "codeName" : "ListName"
-        },
-        "dataType" : 25,
-        "name" : "listname"
-      } ],
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      },
+      "columnEnableLink" : 2,
       "enableRowEdit" : false,
+      "enablePagingBar" : false,
+      "controlType" : "GRID",
       "getPSDEGridColumns" : [ {
         "excelCaption" : "编号",
+        "dataItemName" : "id",
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataItemName" : "id",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -231,11 +230,11 @@
         "name" : "id"
       }, {
         "excelCaption" : "标题",
+        "dataItemName" : "listname",
         "getPSAppDEField" : {
           "name" : "LISTNAME",
           "codeName" : "ListName"
         },
-        "dataItemName" : "listname",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -268,12 +267,6 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
       },
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "gridexpbar_grid"
-      },
-      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
@@ -356,6 +349,12 @@
         "enableDEFieldPrivilege" : false,
         "id" : "数据表格处理器"
       },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "gridexpbar_grid"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact/PSGRIDS/MainExp.json",
       "logicName" : "主表格_通讯录",
       "name" : "gridexpbar_grid",
@@ -374,6 +373,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
     },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "gridexpbar"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -381,20 +384,18 @@
       "id" : "GRIDEXPBAR"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "gridexpbar"
-    },
     "width" : 300.0,
     "codeName" : "GridExpViewgridexpbar",
     "name" : "gridexpbar",
     "modelid" : "4a012e784384c1f4ec3b0150e0885018_gridexpbar"
   } ],
+  "viewStyle" : "STYLE2",
+  "codeName" : "UserContactGridExpView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "batchAddOnly" : false,
       "enableBatchAdd" : false,
+      "batchAddOnly" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "viewLogicType" : "APP_NEWDATA",
@@ -413,7 +414,6 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
-  "codeName" : "UserContactGridExpView",
   "viewType" : "DEGRIDEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserContactGridExpView.json",
   "name" : "UserContactGridExpView"

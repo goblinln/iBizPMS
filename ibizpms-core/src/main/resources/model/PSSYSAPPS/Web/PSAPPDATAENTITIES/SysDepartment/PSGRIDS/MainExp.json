@@ -1,20 +1,57 @@
 {
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "PDEPTID",
+      "codeName" : "ParentDeptid"
+    },
+    "name" : "pdeptid",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DEPTID",
+      "codeName" : "DeptId"
+    },
+    "name" : "deptid",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    },
+    "name" : "orgid",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DEPTNAME",
+      "codeName" : "DeptName"
+    },
+    "name" : "deptname",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DEPTNAME",
+      "codeName" : "DeptName"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "DEPTID",
+      "codeName" : "DeptId"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DEPTID",
+      "codeName" : "DeptId"
+    },
+    "name" : "srfkey",
+    "dataType" : 25
+  } ],
   "singleSelect" : false,
   "enableColFilter" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -34,70 +71,37 @@
     "caption" : "部门标识",
     "name" : "srfkey"
   } ],
-  "columnEnableLink" : 2,
   "hasWFDataItems" : false,
-  "controlType" : "GRID",
-  "enablePagingBar" : false,
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "PDEPTID",
-      "codeName" : "ParentDeptid"
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
     },
-    "dataType" : 25,
-    "name" : "pdeptid"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DEPTID",
-      "codeName" : "DeptId"
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
     },
-    "dataType" : 25,
-    "name" : "deptid"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ORGID",
-      "codeName" : "OrgId"
-    },
-    "dataType" : 25,
-    "name" : "orgid"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DEPTNAME",
-      "codeName" : "DeptName"
-    },
-    "dataType" : 25,
-    "name" : "deptname"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DEPTNAME",
-      "codeName" : "DeptName"
-    },
-    "dataType" : 25,
-    "name" : "srfmajortext"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DEPTID",
-      "codeName" : "DeptId"
-    },
-    "dataAccessAction" : true,
-    "dataType" : 25,
-    "name" : "srfdataaccaction"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DEPTID",
-      "codeName" : "DeptId"
-    },
-    "dataType" : 25,
-    "name" : "srfkey"
-  } ],
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
   "enableRowEdit" : false,
+  "enablePagingBar" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "部门标识",
+    "dataItemName" : "deptid",
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
-    "dataItemName" : "deptid",
     "cLConvertMode" : "NONE",
+    "getCapPSLanguageRes" : {
+      "lanResTag" : "COMMON.DATATYPE.DECIMAL",
+      "id" : "通用[DATATYPE.DECIMAL]"
+    },
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
     "width" : 100,
@@ -109,12 +113,16 @@
     "name" : "deptid"
   }, {
     "excelCaption" : "部门名称",
+    "dataItemName" : "deptname",
     "getPSAppDEField" : {
       "name" : "DEPTNAME",
       "codeName" : "DeptName"
     },
-    "dataItemName" : "deptname",
     "cLConvertMode" : "NONE",
+    "getCapPSLanguageRes" : {
+      "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT",
+      "id" : "控件文本[DATAGRIDROWCOUNTLIST.PAGEFMT]"
+    },
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
     "width" : 100,

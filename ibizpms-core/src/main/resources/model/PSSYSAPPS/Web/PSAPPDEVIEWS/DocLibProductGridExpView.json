@@ -1,10 +1,10 @@
 {
-  "showDataInfoBar" : true,
   "sideBarLayout" : "LEFT",
+  "showDataInfoBar" : true,
   "enableFilter" : false,
   "enableQuickSearch" : true,
-  "getPSDEViewCodeName" : "ProductGridExpView",
   "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "ProductGridExpView",
   "caption" : "产品文档库导航视图",
   "title" : "文档库表格导航视图（产品文档库导航视图）",
   "accUserMode" : 2,
@@ -26,12 +26,11 @@
     "engineType" : "GridExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "GRIDEXPBAR"
+      "name" : "GRIDEXPBAR",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -135,22 +134,69 @@
     "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
+      "getPSDEGridDataItems" : [ {
+        "getPSAppDEField" : {
+          "name" : "PRODUCT",
+          "codeName" : "Product"
+        },
+        "name" : "product",
+        "dataType" : 1
+      }, {
+        "getPSAppDEField" : {
+          "name" : "PROJECT",
+          "codeName" : "Project"
+        },
+        "name" : "project",
+        "dataType" : 1
+      }, {
+        "getPSAppDEField" : {
+          "name" : "DOCLIBTYPE",
+          "codeName" : "Doclibtype"
+        },
+        "name" : "doclibtype",
+        "dataType" : 25
+      }, {
+        "getPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        },
+        "name" : "name",
+        "dataType" : 25
+      }, {
+        "getPSAppDEField" : {
+          "name" : "ISFAVOURITES",
+          "codeName" : "Isfavourites"
+        },
+        "name" : "isfavourites",
+        "dataType" : 25
+      }, {
+        "name" : "srfmstag",
+        "dataType" : 25
+      }, {
+        "getPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        },
+        "name" : "srfmajortext",
+        "dataType" : 25
+      }, {
+        "dataAccessAction" : true,
+        "getPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "name" : "srfdataaccaction",
+        "dataType" : 1
+      }, {
+        "getPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "name" : "srfkey",
+        "dataType" : 1
+      } ],
       "singleSelect" : false,
       "enableColFilter" : false,
-      "getRemovePSControlAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "dataAccessAction" : "DELETE",
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "name" : "remove"
-      },
       "enableRowNew" : false,
       "enableRowEditOrder" : false,
       "noSort" : false,
@@ -170,79 +216,32 @@
         "caption" : "编号",
         "name" : "srfkey"
       } ],
-      "columnEnableLink" : 2,
       "hasWFDataItems" : false,
-      "controlType" : "GRID",
-      "enablePagingBar" : true,
-      "getPSDEGridDataItems" : [ {
-        "getPSAppDEField" : {
-          "name" : "PRODUCT",
-          "codeName" : "Product"
+      "getRemovePSControlAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
         },
-        "dataType" : 1,
-        "name" : "product"
-      }, {
-        "getPSAppDEField" : {
-          "name" : "PROJECT",
-          "codeName" : "Project"
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
-        "dataType" : 1,
-        "name" : "project"
-      }, {
-        "getPSAppDEField" : {
-          "name" : "DOCLIBTYPE",
-          "codeName" : "Doclibtype"
-        },
-        "dataType" : 25,
-        "name" : "doclibtype"
-      }, {
-        "getPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
-        "dataType" : 25,
-        "name" : "name"
-      }, {
-        "getPSAppDEField" : {
-          "name" : "ISFAVOURITES",
-          "codeName" : "Isfavourites"
-        },
-        "dataType" : 25,
-        "name" : "isfavourites"
-      }, {
-        "dataType" : 25,
-        "name" : "srfmstag"
-      }, {
-        "getPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
-        "dataType" : 25,
-        "name" : "srfmajortext"
-      }, {
-        "getPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
-        "dataAccessAction" : true,
-        "dataType" : 1,
-        "name" : "srfdataaccaction"
-      }, {
-        "getPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
-        "dataType" : 1,
-        "name" : "srfkey"
-      } ],
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      },
+      "columnEnableLink" : 2,
       "enableRowEdit" : false,
+      "enablePagingBar" : true,
+      "controlType" : "GRID",
       "getPSDEGridColumns" : [ {
         "excelCaption" : "文档库名称",
+        "dataItemName" : "name",
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataItemName" : "name",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -303,12 +302,6 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
       },
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "gridexpbar_grid"
-      },
-      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
@@ -391,6 +384,12 @@
         "enableDEFieldPrivilege" : false,
         "id" : "数据表格处理器"
       },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "gridexpbar_grid"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib/PSGRIDS/ExpProductMain.json",
       "logicName" : "主表格（产品文档库）（导航）",
       "name" : "gridexpbar_grid",
@@ -414,6 +413,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "gridexpbar"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -421,20 +424,18 @@
       "id" : "GRIDEXPBAR"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "gridexpbar"
-    },
     "width" : 300.0,
     "codeName" : "ProductGridExpViewgridexpbar",
     "name" : "gridexpbar",
     "modelid" : "a53c40aac05dc376d8fb26e320ba4efb_gridexpbar"
   } ],
+  "viewStyle" : "STYLE2",
+  "codeName" : "DocLibProductGridExpView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "batchAddOnly" : false,
       "enableBatchAdd" : false,
+      "batchAddOnly" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "viewLogicType" : "APP_NEWDATA",
@@ -453,7 +454,6 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
-  "codeName" : "DocLibProductGridExpView",
   "viewType" : "DEGRIDEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibProductGridExpView.json",
   "name" : "DocLibProductGridExpView"

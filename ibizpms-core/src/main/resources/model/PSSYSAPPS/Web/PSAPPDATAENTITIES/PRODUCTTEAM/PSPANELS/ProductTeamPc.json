@@ -1,11 +1,8 @@
 {
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
-  },
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
       "getPSPanelItems" : [ {
+        "viewFieldName" : "account",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -16,10 +13,9 @@
           "editorType" : "SPAN",
           "name" : "account"
         },
-        "viewFieldName" : "account",
+        "hidden" : false,
         "convertToCodeItemText" : true,
         "showCaption" : false,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -33,15 +29,15 @@
         "itemStyle" : "DEFAULT",
         "name" : "account"
       }, {
+        "viewFieldName" : "role",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
           "editorType" : "SPAN",
           "name" : "role"
         },
-        "viewFieldName" : "role",
-        "showCaption" : false,
         "hidden" : false,
+        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -111,8 +107,8 @@
         "contentType" : "RAW",
         "rawContent" : "加盟日",
         "getPSLayoutPos" : {
-          "colLG" : 5,
           "colMD" : 24,
+          "colLG" : 5,
           "layout" : "TABLE_24COL"
         },
         "itemType" : "RAWITEM",
@@ -120,20 +116,20 @@
         "showCaption" : true,
         "name" : "rawitem4"
       }, {
+        "viewFieldName" : "join",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
           "editorType" : "SPAN",
           "name" : "join"
         },
-        "viewFieldName" : "join",
-        "showCaption" : false,
         "hidden" : false,
+        "showCaption" : false,
         "getPSLayoutPos" : {
-          "colLG" : 9,
-          "colMD" : 9,
-          "colSM" : 9,
           "colXS" : 9,
+          "colSM" : 9,
+          "colMD" : 9,
+          "colLG" : 9,
           "layout" : "TABLE_24COL"
         },
         "itemType" : "FIELD",
@@ -144,8 +140,8 @@
         "contentType" : "RAW",
         "rawContent" : "可用工日",
         "getPSLayoutPos" : {
-          "colLG" : 4,
           "colMD" : 24,
+          "colLG" : 4,
           "layout" : "TABLE_24COL"
         },
         "itemType" : "RAWITEM",
@@ -153,18 +149,18 @@
         "showCaption" : true,
         "name" : "rawitem6"
       }, {
+        "viewFieldName" : "days",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
           "editorType" : "SPAN",
           "name" : "days"
         },
-        "viewFieldName" : "days",
-        "showCaption" : false,
         "hidden" : false,
+        "showCaption" : false,
         "getPSLayoutPos" : {
-          "colLG" : 6,
           "colMD" : 24,
+          "colLG" : 6,
           "layout" : "TABLE_24COL"
         },
         "itemType" : "FIELD",
@@ -188,8 +184,8 @@
         "contentType" : "RAW",
         "rawContent" : "可用工时/天",
         "getPSLayoutPos" : {
-          "colLG" : 5,
           "colMD" : 24,
+          "colLG" : 5,
           "layout" : "TABLE_24COL"
         },
         "itemType" : "RAWITEM",
@@ -197,20 +193,20 @@
         "showCaption" : true,
         "name" : "rawitem7"
       }, {
+        "viewFieldName" : "hours",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
           "editorType" : "SPAN",
           "name" : "hours"
         },
-        "viewFieldName" : "hours",
-        "showCaption" : false,
         "hidden" : false,
+        "showCaption" : false,
         "getPSLayoutPos" : {
-          "colLG" : 9,
-          "colMD" : 9,
-          "colSM" : 9,
           "colXS" : 9,
+          "colSM" : 9,
+          "colMD" : 9,
+          "colLG" : 9,
           "layout" : "TABLE_24COL"
         },
         "itemType" : "FIELD",
@@ -220,8 +216,8 @@
         "contentType" : "RAW",
         "rawContent" : "总计",
         "getPSLayoutPos" : {
-          "colLG" : 4,
           "colMD" : 24,
+          "colLG" : 4,
           "layout" : "TABLE_24COL"
         },
         "itemType" : "RAWITEM",
@@ -229,20 +225,20 @@
         "showCaption" : true,
         "name" : "rawitem8"
       }, {
+        "viewFieldName" : "total",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
           "editorType" : "SPAN",
           "name" : "total"
         },
-        "viewFieldName" : "total",
-        "showCaption" : false,
         "hidden" : false,
+        "showCaption" : false,
         "getPSLayoutPos" : {
-          "colLG" : 6,
-          "colMD" : 6,
-          "colSM" : 6,
           "colXS" : 6,
+          "colSM" : 6,
+          "colMD" : 6,
+          "colLG" : 6,
           "layout" : "TABLE_24COL"
         },
         "itemType" : "FIELD",
@@ -265,10 +261,10 @@
       "contentType" : "RAW",
       "rawContent" : "消耗",
       "getPSLayoutPos" : {
-        "colLG" : 3,
-        "colMD" : 3,
-        "colSM" : 3,
         "colXS" : 2,
+        "colSM" : 3,
+        "colMD" : 3,
+        "colLG" : 3,
         "layout" : "TABLE_24COL"
       },
       "itemType" : "RAWITEM",
@@ -276,20 +272,20 @@
       "showCaption" : true,
       "name" : "rawitem1"
     }, {
+      "viewFieldName" : "consumed",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "consumed"
       },
-      "viewFieldName" : "consumed",
-      "showCaption" : false,
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
-        "colLG" : 5,
-        "colMD" : 5,
-        "colSM" : 5,
         "colXS" : 5,
+        "colSM" : 5,
+        "colMD" : 5,
+        "colLG" : 5,
         "layout" : "TABLE_24COL"
       },
       "itemType" : "FIELD",
@@ -300,10 +296,10 @@
       "contentType" : "RAW",
       "rawContent" : "剩余",
       "getPSLayoutPos" : {
-        "colLG" : 3,
-        "colMD" : 3,
-        "colSM" : 3,
         "colXS" : 3,
+        "colSM" : 3,
+        "colMD" : 3,
+        "colLG" : 3,
         "layout" : "TABLE_24COL"
       },
       "itemType" : "RAWITEM",
@@ -311,20 +307,20 @@
       "showCaption" : true,
       "name" : "rawitem2"
     }, {
+      "viewFieldName" : "left",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "left"
       },
-      "viewFieldName" : "left",
-      "showCaption" : false,
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
-        "colLG" : 5,
-        "colMD" : 5,
-        "colSM" : 5,
         "colXS" : 5,
+        "colSM" : 5,
+        "colMD" : 5,
+        "colLG" : 5,
         "layout" : "TABLE_24COL"
       },
       "itemType" : "FIELD",
@@ -335,10 +331,10 @@
       "contentType" : "RAW",
       "rawContent" : "预计",
       "getPSLayoutPos" : {
-        "colLG" : 3,
-        "colMD" : 3,
-        "colSM" : 3,
         "colXS" : 3,
+        "colSM" : 3,
+        "colMD" : 3,
+        "colLG" : 3,
         "layout" : "TABLE_24COL"
       },
       "itemType" : "RAWITEM",
@@ -346,20 +342,20 @@
       "showCaption" : true,
       "name" : "rawitem3"
     }, {
+      "viewFieldName" : "estimate",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "estimate"
       },
-      "viewFieldName" : "estimate",
-      "showCaption" : false,
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
-        "colLG" : 5,
-        "colMD" : 5,
-        "colSM" : 5,
         "colXS" : 5,
+        "colSM" : 5,
+        "colMD" : 5,
+        "colLG" : 5,
         "layout" : "TABLE_24COL"
       },
       "itemType" : "FIELD",
@@ -373,6 +369,7 @@
           "id" : "list_itempanel_button1"
         },
         "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
@@ -383,13 +380,12 @@
           },
           "refreshMode" : 1,
           "enableConfirm" : true,
-          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
+          "codeName" : "RemoveMember",
           "getPSSysImage" : {
             "glyph" : "xf127@FontAwesome",
             "cssClass" : "fa fa-unlink"
           },
-          "codeName" : "RemoveMember",
           "caption" : "移除成员",
           "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
@@ -406,9 +402,9 @@
         "tooltip" : "移除",
         "actionType" : "UIACTION",
         "getPSLayoutPos" : {
+          "colMD" : 24,
           "colLG" : 2,
           "colLGOffset" : 21,
-          "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
         "getPSSysImage" : {
@@ -434,13 +430,13 @@
       "showCaption" : false,
       "name" : "container3"
     }, {
+      "viewFieldName" : "id",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "id"
       },
-      "viewFieldName" : "id",
-      "showCaption" : false,
       "hidden" : true,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -454,10 +450,10 @@
       "columnCount" : 24
     },
     "getPSLayoutPos" : {
-      "colLG" : 8,
-      "colMD" : 8,
-      "colSM" : 8,
       "colXS" : 8,
+      "colSM" : 8,
+      "colMD" : 8,
+      "colLG" : 8,
       "layout" : "TABLE_24COL"
     },
     "itemType" : "CONTAINER",
@@ -496,6 +492,10 @@
     "modelref" : true,
     "id" : "id"
   } ],
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
   "controlType" : "PANEL",
   "codeName" : "ProductTeamPc",
   "layoutMode" : "TABLE_24COL",
@@ -513,11 +513,11 @@
     "name" : "list_itempanel_button1"
   } ],
   "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "list_itempanel_button1"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "list_itempanel_button1_click"
   } ],

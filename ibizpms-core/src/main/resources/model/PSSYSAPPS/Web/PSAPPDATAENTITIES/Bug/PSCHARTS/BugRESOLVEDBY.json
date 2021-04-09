@@ -5,11 +5,6 @@
     "index" : 0,
     "id" : "0"
   },
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "index" : 0,
-    "id" : "0"
-  },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
     "type" : "NONE",
@@ -17,7 +12,13 @@
     "name" : "[severity]无坐标系[0]",
     "id" : "0"
   } ],
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
   "controlType" : "CHART",
+  "codeName" : "BugRESOLVEDBY",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "RESOLVEDBY",
     "seriesType" : "pie",
@@ -43,7 +44,6 @@
     "index" : 0,
     "name" : "severity"
   } ],
-  "codeName" : "BugRESOLVEDBY",
   "emptyText" : "无",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
@@ -76,11 +76,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugRESOLVEDBY.json",
+  "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "tablechart"
   },
-  "height" : 300.0,
   "logicName" : "BugRESOLVEDBY",
   "modelid" : "95f94b0849ac5b9578d24633357a01f4",
   "getUserParam" : {

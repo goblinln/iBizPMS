@@ -1,20 +1,166 @@
 {
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    },
+    "name" : "module",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKTYPE",
+      "codeName" : "Tasktype"
+    },
+    "name" : "tasktype",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "FINISHEDBY",
+      "codeName" : "FinishedBy"
+    },
+    "name" : "finishedby",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "FROMBUG",
+      "codeName" : "FromBug"
+    },
+    "name" : "frombug",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    },
+    "name" : "status",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STATUS1",
+      "codeName" : "Status1"
+    },
+    "name" : "status1",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "name" : "parent",
+    "dataType" : 1
+  }, {
+    "name" : "srfmstag",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ESTIMATE",
+      "codeName" : "Estimate"
+    },
+    "name" : "estimate",
+    "dataType" : 7
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "id",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    },
+    "name" : "story",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "name" : "project",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ASSIGNEDTO",
+      "codeName" : "AssignedTo"
+    },
+    "name" : "assignedto",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PRI",
+      "codeName" : "Pri"
+    },
+    "name" : "pri",
+    "dataType" : 9
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    },
+    "name" : "consumed",
+    "dataType" : 7
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PLAN",
+      "codeName" : "Plan"
+    },
+    "name" : "plan",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "name" : "name",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    },
+    "name" : "left",
+    "dataType" : 7
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ISFAVORITES",
+      "codeName" : "Isfavorites"
+    },
+    "name" : "isfavorites",
+    "dataType" : 25
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "DEADLINE",
+      "codeName" : "Deadline"
+    },
+    "name" : "deadline",
+    "dataType" : 5
+  } ],
   "singleSelect" : false,
   "enableColFilter" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -34,6 +180,21 @@
     "caption" : "编号",
     "name" : "srfkey"
   } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "columnEnableLink" : 2,
   "getGroupPSAppDEField" : {
     "name" : "PRI",
@@ -43,185 +204,24 @@
     "name" : "PRI",
     "codeName" : "Pri"
   },
-  "hasWFDataItems" : false,
-  "controlType" : "GRID",
-  "enablePagingBar" : true,
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
-    },
-    "dataType" : 1,
-    "name" : "module"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TASKTYPE",
-      "codeName" : "Tasktype"
-    },
-    "dataType" : 25,
-    "name" : "tasktype"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "FINISHEDBY",
-      "codeName" : "FinishedBy"
-    },
-    "dataType" : 25,
-    "name" : "finishedby"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "FROMBUG",
-      "codeName" : "FromBug"
-    },
-    "dataType" : 1,
-    "name" : "frombug"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
-    },
-    "dataType" : 25,
-    "name" : "status"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "STATUS1",
-      "codeName" : "Status1"
-    },
-    "dataType" : 25,
-    "name" : "status1"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    },
-    "dataType" : 1,
-    "name" : "parent"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ESTIMATE",
-      "codeName" : "Estimate"
-    },
-    "dataType" : 7,
-    "name" : "estimate"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "dataType" : 25,
-    "name" : "srfmajortext"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true,
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataType" : 1,
-    "name" : "srfkey"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataType" : 1,
-    "name" : "id"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "STORY",
-      "codeName" : "Story"
-    },
-    "dataType" : 1,
-    "name" : "story"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
-    "dataType" : 1,
-    "name" : "project"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ASSIGNEDTO",
-      "codeName" : "AssignedTo"
-    },
-    "dataType" : 25,
-    "name" : "assignedto"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PRI",
-      "codeName" : "Pri"
-    },
-    "dataType" : 9,
-    "name" : "pri"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CONSUMED",
-      "codeName" : "Consumed"
-    },
-    "dataType" : 7,
-    "name" : "consumed"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PLAN",
-      "codeName" : "Plan"
-    },
-    "dataType" : 1,
-    "name" : "plan"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "dataType" : 25,
-    "name" : "name"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "LEFT",
-      "codeName" : "Left"
-    },
-    "dataType" : 7,
-    "name" : "left"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ISFAVORITES",
-      "codeName" : "Isfavorites"
-    },
-    "dataType" : 25,
-    "name" : "isfavorites"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DEADLINE",
-      "codeName" : "Deadline"
-    },
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "deadline"
-  } ],
-  "enableRowEdit" : false,
+  "enablePagingBar" : true,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "P",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
     },
+    "dataItemName" : "pri",
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "dataItemName" : "pri",
     "cLConvertMode" : "FRONT",
     "groupItem" : "GROUP1",
     "noPrivDisplayMode" : 1,
@@ -237,11 +237,11 @@
     "name" : "pri"
   }, {
     "excelCaption" : "ID",
+    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -253,19 +253,19 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
+    "linkValueItem" : "srfkey",
+    "excelCaption" : "任务名称",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "excelCaption" : "任务名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
-    "linkValueItem" : "srfkey",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -282,11 +282,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TaskStatusCK.json"
     },
+    "dataItemName" : "status1",
     "getPSAppDEField" : {
       "name" : "STATUS1",
       "codeName" : "Status1"
     },
-    "dataItemName" : "status1",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -303,12 +303,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameUnAssignTo_Gird.json"
     },
+    "dataItemName" : "assignedto",
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "dataItemName" : "assignedto",
     "getPSDEUIAction" : {
+      "getNoPrivDisplayMode" : 1,
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -319,13 +320,12 @@
         "viewType" : "DEOPTVIEW"
       },
       "frontProcessType" : "WIZARD",
-      "getNoPrivDisplayMode" : 1,
       "timeout" : 60000,
+      "codeName" : "AssignTask",
       "getPSSysImage" : {
         "glyph" : "xf0a4@FontAwesome",
         "cssClass" : "fa fa-hand-o-right"
       },
-      "codeName" : "AssignTask",
       "caption" : "指派",
       "actionTarget" : "SINGLEKEY",
       "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
@@ -340,11 +340,11 @@
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
     "width" : 150,
+    "codeName" : "assignedto",
     "getPSSysImage" : {
       "glyph" : "xf0a4@FontAwesome",
       "cssClass" : "fa fa-hand-o-right"
     },
-    "codeName" : "assignedto",
     "caption" : "指派给",
     "columnType" : "DEFGRIDCOLUMN",
     "align" : "LEFT",
@@ -356,11 +356,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "finishedby",
     "getPSAppDEField" : {
       "name" : "FINISHEDBY",
       "codeName" : "FinishedBy"
     },
-    "dataItemName" : "finishedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -373,11 +373,11 @@
     "name" : "finishedby"
   }, {
     "excelCaption" : "预计",
+    "dataItemName" : "estimate",
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
-    "dataItemName" : "estimate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -390,11 +390,11 @@
     "name" : "estimate"
   }, {
     "excelCaption" : "消耗",
+    "dataItemName" : "consumed",
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
-    "dataItemName" : "consumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -407,11 +407,11 @@
     "name" : "consumed"
   }, {
     "excelCaption" : "剩余",
+    "dataItemName" : "left",
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
-    "dataItemName" : "left",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -424,11 +424,11 @@
     "name" : "left"
   }, {
     "excelCaption" : "截止日期",
+    "dataItemName" : "deadline",
     "getPSAppDEField" : {
       "name" : "DEADLINE",
       "codeName" : "Deadline"
     },
-    "dataItemName" : "deadline",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -443,9 +443,9 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 2,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -578,13 +578,12 @@
             "key" : "TITLE",
             "name" : "TITLE"
           } ],
-          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
+          "codeName" : "TaskToBug",
           "getPSSysImage" : {
             "glyph" : "xf188@FontAwesome",
             "cssClass" : "fa fa-bug"
           },
-          "codeName" : "TaskToBug",
           "caption" : "提缺陷",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
@@ -595,13 +594,14 @@
           "name" : "提缺陷",
           "id" : "TaskToBug@Task"
         },
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ud5109c5"
       }, {
-        "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -612,13 +612,12 @@
           },
           "refreshMode" : 1,
           "enableConfirm" : true,
-          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
+          "codeName" : "confirmStoryChange",
           "getPSSysImage" : {
             "glyph" : "xf002@FontAwesome",
             "cssClass" : "fa fa-search"
           },
-          "codeName" : "confirmStoryChange",
           "caption" : "确认",
           "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
@@ -630,13 +629,14 @@
           "name" : "需求变更确认",
           "id" : "confirmStoryChange@Task"
         },
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ucdca98c"
       }, {
-        "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -661,13 +661,12 @@
           },
           "showBusyIndicator" : false,
           "enableConfirm" : true,
-          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
+          "codeName" : "MStartTaskDash1",
           "getPSSysImage" : {
             "glyph" : "xf01d@FontAwesome",
             "cssClass" : "fa fa-play-circle-o"
           },
-          "codeName" : "MStartTaskDash1",
           "caption" : "开始",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__TASK_START_BUT",
@@ -678,13 +677,14 @@
           "name" : "开始任务(多人任务检查)",
           "id" : "MStartTaskDash1@Task"
         },
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u8316814"
       }, {
-        "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -699,13 +699,12 @@
             "id" : "Close"
           },
           "frontProcessType" : "WIZARD",
-          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
+          "codeName" : "CloseTask",
           "getPSSysImage" : {
             "glyph" : "xf011@FontAwesome",
             "cssClass" : "fa fa-power-off"
           },
-          "codeName" : "CloseTask",
           "caption" : "关闭",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
@@ -716,13 +715,14 @@
           "name" : "关闭任务",
           "id" : "CloseTask@Task"
         },
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ubd2fb06"
       }, {
-        "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -747,13 +747,12 @@
           },
           "showBusyIndicator" : false,
           "enableConfirm" : true,
-          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
+          "codeName" : "done",
           "getPSSysImage" : {
             "glyph" : "xf046@FontAwesome",
             "cssClass" : "fa fa-check-square-o"
           },
-          "codeName" : "done",
           "caption" : "完成",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
@@ -764,13 +763,14 @@
           "name" : "完成任务(多人任务检查)",
           "id" : "done@Task"
         },
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ubf934a0"
       }, {
-        "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -781,13 +781,12 @@
             "viewType" : "DEEDITVIEW"
           },
           "frontProcessType" : "WIZARD",
-          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
+          "codeName" : "MainEdit",
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
-          "codeName" : "MainEdit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__TASK_EDIT_BUT",
@@ -798,13 +797,14 @@
           "name" : "主信息编辑",
           "id" : "MainEdit@Task"
         },
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ud0d0133"
       }, {
-        "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -837,12 +837,11 @@
             "key" : "MODULE",
             "name" : "MODULE"
           } ],
-          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
+          "codeName" : "NewSubTask",
           "getPSSysImage" : {
             "cssClass" : "iconfont studio-icon-subnets"
           },
-          "codeName" : "NewSubTask",
           "caption" : "子任务",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
@@ -853,20 +852,28 @@
           "name" : "批量新建子任务",
           "id" : "NewSubTask@Task"
         },
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u7002282"
       }, {
-        "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.COPY",
+            "id" : "工具栏按钮文本[*.COPY]"
+          },
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.COPY",
+            "id" : "工具栏按钮提示[*.COPY]"
+          },
           "timeout" : 60000,
+          "codeName" : "Copy",
           "getPSSysImage" : {
             "glyph" : "xf0c5@FontAwesome",
             "cssClass" : "fa fa-copy"
           },
-          "codeName" : "Copy",
           "caption" : "拷贝",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -876,13 +883,14 @@
           "fullCodeName" : "Copy",
           "name" : "表格界面_拷贝操作"
         },
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ud67a065"
       }, {
-        "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 2,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -893,13 +901,12 @@
           },
           "refreshMode" : 1,
           "enableConfirm" : true,
-          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
+          "codeName" : "TaskFavorites",
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
           },
-          "codeName" : "TaskFavorites",
           "caption" : "收藏",
           "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
@@ -911,13 +918,14 @@
           "name" : "收藏",
           "id" : "TaskFavorites@Task"
         },
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u3eb01df"
       }, {
-        "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 2,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -928,13 +936,12 @@
           },
           "refreshMode" : 1,
           "enableConfirm" : true,
-          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
+          "codeName" : "TaskNFavorites",
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
           },
-          "codeName" : "TaskNFavorites",
           "caption" : "取消收藏",
           "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
@@ -946,6 +953,7 @@
           "name" : "取消收藏",
           "id" : "TaskNFavorites@Task"
         },
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ud5bc55a"
@@ -967,11 +975,11 @@
   "enableGroup" : true,
   "hideHeader" : false,
   "forceFit" : false,
+  "pagingSize" : 20,
   "getGroupPSCodeList" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
   },
-  "pagingSize" : 20,
   "aggMode" : "PAGE",
   "groupMode" : "CODELIST",
   "sortMode" : "REMOTE",
@@ -1109,91 +1117,91 @@
     "name" : "取消收藏"
   } ],
   "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "指派任务"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_assignedto_click"
   }, {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "提缺陷"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_ud5109c5_click"
   }, {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "需求变更确认"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_ucdca98c_click"
   }, {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "开始任务(多人任务检查)"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_u8316814_click"
   }, {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "关闭任务"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_ubd2fb06_click"
   }, {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "完成任务(多人任务检查)"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_ubf934a0_click"
   }, {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "主信息编辑"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_ud0d0133_click"
   }, {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "批量新建子任务"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_u7002282_click"
   }, {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "表格界面_拷贝操作"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_ud67a065_click"
   }, {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "收藏"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_u3eb01df_click"
   }, {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "取消收藏"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_ud5bc55a_click"
   } ],

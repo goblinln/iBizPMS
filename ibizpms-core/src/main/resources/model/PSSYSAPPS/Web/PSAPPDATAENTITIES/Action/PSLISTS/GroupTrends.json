@@ -5,68 +5,64 @@
   "hasWFDataItems" : false,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "dataType" : 25,
-    "name" : "objecttype"
+    "name" : "objecttype",
+    "dataType" : 25
   }, {
-    "dataType" : 5,
     "format" : "YYYY-MM-DD HH:mm:ss",
-    "name" : "date"
+    "name" : "date",
+    "dataType" : 5
   }, {
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
-    "dataType" : 25,
-    "name" : "action"
+    "name" : "action",
+    "dataType" : 25
   }, {
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
-    "dataType" : 25,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 25
   }, {
-    "dataType" : 1,
-    "name" : "objectid"
+    "name" : "objectid",
+    "dataType" : 1
   }, {
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
     },
-    "dataType" : 25,
-    "name" : "actionmanner"
+    "name" : "actionmanner",
+    "dataType" : 25
   }, {
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
-    "dataType" : 25,
-    "name" : "actor"
+    "name" : "actor",
+    "dataType" : 25
   }, {
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Action__read.json"
     },
-    "dataType" : 25,
-    "name" : "read"
+    "name" : "read",
+    "dataType" : 25
   } ],
   "showHeader" : true,
-  "controlType" : "LIST",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
-  "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "GroupTrends",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
   "pagingSize" : 300,
   "groupMode" : "NONE",
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -82,6 +78,10 @@
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

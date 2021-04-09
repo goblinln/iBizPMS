@@ -1,43 +1,43 @@
 {
   "subSysAsCloud" : false,
-  "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSCODELISTS/IndexType.json",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
   "codeName" : "IndexType",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "bug",
     "codeName" : "Bug",
-    "text" : "Bug",
-    "value" : "bug"
+    "text" : "Bug"
   }, {
+    "value" : "product",
     "codeName" : "Product",
-    "text" : "产品",
-    "value" : "product"
+    "text" : "产品"
   }, {
+    "value" : "task",
     "codeName" : "Task",
-    "text" : "任务",
-    "value" : "task"
+    "text" : "任务"
   }, {
+    "value" : "case",
     "codeName" : "Case",
-    "text" : "功能测试",
-    "value" : "case"
+    "text" : "功能测试"
   }, {
+    "value" : "doc",
     "codeName" : "Doc",
-    "text" : "文档",
-    "value" : "doc"
+    "text" : "文档"
   }, {
+    "value" : "story",
     "codeName" : "Story",
-    "text" : "需求",
-    "value" : "story"
+    "text" : "需求"
   }, {
+    "value" : "project",
     "codeName" : "Project",
-    "text" : "项目",
-    "value" : "project"
+    "text" : "项目"
   } ]
 }

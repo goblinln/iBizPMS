@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,13 +26,13 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -41,6 +42,7 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -48,21 +50,20 @@
           "name" : "id"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
+        "hidden" : false,
         "dataType" : 1,
         "caption" : "编号",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 0,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -72,27 +73,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "id"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 255,
           "editorType" : "TEXTBOX",
           "name" : "title"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TITLE",
           "codeName" : "Title"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "需求名称",
         "allowEmpty" : false,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -102,27 +103,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "title"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 100,
           "editorType" : "TEXTBOX",
           "name" : "ibiz_id"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "IBIZ_ID",
           "codeName" : "IBIZId"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "IBIZ标识",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -212,7 +213,6 @@
       "codeName" : "IBIZId"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

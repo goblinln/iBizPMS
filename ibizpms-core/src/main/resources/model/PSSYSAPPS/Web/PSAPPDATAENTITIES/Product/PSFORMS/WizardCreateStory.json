@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getUpdatePSControlAction" : {
     "modelref" : true,
@@ -8,6 +9,7 @@
     "modelref" : true,
     "id" : "load"
   },
+  "infoFormMode" : false,
   "getPSDEWizardForm" : {
     "firstForm" : false,
     "getPSDEWizardStep" : {
@@ -19,14 +21,14 @@
     "stepActions" : [ "PREV", "NEXT", "FINISH" ],
     "name" : "需求"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "formFuncMode" : "WIZARDFORM",
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "rawItemHeight" : -1.0,
@@ -99,8 +101,6 @@
       "codeName" : "Id"
     }
   } ],
-  "noTabHeader" : true,
-  "formFuncMode" : "WIZARDFORM",
   "codeName" : "WizardCreateStory",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

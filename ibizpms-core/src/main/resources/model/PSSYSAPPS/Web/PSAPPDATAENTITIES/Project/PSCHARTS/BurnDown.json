@@ -5,11 +5,6 @@
     "index" : 0,
     "id" : "0"
   },
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "index" : 0,
-    "id" : "0"
-  },
   "getPSChartCoordinateSystems" : [ {
     "getPSChartGrid" : {
       "getPSChartGridXAxis0" : {
@@ -35,7 +30,13 @@
     "name" : "[BurnDown]直角坐标系[0]",
     "id" : "0"
   } ],
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
   "controlType" : "CHART",
+  "codeName" : "BurnDown",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
     "catalogField" : "BEGIN",
@@ -71,47 +72,24 @@
     "index" : 0,
     "name" : "BurnDown"
   } ],
-  "codeName" : "BurnDown",
-  "getPSChartXAxises" : [ {
-    "eChartsPos" : "xAxis",
-    "eChartsType" : "category",
-    "position" : "bottom",
-    "caption" : "日期",
-    "type" : "category",
-    "index" : 0,
-    "name" : "X",
-    "id" : "0"
-  } ],
   "getPSChartYAxises" : [ {
-    "eChartsPos" : "yAxis",
     "eChartsType" : "value",
+    "eChartsPos" : "yAxis",
     "position" : "left",
-    "caption" : "工时",
     "type" : "numeric",
+    "caption" : "工时",
     "index" : 0,
     "name" : "Y",
     "id" : "0"
   } ],
-  "getPSChartDataSets" : [ {
-    "getPSChartDataSetFields" : [ {
-      "groupField" : true,
-      "groupMode" : "DAY",
-      "index" : 0,
-      "name" : "BEGIN",
-      "id" : "0"
-    }, {
-      "groupField" : false,
-      "index" : 1,
-      "name" : "ID",
-      "id" : "1"
-    } ],
+  "getPSChartXAxises" : [ {
+    "eChartsType" : "category",
+    "eChartsPos" : "xAxis",
+    "position" : "bottom",
+    "type" : "category",
+    "caption" : "日期",
     "index" : 0,
-    "name" : "BurnDown-DEFAULT",
-    "id" : "0"
-  } ],
-  "getPSChartDataSetGroups" : [ {
-    "index" : 0,
-    "name" : "DEFAULT",
+    "name" : "X",
     "id" : "0"
   } ],
   "getPSChartGrids" : [ {
@@ -137,6 +115,28 @@
     "type" : "grid",
     "index" : 0,
     "name" : "[BurnDown]直角坐标系[0]",
+    "id" : "0"
+  } ],
+  "getPSChartDataSets" : [ {
+    "getPSChartDataSetFields" : [ {
+      "groupField" : true,
+      "groupMode" : "DAY",
+      "index" : 0,
+      "name" : "BEGIN",
+      "id" : "0"
+    }, {
+      "groupField" : false,
+      "index" : 1,
+      "name" : "ID",
+      "id" : "1"
+    } ],
+    "index" : 0,
+    "name" : "BurnDown-DEFAULT",
+    "id" : "0"
+  } ],
+  "getPSChartDataSetGroups" : [ {
+    "index" : 0,
+    "name" : "DEFAULT",
     "id" : "0"
   } ],
   "getFetchPSControlAction" : {

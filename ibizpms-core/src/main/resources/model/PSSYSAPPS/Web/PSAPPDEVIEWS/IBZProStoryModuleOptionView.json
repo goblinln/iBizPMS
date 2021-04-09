@@ -1,12 +1,12 @@
 {
-  "showDataInfoBar" : true,
   "showCaptionBar" : true,
+  "showDataInfoBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "OptionView",
+  "openMode" : "POPUPMODAL",
   "height" : 500,
   "width" : 800,
   "caption" : "同步",
-  "openMode" : "POPUPMODAL",
   "title" : "需求模块选项操作视图同步",
   "accUserMode" : 2,
   "enableDP" : true,
@@ -27,21 +27,21 @@
     "engineType" : "OptionView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
   },
   "getPSControls" : [ {
+    "showFormNavBar" : false,
     "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
@@ -68,13 +68,13 @@
       "id" : "loaddraftfrom"
     },
     "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : false,
@@ -84,27 +84,27 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "maxLength" : 100,
             "editorType" : "TEXTBOX",
             "name" : "ibiz_id"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "IBIZ_ID",
             "codeName" : "IBIZId"
           },
+          "hidden" : false,
           "dataType" : 25,
           "caption" : "IBIZ标识",
           "allowEmpty" : true,
+          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -114,11 +114,12 @@
           "detailStyle" : "DEFAULT",
           "name" : "ibiz_id"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "enableLinkView" : false,
-            "dropDownView" : false,
             "enablePickupView" : false,
+            "dropDownView" : false,
             "enableAC" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -136,31 +137,30 @@
               "id" : "Default"
             },
             "valueItemName" : "root",
+            "editorType" : "PICKEREX_TRIGGER",
             "editorParams" : {
               "AC" : "TRUE",
               "TRIGGER" : "TRUE",
               "PICKUPVIEW" : "FALSE"
             },
-            "editorType" : "PICKEREX_TRIGGER",
             "name" : "productname"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PRODUCTNAME",
             "codeName" : "ProductName"
           },
+          "hidden" : false,
           "dataType" : 25,
           "caption" : "产品",
           "allowEmpty" : true,
+          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "root",
-          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -170,26 +170,26 @@
           "detailStyle" : "DEFAULT",
           "name" : "productname"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "root"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "ROOT",
             "codeName" : "Root"
           },
+          "hidden" : true,
           "dataType" : 1,
           "caption" : "编号",
           "allowEmpty" : true,
+          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -199,27 +199,27 @@
           "detailStyle" : "DEFAULT",
           "name" : "root"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "type"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "TYPE",
             "codeName" : "Type"
           },
+          "hidden" : true,
           "dataType" : 25,
           "caption" : "类型",
           "allowEmpty" : true,
           "createDV" : "story",
+          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -327,19 +327,12 @@
         "codeName" : "Id"
       }
     } ],
-    "noTabHeader" : true,
     "codeName" : "SycFromIbz",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -419,11 +412,18 @@
       "enableDEFieldPrivilege" : false,
       "id" : "选项表单处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule/PSFORMS/SycFromIbz.json",
     "logicName" : "同步平台模块",
     "name" : "form",
     "modelid" : "ce739ae7bbb2864fba0c467f8e64b276"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "IBZProStoryModuleOptionView",
   "viewType" : "DEOPTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryModuleOptionView.json",

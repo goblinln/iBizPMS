@@ -8,8 +8,10 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -20,25 +22,24 @@
         "name" : "n_status_eq"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
       },
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "项目状态",
       "allowEmpty" : true,
+      "labelWidth" : 80,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 80,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 8,
         "colMD" : 24,
+        "colLG" : 8,
         "width" : 320,
         "layout" : "TABLE_24COL"
       },
@@ -68,7 +69,6 @@
       "codeName" : "Status"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "ProjectStoryStats",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

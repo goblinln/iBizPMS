@@ -15,10 +15,10 @@
     "modelref" : true,
     "id" : "FetchStoryProductTeamPK"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
   "orMode" : "STR",
   "textSeparator" : ",",
+  "dynaInstMode" : 1,
   "codeName" : "UserRealNameProductTeam",
   "emptyText" : "未定义",
   "valueSeparator" : ",",

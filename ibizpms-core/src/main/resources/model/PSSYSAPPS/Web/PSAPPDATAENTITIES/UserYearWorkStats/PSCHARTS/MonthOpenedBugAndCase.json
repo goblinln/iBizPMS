@@ -5,11 +5,6 @@
     "index" : 0,
     "id" : "0"
   },
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "index" : 0,
-    "id" : "0"
-  },
   "getPSChartCoordinateSystems" : [ {
     "getPSChartGrid" : {
       "getPSChartGridXAxis0" : {
@@ -35,7 +30,13 @@
     "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
     "id" : "0"
   } ],
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
   "controlType" : "CHART",
+  "codeName" : "MonthOpenedBugAndCase",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
     "catalogField" : "CURMONTH",
@@ -107,27 +108,51 @@
     "index" : 1,
     "name" : "FinishTask"
   } ],
-  "codeName" : "MonthOpenedBugAndCase",
+  "getPSChartYAxises" : [ {
+    "eChartsType" : "value",
+    "eChartsPos" : "yAxis",
+    "position" : "left",
+    "type" : "numeric",
+    "maxValue" : 200.0,
+    "minValue" : 0.0,
+    "caption" : "数量",
+    "index" : 0,
+    "name" : "数量",
+    "id" : "0"
+  } ],
   "getPSChartXAxises" : [ {
-    "eChartsPos" : "xAxis",
     "eChartsType" : "category",
+    "eChartsPos" : "xAxis",
     "position" : "bottom",
-    "caption" : "月",
     "type" : "category",
+    "caption" : "月",
     "index" : 0,
     "name" : "月",
     "id" : "0"
   } ],
-  "getPSChartYAxises" : [ {
-    "eChartsPos" : "yAxis",
-    "eChartsType" : "value",
-    "position" : "left",
-    "maxValue" : 200.0,
-    "minValue" : 0.0,
-    "caption" : "数量",
-    "type" : "numeric",
+  "getPSChartGrids" : [ {
+    "getPSChartGridXAxis0" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartGridYAxis0" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartCoordinateSystem" : {
+      "getPSChartGrid" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "eChartsType" : "cartesian2d",
+      "type" : "XY",
+      "index" : 0,
+      "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+      "id" : "0"
+    },
+    "type" : "grid",
     "index" : 0,
-    "name" : "数量",
+    "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {
@@ -168,31 +193,6 @@
     "name" : "MonthOpenedBugAndCase",
     "id" : "0"
   } ],
-  "getPSChartGrids" : [ {
-    "getPSChartGridXAxis0" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "getPSChartGridYAxis0" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "getPSChartCoordinateSystem" : {
-      "getPSChartGrid" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "eChartsType" : "cartesian2d",
-      "type" : "XY",
-      "index" : 0,
-      "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
-      "id" : "0"
-    },
-    "type" : "grid",
-    "index" : 0,
-    "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
-    "id" : "0"
-  } ],
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -203,11 +203,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedBugAndCase.json",
+  "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
-  "height" : 300.0,
   "logicName" : "MonthOpenedBugAndCase",
   "modelid" : "419cfd8e4688bd7a4d507d481bb24879",
   "getUserParam" : {

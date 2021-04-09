@@ -1,41 +1,41 @@
 {
   "subSysAsCloud" : false,
-  "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TestQuickpacket.json",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
   "codeName" : "TestQuickpacket",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "ALL",
     "data" : "{}",
     "codeName" : "All",
     "text" : "全部",
-    "default" : true,
-    "value" : "ALL"
+    "default" : true
   }, {
+    "value" : "ICREATE",
     "data" : "{\"n_status_eq\":\"wait\"}",
     "codeName" : "Icreate",
-    "text" : "待测测试单",
-    "value" : "ICREATE"
+    "text" : "待测测试单"
   }, {
+    "value" : "IREVIEW",
     "data" : "{\"n_status_eq\":\"doing\"}",
     "codeName" : "Ireview",
-    "text" : "测试中测试单",
-    "value" : "IREVIEW"
+    "text" : "测试中测试单"
   }, {
+    "value" : "ICLOSE",
     "data" : "{\"n_status_eq\":\"blocked\"}",
     "codeName" : "Iclose",
-    "text" : "被阻塞测试单",
-    "value" : "ICLOSE"
+    "text" : "被阻塞测试单"
   }, {
+    "value" : "Tested",
     "data" : "{\"n_status_eq\":\"done\"}",
     "codeName" : "Tested",
-    "text" : "已测测试单",
-    "value" : "Tested"
+    "text" : "已测测试单"
   } ]
 }

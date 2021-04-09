@@ -6,6 +6,7 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "GetProductBuild",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
@@ -13,6 +14,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -32,17 +34,16 @@
       "srcFieldName" : "PRODUCT",
       "name" : "Default[PRODUCT]"
     } ],
-    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取版本"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3016"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -52,6 +53,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1794"
@@ -66,18 +68,17 @@
       "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取产品"
   } ],
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNOTNULL",
         "dstFieldName" : "PRODUCT",
         "logicType" : "SINGLE",
         "name" : "Default[PRODUCT] 值不为空(NotNil)"
@@ -100,11 +101,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNOTNULL",
         "dstFieldName" : "PROJECT",
         "logicType" : "SINGLE",
         "name" : "Default[PROJECT] 值不为空(NotNil)"
@@ -126,14 +127,13 @@
     "name" : "连接3016"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "GetProductBuild",
   "logicName" : "获取产品及版本",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

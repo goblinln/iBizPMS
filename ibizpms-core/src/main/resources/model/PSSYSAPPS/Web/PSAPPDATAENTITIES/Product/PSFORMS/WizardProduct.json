@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getUpdatePSControlAction" : {
     "modelref" : true,
@@ -8,6 +9,7 @@
     "modelref" : true,
     "id" : "load"
   },
+  "infoFormMode" : false,
   "getPSDEWizardForm" : {
     "firstForm" : true,
     "getPSDEWizardStep" : {
@@ -19,14 +21,14 @@
     "stepActions" : [ "NEXT" ],
     "name" : "产品"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "formFuncMode" : "WIZARDFORM",
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "rawItemHeight" : -1.0,
@@ -37,11 +39,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "codeName" : "rawitem1",
       "getPSSysImage" : {
         "glyph" : "xf17a@FontAwesome",
         "cssClass" : "fa fa-windows"
       },
-      "codeName" : "rawitem1",
       "detailType" : "RAWITEM",
       "detailStyle" : "DEFAULT",
       "showCaption" : true,
@@ -103,8 +105,6 @@
       "codeName" : "Id"
     }
   } ],
-  "noTabHeader" : true,
-  "formFuncMode" : "WIZARDFORM",
   "codeName" : "WizardProduct",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

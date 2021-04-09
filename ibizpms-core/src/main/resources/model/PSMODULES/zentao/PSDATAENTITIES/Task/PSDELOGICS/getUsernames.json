@@ -6,6 +6,7 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "getUsernames",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
@@ -13,6 +14,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -23,12 +25,12 @@
       "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT]"
     } ],
-    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "项目团队"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9577"
@@ -36,7 +38,6 @@
       "modelref" : true,
       "id" : "连接6464"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -46,6 +47,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -56,18 +58,17 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "任务团队"
   } ],
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "MULTIPLE",
         "logicType" : "SINGLE",
@@ -91,11 +92,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "NOTEQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "NOTEQ",
         "paramValue" : "1",
         "dstFieldName" : "MULTIPLE",
         "logicType" : "SINGLE",
@@ -118,14 +119,13 @@
     "name" : "连接6464"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "getUsernames",
   "logicName" : "获取团队成员",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

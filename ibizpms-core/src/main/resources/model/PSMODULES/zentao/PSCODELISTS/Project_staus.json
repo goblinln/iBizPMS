@@ -1,27 +1,27 @@
 {
   "subSysAsCloud" : false,
-  "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Project_staus.json",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
   "codeName" : "Project_staus",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "doing",
     "codeName" : "Doing",
-    "text" : "进行中",
-    "value" : "doing"
+    "text" : "进行中"
   }, {
+    "value" : "suspended",
     "codeName" : "Suspended",
-    "text" : "已挂起",
-    "value" : "suspended"
+    "text" : "已挂起"
   }, {
+    "value" : "closed",
     "codeName" : "Closed",
-    "text" : "已关闭",
-    "value" : "closed"
+    "text" : "已关闭"
   } ]
 }

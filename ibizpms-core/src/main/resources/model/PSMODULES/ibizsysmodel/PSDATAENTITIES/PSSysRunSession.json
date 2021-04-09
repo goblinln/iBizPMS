@@ -1,82 +1,24 @@
 {
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/Save.json"
-  } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "extendMode" : 0,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据集",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "enableGroup" : false,
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "extendMode" : 0,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据查询",
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "extendMode" : 0,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
+  "serviceAPIMode" : 0,
   "getAllPSDEFields" : [ {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "3419b0316944b37fdfbccfe4b0bce7e1",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "3419b0316944b37fdfbccfe4b0bce7e1",
     "codeName" : "RunParam4",
     "logicName" : "运行参数4",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`RUNPARAM4`",
+      "valueAutoGen" : false,
+      "columnName" : "RUNPARAM4",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RUNPARAM4"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -109,28 +51,28 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`RUNPARAM4`",
-      "columnName" : "RUNPARAM4",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "RUNPARAM4"
-    } ],
-    "length" : 100,
     "name" : "RUNPARAM4"
   }, {
+    "length" : 200,
     "dataType" : "TEXT",
-    "deployId" : "1a15d99d0981834919e668b8d68badb3",
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "1a15d99d0981834919e668b8d68badb3",
     "codeName" : "PSSysRunSessionName",
     "logicName" : "系统运行会话名称",
     "stringLength" : 200,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSRUNSESSIONNAME`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSRUNSESSIONNAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSRUNSESSIONNAME"
+    } ],
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -163,25 +105,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSRUNSESSIONNAME`",
-      "columnName" : "PSSYSRUNSESSIONNAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSRUNSESSIONNAME"
-    } ],
-    "length" : 200,
     "name" : "PSSYSRUNSESSIONNAME"
   }, {
+    "length" : 8,
     "dataType" : "DATETIME",
-    "deployId" : "0f8fc26e2ab1675e9c3200d9ca529025",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "0f8fc26e2ab1675e9c3200d9ca529025",
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "valueAutoGen" : false,
+      "columnName" : "CREATEDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CREATEDATE"
+    } ],
+    "predefinedType" : "CREATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -204,26 +147,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`CREATEDATE`",
-      "columnName" : "CREATEDATE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CREATEDATE"
-    } ],
-    "predefinedType" : "CREATEDATE",
-    "length" : 8,
     "name" : "CREATEDATE"
   }, {
+    "length" : 8,
     "dataType" : "DATETIME",
-    "deployId" : "62fba5548bebcd79c3a1fe67f41c6ce3",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "62fba5548bebcd79c3a1fe67f41c6ce3",
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "valueAutoGen" : false,
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEDATE"
+    } ],
+    "predefinedType" : "UPDATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -246,28 +189,27 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`UPDATEDATE`",
-      "columnName" : "UPDATEDATE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATEDATE"
-    } ],
-    "predefinedType" : "UPDATEDATE",
-    "length" : 8,
     "name" : "UPDATEDATE"
   }, {
+    "length" : 100,
     "dataType" : "GUID",
-    "deployId" : "5565b65ac87be706d24f2d9b826deb51",
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "5565b65ac87be706d24f2d9b826deb51",
     "codeName" : "PSSysRunSessionId",
     "logicName" : "系统运行会话标识",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSRUNSESSIONID`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSRUNSESSIONID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSRUNSESSIONID"
+    } ],
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -302,26 +244,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSRUNSESSIONID`",
-      "columnName" : "PSSYSRUNSESSIONID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSRUNSESSIONID"
-    } ],
-    "length" : 100,
     "name" : "PSSYSRUNSESSIONID"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "81b5f04c8e3a52c450cfbd71e481a25d",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "81b5f04c8e3a52c450cfbd71e481a25d",
     "codeName" : "PSSysSFPubId",
     "logicName" : "服务体系",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSSFPUBID`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSSFPUBID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSSFPUBID"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -354,26 +296,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSSFPUBID`",
-      "columnName" : "PSSYSSFPUBID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSSFPUBID"
-    } ],
-    "length" : 100,
     "name" : "PSSYSSFPUBID"
   }, {
+    "length" : 20,
     "dataType" : "SSCODELIST",
-    "deployId" : "3f685a75a874a04435df606191ac2a97",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "3f685a75a874a04435df606191ac2a97",
     "codeName" : "PackMode",
     "logicName" : "打包模式",
     "stringLength" : 20,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PACKMODE`",
+      "valueAutoGen" : false,
+      "columnName" : "PACKMODE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PACKMODE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -406,26 +348,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PACKMODE`",
-      "columnName" : "PACKMODE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PACKMODE"
-    } ],
-    "length" : 20,
     "name" : "PACKMODE"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "0689d818b654be76f7b584feffb45dc4",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "0689d818b654be76f7b584feffb45dc4",
     "codeName" : "PSSystemDBCfgName",
     "logicName" : "运行数据库",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSTEMDBCFGNAME`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSTEMDBCFGNAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSTEMDBCFGNAME"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -458,26 +400,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSTEMDBCFGNAME`",
-      "columnName" : "PSSYSTEMDBCFGNAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSTEMDBCFGNAME"
-    } ],
-    "length" : 100,
     "name" : "PSSYSTEMDBCFGNAME"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "1426ba84dadf5f594c2cebb15a336c06",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "1426ba84dadf5f594c2cebb15a336c06",
     "codeName" : "PSSystemId",
     "logicName" : "系统",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSTEMID`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSTEMID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSTEMID"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -510,25 +452,24 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSTEMID`",
-      "columnName" : "PSSYSTEMID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSTEMID"
-    } ],
-    "length" : 100,
     "name" : "PSSYSTEMID"
   }, {
     "dataType" : "INT",
-    "deployId" : "348a741ee1089c0fcf4619f64498110d",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "348a741ee1089c0fcf4619f64498110d",
     "codeName" : "RunParam5",
     "logicName" : "运行参数5",
     "stdDataType" : 9,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`RUNPARAM5`",
+      "valueAutoGen" : false,
+      "columnName" : "RUNPARAM5",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RUNPARAM5"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -549,24 +490,24 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`RUNPARAM5`",
-      "columnName" : "RUNPARAM5",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "RUNPARAM5"
-    } ],
     "name" : "RUNPARAM5"
   }, {
     "dataType" : "DATETIME",
-    "deployId" : "4e64e15662aa04de594e9d9f58126589",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "4e64e15662aa04de594e9d9f58126589",
     "codeName" : "StartTime",
     "logicName" : "开始时间",
     "stdDataType" : 5,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`STARTTIME`",
+      "valueAutoGen" : false,
+      "columnName" : "STARTTIME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "STARTTIME"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -587,25 +528,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`STARTTIME`",
-      "columnName" : "STARTTIME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "STARTTIME"
-    } ],
     "name" : "STARTTIME"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "4cda27a07a66153cac4b108b61a70980",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "4cda27a07a66153cac4b108b61a70980",
     "codeName" : "PSSystemDBCfgId",
     "logicName" : "运行数据库",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSTEMDBCFGID`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSTEMDBCFGID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSTEMDBCFGID"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -638,26 +580,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSTEMDBCFGID`",
-      "columnName" : "PSSYSTEMDBCFGID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSTEMDBCFGID"
-    } ],
-    "length" : 100,
     "name" : "PSSYSTEMDBCFGID"
   }, {
+    "length" : 100,
     "dataType" : "SSCODELIST",
-    "deployId" : "b01e4e670c7d9a72f4373343b073aec4",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "b01e4e670c7d9a72f4373343b073aec4",
     "codeName" : "RunMode",
     "logicName" : "运行模式",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`RUNMODE`",
+      "valueAutoGen" : false,
+      "columnName" : "RUNMODE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RUNMODE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -690,29 +632,28 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`RUNMODE`",
-      "columnName" : "RUNMODE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "RUNMODE"
-    } ],
-    "length" : 100,
     "name" : "RUNMODE"
   }, {
     "dataType" : "YESNO",
-    "deployId" : "acb12df98db82090ff554688e3f1e77c",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "acb12df98db82090ff554688e3f1e77c",
     "codeName" : "StopWhenTemplError",
     "logicName" : "模板出错时终止",
     "stdDataType" : 9,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`STOPWHENTEMPLERROR`",
+      "valueAutoGen" : false,
+      "columnName" : "STOPWHENTEMPLERROR",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "STOPWHENTEMPLERROR"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -733,25 +674,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`STOPWHENTEMPLERROR`",
-      "columnName" : "STOPWHENTEMPLERROR",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "STOPWHENTEMPLERROR"
-    } ],
     "name" : "STOPWHENTEMPLERROR"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "e38e1ecc8fea460eb058835671d9c9f8",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "e38e1ecc8fea460eb058835671d9c9f8",
     "codeName" : "RunParam",
     "logicName" : "运行参数",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`RUNPARAM`",
+      "valueAutoGen" : false,
+      "columnName" : "RUNPARAM",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RUNPARAM"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -784,25 +726,25 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`RUNPARAM`",
-      "columnName" : "RUNPARAM",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "RUNPARAM"
-    } ],
-    "length" : 100,
     "name" : "RUNPARAM"
   }, {
+    "defaultValue" : "10",
     "dataType" : "NSCODELIST",
-    "deployId" : "06951f88ff4b747cef7d5ce4e5085449",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "06951f88ff4b747cef7d5ce4e5085449",
     "codeName" : "RunState",
     "logicName" : "运行状态",
     "stdDataType" : 9,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`RUNSTATE`",
+      "valueAutoGen" : true,
+      "columnName" : "RUNSTATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RUNSTATE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -824,29 +766,29 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : true,
-      "queryCodeExp" : "t1.`RUNSTATE`",
-      "columnName" : "RUNSTATE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "RUNSTATE"
-    } ],
-    "defaultValue" : "10",
     "name" : "RUNSTATE"
   }, {
+    "defaultValue" : "0",
     "dataType" : "YESNO",
-    "deployId" : "1ecbf513c781c64a106a6a46b5d05a89",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "1ecbf513c781c64a106a6a46b5d05a89",
     "codeName" : "DebugMode",
     "logicName" : "输出调试信息",
     "stdDataType" : 9,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`DEBUGMODE`",
+      "valueAutoGen" : true,
+      "columnName" : "DEBUGMODE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DEBUGMODE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -867,25 +809,24 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : true,
-      "queryCodeExp" : "t1.`DEBUGMODE`",
-      "columnName" : "DEBUGMODE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "DEBUGMODE"
-    } ],
-    "defaultValue" : "0",
     "name" : "DEBUGMODE"
   }, {
     "dataType" : "DATETIME",
-    "deployId" : "2de587b4f79fda88cebece3f9a746112",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "2de587b4f79fda88cebece3f9a746112",
     "codeName" : "EndTime",
     "logicName" : "结束时间",
     "stdDataType" : 5,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`ENDTIME`",
+      "valueAutoGen" : false,
+      "columnName" : "ENDTIME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ENDTIME"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -906,24 +847,24 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`ENDTIME`",
-      "columnName" : "ENDTIME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ENDTIME"
-    } ],
     "name" : "ENDTIME"
   }, {
     "dataType" : "INT",
-    "deployId" : "1686ad23ffffad2b96e94a1fb904052c",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "1686ad23ffffad2b96e94a1fb904052c",
     "codeName" : "RunParam6",
     "logicName" : "运行参数6",
     "stdDataType" : 9,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`RUNPARAM6`",
+      "valueAutoGen" : false,
+      "columnName" : "RUNPARAM6",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RUNPARAM6"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -944,25 +885,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`RUNPARAM6`",
-      "columnName" : "RUNPARAM6",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "RUNPARAM6"
-    } ],
     "name" : "RUNPARAM6"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "ebc2ab0b6bb16101e3978598bcab7d6a",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "ebc2ab0b6bb16101e3978598bcab7d6a",
     "codeName" : "PSSysSFPubName",
     "logicName" : "服务体系",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSSFPUBNAME`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSSFPUBNAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSSFPUBNAME"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -995,26 +937,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSSFPUBNAME`",
-      "columnName" : "PSSYSSFPUBNAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSSFPUBNAME"
-    } ],
-    "length" : 100,
     "name" : "PSSYSSFPUBNAME"
   }, {
+    "length" : 2000,
     "dataType" : "LONGTEXT_1000",
-    "deployId" : "3e4d2c34b93945377959c33832220df9",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "3e4d2c34b93945377959c33832220df9",
     "codeName" : "Memo",
     "logicName" : "备注",
     "stringLength" : 2000,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`MEMO`",
+      "valueAutoGen" : false,
+      "columnName" : "MEMO",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "MEMO"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1047,30 +989,31 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`MEMO`",
-      "columnName" : "MEMO",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "MEMO"
-    } ],
-    "length" : 2000,
     "name" : "MEMO"
   }, {
+    "length" : 60,
     "dataType" : "TEXT",
-    "deployId" : "3a496fd306ce82ffdbbe002635a1fedc",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "3a496fd306ce82ffdbbe002635a1fedc",
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "stringLength" : 60,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`UPDATEMAN`",
+      "valueAutoGen" : false,
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEMAN"
+    } ],
+    "predefinedType" : "UPDATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -1105,30 +1048,28 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`UPDATEMAN`",
-      "columnName" : "UPDATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATEMAN"
-    } ],
-    "predefinedType" : "UPDATEMAN",
-    "length" : 60,
     "name" : "UPDATEMAN"
   }, {
     "dataType" : "YESNO",
-    "deployId" : "1f9b6c18c538eb2b5ba62d375af170da",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "1f9b6c18c538eb2b5ba62d375af170da",
     "codeName" : "FixDBModel",
     "logicName" : "修复数据结构",
     "stdDataType" : 9,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`FIXDBMODEL`",
+      "valueAutoGen" : false,
+      "columnName" : "FIXDBMODEL",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "FIXDBMODEL"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1149,24 +1090,24 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`FIXDBMODEL`",
-      "columnName" : "FIXDBMODEL",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "FIXDBMODEL"
-    } ],
     "name" : "FIXDBMODEL"
   }, {
     "dataType" : "NSCODELIST",
-    "deployId" : "aa98a14d071b885b2bfdde7651313dcc",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "aa98a14d071b885b2bfdde7651313dcc",
     "codeName" : "RebuildMode",
     "logicName" : "重新构建",
     "stdDataType" : 9,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`REBUILDMODE`",
+      "valueAutoGen" : false,
+      "columnName" : "REBUILDMODE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "REBUILDMODE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1187,25 +1128,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`REBUILDMODE`",
-      "columnName" : "REBUILDMODE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "REBUILDMODE"
-    } ],
     "name" : "REBUILDMODE"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "7c1a60dbe72bb33ad2c0ee05cad4c3b2",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "7c1a60dbe72bb33ad2c0ee05cad4c3b2",
     "codeName" : "PSSystemName",
     "logicName" : "系统",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSTEMNAME`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSTEMNAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSTEMNAME"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1238,26 +1180,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSTEMNAME`",
-      "columnName" : "PSSYSTEMNAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSTEMNAME"
-    } ],
-    "length" : 100,
     "name" : "PSSYSTEMNAME"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "324e87b6e51f40fb57e2c8f38c3d54f3",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "324e87b6e51f40fb57e2c8f38c3d54f3",
     "codeName" : "RunParam3",
     "logicName" : "运行参数3",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`RUNPARAM3`",
+      "valueAutoGen" : false,
+      "columnName" : "RUNPARAM3",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RUNPARAM3"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1290,30 +1232,31 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`RUNPARAM3`",
-      "columnName" : "RUNPARAM3",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "RUNPARAM3"
-    } ],
-    "length" : 100,
     "name" : "RUNPARAM3"
   }, {
+    "length" : 60,
     "dataType" : "TEXT",
-    "deployId" : "76383e88ac81c6778ab96a42eba38e1b",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "76383e88ac81c6778ab96a42eba38e1b",
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "stringLength" : 60,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "valueAutoGen" : false,
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CREATEMAN"
+    } ],
+    "predefinedType" : "CREATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -1348,27 +1291,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`CREATEMAN`",
-      "columnName" : "CREATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CREATEMAN"
-    } ],
-    "predefinedType" : "CREATEMAN",
-    "length" : 60,
     "name" : "CREATEMAN"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "d6345ba37fc04ba3f702e493841b8361",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "d6345ba37fc04ba3f702e493841b8361",
     "codeName" : "PSDSConsoleId",
     "logicName" : "控制台标识",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSDSCONSOLEID`",
+      "valueAutoGen" : false,
+      "columnName" : "PSDSCONSOLEID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSDSCONSOLEID"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1401,29 +1343,28 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSDSCONSOLEID`",
-      "columnName" : "PSDSCONSOLEID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSDSCONSOLEID"
-    } ],
-    "length" : 100,
     "name" : "PSDSCONSOLEID"
   }, {
     "dataType" : "YESNO",
-    "deployId" : "ca50fd6b3257c8850541b35b5ba847b3",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "ca50fd6b3257c8850541b35b5ba847b3",
     "codeName" : "EnableVC",
     "logicName" : "签入版本库",
     "stdDataType" : 9,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`ENABLEVC`",
+      "valueAutoGen" : false,
+      "columnName" : "ENABLEVC",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ENABLEVC"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1444,25 +1385,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`ENABLEVC`",
-      "columnName" : "ENABLEVC",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ENABLEVC"
-    } ],
     "name" : "ENABLEVC"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "2137d4800211c69a71afcfab9f8dcb65",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "2137d4800211c69a71afcfab9f8dcb65",
     "codeName" : "RunParam2",
     "logicName" : "运行参数2",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`RUNPARAM2`",
+      "valueAutoGen" : false,
+      "columnName" : "RUNPARAM2",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RUNPARAM2"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1495,15 +1437,6 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`RUNPARAM2`",
-      "columnName" : "RUNPARAM2",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "RUNPARAM2"
-    } ],
-    "length" : 100,
     "name" : "RUNPARAM2"
   }, {
     "getPSDER" : {
@@ -1516,14 +1449,23 @@
       "name" : "PSSYSAPPNAME",
       "codeName" : "PSSysAppName"
     },
+    "length" : 200,
     "dataType" : "PICKUPTEXT",
     "deployId" : "9a788ed39ac98b5cd4f71f4eedc7a199",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "codeName" : "PSSysAppName2",
     "logicName" : "系统应用2",
     "stringLength" : 200,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSAPPNAME2`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSAPPNAME2",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSAPPNAME2"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1556,15 +1498,6 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSAPPNAME2`",
-      "columnName" : "PSSYSAPPNAME2",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSAPPNAME2"
-    } ],
-    "length" : 200,
     "name" : "PSSYSAPPNAME2"
   }, {
     "getPSDER" : {
@@ -1577,14 +1510,23 @@
       "name" : "PSSYSSERVICEAPINAME",
       "codeName" : "PSSysServiceAPIName"
     },
+    "length" : 200,
     "dataType" : "PICKUPTEXT",
     "deployId" : "ccf39473904f6795f5a0d948fdf0940a",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "codeName" : "PSSysServiceAPIName",
     "logicName" : "系统服务接口",
     "stringLength" : 200,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSSERVICEAPINAME`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSSERVICEAPINAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSSERVICEAPINAME"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1617,15 +1559,6 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSSERVICEAPINAME`",
-      "columnName" : "PSSYSSERVICEAPINAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSSERVICEAPINAME"
-    } ],
-    "length" : 200,
     "name" : "PSSYSSERVICEAPINAME"
   }, {
     "getPSDER" : {
@@ -1638,14 +1571,23 @@
       "name" : "PSSYSAPPNAME",
       "codeName" : "PSSysAppName"
     },
+    "length" : 200,
     "dataType" : "PICKUPTEXT",
     "deployId" : "e360edd55ab7802330a200077bcd2c41",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "codeName" : "PSSysAppName",
     "logicName" : "系统应用",
     "stringLength" : 200,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSAPPNAME`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSAPPNAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSAPPNAME"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1678,15 +1620,6 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSAPPNAME`",
-      "columnName" : "PSSYSAPPNAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSAPPNAME"
-    } ],
-    "length" : 200,
     "name" : "PSSYSAPPNAME"
   }, {
     "getPSDER" : {
@@ -1699,14 +1632,23 @@
       "name" : "PSSYSAPPID",
       "codeName" : "PSSysAppId"
     },
+    "length" : 100,
     "dataType" : "PICKUP",
     "deployId" : "54d0d49ce315e95a3024a2bac4dfba95",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "codeName" : "PSSysAppId2",
     "logicName" : "系统应用2",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSAPPID2`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSAPPID2",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSAPPID2"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1739,15 +1681,6 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSAPPID2`",
-      "columnName" : "PSSYSAPPID2",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSAPPID2"
-    } ],
-    "length" : 100,
     "name" : "PSSYSAPPID2"
   }, {
     "getPSDER" : {
@@ -1760,14 +1693,23 @@
       "name" : "PSSYSSERVICEAPIID",
       "codeName" : "PSSysServiceAPIId"
     },
+    "length" : 100,
     "dataType" : "PICKUP",
     "deployId" : "49fcb15dea7e9c1526b293074ad5919f",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "codeName" : "PSSysServiceAPIId",
     "logicName" : "系统服务接口",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSSERVICEAPIID`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSSERVICEAPIID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSSERVICEAPIID"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1800,15 +1742,6 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSSERVICEAPIID`",
-      "columnName" : "PSSYSSERVICEAPIID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSSERVICEAPIID"
-    } ],
-    "length" : 100,
     "name" : "PSSYSSERVICEAPIID"
   }, {
     "getPSDER" : {
@@ -1821,14 +1754,23 @@
       "name" : "PSSYSAPPID",
       "codeName" : "PSSysAppId"
     },
+    "length" : 100,
     "dataType" : "PICKUP",
     "deployId" : "6147aee7217d4c0873aebc93cecbbabf",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "codeName" : "PSSysAppId",
     "logicName" : "系统应用",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PSSYSAPPID`",
+      "valueAutoGen" : false,
+      "columnName" : "PSSYSAPPID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSSYSAPPID"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1861,22 +1803,80 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`PSSYSAPPID`",
-      "columnName" : "PSSYSAPPID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSSYSAPPID"
-    } ],
-    "length" : 100,
     "name" : "PSSYSAPPID"
   } ],
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "logicName" : "数据集",
+    "extendMode" : 0,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "pageSize" : -1,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDEACTIONS/Save.json"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "extendMode" : 0,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
-  "serviceAPIMode" : 0,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1892,21 +1892,20 @@
   } ],
   "saaSMode" : 0,
   "deployId" : "c256f43cb7e7ec153952c1b2ac51b524",
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "codeName" : "PSSysRunSession",
+  "logicName" : "系统运行会话",
+  "tableName" : "T_PSSYSRUNSESSION",
+  "serviceCodeName" : "PSSysRunSession",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
   "extendMode" : 0,
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "codeName" : "PSSysRunSession",
-  "logicName" : "系统运行会话",
-  "tableName" : "T_PSSYSRUNSESSION",
   "virtualMode" : 0,
   "enableSQLStorage" : false,
-  "serviceCodeName" : "PSSysRunSession",
   "serviceAPIClientId" : "45ab5098498d2294128bca01585b9993",
-  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1915,6 +1914,7 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
+  "enableRemove" : true,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,

@@ -1,12 +1,12 @@
 {
   "loadDefault" : true,
+  "enableSearch" : false,
   "expandSearchForm" : false,
   "tabLayout" : "TOP",
-  "enableSearch" : false,
   "enableQuickSearch" : false,
   "showDataInfoBar" : true,
-  "getPSDEViewCodeName" : "Usr3TabExpView",
   "showCaptionBar" : true,
+  "getPSDEViewCodeName" : "Usr3TabExpView",
   "caption" : "我的地盘",
   "title" : "管理",
   "accUserMode" : 2,
@@ -29,12 +29,12 @@
     "engineCat" : "VIEW",
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
   },
   "getPSControls" : [ {
+    "tabLayout" : "TOP",
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel2"
     }, {
@@ -42,7 +42,6 @@
     }, {
       "name" : "tabviewpanel"
     } ],
-    "tabLayout" : "TOP",
     "controlType" : "TABEXPPANEL",
     "getPSControls" : [ {
       "controlType" : "TABVIEWPANEL",
@@ -85,9 +84,9 @@
         "enableFilter" : true,
         "enableQuickSearch" : true,
         "xDataControlName" : "grid",
-        "funcViewMode" : "MDATAVIEW",
-        "getPSDEViewCodeName" : "GridView",
         "showCaptionBar" : true,
+        "getPSDEViewCodeName" : "GridView",
+        "funcViewMode" : "MDATAVIEW",
         "caption" : "关键字",
         "title" : "关键字表格视图",
         "accUserMode" : 2,
@@ -109,17 +108,17 @@
           "engineType" : "GridView",
           "engineCat" : "VIEW",
           "getPSUIEngineParams" : [ {
-            "paramType" : "LOGIC",
-            "name" : "OPENDATA"
+            "name" : "OPENDATA",
+            "paramType" : "LOGIC"
           }, {
-            "paramType" : "LOGIC",
-            "name" : "NEWDATA"
+            "name" : "NEWDATA",
+            "paramType" : "LOGIC"
           }, {
-            "paramType" : "CTRL",
-            "name" : "GRID"
+            "name" : "GRID",
+            "paramType" : "CTRL"
           }, {
-            "paramType" : "CTRL",
-            "name" : "SEARCHFORM"
+            "name" : "SEARCHFORM",
+            "paramType" : "CTRL"
           } ],
           "name" : "engine"
         } ],
@@ -220,7 +219,6 @@
           },
           "name" : "toolbar_tbitem18"
         } ],
-        "viewStyle" : "STYLE2",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProKeyword.json"
@@ -232,15 +230,26 @@
               "modelref" : true,
               "id" : "toolbar_tbitem3"
             },
-            "noPrivDisplayMode" : 2,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.NEW",
+              "id" : "工具栏按钮文本[*.NEW]"
+            },
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.NEW",
+                "id" : "工具栏按钮文本[*.NEW]"
+              },
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.NEW",
+                "id" : "工具栏按钮提示[*.NEW]"
+              },
               "timeout" : 60000,
+              "codeName" : "New",
               "getPSSysImage" : {
                 "glyph" : "xf0f6@FontAwesome",
                 "cssClass" : "fa fa-file-text-o"
               },
-              "codeName" : "New",
               "caption" : "新建",
               "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
               "uIActionTag" : "New",
@@ -249,6 +258,11 @@
               "fullCodeName" : "New",
               "name" : "表格界面_新建操作"
             },
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.NEW",
+              "id" : "工具栏按钮提示[*.NEW]"
+            },
+            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf0f6@FontAwesome",
               "cssClass" : "fa fa-file-text-o"
@@ -265,15 +279,26 @@
               "modelref" : true,
               "id" : "toolbar_tbitem4"
             },
-            "noPrivDisplayMode" : 2,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.EDIT",
+              "id" : "工具栏按钮文本[*.EDIT]"
+            },
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.EDIT",
+                "id" : "工具栏按钮文本[*.EDIT]"
+              },
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.EDIT",
+                "id" : "工具栏按钮提示[*.EDIT]"
+              },
               "timeout" : 60000,
+              "codeName" : "Edit",
               "getPSSysImage" : {
                 "glyph" : "xf044@FontAwesome",
                 "cssClass" : "fa fa-edit"
               },
-              "codeName" : "Edit",
               "caption" : "编辑",
               "actionTarget" : "SINGLEKEY",
               "uIActionTag" : "Edit",
@@ -282,6 +307,11 @@
               "fullCodeName" : "Edit",
               "name" : "表格界面_编辑操作"
             },
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.EDIT",
+              "id" : "工具栏按钮提示[*.EDIT]"
+            },
+            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
@@ -298,15 +328,26 @@
               "modelref" : true,
               "id" : "toolbar_tbitem6"
             },
-            "noPrivDisplayMode" : 2,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.COPY",
+              "id" : "工具栏按钮文本[*.COPY]"
+            },
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.COPY",
+                "id" : "工具栏按钮文本[*.COPY]"
+              },
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.COPY",
+                "id" : "工具栏按钮提示[*.COPY]"
+              },
               "timeout" : 60000,
+              "codeName" : "Copy",
               "getPSSysImage" : {
                 "glyph" : "xf0c5@FontAwesome",
                 "cssClass" : "fa fa-copy"
               },
-              "codeName" : "Copy",
               "caption" : "拷贝",
               "actionTarget" : "SINGLEKEY",
               "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -316,6 +357,11 @@
               "fullCodeName" : "Copy",
               "name" : "表格界面_拷贝操作"
             },
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.COPY",
+              "id" : "工具栏按钮提示[*.COPY]"
+            },
+            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf0c5@FontAwesome",
               "cssClass" : "fa fa-copy"
@@ -336,15 +382,26 @@
               "modelref" : true,
               "id" : "toolbar_tbitem8"
             },
-            "noPrivDisplayMode" : 2,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.REMOVE",
+              "id" : "工具栏按钮文本[*.REMOVE]"
+            },
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.REMOVE",
+                "id" : "工具栏按钮文本[*.REMOVE]"
+              },
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+                "id" : "工具栏按钮提示[*.REMOVE]"
+              },
               "timeout" : 60000,
+              "codeName" : "Remove",
               "getPSSysImage" : {
                 "glyph" : "xf00d@FontAwesome",
                 "cssClass" : "fa fa-remove"
               },
-              "codeName" : "Remove",
               "caption" : "删除",
               "actionTarget" : "MULTIKEY",
               "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
@@ -354,6 +411,11 @@
               "fullCodeName" : "Remove",
               "name" : "表格界面_删除操作"
             },
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+              "id" : "工具栏按钮提示[*.REMOVE]"
+            },
+            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-remove"
@@ -374,15 +436,26 @@
               "modelref" : true,
               "id" : "toolbar_tbitem13"
             },
-            "noPrivDisplayMode" : 2,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.EXPORT",
+              "id" : "工具栏按钮文本[*.EXPORT]"
+            },
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.EXPORT",
+                "id" : "工具栏按钮文本[*.EXPORT]"
+              },
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+                "id" : "工具栏按钮提示[*.EXPORT]"
+              },
               "timeout" : 60000,
+              "codeName" : "ExportExcel",
               "getPSSysImage" : {
                 "glyph" : "xf1c3@FontAwesome",
                 "cssClass" : "fa fa-file-excel-o"
               },
-              "codeName" : "ExportExcel",
               "caption" : "导出",
               "uIActionTag" : "ExportExcel",
               "uIActionType" : "DEUIACTION",
@@ -390,6 +463,11 @@
               "fullCodeName" : "ExportExcel",
               "name" : "表格界面_导出操作（Excel）"
             },
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+              "id" : "工具栏按钮提示[*.EXPORT]"
+            },
+            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf1c3@FontAwesome",
               "cssClass" : "fa fa-file-excel-o"
@@ -411,15 +489,22 @@
                 "modelref" : true,
                 "id" : "toolbar_tbitem21"
               },
-              "noPrivDisplayMode" : 2,
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF",
+                "id" : "菜单项文本[*.EXPORTSRF]"
+              },
               "getPSUIAction" : {
                 "getNoPrivDisplayMode" : 2,
+                "getCapPSLanguageRes" : {
+                  "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF",
+                  "id" : "菜单项文本[*.EXPORTSRF]"
+                },
                 "timeout" : 60000,
+                "codeName" : "ExportModel",
                 "getPSSysImage" : {
                   "glyph" : "xf019@FontAwesome",
                   "cssClass" : "fa fa-download"
                 },
-                "codeName" : "ExportModel",
                 "caption" : "导出数据模型",
                 "uIActionTag" : "ExportModel",
                 "uIActionType" : "DEUIACTION",
@@ -427,6 +512,7 @@
                 "fullCodeName" : "ExportModel",
                 "name" : "表格界面_导出数据模型"
               },
+              "noPrivDisplayMode" : 2,
               "getPSSysImage" : {
                 "glyph" : "xf019@FontAwesome",
                 "cssClass" : "fa fa-download"
@@ -443,15 +529,14 @@
                 "modelref" : true,
                 "id" : "toolbar_tbitem23"
               },
-              "noPrivDisplayMode" : 2,
               "getPSUIAction" : {
                 "getNoPrivDisplayMode" : 2,
                 "timeout" : 60000,
+                "codeName" : "Import",
                 "getPSSysImage" : {
                   "glyph" : "xf093@FontAwesome",
                   "cssClass" : "fa fa-upload"
                 },
-                "codeName" : "Import",
                 "caption" : "数据导入",
                 "uIActionTag" : "Import",
                 "uIActionType" : "DEUIACTION",
@@ -459,6 +544,7 @@
                 "fullCodeName" : "Import",
                 "name" : "表格界面_数据导入栏"
               },
+              "noPrivDisplayMode" : 2,
               "getPSSysImage" : {
                 "glyph" : "xf093@FontAwesome",
                 "cssClass" : "fa fa-upload"
@@ -486,17 +572,27 @@
               "modelref" : true,
               "id" : "toolbar_tbitem19"
             },
-            "enableToggleMode" : true,
-            "noPrivDisplayMode" : 2,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.FILTER",
+              "id" : "工具栏按钮文本[*.FILTER]"
+            },
             "getPSUIAction" : {
               "enableToggleMode" : true,
               "getNoPrivDisplayMode" : 2,
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.FILTER",
+                "id" : "工具栏按钮文本[*.FILTER]"
+              },
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.FILTER",
+                "id" : "工具栏按钮提示[*.FILTER]"
+              },
               "timeout" : 60000,
+              "codeName" : "ToggleFilter",
               "getPSSysImage" : {
                 "glyph" : "xf0b0@FontAwesome",
                 "cssClass" : "fa fa-filter"
               },
-              "codeName" : "ToggleFilter",
               "caption" : "过滤",
               "uIActionTag" : "ToggleFilter",
               "uIActionType" : "DEUIACTION",
@@ -504,6 +600,12 @@
               "fullCodeName" : "ToggleFilter",
               "name" : "表格界面_搜索栏"
             },
+            "enableToggleMode" : true,
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.FILTER",
+              "id" : "工具栏按钮提示[*.FILTER]"
+            },
+            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf0b0@FontAwesome",
               "cssClass" : "fa fa-filter"
@@ -520,15 +622,26 @@
               "modelref" : true,
               "id" : "toolbar_tbitem18"
             },
-            "noPrivDisplayMode" : 2,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.HELP",
+              "id" : "工具栏按钮文本[*.HELP]"
+            },
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.HELP",
+                "id" : "工具栏按钮文本[*.HELP]"
+              },
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.HELP",
+                "id" : "工具栏按钮提示[*.HELP]"
+              },
               "timeout" : 60000,
+              "codeName" : "Help",
               "getPSSysImage" : {
                 "glyph" : "xf128@FontAwesome",
                 "cssClass" : "fa fa-question"
               },
-              "codeName" : "Help",
               "caption" : "帮助",
               "uIActionTag" : "Help",
               "uIActionType" : "DEUIACTION",
@@ -536,6 +649,11 @@
               "fullCodeName" : "Help",
               "name" : "表格界面_帮助操作"
             },
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.HELP",
+              "id" : "工具栏按钮提示[*.HELP]"
+            },
+            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf128@FontAwesome",
               "cssClass" : "fa fa-question"
@@ -561,22 +679,24 @@
           "name" : "toolbar",
           "modelid" : "f41d31cabfd45aa26034f1c0b03986d1"
         }, {
+          "getPSDEGridDataItems" : [ {
+            "dataAccessAction" : true,
+            "getPSAppDEField" : {
+              "name" : "ID",
+              "codeName" : "Id"
+            },
+            "name" : "srfdataaccaction",
+            "dataType" : 25
+          }, {
+            "getPSAppDEField" : {
+              "name" : "ID",
+              "codeName" : "Id"
+            },
+            "name" : "srfkey",
+            "dataType" : 25
+          } ],
           "singleSelect" : false,
           "enableColFilter" : false,
-          "getRemovePSControlAction" : {
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProKeyword.json"
-            },
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Remove"
-            },
-            "dataAccessAction" : "DELETE",
-            "actionName" : "Remove",
-            "actionType" : "DEACTION",
-            "name" : "remove"
-          },
           "enableRowNew" : false,
           "enableRowEditOrder" : false,
           "noSort" : false,
@@ -596,27 +716,25 @@
             "caption" : "ID",
             "name" : "srfkey"
           } ],
-          "columnEnableLink" : 2,
           "hasWFDataItems" : false,
-          "controlType" : "GRID",
-          "enablePagingBar" : true,
-          "getPSDEGridDataItems" : [ {
-            "getPSAppDEField" : {
-              "name" : "ID",
-              "codeName" : "Id"
+          "getRemovePSControlAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProKeyword.json"
             },
-            "dataAccessAction" : true,
-            "dataType" : 25,
-            "name" : "srfdataaccaction"
-          }, {
-            "getPSAppDEField" : {
-              "name" : "ID",
-              "codeName" : "Id"
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Remove"
             },
-            "dataType" : 25,
-            "name" : "srfkey"
-          } ],
+            "dataAccessAction" : "DELETE",
+            "actionName" : "Remove",
+            "actionType" : "DEACTION",
+            "name" : "remove"
+          },
+          "columnEnableLink" : 2,
           "enableRowEdit" : false,
+          "enablePagingBar" : true,
+          "controlType" : "GRID",
           "codeName" : "Main",
           "enableGroup" : false,
           "hideHeader" : false,
@@ -633,12 +751,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProKeyword.json"
           },
-          "getPSControlParam" : {
-            "autoLoad" : true,
-            "showBusyIndicator" : true,
-            "id" : "GRID"
-          },
-          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
           "getPSControlHandler" : {
             "userDRAction" : "READ",
             "getPSHandlerActions" : [ {
@@ -721,6 +833,12 @@
             "enableDEFieldPrivilege" : false,
             "id" : "数据表格处理器"
           },
+          "getPSControlParam" : {
+            "autoLoad" : true,
+            "showBusyIndicator" : true,
+            "id" : "GRID"
+          },
+          "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
           "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProKeyword/PSGRIDS/Main.json",
           "logicName" : "主表格",
           "name" : "grid",
@@ -735,6 +853,7 @@
             "layout" : "TABLE_24COL",
             "columnCount" : 24
           },
+          "noTabHeader" : true,
           "getPSDEFormPages" : [ {
             "getPSLayout" : {
               "layout" : "TABLE_24COL",
@@ -747,19 +866,12 @@
             "detailStyle" : "DEFAULT",
             "name" : "formpage1"
           } ],
-          "noTabHeader" : true,
           "codeName" : "Default",
           "tabHeaderPos" : "TOP",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProKeyword.json"
           },
-          "getPSControlParam" : {
-            "autoLoad" : true,
-            "showBusyIndicator" : true,
-            "id" : "SEARCHFORM"
-          },
-          "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
               "getPSAppDataEntity" : {
@@ -798,11 +910,18 @@
             "enableDEFieldPrivilege" : false,
             "id" : "搜索表单处理器"
           },
+          "getPSControlParam" : {
+            "autoLoad" : true,
+            "showBusyIndicator" : true,
+            "id" : "SEARCHFORM"
+          },
+          "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
           "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProKeyword/PSSEARCHFORMS/Default.json",
           "logicName" : "默认搜索表单",
           "name" : "searchform",
           "modelid" : "99267bc738bb2fd31548cf7cb649ed85"
         } ],
+        "viewStyle" : "STYLE2",
         "getPSAppViewRefs" : [ {
           "getRefPSAppView" : {
             "modelref" : true,
@@ -820,145 +939,146 @@
           "realTitle" : "关键字编辑视图",
           "name" : "EDITDATA"
         } ],
+        "codeName" : "IBIZProKeywordGridView",
         "getPSAppViewLogics" : [ {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem3"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem3",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem3_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem4"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem4",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem4_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem5"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem5",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem5_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem6"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem6",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem6_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem24"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem24",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem24_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem25"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem25",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem25_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem8"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem8",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem8_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem13"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem13",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem13_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem11"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem11",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem11_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem21"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem21",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem21_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem23"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem23",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem23_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem19"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem19",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
           "name" : "toolbar_tbitem19_click"
         }, {
+          "logicTrigger" : "CTRLEVENT",
+          "getPSViewCtrlName" : "toolbar",
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "toolbar_tbitem18"
           },
-          "logicTrigger" : "CTRLEVENT",
-          "getPSViewCtrlName" : "toolbar",
           "eventArg" : "tbitem18",
           "eventNames" : "CLICK",
           "logicType" : "APPVIEWUIACTION",
@@ -966,8 +1086,8 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "getPSAppUILogic" : {
-            "batchAddOnly" : false,
             "enableBatchAdd" : false,
+            "batchAddOnly" : false,
             "enableWizardAdd" : false,
             "actionAfterWizard" : "DEFAULT",
             "getNewDataPSAppView" : {
@@ -1018,7 +1138,6 @@
           "logicType" : "SYSUILOGIC",
           "name" : "opendata"
         } ],
-        "codeName" : "IBIZProKeywordGridView",
         "viewType" : "DEGRIDVIEW",
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBIZProKeywordGridView.json",
         "name" : "IBIZProKeywordGridView"
@@ -1076,6 +1195,7 @@
     "name" : "tabexppanel",
     "modelid" : "9322aeb3d46b7e14022de0e611088cae_tabexppanel"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "IbzMyTerritoryUsr3TabExpView",
   "viewType" : "DETABEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryUsr3TabExpView.json",

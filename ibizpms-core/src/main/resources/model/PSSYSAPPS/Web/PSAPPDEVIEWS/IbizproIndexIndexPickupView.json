@@ -1,7 +1,7 @@
 {
-  "funcViewMode" : "INDEXDEPICKUPVIEW",
-  "getPSDEViewCodeName" : "IndexPickupView",
   "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "IndexPickupView",
+  "funcViewMode" : "INDEXDEPICKUPVIEW",
   "caption" : "索引检索",
   "title" : "索引检索数据选择视图",
   "accUserMode" : 2,
@@ -23,12 +23,11 @@
     "engineType" : "PickupView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "PICKUPVIEWPANEL"
+      "name" : "PICKUPVIEWPANEL",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
@@ -40,8 +39,8 @@
       "expandSearchForm" : true,
       "enableFilter" : false,
       "xDataControlName" : "dataview",
-      "getPSDEViewCodeName" : "IndexPickupDataView",
       "showCaptionBar" : true,
+      "getPSDEViewCodeName" : "IndexPickupDataView",
       "caption" : "索引检索",
       "title" : "索引检索索引关系选择数据视图",
       "accUserMode" : 2,
@@ -59,12 +58,15 @@
         "controlStyle" : "APPDEINDEXPICKUPDATAVIEW_STYLE2",
         "name" : "layoutpanel"
       },
-      "viewStyle" : "STYLE2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
       },
       "getPSControls" : [ {
+        "enableCardEdit" : false,
+        "enableCardEditOrder" : false,
+        "enableCardEditGroup" : false,
+        "enableCardNew" : false,
         "singleSelect" : false,
         "noSort" : false,
         "hasWFDataItems" : false,
@@ -74,30 +76,22 @@
             "name" : "INDEXNAME",
             "codeName" : "Indexname"
           },
-          "dataType" : 25,
-          "name" : "srfmajortext"
+          "name" : "srfmajortext",
+          "dataType" : 25
         }, {
           "getPSAppDEField" : {
             "name" : "INDEXID",
             "codeName" : "Indexid"
           },
-          "dataType" : 25,
-          "name" : "srfkey"
+          "name" : "srfkey",
+          "dataType" : 25
         } ],
-        "enableCardEdit" : false,
-        "enableCardEditOrder" : false,
-        "enableCardEditGroup" : false,
-        "enableCardNew" : false,
-        "controlType" : "DATAVIEW",
         "enablePagingBar" : false,
+        "controlType" : "DATAVIEW",
         "codeName" : "IndexType",
         "enableGroup" : false,
         "pagingSize" : 1000,
         "groupMode" : "NONE",
-        "getFetchPSControlAction" : {
-          "modelref" : true,
-          "id" : "fetch"
-        },
         "getCreatePSControlAction" : {
           "modelref" : true,
           "id" : "create"
@@ -114,14 +108,13 @@
           "modelref" : true,
           "id" : "load"
         },
+        "getFetchPSControlAction" : {
+          "modelref" : true,
+          "id" : "fetch"
+        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "id" : "DATAVIEW"
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -192,11 +185,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "索引选择数据视图处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "id" : "DATAVIEW"
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSDATAVIEWS/IndexType.json",
         "logicName" : "索引实体选择数据视图",
         "name" : "dataview",
         "modelid" : "b7809a0eed51ac1fa8687a2372b44e57"
       } ],
+      "viewStyle" : "STYLE2",
       "codeName" : "IbizproIndexIndexPickupDataView",
       "viewType" : "DEINDEXPICKUPDATAVIEW",
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupDataView.json",
@@ -214,6 +213,7 @@
     "codeName" : "IndexPickupViewpickupviewpanel",
     "name" : "pickupviewpanel"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "IbizproIndexIndexPickupView",
   "viewType" : "DEPICKUPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",

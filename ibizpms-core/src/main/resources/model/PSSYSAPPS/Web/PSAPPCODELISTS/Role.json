@@ -15,8 +15,8 @@
     "modelref" : true,
     "id" : "FetchDefault"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
+  "dynaInstMode" : 1,
   "codeName" : "Role",
   "emptyText" : "未定义",
   "enableCache" : true,

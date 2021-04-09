@@ -1,20 +1,92 @@
 {
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "name" : "product",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
+    },
+    "name" : "modulename",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    },
+    "name" : "module",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "FAILCASE",
+      "codeName" : "Failcase"
+    },
+    "name" : "failcase",
+    "dataType" : 9
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BLOCKEDCASE",
+      "codeName" : "Blockedcase"
+    },
+    "name" : "blockedcase",
+    "dataType" : 9
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TOTALCASE",
+      "codeName" : "Totalcase"
+    },
+    "name" : "totalcase",
+    "dataType" : 9
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TOTALRUNCASE",
+      "codeName" : "Totalruncase"
+    },
+    "name" : "totalruncase",
+    "dataType" : 9
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PASSRATE",
+      "codeName" : "Passrate"
+    },
+    "name" : "passrate",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PASSCASE",
+      "codeName" : "Passcase"
+    },
+    "name" : "passcase",
+    "dataType" : 9
+  } ],
   "singleSelect" : true,
   "enableColFilter" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -34,104 +106,32 @@
     "caption" : "用例编号",
     "name" : "srfkey"
   } ],
-  "columnEnableLink" : 2,
   "hasWFDataItems" : false,
-  "controlType" : "GRID",
-  "enablePagingBar" : false,
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats.json"
     },
-    "dataType" : 1,
-    "name" : "product"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "MODULENAME",
-      "codeName" : "Modulename"
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
     },
-    "dataType" : 25,
-    "name" : "modulename"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
-    },
-    "dataType" : 1,
-    "name" : "module"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "FAILCASE",
-      "codeName" : "Failcase"
-    },
-    "dataType" : 9,
-    "name" : "failcase"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "BLOCKEDCASE",
-      "codeName" : "Blockedcase"
-    },
-    "dataType" : 9,
-    "name" : "blockedcase"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TOTALCASE",
-      "codeName" : "Totalcase"
-    },
-    "dataType" : 9,
-    "name" : "totalcase"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TOTALRUNCASE",
-      "codeName" : "Totalruncase"
-    },
-    "dataType" : 9,
-    "name" : "totalruncase"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PASSRATE",
-      "codeName" : "Passrate"
-    },
-    "dataType" : 25,
-    "name" : "passrate"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    },
-    "dataType" : 25,
-    "name" : "srfmajortext"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true,
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataType" : 1,
-    "name" : "srfkey"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PASSCASE",
-      "codeName" : "Passcase"
-    },
-    "dataType" : 9,
-    "name" : "passcase"
-  } ],
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
   "enableRowEdit" : false,
+  "enablePagingBar" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "模块名称",
+    "dataItemName" : "modulename",
     "getPSAppDEField" : {
       "name" : "MODULENAME",
       "codeName" : "Modulename"
     },
-    "dataItemName" : "modulename",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -144,11 +144,11 @@
     "name" : "modulename"
   }, {
     "excelCaption" : "总用例数",
+    "dataItemName" : "totalcase",
     "getPSAppDEField" : {
       "name" : "TOTALCASE",
       "codeName" : "Totalcase"
     },
-    "dataItemName" : "totalcase",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -162,11 +162,11 @@
     "name" : "totalcase"
   }, {
     "excelCaption" : "通过",
+    "dataItemName" : "passcase",
     "getPSAppDEField" : {
       "name" : "PASSCASE",
       "codeName" : "Passcase"
     },
-    "dataItemName" : "passcase",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -180,11 +180,11 @@
     "name" : "passcase"
   }, {
     "excelCaption" : "失败",
+    "dataItemName" : "failcase",
     "getPSAppDEField" : {
       "name" : "FAILCASE",
       "codeName" : "Failcase"
     },
-    "dataItemName" : "failcase",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -198,11 +198,11 @@
     "name" : "failcase"
   }, {
     "excelCaption" : "阻塞",
+    "dataItemName" : "blockedcase",
     "getPSAppDEField" : {
       "name" : "BLOCKEDCASE",
       "codeName" : "Blockedcase"
     },
-    "dataItemName" : "blockedcase",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -216,11 +216,11 @@
     "name" : "blockedcase"
   }, {
     "excelCaption" : "总执行数",
+    "dataItemName" : "totalruncase",
     "getPSAppDEField" : {
       "name" : "TOTALRUNCASE",
       "codeName" : "Totalruncase"
     },
-    "dataItemName" : "totalruncase",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -234,11 +234,11 @@
     "name" : "totalruncase"
   }, {
     "excelCaption" : "用例通过率",
+    "dataItemName" : "passrate",
     "getPSAppDEField" : {
       "name" : "PASSRATE",
       "codeName" : "Passrate"
     },
-    "dataItemName" : "passrate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

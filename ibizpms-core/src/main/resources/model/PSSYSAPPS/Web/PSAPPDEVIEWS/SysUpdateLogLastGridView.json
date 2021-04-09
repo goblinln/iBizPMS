@@ -6,8 +6,8 @@
   "gridRowActiveMode" : 2,
   "enableFilter" : false,
   "xDataControlName" : "grid",
-  "getPSDEViewCodeName" : "LastGridView",
   "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "LastGridView",
   "caption" : "更新日志",
   "title" : "系统更新日志表格视图",
   "accUserMode" : 2,
@@ -29,14 +29,14 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -51,28 +51,51 @@
     "key" : "size",
     "name" : "size"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
   },
   "getPSControls" : [ {
+    "getPSDEGridDataItems" : [ {
+      "format" : "YYYY-MM-DD",
+      "getPSAppDEField" : {
+        "name" : "UPDATE",
+        "codeName" : "Update"
+      },
+      "name" : "update",
+      "dataType" : 5
+    }, {
+      "getPSAppDEField" : {
+        "name" : "SYS_UPDATE_LOGNAME",
+        "codeName" : "SysUpdateLogName"
+      },
+      "name" : "sys_update_logname",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "SYS_UPDATE_LOGNAME",
+        "codeName" : "SysUpdateLogName"
+      },
+      "name" : "srfmajortext",
+      "dataType" : 25
+    }, {
+      "dataAccessAction" : true,
+      "getPSAppDEField" : {
+        "name" : "SYS_UPDATE_LOGID",
+        "codeName" : "SysUpdateLogId"
+      },
+      "name" : "srfdataaccaction",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "SYS_UPDATE_LOGID",
+        "codeName" : "SysUpdateLogId"
+      },
+      "name" : "srfkey",
+      "dataType" : 25
+    } ],
     "singleSelect" : true,
     "enableColFilter" : false,
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : true,
@@ -92,61 +115,38 @@
       "caption" : "系统更新日志标识",
       "name" : "srfkey"
     } ],
-    "columnEnableLink" : 2,
     "hasWFDataItems" : false,
-    "controlType" : "GRID",
-    "enablePagingBar" : false,
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
+    "columnEnableLink" : 2,
+    "enableRowEdit" : false,
     "getMinorSortPSAppDEField" : {
       "name" : "UPDATE",
       "codeName" : "Update"
     },
-    "getPSDEGridDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "UPDATE",
-        "codeName" : "Update"
-      },
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "update"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "SYS_UPDATE_LOGNAME",
-        "codeName" : "SysUpdateLogName"
-      },
-      "dataType" : 25,
-      "name" : "sys_update_logname"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "SYS_UPDATE_LOGNAME",
-        "codeName" : "SysUpdateLogName"
-      },
-      "dataType" : 25,
-      "name" : "srfmajortext"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "SYS_UPDATE_LOGID",
-        "codeName" : "SysUpdateLogId"
-      },
-      "dataAccessAction" : true,
-      "dataType" : 25,
-      "name" : "srfdataaccaction"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "SYS_UPDATE_LOGID",
-        "codeName" : "SysUpdateLogId"
-      },
-      "dataType" : 25,
-      "name" : "srfkey"
-    } ],
-    "enableRowEdit" : false,
+    "enablePagingBar" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "excelCaption" : "更新名称",
+      "dataItemName" : "sys_update_logname",
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGNAME",
         "codeName" : "SysUpdateLogName"
       },
-      "dataItemName" : "sys_update_logname",
       "getPSDEUIAction" : {
+        "getNoPrivDisplayMode" : 2,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
@@ -157,7 +157,6 @@
           "viewType" : "DETABEXPVIEW"
         },
         "frontProcessType" : "TOP",
-        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
         "codeName" : "LookDetail",
         "caption" : "查看",
@@ -181,11 +180,11 @@
       "name" : "sys_update_logname"
     }, {
       "excelCaption" : "更新日期",
+      "dataItemName" : "update",
       "getPSAppDEField" : {
         "name" : "UPDATE",
         "codeName" : "Update"
       },
-      "dataItemName" : "update",
       "valueFormat" : "YYYY-MM-DD",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -225,11 +224,11 @@
       "name" : "查看"
     } ],
     "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "查看"
       },
-      "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
       "name" : "grid_sys_update_logname_click"
     } ],
@@ -237,12 +236,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -325,11 +318,18 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog/PSGRIDS/LookMain.json",
     "logicName" : "主表格（查看）",
     "name" : "grid",
     "modelid" : "62aab793c79909b5b5da5f7aee5048f6"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -348,11 +348,12 @@
     "realTitle" : "系统更新日志分页导航视图",
     "name" : "EDITDATA"
   } ],
+  "codeName" : "SysUpdateLogLastGridView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "batchAddOnly" : false,
       "enableBatchAdd" : false,
+      "batchAddOnly" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
@@ -403,7 +404,6 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
-  "codeName" : "SysUpdateLogLastGridView",
   "viewType" : "DEGRIDVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateLogLastGridView.json",
   "name" : "SysUpdateLogLastGridView"

@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,13 +26,24 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "getPSDEFormItemUpdates" : [ {
+    "getPSDEFIUpdateDetails" : [ {
+      "name" : "mailto"
+    } ],
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "GetUserConcat"
+    },
+    "codeName" : "GetUserConcat",
+    "name" : "获取联系人"
+  } ],
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -48,11 +60,12 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "enableLinkView" : false,
-            "dropDownView" : false,
             "enablePickupView" : false,
+            "dropDownView" : false,
             "enableAC" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -82,6 +95,7 @@
               "key" : "N_ID_EQ",
               "name" : "N_ID_EQ"
             } ],
+            "editorType" : "PICKEREX_TRIGGER",
             "editorParams" : {
               "SRFNAVCTX.n_id_eq" : "%product%",
               "AC" : "TRUE",
@@ -89,26 +103,24 @@
               "SRFNAVPARAM.n_id_eq" : "%product%",
               "PICKUPVIEW" : "FALSE"
             },
-            "editorType" : "PICKEREX_TRIGGER",
             "name" : "productname"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PRODUCTNAME",
             "codeName" : "ProductName"
           },
+          "hidden" : false,
           "dataType" : 25,
           "caption" : "产品",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 0,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "product",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -118,11 +130,12 @@
           "detailStyle" : "DEFAULT",
           "name" : "productname"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "enableLinkView" : false,
-            "dropDownView" : false,
             "enablePickupView" : false,
+            "dropDownView" : false,
             "enableAC" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -162,6 +175,7 @@
               "key" : "N_ID_EQ",
               "name" : "N_ID_EQ"
             } ],
+            "editorType" : "PICKEREX_TRIGGER",
             "editorParams" : {
               "SRFNAVCTX.n_id_eq" : "%project%",
               "SRFNAVPARAM.product" : "%product%",
@@ -171,26 +185,24 @@
               "SRFNAVPARAM.n_id_eq" : "%project%",
               "PICKUPVIEW" : "FALSE"
             },
-            "editorType" : "PICKEREX_TRIGGER",
             "name" : "projecttname"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PROJECTTNAME",
             "codeName" : "ProjecttName"
           },
+          "hidden" : false,
           "dataType" : 25,
           "caption" : "项目",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 0,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "project",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -200,11 +212,12 @@
           "detailStyle" : "DEFAULT",
           "name" : "projecttname"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "enableLinkView" : false,
-            "dropDownView" : false,
             "enablePickupView" : false,
+            "dropDownView" : false,
             "enableAC" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -222,31 +235,30 @@
               "id" : "Default"
             },
             "valueItemName" : "build",
+            "editorType" : "PICKEREX_TRIGGER",
             "editorParams" : {
               "AC" : "TRUE",
               "TRIGGER" : "TRUE",
               "PICKUPVIEW" : "FALSE"
             },
-            "editorType" : "PICKEREX_TRIGGER",
             "name" : "buildname"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "BUILDNAME",
             "codeName" : "BuildName"
           },
+          "hidden" : false,
           "dataType" : 25,
           "caption" : "版本",
           "allowEmpty" : false,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "build",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -256,6 +268,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "buildname"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "getPSAppCodeList" : {
@@ -266,25 +279,24 @@
             "name" : "owner"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "OWNER",
             "codeName" : "Owner"
           },
+          "hidden" : false,
           "dataType" : 25,
           "needCodeListConfig" : true,
           "caption" : "负责人",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
-            "colLG" : 12,
             "colMD" : 12,
+            "colLG" : 12,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "owner",
@@ -292,6 +304,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "owner"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "getPSAppCodeList" : {
@@ -302,25 +315,24 @@
             "name" : "pri"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PRI",
             "codeName" : "Pri"
           },
+          "hidden" : false,
           "dataType" : 9,
           "needCodeListConfig" : true,
           "caption" : "优先级",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
-            "colLG" : 12,
             "colMD" : 12,
+            "colLG" : 12,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "pri",
@@ -335,35 +347,35 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "dateTimeFormat" : "YYYY-MM-DD",
+              "editorWidth" : 100.0,
+              "editorType" : "DATEPICKEREX_NOTIME",
               "editorParams" : {
                 "TIMEFMT" : "YYYY-MM-DD"
               },
-              "editorType" : "DATEPICKEREX_NOTIME",
-              "editorWidth" : 100.0,
               "name" : "begin"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "BEGIN",
               "codeName" : "Begin"
             },
+            "hidden" : false,
             "dataType" : 5,
             "caption" : "开始日期",
             "allowEmpty" : false,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "itemWidth" : 200.0,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "begin",
@@ -371,35 +383,35 @@
             "detailStyle" : "DEFAULT",
             "name" : "begin"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "dateTimeFormat" : "YYYY-MM-DD",
+              "editorWidth" : 100.0,
+              "editorType" : "DATEPICKEREX_NOTIME",
               "editorParams" : {
                 "TIMEFMT" : "YYYY-MM-DD"
               },
-              "editorType" : "DATEPICKEREX_NOTIME",
-              "editorWidth" : 100.0,
               "name" : "end"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "END",
               "codeName" : "End"
             },
+            "hidden" : false,
             "dataType" : 5,
             "caption" : "结束日期",
             "allowEmpty" : false,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "itemWidth" : 200.0,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "end",
@@ -418,28 +430,28 @@
           "showCaption" : false,
           "name" : "grouppanel2"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "project"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PROJECT",
             "codeName" : "Project"
           },
+          "hidden" : true,
           "dataType" : 1,
           "caption" : "所属项目",
           "allowEmpty" : true,
           "createDV" : "project",
           "createDVT" : "CONTEXT",
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -449,28 +461,28 @@
           "detailStyle" : "DEFAULT",
           "name" : "project"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "build"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "BUILD",
             "codeName" : "Build"
           },
+          "hidden" : true,
           "dataType" : 1,
           "caption" : "版本",
           "allowEmpty" : true,
           "createDV" : "build",
           "createDVT" : "CONTEXT",
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -480,6 +492,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "build"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "getPSAppCodeList" : {
@@ -490,23 +503,22 @@
             "name" : "status"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "STATUS",
             "codeName" : "Status"
           },
+          "hidden" : false,
           "dataType" : 25,
           "needCodeListConfig" : true,
           "caption" : "当前状态",
           "allowEmpty" : true,
           "createDV" : "wait",
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -517,8 +529,8 @@
           "name" : "status"
         } ],
         "getPSLayoutPos" : {
-          "colLG" : 16,
           "colMD" : 16,
+          "colLG" : 16,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "grouppanel1",
@@ -528,28 +540,28 @@
         "showCaption" : false,
         "name" : "grouppanel1"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "product"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PRODUCT",
           "codeName" : "Product"
         },
+        "hidden" : true,
         "dataType" : 1,
         "caption" : "所属产品",
         "allowEmpty" : true,
         "createDV" : "product",
         "createDVT" : "CONTEXT",
+        "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 100,
         "showCaption" : true,
-        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -559,27 +571,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "product"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 90,
           "editorType" : "TEXTBOX",
           "name" : "name"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "名称",
         "allowEmpty" : false,
+        "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 100,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -589,30 +601,30 @@
         "detailStyle" : "DEFAULT",
         "name" : "name"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
+          "editorType" : "HTMLEDITOR",
           "editorParams" : {
             "uploadparams" : "{objecttype:\"testtask\",version:\"editor\"}",
             "exportparams" : "{objecttype:\"testtask\",version:\"editor\"}"
           },
-          "editorType" : "HTMLEDITOR",
           "name" : "desc"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "DESC",
           "codeName" : "Desc"
         },
+        "hidden" : false,
         "dataType" : 21,
         "caption" : "描述",
         "allowEmpty" : true,
+        "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 100,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -622,6 +634,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "desc"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : false,
           "getPSAppCodeList" : {
@@ -632,25 +645,24 @@
           "name" : "mailto"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "MAILTO",
           "codeName" : "Mailto"
         },
+        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "抄送给",
         "allowEmpty" : true,
+        "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 100,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 20,
           "colMD" : 20,
+          "colLG" : 20,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "mailto",
@@ -658,11 +670,12 @@
         "detailStyle" : "DEFAULT",
         "name" : "mailto"
       }, {
+        "emptyCaption" : true,
         "getPSEditor" : {
           "singleSelect" : true,
           "enableLinkView" : false,
-          "dropDownView" : false,
           "enablePickupView" : false,
+          "dropDownView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
@@ -680,12 +693,12 @@
             "id" : "Default"
           },
           "valueItemName" : "mailtopk",
+          "editorType" : "PICKEREX_TRIGGER",
           "editorParams" : {
             "AC" : "TRUE",
             "TRIGGER" : "TRUE",
             "PICKUPVIEW" : "FALSE"
           },
-          "editorType" : "PICKEREX_TRIGGER",
           "name" : "mailtoconact"
         },
         "getPSDEFormItemUpdate" : {
@@ -693,24 +706,23 @@
           "id" : "GetUserConcat"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "MAILTOCONACT",
           "codeName" : "Mailtoconact"
         },
+        "hidden" : false,
         "dataType" : 25,
         "allowEmpty" : true,
+        "labelWidth" : 5,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "valueItemName" : "mailtopk",
-        "labelWidth" : 5,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 4,
           "colMD" : 4,
+          "colLG" : 4,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "mailtoconact",
@@ -718,26 +730,26 @@
         "detailStyle" : "DEFAULT",
         "name" : "mailtoconact"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "mailtopk"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "MAILTOPK",
           "codeName" : "Mailtopk"
         },
+        "hidden" : true,
         "dataType" : 25,
         "caption" : "抄送给",
         "allowEmpty" : true,
+        "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 100,
         "showCaption" : true,
-        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -936,18 +948,6 @@
       "name" : "ID",
       "codeName" : "Id"
     }
-  } ],
-  "noTabHeader" : true,
-  "getPSDEFormItemUpdates" : [ {
-    "getPSDEFIUpdateDetails" : [ {
-      "name" : "mailto"
-    } ],
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "GetUserConcat"
-    },
-    "codeName" : "GetUserConcat",
-    "name" : "获取联系人"
   } ],
   "codeName" : "BuildSUBMIT",
   "tabHeaderPos" : "TOP",

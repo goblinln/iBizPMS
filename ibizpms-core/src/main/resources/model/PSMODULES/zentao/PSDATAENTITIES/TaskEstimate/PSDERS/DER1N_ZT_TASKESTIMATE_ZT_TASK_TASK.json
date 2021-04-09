@@ -11,6 +11,7 @@
   "nestedRS" : true,
   "removeActionType" : -1,
   "masterRS" : 8,
+  "pickupDEFName" : "TASK",
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

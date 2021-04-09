@@ -6,14 +6,15 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "ResetBeginEnd",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7637"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -23,6 +24,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -60,7 +62,6 @@
       "srcFieldName" : "END",
       "name" : "Default[END]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取开始日期"
   } ],
@@ -77,14 +78,13 @@
     "name" : "连接7637"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "ResetBeginEnd",
   "logicName" : "重置开始日期和结束日期",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

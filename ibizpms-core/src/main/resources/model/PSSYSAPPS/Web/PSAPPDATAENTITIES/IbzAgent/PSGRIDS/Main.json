@@ -1,20 +1,59 @@
 {
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "AGENTUSER",
+      "codeName" : "Agentuser"
+    },
+    "name" : "agentuser",
+    "dataType" : 25
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "AGENTEND",
+      "codeName" : "Agentend"
+    },
+    "name" : "agentend",
+    "dataType" : 5
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "name" : "ibz_agentid",
+    "dataType" : 1
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "AGENTBEGIN",
+      "codeName" : "Agentbegin"
+    },
+    "name" : "agentbegin",
+    "dataType" : 5
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTNAME",
+      "codeName" : "IbzAgentName"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  } ],
   "singleSelect" : false,
   "enableColFilter" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -34,71 +73,32 @@
     "caption" : "代理标识",
     "name" : "srfkey"
   } ],
-  "columnEnableLink" : 2,
   "hasWFDataItems" : false,
-  "controlType" : "GRID",
-  "enablePagingBar" : true,
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "AGENTUSER",
-      "codeName" : "Agentuser"
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
     },
-    "dataType" : 25,
-    "name" : "agentuser"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "AGENTEND",
-      "codeName" : "Agentend"
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
     },
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "agentend"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_AGENTID",
-      "codeName" : "IbzAgentId"
-    },
-    "dataType" : 1,
-    "name" : "ibz_agentid"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "AGENTBEGIN",
-      "codeName" : "Agentbegin"
-    },
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "agentbegin"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_AGENTNAME",
-      "codeName" : "IbzAgentName"
-    },
-    "dataType" : 25,
-    "name" : "srfmajortext"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_AGENTID",
-      "codeName" : "IbzAgentId"
-    },
-    "dataAccessAction" : true,
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_AGENTID",
-      "codeName" : "IbzAgentId"
-    },
-    "dataType" : 1,
-    "name" : "srfkey"
-  } ],
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
   "enableRowEdit" : false,
+  "enablePagingBar" : true,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "代理标识",
+    "dataItemName" : "ibz_agentid",
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTID",
       "codeName" : "IbzAgentId"
     },
-    "dataItemName" : "ibz_agentid",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -115,11 +115,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
+    "dataItemName" : "agentuser",
     "getPSAppDEField" : {
       "name" : "AGENTUSER",
       "codeName" : "Agentuser"
     },
-    "dataItemName" : "agentuser",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -132,11 +132,11 @@
     "name" : "agentuser"
   }, {
     "excelCaption" : "代理开始日期",
+    "dataItemName" : "agentbegin",
     "getPSAppDEField" : {
       "name" : "AGENTBEGIN",
       "codeName" : "Agentbegin"
     },
-    "dataItemName" : "agentbegin",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -150,11 +150,11 @@
     "name" : "agentbegin"
   }, {
     "excelCaption" : "代理结束日期",
+    "dataItemName" : "agentend",
     "getPSAppDEField" : {
       "name" : "AGENTEND",
       "codeName" : "Agentend"
     },
-    "dataItemName" : "agentend",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -169,9 +169,9 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
         "showIcon" : true,
         "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 2,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
@@ -182,13 +182,12 @@
             "viewType" : "DEEDITVIEW"
           },
           "frontProcessType" : "WIZARD",
-          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
+          "codeName" : "Edit",
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
-          "codeName" : "Edit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
           "uIActionTag" : "Edit",
@@ -198,6 +197,7 @@
           "name" : "编辑",
           "id" : "Edit@IbzAgent"
         },
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "uef4000f"
@@ -240,11 +240,11 @@
     "name" : "编辑"
   } ],
   "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "编辑"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_uef4000f_click"
   } ],

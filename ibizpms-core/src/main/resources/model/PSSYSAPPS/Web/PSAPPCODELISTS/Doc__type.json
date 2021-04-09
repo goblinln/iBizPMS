@@ -3,18 +3,18 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "getPSCodeItems" : [ {
-    "codeName" : "Text",
-    "text" : "文档",
-    "value" : "text"
-  }, {
-    "codeName" : "Url",
-    "text" : "链接",
-    "value" : "url"
-  } ],
+  "dynaInstMode" : 1,
   "codeName" : "Doc__type",
+  "getPSCodeItems" : [ {
+    "value" : "text",
+    "codeName" : "Text",
+    "text" : "文档"
+  }, {
+    "value" : "url",
+    "codeName" : "Url",
+    "text" : "链接"
+  } ],
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Doc__type.json",

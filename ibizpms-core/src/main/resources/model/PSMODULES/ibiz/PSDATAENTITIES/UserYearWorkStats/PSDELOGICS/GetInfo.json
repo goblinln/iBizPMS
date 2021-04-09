@@ -6,14 +6,15 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "GetInfo",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接592"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -63,6 +64,7 @@
       "id" : "Default"
     },
     "logicHolder" : 3,
+    "codeName" : "Deaction1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接665"
@@ -73,7 +75,6 @@
       "modelref" : true,
       "id" : "连接3532"
     } ],
-    "codeName" : "Deaction1",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
@@ -113,11 +114,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "qa",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -141,11 +142,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "dev",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -169,11 +170,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "po",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -196,14 +197,13 @@
     "name" : "连接3532"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "GetInfo",
   "logicName" : "获取相关信息",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

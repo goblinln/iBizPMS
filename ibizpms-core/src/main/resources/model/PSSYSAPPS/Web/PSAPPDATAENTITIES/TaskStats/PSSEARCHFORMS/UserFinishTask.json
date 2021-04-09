@@ -8,8 +8,10 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -20,26 +22,25 @@
         "name" : "n_project_eq"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PROJECT",
         "codeName" : "Project"
       },
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "项目",
       "allowEmpty" : true,
+      "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 70,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
+        "colMD" : 24,
         "colLG" : 6,
         "colLGOffset" : 1,
-        "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "n_project_eq",
@@ -47,6 +48,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_project_eq"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -57,26 +59,25 @@
         "name" : "n_finishedby_eq"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "FINISHEDBY",
         "codeName" : "FinishedBy"
       },
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "完成者",
       "allowEmpty" : true,
+      "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 70,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
+        "colMD" : 24,
         "colLG" : 6,
         "colLGOffset" : 1,
-        "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "n_finishedby_eq",
@@ -110,7 +111,6 @@
       "codeName" : "FinishedBy"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "UserFinishTask",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

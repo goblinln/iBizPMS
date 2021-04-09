@@ -4,12 +4,12 @@
   "enableImport" : true,
   "enableRowEdit" : false,
   "gridRowActiveMode" : 0,
-  "expandSearchForm" : true,
   "enableSearch" : true,
+  "expandSearchForm" : true,
   "enableFilter" : true,
   "xDataControlName" : "grid",
-  "getPSDEViewCodeName" : "ProductBugResolutionGridView",
   "showCaptionBar" : true,
+  "getPSDEViewCodeName" : "ProductBugResolutionGridView",
   "caption" : "产品Bug解决方案汇总",
   "title" : "Bug统计表格视图",
   "accUserMode" : 2,
@@ -31,21 +31,20 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "CTRL",
-      "name" : "SEARCHFORM"
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
@@ -63,22 +62,129 @@
     "name" : "toolbar",
     "modelid" : "59f7278a2d42e40c347241347f1c954b_toolbar"
   }, {
+    "getPSDEGridDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "BUGEFFICIENT",
+        "codeName" : "Bugefficient"
+      },
+      "name" : "bugefficient",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGFIXED",
+        "codeName" : "Bugfixed"
+      },
+      "name" : "bugfixed",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGWJJ",
+        "codeName" : "Bugwjj"
+      },
+      "name" : "bugwjj",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGNOTREPRO",
+        "codeName" : "Bugnotrepro"
+      },
+      "name" : "bugnotrepro",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGBYDESIGN",
+        "codeName" : "Bugbydesign"
+      },
+      "name" : "bugbydesign",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "name" : "srfmajortext",
+      "dataType" : 25
+    }, {
+      "dataAccessAction" : true,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "srfdataaccaction",
+      "dataType" : 1
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "srfkey",
+      "dataType" : 1
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGTOSTORY",
+        "codeName" : "Bugtostory"
+      },
+      "name" : "bugtostory",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "name" : "product",
+      "dataType" : 1
+    }, {
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "name" : "project",
+      "dataType" : 1
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGEXTERNAL",
+        "codeName" : "Bugexternal"
+      },
+      "name" : "bugexternal",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGPOSTPONED",
+        "codeName" : "Bugpostponed"
+      },
+      "name" : "bugpostponed",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGDUPLICATE",
+        "codeName" : "Bugduplicate"
+      },
+      "name" : "bugduplicate",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGTOTAL",
+        "codeName" : "Bugtotal"
+      },
+      "name" : "bugtotal",
+      "dataType" : 9
+    }, {
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "name" : "productname",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGWILLNOTFIX",
+        "codeName" : "Bugwillnotfix"
+      },
+      "name" : "bugwillnotfix",
+      "dataType" : 9
+    } ],
     "singleSelect" : true,
     "enableColFilter" : false,
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : true,
@@ -98,146 +204,39 @@
       "caption" : "标识",
       "name" : "srfkey"
     } ],
-    "columnEnableLink" : 2,
     "hasWFDataItems" : false,
-    "controlType" : "GRID",
-    "enablePagingBar" : false,
-    "getPSDEGridDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "BUGEFFICIENT",
-        "codeName" : "Bugefficient"
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
       },
-      "dataType" : 25,
-      "name" : "bugefficient"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGFIXED",
-        "codeName" : "Bugfixed"
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
-      "dataType" : 9,
-      "name" : "bugfixed"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGWJJ",
-        "codeName" : "Bugwjj"
-      },
-      "dataType" : 9,
-      "name" : "bugwjj"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGNOTREPRO",
-        "codeName" : "Bugnotrepro"
-      },
-      "dataType" : 9,
-      "name" : "bugnotrepro"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGBYDESIGN",
-        "codeName" : "Bugbydesign"
-      },
-      "dataType" : 9,
-      "name" : "bugbydesign"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      },
-      "dataType" : 25,
-      "name" : "srfmajortext"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataAccessAction" : true,
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 1,
-      "name" : "srfkey"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGTOSTORY",
-        "codeName" : "Bugtostory"
-      },
-      "dataType" : 9,
-      "name" : "bugtostory"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      },
-      "dataType" : 1,
-      "name" : "product"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      },
-      "dataType" : 1,
-      "name" : "project"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGEXTERNAL",
-        "codeName" : "Bugexternal"
-      },
-      "dataType" : 9,
-      "name" : "bugexternal"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGPOSTPONED",
-        "codeName" : "Bugpostponed"
-      },
-      "dataType" : 9,
-      "name" : "bugpostponed"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGDUPLICATE",
-        "codeName" : "Bugduplicate"
-      },
-      "dataType" : 9,
-      "name" : "bugduplicate"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGTOTAL",
-        "codeName" : "Bugtotal"
-      },
-      "dataType" : 9,
-      "name" : "bugtotal"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "PRODUCTNAME",
-        "codeName" : "ProductName"
-      },
-      "dataType" : 25,
-      "name" : "productname"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGWILLNOTFIX",
-        "codeName" : "Bugwillnotfix"
-      },
-      "dataType" : 9,
-      "name" : "bugwillnotfix"
-    } ],
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
+    "columnEnableLink" : 2,
     "enableRowEdit" : false,
+    "enablePagingBar" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
+      "linkValueItem" : "product",
+      "excelCaption" : "产品名称",
       "enableLinkView" : true,
       "getLinkPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
         "viewType" : "DETABEXPVIEW"
       },
-      "excelCaption" : "产品名称",
+      "dataItemName" : "productname",
       "getPSAppDEField" : {
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
       },
-      "dataItemName" : "productname",
-      "linkValueItem" : "product",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -250,11 +249,11 @@
       "name" : "productname"
     }, {
       "excelCaption" : "未解决",
+      "dataItemName" : "bugwjj",
       "getPSAppDEField" : {
         "name" : "BUGWJJ",
         "codeName" : "Bugwjj"
       },
-      "dataItemName" : "bugwjj",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -268,11 +267,11 @@
       "name" : "bugwjj"
     }, {
       "excelCaption" : "设计如此",
+      "dataItemName" : "bugbydesign",
       "getPSAppDEField" : {
         "name" : "BUGBYDESIGN",
         "codeName" : "Bugbydesign"
       },
-      "dataItemName" : "bugbydesign",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -286,11 +285,11 @@
       "name" : "bugbydesign"
     }, {
       "excelCaption" : "重复Bug",
+      "dataItemName" : "bugduplicate",
       "getPSAppDEField" : {
         "name" : "BUGDUPLICATE",
         "codeName" : "Bugduplicate"
       },
-      "dataItemName" : "bugduplicate",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -304,11 +303,11 @@
       "name" : "bugduplicate"
     }, {
       "excelCaption" : "外部原因",
+      "dataItemName" : "bugexternal",
       "getPSAppDEField" : {
         "name" : "BUGEXTERNAL",
         "codeName" : "Bugexternal"
       },
-      "dataItemName" : "bugexternal",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -322,11 +321,11 @@
       "name" : "bugexternal"
     }, {
       "excelCaption" : "已解决",
+      "dataItemName" : "bugfixed",
       "getPSAppDEField" : {
         "name" : "BUGFIXED",
         "codeName" : "Bugfixed"
       },
-      "dataItemName" : "bugfixed",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -340,11 +339,11 @@
       "name" : "bugfixed"
     }, {
       "excelCaption" : "无法重现",
+      "dataItemName" : "bugnotrepro",
       "getPSAppDEField" : {
         "name" : "BUGNOTREPRO",
         "codeName" : "Bugnotrepro"
       },
-      "dataItemName" : "bugnotrepro",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -358,11 +357,11 @@
       "name" : "bugnotrepro"
     }, {
       "excelCaption" : "延期处理",
+      "dataItemName" : "bugpostponed",
       "getPSAppDEField" : {
         "name" : "BUGPOSTPONED",
         "codeName" : "Bugpostponed"
       },
-      "dataItemName" : "bugpostponed",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -376,11 +375,11 @@
       "name" : "bugpostponed"
     }, {
       "excelCaption" : "不予解决",
+      "dataItemName" : "bugwillnotfix",
       "getPSAppDEField" : {
         "name" : "BUGWILLNOTFIX",
         "codeName" : "Bugwillnotfix"
       },
-      "dataItemName" : "bugwillnotfix",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -394,11 +393,11 @@
       "name" : "bugwillnotfix"
     }, {
       "excelCaption" : "转为需求",
+      "dataItemName" : "bugtostory",
       "getPSAppDEField" : {
         "name" : "BUGTOSTORY",
         "codeName" : "Bugtostory"
       },
-      "dataItemName" : "bugtostory",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -412,11 +411,11 @@
       "name" : "bugtostory"
     }, {
       "excelCaption" : "有效率",
+      "dataItemName" : "bugefficient",
       "getPSAppDEField" : {
         "name" : "BUGEFFICIENT",
         "codeName" : "Bugefficient"
       },
-      "dataItemName" : "bugefficient",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -429,11 +428,11 @@
       "name" : "bugefficient"
     }, {
       "excelCaption" : "总计",
+      "dataItemName" : "bugtotal",
       "getPSAppDEField" : {
         "name" : "BUGTOTAL",
         "codeName" : "Bugtotal"
       },
-      "dataItemName" : "bugtotal",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -462,12 +461,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -550,6 +543,12 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSGRIDS/ProductBugResolutionStats.json",
     "logicName" : "产品Bug解决方案汇总表格",
     "name" : "grid",
@@ -564,6 +563,7 @@
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : false,
@@ -573,30 +573,30 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "dateTimeFormat" : "YYYY-MM-DD",
+            "editorWidth" : 100.0,
+            "editorType" : "DATEPICKEREX_NOTIME",
             "editorParams" : {
               "TIMEFMT" : "YYYY-MM-DD"
             },
-            "editorType" : "DATEPICKEREX_NOTIME",
-            "editorWidth" : 100.0,
             "name" : "openeddatelt"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
+          "hidden" : false,
           "dataType" : 25,
           "caption" : "Bug创建时间",
           "allowEmpty" : true,
+          "labelWidth" : 95,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 95,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
-            "colLG" : 14,
             "colMD" : 14,
+            "colLG" : 14,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "openeddatelt",
@@ -604,30 +604,30 @@
           "detailStyle" : "DEFAULT",
           "name" : "openeddatelt"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "dateTimeFormat" : "YYYY-MM-DD",
+            "editorWidth" : 100.0,
+            "editorType" : "DATEPICKEREX_NOTIME",
             "editorParams" : {
               "TIMEFMT" : "YYYY-MM-DD"
             },
-            "editorType" : "DATEPICKEREX_NOTIME",
-            "editorWidth" : 100.0,
             "name" : "openeddategt"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
+          "hidden" : false,
           "dataType" : 25,
           "caption" : "至",
           "allowEmpty" : true,
+          "labelWidth" : 30,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 30,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
-            "colLG" : 10,
             "colMD" : 10,
+            "colLG" : 10,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "openeddategt",
@@ -636,8 +636,8 @@
           "name" : "openeddategt"
         } ],
         "getPSLayoutPos" : {
-          "colLG" : 9,
           "colMD" : 9,
+          "colLG" : 9,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "grouppanel1",
@@ -654,6 +654,7 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "getPSAppCodeList" : {
@@ -664,25 +665,24 @@
             "name" : "producteq"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PRODUCT",
             "codeName" : "Product"
           },
+          "hidden" : false,
           "dataType" : 1,
           "needCodeListConfig" : true,
           "caption" : "产品",
           "allowEmpty" : true,
+          "labelWidth" : 50,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 50,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
-            "colLG" : 12,
             "colMD" : 12,
+            "colLG" : 12,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "producteq",
@@ -690,6 +690,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "producteq"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "getPSAppCodeList" : {
@@ -708,33 +709,32 @@
               "key" : "PRODUCT",
               "name" : "PRODUCT"
             } ],
+            "editorType" : "DROPDOWNLIST",
             "editorParams" : {
               "srfnavctx.product" : "%producteq%",
               "srfnavparam.product" : "%producteq%"
             },
-            "editorType" : "DROPDOWNLIST",
             "name" : "projecteq"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PROJECT",
             "codeName" : "Project"
           },
+          "hidden" : false,
           "dataType" : 1,
           "needCodeListConfig" : true,
           "caption" : "项目",
           "allowEmpty" : true,
+          "labelWidth" : 50,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 50,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
-            "colLG" : 12,
             "colMD" : 12,
+            "colLG" : 12,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "projecteq",
@@ -743,8 +743,8 @@
           "name" : "projecteq"
         } ],
         "getPSLayoutPos" : {
-          "colLG" : 15,
           "colMD" : 24,
+          "colLG" : 15,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "grouppanel2",
@@ -786,19 +786,12 @@
         "codeName" : "Project"
       }
     } ],
-    "noTabHeader" : true,
     "codeName" : "ProductBug",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -837,11 +830,18 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSSEARCHFORMS/ProductBug.json",
     "logicName" : "产品Bug表单",
     "name" : "searchform",
     "modelid" : "66f6f90459fae9a5fe4f5971aeba6957"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -859,11 +859,12 @@
     "realTitle" : "Bug统计编辑视图",
     "name" : "EDITDATA"
   } ],
+  "codeName" : "BugStatsProductBugResolutionGridView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "batchAddOnly" : false,
       "enableBatchAdd" : false,
+      "batchAddOnly" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
@@ -914,7 +915,6 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
-  "codeName" : "BugStatsProductBugResolutionGridView",
   "viewType" : "DEGRIDVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsProductBugResolutionGridView.json",
   "name" : "BugStatsProductBugResolutionGridView"

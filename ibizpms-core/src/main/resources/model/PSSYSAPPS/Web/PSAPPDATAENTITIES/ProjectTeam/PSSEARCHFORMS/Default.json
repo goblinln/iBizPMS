@@ -8,8 +8,10 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
       "resetItemNames" : [ "teams" ],
       "getPSEditor" : {
         "singleSelect" : true,
@@ -22,22 +24,21 @@
         "name" : "dept"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "选择部门",
       "allowEmpty" : true,
+      "labelWidth" : 80,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "resetItemName" : "teams",
-      "labelWidth" : 80,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 6,
         "colMD" : 6,
+        "colLG" : 6,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "dept",
@@ -45,6 +46,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "dept"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -63,30 +65,29 @@
           "key" : "N_ID_NOTEQ",
           "name" : "N_ID_NOTEQ"
         } ],
+        "editorType" : "DROPDOWNLIST",
         "editorParams" : {
           "SRFNAVPARAM.n_id_noteq" : "%project%",
           "SRFNAVCTX.n_id_noteq" : "%project%"
         },
-        "editorType" : "DROPDOWNLIST",
         "placeHolder" : "选择一个团队",
         "name" : "teams"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "复制团队",
       "allowEmpty" : true,
+      "labelWidth" : 80,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 80,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 6,
         "colMD" : 6,
+        "colLG" : 6,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "teams",
@@ -112,7 +113,6 @@
     "id" : "teams",
     "dataType" : 25
   } ],
-  "noTabHeader" : true,
   "codeName" : "Default",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

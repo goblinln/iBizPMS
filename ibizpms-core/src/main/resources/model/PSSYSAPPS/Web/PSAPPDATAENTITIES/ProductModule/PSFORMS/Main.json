@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,13 +26,13 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -41,11 +42,12 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "enableLinkView" : false,
-          "dropDownView" : false,
           "enablePickupView" : false,
+          "dropDownView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
@@ -63,34 +65,33 @@
             "id" : "Default"
           },
           "valueItemName" : "root",
+          "editorType" : "PICKEREX_TRIGGER",
           "editorParams" : {
             "AC" : "TRUE",
             "TRIGGER" : "TRUE",
             "PICKUPVIEW" : "FALSE"
           },
-          "editorType" : "PICKEREX_TRIGGER",
           "name" : "rootname"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ROOTNAME",
           "codeName" : "RootName"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "所属产品",
         "allowEmpty" : true,
+        "labelWidth" : 80,
         "enableCond" : 0,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "valueItemName" : "root",
-        "labelWidth" : 80,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 16,
           "colMD" : 16,
+          "colLG" : 16,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "rootname",
@@ -98,6 +99,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "rootname"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -116,33 +118,32 @@
             "key" : "PRODUCT",
             "name" : "PRODUCT"
           } ],
+          "editorType" : "DROPDOWNLIST",
           "editorParams" : {
             "SRFNAVPARAM.product" : "%root%",
             "SRFNAVCTX.product" : "%root%"
           },
-          "editorType" : "DROPDOWNLIST",
           "name" : "branch"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "BRANCH",
           "codeName" : "Branch"
         },
+        "hidden" : false,
         "dataType" : 9,
         "needCodeListConfig" : true,
         "caption" : "平台",
         "allowEmpty" : true,
+        "labelWidth" : 0,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "NONE",
-        "labelWidth" : 0,
         "showCaption" : false,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 8,
           "colMD" : 8,
+          "colLG" : 8,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "branch",
@@ -150,11 +151,12 @@
         "detailStyle" : "DEFAULT",
         "name" : "branch"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "enableLinkView" : false,
-          "dropDownView" : false,
           "enablePickupView" : false,
+          "dropDownView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
@@ -194,6 +196,7 @@
             "key" : "N_ROOT_EQ",
             "name" : "N_ROOT_EQ"
           } ],
+          "editorType" : "PICKEREX_TRIGGER",
           "editorParams" : {
             "SRFNAVPARAM.n_type_eq" : "story",
             "SRFNAVCTX.n_root_eq" : "%root%",
@@ -204,26 +207,24 @@
             "TRIGGER" : "TRUE",
             "PICKUPVIEW" : "FALSE"
           },
-          "editorType" : "PICKEREX_TRIGGER",
           "name" : "parentname"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PARENTNAME",
           "codeName" : "ParentName"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "上级模块",
         "allowEmpty" : true,
+        "labelWidth" : 80,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "valueItemName" : "parent",
-        "labelWidth" : 80,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -233,27 +234,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "parentname"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 60,
           "editorType" : "TEXTBOX",
           "name" : "name"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "名称",
         "allowEmpty" : false,
+        "labelWidth" : 80,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 80,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -263,27 +264,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "name"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 30,
           "editorType" : "TEXTBOX",
           "name" : "short"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "SHORT",
           "codeName" : "IBizShort"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "简称",
         "allowEmpty" : true,
+        "labelWidth" : 80,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 80,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -293,26 +294,26 @@
         "detailStyle" : "DEFAULT",
         "name" : "short"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "NUMBER",
           "name" : "order"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ORDER",
           "codeName" : "Order"
         },
+        "hidden" : false,
         "dataType" : 9,
         "caption" : "排序值",
         "allowEmpty" : true,
+        "labelWidth" : 80,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 80,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -333,26 +334,26 @@
       "showCaption" : false,
       "name" : "group1"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "root"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ROOT",
         "codeName" : "Root"
       },
+      "hidden" : true,
       "dataType" : 1,
       "caption" : "产品",
       "allowEmpty" : true,
+      "labelWidth" : 100,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 100,
       "showCaption" : true,
-      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -476,7 +477,6 @@
       "codeName" : "Parent"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

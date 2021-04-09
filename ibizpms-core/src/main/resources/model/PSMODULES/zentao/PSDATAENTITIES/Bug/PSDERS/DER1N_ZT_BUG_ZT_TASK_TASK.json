@@ -4,6 +4,7 @@
     "name" : "TASK",
     "codeName" : "Task"
   },
+  "enableExtRestrict" : true,
   "getPSPickupTextDEField" : {
     "name" : "TASKNAME",
     "codeName" : "TaskName"
@@ -25,9 +26,9 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
   },
-  "enableExtRestrict" : true,
   "removeActionType" : -1,
   "masterRS" : 0,
+  "pickupDEFName" : "TASK",
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

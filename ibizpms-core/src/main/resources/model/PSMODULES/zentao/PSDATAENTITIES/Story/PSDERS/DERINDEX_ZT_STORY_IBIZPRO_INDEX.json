@@ -1,5 +1,4 @@
 {
-  "typeValue" : "story",
   "inherit" : false,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
@@ -42,6 +41,7 @@
     },
     "name" : "indexdesc=spec"
   } ],
+  "typeValue" : "story",
   "virtual" : true,
   "getMajorPSDataEntity" : {
     "modelref" : true,

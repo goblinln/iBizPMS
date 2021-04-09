@@ -8,40 +8,41 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RealDept.json"
         },
-        "editorType" : "DROPDOWNLIST",
         "editorWidth" : 100.0,
+        "editorType" : "DROPDOWNLIST",
         "name" : "n_dept_eq"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "DEPT",
         "codeName" : "Dept"
       },
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "部门",
       "allowEmpty" : true,
       "createDV" : "srforgsectorid",
       "createDVT" : "SESSION",
+      "labelWidth" : 45,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 45,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 4,
         "colMD" : 4,
+        "colLG" : 4,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "n_dept_eq",
@@ -49,34 +50,34 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_dept_eq"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
+        "editorWidth" : 100.0,
+        "editorType" : "DATEPICKEREX_NOTIME",
         "editorParams" : {
           "TIMEFMT" : "YYYY-MM-DD"
         },
-        "editorType" : "DATEPICKEREX_NOTIME",
-        "editorWidth" : 100.0,
         "name" : "n_begin_gtandeq"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
+      "hidden" : false,
       "dataType" : 5,
       "caption" : "bug解决日期",
       "allowEmpty" : true,
+      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 6,
         "colMD" : 6,
+        "colLG" : 6,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "n_begin_gtandeq",
@@ -84,34 +85,34 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_begin_gtandeq"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
+        "editorWidth" : 100.0,
+        "editorType" : "DATEPICKEREX_NOTIME",
         "editorParams" : {
           "TIMEFMT" : "YYYY-MM-DD"
         },
-        "editorType" : "DATEPICKEREX_NOTIME",
-        "editorWidth" : 100.0,
         "name" : "n_end_ltandeq"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
+      "hidden" : false,
       "dataType" : 5,
       "caption" : "至",
       "allowEmpty" : true,
+      "labelWidth" : 15,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 15,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 6,
         "colMD" : 6,
+        "colLG" : 6,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "n_end_ltandeq",
@@ -154,7 +155,6 @@
       "codeName" : "End"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "BugResolvedGird",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

@@ -6,9 +6,11 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "getProjectByPlan",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3730"
@@ -19,7 +21,6 @@
       "modelref" : true,
       "id" : "连接5784"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -29,6 +30,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -39,7 +41,6 @@
       "srcFieldName" : "STORY",
       "name" : "Default[STORY]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "根据需求获取项目"
   }, {
@@ -49,6 +50,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -59,7 +61,6 @@
       "srcFieldName" : "PLAN",
       "name" : "Default[PLAN]"
     } ],
-    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取项目"
   }, {
@@ -72,20 +73,20 @@
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNULL",
         "dstFieldName" : "PLAN",
         "logicType" : "SINGLE",
         "name" : "Default[PLAN] 值为空(Nil)"
       }, {
-        "condOP" : "ISNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNULL",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
         "name" : "Default[STORY] 值为空(Nil)"
@@ -108,11 +109,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNOTNULL",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
         "name" : "Default[STORY] 值不为空(NotNil)"
@@ -135,11 +136,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNOTNULL",
         "dstFieldName" : "PLAN",
         "logicType" : "SINGLE",
         "name" : "Default[PLAN] 值不为空(NotNil)"
@@ -161,14 +162,13 @@
     "name" : "连接5784"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "getProjectByPlan",
   "logicName" : "根据计划或需求获取相关项目",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

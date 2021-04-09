@@ -1,23 +1,23 @@
 {
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : true,
   "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
   "builtinAction" : true,
   "getCheckPSDEActionLogics" : [ {
     "name" : "行为[Remove]主状态拒绝逻辑",
     "id" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/Remove__MSDeny.json"
   } ],
   "timeOut" : -1,
-  "extendMode" : 0,
+  "orderValue" : 21,
+  "codeName" : "Remove",
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
-  "orderValue" : 21,
-  "codeName" : "Remove",
   "logicName" : "Remove",
+  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "ID",

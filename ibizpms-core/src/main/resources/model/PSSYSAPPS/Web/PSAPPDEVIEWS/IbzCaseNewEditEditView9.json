@@ -1,6 +1,6 @@
 {
-  "showDataInfoBar" : false,
   "showCaptionBar" : false,
+  "showDataInfoBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "NewEditEditView9",
   "caption" : "创建编辑",
@@ -24,21 +24,21 @@
     "engineType" : "EditView9",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
   },
   "getPSControls" : [ {
+    "showFormNavBar" : false,
     "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
@@ -65,15 +65,16 @@
       "id" : "loaddraftfrom"
     },
     "infoFormMode" : true,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -85,27 +86,26 @@
           "name" : "openedby"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "OPENEDBY",
           "codeName" : "OpenedBy"
         },
+        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "caption" : "由谁创建",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 8,
-          "colMD" : 12,
-          "colSM" : 12,
           "colXS" : 12,
+          "colSM" : 12,
+          "colMD" : 12,
+          "colLG" : 8,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "openedby",
@@ -113,6 +113,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "openedby"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -120,26 +121,25 @@
           "name" : "openeddate"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "OPENEDDATE",
           "codeName" : "OpenedDate"
         },
+        "hidden" : false,
         "dataType" : 5,
         "caption" : "于",
         "allowEmpty" : true,
+        "labelWidth" : 20,
         "enableCond" : 3,
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
-        "labelWidth" : 20,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 12,
-          "colSM" : 12,
           "colXS" : 12,
+          "colSM" : 12,
+          "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "openeddate",
@@ -147,6 +147,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "openeddate"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -158,27 +159,26 @@
           "name" : "lasteditedby"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "LASTEDITEDBY",
           "codeName" : "LastEditedBy"
         },
+        "hidden" : false,
         "dataType" : 25,
         "convertToCodeItemText" : true,
         "caption" : "由谁编辑",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 8,
-          "colMD" : 12,
-          "colSM" : 12,
           "colXS" : 12,
+          "colSM" : 12,
+          "colMD" : 12,
+          "colLG" : 8,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "lasteditedby",
@@ -186,6 +186,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "lasteditedby"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -193,26 +194,25 @@
           "name" : "lastediteddate"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "LASTEDITEDDATE",
           "codeName" : "LastEditedDate"
         },
+        "hidden" : false,
         "dataType" : 5,
         "caption" : "于",
         "allowEmpty" : true,
+        "labelWidth" : 20,
         "enableCond" : 0,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 20,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 12,
-          "colMD" : 12,
-          "colSM" : 12,
           "colXS" : 12,
+          "colSM" : 12,
+          "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "lastediteddate",
@@ -304,19 +304,12 @@
         "codeName" : "Id"
       }
     } ],
-    "noTabHeader" : true,
     "codeName" : "NewEdit",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -396,19 +389,34 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase/PSFORMS/NewEdit.json",
     "logicName" : "创建编辑",
     "name" : "form",
     "modelid" : "08f5bddca22ed17d191c8ec13d4ce491"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "IbzCaseNewEditEditView9",
   "viewType" : "DEEDITVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzCaseNewEditEditView9.json",
   "name" : "IbzCaseNewEditEditView9",
   "getPSAppDERSPaths" : [ [ {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
@@ -416,14 +424,6 @@
     "getParentPSAppDEField" : {
       "name" : "LIB",
       "codeName" : "Lib"
-    },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
     },
     "codeName" : "IbzCases",
     "actionRSMode" : 1,

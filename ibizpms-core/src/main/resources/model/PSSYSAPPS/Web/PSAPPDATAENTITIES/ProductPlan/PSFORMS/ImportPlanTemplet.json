@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,15 +26,16 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -44,22 +46,21 @@
         "name" : "plantemplet"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PLANTEMPLET",
         "codeName" : "Plantemplet"
       },
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "计划模板",
       "allowEmpty" : true,
+      "labelWidth" : 0,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "NONE",
-      "labelWidth" : 0,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -132,7 +133,6 @@
       "codeName" : "Id"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "ImportPlanTemplet",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

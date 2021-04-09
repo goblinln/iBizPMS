@@ -10,6 +10,7 @@
   },
   "removeActionType" : 3,
   "masterRS" : 0,
+  "pickupDEFName" : "PPSSYSSFPUBID",
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

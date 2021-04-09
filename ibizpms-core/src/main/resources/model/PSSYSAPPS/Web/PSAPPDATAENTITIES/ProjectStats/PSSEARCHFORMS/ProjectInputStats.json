@@ -8,8 +8,10 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -20,25 +22,24 @@
         "name" : "n_status_eq"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
       },
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "项目状态",
       "allowEmpty" : true,
+      "labelWidth" : 80,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 80,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 6,
         "colMD" : 24,
+        "colLG" : 6,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "n_status_eq",
@@ -46,35 +47,35 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_status_eq"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
+        "editorWidth" : 100.0,
+        "editorType" : "DATEPICKEREX_NOTIME",
         "editorParams" : {
           "TIMEFMT" : "YYYY-MM-DD"
         },
-        "editorType" : "DATEPICKEREX_NOTIME",
-        "editorWidth" : 100.0,
         "name" : "n_begin_gtandeq"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
+      "hidden" : false,
       "dataType" : 5,
       "caption" : "项目起始时间",
       "allowEmpty" : true,
+      "labelWidth" : 108,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 108,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
+        "colMD" : 24,
         "colLG" : 6,
         "colLGOffset" : 1,
-        "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "n_begin_gtandeq",
@@ -82,34 +83,34 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_begin_gtandeq"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
+        "editorWidth" : 100.0,
+        "editorType" : "DATEPICKEREX_NOTIME",
         "editorParams" : {
           "TIMEFMT" : "YYYY-MM-DD"
         },
-        "editorType" : "DATEPICKEREX_NOTIME",
-        "editorWidth" : 100.0,
         "name" : "n_end_ltandeq"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
+      "hidden" : false,
       "dataType" : 5,
       "caption" : "项目结束时间",
       "allowEmpty" : true,
+      "labelWidth" : 108,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 108,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 6,
         "colMD" : 24,
+        "colLG" : 6,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "n_end_ltandeq",
@@ -150,7 +151,6 @@
       "codeName" : "End"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "ProjectInputStats",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

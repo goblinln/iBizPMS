@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,15 +26,16 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -44,25 +46,24 @@
         "name" : "releasetype"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "RELEASETYPE",
         "codeName" : "Releasetype"
       },
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "运行模式",
       "allowEmpty" : true,
+      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 12,
         "colMD" : 12,
+        "colLG" : 12,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "releasetype",
@@ -70,6 +71,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "releasetype"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -80,25 +82,24 @@
         "name" : "backgroundid"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "BACKGROUNDID",
         "codeName" : "Backgroundid"
       },
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "后台体系",
       "allowEmpty" : true,
+      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 12,
         "colMD" : 12,
+        "colLG" : 12,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "backgroundid",
@@ -106,6 +107,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "backgroundid"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -116,25 +118,24 @@
         "name" : "sqlid"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "SQLID",
         "codeName" : "Sqlid"
       },
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "运行数据库",
       "allowEmpty" : true,
+      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 12,
         "colMD" : 12,
+        "colLG" : 12,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "sqlid",
@@ -142,6 +143,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "sqlid"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -152,25 +154,24 @@
         "name" : "frontapplication"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "FRONTAPPLICATION",
         "codeName" : "Frontapplication"
       },
+      "hidden" : false,
       "dataType" : 25,
       "needCodeListConfig" : true,
       "caption" : "系统应用",
       "allowEmpty" : true,
+      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 12,
         "colMD" : 12,
+        "colLG" : 12,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "frontapplication",
@@ -178,6 +179,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "frontapplication"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -188,25 +190,24 @@
         "name" : "rebuild"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "REBUILD",
         "codeName" : "Rebuild"
       },
+      "hidden" : false,
       "dataType" : 9,
       "needCodeListConfig" : true,
       "caption" : "重新构建",
       "allowEmpty" : true,
+      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 12,
         "colMD" : 12,
+        "colLG" : 12,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "rebuild",
@@ -305,7 +306,6 @@
       "codeName" : "Id"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "TestBuildRelease",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

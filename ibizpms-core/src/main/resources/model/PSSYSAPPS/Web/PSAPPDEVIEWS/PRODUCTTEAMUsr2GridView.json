@@ -4,15 +4,15 @@
   "enableImport" : true,
   "enableRowEdit" : true,
   "gridRowActiveMode" : 0,
-  "expandSearchForm" : true,
   "enableSearch" : true,
+  "expandSearchForm" : true,
   "enableFilter" : true,
   "enableQuickSearch" : true,
   "xDataControlName" : "grid",
-  "getPSDEViewCodeName" : "Usr2GridView",
   "showCaptionBar" : false,
-  "caption" : "产品团队",
+  "getPSDEViewCodeName" : "Usr2GridView",
   "openMode" : "DRAWER_TOP",
+  "caption" : "产品团队",
   "title" : "产品团队表格视图",
   "accUserMode" : 2,
   "enableDP" : true,
@@ -33,17 +33,17 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "CTRL",
-      "name" : "SEARCHFORM"
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -79,7 +79,6 @@
     "key" : "ROOT",
     "name" : "ROOT"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
@@ -91,15 +90,14 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction2"
       },
-      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
+        "codeName" : "NewRow",
         "getPSSysImage" : {
           "glyph" : "xf067@FontAwesome",
           "cssClass" : "fa fa-plus"
         },
-        "codeName" : "NewRow",
         "caption" : "新建行",
         "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
         "uIActionTag" : "NewRow",
@@ -108,6 +106,7 @@
         "fullCodeName" : "NewRow",
         "name" : "表格界面_新建行"
       },
+      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf067@FontAwesome",
         "cssClass" : "fa fa-plus"
@@ -124,15 +123,14 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction3"
       },
-      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
+        "codeName" : "SaveRow",
         "getPSSysImage" : {
           "glyph" : "xf0c7@FontAwesome",
           "cssClass" : "fa fa-save"
         },
-        "codeName" : "SaveRow",
         "caption" : "保存行",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "uIActionTag" : "SaveRow",
@@ -141,6 +139,7 @@
         "fullCodeName" : "SaveRow",
         "name" : "表格界面_保存行"
       },
+      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf0c7@FontAwesome",
         "cssClass" : "fa fa-save"
@@ -166,78 +165,102 @@
     "name" : "toolbar",
     "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4"
   }, {
+    "getPSDEGridDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "LIMITED",
+        "codeName" : "Limited"
+      },
+      "name" : "limited",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ROOT",
+        "codeName" : "Root"
+      },
+      "name" : "root",
+      "dataType" : 1
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "name" : "account_text",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "HOURS",
+        "codeName" : "Hours"
+      },
+      "name" : "hours",
+      "dataType" : 7
+    }, {
+      "format" : "YYYY-MM-DD",
+      "getPSAppDEField" : {
+        "name" : "JOIN",
+        "codeName" : "Join"
+      },
+      "name" : "join",
+      "dataType" : 5
+    }, {
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "name" : "type",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "name" : "srfmajortext",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "srfkey",
+      "dataType" : 1
+    }, {
+      "dataAccessAction" : true,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "srfdataaccaction",
+      "dataType" : 1
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "id",
+      "dataType" : 1
+    }, {
+      "getPSAppDEField" : {
+        "name" : "USERNAME",
+        "codeName" : "Username"
+      },
+      "name" : "username",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "name" : "account",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ROLE",
+        "codeName" : "Role"
+      },
+      "name" : "role",
+      "dataType" : 25
+    } ],
     "singleSelect" : false,
     "enableColFilter" : false,
-    "getCreatePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Create"
-      },
-      "dataAccessAction" : "CREATE",
-      "actionName" : "Create",
-      "actionType" : "DEACTION",
-      "name" : "create"
-    },
-    "getUpdatePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Update"
-      },
-      "dataAccessAction" : "UPDATE",
-      "actionName" : "Update",
-      "actionType" : "DEACTION",
-      "name" : "update"
-    },
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
-    "getGetPSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Get"
-      },
-      "dataAccessAction" : "READ",
-      "actionName" : "Get",
-      "actionType" : "DEACTION",
-      "name" : "load"
-    },
-    "getGetDraftPSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "GetDraft"
-      },
-      "dataAccessAction" : "CREATE",
-      "actionName" : "GetDraft",
-      "actionType" : "DEACTION",
-      "name" : "loaddraft"
-    },
     "enableRowNew" : true,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -330,11 +353,11 @@
           "key" : "ACCOUNT",
           "name" : "ACCOUNT"
         } ],
+        "editorType" : "DROPDOWNLIST",
         "editorParams" : {
           "SRFNAVPARAM.account" : "%account%",
           "SRFNAVCTX.account" : "%account%"
         },
-        "editorType" : "DROPDOWNLIST",
         "name" : "account"
       },
       "getPSAppDEField" : {
@@ -352,10 +375,10 @@
     }, {
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
+        "editorType" : "DATEPICKEREX_NOTIME",
         "editorParams" : {
           "TIMEFMT" : "YYYY-MM-DD"
         },
-        "editorType" : "DATEPICKEREX_NOTIME",
         "name" : "join"
       },
       "getPSAppDEField" : {
@@ -408,117 +431,93 @@
       "caption" : "编号",
       "name" : "srfkey"
     } ],
-    "columnEnableLink" : 2,
     "hasWFDataItems" : false,
-    "controlType" : "GRID",
-    "enablePagingBar" : false,
-    "getPSDEGridDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "LIMITED",
-        "codeName" : "Limited"
+    "getCreatePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
       },
-      "dataType" : 25,
-      "name" : "limited"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ROOT",
-        "codeName" : "Root"
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
       },
-      "dataType" : 1,
-      "name" : "root"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
+      "dataAccessAction" : "CREATE",
+      "actionName" : "Create",
+      "actionType" : "DEACTION",
+      "name" : "create"
+    },
+    "getUpdatePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
       },
-      "dataType" : 25,
-      "name" : "account_text"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "HOURS",
-        "codeName" : "Hours"
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
       },
-      "dataType" : 7,
-      "name" : "hours"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "JOIN",
-        "codeName" : "Join"
+      "dataAccessAction" : "UPDATE",
+      "actionName" : "Update",
+      "actionType" : "DEACTION",
+      "name" : "update"
+    },
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
       },
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "join"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "TYPE",
-        "codeName" : "Type"
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
       },
-      "dataType" : 25,
-      "name" : "type"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
+    "getGetPSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+      "dataAccessAction" : "READ",
+      "actionName" : "Get",
+      "actionType" : "DEACTION",
+      "name" : "load"
+    },
+    "getGetDraftPSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
       },
-      "dataAccessAction" : true,
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
       },
-      "dataType" : 1,
-      "name" : "id"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "USERNAME",
-        "codeName" : "Username"
-      },
-      "dataType" : 25,
-      "name" : "username"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
-      },
-      "dataType" : 25,
-      "name" : "account"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ROLE",
-        "codeName" : "Role"
-      },
-      "dataType" : 25,
-      "name" : "role"
-    } ],
+      "dataAccessAction" : "CREATE",
+      "actionName" : "GetDraft",
+      "actionType" : "DEACTION",
+      "name" : "loaddraft"
+    },
+    "columnEnableLink" : 2,
     "enableRowEdit" : true,
+    "enablePagingBar" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "excelCaption" : "用户",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CodeList25.json"
       },
+      "dataItemName" : "account_text",
+      "enableRowEdit" : true,
       "getPSAppDEField" : {
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
-      "dataItemName" : "account_text",
-      "enableRowEdit" : true,
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -531,12 +530,12 @@
       "name" : "account"
     }, {
       "excelCaption" : "角色",
+      "dataItemName" : "role",
+      "enableRowEdit" : true,
       "getPSAppDEField" : {
         "name" : "ROLE",
         "codeName" : "Role"
       },
-      "dataItemName" : "role",
-      "enableRowEdit" : true,
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -549,12 +548,12 @@
       "name" : "role"
     }, {
       "excelCaption" : "可用工时/天",
+      "dataItemName" : "hours",
+      "enableRowEdit" : true,
       "getPSAppDEField" : {
         "name" : "HOURS",
         "codeName" : "Hours"
       },
-      "dataItemName" : "hours",
-      "enableRowEdit" : true,
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -571,12 +570,12 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
       },
+      "dataItemName" : "limited",
+      "enableRowEdit" : true,
       "getPSAppDEField" : {
         "name" : "LIMITED",
         "codeName" : "Limited"
       },
-      "dataItemName" : "limited",
-      "enableRowEdit" : true,
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -590,16 +589,15 @@
     }, {
       "getPSDEUIActionGroup" : {
         "getPSUIActionGroupDetails" : [ {
-          "addSeparator" : false,
           "showIcon" : true,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
+            "codeName" : "NewRow",
             "getPSSysImage" : {
               "glyph" : "xf067@FontAwesome",
               "cssClass" : "fa fa-plus"
             },
-            "codeName" : "NewRow",
             "caption" : "新建行",
             "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
             "uIActionTag" : "NewRow",
@@ -608,20 +606,28 @@
             "fullCodeName" : "NewRow",
             "name" : "表格界面_新建行"
           },
+          "addSeparator" : false,
           "detailType" : "DEUIACTION",
           "showCaption" : false,
           "name" : "u123c5fb"
         }, {
-          "addSeparator" : false,
           "showIcon" : true,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.REMOVE",
+              "id" : "工具栏按钮文本[*.REMOVE]"
+            },
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+              "id" : "工具栏按钮提示[*.REMOVE]"
+            },
             "timeout" : 60000,
+            "codeName" : "Remove",
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-remove"
             },
-            "codeName" : "Remove",
             "caption" : "删除",
             "actionTarget" : "MULTIKEY",
             "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
@@ -631,6 +637,7 @@
             "fullCodeName" : "Remove",
             "name" : "表格界面_删除操作"
           },
+          "addSeparator" : false,
           "detailType" : "DEUIACTION",
           "showCaption" : false,
           "name" : "u88d3220"
@@ -676,19 +683,19 @@
       "name" : "表格界面_删除操作"
     } ],
     "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "表格界面_新建行"
       },
-      "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
       "name" : "grid_uagridcolumn1_u123c5fb_click"
     }, {
+      "logicTrigger" : "CUSTOM",
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "表格界面_删除操作"
       },
-      "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
       "name" : "grid_uagridcolumn1_u88d3220_click"
     } ],
@@ -696,12 +703,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -784,6 +785,12 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM/PSGRIDS/ProductTeamEdit.json",
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_RENDER",
@@ -802,8 +809,10 @@
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "resetItemNames" : [ "teams" ],
         "getPSEditor" : {
           "singleSelect" : true,
@@ -815,22 +824,21 @@
           "name" : "dept"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
+        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "选择部门",
         "allowEmpty" : true,
+        "labelWidth" : 80,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "resetItemName" : "teams",
-        "labelWidth" : 80,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 6,
           "colMD" : 6,
+          "colLG" : 6,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "dept",
@@ -838,6 +846,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "dept"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -856,29 +865,28 @@
             "key" : "N_ID_NOTEQ",
             "name" : "N_ID_NOTEQ"
           } ],
+          "editorType" : "DROPDOWNLIST",
           "editorParams" : {
             "SRFNAVPARAM.n_id_noteq" : "%product%",
             "SRFNAVCTX.n_id_noteq" : "%product%"
           },
-          "editorType" : "DROPDOWNLIST",
           "name" : "teams"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
+        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "复制团队",
         "allowEmpty" : true,
+        "labelWidth" : 80,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 80,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 6,
           "colMD" : 6,
+          "colLG" : 6,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "teams",
@@ -904,19 +912,12 @@
       "id" : "teams",
       "dataType" : 25
     } ],
-    "noTabHeader" : true,
     "codeName" : "ProductTeamSearchForm",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -955,11 +956,18 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM/PSSEARCHFORMS/ProductTeamSearchForm.json",
     "logicName" : "产品团队管理搜索表单",
     "name" : "searchform",
     "modelid" : "e729b95cb3414e8254ca61ed95836719"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -977,24 +985,25 @@
     "realTitle" : "产品团队编辑视图",
     "name" : "EDITDATA"
   } ],
+  "codeName" : "PRODUCTTEAMUsr2GridView",
   "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction2"
     },
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction2",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction2_click"
   }, {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction3"
     },
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction3",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
@@ -1002,8 +1011,8 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "batchAddOnly" : false,
       "enableBatchAdd" : false,
+      "batchAddOnly" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
@@ -1054,14 +1063,21 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
-  "codeName" : "PRODUCTTEAMUsr2GridView",
   "viewType" : "DEGRIDVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMUsr2GridView.json",
   "name" : "PRODUCTTEAMUsr2GridView",
   "getPSAppDERSPaths" : [ [ {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
@@ -1069,14 +1085,6 @@
     "getParentPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
-    },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "codeName" : "PRODUCTTEAMs",
     "actionRSMode" : 1,

@@ -1,6 +1,177 @@
 {
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "id",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "WORK",
+      "codeName" : "Work"
+    },
+    "name" : "work",
+    "dataType" : 21
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    },
+    "name" : "consumed",
+    "dataType" : 7
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "DATES",
+      "codeName" : "Dates"
+    },
+    "name" : "dates",
+    "dataType" : 5
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASK",
+      "codeName" : "Task"
+    },
+    "name" : "task",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    },
+    "name" : "left",
+    "dataType" : 7
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 1
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  } ],
   "singleSelect" : true,
   "enableColFilter" : false,
+  "enableRowNew" : true,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "enableLinkView" : false,
+      "editable" : false,
+      "editorType" : "SPAN",
+      "name" : "id"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "id",
+    "caption" : "ID",
+    "name" : "id"
+  }, {
+    "getPSEditor" : {
+      "maxLength" : 65535,
+      "editorType" : "TEXTBOX",
+      "name" : "work"
+    },
+    "getPSAppDEField" : {
+      "name" : "WORK",
+      "codeName" : "Work"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "work",
+    "caption" : "备注",
+    "name" : "work"
+  }, {
+    "getPSEditor" : {
+      "precision" : 2,
+      "editorType" : "TEXTBOX",
+      "name" : "consumed"
+    },
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    },
+    "allowEmpty" : false,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "consumed",
+    "caption" : "总计消耗",
+    "name" : "consumed"
+  }, {
+    "getPSEditor" : {
+      "dateTimeFormat" : "YYYY-MM-DD",
+      "editorType" : "DATEPICKEREX_NOTIME",
+      "editorParams" : {
+        "TIMEFMT" : "YYYY-MM-DD"
+      },
+      "name" : "dates"
+    },
+    "getPSAppDEField" : {
+      "name" : "DATES",
+      "codeName" : "Dates"
+    },
+    "allowEmpty" : false,
+    "createDVT" : "CURTIME",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "dates",
+    "caption" : "日期",
+    "name" : "dates"
+  }, {
+    "getPSEditor" : {
+      "precision" : 2,
+      "editorType" : "TEXTBOX",
+      "name" : "left"
+    },
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    },
+    "allowEmpty" : false,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "left",
+    "caption" : "预计剩余",
+    "name" : "left"
+  }, {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "编号",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
   "getCreatePSControlAction" : {
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -71,181 +242,10 @@
     "actionType" : "DEACTION",
     "name" : "loaddraft"
   },
-  "enableRowNew" : true,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "getPSDEGridEditItems" : [ {
-    "getPSEditor" : {
-      "enableLinkView" : false,
-      "editable" : false,
-      "editorType" : "SPAN",
-      "name" : "id"
-    },
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "codeName" : "id",
-    "caption" : "ID",
-    "name" : "id"
-  }, {
-    "getPSEditor" : {
-      "maxLength" : 65535,
-      "editorType" : "TEXTBOX",
-      "name" : "work"
-    },
-    "getPSAppDEField" : {
-      "name" : "WORK",
-      "codeName" : "Work"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "work",
-    "caption" : "备注",
-    "name" : "work"
-  }, {
-    "getPSEditor" : {
-      "precision" : 2,
-      "editorType" : "TEXTBOX",
-      "name" : "consumed"
-    },
-    "getPSAppDEField" : {
-      "name" : "CONSUMED",
-      "codeName" : "Consumed"
-    },
-    "allowEmpty" : false,
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "consumed",
-    "caption" : "总计消耗",
-    "name" : "consumed"
-  }, {
-    "getPSEditor" : {
-      "dateTimeFormat" : "YYYY-MM-DD",
-      "editorParams" : {
-        "TIMEFMT" : "YYYY-MM-DD"
-      },
-      "editorType" : "DATEPICKEREX_NOTIME",
-      "name" : "dates"
-    },
-    "getPSAppDEField" : {
-      "name" : "DATES",
-      "codeName" : "Dates"
-    },
-    "allowEmpty" : false,
-    "createDVT" : "CURTIME",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "dates",
-    "caption" : "日期",
-    "name" : "dates"
-  }, {
-    "getPSEditor" : {
-      "precision" : 2,
-      "editorType" : "TEXTBOX",
-      "name" : "left"
-    },
-    "getPSAppDEField" : {
-      "name" : "LEFT",
-      "codeName" : "Left"
-    },
-    "allowEmpty" : false,
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "left",
-    "caption" : "预计剩余",
-    "name" : "left"
-  }, {
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "srfkey"
-    },
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "codeName" : "srfkey",
-    "caption" : "编号",
-    "name" : "srfkey"
-  } ],
   "columnEnableLink" : 2,
-  "hasWFDataItems" : false,
-  "controlType" : "GRID",
-  "enablePagingBar" : true,
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataType" : 1,
-    "name" : "id"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "WORK",
-      "codeName" : "Work"
-    },
-    "dataType" : 21,
-    "name" : "work"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CONSUMED",
-      "codeName" : "Consumed"
-    },
-    "dataType" : 7,
-    "name" : "consumed"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DATES",
-      "codeName" : "Dates"
-    },
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "dates"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TASK",
-      "codeName" : "Task"
-    },
-    "dataType" : 1,
-    "name" : "task"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "LEFT",
-      "codeName" : "Left"
-    },
-    "dataType" : 7,
-    "name" : "left"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataType" : 1,
-    "name" : "srfmajortext"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true,
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataType" : 1,
-    "name" : "srfkey"
-  } ],
   "enableRowEdit" : true,
+  "enablePagingBar" : true,
+  "controlType" : "GRID",
   "getPSDEGridEditItemVRs" : [ {
     "getPSDEGridEditItemName" : "consumed",
     "valueRuleType" : "DEFVALUERULE",
@@ -321,12 +321,12 @@
   } ],
   "getPSDEGridColumns" : [ {
     "excelCaption" : "日期",
+    "dataItemName" : "dates",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "DATES",
       "codeName" : "Dates"
     },
-    "dataItemName" : "dates",
-    "enableRowEdit" : true,
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -340,12 +340,12 @@
     "name" : "dates"
   }, {
     "excelCaption" : "总计消耗",
+    "dataItemName" : "consumed",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
-    "dataItemName" : "consumed",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -358,12 +358,12 @@
     "name" : "consumed"
   }, {
     "excelCaption" : "预计剩余",
+    "dataItemName" : "left",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
-    "dataItemName" : "left",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -376,12 +376,12 @@
     "name" : "left"
   }, {
     "excelCaption" : "备注",
+    "dataItemName" : "work",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "WORK",
       "codeName" : "Work"
     },
-    "dataItemName" : "work",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

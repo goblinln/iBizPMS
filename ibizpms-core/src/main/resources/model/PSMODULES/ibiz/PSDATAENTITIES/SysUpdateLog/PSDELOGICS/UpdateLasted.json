@@ -6,14 +6,15 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "UpdateLasted",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8487"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -23,6 +24,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -51,7 +53,6 @@
       "srcFieldName" : "LATESTUPDATE",
       "name" : "Default[LATESTUPDATE]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "更新最新更新标识"
   } ],
@@ -68,14 +69,13 @@
     "name" : "连接8487"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "UpdateLasted",
   "logicName" : "更新最新更新标识",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

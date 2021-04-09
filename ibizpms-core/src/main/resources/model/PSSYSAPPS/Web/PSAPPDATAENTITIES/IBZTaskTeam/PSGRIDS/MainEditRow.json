@@ -1,6 +1,167 @@
 {
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
+    "name" : "root",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "name" : "account_text",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "name" : "account",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "name" : "type",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ESTIMATE",
+      "codeName" : "Estimate"
+    },
+    "name" : "estimate",
+    "dataType" : 7
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  } ],
   "singleSelect" : true,
   "enableColFilter" : false,
+  "enableRowNew" : true,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
+      },
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "project",
+        "key" : "project",
+        "name" : "project"
+      } ],
+      "getPSNavigateContexts" : [ {
+        "rawValue" : false,
+        "value" : "project",
+        "key" : "PROJECT",
+        "name" : "PROJECT"
+      } ],
+      "editorType" : "DROPDOWNLIST",
+      "editorParams" : {
+        "SRFNAVCTX.project" : "%project%",
+        "SRFNAVPARAM.project" : "%project%"
+      },
+      "getPSSysPFPlugin" : {
+        "pluginType" : "EDITOR_CUSTOMSTYLE",
+        "pluginCode" : "GridRowEditExtend"
+      },
+      "editorStyle" : "RowEditExtend",
+      "name" : "account"
+    },
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "needCodeListConfig" : true,
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "valueItemName" : "account",
+    "codeName" : "account",
+    "caption" : "用户",
+    "name" : "account"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Team__type.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "editorParams" : {
+        "task" : ""
+      },
+      "name" : "type"
+    },
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "needCodeListConfig" : true,
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "type",
+    "caption" : "团队类型",
+    "name" : "type"
+  }, {
+    "getPSEditor" : {
+      "editorType" : "NUMBER",
+      "placeHolder" : "预计",
+      "name" : "estimate"
+    },
+    "getPSAppDEField" : {
+      "name" : "ESTIMATE",
+      "codeName" : "Estimate"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "estimate",
+    "caption" : "预计",
+    "name" : "estimate"
+  }, {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "编号",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
   "getCreatePSControlAction" : {
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -71,175 +232,14 @@
     "actionType" : "DEACTION",
     "name" : "loaddraft"
   },
-  "enableRowNew" : true,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "getPSDEGridEditItems" : [ {
-    "getPSEditor" : {
-      "singleSelect" : true,
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
-      },
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "project",
-        "key" : "project",
-        "name" : "project"
-      } ],
-      "getPSNavigateContexts" : [ {
-        "rawValue" : false,
-        "value" : "project",
-        "key" : "PROJECT",
-        "name" : "PROJECT"
-      } ],
-      "getPSSysPFPlugin" : {
-        "pluginType" : "EDITOR_CUSTOMSTYLE",
-        "pluginCode" : "GridRowEditExtend"
-      },
-      "editorParams" : {
-        "SRFNAVCTX.project" : "%project%",
-        "SRFNAVPARAM.project" : "%project%"
-      },
-      "editorType" : "DROPDOWNLIST",
-      "editorStyle" : "RowEditExtend",
-      "name" : "account"
-    },
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "needCodeListConfig" : true,
-    "allowEmpty" : true,
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "valueItemName" : "account",
-    "codeName" : "account",
-    "caption" : "用户",
-    "name" : "account"
-  }, {
-    "getPSEditor" : {
-      "singleSelect" : true,
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Team__type.json"
-      },
-      "editorParams" : {
-        "task" : ""
-      },
-      "editorType" : "DROPDOWNLIST",
-      "name" : "type"
-    },
-    "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    },
-    "needCodeListConfig" : true,
-    "allowEmpty" : true,
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "type",
-    "caption" : "团队类型",
-    "name" : "type"
-  }, {
-    "getPSEditor" : {
-      "editorType" : "NUMBER",
-      "placeHolder" : "预计",
-      "name" : "estimate"
-    },
-    "getPSAppDEField" : {
-      "name" : "ESTIMATE",
-      "codeName" : "Estimate"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "estimate",
-    "caption" : "预计",
-    "name" : "estimate"
-  }, {
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "srfkey"
-    },
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "codeName" : "srfkey",
-    "caption" : "编号",
-    "name" : "srfkey"
-  } ],
   "columnEnableLink" : 2,
-  "hasWFDataItems" : false,
-  "controlType" : "GRID",
-  "enablePagingBar" : false,
+  "enableRowEdit" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
-    },
-    "dataType" : 1,
-    "name" : "root"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "dataType" : 25,
-    "name" : "account_text"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "dataType" : 25,
-    "name" : "account"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    },
-    "dataType" : 25,
-    "name" : "type"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ESTIMATE",
-      "codeName" : "Estimate"
-    },
-    "dataType" : 7,
-    "name" : "estimate"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "dataType" : 25,
-    "name" : "srfmajortext"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true,
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataType" : 1,
-    "name" : "srfkey"
-  } ],
-  "enableRowEdit" : true,
+  "enablePagingBar" : false,
+  "controlType" : "GRID",
   "getPSDEGridEditItemVRs" : [ {
     "getPSDEGridEditItemName" : "estimate",
     "valueRuleType" : "DEFVALUERULE",
@@ -280,12 +280,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
     },
+    "dataItemName" : "account_text",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataItemName" : "account_text",
-    "enableRowEdit" : true,
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -298,12 +298,12 @@
     "name" : "account"
   }, {
     "excelCaption" : "预计",
+    "dataItemName" : "estimate",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
-    "dataItemName" : "estimate",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

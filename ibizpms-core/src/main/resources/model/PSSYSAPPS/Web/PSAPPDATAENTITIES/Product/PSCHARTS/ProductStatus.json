@@ -5,12 +5,6 @@
     "index" : 0,
     "id" : "0"
   },
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "legendPos" : "RIGHT",
-    "index" : 0,
-    "id" : "0"
-  },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
     "type" : "NONE",
@@ -18,7 +12,14 @@
     "name" : "[ProductStatus]无坐标系[0]",
     "id" : "0"
   } ],
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "legendPos" : "RIGHT",
+    "index" : 0,
+    "id" : "0"
+  },
   "controlType" : "CHART",
+  "codeName" : "ProductStatus",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "STATUS",
     "seriesType" : "pie",
@@ -52,7 +53,6 @@
       "EC.radius" : "['60%', '70%']"
     }
   } ],
-  "codeName" : "ProductStatus",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
       "groupField" : true,
@@ -89,11 +89,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSCHARTS/ProductStatus.json",
+  "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
-  "height" : 300.0,
   "logicName" : "ProductStatusPie",
   "modelid" : "2b1d9d534cc4b8bc73b4e4721d39882a",
   "getUserParam" : {

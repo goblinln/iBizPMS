@@ -15,10 +15,10 @@
     "modelref" : true,
     "id" : "FetchDefault"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
   "orMode" : "STR",
   "textSeparator" : ",",
+  "dynaInstMode" : 1,
   "codeName" : "RelatedStory",
   "valueSeparator" : ",",
   "cacheTimeout" : 600,

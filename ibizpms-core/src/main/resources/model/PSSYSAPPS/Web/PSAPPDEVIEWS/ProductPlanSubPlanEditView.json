@@ -1,10 +1,10 @@
 {
-  "showDataInfoBar" : true,
   "showCaptionBar" : true,
+  "showDataInfoBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "SubPlanEditView",
-  "caption" : "子计划",
   "openMode" : "DRAWER_RIGHT",
+  "caption" : "子计划",
   "title" : "子计划",
   "accUserMode" : 2,
   "enableDP" : true,
@@ -25,12 +25,12 @@
     "engineType" : "EditView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
@@ -42,7 +42,6 @@
     },
     "name" : "toolbar_deuiaction1"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
@@ -54,14 +53,25 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction1"
       },
-      "noPrivDisplayMode" : 2,
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+      },
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+        },
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+        },
         "timeout" : 60000,
+        "codeName" : "SaveAndExit",
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
-        "codeName" : "SaveAndExit",
         "caption" : "保存并关闭",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "uIActionTag" : "SaveAndExit",
@@ -70,6 +80,11 @@
         "fullCodeName" : "SaveAndExit",
         "name" : "编辑界面_保存并退出操作"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "cssClass" : "sx-tb-saveandclose"
       },
@@ -94,6 +109,7 @@
     "name" : "toolbar",
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
+    "showFormNavBar" : false,
     "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
@@ -120,13 +136,24 @@
       "id" : "loaddraftfrom"
     },
     "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "getPSDEFormItemUpdates" : [ {
+      "getPSDEFIUpdateDetails" : [ {
+        "name" : "end"
+      } ],
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "GetPlanEnd"
+      },
+      "codeName" : "GetPlanEnd",
+      "name" : "获取计划结束时间"
+    } ],
+    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : false,
@@ -143,26 +170,26 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "product"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "PRODUCT",
               "codeName" : "Product"
             },
+            "hidden" : true,
             "dataType" : 1,
             "caption" : "产品",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -172,26 +199,26 @@
             "detailStyle" : "DEFAULT",
             "name" : "product"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "parent"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "PARENT",
               "codeName" : "Parent"
             },
+            "hidden" : true,
             "dataType" : 1,
             "caption" : "父计划",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -201,6 +228,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "parent"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -208,26 +236,22 @@
               "name" : "parentname"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "PARENTNAME",
               "codeName" : "ParentName"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "父计划名称",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
-            "getPSLayoutPos" : {
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "getPSDEFDGroupLogics" : [ {
+              "relatedDetailNames" : [ "parentname" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
                 "dEFDName" : "parentname",
@@ -240,32 +264,36 @@
               "logicType" : "GROUP",
               "name" : "表单成员[parentname][面板显示]逻辑"
             } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
             "codeName" : "parentname",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "parentname"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 90,
               "editorType" : "TEXTBOX",
               "name" : "title"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "TITLE",
               "codeName" : "Title"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "名称",
             "allowEmpty" : false,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -275,14 +303,15 @@
             "detailStyle" : "DEFAULT",
             "name" : "title"
           }, {
+            "emptyCaption" : false,
             "resetItemNames" : [ "future" ],
             "getPSEditor" : {
               "dateTimeFormat" : "YYYY-MM-DD",
+              "editorWidth" : 100.0,
+              "editorType" : "DATEPICKEREX_NOTIME",
               "editorParams" : {
                 "TIMEFMT" : "YYYY-MM-DD"
               },
-              "editorType" : "DATEPICKEREX_NOTIME",
-              "editorWidth" : 100.0,
               "name" : "begin"
             },
             "getPSDEFormItemUpdate" : {
@@ -290,29 +319,24 @@
               "id" : "GetPlanEnd"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "BEGIN",
               "codeName" : "Begin"
             },
+            "hidden" : false,
             "dataType" : 5,
             "caption" : "开始日期",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "resetItemName" : "future",
-            "labelWidth" : 100,
             "itemWidth" : 200.0,
             "showCaption" : true,
-            "hidden" : false,
-            "getPSLayoutPos" : {
-              "colLG" : 8,
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "getPSDEFDGroupLogics" : [ {
+              "relatedDetailNames" : [ "future" ],
               "logicCat" : "ITEMENABLE",
               "getPSDEFDLogics" : [ {
                 "dEFDName" : "future",
@@ -325,11 +349,17 @@
               "logicType" : "GROUP",
               "name" : "表单成员[begin][表单项启用]逻辑"
             } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "colLG" : 8,
+              "layout" : "TABLE_24COL"
+            },
             "codeName" : "begin",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "begin"
           }, {
+            "emptyCaption" : true,
             "getPSEditor" : {
               "getPSAppCodeList" : {
                 "modelref" : true,
@@ -339,24 +369,23 @@
               "name" : "future"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : true,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "FUTURE",
               "codeName" : "Future"
             },
+            "hidden" : false,
             "dataType" : 25,
             "needCodeListConfig" : true,
             "allowEmpty" : true,
+            "labelWidth" : 16,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 16,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 16,
               "colMD" : 24,
+              "colLG" : 16,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "future",
@@ -364,38 +393,34 @@
             "detailStyle" : "DEFAULT",
             "name" : "future"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "dateTimeFormat" : "YYYY-MM-DD",
+              "editorWidth" : 100.0,
+              "editorType" : "DATEPICKEREX_NOTIME",
               "editorParams" : {
                 "TIMEFMT" : "YYYY-MM-DD"
               },
-              "editorType" : "DATEPICKEREX_NOTIME",
-              "editorWidth" : 100.0,
               "name" : "end"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "END",
               "codeName" : "End"
             },
+            "hidden" : false,
             "dataType" : 5,
             "caption" : "结束日期",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "itemWidth" : 200.0,
             "showCaption" : true,
-            "hidden" : false,
-            "getPSLayoutPos" : {
-              "colLG" : 8,
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "getPSDEFDGroupLogics" : [ {
+              "relatedDetailNames" : [ "future" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
                 "dEFDName" : "future",
@@ -408,11 +433,17 @@
               "logicType" : "GROUP",
               "name" : "表单成员[end][面板显示]逻辑"
             } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "colLG" : 8,
+              "layout" : "TABLE_24COL"
+            },
             "codeName" : "end",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "end"
           }, {
+            "emptyCaption" : true,
             "resetItemNames" : [ "future" ],
             "getPSEditor" : {
               "getPSAppCodeList" : {
@@ -427,28 +458,23 @@
               "id" : "GetPlanEnd"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : true,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "DELTA",
               "codeName" : "Delta"
             },
+            "hidden" : false,
             "dataType" : 25,
             "needCodeListConfig" : true,
             "allowEmpty" : true,
+            "labelWidth" : 16,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "resetItemName" : "future",
-            "labelWidth" : 16,
             "showCaption" : true,
-            "hidden" : false,
-            "getPSLayoutPos" : {
-              "colLG" : 16,
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "getPSDEFDGroupLogics" : [ {
+              "relatedDetailNames" : [ "future" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
                 "dEFDName" : "future",
@@ -461,14 +487,19 @@
               "logicType" : "GROUP",
               "name" : "表单成员[delta][面板显示]逻辑"
             } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "colLG" : 16,
+              "layout" : "TABLE_24COL"
+            },
             "codeName" : "delta",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "delta"
           } ],
           "getPSLayoutPos" : {
-            "colLG" : 24,
             "colMD" : 24,
+            "colLG" : 24,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "grouppanel1",
@@ -478,30 +509,30 @@
           "showCaption" : false,
           "name" : "grouppanel1"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
+            "editorType" : "HTMLEDITOR",
             "editorParams" : {
               "uploadparams" : "{objecttype:\"productplan\",version:\"editor\"}",
               "exportparams" : "{objecttype:\"productplan\",version:\"editor\"}"
             },
-            "editorType" : "HTMLEDITOR",
             "name" : "desc"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "DESC",
             "codeName" : "Desc"
           },
+          "hidden" : false,
           "dataType" : 21,
           "caption" : "描述",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -643,30 +674,12 @@
         "codeName" : "Id"
       }
     } ],
-    "noTabHeader" : true,
-    "getPSDEFormItemUpdates" : [ {
-      "getPSDEFIUpdateDetails" : [ {
-        "name" : "end"
-      } ],
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "GetPlanEnd"
-      },
-      "codeName" : "GetPlanEnd",
-      "name" : "获取计划结束时间"
-    } ],
     "codeName" : "MainSubPlan",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -746,31 +759,46 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan/PSFORMS/MainSubPlan.json",
     "logicName" : "子计划主编辑表单",
     "name" : "form",
     "modelid" : "0bb3e1565480bebca629eea214ecb68c"
   } ],
+  "viewStyle" : "STYLE2",
+  "codeName" : "ProductPlanSubPlanEditView",
   "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction1"
     },
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction1_click"
   } ],
-  "codeName" : "ProductPlanSubPlanEditView",
   "viewType" : "DEEDITVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanSubPlanEditView.json",
   "name" : "ProductPlanSubPlanEditView",
   "getPSAppDERSPaths" : [ [ {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
@@ -779,23 +807,23 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
     "codeName" : "ProductPlans",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "产品计划"
   }, {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
@@ -803,14 +831,6 @@
     "getParentPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
-    },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
     "codeName" : "SubProductPlans",
     "actionRSMode" : 1,
@@ -818,9 +838,17 @@
     "rSMode" : 2,
     "name" : "计划子计划"
   } ], [ {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
@@ -828,14 +856,6 @@
     "getParentPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
-    },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
     "codeName" : "SubProductPlans",
     "actionRSMode" : 1,

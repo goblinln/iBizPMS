@@ -6,11 +6,6 @@
     "index" : 0,
     "id" : "0"
   },
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "index" : 0,
-    "id" : "0"
-  },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
     "type" : "NONE",
@@ -18,7 +13,13 @@
     "name" : "[Caseresult]无坐标系[0]",
     "id" : "0"
   } ],
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
   "controlType" : "CHART",
+  "codeName" : "CaseresultProject",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "LASTRUNRESULT1",
     "seriesType" : "pie",
@@ -44,7 +45,6 @@
     "index" : 0,
     "name" : "Caseresult"
   } ],
-  "codeName" : "CaseresultProject",
   "emptyText" : "无",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
@@ -77,11 +77,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
   },
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseresultProject.json",
+  "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "tablechart"
   },
-  "height" : 300.0,
   "logicName" : "CaseresultProject",
   "modelid" : "107dcf7800f65c0807d16a81914d5f6c",
   "getUserParam" : {

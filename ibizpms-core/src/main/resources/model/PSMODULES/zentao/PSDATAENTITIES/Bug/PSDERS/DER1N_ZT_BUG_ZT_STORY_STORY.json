@@ -4,6 +4,7 @@
     "name" : "STORY",
     "codeName" : "Story"
   },
+  "enableExtRestrict" : true,
   "getPSPickupTextDEField" : {
     "name" : "STORYNAME",
     "codeName" : "Storyname"
@@ -25,9 +26,9 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
   },
-  "enableExtRestrict" : true,
   "removeActionType" : -1,
   "masterRS" : 0,
+  "pickupDEFName" : "STORY",
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

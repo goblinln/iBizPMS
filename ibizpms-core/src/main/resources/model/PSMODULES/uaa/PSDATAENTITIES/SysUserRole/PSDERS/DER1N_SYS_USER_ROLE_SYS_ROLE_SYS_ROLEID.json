@@ -10,6 +10,7 @@
   },
   "removeActionType" : 1,
   "masterRS" : 3,
+  "pickupDEFName" : "SYS_ROLEID",
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

@@ -1,20 +1,75 @@
 {
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "IBZ_WEEKLYID",
+      "codeName" : "IbzWeeklyId"
+    },
+    "name" : "ibz_weeklyid",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ISSUBMIT",
+      "codeName" : "Issubmit"
+    },
+    "name" : "issubmit",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_WEEKLYNAME",
+      "codeName" : "IbzWeeklyName"
+    },
+    "name" : "ibz_weeklyname",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "name" : "account",
+    "dataType" : 25
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "name" : "date",
+    "dataType" : 5
+  }, {
+    "name" : "srfmstag",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_WEEKLYNAME",
+      "codeName" : "IbzWeeklyName"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "IBZ_WEEKLYID",
+      "codeName" : "IbzWeeklyId"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_WEEKLYID",
+      "codeName" : "IbzWeeklyId"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "REPORTTO",
+      "codeName" : "Reportto"
+    },
+    "name" : "reportto",
+    "dataType" : 25
+  } ],
   "singleSelect" : false,
   "enableColFilter" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -34,94 +89,39 @@
     "caption" : "周报标识",
     "name" : "srfkey"
   } ],
-  "columnEnableLink" : 2,
   "hasWFDataItems" : false,
-  "controlType" : "GRID",
-  "enablePagingBar" : false,
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "IBZ_WEEKLYID",
-      "codeName" : "IbzWeeklyId"
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
     },
-    "dataType" : 1,
-    "name" : "ibz_weeklyid"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ISSUBMIT",
-      "codeName" : "Issubmit"
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
     },
-    "dataType" : 25,
-    "name" : "issubmit"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_WEEKLYNAME",
-      "codeName" : "IbzWeeklyName"
-    },
-    "dataType" : 25,
-    "name" : "ibz_weeklyname"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "dataType" : 25,
-    "name" : "account"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
-    },
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "date"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_WEEKLYNAME",
-      "codeName" : "IbzWeeklyName"
-    },
-    "dataType" : 25,
-    "name" : "srfmajortext"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_WEEKLYID",
-      "codeName" : "IbzWeeklyId"
-    },
-    "dataAccessAction" : true,
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBZ_WEEKLYID",
-      "codeName" : "IbzWeeklyId"
-    },
-    "dataType" : 1,
-    "name" : "srfkey"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "REPORTTO",
-      "codeName" : "Reportto"
-    },
-    "dataType" : 25,
-    "name" : "reportto"
-  } ],
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
   "enableRowEdit" : false,
+  "enablePagingBar" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
+    "linkValueItem" : "srfkey",
+    "excelCaption" : "周报名称",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyUsr2EditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "excelCaption" : "周报名称",
+    "dataItemName" : "ibz_weeklyname",
     "getPSAppDEField" : {
       "name" : "IBZ_WEEKLYNAME",
       "codeName" : "IbzWeeklyName"
     },
-    "dataItemName" : "ibz_weeklyname",
-    "linkValueItem" : "srfkey",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -138,11 +138,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "account",
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataItemName" : "account",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -155,11 +155,11 @@
     "name" : "account"
   }, {
     "excelCaption" : "日期",
+    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataItemName" : "date",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -177,11 +177,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "reportto",
     "getPSAppDEField" : {
       "name" : "REPORTTO",
       "codeName" : "Reportto"
     },
-    "dataItemName" : "reportto",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

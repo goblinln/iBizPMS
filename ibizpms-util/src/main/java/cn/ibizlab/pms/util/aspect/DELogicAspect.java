@@ -36,6 +36,7 @@ import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ClassUtils;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
@@ -105,7 +106,7 @@ public class DELogicAspect {
             if (!ObjectUtils.isEmpty(entity)) {
                 String id = DEFieldCacheMap.getDEKeyField(entity.getClass());
                 if (StringUtils.isEmpty(id)) {
-                    log.debug("无法获取实体主键属性[{}]", entity.getClass().getSimpleName());
+                    log.debug("无法获取实体主键属性[{}]", getEntityName(entity));
                     return point.proceed();
                 }
                 entity.set(id, arg);
@@ -132,6 +133,17 @@ public class DELogicAspect {
     }
 
     /**
+     * 判断类是否被代理类代理
+     */
+    private String getEntityName(Object entity){
+        String entityName = entity.getClass().getSimpleName();
+        if(entityName.contains("$$")){
+            entityName = ClassUtils.getUserClass(entity.getClass()).getSimpleName();
+        }
+        return entityName;
+    }
+
+    /**
      * 前附加逻辑
      *
      * @param entity
@@ -140,13 +152,13 @@ public class DELogicAspect {
     private void executeBeforeLogic(EntityBase entity, String action, boolean isDyna, String instanceId) {
         Resource bpmnFile;
         if (isDyna) {
-            bpmnFile = getRemoteModel(getDEModule(entity), entity.getClass().getSimpleName(), action, LogicExecMode.BEFORE, instanceId);
+            bpmnFile = getRemoteModel(getDEModule(entity), getEntityName(entity), action, LogicExecMode.BEFORE, instanceId);
             if (bpmnFile != null && bpmnFile.exists()) {
                 executeLogic(bpmnFile, entity, action, instanceId);
                 return;
             }
         }
-        bpmnFile = getLocalModel(entity.getClass().getSimpleName(), action, LogicExecMode.BEFORE);
+        bpmnFile = getLocalModel(getEntityName(entity), action, LogicExecMode.BEFORE);
         if (bpmnFile != null && bpmnFile.exists() && isValid(bpmnFile, entity, action)) {
             executeLogic(bpmnFile, entity, action, instanceId);
         }
@@ -161,13 +173,13 @@ public class DELogicAspect {
     private void executeAfterLogic(EntityBase entity, String action, boolean isDyna, String instanceId) {
         Resource bpmnFile;
         if (isDyna) {
-            bpmnFile = getRemoteModel(getDEModule(entity), entity.getClass().getSimpleName(), action, LogicExecMode.AFTER, instanceId);
+            bpmnFile = getRemoteModel(getDEModule(entity), getEntityName(entity), action, LogicExecMode.AFTER, instanceId);
             if (bpmnFile != null && bpmnFile.exists()) {
                 executeLogic(bpmnFile, entity, action, instanceId);
                 return;
             }
         }
-        bpmnFile = getLocalModel(entity.getClass().getSimpleName(), action, LogicExecMode.AFTER);
+        bpmnFile = getLocalModel(getEntityName(entity), action, LogicExecMode.AFTER);
         if (bpmnFile != null && bpmnFile.exists() && isValid(bpmnFile, entity, action)) {
             executeLogic(bpmnFile, entity, action, instanceId);
         }
@@ -182,13 +194,13 @@ public class DELogicAspect {
     private void executeLogic(EntityBase entity, String action, boolean isDyna, String instanceId) {
         Resource bpmnFile;
         if (isDyna) {
-            bpmnFile = getRemoteModel(getDEModule(entity), entity.getClass().getSimpleName(), action, LogicExecMode.EXEC, instanceId);
+            bpmnFile = getRemoteModel(getDEModule(entity), getEntityName(entity), action, LogicExecMode.EXEC, instanceId);
             if (bpmnFile != null && bpmnFile.exists()) {
                 executeLogic(bpmnFile, entity, action, instanceId);
                 return;
             }
         }
-        bpmnFile = getLocalModel(entity.getClass().getSimpleName(), action, LogicExecMode.EXEC);
+        bpmnFile = getLocalModel(getEntityName(entity), action, LogicExecMode.EXEC);
         if (bpmnFile != null && bpmnFile.exists() && isValid(bpmnFile, entity, action)) {
             executeLogic(bpmnFile, entity, action, instanceId);
         }
@@ -203,7 +215,7 @@ public class DELogicAspect {
     private void executeLogic(Resource bpmnFile, Object entity, String action, String instanceId) {
         String logicMode = bpmnFile instanceof FileSystemResource ? String.format("远程模式:%s", instanceId) : "本地模式";
         try {
-            log.debug("开始执行实体处理逻辑[{}:{}:{}:{}]", entity.getClass().getSimpleName(), action, bpmnFile.getFilename(), logicMode);
+            log.debug("开始执行实体处理逻辑[{}:{}:{}:{}]", getEntityName(entity), action, bpmnFile.getFilename(), logicMode);
             String bpmnId = DigestUtils.md5DigestAsHex(bpmnFile.getURL().getPath().getBytes());
             DELogic logic = getDELogic(bpmnFile, entity, instanceId);
             if (logic == null) {
@@ -227,9 +239,9 @@ public class DELogicAspect {
                 }
             }
             kieSession.startProcess(mainProcess.getId());
-            log.debug("实体处理逻辑[{}:{}:{}:{}]执行结束", entity.getClass().getSimpleName(), action, bpmnFile.getFilename(), logicMode);
+            log.debug("实体处理逻辑[{}:{}:{}:{}]执行结束", getEntityName(entity), action, bpmnFile.getFilename(), logicMode);
         } catch (Exception e) {
-            log.error("执行实体处理逻辑[{}:{}:{}:{}]发生异常" + e.getMessage(), entity.getClass().getSimpleName(), action, bpmnFile.getFilename(), logicMode);
+            log.error("执行实体处理逻辑[{}:{}:{}:{}]发生异常" + e.getMessage(), getEntityName(entity), action, bpmnFile.getFilename(), logicMode);
             throw new BadRequestAlertException("执行实体处理逻辑发生异常"+ e.getMessage(), "DELogicAspect", "executeLogic");
         }
     }
@@ -329,7 +341,7 @@ public class DELogicAspect {
                         if (item instanceof CallActivity) {
                             CallActivity subBpmn = (CallActivity) item;
                             String bpmnFileName = subBpmn.getName();
-                            Resource subBpmnFile = getSubBpmn(getDEModule(entity), entity.getClass().getSimpleName(), bpmnFileName, bpmnFile, instanceId);
+                            Resource subBpmnFile = getSubBpmn(getDEModule(entity), getEntityName(entity), bpmnFileName, bpmnFile, instanceId);
                             DELogic refLogic = getDELogic(subBpmnFile, entity, instanceId);
                             if (refLogic != null) {
                                 refLogics.add(refLogic);
@@ -498,7 +510,7 @@ public class DELogicAspect {
             strModule = m.group(1);
         }
         if (StringUtils.isEmpty(strModule)) {
-            throw new BadRequestAlertException(String.format("无法获取实体[%s]所属模块信息", entity.getClass().getSimpleName()), "LogicAspect", "getDEModule");
+            throw new BadRequestAlertException(String.format("无法获取实体[%s]所属模块信息", getEntityName(entity)), "LogicAspect", "getDEModule");
         }
         return strModule;
     }
@@ -589,7 +601,7 @@ public class DELogicAspect {
             String action = String.valueOf(args[1]);
             Object entity = args[2];
             if (entity instanceof EntityBase) {
-                log.debug("开始执行实体动态行为[{}:{}]", entity.getClass().getSimpleName(), action);
+                log.debug("开始执行实体动态行为[{}:{}]", getEntityName(entity), action);
                 EvaluationContext context = new StandardEvaluationContext();
                 context.setVariable("service", point.getTarget());
                 context.setVariable("action", action);
@@ -600,7 +612,7 @@ public class DELogicAspect {
                 }
                 Expression oldExp = parser.parseExpression(String.format("#service.%s(#args)", action));
                 oldExp.getValue(context);
-                log.debug("实体动态行为[{}:{}]执行结束", entity.getClass().getSimpleName(), action);
+                log.debug("实体动态行为[{}:{}]执行结束", getEntityName(entity), action);
             }
         }
     }
@@ -614,7 +626,7 @@ public class DELogicAspect {
      * @return
      */
     private boolean isValid(Resource bpmn, Object entity, Object action) {
-        String logicId = String.format("%s%s%s", entity.getClass().getSimpleName(), action, bpmn.getFilename()).toLowerCase();
+        String logicId = String.format("%s%s%s", getEntityName(entity), action, bpmn.getFilename()).toLowerCase();
         if (validLogic.containsKey(logicId)) {
             return true;
         } else {

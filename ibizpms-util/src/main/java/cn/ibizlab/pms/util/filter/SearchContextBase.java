@@ -76,16 +76,30 @@ public class SearchContextBase implements ISearchContext{
     /**
      * 动态实例标识
      */
-    @JsonProperty("srfdynainstid")
-    public String srfDynaInstId;
+    @JsonProperty("srfinsttag")
+    public String srfInstTag;
 
-    public String getSrfDynaInstId() {
-        if(StringUtils.isEmpty(srfDynaInstId)){
-            Object dynainstid=params.get("srfdynainstid");
-            return StringUtils.isEmpty(dynainstid)?null:String.valueOf(dynainstid);
+    /**
+     * 动态实例标识2
+     */
+    @JsonProperty("srfinsttag2")
+    public String srfInstTag2;
+
+    public String getSrfInstTag() {
+        if (StringUtils.isEmpty(srfInstTag)) {
+            Object instTag = params.get("srfinsttag");
+            return ObjectUtils.isEmpty(instTag) ? null : String.valueOf(instTag);
+        } else {
+            return srfInstTag;
         }
-        else{
-            return srfDynaInstId;
+    }
+
+    public String getSrfInstTag2() {
+        if (StringUtils.isEmpty(srfInstTag2)) {
+            Object instTag2 = params.get("srfinsttag2");
+            return ObjectUtils.isEmpty(instTag2) ? null : String.valueOf(instTag2);
+        } else {
+            return srfInstTag2;
         }
     }
 

@@ -1,12 +1,12 @@
 {
-  "showDataInfoBar" : true,
   "showCaptionBar" : true,
+  "showDataInfoBar" : true,
   "xDataControlName" : "form",
-  "funcViewMode" : "EDITVIEW",
   "getPSDEViewCodeName" : "EditView",
+  "funcViewMode" : "EDITVIEW",
+  "openMode" : "DRAWER_RIGHT",
   "width" : 750,
   "caption" : "用户信息",
-  "openMode" : "DRAWER_RIGHT",
   "title" : "用户编辑视图",
   "accUserMode" : 2,
   "enableDP" : true,
@@ -27,12 +27,12 @@
     "engineType" : "EditView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
@@ -56,7 +56,6 @@
     "key" : "DEPT",
     "name" : "DEPT"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
@@ -68,14 +67,25 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction1"
       },
-      "noPrivDisplayMode" : 2,
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+      },
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+        },
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+        },
         "timeout" : 60000,
+        "codeName" : "SaveAndExit",
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
-        "codeName" : "SaveAndExit",
         "caption" : "保存并关闭",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "uIActionTag" : "SaveAndExit",
@@ -84,6 +94,11 @@
         "fullCodeName" : "SaveAndExit",
         "name" : "编辑界面_保存并退出操作"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "cssClass" : "sx-tb-saveandclose"
       },
@@ -108,6 +123,7 @@
     "name" : "toolbar",
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
+    "showFormNavBar" : false,
     "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
@@ -134,13 +150,13 @@
       "id" : "loaddraftfrom"
     },
     "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : false,
@@ -157,30 +173,30 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 100,
               "editorType" : "TEXTBOX",
               "name" : "realname"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "REALNAME",
               "codeName" : "Realname"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "真实姓名",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "realname",
@@ -188,36 +204,36 @@
             "detailStyle" : "DEFAULT",
             "name" : "realname"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "dateTimeFormat" : "YYYY-MM-DD",
+              "editorWidth" : 100.0,
+              "editorType" : "DATEPICKEREX_NOTIME",
               "editorParams" : {
                 "TIMEFMT" : "YYYY-MM-DD"
               },
-              "editorType" : "DATEPICKEREX_NOTIME",
-              "editorWidth" : 100.0,
               "name" : "join"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "JOIN",
               "codeName" : "Join"
             },
+            "hidden" : false,
             "dataType" : 5,
             "caption" : "入职日期",
             "allowEmpty" : true,
             "createDVT" : "CURTIME",
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "itemWidth" : 200.0,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "join",
@@ -225,6 +241,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "join"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "singleSelect" : true,
               "getPSAppCodeList" : {
@@ -235,27 +252,26 @@
               "name" : "dept"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "DEPT",
               "codeName" : "Dept"
             },
+            "hidden" : false,
             "dataType" : 9,
             "needCodeListConfig" : true,
             "caption" : "所属部门",
             "allowEmpty" : true,
             "createDV" : "dept",
             "createDVT" : "CONTEXT",
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "dept",
@@ -263,6 +279,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "dept"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "singleSelect" : true,
               "getPSAppCodeList" : {
@@ -273,25 +290,24 @@
               "name" : "role"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ROLE",
               "codeName" : "Role"
             },
+            "hidden" : false,
             "dataType" : 25,
             "needCodeListConfig" : true,
             "caption" : "职位",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "role",
@@ -299,6 +315,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "role"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "getPSAppCodeList" : {
                 "modelref" : true,
@@ -308,25 +325,24 @@
               "name" : "gender"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "GENDER",
               "codeName" : "Gender"
             },
+            "hidden" : false,
             "dataType" : 25,
             "needCodeListConfig" : true,
             "caption" : "性别",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "gender",
@@ -352,30 +368,30 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 30,
               "editorType" : "TEXTBOX",
               "name" : "account"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ACCOUNT",
               "codeName" : "Account"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "账户",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "account",
@@ -383,30 +399,30 @@
             "detailStyle" : "DEFAULT",
             "name" : "account"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 90,
               "editorType" : "TEXTBOX",
               "name" : "email"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "EMAIL",
               "codeName" : "Email"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "邮箱",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "email",
@@ -414,30 +430,30 @@
             "detailStyle" : "DEFAULT",
             "name" : "email"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 32,
               "editorType" : "PASSWORD",
               "name" : "password"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "PASSWORD",
               "codeName" : "Password"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "密码",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "password",
@@ -463,30 +479,30 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 11,
               "editorType" : "TEXTBOX",
               "name" : "mobile"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "MOBILE",
               "codeName" : "Mobile"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "手机",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "mobile",
@@ -494,30 +510,30 @@
             "detailStyle" : "DEFAULT",
             "name" : "mobile"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 20,
               "editorType" : "TEXTBOX",
               "name" : "phone"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "PHONE",
               "codeName" : "Phone"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "电话",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "phone",
@@ -525,30 +541,30 @@
             "detailStyle" : "DEFAULT",
             "name" : "phone"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 20,
               "editorType" : "TEXTBOX",
               "name" : "qq"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "QQ",
               "codeName" : "Qq"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "QQ",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "qq",
@@ -556,30 +572,30 @@
             "detailStyle" : "DEFAULT",
             "name" : "qq"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 90,
               "editorType" : "TEXTBOX",
               "name" : "dingding"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "DINGDING",
               "codeName" : "Dingding"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "钉钉",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "dingding",
@@ -587,30 +603,30 @@
             "detailStyle" : "DEFAULT",
             "name" : "dingding"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 90,
               "editorType" : "TEXTBOX",
               "name" : "weixin"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "WEIXIN",
               "codeName" : "Weixin"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "微信",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "weixin",
@@ -618,30 +634,30 @@
             "detailStyle" : "DEFAULT",
             "name" : "weixin"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 120,
               "editorType" : "TEXTBOX",
               "name" : "address"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ADDRESS",
               "codeName" : "Address"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "通讯地址",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 12,
               "colMD" : 12,
+              "colLG" : 12,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "address",
@@ -828,19 +844,12 @@
         "codeName" : "Id"
       }
     } ],
-    "noTabHeader" : true,
     "codeName" : "Main",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -920,24 +929,31 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User/PSFORMS/Main.json",
     "logicName" : "主编辑表单",
     "name" : "form",
     "modelid" : "03814dd8ec9097fb8dc654dc6e3311d5"
   } ],
+  "viewStyle" : "STYLE2",
+  "codeName" : "UserEditView",
   "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction1"
     },
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "toolbar",
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction1_click"
   } ],
-  "codeName" : "UserEditView",
   "viewType" : "DEEDITVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserEditView.json",
   "name" : "UserEditView"

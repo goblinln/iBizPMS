@@ -1,9 +1,9 @@
 {
-  "showDataInfoBar" : true,
   "showCaptionBar" : true,
+  "showDataInfoBar" : true,
   "xDataControlName" : "form",
-  "funcViewMode" : "EDITVIEW",
   "getPSDEViewCodeName" : "EditView",
+  "funcViewMode" : "EDITVIEW",
   "caption" : "组成员",
   "title" : "组成员编辑视图",
   "accUserMode" : 2,
@@ -25,21 +25,21 @@
     "engineType" : "EditView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
   },
   "getPSControls" : [ {
+    "showFormNavBar" : false,
     "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
@@ -66,35 +66,35 @@
       "id" : "loaddraftfrom"
     },
     "infoFormMode" : true,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "postid"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "POSTID",
           "codeName" : "PostId"
         },
+        "hidden" : true,
         "dataType" : 25,
         "caption" : "岗位标识",
         "allowEmpty" : true,
+        "labelWidth" : 70,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 70,
         "showCaption" : true,
-        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -104,26 +104,26 @@
         "detailStyle" : "DEFAULT",
         "name" : "postid"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "teamid"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TEAMID",
           "codeName" : "TeamId"
         },
+        "hidden" : true,
         "dataType" : 25,
         "caption" : "组标识",
         "allowEmpty" : true,
+        "labelWidth" : 70,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 70,
         "showCaption" : true,
-        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -133,26 +133,26 @@
         "detailStyle" : "DEFAULT",
         "name" : "teamid"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "userid"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "USERID",
           "codeName" : "UserId"
         },
+        "hidden" : true,
         "dataType" : 25,
         "caption" : "用户标识",
         "allowEmpty" : true,
+        "labelWidth" : 70,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 70,
         "showCaption" : true,
-        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -162,6 +162,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "userid"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -169,21 +170,20 @@
           "name" : "personname"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PERSONNAME",
           "codeName" : "PersonName"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "姓名",
         "allowEmpty" : true,
+        "labelWidth" : 70,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 70,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -193,6 +193,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "personname"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -200,21 +201,20 @@
           "name" : "username"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "USERNAME",
           "codeName" : "UserName"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "账号",
         "allowEmpty" : true,
+        "labelWidth" : 70,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 70,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -224,6 +224,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "username"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "enableLinkView" : true,
@@ -232,8 +233,8 @@
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridViewPostMembers.json",
             "viewType" : "DEGRIDVIEW"
           },
-          "dropDownView" : false,
           "enablePickupView" : false,
+          "dropDownView" : false,
           "enableAC" : false,
           "forceSelection" : true,
           "showTrigger" : false,
@@ -250,6 +251,7 @@
             "id" : "Default"
           },
           "valueItemName" : "postid",
+          "editorType" : "PICKEREX_LINKONLY",
           "editable" : false,
           "editorParams" : {
             "EDITABLE" : "FALSE",
@@ -258,26 +260,24 @@
             "TRIGGER" : "FALSE",
             "PICKUPVIEW" : "FALSE"
           },
-          "editorType" : "PICKEREX_LINKONLY",
           "name" : "postname"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "POSTNAME",
           "codeName" : "PostName"
         },
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "岗位",
         "allowEmpty" : true,
+        "labelWidth" : 70,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "valueItemName" : "postid",
-        "labelWidth" : 70,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -287,26 +287,26 @@
         "detailStyle" : "DEFAULT",
         "name" : "postname"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "teammemberid"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TEAMMEMBERID",
           "codeName" : "TeamMemberId"
         },
+        "hidden" : true,
         "dataType" : 25,
         "caption" : "组成员标识",
         "allowEmpty" : true,
+        "labelWidth" : 70,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 70,
         "showCaption" : true,
-        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -409,19 +409,12 @@
         "codeName" : "TeamMemberId"
       }
     } ],
-    "noTabHeader" : true,
     "codeName" : "ExpMainEdit",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -501,11 +494,18 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember/PSFORMS/ExpMainEdit.json",
     "logicName" : "通讯录编辑表单",
     "name" : "form",
     "modelid" : "c450bf3821904779e69343c936dbd66c"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "SysTeamMemberEditView",
   "viewType" : "DEEDITVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberEditView.json",

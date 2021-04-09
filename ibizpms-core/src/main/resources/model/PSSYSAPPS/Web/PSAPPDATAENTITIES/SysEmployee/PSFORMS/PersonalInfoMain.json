@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,13 +26,13 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : true,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : true,
@@ -55,6 +56,7 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -62,21 +64,20 @@
               "name" : "loginname"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "LOGINNAME",
               "codeName" : "LoginName"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "登录名",
             "allowEmpty" : true,
+            "labelWidth" : 80,
             "enableCond" : 1,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 80,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -86,6 +87,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "loginname"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -93,21 +95,20 @@
               "name" : "personname"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "PERSONNAME",
               "codeName" : "PersonName"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "姓名",
             "allowEmpty" : true,
+            "labelWidth" : 80,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 80,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -117,6 +118,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "personname"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -124,21 +126,20 @@
               "name" : "sex"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "SEX",
               "codeName" : "Sex"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "性别",
             "allowEmpty" : true,
+            "labelWidth" : 80,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 80,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -148,6 +149,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "sex"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -155,21 +157,20 @@
               "name" : "mdeptname"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "MDEPTNAME",
               "codeName" : "MDeptName"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "主部门名称",
             "allowEmpty" : true,
+            "labelWidth" : 80,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 80,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -179,26 +180,26 @@
             "detailStyle" : "DEFAULT",
             "name" : "mdeptname"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "userid"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "USERID",
               "codeName" : "UserId"
             },
+            "hidden" : true,
             "dataType" : 25,
             "caption" : "用户标识",
             "allowEmpty" : true,
+            "labelWidth" : 80,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 80,
             "showCaption" : true,
-            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -209,10 +210,10 @@
             "name" : "userid"
           } ],
           "getPSLayoutPos" : {
-            "colLG" : 12,
-            "colMD" : 12,
-            "colSM" : 12,
             "colXS" : 12,
+            "colSM" : 12,
+            "colMD" : 12,
+            "colLG" : 12,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "grouppanel2",
@@ -229,6 +230,7 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -236,21 +238,20 @@
               "name" : "phone"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "PHONE",
               "codeName" : "Phone"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "联系方式",
             "allowEmpty" : true,
+            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -260,6 +261,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "phone"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -267,21 +269,20 @@
               "name" : "email"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "EMAIL",
               "codeName" : "Email"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "邮件",
             "allowEmpty" : true,
+            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -291,6 +292,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "email"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -298,21 +300,20 @@
               "name" : "addr"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ADDR",
               "codeName" : "Addr"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "地址",
             "allowEmpty" : true,
+            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -322,6 +323,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "addr"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -329,21 +331,20 @@
               "name" : "avatar"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "AVATAR",
               "codeName" : "Avatar"
             },
+            "hidden" : false,
             "dataType" : 25,
             "caption" : "社交账号",
             "allowEmpty" : true,
+            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -354,10 +355,10 @@
             "name" : "avatar"
           } ],
           "getPSLayoutPos" : {
-            "colLG" : 12,
-            "colMD" : 12,
-            "colSM" : 12,
             "colXS" : 12,
+            "colSM" : 12,
+            "colMD" : 12,
+            "colLG" : 12,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "grouppanel3",
@@ -509,7 +510,6 @@
       "codeName" : "Avatar"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "PersonalInfoMain",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

@@ -6,14 +6,15 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "MobProductPlanCounter",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接5534"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -23,6 +24,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -33,7 +35,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取bug数"
   }, {
@@ -43,6 +44,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6798"
@@ -57,7 +59,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取需求数"
   } ],
@@ -85,14 +86,13 @@
     "name" : "连接6798"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "MobProductPlanCounter",
   "logicName" : "移动端产品计划计数器",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

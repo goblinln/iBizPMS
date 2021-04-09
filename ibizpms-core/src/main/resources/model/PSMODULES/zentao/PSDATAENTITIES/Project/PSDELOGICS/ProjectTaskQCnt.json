@@ -6,14 +6,15 @@
     "id" : "Begin"
   },
   "logicHolder" : 3,
+  "codeName" : "ProjectTaskQCnt",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7949"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -23,6 +24,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall8",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8042"
@@ -37,7 +39,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall8",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "进行中的任务"
   }, {
@@ -47,6 +48,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall10",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8894"
@@ -61,7 +63,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall10",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "未关闭的任务数"
   }, {
@@ -71,6 +72,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8155"
@@ -85,7 +87,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "未关闭任务数"
   }, {
@@ -95,6 +96,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall7",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1312"
@@ -109,7 +111,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall7",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "已关闭的任务数"
   }, {
@@ -119,6 +120,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7725"
@@ -138,7 +140,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "指派给我的任务数"
   }, {
@@ -148,6 +149,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall5",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7225"
@@ -162,7 +164,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall5",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "所有任务"
   }, {
@@ -172,6 +173,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall3",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接299"
@@ -186,7 +188,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall3",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "已完成的任务数"
   }, {
@@ -196,6 +197,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall6",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7826"
@@ -210,7 +212,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall6",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "已取消任务"
   }, {
@@ -220,6 +221,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall9",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6403"
@@ -234,7 +236,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall9",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "未开始的任务数"
   }, {
@@ -244,6 +245,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall4",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4450"
@@ -263,7 +265,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall4",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "我完成的任务数"
   }, {
@@ -273,6 +274,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall11",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -283,7 +285,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall11",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "需求变更数"
   } ],
@@ -410,14 +411,13 @@
     "name" : "连接7225"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "ProjectTaskQCnt",
   "logicName" : "项目任务快速分组计数器",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

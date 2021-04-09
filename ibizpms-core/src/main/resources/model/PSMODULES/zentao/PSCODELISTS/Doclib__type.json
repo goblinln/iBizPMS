@@ -1,27 +1,27 @@
 {
   "subSysAsCloud" : false,
-  "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doclib__type.json",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
   "codeName" : "Doclib__type",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "product",
     "codeName" : "Product",
-    "text" : "产品文档库",
-    "value" : "product"
+    "text" : "产品文档库"
   }, {
+    "value" : "project",
     "codeName" : "Project",
-    "text" : "项目文档库",
-    "value" : "project"
+    "text" : "项目文档库"
   }, {
+    "value" : "custom",
     "codeName" : "Custom",
-    "text" : "自定义文档库",
-    "value" : "custom"
+    "text" : "自定义文档库"
   } ]
 }

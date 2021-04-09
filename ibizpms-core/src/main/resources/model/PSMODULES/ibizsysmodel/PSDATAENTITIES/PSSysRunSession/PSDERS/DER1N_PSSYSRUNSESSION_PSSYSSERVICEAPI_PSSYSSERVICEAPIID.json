@@ -10,6 +10,7 @@
   },
   "removeActionType" : 0,
   "masterRS" : 0,
+  "pickupDEFName" : "PSSYSSERVICEAPIID",
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

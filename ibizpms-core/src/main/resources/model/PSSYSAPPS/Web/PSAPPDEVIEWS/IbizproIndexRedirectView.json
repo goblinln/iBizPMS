@@ -1,5 +1,6 @@
 {
   "redirectView" : true,
+  "enableCustomGetDataAction" : false,
   "getRedirectPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -62,11 +63,10 @@
     "realTitle" : "项目",
     "name" : "EDITVIEW:PROJECT"
   } ],
-  "enableCustomGetDataAction" : false,
   "enableWorkflow" : true,
-  "funcViewMode" : "REDIRECTVIEW",
-  "getPSDEViewCodeName" : "RedirectView",
   "showCaptionBar" : true,
+  "getPSDEViewCodeName" : "RedirectView",
+  "funcViewMode" : "REDIRECTVIEW",
   "caption" : "索引检索",
   "title" : "索引检索数据重定向视图",
   "accUserMode" : 2,
@@ -84,11 +84,11 @@
     "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
     "name" : "layoutpanel"
   },
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,

@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,13 +26,13 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -41,6 +42,7 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -51,25 +53,24 @@
           "name" : "assignto"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ASSIGNEDTO",
           "codeName" : "AssignedTo"
         },
+        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "指派给",
         "allowEmpty" : false,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 24,
           "colMD" : 24,
+          "colLG" : 24,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "assignto",
@@ -77,38 +78,34 @@
         "detailStyle" : "DEFAULT",
         "name" : "assignto"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
+          "editorWidth" : 100.0,
+          "editorType" : "DATEPICKEREX_NOTIME",
           "editorParams" : {
             "TIMEFMT" : "YYYY-MM-DD"
           },
-          "editorType" : "DATEPICKEREX_NOTIME",
-          "editorWidth" : 100.0,
           "name" : "date"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "DATE",
           "codeName" : "Date"
         },
+        "hidden" : false,
         "dataType" : 5,
         "caption" : "日期",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "itemWidth" : 230.0,
         "showCaption" : true,
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colLG" : 16,
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSDEFDGroupLogics" : [ {
+          "relatedDetailNames" : [ "future" ],
           "logicCat" : "ITEMENABLE",
           "getPSDEFDLogics" : [ {
             "dEFDName" : "future",
@@ -122,11 +119,17 @@
           "logicType" : "GROUP",
           "name" : "表单成员[date][表单项启用]逻辑"
         } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "colLG" : 16,
+          "layout" : "TABLE_24COL"
+        },
         "codeName" : "date",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "date"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "getPSAppCodeList" : {
             "modelref" : true,
@@ -136,21 +139,20 @@
           "name" : "future"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
+        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "allowEmpty" : true,
+        "labelWidth" : 0,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "NONE",
         "valueItemName" : "future",
-        "labelWidth" : 0,
         "showCaption" : false,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 8,
           "colMD" : 24,
+          "colLG" : 8,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "future",
@@ -158,6 +160,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "future"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -168,28 +171,23 @@
           "name" : "begin"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "BEGIN",
           "codeName" : "Begin"
         },
+        "hidden" : false,
         "dataType" : 9,
         "needCodeListConfig" : true,
         "caption" : "起止时间",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colLG" : 10,
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSDEFDGroupLogics" : [ {
+          "relatedDetailNames" : [ "lbldisabledate" ],
           "logicCat" : "ITEMENABLE",
           "getPSDEFDLogics" : [ {
             "dEFDName" : "lblDisableDate",
@@ -203,11 +201,17 @@
           "logicType" : "GROUP",
           "name" : "表单成员[begin][表单项启用]逻辑"
         } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "colLG" : 10,
+          "layout" : "TABLE_24COL"
+        },
         "codeName" : "begin",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "begin"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -218,28 +222,23 @@
           "name" : "end"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "END",
           "codeName" : "End"
         },
+        "hidden" : false,
         "dataType" : 9,
         "needCodeListConfig" : true,
         "caption" : "~",
         "allowEmpty" : true,
+        "labelWidth" : 10,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 10,
         "showCaption" : true,
-        "hidden" : false,
-        "getPSLayoutPos" : {
-          "colLG" : 6,
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSDEFDGroupLogics" : [ {
+          "relatedDetailNames" : [ "lbldisabledate" ],
           "logicCat" : "ITEMENABLE",
           "getPSDEFDLogics" : [ {
             "dEFDName" : "lblDisableDate",
@@ -253,11 +252,17 @@
           "logicType" : "GROUP",
           "name" : "表单成员[end][表单项启用]逻辑"
         } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "colLG" : 6,
+          "layout" : "TABLE_24COL"
+        },
         "codeName" : "end",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "end"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "getPSAppCodeList" : {
             "modelref" : true,
@@ -267,21 +272,20 @@
           "name" : "lbldisabledate"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
+        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "allowEmpty" : true,
+        "labelWidth" : 0,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "NONE",
         "valueItemName" : "lblDisableDate",
-        "labelWidth" : 0,
         "showCaption" : false,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 8,
           "colMD" : 24,
+          "colLG" : 8,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "lbldisabledate",
@@ -390,7 +394,6 @@
       "codeName" : "Id"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "AssigntoForm",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

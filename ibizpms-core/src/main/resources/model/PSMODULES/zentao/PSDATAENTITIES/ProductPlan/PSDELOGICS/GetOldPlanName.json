@@ -6,14 +6,15 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "GetOldPlanName",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接980"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -23,6 +24,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -33,7 +35,6 @@
       "srcFieldName" : "PRODUCT",
       "name" : "Default[PRODUCT]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取名称"
   } ],
@@ -50,14 +51,13 @@
     "name" : "连接980"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "GetOldPlanName",
   "logicName" : "获取上一个计划的名称",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

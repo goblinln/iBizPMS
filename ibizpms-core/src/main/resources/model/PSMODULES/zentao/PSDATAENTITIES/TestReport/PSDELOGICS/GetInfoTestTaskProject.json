@@ -6,6 +6,7 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "GetInfoTestTaskProject",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
@@ -13,6 +14,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3605"
@@ -36,7 +38,6 @@
       "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取数据"
   }, {
@@ -46,6 +47,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6994"
@@ -60,7 +62,6 @@
       "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT]"
     } ],
-    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取测试单"
   }, {
@@ -70,6 +71,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall5",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8985"
@@ -120,7 +122,6 @@
       "srcFieldName" : "END",
       "name" : "Default[END]"
     } ],
-    "codeName" : "Rawsqlcall5",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取影响Bug"
   }, {
@@ -130,6 +131,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall3",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4809"
@@ -144,17 +146,16 @@
       "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT]"
     } ],
-    "codeName" : "Rawsqlcall3",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取项目周期"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4268"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -164,6 +165,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall7",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接2910"
@@ -178,7 +180,6 @@
       "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT]"
     } ],
-    "codeName" : "Rawsqlcall7",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取产品"
   }, {
@@ -188,6 +189,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall6",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9359"
@@ -202,7 +204,6 @@
       "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT]"
     } ],
-    "codeName" : "Rawsqlcall6",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取产品数"
   }, {
@@ -226,6 +227,7 @@
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3676"
@@ -255,7 +257,6 @@
       "dstFieldName" : "OBJECTTYPE",
       "name" : "直接值[project] ==> Default[OBJECTTYPE]"
     } ],
-    "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备参数"
   }, {
@@ -265,6 +266,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall4",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7844"
@@ -279,7 +281,6 @@
       "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT]"
     } ],
-    "codeName" : "Rawsqlcall4",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取影响需求"
   } ],
@@ -384,21 +385,20 @@
     "name" : "连接3605"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "testtask",
     "default" : false,
     "name" : "测试版本"
   }, {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "GetInfoTestTaskProject",
   "logicName" : "根据测试单获取相应信息（项目报告）",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

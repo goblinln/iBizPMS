@@ -13,40 +13,40 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
     },
-    "dataType" : 25,
-    "name" : "indextype"
+    "name" : "indextype",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "indexname"
+    "name" : "indexname",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "orgid"
+    "name" : "orgid",
+    "dataType" : 25
   }, {
-    "dataType" : 1,
-    "name" : "indexid"
+    "name" : "indexid",
+    "dataType" : 1
   }, {
-    "dataType" : 25,
-    "name" : "indexdesc"
+    "name" : "indexdesc",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "color"
+    "name" : "color",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "mdeptid"
+    "name" : "mdeptid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "INDEXID",
       "codeName" : "Indexid"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "INDEXNAME",
       "codeName" : "Indexname"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "INDEX_TYPE",
@@ -56,8 +56,8 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
     },
-    "dataType" : 25,
-    "name" : "srfdatatype"
+    "name" : "srfdatatype",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "INDEX_TYPE",
@@ -67,20 +67,16 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
     },
-    "dataType" : 25,
-    "name" : "index_type"
+    "name" : "index_type",
+    "dataType" : 25
   } ],
   "showHeader" : true,
-  "controlType" : "LIST",
   "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "IndexMob",
   "enableGroup" : false,
   "pagingSize" : 20,
   "groupMode" : "NONE",
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -96,6 +92,10 @@
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

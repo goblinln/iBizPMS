@@ -1,6 +1,6 @@
 {
-  "showDataInfoBar" : false,
   "showCaptionBar" : false,
+  "showDataInfoBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "BugLifeEditView9",
   "caption" : "Bug",
@@ -24,12 +24,12 @@
     "engineType" : "EditView9",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
@@ -55,12 +55,12 @@
     "key" : "BUGPROJECT",
     "name" : "BUGPROJECT"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
   "getPSControls" : [ {
+    "showFormNavBar" : false,
     "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
@@ -87,13 +87,13 @@
       "id" : "loaddraftfrom"
     },
     "infoFormMode" : true,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "noTabHeader" : false,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : true,
@@ -110,6 +110,7 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -121,25 +122,24 @@
               "name" : "openedby"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "OPENEDBY",
               "codeName" : "OpenedBy"
             },
+            "hidden" : false,
             "dataType" : 25,
             "convertToCodeItemText" : true,
             "caption" : "由谁创建",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 3,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 6,
               "colMD" : 24,
+              "colLG" : 6,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "openedby",
@@ -147,6 +147,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "openedby"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -154,27 +155,22 @@
               "name" : "openeddate"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "OPENEDDATE",
               "codeName" : "OpenedDate"
             },
+            "hidden" : false,
             "dataType" : 5,
             "caption" : "于",
             "allowEmpty" : true,
+            "labelWidth" : 30,
             "enableCond" : 3,
             "ignoreInput" : 3,
             "labelPos" : "LEFT",
-            "labelWidth" : 30,
             "showCaption" : true,
-            "hidden" : false,
-            "getPSLayoutPos" : {
-              "colLG" : 17,
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "getPSDEFDGroupLogics" : [ {
+              "relatedDetailNames" : [ "openeddate" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
                 "dEFDName" : "openeddate",
@@ -187,6 +183,11 @@
               "logicType" : "GROUP",
               "name" : "表单成员[openeddate][面板显示]逻辑"
             } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "colLG" : 17,
+              "layout" : "TABLE_24COL"
+            },
             "codeName" : "openeddate",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
@@ -203,6 +204,7 @@
           "showCaption" : false,
           "name" : "grouppanel2"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -221,30 +223,29 @@
               "key" : "bugproduct",
               "name" : "bugproduct"
             } ],
+            "editorType" : "SPAN",
             "editorParams" : {
               "srfnavparam.bugproduct" : "%product%",
               "srfnavparam.bugproject" : "%project%"
             },
-            "editorType" : "SPAN",
             "name" : "openedbuild"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "OPENEDBUILD",
             "codeName" : "OpenedBuild"
           },
+          "hidden" : false,
           "dataType" : 25,
           "convertToCodeItemText" : true,
           "caption" : "影响版本",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 0,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -254,26 +255,26 @@
           "detailStyle" : "DEFAULT",
           "name" : "openedbuild"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "project"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PROJECT",
             "codeName" : "Project"
           },
+          "hidden" : true,
           "dataType" : 1,
           "caption" : "所属项目",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -283,26 +284,26 @@
           "detailStyle" : "DEFAULT",
           "name" : "project"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "product"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PRODUCT",
             "codeName" : "Product"
           },
+          "hidden" : true,
           "dataType" : 1,
           "caption" : "所属产品",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -319,6 +320,7 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -330,25 +332,24 @@
               "name" : "resolvedby"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "RESOLVEDBY",
               "codeName" : "ResolvedBy"
             },
+            "hidden" : false,
             "dataType" : 25,
             "convertToCodeItemText" : true,
             "caption" : "由谁解决",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 3,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 6,
               "colMD" : 24,
+              "colLG" : 6,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "resolvedby",
@@ -356,6 +357,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "resolvedby"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -363,27 +365,22 @@
               "name" : "resolveddate"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "RESOLVEDDATE",
               "codeName" : "ResolvedDate"
             },
+            "hidden" : false,
             "dataType" : 5,
             "caption" : "于",
             "allowEmpty" : true,
+            "labelWidth" : 30,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 30,
             "showCaption" : true,
-            "hidden" : false,
-            "getPSLayoutPos" : {
-              "colLG" : 8,
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "getPSDEFDGroupLogics" : [ {
+              "relatedDetailNames" : [ "resolveddate" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
                 "dEFDName" : "resolveddate",
@@ -396,11 +393,17 @@
               "logicType" : "GROUP",
               "name" : "表单成员[resolveddate][面板显示]逻辑"
             } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "colLG" : 8,
+              "layout" : "TABLE_24COL"
+            },
             "codeName" : "resolveddate",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "resolveddate"
           }, {
+            "emptyCaption" : true,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -408,29 +411,28 @@
               "name" : "delayresolve"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : true,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "DELAYRESOLVE",
               "codeName" : "Delayresolve"
             },
+            "hidden" : false,
             "dataType" : 25,
             "allowEmpty" : true,
+            "labelWidth" : 5,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 5,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 7,
               "colMD" : 7,
+              "colLG" : 7,
               "layout" : "TABLE_24COL"
             },
+            "codeName" : "delayresolve",
             "getPSSysCss" : {
               "cssName" : "textcenterred"
             },
-            "codeName" : "delayresolve",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "delayresolve"
@@ -446,6 +448,7 @@
           "showCaption" : false,
           "name" : "grouppanel3"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -457,22 +460,21 @@
             "name" : "resolvedbuild"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "RESOLVEDBUILD",
             "codeName" : "ResolvedBuild"
           },
+          "hidden" : false,
           "dataType" : 25,
           "convertToCodeItemText" : true,
           "caption" : "解决版本",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -482,6 +484,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "resolvedbuild"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -493,22 +496,21 @@
             "name" : "resolution"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "RESOLUTION",
             "codeName" : "Resolution"
           },
+          "hidden" : false,
           "dataType" : 25,
           "convertToCodeItemText" : true,
           "caption" : "解决方案",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -525,6 +527,7 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -536,25 +539,24 @@
               "name" : "closedby"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "CLOSEDBY",
               "codeName" : "ClosedBy"
             },
+            "hidden" : false,
             "dataType" : 25,
             "convertToCodeItemText" : true,
             "caption" : "由谁关闭",
             "allowEmpty" : true,
+            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 3,
             "labelPos" : "LEFT",
-            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
-              "colLG" : 6,
               "colMD" : 24,
+              "colLG" : 6,
               "layout" : "TABLE_24COL"
             },
             "codeName" : "closedby",
@@ -562,6 +564,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "closedby"
           }, {
+            "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -569,27 +572,22 @@
               "name" : "closeddate"
             },
             "inputTipClosable" : false,
-            "emptyCaption" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "CLOSEDDATE",
               "codeName" : "ClosedDate"
             },
+            "hidden" : false,
             "dataType" : 5,
             "caption" : "于",
             "allowEmpty" : true,
+            "labelWidth" : 30,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 30,
             "showCaption" : true,
-            "hidden" : false,
-            "getPSLayoutPos" : {
-              "colLG" : 17,
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
             "getPSDEFDGroupLogics" : [ {
+              "relatedDetailNames" : [ "closeddate" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
                 "dEFDName" : "closeddate",
@@ -602,6 +600,11 @@
               "logicType" : "GROUP",
               "name" : "表单成员[closeddate][面板显示]逻辑"
             } ],
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "colLG" : 17,
+              "layout" : "TABLE_24COL"
+            },
             "codeName" : "closeddate",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
@@ -618,6 +621,7 @@
           "showCaption" : false,
           "name" : "grouppanel4"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -629,25 +633,24 @@
             "name" : "lasteditedby"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "LASTEDITEDBY",
             "codeName" : "LastEditedBy"
           },
+          "hidden" : false,
           "dataType" : 25,
           "convertToCodeItemText" : true,
           "caption" : "最后修改者",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 0,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
-            "colLG" : 6,
             "colMD" : 24,
+            "colLG" : 6,
             "layout" : "TABLE_24COL"
           },
           "codeName" : "lasteditedby",
@@ -655,6 +658,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "lasteditedby"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -662,27 +666,22 @@
             "name" : "lastediteddate"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "LASTEDITEDDATE",
             "codeName" : "LastEditedDate"
           },
+          "hidden" : false,
           "dataType" : 5,
           "caption" : "于",
           "allowEmpty" : true,
+          "labelWidth" : 30,
           "enableCond" : 0,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
-          "labelWidth" : 30,
           "showCaption" : true,
-          "hidden" : false,
-          "getPSLayoutPos" : {
-            "colLG" : 17,
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
           "getPSDEFDGroupLogics" : [ {
+            "relatedDetailNames" : [ "lastediteddate" ],
             "logicCat" : "PANELVISIBLE",
             "getPSDEFDLogics" : [ {
               "dEFDName" : "lastediteddate",
@@ -695,6 +694,11 @@
             "logicType" : "GROUP",
             "name" : "表单成员[lastediteddate][面板显示]逻辑"
           } ],
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "colLG" : 17,
+            "layout" : "TABLE_24COL"
+          },
           "codeName" : "lastediteddate",
           "detailType" : "FORMITEM",
           "detailStyle" : "DEFAULT",
@@ -730,6 +734,7 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -737,21 +742,20 @@
             "name" : "linkbug"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "LINKBUG",
             "codeName" : "LinkBug"
           },
+          "hidden" : false,
           "dataType" : 25,
           "caption" : "相关Bug",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -761,26 +765,26 @@
           "detailStyle" : "DEFAULT",
           "name" : "linkbug"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "case"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "CASE",
             "codeName" : "IBizCase"
           },
+          "hidden" : true,
           "dataType" : 1,
           "caption" : "相关用例",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -790,6 +794,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "case"
         }, {
+          "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
             "enableLinkView" : true,
@@ -798,8 +803,8 @@
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
               "viewType" : "DEPORTALVIEW"
             },
-            "dropDownView" : false,
             "enablePickupView" : false,
+            "dropDownView" : false,
             "enableAC" : false,
             "forceSelection" : true,
             "showTrigger" : false,
@@ -816,6 +821,7 @@
               "id" : "Default"
             },
             "valueItemName" : "case",
+            "editorType" : "PICKEREX_LINKONLY",
             "editable" : false,
             "editorParams" : {
               "EDITABLE" : "FALSE",
@@ -824,26 +830,24 @@
               "TRIGGER" : "FALSE",
               "PICKUPVIEW" : "FALSE"
             },
-            "editorType" : "PICKEREX_LINKONLY",
             "name" : "casename"
           },
           "inputTipClosable" : false,
-          "emptyCaption" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "CASENAME",
             "codeName" : "Casename"
           },
+          "hidden" : false,
           "dataType" : 25,
           "caption" : "相关用例",
           "allowEmpty" : true,
+          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "case",
-          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -1050,19 +1054,12 @@
         "codeName" : "Id"
       }
     } ],
-    "noTabHeader" : false,
     "codeName" : "DashboardBugLife",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -1142,23 +1139,38 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSFORMS/DashboardBugLife.json",
     "logicName" : "看板Bug的一生",
     "name" : "form",
     "modelid" : "2e47ec728d91e504aaa65400f1ae814b"
   } ],
+  "viewStyle" : "STYLE2",
+  "codeName" : "BugBugLifeEditView9",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
     "cssClass" : "fa fa-bug"
   },
-  "codeName" : "BugBugLifeEditView9",
   "viewType" : "DEEDITVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugBugLifeEditView9.json",
   "name" : "BugBugLifeEditView9",
   "getPSAppDERSPaths" : [ [ {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -1167,23 +1179,23 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
     "codeName" : "Stories",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "产品需求"
   }, {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -1192,23 +1204,23 @@
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
     "codeName" : "Bugs",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "需求Bug"
   } ], [ {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -1217,23 +1229,23 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
     "codeName" : "Bugs",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "项目Bug"
   } ], [ {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -1242,23 +1254,23 @@
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
     "codeName" : "Bugs",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "需求Bug"
   } ], [ {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -1266,14 +1278,6 @@
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
-    },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "codeName" : "Bugs",
     "actionRSMode" : 1,

@@ -8,6 +8,7 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "rawItemHeight" : -1.0,
@@ -15,9 +16,9 @@
       "contentType" : "RAW",
       "rawContent" : "<div style=\" padding-top: 6px;  padding-left: 20px;\"> 筛选条件： </div>",
       "getPSLayoutPos" : {
+        "colMD" : 24,
         "colLG" : 2,
         "colLGOffset" : 2,
-        "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "rawitem1",
@@ -26,25 +27,25 @@
       "showCaption" : true,
       "name" : "rawitem1"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "CHECKBOX",
         "name" : "closed"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
+      "hidden" : false,
       "dataType" : 25,
       "caption" : "关闭产品",
       "allowEmpty" : true,
+      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "RIGHT",
-      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 3,
         "colMD" : 2,
+        "colLG" : 3,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "closed",
@@ -52,6 +53,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "closed"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -62,25 +64,24 @@
         "name" : "n_id_eq"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
+      "hidden" : false,
       "dataType" : 1,
       "needCodeListConfig" : true,
       "caption" : "产品",
       "allowEmpty" : true,
+      "labelWidth" : 50,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 50,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 6,
         "colMD" : 6,
+        "colLG" : 6,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "n_id_eq",
@@ -110,7 +111,6 @@
       "codeName" : "Id"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "ProductStorySum",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

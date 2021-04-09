@@ -25,19 +25,19 @@ public interface IBZWFFeignClient
 					   @PathVariable("entity") String entity,
 					   @PathVariable("businessKey") String businessKey, @RequestBody JSONObject instance);
 
-	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{dynainstid}/{entity}/tasks")
-	Map<String,Map<String,Object>> getTaskByUserId(@PathVariable("system") String system,@PathVariable("userId") String userId,
-										 @PathVariable("entity") String entity,@PathVariable("dynainstid") String dynainstid);
+	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{insttag}/{insttag2}/{entity}/tasks")
+	Map<String, Map<String, Object>> getTaskByUserId(@PathVariable("system") String system, @PathVariable("userId") String userId,
+													 @PathVariable("entity") String entity, @PathVariable("insttag") String instTag, @PathVariable("insttag2") String instTag2);
 
-	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{dynainstid}/{entity}/tasks/unread")
-	Map<String,Map<String,Object>> getUnReadTaskByUserId(@PathVariable("system") String system,@PathVariable("userId") String userId,
-										 @PathVariable("entity") String entity,@PathVariable("dynainstid") String dynainstid);
+	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{insttag}/{insttag2}/{entity}/tasks/unread")
+	Map<String, Map<String, Object>> getUnReadTaskByUserId(@PathVariable("system") String system, @PathVariable("userId") String userId,
+														   @PathVariable("entity") String entity, @PathVariable("insttag") String instTag, @PathVariable("insttag2") String instTag2);
 
-	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{dynainstid}/{entity}/tasks/done")
-	Map<String,Map<String,Object>> getDoneTaskByUserId(@PathVariable("system") String system,@PathVariable("userId") String userId,
-										 @PathVariable("entity") String entity,@PathVariable("dynainstid") String dynainstid);
+	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{insttag}/{insttag2}/{entity}/tasks/done")
+	Map<String, Map<String, Object>> getDoneTaskByUserId(@PathVariable("system") String system, @PathVariable("userId") String userId,
+														 @PathVariable("entity") String entity, @PathVariable("insttag") String instTag, @PathVariable("insttag2") String instTag2);
 
-		@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{dynainstid}/{entity}/tasks/finish")
-	Map<String,Map<String,Object>> getFinishTaskByUserId(@PathVariable("system") String system,@PathVariable("userId") String userId,
-										 @PathVariable("entity") String entity,@PathVariable("dynainstid") String dynainstid);
+	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{insttag}/{insttag2}/{entity}/tasks/finish")
+	Map<String, Map<String, Object>> getFinishTaskByUserId(@PathVariable("system") String system, @PathVariable("userId") String userId,
+														   @PathVariable("entity") String entity, @PathVariable("insttag") String instTag, @PathVariable("insttag2") String instTag2);
 }

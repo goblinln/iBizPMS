@@ -1,10 +1,10 @@
 {
-  "showDataInfoBar" : true,
   "showCaptionBar" : true,
+  "showDataInfoBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "OptionView",
-  "caption" : "发布",
   "openMode" : "DRAWER_RIGHT",
+  "caption" : "发布",
   "title" : "发布选项操作视图",
   "accUserMode" : 2,
   "enableDP" : true,
@@ -25,21 +25,21 @@
     "engineType" : "OptionView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
   },
   "getPSControls" : [ {
+    "showFormNavBar" : false,
     "enableAutoSave" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
@@ -66,15 +66,16 @@
       "id" : "loaddraftfrom"
     },
     "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
+    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -85,25 +86,24 @@
           "name" : "releasetype"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "RELEASETYPE",
           "codeName" : "Releasetype"
         },
+        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "运行模式",
         "allowEmpty" : false,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 12,
           "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "releasetype",
@@ -111,6 +111,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "releasetype"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -129,33 +130,32 @@
             "key" : "PRODUCT",
             "name" : "PRODUCT"
           } ],
+          "editorType" : "DROPDOWNLIST",
           "editorParams" : {
             "SRFNAVPARAM.product" : "%product%",
             "SRFNAVCTX.product" : "%product%"
           },
-          "editorType" : "DROPDOWNLIST",
           "name" : "backgroundid"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "BACKGROUNDID",
           "codeName" : "Backgroundid"
         },
+        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "后台体系",
         "allowEmpty" : false,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 12,
           "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "backgroundid",
@@ -163,6 +163,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "backgroundid"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -181,33 +182,32 @@
             "key" : "PRODUCT",
             "name" : "PRODUCT"
           } ],
+          "editorType" : "DROPDOWNLIST",
           "editorParams" : {
             "SRFNAVPARAM.product" : "%product%",
             "SRFNAVCTX.product" : "%product%"
           },
-          "editorType" : "DROPDOWNLIST",
           "name" : "frontapplication"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "FRONTAPPLICATION",
           "codeName" : "Frontapplication"
         },
+        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "系统应用",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 12,
           "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "frontapplication",
@@ -215,6 +215,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "frontapplication"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -233,33 +234,32 @@
             "key" : "PRODUCT",
             "name" : "PRODUCT"
           } ],
+          "editorType" : "DROPDOWNLIST",
           "editorParams" : {
             "SRFNAVPARAM.product" : "%product%",
             "SRFNAVCTX.product" : "%product%"
           },
-          "editorType" : "DROPDOWNLIST",
           "name" : "sqlid"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "SQLID",
           "codeName" : "Sqlid"
         },
+        "hidden" : false,
         "dataType" : 25,
         "needCodeListConfig" : true,
         "caption" : "运行数据库",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 12,
           "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "sqlid",
@@ -267,6 +267,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "sqlid"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -277,25 +278,24 @@
           "name" : "rebuild"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "REBUILD",
           "codeName" : "Rebuild"
         },
+        "hidden" : false,
         "dataType" : 9,
         "needCodeListConfig" : true,
         "caption" : "重新构建",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 12,
           "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "rebuild",
@@ -303,26 +303,26 @@
         "detailStyle" : "DEFAULT",
         "name" : "rebuild"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "product"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PRODUCT",
           "codeName" : "Product"
         },
+        "hidden" : true,
         "dataType" : 1,
         "caption" : "产品",
         "allowEmpty" : true,
+        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -431,19 +431,12 @@
         "codeName" : "Id"
       }
     } ],
-    "noTabHeader" : true,
     "codeName" : "OneRelease",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -523,23 +516,38 @@
       "enableDEFieldPrivilege" : false,
       "id" : "选项表单处理器（一键发布）"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release/PSFORMS/OneRelease.json",
     "logicName" : "发布",
     "name" : "form",
     "modelid" : "d347c7bfa26de79f2efdc381e74e5bb9"
   } ],
+  "viewStyle" : "STYLE2",
+  "codeName" : "ReleaseOptionView",
   "getPSSysImage" : {
     "glyph" : "xf11d@FontAwesome",
     "cssClass" : "fa fa-flag-o"
   },
-  "codeName" : "ReleaseOptionView",
   "viewType" : "DEOPTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseOptionView.json",
   "name" : "ReleaseOptionView",
   "getPSAppDERSPaths" : [ [ {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableSelect" : true,
     "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
@@ -547,14 +555,6 @@
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
-    },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "codeName" : "Releases",
     "actionRSMode" : 1,

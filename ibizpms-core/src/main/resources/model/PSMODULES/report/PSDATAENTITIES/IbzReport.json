@@ -1,296 +1,24 @@
 {
-  "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Create.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Update.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Remove.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/GetDraft.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/CheckKey.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Save.json"
-  } ],
-  "subSysAsCloud" : false,
-  "getAllPSDELogics" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/MyReportINotSubmit.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/ReportIReceived.json"
-  } ],
-  "getAllPSDEMainStates" : [ {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "MONTHLY"
-      },
-      "name" : "MONTHLY"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "WEEKLY"
-      },
-      "name" : "WEEKLY"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "REPORTLY"
-      },
-      "name" : "REPORTLY"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "daily",
-    "logicName" : "日报",
-    "default" : false,
-    "mSTag" : "daily",
-    "stateValue" : "daily",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "name" : "日报"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "WEEKLY"
-      },
-      "name" : "WEEKLY"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "REPORTLY"
-      },
-      "name" : "REPORTLY"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DAILY"
-      },
-      "name" : "DAILY"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "monthly",
-    "logicName" : "月报",
-    "default" : false,
-    "mSTag" : "monthly",
-    "stateValue" : "monthly",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "name" : "月报"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DAILY"
-      },
-      "name" : "DAILY"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "MONTHLY"
-      },
-      "name" : "MONTHLY"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "WEEKLY"
-      },
-      "name" : "WEEKLY"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "reportly",
-    "logicName" : "汇报",
-    "default" : false,
-    "mSTag" : "reportly",
-    "stateValue" : "reportly",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "name" : "汇报"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "REPORTLY"
-      },
-      "name" : "REPORTLY"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "MONTHLY"
-      },
-      "name" : "MONTHLY"
-    }, {
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DAILY"
-      },
-      "name" : "DAILY"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "weekly",
-    "logicName" : "周报",
-    "default" : false,
-    "mSTag" : "weekly",
-    "stateValue" : "weekly",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "name" : "周报"
-  } ],
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
-  "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "extendMode" : 0,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "AllReport",
-    "logicName" : "汇报汇总",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "enableGroup" : false,
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "AllReport"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "extendMode" : 0,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据集",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "enableGroup" : false,
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "enableBackend" : true,
-    "enableFront" : true,
-    "pubServiceDefault" : true,
-    "extendMode" : 0,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "MyReAllReport",
-    "logicName" : "汇报汇总（我收到的）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "enableGroup" : false,
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : false,
-    "name" : "MyReAllReport"
-  } ],
-  "getAllPSDEDataQueries" : [ {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "extendMode" : 0,
-    "orderValue" : 99999,
-    "codeName" : "AllReport",
-    "logicName" : "汇报汇总",
-    "defaultMode" : false,
-    "name" : "AllReport"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "extendMode" : 0,
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "数据查询",
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
-    "customCode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "extendMode" : 0,
-    "orderValue" : 99999,
-    "codeName" : "MyReAllReport",
-    "logicName" : "汇报汇总（我收到的）",
-    "defaultMode" : false,
-    "name" : "MyReAllReport"
-  }, {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "extendMode" : 0,
-    "orderValue" : 99999,
-    "codeName" : "View",
-    "logicName" : "默认（全部数据）",
-    "defaultMode" : false,
-    "name" : "VIEW"
-  } ],
+  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
+    "length" : 60,
     "dataType" : "TEXT",
-    "deployId" : "15b89a287858c946603e33eb3558c839",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "15b89a287858c946603e33eb3558c839",
     "codeName" : "UpdateManName",
     "logicName" : "更新人名称",
     "stringLength" : 60,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "UPDATEMANNAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEMANNAME"
+    } ],
+    "predefinedType" : "UPDATEMANNAME",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -325,30 +53,29 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "UPDATEMANNAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATEMANNAME"
-    } ],
-    "predefinedType" : "UPDATEMANNAME",
-    "length" : 60,
     "name" : "UPDATEMANNAME"
   }, {
+    "length" : 2000,
     "dataType" : "SMCODELIST",
-    "deployId" : "a09ba28d41d35f9817ab26d7bb1c1239",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "a09ba28d41d35f9817ab26d7bb1c1239",
     "codeName" : "Mailto",
     "logicName" : "抄送给",
     "stringLength" : 2000,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "MAILTO",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "MAILTO"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -381,26 +108,26 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "MAILTO",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "MAILTO"
-    } ],
-    "length" : 2000,
     "name" : "MAILTO"
   }, {
+    "length" : 100,
     "dataType" : "ACID",
+    "valueFormat" : "%1$s",
     "deployId" : "03f5ce6cd1a0b3fe732e53808e6b42bd",
+    "codeName" : "IbzDailyId",
+    "logicName" : "汇报标识",
+    "stdDataType" : 1,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "IBZ_DAILYID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : true,
+      "name" : "IBZ_DAILYID"
+    } ],
     "keyDEField" : true,
     "importOrder" : 1000,
     "enableDBAutoValue" : true,
     "dEFType" : 1,
-    "valueFormat" : "%1$s",
-    "codeName" : "IbzDailyId",
-    "logicName" : "汇报标识",
-    "stdDataType" : 1,
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -423,25 +150,16 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "IBZ_DAILYID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : true,
-      "name" : "IBZ_DAILYID"
-    } ],
-    "length" : 100,
     "name" : "IBZ_DAILYID"
   }, {
     "dataType" : "INT",
-    "deployId" : "bb41477eef11702eacf55d749be1f3ec",
-    "importOrder" : 1000,
-    "dEFType" : 5,
-    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "deployId" : "bb41477eef11702eacf55d749be1f3ec",
     "codeName" : "Reportlycnt",
     "logicName" : "未读汇报数",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -463,16 +181,26 @@
       "name" : "默认规则"
     } ],
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "name" : "REPORTLYCNT"
   }, {
+    "length" : 8,
     "dataType" : "DATETIME",
-    "deployId" : "57380481433cdf8459e2e3c2c77cd202",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "57380481433cdf8459e2e3c2c77cd202",
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEDATE"
+    } ],
+    "predefinedType" : "UPDATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -495,26 +223,25 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "UPDATEDATE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATEDATE"
-    } ],
-    "predefinedType" : "UPDATEDATE",
-    "length" : 8,
     "name" : "UPDATEDATE"
   }, {
+    "length" : 1048576,
     "dataType" : "HTMLTEXT",
-    "deployId" : "775b98e4c55a920ba373c361bdf507d6",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "775b98e4c55a920ba373c361bdf507d6",
     "codeName" : "Worktoday",
     "logicName" : "工作",
     "stringLength" : 1048576,
     "stdDataType" : 21,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "WORKTODAY",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "WORKTODAY"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -548,25 +275,16 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "WORKTODAY",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "WORKTODAY"
-    } ],
-    "length" : 1048576,
     "name" : "WORKTODAY"
   }, {
     "dataType" : "INT",
-    "deployId" : "13fe3711bb51d1f1cfb3ca6aaca9cadf",
-    "importOrder" : 1000,
-    "dEFType" : 5,
-    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "deployId" : "13fe3711bb51d1f1cfb3ca6aaca9cadf",
     "codeName" : "MonthlyCnt",
     "logicName" : "未读月报数",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -588,17 +306,17 @@
       "name" : "默认规则"
     } ],
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "name" : "MONTHLYCNT"
   }, {
     "dataType" : "INT",
-    "deployId" : "5725eda5d51c761c28bd551a1a55f70e",
-    "importOrder" : 1000,
-    "dEFType" : 5,
-    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "deployId" : "5725eda5d51c761c28bd551a1a55f70e",
     "codeName" : "Dailycnt",
     "logicName" : "未读日报数",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -620,16 +338,26 @@
       "name" : "默认规则"
     } ],
     "phisicalDEField" : false,
+    "uIAssistDEField" : true,
     "name" : "DAILYCNT"
   }, {
+    "length" : 8,
     "dataType" : "DATETIME",
-    "deployId" : "181b108d1088a10385a84a7f6325cac3",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "181b108d1088a10385a84a7f6325cac3",
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "CREATEDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CREATEDATE"
+    } ],
+    "predefinedType" : "CREATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -652,30 +380,29 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "CREATEDATE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CREATEDATE"
-    } ],
-    "predefinedType" : "CREATEDATE",
-    "length" : 8,
     "name" : "CREATEDATE"
   }, {
+    "length" : 2000,
     "dataType" : "SMCODELIST",
-    "deployId" : "27b403d80755792cc71f2a8f28100407",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/AllTask.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "27b403d80755792cc71f2a8f28100407",
     "codeName" : "Todaytask",
     "logicName" : "完成任务",
     "stringLength" : 2000,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "TODAYTASK",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TODAYTASK"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -708,29 +435,29 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "TODAYTASK",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "TODAYTASK"
-    } ],
-    "length" : 2000,
     "name" : "TODAYTASK"
   }, {
+    "length" : 60,
     "dataType" : "SSCODELIST",
-    "deployId" : "98f9c427bfffa56e8bc5688fb9c27a96",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "98f9c427bfffa56e8bc5688fb9c27a96",
     "codeName" : "Account",
     "logicName" : "用户",
     "stringLength" : 60,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "ACCOUNT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ACCOUNT"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -763,30 +490,22 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "ACCOUNT",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ACCOUNT"
-    } ],
-    "length" : 60,
     "name" : "ACCOUNT"
   }, {
+    "length" : 200,
     "dataType" : "SSCODELIST",
-    "deployId" : "e761552981bfd6157d9fee4e64c464e3",
-    "importOrder" : 1000,
-    "dEFType" : 5,
-    "uIAssistDEField" : true,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSCODELISTS/ReportType.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "e761552981bfd6157d9fee4e64c464e3",
     "codeName" : "Type",
     "logicName" : "类型",
     "stringLength" : 200,
     "stdDataType" : 25,
+    "importOrder" : 1000,
+    "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -821,22 +540,31 @@
     } ],
     "dEMSFieldMode" : "STATE1",
     "phisicalDEField" : false,
-    "length" : 200,
+    "uIAssistDEField" : true,
     "name" : "TYPE"
   }, {
+    "length" : 60,
     "dataType" : "TEXT",
-    "deployId" : "5851b0662fde2241525b86eb74edcfc6",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "5851b0662fde2241525b86eb74edcfc6",
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "stringLength" : 60,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CREATEMAN"
+    } ],
+    "predefinedType" : "CREATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -871,30 +599,30 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "CREATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CREATEMAN"
-    } ],
-    "predefinedType" : "CREATEMAN",
-    "length" : 60,
     "name" : "CREATEMAN"
   }, {
+    "length" : 60,
     "dataType" : "TEXT",
-    "deployId" : "154ebcb2f428d203cda4767ef3b47b34",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "154ebcb2f428d203cda4767ef3b47b34",
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "stringLength" : 60,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEMAN"
+    } ],
+    "predefinedType" : "UPDATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -929,28 +657,27 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "UPDATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATEMAN"
-    } ],
-    "predefinedType" : "UPDATEMAN",
-    "length" : 60,
     "name" : "UPDATEMAN"
   }, {
+    "length" : 200,
     "dataType" : "TEXT",
-    "deployId" : "4ac4af715d4a558655b43d24d49629ee",
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "4ac4af715d4a558655b43d24d49629ee",
     "codeName" : "IbzDailyName",
     "logicName" : "汇报名称",
     "stringLength" : 200,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "IBZ_DAILYNAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "IBZ_DAILYNAME"
+    } ],
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -983,29 +710,29 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "IBZ_DAILYNAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "IBZ_DAILYNAME"
-    } ],
-    "length" : 200,
     "name" : "IBZ_DAILYNAME"
   }, {
+    "length" : 60,
     "dataType" : "SSCODELIST",
-    "deployId" : "1938f6d844d2de0e521c10c6b9f63969",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "1938f6d844d2de0e521c10c6b9f63969",
     "codeName" : "Reportto",
     "logicName" : "汇报给",
     "stringLength" : 60,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "REPORTTO",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "REPORTTO"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1038,26 +765,18 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "REPORTTO",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "REPORTTO"
-    } ],
-    "length" : 60,
     "name" : "REPORTTO"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "e6b8e44a7f914e3e3a2b7c0815b12722",
-    "importOrder" : 1000,
-    "dEFType" : 5,
-    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "deployId" : "e6b8e44a7f914e3e3a2b7c0815b12722",
     "codeName" : "Submittime",
     "logicName" : "提交时间",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "importOrder" : 1000,
+    "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1091,19 +810,19 @@
       "name" : "默认规则"
     } ],
     "phisicalDEField" : false,
-    "length" : 100,
+    "uIAssistDEField" : true,
     "name" : "SUBMITTIME"
   }, {
+    "length" : 100,
     "dataType" : "TEXT",
-    "deployId" : "52108eae08e6d650a14487d34aa73043",
-    "importOrder" : 1000,
-    "dEFType" : 5,
-    "uIAssistDEField" : true,
     "valueFormat" : "%1$s",
+    "deployId" : "52108eae08e6d650a14487d34aa73043",
     "codeName" : "Files",
     "logicName" : "附件",
     "stringLength" : 100,
     "stdDataType" : 25,
+    "importOrder" : 1000,
+    "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1137,18 +856,27 @@
       "name" : "默认规则"
     } ],
     "phisicalDEField" : false,
-    "length" : 100,
+    "uIAssistDEField" : true,
     "name" : "FILES"
   }, {
+    "length" : 60,
     "dataType" : "TEXT",
-    "deployId" : "08d9dbb356f2467a5ed65818bf185dd4",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "08d9dbb356f2467a5ed65818bf185dd4",
     "codeName" : "CreateManName",
     "logicName" : "建立人名称",
     "stringLength" : 60,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "CREATEMANNAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CREATEMANNAME"
+    } ],
+    "predefinedType" : "CREATEMANNAME",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -1183,26 +911,25 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "CREATEMANNAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CREATEMANNAME"
-    } ],
-    "predefinedType" : "CREATEMANNAME",
-    "length" : 60,
     "name" : "CREATEMANNAME"
   }, {
+    "length" : 1048576,
     "dataType" : "HTMLTEXT",
-    "deployId" : "4296f7e5a682cdbdee29dd082f0a0acc",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "4296f7e5a682cdbdee29dd082f0a0acc",
     "codeName" : "Planstomorrow",
     "logicName" : "计划",
     "stringLength" : 1048576,
     "stdDataType" : 21,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "PLANSTOMORROW",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PLANSTOMORROW"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -1236,29 +963,30 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "PLANSTOMORROW",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PLANSTOMORROW"
-    } ],
-    "length" : 1048576,
     "name" : "PLANSTOMORROW"
   }, {
+    "length" : 60,
+    "defaultValue" : "0",
     "dataType" : "SSCODELIST",
-    "deployId" : "beec2649a9eaff9b37b9cb7d7b9d2ab4",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSCODELISTS/ReportStatus.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "beec2649a9eaff9b37b9cb7d7b9d2ab4",
     "codeName" : "Reportstatus",
     "logicName" : "状态",
     "stringLength" : 60,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "columnName" : "REPORTSTATUS",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "REPORTSTATUS"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1291,25 +1019,23 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : true,
-      "columnName" : "REPORTSTATUS",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "REPORTSTATUS"
-    } ],
-    "length" : 60,
-    "defaultValue" : "0",
     "name" : "REPORTSTATUS"
   }, {
     "dataType" : "DATE",
-    "deployId" : "c7d5662b76ef977cbfde4113cd7ddd5b",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "c7d5662b76ef977cbfde4113cd7ddd5b",
     "codeName" : "Date",
     "logicName" : "日期",
     "stdDataType" : 5,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "DATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DATE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1330,28 +1056,30 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "DATE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "DATE"
-    } ],
     "name" : "DATE"
   }, {
+    "length" : 60,
+    "defaultValue" : "0",
     "dataType" : "SSCODELIST",
-    "deployId" : "3202250c6a979c21e8b53341cc8ff214",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/YesNo.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "3202250c6a979c21e8b53341cc8ff214",
     "codeName" : "Issubmit",
     "logicName" : "是否提交",
     "stringLength" : 60,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "columnName" : "ISSUBMIT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ISSUBMIT"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1384,26 +1112,25 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : true,
-      "columnName" : "ISSUBMIT",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ISSUBMIT"
-    } ],
-    "length" : 60,
-    "defaultValue" : "0",
     "name" : "ISSUBMIT"
   }, {
+    "length" : 1048576,
     "dataType" : "HTMLTEXT",
-    "deployId" : "b1559932d26743d15f04c813f58ba1f3",
-    "importOrder" : 1000,
-    "dEFType" : 1,
     "valueFormat" : "%1$s",
+    "deployId" : "b1559932d26743d15f04c813f58ba1f3",
     "codeName" : "Comment",
     "logicName" : "其他事项",
     "stringLength" : 1048576,
     "stdDataType" : 21,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "COMMENT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "COMMENT"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -1437,29 +1164,29 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "COMMENT",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "COMMENT"
-    } ],
-    "length" : 1048576,
     "name" : "COMMENT"
   }, {
+    "length" : 2000,
     "dataType" : "SMCODELIST",
-    "deployId" : "592275ee1955f8f7e177a74d5e2b7d3a",
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/AllTask.json"
     },
+    "valueFormat" : "%1$s",
+    "deployId" : "592275ee1955f8f7e177a74d5e2b7d3a",
     "codeName" : "Tomorrowplanstask",
     "logicName" : "计划任务",
     "stringLength" : 2000,
     "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "columnName" : "TOMORROWPLANSTASK",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TOMORROWPLANSTASK"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1492,16 +1219,290 @@
       },
       "name" : "默认规则"
     } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "columnName" : "TOMORROWPLANSTASK",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "TOMORROWPLANSTASK"
-    } ],
-    "length" : 2000,
     "name" : "TOMORROWPLANSTASK"
   } ],
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "orderValue" : 99999,
+    "codeName" : "AllReport",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "logicName" : "汇报汇总",
+    "extendMode" : 0,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "pageSize" : -1,
+    "name" : "AllReport"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "logicName" : "数据集",
+    "extendMode" : 0,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "pageSize" : -1,
+    "name" : "DEFAULT"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "orderValue" : 99999,
+    "codeName" : "MyReAllReport",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "logicName" : "汇报汇总（我收到的）",
+    "extendMode" : 0,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "pageSize" : -1,
+    "name" : "MyReAllReport"
+  } ],
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Save.json"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "AllReport",
+    "logicName" : "汇报汇总",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "AllReport"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "extendMode" : 0,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "MyReAllReport",
+    "logicName" : "汇报汇总（我收到的）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "MyReAllReport"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
+  "getAllPSDELogics" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/MyReportINotSubmit.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/ReportIReceived.json"
+  } ],
+  "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "orderValue" : 99999,
+    "codeName" : "daily",
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "月报",
+        "name" : "MONTHLY"
+      },
+      "name" : "MONTHLY"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "周报",
+        "name" : "WEEKLY"
+      },
+      "name" : "WEEKLY"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "汇报",
+        "name" : "REPORTLY"
+      },
+      "name" : "REPORTLY"
+    } ],
+    "logicName" : "日报",
+    "default" : false,
+    "mSTag" : "daily",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "daily",
+    "name" : "日报"
+  }, {
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "orderValue" : 99999,
+    "codeName" : "monthly",
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "周报",
+        "name" : "WEEKLY"
+      },
+      "name" : "WEEKLY"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "汇报",
+        "name" : "REPORTLY"
+      },
+      "name" : "REPORTLY"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "日报",
+        "name" : "DAILY"
+      },
+      "name" : "DAILY"
+    } ],
+    "logicName" : "月报",
+    "default" : false,
+    "mSTag" : "monthly",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "monthly",
+    "name" : "月报"
+  }, {
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "orderValue" : 99999,
+    "codeName" : "reportly",
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "日报",
+        "name" : "DAILY"
+      },
+      "name" : "DAILY"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "月报",
+        "name" : "MONTHLY"
+      },
+      "name" : "MONTHLY"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "周报",
+        "name" : "WEEKLY"
+      },
+      "name" : "WEEKLY"
+    } ],
+    "logicName" : "汇报",
+    "default" : false,
+    "mSTag" : "reportly",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "reportly",
+    "name" : "汇报"
+  }, {
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "orderValue" : 99999,
+    "codeName" : "weekly",
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "汇报",
+        "name" : "REPORTLY"
+      },
+      "name" : "REPORTLY"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "月报",
+        "name" : "MONTHLY"
+      },
+      "name" : "MONTHLY"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "日报",
+        "name" : "DAILY"
+      },
+      "name" : "DAILY"
+    } ],
+    "logicName" : "周报",
+    "default" : false,
+    "mSTag" : "weekly",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "weekly",
+    "name" : "周报"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
@@ -1510,7 +1511,6 @@
     "name" : "TYPE",
     "codeName" : "Type"
   } ],
-  "serviceAPIMode" : 1,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1526,22 +1526,19 @@
   } ],
   "saaSMode" : 4,
   "deployId" : "a584aeb6b7aebf9bdba4c0cca4e5090e",
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "codeName" : "IbzReport",
+  "logicName" : "汇报汇总",
+  "tableName" : "t_ibz_daily",
+  "serviceCodeName" : "IbzReport",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
   "extendMode" : 0,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
-  "dSLink" : "DEFAULT",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "codeName" : "IbzReport",
-  "logicName" : "汇报汇总",
-  "tableName" : "t_ibz_daily",
   "virtualMode" : 0,
   "enableSQLStorage" : true,
-  "serviceCodeName" : "IbzReport",
-  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1550,9 +1547,12 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
+  "enableRemove" : true,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

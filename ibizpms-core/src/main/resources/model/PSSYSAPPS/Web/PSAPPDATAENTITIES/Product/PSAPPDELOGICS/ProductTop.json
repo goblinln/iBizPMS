@@ -6,6 +6,7 @@
     "id" : "Begin"
   },
   "logicHolder" : 3,
+  "codeName" : "ProductTop",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
@@ -13,6 +14,7 @@
       "id" : "ibzTop"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9397"
@@ -23,7 +25,6 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取置顶最大排序值"
   }, {
@@ -47,16 +48,17 @@
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7552"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4446"
@@ -96,7 +98,6 @@
       "dstFieldName" : "TYPE",
       "name" : "直接值[product] ==> ibzTop[TYPE]"
     } ],
-    "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置置顶数据"
   } ],
@@ -135,21 +136,20 @@
     "name" : "连接9397"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : true,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : true,
     "codeName" : "ibzTop",
     "default" : false,
     "name" : "置顶"
   }, {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "ProductTop",
   "logicName" : "置顶",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

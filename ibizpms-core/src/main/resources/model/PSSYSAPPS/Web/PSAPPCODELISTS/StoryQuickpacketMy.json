@@ -3,31 +3,31 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
+  "codeName" : "StoryQuickpacketMy",
   "getPSCodeItems" : [ {
+    "value" : "TOME",
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "codeName" : "Tome",
     "text" : "指给我",
-    "default" : true,
-    "value" : "TOME"
+    "default" : true
   }, {
+    "value" : "ICREATE",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "codeName" : "Icreate",
-    "text" : "由我创建",
-    "value" : "ICREATE"
+    "text" : "由我创建"
   }, {
+    "value" : "IREVIEW",
     "data" : "{\"n_reviewedby_eq\":\"%srfloginname%\"}",
     "codeName" : "Ireview",
-    "text" : "由我评审",
-    "value" : "IREVIEW"
+    "text" : "由我评审"
   }, {
+    "value" : "ICLOSE",
     "data" : "{\"n_closedby_eq\":\"%srfloginname%\"}",
     "codeName" : "Iclose",
-    "text" : "由我关闭",
-    "value" : "ICLOSE"
+    "text" : "由我关闭"
   } ],
-  "codeName" : "StoryQuickpacketMy",
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/StoryQuickpacketMy.json",

@@ -6,6 +6,7 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "Update__MSDeny",
   "getPSDELogicNodes" : [ {
     "errorCode" : 0,
     "errorInfo" : "状态[正常]拒绝[Update]操作",
@@ -17,6 +18,7 @@
   }, {
     "parallelOutput" : false,
     "logicHolder" : 3,
+    "codeName" : "PrepareTemp",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "默认连接"
@@ -36,7 +38,6 @@
       "srcFieldName" : "ID",
       "name" : "复制主键"
     } ],
-    "codeName" : "PrepareTemp",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备临时参数"
   }, {
@@ -58,6 +59,7 @@
       "id" : "Temp"
     },
     "logicHolder" : 3,
+    "codeName" : "Get",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "状态[正常]拒绝[Update]操作"
@@ -65,7 +67,6 @@
       "modelref" : true,
       "id" : "状态[停止维护]拒绝[Update]操作"
     } ],
-    "codeName" : "Get",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
@@ -75,11 +76,11 @@
   }, {
     "parallelOutput" : false,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "默认连接"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   } ],
@@ -108,11 +109,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
+        "condOP" : "EQ",
         "paramValue" : "normal",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
@@ -136,11 +137,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
+        "condOP" : "EQ",
         "paramValue" : "terminate",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
@@ -163,21 +164,20 @@
     "name" : "状态[停止维护]拒绝[Update]操作"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "默认变量"
   }, {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Temp",
     "default" : false,
     "name" : "临时变量"
   } ],
-  "codeName" : "Update__MSDeny",
   "logicName" : "行为[Update]主状态拒绝逻辑",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

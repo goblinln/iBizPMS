@@ -5,12 +5,6 @@
     "index" : 0,
     "id" : "0"
   },
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "legendPos" : "BOTTOM",
-    "index" : 0,
-    "id" : "0"
-  },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
     "type" : "NONE",
@@ -18,7 +12,14 @@
     "name" : "[MyFinishedbyTask]无坐标系[0]",
     "id" : "0"
   } ],
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "legendPos" : "BOTTOM",
+    "index" : 0,
+    "id" : "0"
+  },
   "controlType" : "CHART",
+  "codeName" : "MyFinishedbyTask",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "PRI",
     "seriesType" : "pie",
@@ -49,7 +50,6 @@
       "EC.radius" : "['60%', '70%']"
     }
   } ],
-  "codeName" : "MyFinishedbyTask",
   "emptyText" : "无",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
@@ -82,11 +82,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
   },
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSCHARTS/MyFinishedbyTask.json",
+  "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
-  "height" : 300.0,
   "logicName" : "MyFinishedbyTask",
   "modelid" : "a182b142d83d08eab8fb43e1bdcd0150",
   "getUserParam" : {

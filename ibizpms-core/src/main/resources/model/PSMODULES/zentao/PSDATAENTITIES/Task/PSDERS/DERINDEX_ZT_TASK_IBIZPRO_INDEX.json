@@ -1,5 +1,4 @@
 {
-  "typeValue" : "task",
   "inherit" : false,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
@@ -32,6 +31,7 @@
     },
     "name" : "PROJECT=PROJECT"
   } ],
+  "typeValue" : "task",
   "virtual" : true,
   "getMajorPSDataEntity" : {
     "modelref" : true,

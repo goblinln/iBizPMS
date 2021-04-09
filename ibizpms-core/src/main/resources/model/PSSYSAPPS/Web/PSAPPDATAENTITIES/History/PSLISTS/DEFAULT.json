@@ -5,40 +5,36 @@
   "hasWFDataItems" : false,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "dataType" : 25,
-    "name" : "field"
+    "name" : "field",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "ibiznew"
+    "name" : "ibiznew",
+    "dataType" : 25
   }, {
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
-    "dataType" : 21,
-    "name" : "old"
+    "name" : "old",
+    "dataType" : 21
   }, {
-    "dataType" : 21,
-    "name" : "diff"
+    "name" : "diff",
+    "dataType" : 21
   }, {
-    "dataType" : 1,
-    "name" : "action"
+    "name" : "action",
+    "dataType" : 1
   } ],
   "showHeader" : true,
-  "controlType" : "LIST",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "DEFAULT",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
   "pagingSize" : 1000,
   "groupMode" : "NONE",
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -54,6 +50,10 @@
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

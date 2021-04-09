@@ -8,6 +8,7 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -20,7 +21,6 @@
     "detailStyle" : "DEFAULT",
     "name" : "formpage1"
   } ],
-  "noTabHeader" : true,
   "codeName" : "Default",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

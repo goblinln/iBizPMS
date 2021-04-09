@@ -1,12 +1,11 @@
 {
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
   "builtinAction" : false,
   "timeOut" : -1,
-  "extendMode" : 0,
   "orderValue" : 99999,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
@@ -14,11 +13,12 @@
   },
   "codeName" : "ChangeStatus",
   "logicName" : "状态变更",
+  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/ChangeStatus.json",
-  "userCat" : "CAT1",
-  "name" : "ChangeStatus"
+  "name" : "ChangeStatus",
+  "userCat" : "CAT1"
 }

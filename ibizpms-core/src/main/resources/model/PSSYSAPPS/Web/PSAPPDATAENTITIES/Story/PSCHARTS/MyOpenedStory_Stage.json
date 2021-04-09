@@ -5,12 +5,6 @@
     "index" : 0,
     "id" : "0"
   },
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "legendPos" : "BOTTOM",
-    "index" : 0,
-    "id" : "0"
-  },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
     "type" : "NONE",
@@ -18,7 +12,14 @@
     "name" : "[Pri]无坐标系[0]",
     "id" : "0"
   } ],
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "legendPos" : "BOTTOM",
+    "index" : 0,
+    "id" : "0"
+  },
   "controlType" : "CHART",
+  "codeName" : "MyOpenedStory_Stage",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "STAGE",
     "seriesType" : "pie",
@@ -53,7 +54,6 @@
       "EC.radius" : "['60%', '70%']"
     }
   } ],
-  "codeName" : "MyOpenedStory_Stage",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
       "groupField" : true,
@@ -89,11 +89,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory_Stage.json",
+  "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
-  "height" : 300.0,
   "logicName" : "MyOpenedStory_Stage",
   "modelid" : "c90b74e360af0b39214b0aaa1ce800b4",
   "getUserParam" : {

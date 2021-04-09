@@ -6,6 +6,7 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "GetTestReportBasicInfo",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
@@ -13,6 +14,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall13",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9959"
@@ -27,7 +29,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall13",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "需求覆盖用例数"
   }, {
@@ -37,6 +38,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall11",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3617"
@@ -69,7 +71,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall11",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "用例产生的Bug"
   }, {
@@ -79,6 +80,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9019"
@@ -93,7 +95,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取需求数"
   }, {
@@ -103,6 +104,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall3",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接715"
@@ -144,7 +146,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall3",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "执行的用例数"
   }, {
@@ -154,6 +155,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4999"
@@ -177,7 +179,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取用例数"
   }, {
@@ -187,6 +188,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall12",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6900"
@@ -201,7 +203,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall12",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "有效需求数"
   }, {
@@ -211,6 +212,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall5",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7149"
@@ -225,7 +227,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall5",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "执行结果"
   }, {
@@ -235,6 +236,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall4",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1775"
@@ -276,7 +278,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall4",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "失败的用例数"
   }, {
@@ -286,6 +287,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall9",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
@@ -485,7 +487,6 @@
       "srcFieldName" : "bugcnt",
       "name" : "Default[bugcnt]"
     } ],
-    "codeName" : "Rawsqlcall9",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "设置概况"
   }, {
@@ -495,6 +496,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall6",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6472"
@@ -527,7 +529,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall6",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "有效Bug数"
   }, {
@@ -537,6 +538,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall7",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1248"
@@ -569,7 +571,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall7",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "解决的Bug"
   }, {
@@ -579,6 +580,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall8",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8691"
@@ -611,17 +613,16 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall8",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "产生的Bug"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4377"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -631,6 +632,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall10",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4549"
@@ -672,7 +674,6 @@
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
-    "codeName" : "Rawsqlcall10",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "遗留Bug"
   }, {
@@ -686,11 +687,11 @@
       "id" : "Default"
     },
     "logicHolder" : 3,
+    "codeName" : "Deaction1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9637"
     } ],
-    "codeName" : "Deaction1",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
@@ -854,14 +855,13 @@
     "name" : "连接1248"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "GetTestReportBasicInfo",
   "logicName" : "根据测试报告获取基本信息",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

@@ -1,9 +1,9 @@
 {
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
   "builtinAction" : false,
   "getAfterPSDEActionLogics" : [ {
     "internalLogic" : true,
@@ -17,14 +17,14 @@
     "name" : "附加逻辑"
   } ],
   "timeOut" : -1,
-  "extendMode" : 0,
+  "orderValue" : 99999,
+  "codeName" : "UpdateTitleByYear",
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
   },
-  "orderValue" : 99999,
-  "codeName" : "UpdateTitleByYear",
   "logicName" : "更新标题",
+  "extendMode" : 0,
   "actionMode" : "UPDATE",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

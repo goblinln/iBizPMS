@@ -22,11 +22,6 @@
           "index" : 0,
           "id" : "0"
         },
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -34,7 +29,13 @@
           "name" : "[Caseresult]无坐标系[0]",
           "id" : "0"
         } ],
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "controlType" : "CHART",
+        "codeName" : "CaseresultProject",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "LASTRUNRESULT1",
           "seriesType" : "pie",
@@ -60,7 +61,6 @@
           "index" : 0,
           "name" : "Caseresult"
         } ],
-        "codeName" : "CaseresultProject",
         "emptyText" : "无",
         "getPSChartDataSets" : [ {
           "getPSChartDataSetFields" : [ {
@@ -91,11 +91,6 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "height" : 300.0
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -166,12 +161,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "height" : 300.0
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseresultProject.json",
+        "height" : 300.0,
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
-        "height" : 300.0,
         "logicName" : "CaseresultProject",
         "name" : "dashboard_sysportlet1_chart",
         "modelid" : "107dcf7800f65c0807d16a81914d5f6c",
@@ -188,45 +188,45 @@
         "height" : 0,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_sysportlet1"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
         "height" : 0.0
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_sysportlet1"
-      },
       "name" : "dashboard_sysportlet1",
       "modelid" : "2bf9b21407bcb3dd3b61553b782019b0"
     } ],
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colLG" : 22,
-      "colLGOffset" : 1,
       "colMD" : 22,
+      "colLG" : 22,
       "colMDOffset" : 1,
+      "colLGOffset" : 1,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container1"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "codeName" : "projectDashboardViewdashboard_container1",
     "name" : "dashboard_container1"
@@ -247,11 +247,6 @@
           "index" : 0,
           "id" : "0"
         },
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -259,7 +254,13 @@
           "name" : "[Caseresult]无坐标系[0]",
           "id" : "0"
         } ],
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "controlType" : "CHART",
+        "codeName" : "CaseTypeProject",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "TYPE",
           "seriesType" : "pie",
@@ -285,7 +286,6 @@
           "index" : 0,
           "name" : "Caseresult"
         } ],
-        "codeName" : "CaseTypeProject",
         "emptyText" : "无",
         "getPSChartDataSets" : [ {
           "getPSChartDataSetFields" : [ {
@@ -316,11 +316,6 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "height" : 300.0
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -391,12 +386,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "height" : 300.0
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseTypeProject.json",
+        "height" : 300.0,
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
-        "height" : 300.0,
         "logicName" : "CaseTypeProject",
         "name" : "dashboard_sysportlet2_chart",
         "modelid" : "ddd1b509a21a63d6819b7dbcae8f44c5",
@@ -405,10 +405,10 @@
         }
       } ],
       "height" : 0.0,
+      "codeName" : "CaseTypeProject",
       "getPSSysCss" : {
         "cssName" : "portlet-title"
       },
-      "codeName" : "CaseTypeProject",
       "title" : "按用例类型统计",
       "portletType" : "CHART",
       "getPSLayoutPos" : {
@@ -416,45 +416,45 @@
         "height" : 0,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_sysportlet2"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
         "height" : 0.0
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_sysportlet2"
-      },
       "name" : "dashboard_sysportlet2",
       "modelid" : "0cea03926c34d16d8751989777eddb0c"
     } ],
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colLG" : 22,
-      "colLGOffset" : 1,
       "colMD" : 22,
+      "colLG" : 22,
       "colMDOffset" : 1,
+      "colLGOffset" : 1,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container2"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "codeName" : "projectDashboardViewdashboard_container2",
     "name" : "dashboard_container2"
@@ -475,11 +475,6 @@
           "index" : 0,
           "id" : "0"
         },
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -487,7 +482,13 @@
           "name" : "[Caseresult]无坐标系[0]",
           "id" : "0"
         } ],
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "controlType" : "CHART",
+        "codeName" : "CaseModuleProject",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "MODULENAME",
           "seriesType" : "pie",
@@ -513,7 +514,6 @@
           "index" : 0,
           "name" : "Caseresult"
         } ],
-        "codeName" : "CaseModuleProject",
         "emptyText" : "无",
         "getPSChartDataSets" : [ {
           "getPSChartDataSetFields" : [ {
@@ -544,11 +544,6 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "height" : 300.0
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -619,12 +614,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "height" : 300.0
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseModuleProject.json",
+        "height" : 300.0,
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
-        "height" : 300.0,
         "logicName" : "CaseModuleProject",
         "name" : "dashboard_sysportlet3_chart",
         "modelid" : "153c853e5379ec9d269e963613e2f260",
@@ -641,45 +641,45 @@
         "height" : 0,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_sysportlet3"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
         "height" : 0.0
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_sysportlet3"
-      },
       "name" : "dashboard_sysportlet3",
       "modelid" : "da080e48178460445e28e6820c5ca65d"
     } ],
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colLG" : 22,
-      "colLGOffset" : 1,
       "colMD" : 22,
+      "colLG" : 22,
       "colMDOffset" : 1,
+      "colLGOffset" : 1,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container3"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "codeName" : "projectDashboardViewdashboard_container3",
     "name" : "dashboard_container3"
@@ -700,11 +700,6 @@
           "index" : 0,
           "id" : "0"
         },
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -712,7 +707,13 @@
           "name" : "[Caseresult]无坐标系[0]",
           "id" : "0"
         } ],
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "controlType" : "CHART",
+        "codeName" : "CaseLASTRUNNERProject",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "LASTRUNNER",
           "seriesType" : "pie",
@@ -738,7 +739,6 @@
           "index" : 0,
           "name" : "Caseresult"
         } ],
-        "codeName" : "CaseLASTRUNNERProject",
         "emptyText" : "无",
         "getPSChartDataSets" : [ {
           "getPSChartDataSetFields" : [ {
@@ -769,11 +769,6 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "height" : 300.0
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -844,12 +839,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "height" : 300.0
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseLASTRUNNERProject.json",
+        "height" : 300.0,
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
-        "height" : 300.0,
         "logicName" : "CaseLASTRUNNERProject",
         "name" : "dashboard_sysportlet4_chart",
         "modelid" : "d6647a6ed173d8cff11bd40fb0e98c89",
@@ -858,10 +858,10 @@
         }
       } ],
       "height" : 0.0,
+      "codeName" : "CaseLastrunnerProject",
       "getPSSysCss" : {
         "cssName" : "portlet-title"
       },
-      "codeName" : "CaseLastrunnerProject",
       "title" : "按用例执行人统计",
       "portletType" : "CHART",
       "getPSLayoutPos" : {
@@ -869,45 +869,45 @@
         "height" : 0,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_sysportlet4"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
         "height" : 0.0
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_sysportlet4"
-      },
       "name" : "dashboard_sysportlet4",
       "modelid" : "37e9625909ffaea67369e88ff4068db8"
     } ],
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colLG" : 22,
-      "colLGOffset" : 1,
       "colMD" : 22,
+      "colLG" : 22,
       "colMDOffset" : 1,
+      "colLGOffset" : 1,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container4"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "codeName" : "projectDashboardViewdashboard_container4",
     "name" : "dashboard_container4"
@@ -928,11 +928,6 @@
           "index" : 0,
           "id" : "0"
         },
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -940,7 +935,13 @@
           "name" : "[BugSeverity_Project]无坐标系[0]",
           "id" : "0"
         } ],
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "controlType" : "CHART",
+        "codeName" : "BugSeverity_Project",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "SEVERITY",
           "seriesType" : "pie",
@@ -971,7 +972,6 @@
           "index" : 0,
           "name" : "BugSeverity_Project"
         } ],
-        "codeName" : "BugSeverity_Project",
         "emptyText" : "无",
         "getPSChartDataSets" : [ {
           "getPSChartDataSetFields" : [ {
@@ -1007,11 +1007,6 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "height" : 300.0
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -1082,12 +1077,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "height" : 300.0
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugSeverity_Project.json",
+        "height" : 300.0,
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
-        "height" : 300.0,
         "logicName" : "BugSeverity_Project",
         "name" : "dashboard_bugseverity_chart",
         "modelid" : "288d42bfc9487f885fbaee666dbf3041",
@@ -1104,45 +1104,45 @@
         "height" : 0,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_BugSeverity"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
         "height" : 0.0
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_BugSeverity"
-      },
       "name" : "dashboard_BugSeverity",
       "modelid" : "07ef746fa127ef585142cf8434a9e748"
     } ],
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
-      "colLG" : 22,
-      "colLGOffset" : 1,
       "colMD" : 22,
+      "colLG" : 22,
       "colMDOffset" : 1,
+      "colLGOffset" : 1,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container5"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "codeName" : "projectDashboardViewdashboard_container5",
     "name" : "dashboard_container5"
@@ -1163,11 +1163,6 @@
           "index" : 0,
           "id" : "0"
         },
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -1175,7 +1170,13 @@
           "name" : "[BugType_Project]无坐标系[0]",
           "id" : "0"
         } ],
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "controlType" : "CHART",
+        "codeName" : "BugType_Project",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "TYPE",
           "seriesType" : "pie",
@@ -1201,7 +1202,6 @@
           "index" : 0,
           "name" : "BugType_Project"
         } ],
-        "codeName" : "BugType_Project",
         "getPSChartDataSets" : [ {
           "getPSChartDataSetFields" : [ {
             "groupField" : true,
@@ -1231,11 +1231,6 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "height" : 300.0
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -1306,12 +1301,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "height" : 300.0
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugType_Project.json",
+        "height" : 300.0,
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
-        "height" : 300.0,
         "logicName" : "BugType_Project",
         "name" : "dashboard_bugtypeproject_chart",
         "modelid" : "273b4c306ff899b963ec7c426513b751",
@@ -1328,44 +1328,44 @@
         "height" : 0,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_BugTypeProject"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
         "height" : 0.0
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_BugTypeProject"
-      },
       "name" : "dashboard_BugTypeProject",
       "modelid" : "7b3b1a95e4926ec7392036f81e7caff7"
     } ],
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
+      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
-      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container6"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "codeName" : "projectDashboardViewdashboard_container6",
     "name" : "dashboard_container6"
@@ -1386,11 +1386,6 @@
           "index" : 0,
           "id" : "0"
         },
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -1398,7 +1393,13 @@
           "name" : "[BugStatus]无坐标系[0]",
           "id" : "0"
         } ],
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "controlType" : "CHART",
+        "codeName" : "BugStatus_Project",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "Status",
           "seriesType" : "pie",
@@ -1429,7 +1430,6 @@
           "index" : 0,
           "name" : "BugStatus"
         } ],
-        "codeName" : "BugStatus_Project",
         "emptyText" : "无",
         "getPSChartDataSets" : [ {
           "getPSChartDataSetFields" : [ {
@@ -1465,11 +1465,6 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "height" : 300.0
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -1540,12 +1535,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "height" : 300.0
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugStatus_Project.json",
+        "height" : 300.0,
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
-        "height" : 300.0,
         "logicName" : "BugStatus_Project",
         "name" : "dashboard_bugstatusproject_chart",
         "modelid" : "e3811e4748ec81725f9d4784b0e5ca1b",
@@ -1562,44 +1562,44 @@
         "height" : 0,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_BugStatusProject"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
         "height" : 0.0
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_BugStatusProject"
-      },
       "name" : "dashboard_BugStatusProject",
       "modelid" : "4b6b9402f26d07446355cffc4336ce44"
     } ],
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
+      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
-      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container7"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "codeName" : "projectDashboardViewdashboard_container7",
     "name" : "dashboard_container7"
@@ -1620,11 +1620,6 @@
           "index" : 0,
           "id" : "0"
         },
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -1632,7 +1627,13 @@
           "name" : "[BugResolution_Project]无坐标系[0]",
           "id" : "0"
         } ],
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "controlType" : "CHART",
+        "codeName" : "BugResolution_Project",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "RESOLUTION",
           "seriesType" : "pie",
@@ -1663,7 +1664,6 @@
           "index" : 0,
           "name" : "BugResolution_Project"
         } ],
-        "codeName" : "BugResolution_Project",
         "emptyText" : "无",
         "getPSChartDataSets" : [ {
           "getPSChartDataSetFields" : [ {
@@ -1699,11 +1699,6 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "height" : 300.0
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -1774,12 +1769,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "height" : 300.0
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugResolution_Project.json",
+        "height" : 300.0,
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
-        "height" : 300.0,
         "logicName" : "BugResolution_Project",
         "name" : "dashboard_bugresolutionproject_chart",
         "modelid" : "5176ec1ae8f7b14238220d4fd0bc4ed9",
@@ -1796,44 +1796,44 @@
         "height" : 0,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_BugResolutionProject"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
         "height" : 0.0
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_BugResolutionProject"
-      },
       "name" : "dashboard_BugResolutionProject",
       "modelid" : "23be2fbba05349f3904b0caae06f0f64"
     } ],
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
+      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
-      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container8"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "codeName" : "projectDashboardViewdashboard_container8",
     "name" : "dashboard_container8"
@@ -1854,11 +1854,6 @@
           "index" : 0,
           "id" : "0"
         },
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -1866,7 +1861,13 @@
           "name" : "[BugOpenedBy_Project]无坐标系[0]",
           "id" : "0"
         } ],
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "controlType" : "CHART",
+        "codeName" : "BugOpenedBy_Project",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "OPENEDBY",
           "seriesType" : "pie",
@@ -1892,7 +1893,6 @@
           "index" : 0,
           "name" : "BugOpenedBy_Project"
         } ],
-        "codeName" : "BugOpenedBy_Project",
         "getPSChartDataSets" : [ {
           "getPSChartDataSetFields" : [ {
             "groupField" : true,
@@ -1922,11 +1922,6 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "height" : 300.0
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -1997,12 +1992,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "height" : 300.0
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugOpenedBy_Project.json",
+        "height" : 300.0,
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
-        "height" : 300.0,
         "logicName" : "BugOpenedBy_Project",
         "name" : "dashboard_sysportlet13_chart",
         "modelid" : "39a339f11202bfa1cd8bfff50a3d1d95",
@@ -2019,44 +2019,44 @@
         "height" : 0,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_sysportlet13"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
         "height" : 0.0
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_sysportlet13"
-      },
       "name" : "dashboard_sysportlet13",
       "modelid" : "5eb45fe47581d1d1f53de66e95fa3566"
     } ],
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
+      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
-      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container9"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "codeName" : "projectDashboardViewdashboard_container9",
     "name" : "dashboard_container9"
@@ -2077,11 +2077,6 @@
           "index" : 0,
           "id" : "0"
         },
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -2089,7 +2084,13 @@
           "name" : "[BugModule_Project]无坐标系[0]",
           "id" : "0"
         } ],
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "controlType" : "CHART",
+        "codeName" : "BugModule_Project",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "MODULENAME",
           "seriesType" : "pie",
@@ -2115,7 +2116,6 @@
           "index" : 0,
           "name" : "BugModule_Project"
         } ],
-        "codeName" : "BugModule_Project",
         "emptyText" : "无",
         "getPSChartDataSets" : [ {
           "getPSChartDataSetFields" : [ {
@@ -2146,11 +2146,6 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "height" : 300.0
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -2221,12 +2216,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "height" : 300.0
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugModule_Project.json",
+        "height" : 300.0,
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
-        "height" : 300.0,
         "logicName" : "BugModule_Project",
         "name" : "dashboard_bugmoduleproject_chart",
         "modelid" : "5e392cf90e2d5411a5fcbfa2379e94ac",
@@ -2243,44 +2243,44 @@
         "height" : 0,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_BugModuleProject"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
         "height" : 0.0
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_BugModuleProject"
-      },
       "name" : "dashboard_BugModuleProject",
       "modelid" : "9ac1ec7d0ce5e49a40dc0e0aa0054262"
     } ],
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
+      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
-      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container10"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "codeName" : "projectDashboardViewdashboard_container10",
     "name" : "dashboard_container10"
@@ -2301,11 +2301,6 @@
           "index" : 0,
           "id" : "0"
         },
-        "getPSDEChartLegend" : {
-          "showLegend" : true,
-          "index" : 0,
-          "id" : "0"
-        },
         "getPSChartCoordinateSystems" : [ {
           "eChartsType" : "none",
           "type" : "NONE",
@@ -2313,7 +2308,13 @@
           "name" : "[BugResolvedBy_Project]无坐标系[0]",
           "id" : "0"
         } ],
+        "getPSDEChartLegend" : {
+          "showLegend" : true,
+          "index" : 0,
+          "id" : "0"
+        },
         "controlType" : "CHART",
+        "codeName" : "BugResolvedBy_Project",
         "getPSDEChartSerieses" : [ {
           "catalogField" : "RESOLVEDBY",
           "seriesType" : "pie",
@@ -2339,7 +2340,6 @@
           "index" : 0,
           "name" : "BugResolvedBy_Project"
         } ],
-        "codeName" : "BugResolvedBy_Project",
         "emptyText" : "无",
         "getPSChartDataSets" : [ {
           "getPSChartDataSetFields" : [ {
@@ -2370,11 +2370,6 @@
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-        },
-        "getPSControlParam" : {
-          "autoLoad" : true,
-          "showBusyIndicator" : true,
-          "height" : 300.0
         },
         "getPSControlHandler" : {
           "userDRAction" : "READ",
@@ -2445,12 +2440,17 @@
           "enableDEFieldPrivilege" : false,
           "id" : "图形控件处理器"
         },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "height" : 300.0
+        },
         "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugResolvedBy_Project.json",
+        "height" : 300.0,
         "getPSSysPFPlugin" : {
           "pluginType" : "CHART_RENDER",
           "pluginCode" : "tablechart"
         },
-        "height" : 300.0,
         "logicName" : "BugResolvedBy_Project",
         "name" : "dashboard_sysportlet15_chart",
         "modelid" : "701eb1331183798c32e947cfac7ddbf9",
@@ -2467,44 +2467,44 @@
         "height" : 0,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_sysportlet15"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
         "height" : 0.0
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_sysportlet15"
-      },
       "name" : "dashboard_sysportlet15",
       "modelid" : "494c74e95e638723935489ec5f14e18e"
     } ],
     "portletType" : "CONTAINER",
     "getPSLayoutPos" : {
+      "colMD" : 24,
       "colLG" : 22,
       "colLGOffset" : 1,
-      "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true
-    },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard_container11"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
     },
     "codeName" : "projectDashboardViewdashboard_container11",
     "name" : "dashboard_container11"

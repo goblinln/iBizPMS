@@ -6,19 +6,21 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "runCases",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6741"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接231"
@@ -76,7 +78,6 @@
       "dstFieldName" : "ID",
       "name" : "直接值[0] ==> Default[ID]"
     } ],
-    "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备参数"
   }, {
@@ -122,14 +123,13 @@
     "name" : "连接6741"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "runCases",
   "logicName" : "runCases",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

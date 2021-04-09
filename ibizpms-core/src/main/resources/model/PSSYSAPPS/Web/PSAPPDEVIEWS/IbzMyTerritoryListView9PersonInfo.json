@@ -2,8 +2,8 @@
   "mDCtrlActiveMode" : 2,
   "enableFilter" : false,
   "xDataControlName" : "list",
-  "getPSDEViewCodeName" : "ListView9PersonInfo",
   "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "ListView9PersonInfo",
   "caption" : "我的工作",
   "title" : "我的工作",
   "accUserMode" : 2,
@@ -25,12 +25,11 @@
     "engineType" : "ListView9",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "LIST"
+      "name" : "LIST",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -41,10 +40,6 @@
     "noSort" : false,
     "hasWFDataItems" : false,
     "getItemPSLayoutPanel" : {
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
       "getRootPSPanelItems" : [ {
         "getPSPanelItems" : [ {
           "getPSPanelItems" : [ {
@@ -52,12 +47,12 @@
               "rawItemHeight" : 40.0,
               "contentType" : "RAW",
               "rawContent" : "个人贡献",
+              "contentHeight" : 40.0,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "height" : 40,
                 "layout" : "FLEX"
               },
-              "contentHeight" : 40.0,
               "height" : 40.0,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
@@ -85,27 +80,27 @@
                 "rawItemHeight" : 30.0,
                 "contentType" : "RAW",
                 "rawContent" : "创建的待办数",
+                "contentHeight" : 30.0,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "height" : 30,
                   "layout" : "FLEX"
                 },
-                "contentHeight" : 30.0,
                 "height" : 30.0,
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
                 "showCaption" : true,
                 "name" : "rawitem2"
               }, {
+                "viewFieldName" : "mytodocnt",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mytodocnt"
                 },
-                "viewFieldName" : "mytodocnt",
-                "showCaption" : false,
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -136,27 +131,27 @@
                 "rawItemHeight" : 30.0,
                 "contentType" : "RAW",
                 "rawContent" : "创建的需求数",
+                "contentHeight" : 30.0,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "height" : 30,
                   "layout" : "FLEX"
                 },
-                "contentHeight" : 30.0,
                 "height" : 30.0,
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
                 "showCaption" : true,
                 "name" : "rawitem3"
               }, {
+                "viewFieldName" : "mystorys",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mystorys"
                 },
-                "viewFieldName" : "mystorys",
-                "showCaption" : false,
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -187,27 +182,27 @@
                 "rawItemHeight" : 30.0,
                 "contentType" : "RAW",
                 "rawContent" : "完成的任务数",
+                "contentHeight" : 30.0,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "height" : 30,
                   "layout" : "FLEX"
                 },
-                "contentHeight" : 30.0,
                 "height" : 30.0,
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
                 "showCaption" : true,
                 "name" : "rawitem4"
               }, {
+                "viewFieldName" : "mytasks",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mytasks"
                 },
-                "viewFieldName" : "mytasks",
-                "showCaption" : false,
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -256,27 +251,27 @@
                 "rawItemHeight" : 30.0,
                 "contentType" : "RAW",
                 "rawContent" : "解决的bug数",
+                "contentHeight" : 30.0,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "height" : 30,
                   "layout" : "FLEX"
                 },
-                "contentHeight" : 30.0,
                 "height" : 30.0,
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
                 "showCaption" : true,
                 "name" : "rawitem5"
               }, {
+                "viewFieldName" : "mybugs",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mybugs"
                 },
-                "viewFieldName" : "mybugs",
-                "showCaption" : false,
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -307,27 +302,27 @@
                 "rawItemHeight" : 30.0,
                 "contentType" : "RAW",
                 "rawContent" : "创建的用例数",
+                "contentHeight" : 30.0,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "height" : 30,
                   "layout" : "FLEX"
                 },
-                "contentHeight" : 30.0,
                 "height" : 30.0,
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
                 "showCaption" : true,
                 "name" : "rawitem6"
               }, {
+                "viewFieldName" : "MYFAVORITEBUGS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "myfavoritebugs"
                 },
-                "viewFieldName" : "MYFAVORITEBUGS",
-                "showCaption" : false,
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -412,6 +407,10 @@
         "modelref" : true,
         "id" : "myfavoritebugs"
       } ],
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
       "controlType" : "PANEL",
       "codeName" : "PersonInfoMianBan",
       "layoutMode" : "TABLE_24COL",
@@ -427,46 +426,42 @@
     },
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "dataType" : 9,
-      "name" : "myfavoritebugs"
+      "name" : "myfavoritebugs",
+      "dataType" : 9
     }, {
-      "dataType" : 9,
-      "name" : "mybugs"
+      "name" : "mybugs",
+      "dataType" : 9
     }, {
-      "dataType" : 9,
-      "name" : "mytasks"
+      "name" : "mytasks",
+      "dataType" : 9
     }, {
-      "dataType" : 9,
-      "name" : "mytodocnt"
+      "name" : "mytodocnt",
+      "dataType" : 9
     }, {
-      "dataType" : 9,
-      "name" : "mystorys"
+      "name" : "mystorys",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "REALNAME",
         "codeName" : "Realname"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     } ],
     "showHeader" : true,
-    "controlType" : "LIST",
     "enableRowEdit" : false,
+    "controlType" : "LIST",
     "codeName" : "PersonInfoMyWork",
     "enableGroup" : false,
     "pagingSize" : 1000,
     "groupMode" : "NONE",
-    "getFetchPSControlAction" : {
-      "modelref" : true,
-      "id" : "fetch"
-    },
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -483,16 +478,14 @@
       "modelref" : true,
       "id" : "load"
     },
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "LIST"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -562,11 +555,18 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "LIST"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSLISTS/PersonInfoMyWork.json",
     "logicName" : "PersonInfoMyWork",
     "name" : "list",
     "modelid" : "4dd517f089050019617f247c2be7bb2b"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "IbzMyTerritoryListView9PersonInfo",
   "viewType" : "DELISTVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryListView9PersonInfo.json",

@@ -3,22 +3,22 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "getPSCodeItems" : [ {
-    "codeName" : "Step",
-    "text" : "步骤",
-    "value" : "step"
-  }, {
-    "codeName" : "Group",
-    "text" : "分组",
-    "value" : "group"
-  }, {
-    "codeName" : "Item",
-    "text" : "分组步骤",
-    "value" : "item"
-  } ],
+  "dynaInstMode" : 1,
   "codeName" : "Casestep__type",
+  "getPSCodeItems" : [ {
+    "value" : "step",
+    "codeName" : "Step",
+    "text" : "步骤"
+  }, {
+    "value" : "group",
+    "codeName" : "Group",
+    "text" : "分组"
+  }, {
+    "value" : "item",
+    "codeName" : "Item",
+    "text" : "分组步骤"
+  } ],
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Casestep__type.json",

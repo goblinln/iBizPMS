@@ -3,36 +3,36 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
+  "codeName" : "TodoQuickpacketMy",
   "getPSCodeItems" : [ {
+    "value" : "All",
     "data" : "{\"n_cycle_eq\":\"0\"}",
     "codeName" : "All",
     "text" : "所有待办",
-    "default" : true,
-    "value" : "All"
+    "default" : true
   }, {
+    "value" : "thisyear",
     "data" : "{\"thisyear\":\"thisyear\",\"n_cycle_eq\":\"0\"}",
     "codeName" : "Thisyear",
-    "text" : "本年度",
-    "value" : "thisyear"
+    "text" : "本年度"
   }, {
+    "value" : "Unfinished",
     "data" : "{\"n_status_eq\":\"wait\",\"n_cycle_eq\":\"0\",\"n_date_noteq\":\"2030-01-01\"}",
     "codeName" : "Unfinished",
-    "text" : "未完",
-    "value" : "Unfinished"
+    "text" : "未完"
   }, {
+    "value" : "BYME",
     "data" : "{\"n_date_eq\":\"2030-01-01\",\"n_cycle_eq\":\"0\"}",
     "codeName" : "Byme",
-    "text" : "待定",
-    "value" : "BYME"
+    "text" : "待定"
   }, {
+    "value" : "cycle",
     "data" : "{\"n_cycle_eq\":\"1\"}",
     "codeName" : "Cycle",
-    "text" : "周期",
-    "value" : "cycle"
+    "text" : "周期"
   } ],
-  "codeName" : "TodoQuickpacketMy",
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/TodoQuickpacketMy.json",

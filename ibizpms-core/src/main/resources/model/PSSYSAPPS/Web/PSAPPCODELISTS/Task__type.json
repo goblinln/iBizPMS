@@ -3,46 +3,46 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "getPSCodeItems" : [ {
-    "codeName" : "Design",
-    "text" : "设计",
-    "value" : "design"
-  }, {
-    "codeName" : "Devel",
-    "text" : "开发",
-    "value" : "devel"
-  }, {
-    "codeName" : "Test",
-    "text" : "测试",
-    "value" : "test"
-  }, {
-    "codeName" : "Study",
-    "text" : "研究",
-    "value" : "study"
-  }, {
-    "codeName" : "Discuss",
-    "text" : "讨论",
-    "value" : "discuss"
-  }, {
-    "codeName" : "Ui",
-    "text" : "界面",
-    "value" : "ui"
-  }, {
-    "codeName" : "Affair",
-    "text" : "事务",
-    "value" : "affair"
-  }, {
-    "codeName" : "Serve",
-    "text" : "服务",
-    "value" : "serve"
-  }, {
-    "codeName" : "Misc",
-    "text" : "其他",
-    "value" : "misc"
-  } ],
+  "dynaInstMode" : 1,
   "codeName" : "Task__type",
+  "getPSCodeItems" : [ {
+    "value" : "design",
+    "codeName" : "Design",
+    "text" : "设计"
+  }, {
+    "value" : "devel",
+    "codeName" : "Devel",
+    "text" : "开发"
+  }, {
+    "value" : "test",
+    "codeName" : "Test",
+    "text" : "测试"
+  }, {
+    "value" : "study",
+    "codeName" : "Study",
+    "text" : "研究"
+  }, {
+    "value" : "discuss",
+    "codeName" : "Discuss",
+    "text" : "讨论"
+  }, {
+    "value" : "ui",
+    "codeName" : "Ui",
+    "text" : "界面"
+  }, {
+    "value" : "affair",
+    "codeName" : "Affair",
+    "text" : "事务"
+  }, {
+    "value" : "serve",
+    "codeName" : "Serve",
+    "text" : "服务"
+  }, {
+    "value" : "misc",
+    "codeName" : "Misc",
+    "text" : "其他"
+  } ],
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__type.json",

@@ -1,20 +1,82 @@
 {
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "name" : "product",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATES",
+      "codeName" : "Totalestimates"
+    },
+    "name" : "totalestimates",
+    "dataType" : 7
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
+      "codeName" : "IbizproProductMonthlyName"
+    },
+    "name" : "ibizpro_productmonthlyname",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "YEAR_MONTH",
+      "codeName" : "YearMonth"
+    },
+    "name" : "year_month",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PO",
+      "codeName" : "PO"
+    },
+    "name" : "po",
+    "dataType" : 25
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "name" : "date",
+    "dataType" : 5
+  }, {
+    "name" : "srfmstag",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
+      "codeName" : "IbizproProductMonthlyName"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTMONTHLYID",
+      "codeName" : "IbizproProductMonthlyId"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTMONTHLYID",
+      "codeName" : "IbizproProductMonthlyId"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    },
+    "name" : "productname",
+    "dataType" : 25
+  } ],
   "singleSelect" : false,
   "enableColFilter" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -34,105 +96,43 @@
     "caption" : "产品月报标识",
     "name" : "srfkey"
   } ],
-  "columnEnableLink" : 2,
   "hasWFDataItems" : false,
-  "controlType" : "GRID",
-  "enablePagingBar" : true,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
-    "dataType" : 1,
-    "name" : "product"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TOTALESTIMATES",
-      "codeName" : "Totalestimates"
-    },
-    "dataType" : 7,
-    "name" : "totalestimates"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
-      "codeName" : "IbizproProductMonthlyName"
-    },
-    "dataType" : 25,
-    "name" : "ibizpro_productmonthlyname"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "YEAR_MONTH",
-      "codeName" : "YearMonth"
-    },
-    "dataType" : 25,
-    "name" : "year_month"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PO",
-      "codeName" : "PO"
-    },
-    "dataType" : 25,
-    "name" : "po"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
-    },
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "date"
-  }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
-      "codeName" : "IbizproProductMonthlyName"
-    },
-    "dataType" : 25,
-    "name" : "srfmajortext"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PRODUCTMONTHLYID",
-      "codeName" : "IbizproProductMonthlyId"
-    },
-    "dataAccessAction" : true,
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PRODUCTMONTHLYID",
-      "codeName" : "IbizproProductMonthlyId"
-    },
-    "dataType" : 1,
-    "name" : "srfkey"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PRODUCTNAME",
-      "codeName" : "ProductName"
-    },
-    "dataType" : 25,
-    "name" : "productname"
-  } ],
-  "enableRowEdit" : false,
+  "enablePagingBar" : true,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
+    "linkValueItem" : "srfkey",
+    "excelCaption" : "产品月报名称",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProductMonthlyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "excelCaption" : "产品月报名称",
+    "dataItemName" : "ibizpro_productmonthlyname",
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
       "codeName" : "IbizproProductMonthlyName"
     },
-    "dataItemName" : "ibizpro_productmonthlyname",
-    "linkValueItem" : "srfkey",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -145,11 +145,11 @@
     "name" : "ibizpro_productmonthlyname"
   }, {
     "excelCaption" : "产品名称",
+    "dataItemName" : "productname",
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
-    "dataItemName" : "productname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -162,11 +162,11 @@
     "name" : "productname"
   }, {
     "excelCaption" : "年月",
+    "dataItemName" : "year_month",
     "getPSAppDEField" : {
       "name" : "YEAR_MONTH",
       "codeName" : "YearMonth"
     },
-    "dataItemName" : "year_month",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -179,11 +179,11 @@
     "name" : "year_month"
   }, {
     "excelCaption" : "日期",
+    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataItemName" : "date",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -201,11 +201,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "po",
     "getPSAppDEField" : {
       "name" : "PO",
       "codeName" : "PO"
     },
-    "dataItemName" : "po",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -218,11 +218,11 @@
     "name" : "po"
   }, {
     "excelCaption" : "总工时",
+    "dataItemName" : "totalestimates",
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATES",
       "codeName" : "Totalestimates"
     },
-    "dataItemName" : "totalestimates",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

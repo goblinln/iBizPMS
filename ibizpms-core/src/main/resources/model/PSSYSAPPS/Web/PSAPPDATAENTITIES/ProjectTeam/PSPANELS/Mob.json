@@ -1,15 +1,10 @@
 {
-  "mobilePanel" : true,
-  "getPSLayout" : {
-    "layout" : "TABLE_12COL",
-    "columnCount" : 12
-  },
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
       "htmlContent" : "<ion-icon name=\"person-add-sharp\" style=\"font-size: 18px;\"></ion-icon>",
       "getPSLayoutPos" : {
-        "colLG" : 1,
         "colMD" : 1,
+        "colLG" : 1,
         "layout" : "TABLE_12COL"
       },
       "itemType" : "RAWITEM",
@@ -17,6 +12,7 @@
       "showCaption" : true,
       "name" : "rawitem1"
     }, {
+      "viewFieldName" : "account",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -27,33 +23,32 @@
         "editorType" : "SPAN",
         "name" : "account"
       },
-      "viewFieldName" : "account",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 6,
         "colMD" : 6,
+        "colLG" : 6,
         "layout" : "TABLE_12COL"
       },
       "itemType" : "FIELD",
       "itemStyle" : "DEFAULT",
       "name" : "account"
     }, {
+      "viewFieldName" : "role",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "role"
       },
-      "viewFieldName" : "role",
-      "showCaption" : false,
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
-        "colLG" : 4,
-        "colLGOffset" : 1,
         "colMD" : 4,
+        "colLG" : 4,
         "colMDOffset" : 1,
+        "colLGOffset" : 1,
         "layout" : "TABLE_12COL"
       },
       "itemType" : "FIELD",
@@ -83,6 +78,11 @@
     "modelref" : true,
     "id" : "role"
   } ],
+  "mobilePanel" : true,
+  "getPSLayout" : {
+    "layout" : "TABLE_12COL",
+    "columnCount" : 12
+  },
   "controlType" : "PANEL",
   "codeName" : "Mob",
   "layoutMode" : "TABLE_12COL",

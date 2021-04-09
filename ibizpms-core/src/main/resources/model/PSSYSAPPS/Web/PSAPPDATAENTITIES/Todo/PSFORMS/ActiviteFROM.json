@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,13 +26,13 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "rawItemHeight" : -1.0,
@@ -39,10 +40,10 @@
       "contentType" : "RAW",
       "rawContent" : "您确定要激活这条待办吗？",
       "getPSLayoutPos" : {
-        "colLG" : 20,
-        "colLGOffset" : 4,
         "colMD" : 20,
+        "colLG" : 20,
         "colMDOffset" : 4,
+        "colLGOffset" : 4,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "rawitem1",
@@ -107,7 +108,6 @@
       "codeName" : "Id"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "ActiviteFROM",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

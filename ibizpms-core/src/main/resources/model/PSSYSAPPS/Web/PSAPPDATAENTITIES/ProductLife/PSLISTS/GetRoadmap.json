@@ -2,65 +2,61 @@
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
+  "hasWFDataItems" : false,
   "getGroupPSAppDEField" : {
     "name" : "BRANCH",
     "codeName" : "Branch"
   },
-  "hasWFDataItems" : false,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "dataType" : 25,
-    "name" : "year"
+    "name" : "year",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "parent"
+    "name" : "parent",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "type"
+    "name" : "type",
+    "dataType" : 25
   }, {
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
     },
-    "dataType" : 9,
-    "name" : "marker"
+    "name" : "marker",
+    "dataType" : 9
   }, {
-    "dataType" : 5,
     "format" : "YYYY-MM-DD",
-    "name" : "begin"
+    "name" : "begin",
+    "dataType" : 5
   }, {
-    "dataType" : 25,
-    "name" : "productlifeid"
+    "name" : "productlifeid",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "branch"
+    "name" : "branch",
+    "dataType" : 25
   }, {
-    "dataType" : 9,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 9
   }, {
-    "dataType" : 5,
     "format" : "YYYY-MM-DD",
-    "name" : "end"
+    "name" : "end",
+    "dataType" : 5
   }, {
-    "dataType" : 25,
-    "name" : "productlifename"
+    "name" : "productlifename",
+    "dataType" : 25
   } ],
   "showHeader" : true,
-  "controlType" : "LIST",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "END",
     "codeName" : "End"
   },
-  "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "GetRoadmap",
   "minorSortDir" : "ASC",
   "enableGroup" : true,
   "pagingSize" : 1000,
   "groupMode" : "CODELIST",
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -76,6 +72,10 @@
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

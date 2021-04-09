@@ -1,9 +1,9 @@
 {
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : true,
   "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
   "builtinAction" : true,
   "getAfterPSDEActionLogics" : [ {
     "internalLogic" : true,
@@ -17,14 +17,14 @@
     "name" : "附加逻辑"
   } ],
   "timeOut" : -1,
-  "extendMode" : 0,
+  "orderValue" : 1,
+  "codeName" : "Create",
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
   },
-  "orderValue" : 1,
-  "codeName" : "Create",
   "logicName" : "Create",
+  "extendMode" : 0,
   "actionMode" : "CREATE",
   "actionType" : "BUILTIN",
   "requestParamType" : "ENTITY",

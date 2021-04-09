@@ -1,5 +1,4 @@
 {
-  "typeValue" : "project",
   "inherit" : false,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
@@ -32,6 +31,7 @@
     },
     "name" : "PROJECT=ID"
   } ],
+  "typeValue" : "project",
   "virtual" : true,
   "getMajorPSDataEntity" : {
     "modelref" : true,

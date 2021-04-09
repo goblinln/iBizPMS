@@ -28,22 +28,22 @@ public class IBZWFFallback implements IBZWFFeignClient {
     }
 
     @Override
-    public Map<String, Map<String, Object>> getTaskByUserId(String system, String userId, String entity, String dynainstid) {
+    public Map<String, Map<String, Object>> getTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
         return null;
     }
 
     @Override
-    public Map<String, Map<String, Object>> getUnReadTaskByUserId(String system, String userId, String entity, String dynainstid) {
+    public Map<String, Map<String, Object>> getUnReadTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
         return null;
     }
 
     @Override
-    public Map<String, Map<String, Object>> getDoneTaskByUserId(String system, String userId, String entity, String dynainstid) {
+    public Map<String, Map<String, Object>> getDoneTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
         return null;
     }
 
     @Override
-    public Map<String, Map<String, Object>> getFinishTaskByUserId(String system, String userId, String entity, String dynainstid) {
+    public Map<String, Map<String, Object>> getFinishTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
         return null;
     }
 }

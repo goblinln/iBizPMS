@@ -15,8 +15,8 @@
     "modelref" : true,
     "id" : "FetchProductTeamM"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
+  "dynaInstMode" : 1,
   "codeName" : "CodeList25",
   "emptyText" : "未定义",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/CodeList25.json",

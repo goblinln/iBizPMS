@@ -6,19 +6,21 @@
     "id" : "Begin"
   },
   "logicHolder" : 1,
+  "codeName" : "ResetTaskestimate",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接2830"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
@@ -30,7 +32,6 @@
       "dstFieldName" : "taskestimate",
       "name" : "直接值[null] ==> Default[taskestimate]"
     } ],
-    "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "重置工时统计"
   } ],
@@ -47,14 +48,13 @@
     "name" : "连接2830"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "ResetTaskestimate",
   "logicName" : "重置工时统计值",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

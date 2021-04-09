@@ -8,33 +8,34 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
+        "editorWidth" : 100.0,
+        "editorType" : "DATEPICKEREX_NOTIME",
         "editorParams" : {
           "TIMEFMT" : "YYYY-MM-DD"
         },
-        "editorType" : "DATEPICKEREX_NOTIME",
-        "editorWidth" : 100.0,
         "name" : "begin"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
+      "hidden" : false,
       "dataType" : 25,
       "caption" : "起始日期",
       "allowEmpty" : true,
+      "labelWidth" : 80,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 80,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
+        "colMD" : 24,
         "colLG" : 6,
         "colLGOffset" : 1,
-        "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "begin",
@@ -42,30 +43,30 @@
       "detailStyle" : "DEFAULT",
       "name" : "begin"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
+        "editorWidth" : 100.0,
+        "editorType" : "DATEPICKEREX_NOTIME",
         "editorParams" : {
           "TIMEFMT" : "YYYY-MM-DD"
         },
-        "editorType" : "DATEPICKEREX_NOTIME",
-        "editorWidth" : 100.0,
         "name" : "end"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
+      "hidden" : false,
       "dataType" : 25,
       "caption" : "结束日期",
       "allowEmpty" : true,
+      "labelWidth" : 80,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 80,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colLG" : 6,
         "colMD" : 24,
+        "colLG" : 6,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "end",
@@ -91,7 +92,6 @@
     "id" : "end",
     "dataType" : 25
   } ],
-  "noTabHeader" : true,
   "codeName" : "CompanyDynamicStatic",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

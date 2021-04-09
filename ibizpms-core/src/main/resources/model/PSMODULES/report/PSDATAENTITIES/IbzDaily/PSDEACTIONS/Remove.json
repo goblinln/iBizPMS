@@ -1,29 +1,29 @@
 {
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : true,
   "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
   "builtinAction" : true,
   "timeOut" : -1,
-  "extendMode" : 0,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "DELETE"
-  },
   "orderValue" : 21,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTRemove"
   },
   "codeName" : "Remove",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "DELETE"
+  },
   "logicName" : "Remove",
+  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "IBZ_DAILYID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Remove.json",
-  "userCat" : "CAT1",
-  "name" : "Remove"
+  "name" : "Remove",
+  "userCat" : "CAT1"
 }

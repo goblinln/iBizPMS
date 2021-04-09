@@ -1,99 +1,99 @@
 {
   "subSysAsCloud" : false,
-  "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__os.json",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
   "codeName" : "Bug__os",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "all",
     "codeName" : "All",
-    "text" : "全部",
-    "value" : "all"
+    "text" : "全部"
   }, {
+    "value" : "windows",
     "codeName" : "Windows",
-    "text" : "Windows",
-    "value" : "windows"
+    "text" : "Windows"
   }, {
+    "value" : "win10",
     "codeName" : "Win10",
-    "text" : "Windows 10",
-    "value" : "win10"
+    "text" : "Windows 10"
   }, {
+    "value" : "win8",
     "codeName" : "Win8",
-    "text" : "Windows 8",
-    "value" : "win8"
+    "text" : "Windows 8"
   }, {
+    "value" : "win7",
     "codeName" : "Win7",
-    "text" : "Windows 7",
-    "value" : "win7"
+    "text" : "Windows 7"
   }, {
+    "value" : "vista",
     "codeName" : "Vista",
-    "text" : "Windows Vista",
-    "value" : "vista"
+    "text" : "Windows Vista"
   }, {
+    "value" : "winxp",
     "codeName" : "Winxp",
-    "text" : "Windows XP",
-    "value" : "winxp"
+    "text" : "Windows XP"
   }, {
+    "value" : "win2012",
     "codeName" : "Win2012",
-    "text" : "Windows 2012",
-    "value" : "win2012"
+    "text" : "Windows 2012"
   }, {
+    "value" : "win2008",
     "codeName" : "Win2008",
-    "text" : "Windows 2008",
-    "value" : "win2008"
+    "text" : "Windows 2008"
   }, {
+    "value" : "win2003",
     "codeName" : "Win2003",
-    "text" : "Windows 2003",
-    "value" : "win2003"
+    "text" : "Windows 2003"
   }, {
+    "value" : "win2000",
     "codeName" : "Win2000",
-    "text" : "Windows 2000",
-    "value" : "win2000"
+    "text" : "Windows 2000"
   }, {
+    "value" : "android",
     "codeName" : "Android",
-    "text" : "Android",
-    "value" : "android"
+    "text" : "Android"
   }, {
+    "value" : "ios",
     "codeName" : "Ios",
-    "text" : "IOS",
-    "value" : "ios"
+    "text" : "IOS"
   }, {
+    "value" : "wp8",
     "codeName" : "Wp8",
-    "text" : "WP8",
-    "value" : "wp8"
+    "text" : "WP8"
   }, {
+    "value" : "wp7",
     "codeName" : "Wp7",
-    "text" : "WP7",
-    "value" : "wp7"
+    "text" : "WP7"
   }, {
+    "value" : "symbian",
     "codeName" : "Symbian",
-    "text" : "Symbian",
-    "value" : "symbian"
+    "text" : "Symbian"
   }, {
+    "value" : "linux",
     "codeName" : "Linux",
-    "text" : "Linux",
-    "value" : "linux"
+    "text" : "Linux"
   }, {
+    "value" : "freebsd",
     "codeName" : "Freebsd",
-    "text" : "FreeBSD",
-    "value" : "freebsd"
+    "text" : "FreeBSD"
   }, {
+    "value" : "osx",
     "codeName" : "Osx",
-    "text" : "OS X",
-    "value" : "osx"
+    "text" : "OS X"
   }, {
+    "value" : "unix",
     "codeName" : "Unix",
-    "text" : "Unix",
-    "value" : "unix"
+    "text" : "Unix"
   }, {
+    "value" : "others",
     "codeName" : "Others",
-    "text" : "其他",
-    "value" : "others"
+    "text" : "其他"
   } ]
 }

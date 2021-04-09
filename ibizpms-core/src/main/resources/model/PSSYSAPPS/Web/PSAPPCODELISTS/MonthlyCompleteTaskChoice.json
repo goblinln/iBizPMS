@@ -15,8 +15,8 @@
     "modelref" : true,
     "id" : "FetchThisMonthCompleteTaskChoice"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
+  "dynaInstMode" : 1,
   "codeName" : "MonthlyCompleteTaskChoice",
   "emptyText" : "未定义",
   "cacheTimeout" : 600,

@@ -1,23 +1,23 @@
 {
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
   "builtinAction" : false,
   "getCheckPSDEActionLogics" : [ {
     "name" : "行为[updateStoryVersion]主状态拒绝逻辑",
     "id" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/UpdateStoryVersion__MSDeny.json"
   } ],
   "timeOut" : -1,
-  "extendMode" : 0,
+  "orderValue" : 99999,
+  "codeName" : "UpdateStoryVersion",
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
   },
-  "orderValue" : 99999,
-  "codeName" : "UpdateStoryVersion",
   "logicName" : "更新需求版本",
+  "extendMode" : 0,
   "actionMode" : "UPDATE",
   "actionType" : "DELOGIC",
   "requestParamType" : "ENTITY",

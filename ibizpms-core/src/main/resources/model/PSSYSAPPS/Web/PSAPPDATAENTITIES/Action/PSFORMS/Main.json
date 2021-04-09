@@ -1,4 +1,5 @@
 {
+  "showFormNavBar" : false,
   "enableAutoSave" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -25,13 +26,13 @@
     "id" : "loaddraftfrom"
   },
   "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -41,29 +42,29 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : true,
         "getPSEditor" : {
+          "editorType" : "HTMLEDITOR",
           "editorParams" : {
             "uploadparams" : "{objecttype:\"%objecttype%\",objectid: \"%objectid%\",version:\"editor\"}",
             "exportparams" : "{objecttype:\"%objecttype%\",objectid: \"%objectid%\",version:\"editor\"}"
           },
-          "editorType" : "HTMLEDITOR",
           "name" : "lastcomment"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : true,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "LASTCOMMENT",
           "codeName" : "Lastcomment"
         },
+        "hidden" : false,
         "dataType" : 25,
         "allowEmpty" : true,
+        "labelWidth" : 1,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 1,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -86,12 +87,20 @@
           },
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
+              "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
+            },
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE",
+              "id" : "工具栏按钮提示[EDITVIEW.CLOSE]"
+            },
             "timeout" : 60000,
+            "codeName" : "Exit",
             "getPSSysImage" : {
               "glyph" : "xf08b@FontAwesome",
               "cssClass" : "fa fa-sign-out"
             },
-            "codeName" : "Exit",
             "caption" : "返回",
             "uIActionTag" : "Exit",
             "uIActionType" : "DEUIACTION",
@@ -106,11 +115,15 @@
             "width" : 64,
             "layout" : "FLEX"
           },
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
+            "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
+          },
+          "codeName" : "button1",
           "getPSSysImage" : {
             "glyph" : "xf08b@FontAwesome",
             "cssClass" : "fa fa-sign-out"
           },
-          "codeName" : "button1",
           "caption" : "关闭",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
@@ -123,11 +136,19 @@
           },
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+              "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+            },
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+              "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+            },
             "timeout" : 60000,
+            "codeName" : "SaveAndExit",
             "getPSSysImage" : {
               "cssClass" : "sx-tb-saveandclose"
             },
-            "codeName" : "SaveAndExit",
             "caption" : "保存并关闭",
             "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
             "uIActionTag" : "SaveAndExit",
@@ -143,11 +164,15 @@
             "width" : 58,
             "layout" : "FLEX"
           },
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+            "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+          },
+          "codeName" : "button2",
           "getPSSysImage" : {
             "glyph" : "xf0c7@FontAwesome",
             "cssClass" : "fa fa-save"
           },
-          "codeName" : "button2",
           "caption" : "保存",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
@@ -169,36 +194,36 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "codeName" : "grouppanel2",
       "getPSSysCss" : {
         "cssName" : "form-padding"
       },
-      "codeName" : "grouppanel2",
       "caption" : "分组面板",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
       "showCaption" : false,
       "name" : "grouppanel2"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "objectid"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "OBJECTID",
         "codeName" : "ObjectID"
       },
+      "hidden" : true,
       "dataType" : 1,
       "caption" : "对象ID",
       "allowEmpty" : true,
+      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -208,26 +233,26 @@
       "detailStyle" : "DEFAULT",
       "name" : "objectid"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "noticeusers"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "NOTICEUSERS",
         "codeName" : "Noticeusers"
       },
+      "hidden" : true,
       "dataType" : 25,
       "caption" : "消息通知用户",
       "allowEmpty" : true,
+      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -237,26 +262,26 @@
       "detailStyle" : "DEFAULT",
       "name" : "noticeusers"
     }, {
+      "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "objecttype"
       },
       "inputTipClosable" : false,
-      "emptyCaption" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "OBJECTTYPE",
         "codeName" : "ObjectType"
       },
+      "hidden" : true,
       "dataType" : 25,
       "caption" : "对象类型",
       "allowEmpty" : true,
+      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
-      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -271,10 +296,10 @@
       "columnCount" : 24
     },
     "infoGroupMode" : false,
+    "codeName" : "formpage1",
     "getPSSysCss" : {
       "cssName" : "form-padding"
     },
-    "codeName" : "formpage1",
     "caption" : "基本信息",
     "detailType" : "FORMPAGE",
     "detailStyle" : "DEFAULT",
@@ -356,7 +381,6 @@
       "codeName" : "Id"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
   "getPSAppViewUIActions" : [ {
@@ -375,19 +399,19 @@
     "name" : "form_button2"
   } ],
   "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "form_button1"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "form_button1_click"
   }, {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "form_button2"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "form_button2_click"
   } ],

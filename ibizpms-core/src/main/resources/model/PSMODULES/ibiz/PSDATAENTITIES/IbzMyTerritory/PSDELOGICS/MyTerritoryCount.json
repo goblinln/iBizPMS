@@ -6,6 +6,7 @@
     "id" : "Begin"
   },
   "logicHolder" : 3,
+  "codeName" : "MyTerritoryCount",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
@@ -13,6 +14,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8800"
@@ -23,7 +25,6 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
-    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取我的需求数"
   }, {
@@ -33,23 +34,23 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall4",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
-    "codeName" : "Rawsqlcall4",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "我的待办数"
   }, {
     "parallelOutput" : true,
     "logicHolder" : 3,
+    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6119"
     } ],
-    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -59,6 +60,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3922"
@@ -69,7 +71,6 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
-    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取我的Bug数"
   }, {
@@ -79,6 +80,7 @@
       "id" : "Default"
     },
     "logicHolder" : 1,
+    "codeName" : "Rawsqlcall3",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7988"
@@ -89,7 +91,6 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
-    "codeName" : "Rawsqlcall3",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取我的Bug数"
   } ],
@@ -139,14 +140,13 @@
     "name" : "连接6119"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "envParam" : false,
     "lastParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
-  "codeName" : "MyTerritoryCount",
   "logicName" : "我的地盘移动端计数器",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

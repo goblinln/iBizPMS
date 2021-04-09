@@ -341,11 +341,6 @@
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
 
-        <dependency>
-    <groupId>net.ibizsys.model</groupId>
-    <artifactId>ibizlab-model</artifactId>
-    <version>1.0.7</version>
-</dependency>
 
     </dependencies>
 

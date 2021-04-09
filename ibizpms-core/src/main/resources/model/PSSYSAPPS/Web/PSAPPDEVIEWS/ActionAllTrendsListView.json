@@ -2,8 +2,8 @@
   "mDCtrlActiveMode" : 2,
   "enableFilter" : false,
   "xDataControlName" : "list",
-  "getPSDEViewCodeName" : "AllTrendsListView",
   "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "AllTrendsListView",
   "caption" : "系统日志",
   "title" : "系统日志列表视图",
   "accUserMode" : 2,
@@ -25,18 +25,17 @@
     "engineType" : "ListView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "LIST"
+      "name" : "LIST",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
@@ -48,68 +47,64 @@
     "hasWFDataItems" : false,
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "dataType" : 25,
-      "name" : "objecttype"
+      "name" : "objecttype",
+      "dataType" : 25
     }, {
-      "dataType" : 5,
       "format" : "YYYY-MM-DD HH:mm:ss",
-      "name" : "date"
+      "name" : "date",
+      "dataType" : 5
     }, {
-      "dataType" : 1,
-      "name" : "project"
+      "name" : "project",
+      "dataType" : 1
     }, {
-      "dataType" : 25,
-      "name" : "action"
+      "name" : "action",
+      "dataType" : 25
     }, {
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
-      "dataType" : 25,
-      "name" : "product"
+      "name" : "product",
+      "dataType" : 25
     }, {
-      "dataType" : 1,
-      "name" : "objectid"
+      "name" : "objectid",
+      "dataType" : 1
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
       },
-      "dataType" : 25,
-      "name" : "actionmanner"
+      "name" : "actionmanner",
+      "dataType" : 25
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
       },
-      "dataType" : 25,
-      "name" : "actor"
+      "name" : "actor",
+      "dataType" : 25
     }, {
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Action__read.json"
       },
-      "dataType" : 25,
-      "name" : "read"
+      "name" : "read",
+      "dataType" : 25
     } ],
     "showHeader" : true,
-    "controlType" : "LIST",
+    "enableRowEdit" : false,
     "getMinorSortPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "enableRowEdit" : false,
+    "controlType" : "LIST",
     "codeName" : "GroupTrends",
     "minorSortDir" : "DESC",
     "enableGroup" : false,
     "pagingSize" : 300,
     "groupMode" : "NONE",
-    "getFetchPSControlAction" : {
-      "modelref" : true,
-      "id" : "fetch"
-    },
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -126,16 +121,14 @@
       "modelref" : true,
       "id" : "load"
     },
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "LIST"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -205,6 +198,12 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "LIST"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action/PSLISTS/GroupTrends.json",
     "getPSSysPFPlugin" : {
       "pluginType" : "CUSTOM",
@@ -214,6 +213,7 @@
     "name" : "list",
     "modelid" : "ff3ad7c07969e763b5df209fc71ba18e"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -233,11 +233,12 @@
     "realOpenMode" : "POPUPMODAL",
     "name" : "EDITDATA"
   } ],
+  "codeName" : "ActionAllTrendsListView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "batchAddOnly" : false,
       "enableBatchAdd" : false,
+      "batchAddOnly" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
@@ -288,7 +289,6 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
-  "codeName" : "ActionAllTrendsListView",
   "viewType" : "DELISTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionAllTrendsListView.json",
   "name" : "ActionAllTrendsListView"

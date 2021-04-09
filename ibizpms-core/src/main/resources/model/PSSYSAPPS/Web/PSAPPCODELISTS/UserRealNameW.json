@@ -19,10 +19,10 @@
     "name" : "USERICON",
     "codeName" : "UserIcon"
   },
-  "dynaInstMode" : 1,
   "codeListType" : "DYNAMIC",
   "orMode" : "STR",
   "textSeparator" : ",",
+  "dynaInstMode" : 1,
   "codeName" : "UserRealNameW",
   "emptyText" : "未指派",
   "valueSeparator" : ",",

@@ -5,11 +5,6 @@
     "index" : 0,
     "id" : "0"
   },
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "index" : 0,
-    "id" : "0"
-  },
   "getPSChartCoordinateSystems" : [ {
     "getPSChartGrid" : {
       "getPSChartGridXAxis0" : {
@@ -35,7 +30,13 @@
     "name" : "[storycnt]直角坐标系[0]",
     "id" : "0"
   } ],
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
   "controlType" : "CHART",
+  "codeName" : "MonthOpenedStory",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
     "catalogField" : "CURMONTH",
@@ -72,48 +73,25 @@
     "index" : 0,
     "name" : "storycnt"
   } ],
-  "codeName" : "MonthOpenedStory",
-  "getPSChartXAxises" : [ {
-    "eChartsPos" : "xAxis",
-    "eChartsType" : "category",
-    "position" : "bottom",
-    "caption" : "月",
-    "type" : "category",
-    "index" : 0,
-    "name" : "月",
-    "id" : "0"
-  } ],
   "getPSChartYAxises" : [ {
-    "eChartsPos" : "yAxis",
     "eChartsType" : "value",
+    "eChartsPos" : "yAxis",
     "position" : "left",
+    "type" : "numeric",
     "maxValue" : 200.0,
     "minValue" : 0.0,
-    "type" : "numeric",
     "index" : 0,
     "name" : "数值",
     "id" : "0"
   } ],
-  "getPSChartDataSets" : [ {
-    "getPSChartDataSetFields" : [ {
-      "groupField" : true,
-      "groupMode" : "MONTH",
-      "index" : 0,
-      "name" : "CURMONTH",
-      "id" : "0"
-    }, {
-      "groupField" : false,
-      "index" : 1,
-      "name" : "YEARSTORYCNT",
-      "id" : "1"
-    } ],
+  "getPSChartXAxises" : [ {
+    "eChartsType" : "category",
+    "eChartsPos" : "xAxis",
+    "position" : "bottom",
+    "type" : "category",
+    "caption" : "月",
     "index" : 0,
-    "name" : "storycnt-MonthOpenedStory",
-    "id" : "0"
-  } ],
-  "getPSChartDataSetGroups" : [ {
-    "index" : 0,
-    "name" : "MonthOpenedStory",
+    "name" : "月",
     "id" : "0"
   } ],
   "getPSChartGrids" : [ {
@@ -141,6 +119,28 @@
     "name" : "[storycnt]直角坐标系[0]",
     "id" : "0"
   } ],
+  "getPSChartDataSets" : [ {
+    "getPSChartDataSetFields" : [ {
+      "groupField" : true,
+      "groupMode" : "MONTH",
+      "index" : 0,
+      "name" : "CURMONTH",
+      "id" : "0"
+    }, {
+      "groupField" : false,
+      "index" : 1,
+      "name" : "YEARSTORYCNT",
+      "id" : "1"
+    } ],
+    "index" : 0,
+    "name" : "storycnt-MonthOpenedStory",
+    "id" : "0"
+  } ],
+  "getPSChartDataSetGroups" : [ {
+    "index" : 0,
+    "name" : "MonthOpenedStory",
+    "id" : "0"
+  } ],
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
@@ -151,11 +151,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedStory.json",
+  "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
-  "height" : 300.0,
   "logicName" : "MonthOpenedStory",
   "modelid" : "2ad3d195a67cf63c7a1e78851643e2c1",
   "getUserParam" : {

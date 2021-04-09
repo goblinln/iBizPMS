@@ -1,20 +1,109 @@
 {
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "TASKTYPE",
+      "codeName" : "Tasktype"
+    },
+    "name" : "tasktype",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "DELAYDAYS",
+      "codeName" : "Delaydays"
+    },
+    "name" : "delaydays",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASK",
+      "codeName" : "Task"
+    },
+    "name" : "task",
+    "dataType" : 1
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "name" : "date",
+    "dataType" : 5
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 1
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "id",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    },
+    "name" : "consumed",
+    "dataType" : 7
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "name" : "account",
+    "dataType" : 25
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "ESTSTARTED",
+      "codeName" : "EstStarted"
+    },
+    "name" : "eststarted",
+    "dataType" : 5
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TASKNAME",
+      "codeName" : "TaskName"
+    },
+    "name" : "taskname",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PROGRESSRATE",
+      "codeName" : "Progressrate"
+    },
+    "name" : "progressrate",
+    "dataType" : 25
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "DEADLINE",
+      "codeName" : "Deadline"
+    },
+    "name" : "deadline",
+    "dataType" : 5
+  } ],
   "singleSelect" : true,
   "enableColFilter" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProjectUserTask.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -34,125 +123,36 @@
     "caption" : "编号",
     "name" : "srfkey"
   } ],
-  "columnEnableLink" : 2,
   "hasWFDataItems" : false,
-  "controlType" : "GRID",
-  "enablePagingBar" : true,
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "TASKTYPE",
-      "codeName" : "Tasktype"
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProjectUserTask.json"
     },
-    "dataType" : 25,
-    "name" : "tasktype"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DELAYDAYS",
-      "codeName" : "Delaydays"
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
     },
-    "dataType" : 25,
-    "name" : "delaydays"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TASK",
-      "codeName" : "Task"
-    },
-    "dataType" : 1,
-    "name" : "task"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
-    },
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "date"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataType" : 1,
-    "name" : "srfmajortext"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataAccessAction" : true,
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataType" : 1,
-    "name" : "srfkey"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataType" : 1,
-    "name" : "id"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CONSUMED",
-      "codeName" : "Consumed"
-    },
-    "dataType" : 7,
-    "name" : "consumed"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "dataType" : 25,
-    "name" : "account"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ESTSTARTED",
-      "codeName" : "EstStarted"
-    },
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "eststarted"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TASKNAME",
-      "codeName" : "TaskName"
-    },
-    "dataType" : 25,
-    "name" : "taskname"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PROGRESSRATE",
-      "codeName" : "Progressrate"
-    },
-    "dataType" : 25,
-    "name" : "progressrate"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DEADLINE",
-      "codeName" : "Deadline"
-    },
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "deadline"
-  } ],
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
   "enableRowEdit" : false,
+  "enablePagingBar" : true,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "用户",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "account",
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataItemName" : "account",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -165,12 +165,13 @@
     "name" : "account"
   }, {
     "excelCaption" : "任务名称",
+    "dataItemName" : "taskname",
     "getPSAppDEField" : {
       "name" : "TASKNAME",
       "codeName" : "TaskName"
     },
-    "dataItemName" : "taskname",
     "getPSDEUIAction" : {
+      "getNoPrivDisplayMode" : 2,
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProjectUserTask.json"
@@ -188,7 +189,6 @@
         "key" : "TASK",
         "name" : "TASK"
       } ],
-      "getNoPrivDisplayMode" : 2,
       "timeout" : 60000,
       "codeName" : "TaskDetail",
       "caption" : "任务详情",
@@ -216,11 +216,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__type.json"
     },
+    "dataItemName" : "tasktype",
     "getPSAppDEField" : {
       "name" : "TASKTYPE",
       "codeName" : "Tasktype"
     },
-    "dataItemName" : "tasktype",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -233,11 +233,11 @@
     "name" : "tasktype"
   }, {
     "excelCaption" : "本周消耗",
+    "dataItemName" : "consumed",
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
-    "dataItemName" : "consumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -250,11 +250,11 @@
     "name" : "consumed"
   }, {
     "excelCaption" : "预计开始",
+    "dataItemName" : "eststarted",
     "getPSAppDEField" : {
       "name" : "ESTSTARTED",
       "codeName" : "EstStarted"
     },
-    "dataItemName" : "eststarted",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -268,11 +268,11 @@
     "name" : "eststarted"
   }, {
     "excelCaption" : "截止日期",
+    "dataItemName" : "deadline",
     "getPSAppDEField" : {
       "name" : "DEADLINE",
       "codeName" : "Deadline"
     },
-    "dataItemName" : "deadline",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -286,11 +286,11 @@
     "name" : "deadline"
   }, {
     "excelCaption" : "日期",
+    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataItemName" : "date",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -304,11 +304,11 @@
     "name" : "date"
   }, {
     "excelCaption" : "进度",
+    "dataItemName" : "progressrate",
     "getPSAppDEField" : {
       "name" : "PROGRESSRATE",
       "codeName" : "Progressrate"
     },
-    "dataItemName" : "progressrate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -321,11 +321,11 @@
     "name" : "progressrate"
   }, {
     "excelCaption" : "延期天数",
+    "dataItemName" : "delaydays",
     "getPSAppDEField" : {
       "name" : "DELAYDAYS",
       "codeName" : "Delaydays"
     },
-    "dataItemName" : "delaydays",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -363,11 +363,11 @@
     "name" : "任务详情"
   } ],
   "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "任务详情"
     },
-    "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_taskname_click"
   } ],

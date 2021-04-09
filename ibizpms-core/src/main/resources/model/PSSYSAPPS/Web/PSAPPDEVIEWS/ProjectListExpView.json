@@ -1,10 +1,10 @@
 {
-  "showDataInfoBar" : true,
   "sideBarLayout" : "LEFT",
+  "showDataInfoBar" : true,
   "enableFilter" : false,
   "enableQuickSearch" : true,
-  "getPSDEViewCodeName" : "ListExpView",
   "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "ListExpView",
   "caption" : "项目",
   "title" : "项目列表导航视图",
   "accUserMode" : 2,
@@ -26,12 +26,11 @@
     "engineType" : "ListExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "LISTEXPBAR"
+      "name" : "LISTEXPBAR",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -132,33 +131,33 @@
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataType" : 25,
-        "name" : "srfmajortext"
+        "name" : "srfmajortext",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 25,
-        "name" : "srfkey"
+        "name" : "srfkey",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "PARENT",
           "codeName" : "Parent"
         },
-        "dataType" : 25,
-        "name" : "parent"
+        "name" : "parent",
+        "dataType" : 25
       }, {
-        "dataType" : 25,
-        "name" : "srfmstag"
+        "name" : "srfmstag",
+        "dataType" : 25
       } ],
       "showHeader" : true,
-      "controlType" : "LIST",
+      "enableRowEdit" : false,
       "getMinorSortPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "enableRowEdit" : false,
+      "controlType" : "LIST",
       "codeName" : "Exp",
       "minorSortDir" : "DESC",
       "enableGroup" : false,
@@ -169,10 +168,6 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView9.json",
         "viewType" : "DEEDITVIEW9"
-      },
-      "getFetchPSControlAction" : {
-        "modelref" : true,
-        "id" : "fetch"
       },
       "getCreatePSControlAction" : {
         "modelref" : true,
@@ -190,17 +185,14 @@
         "modelref" : true,
         "id" : "load"
       },
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "listexpbar_list"
-      },
-      "controlStyle" : "LISTVIEW",
-      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
@@ -270,6 +262,13 @@
         "enableDEFieldPrivilege" : false,
         "id" : "列表控件处理器"
       },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "listexpbar_list"
+      },
+      "controlStyle" : "LISTVIEW",
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSLISTS/Exp.json",
       "logicName" : "Exp",
       "name" : "listexpbar_list",
@@ -288,6 +287,10 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "listexpbar"
+    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -295,20 +298,18 @@
       "id" : "LISTEXPBAR"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "listexpbar"
-    },
     "width" : 200.0,
     "codeName" : "ListExpViewlistexpbar",
     "name" : "listexpbar",
     "modelid" : "d1de7b1c3f0c14ee93de65e6b1045786_listexpbar"
   } ],
+  "viewStyle" : "STYLE2",
+  "codeName" : "ProjectListExpView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "batchAddOnly" : false,
       "enableBatchAdd" : false,
+      "batchAddOnly" : false,
       "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "viewLogicType" : "APP_NEWDATA",
@@ -327,7 +328,6 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
-  "codeName" : "ProjectListExpView",
   "viewType" : "DELISTEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectListExpView.json",
   "name" : "ProjectListExpView"

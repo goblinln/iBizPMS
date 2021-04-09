@@ -1,5 +1,4 @@
 {
-  "typeValue" : "bug",
   "inherit" : false,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
@@ -42,6 +41,7 @@
     },
     "name" : "project=project"
   } ],
+  "typeValue" : "bug",
   "virtual" : true,
   "getMajorPSDataEntity" : {
     "modelref" : true,

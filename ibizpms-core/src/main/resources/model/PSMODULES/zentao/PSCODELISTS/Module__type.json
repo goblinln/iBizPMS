@@ -1,39 +1,39 @@
 {
   "subSysAsCloud" : false,
-  "subSysCodeList" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Module__type.json",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
   "codeName" : "Module__type",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "line",
     "codeName" : "Line",
-    "text" : "产品线",
-    "value" : "line"
+    "text" : "产品线"
   }, {
+    "value" : "story",
     "codeName" : "Story",
-    "text" : "需求",
-    "value" : "story"
+    "text" : "需求"
   }, {
+    "value" : "task",
     "codeName" : "Task",
-    "text" : "任务",
-    "value" : "task"
+    "text" : "任务"
   }, {
+    "value" : "doc",
     "codeName" : "Doc",
-    "text" : "文档目录",
-    "value" : "doc"
+    "text" : "文档目录"
   }, {
+    "value" : "case",
     "codeName" : "Case",
-    "text" : "测试用例",
-    "value" : "case"
+    "text" : "测试用例"
   }, {
+    "value" : "bug",
     "codeName" : "Bug",
-    "text" : "Bug",
-    "value" : "bug"
+    "text" : "Bug"
   } ]
 }

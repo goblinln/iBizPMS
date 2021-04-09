@@ -8,6 +8,7 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
+  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -17,30 +18,30 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
+          "editorWidth" : 100.0,
+          "editorType" : "DATEPICKEREX_NOTIME",
           "editorParams" : {
             "TIMEFMT" : "YYYY-MM-DD"
           },
-          "editorType" : "DATEPICKEREX_NOTIME",
-          "editorWidth" : 100.0,
           "name" : "openeddatelt"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "Bug创建时间",
         "allowEmpty" : true,
+        "labelWidth" : 95,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 95,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 14,
           "colMD" : 14,
+          "colLG" : 14,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "openeddatelt",
@@ -48,30 +49,30 @@
         "detailStyle" : "DEFAULT",
         "name" : "openeddatelt"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
+          "editorWidth" : 100.0,
+          "editorType" : "DATEPICKEREX_NOTIME",
           "editorParams" : {
             "TIMEFMT" : "YYYY-MM-DD"
           },
-          "editorType" : "DATEPICKEREX_NOTIME",
-          "editorWidth" : 100.0,
           "name" : "openeddategt"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
+        "hidden" : false,
         "dataType" : 25,
         "caption" : "至",
         "allowEmpty" : true,
+        "labelWidth" : 30,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 30,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 10,
           "colMD" : 10,
+          "colLG" : 10,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "openeddategt",
@@ -80,8 +81,8 @@
         "name" : "openeddategt"
       } ],
       "getPSLayoutPos" : {
-        "colLG" : 9,
         "colMD" : 9,
+        "colLG" : 9,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "grouppanel1",
@@ -98,6 +99,7 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -108,25 +110,24 @@
           "name" : "producteq"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PRODUCT",
           "codeName" : "Product"
         },
+        "hidden" : false,
         "dataType" : 1,
         "needCodeListConfig" : true,
         "caption" : "产品",
         "allowEmpty" : true,
+        "labelWidth" : 50,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 50,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 12,
           "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "producteq",
@@ -134,6 +135,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "producteq"
       }, {
+        "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -152,33 +154,32 @@
             "key" : "PRODUCT",
             "name" : "PRODUCT"
           } ],
+          "editorType" : "DROPDOWNLIST",
           "editorParams" : {
             "srfnavctx.product" : "%producteq%",
             "srfnavparam.product" : "%producteq%"
           },
-          "editorType" : "DROPDOWNLIST",
           "name" : "projecteq"
         },
         "inputTipClosable" : false,
-        "emptyCaption" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "PROJECT",
           "codeName" : "Project"
         },
+        "hidden" : false,
         "dataType" : 1,
         "needCodeListConfig" : true,
         "caption" : "项目",
         "allowEmpty" : true,
+        "labelWidth" : 50,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
-        "labelWidth" : 50,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
-          "colLG" : 12,
           "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "projecteq",
@@ -187,8 +188,8 @@
         "name" : "projecteq"
       } ],
       "getPSLayoutPos" : {
-        "colLG" : 15,
         "colMD" : 24,
+        "colLG" : 15,
         "layout" : "TABLE_24COL"
       },
       "codeName" : "grouppanel2",
@@ -230,7 +231,6 @@
       "codeName" : "Project"
     }
   } ],
-  "noTabHeader" : true,
   "codeName" : "ProductBug",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {
