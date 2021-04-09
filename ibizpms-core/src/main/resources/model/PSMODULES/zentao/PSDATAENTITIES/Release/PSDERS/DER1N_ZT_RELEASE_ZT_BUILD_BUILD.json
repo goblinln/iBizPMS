@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "BUILD",
     "codeName" : "Build"
@@ -8,9 +7,10 @@
     "name" : "BUILDNAME",
     "codeName" : "Buildname"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
-  "masterRS" : 0,
   "pickupDEFName" : "BUILD",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

@@ -1,25 +1,25 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : true,
   "tempDataMode" : 1,
   "getCheckPSDEActionLogics" : [ {
     "name" : "行为[RemoveTempMajor]主状态拒绝逻辑",
     "id" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/RemoveTempMajor__MSDeny.json"
   } ],
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 23,
-  "codeName" : "RemoveTempMajor",
+  "extendMode" : 0,
+  "enableTempData" : true,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
+  "codeName" : "RemoveTempMajor",
   "logicName" : "RemoveTempMajor",
-  "extendMode" : 0,
-  "enableTempData" : true,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "ID",

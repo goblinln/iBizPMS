@@ -1,6 +1,7 @@
 {
-  "showFormNavBar" : false,
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -25,14 +26,12 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -42,27 +41,27 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 200,
           "editorType" : "TEXTBOX",
           "name" : "ibzpro_configname"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "IBZPRO_CONFIGNAME",
           "codeName" : "IbzproConfigName"
         },
-        "hidden" : false,
         "dataType" : 25,
-        "caption" : "名称",
         "allowEmpty" : true,
+        "caption" : "名称",
         "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -72,6 +71,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "ibzpro_configname"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
@@ -82,22 +82,21 @@
           "editorType" : "DROPDOWNLIST",
           "name" : "type"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TYPE",
           "codeName" : "Type"
         },
-        "hidden" : false,
         "dataType" : 25,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "类型",
-        "allowEmpty" : true,
         "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -107,6 +106,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "type"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
@@ -117,22 +117,21 @@
           "editorType" : "DROPDOWNLIST",
           "name" : "scope"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "SCOPE",
           "codeName" : "Scope"
         },
-        "hidden" : false,
         "dataType" : 25,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "范围",
-        "allowEmpty" : true,
         "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -142,6 +141,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "scope"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
@@ -152,22 +152,21 @@
           "editorType" : "DROPDOWNLIST",
           "name" : "managementstatus"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "MANAGEMENTSTATUS",
           "codeName" : "Managementstatus"
         },
-        "hidden" : false,
         "dataType" : 25,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "管理现状",
-        "allowEmpty" : true,
         "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -177,6 +176,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "managementstatus"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
@@ -187,22 +187,21 @@
           "editorType" : "DROPDOWNLIST",
           "name" : "vaild"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "VAILD",
           "codeName" : "Vaild"
         },
-        "hidden" : false,
         "dataType" : 25,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "是否启用",
-        "allowEmpty" : true,
         "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -212,27 +211,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "vaild"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 100,
           "editorType" : "TEXTBOX",
           "name" : "memo"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "MEMO",
           "codeName" : "Memo"
         },
-        "hidden" : false,
         "dataType" : 25,
-        "caption" : "描述",
         "allowEmpty" : true,
+        "caption" : "描述",
         "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -359,6 +358,7 @@
       "codeName" : "IbzproConfigId"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

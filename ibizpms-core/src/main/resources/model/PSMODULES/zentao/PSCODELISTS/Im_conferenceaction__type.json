@@ -3,29 +3,29 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_conferenceaction__type.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_conferenceaction__type.json",
   "codeName" : "Im_conferenceaction__type",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "create",
     "codeName" : "Create",
-    "text" : "create"
+    "text" : "create",
+    "value" : "create"
   }, {
-    "value" : "join",
     "codeName" : "Join",
-    "text" : "join"
+    "text" : "join",
+    "value" : "join"
   }, {
-    "value" : "leave",
     "codeName" : "Leave",
-    "text" : "leave"
+    "text" : "leave",
+    "value" : "leave"
   }, {
-    "value" : "close",
     "codeName" : "Close",
-    "text" : "close"
+    "text" : "close",
+    "value" : "close"
   } ]
 }

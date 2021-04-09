@@ -3,29 +3,29 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_messagestatus__status.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_messagestatus__status.json",
   "codeName" : "Im_messagestatus__status",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "waiting",
     "codeName" : "Waiting",
-    "text" : "waiting"
+    "text" : "waiting",
+    "value" : "waiting"
   }, {
-    "value" : "sent",
     "codeName" : "Sent",
-    "text" : "sent"
+    "text" : "sent",
+    "value" : "sent"
   }, {
-    "value" : "readed",
     "codeName" : "Readed",
-    "text" : "readed"
+    "text" : "readed",
+    "value" : "readed"
   }, {
-    "value" : "deleted",
     "codeName" : "Deleted",
-    "text" : "deleted"
+    "text" : "deleted",
+    "value" : "deleted"
   } ]
 }

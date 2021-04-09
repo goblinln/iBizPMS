@@ -2,19 +2,25 @@
   "showDataInfoBar" : true,
   "loadDefault" : true,
   "enableSearch" : false,
-  "enableQuickGroup" : false,
   "expandSearchForm" : true,
+  "enableQuickGroup" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "PODashboardView",
-  "openMode" : "DRAWER_TOP",
   "caption" : "用户年度工作内容统计",
   "title" : "用户年度工作内容统计数据看板视图",
+  "openMode" : "DRAWER_TOP",
   "accUserMode" : 2,
   "enableDP" : true,
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "curyear",
+    "key" : "curyear",
+    "name" : "curyear"
+  } ],
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -29,16 +35,10 @@
     "engineType" : "PortalView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "DASHBOARD",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "DASHBOARD"
     } ],
     "name" : "engine"
-  } ],
-  "getPSAppViewNavParams" : [ {
-    "rawValue" : false,
-    "value" : "curyear",
-    "key" : "curyear",
-    "name" : "curyear"
   } ],
   "getPSAppViewNavContexts" : [ {
     "rawValue" : false,
@@ -50,6 +50,7 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "codeName" : "POY",
     "getPSLayout" : {
@@ -97,7 +98,6 @@
                 "id" : "0"
               },
               "controlType" : "CHART",
-              "codeName" : "MyOpenedStory",
               "getPSDEChartSerieses" : [ {
                 "catalogField" : "PRI",
                 "seriesType" : "pie",
@@ -118,6 +118,7 @@
                 "getPSChartSeriesEncode" : {
                   "category" : "PRI",
                   "value" : "SRFCOUNT",
+                  "type" : "NONE",
                   "index" : 0,
                   "name" : "坐标系编码",
                   "id" : "0"
@@ -132,6 +133,7 @@
                   "EC.radius" : "['60%', '70%']"
                 }
               } ],
+              "codeName" : "MyOpenedStory",
               "getPSChartDataSets" : [ {
                 "getPSChartDataSetFields" : [ {
                   "groupField" : true,
@@ -166,6 +168,11 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
               },
+              "getPSControlParam" : {
+                "autoLoad" : true,
+                "showBusyIndicator" : true,
+                "height" : 300.0
+              },
               "getPSControlHandler" : {
                 "userDRAction" : "READ",
                 "getPSHandlerActions" : [ {
@@ -235,17 +242,12 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "图形控件处理器"
               },
-              "getPSControlParam" : {
-                "autoLoad" : true,
-                "showBusyIndicator" : true,
-                "height" : 300.0
-              },
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory.json",
               "height" : 300.0,
               "getPSSysPFPlugin" : {
                 "pluginType" : "CHART_RENDER",
                 "pluginCode" : "piePlugin"
               },
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory.json",
               "logicName" : "MyOpenedStory",
               "name" : "dashboard_sysportlet6_chart",
               "modelid" : "96894e73f66dfc1bf9d4cb2b2b6f52e3",
@@ -269,14 +271,14 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
-            "getPSControlHandler" : {
-              "enableDEFieldPrivilege" : false,
-              "id" : "dashboard_sysportlet6"
-            },
             "getPSControlParam" : {
               "autoLoad" : true,
               "showBusyIndicator" : true,
               "height" : 350.0
+            },
+            "getPSControlHandler" : {
+              "enableDEFieldPrivilege" : false,
+              "id" : "dashboard_sysportlet6"
             },
             "name" : "dashboard_sysportlet6",
             "modelid" : "f95dde4138238d540065bb251aa84e6f"
@@ -293,13 +295,13 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
           },
-          "getPSControlHandler" : {
-            "enableDEFieldPrivilege" : false,
-            "id" : "dashboard_container9"
-          },
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true
+          },
+          "getPSControlHandler" : {
+            "enableDEFieldPrivilege" : false,
+            "id" : "dashboard_container9"
           },
           "codeName" : "PODashboardViewdashboard_container9",
           "name" : "dashboard_container9"
@@ -333,7 +335,6 @@
                 "id" : "0"
               },
               "controlType" : "CHART",
-              "codeName" : "MyOpenedStory_Stage",
               "getPSDEChartSerieses" : [ {
                 "catalogField" : "STAGE",
                 "seriesType" : "pie",
@@ -354,6 +355,7 @@
                 "getPSChartSeriesEncode" : {
                   "category" : "STAGE",
                   "value" : "SRFCOUNT",
+                  "type" : "NONE",
                   "index" : 0,
                   "name" : "坐标系编码",
                   "id" : "0"
@@ -368,6 +370,7 @@
                   "EC.radius" : "['60%', '70%']"
                 }
               } ],
+              "codeName" : "MyOpenedStory_Stage",
               "getPSChartDataSets" : [ {
                 "getPSChartDataSetFields" : [ {
                   "groupField" : true,
@@ -402,6 +405,11 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
               },
+              "getPSControlParam" : {
+                "autoLoad" : true,
+                "showBusyIndicator" : true,
+                "height" : 300.0
+              },
               "getPSControlHandler" : {
                 "userDRAction" : "READ",
                 "getPSHandlerActions" : [ {
@@ -471,17 +479,12 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "图形控件处理器"
               },
-              "getPSControlParam" : {
-                "autoLoad" : true,
-                "showBusyIndicator" : true,
-                "height" : 300.0
-              },
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory_Stage.json",
               "height" : 300.0,
               "getPSSysPFPlugin" : {
                 "pluginType" : "CHART_RENDER",
                 "pluginCode" : "piePlugin"
               },
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory_Stage.json",
               "logicName" : "MyOpenedStory_Stage",
               "name" : "dashboard_sysportlet7_chart",
               "modelid" : "c90b74e360af0b39214b0aaa1ce800b4",
@@ -505,14 +508,14 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
-            "getPSControlHandler" : {
-              "enableDEFieldPrivilege" : false,
-              "id" : "dashboard_sysportlet7"
-            },
             "getPSControlParam" : {
               "autoLoad" : true,
               "showBusyIndicator" : true,
               "height" : 350.0
+            },
+            "getPSControlHandler" : {
+              "enableDEFieldPrivilege" : false,
+              "id" : "dashboard_sysportlet7"
             },
             "name" : "dashboard_sysportlet7",
             "modelid" : "c8c7597a820a89e52b2250906bd4c7fa"
@@ -529,13 +532,13 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
           },
-          "getPSControlHandler" : {
-            "enableDEFieldPrivilege" : false,
-            "id" : "dashboard_container10"
-          },
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true
+          },
+          "getPSControlHandler" : {
+            "enableDEFieldPrivilege" : false,
+            "id" : "dashboard_container10"
           },
           "codeName" : "PODashboardViewdashboard_container10",
           "name" : "dashboard_container10"
@@ -553,13 +556,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
         },
-        "getPSControlHandler" : {
-          "enableDEFieldPrivilege" : false,
-          "id" : "dashboard_container4"
-        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true
+        },
+        "getPSControlHandler" : {
+          "enableDEFieldPrivilege" : false,
+          "id" : "dashboard_container4"
         },
         "codeName" : "PODashboardViewdashboard_container4",
         "name" : "dashboard_container4"
@@ -610,7 +613,6 @@
               "id" : "0"
             },
             "controlType" : "CHART",
-            "codeName" : "MonthOpenedStory",
             "getPSDEChartSerieses" : [ {
               "stack" : false,
               "catalogField" : "CURMONTH",
@@ -626,16 +628,17 @@
                 "id" : "0"
               },
               "getPSChartSeriesEncode" : {
-                "getPSChartXAxis" : {
+                "getPSChartYAxis" : {
                   "modelref" : true,
                   "id" : "0"
                 },
-                "getPSChartYAxis" : {
+                "getPSChartXAxis" : {
                   "modelref" : true,
                   "id" : "0"
                 },
                 "x" : [ "CURMONTH" ],
                 "y" : [ "YEARSTORYCNT" ],
+                "type" : "XY",
                 "index" : 0,
                 "name" : "坐标系编码",
                 "id" : "0"
@@ -647,23 +650,13 @@
               "index" : 0,
               "name" : "storycnt"
             } ],
-            "getPSChartYAxises" : [ {
-              "eChartsType" : "value",
-              "eChartsPos" : "yAxis",
-              "position" : "left",
-              "type" : "numeric",
-              "maxValue" : 200.0,
-              "minValue" : 0.0,
-              "index" : 0,
-              "name" : "数值",
-              "id" : "0"
-            } ],
+            "codeName" : "MonthOpenedStory",
             "getPSChartXAxises" : [ {
               "eChartsType" : "category",
               "eChartsPos" : "xAxis",
               "position" : "bottom",
-              "type" : "category",
               "caption" : "月",
+              "type" : "category",
               "index" : 0,
               "name" : "月",
               "id" : "0"
@@ -691,6 +684,17 @@
               "type" : "grid",
               "index" : 0,
               "name" : "[storycnt]直角坐标系[0]",
+              "id" : "0"
+            } ],
+            "getPSChartYAxises" : [ {
+              "eChartsType" : "value",
+              "eChartsPos" : "yAxis",
+              "maxValue" : 200.0,
+              "minValue" : 0.0,
+              "position" : "left",
+              "type" : "numeric",
+              "index" : 0,
+              "name" : "数值",
               "id" : "0"
             } ],
             "getPSChartDataSets" : [ {
@@ -723,6 +727,11 @@
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+            },
+            "getPSControlParam" : {
+              "autoLoad" : true,
+              "showBusyIndicator" : true,
+              "height" : 300.0
             },
             "getPSControlHandler" : {
               "userDRAction" : "READ",
@@ -793,17 +802,12 @@
               "enableDEFieldPrivilege" : false,
               "id" : "图形控件处理器"
             },
-            "getPSControlParam" : {
-              "autoLoad" : true,
-              "showBusyIndicator" : true,
-              "height" : 300.0
-            },
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedStory.json",
             "height" : 300.0,
             "getPSSysPFPlugin" : {
               "pluginType" : "CHART_RENDER",
               "pluginCode" : "NEW"
             },
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedStory.json",
             "logicName" : "MonthOpenedStory",
             "name" : "dashboard_sysportlet5_chart",
             "modelid" : "2ad3d195a67cf63c7a1e78851643e2c1",
@@ -826,14 +830,14 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
           },
-          "getPSControlHandler" : {
-            "enableDEFieldPrivilege" : false,
-            "id" : "dashboard_sysportlet5"
-          },
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
             "height" : 350.0
+          },
+          "getPSControlHandler" : {
+            "enableDEFieldPrivilege" : false,
+            "id" : "dashboard_sysportlet5"
           },
           "name" : "dashboard_sysportlet5",
           "modelid" : "3f660fce6240a5ddac1e9c73555ae46d"
@@ -851,13 +855,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
         },
-        "getPSControlHandler" : {
-          "enableDEFieldPrivilege" : false,
-          "id" : "dashboard_container5"
-        },
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true
+        },
+        "getPSControlHandler" : {
+          "enableDEFieldPrivilege" : false,
+          "id" : "dashboard_container5"
         },
         "codeName" : "PODashboardViewdashboard_container5",
         "name" : "dashboard_container5"
@@ -876,13 +880,13 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_container3"
-      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_container3"
       },
       "codeName" : "PODashboardViewdashboard_container3",
       "name" : "dashboard_container3"
@@ -892,22 +896,21 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
     },
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "dashboard"
-    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
       "id" : "DASHBOARD"
     },
     "hookEventNames" : [ "LOAD" ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "dashboard"
+    },
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSDASHBOARDS/POY.json",
     "logicName" : "年度工作统计（产品经理）",
     "name" : "dashboard",
     "modelid" : "6e0ad417e9fe2138d57f5e9e6a2e3b32"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "UserYearWorkStatsPODashboardView",
   "viewType" : "DEPORTALVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsPODashboardView.json",

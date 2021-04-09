@@ -1,38 +1,12 @@
 {
-  "showCaptionBar" : false,
   "showDataInfoBar" : false,
+  "showCaptionBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "TitleEditView9",
   "caption" : "标题",
   "title" : "用户年度工作内容统计编辑视图（标题）",
   "accUserMode" : 2,
   "enableDP" : true,
-  "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
-    "useDefaultLayout" : true,
-    "controlType" : "VIEWLAYOUTPANEL",
-    "codeName" : "Layoutpanel",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
-    },
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEEDITVIEW9_STYLE2",
-    "name" : "layoutpanel"
-  },
-  "getPSAppViewEngines" : [ {
-    "engineType" : "EditView9",
-    "engineCat" : "VIEW",
-    "getPSUIEngineParams" : [ {
-      "name" : "FORM",
-      "paramType" : "CTRL"
-    }, {
-      "name" : "P2K",
-      "value" : 0,
-      "paramType" : "VALUE"
-    } ],
-    "name" : "engine"
-  } ],
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "srfpersonid",
@@ -48,6 +22,32 @@
     "value" : "srfpersonid",
     "key" : "srfkey",
     "name" : "srfkey"
+  } ],
+  "getPSViewLayoutPanel" : {
+    "useDefaultLayout" : true,
+    "layoutPanel" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
+    },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEEDITVIEW9_STYLE2",
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "EditView9",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "paramType" : "CTRL",
+      "name" : "FORM"
+    }, {
+      "paramType" : "VALUE",
+      "name" : "P2K",
+      "value" : 0
+    } ],
+    "name" : "engine"
   } ],
   "getPSAppViewNavContexts" : [ {
     "rawValue" : false,
@@ -69,9 +69,11 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
-    "showFormNavBar" : false,
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -96,14 +98,12 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : false,
@@ -113,6 +113,7 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
+          "inputTipClosable" : false,
           "emptyCaption" : true,
           "getPSEditor" : {
             "enableLinkView" : false,
@@ -120,13 +121,11 @@
             "editorType" : "SPAN",
             "name" : "title"
           },
-          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "TITLE",
             "codeName" : "Title"
           },
-          "hidden" : false,
           "dataType" : 25,
           "allowEmpty" : true,
           "labelWidth" : 0,
@@ -134,20 +133,22 @@
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 12,
             "colLGOffset" : 6,
             "layout" : "TABLE_24COL"
           },
-          "codeName" : "title",
           "getPSSysCss" : {
             "cssName" : "panelitem-20px"
           },
+          "codeName" : "title",
           "detailType" : "FORMITEM",
           "detailStyle" : "DEFAULT",
           "name" : "title"
         }, {
+          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
@@ -158,22 +159,21 @@
             "editorType" : "DROPDOWNLIST",
             "name" : "curyear"
           },
-          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "CURYEAR",
             "codeName" : "Curyear"
           },
-          "hidden" : false,
           "dataType" : 25,
+          "allowEmpty" : true,
           "needCodeListConfig" : true,
           "caption" : "年度",
-          "allowEmpty" : true,
           "labelWidth" : 0,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 4,
@@ -265,12 +265,19 @@
         "codeName" : "Id"
       }
     } ],
+    "noTabHeader" : true,
     "codeName" : "TitleForm",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -350,18 +357,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSFORMS/TitleForm.json",
     "logicName" : "标题",
     "name" : "form",
     "modelid" : "ce2d73dc64e4f0db19544f61c9be8884"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "UserYearWorkStatsTitleEditView9",
   "viewType" : "DEEDITVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsTitleEditView9.json",

@@ -4,100 +4,114 @@
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "name" : "status",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "status"
   }, {
     "getPSAppDEField" : {
       "name" : "HOURS",
       "codeName" : "Hours"
     },
-    "name" : "hours",
-    "dataType" : 6
+    "dataType" : 6,
+    "name" : "hours"
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "name" : "parent",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "parent"
   }, {
     "getPSAppDEField" : {
       "name" : "CODE",
       "codeName" : "Code"
     },
-    "name" : "code",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "code"
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "JOIN",
       "codeName" : "Join"
     },
-    "name" : "join",
-    "dataType" : 5
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "join"
   }, {
-    "name" : "srfmstag",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmstag"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
-    "name" : "begin",
-    "dataType" : 5
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "begin"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "id",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "id"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "name",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "name"
   }, {
     "getPSAppDEField" : {
       "name" : "ROLE",
       "codeName" : "Role"
     },
-    "name" : "role",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "role"
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
-    "name" : "end",
-    "dataType" : 5
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "end"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -120,35 +134,21 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
+  "enablePagingBar" : true,
   "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : true,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "ID",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -161,11 +161,11 @@
     "name" : "id"
   }, {
     "excelCaption" : "项目代号",
-    "dataItemName" : "code",
     "getPSAppDEField" : {
       "name" : "CODE",
       "codeName" : "Code"
     },
+    "dataItemName" : "code",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -177,19 +177,19 @@
     "widthUnit" : "PX",
     "name" : "code"
   }, {
-    "linkValueItem" : "srfkey",
     "excelCaption" : "项目名称",
+    "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -202,11 +202,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "开始时间",
-    "dataItemName" : "begin",
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
+    "dataItemName" : "begin",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -220,11 +220,11 @@
     "name" : "begin"
   }, {
     "excelCaption" : "结束日期",
-    "dataItemName" : "end",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
+    "dataItemName" : "end",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -242,11 +242,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
     },
-    "dataItemName" : "status",
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
+    "dataItemName" : "status",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -259,11 +259,11 @@
     "name" : "status"
   }, {
     "excelCaption" : "角色",
-    "dataItemName" : "role",
     "getPSAppDEField" : {
       "name" : "ROLE",
       "codeName" : "Role"
     },
+    "dataItemName" : "role",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -276,11 +276,11 @@
     "name" : "role"
   }, {
     "excelCaption" : "加盟日",
-    "dataItemName" : "join",
     "getPSAppDEField" : {
       "name" : "JOIN",
       "codeName" : "Join"
     },
+    "dataItemName" : "join",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -294,11 +294,11 @@
     "name" : "join"
   }, {
     "excelCaption" : "可用工时/天",
-    "dataItemName" : "hours",
     "getPSAppDEField" : {
       "name" : "HOURS",
       "codeName" : "Hours"
     },
+    "dataItemName" : "hours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

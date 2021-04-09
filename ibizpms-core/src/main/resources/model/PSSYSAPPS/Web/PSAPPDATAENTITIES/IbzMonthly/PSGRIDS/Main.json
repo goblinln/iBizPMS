@@ -4,70 +4,84 @@
       "name" : "ISSUBMIT",
       "codeName" : "Issubmit"
     },
-    "name" : "issubmit",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "issubmit"
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "name" : "account",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "account"
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "name" : "date",
-    "dataType" : 5
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "date"
   }, {
-    "name" : "srfmstag",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmstag"
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYID",
       "codeName" : "IbzMonthlyId"
     },
-    "name" : "ibz_monthlyid",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "ibz_monthlyid"
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYNAME",
       "codeName" : "IbzMonthlyName"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYID",
       "codeName" : "IbzMonthlyId"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYID",
       "codeName" : "IbzMonthlyId"
     },
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "REPORTTO",
       "codeName" : "Reportto"
     },
-    "name" : "reportto",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "reportto"
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYNAME",
       "codeName" : "IbzMonthlyName"
     },
-    "name" : "ibz_monthlyname",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "ibz_monthlyname"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -90,42 +104,28 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
+  "enablePagingBar" : true,
   "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
-  "enablePagingBar" : true,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "linkValueItem" : "srfkey",
     "excelCaption" : "月报名称",
+    "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMonthlyMainMsgEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "dataItemName" : "ibz_monthlyname",
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYNAME",
       "codeName" : "IbzMonthlyName"
     },
+    "dataItemName" : "ibz_monthlyname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -142,11 +142,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "account",
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
+    "dataItemName" : "account",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -159,11 +159,11 @@
     "name" : "account"
   }, {
     "excelCaption" : "日期",
-    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "dataItemName" : "date",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -181,11 +181,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "reportto",
     "getPSAppDEField" : {
       "name" : "REPORTTO",
       "codeName" : "Reportto"
     },
+    "dataItemName" : "reportto",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -199,9 +199,8 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
@@ -225,12 +224,13 @@
             "key" : "DATE",
             "name" : "DATE"
           } ],
+          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
-          "codeName" : "Edit",
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "codeName" : "Edit",
           "caption" : "修改",
           "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
@@ -242,14 +242,13 @@
           "name" : "修改",
           "id" : "Edit@IbzMonthly"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u323f136"
       }, {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
@@ -260,12 +259,13 @@
           },
           "refreshMode" : 1,
           "enableConfirm" : true,
+          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
-          "codeName" : "Submit",
           "getPSSysImage" : {
             "glyph" : "xf00c@FontAwesome",
             "cssClass" : "fa fa-check"
           },
+          "codeName" : "Submit",
           "caption" : "提交",
           "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
@@ -277,7 +277,7 @@
           "name" : "提交",
           "id" : "Submit@IbzMonthly"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u57939dc"

@@ -1,4 +1,5 @@
 {
+  "treeGridMode" : 0,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -63,9 +64,7 @@
   "enableRootSelect" : false,
   "outputIconDefault" : true,
   "enableSearchDefault" : false,
-  "treeGridMode" : 0,
   "controlType" : "TREEVIEW",
-  "codeName" : "TaskGroupTree",
   "getPSDETreeNodes" : [ {
     "text" : "优先级分组",
     "enableQuickCreate" : false,
@@ -81,20 +80,20 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "enableNewData" : false,
+    "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "PriGroup",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "优先级分组",
     "id" : "PriGroup"
   }, {
@@ -112,20 +111,20 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "enableNewData" : false,
+    "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "AssignedtoGroup",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "指派分组",
     "id" : "AssignedtoGroup"
   }, {
@@ -143,20 +142,20 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "enableNewData" : false,
+    "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "TypeGroup",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "类型分组",
     "id" : "TypeGroup"
   }, {
@@ -174,20 +173,20 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "enableNewData" : false,
+    "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "StatusGroup",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "状态分组",
     "id" : "StatusGroup"
   }, {
@@ -208,9 +207,9 @@
     "nodeType" : "ROOT",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "默认根节点",
     "id" : "ROOT"
   }, {
@@ -228,23 +227,24 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "enableNewData" : false,
+    "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "StoryGroup",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "需求分组",
     "id" : "StoryGroup"
   } ],
+  "codeName" : "TaskGroupTree",
   "rootVisible" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,

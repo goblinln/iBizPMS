@@ -4,63 +4,77 @@
       "name" : "DOCLIBCNT",
       "codeName" : "Doclibcnt"
     },
-    "name" : "doclibcnt",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "doclibcnt"
   }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "OPENEDDATE",
       "codeName" : "OpenedDate"
     },
-    "name" : "openeddate",
-    "dataType" : 5
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "openeddate"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "name",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "name"
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "name" : "parent",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "parent"
   }, {
-    "name" : "srfmstag",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmstag"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
-    "name" : "openedby",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "openedby"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -83,35 +97,21 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
+  "enablePagingBar" : true,
   "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getMinorSortPSAppDEField" : {
     "name" : "OPENEDDATE",
     "codeName" : "OpenedDate"
   },
-  "enablePagingBar" : true,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "项目名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -124,11 +124,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "文档数量",
-    "dataItemName" : "doclibcnt",
     "getPSAppDEField" : {
       "name" : "DOCLIBCNT",
       "codeName" : "Doclibcnt"
     },
+    "dataItemName" : "doclibcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -145,11 +145,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
-    "dataItemName" : "openedby",
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
+    "dataItemName" : "openedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -162,11 +162,11 @@
     "name" : "openedby"
   }, {
     "excelCaption" : "添加时间",
-    "dataItemName" : "openeddate",
     "getPSAppDEField" : {
       "name" : "OPENEDDATE",
       "codeName" : "OpenedDate"
     },
+    "dataItemName" : "openeddate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,

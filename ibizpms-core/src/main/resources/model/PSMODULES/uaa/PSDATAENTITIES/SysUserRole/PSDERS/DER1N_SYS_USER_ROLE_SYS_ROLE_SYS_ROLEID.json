@@ -1,5 +1,4 @@
 {
-  "masterOrder" : 100,
   "getPSPickupDEField" : {
     "name" : "SYS_ROLEID",
     "codeName" : "RoleId"
@@ -8,9 +7,10 @@
     "name" : "SYS_ROLENAME",
     "codeName" : "RoleName"
   },
+  "masterOrder" : 100,
   "removeActionType" : 1,
-  "masterRS" : 3,
   "pickupDEFName" : "SYS_ROLEID",
+  "masterRS" : 3,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

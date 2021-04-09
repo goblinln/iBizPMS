@@ -1,22 +1,7 @@
 {
   "serviceAPIMode" : 0,
   "getAllPSDEFields" : [ {
-    "length" : 100,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "0812d9724cfb54ef797cf720b1b6ab2e",
-    "codeName" : "TeamId",
-    "logicName" : "组标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`TEAMID`",
-      "valueAutoGen" : false,
-      "columnName" : "TEAMID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "TEAMID"
-    } ],
     "keyDEField" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
@@ -31,8 +16,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "TEAMID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -53,24 +38,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "TEAMID"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "7e9e866b62b277c2cd995c1123a226ea",
-    "codeName" : "TeamName",
-    "logicName" : "组名称",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`TEAMNAME`",
       "valueAutoGen" : false,
-      "columnName" : "TEAMNAME",
+      "queryCodeExp" : "t1.`TEAMID`",
+      "columnName" : "TEAMID",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "TEAMNAME"
+      "name" : "TEAMID"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "0812d9724cfb54ef797cf720b1b6ab2e",
+    "codeName" : "TeamId",
+    "logicName" : "组标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "TEAMID"
+  }, {
+    "dataType" : "TEXT",
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
@@ -86,8 +71,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "TEAMNAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -108,24 +93,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "TEAMNAME"
-  }, {
-    "length" : 2000,
-    "dataType" : "LONGTEXT_1000",
-    "valueFormat" : "%1$s",
-    "deployId" : "02d61b4366827aebd7ab7cdd2b7a0125",
-    "codeName" : "Memo",
-    "logicName" : "备注",
-    "stringLength" : 2000,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`MEMO`",
       "valueAutoGen" : false,
-      "columnName" : "MEMO",
+      "queryCodeExp" : "t1.`TEAMNAME`",
+      "columnName" : "TEAMNAME",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "MEMO"
+      "name" : "TEAMNAME"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "7e9e866b62b277c2cd995c1123a226ea",
+    "codeName" : "TeamName",
+    "logicName" : "组名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "TEAMNAME"
+  }, {
+    "dataType" : "LONGTEXT_1000",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -138,8 +123,8 @@
           "includeMaxValue" : true,
           "maxValue" : 2000,
           "dEFName" : "MEMO",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[2000]",
           "name" : "默认字符串长度"
@@ -160,24 +145,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "MEMO"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "e86316002bfcc24f272efb5275653762",
-    "codeName" : "Domains",
-    "logicName" : "区属",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`DOMAINS`",
       "valueAutoGen" : false,
-      "columnName" : "DOMAINS",
+      "queryCodeExp" : "t1.`MEMO`",
+      "columnName" : "MEMO",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "DOMAINS"
+      "name" : "MEMO"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "02d61b4366827aebd7ab7cdd2b7a0125",
+    "codeName" : "Memo",
+    "logicName" : "备注",
+    "stringLength" : 2000,
+    "stdDataType" : 25,
+    "length" : 2000,
+    "name" : "MEMO"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -190,8 +175,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "DOMAINS",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -212,6 +197,21 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`DOMAINS`",
+      "columnName" : "DOMAINS",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DOMAINS"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "e86316002bfcc24f272efb5275653762",
+    "codeName" : "Domains",
+    "logicName" : "区属",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "DOMAINS"
   } ],
   "getAllPSDEDataSets" : [ {
@@ -219,19 +219,19 @@
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "Default",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "Default",
     "logicName" : "数据集",
-    "extendMode" : 0,
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
-    "pageSize" : -1,
     "name" : "DEFAULT"
   } ],
   "getAllPSDEActions" : [ {
@@ -262,9 +262,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "数据查询",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -273,19 +273,25 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
-  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
+  "enableUIActions" : 15,
+  "orderValue" : 99999,
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "serviceCodeName" : "SysTeam",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -300,21 +306,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 0,
-  "deployId" : "3ee02ad2e370d757a25d38dc2841234a",
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
   "dynaInstMode" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "dSLink" : "DEFAULT",
+  "deployId" : "3ee02ad2e370d757a25d38dc2841234a",
   "codeName" : "SysTeam",
   "logicName" : "组",
   "tableName" : "IBZTEAM",
-  "serviceCodeName" : "SysTeam",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : false,
-  "serviceAPIClientId" : "9dab79080bf86d9ac588a8ab99d5d28c",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -323,10 +324,9 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : false,
+  "serviceAPIClientId" : "9dab79080bf86d9ac588a8ab99d5d28c",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

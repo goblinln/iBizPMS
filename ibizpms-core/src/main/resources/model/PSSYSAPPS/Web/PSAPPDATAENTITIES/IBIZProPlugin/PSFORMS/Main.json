@@ -1,6 +1,7 @@
 {
-  "showFormNavBar" : false,
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -25,14 +26,12 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -42,27 +41,27 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 200,
           "editorType" : "TEXTBOX",
           "name" : "ibizpro_pluginname"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "IBIZPRO_PLUGINNAME",
           "codeName" : "IBIZProPluginName"
         },
-        "hidden" : false,
         "dataType" : 25,
-        "caption" : "插件名称",
         "allowEmpty" : true,
+        "caption" : "插件名称",
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -72,26 +71,26 @@
         "detailStyle" : "DEFAULT",
         "name" : "ibizpro_pluginname"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "version"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "VERSION",
           "codeName" : "Version"
         },
-        "hidden" : true,
         "dataType" : 9,
-        "caption" : "版本",
         "allowEmpty" : true,
+        "caption" : "版本",
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -101,28 +100,28 @@
         "detailStyle" : "DEFAULT",
         "name" : "version"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
           "editorType" : "DROPDOWNLIST",
           "name" : "type"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TYPE",
           "codeName" : "Type"
         },
-        "hidden" : false,
         "dataType" : 25,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "类型",
-        "allowEmpty" : true,
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -132,27 +131,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "type"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 100,
           "editorType" : "TEXTBOX",
           "name" : "downloadurl"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "DOWNLOADURL",
           "codeName" : "Downloadurl"
         },
-        "hidden" : false,
         "dataType" : 25,
-        "caption" : "最新版本下载地址",
         "allowEmpty" : true,
+        "caption" : "最新版本下载地址",
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -162,28 +161,28 @@
         "detailStyle" : "DEFAULT",
         "name" : "downloadurl"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : false,
           "editorType" : "MDROPDOWNLIST",
           "name" : "tag"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TAG",
           "codeName" : "Tag"
         },
-        "hidden" : false,
         "dataType" : 25,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "标签",
-        "allowEmpty" : true,
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -193,28 +192,28 @@
         "detailStyle" : "DEFAULT",
         "name" : "tag"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : false,
           "editorType" : "MDROPDOWNLIST",
           "name" : "keyword"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "KEYWORD",
           "codeName" : "Keyword"
         },
-        "hidden" : false,
         "dataType" : 25,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "关键字",
-        "allowEmpty" : true,
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -342,6 +341,7 @@
       "codeName" : "IBIZProPluginId"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

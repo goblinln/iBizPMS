@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "ROOT",
     "codeName" : "Root"
@@ -8,9 +7,10 @@
     "name" : "ROOTNAME",
     "codeName" : "RootName"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
-  "masterRS" : 0,
   "pickupDEFName" : "ROOT",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

@@ -1,8 +1,8 @@
 {
   "loadDefault" : true,
   "enableSearch" : false,
-  "enableQuickGroup" : false,
   "expandSearchForm" : false,
+  "enableQuickGroup" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "PoChartView9",
@@ -10,9 +10,15 @@
   "title" : "产品汇总表图表视图",
   "accUserMode" : 2,
   "enableDP" : true,
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "curyear",
+    "key" : "curyear",
+    "name" : "curyear"
+  } ],
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -27,16 +33,10 @@
     "engineType" : "ChartView9",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "CHART",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "CHART"
     } ],
     "name" : "engine"
-  } ],
-  "getPSAppViewNavParams" : [ {
-    "rawValue" : false,
-    "value" : "curyear",
-    "key" : "curyear",
-    "name" : "curyear"
   } ],
   "getPSAppViewNavContexts" : [ {
     "rawValue" : false,
@@ -48,6 +48,7 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "getPSDEChartTitle" : {
       "showTitle" : true,
@@ -69,7 +70,6 @@
       "id" : "0"
     },
     "controlType" : "CHART",
-    "codeName" : "ProductCreateStory_PO",
     "getPSDEChartSerieses" : [ {
       "catalogField" : "name",
       "seriesType" : "pie",
@@ -86,6 +86,7 @@
       "getPSChartSeriesEncode" : {
         "category" : "name",
         "value" : "storycnt",
+        "type" : "NONE",
         "index" : 0,
         "name" : "坐标系编码",
         "id" : "0"
@@ -100,6 +101,7 @@
         "EC.radius" : "['60%', '70%']"
       }
     } ],
+    "codeName" : "ProductCreateStory_PO",
     "getPSChartDataSets" : [ {
       "getPSChartDataSetFields" : [ {
         "groupField" : true,
@@ -130,6 +132,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CHART"
+    },
+    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -199,17 +207,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "图形控件处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "CHART"
-    },
-    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSCHARTS/ProductCreateStory_PO.json",
     "getPSSysPFPlugin" : {
       "pluginType" : "CHART_RENDER",
       "pluginCode" : "piePlugin"
     },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSCHARTS/ProductCreateStory_PO.json",
     "logicName" : "ProductCreateStory_PO",
     "name" : "chart",
     "modelid" : "3ac8297cb629de3b538b053ea7f40855",
@@ -218,7 +220,6 @@
       "EC.color" : "[\"#0068B7\",\"#1aa1e6\",\"#81cef2\",\"#FF5D5D\",'#FDC137','#00DA88','#7ECFF','#8666B8','#BD7B46']"
     }
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "ProductSumPoChartView9",
   "viewType" : "DECHARTVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumPoChartView9.json",

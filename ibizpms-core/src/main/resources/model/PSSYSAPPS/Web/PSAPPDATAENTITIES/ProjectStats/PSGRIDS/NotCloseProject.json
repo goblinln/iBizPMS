@@ -4,74 +4,88 @@
       "name" : "TOTALLEFT",
       "codeName" : "TotalLeft"
     },
-    "name" : "totalleft",
-    "dataType" : 7
+    "dataType" : 7,
+    "name" : "totalleft"
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "name" : "status",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "status"
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALCONSUMED",
       "codeName" : "TotalConsumed"
     },
-    "name" : "totalconsumed",
-    "dataType" : 7
+    "dataType" : 7,
+    "name" : "totalconsumed"
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATE",
       "codeName" : "TotalEstimate"
     },
-    "name" : "totalestimate",
-    "dataType" : 7
+    "dataType" : 7,
+    "name" : "totalestimate"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "name",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "name"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
-    "name" : "end",
-    "dataType" : 5
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "end"
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALWH",
       "codeName" : "Totalwh"
     },
-    "name" : "totalwh",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "totalwh"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -94,42 +108,28 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
+  "enablePagingBar" : false,
   "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : false,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "linkValueItem" : "srfkey",
     "excelCaption" : "项目名称",
+    "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -142,11 +142,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "截至日期",
-    "dataItemName" : "end",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
+    "dataItemName" : "end",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -164,11 +164,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
     },
-    "dataItemName" : "status",
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
+    "dataItemName" : "status",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -181,11 +181,11 @@
     "name" : "status"
   }, {
     "excelCaption" : "预计",
-    "dataItemName" : "totalestimate",
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATE",
       "codeName" : "TotalEstimate"
     },
+    "dataItemName" : "totalestimate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -198,11 +198,11 @@
     "name" : "totalestimate"
   }, {
     "excelCaption" : "消耗",
-    "dataItemName" : "totalconsumed",
     "getPSAppDEField" : {
       "name" : "TOTALCONSUMED",
       "codeName" : "TotalConsumed"
     },
+    "dataItemName" : "totalconsumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -215,11 +215,11 @@
     "name" : "totalconsumed"
   }, {
     "excelCaption" : "剩余",
-    "dataItemName" : "totalleft",
     "getPSAppDEField" : {
       "name" : "TOTALLEFT",
       "codeName" : "TotalLeft"
     },
+    "dataItemName" : "totalleft",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -232,11 +232,11 @@
     "name" : "totalleft"
   }, {
     "excelCaption" : "总工时",
-    "dataItemName" : "totalwh",
     "getPSAppDEField" : {
       "name" : "TOTALWH",
       "codeName" : "Totalwh"
     },
+    "dataItemName" : "totalwh",
     "cLConvertMode" : "NONE",
     "hideDefault" : true,
     "noPrivDisplayMode" : 1,
@@ -250,11 +250,11 @@
     "name" : "totalwh"
   }, {
     "excelCaption" : "进度",
-    "dataItemName" : "totalconsumed",
     "getPSAppDEField" : {
       "name" : "TOTALCONSUMED",
       "codeName" : "TotalConsumed"
     },
+    "dataItemName" : "totalconsumed",
     "cLConvertMode" : "NONE",
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_COLRENDER",

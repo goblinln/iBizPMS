@@ -1,33 +1,33 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : true,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : true,
   "getCheckPSDEActionLogics" : [ {
     "name" : "行为[Remove]主状态拒绝逻辑",
     "id" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDELOGICS/Remove__MSDeny.json"
   } ],
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 21,
+  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTRemove"
   },
-  "codeName" : "Remove",
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
+  "codeName" : "Remove",
   "logicName" : "Remove",
-  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "IBZ_WEEKLYID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Remove.json",
-  "name" : "Remove",
-  "userCat" : "CAT1"
+  "userCat" : "CAT1",
+  "name" : "Remove"
 }

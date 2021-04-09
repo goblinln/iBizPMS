@@ -1,6 +1,7 @@
 {
-  "showFormNavBar" : false,
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -25,14 +26,12 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -42,27 +41,27 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 60,
           "editorType" : "TEXTBOX",
           "name" : "listname"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "LISTNAME",
           "codeName" : "ListName"
         },
-        "hidden" : false,
         "dataType" : 25,
-        "caption" : "列表名称",
         "allowEmpty" : false,
+        "caption" : "列表名称",
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -72,6 +71,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "listname"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : false,
@@ -82,22 +82,21 @@
           "editorType" : "MDROPDOWNLIST",
           "name" : "userlist"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "USERLIST",
           "codeName" : "UserList"
         },
-        "hidden" : false,
         "dataType" : 21,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "选择用户",
-        "allowEmpty" : true,
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -188,6 +187,7 @@
       "codeName" : "Id"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

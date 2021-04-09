@@ -15,9 +15,15 @@
   "title" : "产品月报表格视图",
   "accUserMode" : 2,
   "enableDP" : true,
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "srfloginname",
+    "key" : "n_po_eq",
+    "name" : "n_po_eq"
+  } ],
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -32,17 +38,17 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     }, {
-      "name" : "GRID",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRID"
     }, {
-      "name" : "SEARCHFORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "SEARCHFORM"
     } ],
     "name" : "engine"
   } ],
@@ -80,16 +86,11 @@
     },
     "name" : "toolbar_deuiaction4"
   } ],
-  "getPSAppViewNavParams" : [ {
-    "rawValue" : false,
-    "value" : "srfloginname",
-    "key" : "n_po_eq",
-    "name" : "n_po_eq"
-  } ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -97,8 +98,8 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction3_manualcreatemonthly"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
@@ -108,12 +109,13 @@
           "id" : "ManualCreateMonthly"
         },
         "enableConfirm" : true,
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "ManualCreateMonthly",
         "getPSSysImage" : {
           "glyph" : "xf067@FontAwesome",
           "cssClass" : "fa fa-plus"
         },
+        "codeName" : "ManualCreateMonthly",
         "caption" : "生成月报",
         "actionTarget" : "NONE",
         "dataAccessAction" : "SRFUR__PRODUCT_MANAGER",
@@ -125,7 +127,6 @@
         "name" : "生成产品月报",
         "id" : "ManualCreateMonthly@IbizproProductMonthly"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf067@FontAwesome",
         "cssClass" : "fa fa-plus"
@@ -142,14 +143,15 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction2"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "Refresh",
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "codeName" : "Refresh",
         "caption" : "刷新",
         "uIActionTag" : "Refresh",
         "uIActionType" : "DEUIACTION",
@@ -157,7 +159,6 @@
         "fullCodeName" : "Refresh",
         "name" : "表格界面_刷新操作"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf021@FontAwesome",
         "cssClass" : "fa fa-refresh"
@@ -178,8 +179,12 @@
         "lanResTag" : "TBB.TEXT.*.EXPORT",
         "id" : "工具栏按钮文本[*.EXPORT]"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+        "id" : "工具栏按钮提示[*.EXPORT]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -188,12 +193,13 @@
           "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
           "id" : "工具栏按钮提示[*.EXPORT]"
         },
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "ExportExcel",
         "getPSSysImage" : {
           "glyph" : "xf1c3@FontAwesome",
           "cssClass" : "fa fa-file-excel-o"
         },
+        "codeName" : "ExportExcel",
         "caption" : "导出",
         "uIActionTag" : "ExportExcel",
         "uIActionType" : "DEUIACTION",
@@ -201,11 +207,6 @@
         "fullCodeName" : "ExportExcel",
         "name" : "表格界面_导出操作（Excel）"
       },
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-        "id" : "工具栏按钮提示[*.EXPORT]"
-      },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf1c3@FontAwesome",
         "cssClass" : "fa fa-file-excel-o"
@@ -226,9 +227,14 @@
         "lanResTag" : "TBB.TEXT.*.FILTER",
         "id" : "工具栏按钮文本[*.FILTER]"
       },
+      "enableToggleMode" : true,
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.FILTER",
+        "id" : "工具栏按钮提示[*.FILTER]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "enableToggleMode" : true,
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -237,12 +243,13 @@
           "lanResTag" : "TBB.TOOLTIP.*.FILTER",
           "id" : "工具栏按钮提示[*.FILTER]"
         },
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "ToggleFilter",
         "getPSSysImage" : {
           "glyph" : "xf0b0@FontAwesome",
           "cssClass" : "fa fa-filter"
         },
+        "codeName" : "ToggleFilter",
         "caption" : "过滤",
         "uIActionTag" : "ToggleFilter",
         "uIActionType" : "DEUIACTION",
@@ -250,12 +257,6 @@
         "fullCodeName" : "ToggleFilter",
         "name" : "表格界面_搜索栏"
       },
-      "enableToggleMode" : true,
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-        "id" : "工具栏按钮提示[*.FILTER]"
-      },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf0b0@FontAwesome",
         "cssClass" : "fa fa-filter"
@@ -286,77 +287,91 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "name" : "product",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "product"
     }, {
       "getPSAppDEField" : {
         "name" : "TOTALESTIMATES",
         "codeName" : "Totalestimates"
       },
-      "name" : "totalestimates",
-      "dataType" : 7
+      "dataType" : 7,
+      "name" : "totalestimates"
     }, {
       "getPSAppDEField" : {
         "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
         "codeName" : "IbizproProductMonthlyName"
       },
-      "name" : "ibizpro_productmonthlyname",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "ibizpro_productmonthlyname"
     }, {
       "getPSAppDEField" : {
         "name" : "YEAR_MONTH",
         "codeName" : "YearMonth"
       },
-      "name" : "year_month",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "year_month"
     }, {
       "getPSAppDEField" : {
         "name" : "PO",
         "codeName" : "PO"
       },
-      "name" : "po",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "po"
     }, {
-      "format" : "YYYY-MM-DD",
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
       },
-      "name" : "date",
-      "dataType" : 5
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "date"
     }, {
-      "name" : "srfmstag",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmstag"
     }, {
       "getPSAppDEField" : {
         "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
         "codeName" : "IbizproProductMonthlyName"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "IBIZPRO_PRODUCTMONTHLYID",
         "codeName" : "IbizproProductMonthlyId"
       },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
     }, {
       "getPSAppDEField" : {
         "name" : "IBIZPRO_PRODUCTMONTHLYID",
         "codeName" : "IbizproProductMonthlyId"
       },
-      "name" : "srfkey",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfkey"
     }, {
       "getPSAppDEField" : {
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
       },
-      "name" : "productname",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "productname"
     } ],
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
     "singleSelect" : false,
     "enableColFilter" : false,
     "enableRowNew" : false,
@@ -379,42 +394,28 @@
       "name" : "srfkey"
     } ],
     "hasWFDataItems" : false,
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
     "columnEnableLink" : 2,
+    "enablePagingBar" : true,
     "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getMinorSortPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "enablePagingBar" : true,
-    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "linkValueItem" : "srfkey",
       "excelCaption" : "产品月报名称",
+      "linkValueItem" : "srfkey",
       "enableLinkView" : true,
       "getLinkPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProductMonthlyEditView.json",
         "viewType" : "DEEDITVIEW"
       },
-      "dataItemName" : "ibizpro_productmonthlyname",
       "getPSAppDEField" : {
         "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
         "codeName" : "IbizproProductMonthlyName"
       },
+      "dataItemName" : "ibizpro_productmonthlyname",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -427,11 +428,11 @@
       "name" : "ibizpro_productmonthlyname"
     }, {
       "excelCaption" : "产品名称",
-      "dataItemName" : "productname",
       "getPSAppDEField" : {
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
       },
+      "dataItemName" : "productname",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -444,11 +445,11 @@
       "name" : "productname"
     }, {
       "excelCaption" : "年月",
-      "dataItemName" : "year_month",
       "getPSAppDEField" : {
         "name" : "YEAR_MONTH",
         "codeName" : "YearMonth"
       },
+      "dataItemName" : "year_month",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -461,11 +462,11 @@
       "name" : "year_month"
     }, {
       "excelCaption" : "日期",
-      "dataItemName" : "date",
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
       },
+      "dataItemName" : "date",
       "valueFormat" : "YYYY-MM-DD",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -483,11 +484,11 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
-      "dataItemName" : "po",
       "getPSAppDEField" : {
         "name" : "PO",
         "codeName" : "PO"
       },
+      "dataItemName" : "po",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -500,11 +501,11 @@
       "name" : "po"
     }, {
       "excelCaption" : "总工时",
-      "dataItemName" : "totalestimates",
       "getPSAppDEField" : {
         "name" : "TOTALESTIMATES",
         "codeName" : "Totalestimates"
       },
+      "dataItemName" : "totalestimates",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -533,6 +534,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -615,12 +622,6 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly/PSGRIDS/Main.json",
     "logicName" : "主表格",
     "name" : "grid",
@@ -635,7 +636,6 @@
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
@@ -648,12 +648,19 @@
       "detailStyle" : "DEFAULT",
       "name" : "formpage1"
     } ],
+    "noTabHeader" : true,
     "codeName" : "Default",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -692,18 +699,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly/PSSEARCHFORMS/Default.json",
     "logicName" : "默认搜索表单",
     "name" : "searchform",
     "modelid" : "98795d9436e8f8f569ae92ca1600e93f"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -723,7 +723,6 @@
     "realOpenMode" : "DRAWER_TOP",
     "name" : "EDITDATA"
   } ],
-  "codeName" : "IbizproProductMonthlyGridView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
@@ -823,6 +822,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "IbizproProductMonthlyGridView",
   "viewType" : "DEGRIDVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProductMonthlyGridView.json",
   "name" : "IbizproProductMonthlyGridView"

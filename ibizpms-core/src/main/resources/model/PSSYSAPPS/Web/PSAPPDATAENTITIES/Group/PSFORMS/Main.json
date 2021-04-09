@@ -1,6 +1,7 @@
 {
-  "showFormNavBar" : false,
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -25,14 +26,12 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -42,27 +41,27 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 30,
           "editorType" : "TEXTBOX",
           "name" : "name"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "hidden" : false,
         "dataType" : 25,
-        "caption" : "分组名称",
         "allowEmpty" : false,
+        "caption" : "分组名称",
         "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 12,
           "colLG" : 12,
@@ -73,6 +72,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "name"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 255,
@@ -83,22 +83,21 @@
           },
           "name" : "desc"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "DESC",
           "codeName" : "Desc"
         },
-        "hidden" : false,
         "dataType" : 25,
-        "caption" : "分组描述",
         "allowEmpty" : true,
+        "caption" : "分组描述",
         "labelWidth" : 100,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "itemHeight" : 200.0,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -189,6 +188,7 @@
       "codeName" : "Id"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

@@ -15,8 +15,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -31,17 +31,17 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     }, {
-      "name" : "GRID",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRID"
     }, {
-      "name" : "SEARCHFORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "SEARCHFORM"
     } ],
     "name" : "engine"
   } ],
@@ -57,6 +57,7 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -68,8 +69,12 @@
         "lanResTag" : "TBB.TEXT.*.EXPORT",
         "id" : "工具栏按钮文本[*.EXPORT]"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+        "id" : "工具栏按钮提示[*.EXPORT]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -78,12 +83,13 @@
           "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
           "id" : "工具栏按钮提示[*.EXPORT]"
         },
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "ExportExcel",
         "getPSSysImage" : {
           "glyph" : "xf1c3@FontAwesome",
           "cssClass" : "fa fa-file-excel-o"
         },
+        "codeName" : "ExportExcel",
         "caption" : "导出",
         "uIActionTag" : "ExportExcel",
         "uIActionType" : "DEUIACTION",
@@ -91,11 +97,6 @@
         "fullCodeName" : "ExportExcel",
         "name" : "表格界面_导出操作（Excel）"
       },
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-        "id" : "工具栏按钮提示[*.EXPORT]"
-      },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf1c3@FontAwesome",
         "cssClass" : "fa fa-file-excel-o"
@@ -126,94 +127,108 @@
         "name" : "TASKCNT",
         "codeName" : "TaskCnt"
       },
-      "name" : "taskcnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "taskcnt"
     }, {
       "getPSAppDEField" : {
         "name" : "PROGRESS",
         "codeName" : "Progress"
       },
-      "name" : "progress",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "progress"
     }, {
       "getPSAppDEField" : {
         "name" : "TOTALLEFT",
         "codeName" : "TotalLeft"
       },
-      "name" : "totalleft",
-      "dataType" : 7
+      "dataType" : 7,
+      "name" : "totalleft"
     }, {
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
       },
-      "name" : "status",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "status"
     }, {
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
-      "name" : "storycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "storycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "LEFTSTORYCNT",
         "codeName" : "Leftstorycnt"
       },
-      "name" : "leftstorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "leftstorycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfkey",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfkey"
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "id",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "id"
     }, {
       "getPSAppDEField" : {
         "name" : "TOTALCONSUMED",
         "codeName" : "TotalConsumed"
       },
-      "name" : "totalconsumed",
-      "dataType" : 7
+      "dataType" : 7,
+      "name" : "totalconsumed"
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "name" : "name",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "name"
     }, {
       "getPSAppDEField" : {
         "name" : "UNDONETASKCNT",
         "codeName" : "UnDoneTaskCnt"
       },
-      "name" : "undonetaskcnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "undonetaskcnt"
     } ],
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
     "singleSelect" : true,
     "enableColFilter" : false,
     "enableRowNew" : false,
@@ -236,38 +251,24 @@
       "name" : "srfkey"
     } ],
     "hasWFDataItems" : false,
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
     "columnEnableLink" : 2,
-    "enableRowEdit" : false,
     "enablePagingBar" : false,
+    "enableRowEdit" : false,
     "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "linkValueItem" : "srfkey",
       "excelCaption" : "项目名称",
+      "linkValueItem" : "srfkey",
       "enableLinkView" : true,
       "getLinkPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
         "viewType" : "DETABEXPVIEW"
       },
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -280,11 +281,11 @@
       "name" : "name"
     }, {
       "excelCaption" : "需求数",
-      "dataItemName" : "storycnt",
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
+      "dataItemName" : "storycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -298,11 +299,11 @@
       "name" : "storycnt"
     }, {
       "excelCaption" : "剩余需求数",
-      "dataItemName" : "leftstorycnt",
       "getPSAppDEField" : {
         "name" : "LEFTSTORYCNT",
         "codeName" : "Leftstorycnt"
       },
+      "dataItemName" : "leftstorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -316,11 +317,11 @@
       "name" : "leftstorycnt"
     }, {
       "excelCaption" : "任务数",
-      "dataItemName" : "taskcnt",
       "getPSAppDEField" : {
         "name" : "TASKCNT",
         "codeName" : "TaskCnt"
       },
+      "dataItemName" : "taskcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -334,11 +335,11 @@
       "name" : "taskcnt"
     }, {
       "excelCaption" : "剩余任务数",
-      "dataItemName" : "undonetaskcnt",
       "getPSAppDEField" : {
         "name" : "UNDONETASKCNT",
         "codeName" : "UnDoneTaskCnt"
       },
+      "dataItemName" : "undonetaskcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -352,11 +353,11 @@
       "name" : "undonetaskcnt"
     }, {
       "excelCaption" : "剩余工时",
-      "dataItemName" : "totalleft",
       "getPSAppDEField" : {
         "name" : "TOTALLEFT",
         "codeName" : "TotalLeft"
       },
+      "dataItemName" : "totalleft",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -370,11 +371,11 @@
       "name" : "totalleft"
     }, {
       "excelCaption" : "已消耗工时",
-      "dataItemName" : "totalconsumed",
       "getPSAppDEField" : {
         "name" : "TOTALCONSUMED",
         "codeName" : "TotalConsumed"
       },
+      "dataItemName" : "totalconsumed",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -388,11 +389,11 @@
       "name" : "totalconsumed"
     }, {
       "excelCaption" : "进度",
-      "dataItemName" : "progress",
       "getPSAppDEField" : {
         "name" : "PROGRESS",
         "codeName" : "Progress"
       },
+      "dataItemName" : "progress",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -421,6 +422,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -503,12 +510,6 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectProgress.json",
     "logicName" : "项目进度表",
     "name" : "grid",
@@ -523,9 +524,9 @@
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
@@ -536,22 +537,21 @@
           "editorType" : "DROPDOWNLIST",
           "name" : "n_status_eq"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "STATUS",
           "codeName" : "Status"
         },
-        "hidden" : false,
         "dataType" : 25,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "项目状态",
-        "allowEmpty" : true,
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 10,
           "colLG" : 10,
@@ -581,12 +581,19 @@
         "codeName" : "Status"
       }
     } ],
+    "noTabHeader" : true,
     "codeName" : "ProjectStatusDef",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -625,18 +632,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSSEARCHFORMS/ProjectStatusDef.json",
     "logicName" : "项目统计下项目状态",
     "name" : "searchform",
     "modelid" : "73ecc04e3630ec0f0561e5ba884f883b"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -654,7 +654,6 @@
     "realTitle" : "项目统计编辑视图",
     "name" : "EDITDATA"
   } ],
-  "codeName" : "ProjectStatsProjectProgressUsr2GridView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
@@ -721,6 +720,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "ProjectStatsProjectProgressUsr2GridView",
   "viewType" : "DEGRIDVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectProgressUsr2GridView.json",
   "name" : "ProjectStatsProjectProgressUsr2GridView"

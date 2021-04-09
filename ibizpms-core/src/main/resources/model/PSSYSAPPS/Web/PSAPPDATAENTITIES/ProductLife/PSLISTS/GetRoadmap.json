@@ -1,4 +1,43 @@
 {
+  "enableRowEditGroup" : false,
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "name" : "year"
+  }, {
+    "dataType" : 25,
+    "name" : "parent"
+  }, {
+    "dataType" : 25,
+    "name" : "type"
+  }, {
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
+    },
+    "dataType" : 9,
+    "name" : "marker"
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "begin"
+  }, {
+    "dataType" : 25,
+    "name" : "productlifeid"
+  }, {
+    "dataType" : 25,
+    "name" : "branch"
+  }, {
+    "dataType" : 9,
+    "name" : "product"
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "end"
+  }, {
+    "dataType" : 25,
+    "name" : "productlifename"
+  } ],
+  "showHeader" : true,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -7,55 +46,20 @@
     "name" : "BRANCH",
     "codeName" : "Branch"
   },
-  "enableRowEditGroup" : false,
-  "getPSDEListDataItems" : [ {
-    "name" : "year",
-    "dataType" : 25
-  }, {
-    "name" : "parent",
-    "dataType" : 25
-  }, {
-    "name" : "type",
-    "dataType" : 25
-  }, {
-    "getFrontPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
-    },
-    "name" : "marker",
-    "dataType" : 9
-  }, {
-    "format" : "YYYY-MM-DD",
-    "name" : "begin",
-    "dataType" : 5
-  }, {
-    "name" : "productlifeid",
-    "dataType" : 25
-  }, {
-    "name" : "branch",
-    "dataType" : 25
-  }, {
-    "name" : "product",
-    "dataType" : 9
-  }, {
-    "format" : "YYYY-MM-DD",
-    "name" : "end",
-    "dataType" : 5
-  }, {
-    "name" : "productlifename",
-    "dataType" : 25
-  } ],
-  "showHeader" : true,
   "enableRowEdit" : false,
+  "controlType" : "LIST",
   "getMinorSortPSAppDEField" : {
     "name" : "END",
     "codeName" : "End"
   },
-  "controlType" : "LIST",
   "codeName" : "GetRoadmap",
   "minorSortDir" : "ASC",
   "enableGroup" : true,
   "pagingSize" : 1000,
+  "getGroupPSCodeList" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch.json"
+  },
   "groupMode" : "CODELIST",
   "getCreatePSControlAction" : {
     "modelref" : true,

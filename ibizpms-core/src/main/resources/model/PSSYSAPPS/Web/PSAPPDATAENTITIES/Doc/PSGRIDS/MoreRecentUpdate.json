@@ -4,113 +4,127 @@
       "name" : "MODULE",
       "codeName" : "Module"
     },
-    "name" : "module",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "module"
   }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "ADDEDDATE",
       "codeName" : "AddedDate"
     },
-    "name" : "addeddate",
-    "dataType" : 5
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "addeddate"
   }, {
-    "name" : "srfmstag",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmstag"
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "name" : "product",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "product"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "id",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "id"
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "name" : "project",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "project"
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "name" : "title",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "title"
   }, {
     "getPSAppDEField" : {
       "name" : "LIB",
       "codeName" : "Lib"
     },
-    "name" : "lib",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "lib"
   }, {
     "getPSAppDEField" : {
       "name" : "ADDEDBY",
       "codeName" : "AddedBy"
     },
-    "name" : "addedby",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "addedby"
   }, {
     "getPSAppDEField" : {
       "name" : "ISFAVOURITES",
       "codeName" : "Isfavourites"
     },
-    "name" : "isfavourites",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "isfavourites"
   }, {
     "getPSAppDEField" : {
       "name" : "EDITEDBY",
       "codeName" : "EditedBy"
     },
-    "name" : "editedby",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "editedby"
   }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "EDITEDDATE",
       "codeName" : "EditedDate"
     },
-    "name" : "editeddate",
-    "dataType" : 5
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "editeddate"
   }, {
     "getPSAppDEField" : {
       "name" : "DOCQTYPE",
       "codeName" : "Docqtype"
     },
-    "name" : "docqtype",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "docqtype"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -133,35 +147,21 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
+  "enablePagingBar" : true,
   "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getMinorSortPSAppDEField" : {
     "name" : "EDITEDDATE",
     "codeName" : "EditedDate"
   },
-  "enablePagingBar" : true,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "文档编号",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -174,13 +174,12 @@
     "name" : "id"
   }, {
     "excelCaption" : "文档标题",
-    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
+    "dataItemName" : "title",
     "getPSDEUIAction" : {
-      "getNoPrivDisplayMode" : 2,
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
@@ -213,6 +212,7 @@
         "key" : "DOCQTYPE",
         "name" : "DOCQTYPE"
       } ],
+      "getNoPrivDisplayMode" : 2,
       "timeout" : 60000,
       "codeName" : "Look",
       "caption" : "查看",
@@ -240,11 +240,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "addedby",
     "getPSAppDEField" : {
       "name" : "ADDEDBY",
       "codeName" : "AddedBy"
     },
+    "dataItemName" : "addedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -257,11 +257,11 @@
     "name" : "addedby"
   }, {
     "excelCaption" : "添加时间",
-    "dataItemName" : "addeddate",
     "getPSAppDEField" : {
       "name" : "ADDEDDATE",
       "codeName" : "AddedDate"
     },
+    "dataItemName" : "addeddate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -279,11 +279,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "editedby",
     "getPSAppDEField" : {
       "name" : "EDITEDBY",
       "codeName" : "EditedBy"
     },
+    "dataItemName" : "editedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -296,11 +296,11 @@
     "name" : "editedby"
   }, {
     "excelCaption" : "更新时间",
-    "dataItemName" : "editeddate",
     "getPSAppDEField" : {
       "name" : "EDITEDDATE",
       "codeName" : "EditedDate"
     },
+    "dataItemName" : "editeddate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -315,9 +315,8 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
@@ -328,12 +327,13 @@
             "viewType" : "DEEDITVIEW"
           },
           "frontProcessType" : "WIZARD",
+          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
-          "codeName" : "Edit",
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "codeName" : "Edit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
@@ -344,14 +344,13 @@
           "name" : "编辑",
           "id" : "Edit@Doc"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ud6acdb1"
       }, {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
@@ -362,12 +361,13 @@
           },
           "refreshMode" : 1,
           "enableConfirm" : true,
+          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
-          "codeName" : "Delete",
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "codeName" : "Delete",
           "caption" : "删除",
           "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
@@ -380,14 +380,13 @@
           "name" : "删除",
           "id" : "Delete@Doc"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u02e7012"
       }, {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
@@ -404,12 +403,13 @@
           } ],
           "refreshMode" : 1,
           "enableConfirm" : true,
+          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
-          "codeName" : "Collect",
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
           },
+          "codeName" : "Collect",
           "caption" : "收藏",
           "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
@@ -421,14 +421,13 @@
           "name" : "收藏",
           "id" : "Collect@Doc"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u907ac33"
       }, {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
@@ -445,12 +444,13 @@
           } ],
           "refreshMode" : 1,
           "enableConfirm" : true,
+          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
-          "codeName" : "UnCollect",
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
           },
+          "codeName" : "UnCollect",
           "caption" : "取消收藏",
           "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
@@ -462,7 +462,7 @@
           "name" : "取消收藏",
           "id" : "UnCollect@Doc"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u0bb60a8"

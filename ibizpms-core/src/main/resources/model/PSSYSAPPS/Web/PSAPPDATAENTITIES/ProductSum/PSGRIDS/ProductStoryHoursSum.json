@@ -4,115 +4,129 @@
       "name" : "RELEASEDSTAGESTORYHOURS",
       "codeName" : "Releasedstagestoryhours"
     },
-    "name" : "releasedstagestoryhours",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "releasedstagestoryhours"
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALHOURS",
       "codeName" : "Totalhours"
     },
-    "name" : "totalhours",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "totalhours"
   }, {
     "getPSAppDEField" : {
       "name" : "DEVELOPEDSTAGESTORYHOURS",
       "codeName" : "Developedstagestoryhours"
     },
-    "name" : "developedstagestoryhours",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "developedstagestoryhours"
   }, {
     "getPSAppDEField" : {
       "name" : "WAITSTAGESTORYHOURS",
       "codeName" : "Waitstagestoryhours"
     },
-    "name" : "waitstagestoryhours",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "waitstagestoryhours"
   }, {
     "getPSAppDEField" : {
       "name" : "CLOSEDSTAGESTORYHOURS",
       "codeName" : "Closedstagestoryhours"
     },
-    "name" : "closedstagestoryhours",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "closedstagestoryhours"
   }, {
     "getPSAppDEField" : {
       "name" : "TESTINGSTAGESTORYHOURS",
       "codeName" : "Testingstagestoryhours"
     },
-    "name" : "testingstagestoryhours",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "testingstagestoryhours"
   }, {
     "getPSAppDEField" : {
       "name" : "TESTEDSTAGESTORYHOURS",
       "codeName" : "Testedstagestoryhours"
     },
-    "name" : "testedstagestoryhours",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "testedstagestoryhours"
   }, {
     "getPSAppDEField" : {
       "name" : "VERIFIEDSTAGESTORYHOURS",
       "codeName" : "Verifiedstagestoryhours"
     },
-    "name" : "verifiedstagestoryhours",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "verifiedstagestoryhours"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECTEDSTAGESTORYHOURS",
       "codeName" : "Projectedstagestoryhours"
     },
-    "name" : "projectedstagestoryhours",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "projectedstagestoryhours"
   }, {
     "getPSAppDEField" : {
       "name" : "DEVELOPINGSTAGESTORYHOURS",
       "codeName" : "Developingstagestoryhours"
     },
-    "name" : "developingstagestoryhours",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "developingstagestoryhours"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "name",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "name"
   }, {
     "getPSAppDEField" : {
       "name" : "PLANEDSTAGESTORYHOURS",
       "codeName" : "Planedstagestoryhours"
     },
-    "name" : "planedstagestoryhours",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "planedstagestoryhours"
   }, {
     "getPSAppDEField" : {
       "name" : "PO",
       "codeName" : "PO"
     },
-    "name" : "po",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "po"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -135,31 +149,17 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
-  "enableRowEdit" : false,
   "enablePagingBar" : false,
+  "enableRowEdit" : false,
   "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "产品名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -176,11 +176,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "po",
     "getPSAppDEField" : {
       "name" : "PO",
       "codeName" : "PO"
     },
+    "dataItemName" : "po",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -193,11 +193,11 @@
     "name" : "po"
   }, {
     "excelCaption" : "未开始",
-    "dataItemName" : "waitstagestoryhours",
     "getPSAppDEField" : {
       "name" : "WAITSTAGESTORYHOURS",
       "codeName" : "Waitstagestoryhours"
     },
+    "dataItemName" : "waitstagestoryhours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -211,11 +211,11 @@
     "name" : "waitstagestoryhours"
   }, {
     "excelCaption" : "已计划",
-    "dataItemName" : "planedstagestoryhours",
     "getPSAppDEField" : {
       "name" : "PLANEDSTAGESTORYHOURS",
       "codeName" : "Planedstagestoryhours"
     },
+    "dataItemName" : "planedstagestoryhours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -229,11 +229,11 @@
     "name" : "planedstagestoryhours"
   }, {
     "excelCaption" : "已立项",
-    "dataItemName" : "projectedstagestoryhours",
     "getPSAppDEField" : {
       "name" : "PROJECTEDSTAGESTORYHOURS",
       "codeName" : "Projectedstagestoryhours"
     },
+    "dataItemName" : "projectedstagestoryhours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -247,11 +247,11 @@
     "name" : "projectedstagestoryhours"
   }, {
     "excelCaption" : "研发中",
-    "dataItemName" : "developingstagestoryhours",
     "getPSAppDEField" : {
       "name" : "DEVELOPINGSTAGESTORYHOURS",
       "codeName" : "Developingstagestoryhours"
     },
+    "dataItemName" : "developingstagestoryhours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -265,11 +265,11 @@
     "name" : "developingstagestoryhours"
   }, {
     "excelCaption" : "研发完毕",
-    "dataItemName" : "developedstagestoryhours",
     "getPSAppDEField" : {
       "name" : "DEVELOPEDSTAGESTORYHOURS",
       "codeName" : "Developedstagestoryhours"
     },
+    "dataItemName" : "developedstagestoryhours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -283,11 +283,11 @@
     "name" : "developedstagestoryhours"
   }, {
     "excelCaption" : "测试中",
-    "dataItemName" : "testingstagestoryhours",
     "getPSAppDEField" : {
       "name" : "TESTINGSTAGESTORYHOURS",
       "codeName" : "Testingstagestoryhours"
     },
+    "dataItemName" : "testingstagestoryhours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -301,11 +301,11 @@
     "name" : "testingstagestoryhours"
   }, {
     "excelCaption" : "测试完毕",
-    "dataItemName" : "testedstagestoryhours",
     "getPSAppDEField" : {
       "name" : "TESTEDSTAGESTORYHOURS",
       "codeName" : "Testedstagestoryhours"
     },
+    "dataItemName" : "testedstagestoryhours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -319,11 +319,11 @@
     "name" : "testedstagestoryhours"
   }, {
     "excelCaption" : "已验收",
-    "dataItemName" : "verifiedstagestoryhours",
     "getPSAppDEField" : {
       "name" : "VERIFIEDSTAGESTORYHOURS",
       "codeName" : "Verifiedstagestoryhours"
     },
+    "dataItemName" : "verifiedstagestoryhours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -337,11 +337,11 @@
     "name" : "verifiedstagestoryhours"
   }, {
     "excelCaption" : "已发布",
-    "dataItemName" : "releasedstagestoryhours",
     "getPSAppDEField" : {
       "name" : "RELEASEDSTAGESTORYHOURS",
       "codeName" : "Releasedstagestoryhours"
     },
+    "dataItemName" : "releasedstagestoryhours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -355,11 +355,11 @@
     "name" : "releasedstagestoryhours"
   }, {
     "excelCaption" : "已关闭",
-    "dataItemName" : "closedstagestoryhours",
     "getPSAppDEField" : {
       "name" : "CLOSEDSTAGESTORYHOURS",
       "codeName" : "Closedstagestoryhours"
     },
+    "dataItemName" : "closedstagestoryhours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -373,11 +373,11 @@
     "name" : "closedstagestoryhours"
   }, {
     "excelCaption" : "总工时",
-    "dataItemName" : "totalhours",
     "getPSAppDEField" : {
       "name" : "TOTALHOURS",
       "codeName" : "Totalhours"
     },
+    "dataItemName" : "totalhours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

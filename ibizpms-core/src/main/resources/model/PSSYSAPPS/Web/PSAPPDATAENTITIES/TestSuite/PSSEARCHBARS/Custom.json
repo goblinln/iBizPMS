@@ -8,9 +8,7 @@
       "editorType" : "TEXTBOX",
       "name" : "namelike"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "caption" : "名称(%)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_NAME_LIKE",
@@ -22,10 +20,12 @@
       "name" : "N_NAME_LIKE"
     },
     "allowEmpty" : true,
+    "caption" : "名称(%)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -43,10 +43,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "producteq"
     },
-    "hidden" : false,
     "dataType" : 1,
-    "needCodeListConfig" : true,
-    "caption" : "所属产品(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_PRODUCT_EQ",
@@ -58,9 +55,12 @@
       "name" : "N_PRODUCT_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "所属产品(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
@@ -79,10 +79,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "typeeq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "类型(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_TYPE_EQ",
@@ -94,10 +91,13 @@
       "name" : "N_TYPE_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "类型(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
@@ -107,8 +107,8 @@
   } ],
   "enableFilter" : true,
   "controlType" : "SEARCHBAR",
-  "codeName" : "Custom",
   "enableQuickSearch" : true,
+  "codeName" : "Custom",
   "enableGroup" : false,
   "quickSearchWidth" : 0,
   "getPSAppDataEntity" : {

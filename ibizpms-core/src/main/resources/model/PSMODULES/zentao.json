@@ -213,8 +213,6 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/WebHook.json"
   } ],
-  "deployId" : "6de100d5fdb6f03510d44c0f2f6c5b7b",
-  "codeName" : "zentao",
   "getAllPSCodeLists" : [ {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/CurDocVersion.json"
@@ -651,6 +649,8 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Testrun__result.json"
   } ],
+  "deployId" : "6de100d5fdb6f03510d44c0f2f6c5b7b",
+  "codeName" : "zentao",
   "dynaModelFilePath" : "PSMODULES/zentao.json",
   "name" : "基础管理模块"
 }

@@ -1,4 +1,5 @@
 {
+  "treeGridMode" : 0,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -15,9 +16,7 @@
   "enableRootSelect" : false,
   "outputIconDefault" : true,
   "enableSearchDefault" : false,
-  "treeGridMode" : 0,
   "controlType" : "TREEVIEW",
-  "codeName" : "ConcatList",
   "getPSDETreeNodes" : [ {
     "getIdPSAppDEField" : {
       "name" : "ID",
@@ -29,13 +28,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
     },
-    "getTextPSAppDEField" : {
-      "name" : "LISTNAME",
-      "codeName" : "ListName"
-    },
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchMyUSERCONTACT"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "LISTNAME",
+      "codeName" : "ListName"
     },
     "maxSize" : -1,
     "enableQuickCreate" : false,
@@ -58,9 +57,9 @@
     "nodeType" : "ConcatList",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : true,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : true,
     "name" : "联系列表",
     "id" : "ConcatList"
   }, {
@@ -81,12 +80,13 @@
     "nodeType" : "ROOT",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "默认根节点",
     "id" : "ROOT"
   } ],
+  "codeName" : "ConcatList",
   "rootVisible" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,

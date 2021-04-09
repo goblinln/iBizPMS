@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "PPSSYSSFPUBID",
     "codeName" : "PPSSysSFPubId"
@@ -8,9 +7,10 @@
     "name" : "PPSSYSSFPUBNAME",
     "codeName" : "PPSSysSFPubName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
-  "masterRS" : 0,
   "pickupDEFName" : "PPSSYSSFPUBID",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

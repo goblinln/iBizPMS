@@ -1,22 +1,7 @@
 {
   "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "length" : 200,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "f0e8e5ef1477841fdee90f99362b39ce",
-    "codeName" : "ProductLineName",
-    "logicName" : "产品线名称",
-    "stringLength" : 200,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`IBZ_PRODUCTLINENAME`",
-      "valueAutoGen" : false,
-      "columnName" : "IBZ_PRODUCTLINENAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "IBZ_PRODUCTLINENAME"
-    } ],
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
@@ -31,8 +16,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "IBZ_PRODUCTLINENAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -53,24 +38,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "IBZ_PRODUCTLINENAME"
-  }, {
-    "length" : 100,
-    "dataType" : "GUID",
-    "valueFormat" : "%1$s",
-    "deployId" : "88039f0d1998ad4edab00ba3fb319cdc",
-    "codeName" : "ProductLineId",
-    "logicName" : "产品线标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`IBZ_PRODUCTLINEID`",
       "valueAutoGen" : false,
-      "columnName" : "IBZ_PRODUCTLINEID",
+      "queryCodeExp" : "t1.`IBZ_PRODUCTLINENAME`",
+      "columnName" : "IBZ_PRODUCTLINENAME",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "IBZ_PRODUCTLINEID"
+      "name" : "IBZ_PRODUCTLINENAME"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "f0e8e5ef1477841fdee90f99362b39ce",
+    "codeName" : "ProductLineName",
+    "logicName" : "产品线名称",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
+    "name" : "IBZ_PRODUCTLINENAME"
+  }, {
+    "dataType" : "GUID",
     "keyDEField" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
@@ -86,8 +71,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "IBZ_PRODUCTLINEID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -108,29 +93,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`IBZ_PRODUCTLINEID`",
+      "columnName" : "IBZ_PRODUCTLINEID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "IBZ_PRODUCTLINEID"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "88039f0d1998ad4edab00ba3fb319cdc",
+    "codeName" : "ProductLineId",
+    "logicName" : "产品线标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "IBZ_PRODUCTLINEID"
   }, {
-    "length" : 60,
-    "dataType" : "TEXT",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "86896fd2647f265c59676de6c5c80032",
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UPDATEMAN`",
-      "valueAutoGen" : false,
-      "columnName" : "UPDATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATEMAN"
-    } ],
-    "predefinedType" : "UPDATEMAN",
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -145,8 +129,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "UPDATEMAN",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -167,24 +151,25 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "UPDATEMAN"
-  }, {
-    "length" : 8,
-    "dataType" : "DATETIME",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "fe091617c23944a5cd743bb304179990",
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "stdDataType" : 5,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UPDATEDATE`",
       "valueAutoGen" : false,
-      "columnName" : "UPDATEDATE",
+      "queryCodeExp" : "t1.`UPDATEMAN`",
+      "columnName" : "UPDATEMAN",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "UPDATEDATE"
+      "name" : "UPDATEMAN"
     } ],
-    "predefinedType" : "UPDATEDATE",
+    "predefinedType" : "UPDATEMAN",
+    "valueFormat" : "%1$s",
+    "deployId" : "86896fd2647f265c59676de6c5c80032",
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
+    "name" : "UPDATEMAN"
+  }, {
+    "dataType" : "DATETIME",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -209,24 +194,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "UPDATEDATE"
-  }, {
-    "length" : 8,
-    "dataType" : "DATETIME",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "b5169e96900c015cd7817c0ab246e4b4",
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "stdDataType" : 5,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CREATEDATE`",
       "valueAutoGen" : false,
-      "columnName" : "CREATEDATE",
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "columnName" : "UPDATEDATE",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "CREATEDATE"
+      "name" : "UPDATEDATE"
     } ],
-    "predefinedType" : "CREATEDATE",
+    "predefinedType" : "UPDATEDATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "fe091617c23944a5cd743bb304179990",
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "stdDataType" : 5,
+    "length" : 8,
+    "name" : "UPDATEDATE"
+  }, {
+    "dataType" : "DATETIME",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -251,29 +236,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "columnName" : "CREATEDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CREATEDATE"
+    } ],
+    "predefinedType" : "CREATEDATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "b5169e96900c015cd7817c0ab246e4b4",
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "stdDataType" : 5,
+    "length" : 8,
     "name" : "CREATEDATE"
   }, {
-    "length" : 60,
-    "dataType" : "TEXT",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "77bd52b19fd905baab8320da6a4a7ae0",
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CREATEMAN`",
-      "valueAutoGen" : false,
-      "columnName" : "CREATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CREATEMAN"
-    } ],
-    "predefinedType" : "CREATEMAN",
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -288,8 +272,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "CREATEMAN",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -310,6 +294,22 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CREATEMAN"
+    } ],
+    "predefinedType" : "CREATEMAN",
+    "valueFormat" : "%1$s",
+    "deployId" : "77bd52b19fd905baab8320da6a4a7ae0",
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
     "name" : "CREATEMAN"
   } ],
   "getAllPSDEDataSets" : [ {
@@ -317,19 +317,19 @@
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "Default",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
-    "pageSize" : -1,
     "name" : "DEFAULT"
   } ],
   "getAllPSDEActions" : [ {
@@ -360,9 +360,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -371,19 +371,25 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
-  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
+  "enableUIActions" : 15,
+  "orderValue" : 99999,
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "serviceCodeName" : "ProductLine",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -398,20 +404,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 0,
-  "deployId" : "28937ff2f98b4cd3aac045ab744b1444",
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
   "dynaInstMode" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "dSLink" : "DEFAULT",
+  "deployId" : "28937ff2f98b4cd3aac045ab744b1444",
   "codeName" : "ProductLine",
   "logicName" : "产品线",
   "tableName" : "T_IBZ_PRODUCTLINE",
-  "serviceCodeName" : "ProductLine",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : false,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -420,10 +422,8 @@
   "storageMode" : 0,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : false,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

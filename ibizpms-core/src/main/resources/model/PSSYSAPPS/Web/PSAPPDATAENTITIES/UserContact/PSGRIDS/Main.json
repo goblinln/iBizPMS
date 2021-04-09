@@ -4,38 +4,52 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "id",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "id"
   }, {
     "getPSAppDEField" : {
       "name" : "LISTNAME",
       "codeName" : "ListName"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "LISTNAME",
       "codeName" : "ListName"
     },
-    "name" : "listname",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "listname"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -58,31 +72,17 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
-  "enableRowEdit" : false,
   "enablePagingBar" : true,
+  "enableRowEdit" : false,
   "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "编号",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -94,19 +94,19 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "linkValueItem" : "srfkey",
     "excelCaption" : "标题",
+    "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr3GridViewUserConcat.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "dataItemName" : "listname",
     "getPSAppDEField" : {
       "name" : "LISTNAME",
       "codeName" : "ListName"
     },
+    "dataItemName" : "listname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -120,9 +120,8 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.REMOVE",
             "id" : "工具栏按钮文本[*.REMOVE]"
@@ -131,12 +130,13 @@
             "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
             "id" : "工具栏按钮提示[*.REMOVE]"
           },
+          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
-          "codeName" : "Remove",
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "codeName" : "Remove",
           "caption" : "删除",
           "actionTarget" : "MULTIKEY",
           "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
@@ -146,7 +146,7 @@
           "fullCodeName" : "Remove",
           "name" : "表格界面_删除操作"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u5eaeddc"

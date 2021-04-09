@@ -1,17 +1,17 @@
 {
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "showCaptionBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "InfoEditView",
-  "openMode" : "DRAWER_RIGHT",
   "width" : 750,
   "caption" : "部门信息",
   "title" : "部门编辑视图",
+  "openMode" : "DRAWER_RIGHT",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -26,12 +26,12 @@
     "engineType" : "EditView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "FORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "FORM"
     }, {
+      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0,
-      "paramType" : "VALUE"
+      "value" : 0
     } ],
     "name" : "engine"
   } ],
@@ -39,6 +39,7 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSAppDataEntity" : {
@@ -53,8 +54,9 @@
     "name" : "toolbar",
     "modelid" : "5ad21b662e43fd5724b41620471178d8"
   }, {
-    "showFormNavBar" : false,
     "enableAutoSave" : false,
+    "infoFormMode" : true,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -79,14 +81,12 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : true,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : true,
@@ -96,6 +96,7 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
+          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
@@ -103,21 +104,20 @@
             "editorType" : "SPAN",
             "name" : "name"
           },
-          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "NAME",
             "codeName" : "Name"
           },
-          "hidden" : false,
           "dataType" : 25,
-          "caption" : "部门名称",
           "allowEmpty" : true,
+          "caption" : "部门名称",
           "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 12,
             "colLG" : 12,
@@ -128,6 +128,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "name"
         }, {
+          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
@@ -135,21 +136,20 @@
             "editorType" : "SPAN",
             "name" : "parentname"
           },
-          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PARENTNAME",
             "codeName" : "ParentName"
           },
-          "hidden" : false,
           "dataType" : 25,
-          "caption" : "上级部门",
           "allowEmpty" : true,
+          "caption" : "上级部门",
           "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 12,
             "colLG" : 12,
@@ -160,6 +160,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "parentname"
         }, {
+          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
@@ -171,22 +172,21 @@
             "editorType" : "SPAN",
             "name" : "manager"
           },
-          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "MANAGER",
             "codeName" : "Manager"
           },
-          "hidden" : false,
           "dataType" : 25,
+          "allowEmpty" : true,
           "convertToCodeItemText" : true,
           "caption" : "负责人",
-          "allowEmpty" : true,
           "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 12,
             "colLG" : 12,
@@ -285,12 +285,19 @@
         "codeName" : "Id"
       }
     } ],
+    "noTabHeader" : true,
     "codeName" : "Info",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -370,18 +377,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept/PSFORMS/Info.json",
     "logicName" : "信息表单",
     "name" : "form",
     "modelid" : "90e00165992d66152a9d033ba1b06757"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "DeptInfoEditView",
   "viewType" : "DEEDITVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptInfoEditView.json",

@@ -1,201 +1,201 @@
 {
+  "enableUIRemove" : true,
   "getAllPSAppPortletCats" : [ {
     "ungroup" : true,
     "codeName" : "Ungroup",
     "name" : "（未分类）"
   } ],
-  "major" : true,
   "enableUIActions" : 15,
-  "enableUIRemove" : true,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRoadMapYear"
     },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RoadMapYear"
     },
-    "codeName" : "FetchRoadMapYear",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "FetchRoadMapYear",
+    "methodType" : "FETCH",
     "name" : "FetchRoadMapYear"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchGetRoadmapS"
     },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "GetRoadmapS"
     },
-    "codeName" : "FetchGetRoadmapS",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "FetchGetRoadmapS",
+    "methodType" : "FETCH",
     "name" : "FetchGetRoadmapS"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchGetRoadmap"
     },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "GetRoadmap"
     },
-    "codeName" : "FetchGetRoadmap",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "FetchGetRoadmap",
+    "methodType" : "FETCH",
     "name" : "FetchGetRoadmap"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
-    "builtinMethod" : false,
-    "methodType" : "SELECT",
-    "codeName" : "Select",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    }
+    },
+    "codeName" : "Select",
+    "methodType" : "SELECT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Create.json"
     },
-    "codeName" : "Create",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
     "name" : "Create"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Update.json"
     },
-    "codeName" : "Update",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
     },
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
     "name" : "Update"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Remove.json"
     },
-    "codeName" : "Remove",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
     },
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
     "name" : "Remove"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Get.json"
     },
-    "codeName" : "Get",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
     "name" : "Get"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/GetDraft.json"
     },
-    "codeName" : "GetDraft",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
     "name" : "GetDraft"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/CheckKey.json"
     },
     "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
     "name" : "CheckKey"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Save.json"
     },
     "codeName" : "Save",
+    "methodType" : "DEACTION",
     "name" : "Save"
   }, {
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
     },
     "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
     "name" : "DEFAULT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
@@ -218,11 +218,11 @@
     "name" : "UPDATEDATE"
   }, {
     "majorField" : true,
+    "enableQuickSearch" : true,
     "codeName" : "ProductLifeName",
     "logicName" : "产品生命周期名称",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "enableQuickSearch" : true,
     "name" : "IBZ_PRODUCTLIFENAME"
   }, {
     "codeName" : "Product",
@@ -285,6 +285,22 @@
     "name" : "END"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLIFEID",
+        "codeName" : "ProductLifeId"
+      },
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLIFENAME",
+        "codeName" : "ProductLifeName"
+      },
+      "dataType" : 25,
+      "name" : "text"
+    } ],
     "getValuePSAppDEField" : {
       "name" : "IBZ_PRODUCTLIFEID",
       "codeName" : "ProductLifeId"
@@ -293,22 +309,6 @@
       "name" : "IBZ_PRODUCTLIFENAME",
       "codeName" : "ProductLifeName"
     },
-    "enablePagingBar" : false,
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "IBZ_PRODUCTLIFEID",
-        "codeName" : "ProductLifeId"
-      },
-      "name" : "value",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZ_PRODUCTLIFENAME",
-        "codeName" : "ProductLifeName"
-      },
-      "name" : "text",
-      "dataType" : 25
-    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -323,149 +323,151 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Create.json"
     },
-    "codeName" : "Create",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
     "name" : "Create"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Update.json"
     },
-    "codeName" : "Update",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
     },
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
     "name" : "Update"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Remove.json"
     },
-    "codeName" : "Remove",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
     },
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
     "name" : "Remove"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Get.json"
     },
-    "codeName" : "Get",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
     "name" : "Get"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/GetDraft.json"
     },
-    "codeName" : "GetDraft",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
     "name" : "GetDraft"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/CheckKey.json"
     },
     "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
     "name" : "CheckKey"
   }, {
     "builtinMethod" : true,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Save.json"
     },
     "codeName" : "Save",
+    "methodType" : "DEACTION",
     "name" : "Save"
   } ],
   "getAllPSAppDEDataSets" : [ {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRoadMapYear"
     },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RoadMapYear"
     },
-    "codeName" : "FetchRoadMapYear",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "FetchRoadMapYear",
+    "methodType" : "FETCH",
     "name" : "FetchRoadMapYear"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchGetRoadmapS"
     },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "GetRoadmapS"
     },
-    "codeName" : "FetchGetRoadmapS",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "FetchGetRoadmapS",
+    "methodType" : "FETCH",
     "name" : "FetchGetRoadmapS"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchGetRoadmap"
     },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "GetRoadmap"
     },
-    "codeName" : "FetchGetRoadmap",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "FetchGetRoadmap",
+    "methodType" : "FETCH",
     "name" : "FetchGetRoadmap"
   }, {
     "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
     },
     "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
     "name" : "DEFAULT"
   } ],
+  "enableUICreate" : true,
+  "enableUIModify" : true,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -485,8 +487,6 @@
   },
   "codeName" : "ProductLife",
   "logicName" : "产品生命周期",
-  "enableUICreate" : true,
-  "enableUIModify" : true,
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,
   "dataAccCtrlArch" : 1,

@@ -1,5 +1,4 @@
 {
-  "masterOrder" : 100,
   "getPSPickupDEField" : {
     "name" : "SYS_USERID",
     "codeName" : "UserId"
@@ -8,9 +7,10 @@
     "name" : "SYS_USERNAME",
     "codeName" : "PersonName"
   },
+  "masterOrder" : 100,
   "removeActionType" : -1,
-  "masterRS" : 3,
   "pickupDEFName" : "SYS_USERID",
+  "masterRS" : 3,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

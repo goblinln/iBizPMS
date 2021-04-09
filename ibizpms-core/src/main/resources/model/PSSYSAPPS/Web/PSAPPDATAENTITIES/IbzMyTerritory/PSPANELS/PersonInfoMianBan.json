@@ -58,8 +58,8 @@
               "editorType" : "SPAN",
               "name" : "mytodocnt"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -109,8 +109,8 @@
               "editorType" : "SPAN",
               "name" : "mystorys"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -160,8 +160,8 @@
               "editorType" : "SPAN",
               "name" : "mytasks"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -229,8 +229,8 @@
               "editorType" : "SPAN",
               "name" : "mybugs"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -280,8 +280,8 @@
               "editorType" : "SPAN",
               "name" : "myfavoritebugs"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"

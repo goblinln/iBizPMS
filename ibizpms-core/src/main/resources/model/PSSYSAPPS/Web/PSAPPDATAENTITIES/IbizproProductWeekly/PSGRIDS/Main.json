@@ -4,84 +4,98 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "name" : "product",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "product"
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATES",
       "codeName" : "Totalestimates"
     },
-    "name" : "totalestimates",
-    "dataType" : 7
+    "dataType" : 7,
+    "name" : "totalestimates"
   }, {
     "getPSAppDEField" : {
       "name" : "BEGINDATESTATS",
       "codeName" : "Begindatestats"
     },
-    "name" : "begindatestats",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "begindatestats"
   }, {
     "getPSAppDEField" : {
       "name" : "PO",
       "codeName" : "PO"
     },
-    "name" : "po",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "po"
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "name" : "date",
-    "dataType" : 5
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "date"
   }, {
-    "name" : "srfmstag",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmstag"
   }, {
     "getPSAppDEField" : {
       "name" : "ENDDATESTATS",
       "codeName" : "Enddatestats"
     },
-    "name" : "enddatestats",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "enddatestats"
   }, {
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PRODUCTDAILYNAME",
       "codeName" : "IbizproProductWEEKLYName"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PRODUCTWEEKLYID",
       "codeName" : "Ibizpro_productweeklyid"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PRODUCTWEEKLYID",
       "codeName" : "Ibizpro_productweeklyid"
     },
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
-    "name" : "productname",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "productname"
   }, {
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PRODUCTDAILYNAME",
       "codeName" : "IbizproProductWEEKLYName"
     },
-    "name" : "ibizpro_productdailyname",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "ibizpro_productdailyname"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -104,42 +118,28 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
+  "enablePagingBar" : true,
   "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
-  "enablePagingBar" : true,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "linkValueItem" : "srfkey",
     "excelCaption" : "产品周报名称",
+    "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProductWeeklyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "dataItemName" : "ibizpro_productdailyname",
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PRODUCTDAILYNAME",
       "codeName" : "IbizproProductWEEKLYName"
     },
+    "dataItemName" : "ibizpro_productdailyname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -151,19 +151,19 @@
     "widthUnit" : "STAR",
     "name" : "ibizpro_productdailyname"
   }, {
-    "linkValueItem" : "product",
     "excelCaption" : "产品名称",
+    "linkValueItem" : "product",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "dataItemName" : "productname",
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
+    "dataItemName" : "productname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -180,11 +180,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "po",
     "getPSAppDEField" : {
       "name" : "PO",
       "codeName" : "PO"
     },
+    "dataItemName" : "po",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -197,11 +197,11 @@
     "name" : "po"
   }, {
     "excelCaption" : "开始统计",
-    "dataItemName" : "begindatestats",
     "getPSAppDEField" : {
       "name" : "BEGINDATESTATS",
       "codeName" : "Begindatestats"
     },
+    "dataItemName" : "begindatestats",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -214,11 +214,11 @@
     "name" : "begindatestats"
   }, {
     "excelCaption" : "结束统计",
-    "dataItemName" : "enddatestats",
     "getPSAppDEField" : {
       "name" : "ENDDATESTATS",
       "codeName" : "Enddatestats"
     },
+    "dataItemName" : "enddatestats",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -231,11 +231,11 @@
     "name" : "enddatestats"
   }, {
     "excelCaption" : "日期",
-    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "dataItemName" : "date",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -249,11 +249,11 @@
     "name" : "date"
   }, {
     "excelCaption" : "总工时",
-    "dataItemName" : "totalestimates",
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATES",
       "codeName" : "Totalestimates"
     },
+    "dataItemName" : "totalestimates",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

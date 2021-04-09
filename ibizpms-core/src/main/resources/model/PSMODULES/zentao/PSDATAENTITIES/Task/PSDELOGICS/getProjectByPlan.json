@@ -5,12 +5,8 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "getProjectByPlan",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3730"
@@ -21,6 +17,8 @@
       "modelref" : true,
       "id" : "连接5784"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -29,18 +27,18 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "STORY",
       "name" : "Default[STORY]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "根据需求获取项目"
   }, {
@@ -49,18 +47,18 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall2",
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PLAN",
       "name" : "Default[PLAN]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取项目"
   }, {
@@ -71,22 +69,23 @@
     "name" : "设置常规参数"
   } ],
   "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNULL",
         "dstFieldName" : "PLAN",
         "logicType" : "SINGLE",
         "name" : "Default[PLAN] 值为空(Nil)"
       }, {
+        "condOP" : "ISNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNULL",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
         "name" : "Default[STORY] 值为空(Nil)"
@@ -96,7 +95,6 @@
       "logicType" : "GROUP",
       "id" : "cf3b1337760fa0fbd2b2fd77a5d6191d"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Prepareparam1"
@@ -107,13 +105,14 @@
     },
     "name" : "连接3730"
   }, {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
         "name" : "Default[STORY] 值不为空(NotNil)"
@@ -123,7 +122,6 @@
       "logicType" : "GROUP",
       "id" : "ff0b80616c7f7786dce992f0813c422a"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall1"
@@ -134,13 +132,14 @@
     },
     "name" : "连接1706"
   }, {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "PLAN",
         "logicType" : "SINGLE",
         "name" : "Default[PLAN] 值不为空(NotNil)"
@@ -150,7 +149,6 @@
       "logicType" : "GROUP",
       "id" : "7f243d709621de498a2e72ff9fb15ca2"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall2"
@@ -162,13 +160,15 @@
     "name" : "连接5784"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "getProjectByPlan",
   "logicName" : "根据计划或需求获取相关项目",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

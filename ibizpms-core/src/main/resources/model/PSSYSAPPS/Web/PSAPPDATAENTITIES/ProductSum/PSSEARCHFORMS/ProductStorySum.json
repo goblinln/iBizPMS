@@ -8,7 +8,6 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "rawItemHeight" : -1.0,
@@ -27,22 +26,22 @@
       "showCaption" : true,
       "name" : "rawitem1"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "CHECKBOX",
         "name" : "closed"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "关闭产品",
       "allowEmpty" : true,
+      "caption" : "关闭产品",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "RIGHT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 2,
         "colLG" : 3,
@@ -53,6 +52,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "closed"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -63,22 +63,21 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "n_id_eq"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "hidden" : false,
       "dataType" : 1,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "产品",
-      "allowEmpty" : true,
       "labelWidth" : 50,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,
@@ -111,6 +110,7 @@
       "codeName" : "Id"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "ProductStorySum",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

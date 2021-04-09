@@ -1,15 +1,21 @@
 {
-  "showCaptionBar" : false,
   "showDataInfoBar" : false,
+  "showCaptionBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "TestEditView9",
   "caption" : "产品统计",
   "title" : "产品统计编辑视图",
   "accUserMode" : 2,
   "enableDP" : true,
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "srfloginname",
+    "key" : "account",
+    "name" : "account"
+  } ],
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -24,20 +30,14 @@
     "engineType" : "EditView9",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "FORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "FORM"
     }, {
+      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0,
-      "paramType" : "VALUE"
+      "value" : 0
     } ],
     "name" : "engine"
-  } ],
-  "getPSAppViewNavParams" : [ {
-    "rawValue" : false,
-    "value" : "srfloginname",
-    "key" : "account",
-    "name" : "account"
   } ],
   "getPSAppViewNavContexts" : [ {
     "rawValue" : false,
@@ -49,9 +49,11 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
-    "showFormNavBar" : false,
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -76,14 +78,12 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : false,
@@ -93,82 +93,83 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "compositeItem" : true,
           "getPSDEFormItems" : [ {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "custom1"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "BUGCNT",
               "codeName" : "BugCnt"
             },
-            "hidden" : true,
             "dataType" : 9,
-            "caption" : "所有Bug数",
             "allowEmpty" : true,
+            "caption" : "所有Bug数",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "codeName" : "custom1",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "custom1"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "custom2"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ASSIGNTOMEBUGCNT",
               "codeName" : "AssignToMeBugCnt"
             },
-            "hidden" : true,
             "dataType" : 9,
-            "caption" : "指派给我的Bug数",
             "allowEmpty" : true,
+            "caption" : "指派给我的Bug数",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "codeName" : "custom2",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "custom2"
           } ],
+          "compositeItem" : true,
+          "detailType" : "FORMITEM",
+          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
-            "editorType" : "USERCONTROL",
-            "editorParams" : {
-              "USERCONTROL" : "TRUE"
-            },
             "getPSSysPFPlugin" : {
               "pluginType" : "EDITOR_CUSTOMSTYLE",
               "pluginCode" : "PROGRESSCIRCLETOTAL"
             },
+            "editorType" : "USERCONTROL",
+            "editorParams" : {
+              "USERCONTROL" : "TRUE"
+            },
             "editorStyle" : "PROGRESSCIRCLETOTAL",
             "name" : "formitemex1"
           },
-          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
-          "hidden" : false,
           "dataType" : 25,
-          "caption" : "所有",
           "allowEmpty" : true,
+          "caption" : "所有",
           "labelWidth" : 0,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "showCaption" : false,
+          "hidden" : false,
           "contentHeight" : 250.0,
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -180,6 +181,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "formitemex1"
         }, {
+          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "enableLinkView" : false,
@@ -187,21 +189,20 @@
             "editorType" : "SPAN",
             "name" : "assigntomebugcnt"
           },
-          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "ASSIGNTOMEBUGCNT",
             "codeName" : "AssignToMeBugCnt"
           },
-          "hidden" : false,
           "dataType" : 9,
-          "caption" : "指派给我",
           "allowEmpty" : true,
+          "caption" : "指派给我",
           "labelWidth" : 70,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 12,
@@ -253,26 +254,26 @@
             "showCaption" : true,
             "name" : "rawitem1"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "yesterdayresolvedbugcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "YESTERDAYRESOLVEDBUGCNT",
               "codeName" : "Yesterdayresolvedbugcnt"
             },
-            "hidden" : true,
             "dataType" : 9,
-            "caption" : "昨天解决Bug数",
             "allowEmpty" : true,
+            "caption" : "昨天解决Bug数",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "width" : 0,
@@ -283,74 +284,74 @@
             "detailStyle" : "DEFAULT",
             "name" : "yesterdayresolvedbugcnt"
           }, {
-            "compositeItem" : true,
             "getPSDEFormItems" : [ {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom3"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "BUGCNT",
                 "codeName" : "BugCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "所有Bug数",
               "allowEmpty" : true,
+              "caption" : "所有Bug数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom3",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom3"
             }, {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom4"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "ACTIVEBUGCNT",
                 "codeName" : "ActiveBugCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "未解决Bug数",
               "allowEmpty" : true,
+              "caption" : "未解决Bug数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom4",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom4"
             } ],
+            "compositeItem" : true,
+            "detailType" : "FORMITEM",
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
-              "editorType" : "USERCONTROL",
-              "editorParams" : {
-                "USERCONTROL" : "TRUE"
-              },
               "getPSSysPFPlugin" : {
                 "pluginType" : "EDITOR_CUSTOMSTYLE",
                 "pluginCode" : "PROGRESSLINE"
               },
+              "editorType" : "USERCONTROL",
+              "editorParams" : {
+                "USERCONTROL" : "TRUE"
+              },
               "editorStyle" : "PROGRESSLINE",
               "name" : "formitemex2"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "hidden" : false,
             "dataType" : 25,
             "allowEmpty" : true,
             "labelWidth" : 70,
@@ -358,6 +359,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 20,
@@ -367,6 +369,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "formitemex2"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
@@ -374,31 +377,30 @@
               "editorType" : "SPAN",
               "name" : "activebugcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ACTIVEBUGCNT",
               "codeName" : "ActiveBugCnt"
             },
-            "hidden" : false,
             "dataType" : 9,
-            "caption" : "未解决",
             "allowEmpty" : true,
+            "caption" : "未解决",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "TOP",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 4,
               "height" : 54,
               "layout" : "TABLE_24COL"
             },
-            "codeName" : "activebugcnt",
             "getPSSysCss" : {
               "cssName" : "text-center"
             },
+            "codeName" : "activebugcnt",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "activebugcnt"
@@ -417,26 +419,26 @@
             "showCaption" : true,
             "name" : "rawitem2"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "yesterdayconfirmbugcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "YESTERDAYCONFIRMBUGCNT",
               "codeName" : "Yesterdayconfirmbugcnt"
             },
-            "hidden" : true,
             "dataType" : 9,
-            "caption" : "昨天确认Bug数",
             "allowEmpty" : true,
+            "caption" : "昨天确认Bug数",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "width" : 0,
@@ -447,74 +449,74 @@
             "detailStyle" : "DEFAULT",
             "name" : "yesterdayconfirmbugcnt"
           }, {
-            "compositeItem" : true,
             "getPSDEFormItems" : [ {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom5"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "BUGCNT",
                 "codeName" : "BugCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "所有Bug数",
               "allowEmpty" : true,
+              "caption" : "所有Bug数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom5",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom5"
             }, {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom6"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "UNCONFIRMBUGCNT",
                 "codeName" : "UnconfirmBugCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "未确认Bug数",
               "allowEmpty" : true,
+              "caption" : "未确认Bug数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom6",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom6"
             } ],
+            "compositeItem" : true,
+            "detailType" : "FORMITEM",
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
-              "editorType" : "USERCONTROL",
-              "editorParams" : {
-                "USERCONTROL" : "TRUE"
-              },
               "getPSSysPFPlugin" : {
                 "pluginType" : "EDITOR_CUSTOMSTYLE",
                 "pluginCode" : "PROGRESSLINE"
               },
+              "editorType" : "USERCONTROL",
+              "editorParams" : {
+                "USERCONTROL" : "TRUE"
+              },
               "editorStyle" : "PROGRESSLINE",
               "name" : "formitemex3"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "hidden" : false,
             "dataType" : 25,
             "allowEmpty" : true,
             "labelWidth" : 70,
@@ -522,6 +524,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 20,
@@ -531,6 +534,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "formitemex3"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
@@ -538,31 +542,30 @@
               "editorType" : "SPAN",
               "name" : "unconfirmbugcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "UNCONFIRMBUGCNT",
               "codeName" : "UnconfirmBugCnt"
             },
-            "hidden" : false,
             "dataType" : 9,
-            "caption" : "未确认",
             "allowEmpty" : true,
+            "caption" : "未确认",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "TOP",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 4,
               "height" : 54,
               "layout" : "TABLE_24COL"
             },
-            "codeName" : "unconfirmbugcnt",
             "getPSSysCss" : {
               "cssName" : "text-center"
             },
+            "codeName" : "unconfirmbugcnt",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "unconfirmbugcnt"
@@ -581,26 +584,26 @@
             "showCaption" : true,
             "name" : "rawitem3"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "yesterdayclosedbugcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "YESTERDAYCLOSEDBUGCNT",
               "codeName" : "YesterdayClosedBugCnt"
             },
-            "hidden" : true,
             "dataType" : 9,
-            "caption" : "昨天关闭Bug数",
             "allowEmpty" : true,
+            "caption" : "昨天关闭Bug数",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "width" : 0,
@@ -611,74 +614,74 @@
             "detailStyle" : "DEFAULT",
             "name" : "yesterdayclosedbugcnt"
           }, {
-            "compositeItem" : true,
             "getPSDEFormItems" : [ {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom7"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "BUGCNT",
                 "codeName" : "BugCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "所有Bug数",
               "allowEmpty" : true,
+              "caption" : "所有Bug数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom7",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom7"
             }, {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom8"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "NOTCLOSEDBUGCNT",
                 "codeName" : "NotClosedBugCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "未关闭Bug数",
               "allowEmpty" : true,
+              "caption" : "未关闭Bug数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom8",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom8"
             } ],
+            "compositeItem" : true,
+            "detailType" : "FORMITEM",
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
-              "editorType" : "USERCONTROL",
-              "editorParams" : {
-                "USERCONTROL" : "TRUE"
-              },
               "getPSSysPFPlugin" : {
                 "pluginType" : "EDITOR_CUSTOMSTYLE",
                 "pluginCode" : "PROGRESSLINE"
               },
+              "editorType" : "USERCONTROL",
+              "editorParams" : {
+                "USERCONTROL" : "TRUE"
+              },
               "editorStyle" : "PROGRESSLINE",
               "name" : "formitemex4"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "hidden" : false,
             "dataType" : 25,
             "allowEmpty" : true,
             "labelWidth" : 70,
@@ -686,6 +689,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 20,
@@ -695,6 +699,7 @@
             "detailStyle" : "DEFAULT",
             "name" : "formitemex4"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
@@ -702,31 +707,30 @@
               "editorType" : "SPAN",
               "name" : "notclosedbugcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "NOTCLOSEDBUGCNT",
               "codeName" : "NotClosedBugCnt"
             },
-            "hidden" : false,
             "dataType" : 9,
-            "caption" : "未关闭",
             "allowEmpty" : true,
+            "caption" : "未关闭",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "TOP",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 4,
               "height" : 54,
               "layout" : "TABLE_24COL"
             },
-            "codeName" : "notclosedbugcnt",
             "getPSSysCss" : {
               "cssName" : "text-center"
             },
+            "codeName" : "notclosedbugcnt",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "notclosedbugcnt"
@@ -941,12 +945,19 @@
         "codeName" : "Id"
       }
     } ],
+    "noTabHeader" : true,
     "codeName" : "TestMain2",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -1026,18 +1037,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器（测试统计）"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats/PSFORMS/TestMain2.json",
     "logicName" : "嵌入测试统计",
     "name" : "form",
     "modelid" : "47d23fd78cad2918531834d918a7c530"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "ProductStatsTestEditView9",
   "viewType" : "DEEDITVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsTestEditView9.json",

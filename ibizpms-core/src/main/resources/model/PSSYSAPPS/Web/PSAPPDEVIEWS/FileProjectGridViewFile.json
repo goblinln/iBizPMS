@@ -15,9 +15,15 @@
   "title" : "file表格视图",
   "accUserMode" : 2,
   "enableDP" : true,
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "project",
+    "key" : "project",
+    "name" : "project"
+  } ],
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -32,11 +38,11 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "GRID",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRID"
     }, {
-      "name" : "SEARCHFORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "SEARCHFORM"
     } ],
     "name" : "engine"
   } ],
@@ -65,16 +71,11 @@
     "uIActionTarget" : "NONE",
     "name" : "toolbar_deuiaction2"
   } ],
-  "getPSAppViewNavParams" : [ {
-    "rawValue" : false,
-    "value" : "project",
-    "key" : "project",
-    "name" : "project"
-  } ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -82,18 +83,19 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction1"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
         },
         "frontProcessType" : "OTHER",
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "BatchDownload",
         "getPSSysImage" : {
           "cssClass" : "download"
         },
+        "codeName" : "BatchDownload",
         "caption" : "批量下载",
         "actionTarget" : "MULTIKEY",
         "uIActionTag" : "BatchDownload",
@@ -103,7 +105,6 @@
         "name" : "批量下载",
         "id" : "BatchDownload@File"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "cssClass" : "download"
       },
@@ -119,18 +120,19 @@
         "modelref" : true,
         "id" : "toolbar_deuiaction2"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
         },
         "frontProcessType" : "OTHER",
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "AllDownload",
         "getPSSysImage" : {
           "cssClass" : "download"
         },
+        "codeName" : "AllDownload",
         "caption" : "全部下载",
         "actionTarget" : "NONE",
         "uIActionTag" : "AllDownload",
@@ -140,7 +142,6 @@
         "name" : "全部下载",
         "id" : "AllDownload@File"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "cssClass" : "download"
       },
@@ -170,81 +171,95 @@
         "name" : "STRSIZE",
         "codeName" : "Strsize"
       },
-      "name" : "strsize",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "strsize"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "id",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "id"
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "name" : "title",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "title"
     }, {
-      "format" : "YYYY-MM-DD HH:mm:ss",
       "getPSAppDEField" : {
         "name" : "ADDEDDATE",
         "codeName" : "AddedDate"
       },
-      "name" : "addeddate",
-      "dataType" : 5
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "addeddate"
     }, {
       "getPSAppDEField" : {
         "name" : "ADDEDBY",
         "codeName" : "AddedBy"
       },
-      "name" : "addedby",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "addedby"
     }, {
       "getPSAppDEField" : {
         "name" : "OBJECTTYPE",
         "codeName" : "ObjectType"
       },
-      "name" : "objecttype",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "objecttype"
     }, {
       "getPSAppDEField" : {
         "name" : "PATHNAME",
         "codeName" : "Pathname"
       },
-      "name" : "pathname",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "pathname"
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfkey",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfkey"
     }, {
       "getPSAppDEField" : {
         "name" : "SIZE",
         "codeName" : "Size"
       },
-      "name" : "size",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "size"
     } ],
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
     "singleSelect" : false,
     "enableColFilter" : false,
     "enableRowNew" : false,
@@ -267,35 +282,21 @@
       "name" : "srfkey"
     } ],
     "hasWFDataItems" : false,
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
     "columnEnableLink" : 2,
+    "enablePagingBar" : true,
     "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getMinorSortPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "enablePagingBar" : true,
-    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "excelCaption" : "文档编号",
-      "dataItemName" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
+      "dataItemName" : "id",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -308,18 +309,18 @@
       "name" : "id"
     }, {
       "excelCaption" : "附件名",
-      "dataItemName" : "title",
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
+      "dataItemName" : "title",
       "getPSDEUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
         },
         "frontProcessType" : "OTHER",
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
         "codeName" : "Look",
         "caption" : "查看",
@@ -343,11 +344,11 @@
       "name" : "title"
     }, {
       "excelCaption" : "地址",
-      "dataItemName" : "pathname",
       "getPSAppDEField" : {
         "name" : "PATHNAME",
         "codeName" : "Pathname"
       },
+      "dataItemName" : "pathname",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -364,11 +365,11 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/File__object_type.json"
       },
-      "dataItemName" : "objecttype",
       "getPSAppDEField" : {
         "name" : "OBJECTTYPE",
         "codeName" : "ObjectType"
       },
+      "dataItemName" : "objecttype",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -381,11 +382,11 @@
       "name" : "objecttype"
     }, {
       "excelCaption" : "大小",
-      "dataItemName" : "strsize",
       "getPSAppDEField" : {
         "name" : "STRSIZE",
         "codeName" : "Strsize"
       },
+      "dataItemName" : "strsize",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -402,11 +403,11 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
-      "dataItemName" : "addedby",
       "getPSAppDEField" : {
         "name" : "ADDEDBY",
         "codeName" : "AddedBy"
       },
+      "dataItemName" : "addedby",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -419,11 +420,11 @@
       "name" : "addedby"
     }, {
       "excelCaption" : "添加时间",
-      "dataItemName" : "addeddate",
       "getPSAppDEField" : {
         "name" : "ADDEDDATE",
         "codeName" : "AddedDate"
       },
+      "dataItemName" : "addeddate",
       "valueFormat" : "YYYY-MM-DD HH:mm:ss",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -438,20 +439,20 @@
     }, {
       "getPSDEUIActionGroup" : {
         "getPSUIActionGroupDetails" : [ {
-          "showIcon" : true,
+          "addSeparator" : false,
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
             },
             "frontProcessType" : "OTHER",
+            "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
-            "codeName" : "ibzdownload",
             "getPSSysImage" : {
               "glyph" : "xf019@FontAwesome",
               "cssClass" : "fa fa-download"
             },
+            "codeName" : "ibzdownload",
             "caption" : "下载",
             "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "SRFUR__FILE_DOWNLOAD_BUT",
@@ -462,14 +463,13 @@
             "name" : "下载",
             "id" : "ibzdownload@File"
           },
-          "addSeparator" : false,
+          "showIcon" : true,
           "detailType" : "DEUIACTION",
           "showCaption" : false,
           "name" : "ue934bc9"
         }, {
-          "showIcon" : true,
+          "addSeparator" : false,
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
@@ -480,12 +480,13 @@
             },
             "refreshMode" : 1,
             "enableConfirm" : true,
+            "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
-            "codeName" : "delete",
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-remove"
             },
+            "codeName" : "delete",
             "caption" : "删除",
             "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
@@ -498,7 +499,7 @@
             "name" : "删除",
             "id" : "delete@File"
           },
-          "addSeparator" : false,
+          "showIcon" : true,
           "detailType" : "DEUIACTION",
           "showCaption" : false,
           "name" : "u8a00ae7"
@@ -594,6 +595,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -676,12 +683,6 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File/PSGRIDS/DocLibL.json",
     "logicName" : "文档库查看",
     "name" : "grid",
@@ -696,7 +697,6 @@
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSLayout" : {
         "layout" : "TABLE_24COL",
@@ -709,12 +709,19 @@
       "detailStyle" : "DEFAULT",
       "name" : "formpage1"
     } ],
+    "noTabHeader" : true,
     "codeName" : "Default",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -753,19 +760,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File/PSSEARCHFORMS/Default.json",
     "logicName" : "默认搜索表单",
     "name" : "searchform",
     "modelid" : "c95b13341abf1b7a8f37e3ca51127a4e"
   } ],
-  "viewStyle" : "STYLE2",
-  "codeName" : "FileProjectGridViewFile",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
@@ -789,6 +788,7 @@
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction2_click"
   } ],
+  "codeName" : "FileProjectGridViewFile",
   "viewType" : "DEGRIDVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProjectGridViewFile.json",
   "name" : "FileProjectGridViewFile"

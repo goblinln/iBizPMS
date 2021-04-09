@@ -3,6 +3,10 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
   },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchCurUserTemplet"
+  },
   "getValuePSAppDEField" : {
     "name" : "IBZ_PLANTEMPLETID",
     "codeName" : "IbzPlanTempletId"
@@ -10,10 +14,6 @@
   "getTextPSAppDEField" : {
     "name" : "IBZ_PLANTEMPLETNAME",
     "codeName" : "IbzPlanTempletName"
-  },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchCurUserTemplet"
   },
   "codeListType" : "DYNAMIC",
   "dynaInstMode" : 1,

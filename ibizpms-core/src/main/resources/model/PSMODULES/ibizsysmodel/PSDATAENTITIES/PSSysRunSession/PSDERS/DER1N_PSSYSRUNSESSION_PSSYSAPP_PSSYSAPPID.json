@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "PSSYSAPPID",
     "codeName" : "PSSysAppId"
@@ -8,9 +7,10 @@
     "name" : "PSSYSAPPNAME",
     "codeName" : "PSSysAppName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 0,
-  "masterRS" : 0,
   "pickupDEFName" : "PSSYSAPPID",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

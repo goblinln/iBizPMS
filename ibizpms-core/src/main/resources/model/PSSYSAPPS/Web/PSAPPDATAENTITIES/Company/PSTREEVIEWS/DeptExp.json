@@ -1,4 +1,5 @@
 {
+  "treeGridMode" : 0,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -13,11 +14,11 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept/PSDERS/DER1N__ZT_DEPT__ZT_DEPT__PARENT.json"
     },
     "parentValueLevel" : 1,
-    "parentFilter" : "parent",
     "getParentPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
+    "parentFilter" : "parent",
     "searchMode" : 3,
     "name" : "子部门 - 子部门"
   }, {
@@ -58,20 +59,18 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept/PSDERS/DER1N__ZT_DEPT__ZT_DEPT__PARENT.json"
     },
     "parentValueLevel" : 1,
-    "parentFilter" : "parent",
     "getParentPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
+    "parentFilter" : "parent",
     "searchMode" : 3,
     "name" : "根部门 - 子部门"
   } ],
   "enableRootSelect" : false,
   "outputIconDefault" : false,
   "enableSearchDefault" : false,
-  "treeGridMode" : 0,
   "controlType" : "TREEVIEW",
-  "codeName" : "DeptExp",
   "getPSDETreeNodes" : [ {
     "getIdPSAppDEField" : {
       "name" : "ID",
@@ -86,13 +85,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
     },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchRoot"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "maxSize" : -1,
     "enableQuickCreate" : false,
@@ -116,9 +115,9 @@
     "nodeType" : "RootDept",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "根部门",
     "id" : "RootDept"
   }, {
@@ -139,9 +138,9 @@
     "nodeType" : "ROOT",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "默认根节点",
     "id" : "ROOT"
   }, {
@@ -158,13 +157,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
     },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "maxSize" : -1,
     "enableQuickCreate" : false,
@@ -188,9 +187,9 @@
     "nodeType" : "SubDept",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "子部门",
     "id" : "SubDept"
   }, {
@@ -208,23 +207,24 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
     },
+    "enableNewData" : false,
+    "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "AllDept",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : true,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : true,
     "name" : "所有部门",
     "id" : "AllDept"
   } ],
+  "codeName" : "DeptExp",
   "rootVisible" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,

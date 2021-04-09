@@ -3,14 +3,6 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
   },
-  "getValuePSAppDEField" : {
-    "name" : "USERNAME",
-    "codeName" : "UserName"
-  },
-  "getTextPSAppDEField" : {
-    "name" : "PERSONNAME",
-    "codeName" : "PersonName"
-  },
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchTaskTeam"
@@ -18,6 +10,14 @@
   "getIconPathPSAppDEField" : {
     "name" : "USERICON",
     "codeName" : "UserIcon"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "USERNAME",
+    "codeName" : "UserName"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "PERSONNAME",
+    "codeName" : "PersonName"
   },
   "codeListType" : "DYNAMIC",
   "orMode" : "STR",

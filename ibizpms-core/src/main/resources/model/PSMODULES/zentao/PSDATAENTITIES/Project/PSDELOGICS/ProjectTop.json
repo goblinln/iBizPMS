@@ -5,18 +5,13 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "ProjectTop",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1953"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzTop"
@@ -25,31 +20,34 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "OBJECTID",
       "srcFieldName" : "ID",
       "name" : "Default[ID] ==> IbzTop[OBJECTID]"
     }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzTop"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SESSION",
       "dstFieldName" : "ACCOUNT",
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname] ==> IbzTop[ACCOUNT]"
     }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzTop"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCVALUE",
       "srcValue" : "project",
       "dstFieldName" : "TYPE",
       "name" : "直接值[project] ==> IbzTop[TYPE]"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置参数"
   }, {
@@ -58,8 +56,6 @@
       "modelref" : true,
       "id" : "IbzTop"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接5143"
@@ -70,6 +66,8 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取置顶最大排序值"
   }, {
@@ -92,12 +90,12 @@
     "name" : "Save"
   }, {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接2211"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   } ],
@@ -136,20 +134,22 @@
     "name" : "连接2211"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : true,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "IbzTop",
     "default" : false,
     "name" : "置顶"
   }, {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "ProjectTop",
   "logicName" : "置顶",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

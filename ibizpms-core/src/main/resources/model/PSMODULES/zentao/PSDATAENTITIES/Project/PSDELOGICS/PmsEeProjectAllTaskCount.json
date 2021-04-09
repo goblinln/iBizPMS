@@ -5,16 +5,12 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "PmsEeProjectAllTaskCount",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall3",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3736"
@@ -55,6 +51,8 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall3",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取计划任务"
   }, {
@@ -63,8 +61,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7308"
@@ -105,6 +101,8 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取临时任务"
   }, {
@@ -113,8 +111,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall4",
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
       "srcValueType" : "WEBCONTEXT",
@@ -151,6 +147,8 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall4",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取所有任务"
   }, {
@@ -159,8 +157,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall2",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接2761"
@@ -201,16 +197,18 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取周期任务"
   }, {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9322"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   } ],
@@ -260,13 +258,15 @@
     "name" : "连接3736"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "PmsEeProjectAllTaskCount",
   "logicName" : "项目立项全部任务快速分组计数器",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

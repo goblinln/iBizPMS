@@ -1,53 +1,53 @@
 {
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "name" : "productlifeid",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "productlifeid"
   }, {
-    "name" : "parent",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "parent"
   }, {
-    "name" : "type",
-    "dataType" : 25
-  }, {
-    "format" : "YYYY-MM-DD",
-    "name" : "end",
-    "dataType" : 5
+    "dataType" : 25,
+    "name" : "type"
   }, {
     "format" : "YYYY-MM-DD",
-    "name" : "begin",
-    "dataType" : 5
+    "dataType" : 5,
+    "name" : "end"
   }, {
-    "name" : "productlifename",
-    "dataType" : 25
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "begin"
+  }, {
+    "dataType" : 25,
+    "name" : "productlifename"
   }, {
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
     },
-    "name" : "marker",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "marker"
   }, {
-    "name" : "product",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "product"
   }, {
-    "name" : "branch",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "branch"
   }, {
-    "name" : "year",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "year"
   } ],
   "showHeader" : true,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
   "enableRowEdit" : false,
+  "controlType" : "LIST",
   "getMinorSortPSAppDEField" : {
     "name" : "YEAR",
     "codeName" : "Year"
   },
-  "controlType" : "LIST",
   "codeName" : "GetRoadmapYear",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
@@ -78,11 +78,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
   },
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife/PSLISTS/GetRoadmapYear.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CUSTOM",
     "pluginCode" : "RoadMap"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife/PSLISTS/GetRoadmapYear.json",
   "logicName" : "GetRoadmapYear",
   "modelid" : "eaa625149f3763390d0428c97aca929a"
 }

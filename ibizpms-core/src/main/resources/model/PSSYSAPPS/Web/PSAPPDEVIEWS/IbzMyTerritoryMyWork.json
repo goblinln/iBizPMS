@@ -8,9 +8,15 @@
   "title" : "我的工作",
   "accUserMode" : 2,
   "enableDP" : true,
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : false,
+    "value" : "srfloginname",
+    "key" : "n_account_eq",
+    "name" : "n_account_eq"
+  } ],
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -25,32 +31,23 @@
     "engineType" : "ListView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "LIST",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "LIST"
     }, {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     } ],
     "name" : "engine"
-  } ],
-  "getPSAppViewNavParams" : [ {
-    "rawValue" : false,
-    "value" : "srfloginname",
-    "key" : "n_account_eq",
-    "name" : "n_account_eq"
   } ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
-    "enableRowNew" : false,
-    "enableRowEditOrder" : false,
-    "noSort" : false,
-    "hasWFDataItems" : false,
     "getItemPSLayoutPanel" : {
       "getRootPSPanelItems" : [ {
         "getPSPanelItems" : [ {
@@ -66,9 +63,9 @@
               "editorType" : "SPAN",
               "name" : "account"
             },
-            "hidden" : false,
             "convertToCodeItemText" : true,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -96,8 +93,8 @@
           },
           "itemType" : "CONTAINER",
           "itemStyle" : "DEFAULT",
-          "contentWidth" : 230.0,
           "showCaption" : true,
+          "contentWidth" : 230.0,
           "name" : "container2"
         }, {
           "getPSPanelItems" : [ {
@@ -157,8 +154,8 @@
                   "editorType" : "SPAN",
                   "name" : "mytasks"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -177,8 +174,8 @@
                   "editorType" : "SPAN",
                   "name" : "myetasks"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -228,8 +225,8 @@
                   "editorType" : "SPAN",
                   "name" : "mybugs"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -248,8 +245,8 @@
                   "editorType" : "SPAN",
                   "name" : "myebugs"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -299,8 +296,8 @@
                   "editorType" : "SPAN",
                   "name" : "mystorys"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -364,8 +361,8 @@
                   "editorType" : "SPAN",
                   "name" : "projects"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -384,8 +381,8 @@
                   "editorType" : "SPAN",
                   "name" : "eprojects"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -435,8 +432,8 @@
                   "editorType" : "SPAN",
                   "name" : "products"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -569,51 +566,55 @@
     },
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "name" : "projects",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "projects"
     }, {
-      "name" : "myebugs",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "myebugs"
     }, {
-      "name" : "account",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "account"
     }, {
-      "name" : "myetasks",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "myetasks"
     }, {
-      "name" : "mybugs",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "mybugs"
     }, {
-      "name" : "products",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "products"
     }, {
-      "name" : "mystorys",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "mystorys"
     }, {
-      "name" : "mytasks",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "mytasks"
     }, {
-      "name" : "eprojects",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "eprojects"
     }, {
-      "name" : "realname",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "realname"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfkey",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfkey"
     }, {
       "getPSAppDEField" : {
         "name" : "REALNAME",
         "codeName" : "Realname"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     } ],
     "showHeader" : true,
+    "enableRowNew" : false,
+    "enableRowEditOrder" : false,
+    "noSort" : false,
+    "hasWFDataItems" : false,
     "enableRowEdit" : false,
     "controlType" : "LIST",
     "codeName" : "MyWork",
@@ -644,6 +645,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "LIST"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -713,18 +720,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "LIST"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSLISTS/MyWork.json",
     "logicName" : "MyWork",
     "name" : "list",
     "modelid" : "58dafe87c750d665463bd6357f644c98"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -742,7 +742,6 @@
     "realTitle" : "我的地盘编辑视图",
     "name" : "EDITDATA"
   } ],
-  "codeName" : "IbzMyTerritoryMyWork",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
@@ -798,6 +797,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "IbzMyTerritoryMyWork",
   "viewType" : "DELISTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryMyWork.json",
   "name" : "IbzMyTerritoryMyWork"

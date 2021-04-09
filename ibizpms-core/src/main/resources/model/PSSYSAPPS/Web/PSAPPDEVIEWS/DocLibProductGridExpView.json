@@ -10,8 +10,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -26,8 +26,8 @@
     "engineType" : "GridExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "GRIDEXPBAR",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRIDEXPBAR"
     } ],
     "name" : "engine"
   } ],
@@ -35,9 +35,9 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "GRIDEXPBAR",
-    "enableSearch" : false,
     "getXDataPSControl" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib/PSGRIDS/ExpProductMain.json",
@@ -131,6 +131,7 @@
       },
       "controlType" : "GRID"
     },
+    "enableSearch" : false,
     "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
@@ -139,62 +140,76 @@
           "name" : "PRODUCT",
           "codeName" : "Product"
         },
-        "name" : "product",
-        "dataType" : 1
+        "dataType" : 1,
+        "name" : "product"
       }, {
         "getPSAppDEField" : {
           "name" : "PROJECT",
           "codeName" : "Project"
         },
-        "name" : "project",
-        "dataType" : 1
+        "dataType" : 1,
+        "name" : "project"
       }, {
         "getPSAppDEField" : {
           "name" : "DOCLIBTYPE",
           "codeName" : "Doclibtype"
         },
-        "name" : "doclibtype",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "doclibtype"
       }, {
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "name" : "name",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "name"
       }, {
         "getPSAppDEField" : {
           "name" : "ISFAVOURITES",
           "codeName" : "Isfavourites"
         },
-        "name" : "isfavourites",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "isfavourites"
       }, {
-        "name" : "srfmstag",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfmstag"
       }, {
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "name" : "srfmajortext",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfmajortext"
       }, {
         "dataAccessAction" : true,
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "name" : "srfdataaccaction",
-        "dataType" : 1
+        "dataType" : 1,
+        "name" : "srfdataaccaction"
       }, {
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "name" : "srfkey",
-        "dataType" : 1
+        "dataType" : 1,
+        "name" : "srfkey"
       } ],
+      "getRemovePSControlAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      },
       "singleSelect" : false,
       "enableColFilter" : false,
       "enableRowNew" : false,
@@ -217,31 +232,17 @@
         "name" : "srfkey"
       } ],
       "hasWFDataItems" : false,
-      "getRemovePSControlAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "dataAccessAction" : "DELETE",
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "name" : "remove"
-      },
       "columnEnableLink" : 2,
-      "enableRowEdit" : false,
       "enablePagingBar" : true,
+      "enableRowEdit" : false,
       "controlType" : "GRID",
       "getPSDEGridColumns" : [ {
         "excelCaption" : "文档库名称",
-        "dataItemName" : "name",
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "dataItemName" : "name",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -302,6 +303,12 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
       },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "gridexpbar_grid"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
@@ -384,12 +391,6 @@
         "enableDEFieldPrivilege" : false,
         "id" : "数据表格处理器"
       },
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "gridexpbar_grid"
-      },
-      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib/PSGRIDS/ExpProductMain.json",
       "logicName" : "主表格（产品文档库）（导航）",
       "name" : "gridexpbar_grid",
@@ -413,10 +414,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "gridexpbar"
-    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -424,13 +421,15 @@
       "id" : "GRIDEXPBAR"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "gridexpbar"
+    },
     "width" : 300.0,
     "codeName" : "ProductGridExpViewgridexpbar",
     "name" : "gridexpbar",
     "modelid" : "a53c40aac05dc376d8fb26e320ba4efb_gridexpbar"
   } ],
-  "viewStyle" : "STYLE2",
-  "codeName" : "DocLibProductGridExpView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
@@ -454,6 +453,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "DocLibProductGridExpView",
   "viewType" : "DEGRIDEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibProductGridExpView.json",
   "name" : "DocLibProductGridExpView"

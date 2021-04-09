@@ -5,8 +5,6 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "GetModuleBranch",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDataEntity" : {
@@ -17,12 +15,12 @@
       "modelref" : true,
       "id" : "Module"
     },
-    "logicHolder" : 3,
-    "codeName" : "Deaction1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9306"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Deaction1",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
@@ -31,14 +29,11 @@
     "name" : "获取模块详情"
   }, {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6882"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Module"
@@ -47,29 +42,29 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
       "srcFieldName" : "MODULE",
       "name" : "Default[MODULE] ==> Module[ID]"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置模块参数"
   }, {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1496"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam2",
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
@@ -78,11 +73,14 @@
         "modelref" : true,
         "id" : "Module"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "BRANCH",
       "srcFieldName" : "BRANCH",
       "name" : "Module[BRANCH] ==> Default[BRANCH]"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Prepareparam2",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置bug平台值"
   } ],
@@ -98,13 +96,14 @@
     },
     "name" : "连接6882"
   }, {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "MODULE",
         "logicType" : "SINGLE",
         "name" : "Default[MODULE] 值不为空(NotNil)"
@@ -114,7 +113,6 @@
       "logicType" : "GROUP",
       "id" : "661944c18fe1176b86910c3779c3328e"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Prepareparam1"
@@ -137,20 +135,22 @@
     "name" : "连接9306"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Module",
     "default" : false,
     "name" : "模块"
   }, {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "GetModuleBranch",
   "logicName" : "获取模块的平台",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

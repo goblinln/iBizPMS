@@ -9,8 +9,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -25,8 +25,8 @@
     "engineType" : "TreeExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "TREEEXPBAR",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "TREEEXPBAR"
     } ],
     "name" : "engine"
   } ],
@@ -34,9 +34,9 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TREEEXPBAR",
-    "enableSearch" : false,
     "getXDataPSControl" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact/PSTREEVIEWS/ConcatList.json",
@@ -113,9 +113,11 @@
       },
       "controlType" : "TREEVIEW"
     },
+    "enableSearch" : false,
     "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
+      "treeGridMode" : 0,
       "getPSDETreeNodeRSs" : [ {
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -132,9 +134,7 @@
       "enableRootSelect" : false,
       "outputIconDefault" : true,
       "enableSearchDefault" : false,
-      "treeGridMode" : 0,
       "controlType" : "TREEVIEW",
-      "codeName" : "ConcatList",
       "getPSDETreeNodes" : [ {
         "getIdPSAppDEField" : {
           "name" : "ID",
@@ -146,13 +146,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
         },
-        "getTextPSAppDEField" : {
-          "name" : "LISTNAME",
-          "codeName" : "ListName"
-        },
         "getPSAppDEDataSet" : {
           "modelref" : true,
           "id" : "FetchMyUSERCONTACT"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "LISTNAME",
+          "codeName" : "ListName"
         },
         "maxSize" : -1,
         "enableQuickCreate" : false,
@@ -175,9 +175,9 @@
         "nodeType" : "ConcatList",
         "disableSelect" : false,
         "enableQuickSearch" : false,
+        "expanded" : true,
         "counterMode" : 0,
         "treeNodeType" : "DE",
-        "expanded" : true,
         "name" : "联系列表",
         "id" : "ConcatList"
       }, {
@@ -198,12 +198,13 @@
         "nodeType" : "ROOT",
         "disableSelect" : false,
         "enableQuickSearch" : false,
+        "expanded" : false,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
-        "expanded" : false,
         "name" : "默认根节点",
         "id" : "ROOT"
       } ],
+      "codeName" : "ConcatList",
       "rootVisible" : false,
       "getCreatePSControlAction" : {
         "modelref" : true,
@@ -229,6 +230,12 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
       },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "treeexpbar_tree"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
@@ -294,12 +301,6 @@
         "enableDEFieldPrivilege" : false,
         "id" : "树视图处理器"
       },
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "treeexpbar_tree"
-      },
-      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact/PSTREEVIEWS/ConcatList.json",
       "logicName" : "联系人列表",
       "name" : "treeexpbar_tree",
@@ -319,22 +320,20 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
     },
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "treeexpbar"
-    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
       "id" : "TREEEXPBAR"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "treeexpbar"
+    },
     "codeName" : "TreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "modelid" : "b801497fba39749da0bf99e9cda2ff06_treeexpbar"
   } ],
-  "viewStyle" : "STYLE2",
-  "codeName" : "UserContactTreeExpView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
@@ -358,6 +357,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "UserContactTreeExpView",
   "viewType" : "DETREEEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserContactTreeExpView.json",
   "name" : "UserContactTreeExpView"

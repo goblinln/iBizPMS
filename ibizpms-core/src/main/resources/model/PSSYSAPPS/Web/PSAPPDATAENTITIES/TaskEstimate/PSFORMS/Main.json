@@ -1,6 +1,7 @@
 {
-  "showFormNavBar" : false,
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -25,14 +26,12 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -42,6 +41,7 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
@@ -52,22 +52,21 @@
           },
           "name" : "date"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "DATE",
           "codeName" : "Date"
         },
-        "hidden" : false,
         "dataType" : 5,
-        "caption" : "日期",
         "allowEmpty" : false,
+        "caption" : "日期",
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "itemWidth" : 230.0,
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -77,27 +76,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "date"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "precision" : 2,
           "editorType" : "TEXTBOX",
           "name" : "consumed"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "CONSUMED",
           "codeName" : "Consumed"
         },
-        "hidden" : false,
         "dataType" : 7,
-        "caption" : "工时",
         "allowEmpty" : false,
+        "caption" : "工时",
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -107,27 +106,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "consumed"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "precision" : 2,
           "editorType" : "TEXTBOX",
           "name" : "left"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "LEFT",
           "codeName" : "Left"
         },
-        "hidden" : false,
         "dataType" : 7,
-        "caption" : "剩余",
         "allowEmpty" : false,
+        "caption" : "剩余",
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -137,27 +136,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "left"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "maxLength" : 65535,
           "editorType" : "TEXTAREA",
           "name" : "work"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "WORK",
           "codeName" : "Work"
         },
-        "hidden" : false,
         "dataType" : 21,
-        "caption" : "备注",
         "allowEmpty" : true,
+        "caption" : "备注",
         "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -262,6 +261,7 @@
       "codeName" : "Id"
     }
   } ],
+  "noTabHeader" : true,
   "getPSDEFormItemVRs" : [ {
     "getPSDEFormItemName" : "left",
     "valueRuleType" : "DEFVALUERULE",

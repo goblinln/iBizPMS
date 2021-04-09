@@ -1,4 +1,5 @@
 {
+  "treeGridMode" : 0,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -51,9 +52,7 @@
   "enableRootSelect" : false,
   "outputIconDefault" : false,
   "enableSearchDefault" : false,
-  "treeGridMode" : 0,
   "controlType" : "TREEVIEW",
-  "codeName" : "EmployEeload",
   "getPSDETreeNodes" : [ {
     "text" : "公司动态汇总表",
     "enableQuickCreate" : false,
@@ -69,20 +68,20 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
+    "enableNewData" : false,
+    "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "CompanyDynamicStats",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "公司动态汇总表",
     "id" : "CompanyDynamicStats"
   }, {
@@ -100,20 +99,20 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
+    "enableNewData" : false,
+    "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "EmployEeload",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "员工负载表",
     "id" : "EmployEeload"
   }, {
@@ -131,20 +130,20 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
     },
+    "enableNewData" : false,
+    "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "TaskFinish",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "任务完成汇总表",
     "id" : "TaskFinish"
   }, {
@@ -162,20 +161,20 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
     },
+    "enableNewData" : false,
+    "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "BugResolved",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "bug解决汇总表",
     "id" : "BugResolved"
   }, {
@@ -196,12 +195,13 @@
     "nodeType" : "ROOT",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "默认根节点",
     "id" : "ROOT"
   } ],
+  "codeName" : "EmployEeload",
   "rootVisible" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,

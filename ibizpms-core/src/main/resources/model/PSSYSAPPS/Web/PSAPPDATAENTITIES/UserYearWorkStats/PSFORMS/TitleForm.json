@@ -1,6 +1,7 @@
 {
-  "showFormNavBar" : false,
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -25,14 +26,12 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
       "infoGroupMode" : false,
@@ -42,6 +41,7 @@
         "columnCount" : 24
       },
       "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
         "emptyCaption" : true,
         "getPSEditor" : {
           "enableLinkView" : false,
@@ -49,13 +49,11 @@
           "editorType" : "SPAN",
           "name" : "title"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "TITLE",
           "codeName" : "Title"
         },
-        "hidden" : false,
         "dataType" : 25,
         "allowEmpty" : true,
         "labelWidth" : 0,
@@ -63,20 +61,22 @@
         "ignoreInput" : 0,
         "labelPos" : "NONE",
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 12,
           "colLGOffset" : 6,
           "layout" : "TABLE_24COL"
         },
-        "codeName" : "title",
         "getPSSysCss" : {
           "cssName" : "panelitem-20px"
         },
+        "codeName" : "title",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
         "name" : "title"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
@@ -87,22 +87,21 @@
           "editorType" : "DROPDOWNLIST",
           "name" : "curyear"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "CURYEAR",
           "codeName" : "Curyear"
         },
-        "hidden" : false,
         "dataType" : 25,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "年度",
-        "allowEmpty" : true,
         "labelWidth" : 0,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "NONE",
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 4,
@@ -194,6 +193,7 @@
       "codeName" : "Id"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "TitleForm",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

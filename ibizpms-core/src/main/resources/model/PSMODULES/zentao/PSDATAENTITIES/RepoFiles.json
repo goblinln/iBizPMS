@@ -1,22 +1,7 @@
 {
   "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "length" : 255,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "5096a652e9b56ca10edb9668698e8d81",
-    "codeName" : "Path",
-    "logicName" : "path",
-    "stringLength" : 255,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PATH`",
-      "valueAutoGen" : false,
-      "columnName" : "PATH",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PATH"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -29,8 +14,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "PATH",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -51,24 +36,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "PATH"
-  }, {
-    "length" : 20,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "a63f28fb73d1edbaac9bcd87c867ac68",
-    "codeName" : "Type",
-    "logicName" : "type",
-    "stringLength" : 20,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`TYPE`",
       "valueAutoGen" : false,
-      "columnName" : "TYPE",
+      "queryCodeExp" : "t1.`PATH`",
+      "columnName" : "PATH",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "TYPE"
+      "name" : "PATH"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "5096a652e9b56ca10edb9668698e8d81",
+    "codeName" : "Path",
+    "logicName" : "path",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "length" : 255,
+    "name" : "PATH"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -81,8 +66,8 @@
           "includeMaxValue" : true,
           "maxValue" : 20,
           "dEFName" : "TYPE",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[20]",
           "name" : "默认字符串长度"
@@ -103,22 +88,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`TYPE`",
+      "columnName" : "TYPE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TYPE"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "a63f28fb73d1edbaac9bcd87c867ac68",
+    "codeName" : "Type",
+    "logicName" : "type",
+    "stringLength" : 20,
+    "stdDataType" : 25,
+    "length" : 20,
     "name" : "TYPE"
   }, {
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
-    "deployId" : "240ad6942206af42416ce26c06e73ec5",
-    "codeName" : "Revision",
-    "logicName" : "revision",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`REVISION`",
-      "valueAutoGen" : false,
-      "columnName" : "REVISION",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "REVISION"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -141,24 +128,22 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "REVISION"
-  }, {
-    "length" : 1,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "aeaca1a873a23e46ecfa2d46aedfbf3e",
-    "codeName" : "Action",
-    "logicName" : "action",
-    "stringLength" : 1,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`ACTION`",
       "valueAutoGen" : false,
-      "columnName" : "ACTION",
+      "queryCodeExp" : "t1.`REVISION`",
+      "columnName" : "REVISION",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "ACTION"
+      "name" : "REVISION"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "240ad6942206af42416ce26c06e73ec5",
+    "codeName" : "Revision",
+    "logicName" : "revision",
+    "stdDataType" : 9,
+    "name" : "REVISION"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -171,8 +156,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1,
           "dEFName" : "ACTION",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1]",
           "name" : "默认字符串长度"
@@ -193,22 +178,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ACTION`",
+      "columnName" : "ACTION",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ACTION"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "aeaca1a873a23e46ecfa2d46aedfbf3e",
+    "codeName" : "Action",
+    "logicName" : "action",
+    "stringLength" : 1,
+    "stdDataType" : 25,
+    "length" : 1,
     "name" : "ACTION"
   }, {
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
-    "deployId" : "a5a2442caa3de5d3ccc17c119ef3af8a",
-    "codeName" : "Repo",
-    "logicName" : "repo",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`REPO`",
-      "valueAutoGen" : false,
-      "columnName" : "REPO",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "REPO"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -231,22 +218,22 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`REPO`",
+      "columnName" : "REPO",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "REPO"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "a5a2442caa3de5d3ccc17c119ef3af8a",
+    "codeName" : "Repo",
+    "logicName" : "repo",
+    "stdDataType" : 9,
     "name" : "REPO"
   }, {
     "dataType" : "ACID",
-    "valueFormat" : "%1$s",
-    "deployId" : "6b6f167f62079ac8f7ab51943408d4e6",
-    "codeName" : "Id",
-    "logicName" : "id",
-    "stdDataType" : 1,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`ID`",
-      "valueAutoGen" : false,
-      "columnName" : "ID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : true,
-      "name" : "ID"
-    } ],
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -275,6 +262,19 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ID`",
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : true,
+      "name" : "ID"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "6b6f167f62079ac8f7ab51943408d4e6",
+    "codeName" : "Id",
+    "logicName" : "id",
+    "stdDataType" : 1,
     "name" : "ID"
   }, {
     "getPSDER" : {
@@ -287,20 +287,7 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "length" : 255,
     "dataType" : "PICKUP",
-    "deployId" : "527d6c82d053d5a1f623e8058ba66985",
-    "codeName" : "Parent",
-    "logicName" : "parent",
-    "stdDataType" : 1,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PARENT`",
-      "valueAutoGen" : false,
-      "columnName" : "PARENT",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PARENT"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -323,6 +310,19 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`PARENT`",
+      "columnName" : "PARENT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PARENT"
+    } ],
+    "deployId" : "527d6c82d053d5a1f623e8058ba66985",
+    "codeName" : "Parent",
+    "logicName" : "parent",
+    "stdDataType" : 1,
+    "length" : 255,
     "name" : "PARENT"
   } ],
   "getAllPSDEDataSets" : [ {
@@ -330,19 +330,19 @@
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "Default",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
-    "pageSize" : -1,
     "name" : "DEFAULT"
   } ],
   "getAllPSDEActions" : [ {
@@ -373,9 +373,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -384,19 +384,27 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
-  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
+  "enableUIActions" : 15,
+  "orderValue" : 99999,
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "serviceCodeName" : "RepoFiles",
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -411,20 +419,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
-  "deployId" : "3ebef2b1549a0ec7f104e2c328691579",
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
   "dynaInstMode" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "dSLink" : "DEFAULT",
+  "deployId" : "3ebef2b1549a0ec7f104e2c328691579",
   "codeName" : "RepoFiles",
   "logicName" : "repofiles",
   "tableName" : "zt_repofiles",
-  "serviceCodeName" : "RepoFiles",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -433,12 +437,8 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

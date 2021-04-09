@@ -3,31 +3,31 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__review_result.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__review_result.json",
   "codeName" : "Story__review_result",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "pass",
     "codeName" : "Pass",
-    "text" : "确认通过"
+    "text" : "确认通过",
+    "value" : "pass"
   }, {
-    "value" : "revert",
     "codeName" : "Revert",
-    "text" : "撤销变更"
+    "text" : "撤销变更",
+    "value" : "revert"
   }, {
-    "value" : "clarify",
     "codeName" : "Clarify",
     "text" : "有待明确",
+    "color" : "rgba(49, 27, 146, 1)",
     "default" : true,
-    "color" : "rgba(49, 27, 146, 1)"
+    "value" : "clarify"
   }, {
-    "value" : "reject",
     "codeName" : "Reject",
-    "text" : "拒绝"
+    "text" : "拒绝",
+    "value" : "reject"
   } ]
 }

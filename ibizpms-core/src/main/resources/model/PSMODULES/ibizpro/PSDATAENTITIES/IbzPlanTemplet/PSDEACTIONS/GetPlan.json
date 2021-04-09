@@ -1,19 +1,19 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : false,
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 99999,
-  "codeName" : "GetPlan",
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
+  "codeName" : "GetPlan",
   "logicName" : "获取计划",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "USERCUSTOM",
   "requestField" : "IBZ_PLANTEMPLETID",

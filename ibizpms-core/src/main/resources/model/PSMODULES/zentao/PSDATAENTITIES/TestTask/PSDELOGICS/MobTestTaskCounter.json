@@ -5,16 +5,14 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "MobTestTaskCounter",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3313"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -23,27 +21,27 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PRODUCT",
       "name" : "Default[PRODUCT]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取测试用例数"
   } ],
@@ -60,13 +58,15 @@
     "name" : "连接3313"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "MobTestTaskCounter",
   "logicName" : "移动端测试版本计数器",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

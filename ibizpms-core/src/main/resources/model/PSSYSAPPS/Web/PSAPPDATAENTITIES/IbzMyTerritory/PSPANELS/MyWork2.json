@@ -13,9 +13,9 @@
           "editorType" : "SPAN",
           "name" : "account"
         },
-        "hidden" : false,
         "convertToCodeItemText" : true,
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "grow" : -1,
           "layout" : "FLEX"
@@ -43,8 +43,8 @@
       },
       "itemType" : "CONTAINER",
       "itemStyle" : "DEFAULT",
-      "contentWidth" : 230.0,
       "showCaption" : true,
+      "contentWidth" : 230.0,
       "name" : "container2"
     }, {
       "getPSPanelItems" : [ {
@@ -104,8 +104,8 @@
               "editorType" : "SPAN",
               "name" : "mytasks"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -124,8 +124,8 @@
               "editorType" : "SPAN",
               "name" : "myetasks"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -175,8 +175,8 @@
               "editorType" : "SPAN",
               "name" : "mybugs"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -195,8 +195,8 @@
               "editorType" : "SPAN",
               "name" : "myebugs"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -246,8 +246,8 @@
               "editorType" : "SPAN",
               "name" : "mystorys"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -311,8 +311,8 @@
               "editorType" : "SPAN",
               "name" : "projects"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -331,8 +331,8 @@
               "editorType" : "SPAN",
               "name" : "eprojects"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -382,8 +382,8 @@
               "editorType" : "SPAN",
               "name" : "products"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"

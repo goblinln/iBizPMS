@@ -1,22 +1,7 @@
 {
   "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "length" : 255,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "74848a4b2f20410608e2e14563013a21",
-    "codeName" : "Name",
-    "logicName" : "名称",
-    "stringLength" : 255,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`NAME`",
-      "valueAutoGen" : false,
-      "columnName" : "NAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "NAME"
-    } ],
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
@@ -32,8 +17,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "NAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -54,26 +39,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "NAME"
-  }, {
-    "length" : 100,
-    "defaultValue" : "0",
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "62ad1e1537fa583a808725815882911f",
-    "codeName" : "Deleted",
-    "logicName" : "已删除",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`DELETED`",
-      "valueAutoGen" : true,
-      "columnName" : "DELETED",
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`NAME`",
+      "columnName" : "NAME",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "DELETED"
+      "name" : "NAME"
     } ],
-    "predefinedType" : "LOGICVALID",
+    "valueFormat" : "%1$s",
+    "deployId" : "74848a4b2f20410608e2e14563013a21",
+    "codeName" : "Name",
+    "logicName" : "名称",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "length" : 255,
+    "name" : "NAME"
+  }, {
+    "dataType" : "TEXT",
     "enableUICreate" : false,
     "enableUIModify" : false,
     "importOrder" : 1000,
@@ -88,8 +71,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "DELETED",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -110,23 +93,26 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`DELETED`",
+      "columnName" : "DELETED",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DELETED"
+    } ],
+    "predefinedType" : "LOGICVALID",
+    "valueFormat" : "%1$s",
+    "deployId" : "62ad1e1537fa583a808725815882911f",
+    "codeName" : "Deleted",
+    "logicName" : "已删除",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "defaultValue" : "0",
     "name" : "DELETED"
   }, {
-    "length" : 8,
     "dataType" : "ACID",
-    "valueFormat" : "%1$s",
-    "deployId" : "0cfe45487addefd7ad1bda8dec0d78ae",
-    "codeName" : "Id",
-    "logicName" : "编号",
-    "stdDataType" : 1,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`ID`",
-      "valueAutoGen" : false,
-      "columnName" : "ID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : true,
-      "name" : "ID"
-    } ],
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -155,24 +141,23 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ID`",
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : true,
+      "name" : "ID"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "0cfe45487addefd7ad1bda8dec0d78ae",
+    "codeName" : "Id",
+    "logicName" : "编号",
+    "stdDataType" : 1,
+    "length" : 8,
     "name" : "ID"
   }, {
-    "length" : 5,
-    "defaultValue" : "0",
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
-    "deployId" : "4325e5f713430d56add6561bb85bec3d",
-    "codeName" : "Order",
-    "logicName" : "排序",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`ORDER`",
-      "valueAutoGen" : true,
-      "columnName" : "ORDER",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ORDER"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -195,6 +180,21 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`ORDER`",
+      "columnName" : "ORDER",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ORDER"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "4325e5f713430d56add6561bb85bec3d",
+    "codeName" : "Order",
+    "logicName" : "排序",
+    "stdDataType" : 9,
+    "length" : 5,
+    "defaultValue" : "0",
     "name" : "ORDER"
   }, {
     "getPSDER" : {
@@ -207,21 +207,7 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "length" : 8,
-    "defaultValue" : "0",
     "dataType" : "PICKUP",
-    "deployId" : "83a072f1c1ae716cd76310a7f9be94a1",
-    "codeName" : "Product",
-    "logicName" : "所属产品",
-    "stdDataType" : 1,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PRODUCT`",
-      "valueAutoGen" : true,
-      "columnName" : "PRODUCT",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PRODUCT"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -244,6 +230,20 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`PRODUCT`",
+      "columnName" : "PRODUCT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PRODUCT"
+    } ],
+    "deployId" : "83a072f1c1ae716cd76310a7f9be94a1",
+    "codeName" : "Product",
+    "logicName" : "所属产品",
+    "stdDataType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
     "name" : "PRODUCT"
   } ],
   "getAllPSDEDataSets" : [ {
@@ -251,39 +251,39 @@
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "CurProduct",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "CurProduct",
     "logicName" : "CurProduct",
-    "extendMode" : 0,
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
-    "pageSize" : -1,
     "name" : "CurProduct"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "Default",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "majorSortDir" : "ASC",
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
-    "pageSize" : -1,
+    "majorSortDir" : "ASC",
     "name" : "DEFAULT"
   } ],
   "getAllPSDEActions" : [ {
@@ -317,9 +317,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "CurProduct",
     "logicName" : "CurProduct",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "CurProduct"
   }, {
@@ -328,9 +328,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -339,9 +339,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "DefaultBranch",
     "logicName" : "DefaultBranch",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "DefaultBranch"
   }, {
@@ -350,14 +350,13 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
-  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
@@ -365,6 +364,15 @@
   "enableAPIStorage" : false,
   "validLogicValue" : "0",
   "invalidLogicValue" : "1",
+  "enableUIActions" : 15,
+  "orderValue" : 99999,
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "serviceCodeName" : "Branch",
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -379,24 +387,20 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
-  "deployId" : "d50a89fb27d26657f8cc614c3532bfc1",
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
   "dynaInstMode" : 1,
-  "codeName" : "Branch",
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "dSLink" : "DEFAULT",
   "getPSSysImage" : {
     "glyph" : "xf126@FontAwesome",
     "cssClass" : "fa fa-code-fork"
   },
+  "deployId" : "d50a89fb27d26657f8cc614c3532bfc1",
+  "codeName" : "Branch",
   "logicName" : "产品的分支和平台信息",
   "tableName" : "zt_branch",
-  "serviceCodeName" : "Branch",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : true,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -405,12 +409,8 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

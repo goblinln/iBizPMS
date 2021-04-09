@@ -23,9 +23,9 @@
         "editorType" : "SPAN",
         "name" : "account"
       },
-      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,
@@ -42,8 +42,8 @@
         "editorType" : "SPAN",
         "name" : "role"
       },
-      "hidden" : false,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 4,
         "colLG" : 4,

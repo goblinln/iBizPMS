@@ -5,16 +5,14 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "DocLibModuleFavorite",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9866"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -37,14 +35,11 @@
     "name" : "收藏"
   }, {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7481"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IBZ_FAVORITES"
@@ -53,12 +48,12 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "OBJECTID",
       "srcFieldName" : "ID",
       "name" : "Default[ID] ==> IBZ_FAVORITES[OBJECTID]"
     }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IBZ_FAVORITES"
@@ -67,21 +62,24 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "TYPE",
       "srcFieldName" : "TYPE",
       "name" : "Default[TYPE] ==> IBZ_FAVORITES[TYPE]"
     }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IBZ_FAVORITES"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SESSION",
       "dstFieldName" : "ACCOUNT",
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname] ==> IBZ_FAVORITES[ACCOUNT]"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备参数"
   } ],
@@ -109,20 +107,22 @@
     "name" : "连接7481"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "IBZ_FAVORITES",
     "default" : false,
     "name" : "收藏"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "DocLibModuleFavorite",
   "logicName" : "文档库收藏",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

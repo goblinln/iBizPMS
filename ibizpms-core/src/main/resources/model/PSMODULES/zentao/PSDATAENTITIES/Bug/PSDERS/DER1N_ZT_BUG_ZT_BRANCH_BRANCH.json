@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "BRANCH",
     "codeName" : "Branch"
@@ -8,9 +7,10 @@
     "name" : "BRANCHNAME",
     "codeName" : "Branchname"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
-  "masterRS" : 0,
   "pickupDEFName" : "BRANCH",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

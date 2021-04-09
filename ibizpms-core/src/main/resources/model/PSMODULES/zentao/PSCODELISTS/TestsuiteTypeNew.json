@@ -3,21 +3,21 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TestsuiteTypeNew.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TestsuiteTypeNew.json",
   "codeName" : "TestsuiteTypeNew",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "private",
     "codeName" : "Private",
-    "text" : "私有"
+    "text" : "私有",
+    "value" : "private"
   }, {
-    "value" : "public",
     "codeName" : "Public",
-    "text" : "公开"
+    "text" : "公开",
+    "value" : "public"
   } ]
 }

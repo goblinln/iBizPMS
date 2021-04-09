@@ -5,17 +5,17 @@
   },
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "codeName" : "Story__type",
   "getPSCodeItems" : [ {
-    "value" : "requirement",
     "codeName" : "Requirement",
-    "text" : "用户需求"
+    "text" : "用户需求",
+    "value" : "requirement"
   }, {
-    "value" : "story",
     "codeName" : "Story",
     "text" : "软件需求",
-    "default" : true
+    "default" : true,
+    "value" : "story"
   } ],
+  "codeName" : "Story__type",
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__type.json",

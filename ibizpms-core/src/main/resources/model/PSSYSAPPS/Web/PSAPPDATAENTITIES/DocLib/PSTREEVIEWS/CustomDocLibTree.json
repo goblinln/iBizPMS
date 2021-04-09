@@ -1,4 +1,5 @@
 {
+  "treeGridMode" : 0,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -87,9 +88,7 @@
   "enableRootSelect" : false,
   "outputIconDefault" : true,
   "enableSearchDefault" : false,
-  "treeGridMode" : 0,
   "controlType" : "TREEVIEW",
-  "codeName" : "CustomDocLibTree",
   "getPSDETreeNodes" : [ {
     "getIdPSAppDEField" : {
       "name" : "ID",
@@ -100,13 +99,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
     },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchAllDocLibModule_Custom"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "maxSize" : -1,
     "enableQuickCreate" : false,
@@ -128,14 +127,14 @@
     "enableViewData" : false,
     "nodeType" : "DocRoot",
     "disableSelect" : false,
+    "enableQuickSearch" : false,
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "根模块",
     "id" : "DocRoot"
   }, {
@@ -149,13 +148,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchByCustom"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "maxSize" : -1,
     "enableQuickCreate" : false,
@@ -178,8 +177,8 @@
           "modelref" : true,
           "id" : "doclib_cm_deuiaction1"
         },
+        "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -190,12 +189,13 @@
             "viewType" : "DEEDITVIEW"
           },
           "frontProcessType" : "WIZARD",
+          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
-          "codeName" : "EditCustomDocLib",
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "codeName" : "EditCustomDocLib",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
@@ -206,7 +206,6 @@
           "name" : "编辑(自定义文档库)",
           "id" : "EditCustomDocLib@DocLib"
         },
-        "noPrivDisplayMode" : 2,
         "getPSSysImage" : {
           "glyph" : "xf044@FontAwesome",
           "cssClass" : "fa fa-edit"
@@ -223,14 +222,15 @@
           "modelref" : true,
           "id" : "doclib_cm_deuiaction2"
         },
+        "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
-          "codeName" : "RefreshAll",
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "codeName" : "RefreshAll",
           "caption" : "刷新",
           "uIActionTag" : "RefreshAll",
           "uIActionType" : "DEUIACTION",
@@ -238,7 +238,6 @@
           "fullCodeName" : "RefreshAll",
           "name" : "树界面_刷新全部操作"
         },
-        "noPrivDisplayMode" : 2,
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
@@ -255,8 +254,8 @@
           "modelref" : true,
           "id" : "doclib_cm_deuiaction3"
         },
+        "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -299,12 +298,13 @@
             "key" : "PRODUCT",
             "name" : "PRODUCT"
           } ],
+          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
-          "codeName" : "WeiHuFenLei",
           "getPSSysImage" : {
             "glyph" : "xf023@FontAwesome",
             "cssClass" : "fa fa-lock"
           },
+          "codeName" : "WeiHuFenLei",
           "caption" : "维护分类",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__DOCLIBMODULE_MAINTENANCE_BUT",
@@ -315,7 +315,6 @@
           "name" : "维护分类",
           "id" : "WeiHuFenLei@DocLib"
         },
-        "noPrivDisplayMode" : 2,
         "getPSSysImage" : {
           "glyph" : "xf023@FontAwesome",
           "cssClass" : "fa fa-lock"
@@ -347,14 +346,14 @@
     "enableViewData" : false,
     "nodeType" : "Doclib",
     "disableSelect" : false,
+    "enableQuickSearch" : false,
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "文档库",
     "id" : "Doclib"
   }, {
@@ -372,6 +371,10 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+    },
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
       "getPSDEToolbarItems" : [ {
@@ -379,14 +382,15 @@
           "modelref" : true,
           "id" : "all_cm_deuiaction1"
         },
+        "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
-          "codeName" : "RefreshAll",
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "codeName" : "RefreshAll",
           "caption" : "刷新",
           "uIActionTag" : "RefreshAll",
           "uIActionType" : "DEUIACTION",
@@ -394,7 +398,6 @@
           "fullCodeName" : "RefreshAll",
           "name" : "树界面_刷新全部操作"
         },
-        "noPrivDisplayMode" : 2,
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
@@ -422,18 +425,14 @@
     },
     "enableNewData" : false,
     "enableEditData" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-    },
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "ALL",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : true,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : true,
     "name" : "所有文档库",
     "id" : "ALL"
   }, {
@@ -446,13 +445,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
     },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchAllDoclibModule"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "maxSize" : -1,
     "enableQuickCreate" : false,
@@ -474,14 +473,14 @@
     "enableViewData" : false,
     "nodeType" : "DocLibModule",
     "disableSelect" : false,
+    "enableQuickSearch" : false,
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "文档库模块",
     "id" : "DocLibModule"
   }, {
@@ -502,12 +501,13 @@
     "nodeType" : "ROOT",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "默认根节点",
     "id" : "ROOT"
   } ],
+  "codeName" : "CustomDocLibTree",
   "rootVisible" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -575,8 +575,8 @@
         "modelref" : true,
         "id" : "doclib_cm_deuiaction1"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -587,12 +587,13 @@
           "viewType" : "DEEDITVIEW"
         },
         "frontProcessType" : "WIZARD",
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "EditCustomDocLib",
         "getPSSysImage" : {
           "glyph" : "xf044@FontAwesome",
           "cssClass" : "fa fa-edit"
         },
+        "codeName" : "EditCustomDocLib",
         "caption" : "编辑",
         "actionTarget" : "SINGLEKEY",
         "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
@@ -603,7 +604,6 @@
         "name" : "编辑(自定义文档库)",
         "id" : "EditCustomDocLib@DocLib"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf044@FontAwesome",
         "cssClass" : "fa fa-edit"
@@ -620,14 +620,15 @@
         "modelref" : true,
         "id" : "doclib_cm_deuiaction2"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "RefreshAll",
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "codeName" : "RefreshAll",
         "caption" : "刷新",
         "uIActionTag" : "RefreshAll",
         "uIActionType" : "DEUIACTION",
@@ -635,7 +636,6 @@
         "fullCodeName" : "RefreshAll",
         "name" : "树界面_刷新全部操作"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf021@FontAwesome",
         "cssClass" : "fa fa-refresh"
@@ -652,8 +652,8 @@
         "modelref" : true,
         "id" : "doclib_cm_deuiaction3"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -696,12 +696,13 @@
           "key" : "PRODUCT",
           "name" : "PRODUCT"
         } ],
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "WeiHuFenLei",
         "getPSSysImage" : {
           "glyph" : "xf023@FontAwesome",
           "cssClass" : "fa fa-lock"
         },
+        "codeName" : "WeiHuFenLei",
         "caption" : "维护分类",
         "actionTarget" : "SINGLEKEY",
         "dataAccessAction" : "SRFUR__DOCLIBMODULE_MAINTENANCE_BUT",
@@ -712,7 +713,6 @@
         "name" : "维护分类",
         "id" : "WeiHuFenLei@DocLib"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf023@FontAwesome",
         "cssClass" : "fa fa-lock"
@@ -744,14 +744,15 @@
         "modelref" : true,
         "id" : "all_cm_deuiaction1"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "RefreshAll",
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "codeName" : "RefreshAll",
         "caption" : "刷新",
         "uIActionTag" : "RefreshAll",
         "uIActionType" : "DEUIACTION",
@@ -759,7 +760,6 @@
         "fullCodeName" : "RefreshAll",
         "name" : "树界面_刷新全部操作"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf021@FontAwesome",
         "cssClass" : "fa fa-refresh"

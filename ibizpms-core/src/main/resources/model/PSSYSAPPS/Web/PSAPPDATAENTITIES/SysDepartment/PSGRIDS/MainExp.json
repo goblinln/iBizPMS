@@ -4,52 +4,66 @@
       "name" : "PDEPTID",
       "codeName" : "ParentDeptid"
     },
-    "name" : "pdeptid",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "pdeptid"
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
-    "name" : "deptid",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "deptid"
   }, {
     "getPSAppDEField" : {
       "name" : "ORGID",
       "codeName" : "OrgId"
     },
-    "name" : "orgid",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "orgid"
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTNAME",
       "codeName" : "DeptName"
     },
-    "name" : "deptname",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "deptname"
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTNAME",
       "codeName" : "DeptName"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
-    "name" : "srfkey",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfkey"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -72,31 +86,17 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
-  "enableRowEdit" : false,
   "enablePagingBar" : false,
+  "enableRowEdit" : false,
   "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "部门标识",
-    "dataItemName" : "deptid",
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
+    "dataItemName" : "deptid",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
       "lanResTag" : "COMMON.DATATYPE.DECIMAL",
@@ -113,11 +113,11 @@
     "name" : "deptid"
   }, {
     "excelCaption" : "部门名称",
-    "dataItemName" : "deptname",
     "getPSAppDEField" : {
       "name" : "DEPTNAME",
       "codeName" : "DeptName"
     },
+    "dataItemName" : "deptname",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
       "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT",

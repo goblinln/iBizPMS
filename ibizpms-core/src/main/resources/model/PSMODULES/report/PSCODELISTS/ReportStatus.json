@@ -3,22 +3,22 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/report/PSCODELISTS/ReportStatus.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/report/PSCODELISTS/ReportStatus.json",
   "codeName" : "ReportStatus",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "0",
     "codeName" : "Item_0",
     "text" : "未读",
-    "color" : "rgba(244, 15, 15, 1)"
+    "color" : "rgba(244, 15, 15, 1)",
+    "value" : "0"
   }, {
-    "value" : "1",
     "codeName" : "Item_1",
-    "text" : "已读"
+    "text" : "已读",
+    "value" : "1"
   } ]
 }

@@ -5,40 +5,40 @@
   },
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "codeName" : "Testcase__type",
   "getPSCodeItems" : [ {
-    "value" : "feature",
     "codeName" : "Feature",
-    "text" : "功能测试"
+    "text" : "功能测试",
+    "value" : "feature"
   }, {
-    "value" : "performance",
     "codeName" : "Performance",
-    "text" : "性能测试"
+    "text" : "性能测试",
+    "value" : "performance"
   }, {
-    "value" : "config",
     "codeName" : "Config",
-    "text" : "配置相关"
+    "text" : "配置相关",
+    "value" : "config"
   }, {
-    "value" : "install",
     "codeName" : "Install",
-    "text" : "安装部署"
+    "text" : "安装部署",
+    "value" : "install"
   }, {
-    "value" : "security",
     "codeName" : "Security",
-    "text" : "安全相关"
+    "text" : "安全相关",
+    "value" : "security"
   }, {
-    "value" : "interface",
     "codeName" : "Interface",
-    "text" : "接口测试"
+    "text" : "接口测试",
+    "value" : "interface"
   }, {
-    "value" : "unit",
     "codeName" : "Unit",
-    "text" : "单元测试"
+    "text" : "单元测试",
+    "value" : "unit"
   }, {
-    "value" : "other",
     "codeName" : "Other",
-    "text" : "其他"
+    "text" : "其他",
+    "value" : "other"
   } ],
+  "codeName" : "Testcase__type",
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__type.json",

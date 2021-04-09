@@ -1,19 +1,19 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : true,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : true,
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 21,
-  "codeName" : "Remove",
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
+  "codeName" : "Remove",
   "logicName" : "Remove",
-  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "IBZ_AGENTID",

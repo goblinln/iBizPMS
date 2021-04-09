@@ -1,4 +1,5 @@
 {
+  "treeGridMode" : 0,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -37,11 +38,11 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json"
     },
     "parentValueLevel" : 1,
-    "parentFilter" : "parent",
     "getParentPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
+    "parentFilter" : "parent",
     "searchMode" : 3,
     "name" : "子目录 - 子目录"
   }, {
@@ -58,20 +59,18 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json"
     },
     "parentValueLevel" : 1,
-    "parentFilter" : "parent",
     "getParentPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
+    "parentFilter" : "parent",
     "searchMode" : 3,
     "name" : "目录 - 子目录"
   } ],
   "enableRootSelect" : false,
   "outputIconDefault" : true,
   "enableSearchDefault" : false,
-  "treeGridMode" : 0,
   "controlType" : "TREEVIEW",
-  "codeName" : "ModuleWeiHu",
   "getPSDETreeNodes" : [ {
     "nodeValue" : "root",
     "text" : "默认根节点",
@@ -90,9 +89,9 @@
     "nodeType" : "ROOT",
     "disableSelect" : false,
     "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "默认根节点",
     "id" : "ROOT"
   }, {
@@ -110,13 +109,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
     },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchChildModuleByParent"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "maxSize" : -1,
     "enableQuickCreate" : false,
@@ -139,14 +138,14 @@
     "enableViewData" : false,
     "nodeType" : "ChileModule",
     "disableSelect" : false,
+    "enableQuickSearch" : false,
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "子目录",
     "id" : "ChileModule"
   }, {
@@ -164,6 +163,21 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "srfroot",
+      "key" : "n_root_eq",
+      "name" : "n_root_eq"
+    }, {
+      "rawValue" : false,
+      "value" : "srfparent",
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq"
+    } ],
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
       "getPSDEToolbarItems" : [ {
@@ -171,14 +185,15 @@
           "modelref" : true,
           "id" : "allmodule_cm_deuiaction1"
         },
+        "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
-          "codeName" : "RefreshAll",
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "codeName" : "RefreshAll",
           "caption" : "刷新",
           "uIActionTag" : "RefreshAll",
           "uIActionType" : "DEUIACTION",
@@ -186,7 +201,6 @@
           "fullCodeName" : "RefreshAll",
           "name" : "树界面_刷新全部操作"
         },
-        "noPrivDisplayMode" : 2,
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
@@ -214,33 +228,18 @@
     },
     "enableNewData" : false,
     "enableEditData" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
-    },
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "srfroot",
-      "key" : "n_root_eq",
-      "name" : "n_root_eq"
-    }, {
-      "rawValue" : false,
-      "value" : "srfparent",
-      "key" : "n_parent_eq",
-      "name" : "n_parent_eq"
-    } ],
     "nodeType" : "AllModule",
     "disableSelect" : false,
+    "enableQuickSearch" : false,
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : true,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : true,
     "name" : "所有分类",
     "id" : "AllModule"
   }, {
@@ -258,13 +257,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
     },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchChildModuleByRealParent"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "maxSize" : -1,
     "enableQuickCreate" : false,
@@ -287,17 +286,18 @@
     "enableViewData" : false,
     "nodeType" : "Module",
     "disableSelect" : false,
+    "enableQuickSearch" : false,
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
       "cssClass" : "fa fa-folder-o"
     },
-    "enableQuickSearch" : false,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "目录",
     "id" : "Module"
   } ],
+  "codeName" : "ModuleWeiHu",
   "rootVisible" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -334,14 +334,15 @@
         "modelref" : true,
         "id" : "allmodule_cm_deuiaction1"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "RefreshAll",
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "codeName" : "RefreshAll",
         "caption" : "刷新",
         "uIActionTag" : "RefreshAll",
         "uIActionType" : "DEUIACTION",
@@ -349,7 +350,6 @@
         "fullCodeName" : "RefreshAll",
         "name" : "树界面_刷新全部操作"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf021@FontAwesome",
         "cssClass" : "fa fa-refresh"

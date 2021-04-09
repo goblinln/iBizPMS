@@ -12,9 +12,9 @@
         "editorType" : "SPAN",
         "name" : "pri"
       },
-      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 2,
         "colLG" : 2,
@@ -31,8 +31,8 @@
         "editorType" : "SPAN",
         "name" : "name"
       },
-      "hidden" : false,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 10,
         "colLG" : 10,
@@ -49,8 +49,8 @@
         "editorType" : "SPAN",
         "name" : "date1"
       },
-      "hidden" : false,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -71,9 +71,9 @@
         "editorType" : "SPAN",
         "name" : "begin"
       },
-      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -94,9 +94,9 @@
         "editorType" : "SPAN",
         "name" : "status"
       },
-      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,

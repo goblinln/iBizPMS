@@ -8,11 +8,10 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
-      "resetItemNames" : [ "teams" ],
       "getPSEditor" : {
         "singleSelect" : true,
         "getPSAppCodeList" : {
@@ -23,19 +22,19 @@
         "placeHolder" : "选择一个部门的成员",
         "name" : "dept"
       },
-      "inputTipClosable" : false,
+      "resetItemNames" : [ "teams" ],
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "选择部门",
-      "allowEmpty" : true,
       "labelWidth" : 80,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "resetItemName" : "teams",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,
@@ -46,6 +45,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "dept"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -73,18 +73,17 @@
         "placeHolder" : "选择一个团队",
         "name" : "teams"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "复制团队",
-      "allowEmpty" : true,
       "labelWidth" : 80,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,
@@ -113,6 +112,7 @@
     "id" : "teams",
     "dataType" : 25
   } ],
+  "noTabHeader" : true,
   "codeName" : "Default",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

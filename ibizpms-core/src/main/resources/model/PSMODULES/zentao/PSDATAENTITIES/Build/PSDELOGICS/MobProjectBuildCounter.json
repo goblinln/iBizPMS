@@ -5,16 +5,14 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "MobProjectBuildCounter",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6385"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -23,22 +21,22 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接587"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取完成的需求数"
   }, {
@@ -47,18 +45,18 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall3",
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall3",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取产生的bug"
   }, {
@@ -67,22 +65,22 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall2",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8410"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取解决的bug"
   } ],
@@ -121,13 +119,15 @@
     "name" : "连接587"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "MobProjectBuildCounter",
   "logicName" : "移动端项目版本计数器",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

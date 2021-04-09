@@ -5,8 +5,6 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "Remove__MSDeny",
   "getPSDELogicNodes" : [ {
     "errorCode" : 0,
     "errorInfo" : "状态[正常_已置顶]拒绝[Remove]操作",
@@ -25,8 +23,6 @@
       "modelref" : true,
       "id" : "Temp"
     },
-    "logicHolder" : 3,
-    "codeName" : "Get",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "状态[关闭_已置顶]拒绝[Remove]操作"
@@ -34,6 +30,8 @@
       "modelref" : true,
       "id" : "状态[正常_已置顶]拒绝[Remove]操作"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Get",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
@@ -42,14 +40,11 @@
     "name" : "获取数据"
   }, {
     "parallelOutput" : false,
-    "logicHolder" : 3,
-    "codeName" : "PrepareTemp",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "默认连接"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Temp"
@@ -58,11 +53,14 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
       "srcFieldName" : "ID",
       "name" : "复制主键"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "PrepareTemp",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备临时参数"
   }, {
@@ -75,12 +73,12 @@
     "name" : "状态[关闭_已置顶]拒绝[Remove]操作"
   }, {
     "parallelOutput" : false,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "默认连接"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   } ],
@@ -107,23 +105,24 @@
     },
     "name" : "默认连接"
   }, {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "closed",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[closed]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",
@@ -134,7 +133,6 @@
       "logicType" : "GROUP",
       "id" : "f4586da9b38b2efdf87b699aa1c7472e__MSDENY__closed_1"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "DenyByclosed_1"
@@ -145,23 +143,24 @@
     },
     "name" : "状态[关闭_已置顶]拒绝[Remove]操作"
   }, {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "normal",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[normal]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",
@@ -172,7 +171,6 @@
       "logicType" : "GROUP",
       "id" : "f4586da9b38b2efdf87b699aa1c7472e__MSDENY__normal_1"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "DenyBynormal_1"
@@ -184,20 +182,22 @@
     "name" : "状态[正常_已置顶]拒绝[Remove]操作"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Temp",
     "default" : false,
     "name" : "临时变量"
   }, {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "默认变量"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "Remove__MSDeny",
   "logicName" : "行为[Remove]主状态拒绝逻辑",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

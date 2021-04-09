@@ -36,7 +36,6 @@
     "id" : "0"
   },
   "controlType" : "CHART",
-  "codeName" : "BurnDown2",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
     "catalogField" : "DATE",
@@ -52,16 +51,17 @@
       "id" : "0"
     },
     "getPSChartSeriesEncode" : {
-      "getPSChartXAxis" : {
+      "getPSChartYAxis" : {
         "modelref" : true,
         "id" : "0"
       },
-      "getPSChartYAxis" : {
+      "getPSChartXAxis" : {
         "modelref" : true,
         "id" : "0"
       },
       "x" : [ "DATE" ],
       "y" : [ "LEFT" ],
+      "type" : "XY",
       "index" : 0,
       "name" : "坐标系编码",
       "id" : "0"
@@ -90,16 +90,17 @@
       "id" : "1"
     },
     "getPSChartSeriesEncode" : {
-      "getPSChartXAxis" : {
+      "getPSChartYAxis" : {
         "modelref" : true,
         "id" : "0"
       },
-      "getPSChartYAxis" : {
+      "getPSChartXAxis" : {
         "modelref" : true,
         "id" : "0"
       },
       "x" : [ "date" ],
       "y" : [ "estimate" ],
+      "type" : "XY",
       "index" : 0,
       "name" : "坐标系编码",
       "id" : "0"
@@ -113,22 +114,13 @@
       "ECX.label" : "{show: false,position: 'inside'}"
     }
   } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "position" : "left",
-    "type" : "numeric",
-    "caption" : "消耗工时",
-    "index" : 0,
-    "name" : "Y",
-    "id" : "0"
-  } ],
+  "codeName" : "BurnDown2",
   "getPSChartXAxises" : [ {
     "eChartsType" : "category",
     "eChartsPos" : "xAxis",
     "position" : "bottom",
-    "type" : "category",
     "caption" : "日期",
+    "type" : "category",
     "index" : 0,
     "name" : "X",
     "id" : "0"
@@ -156,6 +148,16 @@
     "type" : "grid",
     "index" : 0,
     "name" : "[real]直角坐标系[0]",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "eChartsType" : "value",
+    "eChartsPos" : "yAxis",
+    "position" : "left",
+    "caption" : "消耗工时",
+    "type" : "numeric",
+    "index" : 0,
+    "name" : "Y",
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {
@@ -204,11 +206,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
   },
   "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn/PSCHARTS/BurnDown2.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn/PSCHARTS/BurnDown2.json",
   "logicName" : "BurnDown2",
   "modelid" : "dde39a9842220d96c7f2a9bc8e0559ad"
 }

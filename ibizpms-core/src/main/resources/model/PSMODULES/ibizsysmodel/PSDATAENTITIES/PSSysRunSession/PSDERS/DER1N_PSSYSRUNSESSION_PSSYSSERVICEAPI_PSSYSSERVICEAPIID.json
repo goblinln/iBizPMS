@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "PSSYSSERVICEAPIID",
     "codeName" : "PSSysServiceAPIId"
@@ -8,9 +7,10 @@
     "name" : "PSSYSSERVICEAPINAME",
     "codeName" : "PSSysServiceAPIName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 0,
-  "masterRS" : 0,
   "pickupDEFName" : "PSSYSSERVICEAPIID",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

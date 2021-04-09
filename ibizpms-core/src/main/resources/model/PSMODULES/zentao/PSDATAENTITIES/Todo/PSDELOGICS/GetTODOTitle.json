@@ -5,16 +5,14 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "GetTODOTitle",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接2248"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -23,38 +21,39 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "IDVALUE",
       "name" : "Default[IDVALUE]"
     }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "TYPE",
       "name" : "Default[TYPE]"
     } ],
+    "logicHolder" : 1,
+    "codeName" : "Rawsqlcall1",
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取待办的标题"
   } ],
   "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "NOTEQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "NOTEQ",
         "paramValue" : "custom",
         "dstFieldName" : "TYPE",
         "logicType" : "SINGLE",
@@ -65,7 +64,6 @@
       "logicType" : "GROUP",
       "id" : "ebd2fbaf04bcd5b36e9e71e557351d9b"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall1"
@@ -77,13 +75,15 @@
     "name" : "连接2248"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "GetTODOTitle",
   "logicName" : "获取待办名称",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

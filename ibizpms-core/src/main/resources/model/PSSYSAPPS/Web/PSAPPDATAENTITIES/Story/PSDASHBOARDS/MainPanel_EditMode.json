@@ -26,13 +26,13 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       },
-      "getPSControlHandler" : {
-        "enableDEFieldPrivilege" : false,
-        "id" : "dashboard_container3"
-      },
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_container3"
       },
       "codeName" : "MainView_EditModedashboard_container3",
       "name" : "dashboard_container3"
@@ -48,13 +48,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "dashboard_container1"
-    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true
+    },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "dashboard_container1"
     },
     "codeName" : "MainView_EditModedashboard_container1",
     "name" : "dashboard_container1"

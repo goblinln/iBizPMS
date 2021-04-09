@@ -1,12 +1,12 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "DOC",
     "codeName" : "Doc"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
-  "masterRS" : 0,
   "pickupDEFName" : "DOC",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

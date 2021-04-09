@@ -3,37 +3,37 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Testcase__stage.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Testcase__stage.json",
   "codeName" : "Testcase__stage",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "unittest",
     "codeName" : "Unittest",
-    "text" : "单元测试阶段"
+    "text" : "单元测试阶段",
+    "value" : "unittest"
   }, {
-    "value" : "feature",
     "codeName" : "Feature",
-    "text" : "功能测试阶段"
+    "text" : "功能测试阶段",
+    "value" : "feature"
   }, {
-    "value" : "intergrate",
     "codeName" : "Intergrate",
-    "text" : "集成测试阶段"
+    "text" : "集成测试阶段",
+    "value" : "intergrate"
   }, {
-    "value" : "system",
     "codeName" : "System",
-    "text" : "系统测试阶段"
+    "text" : "系统测试阶段",
+    "value" : "system"
   }, {
-    "value" : "smoke",
     "codeName" : "Smoke",
-    "text" : "冒烟测试阶段"
+    "text" : "冒烟测试阶段",
+    "value" : "smoke"
   }, {
-    "value" : "bvt",
     "codeName" : "Bvt",
-    "text" : "版本验证阶段"
+    "text" : "版本验证阶段",
+    "value" : "bvt"
   } ]
 }

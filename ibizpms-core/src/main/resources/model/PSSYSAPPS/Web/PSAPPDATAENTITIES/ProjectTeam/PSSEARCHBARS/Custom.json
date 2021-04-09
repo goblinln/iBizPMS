@@ -13,10 +13,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "typeeq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "团队类型(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_TYPE_EQ",
@@ -28,10 +25,13 @@
       "name" : "N_TYPE_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "团队类型(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
@@ -49,10 +49,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "accounteq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "用户(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_ACCOUNT_EQ",
@@ -64,9 +61,12 @@
       "name" : "N_ACCOUNT_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "用户(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
@@ -84,10 +84,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "accountlike"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "用户(%)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_ACCOUNT_LIKE",
@@ -99,9 +96,12 @@
       "name" : "N_ACCOUNT_LIKE"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "用户(%)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
@@ -120,10 +120,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "limitedeq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "受限用户(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_LIMITED_EQ",
@@ -135,10 +132,13 @@
       "name" : "N_LIMITED_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "受限用户(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "LIMITED",
       "codeName" : "Limited"
@@ -156,10 +156,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "rooteq"
     },
-    "hidden" : false,
     "dataType" : 1,
-    "needCodeListConfig" : true,
-    "caption" : "项目编号(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_ROOT_EQ",
@@ -171,9 +168,12 @@
       "name" : "N_ROOT_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "项目编号(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
@@ -183,8 +183,8 @@
   } ],
   "enableFilter" : true,
   "controlType" : "SEARCHBAR",
-  "codeName" : "Custom",
   "enableQuickSearch" : true,
+  "codeName" : "Custom",
   "enableGroup" : false,
   "quickSearchWidth" : 0,
   "getPSAppDataEntity" : {

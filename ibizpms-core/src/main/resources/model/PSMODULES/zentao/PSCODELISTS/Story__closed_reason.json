@@ -3,41 +3,41 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__closed_reason.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__closed_reason.json",
   "codeName" : "Story__closed_reason",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "done",
     "codeName" : "Done",
-    "text" : "已完成"
+    "text" : "已完成",
+    "value" : "done"
   }, {
-    "value" : "subdivided",
     "codeName" : "Subdivided",
-    "text" : "已细分"
+    "text" : "已细分",
+    "value" : "subdivided"
   }, {
-    "value" : "duplicate",
     "codeName" : "Duplicate",
-    "text" : "重复"
+    "text" : "重复",
+    "value" : "duplicate"
   }, {
-    "value" : "postponed",
     "codeName" : "Postponed",
-    "text" : "延期"
+    "text" : "延期",
+    "value" : "postponed"
   }, {
-    "value" : "willnotdo",
     "codeName" : "Willnotdo",
-    "text" : "不做"
+    "text" : "不做",
+    "value" : "willnotdo"
   }, {
-    "value" : "cancel",
     "codeName" : "Cancel",
-    "text" : "已取消"
+    "text" : "已取消",
+    "value" : "cancel"
   }, {
-    "value" : "bydesign",
     "codeName" : "Bydesign",
-    "text" : "设计如此"
+    "text" : "设计如此",
+    "value" : "bydesign"
   } ]
 }

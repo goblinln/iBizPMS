@@ -5,20 +5,20 @@
   },
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "codeName" : "Project_staus",
   "getPSCodeItems" : [ {
-    "value" : "doing",
     "codeName" : "Doing",
-    "text" : "进行中"
+    "text" : "进行中",
+    "value" : "doing"
   }, {
-    "value" : "suspended",
     "codeName" : "Suspended",
-    "text" : "已挂起"
+    "text" : "已挂起",
+    "value" : "suspended"
   }, {
-    "value" : "closed",
     "codeName" : "Closed",
-    "text" : "已关闭"
+    "text" : "已关闭",
+    "value" : "closed"
   } ],
+  "codeName" : "Project_staus",
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project_staus.json",

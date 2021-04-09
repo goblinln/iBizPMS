@@ -4,203 +4,217 @@
       "name" : "RESULTCNT",
       "codeName" : "ResultCNT"
     },
-    "name" : "resultcnt",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "resultcnt"
   }, {
     "getPSAppDEField" : {
       "name" : "FROMBUG",
       "codeName" : "FromBug"
     },
-    "name" : "frombug",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "frombug"
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS1",
       "codeName" : "Status1"
     },
-    "name" : "status1",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "status1"
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "name" : "type",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "type"
   }, {
-    "name" : "srfmstag",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmstag"
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
-    "name" : "openedby",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "openedby"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "id",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "id"
   }, {
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "name" : "assignedto",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "assignedto"
   }, {
     "getPSAppDEField" : {
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "name" : "story",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "story"
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "name" : "title",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "title"
   }, {
     "getPSAppDEField" : {
       "name" : "CASESTEPS",
       "codeName" : "CaseSteps"
     },
-    "name" : "casesteps",
-    "dataType" : 21
+    "dataType" : 21,
+    "name" : "casesteps"
   }, {
     "getPSAppDEField" : {
       "name" : "FROMCASEID",
       "codeName" : "FromCaseId"
     },
-    "name" : "fromcaseid",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "fromcaseid"
   }, {
     "getPSAppDEField" : {
       "name" : "ISFAVORITES",
       "codeName" : "Isfavorites"
     },
-    "name" : "isfavorites",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "isfavorites"
   }, {
     "getPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
     },
-    "name" : "module",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "module"
   }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "LASTRUNDATE",
       "codeName" : "LastRunDate"
     },
-    "name" : "lastrundate",
-    "dataType" : 5
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "lastrundate"
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "name" : "status",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "status"
   }, {
     "getPSAppDEField" : {
       "name" : "TASK",
       "codeName" : "Task"
     },
-    "name" : "task",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "task"
   }, {
     "getPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "name" : "product",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "product"
   }, {
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "name" : "pri",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "pri"
   }, {
     "getPSAppDEField" : {
       "name" : "LIB",
       "codeName" : "Lib"
     },
-    "name" : "lib",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "lib"
   }, {
     "getPSAppDEField" : {
       "name" : "LASTRUNRESULT1",
       "codeName" : "Lastrunresult1"
     },
-    "name" : "lastrunresult1",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "lastrunresult1"
   }, {
     "getPSAppDEField" : {
       "name" : "COLOR",
       "codeName" : "Color"
     },
-    "name" : "color",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "color"
   }, {
     "getPSAppDEField" : {
       "name" : "LASTRUNRESULT",
       "codeName" : "LastRunResult"
     },
-    "name" : "lastrunresult",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "lastrunresult"
   }, {
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
-    "name" : "branch",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "branch"
   }, {
     "getPSAppDEField" : {
       "name" : "TOBUGCNT",
       "codeName" : "ToBugCNT"
     },
-    "name" : "tobugcnt",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "tobugcnt"
   }, {
     "getPSAppDEField" : {
       "name" : "LASTRUNNER",
       "codeName" : "LastRunner"
     },
-    "name" : "lastrunner",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "lastrunner"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -223,35 +237,21 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
+  "enablePagingBar" : true,
   "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : true,
-  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "id",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -268,11 +268,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
     },
-    "dataItemName" : "pri",
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
+    "dataItemName" : "pri",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -284,21 +284,20 @@
     "widthUnit" : "PX",
     "name" : "pri"
   }, {
-    "linkValueItem" : "srfkey",
     "excelCaption" : "用例标题",
+    "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
+    "dataItemName" : "title",
     "getPSDEUIAction" : {
-      "getNoPrivDisplayMode" : 2,
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -309,6 +308,7 @@
         "viewType" : "DEPORTALVIEW"
       },
       "frontProcessType" : "WIZARD",
+      "getNoPrivDisplayMode" : 2,
       "timeout" : 60000,
       "codeName" : "Edits",
       "caption" : "概况",
@@ -340,11 +340,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__type.json"
     },
-    "dataItemName" : "type",
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
+    "dataItemName" : "type",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -361,11 +361,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "openedby",
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
+    "dataItemName" : "openedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -382,11 +382,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
-    "dataItemName" : "assignedto",
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
+    "dataItemName" : "assignedto",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -403,11 +403,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "lastrunner",
     "getPSAppDEField" : {
       "name" : "LASTRUNNER",
       "codeName" : "LastRunner"
     },
+    "dataItemName" : "lastrunner",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -420,11 +420,11 @@
     "name" : "lastrunner"
   }, {
     "excelCaption" : "执行时间",
-    "dataItemName" : "lastrundate",
     "getPSAppDEField" : {
       "name" : "LASTRUNDATE",
       "codeName" : "LastRunDate"
     },
+    "dataItemName" : "lastrundate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -442,11 +442,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__result.json"
     },
-    "dataItemName" : "lastrunresult",
     "getPSAppDEField" : {
       "name" : "LASTRUNRESULT",
       "codeName" : "LastRunResult"
     },
+    "dataItemName" : "lastrunresult",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -463,11 +463,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestCaseStatusGrid.json"
     },
-    "dataItemName" : "status1",
     "getPSAppDEField" : {
       "name" : "STATUS1",
       "codeName" : "Status1"
     },
+    "dataItemName" : "status1",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -480,11 +480,11 @@
     "name" : "status1"
   }, {
     "excelCaption" : "B",
-    "dataItemName" : "tobugcnt",
     "getPSAppDEField" : {
       "name" : "TOBUGCNT",
       "codeName" : "ToBugCNT"
     },
+    "dataItemName" : "tobugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -497,11 +497,11 @@
     "name" : "tobugcnt"
   }, {
     "excelCaption" : "R",
-    "dataItemName" : "resultcnt",
     "getPSAppDEField" : {
       "name" : "RESULTCNT",
       "codeName" : "ResultCNT"
     },
+    "dataItemName" : "resultcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -514,11 +514,11 @@
     "name" : "resultcnt"
   }, {
     "excelCaption" : "S",
-    "dataItemName" : "casesteps",
     "getPSAppDEField" : {
       "name" : "CASESTEPS",
       "codeName" : "CaseSteps"
     },
+    "dataItemName" : "casesteps",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -532,9 +532,8 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -557,12 +556,13 @@
             "key" : "TASK",
             "name" : "TASK"
           } ],
+          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
-          "codeName" : "confirmChange",
           "getPSSysImage" : {
             "glyph" : "xf046@FontAwesome",
             "cssClass" : "fa fa-check-square-o"
           },
+          "codeName" : "confirmChange",
           "caption" : "确认用例变动",
           "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
@@ -574,14 +574,13 @@
           "name" : "确认用例变动",
           "id" : "confirmChange@Case"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "uf5bb958"
       }, {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -608,12 +607,13 @@
             "key" : "TASK",
             "name" : "TASK"
           } ],
+          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
-          "codeName" : "NewBugByTestCaseResult",
           "getPSSysImage" : {
             "glyph" : "xf188@FontAwesome",
             "cssClass" : "fa fa-bug"
           },
+          "codeName" : "NewBugByTestCaseResult",
           "caption" : "转Bug",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
@@ -626,14 +626,13 @@
           "name" : "转Bug（测试单）",
           "id" : "NewBugByTestCaseResult@Case"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ue54667e"
       }, {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -656,12 +655,13 @@
             "key" : "TASK",
             "name" : "TASK"
           } ],
+          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
-          "codeName" : "CASEOpenTestRunResultView",
           "getPSSysImage" : {
             "glyph" : "xf16c@FontAwesome",
             "cssClass" : "fa fa-stack-overflow"
           },
+          "codeName" : "CASEOpenTestRunResultView",
           "caption" : "结果",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__CASE_CASERESULT_BUT",
@@ -672,14 +672,13 @@
           "name" : "打开结果视图（测试单）",
           "id" : "CASEOpenTestRunResultView@Case"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u33ef635"
       }, {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -702,12 +701,13 @@
             "key" : "TASK",
             "name" : "TASK"
           } ],
+          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
-          "codeName" : "CaseExecute",
           "getPSSysImage" : {
             "glyph" : "xf01d@FontAwesome",
             "cssClass" : "fa fa-play-circle-o"
           },
+          "codeName" : "CaseExecute",
           "caption" : "执行",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
@@ -718,14 +718,13 @@
           "name" : "执行测试（测试单）",
           "id" : "CaseExecute@Case"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u8afa84b"
       }, {
-        "showIcon" : true,
+        "addSeparator" : false,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -748,12 +747,13 @@
             "key" : "TASK",
             "name" : "TASK"
           } ],
+          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
-          "codeName" : "unlinkCase",
           "getPSSysImage" : {
             "glyph" : "xf127@FontAwesome",
             "cssClass" : "fa fa-unlink"
           },
+          "codeName" : "unlinkCase",
           "caption" : "移除",
           "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
@@ -765,7 +765,7 @@
           "name" : "移除",
           "id" : "unlinkCase@Case"
         },
-        "addSeparator" : false,
+        "showIcon" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u5da14f5"

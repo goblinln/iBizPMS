@@ -1,6 +1,7 @@
 {
-  "showFormNavBar" : false,
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -25,16 +26,15 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -45,22 +45,21 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "releasetype"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "RELEASETYPE",
         "codeName" : "Releasetype"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "运行模式",
-      "allowEmpty" : true,
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 12,
         "colLG" : 12,
@@ -71,6 +70,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "releasetype"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -81,22 +81,21 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "backgroundid"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "BACKGROUNDID",
         "codeName" : "Backgroundid"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "后台体系",
-      "allowEmpty" : true,
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 12,
         "colLG" : 12,
@@ -107,6 +106,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "backgroundid"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -117,22 +117,21 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "sqlid"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "SQLID",
         "codeName" : "Sqlid"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "运行数据库",
-      "allowEmpty" : true,
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 12,
         "colLG" : 12,
@@ -143,6 +142,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "sqlid"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -153,22 +153,21 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "frontapplication"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "FRONTAPPLICATION",
         "codeName" : "Frontapplication"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "系统应用",
-      "allowEmpty" : true,
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 12,
         "colLG" : 12,
@@ -179,6 +178,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "frontapplication"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -189,22 +189,21 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "rebuild"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "REBUILD",
         "codeName" : "Rebuild"
       },
-      "hidden" : false,
       "dataType" : 9,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "重新构建",
-      "allowEmpty" : true,
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 12,
         "colLG" : 12,
@@ -306,6 +305,7 @@
       "codeName" : "Id"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "TestBuildRelease",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

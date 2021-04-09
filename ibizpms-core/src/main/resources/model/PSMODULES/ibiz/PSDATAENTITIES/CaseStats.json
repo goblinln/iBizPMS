@@ -4,19 +4,6 @@
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
-    "deployId" : "79c5bd826ed313321aaf4133994b92fd",
-    "codeName" : "Passcase",
-    "logicName" : "通过用例数",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "0",
-      "valueAutoGen" : false,
-      "columnName" : "PASSCASE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PASSCASE"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "getAllPSDEFValueRules" : [ {
@@ -39,24 +26,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "0",
+      "columnName" : "PASSCASE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PASSCASE"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "79c5bd826ed313321aaf4133994b92fd",
+    "codeName" : "Passcase",
+    "logicName" : "通过用例数",
+    "stdDataType" : 9,
     "name" : "PASSCASE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
-    "deployId" : "b8f3a20b5332a85e39c5f02a93006e6b",
-    "codeName" : "Blockedcase",
-    "logicName" : "阻塞用例数",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "0",
-      "valueAutoGen" : false,
-      "columnName" : "BLOCKEDCASE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "BLOCKEDCASE"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "getAllPSDEFValueRules" : [ {
@@ -79,24 +66,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "0",
+      "columnName" : "BLOCKEDCASE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "BLOCKEDCASE"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "b8f3a20b5332a85e39c5f02a93006e6b",
+    "codeName" : "Blockedcase",
+    "logicName" : "阻塞用例数",
+    "stdDataType" : 9,
     "name" : "BLOCKEDCASE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
-    "deployId" : "cd8ab7d39f2454c58f3e7b11ece251d3",
-    "codeName" : "Totalruncase",
-    "logicName" : "总执行数",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "0",
-      "valueAutoGen" : false,
-      "columnName" : "TOTALRUNCASE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "TOTALRUNCASE"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "getAllPSDEFValueRules" : [ {
@@ -119,24 +106,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "0",
+      "columnName" : "TOTALRUNCASE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TOTALRUNCASE"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "cd8ab7d39f2454c58f3e7b11ece251d3",
+    "codeName" : "Totalruncase",
+    "logicName" : "总执行数",
+    "stdDataType" : 9,
     "name" : "TOTALRUNCASE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
-    "deployId" : "08bbb03465daf9c6562722fdfa57e968",
-    "codeName" : "Failcase",
-    "logicName" : "失败用例数",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "0",
-      "valueAutoGen" : false,
-      "columnName" : "FAILCASE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "FAILCASE"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "getAllPSDEFValueRules" : [ {
@@ -159,24 +146,22 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "FAILCASE"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "8ada09e9ae73236bf5dcd0e3631be3f8",
-    "codeName" : "Title",
-    "logicName" : "用例标题",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`TITLE`",
       "valueAutoGen" : false,
-      "columnName" : "TITLE",
+      "queryCodeExp" : "0",
+      "columnName" : "FAILCASE",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "TITLE"
+      "name" : "FAILCASE"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "08bbb03465daf9c6562722fdfa57e968",
+    "codeName" : "Failcase",
+    "logicName" : "失败用例数",
+    "stdDataType" : 9,
+    "name" : "FAILCASE"
+  }, {
+    "dataType" : "TEXT",
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
@@ -191,8 +176,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "TITLE",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -213,24 +198,26 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`TITLE`",
+      "columnName" : "TITLE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TITLE"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "8ada09e9ae73236bf5dcd0e3631be3f8",
+    "codeName" : "Title",
+    "logicName" : "用例标题",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "TITLE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
-    "deployId" : "8a804b914a8e0fbfc83272754e3696dd",
-    "codeName" : "Totalcase",
-    "logicName" : "总用例数",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "0",
-      "valueAutoGen" : false,
-      "columnName" : "TOTALCASE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "TOTALCASE"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 2,
     "getAllPSDEFValueRules" : [ {
@@ -253,16 +240,22 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "0",
+      "columnName" : "TOTALCASE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TOTALCASE"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "8a804b914a8e0fbfc83272754e3696dd",
+    "codeName" : "Totalcase",
+    "logicName" : "总用例数",
+    "stdDataType" : 9,
     "name" : "TOTALCASE"
   }, {
-    "length" : 100,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "bf2bc57b72a14399425e7efeb04f5593",
-    "codeName" : "Passrate",
-    "logicName" : "用例通过率",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -275,8 +268,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PASSRATE",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -297,25 +290,18 @@
       },
       "name" : "默认规则"
     } ],
-    "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "uIAssistDEField" : true,
+    "deployId" : "bf2bc57b72a14399425e7efeb04f5593",
+    "codeName" : "Passrate",
+    "logicName" : "用例通过率",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
+    "length" : 100,
     "name" : "PASSRATE"
   }, {
-    "length" : 20,
     "dataType" : "ACID",
-    "valueFormat" : "%1$s",
-    "deployId" : "f614ff1a8342e513345662da502b0e85",
-    "codeName" : "Id",
-    "logicName" : "用例编号",
-    "stdDataType" : 1,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`ID`",
-      "valueAutoGen" : false,
-      "columnName" : "ID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : true,
-      "name" : "ID"
-    } ],
     "keyDEField" : true,
     "importOrder" : 1000,
     "enableDBAutoValue" : true,
@@ -341,6 +327,20 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ID`",
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : true,
+      "name" : "ID"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "f614ff1a8342e513345662da502b0e85",
+    "codeName" : "Id",
+    "logicName" : "用例编号",
+    "stdDataType" : 1,
+    "length" : 20,
     "name" : "ID"
   }, {
     "phisicalDEField" : false,
@@ -349,19 +349,13 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats/PSDERS/DER1N_IBZ_CASESTATS_ZT_MODULE_MODULE.json"
     },
     "valueFormat" : "%1$s",
+    "uIAssistDEField" : true,
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "uIAssistDEField" : true,
-    "length" : 60,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "febcc1395bd6c6358e160f120b72d273",
-    "codeName" : "Modulename",
-    "logicName" : "模块名称",
-    "stringLength" : 60,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -374,8 +368,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "MODULENAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -396,6 +390,12 @@
       },
       "name" : "默认规则"
     } ],
+    "deployId" : "febcc1395bd6c6358e160f120b72d273",
+    "codeName" : "Modulename",
+    "logicName" : "模块名称",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
     "name" : "MODULENAME"
   }, {
     "getPSDER" : {
@@ -408,20 +408,7 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "length" : 8,
     "dataType" : "PICKUP",
-    "deployId" : "a0396c31697d1b6668e36ac8b2eafc45",
-    "codeName" : "Product",
-    "logicName" : "产品",
-    "stdDataType" : 1,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PRODUCT`",
-      "valueAutoGen" : false,
-      "columnName" : "PRODUCT",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PRODUCT"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -444,6 +431,19 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`PRODUCT`",
+      "columnName" : "PRODUCT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PRODUCT"
+    } ],
+    "deployId" : "a0396c31697d1b6668e36ac8b2eafc45",
+    "codeName" : "Product",
+    "logicName" : "产品",
+    "stdDataType" : 1,
+    "length" : 8,
     "name" : "PRODUCT"
   }, {
     "getPSDER" : {
@@ -457,18 +457,6 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "deployId" : "95e154ec84963efadb212a3225baa898",
-    "codeName" : "Module",
-    "logicName" : "模块",
-    "stdDataType" : 1,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`MODULE`",
-      "valueAutoGen" : false,
-      "columnName" : "MODULE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "MODULE"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -491,6 +479,18 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`MODULE`",
+      "columnName" : "MODULE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "MODULE"
+    } ],
+    "deployId" : "95e154ec84963efadb212a3225baa898",
+    "codeName" : "Module",
+    "logicName" : "模块",
+    "stdDataType" : 1,
     "name" : "MODULE"
   } ],
   "getAllPSDEDataSets" : [ {
@@ -498,38 +498,38 @@
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "Default",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "Default",
     "logicName" : "数据集",
-    "extendMode" : 0,
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
-    "pageSize" : -1,
     "name" : "DEFAULT"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "TestCaseStats",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "TestCaseStats",
     "logicName" : "测试用例统计",
-    "extendMode" : 0,
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
-    "pageSize" : -1,
     "name" : "TestCaseStats"
   } ],
   "getAllPSDEActions" : [ {
@@ -560,9 +560,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "数据查询",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -571,9 +571,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "TestCaseStats",
     "logicName" : "测试用例统计",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "TestCaseStats"
   }, {
@@ -582,19 +582,27 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
-  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
+  "enableUIActions" : 15,
+  "orderValue" : 99999,
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "serviceCodeName" : "CaseStats",
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -609,20 +617,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
-  "deployId" : "3294041fa814dcb0867719ff5f4f815f",
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
   "dynaInstMode" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "dSLink" : "DEFAULT",
+  "deployId" : "3294041fa814dcb0867719ff5f4f815f",
   "codeName" : "CaseStats",
   "logicName" : "测试用例统计",
   "tableName" : "zt_case",
-  "serviceCodeName" : "CaseStats",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -631,12 +635,8 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

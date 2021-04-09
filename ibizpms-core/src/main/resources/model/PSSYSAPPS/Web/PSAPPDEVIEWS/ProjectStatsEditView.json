@@ -1,6 +1,6 @@
 {
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "showCaptionBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "EditView",
   "funcViewMode" : "EDITVIEW",
@@ -9,8 +9,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -25,12 +25,12 @@
     "engineType" : "EditView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "FORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "FORM"
     }, {
+      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0,
-      "paramType" : "VALUE"
+      "value" : 0
     } ],
     "name" : "engine"
   } ],
@@ -83,6 +83,7 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -94,8 +95,12 @@
         "lanResTag" : "TBB.TEXT.*.SAVE",
         "id" : "工具栏按钮文本[*.SAVE]"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.SAVE",
+        "id" : "工具栏按钮提示[*.SAVE]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.SAVE",
           "id" : "工具栏按钮文本[*.SAVE]"
@@ -104,12 +109,13 @@
           "lanResTag" : "TBB.TOOLTIP.*.SAVE",
           "id" : "工具栏按钮提示[*.SAVE]"
         },
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "Save",
         "getPSSysImage" : {
           "glyph" : "xf0c7@FontAwesome",
           "cssClass" : "fa fa-save"
         },
+        "codeName" : "Save",
         "caption" : "保存",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "uIActionTag" : "Save",
@@ -118,11 +124,6 @@
         "fullCodeName" : "Save",
         "name" : "编辑界面_保存操作"
       },
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.SAVE",
-        "id" : "工具栏按钮提示[*.SAVE]"
-      },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf0c7@FontAwesome",
         "cssClass" : "fa fa-save"
@@ -143,8 +144,12 @@
         "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW",
         "id" : "工具栏按钮文本[EDITVIEW.SAVEANDNEW]"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW",
+        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDNEW]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW",
           "id" : "工具栏按钮文本[EDITVIEW.SAVEANDNEW]"
@@ -153,11 +158,12 @@
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW",
           "id" : "工具栏按钮提示[EDITVIEW.SAVEANDNEW]"
         },
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "SaveAndNew",
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandnew"
         },
+        "codeName" : "SaveAndNew",
         "caption" : "保存并新建",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "uIActionTag" : "SaveAndNew",
@@ -166,11 +172,6 @@
         "fullCodeName" : "SaveAndNew",
         "name" : "编辑界面_保存并新建操作"
       },
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW",
-        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDNEW]"
-      },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "cssClass" : "sx-tb-saveandnew"
       },
@@ -190,8 +191,12 @@
         "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
         "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
           "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
@@ -200,11 +205,12 @@
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
           "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
         },
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "SaveAndExit",
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
+        "codeName" : "SaveAndExit",
         "caption" : "保存并关闭",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "uIActionTag" : "SaveAndExit",
@@ -213,11 +219,6 @@
         "fullCodeName" : "SaveAndExit",
         "name" : "编辑界面_保存并退出操作"
       },
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
-        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
-      },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "cssClass" : "sx-tb-saveandclose"
       },
@@ -237,8 +238,12 @@
         "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE",
         "id" : "工具栏按钮文本[EDITVIEW.REMOVEANDCLOSE]"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
+        "id" : "工具栏按钮提示[EDITVIEW.REMOVEANDCLOSE]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE",
           "id" : "工具栏按钮文本[EDITVIEW.REMOVEANDCLOSE]"
@@ -247,12 +252,13 @@
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
           "id" : "工具栏按钮提示[EDITVIEW.REMOVEANDCLOSE]"
         },
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "RemoveAndExit",
         "getPSSysImage" : {
           "glyph" : "xf00d@FontAwesome",
           "cssClass" : "fa fa-remove"
         },
+        "codeName" : "RemoveAndExit",
         "caption" : "删除",
         "actionTarget" : "SINGLEKEY",
         "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
@@ -262,11 +268,6 @@
         "fullCodeName" : "RemoveAndExit",
         "name" : "编辑界面_删除并退出操作"
       },
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
-        "id" : "工具栏按钮提示[EDITVIEW.REMOVEANDCLOSE]"
-      },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf00d@FontAwesome",
         "cssClass" : "fa fa-remove"
@@ -292,8 +293,9 @@
     "name" : "toolbar",
     "modelid" : "a4eb00b17f8652bdf677cb4ed5231e63"
   }, {
-    "showFormNavBar" : false,
     "enableAutoSave" : false,
+    "infoFormMode" : true,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -318,14 +320,12 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : true,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : true,
@@ -342,84 +342,85 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
-            "compositeItem" : true,
             "getPSDEFormItems" : [ {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom7"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "TOTALWH",
                 "codeName" : "Totalwh"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "总工时",
               "allowEmpty" : true,
+              "caption" : "总工时",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom7",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom7"
             }, {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom8"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "TOTALCONSUMED",
                 "codeName" : "TotalConsumed"
               },
-              "hidden" : true,
               "dataType" : 7,
-              "caption" : "任务消耗总工时",
               "allowEmpty" : true,
+              "caption" : "任务消耗总工时",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom8",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom8"
             } ],
+            "compositeItem" : true,
+            "detailType" : "FORMITEM",
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
+              "getPSSysPFPlugin" : {
+                "pluginType" : "EDITOR_CUSTOMSTYLE",
+                "pluginCode" : "PROGRESSCIRCLEX"
+              },
               "editorHeight" : 250.0,
               "editorType" : "USERCONTROL",
               "editorParams" : {
                 "USERCONTROL" : "TRUE"
               },
-              "getPSSysPFPlugin" : {
-                "pluginType" : "EDITOR_CUSTOMSTYLE",
-                "pluginCode" : "PROGRESSCIRCLEX"
-              },
               "editorStyle" : "PROGRESSCIRCLE",
               "name" : "formitemex4"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "hidden" : false,
             "dataType" : 25,
-            "caption" : "已完成",
             "allowEmpty" : true,
+            "caption" : "已完成",
             "labelWidth" : 0,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "NONE",
             "itemHeight" : 250.0,
             "showCaption" : false,
+            "hidden" : false,
             "contentHeight" : 250.0,
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -449,6 +450,7 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
@@ -456,34 +458,34 @@
               "editorType" : "SPAN",
               "name" : "totalestimate"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "TOTALESTIMATE",
               "codeName" : "TotalEstimate"
             },
-            "hidden" : false,
             "dataType" : 7,
-            "caption" : "预计",
             "allowEmpty" : true,
+            "caption" : "预计",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "TOP",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
               "layout" : "TABLE_24COL"
             },
-            "codeName" : "totalestimate",
             "getPSSysCss" : {
               "cssName" : "text-center"
             },
+            "codeName" : "totalestimate",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "totalestimate"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
@@ -491,34 +493,34 @@
               "editorType" : "SPAN",
               "name" : "totalconsumed"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "TOTALCONSUMED",
               "codeName" : "TotalConsumed"
             },
-            "hidden" : false,
             "dataType" : 7,
-            "caption" : "消耗",
             "allowEmpty" : true,
+            "caption" : "消耗",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "TOP",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
               "layout" : "TABLE_24COL"
             },
-            "codeName" : "totalconsumed",
             "getPSSysCss" : {
               "cssName" : "text-center"
             },
+            "codeName" : "totalconsumed",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "totalconsumed"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "enableLinkView" : false,
@@ -526,30 +528,29 @@
               "editorType" : "SPAN",
               "name" : "totalleft"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "TOTALLEFT",
               "codeName" : "TotalLeft"
             },
-            "hidden" : false,
             "dataType" : 7,
-            "caption" : "剩余",
             "allowEmpty" : true,
+            "caption" : "剩余",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "TOP",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
               "layout" : "TABLE_24COL"
             },
-            "codeName" : "totalleft",
             "getPSSysCss" : {
               "cssName" : "text-center"
             },
+            "codeName" : "totalleft",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "totalleft"
@@ -621,18 +622,17 @@
             "showCaption" : true,
             "name" : "rawitem6"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : true,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "yesterdayctaskcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "YESTERDAYCTASKCNT",
               "codeName" : "Yesterdayctaskcnt"
             },
-            "hidden" : true,
             "dataType" : 9,
             "allowEmpty" : true,
             "labelWidth" : 0,
@@ -640,6 +640,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "width" : 0,
@@ -650,26 +651,26 @@
             "detailStyle" : "DEFAULT",
             "name" : "yesterdayctaskcnt"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "taskcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "TASKCNT",
               "codeName" : "TaskCnt"
             },
-            "hidden" : true,
             "dataType" : 9,
-            "caption" : "总任务",
             "allowEmpty" : true,
+            "caption" : "总任务",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 4,
               "colLG" : 4,
@@ -681,74 +682,74 @@
             "detailStyle" : "DEFAULT",
             "name" : "taskcnt"
           }, {
-            "compositeItem" : true,
             "getPSDEFormItems" : [ {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom1"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "TASKCNT",
                 "codeName" : "TaskCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "任务总数",
               "allowEmpty" : true,
+              "caption" : "任务总数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom1",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom1"
             }, {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom2"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "FINISHTASKCNT",
                 "codeName" : "FinishTaskCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "已结束任务总数",
               "allowEmpty" : true,
+              "caption" : "已结束任务总数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom2",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom2"
             } ],
+            "compositeItem" : true,
+            "detailType" : "FORMITEM",
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
-              "editorType" : "USERCONTROL",
-              "editorParams" : {
-                "USERCONTROL" : "TRUE"
-              },
               "getPSSysPFPlugin" : {
                 "pluginType" : "EDITOR_CUSTOMSTYLE",
                 "pluginCode" : "PROGRESSLINE"
               },
+              "editorType" : "USERCONTROL",
+              "editorParams" : {
+                "USERCONTROL" : "TRUE"
+              },
               "editorStyle" : "PROGRESSLINE",
               "name" : "formitemex1"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "hidden" : false,
             "dataType" : 25,
             "allowEmpty" : true,
             "labelWidth" : 70,
@@ -756,6 +757,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 18,
@@ -780,26 +782,26 @@
             "showCaption" : true,
             "name" : "rawitem7"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "undonetaskcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "UNDONETASKCNT",
               "codeName" : "UnDoneTaskCnt"
             },
-            "hidden" : true,
             "dataType" : 9,
-            "caption" : "未完成",
             "allowEmpty" : true,
+            "caption" : "未完成",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 4,
               "colLG" : 4,
@@ -814,10 +816,10 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "codeName" : "grouppanel1",
           "getPSSysCss" : {
             "cssName" : "group-projectstats"
           },
+          "codeName" : "grouppanel1",
           "caption" : "任务统计",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
@@ -861,18 +863,17 @@
             "showCaption" : true,
             "name" : "rawitem5"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : true,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "releasedstorycnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "RELEASEDSTORYCNT",
               "codeName" : "ReleasedStoryCnt"
             },
-            "hidden" : true,
             "dataType" : 9,
             "allowEmpty" : true,
             "labelWidth" : 0,
@@ -880,6 +881,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "width" : 0,
@@ -890,26 +892,26 @@
             "detailStyle" : "DEFAULT",
             "name" : "releasedstorycnt"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "storycnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "STORYCNT",
               "codeName" : "StoryCnt"
             },
-            "hidden" : true,
             "dataType" : 9,
-            "caption" : "总需求",
             "allowEmpty" : true,
+            "caption" : "总需求",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 4,
               "colLG" : 4,
@@ -921,74 +923,74 @@
             "detailStyle" : "DEFAULT",
             "name" : "storycnt"
           }, {
-            "compositeItem" : true,
             "getPSDEFormItems" : [ {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom3"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "STORYCNT",
                 "codeName" : "StoryCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "需求总数",
               "allowEmpty" : true,
+              "caption" : "需求总数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom3",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom3"
             }, {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom4"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "CLOSEDSTORYCNT",
                 "codeName" : "ClosedStoryCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "关闭需求总数",
               "allowEmpty" : true,
+              "caption" : "关闭需求总数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom4",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom4"
             } ],
+            "compositeItem" : true,
+            "detailType" : "FORMITEM",
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
-              "editorType" : "USERCONTROL",
-              "editorParams" : {
-                "USERCONTROL" : "TRUE"
-              },
               "getPSSysPFPlugin" : {
                 "pluginType" : "EDITOR_CUSTOMSTYLE",
                 "pluginCode" : "PROGRESSLINE"
               },
+              "editorType" : "USERCONTROL",
+              "editorParams" : {
+                "USERCONTROL" : "TRUE"
+              },
               "editorStyle" : "PROGRESSLINE",
               "name" : "formitemex2"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "hidden" : false,
             "dataType" : 25,
             "allowEmpty" : true,
             "labelWidth" : 70,
@@ -996,6 +998,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 18,
@@ -1020,26 +1023,26 @@
             "showCaption" : true,
             "name" : "rawitem8"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "unclosedstorycnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "UNCLOSEDSTORYCNT",
               "codeName" : "UnClosedStoryCnt"
             },
-            "hidden" : true,
             "dataType" : 9,
-            "caption" : "未关闭",
             "allowEmpty" : true,
+            "caption" : "未关闭",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 4,
               "colLG" : 4,
@@ -1054,10 +1057,10 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "codeName" : "grouppanel2",
           "getPSSysCss" : {
             "cssName" : "group-projectstats"
           },
+          "codeName" : "grouppanel2",
           "caption" : "需求统计",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
@@ -1086,18 +1089,17 @@
             "showCaption" : true,
             "name" : "rawitem3"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : true,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "yesterdayrbugcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "YESTERDAYRBUGCNT",
               "codeName" : "Yesterdayrbugcnt"
             },
-            "hidden" : true,
             "dataType" : 9,
             "allowEmpty" : true,
             "labelWidth" : 0,
@@ -1105,6 +1107,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "width" : 0,
@@ -1130,26 +1133,26 @@
             "showCaption" : true,
             "name" : "rawitem4"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "bugcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "BUGCNT",
               "codeName" : "BugCnt"
             },
-            "hidden" : true,
             "dataType" : 9,
-            "caption" : "所有",
             "allowEmpty" : true,
+            "caption" : "所有",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 4,
               "colLG" : 4,
@@ -1161,74 +1164,74 @@
             "detailStyle" : "DEFAULT",
             "name" : "bugcnt"
           }, {
-            "compositeItem" : true,
             "getPSDEFormItems" : [ {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom5"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "BUGCNT",
                 "codeName" : "BugCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "Bug总数",
               "allowEmpty" : true,
+              "caption" : "Bug总数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom5",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom5"
             }, {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "custom6"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "FINISHBUGCNT",
                 "codeName" : "FinishBugCnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "已解决Bug总数",
               "allowEmpty" : true,
+              "caption" : "已解决Bug总数",
               "labelWidth" : 70,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "custom6",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "custom6"
             } ],
+            "compositeItem" : true,
+            "detailType" : "FORMITEM",
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
-              "editorType" : "USERCONTROL",
-              "editorParams" : {
-                "USERCONTROL" : "TRUE"
-              },
               "getPSSysPFPlugin" : {
                 "pluginType" : "EDITOR_CUSTOMSTYLE",
                 "pluginCode" : "PROGRESSLINE"
               },
+              "editorType" : "USERCONTROL",
+              "editorParams" : {
+                "USERCONTROL" : "TRUE"
+              },
               "editorStyle" : "PROGRESSLINE",
               "name" : "formitemex3"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "hidden" : false,
             "dataType" : 25,
             "allowEmpty" : true,
             "labelWidth" : 70,
@@ -1236,6 +1239,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 18,
@@ -1260,26 +1264,26 @@
             "showCaption" : true,
             "name" : "rawitem9"
           }, {
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "activebugcnt"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ACTIVEBUGCNT",
               "codeName" : "ActiveBugCnt"
             },
-            "hidden" : true,
             "dataType" : 9,
-            "caption" : "未解决",
             "allowEmpty" : true,
+            "caption" : "未解决",
             "labelWidth" : 70,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "showCaption" : true,
+            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 4,
               "colLG" : 4,
@@ -1294,10 +1298,10 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "codeName" : "grouppanel3",
           "getPSSysCss" : {
             "cssName" : "group-projectstats"
           },
+          "codeName" : "grouppanel3",
           "caption" : "bug统计",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
@@ -1541,12 +1545,19 @@
         "codeName" : "Id"
       }
     } ],
+    "noTabHeader" : true,
     "codeName" : "Main",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -1626,19 +1637,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSFORMS/Main.json",
     "logicName" : "主编辑表单",
     "name" : "form",
     "modelid" : "881e805e623ff3ab79b9d6b30e89797f"
   } ],
-  "viewStyle" : "STYLE2",
-  "codeName" : "ProjectStatsEditView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
@@ -1706,6 +1709,7 @@
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_tbitem10_click"
   } ],
+  "codeName" : "ProjectStatsEditView",
   "viewType" : "DEEDITVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
   "name" : "ProjectStatsEditView"

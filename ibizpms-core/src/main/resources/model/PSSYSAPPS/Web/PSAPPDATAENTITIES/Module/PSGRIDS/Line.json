@@ -4,135 +4,59 @@
       "name" : "SHORT",
       "codeName" : "IBizShort"
     },
-    "name" : "short",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "short"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "name",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "name"
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "name" : "parent",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "parent"
   }, {
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
-    "name" : "branch",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "branch"
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "name" : "type",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "type"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 1
-  } ],
-  "singleSelect" : false,
-  "enableColFilter" : false,
-  "enableRowNew" : true,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "getPSDEGridEditItems" : [ {
-    "getPSEditor" : {
-      "maxLength" : 30,
-      "editorType" : "TEXTBOX",
-      "name" : "short"
-    },
-    "getPSAppDEField" : {
-      "name" : "SHORT",
-      "codeName" : "IBizShort"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "short",
-    "caption" : "简称",
-    "name" : "short"
-  }, {
-    "getPSEditor" : {
-      "maxLength" : 60,
-      "editorType" : "TEXTBOX",
-      "name" : "name"
-    },
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "allowEmpty" : false,
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "name",
-    "caption" : "名称",
-    "name" : "name"
-  }, {
-    "getPSEditor" : {
-      "singleSelect" : true,
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Module__type.json"
-      },
-      "editorType" : "DROPDOWNLIST",
-      "name" : "type"
-    },
-    "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    },
-    "needCodeListConfig" : true,
-    "allowEmpty" : true,
-    "createDV" : "line",
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "type",
-    "caption" : "类型",
-    "name" : "type"
-  }, {
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "srfkey"
-    },
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "codeName" : "srfkey",
-    "caption" : "id",
+    "dataType" : 1,
     "name" : "srfkey"
   } ],
-  "hasWFDataItems" : false,
   "getCreatePSControlAction" : {
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -203,18 +127,94 @@
     "actionType" : "DEACTION",
     "name" : "loaddraft"
   },
-  "columnEnableLink" : 2,
-  "enableRowEdit" : true,
-  "enablePagingBar" : true,
-  "controlType" : "GRID",
-  "getPSDEGridColumns" : [ {
-    "excelCaption" : "名称",
-    "dataItemName" : "name",
-    "enableRowEdit" : true,
+  "singleSelect" : false,
+  "enableColFilter" : false,
+  "enableRowNew" : true,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "maxLength" : 30,
+      "editorType" : "TEXTBOX",
+      "name" : "short"
+    },
+    "getPSAppDEField" : {
+      "name" : "SHORT",
+      "codeName" : "IBizShort"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "short",
+    "caption" : "简称",
+    "name" : "short"
+  }, {
+    "getPSEditor" : {
+      "maxLength" : 60,
+      "editorType" : "TEXTBOX",
+      "name" : "name"
+    },
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "allowEmpty" : false,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "name",
+    "caption" : "名称",
+    "name" : "name"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Module__type.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "name" : "type"
+    },
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "createDV" : "line",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "type",
+    "caption" : "类型",
+    "name" : "type"
+  }, {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "id",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "columnEnableLink" : 2,
+  "enablePagingBar" : true,
+  "enableRowEdit" : true,
+  "controlType" : "GRID",
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "名称",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "dataItemName" : "name",
+    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -227,12 +227,12 @@
     "name" : "name"
   }, {
     "excelCaption" : "简称",
-    "dataItemName" : "short",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "SHORT",
       "codeName" : "IBizShort"
     },
+    "dataItemName" : "short",
+    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

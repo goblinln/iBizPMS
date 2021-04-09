@@ -3,24 +3,24 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/CaseTestTaskQuickpachet.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/CaseTestTaskQuickpachet.json",
   "codeName" : "CaseTestTaskQuickpachet",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "ALL",
     "data" : "{}",
     "codeName" : "All",
     "text" : "所有用例",
-    "default" : true
+    "default" : true,
+    "value" : "ALL"
   }, {
-    "value" : "TOME",
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "codeName" : "Tome",
-    "text" : "指派给我"
+    "text" : "指派给我",
+    "value" : "TOME"
   } ]
 }

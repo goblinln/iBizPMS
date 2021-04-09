@@ -4,45 +4,59 @@
       "name" : "POSTID",
       "codeName" : "PostId"
     },
-    "name" : "postid",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "postid"
   }, {
     "getPSAppDEField" : {
       "name" : "MEMO",
       "codeName" : "Memo"
     },
-    "name" : "memo",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "memo"
   }, {
     "getPSAppDEField" : {
       "name" : "POSTNAME",
       "codeName" : "PostName"
     },
-    "name" : "postname",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "postname"
   }, {
     "getPSAppDEField" : {
       "name" : "POSTNAME",
       "codeName" : "PostName"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "POSTID",
       "codeName" : "PostId"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "POSTID",
       "codeName" : "PostId"
     },
-    "name" : "srfkey",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfkey"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : false,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -65,31 +79,17 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
-  "enableRowEdit" : false,
   "enablePagingBar" : true,
+  "enableRowEdit" : false,
   "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "岗位标识",
-    "dataItemName" : "postid",
     "getPSAppDEField" : {
       "name" : "POSTID",
       "codeName" : "PostId"
     },
+    "dataItemName" : "postid",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -102,11 +102,11 @@
     "name" : "postid"
   }, {
     "excelCaption" : "岗位名称",
-    "dataItemName" : "postname",
     "getPSAppDEField" : {
       "name" : "POSTNAME",
       "codeName" : "PostName"
     },
+    "dataItemName" : "postname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -119,11 +119,11 @@
     "name" : "postname"
   }, {
     "excelCaption" : "备注",
-    "dataItemName" : "memo",
     "getPSAppDEField" : {
       "name" : "MEMO",
       "codeName" : "Memo"
     },
+    "dataItemName" : "memo",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

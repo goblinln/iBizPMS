@@ -1,22 +1,7 @@
 {
   "serviceAPIMode" : 0,
   "getAllPSDEFields" : [ {
-    "length" : 100,
     "dataType" : "GUID",
-    "valueFormat" : "%1$s",
-    "deployId" : "8ec1f77d6cb219cf380a15f65b54a3a1",
-    "codeName" : "RoleId",
-    "logicName" : "角色标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`SYS_ROLEID`",
-      "valueAutoGen" : false,
-      "columnName" : "SYS_ROLEID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "SYS_ROLEID"
-    } ],
     "keyDEField" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
@@ -36,8 +21,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "SYS_ROLEID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -58,24 +43,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "SYS_ROLEID"
-  }, {
-    "length" : 200,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "42c7377420c308703ee9c37342d06f9f",
-    "codeName" : "RoleName",
-    "logicName" : "角色名称",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`SYS_ROLENAME`",
       "valueAutoGen" : false,
-      "columnName" : "SYS_ROLENAME",
+      "queryCodeExp" : "t1.`SYS_ROLEID`",
+      "columnName" : "SYS_ROLEID",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "SYS_ROLENAME"
+      "name" : "SYS_ROLEID"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "8ec1f77d6cb219cf380a15f65b54a3a1",
+    "codeName" : "RoleId",
+    "logicName" : "角色标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "SYS_ROLEID"
+  }, {
+    "dataType" : "TEXT",
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
@@ -94,8 +79,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "SYS_ROLENAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -116,24 +101,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "SYS_ROLENAME"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "c5f196c48b1f3d3da95191e272af962d",
-    "codeName" : "Memo",
-    "logicName" : "备注",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`MEMO`",
       "valueAutoGen" : false,
-      "columnName" : "MEMO",
+      "queryCodeExp" : "t1.`SYS_ROLENAME`",
+      "columnName" : "SYS_ROLENAME",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "MEMO"
+      "name" : "SYS_ROLENAME"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "42c7377420c308703ee9c37342d06f9f",
+    "codeName" : "RoleName",
+    "logicName" : "角色名称",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
+    "name" : "SYS_ROLENAME"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -146,8 +131,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "MEMO",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -168,6 +153,21 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`MEMO`",
+      "columnName" : "MEMO",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "MEMO"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "c5f196c48b1f3d3da95191e272af962d",
+    "codeName" : "Memo",
+    "logicName" : "备注",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "MEMO"
   }, {
     "getPSDER" : {
@@ -180,21 +180,7 @@
       "name" : "SYS_ROLEID",
       "codeName" : "RoleId"
     },
-    "length" : 100,
     "dataType" : "PICKUP",
-    "deployId" : "c789101b9b8b19692728d18cb700a3a8",
-    "codeName" : "PRoleId",
-    "logicName" : "父角色标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PROLEID`",
-      "valueAutoGen" : false,
-      "columnName" : "PROLEID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PROLEID"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -207,8 +193,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PROLEID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -229,6 +215,20 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`PROLEID`",
+      "columnName" : "PROLEID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PROLEID"
+    } ],
+    "deployId" : "c789101b9b8b19692728d18cb700a3a8",
+    "codeName" : "PRoleId",
+    "logicName" : "父角色标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "PROLEID"
   }, {
     "phisicalDEField" : false,
@@ -242,21 +242,7 @@
       "name" : "SYS_ROLENAME",
       "codeName" : "RoleName"
     },
-    "length" : 200,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "a936ecffea45168e7553c0a5d0aae174",
-    "codeName" : "PRoleName",
-    "logicName" : "父角色名称",
-    "stringLength" : 200,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t11.`SYS_ROLENAME`",
-      "valueAutoGen" : false,
-      "columnName" : "PROLENAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PROLENAME"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 3,
     "getAllPSDEFValueRules" : [ {
@@ -269,8 +255,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "PROLENAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -291,24 +277,23 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "PROLENAME"
-  }, {
-    "length" : 8,
-    "dataType" : "DATETIME",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "4d96a986d44f18b12f07473f8920c0f3",
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "stdDataType" : 5,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CREATEDATE`",
       "valueAutoGen" : false,
-      "columnName" : "CREATEDATE",
+      "queryCodeExp" : "t11.`SYS_ROLENAME`",
+      "columnName" : "PROLENAME",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "CREATEDATE"
+      "name" : "PROLENAME"
     } ],
-    "predefinedType" : "CREATEDATE",
+    "deployId" : "a936ecffea45168e7553c0a5d0aae174",
+    "codeName" : "PRoleName",
+    "logicName" : "父角色名称",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
+    "name" : "PROLENAME"
+  }, {
+    "dataType" : "DATETIME",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getLNPSLanguageRes" : {
@@ -337,24 +322,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "CREATEDATE"
-  }, {
-    "length" : 8,
-    "dataType" : "DATETIME",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "901144dee29ae8e8a5ebc083fdf5b97b",
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "stdDataType" : 5,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UPDATEDATE`",
       "valueAutoGen" : false,
-      "columnName" : "UPDATEDATE",
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "columnName" : "CREATEDATE",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "UPDATEDATE"
+      "name" : "CREATEDATE"
     } ],
-    "predefinedType" : "UPDATEDATE",
+    "predefinedType" : "CREATEDATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "4d96a986d44f18b12f07473f8920c0f3",
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "stdDataType" : 5,
+    "length" : 8,
+    "name" : "CREATEDATE"
+  }, {
+    "dataType" : "DATETIME",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getLNPSLanguageRes" : {
@@ -383,29 +368,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEDATE"
+    } ],
+    "predefinedType" : "UPDATEDATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "901144dee29ae8e8a5ebc083fdf5b97b",
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "stdDataType" : 5,
+    "length" : 8,
     "name" : "UPDATEDATE"
   }, {
-    "length" : 60,
-    "dataType" : "TEXT",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "faca85f80fec0a3a992fae088f3751a9",
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CREATEMAN`",
-      "valueAutoGen" : false,
-      "columnName" : "CREATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CREATEMAN"
-    } ],
-    "predefinedType" : "CREATEMAN",
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -420,8 +404,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "CREATEMAN",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -442,29 +426,29 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CREATEMAN"
+    } ],
+    "predefinedType" : "CREATEMAN",
+    "valueFormat" : "%1$s",
+    "deployId" : "faca85f80fec0a3a992fae088f3751a9",
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
     "name" : "CREATEMAN"
   }, {
-    "length" : 60,
-    "dataType" : "TEXT",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "eb64e3fbb40e884db469f338f8294dff",
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UPDATEMAN`",
-      "valueAutoGen" : false,
-      "columnName" : "UPDATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATEMAN"
-    } ],
-    "predefinedType" : "UPDATEMAN",
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -479,8 +463,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "UPDATEMAN",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -501,6 +485,22 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`UPDATEMAN`",
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEMAN"
+    } ],
+    "predefinedType" : "UPDATEMAN",
+    "valueFormat" : "%1$s",
+    "deployId" : "eb64e3fbb40e884db469f338f8294dff",
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
     "name" : "UPDATEMAN"
   } ],
   "getAllPSDEDataSets" : [ {
@@ -508,19 +508,19 @@
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "Default",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "Default",
     "logicName" : "数据集",
-    "extendMode" : 0,
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
-    "pageSize" : -1,
     "name" : "DEFAULT"
   } ],
   "getAllPSDEActions" : [ {
@@ -551,9 +551,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "数据查询",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -562,19 +562,25 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
-  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
+  "enableUIActions" : 15,
+  "orderValue" : 99999,
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "serviceCodeName" : "SysRole",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -589,21 +595,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 0,
-  "deployId" : "2cc50d0bbc92ab9982dd16f6417120d9",
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
   "dynaInstMode" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "dSLink" : "DEFAULT",
+  "deployId" : "2cc50d0bbc92ab9982dd16f6417120d9",
   "codeName" : "SysRole",
   "logicName" : "系统角色",
   "tableName" : "IBZROLE",
-  "serviceCodeName" : "SysRole",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : false,
-  "serviceAPIClientId" : "ccdd4a88804cf809e0cea3c2d56652c3",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -612,10 +613,9 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : false,
+  "serviceAPIClientId" : "ccdd4a88804cf809e0cea3c2d56652c3",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

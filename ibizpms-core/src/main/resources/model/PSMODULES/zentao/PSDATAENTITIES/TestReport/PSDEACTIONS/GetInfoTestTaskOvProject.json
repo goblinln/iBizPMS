@@ -1,19 +1,19 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : false,
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 99999,
-  "codeName" : "GetInfoTestTaskOvProject",
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
+  "codeName" : "GetInfoTestTaskOvProject",
   "logicName" : "根据测试报告概况信息（项目报告）",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "DELOGIC",
   "requestParamType" : "ENTITY",

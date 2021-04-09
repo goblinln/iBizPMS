@@ -36,7 +36,6 @@
     "id" : "0"
   },
   "controlType" : "CHART",
-  "codeName" : "BurnDown",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
     "catalogField" : "BEGIN",
@@ -52,16 +51,17 @@
       "id" : "0"
     },
     "getPSChartSeriesEncode" : {
-      "getPSChartXAxis" : {
+      "getPSChartYAxis" : {
         "modelref" : true,
         "id" : "0"
       },
-      "getPSChartYAxis" : {
+      "getPSChartXAxis" : {
         "modelref" : true,
         "id" : "0"
       },
       "x" : [ "BEGIN" ],
       "y" : [ "ID" ],
+      "type" : "XY",
       "index" : 0,
       "name" : "坐标系编码",
       "id" : "0"
@@ -72,22 +72,13 @@
     "index" : 0,
     "name" : "BurnDown"
   } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "position" : "left",
-    "type" : "numeric",
-    "caption" : "工时",
-    "index" : 0,
-    "name" : "Y",
-    "id" : "0"
-  } ],
+  "codeName" : "BurnDown",
   "getPSChartXAxises" : [ {
     "eChartsType" : "category",
     "eChartsPos" : "xAxis",
     "position" : "bottom",
-    "type" : "category",
     "caption" : "日期",
+    "type" : "category",
     "index" : 0,
     "name" : "X",
     "id" : "0"
@@ -115,6 +106,16 @@
     "type" : "grid",
     "index" : 0,
     "name" : "[BurnDown]直角坐标系[0]",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "eChartsType" : "value",
+    "eChartsPos" : "yAxis",
+    "position" : "left",
+    "caption" : "工时",
+    "type" : "numeric",
+    "index" : 0,
+    "name" : "Y",
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {

@@ -8,8 +8,8 @@
         "editorType" : "SPAN",
         "name" : "name"
       },
-      "hidden" : false,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -41,9 +41,9 @@
         "editorType" : "SPAN",
         "name" : "severity"
       },
-      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,
@@ -76,9 +76,9 @@
         "editorType" : "SPAN",
         "name" : "pri"
       },
-      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,
@@ -119,8 +119,8 @@
             "editorType" : "SPAN",
             "name" : "deadline"
           },
-          "hidden" : false,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 5,
             "colLG" : 5,
@@ -137,13 +137,8 @@
             "editorType" : "SPAN",
             "name" : "delay"
           },
-          "hidden" : false,
           "showCaption" : false,
-          "getPSLayoutPos" : {
-            "colMD" : 6,
-            "colLG" : 6,
-            "layout" : "TABLE_24COL"
-          },
+          "hidden" : false,
           "getPSPanelItemGroupLogics" : [ {
             "logicCat" : "PANELVISIBLE",
             "getPSPanelItemLogics" : [ {
@@ -157,6 +152,11 @@
             "logicType" : "GROUP",
             "name" : "面板成员[delay][面板显示]逻辑"
           } ],
+          "getPSLayoutPos" : {
+            "colMD" : 6,
+            "colLG" : 6,
+            "layout" : "TABLE_24COL"
+          },
           "getPSSysCss" : {
             "cssName" : "textcenterred"
           },
@@ -168,16 +168,12 @@
           "layout" : "TABLE_24COL",
           "columnCount" : 24
         },
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSPanelItemGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSPanelItemLogics" : [ {
             "dstModelField" : "STATUS",
-            "value" : "active",
             "condOp" : "EQ",
+            "value" : "active",
             "logicType" : "SINGLE",
             "name" : "STATUS 等于(=) (active)"
           } ],
@@ -186,6 +182,10 @@
           "logicType" : "GROUP",
           "name" : "面板成员[container4][面板显示]逻辑"
         } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
         "itemType" : "CONTAINER",
         "caption" : "激活状态",
         "itemStyle" : "DEFAULT",
@@ -213,8 +213,8 @@
               "editorType" : "SPAN",
               "name" : "resolveddate"
             },
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -231,13 +231,8 @@
               "editorType" : "SPAN",
               "name" : "delayresolve"
             },
-            "hidden" : false,
             "showCaption" : false,
-            "getPSLayoutPos" : {
-              "colMD" : 6,
-              "colLG" : 6,
-              "layout" : "TABLE_24COL"
-            },
+            "hidden" : false,
             "getPSPanelItemGroupLogics" : [ {
               "logicCat" : "PANELVISIBLE",
               "getPSPanelItemLogics" : [ {
@@ -251,6 +246,11 @@
               "logicType" : "GROUP",
               "name" : "面板成员[delayresolve][面板显示]逻辑"
             } ],
+            "getPSLayoutPos" : {
+              "colMD" : 6,
+              "colLG" : 6,
+              "layout" : "TABLE_24COL"
+            },
             "getPSSysCss" : {
               "cssName" : "textcenterred"
             },
@@ -295,9 +295,9 @@
             "editorType" : "SPAN",
             "name" : "resolvedby"
           },
-          "hidden" : false,
           "convertToCodeItemText" : true,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 4,
             "colLG" : 4,
@@ -311,16 +311,12 @@
           "layout" : "TABLE_24COL",
           "columnCount" : 24
         },
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSPanelItemGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSPanelItemLogics" : [ {
             "dstModelField" : "STATUS",
-            "value" : "resolved",
             "condOp" : "EQ",
+            "value" : "resolved",
             "logicType" : "SINGLE",
             "name" : "STATUS 等于(=) (resolved)"
           } ],
@@ -329,6 +325,10 @@
           "logicType" : "GROUP",
           "name" : "面板成员[container6][面板显示]逻辑"
         } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
         "itemType" : "CONTAINER",
         "caption" : "已解决状态",
         "itemStyle" : "DEFAULT",
@@ -355,8 +355,8 @@
             "editorType" : "SPAN",
             "name" : "closeddate"
           },
-          "hidden" : false,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 10,
             "colLG" : 10,
@@ -391,9 +391,9 @@
             "editorType" : "SPAN",
             "name" : "closedby"
           },
-          "hidden" : false,
           "convertToCodeItemText" : true,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 4,
             "colLG" : 4,
@@ -407,16 +407,12 @@
           "layout" : "TABLE_24COL",
           "columnCount" : 24
         },
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSPanelItemGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSPanelItemLogics" : [ {
             "dstModelField" : "STATUS",
-            "value" : "closed",
             "condOp" : "EQ",
+            "value" : "closed",
             "logicType" : "SINGLE",
             "name" : "STATUS 等于(=) (closed)"
           } ],
@@ -425,6 +421,10 @@
           "logicType" : "GROUP",
           "name" : "面板成员[container7][面板显示]逻辑"
         } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
         "itemType" : "CONTAINER",
         "caption" : "已关闭状态",
         "itemStyle" : "DEFAULT",
@@ -455,9 +455,9 @@
             "editorType" : "SPAN",
             "name" : "resolution"
           },
-          "hidden" : false,
           "convertToCodeItemText" : true,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 6,
             "colLG" : 6,
@@ -471,16 +471,12 @@
           "layout" : "TABLE_24COL",
           "columnCount" : 24
         },
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSPanelItemGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSPanelItemLogics" : [ {
             "dstModelField" : "STATUS",
-            "value" : "active",
             "condOp" : "NOTEQ",
+            "value" : "active",
             "logicType" : "SINGLE",
             "name" : "STATUS 不等于(<>) (active)"
           } ],
@@ -489,6 +485,10 @@
           "logicType" : "GROUP",
           "name" : "面板成员[container9][面板显示]逻辑"
         } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
         "itemType" : "CONTAINER",
         "caption" : "解决方案",
         "itemStyle" : "DEFAULT",
@@ -496,16 +496,12 @@
         "name" : "container9"
       }, {
         "contentType" : "HTML",
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
         "getPSPanelItemGroupLogics" : [ {
           "logicCat" : "PANELVISIBLE",
           "getPSPanelItemLogics" : [ {
             "dstModelField" : "DEADLINE",
-            "value" : "%SRFCURDATA%",
             "condOp" : "LT",
+            "value" : "%SRFCURDATA%",
             "logicType" : "SINGLE",
             "name" : "DEADLINE 小于(<) (%SRFCURDATA%)"
           } ],
@@ -514,6 +510,10 @@
           "logicType" : "GROUP",
           "name" : "面板成员[rawitem2][面板显示]逻辑"
         } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
         "itemType" : "RAWITEM",
         "itemStyle" : "DEFAULT",
         "showCaption" : true,
@@ -539,7 +539,6 @@
           "id" : "itemlayoutpanel_button1"
         },
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 1,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -550,12 +549,13 @@
             "viewType" : "DEOPTVIEW"
           },
           "frontProcessType" : "WIZARD",
+          "getNoPrivDisplayMode" : 1,
           "timeout" : 60000,
-          "codeName" : "AssingToBug",
           "getPSSysImage" : {
             "glyph" : "xf0a4@FontAwesome",
             "cssClass" : "fa fa-hand-o-right"
           },
+          "codeName" : "AssingToBug",
           "caption" : "指派",
           "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
@@ -597,9 +597,9 @@
           "editorType" : "SPAN",
           "name" : "assignedto"
         },
-        "hidden" : false,
         "convertToCodeItemText" : true,
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 14,
           "colLG" : 14,
@@ -631,8 +631,8 @@
           "editorType" : "HIDDEN",
           "name" : "product"
         },
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -646,8 +646,8 @@
           "editorType" : "HIDDEN",
           "name" : "project"
         },
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -661,8 +661,8 @@
           "editorType" : "HIDDEN",
           "name" : "confirmed"
         },
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -676,8 +676,8 @@
           "editorType" : "HIDDEN",
           "name" : "isfavorites"
         },
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -691,8 +691,8 @@
           "editorType" : "HIDDEN",
           "name" : "module"
         },
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -706,8 +706,8 @@
           "editorType" : "HIDDEN",
           "name" : "srfkey"
         },
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -721,8 +721,8 @@
           "editorType" : "HIDDEN",
           "name" : "story"
         },
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -736,8 +736,8 @@
           "editorType" : "HIDDEN",
           "name" : "status"
         },
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"

@@ -3,25 +3,25 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TaskSpecies.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TaskSpecies.json",
   "codeName" : "TaskSpecies",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "plan",
     "codeName" : "Plan",
-    "text" : "计划任务"
+    "text" : "计划任务",
+    "value" : "plan"
   }, {
-    "value" : "cycle",
     "codeName" : "Cycle",
-    "text" : "周期任务"
+    "text" : "周期任务",
+    "value" : "cycle"
   }, {
-    "value" : "temp",
     "codeName" : "Temp",
-    "text" : "临时任务"
+    "text" : "临时任务",
+    "value" : "temp"
   } ]
 }

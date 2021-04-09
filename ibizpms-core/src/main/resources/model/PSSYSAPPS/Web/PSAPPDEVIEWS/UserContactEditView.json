@@ -1,17 +1,17 @@
 {
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "showCaptionBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "EditView",
   "funcViewMode" : "EDITVIEW",
-  "openMode" : "DRAWER_RIGHT",
   "caption" : "用户联系方式",
   "title" : "usercontact编辑视图",
+  "openMode" : "DRAWER_RIGHT",
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -26,12 +26,12 @@
     "engineType" : "EditView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "FORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "FORM"
     }, {
+      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0,
-      "paramType" : "VALUE"
+      "value" : 0
     } ],
     "name" : "engine"
   } ],
@@ -55,6 +55,7 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -66,8 +67,12 @@
         "lanResTag" : "TBB.TEXT.*.SAVE",
         "id" : "工具栏按钮文本[*.SAVE]"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.SAVE",
+        "id" : "工具栏按钮提示[*.SAVE]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.SAVE",
           "id" : "工具栏按钮文本[*.SAVE]"
@@ -76,12 +81,13 @@
           "lanResTag" : "TBB.TOOLTIP.*.SAVE",
           "id" : "工具栏按钮提示[*.SAVE]"
         },
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "Save",
         "getPSSysImage" : {
           "glyph" : "xf0c7@FontAwesome",
           "cssClass" : "fa fa-save"
         },
+        "codeName" : "Save",
         "caption" : "保存",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "uIActionTag" : "Save",
@@ -90,11 +96,6 @@
         "fullCodeName" : "Save",
         "name" : "编辑界面_保存操作"
       },
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.SAVE",
-        "id" : "工具栏按钮提示[*.SAVE]"
-      },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf0c7@FontAwesome",
         "cssClass" : "fa fa-save"
@@ -115,8 +116,12 @@
         "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE",
         "id" : "工具栏按钮文本[EDITVIEW.REMOVEANDCLOSE]"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
+        "id" : "工具栏按钮提示[EDITVIEW.REMOVEANDCLOSE]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE",
           "id" : "工具栏按钮文本[EDITVIEW.REMOVEANDCLOSE]"
@@ -125,12 +130,13 @@
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
           "id" : "工具栏按钮提示[EDITVIEW.REMOVEANDCLOSE]"
         },
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "RemoveAndExit",
         "getPSSysImage" : {
           "glyph" : "xf00d@FontAwesome",
           "cssClass" : "fa fa-remove"
         },
+        "codeName" : "RemoveAndExit",
         "caption" : "删除",
         "actionTarget" : "SINGLEKEY",
         "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
@@ -140,11 +146,6 @@
         "fullCodeName" : "RemoveAndExit",
         "name" : "编辑界面_删除并退出操作"
       },
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
-        "id" : "工具栏按钮提示[EDITVIEW.REMOVEANDCLOSE]"
-      },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf00d@FontAwesome",
         "cssClass" : "fa fa-remove"
@@ -170,8 +171,9 @@
     "name" : "toolbar",
     "modelid" : "7d038957bdbf1d4015a004ec9cc3c876"
   }, {
-    "showFormNavBar" : false,
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -196,14 +198,12 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : false,
@@ -213,27 +213,27 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
+          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "maxLength" : 60,
             "editorType" : "TEXTBOX",
             "name" : "listname"
           },
-          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "LISTNAME",
             "codeName" : "ListName"
           },
-          "hidden" : false,
           "dataType" : 25,
-          "caption" : "列表名称",
           "allowEmpty" : false,
+          "caption" : "列表名称",
           "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -243,6 +243,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "listname"
         }, {
+          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : false,
@@ -253,22 +254,21 @@
             "editorType" : "MDROPDOWNLIST",
             "name" : "userlist"
           },
-          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "USERLIST",
             "codeName" : "UserList"
           },
-          "hidden" : false,
           "dataType" : 21,
+          "allowEmpty" : true,
           "needCodeListConfig" : true,
           "caption" : "选择用户",
-          "allowEmpty" : true,
           "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "showCaption" : true,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -359,12 +359,19 @@
         "codeName" : "Id"
       }
     } ],
+    "noTabHeader" : true,
     "codeName" : "Main",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -444,19 +451,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact/PSFORMS/Main.json",
     "logicName" : "主编辑表单",
     "name" : "form",
     "modelid" : "8ce039b21566185c06243f99ff11cc42"
   } ],
-  "viewStyle" : "STYLE2",
-  "codeName" : "UserContactEditView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
@@ -480,6 +479,7 @@
     "logicType" : "APPVIEWUIACTION",
     "name" : "toolbar_deuiaction2_click"
   } ],
+  "codeName" : "UserContactEditView",
   "viewType" : "DEEDITVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserContactEditView.json",
   "name" : "UserContactEditView"

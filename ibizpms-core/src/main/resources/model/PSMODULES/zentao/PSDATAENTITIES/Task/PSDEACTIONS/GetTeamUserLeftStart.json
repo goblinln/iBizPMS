@@ -1,19 +1,19 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : false,
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 99999,
-  "codeName" : "GetTeamUserLeftStart",
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
+  "codeName" : "GetTeamUserLeftStart",
   "logicName" : "获取团队成员剩余工时（开始或继续）",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

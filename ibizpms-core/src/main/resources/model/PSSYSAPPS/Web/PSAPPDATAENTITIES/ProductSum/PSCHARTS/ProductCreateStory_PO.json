@@ -19,7 +19,6 @@
     "id" : "0"
   },
   "controlType" : "CHART",
-  "codeName" : "ProductCreateStory_PO",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "name",
     "seriesType" : "pie",
@@ -36,6 +35,7 @@
     "getPSChartSeriesEncode" : {
       "category" : "name",
       "value" : "storycnt",
+      "type" : "NONE",
       "index" : 0,
       "name" : "坐标系编码",
       "id" : "0"
@@ -50,6 +50,7 @@
       "EC.radius" : "['60%', '70%']"
     }
   } ],
+  "codeName" : "ProductCreateStory_PO",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
       "groupField" : true,
@@ -81,11 +82,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
   },
   "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSCHARTS/ProductCreateStory_PO.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum/PSCHARTS/ProductCreateStory_PO.json",
   "logicName" : "ProductCreateStory_PO",
   "modelid" : "3ac8297cb629de3b538b053ea7f40855",
   "getUserParam" : {

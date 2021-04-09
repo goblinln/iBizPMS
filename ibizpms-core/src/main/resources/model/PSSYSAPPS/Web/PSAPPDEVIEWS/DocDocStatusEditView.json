@@ -1,15 +1,21 @@
 {
-  "showCaptionBar" : false,
   "showDataInfoBar" : false,
+  "showCaptionBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "DocStatusEditView",
   "caption" : "嵌入文档库主页",
   "title" : "文档编辑视图",
   "accUserMode" : 2,
   "enableDP" : true,
+  "getPSAppViewNavParams" : [ {
+    "rawValue" : true,
+    "value" : "0",
+    "key" : "doc",
+    "name" : "doc"
+  } ],
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -24,20 +30,14 @@
     "engineType" : "EditView9",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "FORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "FORM"
     }, {
+      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0,
-      "paramType" : "VALUE"
+      "value" : 0
     } ],
     "name" : "engine"
-  } ],
-  "getPSAppViewNavParams" : [ {
-    "rawValue" : true,
-    "value" : "0",
-    "key" : "doc",
-    "name" : "doc"
   } ],
   "getPSAppViewNavContexts" : [ {
     "rawValue" : true,
@@ -49,9 +49,11 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
-    "showFormNavBar" : false,
     "enableAutoSave" : false,
+    "infoFormMode" : true,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -76,14 +78,12 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : true,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
         "infoGroupMode" : true,
@@ -100,84 +100,85 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
-            "compositeItem" : true,
             "getPSDEFormItems" : [ {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "alldoccnt1"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "ALLDOCCNT",
                 "codeName" : "Alldoccnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "所有文档数量",
               "allowEmpty" : true,
+              "caption" : "所有文档数量",
               "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "alldoccnt1",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "alldoccnt1"
             }, {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "recentupdatecnt"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "RECENTUPDATECNT",
                 "codeName" : "Recentupdatecnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "最近更新数量",
               "allowEmpty" : true,
+              "caption" : "最近更新数量",
               "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "recentupdatecnt",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "recentupdatecnt"
             } ],
+            "compositeItem" : true,
+            "detailType" : "FORMITEM",
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
+              "getPSSysPFPlugin" : {
+                "pluginType" : "EDITOR_CUSTOMSTYLE",
+                "pluginCode" : "PROGRESSCIRCLETOTAL"
+              },
               "editorHeight" : 280.0,
               "editorType" : "USERCONTROL",
               "editorParams" : {
                 "USERCONTROL" : "TRUE"
               },
-              "getPSSysPFPlugin" : {
-                "pluginType" : "EDITOR_CUSTOMSTYLE",
-                "pluginCode" : "PROGRESSCIRCLETOTAL"
-              },
               "editorStyle" : "PROGRESSCIRCLETOTAL",
               "name" : "formitemex1"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "hidden" : false,
             "dataType" : 25,
-            "caption" : "所有",
             "allowEmpty" : true,
+            "caption" : "所有",
             "labelWidth" : 0,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "NONE",
             "itemHeight" : 280.0,
             "showCaption" : false,
+            "hidden" : false,
             "contentHeight" : 280.0,
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -304,74 +305,74 @@
             "showCaption" : true,
             "name" : "rawitem1"
           }, {
-            "compositeItem" : true,
             "getPSDEFormItems" : [ {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "alldoccnt2"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "ALLDOCCNT",
                 "codeName" : "Alldoccnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "所有文档数量",
               "allowEmpty" : true,
+              "caption" : "所有文档数量",
               "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "alldoccnt2",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "alldoccnt2"
             }, {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "recentaddcnt"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "RECENTADDCNT",
                 "codeName" : "Recentaddcnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "最近添加数量",
               "allowEmpty" : true,
+              "caption" : "最近添加数量",
               "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "recentaddcnt",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "recentaddcnt"
             } ],
+            "compositeItem" : true,
+            "detailType" : "FORMITEM",
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
-              "editorType" : "USERCONTROL",
-              "editorParams" : {
-                "USERCONTROL" : "TRUE"
-              },
               "getPSSysPFPlugin" : {
                 "pluginType" : "EDITOR_CUSTOMSTYLE",
                 "pluginCode" : "PROGRESSLINE"
               },
+              "editorType" : "USERCONTROL",
+              "editorParams" : {
+                "USERCONTROL" : "TRUE"
+              },
               "editorStyle" : "PROGRESSLINE",
               "name" : "formitemex2"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "hidden" : false,
             "dataType" : 25,
             "allowEmpty" : true,
             "labelWidth" : 0,
@@ -379,6 +380,7 @@
             "ignoreInput" : 0,
             "labelPos" : "NONE",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 16,
@@ -423,74 +425,74 @@
             "showCaption" : true,
             "name" : "rawitem2"
           }, {
-            "compositeItem" : true,
             "getPSDEFormItems" : [ {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "alldoccnt3"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "ALLDOCCNT",
                 "codeName" : "Alldoccnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "所有文档数量",
               "allowEmpty" : true,
+              "caption" : "所有文档数量",
               "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "alldoccnt3",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "alldoccnt3"
             }, {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "mydoccnt"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "MYDOCCNT",
                 "codeName" : "Mydoccnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "我的文档数量",
               "allowEmpty" : true,
+              "caption" : "我的文档数量",
               "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "mydoccnt",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "mydoccnt"
             } ],
+            "compositeItem" : true,
+            "detailType" : "FORMITEM",
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
-              "editorType" : "USERCONTROL",
-              "editorParams" : {
-                "USERCONTROL" : "TRUE"
-              },
               "getPSSysPFPlugin" : {
                 "pluginType" : "EDITOR_CUSTOMSTYLE",
                 "pluginCode" : "PROGRESSLINE"
               },
+              "editorType" : "USERCONTROL",
+              "editorParams" : {
+                "USERCONTROL" : "TRUE"
+              },
               "editorStyle" : "PROGRESSLINE",
               "name" : "formitemex3"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "hidden" : false,
             "dataType" : 25,
             "allowEmpty" : true,
             "labelWidth" : 0,
@@ -498,6 +500,7 @@
             "ignoreInput" : 0,
             "labelPos" : "NONE",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 16,
@@ -542,74 +545,74 @@
             "showCaption" : true,
             "name" : "rawitem3"
           }, {
-            "compositeItem" : true,
             "getPSDEFormItems" : [ {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "alldoccnt4"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "ALLDOCCNT",
                 "codeName" : "Alldoccnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "所有文档数量",
               "allowEmpty" : true,
+              "caption" : "所有文档数量",
               "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "alldoccnt4",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "alldoccnt4"
             }, {
+              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "myfavouritecnt"
               },
-              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "MYFAVOURITECNT",
                 "codeName" : "Myfavouritecnt"
               },
-              "hidden" : true,
               "dataType" : 9,
-              "caption" : "我的收藏数量",
               "allowEmpty" : true,
+              "caption" : "我的收藏数量",
               "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "showCaption" : true,
+              "hidden" : true,
               "codeName" : "myfavouritecnt",
               "detailType" : "FORMITEM",
               "detailStyle" : "DEFAULT",
               "name" : "myfavouritecnt"
             } ],
+            "compositeItem" : true,
+            "detailType" : "FORMITEM",
+            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
-              "editorType" : "USERCONTROL",
-              "editorParams" : {
-                "USERCONTROL" : "TRUE"
-              },
               "getPSSysPFPlugin" : {
                 "pluginType" : "EDITOR_CUSTOMSTYLE",
                 "pluginCode" : "PROGRESSLINE"
               },
+              "editorType" : "USERCONTROL",
+              "editorParams" : {
+                "USERCONTROL" : "TRUE"
+              },
               "editorStyle" : "PROGRESSLINE",
               "name" : "formitemex4"
             },
-            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "hidden" : false,
             "dataType" : 25,
             "allowEmpty" : true,
             "labelWidth" : 0,
@@ -617,6 +620,7 @@
             "ignoreInput" : 0,
             "labelPos" : "NONE",
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 16,
@@ -782,12 +786,19 @@
         "codeName" : "Id"
       }
     } ],
+    "noTabHeader" : true,
     "codeName" : "DOCSTATUS",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -867,18 +878,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器（文档状态）"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc/PSFORMS/DOCSTATUS.json",
     "logicName" : "文档统计表单",
     "name" : "form",
     "modelid" : "137cd4efba8e6ed430bf91584d89ce0d"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "DocDocStatusEditView",
   "viewType" : "DEEDITVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDocStatusEditView.json",

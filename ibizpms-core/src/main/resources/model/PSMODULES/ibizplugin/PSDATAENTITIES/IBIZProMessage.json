@@ -1,14 +1,7 @@
 {
   "serviceAPIMode" : 0,
   "getAllPSDEFields" : [ {
-    "length" : 100,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "7dd7c22ccbf2741651fd9899b824d0c8",
-    "codeName" : "Sendproxyid",
-    "logicName" : "发送代理标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -21,8 +14,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "SENDPROXYID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -43,26 +36,18 @@
       },
       "name" : "默认规则"
     } ],
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
-    "name" : "SENDPROXYID"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
     "valueFormat" : "%1$s",
-    "deployId" : "f51e0c090fb9f306976b99e6a60fe48e",
-    "codeName" : "IBIZProMessageName",
-    "logicName" : "消息名称",
+    "uIAssistDEField" : true,
+    "deployId" : "7dd7c22ccbf2741651fd9899b824d0c8",
+    "codeName" : "Sendproxyid",
+    "logicName" : "发送代理标识",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`IBIZPRO_MESSAGENAME`",
-      "valueAutoGen" : false,
-      "columnName" : "IBIZPRO_MESSAGENAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "IBIZPRO_MESSAGENAME"
-    } ],
+    "phisicalDEField" : false,
+    "length" : 100,
+    "name" : "SENDPROXYID"
+  }, {
+    "dataType" : "TEXT",
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
@@ -77,8 +62,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "IBIZPRO_MESSAGENAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -99,26 +84,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`IBIZPRO_MESSAGENAME`",
+      "columnName" : "IBIZPRO_MESSAGENAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "IBIZPRO_MESSAGENAME"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "f51e0c090fb9f306976b99e6a60fe48e",
+    "codeName" : "IBIZProMessageName",
+    "logicName" : "消息名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "IBIZPRO_MESSAGENAME"
   }, {
-    "dataType" : "NSCODELIST",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "fe2ec703e611431744d8cdf602234043",
-    "codeName" : "Islink",
-    "logicName" : "是否是链接消息",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`ISLINK`",
-      "valueAutoGen" : false,
-      "columnName" : "ISLINK",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ISLINK"
-    } ],
+    "dataType" : "NSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -141,24 +128,22 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "ISLINK"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "ad8405b79282a5879f2db389b78e856c",
-    "codeName" : "Subject",
-    "logicName" : "标题",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`SUBJECT`",
       "valueAutoGen" : false,
-      "columnName" : "SUBJECT",
+      "queryCodeExp" : "t1.`ISLINK`",
+      "columnName" : "ISLINK",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "SUBJECT"
+      "name" : "ISLINK"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "fe2ec703e611431744d8cdf602234043",
+    "codeName" : "Islink",
+    "logicName" : "是否是链接消息",
+    "stdDataType" : 9,
+    "name" : "ISLINK"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -171,8 +156,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "SUBJECT",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -193,22 +178,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`SUBJECT`",
+      "columnName" : "SUBJECT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "SUBJECT"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "ad8405b79282a5879f2db389b78e856c",
+    "codeName" : "Subject",
+    "logicName" : "标题",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "SUBJECT"
   }, {
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
-    "deployId" : "deed2094de513475e494e74145054ab3",
-    "codeName" : "Retryintervaltime",
-    "logicName" : "重发间隔时间",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`RETRYINTERVALTIME`",
-      "valueAutoGen" : false,
-      "columnName" : "RETRYINTERVALTIME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "RETRYINTERVALTIME"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -231,27 +218,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "RETRYINTERVALTIME"
-  }, {
-    "length" : 1048576,
-    "dataType" : "LONGTEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "a60afc89ec1a86fcb3e549d0fed747d4",
-    "codeName" : "Bcc",
-    "logicName" : "密件抄送方",
-    "stringLength" : 1048576,
-    "stdDataType" : 21,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`BCC`",
       "valueAutoGen" : false,
-      "columnName" : "BCC",
+      "queryCodeExp" : "t1.`RETRYINTERVALTIME`",
+      "columnName" : "RETRYINTERVALTIME",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "BCC"
+      "name" : "RETRYINTERVALTIME"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "deed2094de513475e494e74145054ab3",
+    "codeName" : "Retryintervaltime",
+    "logicName" : "重发间隔时间",
+    "stdDataType" : 9,
+    "name" : "RETRYINTERVALTIME"
+  }, {
+    "dataType" : "LONGTEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
-    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -262,8 +246,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "BCC",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -284,18 +268,29 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`BCC`",
+      "columnName" : "BCC",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "BCC"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "a60afc89ec1a86fcb3e549d0fed747d4",
+    "codeName" : "Bcc",
+    "logicName" : "密件抄送方",
+    "stringLength" : 1048576,
+    "stdDataType" : 21,
+    "queryColumn" : false,
+    "length" : 1048576,
     "name" : "BCC"
   }, {
-    "dataType" : "YESNO",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "8a0aacf599a0c13700d2d08e84ecf94e",
-    "codeName" : "Isdone",
-    "logicName" : "是否完成",
-    "stdDataType" : 9,
+    "dataType" : "YESNO",
     "importOrder" : 1000,
     "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -318,29 +313,18 @@
       },
       "name" : "默认规则"
     } ],
-    "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "uIAssistDEField" : true,
+    "deployId" : "8a0aacf599a0c13700d2d08e84ecf94e",
+    "codeName" : "Isdone",
+    "logicName" : "是否完成",
+    "stdDataType" : 9,
+    "phisicalDEField" : false,
     "name" : "ISDONE"
   }, {
-    "length" : 1048576,
     "dataType" : "LONGTEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "57fe3c1604180790d645227baec615b2",
-    "codeName" : "Param",
-    "logicName" : "消息参数",
-    "stringLength" : 1048576,
-    "stdDataType" : 21,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PARAM`",
-      "valueAutoGen" : false,
-      "columnName" : "PARAM",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PARAM"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -351,8 +335,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "PARAM",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -373,24 +357,25 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "PARAM"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "3036788ea6de98de71d735c89eab6091",
-    "codeName" : "IBIZProMessageId",
-    "logicName" : "消息标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`IBIZPRO_MESSAGEID`",
       "valueAutoGen" : false,
-      "columnName" : "IBIZPRO_MESSAGEID",
+      "queryCodeExp" : "t1.`PARAM`",
+      "columnName" : "PARAM",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "IBIZPRO_MESSAGEID"
+      "name" : "PARAM"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "57fe3c1604180790d645227baec615b2",
+    "codeName" : "Param",
+    "logicName" : "消息参数",
+    "stringLength" : 1048576,
+    "stdDataType" : 21,
+    "queryColumn" : false,
+    "length" : 1048576,
+    "name" : "PARAM"
+  }, {
+    "dataType" : "TEXT",
     "keyDEField" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
@@ -405,8 +390,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "IBIZPRO_MESSAGEID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -427,22 +412,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`IBIZPRO_MESSAGEID`",
+      "columnName" : "IBIZPRO_MESSAGEID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "IBIZPRO_MESSAGEID"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "3036788ea6de98de71d735c89eab6091",
+    "codeName" : "IBIZProMessageId",
+    "logicName" : "消息标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "IBIZPRO_MESSAGEID"
   }, {
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
-    "deployId" : "831caef69d69a7592bef72a718734e66",
-    "codeName" : "Retrytimes",
-    "logicName" : "重发次数",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`RETRYTIMES`",
-      "valueAutoGen" : false,
-      "columnName" : "RETRYTIMES",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "RETRYTIMES"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -465,26 +452,26 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`RETRYTIMES`",
+      "columnName" : "RETRYTIMES",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "RETRYTIMES"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "831caef69d69a7592bef72a718734e66",
+    "codeName" : "Retrytimes",
+    "logicName" : "重发次数",
+    "stdDataType" : 9,
     "name" : "RETRYTIMES"
   }, {
-    "dataType" : "NSCODELIST",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "3d36a77f76d15bba163e87e00bfc7755",
-    "codeName" : "Issync",
-    "logicName" : "是否同步",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`ISSYNC`",
-      "valueAutoGen" : false,
-      "columnName" : "ISSYNC",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ISSYNC"
-    } ],
+    "dataType" : "NSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -507,27 +494,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "ISSYNC"
-  }, {
-    "length" : 1048576,
-    "dataType" : "LONGTEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "47c5848a445654da4c6503eaa85283da",
-    "codeName" : "From",
-    "logicName" : "发送方",
-    "stringLength" : 1048576,
-    "stdDataType" : 21,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`FROM`",
       "valueAutoGen" : false,
-      "columnName" : "FROM",
+      "queryCodeExp" : "t1.`ISSYNC`",
+      "columnName" : "ISSYNC",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "FROM"
+      "name" : "ISSYNC"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "3d36a77f76d15bba163e87e00bfc7755",
+    "codeName" : "Issync",
+    "logicName" : "是否同步",
+    "stdDataType" : 9,
+    "name" : "ISSYNC"
+  }, {
+    "dataType" : "LONGTEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
-    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -538,8 +522,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "FROM",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -560,27 +544,27 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "FROM"
-  }, {
-    "length" : 1048576,
-    "dataType" : "LONGTEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "1956b7bcf61824e07135dac13a5f051d",
-    "codeName" : "Cc",
-    "logicName" : "抄送方",
-    "stringLength" : 1048576,
-    "stdDataType" : 21,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CC`",
       "valueAutoGen" : false,
-      "columnName" : "CC",
+      "queryCodeExp" : "t1.`FROM`",
+      "columnName" : "FROM",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "CC"
+      "name" : "FROM"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "47c5848a445654da4c6503eaa85283da",
+    "codeName" : "From",
+    "logicName" : "发送方",
+    "stringLength" : 1048576,
+    "stdDataType" : 21,
+    "queryColumn" : false,
+    "length" : 1048576,
+    "name" : "FROM"
+  }, {
+    "dataType" : "LONGTEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
-    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -591,8 +575,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "CC",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -613,14 +597,25 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`CC`",
+      "columnName" : "CC",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CC"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "1956b7bcf61824e07135dac13a5f051d",
+    "codeName" : "Cc",
+    "logicName" : "抄送方",
+    "stringLength" : 1048576,
+    "stdDataType" : 21,
+    "queryColumn" : false,
+    "length" : 1048576,
     "name" : "CC"
   }, {
     "dataType" : "DATETIME",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "b32c2c91cdb1357b4644825e867af0bd",
-    "codeName" : "SendTime",
-    "logicName" : "发送时间",
-    "stdDataType" : 5,
     "importOrder" : 1000,
     "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -643,29 +638,18 @@
       },
       "name" : "默认规则"
     } ],
-    "phisicalDEField" : false,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
     "uIAssistDEField" : true,
+    "deployId" : "b32c2c91cdb1357b4644825e867af0bd",
+    "codeName" : "SendTime",
+    "logicName" : "发送时间",
+    "stdDataType" : 5,
+    "phisicalDEField" : false,
     "name" : "SENDTIME"
   }, {
-    "length" : 1048576,
     "dataType" : "LONGTEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "ca3670870f07ff272ca13b0701a49aa7",
-    "codeName" : "Content",
-    "logicName" : "内容",
-    "stringLength" : 1048576,
-    "stdDataType" : 21,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CONTENT`",
-      "valueAutoGen" : false,
-      "columnName" : "CONTENT",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CONTENT"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
-    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -676,8 +660,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "CONTENT",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -698,24 +682,25 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "CONTENT"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "40dde7ea568af0e936735224eef8447d",
-    "codeName" : "Linkurl",
-    "logicName" : "链接地址",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`LINKURL`",
       "valueAutoGen" : false,
-      "columnName" : "LINKURL",
+      "queryCodeExp" : "t1.`CONTENT`",
+      "columnName" : "CONTENT",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "LINKURL"
+      "name" : "CONTENT"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "ca3670870f07ff272ca13b0701a49aa7",
+    "codeName" : "Content",
+    "logicName" : "内容",
+    "stringLength" : 1048576,
+    "stdDataType" : 21,
+    "queryColumn" : false,
+    "length" : 1048576,
+    "name" : "CONTENT"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -728,8 +713,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "LINKURL",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -750,18 +735,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`LINKURL`",
+      "columnName" : "LINKURL",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "LINKURL"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "40dde7ea568af0e936735224eef8447d",
+    "codeName" : "Linkurl",
+    "logicName" : "链接地址",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "LINKURL"
   }, {
-    "dataType" : "YESNO",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "3032d861b7a3f34d32f211ecc0901a37",
-    "codeName" : "Isread",
-    "logicName" : "是否已读",
-    "stdDataType" : 9,
+    "dataType" : "YESNO",
     "importOrder" : 1000,
     "dEFType" : 5,
     "getAllPSDEFValueRules" : [ {
@@ -784,28 +779,20 @@
       },
       "name" : "默认规则"
     } ],
-    "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "uIAssistDEField" : true,
+    "deployId" : "3032d861b7a3f34d32f211ecc0901a37",
+    "codeName" : "Isread",
+    "logicName" : "是否已读",
+    "stdDataType" : 9,
+    "phisicalDEField" : false,
     "name" : "ISREAD"
   }, {
-    "dataType" : "NSCODELIST",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "297ba4eb7baf9d4400832bb16103155d",
-    "codeName" : "Isretry",
-    "logicName" : "是否重发",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`ISRETRY`",
-      "valueAutoGen" : false,
-      "columnName" : "ISRETRY",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ISRETRY"
-    } ],
+    "dataType" : "NSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -828,28 +815,26 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`ISRETRY`",
+      "columnName" : "ISRETRY",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ISRETRY"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "297ba4eb7baf9d4400832bb16103155d",
+    "codeName" : "Isretry",
+    "logicName" : "是否重发",
+    "stdDataType" : 9,
     "name" : "ISRETRY"
   }, {
-    "length" : 60,
-    "dataType" : "SSCODELIST",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizplugin/PSCODELISTS/Message__type.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "1e0296a5f43e0212d88d2db36b9f0339",
-    "codeName" : "Type",
-    "logicName" : "消息类型",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`TYPE`",
-      "valueAutoGen" : false,
-      "columnName" : "TYPE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "TYPE"
-    } ],
+    "dataType" : "SSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -862,8 +847,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "TYPE",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -884,27 +869,26 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "TYPE"
-  }, {
-    "length" : 1048576,
-    "dataType" : "LONGTEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "92e488820eb595fc2083154f896c7113",
-    "codeName" : "To",
-    "logicName" : "接收方",
-    "stringLength" : 1048576,
-    "stdDataType" : 21,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`TO`",
       "valueAutoGen" : false,
-      "columnName" : "TO",
+      "queryCodeExp" : "t1.`TYPE`",
+      "columnName" : "TYPE",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "TO"
+      "name" : "TYPE"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "1e0296a5f43e0212d88d2db36b9f0339",
+    "codeName" : "Type",
+    "logicName" : "消息类型",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
+    "name" : "TYPE"
+  }, {
+    "dataType" : "LONGTEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
-    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -915,8 +899,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "TO",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -937,6 +921,22 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`TO`",
+      "columnName" : "TO",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TO"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "92e488820eb595fc2083154f896c7113",
+    "codeName" : "To",
+    "logicName" : "接收方",
+    "stringLength" : 1048576,
+    "stdDataType" : 21,
+    "queryColumn" : false,
+    "length" : 1048576,
     "name" : "TO"
   } ],
   "getAllPSDEDataSets" : [ {
@@ -944,57 +944,57 @@
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "Default",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "Default",
     "logicName" : "数据集",
-    "extendMode" : 0,
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
-    "pageSize" : -1,
     "name" : "DEFAULT"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "UserAllMessages",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "UserAllMessages",
     "logicName" : "用户全部消息",
-    "extendMode" : 0,
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
-    "pageSize" : -1,
     "name" : "UserAllMessages"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "UserUnreadMessages",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "UserUnreadMessages",
     "logicName" : "用户未读信息",
-    "extendMode" : 0,
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
-    "pageSize" : -1,
     "name" : "UserUnreadMessages"
   } ],
   "getAllPSDEActions" : [ {
@@ -1034,9 +1034,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "数据查询",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -1045,9 +1045,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "UserAllMessages",
     "logicName" : "用户全部消息",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "UserAllMessages"
   }, {
@@ -1056,9 +1056,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "UserUnreadMessages",
     "logicName" : "用户未读信息",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "UserUnreadMessages"
   }, {
@@ -1067,19 +1067,25 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
-  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
+  "enableUIActions" : 15,
+  "orderValue" : 99999,
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "serviceCodeName" : "IBIZProMessage",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1094,21 +1100,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 0,
-  "deployId" : "40c5292aaa2a442c156a4096ac73d4a8",
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
   "dynaInstMode" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "dSLink" : "DEFAULT",
+  "deployId" : "40c5292aaa2a442c156a4096ac73d4a8",
   "codeName" : "IBIZProMessage",
   "logicName" : "消息",
   "tableName" : "T_IBIZPRO_MESSAGE",
-  "serviceCodeName" : "IBIZProMessage",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : false,
-  "serviceAPIClientId" : "3c9f3dc2e8583c9e7c71311502bbc307",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1117,10 +1118,9 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : false,
+  "serviceAPIClientId" : "3c9f3dc2e8583c9e7c71311502bbc307",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

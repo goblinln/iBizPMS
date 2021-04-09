@@ -8,9 +8,9 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -22,13 +22,11 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "isweekend"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "间隔",
-      "allowEmpty" : true,
       "createDV" : "5",
       "labelWidth" : 50,
       "enableCond" : 3,
@@ -36,17 +34,18 @@
       "labelPos" : "LEFT",
       "itemHeight" : 29.0,
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
-        "colXS" : 24,
         "colSM" : 24,
+        "colXS" : 24,
         "colMD" : 24,
         "colLG" : 24,
         "layout" : "TABLE_24COL"
       },
-      "codeName" : "isweekend",
       "getPSSysCss" : {
         "cssName" : "burnout-diagram-interval"
       },
+      "codeName" : "isweekend",
       "detailType" : "FORMITEM",
       "detailStyle" : "DEFAULT",
       "name" : "isweekend"
@@ -67,6 +66,7 @@
     "dataType" : 25,
     "createDV" : "5"
   } ],
+  "noTabHeader" : true,
   "codeName" : "Default",
   "formStyle" : "SEARCHBAR",
   "tabHeaderPos" : "TOP",

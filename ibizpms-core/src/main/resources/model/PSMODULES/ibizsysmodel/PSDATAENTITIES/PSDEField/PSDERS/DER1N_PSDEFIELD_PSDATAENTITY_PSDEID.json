@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "PSDEID",
     "codeName" : "PSDEId"
@@ -8,9 +7,10 @@
     "name" : "PSDENAME",
     "codeName" : "PSDEName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 1,
-  "masterRS" : 0,
   "pickupDEFName" : "PSDEID",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

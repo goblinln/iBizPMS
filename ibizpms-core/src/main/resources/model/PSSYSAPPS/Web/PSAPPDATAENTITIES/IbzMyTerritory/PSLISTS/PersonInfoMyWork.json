@@ -1,8 +1,4 @@
 {
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
   "getItemPSLayoutPanel" : {
     "getRootPSPanelItems" : [ {
       "getPSPanelItems" : [ {
@@ -63,8 +59,8 @@
                 "editorType" : "SPAN",
                 "name" : "mytodocnt"
               },
-              "hidden" : false,
               "showCaption" : false,
+              "hidden" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -114,8 +110,8 @@
                 "editorType" : "SPAN",
                 "name" : "mystorys"
               },
-              "hidden" : false,
               "showCaption" : false,
+              "hidden" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -165,8 +161,8 @@
                 "editorType" : "SPAN",
                 "name" : "mytasks"
               },
-              "hidden" : false,
               "showCaption" : false,
+              "hidden" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -234,8 +230,8 @@
                 "editorType" : "SPAN",
                 "name" : "mybugs"
               },
-              "hidden" : false,
               "showCaption" : false,
+              "hidden" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -285,8 +281,8 @@
                 "editorType" : "SPAN",
                 "name" : "myfavoritebugs"
               },
-              "hidden" : false,
               "showCaption" : false,
+              "hidden" : false,
               "getPSLayoutPos" : {
                 "grow" : -1,
                 "layout" : "FLEX"
@@ -390,36 +386,40 @@
   },
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "name" : "myfavoritebugs",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "myfavoritebugs"
   }, {
-    "name" : "mybugs",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "mybugs"
   }, {
-    "name" : "mytasks",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "mytasks"
   }, {
-    "name" : "mytodocnt",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "mytodocnt"
   }, {
-    "name" : "mystorys",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "mystorys"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "REALNAME",
       "codeName" : "Realname"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   } ],
   "showHeader" : true,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
   "enableRowEdit" : false,
   "controlType" : "LIST",
   "codeName" : "PersonInfoMyWork",

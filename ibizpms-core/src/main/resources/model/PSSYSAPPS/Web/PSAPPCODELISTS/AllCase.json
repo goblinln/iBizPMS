@@ -3,6 +3,10 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
   },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
+  },
   "getValuePSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
@@ -10,10 +14,6 @@
   "getTextPSAppDEField" : {
     "name" : "TITLE",
     "codeName" : "Title"
-  },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchDefault"
   },
   "codeListType" : "DYNAMIC",
   "dynaInstMode" : 1,

@@ -1,4 +1,5 @@
 {
+  "treeGridMode" : 0,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -67,9 +68,7 @@
   "enableRootSelect" : false,
   "outputIconDefault" : false,
   "enableSearchDefault" : true,
-  "treeGridMode" : 0,
   "controlType" : "TREEVIEW",
-  "codeName" : "CaseExp",
   "getPSDETreeNodes" : [ {
     "text" : "全部",
     "enableQuickCreate" : false,
@@ -85,14 +84,10 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
     },
-    "enableRemoveData" : false,
-    "enableViewData" : false,
     "getPSNavigateParams" : [ {
       "rawValue" : true,
       "value" : "0",
@@ -105,12 +100,16 @@
       "key" : "BRANCH",
       "name" : "BRANCH"
     } ],
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
     "nodeType" : "ALL",
     "disableSelect" : false,
     "enableQuickSearch" : true,
+    "expanded" : true,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : true,
     "name" : "全部",
     "id" : "ALL"
   }, {
@@ -131,9 +130,9 @@
     "nodeType" : "ROOT",
     "disableSelect" : false,
     "enableQuickSearch" : true,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : false,
     "name" : "默认根节点",
     "id" : "ROOT"
   }, {
@@ -146,13 +145,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
     },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "maxSize" : -1,
     "enableQuickCreate" : false,
@@ -169,10 +168,6 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
     "getPSNavigateParams" : [ {
       "rawValue" : false,
       "value" : "name",
@@ -195,12 +190,16 @@
       "key" : "BRANCH",
       "name" : "BRANCH"
     } ],
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
     "nodeType" : "MODULE",
     "disableSelect" : false,
     "enableQuickSearch" : true,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "非根模块（动态）",
     "id" : "MODULE"
   }, {
@@ -213,13 +212,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
     },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchRoot"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "maxSize" : -1,
     "enableQuickCreate" : false,
@@ -236,10 +235,6 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : true,
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
     "getPSNavigateParams" : [ {
       "rawValue" : false,
       "value" : "name",
@@ -262,15 +257,20 @@
       "key" : "BRANCH",
       "name" : "BRANCH"
     } ],
+    "enableNewData" : false,
+    "enableEditData" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
     "nodeType" : "ROOTMODULE",
     "disableSelect" : false,
     "enableQuickSearch" : true,
+    "expanded" : true,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : true,
     "name" : "根模块（动态）",
     "id" : "ROOTMODULE"
   } ],
+  "codeName" : "CaseExp",
   "rootVisible" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,

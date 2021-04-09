@@ -1,6 +1,7 @@
 {
-  "showFormNavBar" : false,
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -25,36 +26,34 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "lib"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "LIB",
         "codeName" : "Lib"
       },
-      "hidden" : true,
       "dataType" : 1,
-      "caption" : "所属文档库",
       "allowEmpty" : true,
+      "caption" : "所属文档库",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -64,12 +63,13 @@
       "detailStyle" : "DEFAULT",
       "name" : "lib"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
+        "dropDownView" : false,
+        "enablePickupView" : false,
         "singleSelect" : true,
         "enableLinkView" : false,
-        "enablePickupView" : false,
-        "dropDownView" : false,
         "enableAC" : true,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -95,22 +95,21 @@
         },
         "name" : "libname"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "LIBNAME",
         "codeName" : "Libname"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "所属文档库",
       "allowEmpty" : false,
+      "caption" : "所属文档库",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "valueItemName" : "lib",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -120,26 +119,26 @@
       "detailStyle" : "DEFAULT",
       "name" : "libname"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "module"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "MODULE",
         "codeName" : "Module"
       },
-      "hidden" : true,
       "dataType" : 1,
-      "caption" : "所属分类",
       "allowEmpty" : true,
+      "caption" : "所属分类",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -149,13 +148,13 @@
       "detailStyle" : "DEFAULT",
       "name" : "module"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
-      "resetItemNames" : [ "libname" ],
       "getPSEditor" : {
+        "dropDownView" : false,
+        "enablePickupView" : false,
         "singleSelect" : true,
         "enableLinkView" : false,
-        "enablePickupView" : false,
-        "dropDownView" : false,
         "enableAC" : true,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -195,16 +194,15 @@
         },
         "name" : "modulename"
       },
-      "inputTipClosable" : false,
+      "resetItemNames" : [ "libname" ],
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "MODULENAME",
         "codeName" : "Modulename"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "所属分类",
       "allowEmpty" : true,
+      "caption" : "所属分类",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
@@ -212,6 +210,7 @@
       "resetItemName" : "libname",
       "valueItemName" : "module",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -221,27 +220,27 @@
       "detailStyle" : "DEFAULT",
       "name" : "modulename"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "maxLength" : 255,
         "editorType" : "TEXTBOX",
         "name" : "title"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "文档标题",
       "allowEmpty" : false,
+      "caption" : "文档标题",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -251,27 +250,27 @@
       "detailStyle" : "DEFAULT",
       "name" : "title"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "maxLength" : 255,
         "editorType" : "TEXTBOX",
         "name" : "keywords"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "KEYWORDS",
         "codeName" : "Keywords"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "关键字",
       "allowEmpty" : true,
+      "caption" : "关键字",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -281,6 +280,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "keywords"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "getPSAppCodeList" : {
@@ -290,23 +290,22 @@
         "editorType" : "RADIOBUTTONLIST",
         "name" : "type"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "文档类型",
-      "allowEmpty" : true,
       "createDV" : "text",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -316,8 +315,8 @@
       "detailStyle" : "DEFAULT",
       "name" : "type"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
-      "resetItemNames" : [ "type" ],
       "getPSEditor" : {
         "editorType" : "HTMLEDITOR",
         "editorParams" : {
@@ -326,28 +325,28 @@
         },
         "name" : "content"
       },
-      "inputTipClosable" : false,
+      "resetItemNames" : [ "type" ],
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "CONTENT",
         "codeName" : "Content"
       },
-      "hidden" : false,
       "dataType" : 21,
-      "caption" : "文档正文",
       "allowEmpty" : true,
+      "caption" : "文档正文",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "resetItemName" : "type",
       "showCaption" : true,
+      "hidden" : false,
       "getPSDEFDGroupLogics" : [ {
         "relatedDetailNames" : [ "type" ],
         "logicCat" : "PANELVISIBLE",
         "getPSDEFDLogics" : [ {
-          "dEFDName" : "type",
           "condOP" : "EQ",
+          "dEFDName" : "type",
           "value" : "text",
           "logicType" : "SINGLE",
           "name" : "type 等于(=) (text)"
@@ -366,35 +365,35 @@
       "detailStyle" : "DEFAULT",
       "name" : "content"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
-      "resetItemNames" : [ "type" ],
       "getPSEditor" : {
         "maxLength" : 100,
         "editorType" : "TEXTBOX",
         "name" : "url"
       },
-      "inputTipClosable" : false,
+      "resetItemNames" : [ "type" ],
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "URL",
         "codeName" : "Url"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "文档链接",
       "allowEmpty" : true,
+      "caption" : "文档链接",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "resetItemName" : "type",
       "showCaption" : true,
+      "hidden" : false,
       "getPSDEFDGroupLogics" : [ {
         "relatedDetailNames" : [ "type" ],
         "logicCat" : "PANELVISIBLE",
         "getPSDEFDLogics" : [ {
-          "dEFDName" : "type",
           "condOP" : "EQ",
+          "dEFDName" : "type",
           "value" : "url",
           "logicType" : "SINGLE",
           "name" : "type 等于(=) (url)"
@@ -413,6 +412,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "url"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "maxFileCount" : -1,
@@ -429,21 +429,20 @@
         },
         "name" : "files"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "FILES",
         "codeName" : "Files"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "附件",
       "allowEmpty" : true,
+      "caption" : "附件",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -453,6 +452,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "files"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "getPSAppCodeList" : {
@@ -462,23 +462,22 @@
         "editorType" : "RADIOBUTTONLIST",
         "name" : "acl"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ACL",
         "codeName" : "Acl"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "权限",
-      "allowEmpty" : true,
       "createDV" : "open",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -625,6 +624,7 @@
       "codeName" : "Id"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "CreateEditForm",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

@@ -5,16 +5,16 @@
   },
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "codeName" : "Doc__type",
   "getPSCodeItems" : [ {
-    "value" : "text",
     "codeName" : "Text",
-    "text" : "文档"
+    "text" : "文档",
+    "value" : "text"
   }, {
-    "value" : "url",
     "codeName" : "Url",
-    "text" : "链接"
+    "text" : "链接",
+    "value" : "url"
   } ],
+  "codeName" : "Doc__type",
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Doc__type.json",

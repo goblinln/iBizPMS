@@ -1,8 +1,8 @@
 {
   "loadDefault" : true,
   "enableSearch" : false,
-  "enableQuickGroup" : false,
   "expandSearchForm" : false,
+  "enableQuickGroup" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "BurnDownChartView",
@@ -11,8 +11,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -27,8 +27,8 @@
     "engineType" : "ChartView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "CHART",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "CHART"
     } ],
     "name" : "engine"
   } ],
@@ -36,6 +36,7 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "getPSDEChartTitle" : {
       "showTitle" : true,
@@ -74,7 +75,6 @@
       "id" : "0"
     },
     "controlType" : "CHART",
-    "codeName" : "BurnDown",
     "getPSDEChartSerieses" : [ {
       "stack" : false,
       "catalogField" : "BEGIN",
@@ -90,16 +90,17 @@
         "id" : "0"
       },
       "getPSChartSeriesEncode" : {
-        "getPSChartXAxis" : {
+        "getPSChartYAxis" : {
           "modelref" : true,
           "id" : "0"
         },
-        "getPSChartYAxis" : {
+        "getPSChartXAxis" : {
           "modelref" : true,
           "id" : "0"
         },
         "x" : [ "BEGIN" ],
         "y" : [ "ID" ],
+        "type" : "XY",
         "index" : 0,
         "name" : "坐标系编码",
         "id" : "0"
@@ -110,22 +111,13 @@
       "index" : 0,
       "name" : "BurnDown"
     } ],
-    "getPSChartYAxises" : [ {
-      "eChartsType" : "value",
-      "eChartsPos" : "yAxis",
-      "position" : "left",
-      "type" : "numeric",
-      "caption" : "工时",
-      "index" : 0,
-      "name" : "Y",
-      "id" : "0"
-    } ],
+    "codeName" : "BurnDown",
     "getPSChartXAxises" : [ {
       "eChartsType" : "category",
       "eChartsPos" : "xAxis",
       "position" : "bottom",
-      "type" : "category",
       "caption" : "日期",
+      "type" : "category",
       "index" : 0,
       "name" : "X",
       "id" : "0"
@@ -153,6 +145,16 @@
       "type" : "grid",
       "index" : 0,
       "name" : "[BurnDown]直角坐标系[0]",
+      "id" : "0"
+    } ],
+    "getPSChartYAxises" : [ {
+      "eChartsType" : "value",
+      "eChartsPos" : "yAxis",
+      "position" : "left",
+      "caption" : "工时",
+      "type" : "numeric",
+      "index" : 0,
+      "name" : "Y",
       "id" : "0"
     } ],
     "getPSChartDataSets" : [ {
@@ -186,6 +188,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CHART"
+    },
+    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -255,18 +263,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "图形控件处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "CHART"
-    },
-    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSCHARTS/BurnDown.json",
     "logicName" : "BurnDown",
     "name" : "chart",
     "modelid" : "b09f35e51d613eb6892615d2cdbeb77d"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "ProjectBurnDownChartView",
   "viewType" : "DECHARTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectBurnDownChartView.json",

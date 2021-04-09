@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "ORGID",
     "codeName" : "OrgId"
@@ -8,9 +7,10 @@
     "name" : "ORGNAME",
     "codeName" : "OrgName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 2,
-  "masterRS" : 0,
   "pickupDEFName" : "ORGID",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

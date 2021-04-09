@@ -1,19 +1,19 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : false,
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 99999,
-  "codeName" : "GetTestReportProject",
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
+  "codeName" : "GetTestReportProject",
   "logicName" : "根据测试报告获取基本信息（项目报告）",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "DELOGIC",
   "requestParamType" : "ENTITY",

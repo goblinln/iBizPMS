@@ -1,22 +1,7 @@
 {
   "serviceAPIMode" : 0,
   "getAllPSDEFields" : [ {
-    "length" : 100,
     "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "6ad47a886e309db40796f29fe58a0963",
-    "codeName" : "AuthClientId",
-    "logicName" : "认证客户端标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`AUTHCLIENTID`",
-      "valueAutoGen" : false,
-      "columnName" : "AUTHCLIENTID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "AUTHCLIENTID"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -29,8 +14,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "AUTHCLIENTID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -51,22 +36,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`AUTHCLIENTID`",
+      "columnName" : "AUTHCLIENTID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "AUTHCLIENTID"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "6ad47a886e309db40796f29fe58a0963",
+    "codeName" : "AuthClientId",
+    "logicName" : "认证客户端标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "AUTHCLIENTID"
   }, {
     "dataType" : "NSCODELIST",
-    "valueFormat" : "%1$s",
-    "deployId" : "4e98c7c42682afdc890a1a3c25fa5408",
-    "codeName" : "APIMode",
-    "logicName" : "接口模式",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`APIMODE`",
-      "valueAutoGen" : false,
-      "columnName" : "APIMODE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "APIMODE"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -89,24 +76,22 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "APIMODE"
-  }, {
-    "length" : 8,
-    "dataType" : "DATETIME",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "aa6f5668b2e60bbe4d0817f063bbc4ea",
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "stdDataType" : 5,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UPDATEDATE`",
       "valueAutoGen" : false,
-      "columnName" : "UPDATEDATE",
+      "queryCodeExp" : "t1.`APIMODE`",
+      "columnName" : "APIMODE",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "UPDATEDATE"
+      "name" : "APIMODE"
     } ],
-    "predefinedType" : "UPDATEDATE",
+    "valueFormat" : "%1$s",
+    "deployId" : "4e98c7c42682afdc890a1a3c25fa5408",
+    "codeName" : "APIMode",
+    "logicName" : "接口模式",
+    "stdDataType" : 9,
+    "name" : "APIMODE"
+  }, {
+    "dataType" : "DATETIME",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -131,24 +116,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "UPDATEDATE"
-  }, {
-    "length" : 50,
-    "dataType" : "SSCODELIST",
-    "valueFormat" : "%1$s",
-    "deployId" : "29858b9a36c40f83b241af6271b7827e",
-    "codeName" : "PredefinedType",
-    "logicName" : "平台预定义类型",
-    "stringLength" : 50,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PREDEFINEDTYPE`",
       "valueAutoGen" : false,
-      "columnName" : "PREDEFINEDTYPE",
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "columnName" : "UPDATEDATE",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "PREDEFINEDTYPE"
+      "name" : "UPDATEDATE"
     } ],
+    "predefinedType" : "UPDATEDATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "aa6f5668b2e60bbe4d0817f063bbc4ea",
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "stdDataType" : 5,
+    "length" : 8,
+    "name" : "UPDATEDATE"
+  }, {
+    "dataType" : "SSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -161,8 +146,8 @@
           "includeMaxValue" : true,
           "maxValue" : 50,
           "dEFName" : "PREDEFINEDTYPE",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[50]",
           "name" : "默认字符串长度"
@@ -183,24 +168,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "PREDEFINEDTYPE"
-  }, {
-    "length" : 100,
-    "dataType" : "GUID",
-    "valueFormat" : "%1$s",
-    "deployId" : "1aa1d941f8655522534ee6ffa2ed237c",
-    "codeName" : "PSSysServiceAPIId",
-    "logicName" : "系统服务接口标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PSSYSSERVICEAPIID`",
       "valueAutoGen" : false,
-      "columnName" : "PSSYSSERVICEAPIID",
+      "queryCodeExp" : "t1.`PREDEFINEDTYPE`",
+      "columnName" : "PREDEFINEDTYPE",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "PSSYSSERVICEAPIID"
+      "name" : "PREDEFINEDTYPE"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "29858b9a36c40f83b241af6271b7827e",
+    "codeName" : "PredefinedType",
+    "logicName" : "平台预定义类型",
+    "stringLength" : 50,
+    "stdDataType" : 25,
+    "length" : 50,
+    "name" : "PREDEFINEDTYPE"
+  }, {
+    "dataType" : "GUID",
     "keyDEField" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
@@ -216,8 +201,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PSSYSSERVICEAPIID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -238,24 +223,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "PSSYSSERVICEAPIID"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "438780bc22a311206f21bb73d790ab61",
-    "codeName" : "ServiceParam4",
-    "logicName" : "服务参数4",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`SERVICEPARAM4`",
       "valueAutoGen" : false,
-      "columnName" : "SERVICEPARAM4",
+      "queryCodeExp" : "t1.`PSSYSSERVICEAPIID`",
+      "columnName" : "PSSYSSERVICEAPIID",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "SERVICEPARAM4"
+      "name" : "PSSYSSERVICEAPIID"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "1aa1d941f8655522534ee6ffa2ed237c",
+    "codeName" : "PSSysServiceAPIId",
+    "logicName" : "系统服务接口标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "PSSYSSERVICEAPIID"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -268,8 +253,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "SERVICEPARAM4",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -290,24 +275,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "SERVICEPARAM4"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "faedfe868c939e93a026e263aadf83a2",
-    "codeName" : "CfgTag",
-    "logicName" : "配置标记",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CFGTAG`",
       "valueAutoGen" : false,
-      "columnName" : "CFGTAG",
+      "queryCodeExp" : "t1.`SERVICEPARAM4`",
+      "columnName" : "SERVICEPARAM4",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "CFGTAG"
+      "name" : "SERVICEPARAM4"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "438780bc22a311206f21bb73d790ab61",
+    "codeName" : "ServiceParam4",
+    "logicName" : "服务参数4",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "SERVICEPARAM4"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -320,8 +305,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "CFGTAG",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -342,24 +327,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "CFGTAG"
-  }, {
-    "length" : 200,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "e5f0fa1fecd4f3f8599889de99aa4b5a",
-    "codeName" : "ServiceParam",
-    "logicName" : "服务参数",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`SERVICEPARAM`",
       "valueAutoGen" : false,
-      "columnName" : "SERVICEPARAM",
+      "queryCodeExp" : "t1.`CFGTAG`",
+      "columnName" : "CFGTAG",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "SERVICEPARAM"
+      "name" : "CFGTAG"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "faedfe868c939e93a026e263aadf83a2",
+    "codeName" : "CfgTag",
+    "logicName" : "配置标记",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "CFGTAG"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -372,8 +357,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "SERVICEPARAM",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -394,29 +379,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`SERVICEPARAM`",
+      "columnName" : "SERVICEPARAM",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "SERVICEPARAM"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "e5f0fa1fecd4f3f8599889de99aa4b5a",
+    "codeName" : "ServiceParam",
+    "logicName" : "服务参数",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
     "name" : "SERVICEPARAM"
   }, {
-    "length" : 60,
-    "dataType" : "TEXT",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "32de184a457002b392ddf53ab27e1aa8",
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CREATEMAN`",
-      "valueAutoGen" : false,
-      "columnName" : "CREATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CREATEMAN"
-    } ],
-    "predefinedType" : "CREATEMAN",
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -431,8 +415,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "CREATEMAN",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -453,24 +437,25 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "CREATEMAN"
-  }, {
-    "length" : 60,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "fac702d62fe02e8438308e9370a73535",
-    "codeName" : "ServiceCodeName",
-    "logicName" : "服务代码名称",
-    "stringLength" : 60,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`SERVICECODENAME`",
       "valueAutoGen" : false,
-      "columnName" : "SERVICECODENAME",
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "columnName" : "CREATEMAN",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "SERVICECODENAME"
+      "name" : "CREATEMAN"
     } ],
+    "predefinedType" : "CREATEMAN",
+    "valueFormat" : "%1$s",
+    "deployId" : "32de184a457002b392ddf53ab27e1aa8",
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
+    "name" : "CREATEMAN"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -483,8 +468,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "SERVICECODENAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -505,24 +490,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "SERVICECODENAME"
-  }, {
-    "length" : 8,
-    "dataType" : "DATETIME",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "62013c50ec736f33a74c5a2fb11b223f",
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "stdDataType" : 5,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CREATEDATE`",
       "valueAutoGen" : false,
-      "columnName" : "CREATEDATE",
+      "queryCodeExp" : "t1.`SERVICECODENAME`",
+      "columnName" : "SERVICECODENAME",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "CREATEDATE"
+      "name" : "SERVICECODENAME"
     } ],
-    "predefinedType" : "CREATEDATE",
+    "valueFormat" : "%1$s",
+    "deployId" : "fac702d62fe02e8438308e9370a73535",
+    "codeName" : "ServiceCodeName",
+    "logicName" : "服务代码名称",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
+    "name" : "SERVICECODENAME"
+  }, {
+    "dataType" : "DATETIME",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -547,22 +532,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "columnName" : "CREATEDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CREATEDATE"
+    } ],
+    "predefinedType" : "CREATEDATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "62013c50ec736f33a74c5a2fb11b223f",
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "stdDataType" : 5,
+    "length" : 8,
     "name" : "CREATEDATE"
   }, {
     "dataType" : "NSCODELIST",
-    "valueFormat" : "%1$s",
-    "deployId" : "a02981c51a9228ae48a44ce292b9d00a",
-    "codeName" : "LockFlag",
-    "logicName" : "模型锁标志",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`LOCKFLAG`",
-      "valueAutoGen" : false,
-      "columnName" : "LOCKFLAG",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "LOCKFLAG"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -585,25 +572,22 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "LOCKFLAG"
-  }, {
-    "length" : 20,
-    "defaultValue" : "GET",
-    "dataType" : "SSCODELIST",
-    "valueFormat" : "%1$s",
-    "deployId" : "c6eae7d6efce088398afc61cd3888b86",
-    "codeName" : "DefSelectReqMethod",
-    "logicName" : "默认查询请求方式",
-    "stringLength" : 20,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`DEFSELECTREQMETHOD`",
-      "valueAutoGen" : true,
-      "columnName" : "DEFSELECTREQMETHOD",
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`LOCKFLAG`",
+      "columnName" : "LOCKFLAG",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "DEFSELECTREQMETHOD"
+      "name" : "LOCKFLAG"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "a02981c51a9228ae48a44ce292b9d00a",
+    "codeName" : "LockFlag",
+    "logicName" : "模型锁标志",
+    "stdDataType" : 9,
+    "name" : "LOCKFLAG"
+  }, {
+    "dataType" : "SSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -616,8 +600,8 @@
           "includeMaxValue" : true,
           "maxValue" : 20,
           "dEFName" : "DEFSELECTREQMETHOD",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[20]",
           "name" : "默认字符串长度"
@@ -638,24 +622,25 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "DEFSELECTREQMETHOD"
-  }, {
-    "length" : 200,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "4eebb16a6fd6e2699f743ee39318ad94",
-    "codeName" : "ServiceParam2",
-    "logicName" : "服务参数2",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`SERVICEPARAM2`",
-      "valueAutoGen" : false,
-      "columnName" : "SERVICEPARAM2",
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`DEFSELECTREQMETHOD`",
+      "columnName" : "DEFSELECTREQMETHOD",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "SERVICEPARAM2"
+      "name" : "DEFSELECTREQMETHOD"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "c6eae7d6efce088398afc61cd3888b86",
+    "codeName" : "DefSelectReqMethod",
+    "logicName" : "默认查询请求方式",
+    "stringLength" : 20,
+    "stdDataType" : 25,
+    "length" : 20,
+    "defaultValue" : "GET",
+    "name" : "DEFSELECTREQMETHOD"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -668,8 +653,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "SERVICEPARAM2",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -690,24 +675,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "SERVICEPARAM2"
-  }, {
-    "length" : 40,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "fe547a0089a74cfc31112fa12430ef2d",
-    "codeName" : "CodeName",
-    "logicName" : "代码名称",
-    "stringLength" : 40,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CODENAME`",
       "valueAutoGen" : false,
-      "columnName" : "CODENAME",
+      "queryCodeExp" : "t1.`SERVICEPARAM2`",
+      "columnName" : "SERVICEPARAM2",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "CODENAME"
+      "name" : "SERVICEPARAM2"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "4eebb16a6fd6e2699f743ee39318ad94",
+    "codeName" : "ServiceParam2",
+    "logicName" : "服务参数2",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
+    "name" : "SERVICEPARAM2"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "allowEmpty" : false,
@@ -721,8 +706,8 @@
           "includeMaxValue" : true,
           "maxValue" : 40,
           "dEFName" : "CODENAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[40]",
           "name" : "默认字符串长度"
@@ -743,24 +728,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "CODENAME"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "b08f42305c4d2e89e9f0ff368a45fb6a",
-    "codeName" : "AuthParam4",
-    "logicName" : "认证参数4",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`AUTHPARAM4`",
       "valueAutoGen" : false,
-      "columnName" : "AUTHPARAM4",
+      "queryCodeExp" : "t1.`CODENAME`",
+      "columnName" : "CODENAME",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "AUTHPARAM4"
+      "name" : "CODENAME"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "fe547a0089a74cfc31112fa12430ef2d",
+    "codeName" : "CodeName",
+    "logicName" : "代码名称",
+    "stringLength" : 40,
+    "stdDataType" : 25,
+    "length" : 40,
+    "name" : "CODENAME"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -773,8 +758,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "AUTHPARAM4",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -795,24 +780,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "AUTHPARAM4"
-  }, {
-    "length" : 10,
-    "dataType" : "SSCODELIST",
-    "valueFormat" : "%1$s",
-    "deployId" : "b2066e85c08265384906536fe343b9af",
-    "codeName" : "UserCat",
-    "logicName" : "用户分类",
-    "stringLength" : 10,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`USERCAT`",
       "valueAutoGen" : false,
-      "columnName" : "USERCAT",
+      "queryCodeExp" : "t1.`AUTHPARAM4`",
+      "columnName" : "AUTHPARAM4",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "USERCAT"
+      "name" : "AUTHPARAM4"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "b08f42305c4d2e89e9f0ff368a45fb6a",
+    "codeName" : "AuthParam4",
+    "logicName" : "认证参数4",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "AUTHPARAM4"
+  }, {
+    "dataType" : "SSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -825,8 +810,8 @@
           "includeMaxValue" : true,
           "maxValue" : 10,
           "dEFName" : "USERCAT",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[10]",
           "name" : "默认字符串长度"
@@ -847,24 +832,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "USERCAT"
-  }, {
-    "length" : 50,
-    "dataType" : "SSCODELIST",
-    "valueFormat" : "%1$s",
-    "deployId" : "d560f4be4148b76eeac413fc44bd012e",
-    "codeName" : "AuthMode",
-    "logicName" : "认证模式",
-    "stringLength" : 50,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`AUTHMODE`",
       "valueAutoGen" : false,
-      "columnName" : "AUTHMODE",
+      "queryCodeExp" : "t1.`USERCAT`",
+      "columnName" : "USERCAT",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "AUTHMODE"
+      "name" : "USERCAT"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "b2066e85c08265384906536fe343b9af",
+    "codeName" : "UserCat",
+    "logicName" : "用户分类",
+    "stringLength" : 10,
+    "stdDataType" : 25,
+    "length" : 10,
+    "name" : "USERCAT"
+  }, {
+    "dataType" : "SSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -877,8 +862,8 @@
           "includeMaxValue" : true,
           "maxValue" : 50,
           "dEFName" : "AUTHMODE",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[50]",
           "name" : "默认字符串长度"
@@ -899,24 +884,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "AUTHMODE"
-  }, {
-    "length" : 200,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "e34985c5ff19ccc18807d3b0145b29a4",
-    "codeName" : "UserTag",
-    "logicName" : "用户标记",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`USERTAG`",
       "valueAutoGen" : false,
-      "columnName" : "USERTAG",
+      "queryCodeExp" : "t1.`AUTHMODE`",
+      "columnName" : "AUTHMODE",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "USERTAG"
+      "name" : "AUTHMODE"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "d560f4be4148b76eeac413fc44bd012e",
+    "codeName" : "AuthMode",
+    "logicName" : "认证模式",
+    "stringLength" : 50,
+    "stdDataType" : 25,
+    "length" : 50,
+    "name" : "AUTHMODE"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -929,8 +914,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "USERTAG",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -951,24 +936,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "USERTAG"
-  }, {
-    "length" : 40,
-    "dataType" : "SSCODELIST",
-    "valueFormat" : "%1$s",
-    "deployId" : "5d933479d21a7283dbfba0f9ea70cd88",
-    "codeName" : "APIType",
-    "logicName" : "接口类型",
-    "stringLength" : 40,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`APITYPE`",
       "valueAutoGen" : false,
-      "columnName" : "APITYPE",
+      "queryCodeExp" : "t1.`USERTAG`",
+      "columnName" : "USERTAG",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "APITYPE"
+      "name" : "USERTAG"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "e34985c5ff19ccc18807d3b0145b29a4",
+    "codeName" : "UserTag",
+    "logicName" : "用户标记",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
+    "name" : "USERTAG"
+  }, {
+    "dataType" : "SSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "allowEmpty" : false,
@@ -982,8 +967,8 @@
           "includeMaxValue" : true,
           "maxValue" : 40,
           "dEFName" : "APITYPE",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[40]",
           "name" : "默认字符串长度"
@@ -1004,24 +989,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "APITYPE"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "346940d49804ece9d17d02c92be0e476",
-    "codeName" : "PSSystemName",
-    "logicName" : "系统",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PSSYSTEMNAME`",
       "valueAutoGen" : false,
-      "columnName" : "PSSYSTEMNAME",
+      "queryCodeExp" : "t1.`APITYPE`",
+      "columnName" : "APITYPE",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "PSSYSTEMNAME"
+      "name" : "APITYPE"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "5d933479d21a7283dbfba0f9ea70cd88",
+    "codeName" : "APIType",
+    "logicName" : "接口类型",
+    "stringLength" : 40,
+    "stdDataType" : 25,
+    "length" : 40,
+    "name" : "APITYPE"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1034,8 +1019,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PSSYSTEMNAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1056,24 +1041,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "PSSYSTEMNAME"
-  }, {
-    "length" : 200,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "6c1cfc853e174cf3c563249459f6d872",
-    "codeName" : "AuthParam2",
-    "logicName" : "认证参数2",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`AUTHPARAM2`",
       "valueAutoGen" : false,
-      "columnName" : "AUTHPARAM2",
+      "queryCodeExp" : "t1.`PSSYSTEMNAME`",
+      "columnName" : "PSSYSTEMNAME",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "AUTHPARAM2"
+      "name" : "PSSYSTEMNAME"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "346940d49804ece9d17d02c92be0e476",
+    "codeName" : "PSSystemName",
+    "logicName" : "系统",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "PSSYSTEMNAME"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1086,8 +1071,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "AUTHPARAM2",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -1108,24 +1093,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "AUTHPARAM2"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "0210ba5bc44045d5a2a698b534d1dfeb",
-    "codeName" : "CfgPSModelStorageId",
-    "logicName" : "配置模型存储标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CFGPSMODELSTORAGEID`",
       "valueAutoGen" : false,
-      "columnName" : "CFGPSMODELSTORAGEID",
+      "queryCodeExp" : "t1.`AUTHPARAM2`",
+      "columnName" : "AUTHPARAM2",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "CFGPSMODELSTORAGEID"
+      "name" : "AUTHPARAM2"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "6c1cfc853e174cf3c563249459f6d872",
+    "codeName" : "AuthParam2",
+    "logicName" : "认证参数2",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
+    "name" : "AUTHPARAM2"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1138,8 +1123,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "CFGPSMODELSTORAGEID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1160,24 +1145,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "CFGPSMODELSTORAGEID"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "9ee6065e515c4a7e3b336e0dc10b65f5",
-    "codeName" : "APITag",
-    "logicName" : "接口标记",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`APITAG`",
       "valueAutoGen" : false,
-      "columnName" : "APITAG",
+      "queryCodeExp" : "t1.`CFGPSMODELSTORAGEID`",
+      "columnName" : "CFGPSMODELSTORAGEID",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "APITAG"
+      "name" : "CFGPSMODELSTORAGEID"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "0210ba5bc44045d5a2a698b534d1dfeb",
+    "codeName" : "CfgPSModelStorageId",
+    "logicName" : "配置模型存储标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "CFGPSMODELSTORAGEID"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1190,8 +1175,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "APITAG",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1212,24 +1197,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "APITAG"
-  }, {
-    "length" : 50,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "60713eea2d1e61c59e9c83658f692a3d",
-    "codeName" : "UserTag4",
-    "logicName" : "用户标记4",
-    "stringLength" : 50,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`USERTAG4`",
       "valueAutoGen" : false,
-      "columnName" : "USERTAG4",
+      "queryCodeExp" : "t1.`APITAG`",
+      "columnName" : "APITAG",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "USERTAG4"
+      "name" : "APITAG"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "9ee6065e515c4a7e3b336e0dc10b65f5",
+    "codeName" : "APITag",
+    "logicName" : "接口标记",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "APITAG"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1242,8 +1227,8 @@
           "includeMaxValue" : true,
           "maxValue" : 50,
           "dEFName" : "USERTAG4",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[50]",
           "name" : "默认字符串长度"
@@ -1264,24 +1249,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "USERTAG4"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "81544338c18a266c68087f25019ef174",
-    "codeName" : "ServiceParam3",
-    "logicName" : "服务参数3",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`SERVICEPARAM3`",
       "valueAutoGen" : false,
-      "columnName" : "SERVICEPARAM3",
+      "queryCodeExp" : "t1.`USERTAG4`",
+      "columnName" : "USERTAG4",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "SERVICEPARAM3"
+      "name" : "USERTAG4"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "60713eea2d1e61c59e9c83658f692a3d",
+    "codeName" : "UserTag4",
+    "logicName" : "用户标记4",
+    "stringLength" : 50,
+    "stdDataType" : 25,
+    "length" : 50,
+    "name" : "USERTAG4"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1294,8 +1279,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "SERVICEPARAM3",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1316,25 +1301,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "SERVICEPARAM3"
-  }, {
-    "length" : 20,
-    "defaultValue" : "GET",
-    "dataType" : "SSCODELIST",
-    "valueFormat" : "%1$s",
-    "deployId" : "4848446c72662aabc7925b860fc0c07c",
-    "codeName" : "DefDEDataSetReqMethod",
-    "logicName" : "默认结果集请求方式",
-    "stringLength" : 20,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`DEFDEDATASETREQMETHOD`",
-      "valueAutoGen" : true,
-      "columnName" : "DEFDEDATASETREQMETHOD",
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`SERVICEPARAM3`",
+      "columnName" : "SERVICEPARAM3",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "DEFDEDATASETREQMETHOD"
+      "name" : "SERVICEPARAM3"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "81544338c18a266c68087f25019ef174",
+    "codeName" : "ServiceParam3",
+    "logicName" : "服务参数3",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "SERVICEPARAM3"
+  }, {
+    "dataType" : "SSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1347,8 +1331,8 @@
           "includeMaxValue" : true,
           "maxValue" : 20,
           "dEFName" : "DEFDEDATASETREQMETHOD",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[20]",
           "name" : "默认字符串长度"
@@ -1369,24 +1353,25 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "DEFDEDATASETREQMETHOD"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "643b6b9f637293b9a31d60f21760a44f",
-    "codeName" : "UniqueTag",
-    "logicName" : "唯一标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UNIQUETAG`",
-      "valueAutoGen" : false,
-      "columnName" : "UNIQUETAG",
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`DEFDEDATASETREQMETHOD`",
+      "columnName" : "DEFDEDATASETREQMETHOD",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "UNIQUETAG"
+      "name" : "DEFDEDATASETREQMETHOD"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "4848446c72662aabc7925b860fc0c07c",
+    "codeName" : "DefDEDataSetReqMethod",
+    "logicName" : "默认结果集请求方式",
+    "stringLength" : 20,
+    "stdDataType" : 25,
+    "length" : 20,
+    "defaultValue" : "GET",
+    "name" : "DEFDEDATASETREQMETHOD"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1399,8 +1384,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "UNIQUETAG",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1421,24 +1406,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "UNIQUETAG"
-  }, {
-    "length" : 30,
-    "dataType" : "SSCODELIST",
-    "valueFormat" : "%1$s",
-    "deployId" : "2d01f1e75f95f891c59d625d2a335a3a",
-    "codeName" : "ServiceType",
-    "logicName" : "服务类型",
-    "stringLength" : 30,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`SERVICETYPE`",
       "valueAutoGen" : false,
-      "columnName" : "SERVICETYPE",
+      "queryCodeExp" : "t1.`UNIQUETAG`",
+      "columnName" : "UNIQUETAG",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "SERVICETYPE"
+      "name" : "UNIQUETAG"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "643b6b9f637293b9a31d60f21760a44f",
+    "codeName" : "UniqueTag",
+    "logicName" : "唯一标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "UNIQUETAG"
+  }, {
+    "dataType" : "SSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1451,8 +1436,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "SERVICETYPE",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -1473,24 +1458,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "SERVICETYPE"
-  }, {
-    "length" : 200,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "fbfa6c4032334538c7e5a81674c36602",
-    "codeName" : "PSSysServiceAPIName",
-    "logicName" : "系统服务接口名称",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PSSYSSERVICEAPINAME`",
       "valueAutoGen" : false,
-      "columnName" : "PSSYSSERVICEAPINAME",
+      "queryCodeExp" : "t1.`SERVICETYPE`",
+      "columnName" : "SERVICETYPE",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "PSSYSSERVICEAPINAME"
+      "name" : "SERVICETYPE"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "2d01f1e75f95f891c59d625d2a335a3a",
+    "codeName" : "ServiceType",
+    "logicName" : "服务类型",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "length" : 30,
+    "name" : "SERVICETYPE"
+  }, {
+    "dataType" : "TEXT",
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
@@ -1505,8 +1490,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "PSSYSSERVICEAPINAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -1527,24 +1512,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "PSSYSSERVICEAPINAME"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "aad40cfec1023adad95ebb6b2fef84e4",
-    "codeName" : "PSSystemId",
-    "logicName" : "系统",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PSSYSTEMID`",
       "valueAutoGen" : false,
-      "columnName" : "PSSYSTEMID",
+      "queryCodeExp" : "t1.`PSSYSSERVICEAPINAME`",
+      "columnName" : "PSSYSSERVICEAPINAME",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "PSSYSTEMID"
+      "name" : "PSSYSSERVICEAPINAME"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "fbfa6c4032334538c7e5a81674c36602",
+    "codeName" : "PSSysServiceAPIName",
+    "logicName" : "系统服务接口名称",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
+    "name" : "PSSYSSERVICEAPINAME"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1557,8 +1542,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PSSYSTEMID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1579,24 +1564,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "PSSYSTEMID"
-  }, {
-    "length" : 50,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "bb305a72c6f0f48b82290dd47d883a9c",
-    "codeName" : "UserTag3",
-    "logicName" : "用户标记3",
-    "stringLength" : 50,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`USERTAG3`",
       "valueAutoGen" : false,
-      "columnName" : "USERTAG3",
+      "queryCodeExp" : "t1.`PSSYSTEMID`",
+      "columnName" : "PSSYSTEMID",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "USERTAG3"
+      "name" : "PSSYSTEMID"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "aad40cfec1023adad95ebb6b2fef84e4",
+    "codeName" : "PSSystemId",
+    "logicName" : "系统",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "PSSYSTEMID"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1609,8 +1594,8 @@
           "includeMaxValue" : true,
           "maxValue" : 50,
           "dEFName" : "USERTAG3",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[50]",
           "name" : "默认字符串长度"
@@ -1631,27 +1616,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`USERTAG3`",
+      "columnName" : "USERTAG3",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "USERTAG3"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "bb305a72c6f0f48b82290dd47d883a9c",
+    "codeName" : "UserTag3",
+    "logicName" : "用户标记3",
+    "stringLength" : 50,
+    "stdDataType" : 25,
+    "length" : 50,
     "name" : "USERTAG3"
   }, {
-    "defaultValue" : "1",
-    "dataType" : "YESNO",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "124fba3437b7f214d9ee9bd6025c9333",
-    "codeName" : "ValidFlag",
-    "logicName" : "是否启用",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`VALIDFLAG`",
-      "valueAutoGen" : true,
-      "columnName" : "VALIDFLAG",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "VALIDFLAG"
-    } ],
+    "dataType" : "YESNO",
     "importOrder" : 1000,
     "dEFType" : 1,
     "allowEmpty" : false,
@@ -1675,24 +1661,23 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "VALIDFLAG"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "f2f23af7e5a242cb149f8450a61b8e53",
-    "codeName" : "APITag2",
-    "logicName" : "接口标记2",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`APITAG2`",
-      "valueAutoGen" : false,
-      "columnName" : "APITAG2",
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`VALIDFLAG`",
+      "columnName" : "VALIDFLAG",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "APITAG2"
+      "name" : "VALIDFLAG"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "124fba3437b7f214d9ee9bd6025c9333",
+    "codeName" : "ValidFlag",
+    "logicName" : "是否启用",
+    "stdDataType" : 9,
+    "defaultValue" : "1",
+    "name" : "VALIDFLAG"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1705,8 +1690,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "APITAG2",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1727,24 +1712,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "APITAG2"
-  }, {
-    "length" : 500,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "a6cc9827fde33c95fdabf7cfa4af8ea4",
-    "codeName" : "AuthCheckTokenUri",
-    "logicName" : "认证token路径",
-    "stringLength" : 500,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`AUTHCHECKTOKENURI`",
       "valueAutoGen" : false,
-      "columnName" : "AUTHCHECKTOKENURI",
+      "queryCodeExp" : "t1.`APITAG2`",
+      "columnName" : "APITAG2",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "AUTHCHECKTOKENURI"
+      "name" : "APITAG2"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "f2f23af7e5a242cb149f8450a61b8e53",
+    "codeName" : "APITag2",
+    "logicName" : "接口标记2",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "APITAG2"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1757,8 +1742,8 @@
           "includeMaxValue" : true,
           "maxValue" : 500,
           "dEFName" : "AUTHCHECKTOKENURI",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[500]",
           "name" : "默认字符串长度"
@@ -1779,24 +1764,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "AUTHCHECKTOKENURI"
-  }, {
-    "length" : 20,
-    "dataType" : "SSCODELIST",
-    "valueFormat" : "%1$s",
-    "deployId" : "3afb1cbb7da8770d77e79b2dde5fbbab",
-    "codeName" : "DefDEActionReqMethod",
-    "logicName" : "默认实体行为请求方式",
-    "stringLength" : 20,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`DEFDEACTIONREQMETHOD`",
       "valueAutoGen" : false,
-      "columnName" : "DEFDEACTIONREQMETHOD",
+      "queryCodeExp" : "t1.`AUTHCHECKTOKENURI`",
+      "columnName" : "AUTHCHECKTOKENURI",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "DEFDEACTIONREQMETHOD"
+      "name" : "AUTHCHECKTOKENURI"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "a6cc9827fde33c95fdabf7cfa4af8ea4",
+    "codeName" : "AuthCheckTokenUri",
+    "logicName" : "认证token路径",
+    "stringLength" : 500,
+    "stdDataType" : 25,
+    "length" : 500,
+    "name" : "AUTHCHECKTOKENURI"
+  }, {
+    "dataType" : "SSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1809,8 +1794,8 @@
           "includeMaxValue" : true,
           "maxValue" : 20,
           "dEFName" : "DEFDEACTIONREQMETHOD",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[20]",
           "name" : "默认字符串长度"
@@ -1831,24 +1816,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "DEFDEACTIONREQMETHOD"
-  }, {
-    "length" : 200,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "fb8bfe8f0550129d95dcb8ad8f19e6fc",
-    "codeName" : "AuthParam",
-    "logicName" : "认证参数",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`AUTHPARAM`",
       "valueAutoGen" : false,
-      "columnName" : "AUTHPARAM",
+      "queryCodeExp" : "t1.`DEFDEACTIONREQMETHOD`",
+      "columnName" : "DEFDEACTIONREQMETHOD",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "AUTHPARAM"
+      "name" : "DEFDEACTIONREQMETHOD"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "3afb1cbb7da8770d77e79b2dde5fbbab",
+    "codeName" : "DefDEActionReqMethod",
+    "logicName" : "默认实体行为请求方式",
+    "stringLength" : 20,
+    "stdDataType" : 25,
+    "length" : 20,
+    "name" : "DEFDEACTIONREQMETHOD"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1861,8 +1846,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "AUTHPARAM",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -1883,29 +1868,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`AUTHPARAM`",
+      "columnName" : "AUTHPARAM",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "AUTHPARAM"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "fb8bfe8f0550129d95dcb8ad8f19e6fc",
+    "codeName" : "AuthParam",
+    "logicName" : "认证参数",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
     "name" : "AUTHPARAM"
   }, {
-    "length" : 60,
-    "dataType" : "TEXT",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "dba0af5e94895733a20d6b1b84210dc2",
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UPDATEMAN`",
-      "valueAutoGen" : false,
-      "columnName" : "UPDATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATEMAN"
-    } ],
-    "predefinedType" : "UPDATEMAN",
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -1920,8 +1904,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "UPDATEMAN",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -1942,24 +1926,25 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "UPDATEMAN"
-  }, {
-    "length" : 100,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "9882e92c113e0a3843803153df31d4dd",
-    "codeName" : "AuthParam3",
-    "logicName" : "认证参数3",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`AUTHPARAM3`",
       "valueAutoGen" : false,
-      "columnName" : "AUTHPARAM3",
+      "queryCodeExp" : "t1.`UPDATEMAN`",
+      "columnName" : "UPDATEMAN",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "AUTHPARAM3"
+      "name" : "UPDATEMAN"
     } ],
+    "predefinedType" : "UPDATEMAN",
+    "valueFormat" : "%1$s",
+    "deployId" : "dba0af5e94895733a20d6b1b84210dc2",
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
+    "name" : "UPDATEMAN"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -1972,8 +1957,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "AUTHPARAM3",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1994,24 +1979,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "AUTHPARAM3"
-  }, {
-    "length" : 200,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "a002eded9d3c80ebda058161599e0ffc",
-    "codeName" : "UserTag2",
-    "logicName" : "用户标记2",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`USERTAG2`",
       "valueAutoGen" : false,
-      "columnName" : "USERTAG2",
+      "queryCodeExp" : "t1.`AUTHPARAM3`",
+      "columnName" : "AUTHPARAM3",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "USERTAG2"
+      "name" : "AUTHPARAM3"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "9882e92c113e0a3843803153df31d4dd",
+    "codeName" : "AuthParam3",
+    "logicName" : "认证参数3",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
+    "name" : "AUTHPARAM3"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -2024,8 +2009,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "USERTAG2",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -2046,24 +2031,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "USERTAG2"
-  }, {
-    "length" : 1000,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "0d4007018c2f8ce1ea1714e5943b0f01",
-    "codeName" : "AuthClientSecret",
-    "logicName" : "认证客户端密钥",
-    "stringLength" : 1000,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`AUTHCLIENTSECRET`",
       "valueAutoGen" : false,
-      "columnName" : "AUTHCLIENTSECRET",
+      "queryCodeExp" : "t1.`USERTAG2`",
+      "columnName" : "USERTAG2",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "AUTHCLIENTSECRET"
+      "name" : "USERTAG2"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "a002eded9d3c80ebda058161599e0ffc",
+    "codeName" : "UserTag2",
+    "logicName" : "用户标记2",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
+    "name" : "USERTAG2"
+  }, {
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -2076,8 +2061,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1000,
           "dEFName" : "AUTHCLIENTSECRET",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1000]",
           "name" : "默认字符串长度"
@@ -2098,22 +2083,24 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`AUTHCLIENTSECRET`",
+      "columnName" : "AUTHCLIENTSECRET",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "AUTHCLIENTSECRET"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "0d4007018c2f8ce1ea1714e5943b0f01",
+    "codeName" : "AuthClientSecret",
+    "logicName" : "认证客户端密钥",
+    "stringLength" : 1000,
+    "stdDataType" : 25,
+    "length" : 1000,
     "name" : "AUTHCLIENTSECRET"
   }, {
     "dataType" : "INT",
-    "valueFormat" : "%1$s",
-    "deployId" : "1dea8940d9d369641e73c2321defe196",
-    "codeName" : "Ver",
-    "logicName" : "版本",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`VER`",
-      "valueAutoGen" : false,
-      "columnName" : "VER",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "VER"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "allowEmpty" : false,
@@ -2137,24 +2124,22 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "VER"
-  }, {
-    "length" : 2000,
-    "dataType" : "LONGTEXT_1000",
-    "valueFormat" : "%1$s",
-    "deployId" : "fca40143dd3b44cb897ec35e38846816",
-    "codeName" : "Memo",
-    "logicName" : "备注",
-    "stringLength" : 2000,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`MEMO`",
       "valueAutoGen" : false,
-      "columnName" : "MEMO",
+      "queryCodeExp" : "t1.`VER`",
+      "columnName" : "VER",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "MEMO"
+      "name" : "VER"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "1dea8940d9d369641e73c2321defe196",
+    "codeName" : "Ver",
+    "logicName" : "版本",
+    "stdDataType" : 9,
+    "name" : "VER"
+  }, {
+    "dataType" : "LONGTEXT_1000",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -2167,8 +2152,8 @@
           "includeMaxValue" : true,
           "maxValue" : 2000,
           "dEFName" : "MEMO",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[2000]",
           "name" : "默认字符串长度"
@@ -2189,6 +2174,21 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`MEMO`",
+      "columnName" : "MEMO",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "MEMO"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "fca40143dd3b44cb897ec35e38846816",
+    "codeName" : "Memo",
+    "logicName" : "备注",
+    "stringLength" : 2000,
+    "stdDataType" : 25,
+    "length" : 2000,
     "name" : "MEMO"
   }, {
     "phisicalDEField" : false,
@@ -2202,21 +2202,7 @@
       "name" : "PSMODULENAME",
       "codeName" : "PSModuleName"
     },
-    "length" : 200,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "228e72574dae774d8bf4efeeb191f690",
-    "codeName" : "PSModuleName",
-    "logicName" : "系统模块",
-    "stringLength" : 200,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t11.`PSMODULENAME`",
-      "valueAutoGen" : false,
-      "columnName" : "PSMODULENAME",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSMODULENAME"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 3,
     "getAllPSDEFValueRules" : [ {
@@ -2229,8 +2215,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "PSMODULENAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -2251,6 +2237,20 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t11.`PSMODULENAME`",
+      "columnName" : "PSMODULENAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSMODULENAME"
+    } ],
+    "deployId" : "228e72574dae774d8bf4efeeb191f690",
+    "codeName" : "PSModuleName",
+    "logicName" : "系统模块",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
     "name" : "PSMODULENAME"
   }, {
     "getPSDER" : {
@@ -2263,21 +2263,7 @@
       "name" : "PSMODULEID",
       "codeName" : "PSModuleId"
     },
-    "length" : 100,
     "dataType" : "PICKUP",
-    "deployId" : "fae1cdf406b9ad4034d5db56c64582d0",
-    "codeName" : "PSModuleId",
-    "logicName" : "系统模块",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`PSMODULEID`",
-      "valueAutoGen" : false,
-      "columnName" : "PSMODULEID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PSMODULEID"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -2290,8 +2276,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PSMODULEID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -2312,6 +2298,20 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`PSMODULEID`",
+      "columnName" : "PSMODULEID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PSMODULEID"
+    } ],
+    "deployId" : "fae1cdf406b9ad4034d5db56c64582d0",
+    "codeName" : "PSModuleId",
+    "logicName" : "系统模块",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "PSMODULEID"
   } ],
   "getAllPSDEDataSets" : [ {
@@ -2319,19 +2319,19 @@
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "Default",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "Default",
     "logicName" : "数据集",
-    "extendMode" : 0,
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
-    "pageSize" : -1,
     "name" : "DEFAULT"
   } ],
   "getAllPSDEActions" : [ {
@@ -2362,9 +2362,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "数据查询",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -2373,19 +2373,25 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
-  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
+  "enableUIActions" : 15,
+  "orderValue" : 99999,
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "serviceCodeName" : "PSSysServiceAPI",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -2400,21 +2406,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 0,
-  "deployId" : "44b2831eb6d4835cb194a84d42fe3fc0",
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
   "dynaInstMode" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "dSLink" : "DEFAULT",
+  "deployId" : "44b2831eb6d4835cb194a84d42fe3fc0",
   "codeName" : "PSSysServiceAPI",
   "logicName" : "系统服务接口",
   "tableName" : "T_PSSYSSERVICEAPI",
-  "serviceCodeName" : "PSSysServiceAPI",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : false,
-  "serviceAPIClientId" : "45ab5098498d2294128bca01585b9993",
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -2423,10 +2424,9 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : false,
+  "serviceAPIClientId" : "45ab5098498d2294128bca01585b9993",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

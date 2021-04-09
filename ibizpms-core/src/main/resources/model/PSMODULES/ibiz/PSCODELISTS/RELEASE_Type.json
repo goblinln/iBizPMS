@@ -3,49 +3,49 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/RELEASE_Type.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/RELEASE_Type.json",
   "codeName" : "RELEASE_Type",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "DEPLOYPKG",
     "codeName" : "Deploypkg",
-    "text" : "部署系统组件到仓库"
+    "text" : "部署系统组件到仓库",
+    "value" : "DEPLOYPKG"
   }, {
-    "value" : "PACKMOBAPP",
     "codeName" : "Packmobapp",
-    "text" : "打包移动应用"
+    "text" : "打包移动应用",
+    "value" : "PACKMOBAPP"
   }, {
-    "value" : "PACKVER",
     "codeName" : "Packver",
-    "text" : "打包版本"
+    "text" : "打包版本",
+    "value" : "PACKVER"
   }, {
-    "value" : "PUBCODE",
     "codeName" : "Pubcode",
-    "text" : "代码发布"
+    "text" : "代码发布",
+    "value" : "PUBCODE"
   }, {
-    "value" : "PUBCODE2",
     "codeName" : "Pubcode2",
-    "text" : "代码发布（模板开发）"
+    "text" : "代码发布（模板开发）",
+    "value" : "PUBCODE2"
   }, {
-    "value" : "STARTMSAPI",
     "codeName" : "Startmsapi",
-    "text" : "启动微服务"
+    "text" : "启动微服务",
+    "value" : "STARTMSAPI"
   }, {
-    "value" : "STARTMSAPP",
     "codeName" : "Startmsapp",
-    "text" : "启动微服务应用"
+    "text" : "启动微服务应用",
+    "value" : "STARTMSAPP"
   }, {
-    "value" : "STARTMSFUNC",
     "codeName" : "Startmsfunc",
-    "text" : "启动微服务功能"
+    "text" : "启动微服务功能",
+    "value" : "STARTMSFUNC"
   }, {
-    "value" : "STARTX",
     "codeName" : "Startx",
-    "text" : "启动系统"
+    "text" : "启动系统",
+    "value" : "STARTX"
   } ]
 }

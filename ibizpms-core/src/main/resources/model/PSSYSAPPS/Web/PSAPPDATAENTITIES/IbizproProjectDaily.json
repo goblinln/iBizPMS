@@ -1,6 +1,6 @@
 {
+  "enableUIRemove" : true,
   "getAllPSAppDEUIActions" : [ {
-    "getNoPrivDisplayMode" : 2,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
@@ -22,12 +22,13 @@
       "key" : "ISMANUAL",
       "name" : "ISMANUAL"
     } ],
+    "getNoPrivDisplayMode" : 2,
     "timeout" : 60000,
-    "codeName" : "ManualCreateDaily",
     "getPSSysImage" : {
       "glyph" : "xf067@FontAwesome",
       "cssClass" : "fa fa-plus"
     },
+    "codeName" : "ManualCreateDaily",
     "caption" : "生成日报",
     "actionTarget" : "NONE",
     "uIActionTag" : "ManualCreateDaily",
@@ -38,196 +39,195 @@
     "name" : "生成项目日报",
     "id" : "ManualCreateDaily@IbizproProjectDaily"
   } ],
-  "major" : true,
   "enableUIActions" : 15,
-  "enableUIRemove" : true,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
-    "builtinMethod" : false,
-    "methodType" : "SELECT",
-    "codeName" : "Select",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    }
+    },
+    "codeName" : "Select",
+    "methodType" : "SELECT"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBIZPROPROJECTDAILY__DEACTION__CREATE"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Create.json"
     },
-    "codeName" : "Create",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
-    }
+    },
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBIZPROPROJECTDAILY__DEACTION__UPDATE"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Update.json"
     },
-    "codeName" : "Update",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
-    }
+    },
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBIZPROPROJECTDAILY__DEACTION__REMOVE"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Remove.json"
     },
-    "codeName" : "Remove",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
-    }
+    },
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBIZPROPROJECTDAILY__DEACTION__GET"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Get.json"
     },
-    "codeName" : "Get",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    }
+    },
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/GetDraft.json"
     },
-    "codeName" : "GetDraft",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
-    }
+    },
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SumProjectDaily"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/SumProjectDaily.json"
     },
-    "codeName" : "SumProjectDaily"
+    "codeName" : "SumProjectDaily",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
     },
-    "codeName" : "FetchDefault",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    }
+    },
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGET"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE"
   }, {
     "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH"
   } ],
   "getAllPSAppDEFields" : [ {
     "majorField" : true,
+    "enableQuickSearch" : true,
     "codeName" : "IbizproProjectDailyName",
     "logicName" : "项目日报名称",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "enableQuickSearch" : true,
     "name" : "IBIZPRO_PROJECTDAILYNAME"
   }, {
     "codeName" : "Tasks",
@@ -309,6 +309,22 @@
     "name" : "PROJECT"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "IBIZPRO_PROJECTDAILYID",
+        "codeName" : "IbizproProjectDailyId"
+      },
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBIZPRO_PROJECTDAILYNAME",
+        "codeName" : "IbizproProjectDailyName"
+      },
+      "dataType" : 25,
+      "name" : "text"
+    } ],
     "getValuePSAppDEField" : {
       "name" : "IBIZPRO_PROJECTDAILYID",
       "codeName" : "IbizproProjectDailyId"
@@ -317,22 +333,6 @@
       "name" : "IBIZPRO_PROJECTDAILYNAME",
       "codeName" : "IbizproProjectDailyName"
     },
-    "enablePagingBar" : false,
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "IBIZPRO_PROJECTDAILYID",
-        "codeName" : "IbizproProjectDailyId"
-      },
-      "name" : "value",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBIZPRO_PROJECTDAILYNAME",
-        "codeName" : "IbizproProjectDailyName"
-      },
-      "name" : "text",
-      "dataType" : 25
-    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -346,139 +346,141 @@
     "codeName" : "IbizproProjectDailyName"
   } ],
   "getAllPSAppDEActions" : [ {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBIZPROPROJECTDAILY__DEACTION__CREATE"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Create.json"
     },
-    "codeName" : "Create",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
-    }
+    },
+    "codeName" : "Create",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBIZPROPROJECTDAILY__DEACTION__UPDATE"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Update.json"
     },
-    "codeName" : "Update",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
-    }
+    },
+    "codeName" : "Update",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBIZPROPROJECTDAILY__DEACTION__REMOVE"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Remove.json"
     },
-    "codeName" : "Remove",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
-    }
+    },
+    "codeName" : "Remove",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBIZPROPROJECTDAILY__DEACTION__GET"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Get.json"
     },
-    "codeName" : "Get",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    }
+    },
+    "codeName" : "Get",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/GetDraft.json"
     },
-    "codeName" : "GetDraft",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
-    }
+    },
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
+    "codeName" : "Save",
+    "methodType" : "DEACTION"
   }, {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SumProjectDaily"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/SumProjectDaily.json"
     },
-    "codeName" : "SumProjectDaily"
+    "codeName" : "SumProjectDaily",
+    "methodType" : "DEACTION"
   } ],
   "getAllPSAppDEDataSets" : [ {
+    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
     },
-    "codeName" : "FetchDefault",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    }
+    },
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH"
   } ],
+  "enableUICreate" : true,
+  "enableUIModify" : true,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -498,8 +500,6 @@
   },
   "codeName" : "IbizproProjectDaily",
   "logicName" : "项目日报",
-  "enableUICreate" : true,
-  "enableUIModify" : true,
   "dataAccCtrlMode" : 1,
   "storageMode" : 0,
   "dataAccCtrlArch" : 1,

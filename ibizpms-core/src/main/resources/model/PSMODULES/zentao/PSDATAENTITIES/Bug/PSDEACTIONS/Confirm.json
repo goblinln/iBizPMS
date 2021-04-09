@@ -1,9 +1,8 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : false,
   "getAfterPSDEActionLogics" : [ {
     "internalLogic" : true,
@@ -16,20 +15,21 @@
     "attachMode" : "AFTER",
     "name" : "附加逻辑"
   } ],
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 99999,
+  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
   "codeName" : "Confirm",
   "logicName" : "确认",
-  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Confirm.json",
-  "name" : "Confirm",
-  "userCat" : "CAT1"
+  "userCat" : "CAT1",
+  "name" : "Confirm"
 }

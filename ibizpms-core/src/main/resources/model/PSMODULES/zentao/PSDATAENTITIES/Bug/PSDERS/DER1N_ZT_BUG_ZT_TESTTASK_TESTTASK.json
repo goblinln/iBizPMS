@@ -1,12 +1,12 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "TESTTASK",
     "codeName" : "Testtask"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
-  "masterRS" : 0,
   "pickupDEFName" : "TESTTASK",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

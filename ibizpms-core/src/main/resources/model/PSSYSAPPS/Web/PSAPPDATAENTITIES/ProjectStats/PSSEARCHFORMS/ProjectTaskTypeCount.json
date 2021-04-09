@@ -8,9 +8,9 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -21,22 +21,21 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "n_status_eq"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "项目状态",
-      "allowEmpty" : true,
       "labelWidth" : 100,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,
@@ -47,6 +46,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_status_eq"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
@@ -57,21 +57,20 @@
         },
         "name" : "n_begin_gtandeq"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "hidden" : false,
       "dataType" : 5,
-      "caption" : "项目起始时间",
       "allowEmpty" : true,
+      "caption" : "项目起始时间",
       "labelWidth" : 100,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,
@@ -82,6 +81,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_begin_gtandeq"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
@@ -92,21 +92,20 @@
         },
         "name" : "n_end_ltandeq"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "hidden" : false,
       "dataType" : 5,
-      "caption" : "至",
       "allowEmpty" : true,
+      "caption" : "至",
       "labelWidth" : 20,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,
@@ -150,6 +149,7 @@
       "codeName" : "End"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "ProjectTaskTypeCount",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

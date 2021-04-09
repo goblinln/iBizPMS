@@ -3,21 +3,21 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_client__status.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_client__status.json",
   "codeName" : "Im_client__status",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "released",
     "codeName" : "Released",
-    "text" : "released"
+    "text" : "released",
+    "value" : "released"
   }, {
-    "value" : "wait",
     "codeName" : "Wait",
-    "text" : "wait"
+    "text" : "wait",
+    "value" : "wait"
   } ]
 }

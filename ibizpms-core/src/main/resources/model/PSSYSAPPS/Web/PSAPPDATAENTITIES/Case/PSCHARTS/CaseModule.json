@@ -18,7 +18,6 @@
     "id" : "0"
   },
   "controlType" : "CHART",
-  "codeName" : "CaseModule",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "MODULENAME",
     "seriesType" : "pie",
@@ -35,6 +34,7 @@
     "getPSChartSeriesEncode" : {
       "category" : "MODULENAME",
       "value" : "SRFCOUNT",
+      "type" : "NONE",
       "index" : 0,
       "name" : "坐标系编码",
       "id" : "0"
@@ -44,6 +44,7 @@
     "index" : 0,
     "name" : "Caseresult"
   } ],
+  "codeName" : "CaseModule",
   "emptyText" : "无",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
@@ -75,12 +76,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseModule.json",
   "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "tablechart"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CaseModule.json",
   "logicName" : "CaseModule",
   "modelid" : "bc25d99a6895ec072cbb4ed1f1668c23",
   "getUserParam" : {

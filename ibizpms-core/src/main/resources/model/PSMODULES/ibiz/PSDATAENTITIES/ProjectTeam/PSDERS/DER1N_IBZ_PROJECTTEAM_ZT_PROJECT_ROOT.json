@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "ROOT",
     "codeName" : "Root"
@@ -9,9 +8,10 @@
     "codeName" : "ProjectName"
   },
   "nestedRS" : true,
+  "masterOrder" : -1,
   "removeActionType" : -1,
-  "masterRS" : 8,
   "pickupDEFName" : "ROOT",
+  "masterRS" : 8,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

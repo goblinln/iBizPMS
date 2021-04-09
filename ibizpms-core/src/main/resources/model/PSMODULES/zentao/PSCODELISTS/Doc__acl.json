@@ -3,25 +3,25 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doc__acl.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doc__acl.json",
   "codeName" : "Doc__acl",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "open",
     "codeName" : "Open",
-    "text" : "公开"
+    "text" : "公开",
+    "value" : "open"
   }, {
-    "value" : "private",
     "codeName" : "Private",
-    "text" : "私有"
+    "text" : "私有",
+    "value" : "private"
   }, {
-    "value" : "custom",
     "codeName" : "Custom",
-    "text" : "自定义"
+    "text" : "自定义",
+    "value" : "custom"
   } ]
 }

@@ -3,25 +3,25 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Usertpl__type.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Usertpl__type.json",
   "codeName" : "Usertpl__type",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "story",
     "codeName" : "Story",
-    "text" : "story"
+    "text" : "story",
+    "value" : "story"
   }, {
-    "value" : "task",
     "codeName" : "Task",
-    "text" : "task"
+    "text" : "task",
+    "value" : "task"
   }, {
-    "value" : "bug",
     "codeName" : "Bug",
-    "text" : "bug"
+    "text" : "bug",
+    "value" : "bug"
   } ]
 }

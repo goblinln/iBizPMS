@@ -5,22 +5,22 @@
   },
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "codeName" : "Product__type",
   "getPSCodeItems" : [ {
-    "value" : "normal",
     "codeName" : "Normal",
     "text" : "正常",
+    "color" : "blue",
     "default" : true,
-    "color" : "blue"
+    "value" : "normal"
   }, {
-    "value" : "branch",
     "codeName" : "Branch",
-    "text" : "多分支"
+    "text" : "多分支",
+    "value" : "branch"
   }, {
-    "value" : "platform",
     "codeName" : "Platform",
-    "text" : "多平台"
+    "text" : "多平台",
+    "value" : "platform"
   } ],
+  "codeName" : "Product__type",
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__type.json",

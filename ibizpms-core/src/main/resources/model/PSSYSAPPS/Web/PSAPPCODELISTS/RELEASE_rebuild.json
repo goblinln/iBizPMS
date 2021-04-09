@@ -6,24 +6,24 @@
   "codeItemValueNumber" : true,
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "codeName" : "RELEASE_rebuild",
   "getPSCodeItems" : [ {
-    "value" : "0",
     "codeName" : "None",
-    "text" : "无操作"
+    "text" : "无操作",
+    "value" : "0"
   }, {
-    "value" : "1",
     "codeName" : "Quick",
-    "text" : "快速（删除本地项目与代码仓库多余文件）"
+    "text" : "快速（删除本地项目与代码仓库多余文件）",
+    "value" : "1"
   }, {
-    "value" : "4",
     "codeName" : "FixModel",
-    "text" : "修复模型"
+    "text" : "修复模型",
+    "value" : "4"
   }, {
-    "value" : "2",
     "codeName" : "Full",
-    "text" : "完整（完全重建本地项目及代码仓库）"
+    "text" : "完整（完全重建本地项目及代码仓库）",
+    "value" : "2"
   } ],
+  "codeName" : "RELEASE_rebuild",
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/RELEASE_rebuild.json",

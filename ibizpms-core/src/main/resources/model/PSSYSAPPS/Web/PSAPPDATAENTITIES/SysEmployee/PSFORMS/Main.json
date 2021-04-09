@@ -1,6 +1,7 @@
 {
-  "showFormNavBar" : false,
   "enableAutoSave" : false,
+  "infoFormMode" : true,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -25,18 +26,19 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : true,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
+        "dropDownView" : false,
+        "enablePickupView" : false,
         "singleSelect" : true,
         "enableLinkView" : true,
         "getLinkPSAppView" : {
@@ -44,8 +46,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr2GridView.json",
           "viewType" : "DEGRIDVIEW"
         },
-        "enablePickupView" : false,
-        "dropDownView" : false,
         "enableAC" : false,
         "forceSelection" : true,
         "showTrigger" : false,
@@ -73,22 +73,21 @@
         },
         "name" : "orgname"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ORGNAME",
         "codeName" : "OrgName"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "单位",
       "allowEmpty" : true,
+      "caption" : "单位",
       "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "valueItemName" : "orgid",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -98,6 +97,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "orgname"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
@@ -105,21 +105,20 @@
         "editorType" : "SPAN",
         "name" : "mdeptname"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "MDEPTNAME",
         "codeName" : "MDeptName"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "部门",
       "allowEmpty" : true,
+      "caption" : "部门",
       "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -129,6 +128,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "mdeptname"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
@@ -136,21 +136,20 @@
         "editorType" : "SPAN",
         "name" : "personname"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PERSONNAME",
         "codeName" : "PersonName"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "姓名",
       "allowEmpty" : true,
+      "caption" : "姓名",
       "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -160,6 +159,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "personname"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
@@ -167,21 +167,20 @@
         "editorType" : "SPAN",
         "name" : "nickname"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "NICKNAME",
         "codeName" : "NickName"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "别名",
       "allowEmpty" : true,
+      "caption" : "别名",
       "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -191,6 +190,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "nickname"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
@@ -198,21 +198,20 @@
         "editorType" : "SPAN",
         "name" : "sex"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "SEX",
         "codeName" : "Sex"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "性别",
       "allowEmpty" : true,
+      "caption" : "性别",
       "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -222,6 +221,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "sex"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
@@ -229,21 +229,20 @@
         "editorType" : "SPAN",
         "name" : "phone"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PHONE",
         "codeName" : "Phone"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "电话",
       "allowEmpty" : true,
+      "caption" : "电话",
       "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -367,6 +366,7 @@
       "codeName" : "UserId"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

@@ -19,7 +19,6 @@
     "id" : "0"
   },
   "controlType" : "CHART",
-  "codeName" : "BugStatus_Project",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "Status",
     "seriesType" : "pie",
@@ -40,6 +39,7 @@
     "getPSChartSeriesEncode" : {
       "category" : "Status",
       "value" : "SRFCOUNT",
+      "type" : "NONE",
       "index" : 0,
       "name" : "坐标系编码",
       "id" : "0"
@@ -50,6 +50,7 @@
     "index" : 0,
     "name" : "BugStatus"
   } ],
+  "codeName" : "BugStatus_Project",
   "emptyText" : "无",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
@@ -86,12 +87,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugStatus_Project.json",
   "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "tablechart"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugStatus_Project.json",
   "logicName" : "BugStatus_Project",
   "modelid" : "e3811e4748ec81725f9d4784b0e5ca1b",
   "getUserParam" : {

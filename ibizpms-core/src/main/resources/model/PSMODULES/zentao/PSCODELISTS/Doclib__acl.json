@@ -3,21 +3,21 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doclib__acl.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doclib__acl.json",
   "codeName" : "Doclib__acl",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "default",
     "codeName" : "Default",
-    "text" : "默认"
+    "text" : "默认",
+    "value" : "default"
   }, {
-    "value" : "custom",
     "codeName" : "Custom",
-    "text" : "自定义"
+    "text" : "自定义",
+    "value" : "custom"
   } ]
 }

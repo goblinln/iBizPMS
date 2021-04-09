@@ -4,66 +4,80 @@
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
-    "name" : "taskcnt",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "taskcnt"
   }, {
     "getPSAppDEField" : {
       "name" : "TIMESCALE",
       "codeName" : "Timescale"
     },
-    "name" : "timescale",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "timescale"
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECTTOTALCONSUMED",
       "codeName" : "Projecttotalconsumed"
     },
-    "name" : "projecttotalconsumed",
-    "dataType" : 7
+    "dataType" : 7,
+    "name" : "projecttotalconsumed"
   }, {
     "getPSAppDEField" : {
       "name" : "MEMBERCNT",
       "codeName" : "Membercnt"
     },
-    "name" : "membercnt",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "membercnt"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "name",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "name"
   }, {
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "name" : "storycnt",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "storycnt"
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -86,31 +100,17 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
-  "enableRowEdit" : false,
   "enablePagingBar" : false,
+  "enableRowEdit" : false,
   "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "excelCaption" : "项目名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -123,11 +123,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "工期",
-    "dataItemName" : "timescale",
     "getPSAppDEField" : {
       "name" : "TIMESCALE",
       "codeName" : "Timescale"
     },
+    "dataItemName" : "timescale",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -140,11 +140,11 @@
     "name" : "timescale"
   }, {
     "excelCaption" : "任务数",
-    "dataItemName" : "taskcnt",
     "getPSAppDEField" : {
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
+    "dataItemName" : "taskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -158,11 +158,11 @@
     "name" : "taskcnt"
   }, {
     "excelCaption" : "需求数",
-    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
+    "dataItemName" : "storycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -176,11 +176,11 @@
     "name" : "storycnt"
   }, {
     "excelCaption" : "人数",
-    "dataItemName" : "membercnt",
     "getPSAppDEField" : {
       "name" : "MEMBERCNT",
       "codeName" : "Membercnt"
     },
+    "dataItemName" : "membercnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -194,11 +194,11 @@
     "name" : "membercnt"
   }, {
     "excelCaption" : "总消耗",
-    "dataItemName" : "projecttotalconsumed",
     "getPSAppDEField" : {
       "name" : "PROJECTTOTALCONSUMED",
       "codeName" : "Projecttotalconsumed"
     },
+    "dataItemName" : "projecttotalconsumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

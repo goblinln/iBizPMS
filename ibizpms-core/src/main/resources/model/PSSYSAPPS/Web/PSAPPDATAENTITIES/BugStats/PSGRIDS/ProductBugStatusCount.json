@@ -4,80 +4,94 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "name" : "product",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "product"
   }, {
     "getPSAppDEField" : {
       "name" : "BUGEFFICIENT",
       "codeName" : "Bugefficient"
     },
-    "name" : "bugefficient",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "bugefficient"
   }, {
     "getPSAppDEField" : {
       "name" : "BUGACTIVE",
       "codeName" : "Bugactive"
     },
-    "name" : "bugactive",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "bugactive"
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "name" : "project",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "project"
   }, {
     "getPSAppDEField" : {
       "name" : "BUGRESOLVED",
       "codeName" : "Bugresolved"
     },
-    "name" : "bugresolved",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "bugresolved"
   }, {
     "getPSAppDEField" : {
       "name" : "BUGCLOSED",
       "codeName" : "Bugclosed"
     },
-    "name" : "bugclosed",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "bugclosed"
   }, {
     "getPSAppDEField" : {
       "name" : "BUGTOTAL",
       "codeName" : "Bugtotal"
     },
-    "name" : "bugtotal",
-    "dataType" : 9
+    "dataType" : 9,
+    "name" : "bugtotal"
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "name" : "srfmajortext",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "srfmajortext"
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfdataaccaction"
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   }, {
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
-    "name" : "productname",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "productname"
   } ],
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
   "singleSelect" : true,
   "enableColFilter" : false,
   "enableRowNew" : false,
@@ -100,38 +114,24 @@
     "name" : "srfkey"
   } ],
   "hasWFDataItems" : false,
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
   "columnEnableLink" : 2,
-  "enableRowEdit" : false,
   "enablePagingBar" : false,
+  "enableRowEdit" : false,
   "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "linkValueItem" : "product",
     "excelCaption" : "产品名称",
+    "linkValueItem" : "product",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "dataItemName" : "productname",
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
+    "dataItemName" : "productname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -144,11 +144,11 @@
     "name" : "productname"
   }, {
     "excelCaption" : "已解决",
-    "dataItemName" : "bugresolved",
     "getPSAppDEField" : {
       "name" : "BUGRESOLVED",
       "codeName" : "Bugresolved"
     },
+    "dataItemName" : "bugresolved",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -162,11 +162,11 @@
     "name" : "bugresolved"
   }, {
     "excelCaption" : "已关闭",
-    "dataItemName" : "bugclosed",
     "getPSAppDEField" : {
       "name" : "BUGCLOSED",
       "codeName" : "Bugclosed"
     },
+    "dataItemName" : "bugclosed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -180,11 +180,11 @@
     "name" : "bugclosed"
   }, {
     "excelCaption" : "已激活",
-    "dataItemName" : "bugactive",
     "getPSAppDEField" : {
       "name" : "BUGACTIVE",
       "codeName" : "Bugactive"
     },
+    "dataItemName" : "bugactive",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -198,11 +198,11 @@
     "name" : "bugactive"
   }, {
     "excelCaption" : "有效率",
-    "dataItemName" : "bugefficient",
     "getPSAppDEField" : {
       "name" : "BUGEFFICIENT",
       "codeName" : "Bugefficient"
     },
+    "dataItemName" : "bugefficient",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -215,11 +215,11 @@
     "name" : "bugefficient"
   }, {
     "excelCaption" : "总计",
-    "dataItemName" : "bugtotal",
     "getPSAppDEField" : {
       "name" : "BUGTOTAL",
       "codeName" : "Bugtotal"
     },
+    "dataItemName" : "bugtotal",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

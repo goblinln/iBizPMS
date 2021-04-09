@@ -15,8 +15,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -31,17 +31,17 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     }, {
-      "name" : "GRID",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRID"
     }, {
-      "name" : "SEARCHFORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "SEARCHFORM"
     } ],
     "name" : "engine"
   } ],
@@ -57,6 +57,7 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -68,8 +69,12 @@
         "lanResTag" : "TBB.TEXT.*.EXPORT",
         "id" : "工具栏按钮文本[*.EXPORT]"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+        "id" : "工具栏按钮提示[*.EXPORT]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -78,12 +83,13 @@
           "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
           "id" : "工具栏按钮提示[*.EXPORT]"
         },
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "ExportExcel",
         "getPSSysImage" : {
           "glyph" : "xf1c3@FontAwesome",
           "cssClass" : "fa fa-file-excel-o"
         },
+        "codeName" : "ExportExcel",
         "caption" : "导出",
         "uIActionTag" : "ExportExcel",
         "uIActionType" : "DEUIACTION",
@@ -91,11 +97,6 @@
         "fullCodeName" : "ExportExcel",
         "name" : "表格界面_导出操作（Excel）"
       },
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-        "id" : "工具栏按钮提示[*.EXPORT]"
-      },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf1c3@FontAwesome",
         "cssClass" : "fa fa-file-excel-o"
@@ -126,115 +127,129 @@
         "name" : "PLANNEDSTAGESTORYCNT",
         "codeName" : "Plannedstagestorycnt"
       },
-      "name" : "plannedstagestorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "plannedstagestorycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "DEVELOPEDSTAGESTORYCNT",
         "codeName" : "Developedstagestorycnt"
       },
-      "name" : "developedstagestorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "developedstagestorycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "VERIFIEDSTAGESTORYCNT",
         "codeName" : "Verifiedstagestorycnt"
       },
-      "name" : "verifiedstagestorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "verifiedstagestorycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "TESTEDSTAGESTORYCNT",
         "codeName" : "Testedstagestorycnt"
       },
-      "name" : "testedstagestorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "testedstagestorycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
-      "name" : "storycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "storycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfkey",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfkey"
     }, {
       "getPSAppDEField" : {
         "name" : "CLOSEDSTAGESTORYCNT",
         "codeName" : "Closedstagestorycnt"
       },
-      "name" : "closedstagestorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "closedstagestorycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "name" : "name",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "name"
     }, {
       "getPSAppDEField" : {
         "name" : "PROJECTEDSTAGESTORYCNT",
         "codeName" : "Projectedstagestorycnt"
       },
-      "name" : "projectedstagestorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "projectedstagestorycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "RELEASEDSTAGESTORYCNT",
         "codeName" : "Releasedstagestorycnt"
       },
-      "name" : "releasedstagestorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "releasedstagestorycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "EMPTYSTAGESTORYCNT",
         "codeName" : "Emptystagestorycnt"
       },
-      "name" : "emptystagestorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "emptystagestorycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "TESTINGSTAGESTORYCNT",
         "codeName" : "Testingstagestorycnt"
       },
-      "name" : "testingstagestorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "testingstagestorycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "WAITSTAGESTORYCNT",
         "codeName" : "Waitstagestorycnt"
       },
-      "name" : "waitstagestorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "waitstagestorycnt"
     }, {
       "getPSAppDEField" : {
         "name" : "DEVELOPINGSTAGESTORYCNT",
         "codeName" : "Developingstagestorycnt"
       },
-      "name" : "developingstagestorycnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "developingstagestorycnt"
     } ],
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
     "singleSelect" : true,
     "enableColFilter" : false,
     "enableRowNew" : false,
@@ -257,31 +272,17 @@
       "name" : "srfkey"
     } ],
     "hasWFDataItems" : false,
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
     "columnEnableLink" : 2,
-    "enableRowEdit" : false,
     "enablePagingBar" : false,
+    "enableRowEdit" : false,
     "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "excelCaption" : "项目名称",
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -294,11 +295,11 @@
       "name" : "name"
     }, {
       "excelCaption" : "空",
-      "dataItemName" : "emptystagestorycnt",
       "getPSAppDEField" : {
         "name" : "EMPTYSTAGESTORYCNT",
         "codeName" : "Emptystagestorycnt"
       },
+      "dataItemName" : "emptystagestorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -312,11 +313,11 @@
       "name" : "emptystagestorycnt"
     }, {
       "excelCaption" : "未开始",
-      "dataItemName" : "waitstagestorycnt",
       "getPSAppDEField" : {
         "name" : "WAITSTAGESTORYCNT",
         "codeName" : "Waitstagestorycnt"
       },
+      "dataItemName" : "waitstagestorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -330,11 +331,11 @@
       "name" : "waitstagestorycnt"
     }, {
       "excelCaption" : "已计划",
-      "dataItemName" : "plannedstagestorycnt",
       "getPSAppDEField" : {
         "name" : "PLANNEDSTAGESTORYCNT",
         "codeName" : "Plannedstagestorycnt"
       },
+      "dataItemName" : "plannedstagestorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -348,11 +349,11 @@
       "name" : "plannedstagestorycnt"
     }, {
       "excelCaption" : "已立项",
-      "dataItemName" : "projectedstagestorycnt",
       "getPSAppDEField" : {
         "name" : "PROJECTEDSTAGESTORYCNT",
         "codeName" : "Projectedstagestorycnt"
       },
+      "dataItemName" : "projectedstagestorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -366,11 +367,11 @@
       "name" : "projectedstagestorycnt"
     }, {
       "excelCaption" : "研发中",
-      "dataItemName" : "developingstagestorycnt",
       "getPSAppDEField" : {
         "name" : "DEVELOPINGSTAGESTORYCNT",
         "codeName" : "Developingstagestorycnt"
       },
+      "dataItemName" : "developingstagestorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -384,11 +385,11 @@
       "name" : "developingstagestorycnt"
     }, {
       "excelCaption" : "研发完毕",
-      "dataItemName" : "developedstagestorycnt",
       "getPSAppDEField" : {
         "name" : "DEVELOPEDSTAGESTORYCNT",
         "codeName" : "Developedstagestorycnt"
       },
+      "dataItemName" : "developedstagestorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -402,11 +403,11 @@
       "name" : "developedstagestorycnt"
     }, {
       "excelCaption" : "测试中",
-      "dataItemName" : "testingstagestorycnt",
       "getPSAppDEField" : {
         "name" : "TESTINGSTAGESTORYCNT",
         "codeName" : "Testingstagestorycnt"
       },
+      "dataItemName" : "testingstagestorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -420,11 +421,11 @@
       "name" : "testingstagestorycnt"
     }, {
       "excelCaption" : "测试完毕",
-      "dataItemName" : "testedstagestorycnt",
       "getPSAppDEField" : {
         "name" : "TESTEDSTAGESTORYCNT",
         "codeName" : "Testedstagestorycnt"
       },
+      "dataItemName" : "testedstagestorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -438,11 +439,11 @@
       "name" : "testedstagestorycnt"
     }, {
       "excelCaption" : "已验收",
-      "dataItemName" : "verifiedstagestorycnt",
       "getPSAppDEField" : {
         "name" : "VERIFIEDSTAGESTORYCNT",
         "codeName" : "Verifiedstagestorycnt"
       },
+      "dataItemName" : "verifiedstagestorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -456,11 +457,11 @@
       "name" : "verifiedstagestorycnt"
     }, {
       "excelCaption" : "已发布",
-      "dataItemName" : "releasedstagestorycnt",
       "getPSAppDEField" : {
         "name" : "RELEASEDSTAGESTORYCNT",
         "codeName" : "Releasedstagestorycnt"
       },
+      "dataItemName" : "releasedstagestorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -474,11 +475,11 @@
       "name" : "releasedstagestorycnt"
     }, {
       "excelCaption" : "已关闭",
-      "dataItemName" : "closedstagestorycnt",
       "getPSAppDEField" : {
         "name" : "CLOSEDSTAGESTORYCNT",
         "codeName" : "Closedstagestorycnt"
       },
+      "dataItemName" : "closedstagestorycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -492,11 +493,11 @@
       "name" : "closedstagestorycnt"
     }, {
       "excelCaption" : "总计",
-      "dataItemName" : "storycnt",
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
+      "dataItemName" : "storycnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -525,6 +526,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -607,12 +614,6 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectStoryStageStats.json",
     "logicName" : "项目需求阶段统计",
     "name" : "grid",
@@ -627,9 +628,9 @@
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
@@ -640,22 +641,21 @@
           "editorType" : "DROPDOWNLIST",
           "name" : "n_status_eq"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "STATUS",
           "codeName" : "Status"
         },
-        "hidden" : false,
         "dataType" : 25,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "项目状态",
-        "allowEmpty" : true,
         "labelWidth" : 80,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 8,
@@ -688,12 +688,19 @@
         "codeName" : "Status"
       }
     } ],
+    "noTabHeader" : true,
     "codeName" : "ProjectStoryStats",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -732,18 +739,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSSEARCHFORMS/ProjectStoryStats.json",
     "logicName" : "项目需求统计多用",
     "name" : "searchform",
     "modelid" : "a68ca214bdd67b0f293221ea411522ef"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -761,7 +761,6 @@
     "realTitle" : "项目统计编辑视图",
     "name" : "EDITDATA"
   } ],
-  "codeName" : "ProjectStatsProjectStoryStageStatusGridView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
@@ -828,6 +827,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "ProjectStatsProjectStoryStageStatusGridView",
   "viewType" : "DEGRIDVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectStoryStageStatusGridView.json",
   "name" : "ProjectStatsProjectStoryStageStatusGridView"

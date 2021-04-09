@@ -12,10 +12,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "latestupdateeq"
     },
-    "hidden" : false,
     "dataType" : 9,
-    "needCodeListConfig" : true,
-    "caption" : "最新更新(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_LATESTUPDATE_EQ",
@@ -27,9 +24,12 @@
       "name" : "N_LATESTUPDATE_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "最新更新(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "LATESTUPDATE",
       "codeName" : "Latestupdate"
@@ -43,9 +43,7 @@
       "editorType" : "TEXTBOX",
       "name" : "lognamelike"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "caption" : "更新名称(%)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_SYS_UPDATE_LOGNAME_LIKE",
@@ -57,10 +55,12 @@
       "name" : "N_SYS_UPDATE_LOGNAME_LIKE"
     },
     "allowEmpty" : true,
+    "caption" : "更新名称(%)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "SYS_UPDATE_LOGNAME",
       "codeName" : "SysUpdateLogName"
@@ -79,10 +79,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "updatebrancheq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "更新平台(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_UPDATEBRANCH_EQ",
@@ -94,10 +91,13 @@
       "name" : "N_UPDATEBRANCH_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "更新平台(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "UPDATEBRANCH",
       "codeName" : "Updatebranch"
@@ -107,8 +107,8 @@
   } ],
   "enableFilter" : true,
   "controlType" : "SEARCHBAR",
-  "codeName" : "Custom",
   "enableQuickSearch" : true,
+  "codeName" : "Custom",
   "enableGroup" : false,
   "quickSearchWidth" : 0,
   "getPSAppDataEntity" : {

@@ -9,8 +9,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -25,8 +25,8 @@
     "engineType" : "TreeExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "TREEEXPBAR",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "TREEEXPBAR"
     } ],
     "name" : "engine"
   } ],
@@ -34,9 +34,9 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TREEEXPBAR",
-    "enableSearch" : true,
     "getXDataPSControl" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule/PSTREEVIEWS/TaskModuleExp.json",
@@ -113,9 +113,11 @@
       },
       "controlType" : "TREEVIEW"
     },
+    "enableSearch" : true,
     "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
+      "treeGridMode" : 0,
       "getPSDETreeNodeRSs" : [ {
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -166,13 +168,13 @@
           "id" : "Root_NoBranch"
         },
         "parentValueLevel" : 1,
-        "parentFilter" : "root",
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "projectproduct",
           "key" : "PRODUCT",
           "name" : "PRODUCT"
         } ],
+        "parentFilter" : "root",
         "searchMode" : 3,
         "name" : "项目产品（动态） - 根模块无分支（动态）"
       }, {
@@ -302,13 +304,13 @@
           "id" : "BRANCHS"
         },
         "parentValueLevel" : 1,
-        "parentFilter" : "product",
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "projectproduct",
           "key" : "PRODUCT",
           "name" : "PRODUCT"
         } ],
+        "parentFilter" : "product",
         "searchMode" : 3,
         "name" : "项目产品（动态） - 平台（动态）"
       }, {
@@ -365,9 +367,7 @@
       "enableRootSelect" : false,
       "outputIconDefault" : false,
       "enableSearchDefault" : true,
-      "treeGridMode" : 0,
       "controlType" : "TREEVIEW",
-      "codeName" : "TaskModuleExp",
       "getPSDETreeNodes" : [ {
         "text" : "所有模块",
         "enableQuickCreate" : false,
@@ -383,6 +383,22 @@
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+        },
+        "getPSNavigateParams" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "module",
+          "name" : "module"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "MODULE",
+          "name" : "MODULE"
+        } ],
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
           "getPSDEToolbarItems" : [ {
@@ -390,14 +406,15 @@
               "modelref" : true,
               "id" : "all_cm_deuiaction1"
             },
+            "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
               "timeout" : 60000,
-              "codeName" : "RefreshParent",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "codeName" : "RefreshParent",
               "caption" : "刷新",
               "uIActionTag" : "RefreshParent",
               "uIActionType" : "DEUIACTION",
@@ -405,7 +422,6 @@
               "fullCodeName" : "RefreshParent",
               "name" : "树界面_刷新父节点操作"
             },
-            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
@@ -433,30 +449,14 @@
         },
         "enableNewData" : false,
         "enableEditData" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
-        },
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "getPSNavigateParams" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "module",
-          "name" : "module"
-        } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "MODULE",
-          "name" : "MODULE"
-        } ],
         "nodeType" : "ALL",
         "disableSelect" : false,
         "enableQuickSearch" : true,
+        "expanded" : true,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
-        "expanded" : true,
         "name" : "所有模块",
         "id" : "ALL"
       }, {
@@ -469,13 +469,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
         },
-        "getTextPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
         "getPSAppDEDataSet" : {
           "modelref" : true,
           "id" : "FetchDefault"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
         },
         "maxSize" : -1,
         "enableQuickCreate" : false,
@@ -493,14 +493,15 @@
               "modelref" : true,
               "id" : "branchs_cm_deuiaction1"
             },
+            "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
               "timeout" : 60000,
-              "codeName" : "RefreshParent",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "codeName" : "RefreshParent",
               "caption" : "刷新",
               "uIActionTag" : "RefreshParent",
               "uIActionType" : "DEUIACTION",
@@ -508,7 +509,6 @@
               "fullCodeName" : "RefreshParent",
               "name" : "树界面_刷新父节点操作"
             },
-            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
@@ -541,9 +541,9 @@
         "nodeType" : "BRANCHS",
         "disableSelect" : false,
         "enableQuickSearch" : true,
+        "expanded" : true,
         "counterMode" : 0,
         "treeNodeType" : "DE",
-        "expanded" : true,
         "name" : "平台（动态）",
         "id" : "BRANCHS"
       }, {
@@ -560,13 +560,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectProduct.json"
         },
-        "getTextPSAppDEField" : {
-          "name" : "PRODUCTNAME",
-          "codeName" : "ProductName"
-        },
         "getPSAppDEDataSet" : {
           "modelref" : true,
           "id" : "FetchDefault"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "PRODUCTNAME",
+          "codeName" : "ProductName"
         },
         "sortDir" : "ASC",
         "maxSize" : -1,
@@ -584,6 +584,18 @@
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : true,
+        "getPSNavigateParams" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "module",
+          "name" : "module"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "MODULE",
+          "name" : "MODULE"
+        } ],
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
           "getPSDEToolbarItems" : [ {
@@ -591,14 +603,15 @@
               "modelref" : true,
               "id" : "zt_product_cm_deuiaction1"
             },
+            "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
               "timeout" : 60000,
-              "codeName" : "RefreshParent",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "codeName" : "RefreshParent",
               "caption" : "刷新",
               "uIActionTag" : "RefreshParent",
               "uIActionType" : "DEUIACTION",
@@ -606,7 +619,6 @@
               "fullCodeName" : "RefreshParent",
               "name" : "树界面_刷新父节点操作"
             },
-            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
@@ -636,24 +648,12 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "getPSNavigateParams" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "module",
-          "name" : "module"
-        } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "MODULE",
-          "name" : "MODULE"
-        } ],
         "nodeType" : "ZT_PRODUCT",
         "disableSelect" : false,
         "enableQuickSearch" : true,
+        "expanded" : true,
         "counterMode" : 0,
         "treeNodeType" : "DE",
-        "expanded" : true,
         "name" : "项目产品（动态）",
         "id" : "ZT_PRODUCT"
       }, {
@@ -674,9 +674,9 @@
         "nodeType" : "ROOT",
         "disableSelect" : false,
         "enableQuickSearch" : true,
+        "expanded" : false,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
-        "expanded" : false,
         "name" : "默认根节点",
         "id" : "ROOT"
       }, {
@@ -693,13 +693,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
         },
-        "getTextPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
         "getPSAppDEDataSet" : {
           "modelref" : true,
           "id" : "FetchRoot_Task"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
         },
         "maxSize" : -1,
         "enableQuickCreate" : false,
@@ -715,6 +715,33 @@
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "name",
+          "key" : "modulename",
+          "name" : "modulename"
+        }, {
+          "rawValue" : false,
+          "value" : "srfkey",
+          "key" : "module",
+          "name" : "module"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "srfkey",
+          "key" : "PROJECTMODULE",
+          "name" : "PROJECTMODULE"
+        }, {
+          "rawValue" : false,
+          "value" : "srfkey",
+          "key" : "MODULE",
+          "name" : "MODULE"
+        }, {
+          "rawValue" : false,
+          "value" : "name",
+          "key" : "MODULENAME",
+          "name" : "MODULENAME"
+        } ],
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
           "getPSDEToolbarItems" : [ {
@@ -722,14 +749,15 @@
               "modelref" : true,
               "id" : "projectmodule_cm_deuiaction1"
             },
+            "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
               "timeout" : 60000,
-              "codeName" : "RefreshParent",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "codeName" : "RefreshParent",
               "caption" : "刷新",
               "uIActionTag" : "RefreshParent",
               "uIActionType" : "DEUIACTION",
@@ -737,7 +765,6 @@
               "fullCodeName" : "RefreshParent",
               "name" : "树界面_刷新父节点操作"
             },
-            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
@@ -767,6 +794,50 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
+        "nodeType" : "ProjectModule",
+        "disableSelect" : false,
+        "enableQuickSearch" : true,
+        "expanded" : false,
+        "counterMode" : 0,
+        "treeNodeType" : "DE",
+        "name" : "项目根模块（动态）",
+        "id" : "ProjectModule"
+      }, {
+        "getIdPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "getLeafFlagPSAppDEField" : {
+          "name" : "ISLEAF",
+          "codeName" : "IsLeaf"
+        },
+        "appendCaption" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchRoot"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        },
+        "maxSize" : -1,
+        "enableQuickCreate" : false,
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "rootNode" : false,
+        "appendPNodeId" : false,
+        "enableCheck" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selected" : false,
+        "selectFirstOnly" : false,
+        "expandFirstOnly" : true,
         "getPSNavigateParams" : [ {
           "rawValue" : false,
           "value" : "name",
@@ -794,50 +865,6 @@
           "key" : "MODULENAME",
           "name" : "MODULENAME"
         } ],
-        "nodeType" : "ProjectModule",
-        "disableSelect" : false,
-        "enableQuickSearch" : true,
-        "counterMode" : 0,
-        "treeNodeType" : "DE",
-        "expanded" : false,
-        "name" : "项目根模块（动态）",
-        "id" : "ProjectModule"
-      }, {
-        "getIdPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
-        "getLeafFlagPSAppDEField" : {
-          "name" : "ISLEAF",
-          "codeName" : "IsLeaf"
-        },
-        "appendCaption" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-        },
-        "getTextPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchRoot"
-        },
-        "maxSize" : -1,
-        "enableQuickCreate" : false,
-        "getNavPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
-          "viewType" : "DEGRIDVIEW"
-        },
-        "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : true,
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
           "getPSDEToolbarItems" : [ {
@@ -845,14 +872,15 @@
               "modelref" : true,
               "id" : "rootmodule_cm_deuiaction1"
             },
+            "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
               "timeout" : 60000,
-              "codeName" : "RefreshParent",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "codeName" : "RefreshParent",
               "caption" : "刷新",
               "uIActionTag" : "RefreshParent",
               "uIActionType" : "DEUIACTION",
@@ -860,7 +888,6 @@
               "fullCodeName" : "RefreshParent",
               "name" : "树界面_刷新父节点操作"
             },
-            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
@@ -890,39 +917,12 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "name",
-          "key" : "modulename",
-          "name" : "modulename"
-        }, {
-          "rawValue" : false,
-          "value" : "srfkey",
-          "key" : "module",
-          "name" : "module"
-        } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "srfkey",
-          "key" : "PROJECTMODULE",
-          "name" : "PROJECTMODULE"
-        }, {
-          "rawValue" : false,
-          "value" : "srfkey",
-          "key" : "MODULE",
-          "name" : "MODULE"
-        }, {
-          "rawValue" : false,
-          "value" : "name",
-          "key" : "MODULENAME",
-          "name" : "MODULENAME"
-        } ],
         "nodeType" : "ROOTMODULE",
         "disableSelect" : false,
         "enableQuickSearch" : true,
+        "expanded" : true,
         "counterMode" : 0,
         "treeNodeType" : "DE",
-        "expanded" : true,
         "name" : "产品根模块（动态）",
         "id" : "ROOTMODULE"
       }, {
@@ -939,13 +939,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
         },
-        "getTextPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
         "getPSAppDEDataSet" : {
           "modelref" : true,
           "id" : "FetchDefault"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
         },
         "maxSize" : -1,
         "enableQuickCreate" : false,
@@ -968,14 +968,15 @@
               "modelref" : true,
               "id" : "productnotroot_cm_deuiaction1"
             },
+            "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
               "timeout" : 60000,
-              "codeName" : "RefreshParent",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "codeName" : "RefreshParent",
               "caption" : "刷新",
               "uIActionTag" : "RefreshParent",
               "uIActionType" : "DEUIACTION",
@@ -983,7 +984,6 @@
               "fullCodeName" : "RefreshParent",
               "name" : "树界面_刷新父节点操作"
             },
-            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
@@ -1016,9 +1016,9 @@
         "nodeType" : "productNotRoot",
         "disableSelect" : false,
         "enableQuickSearch" : true,
+        "expanded" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
-        "expanded" : false,
         "name" : "产品非跟模块(动态)",
         "id" : "productNotRoot"
       }, {
@@ -1035,13 +1035,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
         },
-        "getTextPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
         "getPSAppDEDataSet" : {
           "modelref" : true,
           "id" : "FetchDefault"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
         },
         "maxSize" : -1,
         "enableQuickCreate" : false,
@@ -1057,6 +1057,33 @@
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "name",
+          "key" : "modulename",
+          "name" : "modulename"
+        }, {
+          "rawValue" : false,
+          "value" : "srfkey",
+          "key" : "module",
+          "name" : "module"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "srfkey",
+          "key" : "PROJECTMODULE",
+          "name" : "PROJECTMODULE"
+        }, {
+          "rawValue" : false,
+          "value" : "srfkey",
+          "key" : "MODULE",
+          "name" : "MODULE"
+        }, {
+          "rawValue" : false,
+          "value" : "name",
+          "key" : "MODULENAME",
+          "name" : "MODULENAME"
+        } ],
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
           "getPSDEToolbarItems" : [ {
@@ -1064,14 +1091,15 @@
               "modelref" : true,
               "id" : "module_cm_deuiaction1"
             },
+            "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
               "timeout" : 60000,
-              "codeName" : "RefreshParent",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "codeName" : "RefreshParent",
               "caption" : "刷新",
               "uIActionTag" : "RefreshParent",
               "uIActionType" : "DEUIACTION",
@@ -1079,7 +1107,6 @@
               "fullCodeName" : "RefreshParent",
               "name" : "树界面_刷新父节点操作"
             },
-            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
@@ -1109,6 +1136,50 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
+        "nodeType" : "MODULE",
+        "disableSelect" : false,
+        "enableQuickSearch" : true,
+        "expanded" : false,
+        "counterMode" : 0,
+        "treeNodeType" : "DE",
+        "name" : "非根模块（动态）",
+        "id" : "MODULE"
+      }, {
+        "getIdPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "getLeafFlagPSAppDEField" : {
+          "name" : "ISLEAF",
+          "codeName" : "IsLeaf"
+        },
+        "appendCaption" : false,
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchRoot_NoBranch"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        },
+        "maxSize" : -1,
+        "enableQuickCreate" : false,
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "rootNode" : false,
+        "appendPNodeId" : false,
+        "enableCheck" : false,
+        "hasPSDETreeNodeRSs" : true,
+        "selected" : false,
+        "selectFirstOnly" : false,
+        "expandFirstOnly" : true,
         "getPSNavigateParams" : [ {
           "rawValue" : false,
           "value" : "name",
@@ -1136,50 +1207,6 @@
           "key" : "MODULENAME",
           "name" : "MODULENAME"
         } ],
-        "nodeType" : "MODULE",
-        "disableSelect" : false,
-        "enableQuickSearch" : true,
-        "counterMode" : 0,
-        "treeNodeType" : "DE",
-        "expanded" : false,
-        "name" : "非根模块（动态）",
-        "id" : "MODULE"
-      }, {
-        "getIdPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
-        "getLeafFlagPSAppDEField" : {
-          "name" : "ISLEAF",
-          "codeName" : "IsLeaf"
-        },
-        "appendCaption" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-        },
-        "getTextPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchRoot_NoBranch"
-        },
-        "maxSize" : -1,
-        "enableQuickCreate" : false,
-        "getNavPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
-          "viewType" : "DEGRIDVIEW"
-        },
-        "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : true,
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
           "getPSDEToolbarItems" : [ {
@@ -1187,14 +1214,15 @@
               "modelref" : true,
               "id" : "root_nobranch_cm_deuiaction1"
             },
+            "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
               "timeout" : 60000,
-              "codeName" : "RefreshParent",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "codeName" : "RefreshParent",
               "caption" : "刷新",
               "uIActionTag" : "RefreshParent",
               "uIActionType" : "DEUIACTION",
@@ -1202,7 +1230,6 @@
               "fullCodeName" : "RefreshParent",
               "name" : "树界面_刷新父节点操作"
             },
-            "noPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
@@ -1232,42 +1259,16 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "name",
-          "key" : "modulename",
-          "name" : "modulename"
-        }, {
-          "rawValue" : false,
-          "value" : "srfkey",
-          "key" : "module",
-          "name" : "module"
-        } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "srfkey",
-          "key" : "PROJECTMODULE",
-          "name" : "PROJECTMODULE"
-        }, {
-          "rawValue" : false,
-          "value" : "srfkey",
-          "key" : "MODULE",
-          "name" : "MODULE"
-        }, {
-          "rawValue" : false,
-          "value" : "name",
-          "key" : "MODULENAME",
-          "name" : "MODULENAME"
-        } ],
         "nodeType" : "Root_NoBranch",
         "disableSelect" : false,
         "enableQuickSearch" : true,
+        "expanded" : true,
         "counterMode" : 0,
         "treeNodeType" : "DE",
-        "expanded" : true,
         "name" : "产品根模块无分支（动态）",
         "id" : "Root_NoBranch"
       } ],
+      "codeName" : "TaskModuleExp",
       "rootVisible" : false,
       "getCreatePSControlAction" : {
         "modelref" : true,
@@ -1353,14 +1354,15 @@
             "modelref" : true,
             "id" : "zt_product_cm_deuiaction1"
           },
+          "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
-            "codeName" : "RefreshParent",
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "codeName" : "RefreshParent",
             "caption" : "刷新",
             "uIActionTag" : "RefreshParent",
             "uIActionType" : "DEUIACTION",
@@ -1368,7 +1370,6 @@
             "fullCodeName" : "RefreshParent",
             "name" : "树界面_刷新父节点操作"
           },
-          "noPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
@@ -1400,14 +1401,15 @@
             "modelref" : true,
             "id" : "branchs_cm_deuiaction1"
           },
+          "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
-            "codeName" : "RefreshParent",
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "codeName" : "RefreshParent",
             "caption" : "刷新",
             "uIActionTag" : "RefreshParent",
             "uIActionType" : "DEUIACTION",
@@ -1415,7 +1417,6 @@
             "fullCodeName" : "RefreshParent",
             "name" : "树界面_刷新父节点操作"
           },
-          "noPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
@@ -1447,14 +1448,15 @@
             "modelref" : true,
             "id" : "productnotroot_cm_deuiaction1"
           },
+          "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
-            "codeName" : "RefreshParent",
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "codeName" : "RefreshParent",
             "caption" : "刷新",
             "uIActionTag" : "RefreshParent",
             "uIActionType" : "DEUIACTION",
@@ -1462,7 +1464,6 @@
             "fullCodeName" : "RefreshParent",
             "name" : "树界面_刷新父节点操作"
           },
-          "noPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
@@ -1494,14 +1495,15 @@
             "modelref" : true,
             "id" : "all_cm_deuiaction1"
           },
+          "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
-            "codeName" : "RefreshParent",
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "codeName" : "RefreshParent",
             "caption" : "刷新",
             "uIActionTag" : "RefreshParent",
             "uIActionType" : "DEUIACTION",
@@ -1509,7 +1511,6 @@
             "fullCodeName" : "RefreshParent",
             "name" : "树界面_刷新父节点操作"
           },
-          "noPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
@@ -1541,14 +1542,15 @@
             "modelref" : true,
             "id" : "module_cm_deuiaction1"
           },
+          "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
-            "codeName" : "RefreshParent",
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "codeName" : "RefreshParent",
             "caption" : "刷新",
             "uIActionTag" : "RefreshParent",
             "uIActionType" : "DEUIACTION",
@@ -1556,7 +1558,6 @@
             "fullCodeName" : "RefreshParent",
             "name" : "树界面_刷新父节点操作"
           },
-          "noPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
@@ -1588,14 +1589,15 @@
             "modelref" : true,
             "id" : "rootmodule_cm_deuiaction1"
           },
+          "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
-            "codeName" : "RefreshParent",
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "codeName" : "RefreshParent",
             "caption" : "刷新",
             "uIActionTag" : "RefreshParent",
             "uIActionType" : "DEUIACTION",
@@ -1603,7 +1605,6 @@
             "fullCodeName" : "RefreshParent",
             "name" : "树界面_刷新父节点操作"
           },
-          "noPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
@@ -1635,14 +1636,15 @@
             "modelref" : true,
             "id" : "root_nobranch_cm_deuiaction1"
           },
+          "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
-            "codeName" : "RefreshParent",
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "codeName" : "RefreshParent",
             "caption" : "刷新",
             "uIActionTag" : "RefreshParent",
             "uIActionType" : "DEUIACTION",
@@ -1650,7 +1652,6 @@
             "fullCodeName" : "RefreshParent",
             "name" : "树界面_刷新父节点操作"
           },
-          "noPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
@@ -1682,14 +1683,15 @@
             "modelref" : true,
             "id" : "projectmodule_cm_deuiaction1"
           },
+          "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
-            "codeName" : "RefreshParent",
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "codeName" : "RefreshParent",
             "caption" : "刷新",
             "uIActionTag" : "RefreshParent",
             "uIActionType" : "DEUIACTION",
@@ -1697,7 +1699,6 @@
             "fullCodeName" : "RefreshParent",
             "name" : "树界面_刷新父节点操作"
           },
-          "noPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
@@ -1816,6 +1817,12 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
       },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "treeexpbar_tree"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
@@ -1881,12 +1888,6 @@
         "enableDEFieldPrivilege" : false,
         "id" : "树视图处理器"
       },
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "treeexpbar_tree"
-      },
-      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule/PSTREEVIEWS/TaskModuleExp.json",
       "logicName" : "任务模块导航",
       "name" : "treeexpbar_tree",
@@ -1956,22 +1957,20 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "treeexpbar"
-    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
       "id" : "TREEEXPBAR"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "treeexpbar"
+    },
     "codeName" : "TaskTreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "modelid" : "103bc77ad54de2476db1d4e9c788cd4e_treeexpbar"
   } ],
-  "viewStyle" : "STYLE2",
-  "codeName" : "ProjectTaskTreeExpView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
@@ -1995,6 +1994,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "ProjectTaskTreeExpView",
   "viewType" : "DETREEEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTaskTreeExpView.json",
   "name" : "ProjectTaskTreeExpView"

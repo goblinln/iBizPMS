@@ -5,16 +5,14 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "GetInfo",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接592"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -63,8 +61,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 3,
-    "codeName" : "Deaction1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接665"
@@ -75,6 +71,8 @@
       "modelref" : true,
       "id" : "连接3532"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Deaction1",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
@@ -112,13 +110,14 @@
     },
     "name" : "连接592"
   }, {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "qa",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -129,7 +128,6 @@
       "logicType" : "GROUP",
       "id" : "924647000960597bb08bbb4f1ce22be5"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Deaction3"
@@ -140,13 +138,14 @@
     },
     "name" : "连接665"
   }, {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "dev",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -157,7 +156,6 @@
       "logicType" : "GROUP",
       "id" : "93bb593cf57dfd9f293d9411f82e89ea"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Deaction2"
@@ -168,13 +166,14 @@
     },
     "name" : "连接9228"
   }, {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "po",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -185,7 +184,6 @@
       "logicType" : "GROUP",
       "id" : "a18f2c732e273ed1e09eed7041783f3b"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Deaction4"
@@ -197,13 +195,15 @@
     "name" : "连接3532"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "GetInfo",
   "logicName" : "获取相关信息",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

@@ -1,19 +1,19 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : true,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : true,
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 31,
-  "codeName" : "Get",
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
+  "codeName" : "Get",
   "logicName" : "Get",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "BUILTIN",
   "requestField" : "INDEXID",

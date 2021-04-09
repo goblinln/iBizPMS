@@ -11,8 +11,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -27,30 +27,31 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
-    "enableCardEdit" : false,
-    "enableCardEditOrder" : false,
-    "enableCardEditGroup" : false,
-    "enableCardNew" : false,
-    "singleSelect" : false,
-    "noSort" : false,
-    "hasWFDataItems" : false,
-    "appendDEItems" : false,
     "getPSDEDataViewDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "INDEXNAME",
         "codeName" : "Indexname"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     }, {
       "getPSAppDEField" : {
         "name" : "INDEXID",
         "codeName" : "Indexid"
       },
-      "name" : "srfkey",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfkey"
     } ],
+    "enableCardEdit" : false,
+    "enableCardEditOrder" : false,
+    "enableCardEditGroup" : false,
+    "enableCardNew" : false,
+    "appendDEItems" : false,
+    "singleSelect" : false,
+    "noSort" : false,
+    "hasWFDataItems" : false,
     "enablePagingBar" : false,
     "controlType" : "DATAVIEW",
     "codeName" : "IndexType",
@@ -80,6 +81,11 @@
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "DATAVIEW"
     },
     "getPSControlHandler" : {
       "userDRAction" : "READ",
@@ -150,17 +156,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "索引选择数据视图处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "DATAVIEW"
-    },
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSDATAVIEWS/IndexType.json",
     "logicName" : "索引实体选择数据视图",
     "name" : "dataview",
     "modelid" : "b7809a0eed51ac1fa8687a2372b44e57"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "IbizproIndexIndexPickupDataView",
   "viewType" : "DEINDEXPICKUPDATAVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupDataView.json",

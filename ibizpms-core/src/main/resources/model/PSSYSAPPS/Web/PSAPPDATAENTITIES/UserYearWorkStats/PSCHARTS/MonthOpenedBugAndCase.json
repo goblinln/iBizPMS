@@ -36,7 +36,6 @@
     "id" : "0"
   },
   "controlType" : "CHART",
-  "codeName" : "MonthOpenedBugAndCase",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
     "catalogField" : "CURMONTH",
@@ -52,16 +51,17 @@
       "id" : "0"
     },
     "getPSChartSeriesEncode" : {
-      "getPSChartXAxis" : {
+      "getPSChartYAxis" : {
         "modelref" : true,
         "id" : "0"
       },
-      "getPSChartYAxis" : {
+      "getPSChartXAxis" : {
         "modelref" : true,
         "id" : "0"
       },
       "x" : [ "CURMONTH" ],
       "y" : [ "MONTRESOLVEDBUG" ],
+      "type" : "XY",
       "index" : 0,
       "name" : "坐标系编码",
       "id" : "0"
@@ -87,16 +87,17 @@
       "id" : "1"
     },
     "getPSChartSeriesEncode" : {
-      "getPSChartXAxis" : {
+      "getPSChartYAxis" : {
         "modelref" : true,
         "id" : "0"
       },
-      "getPSChartYAxis" : {
+      "getPSChartXAxis" : {
         "modelref" : true,
         "id" : "0"
       },
       "x" : [ "CURMONTH" ],
       "y" : [ "YEARCASECNT" ],
+      "type" : "XY",
       "index" : 0,
       "name" : "坐标系编码",
       "id" : "0"
@@ -108,24 +109,13 @@
     "index" : 1,
     "name" : "FinishTask"
   } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "position" : "left",
-    "type" : "numeric",
-    "maxValue" : 200.0,
-    "minValue" : 0.0,
-    "caption" : "数量",
-    "index" : 0,
-    "name" : "数量",
-    "id" : "0"
-  } ],
+  "codeName" : "MonthOpenedBugAndCase",
   "getPSChartXAxises" : [ {
     "eChartsType" : "category",
     "eChartsPos" : "xAxis",
     "position" : "bottom",
-    "type" : "category",
     "caption" : "月",
+    "type" : "category",
     "index" : 0,
     "name" : "月",
     "id" : "0"
@@ -153,6 +143,18 @@
     "type" : "grid",
     "index" : 0,
     "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "eChartsType" : "value",
+    "eChartsPos" : "yAxis",
+    "maxValue" : 200.0,
+    "minValue" : 0.0,
+    "position" : "left",
+    "caption" : "数量",
+    "type" : "numeric",
+    "index" : 0,
+    "name" : "数量",
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {
@@ -202,12 +204,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedBugAndCase.json",
   "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedBugAndCase.json",
   "logicName" : "MonthOpenedBugAndCase",
   "modelid" : "419cfd8e4688bd7a4d507d481bb24879",
   "getUserParam" : {

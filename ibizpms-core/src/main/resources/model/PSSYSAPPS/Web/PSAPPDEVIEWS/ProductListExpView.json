@@ -10,8 +10,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -26,8 +26,8 @@
     "engineType" : "ListExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "LISTEXPBAR",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "LISTEXPBAR"
     } ],
     "name" : "engine"
   } ],
@@ -35,9 +35,9 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "LISTEXPBAR",
-    "enableSearch" : true,
     "getXDataPSControl" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSLISTS/Exp.json",
@@ -118,46 +118,47 @@
       },
       "controlType" : "LIST"
     },
+    "enableSearch" : true,
     "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
-      "enableRowNew" : false,
-      "enableRowEditOrder" : false,
-      "noSort" : false,
-      "hasWFDataItems" : false,
       "enableRowEditGroup" : false,
       "getPSDEListDataItems" : [ {
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "name" : "srfmajortext",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfmajortext"
       }, {
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "name" : "srfkey",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfkey"
       }, {
         "getPSAppDEField" : {
           "name" : "LINE",
           "codeName" : "Line"
         },
-        "name" : "line",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "line"
       }, {
-        "name" : "srfmstag",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfmstag"
       } ],
       "showHeader" : true,
+      "enableRowNew" : false,
+      "enableRowEditOrder" : false,
+      "noSort" : false,
+      "hasWFDataItems" : false,
       "enableRowEdit" : false,
+      "controlType" : "LIST",
       "getMinorSortPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "controlType" : "LIST",
       "codeName" : "Exp",
       "minorSortDir" : "DESC",
       "enableGroup" : false,
@@ -208,8 +209,12 @@
             "lanResTag" : "TBB.TEXT.*.NEW",
             "id" : "工具栏按钮文本[*.NEW]"
           },
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.NEW",
+            "id" : "工具栏按钮提示[*.NEW]"
+          },
+          "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "getCapPSLanguageRes" : {
               "lanResTag" : "TBB.TEXT.*.NEW",
               "id" : "工具栏按钮文本[*.NEW]"
@@ -218,12 +223,13 @@
               "lanResTag" : "TBB.TOOLTIP.*.NEW",
               "id" : "工具栏按钮提示[*.NEW]"
             },
+            "getNoPrivDisplayMode" : 2,
             "timeout" : 60000,
-            "codeName" : "New",
             "getPSSysImage" : {
               "glyph" : "xf0f6@FontAwesome",
               "cssClass" : "fa fa-file-text-o"
             },
+            "codeName" : "New",
             "caption" : "新建",
             "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
             "uIActionTag" : "New",
@@ -232,11 +238,6 @@
             "fullCodeName" : "New",
             "name" : "表格界面_新建操作"
           },
-          "getTooltipPSLanguageRes" : {
-            "lanResTag" : "TBB.TOOLTIP.*.NEW",
-            "id" : "工具栏按钮提示[*.NEW]"
-          },
-          "noPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf067@FontAwesome",
             "cssClass" : "fa fa-plus"
@@ -278,6 +279,13 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
       },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "listexpbar_list"
+      },
+      "controlStyle" : "LISTVIEW",
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
@@ -347,13 +355,6 @@
         "enableDEFieldPrivilege" : false,
         "id" : "列表控件处理器"
       },
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "listexpbar_list"
-      },
-      "controlStyle" : "LISTVIEW",
-      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSLISTS/Exp.json",
       "logicName" : "Exp",
       "name" : "listexpbar_list",
@@ -372,10 +373,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "listexpbar"
-    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -383,13 +380,15 @@
       "id" : "LISTEXPBAR"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "listexpbar"
+    },
     "width" : 200.0,
     "codeName" : "ListExpViewlistexpbar",
     "name" : "listexpbar",
     "modelid" : "a84a543c155b01389bc12eb1c27624b5_listexpbar"
   } ],
-  "viewStyle" : "STYLE2",
-  "codeName" : "ProductListExpView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
@@ -413,6 +412,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "ProductListExpView",
   "viewType" : "DELISTEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductListExpView.json",
   "name" : "ProductListExpView"

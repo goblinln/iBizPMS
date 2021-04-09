@@ -1,35 +1,35 @@
 {
+  "enableRowEditGroup" : false,
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "name" : "field"
+  }, {
+    "dataType" : 25,
+    "name" : "ibiznew"
+  }, {
+    "dataType" : 1,
+    "name" : "id"
+  }, {
+    "dataType" : 21,
+    "name" : "old"
+  }, {
+    "dataType" : 21,
+    "name" : "diff"
+  }, {
+    "dataType" : 1,
+    "name" : "action"
+  } ],
+  "showHeader" : true,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
   "hasWFDataItems" : false,
-  "enableRowEditGroup" : false,
-  "getPSDEListDataItems" : [ {
-    "name" : "field",
-    "dataType" : 25
-  }, {
-    "name" : "ibiznew",
-    "dataType" : 25
-  }, {
-    "name" : "id",
-    "dataType" : 1
-  }, {
-    "name" : "old",
-    "dataType" : 21
-  }, {
-    "name" : "diff",
-    "dataType" : 21
-  }, {
-    "name" : "action",
-    "dataType" : 1
-  } ],
-  "showHeader" : true,
   "enableRowEdit" : false,
+  "controlType" : "LIST",
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "controlType" : "LIST",
   "codeName" : "DEFAULT",
   "minorSortDir" : "DESC",
   "enableGroup" : false,

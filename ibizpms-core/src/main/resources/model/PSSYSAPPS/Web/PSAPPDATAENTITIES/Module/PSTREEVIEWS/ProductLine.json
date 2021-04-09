@@ -1,4 +1,5 @@
 {
+  "treeGridMode" : 0,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -27,9 +28,7 @@
   "enableRootSelect" : false,
   "outputIconDefault" : false,
   "enableSearchDefault" : true,
-  "treeGridMode" : 0,
   "controlType" : "TREEVIEW",
-  "codeName" : "ProductLine",
   "getPSDETreeNodes" : [ {
     "getIdPSAppDEField" : {
       "name" : "ID",
@@ -41,13 +40,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
     },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchLine"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "maxSize" : -1,
     "enableQuickCreate" : false,
@@ -71,9 +70,9 @@
     "nodeType" : "Line",
     "disableSelect" : false,
     "enableQuickSearch" : true,
+    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "DE",
-    "expanded" : false,
     "name" : "产品线",
     "id" : "Line"
   }, {
@@ -91,6 +90,10 @@
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
+    },
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
       "getPSDEToolbarItems" : [ {
@@ -98,8 +101,8 @@
           "modelref" : true,
           "id" : "all_cm_deuiaction1"
         },
+        "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
@@ -110,6 +113,7 @@
             "viewType" : "DEGRIDVIEW"
           },
           "frontProcessType" : "WIZARD",
+          "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
           "codeName" : "SeLine",
           "caption" : "维护产品线",
@@ -121,7 +125,6 @@
           "name" : "维护产品线",
           "id" : "SeLine@Module"
         },
-        "noPrivDisplayMode" : 2,
         "tooltip" : "维护产品线",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
@@ -134,14 +137,15 @@
           "modelref" : true,
           "id" : "all_cm_deuiaction2"
         },
+        "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
           "timeout" : 60000,
-          "codeName" : "RefreshAll",
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "codeName" : "RefreshAll",
           "caption" : "刷新",
           "uIActionTag" : "RefreshAll",
           "uIActionType" : "DEUIACTION",
@@ -149,7 +153,6 @@
           "fullCodeName" : "RefreshAll",
           "name" : "树界面_刷新全部操作"
         },
-        "noPrivDisplayMode" : 2,
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
@@ -177,18 +180,14 @@
     },
     "enableNewData" : false,
     "enableEditData" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-    },
     "enableRemoveData" : false,
     "enableViewData" : false,
     "nodeType" : "All",
     "disableSelect" : false,
     "enableQuickSearch" : true,
+    "expanded" : true,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : true,
     "name" : "所有产品",
     "id" : "All"
   }, {
@@ -209,12 +208,13 @@
     "nodeType" : "ROOT",
     "disableSelect" : false,
     "enableQuickSearch" : true,
+    "expanded" : true,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
-    "expanded" : true,
     "name" : "默认根节点",
     "id" : "ROOT"
   } ],
+  "codeName" : "ProductLine",
   "rootVisible" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
@@ -263,8 +263,8 @@
         "modelref" : true,
         "id" : "all_cm_deuiaction1"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
@@ -275,6 +275,7 @@
           "viewType" : "DEGRIDVIEW"
         },
         "frontProcessType" : "WIZARD",
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
         "codeName" : "SeLine",
         "caption" : "维护产品线",
@@ -286,7 +287,6 @@
         "name" : "维护产品线",
         "id" : "SeLine@Module"
       },
-      "noPrivDisplayMode" : 2,
       "tooltip" : "维护产品线",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
@@ -299,14 +299,15 @@
         "modelref" : true,
         "id" : "all_cm_deuiaction2"
       },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
         "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "RefreshAll",
         "getPSSysImage" : {
           "glyph" : "xf021@FontAwesome",
           "cssClass" : "fa fa-refresh"
         },
+        "codeName" : "RefreshAll",
         "caption" : "刷新",
         "uIActionTag" : "RefreshAll",
         "uIActionType" : "DEUIACTION",
@@ -314,7 +315,6 @@
         "fullCodeName" : "RefreshAll",
         "name" : "树界面_刷新全部操作"
       },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf021@FontAwesome",
         "cssClass" : "fa fa-refresh"

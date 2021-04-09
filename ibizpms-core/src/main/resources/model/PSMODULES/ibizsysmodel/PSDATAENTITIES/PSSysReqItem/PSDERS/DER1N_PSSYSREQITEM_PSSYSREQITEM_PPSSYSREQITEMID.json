@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "PPSSYSREQITEMID",
     "codeName" : "PPSSysReqItemId"
@@ -8,9 +7,10 @@
     "name" : "PPSSYSREQITEMNAME",
     "codeName" : "PPSSysReqItemName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 1,
-  "masterRS" : 0,
   "pickupDEFName" : "PPSSYSREQITEMID",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

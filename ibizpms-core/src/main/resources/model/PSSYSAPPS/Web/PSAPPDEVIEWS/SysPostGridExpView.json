@@ -10,8 +10,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -26,8 +26,8 @@
     "engineType" : "GridExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "GRIDEXPBAR",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRIDEXPBAR"
     } ],
     "name" : "engine"
   } ],
@@ -35,9 +35,9 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "GRIDEXPBAR",
-    "enableSearch" : false,
     "getXDataPSControl" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost/PSGRIDS/MainConcat.json",
@@ -131,6 +131,7 @@
       },
       "controlType" : "GRID"
     },
+    "enableSearch" : false,
     "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
@@ -139,45 +140,59 @@
           "name" : "POSTID",
           "codeName" : "PostId"
         },
-        "name" : "postid",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "postid"
       }, {
         "getPSAppDEField" : {
           "name" : "MEMO",
           "codeName" : "Memo"
         },
-        "name" : "memo",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "memo"
       }, {
         "getPSAppDEField" : {
           "name" : "POSTNAME",
           "codeName" : "PostName"
         },
-        "name" : "postname",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "postname"
       }, {
         "getPSAppDEField" : {
           "name" : "POSTNAME",
           "codeName" : "PostName"
         },
-        "name" : "srfmajortext",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfmajortext"
       }, {
         "dataAccessAction" : true,
         "getPSAppDEField" : {
           "name" : "POSTID",
           "codeName" : "PostId"
         },
-        "name" : "srfdataaccaction",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfdataaccaction"
       }, {
         "getPSAppDEField" : {
           "name" : "POSTID",
           "codeName" : "PostId"
         },
-        "name" : "srfkey",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfkey"
       } ],
+      "getRemovePSControlAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      },
       "singleSelect" : false,
       "enableColFilter" : false,
       "enableRowNew" : false,
@@ -200,31 +215,17 @@
         "name" : "srfkey"
       } ],
       "hasWFDataItems" : false,
-      "getRemovePSControlAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "dataAccessAction" : "DELETE",
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "name" : "remove"
-      },
       "columnEnableLink" : 2,
-      "enableRowEdit" : false,
       "enablePagingBar" : true,
+      "enableRowEdit" : false,
       "controlType" : "GRID",
       "getPSDEGridColumns" : [ {
         "excelCaption" : "岗位标识",
-        "dataItemName" : "postid",
         "getPSAppDEField" : {
           "name" : "POSTID",
           "codeName" : "PostId"
         },
+        "dataItemName" : "postid",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -237,11 +238,11 @@
         "name" : "postid"
       }, {
         "excelCaption" : "岗位名称",
-        "dataItemName" : "postname",
         "getPSAppDEField" : {
           "name" : "POSTNAME",
           "codeName" : "PostName"
         },
+        "dataItemName" : "postname",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -254,11 +255,11 @@
         "name" : "postname"
       }, {
         "excelCaption" : "备注",
-        "dataItemName" : "memo",
         "getPSAppDEField" : {
           "name" : "MEMO",
           "codeName" : "Memo"
         },
+        "dataItemName" : "memo",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -291,6 +292,12 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
       },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "gridexpbar_grid"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
@@ -373,12 +380,6 @@
         "enableDEFieldPrivilege" : false,
         "id" : "数据表格处理器"
       },
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "gridexpbar_grid"
-      },
-      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost/PSGRIDS/MainConcat.json",
       "logicName" : "主表格_通讯录",
       "name" : "gridexpbar_grid",
@@ -397,10 +398,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
     },
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "gridexpbar"
-    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -408,13 +405,15 @@
       "id" : "GRIDEXPBAR"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "gridexpbar"
+    },
     "width" : 300.0,
     "codeName" : "GridExpViewgridexpbar",
     "name" : "gridexpbar",
     "modelid" : "84ad1f110ad2f5100d78d5a23c67fd02_gridexpbar"
   } ],
-  "viewStyle" : "STYLE2",
-  "codeName" : "SysPostGridExpView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
@@ -438,6 +437,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "SysPostGridExpView",
   "viewType" : "DEGRIDEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysPostGridExpView.json",
   "name" : "SysPostGridExpView"

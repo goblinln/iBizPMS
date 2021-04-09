@@ -8,9 +8,7 @@
       "editorType" : "TEXTBOX",
       "name" : "namelike"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "caption" : "待办名称(%)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_NAME_LIKE",
@@ -22,10 +20,12 @@
       "name" : "N_NAME_LIKE"
     },
     "allowEmpty" : true,
+    "caption" : "待办名称(%)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -43,10 +43,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "typeeq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "类型(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_TYPE_EQ",
@@ -58,9 +55,12 @@
       "name" : "N_TYPE_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "类型(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
@@ -78,10 +78,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "typenoteq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "类型(<>)",
     "getPSDEFSearchMode" : {
       "valueOP" : "NOTEQ",
       "codeName" : "N_TYPE_NOTEQ",
@@ -93,9 +90,12 @@
       "name" : "N_TYPE_NOTEQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "类型(<>)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
@@ -114,10 +114,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "statuseq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "状态(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_STATUS_EQ",
@@ -129,10 +126,13 @@
       "name" : "N_STATUS_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "状态(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
@@ -151,10 +151,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "statusnoteq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "状态(<>)",
     "getPSDEFSearchMode" : {
       "valueOP" : "NOTEQ",
       "codeName" : "N_STATUS_NOTEQ",
@@ -166,10 +163,13 @@
       "name" : "N_STATUS_NOTEQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "状态(<>)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
@@ -187,10 +187,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "accounteq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "所有者(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_ACCOUNT_EQ",
@@ -202,9 +199,12 @@
       "name" : "N_ACCOUNT_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "所有者(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
@@ -223,10 +223,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "begineq"
     },
-    "hidden" : false,
     "dataType" : 9,
-    "needCodeListConfig" : true,
-    "caption" : "开始(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_BEGIN_EQ",
@@ -238,10 +235,13 @@
       "name" : "N_BEGIN_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "开始(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
@@ -260,10 +260,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "config_typeeq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "周期类型(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_CONFIG_TYPE_EQ",
@@ -275,10 +272,13 @@
       "name" : "N_CONFIG_TYPE_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "周期类型(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "CONFIG_TYPE",
       "codeName" : "Config_type"
@@ -291,9 +291,7 @@
       "editorType" : "NUMBER",
       "name" : "cycleeq"
     },
-    "hidden" : false,
     "dataType" : 9,
-    "caption" : "周期(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_CYCLE_EQ",
@@ -305,9 +303,11 @@
       "name" : "N_CYCLE_EQ"
     },
     "allowEmpty" : true,
+    "caption" : "周期(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "CYCLE",
       "codeName" : "Cycle"
@@ -325,9 +325,7 @@
       },
       "name" : "dateeq"
     },
-    "hidden" : false,
     "dataType" : 5,
-    "caption" : "日期(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_DATE_EQ",
@@ -339,10 +337,12 @@
       "name" : "N_DATE_EQ"
     },
     "allowEmpty" : true,
+    "caption" : "日期(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
@@ -360,9 +360,7 @@
       },
       "name" : "dategteq"
     },
-    "hidden" : false,
     "dataType" : 5,
-    "caption" : "日期(>=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "GTANDEQ",
       "codeName" : "N_DATE_GTANDEQ",
@@ -374,10 +372,12 @@
       "name" : "N_DATE_GTANDEQ"
     },
     "allowEmpty" : true,
+    "caption" : "日期(>=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
@@ -395,9 +395,7 @@
       },
       "name" : "datelteq"
     },
-    "hidden" : false,
     "dataType" : 5,
-    "caption" : "日期(<=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LTANDEQ",
       "codeName" : "N_DATE_LTANDEQ",
@@ -409,10 +407,12 @@
       "name" : "N_DATE_LTANDEQ"
     },
     "allowEmpty" : true,
+    "caption" : "日期(<=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
@@ -430,9 +430,7 @@
       },
       "name" : "datenoteq"
     },
-    "hidden" : false,
     "dataType" : 5,
-    "caption" : "日期(<>)",
     "getPSDEFSearchMode" : {
       "valueOP" : "NOTEQ",
       "codeName" : "N_DATE_NOTEQ",
@@ -444,10 +442,12 @@
       "name" : "N_DATE_NOTEQ"
     },
     "allowEmpty" : true,
+    "caption" : "日期(<>)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
@@ -466,10 +466,7 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "endeq"
     },
-    "hidden" : false,
     "dataType" : 9,
-    "needCodeListConfig" : true,
-    "caption" : "结束(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_END_EQ",
@@ -481,10 +478,13 @@
       "name" : "N_END_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "结束(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
@@ -502,10 +502,7 @@
       "editorType" : "CHECKBOXLIST",
       "name" : "privateeq"
     },
-    "hidden" : false,
     "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "私人事务(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_PRIVATE_EQ",
@@ -517,10 +514,13 @@
       "name" : "N_PRIVATE_EQ"
     },
     "allowEmpty" : true,
+    "needCodeListConfig" : true,
+    "caption" : "私人事务(=)",
     "labelWidth" : 0,
     "labelPos" : "NONE",
     "itemWidth" : 100.0,
     "showCaption" : false,
+    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "PRIVATE",
       "codeName" : "IBizPrivate"
@@ -530,8 +530,8 @@
   } ],
   "enableFilter" : true,
   "controlType" : "SEARCHBAR",
-  "codeName" : "Custom",
   "enableQuickSearch" : true,
+  "codeName" : "Custom",
   "enableGroup" : false,
   "quickSearchWidth" : 0,
   "getPSAppDataEntity" : {

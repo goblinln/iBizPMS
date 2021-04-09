@@ -3,50 +3,50 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : true,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__pri.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__pri.json",
   "codeName" : "Story__pri",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "1",
     "textCls" : "text-red-border-color",
-    "codeName" : "Item_1",
     "getPSSysCss" : {
       "cssName" : "text-red-border-color"
     },
+    "codeName" : "Item_1",
     "text" : "1",
-    "color" : "rgba(230, 43, 43, 1)"
+    "color" : "rgba(230, 43, 43, 1)",
+    "value" : "1"
   }, {
-    "value" : "2",
     "textCls" : "text-pink-border-color",
-    "codeName" : "Item_2",
     "getPSSysCss" : {
       "cssName" : "text-pink-border-color"
     },
+    "codeName" : "Item_2",
     "text" : "2",
-    "color" : "rgba(225, 228, 33, 1)"
+    "color" : "rgba(225, 228, 33, 1)",
+    "value" : "2"
   }, {
-    "value" : "3",
     "textCls" : "text-blue-border-color",
-    "codeName" : "Item_3",
     "getPSSysCss" : {
       "cssName" : "text-blue-border-color"
     },
+    "codeName" : "Item_3",
     "text" : "3",
+    "color" : "rgba(52, 8, 248, 1)",
     "default" : true,
-    "color" : "rgba(52, 8, 248, 1)"
+    "value" : "3"
   }, {
-    "value" : "4",
     "textCls" : "text-green-border-color",
-    "codeName" : "Item_4",
     "getPSSysCss" : {
       "cssName" : "text-green-border-color"
     },
+    "codeName" : "Item_4",
     "text" : "4",
-    "color" : "rgba(80, 133, 63, 1)"
+    "color" : "rgba(80, 133, 63, 1)",
+    "value" : "4"
   } ]
 }

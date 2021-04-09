@@ -1,12 +1,12 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "FROMBUG",
     "codeName" : "FromBug"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
-  "masterRS" : 0,
   "pickupDEFName" : "FROMBUG",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

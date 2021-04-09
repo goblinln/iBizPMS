@@ -1,19 +1,19 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : false,
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 99999,
-  "codeName" : "RemoveModule",
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
+  "codeName" : "RemoveModule",
   "logicName" : "删除模块",
-  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "DELOGIC",
   "requestParamType" : "ENTITY",

@@ -5,18 +5,13 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "Update__MSDeny",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : false,
-    "logicHolder" : 3,
-    "codeName" : "PrepareTemp",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "默认连接"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Temp"
@@ -25,11 +20,14 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "IBZ_WEEKLYID",
       "srcFieldName" : "IBZ_WEEKLYID",
       "name" : "复制主键"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "PrepareTemp",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备临时参数"
   }, {
@@ -42,12 +40,12 @@
     "name" : "状态[未提交]拒绝[Update]操作"
   }, {
     "parallelOutput" : false,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "默认连接"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
@@ -68,8 +66,6 @@
       "modelref" : true,
       "id" : "Temp"
     },
-    "logicHolder" : 3,
-    "codeName" : "Get",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "状态[未提交]拒绝[Update]操作"
@@ -77,6 +73,8 @@
       "modelref" : true,
       "id" : "状态[已提交]拒绝[Update]操作"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Get",
     "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
@@ -107,13 +105,14 @@
     },
     "name" : "默认连接"
   }, {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "0",
         "dstFieldName" : "ISSUBMIT",
         "logicType" : "SINGLE",
@@ -124,7 +123,6 @@
       "logicType" : "GROUP",
       "id" : "74a5c764edd34f875daebc51d4449dd1__MSDENY__NSUNBMIT"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "DenyByNSUNBMIT"
@@ -135,13 +133,14 @@
     },
     "name" : "状态[未提交]拒绝[Update]操作"
   }, {
+    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISSUBMIT",
         "logicType" : "SINGLE",
@@ -152,7 +151,6 @@
       "logicType" : "GROUP",
       "id" : "74a5c764edd34f875daebc51d4449dd1__MSDENY__SUBMIT"
     },
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "DenyBySUBMIT"
@@ -164,20 +162,22 @@
     "name" : "状态[已提交]拒绝[Update]操作"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "默认变量"
   }, {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Temp",
     "default" : false,
     "name" : "临时变量"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "Update__MSDeny",
   "logicName" : "行为[Update]主状态拒绝逻辑",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

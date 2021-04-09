@@ -1,19 +1,19 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : true,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : true,
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 11,
-  "codeName" : "Update",
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
   },
+  "codeName" : "Update",
   "logicName" : "Update",
-  "extendMode" : 0,
   "actionMode" : "UPDATE",
   "actionType" : "BUILTIN",
   "requestParamType" : "ENTITY",

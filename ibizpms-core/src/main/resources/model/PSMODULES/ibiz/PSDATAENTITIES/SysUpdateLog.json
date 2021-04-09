@@ -1,22 +1,7 @@
 {
   "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "length" : 8,
     "dataType" : "DATETIME",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "de11779638ea32a0d08b2b9421e8d534",
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "stdDataType" : 5,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UPDATEDATE`",
-      "valueAutoGen" : false,
-      "columnName" : "UPDATEDATE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATEDATE"
-    } ],
-    "predefinedType" : "UPDATEDATE",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -41,29 +26,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEDATE"
+    } ],
+    "predefinedType" : "UPDATEDATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "de11779638ea32a0d08b2b9421e8d534",
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "stdDataType" : 5,
+    "length" : 8,
     "name" : "UPDATEDATE"
   }, {
-    "length" : 60,
-    "dataType" : "TEXT",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "945a55dafd9f74f374eff571d897c83b",
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UPDATEMAN`",
-      "valueAutoGen" : false,
-      "columnName" : "UPDATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATEMAN"
-    } ],
-    "predefinedType" : "UPDATEMAN",
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -78,8 +62,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "UPDATEMAN",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -100,29 +84,29 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`UPDATEMAN`",
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEMAN"
+    } ],
+    "predefinedType" : "UPDATEMAN",
+    "valueFormat" : "%1$s",
+    "deployId" : "945a55dafd9f74f374eff571d897c83b",
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
     "name" : "UPDATEMAN"
   }, {
-    "length" : 60,
-    "dataType" : "TEXT",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "7c13f19d70c120d147955b05c4de8c72",
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CREATEMAN`",
-      "valueAutoGen" : false,
-      "columnName" : "CREATEMAN",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CREATEMAN"
-    } ],
-    "predefinedType" : "CREATEMAN",
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -137,8 +121,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "CREATEMAN",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -159,24 +143,25 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "CREATEMAN"
-  }, {
-    "length" : 8,
-    "dataType" : "DATETIME",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "0ab2a4c8fd78f18577f34dcc4e551bff",
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "stdDataType" : 5,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`CREATEDATE`",
       "valueAutoGen" : false,
-      "columnName" : "CREATEDATE",
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "columnName" : "CREATEMAN",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "CREATEDATE"
+      "name" : "CREATEMAN"
     } ],
-    "predefinedType" : "CREATEDATE",
+    "predefinedType" : "CREATEMAN",
+    "valueFormat" : "%1$s",
+    "deployId" : "7c13f19d70c120d147955b05c4de8c72",
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
+    "name" : "CREATEMAN"
+  }, {
+    "dataType" : "DATETIME",
     "importOrder" : 1000,
     "dEFType" : 1,
     "systemReserver" : true,
@@ -201,24 +186,24 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "CREATEDATE"
-  }, {
-    "length" : 100,
-    "dataType" : "GUID",
-    "valueFormat" : "%1$s",
-    "deployId" : "6657a18a5f37ccdf76a2721b5e279077",
-    "codeName" : "SysUpdateLogId",
-    "logicName" : "系统更新日志标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`SYS_UPDATE_LOGID`",
       "valueAutoGen" : false,
-      "columnName" : "SYS_UPDATE_LOGID",
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "columnName" : "CREATEDATE",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "SYS_UPDATE_LOGID"
+      "name" : "CREATEDATE"
     } ],
+    "predefinedType" : "CREATEDATE",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "0ab2a4c8fd78f18577f34dcc4e551bff",
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "stdDataType" : 5,
+    "length" : 8,
+    "name" : "CREATEDATE"
+  }, {
+    "dataType" : "GUID",
     "keyDEField" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
@@ -234,8 +219,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "SYS_UPDATE_LOGID",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -256,29 +241,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`SYS_UPDATE_LOGID`",
+      "columnName" : "SYS_UPDATE_LOGID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "SYS_UPDATE_LOGID"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "6657a18a5f37ccdf76a2721b5e279077",
+    "codeName" : "SysUpdateLogId",
+    "logicName" : "系统更新日志标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "length" : 100,
     "name" : "SYS_UPDATE_LOGID"
   }, {
-    "length" : 60,
-    "defaultValue" : "MOB",
-    "dataType" : "SSCODELIST",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/SYS_UPDATE_BRANCH.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "5e781cd8d01de89b9b0c864d4104bfb6",
-    "codeName" : "Updatebranch",
-    "logicName" : "更新平台",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UPDATEBRANCH`",
-      "valueAutoGen" : true,
-      "columnName" : "UPDATEBRANCH",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATEBRANCH"
-    } ],
+    "dataType" : "SSCODELIST",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -291,8 +275,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "UPDATEBRANCH",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -313,23 +297,31 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`UPDATEBRANCH`",
+      "columnName" : "UPDATEBRANCH",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEBRANCH"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "5e781cd8d01de89b9b0c864d4104bfb6",
+    "codeName" : "Updatebranch",
+    "logicName" : "更新平台",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "length" : 60,
+    "defaultValue" : "MOB",
     "name" : "UPDATEBRANCH"
   }, {
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateFeatures/PSDERS/DER1N_SYS_UPDATE_FEATURES_SYS_UPDATE_LOG_SYS_UPDATE_LOGID.json"
     },
-    "length" : 1048576,
     "dataType" : "ONE2MANYDATA",
-    "valueFormat" : "%1$s",
-    "deployId" : "8d75d89724f9c68e3249626d391f50e7",
-    "codeName" : "Updatefeatures",
-    "logicName" : "更新功能列表详情",
-    "stringLength" : 1048576,
-    "stdDataType" : 21,
     "importOrder" : 1000,
     "dEFType" : 5,
-    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -340,8 +332,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "UPDATEFEATURES",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -362,29 +354,21 @@
       },
       "name" : "默认规则"
     } ],
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true,
-    "name" : "UPDATEFEATURES"
-  }, {
-    "length" : 1048576,
-    "dataType" : "HTMLTEXT",
     "valueFormat" : "%1$s",
-    "deployId" : "5f81fb7ee960157224ff38784ce4d3d5",
-    "codeName" : "Updesc",
-    "logicName" : "更新说明",
+    "uIAssistDEField" : true,
+    "deployId" : "8d75d89724f9c68e3249626d391f50e7",
+    "codeName" : "Updatefeatures",
+    "logicName" : "更新功能列表详情",
     "stringLength" : 1048576,
     "stdDataType" : 21,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UPDESC`",
-      "valueAutoGen" : false,
-      "columnName" : "UPDESC",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDESC"
-    } ],
+    "queryColumn" : false,
+    "phisicalDEField" : false,
+    "length" : 1048576,
+    "name" : "UPDATEFEATURES"
+  }, {
+    "dataType" : "HTMLTEXT",
     "importOrder" : 1000,
     "dEFType" : 1,
-    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -395,8 +379,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "UPDESC",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -417,24 +401,25 @@
       },
       "name" : "默认规则"
     } ],
-    "name" : "UPDESC"
-  }, {
-    "length" : 200,
-    "dataType" : "TEXT",
-    "valueFormat" : "%1$s",
-    "deployId" : "e30cde2a15ef10f64016fd3205dadd4a",
-    "codeName" : "SysUpdateLogName",
-    "logicName" : "更新名称",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`SYS_UPDATE_LOGNAME`",
       "valueAutoGen" : false,
-      "columnName" : "SYS_UPDATE_LOGNAME",
+      "queryCodeExp" : "t1.`UPDESC`",
+      "columnName" : "UPDESC",
       "dBType" : "MYSQL5",
       "autoIncrement" : false,
-      "name" : "SYS_UPDATE_LOGNAME"
+      "name" : "UPDESC"
     } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "5f81fb7ee960157224ff38784ce4d3d5",
+    "codeName" : "Updesc",
+    "logicName" : "更新说明",
+    "stringLength" : 1048576,
+    "stdDataType" : 21,
+    "queryColumn" : false,
+    "length" : 1048576,
+    "name" : "UPDESC"
+  }, {
+    "dataType" : "TEXT",
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
@@ -449,8 +434,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "SYS_UPDATE_LOGNAME",
-          "tryMode" : false,
           "keyCond" : true,
+          "tryMode" : false,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -471,27 +456,28 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`SYS_UPDATE_LOGNAME`",
+      "columnName" : "SYS_UPDATE_LOGNAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "SYS_UPDATE_LOGNAME"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "e30cde2a15ef10f64016fd3205dadd4a",
+    "codeName" : "SysUpdateLogName",
+    "logicName" : "更新名称",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "length" : 200,
     "name" : "SYS_UPDATE_LOGNAME"
   }, {
-    "defaultValue" : "1",
-    "dataType" : "YESNO",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
-    "valueFormat" : "%1$s",
-    "deployId" : "c745b5ad108686631213d6914ab5f6d7",
-    "codeName" : "Latestupdate",
-    "logicName" : "最新更新",
-    "stdDataType" : 9,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`LATESTUPDATE`",
-      "valueAutoGen" : true,
-      "columnName" : "LATESTUPDATE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "LATESTUPDATE"
-    } ],
+    "dataType" : "YESNO",
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -514,22 +500,23 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : true,
+      "queryCodeExp" : "t1.`LATESTUPDATE`",
+      "columnName" : "LATESTUPDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "LATESTUPDATE"
+    } ],
+    "valueFormat" : "%1$s",
+    "deployId" : "c745b5ad108686631213d6914ab5f6d7",
+    "codeName" : "Latestupdate",
+    "logicName" : "最新更新",
+    "stdDataType" : 9,
+    "defaultValue" : "1",
     "name" : "LATESTUPDATE"
   }, {
     "dataType" : "DATE",
-    "valueFormat" : "%1$tY-%1$tm-%1$td",
-    "deployId" : "a476535ca884e271eeed2fea1b54c662",
-    "codeName" : "Update",
-    "logicName" : "更新日期",
-    "stdDataType" : 5,
-    "getAllPSDEFDTColumns" : [ {
-      "queryCodeExp" : "t1.`UPDATE`",
-      "valueAutoGen" : false,
-      "columnName" : "UPDATE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "UPDATE"
-    } ],
     "importOrder" : 1000,
     "dEFType" : 1,
     "getAllPSDEFValueRules" : [ {
@@ -552,6 +539,19 @@
       },
       "name" : "默认规则"
     } ],
+    "getAllPSDEFDTColumns" : [ {
+      "valueAutoGen" : false,
+      "queryCodeExp" : "t1.`UPDATE`",
+      "columnName" : "UPDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATE"
+    } ],
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "a476535ca884e271eeed2fea1b54c662",
+    "codeName" : "Update",
+    "logicName" : "更新日期",
+    "stdDataType" : 5,
     "name" : "UPDATE"
   } ],
   "getAllPSDEDataSets" : [ {
@@ -559,20 +559,20 @@
     "enableFront" : true,
     "pubServiceDefault" : true,
     "orderValue" : 99999,
-    "codeName" : "Default",
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "codeName" : "Default",
     "logicName" : "数据集",
-    "extendMode" : 0,
-    "majorSortDir" : "DESC",
+    "pageSize" : -1,
     "userDRAction" : "READ",
     "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
-    "pageSize" : -1,
+    "majorSortDir" : "DESC",
     "name" : "DEFAULT"
   } ],
   "getAllPSDEActions" : [ {
@@ -606,9 +606,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "数据查询",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -617,9 +617,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
+    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -628,12 +628,20 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDELOGICS/UpdateLasted.json"
   } ],
   "subSysAsCloud" : false,
-  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
+  "enableUIActions" : 15,
+  "orderValue" : 99999,
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "serviceCodeName" : "SysUpdateLog",
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -648,20 +656,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
-  "deployId" : "67bd3c27cea3f1dea15ed02860b945dc",
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
   "dynaInstMode" : 1,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "dSLink" : "DEFAULT",
+  "deployId" : "67bd3c27cea3f1dea15ed02860b945dc",
   "codeName" : "SysUpdateLog",
   "logicName" : "更新日志",
   "tableName" : "T_SYS_UPDATE_LOG",
-  "serviceCodeName" : "SysUpdateLog",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -670,12 +674,8 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

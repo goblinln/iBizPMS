@@ -1,29 +1,29 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : true,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : true,
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 21,
+  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTRemove"
   },
-  "codeName" : "Remove",
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
+  "codeName" : "Remove",
   "logicName" : "Remove",
-  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "ID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Remove.json",
-  "name" : "Remove",
-  "userCat" : "CAT1"
+  "userCat" : "CAT1",
+  "name" : "Remove"
 }

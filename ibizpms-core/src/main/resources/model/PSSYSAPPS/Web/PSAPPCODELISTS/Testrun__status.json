@@ -5,25 +5,25 @@
   },
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "codeName" : "Testrun__status",
   "getPSCodeItems" : [ {
-    "value" : "wait",
     "codeName" : "Wait",
     "text" : "未开始",
-    "default" : true
+    "default" : true,
+    "value" : "wait"
   }, {
-    "value" : "doing",
     "codeName" : "Doing",
-    "text" : "进行中"
+    "text" : "进行中",
+    "value" : "doing"
   }, {
-    "value" : "done",
     "codeName" : "Done",
-    "text" : "已完成"
+    "text" : "已完成",
+    "value" : "done"
   }, {
-    "value" : "blocked",
     "codeName" : "Blocked",
-    "text" : "被阻塞"
+    "text" : "被阻塞",
+    "value" : "blocked"
   } ],
+  "codeName" : "Testrun__status",
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testrun__status.json",

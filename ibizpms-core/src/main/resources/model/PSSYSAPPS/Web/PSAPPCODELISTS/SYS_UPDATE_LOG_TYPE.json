@@ -5,18 +5,18 @@
   },
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "codeName" : "SYS_UPDATE_LOG_TYPE",
   "getPSCodeItems" : [ {
-    "value" : "10",
     "codeName" : "Item_10",
     "text" : "功能增强",
-    "color" : "rgba(217, 4, 4, 1)"
+    "color" : "rgba(217, 4, 4, 1)",
+    "value" : "10"
   }, {
-    "value" : "20",
     "codeName" : "Item_20",
     "text" : "优化",
-    "color" : "rgba(97, 207, 13, 1)"
+    "color" : "rgba(97, 207, 13, 1)",
+    "value" : "20"
   } ],
+  "codeName" : "SYS_UPDATE_LOG_TYPE",
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/SYS_UPDATE_LOG_TYPE.json",

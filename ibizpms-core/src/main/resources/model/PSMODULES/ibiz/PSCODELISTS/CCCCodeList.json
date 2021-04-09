@@ -3,16 +3,16 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/CCCCodeList.json",
   "codeListType" : "DYNAMIC",
   "orMode" : "STR",
   "textSeparator" : "、",
+  "predefinedType" : "RUNTIME",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/CCCCodeList.json",
   "codeName" : "CCCCodeList",
   "userScope" : false,
   "emptyText" : "未定义",
   "valueSeparator" : ";",
-  "predefinedType" : "RUNTIME",
   "enableCache" : true,
   "refFlag" : false
 }

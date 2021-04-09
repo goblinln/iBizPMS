@@ -3,6 +3,10 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
   },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
+  },
   "getValuePSAppDEField" : {
     "name" : "DEPTID",
     "codeName" : "DeptId"
@@ -10,10 +14,6 @@
   "getTextPSAppDEField" : {
     "name" : "DEPTNAME",
     "codeName" : "DeptName"
-  },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchDefault"
   },
   "codeListType" : "DYNAMIC",
   "dynaInstMode" : 1,

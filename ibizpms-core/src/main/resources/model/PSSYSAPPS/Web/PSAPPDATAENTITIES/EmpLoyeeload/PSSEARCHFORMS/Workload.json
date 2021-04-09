@@ -8,20 +8,9 @@
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "getPSDEFormItemUpdates" : [ {
-    "getPSDEFIUpdateDetails" : [ {
-      "name" : "workday"
-    } ],
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "UpdateTime"
-    },
-    "codeName" : "UpdateTime",
-    "name" : "UpdateTime"
-  } ],
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -48,18 +37,17 @@
         },
         "name" : "dept"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "部门",
-      "allowEmpty" : true,
       "labelWidth" : 45,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -70,6 +58,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "dept"
     }, {
+      "inputTipClosable" : false,
+      "getPSDEFormItemUpdate" : {
+        "modelref" : true,
+        "id" : "UpdateTime"
+      },
       "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
@@ -80,26 +73,21 @@
         },
         "name" : "begin"
       },
-      "getPSDEFormItemUpdate" : {
-        "modelref" : true,
-        "id" : "UpdateTime"
-      },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "hidden" : false,
       "dataType" : 5,
-      "caption" : "起止时间",
       "allowEmpty" : true,
+      "caption" : "起止时间",
       "createDVT" : "CURTIME",
       "labelWidth" : 80,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 4,
         "colLG" : 4,
@@ -110,6 +98,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "begin"
     }, {
+      "inputTipClosable" : false,
+      "getPSDEFormItemUpdate" : {
+        "modelref" : true,
+        "id" : "UpdateTime"
+      },
       "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
@@ -120,25 +113,20 @@
         },
         "name" : "end"
       },
-      "getPSDEFormItemUpdate" : {
-        "modelref" : true,
-        "id" : "UpdateTime"
-      },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "hidden" : false,
       "dataType" : 5,
-      "caption" : "至",
       "allowEmpty" : true,
+      "caption" : "至",
       "labelWidth" : 30,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -151,27 +139,27 @@
       "detailStyle" : "DEFAULT",
       "name" : "end"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "NUMBER",
         "name" : "workday"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "WORKDAY",
         "codeName" : "Workday"
       },
-      "hidden" : false,
       "dataType" : 9,
-      "caption" : "工作天数",
       "allowEmpty" : true,
+      "caption" : "工作天数",
       "createDV" : "6",
       "labelWidth" : 60,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 4,
@@ -183,23 +171,23 @@
       "detailStyle" : "DEFAULT",
       "name" : "workday"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "NUMBER",
         "name" : "everydaytime"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "每天工时",
       "allowEmpty" : true,
+      "caption" : "每天工时",
       "createDV" : "7",
       "labelWidth" : 60,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 4,
@@ -213,6 +201,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "everydaytime"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : true,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -224,21 +213,20 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "assign"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ASSIGN",
         "codeName" : "Assign"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "needCodeListConfig" : true,
       "allowEmpty" : true,
+      "needCodeListConfig" : true,
       "labelWidth" : 5,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -297,6 +285,18 @@
       "name" : "ASSIGN",
       "codeName" : "Assign"
     }
+  } ],
+  "noTabHeader" : true,
+  "getPSDEFormItemUpdates" : [ {
+    "getPSDEFIUpdateDetails" : [ {
+      "name" : "workday"
+    } ],
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "UpdateTime"
+    },
+    "codeName" : "UpdateTime",
+    "name" : "UpdateTime"
   } ],
   "codeName" : "Workload",
   "tabHeaderPos" : "TOP",

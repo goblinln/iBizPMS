@@ -18,7 +18,6 @@
     "id" : "0"
   },
   "controlType" : "CHART",
-  "codeName" : "BugType",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "type",
     "seriesType" : "pie",
@@ -39,6 +38,7 @@
     "getPSChartSeriesEncode" : {
       "category" : "type",
       "value" : "SRFCOUNT",
+      "type" : "NONE",
       "index" : 0,
       "name" : "坐标系编码",
       "id" : "0"
@@ -49,6 +49,7 @@
     "index" : 0,
     "name" : "severity"
   } ],
+  "codeName" : "BugType",
   "emptyText" : "无",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
@@ -85,12 +86,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugType.json",
   "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "tablechart"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugType.json",
   "logicName" : "BugType",
   "modelid" : "9b43ccd9028be43b5a0ea658fbf58d91",
   "getUserParam" : {

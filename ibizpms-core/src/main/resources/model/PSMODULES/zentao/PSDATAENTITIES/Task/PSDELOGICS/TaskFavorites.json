@@ -5,8 +5,6 @@
     "modelref" : true,
     "id" : "Begin"
   },
-  "logicHolder" : 1,
-  "codeName" : "TaskFavorites",
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getDstPSDataEntity" : {
@@ -27,24 +25,21 @@
     "name" : "创建收藏信息"
   }, {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7343"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始"
   }, {
     "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam1",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1062"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzFavorites"
@@ -53,31 +48,34 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "OBJECTID",
       "srcFieldName" : "ID",
       "name" : "Default[ID] ==> IbzFavorites[OBJECTID]"
     }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzFavorites"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SESSION",
       "dstFieldName" : "ACCOUNT",
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname] ==> IbzFavorites[ACCOUNT]"
     }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzFavorites"
       },
+      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCVALUE",
       "srcValue" : "task",
       "dstFieldName" : "TYPE",
       "name" : "直接值[task] ==> IbzFavorites[TYPE]"
     } ],
+    "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置收藏参数"
   } ],
@@ -105,20 +103,22 @@
     "name" : "连接1062"
   } ],
   "getPSDELogicParams" : [ {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : false,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
-    "envParam" : false,
-    "lastParam" : false,
     "sessionParam" : true,
+    "lastParam" : false,
+    "envParam" : false,
     "codeName" : "IbzFavorites",
     "default" : false,
     "name" : "收藏"
   } ],
+  "logicHolder" : 1,
+  "codeName" : "TaskFavorites",
   "logicName" : "任务收藏",
   "defaultParamName" : "Default",
   "logicSubType" : "NONE",

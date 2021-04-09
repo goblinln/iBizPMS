@@ -9,8 +9,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -25,8 +25,8 @@
     "engineType" : "ListView9",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "LIST",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "LIST"
     } ],
     "name" : "engine"
   } ],
@@ -34,11 +34,8 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
-    "enableRowNew" : false,
-    "enableRowEditOrder" : false,
-    "noSort" : false,
-    "hasWFDataItems" : false,
     "getItemPSLayoutPanel" : {
       "getRootPSPanelItems" : [ {
         "getPSPanelItems" : [ {
@@ -99,8 +96,8 @@
                   "editorType" : "SPAN",
                   "name" : "mytodocnt"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -150,8 +147,8 @@
                   "editorType" : "SPAN",
                   "name" : "mystorys"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -201,8 +198,8 @@
                   "editorType" : "SPAN",
                   "name" : "mytasks"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -270,8 +267,8 @@
                   "editorType" : "SPAN",
                   "name" : "mybugs"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -321,8 +318,8 @@
                   "editorType" : "SPAN",
                   "name" : "myfavoritebugs"
                 },
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -426,36 +423,40 @@
     },
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "name" : "myfavoritebugs",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "myfavoritebugs"
     }, {
-      "name" : "mybugs",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "mybugs"
     }, {
-      "name" : "mytasks",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "mytasks"
     }, {
-      "name" : "mytodocnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "mytodocnt"
     }, {
-      "name" : "mystorys",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "mystorys"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfkey",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfkey"
     }, {
       "getPSAppDEField" : {
         "name" : "REALNAME",
         "codeName" : "Realname"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     } ],
     "showHeader" : true,
+    "enableRowNew" : false,
+    "enableRowEditOrder" : false,
+    "noSort" : false,
+    "hasWFDataItems" : false,
     "enableRowEdit" : false,
     "controlType" : "LIST",
     "codeName" : "PersonInfoMyWork",
@@ -486,6 +487,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "LIST"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -555,18 +562,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "LIST"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSLISTS/PersonInfoMyWork.json",
     "logicName" : "PersonInfoMyWork",
     "name" : "list",
     "modelid" : "4dd517f089050019617f247c2be7bb2b"
   } ],
-  "viewStyle" : "STYLE2",
   "codeName" : "IbzMyTerritoryListView9PersonInfo",
   "viewType" : "DELISTVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryListView9PersonInfo.json",

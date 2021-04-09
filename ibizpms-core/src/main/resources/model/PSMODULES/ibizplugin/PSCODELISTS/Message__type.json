@@ -3,21 +3,21 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/ibizplugin/PSCODELISTS/Message__type.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibizplugin/PSCODELISTS/Message__type.json",
   "codeName" : "Message__type",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "todo",
     "codeName" : "Todo",
-    "text" : "待办"
+    "text" : "待办",
+    "value" : "todo"
   }, {
-    "value" : "toread",
     "codeName" : "Toread",
-    "text" : "待阅"
+    "text" : "待阅",
+    "value" : "toread"
   } ]
 }

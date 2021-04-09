@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "PSSUBSYSSERVICEAPIID",
     "codeName" : "PSSubSysServiceAPIId"
@@ -8,9 +7,10 @@
     "name" : "PSSUBSYSSERVICEAPINAME",
     "codeName" : "PSSubSysServiceAPIName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
-  "masterRS" : 0,
   "pickupDEFName" : "PSSUBSYSSERVICEAPIID",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

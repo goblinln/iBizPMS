@@ -3,6 +3,10 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/StorySpec.json"
   },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchVersion"
+  },
   "getValuePSAppDEField" : {
     "name" : "VERSION",
     "codeName" : "Version"
@@ -14,10 +18,6 @@
   "getMinorSortPSAppDEField" : {
     "name" : "VERSION",
     "codeName" : "Version"
-  },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchVersion"
   },
   "codeListType" : "DYNAMIC",
   "dynaInstMode" : 1,

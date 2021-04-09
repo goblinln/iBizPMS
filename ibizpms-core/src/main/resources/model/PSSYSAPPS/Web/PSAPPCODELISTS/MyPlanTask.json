@@ -3,6 +3,10 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
   },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchMyTomorrowPlanTask"
+  },
   "getValuePSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
@@ -10,10 +14,6 @@
   "getTextPSAppDEField" : {
     "name" : "NAME",
     "codeName" : "Name"
-  },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchMyTomorrowPlanTask"
   },
   "codeListType" : "DYNAMIC",
   "dynaInstMode" : 1,

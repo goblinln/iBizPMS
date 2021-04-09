@@ -4,6 +4,10 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
   },
   "codeItemValueNumber" : true,
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchCurProduct"
+  },
   "getValuePSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
@@ -11,10 +15,6 @@
   "getTextPSAppDEField" : {
     "name" : "NAME",
     "codeName" : "Name"
-  },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchCurProduct"
   },
   "codeListType" : "DYNAMIC",
   "dynaInstMode" : 1,

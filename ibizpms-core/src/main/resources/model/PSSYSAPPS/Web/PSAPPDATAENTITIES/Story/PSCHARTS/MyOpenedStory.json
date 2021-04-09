@@ -19,7 +19,6 @@
     "id" : "0"
   },
   "controlType" : "CHART",
-  "codeName" : "MyOpenedStory",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "PRI",
     "seriesType" : "pie",
@@ -40,6 +39,7 @@
     "getPSChartSeriesEncode" : {
       "category" : "PRI",
       "value" : "SRFCOUNT",
+      "type" : "NONE",
       "index" : 0,
       "name" : "坐标系编码",
       "id" : "0"
@@ -54,6 +54,7 @@
       "EC.radius" : "['60%', '70%']"
     }
   } ],
+  "codeName" : "MyOpenedStory",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
       "groupField" : true,
@@ -88,12 +89,12 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory.json",
   "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory.json",
   "logicName" : "MyOpenedStory",
   "modelid" : "96894e73f66dfc1bf9d4cb2b2b6f52e3",
   "getUserParam" : {

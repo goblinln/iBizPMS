@@ -10,8 +10,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -26,8 +26,8 @@
     "engineType" : "GridExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "GRIDEXPBAR",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRIDEXPBAR"
     } ],
     "name" : "engine"
   } ],
@@ -35,9 +35,9 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "GRIDEXPBAR",
-    "enableSearch" : false,
     "getXDataPSControl" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam/PSGRIDS/MainExp.json",
@@ -131,6 +131,7 @@
       },
       "controlType" : "GRID"
     },
+    "enableSearch" : false,
     "enableCounter" : true,
     "showTitleBar" : false,
     "getPSControls" : [ {
@@ -139,38 +140,52 @@
           "name" : "TEAMID",
           "codeName" : "TeamId"
         },
-        "name" : "teamid",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "teamid"
       }, {
         "getPSAppDEField" : {
           "name" : "TEAMNAME",
           "codeName" : "TeamName"
         },
-        "name" : "teamname",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "teamname"
       }, {
         "getPSAppDEField" : {
           "name" : "TEAMNAME",
           "codeName" : "TeamName"
         },
-        "name" : "srfmajortext",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfmajortext"
       }, {
         "dataAccessAction" : true,
         "getPSAppDEField" : {
           "name" : "TEAMID",
           "codeName" : "TeamId"
         },
-        "name" : "srfdataaccaction",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfdataaccaction"
       }, {
         "getPSAppDEField" : {
           "name" : "TEAMID",
           "codeName" : "TeamId"
         },
-        "name" : "srfkey",
-        "dataType" : 25
+        "dataType" : 25,
+        "name" : "srfkey"
       } ],
+      "getRemovePSControlAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      },
       "singleSelect" : false,
       "enableColFilter" : false,
       "enableRowNew" : false,
@@ -193,31 +208,17 @@
         "name" : "srfkey"
       } ],
       "hasWFDataItems" : false,
-      "getRemovePSControlAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "dataAccessAction" : "DELETE",
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "name" : "remove"
-      },
       "columnEnableLink" : 2,
-      "enableRowEdit" : false,
       "enablePagingBar" : false,
+      "enableRowEdit" : false,
       "controlType" : "GRID",
       "getPSDEGridColumns" : [ {
         "excelCaption" : "组标识",
-        "dataItemName" : "teamid",
         "getPSAppDEField" : {
           "name" : "TEAMID",
           "codeName" : "TeamId"
         },
+        "dataItemName" : "teamid",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -230,11 +231,11 @@
         "name" : "teamid"
       }, {
         "excelCaption" : "组名称",
-        "dataItemName" : "teamname",
         "getPSAppDEField" : {
           "name" : "TEAMNAME",
           "codeName" : "TeamName"
         },
+        "dataItemName" : "teamname",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -267,6 +268,12 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
       },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "gridexpbar_grid"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "getPSControlHandler" : {
         "userDRAction" : "READ",
         "getPSHandlerActions" : [ {
@@ -349,12 +356,6 @@
         "enableDEFieldPrivilege" : false,
         "id" : "数据表格处理器"
       },
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "gridexpbar_grid"
-      },
-      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam/PSGRIDS/MainExp.json",
       "logicName" : "主表格_通讯录",
       "name" : "gridexpbar_grid",
@@ -373,10 +374,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
     },
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "gridexpbar"
-    },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -384,13 +381,15 @@
       "id" : "GRIDEXPBAR"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "gridexpbar"
+    },
     "width" : 300.0,
     "codeName" : "GridExpViewgridexpbar",
     "name" : "gridexpbar",
     "modelid" : "4a861140b27c2972c173b07a4d00b7e1_gridexpbar"
   } ],
-  "viewStyle" : "STYLE2",
-  "codeName" : "SysTeamGridExpView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
@@ -414,6 +413,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "SysTeamGridExpView",
   "viewType" : "DEGRIDEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamGridExpView.json",
   "name" : "SysTeamGridExpView"

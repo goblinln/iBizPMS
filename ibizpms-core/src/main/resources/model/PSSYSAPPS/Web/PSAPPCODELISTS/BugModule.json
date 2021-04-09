@@ -3,14 +3,6 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
   },
-  "getValuePSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
-  },
-  "getTextPSAppDEField" : {
-    "name" : "NAME",
-    "codeName" : "Name"
-  },
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchBugModuleCodeList"
@@ -18,6 +10,14 @@
   "getPValuePSAppDEField" : {
     "name" : "PARENT",
     "codeName" : "Parent"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "NAME",
+    "codeName" : "Name"
   },
   "codeListType" : "DYNAMIC",
   "dynaInstMode" : 1,

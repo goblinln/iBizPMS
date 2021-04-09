@@ -3,17 +3,17 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/BugCreateResolve.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/BugCreateResolve.json",
   "codeName" : "BugCreateResolve",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "1",
     "codeName" : "Item_1",
-    "text" : "创建"
+    "text" : "创建",
+    "value" : "1"
   } ]
 }

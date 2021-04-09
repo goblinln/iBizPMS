@@ -12,9 +12,9 @@
         "editorType" : "SPAN",
         "name" : "pri"
       },
-      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 1,
         "colLG" : 1,
@@ -31,8 +31,8 @@
         "editorType" : "SPAN",
         "name" : "name"
       },
-      "hidden" : false,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 11,
         "colLG" : 11,
@@ -53,9 +53,9 @@
         "editorType" : "SPAN",
         "name" : "status"
       },
-      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -66,11 +66,6 @@
       "name" : "status"
     }, {
       "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
-      "getPSLayoutPos" : {
-        "colMD" : 1,
-        "colLG" : 1,
-        "layout" : "TABLE_12COL"
-      },
       "getPSPanelItemGroupLogics" : [ {
         "logicCat" : "PANELVISIBLE",
         "getPSPanelItemLogics" : [ {
@@ -80,8 +75,8 @@
           "name" : "assignedto 值不为空(NotNil)"
         }, {
           "dstModelField" : "assignedto",
-          "value" : "closed",
           "condOp" : "NOTEQ",
+          "value" : "closed",
           "logicType" : "SINGLE",
           "name" : "assignedto 不等于(<>) (closed)"
         } ],
@@ -90,22 +85,22 @@
         "logicType" : "GROUP",
         "name" : "面板成员[rawitem1][面板显示]逻辑"
       } ],
-      "itemType" : "RAWITEM",
-      "itemStyle" : "DEFAULT",
-      "showCaption" : true,
-      "name" : "rawitem1"
-    }, {
       "getPSLayoutPos" : {
         "colMD" : 1,
         "colLG" : 1,
         "layout" : "TABLE_12COL"
       },
+      "itemType" : "RAWITEM",
+      "itemStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "rawitem1"
+    }, {
       "getPSPanelItemGroupLogics" : [ {
         "logicCat" : "PANELVISIBLE",
         "getPSPanelItemLogics" : [ {
           "dstModelField" : "assignedto",
-          "value" : "closed",
           "condOp" : "EQ",
+          "value" : "closed",
           "logicType" : "SINGLE",
           "name" : "assignedto 等于(=) (closed)"
         } ],
@@ -114,16 +109,16 @@
         "logicType" : "GROUP",
         "name" : "面板成员[rawitem3][面板显示]逻辑"
       } ],
-      "itemType" : "RAWITEM",
-      "itemStyle" : "DEFAULT",
-      "showCaption" : true,
-      "name" : "rawitem3"
-    }, {
       "getPSLayoutPos" : {
         "colMD" : 1,
         "colLG" : 1,
         "layout" : "TABLE_12COL"
       },
+      "itemType" : "RAWITEM",
+      "itemStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "rawitem3"
+    }, {
       "getPSPanelItemGroupLogics" : [ {
         "logicCat" : "PANELVISIBLE",
         "getPSPanelItemLogics" : [ {
@@ -137,6 +132,11 @@
         "logicType" : "GROUP",
         "name" : "面板成员[rawitem2][面板显示]逻辑"
       } ],
+      "getPSLayoutPos" : {
+        "colMD" : 1,
+        "colLG" : 1,
+        "layout" : "TABLE_12COL"
+      },
       "itemType" : "RAWITEM",
       "itemStyle" : "DEFAULT",
       "showCaption" : true,
@@ -153,9 +153,9 @@
         "editorType" : "SPAN",
         "name" : "assignedto"
       },
-      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 4,
         "colLG" : 4,
@@ -172,8 +172,8 @@
         "editorType" : "SPAN",
         "name" : "left"
       },
-      "hidden" : false,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 2,
         "colLG" : 2,

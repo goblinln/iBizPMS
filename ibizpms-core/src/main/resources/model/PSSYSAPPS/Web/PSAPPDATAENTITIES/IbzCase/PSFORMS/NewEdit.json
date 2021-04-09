@@ -1,6 +1,7 @@
 {
-  "showFormNavBar" : false,
   "enableAutoSave" : false,
+  "infoFormMode" : true,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -25,16 +26,15 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : true,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
@@ -46,25 +46,24 @@
         "editorType" : "SPAN",
         "name" : "openedby"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "OPENEDBY",
         "codeName" : "OpenedBy"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "convertToCodeItemText" : true,
       "caption" : "由谁创建",
-      "allowEmpty" : true,
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 3,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
-        "colXS" : 12,
         "colSM" : 12,
+        "colXS" : 12,
         "colMD" : 12,
         "colLG" : 8,
         "layout" : "TABLE_24COL"
@@ -74,6 +73,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "openedby"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
@@ -81,24 +81,23 @@
         "editorType" : "SPAN",
         "name" : "openeddate"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "OPENEDDATE",
         "codeName" : "OpenedDate"
       },
-      "hidden" : false,
       "dataType" : 5,
-      "caption" : "于",
       "allowEmpty" : true,
+      "caption" : "于",
       "labelWidth" : 20,
       "enableCond" : 3,
       "ignoreInput" : 3,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
-        "colXS" : 12,
         "colSM" : 12,
+        "colXS" : 12,
         "colMD" : 12,
         "colLG" : 12,
         "layout" : "TABLE_24COL"
@@ -108,6 +107,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "openeddate"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
@@ -119,25 +119,24 @@
         "editorType" : "SPAN",
         "name" : "lasteditedby"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "LASTEDITEDBY",
         "codeName" : "LastEditedBy"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "convertToCodeItemText" : true,
       "caption" : "由谁编辑",
-      "allowEmpty" : true,
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 3,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
-        "colXS" : 12,
         "colSM" : 12,
+        "colXS" : 12,
         "colMD" : 12,
         "colLG" : 8,
         "layout" : "TABLE_24COL"
@@ -147,6 +146,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "lasteditedby"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
@@ -154,24 +154,23 @@
         "editorType" : "SPAN",
         "name" : "lastediteddate"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "LASTEDITEDDATE",
         "codeName" : "LastEditedDate"
       },
-      "hidden" : false,
       "dataType" : 5,
-      "caption" : "于",
       "allowEmpty" : true,
+      "caption" : "于",
       "labelWidth" : 20,
       "enableCond" : 0,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
-        "colXS" : 12,
         "colSM" : 12,
+        "colXS" : 12,
         "colMD" : 12,
         "colLG" : 12,
         "layout" : "TABLE_24COL"
@@ -265,6 +264,7 @@
       "codeName" : "Id"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "NewEdit",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

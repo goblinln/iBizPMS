@@ -1,66 +1,66 @@
 {
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "name" : "action",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "action"
   }, {
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
-    "name" : "actor",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "actor"
   }, {
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
     },
-    "name" : "actionmanner",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "actionmanner"
   }, {
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Action__read.json"
     },
-    "name" : "read",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "read"
   }, {
-    "name" : "product",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "product"
   }, {
-    "name" : "project",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "project"
   }, {
-    "name" : "objectid",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "objectid"
   }, {
     "format" : "YYYY-MM-DD HH:mm:ss",
-    "name" : "date",
-    "dataType" : 5
+    "dataType" : 5,
+    "name" : "date"
   }, {
-    "name" : "objecttype",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "objecttype"
   }, {
-    "name" : "srfkey",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "srfkey"
   }, {
-    "name" : "date1",
-    "dataType" : 25
+    "dataType" : 25,
+    "name" : "date1"
   }, {
-    "name" : "id",
-    "dataType" : 1
+    "dataType" : 1,
+    "name" : "id"
   } ],
   "showHeader" : true,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
   "enableRowEdit" : false,
+  "controlType" : "LIST",
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
-  "controlType" : "LIST",
   "codeName" : "Trends",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
@@ -91,11 +91,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
   },
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action/PSLISTS/Trends.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CUSTOM",
     "pluginCode" : "newDynamicTimeLine"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action/PSLISTS/Trends.json",
   "logicName" : "Trends",
   "userTag" : "default",
   "modelid" : "999d18662199bb9f2e4a888396b7e2ed"

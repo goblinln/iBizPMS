@@ -1,19 +1,19 @@
 {
+  "transactionMode" : "DEFAULT",
   "paramMode" : 1,
   "generateTestUnit" : false,
   "customParam" : false,
-  "transactionMode" : "DEFAULT",
-  "pubServiceDefault" : true,
   "builtinAction" : false,
+  "pubServiceDefault" : true,
   "timeOut" : -1,
   "orderValue" : 99999,
-  "codeName" : "UpdateStoryVersion",
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
   },
+  "codeName" : "UpdateStoryVersion",
   "logicName" : "更新需求版本",
-  "extendMode" : 0,
   "actionMode" : "UPDATE",
   "actionType" : "DELOGIC",
   "requestParamType" : "ENTITY",

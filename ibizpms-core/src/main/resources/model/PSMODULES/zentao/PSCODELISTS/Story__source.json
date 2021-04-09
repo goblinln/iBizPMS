@@ -3,73 +3,73 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__source.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__source.json",
   "codeName" : "Story__source",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "customer",
     "codeName" : "Customer",
-    "text" : "客户"
+    "text" : "客户",
+    "value" : "customer"
   }, {
-    "value" : "user",
     "codeName" : "User",
-    "text" : "用户"
+    "text" : "用户",
+    "value" : "user"
   }, {
-    "value" : "po",
     "codeName" : "Po",
-    "text" : "产品经理"
+    "text" : "产品经理",
+    "value" : "po"
   }, {
-    "value" : "market",
     "codeName" : "Market",
-    "text" : "市场"
+    "text" : "市场",
+    "value" : "market"
   }, {
-    "value" : "service",
     "codeName" : "Service",
-    "text" : "客服"
+    "text" : "客服",
+    "value" : "service"
   }, {
-    "value" : "operation",
     "codeName" : "Operation",
-    "text" : "运营"
+    "text" : "运营",
+    "value" : "operation"
   }, {
-    "value" : "support",
     "codeName" : "Support",
-    "text" : "技术支持"
+    "text" : "技术支持",
+    "value" : "support"
   }, {
-    "value" : "competitor",
     "codeName" : "Competitor",
-    "text" : "竞争对手"
+    "text" : "竞争对手",
+    "value" : "competitor"
   }, {
-    "value" : "partner",
     "codeName" : "Partner",
-    "text" : "合作伙伴"
+    "text" : "合作伙伴",
+    "value" : "partner"
   }, {
-    "value" : "dev",
     "codeName" : "Dev",
-    "text" : "开发人员"
+    "text" : "开发人员",
+    "value" : "dev"
   }, {
-    "value" : "tester",
     "codeName" : "Tester",
-    "text" : "测试人员"
+    "text" : "测试人员",
+    "value" : "tester"
   }, {
-    "value" : "bug",
     "codeName" : "Bug",
-    "text" : "Bug"
+    "text" : "Bug",
+    "value" : "bug"
   }, {
-    "value" : "forum",
     "codeName" : "Forum",
-    "text" : "论坛"
+    "text" : "论坛",
+    "value" : "forum"
   }, {
-    "value" : "other",
     "codeName" : "Other",
-    "text" : "其它"
+    "text" : "其它",
+    "value" : "other"
   }, {
-    "value" : "iBiz",
     "codeName" : "Ibiz",
-    "text" : "iBiz"
+    "text" : "iBiz",
+    "value" : "iBiz"
   } ]
 }

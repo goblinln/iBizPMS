@@ -1,6 +1,7 @@
 {
-  "showFormNavBar" : false,
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -25,37 +26,35 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
     "columnCount" : 24
   },
-  "noTabHeader" : true,
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "ibz_weeklyname"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "IBZ_WEEKLYNAME",
         "codeName" : "IbzWeeklyName"
       },
-      "hidden" : true,
       "dataType" : 25,
-      "caption" : "周报名称",
       "allowEmpty" : false,
+      "caption" : "周报名称",
       "createDVT" : "OPERATORNAME",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -65,27 +64,27 @@
       "detailStyle" : "DEFAULT",
       "name" : "ibz_weeklyname"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "date"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
       },
-      "hidden" : true,
       "dataType" : 5,
-      "caption" : "日期",
       "allowEmpty" : true,
+      "caption" : "日期",
       "createDVT" : "CURTIME",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -95,6 +94,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "date"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -105,22 +105,21 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "reportto"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "REPORTTO",
         "codeName" : "Reportto"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : false,
       "needCodeListConfig" : true,
       "caption" : "汇报给",
-      "allowEmpty" : false,
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 12,
@@ -131,6 +130,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "reportto"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : false,
@@ -141,22 +141,21 @@
         "editorType" : "MDROPDOWNLIST",
         "name" : "mailto"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "MAILTO",
         "codeName" : "Mailto"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "抄送给",
-      "allowEmpty" : true,
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 12,
@@ -167,6 +166,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "mailto"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : false,
@@ -177,22 +177,21 @@
         "editorType" : "MDROPDOWNLIST",
         "name" : "thisweektask"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "THISWEEKTASK",
         "codeName" : "Thisweektask"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "本周完成任务",
-      "allowEmpty" : true,
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -202,6 +201,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "thisweektask"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HTMLEDITOR",
@@ -211,21 +211,20 @@
         },
         "name" : "workthisweek"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "WORKTHISWEEK",
         "codeName" : "Workthisweek"
       },
-      "hidden" : false,
       "dataType" : 21,
-      "caption" : "本周工作",
       "allowEmpty" : false,
+      "caption" : "本周工作",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -235,6 +234,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "workthisweek"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : false,
@@ -245,22 +245,21 @@
         "editorType" : "MDROPDOWNLIST",
         "name" : "nextweektask"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "NEXTWEEKTASK",
         "codeName" : "Nextweektask"
       },
-      "hidden" : false,
       "dataType" : 25,
+      "allowEmpty" : true,
       "needCodeListConfig" : true,
       "caption" : "下周计划任务",
-      "allowEmpty" : true,
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -270,6 +269,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "nextweektask"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HTMLEDITOR",
@@ -279,21 +279,20 @@
         },
         "name" : "plannextweek"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PLANNEXTWEEK",
         "codeName" : "Plannextweek"
       },
-      "hidden" : false,
       "dataType" : 21,
-      "caption" : "下周计划",
       "allowEmpty" : true,
+      "caption" : "下周计划",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -303,6 +302,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "plannextweek"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HTMLEDITOR",
@@ -312,21 +312,20 @@
         },
         "name" : "comment"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "COMMENT",
         "codeName" : "Comment"
       },
-      "hidden" : false,
       "dataType" : 21,
-      "caption" : "其他事项",
       "allowEmpty" : true,
+      "caption" : "其他事项",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -336,6 +335,7 @@
       "detailStyle" : "DEFAULT",
       "name" : "comment"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "maxFileCount" : -1,
@@ -352,21 +352,20 @@
         },
         "name" : "files"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "FILES",
         "codeName" : "Files"
       },
-      "hidden" : false,
       "dataType" : 25,
-      "caption" : "附件",
       "allowEmpty" : true,
+      "caption" : "附件",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -376,26 +375,26 @@
       "detailStyle" : "DEFAULT",
       "name" : "files"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "ibz_weeklyid"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "IBZ_WEEKLYID",
         "codeName" : "IbzWeeklyId"
       },
-      "hidden" : true,
       "dataType" : 1,
-      "caption" : "周报标识",
       "allowEmpty" : true,
+      "caption" : "周报标识",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -405,21 +404,20 @@
       "detailStyle" : "DEFAULT",
       "name" : "ibz_weeklyid"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "account"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
-      "hidden" : true,
       "dataType" : 25,
-      "caption" : "用户",
       "allowEmpty" : true,
+      "caption" : "用户",
       "createDV" : "srfloginname",
       "createDVT" : "SESSION",
       "labelWidth" : 130,
@@ -427,6 +425,7 @@
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -436,27 +435,27 @@
       "detailStyle" : "DEFAULT",
       "name" : "account"
     }, {
+      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "issubmit"
       },
-      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ISSUBMIT",
         "codeName" : "Issubmit"
       },
-      "hidden" : true,
       "dataType" : 25,
-      "caption" : "是否提交",
       "allowEmpty" : true,
+      "caption" : "是否提交",
       "createDV" : "0",
       "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "showCaption" : true,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -623,6 +622,7 @@
       "codeName" : "Issubmit"
     }
   } ],
+  "noTabHeader" : true,
   "codeName" : "Main",
   "tabHeaderPos" : "TOP",
   "getPSAppDataEntity" : {

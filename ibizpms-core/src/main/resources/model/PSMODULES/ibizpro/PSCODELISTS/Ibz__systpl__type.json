@@ -3,17 +3,17 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
-  "dynaModelFilePath" : "PSMODULES/ibizpro/PSCODELISTS/Ibz__systpl__type.json",
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSCODELISTS/Ibz__systpl__type.json",
   "codeName" : "Ibz__systpl__type",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "tpltype__freemarker",
     "codeName" : "Tpltype__freemarker",
-    "text" : "Freemarker"
+    "text" : "Freemarker",
+    "value" : "tpltype__freemarker"
   } ]
 }

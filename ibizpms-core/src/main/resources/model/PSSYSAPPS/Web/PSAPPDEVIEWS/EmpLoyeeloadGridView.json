@@ -16,8 +16,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -32,17 +32,17 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     }, {
-      "name" : "GRID",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRID"
     }, {
-      "name" : "SEARCHFORM",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "SEARCHFORM"
     } ],
     "name" : "engine"
   } ],
@@ -50,86 +50,101 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "getPSDEGridDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "TASKCNT",
         "codeName" : "TaskCnt"
       },
-      "name" : "taskcnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "taskcnt"
     }, {
       "getPSAppDEField" : {
         "name" : "PROJECT",
         "codeName" : "Project"
       },
-      "name" : "project",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "project"
     }, {
       "getPSAppDEField" : {
         "name" : "WORKLOAD",
         "codeName" : "Workload"
       },
-      "name" : "workload",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "workload"
     }, {
       "getPSAppDEField" : {
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
-      "name" : "assignedto",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "assignedto"
     }, {
       "getPSAppDEField" : {
         "name" : "TOTALLEFT",
         "codeName" : "TotalLeft"
       },
-      "name" : "totalleft",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "totalleft"
     }, {
       "getPSAppDEField" : {
         "name" : "TOTALTASKCNT",
         "codeName" : "Totaltaskcnt"
       },
-      "name" : "totaltaskcnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "totaltaskcnt"
     }, {
       "getPSAppDEField" : {
         "name" : "LEFT",
         "codeName" : "Left"
       },
-      "name" : "left",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "left"
     }, {
       "getPSAppDEField" : {
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       },
-      "name" : "projectname",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "projectname"
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfkey",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfkey"
     } ],
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
     "singleSelect" : true,
     "enableColFilter" : false,
     "enableRowNew" : false,
@@ -152,23 +167,9 @@
       "name" : "srfkey"
     } ],
     "hasWFDataItems" : false,
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
     "columnEnableLink" : 2,
-    "enableRowEdit" : false,
     "enablePagingBar" : false,
+    "enableRowEdit" : false,
     "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "excelCaption" : "姓名",
@@ -176,11 +177,11 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
-      "dataItemName" : "assignedto",
       "getPSAppDEField" : {
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
+      "dataItemName" : "assignedto",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -192,19 +193,19 @@
       "widthUnit" : "PX",
       "name" : "assignedto"
     }, {
-      "linkValueItem" : "project",
       "excelCaption" : "项目",
+      "linkValueItem" : "project",
       "enableLinkView" : true,
       "getLinkPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
         "viewType" : "DETABEXPVIEW"
       },
-      "dataItemName" : "projectname",
       "getPSAppDEField" : {
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       },
+      "dataItemName" : "projectname",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -217,11 +218,11 @@
       "name" : "projectname"
     }, {
       "excelCaption" : "任务数",
-      "dataItemName" : "taskcnt",
       "getPSAppDEField" : {
         "name" : "TASKCNT",
         "codeName" : "TaskCnt"
       },
+      "dataItemName" : "taskcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -234,11 +235,11 @@
       "name" : "taskcnt"
     }, {
       "excelCaption" : "剩余工时",
-      "dataItemName" : "left",
       "getPSAppDEField" : {
         "name" : "LEFT",
         "codeName" : "Left"
       },
+      "dataItemName" : "left",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -251,11 +252,11 @@
       "name" : "left"
     }, {
       "excelCaption" : "总任务数",
-      "dataItemName" : "totaltaskcnt",
       "getPSAppDEField" : {
         "name" : "TOTALTASKCNT",
         "codeName" : "Totaltaskcnt"
       },
+      "dataItemName" : "totaltaskcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -268,11 +269,11 @@
       "name" : "totaltaskcnt"
     }, {
       "excelCaption" : "总工时",
-      "dataItemName" : "totalleft",
       "getPSAppDEField" : {
         "name" : "TOTALLEFT",
         "codeName" : "TotalLeft"
       },
+      "dataItemName" : "totalleft",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -285,11 +286,11 @@
       "name" : "totalleft"
     }, {
       "excelCaption" : "工作负载",
-      "dataItemName" : "workload",
       "getPSAppDEField" : {
         "name" : "WORKLOAD",
         "codeName" : "Workload"
       },
+      "dataItemName" : "workload",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -317,6 +318,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -399,12 +406,6 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload/PSGRIDS/Main.json",
     "logicName" : "主表格",
     "name" : "grid",
@@ -419,20 +420,9 @@
       "layout" : "TABLE_24COL",
       "columnCount" : 24
     },
-    "getPSDEFormItemUpdates" : [ {
-      "getPSDEFIUpdateDetails" : [ {
-        "name" : "workday"
-      } ],
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "UpdateTime"
-      },
-      "codeName" : "UpdateTime",
-      "name" : "UpdateTime"
-    } ],
-    "noTabHeader" : true,
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
@@ -459,18 +449,17 @@
           },
           "name" : "dept"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "hidden" : false,
         "dataType" : 25,
+        "allowEmpty" : true,
         "needCodeListConfig" : true,
         "caption" : "部门",
-        "allowEmpty" : true,
         "labelWidth" : 45,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 3,
           "colLG" : 3,
@@ -481,6 +470,11 @@
         "detailStyle" : "DEFAULT",
         "name" : "dept"
       }, {
+        "inputTipClosable" : false,
+        "getPSDEFormItemUpdate" : {
+          "modelref" : true,
+          "id" : "UpdateTime"
+        },
         "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
@@ -491,26 +485,21 @@
           },
           "name" : "begin"
         },
-        "getPSDEFormItemUpdate" : {
-          "modelref" : true,
-          "id" : "UpdateTime"
-        },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "BEGIN",
           "codeName" : "Begin"
         },
-        "hidden" : false,
         "dataType" : 5,
-        "caption" : "起止时间",
         "allowEmpty" : true,
+        "caption" : "起止时间",
         "createDVT" : "CURTIME",
         "labelWidth" : 80,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 4,
           "colLG" : 4,
@@ -521,6 +510,11 @@
         "detailStyle" : "DEFAULT",
         "name" : "begin"
       }, {
+        "inputTipClosable" : false,
+        "getPSDEFormItemUpdate" : {
+          "modelref" : true,
+          "id" : "UpdateTime"
+        },
         "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
@@ -531,25 +525,20 @@
           },
           "name" : "end"
         },
-        "getPSDEFormItemUpdate" : {
-          "modelref" : true,
-          "id" : "UpdateTime"
-        },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "END",
           "codeName" : "End"
         },
-        "hidden" : false,
         "dataType" : 5,
-        "caption" : "至",
         "allowEmpty" : true,
+        "caption" : "至",
         "labelWidth" : 30,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 3,
           "colLG" : 3,
@@ -562,27 +551,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "end"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "NUMBER",
           "name" : "workday"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "WORKDAY",
           "codeName" : "Workday"
         },
-        "hidden" : false,
         "dataType" : 9,
-        "caption" : "工作天数",
         "allowEmpty" : true,
+        "caption" : "工作天数",
         "createDV" : "6",
         "labelWidth" : 60,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 3,
           "colLG" : 4,
@@ -594,23 +583,23 @@
         "detailStyle" : "DEFAULT",
         "name" : "workday"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "NUMBER",
           "name" : "everydaytime"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "hidden" : false,
         "dataType" : 25,
-        "caption" : "每天工时",
         "allowEmpty" : true,
+        "caption" : "每天工时",
         "createDV" : "7",
         "labelWidth" : 60,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 3,
           "colLG" : 4,
@@ -624,6 +613,7 @@
         "detailStyle" : "DEFAULT",
         "name" : "everydaytime"
       }, {
+        "inputTipClosable" : false,
         "emptyCaption" : true,
         "getPSEditor" : {
           "singleSelect" : true,
@@ -635,21 +625,20 @@
           "editorType" : "DROPDOWNLIST",
           "name" : "assign"
         },
-        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ASSIGN",
           "codeName" : "Assign"
         },
-        "hidden" : false,
         "dataType" : 25,
-        "needCodeListConfig" : true,
         "allowEmpty" : true,
+        "needCodeListConfig" : true,
         "labelWidth" : 5,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "showCaption" : true,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 3,
           "colLG" : 3,
@@ -709,12 +698,30 @@
         "codeName" : "Assign"
       }
     } ],
+    "noTabHeader" : true,
+    "getPSDEFormItemUpdates" : [ {
+      "getPSDEFIUpdateDetails" : [ {
+        "name" : "workday"
+      } ],
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "UpdateTime"
+      },
+      "codeName" : "UpdateTime",
+      "name" : "UpdateTime"
+    } ],
     "codeName" : "Workload",
     "tabHeaderPos" : "TOP",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "getPSAppDataEntity" : {
@@ -753,18 +760,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload/PSSEARCHFORMS/Workload.json",
     "logicName" : "员工负载",
     "name" : "searchform",
     "modelid" : "450d04ce1f9a311b18f9c137ea7b311d"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -782,7 +782,6 @@
     "realTitle" : "员工负载表编辑视图",
     "name" : "EDITDATA"
   } ],
-  "codeName" : "EmpLoyeeloadGridView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
@@ -838,6 +837,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "EmpLoyeeloadGridView",
   "viewType" : "DEGRIDVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/EmpLoyeeloadGridView.json",
   "name" : "EmpLoyeeloadGridView"

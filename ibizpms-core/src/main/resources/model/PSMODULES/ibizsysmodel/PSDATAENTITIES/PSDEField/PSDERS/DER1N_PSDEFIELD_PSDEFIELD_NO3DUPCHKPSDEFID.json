@@ -1,5 +1,4 @@
 {
-  "masterOrder" : -1,
   "getPSPickupDEField" : {
     "name" : "NO3DUPCHKPSDEFID",
     "codeName" : "No3DupChkPSDEFId"
@@ -8,9 +7,10 @@
     "name" : "NO3DUPCHKPSDEFNAME",
     "codeName" : "No3DupChkPSDEFName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
-  "masterRS" : 0,
   "pickupDEFName" : "NO3DUPCHKPSDEFID",
+  "masterRS" : 0,
   "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,

@@ -19,7 +19,6 @@
     "id" : "0"
   },
   "controlType" : "CHART",
-  "codeName" : "InvolvedProject_dev",
   "getPSDEChartSerieses" : [ {
     "catalogField" : "STATUS",
     "seriesType" : "pie",
@@ -40,6 +39,7 @@
     "getPSChartSeriesEncode" : {
       "category" : "STATUS",
       "value" : "SRFCOUNT",
+      "type" : "NONE",
       "index" : 0,
       "name" : "坐标系编码",
       "id" : "0"
@@ -55,6 +55,7 @@
       "EC.radius" : "['60%', '70%']"
     }
   } ],
+  "codeName" : "InvolvedProject_dev",
   "getPSChartDataSets" : [ {
     "getPSChartDataSetFields" : [ {
       "groupField" : true,
@@ -91,11 +92,11 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
   "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSCHARTS/InvolvedProject_dev.json",
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSCHARTS/InvolvedProject_dev.json",
   "logicName" : "InvolvedProject_dev",
   "modelid" : "40d18c30ac5ff684513990fe3b683a29",
   "getUserParam" : {

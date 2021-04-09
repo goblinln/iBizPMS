@@ -13,8 +13,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {
@@ -29,14 +29,14 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "OPENDATA"
     }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
+      "paramType" : "LOGIC",
+      "name" : "NEWDATA"
     }, {
-      "name" : "GRID",
-      "paramType" : "CTRL"
+      "paramType" : "CTRL",
+      "name" : "GRID"
     } ],
     "name" : "engine"
   } ],
@@ -52,6 +52,7 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -63,8 +64,12 @@
         "lanResTag" : "TBB.TEXT.*.EXPORT",
         "id" : "工具栏按钮文本[*.EXPORT]"
       },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+        "id" : "工具栏按钮提示[*.EXPORT]"
+      },
+      "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -73,12 +78,13 @@
           "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
           "id" : "工具栏按钮提示[*.EXPORT]"
         },
+        "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
-        "codeName" : "ExportExcel",
         "getPSSysImage" : {
           "glyph" : "xf1c3@FontAwesome",
           "cssClass" : "fa fa-file-excel-o"
         },
+        "codeName" : "ExportExcel",
         "caption" : "导出",
         "uIActionTag" : "ExportExcel",
         "uIActionType" : "DEUIACTION",
@@ -86,11 +92,6 @@
         "fullCodeName" : "ExportExcel",
         "name" : "表格界面_导出操作（Excel）"
       },
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-        "id" : "工具栏按钮提示[*.EXPORT]"
-      },
-      "noPrivDisplayMode" : 2,
       "getPSSysImage" : {
         "glyph" : "xf1c3@FontAwesome",
         "cssClass" : "fa fa-file-excel-o"
@@ -121,108 +122,122 @@
         "name" : "INSTALL",
         "codeName" : "Install"
       },
-      "name" : "install",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "install"
     }, {
       "getPSAppDEField" : {
         "name" : "DESIGNDEFECT",
         "codeName" : "Designdefect"
       },
-      "name" : "designdefect",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "designdefect"
     }, {
       "getPSAppDEField" : {
         "name" : "OTHERS",
         "codeName" : "Others"
       },
-      "name" : "others",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "others"
     }, {
       "getPSAppDEField" : {
         "name" : "STANDARD",
         "codeName" : "Standard"
       },
-      "name" : "standard",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "standard"
     }, {
       "getPSAppDEField" : {
         "name" : "AUTOMATION",
         "codeName" : "Automation"
       },
-      "name" : "automation",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "automation"
     }, {
       "getPSAppDEField" : {
         "name" : "SECURITY",
         "codeName" : "Security"
       },
-      "name" : "security",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "security"
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "name" : "srfmajortext",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "srfmajortext"
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfdataaccaction"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "srfkey",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "srfkey"
     }, {
       "getPSAppDEField" : {
         "name" : "CODEERROR",
         "codeName" : "Codeerror"
       },
-      "name" : "codeerror",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "codeerror"
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "name" : "id",
-      "dataType" : 1
+      "dataType" : 1,
+      "name" : "id"
     }, {
       "getPSAppDEField" : {
         "name" : "BUGCNT",
         "codeName" : "BugCnt"
       },
-      "name" : "bugcnt",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "bugcnt"
     }, {
       "getPSAppDEField" : {
         "name" : "PERFORMANCE",
         "codeName" : "Performance"
       },
-      "name" : "performance",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "performance"
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "name" : "name",
-      "dataType" : 25
+      "dataType" : 25,
+      "name" : "name"
     }, {
       "getPSAppDEField" : {
         "name" : "CONFIG",
         "codeName" : "Config"
       },
-      "name" : "config",
-      "dataType" : 9
+      "dataType" : 9,
+      "name" : "config"
     } ],
+    "getRemovePSControlAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+      },
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "dataAccessAction" : "DELETE",
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "name" : "remove"
+    },
     "singleSelect" : true,
     "enableColFilter" : false,
     "enableRowNew" : false,
@@ -245,38 +260,24 @@
       "name" : "srfkey"
     } ],
     "hasWFDataItems" : false,
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
     "columnEnableLink" : 2,
-    "enableRowEdit" : false,
     "enablePagingBar" : false,
+    "enableRowEdit" : false,
     "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "linkValueItem" : "srfkey",
       "excelCaption" : "项目名称",
+      "linkValueItem" : "srfkey",
       "enableLinkView" : true,
       "getLinkPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
         "viewType" : "DETABEXPVIEW"
       },
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -289,11 +290,11 @@
       "name" : "name"
     }, {
       "excelCaption" : "代码错误",
-      "dataItemName" : "codeerror",
       "getPSAppDEField" : {
         "name" : "CODEERROR",
         "codeName" : "Codeerror"
       },
+      "dataItemName" : "codeerror",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -307,11 +308,11 @@
       "name" : "codeerror"
     }, {
       "excelCaption" : "配置相关",
-      "dataItemName" : "config",
       "getPSAppDEField" : {
         "name" : "CONFIG",
         "codeName" : "Config"
       },
+      "dataItemName" : "config",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -325,11 +326,11 @@
       "name" : "config"
     }, {
       "excelCaption" : "设计缺陷",
-      "dataItemName" : "designdefect",
       "getPSAppDEField" : {
         "name" : "DESIGNDEFECT",
         "codeName" : "Designdefect"
       },
+      "dataItemName" : "designdefect",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -343,11 +344,11 @@
       "name" : "designdefect"
     }, {
       "excelCaption" : "安装部署",
-      "dataItemName" : "install",
       "getPSAppDEField" : {
         "name" : "INSTALL",
         "codeName" : "Install"
       },
+      "dataItemName" : "install",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -361,11 +362,11 @@
       "name" : "install"
     }, {
       "excelCaption" : "性能问题",
-      "dataItemName" : "performance",
       "getPSAppDEField" : {
         "name" : "PERFORMANCE",
         "codeName" : "Performance"
       },
+      "dataItemName" : "performance",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -379,11 +380,11 @@
       "name" : "performance"
     }, {
       "excelCaption" : "安全相关",
-      "dataItemName" : "security",
       "getPSAppDEField" : {
         "name" : "SECURITY",
         "codeName" : "Security"
       },
+      "dataItemName" : "security",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -397,11 +398,11 @@
       "name" : "security"
     }, {
       "excelCaption" : "标准规范",
-      "dataItemName" : "standard",
       "getPSAppDEField" : {
         "name" : "STANDARD",
         "codeName" : "Standard"
       },
+      "dataItemName" : "standard",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -415,11 +416,11 @@
       "name" : "standard"
     }, {
       "excelCaption" : "测试脚本",
-      "dataItemName" : "automation",
       "getPSAppDEField" : {
         "name" : "AUTOMATION",
         "codeName" : "Automation"
       },
+      "dataItemName" : "automation",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -433,11 +434,11 @@
       "name" : "automation"
     }, {
       "excelCaption" : "其他",
-      "dataItemName" : "others",
       "getPSAppDEField" : {
         "name" : "OTHERS",
         "codeName" : "Others"
       },
+      "dataItemName" : "others",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -451,11 +452,11 @@
       "name" : "others"
     }, {
       "excelCaption" : "Bug总数",
-      "dataItemName" : "bugcnt",
       "getPSAppDEField" : {
         "name" : "BUGCNT",
         "codeName" : "BugCnt"
       },
+      "dataItemName" : "bugcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -484,6 +485,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
     },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
       "getPSHandlerActions" : [ {
@@ -566,18 +573,11 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectBugTypeSum.json",
     "logicName" : "项目bug类型统计",
     "name" : "grid",
     "modelid" : "1226cd87815a2a0b461bf3a561e6b0c3"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -595,7 +595,6 @@
     "realTitle" : "项目统计编辑视图",
     "name" : "EDITDATA"
   } ],
-  "codeName" : "ProjectStatsProjectBugTypeSumUsr2GridView",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
@@ -662,6 +661,7 @@
     "logicType" : "SYSUILOGIC",
     "name" : "opendata"
   } ],
+  "codeName" : "ProjectStatsProjectBugTypeSumUsr2GridView",
   "viewType" : "DEGRIDVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsProjectBugTypeSumUsr2GridView.json",
   "name" : "ProjectStatsProjectBugTypeSumUsr2GridView"

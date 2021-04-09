@@ -1,26 +1,26 @@
 {
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "codeName" : "Todo__status",
   "getPSCodeItems" : [ {
-    "value" : "wait",
     "codeName" : "Wait",
-    "text" : "未开始"
+    "text" : "未开始",
+    "value" : "wait"
   }, {
-    "value" : "doing",
     "codeName" : "Doing",
     "text" : "进行中",
-    "color" : "rgba(245, 18, 18, 1)"
+    "color" : "rgba(245, 18, 18, 1)",
+    "value" : "doing"
   }, {
-    "value" : "done",
     "codeName" : "Done",
     "text" : "已完成",
-    "color" : "rgba(4, 251, 17, 1)"
+    "color" : "rgba(4, 251, 17, 1)",
+    "value" : "done"
   }, {
-    "value" : "closed",
     "codeName" : "Closed",
-    "text" : "已关闭"
+    "text" : "已关闭",
+    "value" : "closed"
   } ],
+  "codeName" : "Todo__status",
   "emptyText" : "未定义",
   "enableCache" : true,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Todo__status.json",

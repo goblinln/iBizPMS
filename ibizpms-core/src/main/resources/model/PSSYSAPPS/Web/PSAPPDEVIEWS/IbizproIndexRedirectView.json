@@ -1,6 +1,5 @@
 {
   "redirectView" : true,
-  "enableCustomGetDataAction" : false,
   "getRedirectPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -63,6 +62,7 @@
     "realTitle" : "项目",
     "name" : "EDITVIEW:PROJECT"
   } ],
+  "enableCustomGetDataAction" : false,
   "enableWorkflow" : true,
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "RedirectView",
@@ -72,8 +72,8 @@
   "accUserMode" : 2,
   "enableDP" : true,
   "getPSViewLayoutPanel" : {
-    "layoutPanel" : true,
     "useDefaultLayout" : true,
+    "layoutPanel" : true,
     "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
     "getPSAppDataEntity" : {

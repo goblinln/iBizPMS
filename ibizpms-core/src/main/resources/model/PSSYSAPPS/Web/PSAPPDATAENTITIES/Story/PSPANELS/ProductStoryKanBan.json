@@ -8,8 +8,8 @@
         "editorType" : "SPAN",
         "name" : "title"
       },
-      "hidden" : false,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -40,9 +40,9 @@
           "editorType" : "SPAN",
           "name" : "pri"
         },
-        "hidden" : false,
         "convertToCodeItemText" : true,
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 4,
@@ -63,9 +63,9 @@
           "editorType" : "SPAN",
           "name" : "status"
         },
-        "hidden" : false,
         "convertToCodeItemText" : true,
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 14,
@@ -83,8 +83,8 @@
           "editorType" : "SPAN",
           "name" : "estimate"
         },
-        "hidden" : false,
         "showCaption" : false,
+        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 4,
@@ -139,8 +139,8 @@
         "editorType" : "HIDDEN",
         "name" : "srfkey"
       },
-      "hidden" : true,
       "showCaption" : false,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -154,8 +154,8 @@
         "editorType" : "HIDDEN",
         "name" : "stage"
       },
-      "hidden" : true,
       "showCaption" : false,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -169,8 +169,8 @@
         "editorType" : "HIDDEN",
         "name" : "story"
       },
-      "hidden" : true,
       "showCaption" : false,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -184,8 +184,8 @@
         "editorType" : "HIDDEN",
         "name" : "isfavorites"
       },
-      "hidden" : true,
       "showCaption" : false,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -199,8 +199,8 @@
         "editorType" : "HIDDEN",
         "name" : "ischild"
       },
-      "hidden" : true,
       "showCaption" : false,
+      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
