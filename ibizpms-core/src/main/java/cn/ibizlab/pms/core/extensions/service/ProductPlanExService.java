@@ -138,6 +138,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
             ProductPlanSearchContext productPlanSearchContext = new ProductPlanSearchContext();
             productPlanSearchContext.setSelectCond(context.getSelectCond().clone());
             productPlanSearchContext.setN_parent_eq(productPlan.getId());
+            productPlanSearchContext.setSort(context.getSort());
             productPlan.set("items", this.searchDefault(productPlanSearchContext).getContent());
         }
         return new PageImpl<ProductPlan>(pages.getRecords(), context.getPageable(), pages.getTotal());
