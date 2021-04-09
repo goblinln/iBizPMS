@@ -1,1 +1,0 @@
-{"codeListType":"STATIC","dynaInstMode":1,"codeName":"User__gender","getPSCodeItems":[{"value":"f","codeName":"F","text":"女"},{"value":"m","codeName":"M","text":"男"}],"emptyText":"未定义","enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/User__gender.json","name":"ZT_USER__GENDER"}

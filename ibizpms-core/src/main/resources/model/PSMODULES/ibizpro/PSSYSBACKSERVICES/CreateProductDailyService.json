@@ -1,9 +1,0 @@
-{
-  "serviceOrder" : 0,
-  "serviceHandler" : "CreateProductDailyService",
-  "codeName" : "CreateProductDailyService",
-  "serviceContainer" : "SC01",
-  "startMode" : "AUTO",
-  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductDailyService.json",
-  "name" : "定时生成产品日报"
-}

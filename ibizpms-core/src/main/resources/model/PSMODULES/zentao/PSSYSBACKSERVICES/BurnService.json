@@ -1,9 +1,0 @@
-{
-  "serviceOrder" : 0,
-  "serviceHandler" : "BurnService",
-  "codeName" : "BurnService",
-  "serviceContainer" : "SC01",
-  "startMode" : "MANUAL",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/BurnService.json",
-  "name" : "定时更新燃尽图服务"
-}

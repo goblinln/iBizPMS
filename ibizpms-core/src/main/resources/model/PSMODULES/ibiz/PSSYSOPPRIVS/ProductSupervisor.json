@@ -1,7 +1,0 @@
-{
-  "codeName" : "ProductSupervisor",
-  "roleType" : "CUSTOM",
-  "roleTag" : "ProductSupervisor",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductSupervisor.json",
-  "name" : "产品主管"
-}
