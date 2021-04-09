@@ -26,33 +26,24 @@
 
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PRODUCTPLAN_ZT_BRANCH_BRANCH] -->
 	 <select id="selectByBranch" resultMap="ProductPlanResultMap">
-	select * from (
          select t1.* from (
                 <include refid="Default" />
 			 ) t1
 			 where  branch=#{id}
-		 )t1
-		 order by `begin`  desc  
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT] -->
 	 <select id="selectByProduct" resultMap="ProductPlanResultMap">
-	select * from (
          select t1.* from (
                 <include refid="Default" />
 			 ) t1
 			 where  product=#{id}
-		 )t1
-		 order by `begin`  desc  
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N__ZT_PRODUCTPLAN__ZT_PRODUCTPLAN__PARENT] -->
 	 <select id="selectByParent" resultMap="ProductPlanResultMap">
-	select * from (
          select t1.* from (
                 <include refid="Default" />
 			 ) t1
 			 where  parent=#{id}
-		 )t1
-		 order by `begin`  desc  
      </select>
 
     <!--数据集合[ChildPlan]-->
@@ -75,14 +66,11 @@
 
     <!--数据集合[Default]-->
 	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext"  resultMap="ProductPlanResultMap">
-	 	select * from (
          select t1.* from (
                 <include refid="Default" />
          )t1
          <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
          <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
-		 )t1
-		 order by `begin`  desc  
      </select>
 
     <!--数据集合[DefaultParent]-->
