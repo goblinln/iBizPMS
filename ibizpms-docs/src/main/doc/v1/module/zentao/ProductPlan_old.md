@@ -51,6 +51,7 @@ hide members
 |平台/分支|BRANCH|PICKUP|&nbsp;|
 |父计划|PARENT|PICKUP|&nbsp;|
 |产品|PRODUCT|PICKUP|&nbsp;|
+|开始时间|BEGINTIME|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -88,6 +89,7 @@ hide members
 |平台/分支|默认规则|默认规则|
 |父计划|默认规则|默认规则|
 |产品|默认规则|默认规则|
+|开始时间|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 

@@ -353,6 +353,16 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @ApiModelProperty("产品")
     private Long product;
 
+    /**
+     * 属性 [BEGINTIME]
+     *
+     */
+    @JSONField(name = "begintime")
+    @JsonProperty("begintime")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("开始时间")
+    private String begintime;
+
 
     /**
      * 设置 [TITLE]

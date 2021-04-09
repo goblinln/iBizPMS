@@ -269,4 +269,12 @@ export interface ProductPlan {
      * @memberof ProductPlan
      */
     product?: any;
+
+    /**
+     * 开始时间
+     *
+     * @returns {*}
+     * @memberof ProductPlan
+     */
+    begintime?: any;
 }

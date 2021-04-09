@@ -1863,7 +1863,8 @@ POST
 | 31 | branch | Long | 允许 | 平台/分支 |
 | 32 | parent | Long | 允许 | 父计划 |
 | 33 | product | Long | 允许 | 产品 |
-| 34 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 34 | begintime | String | 允许 | 开始时间 |
+| 35 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### ProductPlanSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |
