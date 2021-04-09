@@ -340,14 +340,11 @@
 
     <!--数据集合[ProjectTask]-->
 	 <select id="searchProjectTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext"  resultMap="TaskResultMap">
-	 	select * from (
          select t1.* from (
                 <include refid="ProjectTask" />
          )t1
          <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
          <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
-		 )t1
-		 order by `config_begin`  asc  
      </select>
 
     <!--数据集合[RootTask]-->
