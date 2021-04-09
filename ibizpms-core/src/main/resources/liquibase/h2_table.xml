@@ -2200,7 +2200,7 @@
 
 
     <!--输出实体[ZT_PRODUCTPLAN]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_productplan-1-83">
+    <changeSet author="zentao" id="tab-zt_productplan-2-83">
         <createTable tableName="zt_productplan">
                 <column name="`TITLE`" remarks="" type="VARCHAR(90)">
                 </column>
@@ -3240,13 +3240,13 @@
        <addForeignKeyConstraint baseColumnNames="ROOT" baseTableName="zt_module" constraintName="DER1N_IBZ_PRODUCTMODULE_ZT_PRO" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_product" validate="true"/>
     </changeSet>
         <!--输出实体[ZT_PRODUCTPLAN]外键关系 -->
-    <changeSet author="zentao" id="fk-zt_productplan-1-197">
+    <changeSet author="zentao" id="fk-zt_productplan-2-197">
        <addForeignKeyConstraint baseColumnNames="BRANCH" baseTableName="zt_productplan" constraintName="DER1N_ZT_PRODUCTPLAN_ZT_BRANCH" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_branch" validate="true"/>
     </changeSet>
-    <changeSet author="zentao" id="fk-zt_productplan-1-198">
+    <changeSet author="zentao" id="fk-zt_productplan-2-198">
        <addForeignKeyConstraint baseColumnNames="PRODUCT" baseTableName="zt_productplan" constraintName="DER1N_ZT_PRODUCTPLAN_ZT_PRODUC" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_product" validate="true"/>
     </changeSet>
-    <changeSet author="zentao" id="fk-zt_productplan-1-199">
+    <changeSet author="zentao" id="fk-zt_productplan-2-199">
        <addForeignKeyConstraint baseColumnNames="PARENT" baseTableName="zt_productplan" constraintName="DER1N__ZT_PRODUCTPLAN__ZT_PROD" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_productplan" validate="true"/>
     </changeSet>
         <!--输出实体[IBZ_PRODUCTSTATS]外键关系 -->

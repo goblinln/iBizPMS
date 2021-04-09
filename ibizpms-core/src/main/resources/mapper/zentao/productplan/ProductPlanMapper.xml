@@ -105,11 +105,14 @@
 
     <!--数据集合[PlanTasks]-->
 	 <select id="searchPlanTasks"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext"  resultMap="ProductPlanResultMap">
+	 	select * from (
          select t1.* from (
                 <include refid="PlanTasks" />
          )t1
          <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
          <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+		 )t1
+		 order by `begin`  asc  
      </select>
 
     <!--数据集合[ProjectApp]-->
