@@ -220,7 +220,8 @@ public class TaskExService extends TaskServiceImpl {
             TaskSearchContext context1 = new TaskSearchContext();
             context1.setSelectCond(context.getSelectCond().clone());
             context1.setN_parent_eq(task.getId());
-            List<Task> taskList = this.searchDefault(context1).getContent();
+            context1.set("parent", task.getId());
+            List<Task> taskList = this.searchChildDefault(context1).getContent();
             task.set("items", taskList);
             pages.setPages(pages.getTotal() + taskList.size());
         }
@@ -240,7 +241,8 @@ public class TaskExService extends TaskServiceImpl {
             TaskSearchContext context1 = new TaskSearchContext();
             context1.setSelectCond(context.getSelectCond().clone());
             context1.setN_parent_eq(task.getId());
-            List<Task> taskList = this.searchDefault(context1).getContent();
+            context1.set("parent", task.getId());
+            List<Task> taskList = this.searchChildDefault(context1).getContent();
             task.set("items", taskList);
             pages.setPages(pages.getTotal() + taskList.size());
 
@@ -301,7 +303,8 @@ public class TaskExService extends TaskServiceImpl {
             TaskSearchContext context1 = new TaskSearchContext();
             context1.setSelectCond(context.getSelectCond().clone());
             context1.setN_parent_eq(task.getId());
-            List<Task> taskList = this.searchDefault(context1).getContent();
+            context1.set("parent", task.getId());
+            List<Task> taskList = this.searchChildDefault(context1).getContent();
             task.set("items", taskList);
             pages.setPages(pages.getTotal() + taskList.size());
 
@@ -322,7 +325,8 @@ public class TaskExService extends TaskServiceImpl {
             TaskSearchContext context1 = new TaskSearchContext();
             context1.setSelectCond(context.getSelectCond().clone());
             context1.setN_parent_eq(task.getId());
-            List<Task> taskList = this.searchDefault(context1).getContent();
+            context1.set("parent", task.getId());
+            List<Task> taskList = this.searchChildDefault(context1).getContent();
             task.set("items", taskList);
             pages.setPages(pages.getTotal() + taskList.size());
 
@@ -342,7 +346,8 @@ public class TaskExService extends TaskServiceImpl {
             TaskSearchContext context1 = new TaskSearchContext();
             context1.setSelectCond(context.getSelectCond().clone());
             context1.setN_parent_eq(task.getId());
-            List<Task> taskList = this.searchDefault(context1).getContent();
+            context1.set("parent", task.getId());
+            List<Task> taskList = this.searchChildDefault(context1).getContent();
             task.set("items", taskList);
             pages.setPages(pages.getTotal() + taskList.size());
 
