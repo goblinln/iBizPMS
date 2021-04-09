@@ -1334,6 +1334,7 @@ hide footbox
 |BugTask|Bug相关任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_BugTask))|否|&nbsp;|
 |ByModule|通过模块查询([MYSQL5](../../appendix/query_MYSQL5.md#Task_ByModule))|否|&nbsp;|
 |ChildDefault|数据查询（子任务）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ChildDefault))|否|&nbsp;|
+|ChildDefaultMore|数据查询（子任务）（更多）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ChildDefaultMore))|否|&nbsp;|
 |ChildTask|子任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_ChildTask))|否|&nbsp;|
 |ChildTaskTree|子任务（树）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ChildTaskTree))|否|&nbsp;|
 |CurFinishTask|用户年度完成任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_CurFinishTask))|否|&nbsp;|
@@ -1378,6 +1379,7 @@ hide footbox
 |BugTask|Bug相关任务|BugTask|否|&nbsp;|
 |ByModule|通过模块查询|ByModule|否|&nbsp;|
 |ChildDefault|数据查询（子任务）|ChildDefault|否|&nbsp;|
+|ChildDefaultMore|数据查询（子任务）（更多）|ChildDefaultMore|否|&nbsp;|
 |ChildTask|子任务|ChildTask|否|&nbsp;|
 |ChildTaskTree|子任务（树）|ChildTaskTree|否|&nbsp;|
 |CurFinishTask|用户年度完成任务|CurFinishTask|否|&nbsp;|
