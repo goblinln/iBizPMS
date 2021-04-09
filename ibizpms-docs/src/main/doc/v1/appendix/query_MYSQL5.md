@@ -19635,8 +19635,8 @@ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`CANCELEDBY`, t1.`CANCELEDDATE`, t
 t1.`PLAN`,
 t61.`TITLE` AS `PLANNAME` FROM `zt_task` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.STORY = t21.ID  LEFT JOIN zt_project t31 ON t1.PROJECT = t31.ID  LEFT JOIN zt_product t41 ON t21.PRODUCT = t41.ID  LEFT JOIN zt_task t51 ON t1.PARENT = t51.ID LEFT JOIN `zt_productplan` t61 ON t1.`PLAN` = t61.`ID`
 WHERE t1.DELETED = '0' 
+(( t1.`PARENT` = 0  or  t1.`PARENT` = -1) and t1.`project` = #{srf.n_projectname_eq}) 
 FIND_IN_SET (#{srf.datacontext.srfparentkey}, t11.`PATH`) 
-( t1.`PARENT` = 0  or  t1.`PARENT` = -1) 
 
 ```
 ### 数据查询（子任务）(ChildDefault)<div id="Task_ChildDefault"></div>
@@ -20025,7 +20025,7 @@ t1.`PLAN`,
 t1.`TASKSPECIES`,
 t61.`TITLE` AS `PLANNAME` FROM `zt_task` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.STORY = t21.ID  LEFT JOIN zt_project t31 ON t1.PROJECT = t31.ID  LEFT JOIN zt_product t41 ON t21.PRODUCT = t41.ID  LEFT JOIN zt_task t51 ON t1.PARENT = t51.ID LEFT JOIN `zt_productplan` t61 ON t1.`PLAN` = t61.`ID`
 WHERE t1.DELETED = '0' 
-( t1.`PARENT` <= 0 ) 
+(( t1.`PARENT` <= 0 ) and t1.`project` = #{srf.n_projectname_eq}) 
 
 ```
 ### 根任务(RootTask)<div id="Task_RootTask"></div>
