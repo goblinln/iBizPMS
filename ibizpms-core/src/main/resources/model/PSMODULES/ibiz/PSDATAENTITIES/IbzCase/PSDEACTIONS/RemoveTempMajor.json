@@ -1,0 +1,26 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : true,
+  "tempDataMode" : 1,
+  "timeOut" : -1,
+  "orderValue" : 23,
+  "codeName" : "RemoveTempMajor",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "DELETE"
+  },
+  "logicName" : "RemoveTempMajor",
+  "extendMode" : 0,
+  "enableTempData" : true,
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase/PSDEACTIONS/RemoveTempMajor.json",
+  "name" : "RemoveTempMajor"
+}

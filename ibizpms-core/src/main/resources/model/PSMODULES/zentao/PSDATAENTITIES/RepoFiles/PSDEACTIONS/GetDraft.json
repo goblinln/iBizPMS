@@ -1,0 +1,23 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "orderValue" : 41,
+  "codeName" : "GetDraft",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "logicName" : "GetDraft",
+  "extendMode" : 0,
+  "actionMode" : "GETDRAFT",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "NONE",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles/PSDEACTIONS/GetDraft.json",
+  "name" : "GetDraft"
+}

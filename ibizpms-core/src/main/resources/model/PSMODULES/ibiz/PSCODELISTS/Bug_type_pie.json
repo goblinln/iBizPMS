@@ -1,0 +1,55 @@
+{
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/Bug_type_pie.json",
+  "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
+  "codeName" : "Bug_type_pie",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "value" : "codeerror",
+    "codeName" : "Codeerror",
+    "text" : "代码错误"
+  }, {
+    "value" : "config",
+    "codeName" : "Config",
+    "text" : "配置相关"
+  }, {
+    "value" : "install",
+    "codeName" : "Install",
+    "text" : "安装部署"
+  }, {
+    "value" : "security",
+    "codeName" : "Security",
+    "text" : "安全相关"
+  }, {
+    "value" : "performance",
+    "codeName" : "Performance",
+    "text" : "性能问题"
+  }, {
+    "value" : "standard",
+    "codeName" : "Standard",
+    "text" : "标准规范"
+  }, {
+    "value" : "automation",
+    "codeName" : "Automation",
+    "text" : "测试脚本"
+  }, {
+    "value" : "designdefect",
+    "codeName" : "Designdefect",
+    "text" : "设计缺陷"
+  }, {
+    "value" : "others",
+    "codeName" : "Others",
+    "text" : "其他"
+  }, {
+    "value" : "无",
+    "codeName" : "Item_10",
+    "text" : "无"
+  } ]
+}

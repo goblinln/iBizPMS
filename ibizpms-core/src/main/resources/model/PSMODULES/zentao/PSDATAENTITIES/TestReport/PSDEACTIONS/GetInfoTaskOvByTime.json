@@ -1,0 +1,23 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "orderValue" : 99999,
+  "codeName" : "GetInfoTaskOvByTime",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "logicName" : "根据起始时间获取概况信息",
+  "extendMode" : 0,
+  "actionMode" : "READ",
+  "actionType" : "DELOGIC",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTaskOvByTime.json",
+  "name" : "GetInfoTaskOvByTime"
+}

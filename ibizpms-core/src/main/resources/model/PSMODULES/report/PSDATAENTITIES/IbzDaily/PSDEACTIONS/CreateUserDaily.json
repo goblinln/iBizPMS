@@ -1,0 +1,28 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "orderValue" : 99999,
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCommon"
+  },
+  "codeName" : "CreateUserDaily",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "logicName" : "定时生成用户日报",
+  "extendMode" : 0,
+  "actionMode" : "CREATE",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/CreateUserDaily.json",
+  "name" : "CreateUserDaily",
+  "userCat" : "CAT1"
+}

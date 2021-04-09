@@ -1,0 +1,28 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "MODULE",
+    "codeName" : "Module"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "MODULENAME",
+    "codeName" : "Modulename"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "pickupDEFName" : "MODULE",
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "IBZProductModule",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_IBZ_PRODUCTMODULE_MODULE.json",
+  "name" : "DER1N_ZT_STORY_IBZ_PRODUCTMODULE_MODULE"
+}

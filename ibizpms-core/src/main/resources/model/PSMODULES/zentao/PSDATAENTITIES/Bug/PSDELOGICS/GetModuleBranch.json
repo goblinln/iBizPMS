@@ -1,0 +1,159 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "logicHolder" : 1,
+  "codeName" : "GetModuleBranch",
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : true,
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Module"
+    },
+    "logicHolder" : 3,
+    "codeName" : "Deaction1",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接9306"
+    } ],
+    "logicNodeType" : "DEACTION",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Get.json"
+    },
+    "name" : "获取模块详情"
+  }, {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "codeName" : "Prepareparam1",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接6882"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Module"
+      },
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "dstFieldName" : "ID",
+      "srcFieldName" : "MODULE",
+      "name" : "Default[MODULE] ==> Module[ID]"
+    } ],
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置模块参数"
+  }, {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "codeName" : "Begin",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接1496"
+    } ],
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  }, {
+    "parallelOutput" : true,
+    "logicHolder" : 3,
+    "codeName" : "Prepareparam2",
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Module"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "dstFieldName" : "BRANCH",
+      "srcFieldName" : "BRANCH",
+      "name" : "Module[BRANCH] ==> Default[BRANCH]"
+    } ],
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置bug平台值"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接6882"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "condOP" : "ISNOTNULL",
+        "dstFieldName" : "MODULE",
+        "logicType" : "SINGLE",
+        "name" : "Default[MODULE] 值不为空(NotNil)"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "661944c18fe1176b86910c3779c3328e"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "连接1496"
+  }, {
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam2"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "name" : "连接9306"
+  } ],
+  "getPSDELogicParams" : [ {
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false,
+    "codeName" : "Module",
+    "default" : false,
+    "name" : "模块"
+  }, {
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "传入变量"
+  } ],
+  "logicName" : "获取模块的平台",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/GetModuleBranch.json",
+  "name" : "获取模块的平台"
+}

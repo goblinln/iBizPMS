@@ -1,0 +1,639 @@
+{
+  "serviceAPIMode" : 0,
+  "getAllPSDEFields" : [ {
+    "length" : 100,
+    "dataType" : "GUID",
+    "valueFormat" : "%1$s",
+    "deployId" : "8ec1f77d6cb219cf380a15f65b54a3a1",
+    "codeName" : "RoleId",
+    "logicName" : "角色标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`SYS_ROLEID`",
+      "valueAutoGen" : false,
+      "columnName" : "SYS_ROLEID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "SYS_ROLEID"
+    } ],
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "CONTROL.SPEX.STANDARDPAGE",
+      "id" : "控件文本[SPEX.STANDARDPAGE]"
+    },
+    "pasteReset" : true,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "SYS_ROLEID",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SYS_ROLEID",
+        "codeName" : "RoleId"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "SYS_ROLEID"
+  }, {
+    "length" : 200,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "42c7377420c308703ee9c37342d06f9f",
+    "codeName" : "RoleName",
+    "logicName" : "角色名称",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`SYS_ROLENAME`",
+      "valueAutoGen" : false,
+      "columnName" : "SYS_ROLENAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "SYS_ROLENAME"
+    } ],
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "TBB.TOOLTIP.*.SAVE",
+      "id" : "工具栏按钮提示[*.SAVE]"
+    },
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "SYS_ROLENAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SYS_ROLENAME",
+        "codeName" : "RoleName"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "SYS_ROLENAME"
+  }, {
+    "length" : 100,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "c5f196c48b1f3d3da95191e272af962d",
+    "codeName" : "Memo",
+    "logicName" : "备注",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`MEMO`",
+      "valueAutoGen" : false,
+      "columnName" : "MEMO",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "MEMO"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "MEMO",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "MEMO",
+        "codeName" : "Memo"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "MEMO"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDERS/DER1N_SYS_ROLE_SYS_ROLE_PROLEID.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "SYS_ROLEID",
+      "codeName" : "RoleId"
+    },
+    "length" : 100,
+    "dataType" : "PICKUP",
+    "deployId" : "c789101b9b8b19692728d18cb700a3a8",
+    "codeName" : "PRoleId",
+    "logicName" : "父角色标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PROLEID`",
+      "valueAutoGen" : false,
+      "columnName" : "PROLEID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PROLEID"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "PROLEID",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PROLEID",
+        "codeName" : "PRoleId"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "PROLEID"
+  }, {
+    "phisicalDEField" : false,
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDERS/DER1N_SYS_ROLE_SYS_ROLE_PROLEID.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "SYS_ROLENAME",
+      "codeName" : "RoleName"
+    },
+    "length" : 200,
+    "dataType" : "PICKUPTEXT",
+    "deployId" : "a936ecffea45168e7553c0a5d0aae174",
+    "codeName" : "PRoleName",
+    "logicName" : "父角色名称",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t11.`SYS_ROLENAME`",
+      "valueAutoGen" : false,
+      "columnName" : "PROLENAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PROLENAME"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 3,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 200,
+          "dEFName" : "PROLENAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PROLENAME",
+        "codeName" : "PRoleName"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "PROLENAME"
+  }, {
+    "length" : 8,
+    "dataType" : "DATETIME",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "4d96a986d44f18b12f07473f8920c0f3",
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "stdDataType" : 5,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "valueAutoGen" : false,
+      "columnName" : "CREATEDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CREATEDATE"
+    } ],
+    "predefinedType" : "CREATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "COMMON.CONDITION.ABSGT",
+      "id" : "通用[CONDITION.ABSGT]"
+    },
+    "systemReserver" : true,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "CREATEDATE"
+  }, {
+    "length" : 8,
+    "dataType" : "DATETIME",
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "901144dee29ae8e8a5ebc083fdf5b97b",
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "stdDataType" : 5,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "valueAutoGen" : false,
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEDATE"
+    } ],
+    "predefinedType" : "UPDATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "CONTROL.PICTURE.UPLOAD.TEXT",
+      "id" : "控件文本[PICTURE.UPLOAD.TEXT]"
+    },
+    "systemReserver" : true,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "UPDATEDATE"
+  }, {
+    "length" : 60,
+    "dataType" : "TEXT",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "faca85f80fec0a3a992fae088f3751a9",
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "valueAutoGen" : false,
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CREATEMAN"
+    } ],
+    "predefinedType" : "CREATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "systemReserver" : true,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 60,
+          "dEFName" : "CREATEMAN",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[60]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "CREATEMAN"
+  }, {
+    "length" : 60,
+    "dataType" : "TEXT",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "eb64e3fbb40e884db469f338f8294dff",
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`UPDATEMAN`",
+      "valueAutoGen" : false,
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "UPDATEMAN"
+    } ],
+    "predefinedType" : "UPDATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "systemReserver" : true,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 60,
+          "dEFName" : "UPDATEMAN",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[60]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "UPDATEMAN"
+  } ],
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "logicName" : "数据集",
+    "extendMode" : 0,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "pageSize" : -1,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Save.json"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "extendMode" : 0,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "enableDataVer" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableAPIStorage" : true,
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "saaSMode" : 0,
+  "deployId" : "2cc50d0bbc92ab9982dd16f6417120d9",
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "codeName" : "SysRole",
+  "logicName" : "系统角色",
+  "tableName" : "IBZROLE",
+  "serviceCodeName" : "SysRole",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : false,
+  "serviceAPIClientId" : "ccdd4a88804cf809e0cea3c2d56652c3",
+  "logicValid" : false,
+  "enableMultiDS" : false,
+  "dataAccCtrlMode" : 1,
+  "auditMode" : 0,
+  "dataChangeLogMode" : 0,
+  "storageMode" : 4,
+  "dataImpExpMode" : 3,
+  "dataAccCtrlArch" : 1,
+  "enableRemove" : true,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "enableMultiForm" : false,
+  "enableEntityCache" : false,
+  "dEType" : 1,
+  "getMinorPSDERs" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDERS/DER1N_SYS_ROLE_SYS_ROLE_PROLEID.json"
+  } ],
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "getMajorPSDERs" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDERS/DER1N_SYS_ROLE_SYS_ROLE_PROLEID.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDERS/DER1N_SYS_USER_ROLE_SYS_ROLE_SYS_ROLEID.json"
+  } ],
+  "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json",
+  "name" : "SYS_ROLE"
+}

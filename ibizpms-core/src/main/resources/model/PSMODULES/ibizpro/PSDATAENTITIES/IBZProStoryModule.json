@@ -1,0 +1,880 @@
+{
+  "serviceAPIMode" : 1,
+  "getAllPSDEFields" : [ {
+    "length" : 3,
+    "defaultValue" : "0",
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "cda7258f55bf99ec1a1442b782a3181f",
+    "codeName" : "Grade",
+    "logicName" : "级别",
+    "stdDataType" : 9,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`GRADE`",
+      "valueAutoGen" : true,
+      "columnName" : "GRADE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "GRADE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "GRADE",
+        "codeName" : "Grade"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "GRADE"
+  }, {
+    "length" : 65535,
+    "defaultValue" : "/",
+    "dataType" : "LONGTEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "5cad7212f1e9b755078310acdf0a7ca0",
+    "codeName" : "Collector",
+    "logicName" : "collector",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`COLLECTOR`",
+      "valueAutoGen" : true,
+      "columnName" : "COLLECTOR",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "COLLECTOR"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "queryColumn" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 65535,
+          "dEFName" : "COLLECTOR",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[65535]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[65535]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[65535]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "COLLECTOR",
+        "codeName" : "Collector"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "COLLECTOR"
+  }, {
+    "length" : 30,
+    "defaultValue" : "/",
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "5614191093cd079afb21dced4de753fd",
+    "codeName" : "Owner",
+    "logicName" : "owner",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`OWNER`",
+      "valueAutoGen" : true,
+      "columnName" : "OWNER",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "OWNER"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "OWNER",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "OWNER",
+        "codeName" : "Owner"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "OWNER"
+  }, {
+    "length" : 60,
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibizpro_storymodule__type.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "b8da0ca3ded1235f2409cfde706d8d49",
+    "codeName" : "Ibiz_storytype",
+    "logicName" : "需求模块类型",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`IBIZ_STORYTYPE`",
+      "valueAutoGen" : false,
+      "columnName" : "IBIZ_STORYTYPE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "IBIZ_STORYTYPE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 60,
+          "dEFName" : "IBIZ_STORYTYPE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[60]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "IBIZ_STORYTYPE",
+        "codeName" : "Ibiz_storytype"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "IBIZ_STORYTYPE"
+  }, {
+    "length" : 20,
+    "dataType" : "ACID",
+    "valueFormat" : "%1$s",
+    "deployId" : "c0b12c07158028efec7002e187fb2d04",
+    "codeName" : "Id",
+    "logicName" : "id",
+    "stdDataType" : 1,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`ID`",
+      "valueAutoGen" : false,
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : true,
+      "name" : "ID"
+    } ],
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
+    "pasteReset" : true,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "ID"
+  }, {
+    "length" : 30,
+    "defaultValue" : "story",
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Module__type.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "02964e904e5861493759f19149b7f649",
+    "codeName" : "Type",
+    "logicName" : "类型",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`TYPE`",
+      "valueAutoGen" : true,
+      "columnName" : "TYPE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TYPE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "TYPE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "TYPE"
+  }, {
+    "length" : 30,
+    "defaultValue" : "/",
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "5764246cd6e0635b039d09bbf225f932",
+    "codeName" : "IBizShort",
+    "logicName" : "简称",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`SHORT`",
+      "valueAutoGen" : true,
+      "columnName" : "SHORT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "SHORT"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 30,
+          "dEFName" : "SHORT",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[30]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "SHORT",
+        "codeName" : "IBizShort"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "SHORT"
+  }, {
+    "length" : 60,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "b05dd47a1c7e0f5d542c81b3c9d760d3",
+    "codeName" : "Name",
+    "logicName" : "名称",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`NAME`",
+      "valueAutoGen" : false,
+      "columnName" : "NAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "NAME"
+    } ],
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 60,
+          "dEFName" : "NAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[60]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "NAME"
+  }, {
+    "length" : 1,
+    "defaultValue" : "0",
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "a7c306197c9ef6b59009f0c258361019",
+    "codeName" : "Deleted",
+    "logicName" : "已删除",
+    "stringLength" : 1,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`DELETED`",
+      "valueAutoGen" : true,
+      "columnName" : "DELETED",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DELETED"
+    } ],
+    "predefinedType" : "LOGICVALID",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 1,
+          "dEFName" : "DELETED",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[1]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[1]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[1]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "DELETED"
+  }, {
+    "length" : 255,
+    "defaultValue" : "，",
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "0dd62b7e25635f3327e8b6e33df58633",
+    "codeName" : "Path",
+    "logicName" : "路径",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PATH`",
+      "valueAutoGen" : true,
+      "columnName" : "PATH",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PATH"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "PATH",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PATH",
+        "codeName" : "Path"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "PATH"
+  }, {
+    "length" : 100,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "24e968d28d20d26b2d0279a7166ced81",
+    "codeName" : "IBIZId",
+    "logicName" : "IBIZ标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`IBIZ_ID`",
+      "valueAutoGen" : false,
+      "columnName" : "IBIZ_ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "IBIZ_ID"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "IBIZ_ID",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "IBIZ_ID",
+        "codeName" : "IBIZId"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "IBIZ_ID"
+  }, {
+    "phisicalDEField" : false,
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDERS/DER1N_IBZPRO_STORYMODULE_IBZPRO_PRODUCT_ROOT.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "length" : 90,
+    "dataType" : "PICKUPTEXT",
+    "deployId" : "89fed561da8b2f63259572505df71266",
+    "codeName" : "ProductName",
+    "logicName" : "产品",
+    "stringLength" : 90,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t11.`NAME`",
+      "valueAutoGen" : false,
+      "columnName" : "PRODUCTNAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PRODUCTNAME"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 3,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 90,
+          "dEFName" : "PRODUCTNAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[90]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[90]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[90]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "PRODUCTNAME"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDERS/DER1N_IBZPRO_STORYMODULE_IBZPRO_PRODUCT_ROOT.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "length" : 8,
+    "dataType" : "PICKUP",
+    "deployId" : "fe41c77aced679b8c602306791c004e4",
+    "codeName" : "Root",
+    "logicName" : "编号",
+    "stdDataType" : 1,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`ROOT`",
+      "valueAutoGen" : false,
+      "columnName" : "ROOT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "ROOT"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ROOT",
+        "codeName" : "Root"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "ROOT"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDERS/DER1N_IBZPRO_STORYMODULE_IBZPRO_STORYMODULE_PARENT.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "length" : 20,
+    "dataType" : "PICKUP",
+    "deployId" : "5f847f7393728604ed879aa05d5bedff",
+    "codeName" : "Parent",
+    "logicName" : "id",
+    "stdDataType" : 1,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`PARENT`",
+      "valueAutoGen" : false,
+      "columnName" : "PARENT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "PARENT"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "PARENT"
+  } ],
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "logicName" : "数据集",
+    "extendMode" : 0,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "pageSize" : -1,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDEACTIONS/Save.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDEACTIONS/SyncFromIBIZ.json"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "extendMode" : 0,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
+  "getAllPSDELogics" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDELOGICS/FixPath.json"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "enableDataVer" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableAPIStorage" : false,
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "saaSMode" : 4,
+  "deployId" : "b2e1b0756a7f864e9d0d862daf04a93b",
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "codeName" : "IBZProStoryModule",
+  "logicName" : "需求模块",
+  "tableName" : "zt_module",
+  "serviceCodeName" : "IBZProStoryModule",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "logicValid" : false,
+  "enableMultiDS" : false,
+  "dataAccCtrlMode" : 1,
+  "auditMode" : 0,
+  "dataChangeLogMode" : 0,
+  "storageMode" : 1,
+  "dataImpExpMode" : 3,
+  "dataAccCtrlArch" : 1,
+  "enableRemove" : true,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "enableMultiForm" : false,
+  "enableEntityCache" : false,
+  "dEType" : 1,
+  "getMinorPSDERs" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDERS/DER1N_IBZPRO_STORYMODULE_IBZPRO_PRODUCT_ROOT.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDERS/DER1N_IBZPRO_STORYMODULE_IBZPRO_STORYMODULE_PARENT.json"
+  } ],
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "getMajorPSDERs" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDERS/DER1N_IBZPRO_STORYMODULE_IBZPRO_STORYMODULE_PARENT.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDERS/DER1N_IBZPRO_STORY_IBZPRO_STORYMODULE_MODULE.json"
+  } ],
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule.json",
+  "name" : "IBZPRO_STORYMODULE"
+}

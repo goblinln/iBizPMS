@@ -1,0 +1,23 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "orderValue" : 99999,
+  "codeName" : "GetTestTaskCntRun",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "logicName" : "获取测试单执行结果",
+  "extendMode" : 0,
+  "actionMode" : "READ",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetTestTaskCntRun.json",
+  "name" : "GetTestTaskCntRun"
+}

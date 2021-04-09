@@ -1,0 +1,301 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "name" : "product",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "id",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
+    "name" : "order",
+    "dataType" : 9
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "name" : "name",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  } ],
+  "singleSelect" : false,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "编号",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "enablePagingBar" : true,
+  "controlType" : "GRID",
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "编号",
+    "dataItemName" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "id",
+    "caption" : "编号",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "id"
+  }, {
+    "excelCaption" : "名称",
+    "dataItemName" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 0,
+    "codeName" : "name",
+    "caption" : "名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "name"
+  }, {
+    "excelCaption" : "排序",
+    "dataItemName" : "order",
+    "getPSAppDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "order",
+    "caption" : "排序",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "order"
+  }, {
+    "getPSDEUIActionGroup" : {
+      "getPSUIActionGroupDetails" : [ {
+        "showIcon" : true,
+        "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 1,
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          },
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BranchPMEditView.json",
+            "viewType" : "DEEDITVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "codeName" : "Edit",
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "caption" : "编辑",
+          "actionTarget" : "SINGLEKEY",
+          "reloadData" : true,
+          "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
+          "uIActionTag" : "Edit",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "FRONT",
+          "fullCodeName" : "Branch_Edit",
+          "name" : "编辑",
+          "id" : "Edit@Branch"
+        },
+        "addSeparator" : false,
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "u4a41350"
+      }, {
+        "showIcon" : true,
+        "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 1,
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "refreshMode" : 1,
+          "enableConfirm" : true,
+          "timeout" : 60000,
+          "codeName" : "Delete",
+          "getPSSysImage" : {
+            "glyph" : "xf00d@FontAwesome",
+            "cssClass" : "fa fa-remove"
+          },
+          "caption" : "删除",
+          "actionTarget" : "SINGLEKEY",
+          "reloadData" : true,
+          "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
+          "uIActionTag" : "Delete",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "BACKEND",
+          "fullCodeName" : "Branch_Delete",
+          "name" : "删除",
+          "id" : "Delete@Branch"
+        },
+        "addSeparator" : false,
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "u2bf789e"
+      } ],
+      "name" : "删除"
+    },
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 80,
+    "codeName" : "uagridcolumn1",
+    "caption" : "操作",
+    "columnType" : "UAGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "name" : "uagridcolumn1"
+  } ],
+  "codeName" : "PlatformManagement",
+  "minorSortDir" : "DESC",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 20,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSDEDataExport" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch/PSAPPDEDATAEXPS/DataExport.json"
+  },
+  "getPSAppViewUIActions" : [ {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+      },
+      "modelref" : true,
+      "id" : "Edit@Branch"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "name" : "编辑"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+      },
+      "modelref" : true,
+      "id" : "Delete@Branch"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "name" : "删除"
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "编辑"
+    },
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_u4a41350_click"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "删除"
+    },
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_u2bf789e_click"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch/PSGRIDS/PlatformManagement.json",
+  "logicName" : "平台管理",
+  "modelid" : "9da102c1aeb5337836443f2c9f40699d"
+}

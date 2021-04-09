@@ -1,0 +1,25 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : true,
+  "tempDataMode" : 2,
+  "timeOut" : -1,
+  "orderValue" : 2,
+  "codeName" : "CreateTemp",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "logicName" : "CreateTemp",
+  "extendMode" : 0,
+  "enableTempData" : true,
+  "actionMode" : "CREATE",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/CreateTemp.json",
+  "name" : "CreateTemp"
+}

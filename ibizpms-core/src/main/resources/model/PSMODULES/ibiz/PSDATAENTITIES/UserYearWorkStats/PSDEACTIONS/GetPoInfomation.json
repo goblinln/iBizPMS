@@ -1,0 +1,24 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : false,
+  "timeOut" : -1,
+  "orderValue" : 99999,
+  "codeName" : "GetPoInfomation",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "logicName" : "获取产品经理相关数据",
+  "extendMode" : 0,
+  "actionMode" : "READ",
+  "actionType" : "DELOGIC",
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetPoInfomation.json",
+  "name" : "GetPoInfomation"
+}

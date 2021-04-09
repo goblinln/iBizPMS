@@ -1,0 +1,474 @@
+{
+  "major" : true,
+  "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "getAllPSAppDEMethods" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false,
+    "methodType" : "SELECT",
+    "codeName" : "Select",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSDEPARTMENT__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSDEPARTMENT__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSDEPARTMENT__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSDEPARTMENT__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterUpdate",
+    "name" : "FILTERUPDATE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterSearch",
+    "name" : "FILTERSEARCH"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterGet",
+    "name" : "FILTERGET"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterCreate",
+    "name" : "FILTERCREATE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterGetDraft",
+    "name" : "FILTERGETDRAFT"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterRemove",
+    "name" : "FILTERREMOVE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterFetch",
+    "name" : "FILTERFETCH"
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "keyField" : true,
+    "codeName" : "DeptId",
+    "logicName" : "部门标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "DEPTID"
+  }, {
+    "codeName" : "DeptCode",
+    "logicName" : "部门代码",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "DEPTCODE"
+  }, {
+    "majorField" : true,
+    "codeName" : "DeptName",
+    "logicName" : "部门名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "enableQuickSearch" : true,
+    "name" : "DEPTNAME"
+  }, {
+    "codeName" : "OrgId",
+    "logicName" : "单位",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "ORGID"
+  }, {
+    "codeName" : "ParentDeptid",
+    "logicName" : "上级部门",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "PDEPTID"
+  }, {
+    "codeName" : "ShortName",
+    "logicName" : "部门简称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "SHORTNAME"
+  }, {
+    "codeName" : "DeptLevel",
+    "logicName" : "部门级别",
+    "stdDataType" : 9,
+    "name" : "DEPTLEVEL"
+  }, {
+    "codeName" : "Domains",
+    "logicName" : "区属",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "DOMAINS"
+  }, {
+    "codeName" : "ShowOrder",
+    "logicName" : "排序",
+    "stdDataType" : 9,
+    "name" : "SHOWORDER"
+  }, {
+    "codeName" : "BCode",
+    "logicName" : "业务编码",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "BCODE"
+  }, {
+    "codeName" : "LeaderId",
+    "logicName" : "分管领导标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "LEADERID"
+  }, {
+    "codeName" : "LeaderName",
+    "logicName" : "分管领导",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "LEADERNAME"
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "单位",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "ORGNAME"
+  }, {
+    "codeName" : "ParentDeptName",
+    "logicName" : "上级部门",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "PDEPTNAME"
+  }, {
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "stdDataType" : 5,
+    "name" : "CREATEDATE"
+  }, {
+    "codeName" : "Enable",
+    "logicName" : "逻辑有效标志",
+    "stdDataType" : 9,
+    "name" : "ENABLE"
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "name" : "UPDATEMAN"
+  }, {
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "stdDataType" : 5,
+    "name" : "UPDATEDATE"
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "name" : "CREATEMAN"
+  } ],
+  "getAllPSAppDEACModes" : [ {
+    "getValuePSAppDEField" : {
+      "name" : "DEPTID",
+      "codeName" : "DeptId"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "DEPTNAME",
+      "codeName" : "DeptName"
+    },
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "DEPTID",
+        "codeName" : "DeptId"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "DEPTNAME",
+        "codeName" : "DeptName"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "pagingSize" : 50,
+    "name" : "DEFAULT"
+  } ],
+  "enableFilterActions" : true,
+  "enableWFActions" : false,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "DEPTNAME",
+    "codeName" : "DeptName"
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSDEPARTMENT__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSDEPARTMENT__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSDEPARTMENT__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSDEPARTMENT__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save"
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDESERVICEAPIS/SysDepartment.json"
+  },
+  "codeName" : "SysDepartment",
+  "logicName" : "部门",
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "dataAccCtrlMode" : 1,
+  "storageMode" : 0,
+  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json",
+  "name" : "SYS_DEPT"
+}

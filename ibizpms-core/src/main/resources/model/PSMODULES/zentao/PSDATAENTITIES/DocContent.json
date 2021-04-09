@@ -1,0 +1,562 @@
+{
+  "serviceAPIMode" : 1,
+  "getAllPSDEFields" : [ {
+    "length" : 65535,
+    "dataType" : "LONGTEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "4083b70cc4410f1f384b853bad94474a",
+    "codeName" : "Files",
+    "logicName" : "附件",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`FILES`",
+      "valueAutoGen" : false,
+      "columnName" : "FILES",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "FILES"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "queryColumn" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 65535,
+          "dEFName" : "FILES",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[65535]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[65535]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[65535]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "FILES",
+        "codeName" : "Files"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "FILES"
+  }, {
+    "dataType" : "ACID",
+    "valueFormat" : "%1$s",
+    "deployId" : "949eb065e62996b2cf6efaa4f852f46c",
+    "codeName" : "Id",
+    "logicName" : "编号",
+    "stdDataType" : 1,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`ID`",
+      "valueAutoGen" : false,
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : true,
+      "name" : "ID"
+    } ],
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
+    "pasteReset" : true,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "ID"
+  }, {
+    "length" : 65535,
+    "dataType" : "LONGTEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "91faa69a1fdd3e04771307f2761fcd75",
+    "codeName" : "Content",
+    "logicName" : "文档正文",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`CONTENT`",
+      "valueAutoGen" : false,
+      "columnName" : "CONTENT",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "CONTENT"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "queryColumn" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 65535,
+          "dEFName" : "CONTENT",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[65535]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[65535]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[65535]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "CONTENT",
+        "codeName" : "Content"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "CONTENT"
+  }, {
+    "length" : 10,
+    "dataType" : "SSCODELIST",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Doccontent__type.json"
+    },
+    "valueFormat" : "%1$s",
+    "deployId" : "3d7395253a544c947b6120793655e9f2",
+    "codeName" : "Type",
+    "logicName" : "文档类型",
+    "stringLength" : 10,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`TYPE`",
+      "valueAutoGen" : false,
+      "columnName" : "TYPE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TYPE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 10,
+          "dEFName" : "TYPE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[10]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[10]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[10]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "TYPE"
+  }, {
+    "length" : 255,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "f55fdd00d93a0e071278b06eab9d361e",
+    "codeName" : "Title",
+    "logicName" : "文档标题",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`TITLE`",
+      "valueAutoGen" : false,
+      "columnName" : "TITLE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "TITLE"
+    } ],
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "TITLE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "TITLE"
+  }, {
+    "length" : 5,
+    "defaultValue" : "1",
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
+    "deployId" : "8d6b7152549f323d310b3ada6870c5f2",
+    "codeName" : "Version",
+    "logicName" : "版本号",
+    "stdDataType" : 9,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`VERSION`",
+      "valueAutoGen" : true,
+      "columnName" : "VERSION",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "VERSION"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "VERSION",
+        "codeName" : "Version"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "VERSION"
+  }, {
+    "length" : 255,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "17c74d889377d67143dfb97604790622",
+    "codeName" : "Digest",
+    "logicName" : "文档摘要",
+    "stringLength" : 255,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`DIGEST`",
+      "valueAutoGen" : false,
+      "columnName" : "DIGEST",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DIGEST"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 255,
+          "dEFName" : "DIGEST",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[255]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DIGEST",
+        "codeName" : "Digest"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "DIGEST"
+  }, {
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDERS/DER1N_ZT_DOCCONTENT_ZT_DOC_DOC.json"
+    },
+    "valueFormat" : "%1$s",
+    "linkDEField" : true,
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "length" : 8,
+    "dataType" : "PICKUP",
+    "deployId" : "05f690c293237febbd0df412df182521",
+    "codeName" : "Doc",
+    "logicName" : "文档",
+    "stdDataType" : 1,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`DOC`",
+      "valueAutoGen" : false,
+      "columnName" : "DOC",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DOC"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "默认规则",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DOC",
+        "codeName" : "Doc"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "DOC"
+  } ],
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "orderValue" : 99999,
+    "codeName" : "CurVersion",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "logicName" : "当前版本",
+    "extendMode" : 0,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : false,
+    "pageSize" : -1,
+    "name" : "CurVersion"
+  }, {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "logicName" : "DEFAULT",
+    "extendMode" : 0,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "pageSize" : -1,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDEACTIONS/Save.json"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : true,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "CurVersion",
+    "logicName" : "当前版本",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "CurVersion"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "extendMode" : 0,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "enableDataVer" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableAPIStorage" : false,
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "saaSMode" : 4,
+  "deployId" : "ccd3438e6d5cc9c94c5a23cff20d0805",
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "codeName" : "DocContent",
+  "logicName" : "文档内容",
+  "tableName" : "zt_doccontent",
+  "serviceCodeName" : "DocContent",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "logicValid" : false,
+  "enableMultiDS" : false,
+  "dataAccCtrlMode" : 1,
+  "auditMode" : 0,
+  "dataChangeLogMode" : 0,
+  "storageMode" : 1,
+  "dataImpExpMode" : 3,
+  "dataAccCtrlArch" : 1,
+  "enableRemove" : true,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
+  "enableMultiForm" : false,
+  "enableEntityCache" : false,
+  "dEType" : 1,
+  "getMinorPSDERs" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDERS/DER1N_ZT_DOCCONTENT_ZT_DOC_DOC.json"
+  } ],
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocContent.json",
+  "name" : "ZT_DOCCONTENT"
+}

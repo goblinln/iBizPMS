@@ -1,0 +1,398 @@
+{
+  "serviceAPIMode" : 0,
+  "getAllPSDEFields" : [ {
+    "length" : 100,
+    "defaultValue" : "postcode",
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "baed11bba876eef20c3335f7934a1a67",
+    "codeName" : "PostId",
+    "logicName" : "岗位标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`POSTID`",
+      "valueAutoGen" : true,
+      "columnName" : "POSTID",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "POSTID"
+    } ],
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "pasteReset" : true,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "POSTID",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "POSTID",
+        "codeName" : "PostId"
+      },
+      "name" : "默认规则"
+    } ],
+    "defaultValueType" : "PARAM",
+    "name" : "POSTID"
+  }, {
+    "length" : 100,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "55d88d451a40e226639ec52d1e9afe87",
+    "codeName" : "PostCode",
+    "logicName" : "岗位编码",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`POSTCODE`",
+      "valueAutoGen" : false,
+      "columnName" : "POSTCODE",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "POSTCODE"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "POSTCODE",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "POSTCODE",
+        "codeName" : "PostCode"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "POSTCODE"
+  }, {
+    "length" : 100,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "c3be81544cfb15e9b5e0127fa8113d7a",
+    "codeName" : "PostName",
+    "logicName" : "岗位名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`POSTNAME`",
+      "valueAutoGen" : false,
+      "columnName" : "POSTNAME",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "POSTNAME"
+    } ],
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "allowEmpty" : false,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "POSTNAME",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "POSTNAME",
+        "codeName" : "PostName"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "POSTNAME"
+  }, {
+    "length" : 100,
+    "dataType" : "TEXT",
+    "valueFormat" : "%1$s",
+    "deployId" : "b5c743f1f0a6c25c42e00e516d1c6ee7",
+    "codeName" : "Domains",
+    "logicName" : "区属",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`DOMAINS`",
+      "valueAutoGen" : false,
+      "columnName" : "DOMAINS",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "DOMAINS"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 100,
+          "dEFName" : "DOMAINS",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "DOMAINS",
+        "codeName" : "Domains"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "DOMAINS"
+  }, {
+    "length" : 2000,
+    "dataType" : "LONGTEXT_1000",
+    "valueFormat" : "%1$s",
+    "deployId" : "f2700a889cc8eafb89a95b30a873c4c9",
+    "codeName" : "Memo",
+    "logicName" : "备注",
+    "stringLength" : 2000,
+    "stdDataType" : 25,
+    "getAllPSDEFDTColumns" : [ {
+      "queryCodeExp" : "t1.`MEMO`",
+      "valueAutoGen" : false,
+      "columnName" : "MEMO",
+      "dBType" : "MYSQL5",
+      "autoIncrement" : false,
+      "name" : "MEMO"
+    } ],
+    "importOrder" : 1000,
+    "dEFType" : 1,
+    "getAllPSDEFValueRules" : [ {
+      "enableBackend" : true,
+      "enableFront" : true,
+      "checkDefault" : true,
+      "getPSDEFVRGroupCondition" : {
+        "getPSDEFVRConditions" : [ {
+          "includeMinValue" : false,
+          "includeMaxValue" : true,
+          "maxValue" : 2000,
+          "dEFName" : "MEMO",
+          "tryMode" : false,
+          "keyCond" : true,
+          "condType" : "STRINGLENGTH",
+          "ruleInfo" : "内容长度必须小于等于[2000]",
+          "name" : "默认字符串长度"
+        } ],
+        "condOp" : "AND",
+        "tryMode" : false,
+        "condType" : "GROUP",
+        "ruleInfo" : "内容长度必须小于等于[2000]",
+        "name" : "默认组"
+      },
+      "codeName" : "Default",
+      "ruleInfo" : "内容长度必须小于等于[2000]",
+      "defaultMode" : true,
+      "ruleHolder" : 3,
+      "getPSDEField" : {
+        "name" : "MEMO",
+        "codeName" : "Memo"
+      },
+      "name" : "默认规则"
+    } ],
+    "name" : "MEMO"
+  } ],
+  "getAllPSDEDataSets" : [ {
+    "enableBackend" : true,
+    "enableFront" : true,
+    "pubServiceDefault" : true,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "logicName" : "数据集",
+    "extendMode" : 0,
+    "userDRAction" : "READ",
+    "enableGroup" : false,
+    "cacheTimeout" : -1,
+    "enableCache" : false,
+    "defaultMode" : true,
+    "pageSize" : -1,
+    "name" : "DEFAULT"
+  } ],
+  "getAllPSDEActions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Create.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Update.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Remove.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/GetDraft.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/CheckKey.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Save.json"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "extendMode" : 0,
+    "defaultMode" : true,
+    "name" : "DEFAULT"
+  }, {
+    "customCode" : false,
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false,
+    "orderValue" : 99999,
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
+    "defaultMode" : false,
+    "name" : "VIEW"
+  } ],
+  "subSysAsCloud" : false,
+  "enableUIActions" : 15,
+  "systemTag" : "iBizPMS",
+  "enableDataVer" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableAPIStorage" : true,
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "saaSMode" : 0,
+  "deployId" : "ac23aaa698cfaee8d514de2beebbfa8e",
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
+  "dynaInstMode" : 1,
+  "codeName" : "SysPost",
+  "logicName" : "岗位",
+  "tableName" : "IBZPOST",
+  "serviceCodeName" : "SysPost",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : false,
+  "serviceAPIClientId" : "9dab79080bf86d9ac588a8ab99d5d28c",
+  "logicValid" : false,
+  "enableMultiDS" : false,
+  "dataAccCtrlMode" : 1,
+  "auditMode" : 0,
+  "dataChangeLogMode" : 0,
+  "storageMode" : 4,
+  "dataImpExpMode" : 3,
+  "dataAccCtrlArch" : 1,
+  "enableRemove" : true,
+  "subSysDE" : false,
+  "virtual" : false,
+  "enableViewLevel" : 0,
+  "enableMultiForm" : false,
+  "enableEntityCache" : false,
+  "dEType" : 1,
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "getMajorPSDERs" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json"
+  } ],
+  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json",
+  "name" : "SYS_POST"
+}

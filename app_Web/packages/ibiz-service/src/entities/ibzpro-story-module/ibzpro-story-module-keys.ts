@@ -1,0 +1,16 @@
+export default [
+    'grade',
+    'collector',
+    'owner',
+    'ibiz_storytype',
+    'id',
+    'type',
+    'ibizshort',
+    'name',
+    'deleted',
+    'path',
+    'ibizid',
+    'productname',
+    'root',
+    'parent',
+];

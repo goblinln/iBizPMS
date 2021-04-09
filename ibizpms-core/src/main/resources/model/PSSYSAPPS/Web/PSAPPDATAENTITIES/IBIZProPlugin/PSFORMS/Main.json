@@ -1,0 +1,355 @@
+{
+  "showFormNavBar" : false,
+  "enableAutoSave" : false,
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "infoFormMode" : false,
+  "controlType" : "FORM",
+  "readOnly" : false,
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
+  "noTabHeader" : true,
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "infoGroupMode" : false,
+      "actionGroupExtractMode" : "ITEM",
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSDEFormDetails" : [ {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "maxLength" : 200,
+          "editorType" : "TEXTBOX",
+          "name" : "ibizpro_pluginname"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "IBIZPRO_PLUGINNAME",
+          "codeName" : "IBIZProPluginName"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "caption" : "插件名称",
+        "allowEmpty" : true,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "ibizpro_pluginname",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "ibizpro_pluginname"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "version"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "VERSION",
+          "codeName" : "Version"
+        },
+        "hidden" : true,
+        "dataType" : 9,
+        "caption" : "版本",
+        "allowEmpty" : true,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "version",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "version"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "singleSelect" : true,
+          "editorType" : "DROPDOWNLIST",
+          "name" : "type"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "TYPE",
+          "codeName" : "Type"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "caption" : "类型",
+        "allowEmpty" : true,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "type",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "type"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "maxLength" : 100,
+          "editorType" : "TEXTBOX",
+          "name" : "downloadurl"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DOWNLOADURL",
+          "codeName" : "Downloadurl"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "caption" : "最新版本下载地址",
+        "allowEmpty" : true,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "downloadurl",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "downloadurl"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "singleSelect" : false,
+          "editorType" : "MDROPDOWNLIST",
+          "name" : "tag"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "TAG",
+          "codeName" : "Tag"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "caption" : "标签",
+        "allowEmpty" : true,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "tag",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "tag"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "singleSelect" : false,
+          "editorType" : "MDROPDOWNLIST",
+          "name" : "keyword"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "KEYWORD",
+          "codeName" : "Keyword"
+        },
+        "hidden" : false,
+        "dataType" : 25,
+        "needCodeListConfig" : true,
+        "caption" : "关键字",
+        "allowEmpty" : true,
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "keyword",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "keyword"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "group1",
+      "caption" : "系统插件基本信息",
+      "detailType" : "GROUPPANEL",
+      "detailStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "group1"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "infoGroupMode" : false,
+    "codeName" : "formpage1",
+    "caption" : "基本信息",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PLUGINID",
+      "codeName" : "IBIZProPluginId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PLUGINNAME",
+      "codeName" : "IBIZProPluginName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "ibizpro_pluginname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PLUGINNAME",
+      "codeName" : "IBIZProPluginName"
+    }
+  }, {
+    "id" : "version",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "VERSION",
+      "codeName" : "Version"
+    }
+  }, {
+    "id" : "type",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "id" : "downloadurl",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "DOWNLOADURL",
+      "codeName" : "Downloadurl"
+    }
+  }, {
+    "id" : "tag",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "TAG",
+      "codeName" : "Tag"
+    }
+  }, {
+    "id" : "keyword",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "KEYWORD",
+      "codeName" : "Keyword"
+    }
+  }, {
+    "id" : "ibizpro_pluginid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PLUGINID",
+      "codeName" : "IBIZProPluginId"
+    }
+  } ],
+  "codeName" : "Main",
+  "tabHeaderPos" : "TOP",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin.json"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin/PSFORMS/Main.json",
+  "logicName" : "主编辑表单",
+  "modelid" : "2f854edeeb01f9eb8bcef848bc4165ad"
+}

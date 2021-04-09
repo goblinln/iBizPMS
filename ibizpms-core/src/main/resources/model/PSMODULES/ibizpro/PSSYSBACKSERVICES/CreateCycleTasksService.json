@@ -1,0 +1,9 @@
+{
+  "serviceOrder" : 0,
+  "serviceHandler" : "CreateCycleTasksService",
+  "codeName" : "CreateCycleTasksService",
+  "serviceContainer" : "SC01",
+  "startMode" : "AUTO",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateCycleTasksService.json",
+  "name" : "定时生成周期任务"
+}

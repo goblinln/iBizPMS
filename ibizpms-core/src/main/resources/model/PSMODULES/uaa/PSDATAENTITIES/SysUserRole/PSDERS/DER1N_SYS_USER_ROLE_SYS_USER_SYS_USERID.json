@@ -1,0 +1,29 @@
+{
+  "masterOrder" : 100,
+  "getPSPickupDEField" : {
+    "name" : "SYS_USERID",
+    "codeName" : "UserId"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "SYS_USERNAME",
+    "codeName" : "PersonName"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 3,
+  "pickupDEFName" : "SYS_USERID",
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "User",
+  "logicName" : "用户",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDERS/DER1N_SYS_USER_ROLE_SYS_USER_SYS_USERID.json",
+  "name" : "DER1N_SYS_USER_ROLE_SYS_USER_SYS_USERID"
+}

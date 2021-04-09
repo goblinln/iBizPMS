@@ -1,0 +1,186 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "logicHolder" : 1,
+  "codeName" : "Remove__MSDeny",
+  "getPSDELogicNodes" : [ {
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "PrepareTemp",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "默认连接"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Temp"
+      },
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "dstFieldName" : "IBZ_WEEKLYID",
+      "srcFieldName" : "IBZ_WEEKLYID",
+      "name" : "复制主键"
+    } ],
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "准备临时参数"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Temp"
+    },
+    "logicHolder" : 3,
+    "codeName" : "Get",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "状态[未提交]拒绝[Remove]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已提交]拒绝[Remove]操作"
+    } ],
+    "logicNodeType" : "DEACTION",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Get.json"
+    },
+    "name" : "获取数据"
+  }, {
+    "errorCode" : 0,
+    "errorInfo" : "状态[未提交]拒绝[Remove]操作",
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "DenyByNSUNBMIT",
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[未提交]拒绝[Remove]操作"
+  }, {
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "Begin",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "默认连接"
+    } ],
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  }, {
+    "errorCode" : 0,
+    "errorInfo" : "状态[已提交]拒绝[Remove]操作",
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "DenyBySUBMIT",
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已提交]拒绝[Remove]操作"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : true,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "PrepareTemp"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "默认连接"
+  }, {
+    "defaultLink" : true,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "PrepareTemp"
+    },
+    "name" : "默认连接"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "0",
+        "dstFieldName" : "ISSUBMIT",
+        "logicType" : "SINGLE",
+        "name" : "属性[ISSUBMIT]等于[0]"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "05002bab4b15bf8a14f0da794c5899e0__MSDENY__NSUNBMIT"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyByNSUNBMIT"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "状态[未提交]拒绝[Remove]操作"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "1",
+        "dstFieldName" : "ISSUBMIT",
+        "logicType" : "SINGLE",
+        "name" : "属性[ISSUBMIT]等于[1]"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "05002bab4b15bf8a14f0da794c5899e0__MSDENY__SUBMIT"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBySUBMIT"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "状态[已提交]拒绝[Remove]操作"
+  } ],
+  "getPSDELogicParams" : [ {
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "默认变量"
+  }, {
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false,
+    "codeName" : "Temp",
+    "default" : false,
+    "name" : "临时变量"
+  } ],
+  "logicName" : "行为[Remove]主状态拒绝逻辑",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDELOGICS/Remove__MSDeny.json",
+  "name" : "行为[Remove]主状态拒绝逻辑"
+}

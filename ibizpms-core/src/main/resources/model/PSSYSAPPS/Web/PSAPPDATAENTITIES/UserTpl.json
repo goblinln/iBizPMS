@@ -1,0 +1,430 @@
+{
+  "major" : true,
+  "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "getAllPSAppDEMethods" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false,
+    "methodType" : "SELECT",
+    "codeName" : "Select",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "USERTPL__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "USERTPL__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "USERTPL__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "USERTPL__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMyUserTpl"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyUserTpl"
+    },
+    "codeName" : "FetchMyUserTpl",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterUpdate",
+    "name" : "FILTERUPDATE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterSearch",
+    "name" : "FILTERSEARCH"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterGet",
+    "name" : "FILTERGET"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterCreate",
+    "name" : "FILTERCREATE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterGetDraft",
+    "name" : "FILTERGETDRAFT"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterRemove",
+    "name" : "FILTERREMOVE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterFetch",
+    "name" : "FILTERFETCH"
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "majorField" : true,
+    "codeName" : "Title",
+    "logicName" : "模板标题",
+    "stringLength" : 150,
+    "stdDataType" : 25,
+    "enableQuickSearch" : true,
+    "name" : "TITLE"
+  }, {
+    "keyField" : true,
+    "codeName" : "Id",
+    "logicName" : "id",
+    "stdDataType" : 1,
+    "name" : "ID"
+  }, {
+    "codeName" : "Content",
+    "logicName" : "content",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
+    "name" : "CONTENT"
+  }, {
+    "codeName" : "Type",
+    "logicName" : "type",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "name" : "TYPE"
+  }, {
+    "codeName" : "Account",
+    "logicName" : "account",
+    "stringLength" : 30,
+    "stdDataType" : 25,
+    "name" : "ACCOUNT"
+  }, {
+    "codeName" : "IBizPublic",
+    "logicName" : "公开",
+    "stringLength" : 1,
+    "stdDataType" : 25,
+    "name" : "PUBLIC"
+  } ],
+  "getAllPSAppDEACModes" : [ {
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "pagingSize" : 50,
+    "name" : "DEFAULT"
+  } ],
+  "enableFilterActions" : true,
+  "enableWFActions" : false,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "USERTPL__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "USERTPL__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "USERTPL__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "USERTPL__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save"
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMyUserTpl"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyUserTpl"
+    },
+    "codeName" : "FetchMyUserTpl",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDESERVICEAPIS/UserTpl.json"
+  },
+  "codeName" : "UserTpl",
+  "logicName" : "用户模板",
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "dataAccCtrlMode" : 1,
+  "storageMode" : 0,
+  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json",
+  "name" : "ZT_USERTPL"
+}

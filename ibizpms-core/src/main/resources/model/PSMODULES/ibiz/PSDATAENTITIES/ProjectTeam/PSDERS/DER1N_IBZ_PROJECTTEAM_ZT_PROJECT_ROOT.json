@@ -1,0 +1,29 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "ROOT",
+    "codeName" : "Root"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "PROJECTNAME",
+    "codeName" : "ProjectName"
+  },
+  "nestedRS" : true,
+  "removeActionType" : -1,
+  "masterRS" : 8,
+  "pickupDEFName" : "ROOT",
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ProjectTeam",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDERS/DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT.json",
+  "name" : "DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT"
+}

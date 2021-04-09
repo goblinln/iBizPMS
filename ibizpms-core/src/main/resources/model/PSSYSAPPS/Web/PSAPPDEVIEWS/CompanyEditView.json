@@ -1,0 +1,554 @@
+{
+  "showCaptionBar" : true,
+  "showDataInfoBar" : true,
+  "xDataControlName" : "form",
+  "getPSDEViewCodeName" : "EditView",
+  "funcViewMode" : "EDITVIEW",
+  "caption" : "公司信息",
+  "title" : "公司编辑视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+    },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEEDITVIEW_STYLE2",
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "EditView",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "name" : "FORM",
+      "paramType" : "CTRL"
+    }, {
+      "name" : "P2K",
+      "value" : 0,
+      "paramType" : "VALUE"
+    } ],
+    "name" : "engine"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+  },
+  "getPSControls" : [ {
+    "showFormNavBar" : false,
+    "enableAutoSave" : false,
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "getGetDraftPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraft"
+    },
+    "getGetDraftFromPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraftfrom"
+    },
+    "infoFormMode" : false,
+    "controlType" : "FORM",
+    "readOnly" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "noTabHeader" : true,
+    "getPSDEFormPages" : [ {
+      "getPSDEFormDetails" : [ {
+        "infoGroupMode" : false,
+        "actionGroupExtractMode" : "ITEM",
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
+        "getPSDEFormDetails" : [ {
+          "emptyCaption" : false,
+          "getPSEditor" : {
+            "maxLength" : 120,
+            "editorType" : "TEXTBOX",
+            "name" : "name"
+          },
+          "inputTipClosable" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "NAME",
+            "codeName" : "Name"
+          },
+          "hidden" : false,
+          "dataType" : 25,
+          "caption" : "公司名称",
+          "allowEmpty" : false,
+          "labelWidth" : 100,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "showCaption" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "name",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "name"
+        }, {
+          "emptyCaption" : false,
+          "getPSEditor" : {
+            "maxLength" : 20,
+            "editorType" : "TEXTBOX",
+            "name" : "phone"
+          },
+          "inputTipClosable" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "PHONE",
+            "codeName" : "Phone"
+          },
+          "hidden" : false,
+          "dataType" : 25,
+          "caption" : "联系电话",
+          "allowEmpty" : true,
+          "labelWidth" : 100,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "showCaption" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "phone",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "phone"
+        }, {
+          "emptyCaption" : false,
+          "getPSEditor" : {
+            "maxLength" : 20,
+            "editorType" : "TEXTBOX",
+            "name" : "fax"
+          },
+          "inputTipClosable" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FAX",
+            "codeName" : "Fax"
+          },
+          "hidden" : false,
+          "dataType" : 25,
+          "caption" : "传真",
+          "allowEmpty" : true,
+          "labelWidth" : 100,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "showCaption" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "fax",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "fax"
+        }, {
+          "emptyCaption" : false,
+          "getPSEditor" : {
+            "maxLength" : 120,
+            "editorType" : "TEXTBOX",
+            "name" : "address"
+          },
+          "inputTipClosable" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ADDRESS",
+            "codeName" : "Address"
+          },
+          "hidden" : false,
+          "dataType" : 25,
+          "caption" : "通讯地址",
+          "allowEmpty" : true,
+          "labelWidth" : 100,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "showCaption" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "address",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "address"
+        }, {
+          "emptyCaption" : false,
+          "getPSEditor" : {
+            "maxLength" : 10,
+            "editorType" : "TEXTBOX",
+            "name" : "zipcode"
+          },
+          "inputTipClosable" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ZIPCODE",
+            "codeName" : "Zipcode"
+          },
+          "hidden" : false,
+          "dataType" : 25,
+          "caption" : "邮政编码",
+          "allowEmpty" : true,
+          "labelWidth" : 100,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "showCaption" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "zipcode",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "zipcode"
+        }, {
+          "emptyCaption" : false,
+          "getPSEditor" : {
+            "maxLength" : 120,
+            "editorType" : "TEXTBOX",
+            "name" : "website"
+          },
+          "inputTipClosable" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "WEBSITE",
+            "codeName" : "Website"
+          },
+          "hidden" : false,
+          "dataType" : 25,
+          "caption" : "官网",
+          "allowEmpty" : true,
+          "labelWidth" : 100,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "showCaption" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "website",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "website"
+        }, {
+          "emptyCaption" : false,
+          "getPSEditor" : {
+            "maxLength" : 120,
+            "editorType" : "TEXTBOX",
+            "name" : "backyard"
+          },
+          "inputTipClosable" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "BACKYARD",
+            "codeName" : "Backyard"
+          },
+          "hidden" : false,
+          "dataType" : 25,
+          "caption" : "内网",
+          "allowEmpty" : true,
+          "labelWidth" : 100,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "showCaption" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "backyard",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "backyard"
+        }, {
+          "emptyCaption" : false,
+          "getPSEditor" : {
+            "singleSelect" : true,
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Company__guest.json"
+            },
+            "editorType" : "DROPDOWNLIST",
+            "name" : "guest"
+          },
+          "inputTipClosable" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "GUEST",
+            "codeName" : "Guest"
+          },
+          "hidden" : false,
+          "dataType" : 25,
+          "needCodeListConfig" : true,
+          "caption" : "匿名登陆",
+          "allowEmpty" : true,
+          "labelWidth" : 100,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "showCaption" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "guest",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "guest"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "group1",
+        "caption" : "company基本信息",
+        "detailType" : "GROUPPANEL",
+        "detailStyle" : "DEFAULT",
+        "showCaption" : false,
+        "name" : "group1"
+      } ],
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "infoGroupMode" : false,
+      "codeName" : "formpage1",
+      "caption" : "基本信息",
+      "detailType" : "FORMPAGE",
+      "detailStyle" : "DEFAULT",
+      "name" : "formpage1"
+    } ],
+    "getPSDEFormItems" : [ {
+      "id" : "srforikey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfkey",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "id" : "srftempmode",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfuf",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfdeid",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfsourcekey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "name",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "id" : "phone",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "PHONE",
+        "codeName" : "Phone"
+      }
+    }, {
+      "id" : "fax",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FAX",
+        "codeName" : "Fax"
+      }
+    }, {
+      "id" : "address",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "ADDRESS",
+        "codeName" : "Address"
+      }
+    }, {
+      "id" : "zipcode",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "ZIPCODE",
+        "codeName" : "Zipcode"
+      }
+    }, {
+      "id" : "website",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "WEBSITE",
+        "codeName" : "Website"
+      }
+    }, {
+      "id" : "backyard",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "BACKYARD",
+        "codeName" : "Backyard"
+      }
+    }, {
+      "id" : "guest",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "GUEST",
+        "codeName" : "Guest"
+      }
+    }, {
+      "id" : "id",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    } ],
+    "codeName" : "Main_Edit",
+    "tabHeaderPos" : "TOP",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "dataAccessAction" : "UPDATE",
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "name" : "update"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GETDRAFTFROM",
+        "actionType" : "DEACTION",
+        "name" : "loaddraftfrom"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "name" : "loaddraft"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "dataAccessAction" : "READ",
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "name" : "load"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "name" : "create"
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "编辑表单处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company/PSFORMS/Main_Edit.json",
+    "logicName" : "主编辑表单",
+    "name" : "form",
+    "modelid" : "a2e8a190566f756d9154e6a7f0b4006f"
+  } ],
+  "viewStyle" : "STYLE2",
+  "codeName" : "CompanyEditView",
+  "viewType" : "DEEDITVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CompanyEditView.json",
+  "name" : "CompanyEditView"
+}

@@ -1,0 +1,100 @@
+{
+  "getPSDEChartTitle" : {
+    "showTitle" : false,
+    "title" : "Bug严重级别分布_Project",
+    "subTitle" : "Bug严重级别分类",
+    "index" : 0,
+    "id" : "0"
+  },
+  "getPSChartCoordinateSystems" : [ {
+    "eChartsType" : "none",
+    "type" : "NONE",
+    "index" : 0,
+    "name" : "[BugSeverity_Project]无坐标系[0]",
+    "id" : "0"
+  } ],
+  "getPSDEChartLegend" : {
+    "showLegend" : true,
+    "index" : 0,
+    "id" : "0"
+  },
+  "controlType" : "CHART",
+  "codeName" : "BugSeverity_Project",
+  "getPSDEChartSerieses" : [ {
+    "catalogField" : "SEVERITY",
+    "seriesType" : "pie",
+    "getCatalogPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
+    },
+    "eChartsType" : "pie",
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "enableChartDataSet" : true,
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartSeriesEncode" : {
+      "category" : "SEVERITY",
+      "value" : "SRFCOUNT",
+      "index" : 0,
+      "name" : "坐标系编码",
+      "id" : "0"
+    },
+    "valueField" : "SRFCOUNT",
+    "seriesLayoutBy" : "column",
+    "groupMode" : "CODELIST",
+    "index" : 0,
+    "name" : "BugSeverity_Project"
+  } ],
+  "emptyText" : "无",
+  "getPSChartDataSets" : [ {
+    "getPSChartDataSetFields" : [ {
+      "groupField" : true,
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
+      },
+      "groupMode" : "CODELIST",
+      "index" : 0,
+      "name" : "SEVERITY",
+      "id" : "0"
+    }, {
+      "groupField" : false,
+      "index" : 1,
+      "name" : "SRFCOUNT",
+      "id" : "1"
+    } ],
+    "index" : 0,
+    "name" : "BugSeverity_Project-BuildProduceBugSeverity_Project",
+    "id" : "0"
+  } ],
+  "getPSChartDataSetGroups" : [ {
+    "index" : 0,
+    "name" : "BuildProduceBugSeverity_Project",
+    "id" : "0"
+  } ],
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "readOnly" : true,
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugSeverity_Project.json",
+  "height" : 300.0,
+  "getPSSysPFPlugin" : {
+    "pluginType" : "CHART_RENDER",
+    "pluginCode" : "tablechart"
+  },
+  "logicName" : "BugSeverity_Project",
+  "modelid" : "288d42bfc9487f885fbaee666dbf3041",
+  "getUserParam" : {
+    "EC.color" : "[\"#2979FF\",\"#3D5AFE\",\"#651fff\",\"#D500f9\",'#00ffa9','#85B3FF','#A1FFFF']"
+  }
+}

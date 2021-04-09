@@ -1,0 +1,65 @@
+{
+  "subSysAsCloud" : false,
+  "defaultModule" : false,
+  "subSysModule" : false,
+  "getAllPSDataEntities" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDataEntity.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysSADE.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqItem.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysSFPub.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg.json"
+  } ],
+  "deployId" : "ed284836fd79cad06dda6fe074a0048e",
+  "codeName" : "ibizsysmodel",
+  "getAllPSCodeLists" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/BackendBuild.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/SQLBuild.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/Backendservicesystem.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/SystemAPP.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/RunSQL.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/APPBuild.json"
+  } ],
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel.json",
+  "name" : "iBiz系统模型"
+}

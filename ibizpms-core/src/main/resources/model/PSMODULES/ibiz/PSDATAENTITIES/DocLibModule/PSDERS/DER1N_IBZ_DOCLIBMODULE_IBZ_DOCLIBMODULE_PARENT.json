@@ -1,0 +1,29 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "PARENT",
+    "codeName" : "Parent"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "MODULENAME",
+    "codeName" : "Modulename"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "pickupDEFName" : "PARENT",
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "PDocLibModule",
+  "logicName" : "父模块",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
+  "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT"
+}

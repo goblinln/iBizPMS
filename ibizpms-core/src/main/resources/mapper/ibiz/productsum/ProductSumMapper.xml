@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.ProductSumMapper">
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="ProductSumResultMap" databaseId="mysql">
+        <![CDATA[select t1.* from (SELECT 0 AS `ACTIVESTORYCNT`, 0 AS `BUGCNT`, 0 AS `CHANGEDSTORYCNT`, 0 AS `CLOSEDSTAGESTORYCNT`, 0 AS `CLOSEDSTAGESTORYHOURS`, 0 AS `CLOSEDSTORYCNT`, 0 AS `DEVELOPEDSTAGESTORYCNT`, 0 AS `DEVELOPEDSTAGESTORYHOURS`, 0 AS `DEVELOPINGSTAGESTORYCNT`, 0 AS `DEVELOPINGSTAGESTORYHOURS`, t1.`ID`, t1.`NAME`, 0 AS `PLAN`, 0 AS `PLANEDSTAGESTORYCNT`, 0 AS `PLANEDSTAGESTORYHOURS`, t1.`PO`, 0 AS `PROJECTEDSTAGESTORYCNT`, 0 AS `PROJECTEDSTAGESTORYHOURS`, 0 AS `RELEASEDSTAGESTORYCNT`, 0 AS `RELEASEDSTAGESTORYHOURS`, 0 AS `STORYCNT`, 0 AS `TESTEDSTAGESTORYCNT`, 0 AS `TESTEDSTAGESTORYHOURS`, 0 AS `TESTINGSTAGESTORYCNT`, 0 AS `TESTINGSTAGESTORYHOURS`, 0 AS `TOTALHOURS`, 0 AS `VERIFIEDSTAGESTORYCNT`, 0 AS `VERIFIEDSTAGESTORYHOURS`, 0 AS `WAITSTAGESTORYCNT`, 0 AS `WAITSTAGESTORYHOURS`, 0 AS `WAITSTORYCNT` FROM `zt_product` t1  ) t1 where id=#{id}]]>
+    </select>
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="ProductSumResultMap" type="cn.ibizlab.pms.core.ibiz.domain.ProductSum" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+
+
+    </resultMap>
+
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext"  resultMap="ProductSumResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[ProductBugcnt_QA]-->
+	 <select id="searchProductBugcnt_QA"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext"  resultMap="ProductSumResultMap">
+         select t1.* from (
+                <include refid="ProductBugcnt_QA" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[ProductCreateStory]-->
+	 <select id="searchProductCreateStory"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext"  resultMap="ProductSumResultMap">
+         select t1.* from (
+                <include refid="ProductCreateStory" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[ProductStoryHoursSum]-->
+	 <select id="searchProductStoryHoursSum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext"  resultMap="ProductSumResultMap">
+         select t1.* from (
+                <include refid="ProductStoryHoursSum" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[ProductStorySum]-->
+	 <select id="searchProductStorySum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext"  resultMap="ProductSumResultMap">
+         select t1.* from (
+                <include refid="ProductStorySum" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[ProductStorycntAndPlancnt]-->
+	 <select id="searchProductStorycntAndPlancnt"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext"  resultMap="ProductSumResultMap">
+         select t1.* from (
+                <include refid="ProductPlancntAndStorycnt_PO" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[ProductSumBugType]-->
+	 <select id="searchProductSumBugType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext"  resultMap="ProductSumResultMap">
+         select t1.* from (
+                <include refid="ProductSumBugType" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ select t1.*  from(select  t1.id,t1.`NAME`,t1.po,t1.PLAN, case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end as `begin`,case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end as `end`, 	sum( IF ( t1.`status` = 'draft', t1.rowcnt, 0 ) ) AS WAITSTORYCNT, 	SUM( IF ( t1.`status` = 'active', t1.rowcnt, 0 ) ) AS ACTIVESTORYCNT, 	SUM( IF ( t1.`status` = 'changed', t1.rowcnt, 0 ) ) AS CHANGEDSTORYCNT, 	SUM( IF ( t1.`status` = 'closed', t1.rowcnt, 0 ) ) AS CLOSEDSTORYCNT, 	sum( IF ( t1.`deleted` = '0',  t1.rowcnt, 0) ) AS STORYCNT  FROM 	( 	SELECT 		1 AS rowcnt, 	t41.id as plan, 		t31.`NAME` AS `NAME`, 		t31.id AS id, 		t1.`status`, 		t31.po, 		t41.`begin`, 		t41.`end` , 		t1.deleted 	FROM 		zt_product t31 		LEFT JOIN ZT_PRODUCTPLAN t41 ON t41.PRODUCT = t31.ID 		LEFT JOIN  `zt_story` t1  ON t41.id = t1.plan  where t31.deleted = '0' and  ( 			( ( t31.`status` = 'normal' ) OR ( t31.`status` = 'closed' AND #{srf.datacontext.closed} = '1' ) )  			and ( t41.id is null or 				( t41.`end` >= now( ) )  				OR ( t41.`end` <= now( ) AND #{srf.datacontext.expired} = '1' )  			)  		) ) t1 GROUP BY t1.id,t1.`NAME`,t1.po,t1.PLAN,t1.`begin`,t1.`end`) t1
+			]]>
+    </sql>
+    <!--数据查询[ProductBugcnt_QA]-->
+    <sql id="ProductBugcnt_QA" databaseId="mysql">
+		<![CDATA[ SELECT t1.productid as id,t1.productname as `name`,t1.createbugcnt as bugcnt,t1.createbugcnt as storycnt,t2.productallbug, CONCAT(ROUND(t1.createbugcnt/(case when t2.productallbug = 0 or t2.productallbug is null then 1 else t2.productallbug end)*100,1),'%') as zhanbi, t1.openedBy from ( SELECT t1.openedBy,t1.productid,t1.productname,COUNT(1) as createbugcnt from ( SELECT t1.id ,t1.openedBy,t2.id as productid,t1.product,t2.`name` as productname from zt_bug t1 LEFT JOIN zt_product t2 on t2.id = t1.product where YEAR(t2.createdDate) = #{srf.webcontext.curyear} ) t1 GROUP BY t1.openedBy,t1.productid  )t1 LEFT JOIN ( select t1.productid,t1.productname,count(1) as productallbug from ( SELECT t1.id ,t1.openedBy,t2.id as productid,t1.product,t2.`name` as productname from zt_bug t1 LEFT JOIN zt_product t2 on t2.id = t1.product ) t1 GROUP BY t1.productid ) t2 on t2.productid = t1.productid HAVING t1.openedBy =   #{srf.sessioncontext.srfloginname}
+			]]>
+    </sql>
+    <!--数据查询[ProductCreateStory]-->
+    <sql id="ProductCreateStory" databaseId="mysql">
+		<![CDATA[ 	SELECT 0 AS `ACTIVESTORYCNT`, 0 AS `CHANGEDSTORYCNT`, 0 AS `CLOSEDSTORYCNT`, t1.`ID`, t1.`NAME`, 0 AS `PLAN`, t1.`PO`, t2.storycnt AS `STORYCNT`, 0 AS `WAITSTORYCNT`, t2.zhanbi FROM `zt_product` t1  INNER JOIN ( SELECT t1.*,IFNULL(t2.storycnt,0) as storycnt,IFNULL(t2.allstorycnt,0) as allstorycnt,IFNULL(t2.zhanbi,0) as zhanbi from ( SELECT t1.id,t1.`name`,t1.`status` from zt_product t1 where t1.id in (SELECT t1.id from zt_product t1 where YEAR(t1.createddate) =   #{srf.webcontext.curyear}  and (t1.createdBy =  #{srf.sessioncontext.srfloginname}  or t1.po =  #{srf.sessioncontext.srfloginname}  or t1.QD =  #{srf.sessioncontext.srfloginname}  or t1.RD =  #{srf.sessioncontext.srfloginname} ))  or t1.id in (SELECT DISTINCT t1.product from zt_story t1 where t1.openedBy =  #{srf.sessioncontext.srfloginname}  and YEAR(t1.openeddate) =   #{srf.webcontext.curyear})  or t1.id in (SELECT DISTINCT t1.product from zt_productplan t1 LEFT JOIN zt_action t2 on t1.id = t2.OBJECTID and t2.objectType = 'productplan' where YEAR(t2.date) =   #{srf.webcontext.curyear}  and t2.actor =  #{srf.sessioncontext.srfloginname}  and t2.action = 'opened' ) ) t1  LEFT JOIN ( select t1.*,t2.allstorycnt , CONCAT(ROUND(t1.storycnt/(case when t2.allstorycnt = 0 or t2.allstorycnt is null then 1 else t2.allstorycnt end)*100,1),'%') as zhanbi from (SELECT t1.openedBy,t1.productid,t1.productname,COUNT(1) as storycnt from ( SELECT t1.id,t1.openedBy,t2.id as productid ,t2.`name` as productname from zt_story t1 LEFT JOIN zt_product t2 on t2.id = t1.product) t1 GROUP BY t1.openedBy,t1.productid ) t1 LEFT JOIN (select t1.productid,t1.productname,COUNT(1) as allstorycnt from ( SELECT t1.id,t1.openedBy,t2.id as productid ,t2.`name` as productname from zt_story t1 LEFT JOIN zt_product t2 on t2.id = t1.product ) t1 GROUP BY t1.productid) t2 on t2.productid = t1.productid  having t1.openedBy =  #{srf.sessioncontext.srfloginname} ) t2 on t1.id = t2.productid ) t2 on t1.id = t2.id
+			]]>
+    </sql>
+    <!--数据查询[ProductPlancntAndStorycnt_PO]-->
+    <sql id="ProductPlancntAndStorycnt_PO" databaseId="mysql">
+		<![CDATA[ SELECT 0 AS `ACTIVESTORYCNT`, 0 AS `CHANGEDSTORYCNT`, 0 AS `CLOSEDSTORYCNT`, t1.`ID`, t1.`NAME`, t2.plan AS `PLAN`, t1.`PO`, t2.storycnt AS `STORYCNT`, t2.plan AS `WAITSTORYCNT`, t2.zhanbi FROM `zt_product` t1 INNER JOIN ( SELECT t1.*,IFNULL(t2.storycnt,0) as storycnt,IFNULL(t2.allstorycnt,0) as allstorycnt,IFNULL(t2.zhanbi,0) as zhanbi,IFNULL(t3.plancnt,0) as plan from ( SELECT t1.id,t1.`name`,t1.`status` from zt_product t1 where t1.id in (SELECT t1.id from zt_product t1 where YEAR(t1.createddate) =   #{srf.webcontext.curyear}  and (t1.createdBy = #{srf.sessioncontext.srfloginname} or t1.po = #{srf.sessioncontext.srfloginname} or t1.QD = #{srf.sessioncontext.srfloginname} or t1.RD = #{srf.sessioncontext.srfloginname} )) or t1.id in (SELECT DISTINCT t1.product from zt_story t1 where t1.openedBy = #{srf.sessioncontext.srfloginname} and YEAR(t1.openeddate) =   #{srf.webcontext.curyear} ) or t1.id in (SELECT DISTINCT t1.product from zt_productplan t1 LEFT JOIN zt_action t2 on t1.id = t2.OBJECTID and t2.objectType = 'productplan' where YEAR(t2.date) =    #{srf.webcontext.curyear}  and t2.actor = #{srf.sessioncontext.srfloginname} and t2.action = 'opened' ) ) t1 LEFT JOIN ( select t1.*,t2.allstorycnt , CONCAT(ROUND(t1.storycnt/(case when t2.allstorycnt = 0 or t2.allstorycnt is null then 1 else t2.allstorycnt end)*100,1),'%') as zhanbi from (SELECT t1.openedBy,t1.productid,t1.productname,COUNT(1) as storycnt from ( SELECT t1.id,t1.openedBy,t2.id as productid ,t2.`name` as productname from zt_story t1 LEFT JOIN zt_product t2 on t2.id = t1.product) t1 GROUP BY t1.openedBy,t1.productid ) t1 LEFT JOIN (select t1.productid,t1.productname,COUNT(1) as allstorycnt from ( SELECT t1.id,t1.openedBy,t2.id as productid ,t2.`name` as productname from zt_story t1 LEFT JOIN zt_product t2 on t2.id = t1.product ) t1 GROUP BY t1.productid) t2 on t2.productid = t1.productid having t1.openedBy = #{srf.sessioncontext.srfloginname} ) t2 on t1.id = t2.productid LEFT JOIN ( SELECT t1.productid,t1.productname,count(1) as plancnt from ( select t1.id,t2.id as productid,t2.`name` as productname from zt_productplan t1 LEFT JOIN zt_product t2 on t2.id = t1.product where t1.parent >= 0 and t1.`begin` >= (CONCAT( YEAR(NOW()),'-01-01',' 00:00:00')) and t1.`end` <= (CONCAT( YEAR(NOW()),'-12-31',' 23:59:59')) and t1.parent >= '0' ) t1 GROUP BY t1.productid ) t3 on t3.productid = t1.id ) t2 on t2.id = t1.id
+			]]>
+    </sql>
+    <!--数据查询[ProductStoryHoursSum]-->
+    <sql id="ProductStoryHoursSum" databaseId="mysql">
+		<![CDATA[ select t1.`id`, t1.`name`, t1.`po`,  sum( IF ( t1.`stage` = 'closed' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`estimate`, 0 ) ) AS `CLOSEDSTAGESTORYHOURS`,  sum( IF ( t1.`stage` = 'released' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`estimate`, 0 ) ) AS `RELEASEDSTAGESTORYHOURS`,  sum( IF ( t1.`stage` = 'verified' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`estimate`, 0 ) ) AS `VERIFIEDSTAGESTORYHOURS`,  sum( IF ( t1.`stage` = 'tested' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`estimate`, 0 ) ) AS `TESTEDSTAGESTORYHOURS`,  sum( IF ( t1.`stage` = 'testing' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`estimate`, 0 ) ) AS `TESTINGSTAGESTORYHOURS`,  sum( IF ( t1.`stage` = 'developed' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`estimate`, 0 ) ) AS `DEVELOPEDSTAGESTORYHOURS`,  sum( IF ( t1.`stage` = 'developing' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`estimate`, 0 ) ) AS `DEVELOPINGSTAGESTORYHOURS`,  sum( IF ( t1.`stage` = 'projected' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`estimate`, 0 ) ) AS `PROJECTEDSTAGESTORYHOURS`,  sum( IF ( t1.`stage` = 'planed' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`estimate`, 0 ) ) AS `PLANEDSTAGESTORYHOURS`,  sum( IF ( t1.`stage` = 'wait' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`estimate`, 0 ) ) AS `WAITSTAGESTORYHOURS`,  sum( IF ( t1.`deleted` = '0' and t1.`parent` <> -1, t1.`estimate`, 0 ) ) AS `TOTALHOURS`  from (select t1.`id`, t1.`name`, t1.`po`, t1.`status`, t2.`parent`, t2.`stage`, t2.`estimate`, t2.`deleted` from zt_product t1 left join zt_story t2 on t1.`id` = t2.`product` where t1.`deleted`= '0') t1 where t1.`status` = 'normal' or (t1.`status` = 'closed' and #{srf.datacontext.closed} = '1') group by t1.`id`
+			]]>
+    </sql>
+    <!--数据查询[ProductStorySum]-->
+    <sql id="ProductStorySum" databaseId="mysql">
+		<![CDATA[ select t1.`id`, t1.`name`, t1.`po`,  sum( IF ( t1.`stage` = 'closed' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`rowcnt`, 0 ) ) AS `CLOSEDSTAGESTORYCNT`,  sum( IF ( t1.`stage` = 'released' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`rowcnt`, 0 ) ) AS `RELEASEDSTAGESTORYCNT`,  sum( IF ( t1.`stage` = 'verified' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`rowcnt`, 0 ) ) AS `VERIFIEDSTAGESTORYCNT`,  sum( IF ( t1.`stage` = 'tested' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`rowcnt`, 0 ) ) AS `TESTEDSTAGESTORYCNT`,  sum( IF ( t1.`stage` = 'testing' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`rowcnt`, 0 ) ) AS `TESTINGSTAGESTORYCNT`,  sum( IF ( t1.`stage` = 'developed' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`rowcnt`, 0 ) ) AS `DEVELOPEDSTAGESTORYCNT`,  sum( IF ( t1.`stage` = 'developing' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`rowcnt`, 0 ) ) AS `DEVELOPINGSTAGESTORYCNT`,  sum( IF ( t1.`stage` = 'projected' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`rowcnt`, 0 ) ) AS `PROJECTEDSTAGESTORYCNT`,  sum( IF ( t1.`stage` = 'planed' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`rowcnt`, 0 ) ) AS `PLANEDSTAGESTORYCNT`,  sum( IF ( t1.`stage` = 'wait' and t1.`parent` <> -1 and t1.`deleted` = '0', t1.`rowcnt`, 0 ) ) AS `WAITSTAGESTORYCNT`,  sum( IF ( t1.`deleted` = '0' and t1.`parent` <> -1, t1.`rowcnt`, 0 ) ) AS `STORYCNT`  from (select t1.`id`, t1.`name`, t1.`po`, t1.`status`, t2.`parent`, t2.`stage`, t2.`deleted`, 1 as `rowcnt` from zt_product t1 left join zt_story t2 on t1.`id` = t2.`product` where t1.`deleted` = '0') t1  where t1.`status` = 'normal' or (t1.`status` = 'closed' and #{srf.datacontext.closed} = '1') group by t1.`id`
+			]]>
+    </sql>
+    <!--数据查询[ProductSumBugType]-->
+    <sql id="ProductSumBugType" databaseId="mysql">
+		<![CDATA[ SELECT 	t1.*, 	SUM( 	IFNULL(t1.codeerror,0)  + IFNULL(t1.config,0) + IFNULL(t1.designdefect,0) +IFNULL(t1.standard,0)  + IFNULL(t1.performance,0) + IFNULL(t1.others,0) +IFNULL(t1.INSTALL,0)  + IFNULL(t1.automation,0) +IFNULL(t1.SECURITY ,0) 	) AS bugsum  FROM 	( SELECT 	t1.id, 	t1.NAME, 	t1.po, 	sum( IF ( t1.type = 'codeerror' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'codeerror', 	sum( IF ( t1.type = 'config' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'config', 	sum( IF ( t1.type = 'designdefect' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'designdefect', 	sum( IF ( t1.type = 'standard' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'standard', 	sum( IF ( t1.type = 'performance' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'performance', 	sum( IF ( t1.type = 'others' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'others', 	sum( IF ( t1.type = 'install' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'install', 	sum( IF ( t1.type = 'automation' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'automation', 	sum( IF ( t1.type = 'security' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'security'  FROM 	( SELECT 	t1.`id`, 	t1.`name`, 	t1.`po`, 	t1.`status`, 	t2.`type`, 	t2.`title`, 	t2.`deleted`, 	1 AS `rowcnt`  FROM 	zt_product t1 	LEFT JOIN zt_bug t2 ON t1.`id` = t2.`product`  WHERE 	t1.`deleted` = '0'  	) t1  WHERE 	t1.`status` = 'normal'  	OR ( t1.`status` = 'closed' AND #{srf.datacontext.closed} = '1' )  GROUP BY 	t1.id  	) t1  GROUP BY 	t1.id
+			]]>
+    </sql>
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT 0 AS `ACTIVESTORYCNT`, 0 AS `BUGCNT`, 0 AS `CHANGEDSTORYCNT`, 0 AS `CLOSEDSTAGESTORYCNT`, 0 AS `CLOSEDSTAGESTORYHOURS`, 0 AS `CLOSEDSTORYCNT`, 0 AS `DEVELOPEDSTAGESTORYCNT`, 0 AS `DEVELOPEDSTAGESTORYHOURS`, 0 AS `DEVELOPINGSTAGESTORYCNT`, 0 AS `DEVELOPINGSTAGESTORYHOURS`, t1.`ID`, t1.`NAME`, 0 AS `PLAN`, 0 AS `PLANEDSTAGESTORYCNT`, 0 AS `PLANEDSTAGESTORYHOURS`, t1.`PO`, 0 AS `PROJECTEDSTAGESTORYCNT`, 0 AS `PROJECTEDSTAGESTORYHOURS`, 0 AS `RELEASEDSTAGESTORYCNT`, 0 AS `RELEASEDSTAGESTORYHOURS`, 0 AS `STORYCNT`, 0 AS `TESTEDSTAGESTORYCNT`, 0 AS `TESTEDSTAGESTORYHOURS`, 0 AS `TESTINGSTAGESTORYCNT`, 0 AS `TESTINGSTAGESTORYHOURS`, 0 AS `TOTALHOURS`, 0 AS `VERIFIEDSTAGESTORYCNT`, 0 AS `VERIFIEDSTAGESTORYHOURS`, 0 AS `WAITSTAGESTORYCNT`, 0 AS `WAITSTAGESTORYHOURS`, 0 AS `WAITSTORYCNT` FROM `zt_product` t1  
+			]]>
+    </sql>
+</mapper>
+

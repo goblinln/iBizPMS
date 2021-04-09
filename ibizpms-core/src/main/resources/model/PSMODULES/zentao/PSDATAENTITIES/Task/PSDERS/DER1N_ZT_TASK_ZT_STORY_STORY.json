@@ -1,0 +1,28 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "STORY",
+    "codeName" : "Story"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "STORYNAME",
+    "codeName" : "Storyname"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "pickupDEFName" : "STORY",
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ZTStory",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_STORY_STORY.json",
+  "name" : "DER1N_ZT_TASK_ZT_STORY_STORY"
+}

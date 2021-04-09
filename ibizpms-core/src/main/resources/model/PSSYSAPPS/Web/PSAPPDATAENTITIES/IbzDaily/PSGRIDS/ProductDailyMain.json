@@ -1,0 +1,221 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "ISSUBMIT",
+      "codeName" : "Issubmit"
+    },
+    "name" : "issubmit",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "name" : "account",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYID",
+      "codeName" : "IbzDailyId"
+    },
+    "name" : "ibz_dailyid",
+    "dataType" : 1
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "name" : "date",
+    "dataType" : 5
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYNAME",
+      "codeName" : "IbzDailyName"
+    },
+    "name" : "ibz_dailyname",
+    "dataType" : 25
+  }, {
+    "name" : "srfmstag",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYNAME",
+      "codeName" : "IbzDailyName"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYID",
+      "codeName" : "IbzDailyId"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYID",
+      "codeName" : "IbzDailyId"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "REPORTTO",
+      "codeName" : "Reportto"
+    },
+    "name" : "reportto",
+    "dataType" : 25
+  } ],
+  "singleSelect" : true,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYID",
+      "codeName" : "IbzDailyId"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "日报标识",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "getMinorSortPSAppDEField" : {
+    "name" : "DATE",
+    "codeName" : "Date"
+  },
+  "enablePagingBar" : false,
+  "controlType" : "GRID",
+  "getPSDEGridColumns" : [ {
+    "linkValueItem" : "srfkey",
+    "excelCaption" : "日报名称",
+    "enableLinkView" : true,
+    "getLinkPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "dataItemName" : "ibz_dailyname",
+    "getPSAppDEField" : {
+      "name" : "IBZ_DAILYNAME",
+      "codeName" : "IbzDailyName"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 150,
+    "codeName" : "ibz_dailyname",
+    "caption" : "日报名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "ibz_dailyname"
+  }, {
+    "excelCaption" : "用户",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "dataItemName" : "account",
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "account",
+    "caption" : "用户",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "account"
+  }, {
+    "excelCaption" : "日期",
+    "dataItemName" : "date",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "date",
+    "caption" : "日期",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "date"
+  }, {
+    "excelCaption" : "汇报给",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "dataItemName" : "reportto",
+    "getPSAppDEField" : {
+      "name" : "REPORTTO",
+      "codeName" : "Reportto"
+    },
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "reportto",
+    "caption" : "汇报给",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "reportto"
+  } ],
+  "codeName" : "ProductDailyMain",
+  "minorSortDir" : "DESC",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 40,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily/PSGRIDS/ProductDailyMain.json",
+  "logicName" : "主表格（产品日报）",
+  "modelid" : "9d65b1b62e7a9c88e42ffc751fbe6549"
+}

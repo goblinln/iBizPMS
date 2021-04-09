@@ -1,0 +1,29 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "PSSUBSYSSERVICEAPIID",
+    "codeName" : "PSSubSysServiceAPIId"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "PSSUBSYSSERVICEAPINAME",
+    "codeName" : "PSSubSysServiceAPIName"
+  },
+  "removeActionType" : 3,
+  "masterRS" : 0,
+  "pickupDEFName" : "PSSUBSYSSERVICEAPIID",
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "PSSubSysServiceAPI",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysSADE.json"
+  },
+  "minorCodeName" : "PSSubSysSADEs",
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysSADE/PSDERS/DER1N_PSSUBSYSSADE_PSSUBSYSSERVICEAPI_PSSUBSYSSERVICEAPIID.json",
+  "name" : "DER1N_PSSUBSYSSADE_PSSUBSYSSERVICEAPI_PSSUBSYSSERVICEAPIID"
+}

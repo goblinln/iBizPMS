@@ -1,0 +1,423 @@
+{
+  "major" : true,
+  "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "getAllPSAppDEMethods" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false,
+    "methodType" : "SELECT",
+    "codeName" : "Select",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSUSERROLE__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSUSERROLE__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSUSERROLE__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSUSERROLE__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterUpdate",
+    "name" : "FILTERUPDATE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterSearch",
+    "name" : "FILTERSEARCH"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterGet",
+    "name" : "FILTERGET"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterCreate",
+    "name" : "FILTERCREATE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterGetDraft",
+    "name" : "FILTERGETDRAFT"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterRemove",
+    "name" : "FILTERREMOVE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterFetch",
+    "name" : "FILTERFETCH"
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "keyField" : true,
+    "codeName" : "UserRoleId",
+    "logicName" : "用户角色关系标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "SYS_USER_ROLEID"
+  }, {
+    "codeName" : "RoleId",
+    "logicName" : "角色标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "SYS_ROLEID"
+  }, {
+    "codeName" : "RoleName",
+    "logicName" : "角色名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "SYS_ROLENAME"
+  }, {
+    "majorField" : true,
+    "codeName" : "UserId",
+    "logicName" : "用户标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "enableQuickSearch" : true,
+    "name" : "SYS_USERID"
+  }, {
+    "codeName" : "PersonName",
+    "logicName" : "用户名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "SYS_USERNAME"
+  }, {
+    "codeName" : "LoginName",
+    "logicName" : "登录名",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "LOGINNAME"
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "单位",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "ORGNAME"
+  }, {
+    "codeName" : "MDeptName",
+    "logicName" : "主部门",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "MDEPTNAME"
+  }, {
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "stdDataType" : 5,
+    "name" : "CREATEDATE"
+  }, {
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "stdDataType" : 5,
+    "name" : "UPDATEDATE"
+  } ],
+  "getAllPSAppDEACModes" : [ {
+    "getValuePSAppDEField" : {
+      "name" : "SYS_USER_ROLEID",
+      "codeName" : "UserRoleId"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "SYS_USERID",
+      "codeName" : "UserId"
+    },
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "SYS_USER_ROLEID",
+        "codeName" : "UserRoleId"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "SYS_USERID",
+        "codeName" : "UserId"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "pagingSize" : 50,
+    "name" : "DEFAULT"
+  } ],
+  "enableFilterActions" : true,
+  "enableWFActions" : false,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "SYS_USERID",
+    "codeName" : "UserId"
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSUSERROLE__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSUSERROLE__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSUSERROLE__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SYSUSERROLE__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save"
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDESERVICEAPIS/SysUserRole.json"
+  },
+  "codeName" : "SysUserRole",
+  "logicName" : "用户角色关系",
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "dataAccCtrlMode" : 1,
+  "storageMode" : 0,
+  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUserRole.json",
+  "name" : "SYS_USER_ROLE"
+}

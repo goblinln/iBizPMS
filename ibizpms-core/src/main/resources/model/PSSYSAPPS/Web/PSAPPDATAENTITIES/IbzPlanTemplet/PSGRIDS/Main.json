@@ -1,0 +1,140 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "IBZ_PLANTEMPLETNAME",
+      "codeName" : "IbzPlanTempletName"
+    },
+    "name" : "ibz_plantempletname",
+    "dataType" : 25
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "name" : "updatedate",
+    "dataType" : 5
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_PLANTEMPLETNAME",
+      "codeName" : "IbzPlanTempletName"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "IBZ_PLANTEMPLETID",
+      "codeName" : "IbzPlanTempletId"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_PLANTEMPLETID",
+      "codeName" : "IbzPlanTempletId"
+    },
+    "name" : "srfkey",
+    "dataType" : 25
+  } ],
+  "singleSelect" : false,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "IBZ_PLANTEMPLETID",
+      "codeName" : "IbzPlanTempletId"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "产品计划模板标识",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
+  "controlType" : "GRID",
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "模板名称",
+    "dataItemName" : "ibz_plantempletname",
+    "getPSAppDEField" : {
+      "name" : "IBZ_PLANTEMPLETNAME",
+      "codeName" : "IbzPlanTempletName"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 150,
+    "codeName" : "ibz_plantempletname",
+    "caption" : "模板名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "ibz_plantempletname"
+  }, {
+    "excelCaption" : "更新时间",
+    "dataItemName" : "updatedate",
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 150,
+    "codeName" : "updatedate",
+    "caption" : "更新时间",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "updatedate"
+  } ],
+  "codeName" : "Main",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 20,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSDEDataExport" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet/PSAPPDEDATAEXPS/DataExport.json"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet/PSGRIDS/Main.json",
+  "logicName" : "主表格",
+  "modelid" : "2d7b0cbca66ad197036a53386c256530"
+}

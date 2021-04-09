@@ -1,0 +1,320 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "id",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "MANAGER",
+      "codeName" : "Manager"
+    },
+    "name" : "manager",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "name" : "name",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "name" : "parent",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PARENTNAME",
+      "codeName" : "ParentName"
+    },
+    "name" : "parentname",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  } ],
+  "singleSelect" : false,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "id",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
+  "controlType" : "GRID",
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "ID",
+    "dataItemName" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "id",
+    "caption" : "ID",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "id"
+  }, {
+    "excelCaption" : "部门",
+    "dataItemName" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 300,
+    "codeName" : "name",
+    "caption" : "部门",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "name"
+  }, {
+    "excelCaption" : "上级部门",
+    "dataItemName" : "parentname",
+    "getPSAppDEField" : {
+      "name" : "PARENTNAME",
+      "codeName" : "ParentName"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 300,
+    "codeName" : "parentname",
+    "caption" : "上级部门",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "parentname"
+  }, {
+    "excelCaption" : "负责人",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+    },
+    "dataItemName" : "manager",
+    "getPSAppDEField" : {
+      "name" : "MANAGER",
+      "codeName" : "Manager"
+    },
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 150,
+    "codeName" : "manager",
+    "caption" : "负责人",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "manager"
+  }, {
+    "getPSDEUIActionGroup" : {
+      "getPSUIActionGroupDetails" : [ {
+        "showIcon" : true,
+        "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 1,
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+          },
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "refreshMode" : 1,
+          "enableConfirm" : true,
+          "timeout" : 60000,
+          "codeName" : "Delete",
+          "getPSSysImage" : {
+            "glyph" : "xf00d@FontAwesome",
+            "cssClass" : "fa fa-remove"
+          },
+          "caption" : "删除",
+          "actionTarget" : "SINGLEKEY",
+          "reloadData" : true,
+          "dataAccessAction" : "SRFUR__ADMIN",
+          "uIActionTag" : "Delete",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "BACKEND",
+          "fullCodeName" : "Dept_Delete",
+          "name" : "删除",
+          "id" : "Delete@Dept"
+        },
+        "addSeparator" : false,
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "ud401683"
+      }, {
+        "showIcon" : true,
+        "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 1,
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+          },
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptEditView.json",
+            "viewType" : "DEEDITVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "codeName" : "Edit",
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "caption" : "编辑",
+          "actionTarget" : "SINGLEKEY",
+          "reloadData" : true,
+          "dataAccessAction" : "SRFUR__ADMIN",
+          "uIActionTag" : "Edit",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "FRONT",
+          "fullCodeName" : "Dept_Edit",
+          "name" : "编辑",
+          "id" : "Edit@Dept"
+        },
+        "addSeparator" : false,
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "u9c4d5a2"
+      } ],
+      "name" : "操作列"
+    },
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "uagridcolumn1",
+    "caption" : "操作",
+    "columnType" : "UAGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "name" : "uagridcolumn1"
+  } ],
+  "codeName" : "Main",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 20,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppViewUIActions" : [ {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+      },
+      "modelref" : true,
+      "id" : "Delete@Dept"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "name" : "删除"
+  }, {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+      },
+      "modelref" : true,
+      "id" : "Edit@Dept"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "name" : "编辑"
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "删除"
+    },
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_ud401683_click"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "编辑"
+    },
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_u9c4d5a2_click"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept/PSGRIDS/Main.json",
+  "logicName" : "主表格",
+  "modelid" : "fd7e38b5eb93a6a589316b5158e1d42e"
+}

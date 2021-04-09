@@ -1,0 +1,65 @@
+package cn.ibizlab.pms.zentao.logic.storylogic.getstoryspecs;
+import java.util.Map;
+import java.util.HashMap;
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+global cn.ibizlab.pms.core.zentao.domain.StorySpec storygetstoryspecsstory;
+global cn.ibizlab.pms.core.zentao.domain.Story storygetstoryspecsdefault;
+global cn.ibizlab.pms.core.zentao.service.IStoryService storyservice;
+global cn.ibizlab.pms.core.zentao.service.IStoryService iBzSysStoryDefaultService;
+global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+no-loop
+
+//逻辑处理节点[获取数据]
+rule "rawsqlcall1"
+ruleflow-group "storygetstoryspecsrawsqlcall1"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",storygetstoryspecsdefault.get("id"));
+    param.put("param1",storygetstoryspecsdefault.get("version"));
+    String strSql="select t1.* from zt_storyspec t1 where t1.story = #{et.param0} and t1.version = #{et.param1} order by t1.version desc limit 0,1";
+    java.util.List<JSONObject> entities=iBzSysStoryDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            storygetstoryspecsstory.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(storygetstoryspecsstory);//更新fact中变量值
+    update(storygetstoryspecsdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[处理]
+rule "deaction1"
+ruleflow-group "storygetstoryspecsdeaction1"
+    when
+    then
+    storyservice.getStorySpec(storygetstoryspecsdefault);
+    update(storygetstoryspecsstory);//更新fact中变量值
+    update(storygetstoryspecsdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[参数]
+rule "prepareparam1"
+ruleflow-group "storygetstoryspecsprepareparam1"
+    when
+    then
+    storygetstoryspecsdefault.set("title",storygetstoryspecsstory.get("title"));
+    storygetstoryspecsdefault.set("verify",storygetstoryspecsstory.get("verify"));
+    storygetstoryspecsdefault.set("spec",storygetstoryspecsstory.get("spec"));
+    update(storygetstoryspecsstory);//更新fact中变量值
+    update(storygetstoryspecsdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[开始]
+rule "begin"
+ruleflow-group "storygetstoryspecsbegin"
+    when
+    then
+    end
+

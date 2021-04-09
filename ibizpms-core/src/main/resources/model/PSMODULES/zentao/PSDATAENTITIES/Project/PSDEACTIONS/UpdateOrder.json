@@ -1,0 +1,32 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : false,
+  "getCheckPSDEActionLogics" : [ {
+    "name" : "行为[UpdateOrder]主状态拒绝逻辑",
+    "id" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/UpdateOrder__MSDeny.json"
+  } ],
+  "timeOut" : -1,
+  "orderValue" : 99999,
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCommon"
+  },
+  "codeName" : "UpdateOrder",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "UPDATE"
+  },
+  "logicName" : "排序",
+  "extendMode" : 0,
+  "actionMode" : "UPDATE",
+  "actionType" : "USERCUSTOM",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UpdateOrder.json",
+  "name" : "UpdateOrder",
+  "userCat" : "CAT1"
+}

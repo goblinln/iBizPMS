@@ -1,0 +1,914 @@
+{
+  "major" : true,
+  "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "getAllPSAppDEMethods" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false,
+    "methodType" : "SELECT",
+    "codeName" : "Select",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTASKESTIMATE__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTASKESTIMATE__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTASKESTIMATE__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTASKESTIMATE__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAccountDetail"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AccountDetail"
+    },
+    "codeName" : "FetchAccountDetail",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterUpdate",
+    "name" : "FILTERUPDATE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterSearch",
+    "name" : "FILTERSEARCH"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterGet",
+    "name" : "FILTERGET"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterCreate",
+    "name" : "FILTERCREATE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterGetDraft",
+    "name" : "FILTERGETDRAFT"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterRemove",
+    "name" : "FILTERREMOVE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterFetch",
+    "name" : "FILTERFETCH"
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "TwentyfiveEVALUATIONTIME",
+    "logicName" : "二十五号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYFIVEEVALUATIONTIME"
+  }, {
+    "codeName" : "Seventeenconsumed",
+    "logicName" : "十七号工时",
+    "stdDataType" : 7,
+    "name" : "SEVENTEENCONSUMED"
+  }, {
+    "codeName" : "Project",
+    "logicName" : "项目标识",
+    "stdDataType" : 1,
+    "name" : "PROJECT"
+  }, {
+    "codeName" : "FifteenEVALUATIONTIME",
+    "logicName" : "十五号评估工时",
+    "stdDataType" : 7,
+    "name" : "FIFTEENEVALUATIONTIME"
+  }, {
+    "codeName" : "Otherconsumed",
+    "logicName" : "其他项目工时",
+    "stdDataType" : 7,
+    "name" : "OTHERCONSUMED"
+  }, {
+    "codeName" : "ThirteenEVALUATIONCOST",
+    "logicName" : "十三号评估成本",
+    "stdDataType" : 7,
+    "name" : "THIRTEENEVALUATIONCOST"
+  }, {
+    "codeName" : "ThirtyEVALUATIONCOST",
+    "logicName" : "三十号评估成本",
+    "stdDataType" : 7,
+    "name" : "THIRTYEVALUATIONCOST"
+  }, {
+    "codeName" : "Evaluationcost",
+    "logicName" : "评估成本",
+    "stdDataType" : 7,
+    "name" : "EVALUATIONCOST"
+  }, {
+    "codeName" : "TwentysixEVALUATIONCOST",
+    "logicName" : "二十六号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWENTYSIXEVALUATIONCOST"
+  }, {
+    "codeName" : "TwoEVALUATIONTIME",
+    "logicName" : "二号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWOEVALUATIONTIME"
+  }, {
+    "codeName" : "ThirtyEVALUATIONTIME",
+    "logicName" : "三十号评估工时",
+    "stdDataType" : 7,
+    "name" : "THIRTYEVALUATIONTIME"
+  }, {
+    "codeName" : "Twentysixconsumed",
+    "logicName" : "二十六号工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYSIXCONSUMED"
+  }, {
+    "codeName" : "NineteenEVALUATIONTIME",
+    "logicName" : "十九号评估工时",
+    "stdDataType" : 7,
+    "name" : "NINETEENEVALUATIONTIME"
+  }, {
+    "codeName" : "Twentyoneconsumed",
+    "logicName" : "二十一号工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYONECONSUMED"
+  }, {
+    "codeName" : "Evaluationtime",
+    "logicName" : "评估工时",
+    "stdDataType" : 7,
+    "name" : "EVALUATIONTIME"
+  }, {
+    "codeName" : "TwentyfourEVALUATIONCOST",
+    "logicName" : "二十四号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWENTYFOUREVALUATIONCOST"
+  }, {
+    "codeName" : "ThreeEVALUATIONCOST",
+    "logicName" : "三号评估成本",
+    "stdDataType" : 7,
+    "name" : "THREEEVALUATIONCOST"
+  }, {
+    "codeName" : "ThirtyoneEVALUATIONCOST",
+    "logicName" : "三十一号评估成本",
+    "stdDataType" : 7,
+    "name" : "THIRTYONEEVALUATIONCOST"
+  }, {
+    "codeName" : "SixEVALUATIONCOST",
+    "logicName" : "六号评估成本",
+    "stdDataType" : 7,
+    "name" : "SIXEVALUATIONCOST"
+  }, {
+    "codeName" : "EighteenEVALUATIONTIME",
+    "logicName" : "十八号评估工时",
+    "stdDataType" : 7,
+    "name" : "EIGHTEENEVALUATIONTIME"
+  }, {
+    "codeName" : "ThirteenEVALUATIONTIME",
+    "logicName" : "十三号评估工时",
+    "stdDataType" : 7,
+    "name" : "THIRTEENEVALUATIONTIME"
+  }, {
+    "codeName" : "TwentynineEVALUATIONCOST",
+    "logicName" : "二十九号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWENTYNINEEVALUATIONCOST"
+  }, {
+    "codeName" : "TwentyEVALUATIONTIME",
+    "logicName" : "二十号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYEVALUATIONTIME"
+  }, {
+    "codeName" : "TwentytwoEVALUATIONTIME",
+    "logicName" : "二十二号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYTWOEVALUATIONTIME"
+  }, {
+    "codeName" : "OneEVALUATIONTIME",
+    "logicName" : "一号评估工时",
+    "stdDataType" : 7,
+    "name" : "ONEEVALUATIONTIME"
+  }, {
+    "codeName" : "Elevenconsumed",
+    "logicName" : "十一号工时",
+    "stdDataType" : 7,
+    "name" : "ELEVENCONSUMED"
+  }, {
+    "codeName" : "FourteenEVALUATIONTIME",
+    "logicName" : "十四号评估工时",
+    "stdDataType" : 7,
+    "name" : "FOURTEENEVALUATIONTIME"
+  }, {
+    "codeName" : "Twentytwoconsumed",
+    "logicName" : "二十二号工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYTWOCONSUMED"
+  }, {
+    "codeName" : "TwentyoneEVALUATIONCOST",
+    "logicName" : "二十一号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWENTYONEEVALUATIONCOST"
+  }, {
+    "codeName" : "Eightconsumed",
+    "logicName" : "八号工时",
+    "stdDataType" : 7,
+    "name" : "EIGHTCONSUMED"
+  }, {
+    "codeName" : "TwentyeightEVALUATIONTIME",
+    "logicName" : "二十八号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYEIGHTEVALUATIONTIME"
+  }, {
+    "codeName" : "Threeconsumed",
+    "logicName" : "三号工时",
+    "stdDataType" : 7,
+    "name" : "THREECONSUMED"
+  }, {
+    "codeName" : "TwentythreeEVALUATIONTIME",
+    "logicName" : "二十三号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYTHREEEVALUATIONTIME"
+  }, {
+    "codeName" : "TenEVALUATIONTIME",
+    "logicName" : "十号评估工时",
+    "stdDataType" : 7,
+    "name" : "TENEVALUATIONTIME"
+  }, {
+    "codeName" : "Sixconsumed",
+    "logicName" : "六号工时",
+    "stdDataType" : 7,
+    "name" : "SIXCONSUMED"
+  }, {
+    "codeName" : "Twentyfiveconsumed",
+    "logicName" : "二十五号工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYFIVECONSUMED"
+  }, {
+    "codeName" : "Twentyeightconsumed",
+    "logicName" : "二十八号工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYEIGHTCONSUMED"
+  }, {
+    "codeName" : "Thirteenconsumed",
+    "logicName" : "十三号工时",
+    "stdDataType" : 7,
+    "name" : "THIRTEENCONSUMED"
+  }, {
+    "codeName" : "FourEVALUATIONCOST",
+    "logicName" : "四号评估成本",
+    "stdDataType" : 7,
+    "name" : "FOUREVALUATIONCOST"
+  }, {
+    "codeName" : "TwentytwoEVALUATIONCOST",
+    "logicName" : "二十二号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWENTYTWOEVALUATIONCOST"
+  }, {
+    "codeName" : "Month",
+    "logicName" : "月",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "MONTH"
+  }, {
+    "codeName" : "TwelveEVALUATIONTIME",
+    "logicName" : "十二号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWELVEEVALUATIONTIME"
+  }, {
+    "codeName" : "TenEVALUATIONCOST",
+    "logicName" : "十号评估成本",
+    "stdDataType" : 7,
+    "name" : "TENEVALUATIONCOST"
+  }, {
+    "codeName" : "SevenEVALUATIONCOST",
+    "logicName" : "七号评估成本",
+    "stdDataType" : 7,
+    "name" : "SEVENEVALUATIONCOST"
+  }, {
+    "codeName" : "FifteenEVALUATIONCOST",
+    "logicName" : "十五号评估成本",
+    "stdDataType" : 7,
+    "name" : "FIFTEENEVALUATIONCOST"
+  }, {
+    "codeName" : "NineEVALUATIONCOST",
+    "logicName" : "九号评估成本",
+    "stdDataType" : 7,
+    "name" : "NINEEVALUATIONCOST"
+  }, {
+    "codeName" : "Thirtyconsumed",
+    "logicName" : "三十号工时",
+    "stdDataType" : 7,
+    "name" : "THIRTYCONSUMED"
+  }, {
+    "codeName" : "ElevenEVALUATIONCOST",
+    "logicName" : "十一号评估成本",
+    "stdDataType" : 7,
+    "name" : "ELEVENEVALUATIONCOST"
+  }, {
+    "codeName" : "ThreeEVALUATIONTIME",
+    "logicName" : "三号评估工时",
+    "stdDataType" : 7,
+    "name" : "THREEEVALUATIONTIME"
+  }, {
+    "codeName" : "TwentynineEVALUATIONTIME",
+    "logicName" : "二十九号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYNINEEVALUATIONTIME"
+  }, {
+    "codeName" : "Nineconsumed",
+    "logicName" : "九号工时",
+    "stdDataType" : 7,
+    "name" : "NINECONSUMED"
+  }, {
+    "codeName" : "OneEVALUATIONCOST",
+    "logicName" : "一号评估成本",
+    "stdDataType" : 7,
+    "name" : "ONEEVALUATIONCOST"
+  }, {
+    "codeName" : "Twentyconsumed",
+    "logicName" : "二十号工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYCONSUMED"
+  }, {
+    "codeName" : "FiveEVALUATIONCOST",
+    "logicName" : "五号评估成本",
+    "stdDataType" : 7,
+    "name" : "FIVEEVALUATIONCOST"
+  }, {
+    "codeName" : "TwentyoneEVALUATIONTIME",
+    "logicName" : "二十一号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYONEEVALUATIONTIME"
+  }, {
+    "codeName" : "Fourconsumed",
+    "logicName" : "四号工时",
+    "stdDataType" : 7,
+    "name" : "FOURONSUMED"
+  }, {
+    "codeName" : "Otherevaluationtime",
+    "logicName" : "其他项目评估工时",
+    "stdDataType" : 7,
+    "name" : "OTHEREVALUATIONTIME"
+  }, {
+    "codeName" : "Twentysevenconsumed",
+    "logicName" : "二十七号工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYSEVENCONSUMED"
+  }, {
+    "codeName" : "Twoconsumed",
+    "logicName" : "二号工时",
+    "stdDataType" : 7,
+    "name" : "TWOCONSUMED"
+  }, {
+    "codeName" : "TwentyfourEVALUATIONTIME",
+    "logicName" : "二十四号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYFOUREVALUATIONTIME"
+  }, {
+    "codeName" : "TwentysixEVALUATIONTIME",
+    "logicName" : "二十六号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYSIXEVALUATIONTIME"
+  }, {
+    "codeName" : "NineEVALUATIONTIME",
+    "logicName" : "九号评估工时",
+    "stdDataType" : 7,
+    "name" : "NINEEVALUATIONTIME"
+  }, {
+    "codeName" : "EighteenEVALUATIONCOST",
+    "logicName" : "十八号评估成本",
+    "stdDataType" : 7,
+    "name" : "EIGHTEENEVALUATIONCOST"
+  }, {
+    "codeName" : "TwentythreeEVALUATIONCOST",
+    "logicName" : "二十三号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWENTYTHREEEVALUATIONCOST"
+  }, {
+    "codeName" : "FourEVALUATIONTIME",
+    "logicName" : "四号评估工时",
+    "stdDataType" : 7,
+    "name" : "FOUREVALUATIONTIME"
+  }, {
+    "codeName" : "ProjectName",
+    "logicName" : "项目名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "PROJECTNAME"
+  }, {
+    "codeName" : "EightEVALUATIONCOST",
+    "logicName" : "八号评估成本",
+    "stdDataType" : 7,
+    "name" : "EIGHTEVALUATIONCOST"
+  }, {
+    "codeName" : "EightEVALUATIONTIME",
+    "logicName" : "八号评估工时",
+    "stdDataType" : 7,
+    "name" : "EIGHTEVALUATIONTIME"
+  }, {
+    "codeName" : "Twentynineconsumed",
+    "logicName" : "二十九号工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYNINECONSUMED"
+  }, {
+    "codeName" : "Consumed",
+    "logicName" : "工时",
+    "stdDataType" : 7,
+    "name" : "CONSUMED"
+  }, {
+    "valueFormat" : "YYYY-MM-DD",
+    "codeName" : "Date",
+    "logicName" : "日期",
+    "stdDataType" : 5,
+    "name" : "DATE"
+  }, {
+    "codeName" : "Sixteenconsumed",
+    "logicName" : "十六号工时",
+    "stdDataType" : 7,
+    "name" : "SIXTEENCONSUMED"
+  }, {
+    "codeName" : "ThirtyoneEVALUATIONTIME",
+    "logicName" : "三十一号评估工时",
+    "stdDataType" : 7,
+    "name" : "THIRTYONEEVALUATIONTIME"
+  }, {
+    "codeName" : "SixteenEVALUATIONCOST",
+    "logicName" : "十六号评估成本",
+    "stdDataType" : 7,
+    "name" : "SIXTEENEVALUATIONCOST"
+  }, {
+    "codeName" : "SixteenEVALUATIONTIME",
+    "logicName" : "十六号评估工时",
+    "stdDataType" : 7,
+    "name" : "SIXTEENEVALUATIONTIME"
+  }, {
+    "codeName" : "Account",
+    "logicName" : "用户",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "ACCOUNT"
+  }, {
+    "codeName" : "Sevenconsumed",
+    "logicName" : "七号工时",
+    "stdDataType" : 7,
+    "name" : "SEVENCONSUMED"
+  }, {
+    "codeName" : "Nineteenconsumed",
+    "logicName" : "十九号工时",
+    "stdDataType" : 7,
+    "name" : "NINETEENCONSUMED"
+  }, {
+    "codeName" : "Year",
+    "logicName" : "年",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "YEAR"
+  }, {
+    "codeName" : "SixEVALUATIONTIME",
+    "logicName" : "六号评估工时",
+    "stdDataType" : 7,
+    "name" : "SIXEVALUATIONTIME"
+  }, {
+    "codeName" : "TwentyfiveEVALUATIONCOST",
+    "logicName" : "二十五号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWENTYFIVEEVALUATIONCOST"
+  }, {
+    "codeName" : "SeventeenEVALUATIONTIME",
+    "logicName" : "十七号评估工时",
+    "stdDataType" : 7,
+    "name" : "SEVENTEENEVALUATIONTIME"
+  }, {
+    "codeName" : "TwentysevenEVALUATIONTIME",
+    "logicName" : "二十七号评估工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYSEVENEVALUATIONTIME"
+  }, {
+    "codeName" : "Fourteenconsumed",
+    "logicName" : "十四号工时",
+    "stdDataType" : 7,
+    "name" : "FOURTEENCONSUMED"
+  }, {
+    "codeName" : "Eighteenconsumed",
+    "logicName" : "十八号工时",
+    "stdDataType" : 7,
+    "name" : "EIGHTEENCONSUMED"
+  }, {
+    "keyField" : true,
+    "codeName" : "Id",
+    "logicName" : "主键",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "ID"
+  }, {
+    "codeName" : "Twentyfourconsumed",
+    "logicName" : "二十四号工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYFOURCONSUMED"
+  }, {
+    "codeName" : "Thirtyoneconsumed",
+    "logicName" : "三十一号工时",
+    "stdDataType" : 7,
+    "name" : "THIRTYONECONSUMED"
+  }, {
+    "codeName" : "TwelveEVALUATIONCOST",
+    "logicName" : "十二号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWELVEEVALUATIONCOST"
+  }, {
+    "codeName" : "SeventeenEVALUATIONCOST",
+    "logicName" : "十七号评估成本",
+    "stdDataType" : 7,
+    "name" : "SEVENTEENEVALUATIONCOST"
+  }, {
+    "codeName" : "TwentyEVALUATIONCOST",
+    "logicName" : "二十号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWENTYEVALUATIONCOST"
+  }, {
+    "codeName" : "Tenconsumed",
+    "logicName" : "十号工时",
+    "stdDataType" : 7,
+    "name" : "TENCONSUMED"
+  }, {
+    "codeName" : "ElevenEVALUATIONTIME",
+    "logicName" : "十一号评估工时",
+    "stdDataType" : 7,
+    "name" : "ELEVENEVALUATIONTIME"
+  }, {
+    "codeName" : "FiveEVALUATIONTIME",
+    "logicName" : "五号评估工时",
+    "stdDataType" : 7,
+    "name" : "FIVEEVALUATIONTIME"
+  }, {
+    "codeName" : "Fifteenconsumed",
+    "logicName" : "十五号工时",
+    "stdDataType" : 7,
+    "name" : "FIFTEENCONSUMED"
+  }, {
+    "codeName" : "TwentyeightEVALUATIONCOST",
+    "logicName" : "二十八号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWENTYEIGHTEVALUATIONCOST"
+  }, {
+    "codeName" : "Twelveconsumed",
+    "logicName" : "十二号工时",
+    "stdDataType" : 7,
+    "name" : "TWELVECONSUMED"
+  }, {
+    "codeName" : "FourteenEVALUATIONCOST",
+    "logicName" : "十四号评估成本",
+    "stdDataType" : 7,
+    "name" : "FOURTEENEVALUATIONCOST"
+  }, {
+    "codeName" : "Fiveconsumed",
+    "logicName" : "五号工时",
+    "stdDataType" : 7,
+    "name" : "FIVECONSUMED"
+  }, {
+    "codeName" : "Twentythreeconsumed",
+    "logicName" : "二十三号工时",
+    "stdDataType" : 7,
+    "name" : "TWENTYTHREECONSUMED"
+  }, {
+    "codeName" : "SevenEVALUATIONTIME",
+    "logicName" : "七号评估工时",
+    "stdDataType" : 7,
+    "name" : "SEVENEVALUATIONTIME"
+  }, {
+    "codeName" : "TwentysevenEVALUATIONCOST",
+    "logicName" : "二十七号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWENTYSEVENEVALUATIONCOST"
+  }, {
+    "codeName" : "Oneconsumed",
+    "logicName" : "一号工时",
+    "stdDataType" : 7,
+    "name" : "ONECONSUMED"
+  }, {
+    "codeName" : "TwoEVALUATIONCOST",
+    "logicName" : "二号评估成本",
+    "stdDataType" : 7,
+    "name" : "TWOEVALUATIONCOST"
+  }, {
+    "codeName" : "NineteenEVALUATIONCOST",
+    "logicName" : "十九号评估成本",
+    "stdDataType" : 7,
+    "name" : "NINETEENEVALUATIONCOST"
+  }, {
+    "codeName" : "Inputcost",
+    "logicName" : "投入成本",
+    "stdDataType" : 7,
+    "name" : "INPUTCOST"
+  } ],
+  "getAllPSAppDEACModes" : [ {
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    } ],
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "pagingSize" : 50,
+    "name" : "DEFAULT"
+  } ],
+  "enableFilterActions" : true,
+  "enableWFActions" : false,
+  "getAllPSAppDEActions" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTASKESTIMATE__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTASKESTIMATE__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTASKESTIMATE__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTASKESTIMATE__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save"
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAccountDetail"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AccountDetail"
+    },
+    "codeName" : "FetchAccountDetail",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDESERVICEAPIS/ProjectTaskestimate.json"
+  },
+  "codeName" : "ProjectTaskestimate",
+  "logicName" : "项目工时统计",
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "dataAccCtrlMode" : 1,
+  "storageMode" : 0,
+  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskestimate.json",
+  "name" : "PROJECTTASKESTIMATE"
+}

@@ -1,0 +1,28 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "PPSSYSREQMODULEID",
+    "codeName" : "PPSSysReqModuleId"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "PPSSYSREQMODULENAME",
+    "codeName" : "PPSSysReqModuleName"
+  },
+  "removeActionType" : 3,
+  "masterRS" : 0,
+  "pickupDEFName" : "PPSSYSREQMODULEID",
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "PPSysReqModule",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDERS/DER1N_PSSYSREQMODULE_PSSYSREQMODULE_PPSSYSREQMODULEID.json",
+  "name" : "DER1N_PSSYSREQMODULE_PSSYSREQMODULE_PPSSYSREQMODULEID"
+}

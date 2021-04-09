@@ -1,0 +1,986 @@
+{
+  "getAllPSAppDEUIActions" : [ {
+    "getNoPrivDisplayMode" : 2,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "codeName" : "AddProduct",
+    "getPSSysImage" : {
+      "glyph" : "xf067@FontAwesome",
+      "cssClass" : "fa fa-plus"
+    },
+    "caption" : "添加产品",
+    "actionTarget" : "NONE",
+    "reloadData" : true,
+    "dataAccessAction" : "SRFUR__PRODSTA_ADDPROD_BUT",
+    "uIActionTag" : "AddProduct",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductStats_AddProduct",
+    "name" : "添加产品",
+    "id" : "AddProduct@ProductStats"
+  }, {
+    "getNoPrivDisplayMode" : 2,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "timeout" : 60000,
+    "codeName" : "OpenProductPlanCreateView",
+    "getPSSysImage" : {
+      "glyph" : "xf067@FontAwesome",
+      "cssClass" : "fa fa-plus"
+    },
+    "caption" : "创建计划",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__PRODSTA_PLANCRT_BUT",
+    "uIActionTag" : "OpenProductPlanCreateView",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductStats_OpenProductPlanCreateView",
+    "name" : "创建计划",
+    "id" : "OpenProductPlanCreateView@ProductStats"
+  }, {
+    "getNoPrivDisplayMode" : 2,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "timeout" : 60000,
+    "codeName" : "OpenProjectCreateView",
+    "getPSSysImage" : {
+      "glyph" : "xf067@FontAwesome",
+      "cssClass" : "fa fa-plus"
+    },
+    "caption" : "创建项目",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__PRODSTA_PROJCRT_BUT",
+    "uIActionTag" : "OpenProjectCreateView",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductStats_OpenProjectCreateView",
+    "name" : "创建项目",
+    "id" : "OpenProjectCreateView@ProductStats"
+  }, {
+    "getNoPrivDisplayMode" : 2,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseQuickCreateView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "timeout" : 60000,
+    "codeName" : "OpenReleasedCreateView",
+    "getPSSysImage" : {
+      "glyph" : "xf067@FontAwesome",
+      "cssClass" : "fa fa-plus"
+    },
+    "caption" : "创建发布",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__PRODSTA_RELCRT_BUT",
+    "uIActionTag" : "OpenReleasedCreateView",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductStats_OpenReleasedCreateView",
+    "name" : "创建发布",
+    "id" : "OpenReleasedCreateView@ProductStats"
+  }, {
+    "getNoPrivDisplayMode" : 2,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : true,
+      "value" : "TABVIEWPANEL2",
+      "key" : "srftabactivate",
+      "name" : "srftabactivate"
+    } ],
+    "frontProcessType" : "WIZARD",
+    "uIActionParamJO" : {
+      "srftabactivate" : "TABVIEWPANEL2"
+    },
+    "timeout" : 60000,
+    "codeName" : "OpenProductStoryView",
+    "getPSSysImage" : {
+      "glyph" : "xf002@FontAwesome",
+      "cssClass" : "fa fa-search"
+    },
+    "caption" : "查看全部",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__PRODSTA_STOREOP_BUT",
+    "uIActionTag" : "OpenProductStoryView",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductStats_OpenProductStoryView",
+    "name" : "打开产品需求",
+    "id" : "OpenProductStoryView@ProductStats"
+  }, {
+    "getNoPrivDisplayMode" : 2,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "timeout" : 60000,
+    "codeName" : "OpenStoryCreateView",
+    "caption" : "提需求",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__PRODSTA_STORYCRT_BUT",
+    "uIActionTag" : "OpenStoryCreateView",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "ProductStats_OpenStoryCreateView",
+    "name" : "提需求",
+    "id" : "OpenStoryCreateView@ProductStats"
+  } ],
+  "major" : true,
+  "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "getAllPSAppDEMethods" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false,
+    "methodType" : "SELECT",
+    "codeName" : "Select",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSTATS__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSTATS__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSTATS__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSTATS__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetTestStats"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/GetTestStats.json"
+    },
+    "codeName" : "GetTestStats",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchNoOpenProduct"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NoOpenProduct"
+    },
+    "codeName" : "FetchNoOpenProduct",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProdctQuantiGird"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProdctQuantiGird"
+    },
+    "codeName" : "FetchProdctQuantiGird",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductInputTable"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductInputTable"
+    },
+    "codeName" : "FetchProductInputTable",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductcompletionstatistics"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Productcompletionstatistics"
+    },
+    "codeName" : "FetchProductcompletionstatistics",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterUpdate",
+    "name" : "FILTERUPDATE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterSearch",
+    "name" : "FILTERSEARCH"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterGet",
+    "name" : "FILTERGET"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterCreate",
+    "name" : "FILTERCREATE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterGetDraft",
+    "name" : "FILTERGETDRAFT"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterRemove",
+    "name" : "FILTERREMOVE"
+  }, {
+    "builtinMethod" : true,
+    "methodType" : "FILTERACTION",
+    "codeName" : "FilterFetch",
+    "name" : "FILTERFETCH"
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "Code",
+    "logicName" : "产品代号",
+    "stringLength" : 45,
+    "stdDataType" : 25,
+    "name" : "CODE"
+  }, {
+    "keyField" : true,
+    "codeName" : "Id",
+    "logicName" : "产品编号",
+    "stdDataType" : 1,
+    "name" : "ID"
+  }, {
+    "codeName" : "FinishedStoryCNT",
+    "logicName" : "已完成的需求数",
+    "stdDataType" : 9,
+    "name" : "FINISHEDSTORYCNT"
+  }, {
+    "codeName" : "ReleasedStoryCnt",
+    "logicName" : "已发布需求数",
+    "stdDataType" : 9,
+    "name" : "RELEASEDSTORYCNT"
+  }, {
+    "codeName" : "Importantbugpercent",
+    "logicName" : "严重bug比",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "name" : "IMPORTANTBUGPERCENT"
+  }, {
+    "codeName" : "UnDoneResProjectCnt",
+    "logicName" : "未完成关联项目数",
+    "stdDataType" : 9,
+    "name" : "UNDONERESPROJECTCNT"
+  }, {
+    "codeName" : "AssignToMeBugCnt",
+    "logicName" : "指派给我的Bug数",
+    "stdDataType" : 9,
+    "name" : "ASSIGNTOMEBUGCNT"
+  }, {
+    "codeName" : "Deleted",
+    "logicName" : "已删除",
+    "stringLength" : 1,
+    "stdDataType" : 25,
+    "name" : "DELETED"
+  }, {
+    "codeName" : "Istop",
+    "logicName" : "是否置顶",
+    "stdDataType" : 9,
+    "name" : "ISTOP"
+  }, {
+    "codeName" : "ResProjectCnt",
+    "logicName" : "关联项目数",
+    "stdDataType" : 9,
+    "name" : "RESPROJECTCNT"
+  }, {
+    "codeName" : "BugCnt",
+    "logicName" : "所有Bug数",
+    "stdDataType" : 9,
+    "name" : "BUGCNT"
+  }, {
+    "codeName" : "Haveconsumed",
+    "logicName" : "已消耗工时",
+    "stdDataType" : 7,
+    "name" : "HAVECONSUMED"
+  }, {
+    "codeName" : "Type",
+    "logicName" : "产品类型",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "name" : "TYPE"
+  }, {
+    "codeName" : "WaitStoryCnt",
+    "logicName" : "未开始需求数",
+    "stdDataType" : 9,
+    "name" : "WAITSTORYCNT"
+  }, {
+    "codeName" : "BugStory",
+    "logicName" : "需求所提bug数",
+    "stdDataType" : 9,
+    "name" : "BUGSTORY"
+  }, {
+    "codeName" : "StoryCnt",
+    "logicName" : "需求总数",
+    "stdDataType" : 9,
+    "name" : "STORYCNT"
+  }, {
+    "majorField" : true,
+    "codeName" : "Name",
+    "logicName" : "产品名称",
+    "stringLength" : 90,
+    "stdDataType" : 25,
+    "enableQuickSearch" : true,
+    "name" : "NAME"
+  }, {
+    "codeName" : "IMPORtantBUGCNT",
+    "logicName" : "重要的Bug数",
+    "stdDataType" : 9,
+    "name" : "IMPORTANTBUGCNT"
+  }, {
+    "codeName" : "YesterdayClosedBugCnt",
+    "logicName" : "昨天关闭Bug数",
+    "stdDataType" : 9,
+    "name" : "YESTERDAYCLOSEDBUGCNT"
+  }, {
+    "codeName" : "Status",
+    "logicName" : "状态",
+    "stringLength" : 60,
+    "stdDataType" : 25,
+    "name" : "STATUS"
+  }, {
+    "codeName" : "Yesterdayresolvedbugcnt",
+    "logicName" : "昨天解决Bug数",
+    "stdDataType" : 9,
+    "name" : "YESTERDAYRESOLVEDBUGCNT"
+  }, {
+    "codeName" : "DevelopingStoryCnt",
+    "logicName" : "开发中需求数",
+    "stdDataType" : 9,
+    "name" : "DEVELOPINGSTORYCNT"
+  }, {
+    "codeName" : "ActiveStoryCnt",
+    "logicName" : "激活需求数",
+    "stdDataType" : 9,
+    "name" : "ACTIVESTORYCNT"
+  }, {
+    "codeName" : "NotClosedBugCnt",
+    "logicName" : "未关闭Bug数",
+    "stdDataType" : 9,
+    "name" : "NOTCLOSEDBUGCNT"
+  }, {
+    "codeName" : "NormalReleaseCnt",
+    "logicName" : "维护中发布数",
+    "stdDataType" : 9,
+    "name" : "NORMALRELEASECNT"
+  }, {
+    "codeName" : "Order1",
+    "logicName" : "产品排序",
+    "stdDataType" : 9,
+    "name" : "ORDER1"
+  }, {
+    "codeName" : "Currproject",
+    "logicName" : "当前项目",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "name" : "CURRPROJECT"
+  }, {
+    "codeName" : "TestingStoryCnt",
+    "logicName" : "测试中需求数",
+    "stdDataType" : 9,
+    "name" : "TESTINGSTORYCNT"
+  }, {
+    "codeName" : "ProductPlanCnt",
+    "logicName" : "计划总数",
+    "stdDataType" : 9,
+    "name" : "PRODUCTPLANCNT"
+  }, {
+    "codeName" : "ReleaseCnt",
+    "logicName" : "发布总数",
+    "stdDataType" : 9,
+    "name" : "RELEASECNT"
+  }, {
+    "codeName" : "Yesterdayconfirmbugcnt",
+    "logicName" : "昨天确认Bug数",
+    "stdDataType" : 9,
+    "name" : "YESTERDAYCONFIRMBUGCNT"
+  }, {
+    "codeName" : "Postponedprojectcnt",
+    "logicName" : "已延期",
+    "stdDataType" : 9,
+    "name" : "POSTPONEDPROJECTCNT"
+  }, {
+    "codeName" : "UnEndProductPlanCnt",
+    "logicName" : "未过期计划数",
+    "stdDataType" : 9,
+    "name" : "UNENDPRODUCTPLANCNT"
+  }, {
+    "codeName" : "RESOLVEDBUGCNT",
+    "logicName" : "解决Bug数",
+    "stdDataType" : 9,
+    "name" : "RESOLVEDBUGCNT"
+  }, {
+    "codeName" : "PlannedStoryCnt",
+    "logicName" : "已计划需求数",
+    "stdDataType" : 9,
+    "name" : "PLANNEDSTORYCNT"
+  }, {
+    "codeName" : "UnconfirmBugCnt",
+    "logicName" : "未确认Bug数",
+    "stdDataType" : 9,
+    "name" : "UNCONFIRMBUGCNT"
+  }, {
+    "codeName" : "ActiveBugCnt",
+    "logicName" : "未解决Bug数",
+    "stdDataType" : 9,
+    "name" : "ACTIVEBUGCNT"
+  } ],
+  "getAllPSAppDEACModes" : [ {
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "defaultMode" : true,
+    "pagingSize" : 50,
+    "name" : "DEFAULT"
+  } ],
+  "enableFilterActions" : true,
+  "enableWFActions" : false,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "NAME",
+    "codeName" : "Name"
+  } ],
+  "getAllPSAppDEDataExports" : [ {
+    "maxRowCount" : 1000,
+    "getPSDEDataExportItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "format" : "%1$s",
+      "caption" : "产品名称",
+      "name" : "name"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "RESPROJECTCNT",
+        "codeName" : "ResProjectCnt"
+      },
+      "format" : "%1$s",
+      "caption" : "关联项目数",
+      "name" : "resprojectcnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "HAVECONSUMED",
+        "codeName" : "Haveconsumed"
+      },
+      "format" : "%1$s",
+      "caption" : "已消耗工时",
+      "name" : "haveconsumed"
+    } ],
+    "codeName" : "ProductInputExport",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats/PSAPPDEDATAEXPS/ProductInputExport.json",
+    "name" : "产品投入数据导出"
+  }, {
+    "maxRowCount" : 1000,
+    "getPSDEDataExportItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "format" : "%1$s",
+      "caption" : "产品名称",
+      "name" : "name"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      },
+      "format" : "%1$s",
+      "caption" : "需求总数",
+      "name" : "storycnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "FINISHEDSTORYCNT",
+        "codeName" : "FinishedStoryCNT"
+      },
+      "format" : "%1$s",
+      "caption" : "已完成的需求数",
+      "name" : "finishedstorycnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
+      },
+      "format" : "%1$s",
+      "caption" : "所有Bug数",
+      "name" : "bugcnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "RESOLVEDBUGCNT",
+        "codeName" : "RESOLVEDBUGCNT"
+      },
+      "format" : "%1$s",
+      "caption" : "解决Bug数",
+      "name" : "resolvedbugcnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "BUGSTORY",
+        "codeName" : "BugStory"
+      },
+      "format" : "%1$s",
+      "caption" : "需求所提bug数",
+      "name" : "bugstory"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IMPORTANTBUGCNT",
+        "codeName" : "IMPORtantBUGCNT"
+      },
+      "format" : "%1$s",
+      "caption" : "重要的Bug数",
+      "name" : "importantbugcnt"
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IMPORTANTBUGPERCENT",
+        "codeName" : "Importantbugpercent"
+      },
+      "format" : "%1$s",
+      "caption" : "严重bug比",
+      "name" : "importantbugpercent"
+    } ],
+    "codeName" : "ProductQuantityExport",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats/PSAPPDEDATAEXPS/ProductQuantityExport.json",
+    "name" : "产品质量数据导出"
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSTATS__DEACTION__CREATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/Create.json"
+    },
+    "codeName" : "Create",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSTATS__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/Update.json"
+    },
+    "codeName" : "Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSTATS__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/Remove.json"
+    },
+    "codeName" : "Remove",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PRODUCTSTATS__DEACTION__GET"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/Get.json"
+    },
+    "codeName" : "Get",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/GetDraft.json"
+    },
+    "codeName" : "GetDraft",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/CheckKey.json"
+    },
+    "codeName" : "CheckKey"
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetTestStats"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/GetTestStats.json"
+    },
+    "codeName" : "GetTestStats",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/Save.json"
+    },
+    "codeName" : "Save"
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "codeName" : "FetchDefault",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchNoOpenProduct"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NoOpenProduct"
+    },
+    "codeName" : "FetchNoOpenProduct",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProdctQuantiGird"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProdctQuantiGird"
+    },
+    "codeName" : "FetchProdctQuantiGird",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductInputTable"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductInputTable"
+    },
+    "codeName" : "FetchProductInputTable",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductcompletionstatistics"
+    },
+    "builtinMethod" : false,
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Productcompletionstatistics"
+    },
+    "codeName" : "FetchProductcompletionstatistics",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDESERVICEAPIS/ProductStats.json"
+  },
+  "codeName" : "ProductStats",
+  "logicName" : "产品统计",
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "dataAccCtrlMode" : 1,
+  "storageMode" : 0,
+  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json",
+  "name" : "IBZ_PRODUCTSTATS"
+}

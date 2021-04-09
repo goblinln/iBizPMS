@@ -1,0 +1,23 @@
+{
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doclib__acl.json",
+  "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
+  "codeName" : "Doclib__acl",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "value" : "default",
+    "codeName" : "Default",
+    "text" : "默认"
+  }, {
+    "value" : "custom",
+    "codeName" : "Custom",
+    "text" : "自定义"
+  } ]
+}

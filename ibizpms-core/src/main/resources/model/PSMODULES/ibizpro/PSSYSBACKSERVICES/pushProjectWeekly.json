@@ -1,0 +1,9 @@
+{
+  "serviceOrder" : 0,
+  "serviceHandler" : "PushProjectWeekly",
+  "codeName" : "pushProjectWeekly",
+  "serviceContainer" : "SC01",
+  "startMode" : "AUTO",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/pushProjectWeekly.json",
+  "name" : "定时推送项目周报"
+}

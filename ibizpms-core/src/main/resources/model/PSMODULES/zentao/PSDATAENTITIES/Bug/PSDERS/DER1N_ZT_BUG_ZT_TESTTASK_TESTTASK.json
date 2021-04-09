@@ -1,0 +1,24 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "TESTTASK",
+    "codeName" : "Testtask"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "pickupDEFName" : "TESTTASK",
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ZTTestTask",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_TESTTASK_TESTTASK.json",
+  "name" : "DER1N_ZT_BUG_ZT_TESTTASK_TESTTASK"
+}

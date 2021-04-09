@@ -1,0 +1,35 @@
+{
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Block__module.json",
+  "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
+  "codeName" : "Block__module",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "refFlag" : true,
+  "getPSCodeItems" : [ {
+    "value" : "product",
+    "codeName" : "Product",
+    "text" : "产品"
+  }, {
+    "value" : "project",
+    "codeName" : "Project",
+    "text" : "项目"
+  }, {
+    "value" : "qa",
+    "codeName" : "Qa",
+    "text" : "测试"
+  }, {
+    "value" : "todo",
+    "codeName" : "Todo",
+    "text" : "待办"
+  }, {
+    "value" : "my",
+    "codeName" : "My",
+    "text" : "我的地盘"
+  } ]
+}

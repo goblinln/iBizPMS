@@ -1,0 +1,33 @@
+{
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+  },
+  "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
+  "codeName" : "Story__status",
+  "getPSCodeItems" : [ {
+    "value" : "draft",
+    "codeName" : "Draft",
+    "text" : "草稿",
+    "color" : "rgba(185, 111, 241, 1)"
+  }, {
+    "value" : "active",
+    "codeName" : "Active",
+    "text" : "激活"
+  }, {
+    "value" : "closed",
+    "codeName" : "Closed",
+    "text" : "已关闭",
+    "color" : "rgba(203, 198, 198, 0.84)"
+  }, {
+    "value" : "changed",
+    "codeName" : "Changed",
+    "text" : "已变更",
+    "color" : "rgba(217, 68, 68, 1)"
+  } ],
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__status.json",
+  "name" : "需求状态"
+}

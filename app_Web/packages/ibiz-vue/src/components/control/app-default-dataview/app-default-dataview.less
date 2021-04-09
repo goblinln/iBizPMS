@@ -1,0 +1,202 @@
+.app-data-view {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    // 排序栏样式
+    .bar-container{
+      padding: 6px 8px;
+      background-color: var(--ctrl-background-color-tint);
+      .ivu-row-flex.page-sort-bar{
+        width: 100%;
+        height: 30px;
+        .ivu-col{
+          user-select: none;
+          text-align: center;
+          display: flex;
+          align-items: flex-end;
+          padding-bottom: 4px;
+          background-color: var(--ctrl-background-color-bright);
+          border: 1px solid var(--ctrl-border-color-tint);
+          margin-left: -1px;
+          .sort-field-text{
+            margin-left: 7px;
+          }
+          .caret-wrapper{
+            width: 15px;
+            display: inline-block;
+            padding-bottom: 2px;
+            .ivu-icon{
+              display: block;
+              line-height: 0.5;
+              color: var(--ctrl-font-color-tint);
+            }
+          }
+        }
+        // 悬浮样式
+        .ivu-col:hover{
+            border:1px solid var(--ctrl-border-color-hover);
+            position:relative;
+            z-index:2;
+            .sort-field-text{
+              color: var(--ctrl-font-color-hover);
+            }
+        }
+        // 选中样式
+        .sort-ascending, .sort-descending{
+            border:1px solid var(--ctrl-border-color-hover);
+            position:relative;
+            z-index:2;
+          .sort-field-text{
+              color:var(--ctrl-font-color-active);
+              font-weight: 800;
+          }
+        }
+        .sort-ascending .caret-wrapper .ivu-icon.ivu-icon-md-arrow-dropup,
+        .sort-descending .caret-wrapper .ivu-icon.ivu-icon-md-arrow-dropdown{
+            color: var(--ctrl-font-color-active);
+        }
+      }
+    }
+    .data-view-container {
+      position: relative;
+// <#if hasSortBar>
+//         height: calc(100% - 42px);
+// <#else>
+//         height: 100%;
+// </#if>
+        align-content: start;
+        .el-collapse{
+          width: 100%;
+          .el-collapse-item__content{
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            .item-nodata {
+              padding-bottom: 10px;
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+        .el-collapse-item__header.is-active{
+          color: var(--ctrl-font-color-active);
+          background-color: var(--ctrl-background-color-active);
+        }
+        .ivu-col{
+          padding: 10px;
+          .el-card__body{
+            padding: 10px;
+          }
+        }
+        .el-card{
+          background-color: var(--ctrl-background-color-tint);
+          color: var(--ctrl-font-color-tint);
+          box-shadow: 0 2px 12px 0 var(--ctrl-shadow-color);
+        }
+        .single-card-data{
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            .data-view-item{
+              .single-card-default {
+                  .ivu-tooltip{
+                      .ivu-tooltip-rel{
+                          width: 150px;
+                          white-space: nowrap;
+                          text-overflow: ellipsis;
+                          overflow: hidden;
+                          text-align: left;
+                          padding-left: 5px;
+                          font-size: 18px;
+                          font-weight: 800;
+                      }
+                  }
+              }
+              .single-card-img {
+                  width: 150px;
+                  height: calc(100% - 32px);
+              }
+            }
+            .data-view-item-action{
+              button{
+                margin: 0 3px;
+                cursor: pointer;
+                padding:3px;
+              }
+              button:hover{
+                color: var(--ctrl-background-color-hover);
+              }
+              button:disabled, button:disabled:hover {
+                cursor: no-drop;
+                color: var(--ctrl-font-color-tint);
+              }
+            }
+        }
+        .isselected{
+            border: 2px solid var(--ctrl-font-color-active);
+            box-shadow: 5px 5px 12px 0 var(--ctrl-font-color-active);
+            .ivu-tooltip{
+                color: var(--ctrl-font-color-active);
+                font-weight: 800;
+            }
+        }
+        .single-card-data:hover{
+            border: 2px solid var(--ctrl-font-color-hover);
+            box-shadow: 5px 5px 12px 0 var(--ctrl-font-color-hover);
+            .ivu-tooltip{
+              color: var(--ctrl-font-color-hover);
+              font-weight: 800;
+            }
+        }
+    }
+    // 空值文本
+    .app-data-empty {
+// <#if hasSortBar>
+//         height: calc(100% - 42px);
+// <#else>
+//         height: 100%;
+// </#if>
+        color: var(--ctrl-font-color-tint);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .el-backtop {
+      position: absolute;
+    }
+// <#if ctrl.getBatchPSDEToolbar?? && ctrl.getBatchPSDEToolbar()??>
+    .drag-filed{
+        position: absolute;
+        height: 42px;
+        width: 100%;
+        top: 40px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        font-size: 20px;
+        z-index: 5;
+        .dataview-pagination-icon{
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          border:1px solid var(--ctrl-border-color-tint);
+          border-radius: 50%;
+          background-color: var(--ctrl-background-color-bright);
+          margin: 3px;
+          position: absolute;
+          right: 0;
+        }
+        .dataview-pagination-icon:hover{
+          background-color: var(--ctrl-background-color-hover);
+          color: var(--ctrl-background-color-bright)
+        }
+    }
+// </#if>
+}
+// <#ibizinclude>
+// ../@MACRO/CSS/DEFAULT.less.ftl
+// </#ibizinclude>

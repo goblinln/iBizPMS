@@ -1,0 +1,23 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : true,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "orderValue" : 1,
+  "codeName" : "Create",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "logicName" : "Create",
+  "extendMode" : 0,
+  "actionMode" : "CREATE",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Create.json",
+  "name" : "Create"
+}

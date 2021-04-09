@@ -1,0 +1,115 @@
+package cn.ibizlab.pms.zentao.logic.projectlogic.removetempmajor__msdeny;
+import java.util.Map;
+import java.util.HashMap;
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+global cn.ibizlab.pms.core.zentao.domain.Project projectremovetempmajor__msdenydefault;
+global cn.ibizlab.pms.core.zentao.domain.Project projectremovetempmajor__msdenytemp;
+global cn.ibizlab.pms.core.zentao.service.IProjectService projectservice;
+global cn.ibizlab.pms.core.zentao.service.IProjectService iBzSysProjectDefaultService;
+global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+no-loop
+
+//逻辑处理节点[状态[已挂起_未置顶]拒绝[removetempmajor]操作]
+rule "denybysuspended_0"
+ruleflow-group "projectremovetempmajor__msdenydenybysuspended_0"
+    when
+    then
+    update(projectremovetempmajor__msdenydefault);//更新fact中变量值
+    update(projectremovetempmajor__msdenytemp);//更新fact中变量值
+    end
+
+//逻辑处理节点[状态[已挂起_已置顶]拒绝[removetempmajor]操作]
+rule "denybysuspended_1"
+ruleflow-group "projectremovetempmajor__msdenydenybysuspended_1"
+    when
+    then
+    update(projectremovetempmajor__msdenydefault);//更新fact中变量值
+    update(projectremovetempmajor__msdenytemp);//更新fact中变量值
+    end
+
+//逻辑处理节点[状态[未开始_未置顶]拒绝[removetempmajor]操作]
+rule "denybywait_0"
+ruleflow-group "projectremovetempmajor__msdenydenybywait_0"
+    when
+    then
+    update(projectremovetempmajor__msdenydefault);//更新fact中变量值
+    update(projectremovetempmajor__msdenytemp);//更新fact中变量值
+    end
+
+//逻辑处理节点[状态[未开始_已置顶]拒绝[removetempmajor]操作]
+rule "denybywait_1"
+ruleflow-group "projectremovetempmajor__msdenydenybywait_1"
+    when
+    then
+    update(projectremovetempmajor__msdenydefault);//更新fact中变量值
+    update(projectremovetempmajor__msdenytemp);//更新fact中变量值
+    end
+
+//逻辑处理节点[状态[已关闭_未置顶]拒绝[removetempmajor]操作]
+rule "denybyclosed_0"
+ruleflow-group "projectremovetempmajor__msdenydenybyclosed_0"
+    when
+    then
+    update(projectremovetempmajor__msdenydefault);//更新fact中变量值
+    update(projectremovetempmajor__msdenytemp);//更新fact中变量值
+    end
+
+//逻辑处理节点[获取数据]
+rule "get"
+ruleflow-group "projectremovetempmajor__msdenyget"
+    when
+    then
+    cn.ibizlab.pms.util.helper.CachedBeanCopier.copy(projectservice.get(projectremovetempmajor__msdenytemp.getId()),projectremovetempmajor__msdenytemp);
+    update(projectremovetempmajor__msdenydefault);//更新fact中变量值
+    update(projectremovetempmajor__msdenytemp);//更新fact中变量值
+    end
+
+//逻辑处理节点[状态[已关闭_已置顶]拒绝[removetempmajor]操作]
+rule "denybyclosed_1"
+ruleflow-group "projectremovetempmajor__msdenydenybyclosed_1"
+    when
+    then
+    update(projectremovetempmajor__msdenydefault);//更新fact中变量值
+    update(projectremovetempmajor__msdenytemp);//更新fact中变量值
+    end
+
+//逻辑处理节点[准备临时参数]
+rule "preparetemp"
+ruleflow-group "projectremovetempmajor__msdenypreparetemp"
+    when
+    then
+    projectremovetempmajor__msdenytemp.set("id",projectremovetempmajor__msdenydefault.get("id"));
+    update(projectremovetempmajor__msdenydefault);//更新fact中变量值
+    update(projectremovetempmajor__msdenytemp);//更新fact中变量值
+    end
+
+//逻辑处理节点[状态[进行中_未置顶]拒绝[removetempmajor]操作]
+rule "denybydoing_0"
+ruleflow-group "projectremovetempmajor__msdenydenybydoing_0"
+    when
+    then
+    update(projectremovetempmajor__msdenydefault);//更新fact中变量值
+    update(projectremovetempmajor__msdenytemp);//更新fact中变量值
+    end
+
+//逻辑处理节点[开始]
+rule "begin"
+ruleflow-group "projectremovetempmajor__msdenybegin"
+    when
+    then
+    end
+
+//逻辑处理节点[状态[进行中_已置顶]拒绝[removetempmajor]操作]
+rule "denybydoing_1"
+ruleflow-group "projectremovetempmajor__msdenydenybydoing_1"
+    when
+    then
+    update(projectremovetempmajor__msdenydefault);//更新fact中变量值
+    update(projectremovetempmajor__msdenytemp);//更新fact中变量值
+    end
+

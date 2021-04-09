@@ -1,0 +1,29 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "LINE",
+    "codeName" : "Line"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "LINENAME",
+    "codeName" : "LineName"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "pickupDEFName" : "LINE",
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "ModuleLine",
+  "logicName" : "产品线",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DER1N_ZT_PRODUCT_ZT_MODULE_LINE.json",
+  "name" : "DER1N_ZT_PRODUCT_ZT_MODULE_LINE"
+}

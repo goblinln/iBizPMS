@@ -1,0 +1,1132 @@
+{
+  "showCaptionBar" : true,
+  "showDataInfoBar" : true,
+  "xDataControlName" : "form",
+  "getPSDEViewCodeName" : "EditView",
+  "funcViewMode" : "EDITVIEW",
+  "tempMode" : 1,
+  "openMode" : "DRAWER_TOP",
+  "caption" : "计划模板",
+  "title" : "产品计划模板编辑视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+    },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEEDITVIEW_STYLE2",
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "EditView",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "name" : "FORM",
+      "paramType" : "CTRL"
+    }, {
+      "name" : "P2K",
+      "value" : 0,
+      "paramType" : "VALUE"
+    } ],
+    "name" : "engine"
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "xDataControlName" : "form",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "SaveAndExit"
+    },
+    "name" : "toolbar_deuiaction1"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+  },
+  "getPSControls" : [ {
+    "controlType" : "TOOLBAR",
+    "getPSDEToolbarItems" : [ {
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+        },
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+        },
+        "timeout" : 60000,
+        "codeName" : "SaveAndExit",
+        "getPSSysImage" : {
+          "cssClass" : "sx-tb-saveandclose"
+        },
+        "caption" : "保存并关闭",
+        "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
+        "uIActionTag" : "SaveAndExit",
+        "uIActionType" : "DEUIACTION",
+        "uIActionMode" : "SYS",
+        "fullCodeName" : "SaveAndExit",
+        "name" : "编辑界面_保存并退出操作"
+      },
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+      },
+      "noPrivDisplayMode" : 2,
+      "getPSSysImage" : {
+        "cssClass" : "sx-tb-saveandclose"
+      },
+      "tooltip" : "保存并关闭",
+      "groupExtractMode" : "ITEM",
+      "showIcon" : true,
+      "itemType" : "DEUIACTION",
+      "caption" : "保存并关闭",
+      "showCaption" : true,
+      "name" : "deuiaction1"
+    } ],
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+    },
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "hookEventNames" : [ "CLICK" ],
+    "codeName" : "EditViewtoolbar",
+    "logicName" : "编辑界面（保存并关闭）",
+    "name" : "toolbar",
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+  }, {
+    "showFormNavBar" : false,
+    "enableAutoSave" : false,
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "getGetDraftPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraft"
+    },
+    "getGetDraftFromPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraftfrom"
+    },
+    "infoFormMode" : false,
+    "controlType" : "FORM",
+    "readOnly" : false,
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "noTabHeader" : true,
+    "getPSDEFormPages" : [ {
+      "getPSDEFormDetails" : [ {
+        "infoGroupMode" : false,
+        "actionGroupExtractMode" : "ITEM",
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
+        "getPSDEFormDetails" : [ {
+          "emptyCaption" : false,
+          "getPSEditor" : {
+            "maxLength" : 200,
+            "editorType" : "TEXTBOX",
+            "name" : "ibz_plantempletname"
+          },
+          "inputTipClosable" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "IBZ_PLANTEMPLETNAME",
+            "codeName" : "IbzPlanTempletName"
+          },
+          "hidden" : false,
+          "dataType" : 25,
+          "caption" : "模板名称",
+          "allowEmpty" : false,
+          "labelWidth" : 80,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "showCaption" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "ibz_plantempletname",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "ibz_plantempletname"
+        }, {
+          "emptyCaption" : false,
+          "getPSEditor" : {
+            "singleSelect" : true,
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanAcl.json"
+            },
+            "editorType" : "DROPDOWNLIST",
+            "name" : "acl"
+          },
+          "inputTipClosable" : false,
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ACL",
+            "codeName" : "Acl"
+          },
+          "hidden" : false,
+          "dataType" : 25,
+          "needCodeListConfig" : true,
+          "caption" : "权限",
+          "allowEmpty" : false,
+          "createDV" : "open",
+          "labelWidth" : 80,
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "showCaption" : true,
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "codeName" : "acl",
+          "detailType" : "FORMITEM",
+          "detailStyle" : "DEFAULT",
+          "name" : "acl"
+        } ],
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "group1",
+        "caption" : "产品计划模板基本信息",
+        "detailType" : "GROUPPANEL",
+        "detailStyle" : "DEFAULT",
+        "showCaption" : false,
+        "name" : "group1"
+      }, {
+        "needSave" : false,
+        "refreshItemsSetParamOnly" : false,
+        "parentDataJO" : {
+          "srfparentdefname" : "PLANTEMPLETID",
+          "srfparentdename" : "IBZ_PLANTEMPLET",
+          "SRFPARENTTYPE" : "DER1N",
+          "srfparentmode" : "DER1N_IBZ_PLANTEMPLETDETAIL_IBZ_PLANTEMPLET_PLANTEMPLETID",
+          "SRFDER1NID" : "DER1N_IBZ_PLANTEMPLETDETAIL_IBZ_PLANTEMPLET_PLANTEMPLETID"
+        },
+        "getPSAppView" : {
+          "rowEditDefault" : true,
+          "enableExport" : true,
+          "enableImport" : true,
+          "enableRowEdit" : true,
+          "gridRowActiveMode" : 0,
+          "enableFilter" : false,
+          "xDataControlName" : "grid",
+          "showCaptionBar" : false,
+          "getPSDEViewCodeName" : "GridView9",
+          "tempMode" : 2,
+          "caption" : "计划模板详情",
+          "title" : "计划模板详情表格视图",
+          "accUserMode" : 2,
+          "enableDP" : true,
+          "getPSViewLayoutPanel" : {
+            "layoutPanel" : true,
+            "useDefaultLayout" : true,
+            "controlType" : "VIEWLAYOUTPANEL",
+            "codeName" : "Layoutpanel",
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+            },
+            "getPSControlParam" : { },
+            "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
+            "name" : "layoutpanel"
+          },
+          "getPSAppViewEngines" : [ {
+            "engineType" : "GridView9",
+            "engineCat" : "VIEW",
+            "getPSUIEngineParams" : [ {
+              "name" : "OPENDATA",
+              "paramType" : "LOGIC"
+            }, {
+              "name" : "NEWDATA",
+              "paramType" : "LOGIC"
+            }, {
+              "name" : "GRID",
+              "paramType" : "CTRL"
+            } ],
+            "name" : "engine"
+          } ],
+          "getPSAppViewUIActions" : [ {
+            "xDataControlName" : "grid",
+            "getPSUIAction" : {
+              "modelref" : true,
+              "id" : "NewRow"
+            },
+            "name" : "toolbar_deuiaction2"
+          } ],
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+          },
+          "getPSControls" : [ {
+            "controlType" : "TOOLBAR",
+            "getPSDEToolbarItems" : [ {
+              "getPSAppViewUIAction" : {
+                "modelref" : true,
+                "id" : "toolbar_deuiaction2"
+              },
+              "getPSUIAction" : {
+                "getNoPrivDisplayMode" : 2,
+                "timeout" : 60000,
+                "codeName" : "NewRow",
+                "getPSSysImage" : {
+                  "glyph" : "xf067@FontAwesome",
+                  "cssClass" : "fa fa-plus"
+                },
+                "caption" : "新建行",
+                "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
+                "uIActionTag" : "NewRow",
+                "uIActionType" : "DEUIACTION",
+                "uIActionMode" : "SYS",
+                "fullCodeName" : "NewRow",
+                "name" : "表格界面_新建行"
+              },
+              "noPrivDisplayMode" : 2,
+              "getPSSysImage" : {
+                "glyph" : "xf067@FontAwesome",
+                "cssClass" : "fa fa-plus"
+              },
+              "tooltip" : "新建行",
+              "groupExtractMode" : "ITEM",
+              "showIcon" : true,
+              "itemType" : "DEUIACTION",
+              "caption" : "新建行",
+              "showCaption" : true,
+              "name" : "deuiaction2"
+            } ],
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+            },
+            "getPSControlParam" : {
+              "id" : "TOOLBAR"
+            },
+            "hookEventNames" : [ "CLICK" ],
+            "codeName" : "GridView9toolbar",
+            "logicName" : "表格界面（行编辑仅新建行）",
+            "name" : "toolbar",
+            "modelid" : "a5cf3f211750844db193707184d135a6"
+          }, {
+            "getPSDEGridDataItems" : [ {
+              "getPSAppDEField" : {
+                "name" : "EXPECT",
+                "codeName" : "Expect"
+              },
+              "name" : "expect",
+              "dataType" : 21
+            }, {
+              "getPSAppDEField" : {
+                "name" : "DESC",
+                "codeName" : "Desc"
+              },
+              "name" : "desc",
+              "dataType" : 21
+            }, {
+              "getPSAppDEField" : {
+                "name" : "ORDER",
+                "codeName" : "Order"
+              },
+              "name" : "order",
+              "dataType" : 9
+            }, {
+              "getPSAppDEField" : {
+                "name" : "TYPE",
+                "codeName" : "Type"
+              },
+              "name" : "type",
+              "dataType" : 25
+            }, {
+              "getPSAppDEField" : {
+                "name" : "IBZ_PLANTEMPLETDETAILNAME",
+                "codeName" : "IbzPlanTempletDetailName"
+              },
+              "name" : "srfmajortext",
+              "dataType" : 25
+            }, {
+              "dataAccessAction" : true,
+              "getPSAppDEField" : {
+                "name" : "IBZ_PLANTEMPLETDETAILID",
+                "codeName" : "IbzPlanTempletDetailId"
+              },
+              "name" : "srfdataaccaction",
+              "dataType" : 25
+            }, {
+              "getPSAppDEField" : {
+                "name" : "IBZ_PLANTEMPLETDETAILID",
+                "codeName" : "IbzPlanTempletDetailId"
+              },
+              "name" : "srfkey",
+              "dataType" : 25
+            }, {
+              "getPSAppDEField" : {
+                "name" : "PLANCODE",
+                "codeName" : "Plancode"
+              },
+              "name" : "plancode",
+              "dataType" : 25
+            }, {
+              "getPSAppDEField" : {
+                "name" : "PLANTEMPLETID",
+                "codeName" : "Plantempletid"
+              },
+              "name" : "plantempletid",
+              "dataType" : 25
+            } ],
+            "singleSelect" : true,
+            "enableColFilter" : false,
+            "enableRowNew" : true,
+            "enableRowEditOrder" : false,
+            "noSort" : false,
+            "getPSDEGridEditItems" : [ {
+              "getPSEditor" : {
+                "maxLength" : 1048576,
+                "editorType" : "TEXTBOX",
+                "placeHolder" : "描述",
+                "name" : "expect1"
+              },
+              "getPSAppDEField" : {
+                "name" : "EXPECT",
+                "codeName" : "Expect"
+              },
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "codeName" : "expect1",
+              "caption" : "描述",
+              "name" : "expect1"
+            }, {
+              "getPSEditor" : {
+                "maxLength" : 1048576,
+                "editorType" : "TEXTBOX",
+                "placeHolder" : "计划名称不能为空",
+                "name" : "desc"
+              },
+              "getPSAppDEField" : {
+                "name" : "DESC",
+                "codeName" : "Desc"
+              },
+              "allowEmpty" : false,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "codeName" : "desc",
+              "caption" : "计划名称",
+              "name" : "desc"
+            }, {
+              "getPSEditor" : {
+                "editorType" : "NUMBER",
+                "name" : "order"
+              },
+              "getPSAppDEField" : {
+                "name" : "ORDER",
+                "codeName" : "Order"
+              },
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "codeName" : "order",
+              "caption" : "排序",
+              "name" : "order"
+            }, {
+              "getPSEditor" : {
+                "singleSelect" : true,
+                "getPSAppCodeList" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlantempletType.json"
+                },
+                "editorType" : "DROPDOWNLIST",
+                "name" : "type"
+              },
+              "getPSAppDEField" : {
+                "name" : "TYPE",
+                "codeName" : "Type"
+              },
+              "needCodeListConfig" : true,
+              "allowEmpty" : false,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "codeName" : "type",
+              "caption" : "类型",
+              "name" : "type"
+            }, {
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "srfkey"
+              },
+              "getPSAppDEField" : {
+                "name" : "IBZ_PLANTEMPLETDETAILID",
+                "codeName" : "IbzPlanTempletDetailId"
+              },
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "codeName" : "srfkey",
+              "caption" : "计划模板详情标识",
+              "name" : "srfkey"
+            }, {
+              "getPSEditor" : {
+                "maxLength" : 100,
+                "editorType" : "TEXTBOX",
+                "name" : "plancode"
+              },
+              "getPSAppDEField" : {
+                "name" : "PLANCODE",
+                "codeName" : "Plancode"
+              },
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "codeName" : "plancode",
+              "caption" : "计划编号",
+              "name" : "plancode"
+            }, {
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "plantempletid"
+              },
+              "getPSAppDEField" : {
+                "name" : "PLANTEMPLETID",
+                "codeName" : "Plantempletid"
+              },
+              "allowEmpty" : true,
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "codeName" : "plantempletid",
+              "caption" : "产品计划模板标识",
+              "name" : "plantempletid"
+            } ],
+            "hasWFDataItems" : false,
+            "getCreatePSControlAction" : {
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+              },
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "CreateTemp"
+              },
+              "dataAccessAction" : "CREATE",
+              "actionName" : "CreateTemp",
+              "actionType" : "DEACTION",
+              "name" : "create"
+            },
+            "getUpdatePSControlAction" : {
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+              },
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "UpdateTemp"
+              },
+              "dataAccessAction" : "UPDATE",
+              "actionName" : "UpdateTemp",
+              "actionType" : "DEACTION",
+              "name" : "update"
+            },
+            "getRemovePSControlAction" : {
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+              },
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "RemoveTemp"
+              },
+              "dataAccessAction" : "DELETE",
+              "actionName" : "RemoveTemp",
+              "actionType" : "DEACTION",
+              "name" : "remove"
+            },
+            "getGetPSControlAction" : {
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+              },
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "GetTemp"
+              },
+              "dataAccessAction" : "READ",
+              "actionName" : "GetTemp",
+              "actionType" : "DEACTION",
+              "name" : "load"
+            },
+            "getGetDraftPSControlAction" : {
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+              },
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "GetDraftTemp"
+              },
+              "dataAccessAction" : "CREATE",
+              "actionName" : "GetDraftTemp",
+              "actionType" : "DEACTION",
+              "name" : "loaddraft"
+            },
+            "columnEnableLink" : 2,
+            "enableRowEdit" : true,
+            "enablePagingBar" : false,
+            "controlType" : "GRID",
+            "getPSDEGridColumns" : [ {
+              "excelCaption" : "计划名称",
+              "dataItemName" : "desc",
+              "enableRowEdit" : true,
+              "getPSAppDEField" : {
+                "name" : "DESC",
+                "codeName" : "Desc"
+              },
+              "cLConvertMode" : "NONE",
+              "noPrivDisplayMode" : 1,
+              "enableSort" : false,
+              "width" : 200,
+              "codeName" : "desc",
+              "caption" : "计划名称",
+              "columnType" : "DEFGRIDCOLUMN",
+              "align" : "LEFT",
+              "widthUnit" : "PX",
+              "name" : "desc"
+            }, {
+              "excelCaption" : "类型",
+              "getPSAppCodeList" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlantempletType.json"
+              },
+              "dataItemName" : "type",
+              "enableRowEdit" : true,
+              "getPSAppDEField" : {
+                "name" : "TYPE",
+                "codeName" : "Type"
+              },
+              "cLConvertMode" : "FRONT",
+              "hideDefault" : true,
+              "noPrivDisplayMode" : 1,
+              "enableSort" : true,
+              "width" : 100,
+              "codeName" : "type",
+              "caption" : "类型",
+              "columnType" : "DEFGRIDCOLUMN",
+              "align" : "LEFT",
+              "widthUnit" : "PX",
+              "name" : "type"
+            }, {
+              "excelCaption" : "描述",
+              "dataItemName" : "expect",
+              "enableRowEdit" : true,
+              "getPSAppDEField" : {
+                "name" : "EXPECT",
+                "codeName" : "Expect"
+              },
+              "cLConvertMode" : "NONE",
+              "noPrivDisplayMode" : 1,
+              "enableSort" : false,
+              "width" : 200,
+              "codeName" : "expect1",
+              "caption" : "描述",
+              "columnType" : "DEFGRIDCOLUMN",
+              "align" : "LEFT",
+              "widthUnit" : "STAR",
+              "name" : "expect1"
+            } ],
+            "codeName" : "Main_Edit",
+            "enableGroup" : false,
+            "hideHeader" : false,
+            "forceFit" : false,
+            "pagingSize" : 50,
+            "aggMode" : "NONE",
+            "groupMode" : "NONE",
+            "sortMode" : "REMOTE",
+            "getFetchPSControlAction" : {
+              "modelref" : true,
+              "id" : "fetch"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+            },
+            "getPSControlHandler" : {
+              "userDRAction" : "READ",
+              "getPSHandlerActions" : [ {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "UpdateTemp"
+                },
+                "dataAccessAction" : "UPDATE",
+                "actionName" : "UpdateTemp",
+                "actionType" : "DEACTION",
+                "name" : "update"
+              }, {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "FetchTempDefault"
+                },
+                "actionType" : "DEDATASET",
+                "name" : "fetch"
+              }, {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "RemoveTemp"
+                },
+                "dataAccessAction" : "DELETE",
+                "actionName" : "RemoveTemp",
+                "actionType" : "DEACTION",
+                "name" : "remove"
+              }, {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "GetTemp"
+                },
+                "dataAccessAction" : "READ",
+                "actionName" : "GetTemp",
+                "actionType" : "DEACTION",
+                "name" : "load"
+              }, {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "GetDraftTemp"
+                },
+                "dataAccessAction" : "CREATE",
+                "actionName" : "GetDraftTemp",
+                "actionType" : "DEACTION",
+                "name" : "loaddraft"
+              }, {
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+                },
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "CreateTemp"
+                },
+                "dataAccessAction" : "CREATE",
+                "actionName" : "CreateTemp",
+                "actionType" : "DEACTION",
+                "name" : "create"
+              } ],
+              "enableDEFieldPrivilege" : false,
+              "id" : "数据表格处理器"
+            },
+            "getPSControlParam" : {
+              "autoLoad" : true,
+              "showBusyIndicator" : true,
+              "id" : "GRID"
+            },
+            "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail/PSGRIDS/Main_Edit.json",
+            "getPSSysPFPlugin" : {
+              "pluginType" : "GRID_RENDER",
+              "pluginCode" : "StepTable"
+            },
+            "logicName" : "行编辑",
+            "name" : "grid",
+            "modelid" : "7a427031b62885759a7284ed9d89f536"
+          } ],
+          "viewStyle" : "STYLE2",
+          "codeName" : "IbzPlanTempletDetailGridView9",
+          "getPSAppViewLogics" : [ {
+            "logicTrigger" : "CTRLEVENT",
+            "getPSViewCtrlName" : "toolbar",
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "toolbar_deuiaction2"
+            },
+            "eventArg" : "deuiaction2",
+            "eventNames" : "CLICK",
+            "logicType" : "APPVIEWUIACTION",
+            "name" : "toolbar_deuiaction2_click"
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "getPSAppUILogic" : {
+              "enableBatchAdd" : false,
+              "batchAddOnly" : false,
+              "enableWizardAdd" : false,
+              "actionAfterWizard" : "DEFAULT",
+              "viewLogicType" : "APP_NEWDATA",
+              "logicType" : "PREDEFINED",
+              "name" : "新建数据"
+            },
+            "logicType" : "SYSUILOGIC",
+            "name" : "newdata"
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "getPSAppUILogic" : {
+              "viewLogicType" : "APP_OPENDATA",
+              "logicType" : "PREDEFINED",
+              "name" : "打开数据"
+            },
+            "logicType" : "SYSUILOGIC",
+            "name" : "opendata"
+          } ],
+          "viewType" : "DEGRIDVIEW9",
+          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletDetailGridView9.json",
+          "name" : "IbzPlanTempletDetailGridView9",
+          "getPSAppDERSPaths" : [ [ {
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "enableCreateDataRS" : false,
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+            },
+            "getMinorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json"
+            },
+            "getParentPSAppDEField" : {
+              "name" : "PLANTEMPLETID",
+              "codeName" : "Plantempletid"
+            },
+            "codeName" : "PlanTempletDetails",
+            "actionRSMode" : 1,
+            "dataRSMode" : 0,
+            "rSMode" : 2,
+            "name" : "计划模板-详情"
+          } ] ]
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "druipart1",
+        "detailType" : "DRUIPART",
+        "detailStyle" : "DEFAULT",
+        "showCaption" : true,
+        "name" : "druipart1"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "plans"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PLANS",
+          "codeName" : "Plans"
+        },
+        "hidden" : true,
+        "dataType" : 25,
+        "caption" : "计划",
+        "allowEmpty" : true,
+        "createDV" : "plans",
+        "createDVT" : "CONTEXT",
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "plans",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "plans"
+      }, {
+        "emptyCaption" : false,
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "product"
+        },
+        "inputTipClosable" : false,
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PRODUCT",
+          "codeName" : "Product"
+        },
+        "hidden" : true,
+        "dataType" : 1,
+        "caption" : "产品",
+        "allowEmpty" : true,
+        "createDV" : "product",
+        "createDVT" : "CONTEXT",
+        "labelWidth" : 130,
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "showCaption" : true,
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "codeName" : "product",
+        "detailType" : "FORMITEM",
+        "detailStyle" : "DEFAULT",
+        "name" : "product"
+      } ],
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "infoGroupMode" : false,
+      "codeName" : "formpage1",
+      "caption" : "基本信息",
+      "detailType" : "FORMPAGE",
+      "detailStyle" : "DEFAULT",
+      "name" : "formpage1"
+    } ],
+    "getPSDEFormItems" : [ {
+      "id" : "srfupdatedate",
+      "hidden" : true,
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      }
+    }, {
+      "id" : "srforikey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfkey",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      }
+    }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETNAME",
+        "codeName" : "IbzPlanTempletName"
+      }
+    }, {
+      "id" : "srftempmode",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfuf",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfdeid",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfsourcekey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "ibz_plantempletname",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETNAME",
+        "codeName" : "IbzPlanTempletName"
+      }
+    }, {
+      "id" : "acl",
+      "dataType" : 25,
+      "createDV" : "open",
+      "getPSAppDEField" : {
+        "name" : "ACL",
+        "codeName" : "Acl"
+      }
+    }, {
+      "id" : "plans",
+      "hidden" : true,
+      "dataType" : 25,
+      "createDVT" : "CONTEXT",
+      "createDV" : "plans",
+      "getPSAppDEField" : {
+        "name" : "PLANS",
+        "codeName" : "Plans"
+      }
+    }, {
+      "id" : "product",
+      "hidden" : true,
+      "dataType" : 1,
+      "createDVT" : "CONTEXT",
+      "createDV" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      }
+    }, {
+      "id" : "ibz_plantempletid",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETID",
+        "codeName" : "IbzPlanTempletId"
+      }
+    } ],
+    "codeName" : "Main",
+    "tabHeaderPos" : "TOP",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "UpdateTempMajor"
+        },
+        "dataAccessAction" : "UPDATE",
+        "actionName" : "UpdateTempMajor",
+        "actionType" : "DEACTION",
+        "name" : "update"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GETDRAFTTEMPMAJORFROM",
+        "actionType" : "DEACTION",
+        "name" : "loaddraftfrom"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "RemoveTempMajor"
+        },
+        "dataAccessAction" : "DELETE",
+        "actionName" : "RemoveTempMajor",
+        "actionType" : "DEACTION",
+        "name" : "remove"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraftTempMajor"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "GetDraftTempMajor",
+        "actionType" : "DEACTION",
+        "name" : "loaddraft"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetTempMajor"
+        },
+        "dataAccessAction" : "READ",
+        "actionName" : "GetTempMajor",
+        "actionType" : "DEACTION",
+        "name" : "load"
+      }, {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "CreateTempMajor"
+        },
+        "dataAccessAction" : "CREATE",
+        "actionName" : "CreateTempMajor",
+        "actionType" : "DEACTION",
+        "name" : "create"
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "编辑表单处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet/PSFORMS/Main.json",
+    "logicName" : "主编辑表单",
+    "name" : "form",
+    "modelid" : "2d7b0cbca66ad197036a53386c256530"
+  } ],
+  "viewStyle" : "STYLE2",
+  "codeName" : "IbzPlanTempletEditView",
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CTRLEVENT",
+    "getPSViewCtrlName" : "toolbar",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction1"
+    },
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction1_click"
+  } ],
+  "viewType" : "DEEDITVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json",
+  "name" : "IbzPlanTempletEditView"
+}

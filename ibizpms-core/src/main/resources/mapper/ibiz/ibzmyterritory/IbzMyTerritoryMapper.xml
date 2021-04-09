@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.IbzMyTerritoryMapper">
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="IbzMyTerritoryResultMap" databaseId="mysql">
+        <![CDATA[select t1.* from (SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1  ) t1 where id=#{id}]]>
+    </select>
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="IbzMyTerritoryResultMap" type="cn.ibizlab.pms.core.ibiz.domain.IbzMyTerritory" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+
+
+    </resultMap>
+
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext"  resultMap="IbzMyTerritoryResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[MyWork]-->
+	 <select id="searchMyWork"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext"  resultMap="IbzMyTerritoryResultMap">
+         select t1.* from (
+                <include refid="MyWork" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[MyWorkMob]-->
+	 <select id="searchMyWorkMob"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext"  resultMap="IbzMyTerritoryResultMap">
+         select t1.* from (
+                <include refid="MyWorkMob" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[MyWorkPm]-->
+	 <select id="searchMyWorkPm"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext"  resultMap="IbzMyTerritoryResultMap">
+         select t1.* from (
+                <include refid="MyWorkPm" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[PersonInfo]-->
+	 <select id="searchPersonInfo"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext"  resultMap="IbzMyTerritoryResultMap">
+         select t1.* from (
+                <include refid="PersonInfo" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据集合[Welcome]-->
+	 <select id="searchWelcome"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext"  resultMap="IbzMyTerritoryResultMap">
+         select t1.* from (
+                <include refid="Welcome" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1  
+			]]>
+    </sql>
+    <!--数据查询[MyWork]-->
+    <sql id="MyWork" databaseId="mysql">
+		<![CDATA[ SELECT 	t1.`ACCOUNT`, 	t11.mytasks, 	CONCAT('已延期 ',t51.MYETASKS) as MYETASKS, 	t21.mybugs, 	CONCAT('已延期 ', t31.myEbugs) as myEbugs, 	t41.mystorys , 	(select count(1) as projects from zt_project tt where tt.deleted = '0' and (tt.`status` <> 'closed' )) as  projects, 	concat('已延期 ', (select count(1) as eprojects from zt_project tt where tt.deleted = '0' and (tt.`status` <> 'closed' ) and tt.`end` < DATE_FORMAT(now(),'%Y-%m-%d'))) as  eprojects, 	(select count(1) as products from zt_product tt where tt.`status` = 'normal' and tt.deleted = '0' and tt.acl = 'open') as  products FROM 	(select DISTINCT t1.actor as account from zt_action t1 where t1.actor <> '' and t1.actor is not null) t1 	LEFT JOIN ( SELECT t.assignedTo AS account, COUNT( 1 ) AS mytasks FROM zt_task t GROUP BY t.assignedTo ) t11 ON t1.account = t11.account 	LEFT JOIN ( SELECT t.assignedTo AS account, COUNT( 1 ) AS mybugs FROM zt_bug t GROUP BY t.assignedTo ) t21 ON t1.account = t21.account 	LEFT JOIN ( SELECT 	t.assignedTo AS account, 	COUNT( 1 ) AS myEbugs  FROM 	zt_bug t  WHERE 	t.DEADLINE < DATE_FORMAT( now( ), '%Y-%m-%d' )  	AND t.`status` = 'active'  GROUP BY 	t.assignedTo  	) t31 ON t1.account = t31.account 	LEFT JOIN ( SELECT t.assignedTo AS account, COUNT( 1 ) AS mystorys FROM zt_story t GROUP BY t.assignedTo ) t41 ON t1.account = t41.account 	LEFT JOIN ( SELECT t.assignedTo AS account, COUNT( 1 ) AS MYETASKS FROM zt_task t where (t.`status` = 'wait' or t.`status` = 'doing') and (t.DEADLINE < DATE_FORMAT(now(),'%Y-%m-%d') and t.deadline <> '0000-00-00') GROUP BY t.assignedTo ) t51 ON t1.account = t51.account
+			]]>
+    </sql>
+    <!--数据查询[MyWorkMob]-->
+    <sql id="MyWorkMob" databaseId="mysql">
+		<![CDATA[ SELECT 	t1.`ACCOUNT`, 	t11.mytasks, 	CONCAT(t51.MYETASKS) as MYETASKS, 	t21.mybugs, 	CONCAT( t31.myEbugs) as myEbugs, 	t41.mystorys , 	(select count(1) as projects from zt_project tt where tt.deleted = '0' and (tt.`status` <> 'closed' )) as  projects, 	concat((select count(1) as eprojects from zt_project tt where tt.deleted = '0' and (tt.`status` <> 'closed' ) and tt.`end` < DATE_FORMAT(now(),'%Y-%m-%d'))) as  eprojects, 	(select count(1) as products from zt_product tt where tt.`status` = 'normal' and tt.deleted = '0' and tt.acl = 'open') as  products FROM 	(select DISTINCT t1.actor as account from zt_action t1 where t1.actor <> '' and t1.actor is not null) t1 	LEFT JOIN ( SELECT t.assignedTo AS account, COUNT( 1 ) AS mytasks FROM zt_task t GROUP BY t.assignedTo ) t11 ON t1.account = t11.account 	LEFT JOIN ( SELECT t.assignedTo AS account, COUNT( 1 ) AS mybugs FROM zt_bug t GROUP BY t.assignedTo ) t21 ON t1.account = t21.account 	LEFT JOIN ( SELECT 	t.assignedTo AS account, 	COUNT( 1 ) AS myEbugs  FROM 	zt_bug t  WHERE 	t.DEADLINE < DATE_FORMAT( now( ), '%Y-%m-%d' )  	AND t.`status` = 'active'  GROUP BY 	t.assignedTo  	) t31 ON t1.account = t31.account 	LEFT JOIN ( SELECT t.assignedTo AS account, COUNT( 1 ) AS mystorys FROM zt_story t GROUP BY t.assignedTo ) t41 ON t1.account = t41.account 	LEFT JOIN ( SELECT t.assignedTo AS account, COUNT( 1 ) AS MYETASKS FROM zt_task t where (t.`status` = 'wait' or t.`status` = 'doing') and (t.DEADLINE < DATE_FORMAT(now(),'%Y-%m-%d') and t.deadline <> '0000-00-00') GROUP BY t.assignedTo ) t51 ON t1.account = t51.account
+			]]>
+    </sql>
+    <!--数据查询[MyWorkPm]-->
+    <sql id="MyWorkPm" databaseId="mysql">
+		<![CDATA[ SELECT 	t1.`ACCOUNT`, 	(select count(1) as projects from zt_project tt where tt.deleted = '0' and (tt.`status` <> 'closed' ) and tt.pm = t1.account) as  projects, 	concat('已延期 ', (select count(1) as eprojects from zt_project tt where tt.deleted = '0' and (tt.`status` <> 'closed' ) and tt.`end` < DATE_FORMAT(now(),'%Y-%m-%d') and tt.pm = t1.account) ) as  eprojects, 	(select count(1) as LEFTLCBCNT from T_PMSEE_MILESTONE tt left JOIN t_pmsee_project t2 on t2.PMSEE_PROJECTID = tt.projectid and tt.version = t2.MILESTONEVERSION where t2.deleted = '0' and tt.`status` = '0' and t2.PMO = t1.account) as LEFTLCBCNT, 	concat('今日里程碑 ',(select count(1) as LEFTLCBJZCNT from T_PMSEE_MILESTONE tt left JOIN t_pmsee_project t2 on t2.PMSEE_PROJECTID = tt.projectid and tt.version = t2.MILESTONEVERSION where t2.deleted = '0' and DATE_FORMAT(now(),'%Y-%m-%d') = DATE_FORMAT(tt.`end`,'%Y-%m-%d') and t2.PMO = t1.account)) as LEFTLCBJZCNT, 	(select count(1) as PROJECTTEAMCNT from (select t2.pm,tt.account from zt_team tt left join zt_project t2 on tt.root = t2.id where tt.type = 'project' and t2.PM is not null and t2.pm <> '' GROUP BY t2.PM, tt.account) tt where tt.pm = t1.account) as PROJECTTEAMCNT, 	concat('今日离场 ',(select count(1) as PROJECTTEAMJZCNT  from (select t2.pm,tt.account from zt_team tt left join zt_project t2 on tt.root = t2.id where DATE_FORMAT(now(),'%Y-%m-%d') = DATE_FORMAT(DATE_ADD(tt.`join`, INTERVAL tt.days day),'%Y-%m-%d')  and tt.type = 'project' and t2.PM is not null and t2.pm <> '' GROUP BY t2.PM, tt.account) tt where tt.pm = t1.account)) as PROJECTTEAMJZCNT, 	(select count(1) as MYTODOCNT from zt_todo t where t.`status` in( 'doing', 'wait') and t.type = 'custom' and t.cycle = '0' and t.account = t1.account) as MYTODOCNT, 	concat('今日截止 ',(select count(1) as MYTODOCNTJZ from zt_todo t where t.`status` in( 'doing', 'wait') and t.type = 'custom' and t.cycle = '0' and DATE_FORMAT(now(),'%Y-%m-%d') >= t.date and t.account = t1.account)) as MYTODOCNTJZ FROM 	(select DISTINCT t1.actor as account from zt_action t1 where t1.actor <> '' and t1.actor is not null) t1
+			]]>
+    </sql>
+    <!--数据查询[PersonInfo]-->
+    <sql id="PersonInfo" databaseId="mysql">
+		<![CDATA[ SELECT #{srf.sessioncontext.srfloginname} as account, (SELECT count(1) from zt_todo where account = #{srf.sessioncontext.srfloginname} ) as mytodocnt,(SELECT count(1) from zt_story where deleted = '0' and openedBy = #{srf.sessioncontext.srfloginname}) as mystorys, (SELECT count(1) from zt_task where deleted = '0' and (`status` = 'done' or (`status` = 'closed' and closedReason = 'done') ) and parent >= 0 and ((finishedBy = #{srf.sessioncontext.srfloginname} and not EXISTS (SELECT 1 from zt_team t where t.root = id and t.type = 'task'))  or FIND_IN_SET(#{srf.sessioncontext.srfloginname},finishedList) )) as mytasks, (SELECT count(1) from zt_bug where `status` in ('closed','resolved') and resolution = 'fixed' and resolvedBy = #{srf.sessioncontext.srfloginname}) as mybugs, (SELECT count(1) from zt_case where deleted = '0' and openedBy =  #{srf.sessioncontext.srfloginname}) as MYFAVORITEBUGS
+			]]>
+    </sql>
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1  
+			]]>
+    </sql>
+    <!--数据查询[Welcome]-->
+    <sql id="Welcome" databaseId="mysql">
+		<![CDATA[ select CONCAT(t1.REALNAME,'，',t1.NICKNAME,'!') as realname, t1.ACCOUNT from (SELECT 	t1.`ACCOUNT`, 	(case when DATE_FORMAT(now(),'%H') < 11 AND DATE_FORMAT(now(),'%H') >= 5   then '早上好' when DATE_FORMAT(now(),'%H') < 14 AND DATE_FORMAT(now(),'%H') >= 11 then '中午好' when DATE_FORMAT(now(),'%H') < 19 AND DATE_FORMAT(now(),'%H') >= 14 then '下午好' when (DATE_FORMAT(now(),'%H') >= 19 || DATE_FORMAT(now(),'%H') < 5) then '晚上好' end) AS `NICKNAME`, 	t1.`REALNAME` FROM 	`zt_user` t1) t1
+			]]>
+    </sql>
+</mapper>
+

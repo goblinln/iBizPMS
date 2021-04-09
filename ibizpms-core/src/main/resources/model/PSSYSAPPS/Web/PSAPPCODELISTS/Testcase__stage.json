@@ -1,0 +1,38 @@
+{
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+  },
+  "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
+  "codeName" : "Testcase__stage",
+  "getPSCodeItems" : [ {
+    "value" : "unittest",
+    "codeName" : "Unittest",
+    "text" : "单元测试阶段"
+  }, {
+    "value" : "feature",
+    "codeName" : "Feature",
+    "text" : "功能测试阶段"
+  }, {
+    "value" : "intergrate",
+    "codeName" : "Intergrate",
+    "text" : "集成测试阶段"
+  }, {
+    "value" : "system",
+    "codeName" : "System",
+    "text" : "系统测试阶段"
+  }, {
+    "value" : "smoke",
+    "codeName" : "Smoke",
+    "text" : "冒烟测试阶段"
+  }, {
+    "value" : "bvt",
+    "codeName" : "Bvt",
+    "text" : "版本验证阶段"
+  } ],
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__stage.json",
+  "name" : "测试用例阶段"
+}

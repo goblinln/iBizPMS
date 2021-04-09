@@ -1,0 +1,14 @@
+{
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "subSysCodeList" : false,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TestTask.json",
+  "codeListType" : "DYNAMIC",
+  "dynaInstMode" : 1,
+  "codeName" : "TestTask",
+  "userScope" : false,
+  "emptyText" : "未定义",
+  "enableCache" : false,
+  "refFlag" : true
+}

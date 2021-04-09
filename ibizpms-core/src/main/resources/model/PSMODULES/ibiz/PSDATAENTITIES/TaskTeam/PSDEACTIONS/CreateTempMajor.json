@@ -1,0 +1,25 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : true,
+  "tempDataMode" : 1,
+  "timeOut" : -1,
+  "orderValue" : 3,
+  "codeName" : "CreateTempMajor",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "logicName" : "CreateTempMajor",
+  "extendMode" : 0,
+  "enableTempData" : true,
+  "actionMode" : "CREATE",
+  "actionType" : "BUILTIN",
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDEACTIONS/CreateTempMajor.json",
+  "name" : "CreateTempMajor"
+}

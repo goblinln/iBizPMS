@@ -1,0 +1,37 @@
+{
+  "loadDefault" : true,
+  "htmlUrl" : "./assets/html/iBizPMS.html",
+  "showCaptionBar" : false,
+  "getPSDEViewCodeName" : "HtmlView",
+  "caption" : "iBiz软件生产管理",
+  "title" : "iBiz软件生产管理",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEHTMLVIEW_STYLE2",
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "HtmlView",
+    "engineCat" : "VIEW",
+    "name" : "engine"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+  },
+  "viewStyle" : "STYLE2",
+  "codeName" : "ProductHtmlView",
+  "viewType" : "DEHTMLVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductHtmlView.json",
+  "name" : "ProductHtmlView"
+}

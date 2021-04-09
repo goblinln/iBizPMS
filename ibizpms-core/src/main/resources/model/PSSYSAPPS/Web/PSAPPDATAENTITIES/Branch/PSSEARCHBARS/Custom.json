@@ -1,0 +1,84 @@
+{
+  "quickSearchMode" : 1,
+  "mobileSearchBar" : false,
+  "getPSSearchBarFilters" : [ {
+    "emptyCaption" : false,
+    "getPSEditor" : {
+      "editorWidth" : 100.0,
+      "editorType" : "TEXTBOX",
+      "name" : "namelike"
+    },
+    "hidden" : false,
+    "dataType" : 25,
+    "caption" : "名称(%)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "LIKE",
+      "codeName" : "N_NAME_LIKE",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "N_NAME_LIKE"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "itemWidth" : 100.0,
+    "showCaption" : false,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "itemType" : "FILTER",
+    "name" : "namelike"
+  }, {
+    "emptyCaption" : false,
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "name" : "producteq"
+    },
+    "hidden" : false,
+    "dataType" : 1,
+    "needCodeListConfig" : true,
+    "caption" : "所属产品(=)",
+    "getPSDEFSearchMode" : {
+      "valueOP" : "EQ",
+      "codeName" : "N_PRODUCT_EQ",
+      "default" : false,
+      "getPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "name" : "N_PRODUCT_EQ"
+    },
+    "allowEmpty" : true,
+    "labelWidth" : 0,
+    "labelPos" : "NONE",
+    "showCaption" : false,
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "itemType" : "FILTER",
+    "name" : "producteq"
+  } ],
+  "enableFilter" : true,
+  "controlType" : "SEARCHBAR",
+  "codeName" : "Custom",
+  "enableQuickSearch" : true,
+  "enableGroup" : false,
+  "quickSearchWidth" : 0,
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch/PSSEARCHBARS/Custom.json",
+  "logicName" : "平台自定义搜索栏",
+  "modelid" : "5df704a47ceb5a4e0cb38e658c16a8a3"
+}

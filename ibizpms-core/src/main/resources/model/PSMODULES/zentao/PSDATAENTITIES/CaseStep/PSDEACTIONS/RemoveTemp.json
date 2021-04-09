@@ -1,0 +1,26 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : false,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : true,
+  "tempDataMode" : 2,
+  "timeOut" : -1,
+  "orderValue" : 22,
+  "codeName" : "RemoveTemp",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "DELETE"
+  },
+  "logicName" : "RemoveTemp",
+  "extendMode" : 0,
+  "enableTempData" : true,
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/RemoveTemp.json",
+  "name" : "RemoveTemp"
+}

@@ -1,0 +1,327 @@
+{
+  "getPSAppMenuItems" : [ {
+    "getPSAppMenuItems" : [ {
+      "openDefault" : true,
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "Auto23"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 2,
+      "caption" : "我的收藏",
+      "tooltip" : "我的收藏",
+      "name" : "menuitem12"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "Auto10"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 2,
+      "caption" : "我的地盘",
+      "tooltip" : "我的地盘",
+      "name" : "menuitem9"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "Auto1"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 0,
+      "caption" : "产品主页",
+      "tooltip" : "产品主页",
+      "name" : "menuitem3"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "Auto6"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 0,
+      "caption" : "项目主页",
+      "tooltip" : "项目主页",
+      "name" : "menuitem2"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "Auto9"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 0,
+      "caption" : "测试主页",
+      "tooltip" : "测试主页",
+      "name" : "menuitem1"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "AppFunc4"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 2,
+      "caption" : "文档",
+      "tooltip" : "文档",
+      "name" : "menuitem16"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "AppFunc7"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 2,
+      "caption" : "计划模板",
+      "tooltip" : "计划模板",
+      "name" : "menuitem23"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "AppFunc"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 2,
+      "caption" : "统计",
+      "tooltip" : "统计",
+      "name" : "menuitem22"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "POAppFunc"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 2,
+      "caption" : "年度统计",
+      "tooltip" : "年度统计",
+      "name" : "menuitem25"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "Auto8"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 2,
+      "caption" : "iBiz软件生产管理",
+      "tooltip" : "iBiz软件生产管理",
+      "name" : "menuitem7"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "AppFunc8"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 2,
+      "caption" : "通讯录",
+      "tooltip" : "通讯录",
+      "name" : "menuitem26"
+    }, {
+      "hidden" : true,
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "AppFunc9"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 2,
+      "caption" : "全文检索",
+      "tooltip" : "全文检索",
+      "name" : "menuitem27"
+    }, {
+      "getPSAppMenuItems" : [ {
+        "getPSAppFunc" : {
+          "modelref" : true,
+          "id" : "AppFunc2"
+        },
+        "itemType" : "MENUITEM",
+        "accUserMode" : 0,
+        "caption" : "用户",
+        "tooltip" : "用户",
+        "name" : "menuitem11"
+      }, {
+        "getPSAppFunc" : {
+          "modelref" : true,
+          "id" : "Auto15"
+        },
+        "itemType" : "MENUITEM",
+        "accUserMode" : 2,
+        "caption" : "用例库",
+        "tooltip" : "用例库",
+        "name" : "menuitem10"
+      }, {
+        "getPSAppFunc" : {
+          "modelref" : true,
+          "id" : "AppFunc6"
+        },
+        "itemType" : "MENUITEM",
+        "accUserMode" : 2,
+        "caption" : "系统配置",
+        "tooltip" : "系统配置",
+        "name" : "menuitem21"
+      }, {
+        "getPSAppFunc" : {
+          "modelref" : true,
+          "id" : "AppFunc5"
+        },
+        "itemType" : "MENUITEM",
+        "accUserMode" : 2,
+        "caption" : "汇报角色角色",
+        "tooltip" : "汇报角色角色",
+        "name" : "menuitem19"
+      }, {
+        "getPSAppFunc" : {
+          "modelref" : true,
+          "id" : "PluginManagement"
+        },
+        "itemType" : "MENUITEM",
+        "accUserMode" : 2,
+        "caption" : "插件管理",
+        "tooltip" : "插件管理",
+        "name" : "menuitem17"
+      }, {
+        "getPSAppFunc" : {
+          "modelref" : true,
+          "id" : "AppFunc3"
+        },
+        "itemType" : "MENUITEM",
+        "accUserMode" : 2,
+        "caption" : "更新日志",
+        "tooltip" : "更新日志",
+        "name" : "menuitem8"
+      } ],
+      "itemType" : "MENUITEM",
+      "accUserMode" : 0,
+      "caption" : "系统管理",
+      "tooltip" : "系统管理",
+      "name" : "menuitem24"
+    } ],
+    "itemType" : "MENUITEM",
+    "accUserMode" : 0,
+    "caption" : "顶部菜单",
+    "tooltip" : "顶部菜单",
+    "name" : "top_menus"
+  }, {
+    "getPSAppMenuItems" : [ {
+      "accessKey" : "PRODUCTLEFT",
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "Auto2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1b3@FontAwesome",
+        "cssClass" : "fa fa-cubes"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 4,
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "MENUITEM.CAPTION.MENUITEM.CAPTION.LEFT_PRODUCT",
+        "id" : "菜单项文本[MENUITEM.CAPTION.LEFT_PRODUCT]"
+      },
+      "caption" : "产品",
+      "tooltip" : "产品",
+      "name" : "menuitem4"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "Auto5"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf18d@FontAwesome",
+        "cssClass" : "fa fa-stack-exchange"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 2,
+      "caption" : "项目",
+      "tooltip" : "项目",
+      "name" : "menuitem5"
+    }, {
+      "getPSAppFunc" : {
+        "modelref" : true,
+        "id" : "Auto11"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf085@FontAwesome",
+        "cssClass" : "fa fa-cogs"
+      },
+      "itemType" : "MENUITEM",
+      "accUserMode" : 2,
+      "caption" : "测试",
+      "tooltip" : "测试",
+      "name" : "menuitem6"
+    } ],
+    "itemType" : "MENUITEM",
+    "accUserMode" : 0,
+    "caption" : "左侧分页导航",
+    "tooltip" : "左侧分页导航",
+    "name" : "left_exp"
+  }, {
+    "itemType" : "MENUITEM",
+    "accUserMode" : 0,
+    "caption" : "底部导航区",
+    "tooltip" : "底部导航区",
+    "name" : "bottom_exp"
+  }, {
+    "itemType" : "MENUITEM",
+    "accUserMode" : 0,
+    "caption" : "底部中间菜单",
+    "tooltip" : "底部中间菜单",
+    "name" : "footer_center"
+  }, {
+    "hidden" : true,
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "Auto26"
+    },
+    "itemType" : "MENUITEM",
+    "accUserMode" : 2,
+    "caption" : "bug菜单项",
+    "tooltip" : "bug菜单项",
+    "name" : "menuitem13"
+  }, {
+    "hidden" : true,
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "Auto26"
+    },
+    "itemType" : "MENUITEM",
+    "accUserMode" : 2,
+    "caption" : "菜单项",
+    "tooltip" : "菜单项",
+    "name" : "menuitem14"
+  }, {
+    "hidden" : true,
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "Auto27"
+    },
+    "itemType" : "MENUITEM",
+    "accUserMode" : 2,
+    "caption" : "菜单项",
+    "tooltip" : "菜单项",
+    "name" : "menuitem15"
+  }, {
+    "hidden" : true,
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "Auto29"
+    },
+    "itemType" : "MENUITEM",
+    "accUserMode" : 2,
+    "caption" : "菜单项",
+    "tooltip" : "菜单项",
+    "name" : "menuitem18"
+  }, {
+    "hidden" : true,
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "Auto32"
+    },
+    "itemType" : "MENUITEM",
+    "accUserMode" : 2,
+    "caption" : "菜单项",
+    "tooltip" : "菜单项",
+    "name" : "menuitem20"
+  } ],
+  "enableCustomize" : false,
+  "controlType" : "APPMENU",
+  "codeName" : "zentao",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPMENUS/zentao.json",
+  "logicName" : "禅道首页默认菜单",
+  "name" : "zentao",
+  "modelid" : "0a4e485b6222864606f7d7e77325ee2d"
+}

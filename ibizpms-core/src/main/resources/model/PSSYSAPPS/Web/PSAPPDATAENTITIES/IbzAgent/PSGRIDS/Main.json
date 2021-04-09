@@ -1,0 +1,259 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "AGENTUSER",
+      "codeName" : "Agentuser"
+    },
+    "name" : "agentuser",
+    "dataType" : 25
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "AGENTEND",
+      "codeName" : "Agentend"
+    },
+    "name" : "agentend",
+    "dataType" : 5
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "name" : "ibz_agentid",
+    "dataType" : 1
+  }, {
+    "format" : "YYYY-MM-DD",
+    "getPSAppDEField" : {
+      "name" : "AGENTBEGIN",
+      "codeName" : "Agentbegin"
+    },
+    "name" : "agentbegin",
+    "dataType" : 5
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTNAME",
+      "codeName" : "IbzAgentName"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  } ],
+  "singleSelect" : false,
+  "enableColFilter" : false,
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "代理标识",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
+  "controlType" : "GRID",
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "代理标识",
+    "dataItemName" : "ibz_agentid",
+    "getPSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 100,
+    "codeName" : "ibz_agentid",
+    "caption" : "代理标识",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "name" : "ibz_agentid"
+  }, {
+    "excelCaption" : "代理用户",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+    },
+    "dataItemName" : "agentuser",
+    "getPSAppDEField" : {
+      "name" : "AGENTUSER",
+      "codeName" : "Agentuser"
+    },
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 150,
+    "codeName" : "agentuser",
+    "caption" : "代理用户",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "STAR",
+    "name" : "agentuser"
+  }, {
+    "excelCaption" : "代理开始日期",
+    "dataItemName" : "agentbegin",
+    "getPSAppDEField" : {
+      "name" : "AGENTBEGIN",
+      "codeName" : "Agentbegin"
+    },
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 150,
+    "codeName" : "agentbegin",
+    "caption" : "代理开始日期",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "name" : "agentbegin"
+  }, {
+    "excelCaption" : "代理结束日期",
+    "dataItemName" : "agentend",
+    "getPSAppDEField" : {
+      "name" : "AGENTEND",
+      "codeName" : "Agentend"
+    },
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 150,
+    "codeName" : "agentend",
+    "caption" : "代理结束日期",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "name" : "agentend"
+  }, {
+    "getPSDEUIActionGroup" : {
+      "getPSUIActionGroupDetails" : [ {
+        "showIcon" : true,
+        "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 2,
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+          },
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentCreateEditView.json",
+            "viewType" : "DEEDITVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "timeout" : 60000,
+          "codeName" : "Edit",
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "caption" : "编辑",
+          "actionTarget" : "SINGLEKEY",
+          "uIActionTag" : "Edit",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "FRONT",
+          "fullCodeName" : "IbzAgent_Edit",
+          "name" : "编辑",
+          "id" : "Edit@IbzAgent"
+        },
+        "addSeparator" : false,
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "uef4000f"
+      } ],
+      "name" : "代理操作列行为组"
+    },
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 150,
+    "codeName" : "uagridcolumn1",
+    "caption" : "操作",
+    "columnType" : "UAGRIDCOLUMN",
+    "align" : "CENTER",
+    "widthUnit" : "PX",
+    "name" : "uagridcolumn1"
+  } ],
+  "codeName" : "Main",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 20,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppViewUIActions" : [ {
+    "xDataControlName" : "grid",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+      },
+      "modelref" : true,
+      "id" : "Edit@IbzAgent"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "name" : "编辑"
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "编辑"
+    },
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_uef4000f_click"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent/PSGRIDS/Main.json",
+  "logicName" : "主表格",
+  "modelid" : "1d69f6323e6c7616bc2445444476b835"
+}

@@ -1,0 +1,61 @@
+package cn.ibizlab.pms.zentao.logic.productlogic.remove__msdeny;
+import java.util.Map;
+import java.util.HashMap;
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+global cn.ibizlab.pms.core.zentao.domain.Product productremove__msdenytemp;
+global cn.ibizlab.pms.core.zentao.domain.Product productremove__msdenydefault;
+global cn.ibizlab.pms.core.zentao.service.IProductService productservice;
+global cn.ibizlab.pms.core.zentao.service.IProductService iBzSysProductDefaultService;
+global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+no-loop
+
+//逻辑处理节点[状态[正常_已置顶]拒绝[remove]操作]
+rule "denybynormal_1"
+ruleflow-group "productremove__msdenydenybynormal_1"
+    when
+    then
+    update(productremove__msdenytemp);//更新fact中变量值
+    update(productremove__msdenydefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[获取数据]
+rule "get"
+ruleflow-group "productremove__msdenyget"
+    when
+    then
+    cn.ibizlab.pms.util.helper.CachedBeanCopier.copy(productservice.get(productremove__msdenytemp.getId()),productremove__msdenytemp);
+    update(productremove__msdenytemp);//更新fact中变量值
+    update(productremove__msdenydefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[准备临时参数]
+rule "preparetemp"
+ruleflow-group "productremove__msdenypreparetemp"
+    when
+    then
+    productremove__msdenytemp.set("id",productremove__msdenydefault.get("id"));
+    update(productremove__msdenytemp);//更新fact中变量值
+    update(productremove__msdenydefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[状态[关闭_已置顶]拒绝[remove]操作]
+rule "denybyclosed_1"
+ruleflow-group "productremove__msdenydenybyclosed_1"
+    when
+    then
+    update(productremove__msdenytemp);//更新fact中变量值
+    update(productremove__msdenydefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[开始]
+rule "begin"
+ruleflow-group "productremove__msdenybegin"
+    when
+    then
+    end
+

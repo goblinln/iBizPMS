@@ -1,0 +1,24 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "PARENT",
+    "codeName" : "Parent"
+  },
+  "removeActionType" : -1,
+  "masterRS" : 0,
+  "pickupDEFName" : "PARENT",
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "IBizParent",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+  },
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT.json",
+  "name" : "DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT"
+}

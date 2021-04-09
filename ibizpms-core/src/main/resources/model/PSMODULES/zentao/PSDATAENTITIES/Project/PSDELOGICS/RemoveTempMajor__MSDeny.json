@@ -1,0 +1,500 @@
+{
+  "enableBackend" : true,
+  "enableFront" : false,
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "logicHolder" : 1,
+  "codeName" : "RemoveTempMajor__MSDeny",
+  "getPSDELogicNodes" : [ {
+    "errorCode" : 0,
+    "errorInfo" : "状态[已挂起_未置顶]拒绝[RemoveTempMajor]操作",
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "DenyBysuspended_0",
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已挂起_未置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "errorCode" : 0,
+    "errorInfo" : "状态[已挂起_已置顶]拒绝[RemoveTempMajor]操作",
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "DenyBysuspended_1",
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已挂起_已置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "errorCode" : 0,
+    "errorInfo" : "状态[未开始_未置顶]拒绝[RemoveTempMajor]操作",
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "DenyBywait_0",
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[未开始_未置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "errorCode" : 0,
+    "errorInfo" : "状态[未开始_已置顶]拒绝[RemoveTempMajor]操作",
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "DenyBywait_1",
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[未开始_已置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "errorCode" : 0,
+    "errorInfo" : "状态[已关闭_未置顶]拒绝[RemoveTempMajor]操作",
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "DenyByclosed_0",
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已关闭_未置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "parallelOutput" : true,
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Temp"
+    },
+    "logicHolder" : 3,
+    "codeName" : "Get",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "状态[已关闭_未置顶]拒绝[RemoveTempMajor]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已关闭_已置顶]拒绝[RemoveTempMajor]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[进行中_未置顶]拒绝[RemoveTempMajor]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[进行中_已置顶]拒绝[RemoveTempMajor]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已挂起_未置顶]拒绝[RemoveTempMajor]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已挂起_已置顶]拒绝[RemoveTempMajor]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[未开始_未置顶]拒绝[RemoveTempMajor]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[未开始_已置顶]拒绝[RemoveTempMajor]操作"
+    } ],
+    "logicNodeType" : "DEACTION",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
+    },
+    "name" : "获取数据"
+  }, {
+    "errorCode" : 0,
+    "errorInfo" : "状态[已关闭_已置顶]拒绝[RemoveTempMajor]操作",
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "DenyByclosed_1",
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已关闭_已置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "PrepareTemp",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "默认连接"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Temp"
+      },
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM",
+      "dstFieldName" : "ID",
+      "srcFieldName" : "ID",
+      "name" : "复制主键"
+    } ],
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "准备临时参数"
+  }, {
+    "errorCode" : 0,
+    "errorInfo" : "状态[进行中_未置顶]拒绝[RemoveTempMajor]操作",
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "DenyBydoing_0",
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[进行中_未置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "Begin",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "默认连接"
+    } ],
+    "logicNodeType" : "BEGIN",
+    "name" : "开始"
+  }, {
+    "errorCode" : 0,
+    "errorInfo" : "状态[进行中_已置顶]拒绝[RemoveTempMajor]操作",
+    "parallelOutput" : false,
+    "logicHolder" : 3,
+    "codeName" : "DenyBydoing_1",
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[进行中_已置顶]拒绝[RemoveTempMajor]操作"
+  } ],
+  "getPSDELogicLinks" : [ {
+    "defaultLink" : true,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "PrepareTemp"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "name" : "默认连接"
+  }, {
+    "defaultLink" : true,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "PrepareTemp"
+    },
+    "name" : "默认连接"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "closed",
+        "dstFieldName" : "STATUS",
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS]等于[closed]"
+      }, {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "0",
+        "dstFieldName" : "ISTOP",
+        "logicType" : "SINGLE",
+        "name" : "属性[ISTOP]等于[0]"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "2b65d27a8f613bfd61a58b8dbad867c3__MSDENY__closed_0"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyByclosed_0"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "状态[已关闭_未置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "closed",
+        "dstFieldName" : "STATUS",
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS]等于[closed]"
+      }, {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "1",
+        "dstFieldName" : "ISTOP",
+        "logicType" : "SINGLE",
+        "name" : "属性[ISTOP]等于[1]"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "2b65d27a8f613bfd61a58b8dbad867c3__MSDENY__closed_1"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyByclosed_1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "状态[已关闭_已置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "doing",
+        "dstFieldName" : "STATUS",
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS]等于[doing]"
+      }, {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "0",
+        "dstFieldName" : "ISTOP",
+        "logicType" : "SINGLE",
+        "name" : "属性[ISTOP]等于[0]"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "2b65d27a8f613bfd61a58b8dbad867c3__MSDENY__doing_0"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydoing_0"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "状态[进行中_未置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "doing",
+        "dstFieldName" : "STATUS",
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS]等于[doing]"
+      }, {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "1",
+        "dstFieldName" : "ISTOP",
+        "logicType" : "SINGLE",
+        "name" : "属性[ISTOP]等于[1]"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "2b65d27a8f613bfd61a58b8dbad867c3__MSDENY__doing_1"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydoing_1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "状态[进行中_已置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "suspended",
+        "dstFieldName" : "STATUS",
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS]等于[suspended]"
+      }, {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "0",
+        "dstFieldName" : "ISTOP",
+        "logicType" : "SINGLE",
+        "name" : "属性[ISTOP]等于[0]"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "2b65d27a8f613bfd61a58b8dbad867c3__MSDENY__suspended_0"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBysuspended_0"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "状态[已挂起_未置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "suspended",
+        "dstFieldName" : "STATUS",
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS]等于[suspended]"
+      }, {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "1",
+        "dstFieldName" : "ISTOP",
+        "logicType" : "SINGLE",
+        "name" : "属性[ISTOP]等于[1]"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "2b65d27a8f613bfd61a58b8dbad867c3__MSDENY__suspended_1"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBysuspended_1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "状态[已挂起_已置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "wait",
+        "dstFieldName" : "STATUS",
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS]等于[wait]"
+      }, {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "0",
+        "dstFieldName" : "ISTOP",
+        "logicType" : "SINGLE",
+        "name" : "属性[ISTOP]等于[0]"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "2b65d27a8f613bfd61a58b8dbad867c3__MSDENY__wait_0"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBywait_0"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "状态[未开始_未置顶]拒绝[RemoveTempMajor]操作"
+  }, {
+    "getPSDELogicLinkGroupCond" : {
+      "getPSDELogicLinkConds" : [ {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "wait",
+        "dstFieldName" : "STATUS",
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS]等于[wait]"
+      }, {
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "condOP" : "EQ",
+        "paramValue" : "1",
+        "dstFieldName" : "ISTOP",
+        "logicType" : "SINGLE",
+        "name" : "属性[ISTOP]等于[1]"
+      } ],
+      "notMode" : false,
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "id" : "2b65d27a8f613bfd61a58b8dbad867c3__MSDENY__wait_1"
+    },
+    "defaultLink" : false,
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBywait_1"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "状态[未开始_已置顶]拒绝[RemoveTempMajor]操作"
+  } ],
+  "getPSDELogicParams" : [ {
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false,
+    "codeName" : "Default",
+    "default" : true,
+    "name" : "默认变量"
+  }, {
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false,
+    "codeName" : "Temp",
+    "default" : false,
+    "name" : "临时变量"
+  } ],
+  "logicName" : "行为[RemoveTempMajor]主状态拒绝逻辑",
+  "defaultParamName" : "Default",
+  "logicSubType" : "NONE",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/RemoveTempMajor__MSDeny.json",
+  "name" : "行为[RemoveTempMajor]主状态拒绝逻辑"
+}

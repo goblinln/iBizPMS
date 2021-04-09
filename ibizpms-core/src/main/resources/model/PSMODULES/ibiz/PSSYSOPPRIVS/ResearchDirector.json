@@ -1,0 +1,7 @@
+{
+  "codeName" : "ResearchDirector",
+  "roleType" : "CUSTOM",
+  "roleTag" : "ResearchDirector",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ResearchDirector.json",
+  "name" : "研发主管"
+}

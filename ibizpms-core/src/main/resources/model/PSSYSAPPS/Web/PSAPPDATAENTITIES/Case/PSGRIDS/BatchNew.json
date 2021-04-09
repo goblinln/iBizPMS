@@ -1,0 +1,525 @@
+{
+  "getPSDEGridDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    },
+    "name" : "module",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "FROMBUG",
+      "codeName" : "FromBug"
+    },
+    "name" : "frombug",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STORYNAME",
+      "codeName" : "Storyname"
+    },
+    "name" : "storyname",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "name" : "type",
+    "dataType" : 25
+  }, {
+    "name" : "srfmstag",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfkey",
+    "dataType" : 1
+  }, {
+    "dataAccessAction" : true,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "srfdataaccaction",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "name" : "product",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
+    },
+    "name" : "modulename",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    },
+    "name" : "story",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "name" : "title",
+    "dataType" : 25
+  }, {
+    "getPSAppDEField" : {
+      "name" : "LIB",
+      "codeName" : "Lib"
+    },
+    "name" : "lib",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "FROMCASEID",
+      "codeName" : "FromCaseId"
+    },
+    "name" : "fromcaseid",
+    "dataType" : 1
+  }, {
+    "getPSAppDEField" : {
+      "name" : "BRANCH",
+      "codeName" : "Branch"
+    },
+    "name" : "branch",
+    "dataType" : 1
+  } ],
+  "singleSelect" : false,
+  "enableColFilter" : false,
+  "enableRowNew" : true,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "getPSDEGridEditItems" : [ {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "product"
+    },
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "allowEmpty" : true,
+    "createDV" : "product",
+    "createDVT" : "CONTEXT",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "product",
+    "caption" : "所属产品",
+    "name" : "product"
+  }, {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "story"
+    },
+    "getPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "story",
+    "caption" : "相关需求",
+    "name" : "story"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "dropDownView" : false,
+      "enableAC" : true,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "handlerType" : "PickupText",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchBugModule"
+      },
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "valueItemName" : "module",
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "product",
+        "key" : "n_root_eq",
+        "name" : "n_root_eq"
+      } ],
+      "getPSNavigateContexts" : [ {
+        "rawValue" : false,
+        "value" : "product",
+        "key" : "N_ROOT_EQ",
+        "name" : "N_ROOT_EQ"
+      } ],
+      "editorType" : "PICKEREX_TRIGGER",
+      "editorParams" : {
+        "SRFNAVCTX.n_root_eq" : "%product%",
+        "AC" : "TRUE",
+        "SRFNAVPARAM.n_root_eq" : "%product%",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "name" : "modulename"
+    },
+    "getPSAppDEField" : {
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "valueItemName" : "module",
+    "codeName" : "modulename",
+    "caption" : "所属模块",
+    "name" : "modulename"
+  }, {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "module"
+    },
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "module",
+    "caption" : "所属模块",
+    "name" : "module"
+  }, {
+    "getPSEditor" : {
+      "maxLength" : 255,
+      "editorType" : "TEXTBOX",
+      "name" : "title"
+    },
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "allowEmpty" : false,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "title",
+    "caption" : "用例标题",
+    "name" : "title"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "dropDownView" : false,
+      "enableAC" : true,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "handlerType" : "PickupText",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchCaseStory"
+      },
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "valueItemName" : "story",
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "product",
+        "key" : "n_product_eq",
+        "name" : "n_product_eq"
+      }, {
+        "rawValue" : false,
+        "value" : "module",
+        "key" : "n_module_eq",
+        "name" : "n_module_eq"
+      } ],
+      "getPSNavigateContexts" : [ {
+        "rawValue" : false,
+        "value" : "product",
+        "key" : "N_PRODUCT_EQ",
+        "name" : "N_PRODUCT_EQ"
+      }, {
+        "rawValue" : false,
+        "value" : "module",
+        "key" : "N_MODULE_EQ",
+        "name" : "N_MODULE_EQ"
+      } ],
+      "editorType" : "PICKEREX_TRIGGER",
+      "editorParams" : {
+        "SRFNAVCTX.n_module_eq" : "%module%",
+        "SRFNAVPARAM.n_module_eq" : "%module%",
+        "SRFNAVPARAM.n_product_eq" : "%product%",
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "SRFNAVCTX.n_product_eq" : "%product%",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "name" : "storyname"
+    },
+    "getPSAppDEField" : {
+      "name" : "STORYNAME",
+      "codeName" : "Storyname"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "valueItemName" : "story",
+    "codeName" : "storyname",
+    "caption" : "相关需求",
+    "name" : "storyname"
+  }, {
+    "getPSEditor" : {
+      "singleSelect" : true,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__type.json"
+      },
+      "editorType" : "DROPDOWNLIST",
+      "name" : "type"
+    },
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "needCodeListConfig" : true,
+    "allowEmpty" : true,
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "codeName" : "type",
+    "caption" : "用例类型",
+    "name" : "type"
+  }, {
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "allowEmpty" : true,
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "codeName" : "srfkey",
+    "caption" : "用例编号",
+    "name" : "srfkey"
+  } ],
+  "hasWFDataItems" : false,
+  "getCreatePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "dataAccessAction" : "CREATE",
+    "actionName" : "Create",
+    "actionType" : "DEACTION",
+    "name" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "dataAccessAction" : "UPDATE",
+    "actionName" : "Update",
+    "actionType" : "DEACTION",
+    "name" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "dataAccessAction" : "DELETE",
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "name" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "dataAccessAction" : "READ",
+    "actionName" : "Get",
+    "actionType" : "DEACTION",
+    "name" : "load"
+  },
+  "getGetDraftPSControlAction" : {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "dataAccessAction" : "CREATE",
+    "actionName" : "GetDraft",
+    "actionType" : "DEACTION",
+    "name" : "loaddraft"
+  },
+  "columnEnableLink" : 2,
+  "enableRowEdit" : true,
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "enablePagingBar" : false,
+  "controlType" : "GRID",
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "所属模块",
+    "dataItemName" : "modulename",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 200,
+    "codeName" : "modulename",
+    "caption" : "所属模块",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "modulename"
+  }, {
+    "linkValueItem" : "story",
+    "excelCaption" : "相关需求",
+    "enableLinkView" : true,
+    "getLinkPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+      "viewType" : "DEPORTALVIEW"
+    },
+    "dataItemName" : "storyname",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "STORYNAME",
+      "codeName" : "Storyname"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 200,
+    "codeName" : "storyname",
+    "caption" : "相关需求",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "storyname"
+  }, {
+    "linkValueItem" : "srfkey",
+    "excelCaption" : "用例标题",
+    "enableLinkView" : true,
+    "getLinkPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
+    },
+    "dataItemName" : "title",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 500,
+    "codeName" : "title",
+    "caption" : "用例标题",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "title"
+  }, {
+    "excelCaption" : "用例类型",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__type.json"
+    },
+    "dataItemName" : "type",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 130,
+    "codeName" : "type",
+    "caption" : "用例类型",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "type"
+  } ],
+  "codeName" : "BatchNew",
+  "minorSortDir" : "DESC",
+  "enableGroup" : false,
+  "hideHeader" : false,
+  "forceFit" : false,
+  "pagingSize" : 100,
+  "aggMode" : "NONE",
+  "groupMode" : "NONE",
+  "sortMode" : "REMOTE",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSGRIDS/BatchNew.json",
+  "logicName" : "批量新建",
+  "modelid" : "c92e9553e5e0e62b9d87b4df49796b8f"
+}

@@ -1,0 +1,168 @@
+{
+  "showDataInfoBar" : true,
+  "loadDefault" : true,
+  "enableSearch" : false,
+  "enableQuickGroup" : false,
+  "expandSearchForm" : true,
+  "enableQuickSearch" : false,
+  "showCaptionBar" : true,
+  "getPSDEViewCodeName" : "MainView_EditMode",
+  "openMode" : "DRAWER_TOP",
+  "caption" : "需求",
+  "title" : "需求数据看板视图",
+  "accUserMode" : 2,
+  "enableDP" : true,
+  "getPSViewLayoutPanel" : {
+    "layoutPanel" : true,
+    "useDefaultLayout" : true,
+    "controlType" : "VIEWLAYOUTPANEL",
+    "codeName" : "Layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSControlParam" : { },
+    "controlStyle" : "APPDEPORTALVIEW_STYLE2",
+    "name" : "layoutpanel"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineType" : "PortalView",
+    "engineCat" : "VIEW",
+    "getPSUIEngineParams" : [ {
+      "name" : "DASHBOARD",
+      "paramType" : "CTRL"
+    } ],
+    "name" : "engine"
+  } ],
+  "getPSAppViewNavContexts" : [ {
+    "rawValue" : true,
+    "value" : "story",
+    "key" : "OBJECTTYPE",
+    "name" : "OBJECTTYPE"
+  }, {
+    "rawValue" : false,
+    "value" : "story",
+    "key" : "SRFPARENTKEY",
+    "name" : "SRFPARENTKEY"
+  } ],
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+  },
+  "getPSControls" : [ {
+    "codeName" : "MainPanel_EditMode",
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "enableCustomized" : false,
+    "getPSControls" : [ {
+      "getPSLayout" : {
+        "layout" : "TABLE_24COL",
+        "columnCount" : 24
+      },
+      "getPSControls" : [ {
+        "getPSLayout" : {
+          "layout" : "TABLE_24COL",
+          "columnCount" : 24
+        },
+        "portletType" : "CONTAINER",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "showTitleBar" : true,
+        "controlType" : "PORTLET",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+        },
+        "getPSControlHandler" : {
+          "enableDEFieldPrivilege" : false,
+          "id" : "dashboard_container3"
+        },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true
+        },
+        "codeName" : "MainView_EditModedashboard_container3",
+        "name" : "dashboard_container3"
+      } ],
+      "portletType" : "CONTAINER",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "showTitleBar" : true,
+      "controlType" : "PORTLET",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "dashboard_container1"
+      },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true
+      },
+      "codeName" : "MainView_EditModedashboard_container1",
+      "name" : "dashboard_container1"
+    } ],
+    "controlType" : "DASHBOARD",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "dashboard"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "DASHBOARD"
+    },
+    "hookEventNames" : [ "LOAD" ],
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSDASHBOARDS/MainPanel_EditMode.json",
+    "logicName" : "需求主数据看板_编辑模式",
+    "name" : "dashboard",
+    "modelid" : "7e14015af219d302f7d81ff40cdcc418"
+  } ],
+  "viewStyle" : "STYLE2",
+  "codeName" : "StoryMainView_EditMode",
+  "getPSSysImage" : {
+    "glyph" : "xf006@FontAwesome",
+    "cssClass" : "fa fa-star-o"
+  },
+  "viewType" : "DEPORTALVIEW",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView_EditMode.json",
+  "name" : "StoryMainView_EditMode",
+  "getPSAppDERSPaths" : [ [ {
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "codeName" : "Stories",
+    "actionRSMode" : 1,
+    "dataRSMode" : 0,
+    "rSMode" : 2,
+    "name" : "产品需求"
+  } ] ]
+}

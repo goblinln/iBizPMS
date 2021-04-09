@@ -1,0 +1,17 @@
+{
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+  },
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchBugProject"
+  },
+  "codeListType" : "DYNAMIC",
+  "dynaInstMode" : 1,
+  "codeName" : "ProjectCodeList",
+  "emptyText" : "未定义",
+  "enableCache" : true,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectCodeList.json",
+  "name" : "项目（动态）"
+}

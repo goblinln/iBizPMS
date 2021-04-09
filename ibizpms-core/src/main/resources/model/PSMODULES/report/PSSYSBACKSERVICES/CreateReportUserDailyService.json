@@ -1,0 +1,9 @@
+{
+  "serviceOrder" : 0,
+  "serviceHandler" : "CreateReportUserDailyService",
+  "codeName" : "CreateReportUserDailyService",
+  "serviceContainer" : "SC01",
+  "startMode" : "MANUAL",
+  "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserDailyService.json",
+  "name" : "每日定时生成用户日报"
+}

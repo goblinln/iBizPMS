@@ -1,0 +1,50 @@
+{
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "enableRowEditGroup" : false,
+  "getPSDEListDataItems" : [ {
+    "getPSAppDEField" : {
+      "name" : "PLANNAME",
+      "codeName" : "Planname"
+    },
+    "name" : "srfmajortext",
+    "dataType" : 25
+  } ],
+  "showHeader" : true,
+  "enableRowEdit" : false,
+  "controlType" : "LIST",
+  "codeName" : "Plan",
+  "enableGroup" : false,
+  "pagingSize" : 1000,
+  "groupMode" : "NONE",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectProduct.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectProduct/PSLISTS/Plan.json",
+  "logicName" : "Plan",
+  "modelid" : "ed7b1fa3c40c0986f3e219ccd0ce947e"
+}

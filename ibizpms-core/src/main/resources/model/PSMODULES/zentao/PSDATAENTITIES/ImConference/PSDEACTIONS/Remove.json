@@ -1,0 +1,24 @@
+{
+  "paramMode" : 1,
+  "generateTestUnit" : true,
+  "customParam" : false,
+  "transactionMode" : "DEFAULT",
+  "pubServiceDefault" : true,
+  "builtinAction" : true,
+  "timeOut" : -1,
+  "orderValue" : 21,
+  "codeName" : "Remove",
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "DELETE"
+  },
+  "logicName" : "Remove",
+  "extendMode" : 0,
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ImConference/PSDEACTIONS/Remove.json",
+  "name" : "Remove"
+}

@@ -1,0 +1,79 @@
+{
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "enableFilterSave" : false,
+  "searchButtonStyle" : "DEFAULT",
+  "controlType" : "SEARCHFORM",
+  "getPSLayout" : {
+    "layout" : "TABLE_24COL",
+    "columnCount" : 24
+  },
+  "noTabHeader" : true,
+  "getPSDEFormPages" : [ {
+    "getPSDEFormDetails" : [ {
+      "emptyCaption" : false,
+      "getPSEditor" : {
+        "singleSelect" : true,
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product.json"
+        },
+        "editorType" : "DROPDOWNLIST",
+        "name" : "product"
+      },
+      "inputTipClosable" : false,
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "hidden" : false,
+      "dataType" : 1,
+      "needCodeListConfig" : true,
+      "caption" : "产品",
+      "allowEmpty" : true,
+      "labelWidth" : 100,
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "showCaption" : true,
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "colLG" : 8,
+        "layout" : "TABLE_24COL"
+      },
+      "codeName" : "product",
+      "detailType" : "FORMITEM",
+      "detailStyle" : "DEFAULT",
+      "name" : "product"
+    } ],
+    "getPSLayout" : {
+      "layout" : "TABLE_24COL",
+      "columnCount" : 24
+    },
+    "infoGroupMode" : false,
+    "codeName" : "formpage1",
+    "caption" : "表单分页",
+    "detailType" : "FORMPAGE",
+    "detailStyle" : "DEFAULT",
+    "name" : "formpage1"
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "product",
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  } ],
+  "codeName" : "TestCaseStats",
+  "tabHeaderPos" : "TOP",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats.json"
+  },
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats/PSSEARCHFORMS/TestCaseStats.json",
+  "logicName" : "用例统计表专用",
+  "modelid" : "a856b2b57e47d4d2896ab1e2902eb136"
+}

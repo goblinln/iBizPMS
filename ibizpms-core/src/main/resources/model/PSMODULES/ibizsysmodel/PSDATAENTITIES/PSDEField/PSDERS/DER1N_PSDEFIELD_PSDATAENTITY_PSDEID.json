@@ -1,0 +1,29 @@
+{
+  "masterOrder" : -1,
+  "getPSPickupDEField" : {
+    "name" : "PSDEID",
+    "codeName" : "PSDEId"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "PSDENAME",
+    "codeName" : "PSDEName"
+  },
+  "removeActionType" : 1,
+  "masterRS" : 0,
+  "pickupDEFName" : "PSDEID",
+  "removeOrder" : 0,
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDataEntity.json"
+  },
+  "orderValue" : 100,
+  "codeName" : "PSDE",
+  "dERType" : "DER1N",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
+  },
+  "minorCodeName" : "PSDEFields",
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField/PSDERS/DER1N_PSDEFIELD_PSDATAENTITY_PSDEID.json",
+  "name" : "DER1N_PSDEFIELD_PSDATAENTITY_PSDEID"
+}
