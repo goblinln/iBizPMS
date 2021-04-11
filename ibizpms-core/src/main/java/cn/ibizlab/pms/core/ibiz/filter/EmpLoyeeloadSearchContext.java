@@ -55,8 +55,8 @@ public class EmpLoyeeloadSearchContext extends QueryWrapperContext<EmpLoyeeload>
             this.getSearchCond().eq("`assign`", n_assign_eq);
         }
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_begin_ltandeq;//[属性]
 	public void setN_begin_ltandeq(Timestamp n_begin_ltandeq) {
         this.n_begin_ltandeq = n_begin_ltandeq;
@@ -64,8 +64,8 @@ public class EmpLoyeeloadSearchContext extends QueryWrapperContext<EmpLoyeeload>
             this.getSearchCond().le("`begin`", n_begin_ltandeq);
         }
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_end_gtandeq;//[结束]
 	public void setN_end_gtandeq(Timestamp n_end_gtandeq) {
         this.n_end_gtandeq = n_end_gtandeq;

@@ -48,8 +48,8 @@ public class PRODUCTTEAMSearchContext extends QueryWrapperContext<PRODUCTTEAM> {
             this.getSearchCond().like("`account`", n_account_like);
         }
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_join_gtandeq;//[加盟日]
 	public void setN_join_gtandeq(Timestamp n_join_gtandeq) {
         this.n_join_gtandeq = n_join_gtandeq;
@@ -57,8 +57,8 @@ public class PRODUCTTEAMSearchContext extends QueryWrapperContext<PRODUCTTEAM> {
             this.getSearchCond().ge("`join`", n_join_gtandeq);
         }
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_end_ltandeq;//[结束时间]
 	public void setN_end_ltandeq(Timestamp n_end_ltandeq) {
         this.n_end_ltandeq = n_end_ltandeq;

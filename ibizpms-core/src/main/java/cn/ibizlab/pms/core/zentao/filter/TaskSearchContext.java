@@ -178,8 +178,8 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
 			this.getSearchCond().in("`assignedto`",this.n_assignedto_in.split(";"));
         }
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_eststarted_gtandeq;//[预计开始]
 	public void setN_eststarted_gtandeq(Timestamp n_eststarted_gtandeq) {
         this.n_eststarted_gtandeq = n_eststarted_gtandeq;
@@ -187,8 +187,8 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
             this.getSearchCond().ge("`eststarted`", n_eststarted_gtandeq);
         }
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_eststarted_ltandeq;//[预计开始]
 	public void setN_eststarted_ltandeq(Timestamp n_eststarted_ltandeq) {
         this.n_eststarted_ltandeq = n_eststarted_ltandeq;
@@ -217,8 +217,8 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
             this.getSearchCond().eq("`tasktype`", n_tasktype_eq);
         }
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_finisheddate_ltandeq;//[实际完成]
 	public void setN_finisheddate_ltandeq(Timestamp n_finisheddate_ltandeq) {
         this.n_finisheddate_ltandeq = n_finisheddate_ltandeq;
