@@ -12,6 +12,7 @@
       "id" : "连接1953"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzTop"
@@ -20,27 +21,26 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "OBJECTID",
       "srcFieldName" : "ID",
       "name" : "Default[ID] ==> IbzTop[OBJECTID]"
     }, {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzTop"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SESSION",
       "dstFieldName" : "ACCOUNT",
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname] ==> IbzTop[ACCOUNT]"
     }, {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzTop"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCVALUE",
       "srcValue" : "project",
       "dstFieldName" : "TYPE",
@@ -72,13 +72,13 @@
     "name" : "获取置顶最大排序值"
   }, {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "IbzTop"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
     },
     "logicHolder" : 3,
     "codeName" : "Deaction1",
@@ -134,16 +134,16 @@
     "name" : "连接2211"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : true,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : true,
     "codeName" : "IbzTop",
     "default" : false,
     "name" : "置顶"
   }, {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

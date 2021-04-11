@@ -125,20 +125,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "编号",
+    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -150,7 +150,6 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "任务名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -158,11 +157,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
+    "excelCaption" : "任务名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -174,7 +174,6 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
-    "excelCaption" : "所属项目",
     "linkValueItem" : "project",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -182,11 +181,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "所属项目",
+    "dataItemName" : "projectname",
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataItemName" : "projectname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

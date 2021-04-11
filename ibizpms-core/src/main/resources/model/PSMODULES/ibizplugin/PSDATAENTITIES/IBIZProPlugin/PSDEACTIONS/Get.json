@@ -6,14 +6,14 @@
   "builtinAction" : true,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 31,
-  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
+  "orderValue" : 31,
   "codeName" : "Get",
   "logicName" : "Get",
+  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "BUILTIN",
   "requestField" : "IBIZPRO_PLUGINID",

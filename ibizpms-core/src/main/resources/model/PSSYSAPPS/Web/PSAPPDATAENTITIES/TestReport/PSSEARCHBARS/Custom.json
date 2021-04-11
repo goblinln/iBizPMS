@@ -1,14 +1,14 @@
 {
   "quickSearchMode" : 1,
-  "mobileSearchBar" : false,
   "getPSSearchBarFilters" : [ {
     "emptyCaption" : false,
     "getPSEditor" : {
-      "editorWidth" : 100.0,
       "editorType" : "TEXTBOX",
+      "editorWidth" : 100.0,
       "name" : "titlelike"
     },
     "dataType" : 25,
+    "hidden" : false,
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_TITLE_LIKE",
@@ -21,11 +21,10 @@
     },
     "allowEmpty" : true,
     "caption" : "标题(%)",
-    "labelWidth" : 0,
     "labelPos" : "NONE",
+    "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
@@ -40,11 +39,13 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testreport__object_type.json"
       },
-      "editorWidth" : 100.0,
       "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
       "name" : "objecttypeeq"
     },
     "dataType" : 25,
+    "hidden" : false,
+    "needCodeListConfig" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_OBJECTTYPE_EQ",
@@ -56,13 +57,11 @@
       "name" : "N_OBJECTTYPE_EQ"
     },
     "allowEmpty" : true,
-    "needCodeListConfig" : true,
     "caption" : "对象类型(=)",
-    "labelWidth" : 0,
     "labelPos" : "NONE",
+    "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "OBJECTTYPE",
       "codeName" : "ObjectType"
@@ -72,9 +71,9 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "singleSelect" : true,
       "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
@@ -100,6 +99,7 @@
       "name" : "productnameeq"
     },
     "dataType" : 25,
+    "hidden" : false,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_PRODUCTNAME_EQ",
@@ -112,10 +112,9 @@
     },
     "allowEmpty" : true,
     "caption" : "所属产品(=)",
-    "labelWidth" : 0,
     "labelPos" : "NONE",
+    "labelWidth" : 0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
@@ -125,9 +124,9 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "singleSelect" : true,
       "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
@@ -153,6 +152,7 @@
       "name" : "productnamelike"
     },
     "dataType" : 25,
+    "hidden" : false,
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_PRODUCTNAME_LIKE",
@@ -165,10 +165,9 @@
     },
     "allowEmpty" : true,
     "caption" : "所属产品(%)",
-    "labelWidth" : 0,
     "labelPos" : "NONE",
+    "labelWidth" : 0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
@@ -178,9 +177,9 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "singleSelect" : true,
       "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
@@ -206,6 +205,7 @@
       "name" : "projectnameeq"
     },
     "dataType" : 25,
+    "hidden" : false,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_PROJECTNAME_EQ",
@@ -218,10 +218,9 @@
     },
     "allowEmpty" : true,
     "caption" : "所属项目(=)",
-    "labelWidth" : 0,
     "labelPos" : "NONE",
+    "labelWidth" : 0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
@@ -231,9 +230,9 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "singleSelect" : true,
       "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
@@ -259,6 +258,7 @@
       "name" : "projectnamelike"
     },
     "dataType" : 25,
+    "hidden" : false,
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_PROJECTNAME_LIKE",
@@ -271,10 +271,9 @@
     },
     "allowEmpty" : true,
     "caption" : "所属项目(%)",
-    "labelWidth" : 0,
     "labelPos" : "NONE",
+    "labelWidth" : 0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
@@ -282,10 +281,11 @@
     "itemType" : "FILTER",
     "name" : "projectnamelike"
   } ],
-  "enableFilter" : true,
+  "mobileSearchBar" : false,
   "controlType" : "SEARCHBAR",
-  "enableQuickSearch" : true,
+  "enableFilter" : true,
   "codeName" : "Custom",
+  "enableQuickSearch" : true,
   "enableGroup" : false,
   "quickSearchWidth" : 0,
   "getPSAppDataEntity" : {

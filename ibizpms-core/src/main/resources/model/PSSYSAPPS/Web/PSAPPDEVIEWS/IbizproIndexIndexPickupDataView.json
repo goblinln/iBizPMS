@@ -23,12 +23,16 @@
     "controlStyle" : "APPDEINDEXPICKUPDATAVIEW_STYLE2",
     "name" : "layoutpanel"
   },
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
+    "singleSelect" : false,
+    "noSort" : false,
+    "hasWFDataItems" : false,
+    "appendDEItems" : false,
     "getPSDEDataViewDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "INDEXNAME",
@@ -48,12 +52,8 @@
     "enableCardEditOrder" : false,
     "enableCardEditGroup" : false,
     "enableCardNew" : false,
-    "appendDEItems" : false,
-    "singleSelect" : false,
-    "noSort" : false,
-    "hasWFDataItems" : false,
-    "enablePagingBar" : false,
     "controlType" : "DATAVIEW",
+    "enablePagingBar" : false,
     "codeName" : "IndexType",
     "enableGroup" : false,
     "pagingSize" : 1000,

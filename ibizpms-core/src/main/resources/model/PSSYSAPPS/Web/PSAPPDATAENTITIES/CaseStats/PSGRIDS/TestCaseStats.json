@@ -122,16 +122,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "模块名称",
+    "dataItemName" : "modulename",
     "getPSAppDEField" : {
       "name" : "MODULENAME",
       "codeName" : "Modulename"
     },
-    "dataItemName" : "modulename",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -144,11 +144,11 @@
     "name" : "modulename"
   }, {
     "excelCaption" : "总用例数",
+    "dataItemName" : "totalcase",
     "getPSAppDEField" : {
       "name" : "TOTALCASE",
       "codeName" : "Totalcase"
     },
-    "dataItemName" : "totalcase",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -162,11 +162,11 @@
     "name" : "totalcase"
   }, {
     "excelCaption" : "通过",
+    "dataItemName" : "passcase",
     "getPSAppDEField" : {
       "name" : "PASSCASE",
       "codeName" : "Passcase"
     },
-    "dataItemName" : "passcase",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -180,11 +180,11 @@
     "name" : "passcase"
   }, {
     "excelCaption" : "失败",
+    "dataItemName" : "failcase",
     "getPSAppDEField" : {
       "name" : "FAILCASE",
       "codeName" : "Failcase"
     },
-    "dataItemName" : "failcase",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -198,11 +198,11 @@
     "name" : "failcase"
   }, {
     "excelCaption" : "阻塞",
+    "dataItemName" : "blockedcase",
     "getPSAppDEField" : {
       "name" : "BLOCKEDCASE",
       "codeName" : "Blockedcase"
     },
-    "dataItemName" : "blockedcase",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -216,11 +216,11 @@
     "name" : "blockedcase"
   }, {
     "excelCaption" : "总执行数",
+    "dataItemName" : "totalruncase",
     "getPSAppDEField" : {
       "name" : "TOTALRUNCASE",
       "codeName" : "Totalruncase"
     },
-    "dataItemName" : "totalruncase",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -234,11 +234,11 @@
     "name" : "totalruncase"
   }, {
     "excelCaption" : "用例通过率",
+    "dataItemName" : "passrate",
     "getPSAppDEField" : {
       "name" : "PASSRATE",
       "codeName" : "Passrate"
     },
-    "dataItemName" : "passrate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

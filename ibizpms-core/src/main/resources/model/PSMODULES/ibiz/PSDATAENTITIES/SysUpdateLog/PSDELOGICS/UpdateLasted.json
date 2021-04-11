@@ -22,29 +22,29 @@
       "id" : "Default"
     },
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "UPDATEBRANCH",
       "name" : "Default[UPDATEBRANCH]"
     }, {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "SYS_UPDATE_LOGID",
       "name" : "Default[SYS_UPDATE_LOGID]"
     }, {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "LATESTUPDATE",
       "name" : "Default[LATESTUPDATE]"
@@ -67,9 +67,9 @@
     "name" : "连接8487"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

@@ -1,6 +1,6 @@
 {
-  "sideBarLayout" : "LEFT",
   "showDataInfoBar" : true,
+  "sideBarLayout" : "LEFT",
   "enableFilter" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
@@ -26,114 +26,21 @@
     "engineType" : "GridExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "GRIDEXPBAR"
+      "name" : "GRIDEXPBAR",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "GRIDEXPBAR",
-    "getXDataPSControl" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib/PSGRIDS/ExpProductMain.json",
-      "name" : "gridexpbar_grid",
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "gridexpbar_grid"
-      },
-      "getPSControlHandler" : {
-        "userDRAction" : "READ",
-        "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
-          "dataAccessAction" : "UPDATE",
-          "actionName" : "Update",
-          "actionType" : "DEACTION",
-          "name" : "update"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "FetchDefault"
-          },
-          "actionType" : "DEDATASET",
-          "name" : "fetch"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "dataAccessAction" : "DELETE",
-          "actionName" : "Remove",
-          "actionType" : "DEACTION",
-          "name" : "remove"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Get"
-          },
-          "dataAccessAction" : "READ",
-          "actionName" : "Get",
-          "actionType" : "DEACTION",
-          "name" : "load"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "GetDraft"
-          },
-          "dataAccessAction" : "CREATE",
-          "actionName" : "GetDraft",
-          "actionType" : "DEACTION",
-          "name" : "loaddraft"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Create"
-          },
-          "dataAccessAction" : "CREATE",
-          "actionName" : "Create",
-          "actionType" : "DEACTION",
-          "name" : "create"
-        } ],
-        "enableDEFieldPrivilege" : false,
-        "id" : "数据表格处理器"
-      },
-      "controlType" : "GRID"
-    },
+    "xDataControlName" : "gridexpbar_grid",
     "enableSearch" : false,
     "enableCounter" : true,
-    "showTitleBar" : false,
     "getPSControls" : [ {
       "getPSDEGridDataItems" : [ {
         "getPSAppDEField" : {
@@ -233,16 +140,16 @@
       } ],
       "hasWFDataItems" : false,
       "columnEnableLink" : 2,
-      "enablePagingBar" : true,
-      "enableRowEdit" : false,
       "controlType" : "GRID",
+      "enableRowEdit" : false,
+      "enablePagingBar" : true,
       "getPSDEGridColumns" : [ {
         "excelCaption" : "文档库名称",
+        "dataItemName" : "name",
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataItemName" : "name",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -268,17 +175,6 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocGridViewLookDoc.json",
         "viewType" : "DEGRIDVIEW"
       },
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "product",
-        "key" : "product",
-        "name" : "product"
-      }, {
-        "rawValue" : true,
-        "value" : "0",
-        "key" : "parent",
-        "name" : "parent"
-      } ],
       "getPSNavigateContexts" : [ {
         "rawValue" : false,
         "value" : "doclibtype",
@@ -295,6 +191,45 @@
         "key" : "PRODUCT",
         "name" : "PRODUCT"
       } ],
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "product",
+        "key" : "product",
+        "name" : "product"
+      }, {
+        "rawValue" : true,
+        "value" : "0",
+        "key" : "parent",
+        "name" : "parent"
+      } ],
+      "getNavPSDER" : {
+        "getPSPickupDEField" : {
+          "name" : "LIB",
+          "codeName" : "Lib"
+        },
+        "masterOrder" : -1,
+        "getPSPickupTextDEField" : {
+          "name" : "LIBNAME",
+          "codeName" : "Libname"
+        },
+        "removeActionType" : -1,
+        "pickupDEFName" : "LIB",
+        "masterRS" : 0,
+        "removeOrder" : 0,
+        "getMajorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+        },
+        "orderValue" : 100,
+        "getMinorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+        },
+        "codeName" : "Zt_doclib",
+        "dERType" : "DER1N",
+        "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json",
+        "name" : "DER1N_ZT_DOC_ZT_DOCLIB_LIB"
+      },
       "getFetchPSControlAction" : {
         "modelref" : true,
         "id" : "fetch"
@@ -396,6 +331,7 @@
       "name" : "gridexpbar_grid",
       "modelid" : "cc5cf479369502ab31ec96e3f139e377"
     } ],
+    "showTitleBar" : false,
     "getPSAppViewRefs" : [ {
       "getRefPSAppView" : {
         "modelref" : true,
@@ -433,10 +369,10 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
       "enableWizardAdd" : false,
-      "actionAfterWizard" : "DEFAULT",
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"

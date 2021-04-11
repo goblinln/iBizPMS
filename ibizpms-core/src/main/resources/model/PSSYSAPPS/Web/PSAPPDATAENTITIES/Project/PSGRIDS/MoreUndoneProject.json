@@ -7,11 +7,11 @@
     "dataType" : 9,
     "name" : "doclibcnt"
   }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "OPENEDDATE",
       "codeName" : "OpenedDate"
     },
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "dataType" : 5,
     "name" : "openeddate"
   }, {
@@ -98,20 +98,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "OPENEDDATE",
     "codeName" : "OpenedDate"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "项目名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -124,11 +124,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "文档数量",
+    "dataItemName" : "doclibcnt",
     "getPSAppDEField" : {
       "name" : "DOCLIBCNT",
       "codeName" : "Doclibcnt"
     },
-    "dataItemName" : "doclibcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -145,11 +145,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
+    "dataItemName" : "openedby",
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
-    "dataItemName" : "openedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -162,11 +162,11 @@
     "name" : "openedby"
   }, {
     "excelCaption" : "添加时间",
+    "dataItemName" : "openeddate",
     "getPSAppDEField" : {
       "name" : "OPENEDDATE",
       "codeName" : "OpenedDate"
     },
-    "dataItemName" : "openeddate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,

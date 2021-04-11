@@ -7,11 +7,11 @@
     "dataType" : 1,
     "name" : "module"
   }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "LASTRUNDATE",
       "codeName" : "LastRunDate"
     },
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "dataType" : 5,
     "name" : "lastrundate"
   }, {
@@ -302,17 +302,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurCaseVersion.json"
       },
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "case",
-        "key" : "case",
-        "name" : "case"
-      } ],
       "getPSNavigateContexts" : [ {
         "rawValue" : false,
         "value" : "case",
         "key" : "CASE",
         "name" : "CASE"
+      } ],
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "case",
+        "key" : "case",
+        "name" : "case"
       } ],
       "editorType" : "DROPDOWNLIST",
       "editorParams" : {
@@ -325,8 +325,8 @@
       "name" : "VERSION",
       "codeName" : "Version"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "enableCond" : 3,
     "ignoreInput" : 0,
     "valueItemName" : "version",
@@ -336,21 +336,21 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : true,
   "controlType" : "GRID",
+  "enableRowEdit" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "ID",
+    "dataItemName" : "id",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -367,12 +367,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurCaseVersion.json"
     },
+    "dataItemName" : "version_text",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "VERSION",
       "codeName" : "Version"
     },
-    "dataItemName" : "version_text",
-    "enableRowEdit" : true,
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -389,11 +389,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
     },
+    "dataItemName" : "pri",
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "dataItemName" : "pri",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -405,7 +405,6 @@
     "widthUnit" : "PX",
     "name" : "pri"
   }, {
-    "excelCaption" : "用例标题",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -413,11 +412,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
+    "excelCaption" : "用例标题",
+    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataItemName" : "title",
     "cLConvertMode" : "NONE",
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_COLRENDER",
@@ -438,11 +438,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__type.json"
     },
+    "dataItemName" : "type",
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataItemName" : "type",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -459,11 +459,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "openedby",
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
-    "dataItemName" : "openedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -480,11 +480,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "lastrunner",
     "getPSAppDEField" : {
       "name" : "LASTRUNNER",
       "codeName" : "LastRunner"
     },
-    "dataItemName" : "lastrunner",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -497,11 +497,11 @@
     "name" : "lastrunner"
   }, {
     "excelCaption" : "执行时间",
+    "dataItemName" : "lastrundate",
     "getPSAppDEField" : {
       "name" : "LASTRUNDATE",
       "codeName" : "LastRunDate"
     },
-    "dataItemName" : "lastrundate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -519,11 +519,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__result.json"
     },
+    "dataItemName" : "lastrunresult",
     "getPSAppDEField" : {
       "name" : "LASTRUNRESULT",
       "codeName" : "LastRunResult"
     },
-    "dataItemName" : "lastrunresult",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -540,11 +540,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestCaseStatusGrid.json"
     },
+    "dataItemName" : "status1",
     "getPSAppDEField" : {
       "name" : "STATUS1",
       "codeName" : "Status1"
     },
-    "dataItemName" : "status1",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

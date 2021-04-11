@@ -3,44 +3,44 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
-  "codeListType" : "STATIC",
-  "dynaInstMode" : 1,
   "getPSCodeItems" : [ {
+    "value" : "projected",
     "codeName" : "Projected",
     "text" : "已立项",
-    "color" : "rgba(139, 173, 237, 1)",
-    "value" : "projected"
+    "color" : "rgba(139, 173, 237, 1)"
   }, {
+    "value" : "developing",
     "codeName" : "Developing",
     "text" : "研发中",
-    "color" : "rgba(63, 77, 238, 1)",
-    "value" : "developing"
+    "color" : "rgba(63, 77, 238, 1)"
   }, {
+    "value" : "developed",
     "codeName" : "Developed",
     "text" : "研发完毕",
-    "color" : "rgba(73, 227, 101, 1)",
-    "value" : "developed"
+    "color" : "rgba(73, 227, 101, 1)"
   }, {
+    "value" : "testing",
     "codeName" : "Testing",
     "text" : "测试中",
-    "color" : "rgba(224, 198, 54, 1)",
-    "value" : "testing"
+    "color" : "rgba(224, 198, 54, 1)"
   }, {
+    "value" : "tested",
     "codeName" : "Tested",
     "text" : "测试完毕",
-    "color" : "rgba(234, 233, 237, 1)",
-    "value" : "tested"
+    "color" : "rgba(234, 233, 237, 1)"
   }, {
+    "value" : "verified",
     "codeName" : "Verified",
     "text" : "已验收",
-    "color" : "rgba(109, 108, 108, 1)",
-    "value" : "verified"
+    "color" : "rgba(109, 108, 108, 1)"
   }, {
+    "value" : "released",
     "codeName" : "Released",
     "text" : "已发布",
-    "color" : "rgba(11, 11, 11, 1)",
-    "value" : "released"
+    "color" : "rgba(11, 11, 11, 1)"
   } ],
+  "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
   "codeName" : "StoryStageKane",
   "emptyText" : "未定义",
   "enableCache" : true,

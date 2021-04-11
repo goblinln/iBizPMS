@@ -12,6 +12,7 @@
       "id" : "默认连接"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Temp"
@@ -20,7 +21,6 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "IBZ_WEEKLYID",
       "srcFieldName" : "IBZ_WEEKLYID",
@@ -58,13 +58,13 @@
     "name" : "状态[已提交]拒绝[Update]操作"
   }, {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Temp"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -105,14 +105,13 @@
     },
     "name" : "默认连接"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
+        "condOP" : "EQ",
         "paramValue" : "0",
         "dstFieldName" : "ISSUBMIT",
         "logicType" : "SINGLE",
@@ -123,6 +122,7 @@
       "logicType" : "GROUP",
       "id" : "74a5c764edd34f875daebc51d4449dd1__MSDENY__NSUNBMIT"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "DenyByNSUNBMIT"
@@ -133,14 +133,13 @@
     },
     "name" : "状态[未提交]拒绝[Update]操作"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
+        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISSUBMIT",
         "logicType" : "SINGLE",
@@ -151,6 +150,7 @@
       "logicType" : "GROUP",
       "id" : "74a5c764edd34f875daebc51d4449dd1__MSDENY__SUBMIT"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "DenyBySUBMIT"
@@ -162,16 +162,16 @@
     "name" : "状态[已提交]拒绝[Update]操作"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "默认变量"
   }, {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Temp",
     "default" : false,
     "name" : "临时变量"

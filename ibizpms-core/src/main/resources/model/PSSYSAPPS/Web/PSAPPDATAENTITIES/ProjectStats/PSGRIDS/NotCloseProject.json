@@ -57,11 +57,11 @@
     "dataType" : 1,
     "name" : "srfkey"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "end"
   }, {
@@ -109,15 +109,14 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "项目名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -125,11 +124,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "项目名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -142,11 +142,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "截至日期",
+    "dataItemName" : "end",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
-    "dataItemName" : "end",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -164,11 +164,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
     },
+    "dataItemName" : "status",
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataItemName" : "status",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -181,11 +181,11 @@
     "name" : "status"
   }, {
     "excelCaption" : "预计",
+    "dataItemName" : "totalestimate",
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATE",
       "codeName" : "TotalEstimate"
     },
-    "dataItemName" : "totalestimate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -198,11 +198,11 @@
     "name" : "totalestimate"
   }, {
     "excelCaption" : "消耗",
+    "dataItemName" : "totalconsumed",
     "getPSAppDEField" : {
       "name" : "TOTALCONSUMED",
       "codeName" : "TotalConsumed"
     },
-    "dataItemName" : "totalconsumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -215,11 +215,11 @@
     "name" : "totalconsumed"
   }, {
     "excelCaption" : "剩余",
+    "dataItemName" : "totalleft",
     "getPSAppDEField" : {
       "name" : "TOTALLEFT",
       "codeName" : "TotalLeft"
     },
-    "dataItemName" : "totalleft",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -232,11 +232,11 @@
     "name" : "totalleft"
   }, {
     "excelCaption" : "总工时",
+    "dataItemName" : "totalwh",
     "getPSAppDEField" : {
       "name" : "TOTALWH",
       "codeName" : "Totalwh"
     },
-    "dataItemName" : "totalwh",
     "cLConvertMode" : "NONE",
     "hideDefault" : true,
     "noPrivDisplayMode" : 1,
@@ -250,11 +250,11 @@
     "name" : "totalwh"
   }, {
     "excelCaption" : "进度",
+    "dataItemName" : "totalconsumed",
     "getPSAppDEField" : {
       "name" : "TOTALCONSUMED",
       "codeName" : "TotalConsumed"
     },
-    "dataItemName" : "totalconsumed",
     "cLConvertMode" : "NONE",
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_COLRENDER",

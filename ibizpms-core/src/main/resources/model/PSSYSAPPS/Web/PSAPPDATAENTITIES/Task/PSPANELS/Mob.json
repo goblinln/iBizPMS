@@ -1,7 +1,6 @@
 {
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
-      "viewFieldName" : "pri",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -12,9 +11,10 @@
         "editorType" : "SPAN",
         "name" : "pri"
       },
+      "viewFieldName" : "pri",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 1,
         "colLG" : 1,
@@ -24,15 +24,15 @@
       "itemStyle" : "DEFAULT",
       "name" : "pri"
     }, {
-      "viewFieldName" : "name",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "name"
       },
-      "showCaption" : false,
+      "viewFieldName" : "name",
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 11,
         "colLG" : 11,
@@ -42,7 +42,6 @@
       "itemStyle" : "DEFAULT",
       "name" : "name"
     }, {
-      "viewFieldName" : "status",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -53,9 +52,10 @@
         "editorType" : "SPAN",
         "name" : "status"
       },
+      "viewFieldName" : "status",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -66,6 +66,11 @@
       "name" : "status"
     }, {
       "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
+      "getPSLayoutPos" : {
+        "colMD" : 1,
+        "colLG" : 1,
+        "layout" : "TABLE_12COL"
+      },
       "getPSPanelItemGroupLogics" : [ {
         "logicCat" : "PANELVISIBLE",
         "getPSPanelItemLogics" : [ {
@@ -75,8 +80,8 @@
           "name" : "assignedto 值不为空(NotNil)"
         }, {
           "dstModelField" : "assignedto",
-          "condOp" : "NOTEQ",
           "value" : "closed",
+          "condOp" : "NOTEQ",
           "logicType" : "SINGLE",
           "name" : "assignedto 不等于(<>) (closed)"
         } ],
@@ -85,22 +90,22 @@
         "logicType" : "GROUP",
         "name" : "面板成员[rawitem1][面板显示]逻辑"
       } ],
-      "getPSLayoutPos" : {
-        "colMD" : 1,
-        "colLG" : 1,
-        "layout" : "TABLE_12COL"
-      },
       "itemType" : "RAWITEM",
       "itemStyle" : "DEFAULT",
       "showCaption" : true,
       "name" : "rawitem1"
     }, {
+      "getPSLayoutPos" : {
+        "colMD" : 1,
+        "colLG" : 1,
+        "layout" : "TABLE_12COL"
+      },
       "getPSPanelItemGroupLogics" : [ {
         "logicCat" : "PANELVISIBLE",
         "getPSPanelItemLogics" : [ {
           "dstModelField" : "assignedto",
-          "condOp" : "EQ",
           "value" : "closed",
+          "condOp" : "EQ",
           "logicType" : "SINGLE",
           "name" : "assignedto 等于(=) (closed)"
         } ],
@@ -109,16 +114,16 @@
         "logicType" : "GROUP",
         "name" : "面板成员[rawitem3][面板显示]逻辑"
       } ],
-      "getPSLayoutPos" : {
-        "colMD" : 1,
-        "colLG" : 1,
-        "layout" : "TABLE_12COL"
-      },
       "itemType" : "RAWITEM",
       "itemStyle" : "DEFAULT",
       "showCaption" : true,
       "name" : "rawitem3"
     }, {
+      "getPSLayoutPos" : {
+        "colMD" : 1,
+        "colLG" : 1,
+        "layout" : "TABLE_12COL"
+      },
       "getPSPanelItemGroupLogics" : [ {
         "logicCat" : "PANELVISIBLE",
         "getPSPanelItemLogics" : [ {
@@ -132,17 +137,11 @@
         "logicType" : "GROUP",
         "name" : "面板成员[rawitem2][面板显示]逻辑"
       } ],
-      "getPSLayoutPos" : {
-        "colMD" : 1,
-        "colLG" : 1,
-        "layout" : "TABLE_12COL"
-      },
       "itemType" : "RAWITEM",
       "itemStyle" : "DEFAULT",
       "showCaption" : true,
       "name" : "rawitem2"
     }, {
-      "viewFieldName" : "assignedto",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -153,9 +152,10 @@
         "editorType" : "SPAN",
         "name" : "assignedto"
       },
+      "viewFieldName" : "assignedto",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 4,
         "colLG" : 4,
@@ -165,15 +165,15 @@
       "itemStyle" : "DEFAULT",
       "name" : "assignedto"
     }, {
-      "viewFieldName" : " left",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "left"
       },
-      "showCaption" : false,
+      "viewFieldName" : " left",
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 2,
         "colLG" : 2,

@@ -1,4 +1,9 @@
 {
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "getPSAppDEField" : {
@@ -25,13 +30,8 @@
     "dataType" : 25,
     "name" : "srfmstag"
   } ],
-  "showHeader" : true,
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "enableRowEdit" : false,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
@@ -101,11 +101,11 @@
           "id" : "工具栏按钮提示[*.NEW]"
         },
         "getNoPrivDisplayMode" : 2,
-        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf0f6@FontAwesome",
           "cssClass" : "fa fa-file-text-o"
         },
+        "timeout" : 60000,
         "codeName" : "New",
         "caption" : "新建",
         "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -156,8 +156,8 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
-  "controlStyle" : "LISTVIEW",
   "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "controlStyle" : "LISTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSLISTS/Exp.json",
   "logicName" : "Exp",
   "modelid" : "33faef68532bd41ec8c3b0e9bd5cfd48"

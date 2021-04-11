@@ -94,16 +94,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "名称",
+    "dataItemName" : "orgname",
     "getPSAppDEField" : {
       "name" : "ORGNAME",
       "codeName" : "OrgName"
     },
-    "dataItemName" : "orgname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -116,11 +116,11 @@
     "name" : "orgname"
   }, {
     "excelCaption" : "单位简称",
+    "dataItemName" : "shortname",
     "getPSAppDEField" : {
       "name" : "SHORTNAME",
       "codeName" : "ShortName"
     },
-    "dataItemName" : "shortname",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
       "lanResTag" : "TBB.TEXT.*.CANCELWF",

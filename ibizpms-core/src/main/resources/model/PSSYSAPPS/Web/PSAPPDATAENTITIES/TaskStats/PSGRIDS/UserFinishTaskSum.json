@@ -94,16 +94,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "项目名称",
+    "dataItemName" : "projectname",
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataItemName" : "projectname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -120,11 +120,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "finishedby",
     "getPSAppDEField" : {
       "name" : "FINISHEDBY",
       "codeName" : "FinishedBy"
     },
-    "dataItemName" : "finishedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -137,11 +137,11 @@
     "name" : "finishedby"
   }, {
     "excelCaption" : "预计总工时",
+    "dataItemName" : "totalestimate",
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATE",
       "codeName" : "TotalEstimate"
     },
-    "dataItemName" : "totalestimate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -154,11 +154,11 @@
     "name" : "totalestimate"
   }, {
     "excelCaption" : "消耗总工时",
+    "dataItemName" : "totalconsumed",
     "getPSAppDEField" : {
       "name" : "TOTALCONSUMED",
       "codeName" : "TotalConsumed"
     },
-    "dataItemName" : "totalconsumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -171,11 +171,11 @@
     "name" : "totalconsumed"
   }, {
     "excelCaption" : "效率",
+    "dataItemName" : "taskefficient",
     "getPSAppDEField" : {
       "name" : "TASKEFFICIENT",
       "codeName" : "Taskefficient"
     },
-    "dataItemName" : "taskefficient",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

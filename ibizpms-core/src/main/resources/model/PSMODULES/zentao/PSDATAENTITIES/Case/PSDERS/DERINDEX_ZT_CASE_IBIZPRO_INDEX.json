@@ -1,6 +1,6 @@
 {
-  "virtual" : true,
   "typeValue" : "case",
+  "virtual" : true,
   "inherit" : false,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
@@ -38,13 +38,13 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
   },
   "orderValue" : 100,
-  "codeName" : "Case",
-  "logicName" : "功能测试",
-  "dERType" : "DERINDEX",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
   },
+  "codeName" : "Case",
+  "logicName" : "功能测试",
+  "dERType" : "DERINDEX",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DERINDEX_ZT_CASE_IBIZPRO_INDEX.json",
   "name" : "DERINDEX_ZT_CASE_IBIZPRO_INDEX"
 }

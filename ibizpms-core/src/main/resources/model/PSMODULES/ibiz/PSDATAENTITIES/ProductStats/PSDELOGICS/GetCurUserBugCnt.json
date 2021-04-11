@@ -22,11 +22,11 @@
       "id" : "Default"
     },
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
@@ -54,9 +54,9 @@
     "name" : "连接7619"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

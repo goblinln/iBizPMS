@@ -12,20 +12,20 @@
       "id" : "Default"
     },
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT]"
     }, {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PRODUCT",
       "name" : "Default[PRODUCT]"
@@ -55,11 +55,11 @@
       "id" : "连接1794"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT]"
@@ -70,14 +70,13 @@
     "name" : "获取产品"
   } ],
   "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNOTNULL",
         "dstFieldName" : "PRODUCT",
         "logicType" : "SINGLE",
         "name" : "Default[PRODUCT] 值不为空(NotNil)"
@@ -87,6 +86,7 @@
       "logicType" : "GROUP",
       "id" : "f08f3584fce11dd05b3852b549246602"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall2"
@@ -97,14 +97,13 @@
     },
     "name" : "连接1794"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNOTNULL",
         "dstFieldName" : "PROJECT",
         "logicType" : "SINGLE",
         "name" : "Default[PROJECT] 值不为空(NotNil)"
@@ -114,6 +113,7 @@
       "logicType" : "GROUP",
       "id" : "7a8aedfbaad4ce8b4ac3b52921f3b924"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall1"
@@ -125,9 +125,9 @@
     "name" : "连接3016"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

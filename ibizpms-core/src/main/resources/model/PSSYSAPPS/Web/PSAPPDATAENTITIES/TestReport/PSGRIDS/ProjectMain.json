@@ -42,11 +42,11 @@
     "dataType" : 25,
     "name" : "tasks"
   }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "CREATEDDATE",
       "codeName" : "CreatedDate"
     },
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "dataType" : 5,
     "name" : "createddate"
   }, {
@@ -116,20 +116,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "ID",
+    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -142,11 +142,11 @@
     "name" : "id"
   }, {
     "excelCaption" : "标题",
+    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataItemName" : "title",
     "getPSDEUIAction" : {
       "getCapPSLanguageRes" : {
         "lanResTag" : "TBB.TEXT.*.EDIT",
@@ -157,11 +157,11 @@
         "id" : "工具栏按钮提示[*.EDIT]"
       },
       "getNoPrivDisplayMode" : 2,
-      "timeout" : 60000,
       "getPSSysImage" : {
         "glyph" : "xf044@FontAwesome",
         "cssClass" : "fa fa-edit"
       },
+      "timeout" : 60000,
       "codeName" : "Edit",
       "caption" : "编辑",
       "actionTarget" : "SINGLEKEY",
@@ -187,11 +187,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "createdby",
     "getPSAppDEField" : {
       "name" : "CREATEDBY",
       "codeName" : "CreatedBy"
     },
-    "dataItemName" : "createdby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -204,11 +204,11 @@
     "name" : "createdby"
   }, {
     "excelCaption" : "创建时间",
+    "dataItemName" : "createddate",
     "getPSAppDEField" : {
       "name" : "CREATEDDATE",
       "codeName" : "CreatedDate"
     },
-    "dataItemName" : "createddate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -221,7 +221,6 @@
     "widthUnit" : "PX",
     "name" : "createddate"
   }, {
-    "excelCaption" : "所属项目",
     "linkValueItem" : "project",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -229,11 +228,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "所属项目",
+    "dataItemName" : "projectname",
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataItemName" : "projectname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -250,11 +250,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestTask.json"
     },
+    "dataItemName" : "tasks",
     "getPSAppDEField" : {
       "name" : "TASKS",
       "codeName" : "Tasks"
     },
-    "dataItemName" : "tasks",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -268,7 +268,7 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -282,11 +282,11 @@
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "ProjectEdits",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -299,12 +299,12 @@
           "name" : "编辑（项目）",
           "id" : "ProjectEdits@TestReport"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u58bc4ed"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -317,11 +317,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "timeout" : 60000,
           "codeName" : "Delete",
           "caption" : "删除",
           "actionTarget" : "SINGLEKEY",
@@ -336,7 +336,7 @@
           "name" : "删除",
           "id" : "Delete@TestReport"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u0499c7d"

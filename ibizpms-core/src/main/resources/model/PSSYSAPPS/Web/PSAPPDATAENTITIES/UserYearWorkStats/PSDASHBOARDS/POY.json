@@ -189,11 +189,11 @@
               "enableDEFieldPrivilege" : false,
               "id" : "图形控件处理器"
             },
-            "height" : 300.0,
             "getPSSysPFPlugin" : {
               "pluginType" : "CHART_RENDER",
               "pluginCode" : "piePlugin"
             },
+            "height" : 300.0,
             "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory.json",
             "logicName" : "MyOpenedStory",
             "name" : "dashboard_sysportlet6_chart",
@@ -212,8 +212,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "showTitleBar" : false,
           "controlType" : "PORTLET",
+          "showTitleBar" : false,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -236,8 +236,8 @@
           "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
-        "showTitleBar" : false,
         "controlType" : "PORTLET",
+        "showTitleBar" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -426,11 +426,11 @@
               "enableDEFieldPrivilege" : false,
               "id" : "图形控件处理器"
             },
-            "height" : 300.0,
             "getPSSysPFPlugin" : {
               "pluginType" : "CHART_RENDER",
               "pluginCode" : "piePlugin"
             },
+            "height" : 300.0,
             "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory_Stage.json",
             "logicName" : "MyOpenedStory_Stage",
             "name" : "dashboard_sysportlet7_chart",
@@ -449,8 +449,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "showTitleBar" : false,
           "controlType" : "PORTLET",
+          "showTitleBar" : false,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -473,8 +473,8 @@
           "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
-        "showTitleBar" : false,
         "controlType" : "PORTLET",
+        "showTitleBar" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -496,8 +496,8 @@
         "colLG" : 14,
         "layout" : "TABLE_24COL"
       },
-      "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "showTitleBar" : true,
       "title" : "所创建需求数和对应的优先级及状态",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -575,11 +575,11 @@
               "id" : "0"
             },
             "getPSChartSeriesEncode" : {
-              "getPSChartYAxis" : {
+              "getPSChartXAxis" : {
                 "modelref" : true,
                 "id" : "0"
               },
-              "getPSChartXAxis" : {
+              "getPSChartYAxis" : {
                 "modelref" : true,
                 "id" : "0"
               },
@@ -602,10 +602,21 @@
             "eChartsType" : "category",
             "eChartsPos" : "xAxis",
             "position" : "bottom",
-            "caption" : "月",
             "type" : "category",
+            "caption" : "月",
             "index" : 0,
             "name" : "月",
+            "id" : "0"
+          } ],
+          "getPSChartYAxises" : [ {
+            "eChartsType" : "value",
+            "eChartsPos" : "yAxis",
+            "position" : "left",
+            "type" : "numeric",
+            "maxValue" : 200.0,
+            "minValue" : 0.0,
+            "index" : 0,
+            "name" : "数值",
             "id" : "0"
           } ],
           "getPSChartGrids" : [ {
@@ -631,17 +642,6 @@
             "type" : "grid",
             "index" : 0,
             "name" : "[storycnt]直角坐标系[0]",
-            "id" : "0"
-          } ],
-          "getPSChartYAxises" : [ {
-            "eChartsType" : "value",
-            "eChartsPos" : "yAxis",
-            "maxValue" : 200.0,
-            "minValue" : 0.0,
-            "position" : "left",
-            "type" : "numeric",
-            "index" : 0,
-            "name" : "数值",
             "id" : "0"
           } ],
           "getPSChartDataSets" : [ {
@@ -749,11 +749,11 @@
             "enableDEFieldPrivilege" : false,
             "id" : "图形控件处理器"
           },
-          "height" : 300.0,
           "getPSSysPFPlugin" : {
             "pluginType" : "CHART_RENDER",
             "pluginCode" : "NEW"
           },
+          "height" : 300.0,
           "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedStory.json",
           "logicName" : "MonthOpenedStory",
           "name" : "dashboard_sysportlet5_chart",
@@ -771,8 +771,8 @@
           "height" : 350,
           "layout" : "TABLE_24COL"
         },
-        "showTitleBar" : false,
         "controlType" : "PORTLET",
+        "showTitleBar" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -795,8 +795,8 @@
         "colLG" : 10,
         "layout" : "TABLE_24COL"
       },
-      "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "showTitleBar" : true,
       "title" : "月创建需求数",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -821,8 +821,8 @@
       "colLGOffset" : 1,
       "layout" : "TABLE_24COL"
     },
-    "showTitleBar" : true,
     "controlType" : "PORTLET",
+    "showTitleBar" : true,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"

@@ -45,11 +45,11 @@
     "dataType" : 25,
     "name" : "srfmstag"
   }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "EDITEDDATE",
       "codeName" : "EditedDate"
     },
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "dataType" : 5,
     "name" : "editeddate"
   }, {
@@ -112,15 +112,14 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "EDITEDDATE",
     "codeName" : "EditedDate"
   },
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "文档标题",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -128,11 +127,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
+    "excelCaption" : "文档标题",
+    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataItemName" : "title",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -149,11 +149,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "addedby",
     "getPSAppDEField" : {
       "name" : "ADDEDBY",
       "codeName" : "AddedBy"
     },
-    "dataItemName" : "addedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -166,11 +166,11 @@
     "name" : "addedby"
   }, {
     "excelCaption" : "更新时间",
+    "dataItemName" : "editeddate",
     "getPSAppDEField" : {
       "name" : "EDITEDDATE",
       "codeName" : "EditedDate"
     },
-    "dataItemName" : "editeddate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,

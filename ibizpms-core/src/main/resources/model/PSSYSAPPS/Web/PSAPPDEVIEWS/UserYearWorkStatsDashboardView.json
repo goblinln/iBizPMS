@@ -35,8 +35,8 @@
     "engineType" : "PortalView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "DASHBOARD"
+      "name" : "DASHBOARD",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -46,11 +46,11 @@
     "key" : "CURYEAR",
     "name" : "CURYEAR"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "codeName" : "DEVY",
     "getPSLayout" : {
@@ -230,11 +230,11 @@
               "enableDEFieldPrivilege" : false,
               "id" : "图形控件处理器"
             },
-            "height" : 300.0,
             "getPSSysPFPlugin" : {
               "pluginType" : "CHART_RENDER",
               "pluginCode" : "piePlugin"
             },
+            "height" : 300.0,
             "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSCHARTS/MyFinishedbyTask.json",
             "logicName" : "MyFinishedbyTask",
             "name" : "dashboard_sysportlet3_chart",
@@ -254,8 +254,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "showTitleBar" : false,
           "controlType" : "PORTLET",
+          "showTitleBar" : false,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -434,11 +434,11 @@
               "enableDEFieldPrivilege" : false,
               "id" : "图形控件处理器"
             },
-            "height" : 300.0,
             "getPSSysPFPlugin" : {
               "pluginType" : "CHART_RENDER",
               "pluginCode" : "piePlugin"
             },
+            "height" : 300.0,
             "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/CurUserResolveBug.json",
             "logicName" : "CurUserResolveBug",
             "name" : "dashboard_sysportlet4_chart",
@@ -458,8 +458,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "showTitleBar" : false,
           "controlType" : "PORTLET",
+          "showTitleBar" : false,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -482,8 +482,8 @@
           "colLG" : 14,
           "layout" : "TABLE_24COL"
         },
-        "showTitleBar" : true,
         "controlType" : "PORTLET",
+        "showTitleBar" : true,
         "title" : "完成任务数和解决Bug数",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -561,11 +561,11 @@
                 "id" : "0"
               },
               "getPSChartSeriesEncode" : {
-                "getPSChartYAxis" : {
+                "getPSChartXAxis" : {
                   "modelref" : true,
                   "id" : "0"
                 },
-                "getPSChartXAxis" : {
+                "getPSChartYAxis" : {
                   "modelref" : true,
                   "id" : "0"
                 },
@@ -597,11 +597,11 @@
                 "id" : "1"
               },
               "getPSChartSeriesEncode" : {
-                "getPSChartYAxis" : {
+                "getPSChartXAxis" : {
                   "modelref" : true,
                   "id" : "0"
                 },
-                "getPSChartXAxis" : {
+                "getPSChartYAxis" : {
                   "modelref" : true,
                   "id" : "0"
                 },
@@ -633,11 +633,11 @@
                 "id" : "2"
               },
               "getPSChartSeriesEncode" : {
-                "getPSChartYAxis" : {
+                "getPSChartXAxis" : {
                   "modelref" : true,
                   "id" : "0"
                 },
-                "getPSChartXAxis" : {
+                "getPSChartYAxis" : {
                   "modelref" : true,
                   "id" : "0"
                 },
@@ -660,10 +660,22 @@
               "eChartsType" : "category",
               "eChartsPos" : "xAxis",
               "position" : "bottom",
-              "caption" : "月",
               "type" : "category",
+              "caption" : "月",
               "index" : 0,
               "name" : "月",
+              "id" : "0"
+            } ],
+            "getPSChartYAxises" : [ {
+              "eChartsType" : "value",
+              "eChartsPos" : "yAxis",
+              "position" : "left",
+              "type" : "numeric",
+              "maxValue" : 100.0,
+              "minValue" : 0.0,
+              "caption" : "数量",
+              "index" : 0,
+              "name" : "数量",
               "id" : "0"
             } ],
             "getPSChartGrids" : [ {
@@ -689,18 +701,6 @@
               "type" : "grid",
               "index" : 0,
               "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
-              "id" : "0"
-            } ],
-            "getPSChartYAxises" : [ {
-              "eChartsType" : "value",
-              "eChartsPos" : "yAxis",
-              "maxValue" : 100.0,
-              "minValue" : 0.0,
-              "position" : "left",
-              "caption" : "数量",
-              "type" : "numeric",
-              "index" : 0,
-              "name" : "数量",
               "id" : "0"
             } ],
             "getPSChartDataSets" : [ {
@@ -840,11 +840,11 @@
               "enableDEFieldPrivilege" : false,
               "id" : "图形控件处理器"
             },
-            "height" : 300.0,
             "getPSSysPFPlugin" : {
               "pluginType" : "CHART_RENDER",
               "pluginCode" : "NEW"
             },
+            "height" : 300.0,
             "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthFinishTaskAndBug.json",
             "logicName" : "MonthFinishTaskAndBug",
             "name" : "dashboard_sysportlet5_chart",
@@ -862,8 +862,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "showTitleBar" : false,
           "controlType" : "PORTLET",
+          "showTitleBar" : false,
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -886,8 +886,8 @@
           "colLG" : 10,
           "layout" : "TABLE_24COL"
         },
-        "showTitleBar" : true,
         "controlType" : "PORTLET",
+        "showTitleBar" : true,
         "title" : "月完成任务数及累计工时和解决Bug数",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -912,8 +912,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "showTitleBar" : true,
       "controlType" : "PORTLET",
+      "showTitleBar" : true,
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"

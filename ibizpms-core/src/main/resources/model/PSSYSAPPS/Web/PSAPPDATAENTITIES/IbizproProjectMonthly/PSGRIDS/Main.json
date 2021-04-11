@@ -42,11 +42,11 @@
     "dataType" : 25,
     "name" : "projectname"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "date"
   }, {
@@ -112,15 +112,14 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "项目月报名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -128,11 +127,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProjectMonthlyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
+    "excelCaption" : "项目月报名称",
+    "dataItemName" : "ibizpro_projectmonthlyname",
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTMONTHLYNAME",
       "codeName" : "IbizproProjectMonthlyName"
     },
-    "dataItemName" : "ibizpro_projectmonthlyname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -145,11 +145,11 @@
     "name" : "ibizpro_projectmonthlyname"
   }, {
     "excelCaption" : "项目名称",
+    "dataItemName" : "projectname",
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataItemName" : "projectname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -162,11 +162,11 @@
     "name" : "projectname"
   }, {
     "excelCaption" : "年月",
+    "dataItemName" : "year_month",
     "getPSAppDEField" : {
       "name" : "YEAR_MONTH",
       "codeName" : "YearMonth"
     },
-    "dataItemName" : "year_month",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -179,11 +179,11 @@
     "name" : "year_month"
   }, {
     "excelCaption" : "日期",
+    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataItemName" : "date",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -201,11 +201,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "pm",
     "getPSAppDEField" : {
       "name" : "PM",
       "codeName" : "PM"
     },
-    "dataItemName" : "pm",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -218,11 +218,11 @@
     "name" : "pm"
   }, {
     "excelCaption" : "总工时",
+    "dataItemName" : "totalestimates",
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATES",
       "codeName" : "Totalestimates"
     },
-    "dataItemName" : "totalestimates",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

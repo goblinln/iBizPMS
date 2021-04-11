@@ -32,25 +32,25 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "CTRL",
-      "name" : "SEARCHFORM"
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "getPSDEGridDataItems" : [ {
       "getPSAppDEField" : {
@@ -168,20 +168,20 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "enablePagingBar" : false,
-    "enableRowEdit" : false,
     "controlType" : "GRID",
+    "enableRowEdit" : false,
+    "enablePagingBar" : false,
     "getPSDEGridColumns" : [ {
       "excelCaption" : "姓名",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
+      "dataItemName" : "assignedto",
       "getPSAppDEField" : {
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
-      "dataItemName" : "assignedto",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -193,7 +193,6 @@
       "widthUnit" : "PX",
       "name" : "assignedto"
     }, {
-      "excelCaption" : "项目",
       "linkValueItem" : "project",
       "enableLinkView" : true,
       "getLinkPSAppView" : {
@@ -201,11 +200,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
         "viewType" : "DETABEXPVIEW"
       },
+      "excelCaption" : "项目",
+      "dataItemName" : "projectname",
       "getPSAppDEField" : {
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       },
-      "dataItemName" : "projectname",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -218,11 +218,11 @@
       "name" : "projectname"
     }, {
       "excelCaption" : "任务数",
+      "dataItemName" : "taskcnt",
       "getPSAppDEField" : {
         "name" : "TASKCNT",
         "codeName" : "TaskCnt"
       },
-      "dataItemName" : "taskcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -235,11 +235,11 @@
       "name" : "taskcnt"
     }, {
       "excelCaption" : "剩余工时",
+      "dataItemName" : "left",
       "getPSAppDEField" : {
         "name" : "LEFT",
         "codeName" : "Left"
       },
-      "dataItemName" : "left",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -252,11 +252,11 @@
       "name" : "left"
     }, {
       "excelCaption" : "总任务数",
+      "dataItemName" : "totaltaskcnt",
       "getPSAppDEField" : {
         "name" : "TOTALTASKCNT",
         "codeName" : "Totaltaskcnt"
       },
-      "dataItemName" : "totaltaskcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -269,11 +269,11 @@
       "name" : "totaltaskcnt"
     }, {
       "excelCaption" : "总工时",
+      "dataItemName" : "totalleft",
       "getPSAppDEField" : {
         "name" : "TOTALLEFT",
         "codeName" : "TotalLeft"
       },
-      "dataItemName" : "totalleft",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -286,11 +286,11 @@
       "name" : "totalleft"
     }, {
       "excelCaption" : "工作负载",
+      "dataItemName" : "workload",
       "getPSAppDEField" : {
         "name" : "WORKLOAD",
         "codeName" : "Workload"
       },
-      "dataItemName" : "workload",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -422,7 +422,6 @@
     },
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
-        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "singleSelect" : true,
@@ -430,17 +429,17 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RealDept.json"
           },
-          "getPSNavigateParams" : [ {
-            "rawValue" : false,
-            "value" : "srforgid",
-            "key" : "n_orgid_eq",
-            "name" : "n_orgid_eq"
-          } ],
           "getPSNavigateContexts" : [ {
             "rawValue" : false,
             "value" : "srforgid",
             "key" : "N_ORGID_EQ",
             "name" : "N_ORGID_EQ"
+          } ],
+          "getPSNavigateParams" : [ {
+            "rawValue" : false,
+            "value" : "srforgid",
+            "key" : "n_orgid_eq",
+            "name" : "n_orgid_eq"
           } ],
           "editorType" : "DROPDOWNLIST",
           "editorParams" : {
@@ -449,17 +448,18 @@
           },
           "name" : "dept"
         },
+        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "dataType" : 25,
-        "allowEmpty" : true,
+        "hidden" : false,
         "needCodeListConfig" : true,
+        "allowEmpty" : true,
         "caption" : "部门",
-        "labelWidth" : 45,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
+        "labelWidth" : 45,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 3,
           "colLG" : 3,
@@ -470,7 +470,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "dept"
       }, {
-        "inputTipClosable" : false,
         "getPSDEFormItemUpdate" : {
           "modelref" : true,
           "id" : "UpdateTime"
@@ -478,28 +477,29 @@
         "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
-          "editorWidth" : 100.0,
           "editorType" : "DATEPICKEREX_NOTIME",
+          "editorWidth" : 100.0,
           "editorParams" : {
             "TIMEFMT" : "YYYY-MM-DD"
           },
           "name" : "begin"
         },
+        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "BEGIN",
           "codeName" : "Begin"
         },
         "dataType" : 5,
+        "hidden" : false,
         "allowEmpty" : true,
         "caption" : "起止时间",
         "createDVT" : "CURTIME",
-        "labelWidth" : 80,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
+        "labelWidth" : 80,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 4,
           "colLG" : 4,
@@ -510,7 +510,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "begin"
       }, {
-        "inputTipClosable" : false,
         "getPSDEFormItemUpdate" : {
           "modelref" : true,
           "id" : "UpdateTime"
@@ -518,27 +517,28 @@
         "emptyCaption" : false,
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD",
-          "editorWidth" : 100.0,
           "editorType" : "DATEPICKEREX_NOTIME",
+          "editorWidth" : 100.0,
           "editorParams" : {
             "TIMEFMT" : "YYYY-MM-DD"
           },
           "name" : "end"
         },
+        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "END",
           "codeName" : "End"
         },
         "dataType" : 5,
+        "hidden" : false,
         "allowEmpty" : true,
         "caption" : "至",
-        "labelWidth" : 30,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
+        "labelWidth" : 30,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 3,
           "colLG" : 3,
@@ -551,27 +551,27 @@
         "detailStyle" : "DEFAULT",
         "name" : "end"
       }, {
-        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "NUMBER",
           "name" : "workday"
         },
+        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "WORKDAY",
           "codeName" : "Workday"
         },
         "dataType" : 9,
+        "hidden" : false,
         "allowEmpty" : true,
         "caption" : "工作天数",
         "createDV" : "6",
-        "labelWidth" : 60,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
+        "labelWidth" : 60,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 3,
           "colLG" : 4,
@@ -583,23 +583,23 @@
         "detailStyle" : "DEFAULT",
         "name" : "workday"
       }, {
-        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "NUMBER",
           "name" : "everydaytime"
         },
+        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "dataType" : 25,
+        "hidden" : false,
         "allowEmpty" : true,
         "caption" : "每天工时",
         "createDV" : "7",
-        "labelWidth" : 60,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
+        "labelWidth" : 60,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 3,
           "colLG" : 4,
@@ -613,7 +613,6 @@
         "detailStyle" : "DEFAULT",
         "name" : "everydaytime"
       }, {
-        "inputTipClosable" : false,
         "emptyCaption" : true,
         "getPSEditor" : {
           "singleSelect" : true,
@@ -621,24 +620,25 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IsAssigned.json"
           },
-          "editorWidth" : 100.0,
           "editorType" : "DROPDOWNLIST",
+          "editorWidth" : 100.0,
           "name" : "assign"
         },
+        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ASSIGN",
           "codeName" : "Assign"
         },
         "dataType" : 25,
-        "allowEmpty" : true,
+        "hidden" : false,
         "needCodeListConfig" : true,
-        "labelWidth" : 5,
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
+        "labelWidth" : 5,
         "showCaption" : true,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 3,
           "colLG" : 3,
@@ -785,26 +785,24 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
-      "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/EMPLOYEELOADEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/EMPLOYEELOADEditView.json"
+        }
       },
+      "enableBatchAdd" : false,
+      "batchAddOnly" : false,
+      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/EMPLOYEELOADEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/EMPLOYEELOADEditView.json"
+        }
       } ],
       "logicType" : "PREDEFINED",
       "name" : "新建数据"
@@ -819,8 +817,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/EMPLOYEELOADEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/EMPLOYEELOADEditView.json"
+        }
       },
       "viewLogicType" : "APP_OPENDATA",
       "getPSAppUILogicRefViews" : [ {
@@ -828,8 +825,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/EMPLOYEELOADEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/EMPLOYEELOADEditView.json"
+        }
       } ],
       "logicType" : "PREDEFINED",
       "name" : "打开数据"

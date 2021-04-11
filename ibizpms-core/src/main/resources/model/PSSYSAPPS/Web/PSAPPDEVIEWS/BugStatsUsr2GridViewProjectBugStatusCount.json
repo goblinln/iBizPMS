@@ -31,25 +31,25 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "CTRL",
-      "name" : "SEARCHFORM"
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "getPSDEGridDataItems" : [ {
       "getPSAppDEField" : {
@@ -160,16 +160,16 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "enablePagingBar" : false,
-    "enableRowEdit" : false,
     "controlType" : "GRID",
+    "enableRowEdit" : false,
+    "enablePagingBar" : false,
     "getPSDEGridColumns" : [ {
       "excelCaption" : "项目名称",
+      "dataItemName" : "projectname",
       "getPSAppDEField" : {
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       },
-      "dataItemName" : "projectname",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -182,11 +182,11 @@
       "name" : "projectname"
     }, {
       "excelCaption" : "激活",
+      "dataItemName" : "bugactive",
       "getPSAppDEField" : {
         "name" : "BUGACTIVE",
         "codeName" : "Bugactive"
       },
-      "dataItemName" : "bugactive",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -200,11 +200,11 @@
       "name" : "bugactive"
     }, {
       "excelCaption" : "已解决",
+      "dataItemName" : "bugresolved",
       "getPSAppDEField" : {
         "name" : "BUGRESOLVED",
         "codeName" : "Bugresolved"
       },
-      "dataItemName" : "bugresolved",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -218,11 +218,11 @@
       "name" : "bugresolved"
     }, {
       "excelCaption" : "已关闭",
+      "dataItemName" : "bugclosed",
       "getPSAppDEField" : {
         "name" : "BUGCLOSED",
         "codeName" : "Bugclosed"
       },
-      "dataItemName" : "bugclosed",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -236,11 +236,11 @@
       "name" : "bugclosed"
     }, {
       "excelCaption" : "总计",
+      "dataItemName" : "bugcnt",
       "getPSAppDEField" : {
         "name" : "BUGCNT",
         "codeName" : "BugCnt"
       },
-      "dataItemName" : "bugcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -380,27 +380,27 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "dateTimeFormat" : "YYYY-MM-DD",
-            "editorWidth" : 100.0,
             "editorType" : "DATEPICKEREX_NOTIME",
+            "editorWidth" : 100.0,
             "editorParams" : {
               "TIMEFMT" : "YYYY-MM-DD"
             },
             "name" : "openeddatelt"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "dataType" : 25,
+          "hidden" : false,
           "allowEmpty" : true,
           "caption" : "Bug创建时间",
-          "labelWidth" : 95,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 95,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 14,
             "colLG" : 14,
@@ -411,27 +411,27 @@
           "detailStyle" : "DEFAULT",
           "name" : "openeddatelt"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "dateTimeFormat" : "YYYY-MM-DD",
-            "editorWidth" : 100.0,
             "editorType" : "DATEPICKEREX_NOTIME",
+            "editorWidth" : 100.0,
             "editorParams" : {
               "TIMEFMT" : "YYYY-MM-DD"
             },
             "name" : "openeddategt"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "dataType" : 25,
+          "hidden" : false,
           "allowEmpty" : true,
           "caption" : "至",
-          "labelWidth" : 30,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 30,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 10,
             "colLG" : 10,
@@ -461,7 +461,6 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
@@ -472,17 +471,18 @@
             "editorType" : "DROPDOWNLIST",
             "name" : "producteq"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "dataType" : 25,
-          "allowEmpty" : true,
+          "hidden" : false,
           "needCodeListConfig" : true,
+          "allowEmpty" : true,
           "caption" : "产品",
-          "labelWidth" : 50,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 50,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 12,
             "colLG" : 12,
@@ -493,7 +493,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "producteq"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
@@ -501,17 +500,17 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectCodeList.json"
             },
-            "getPSNavigateParams" : [ {
-              "rawValue" : false,
-              "value" : "producteq",
-              "key" : "product",
-              "name" : "product"
-            } ],
             "getPSNavigateContexts" : [ {
               "rawValue" : false,
               "value" : "producteq",
               "key" : "PRODUCT",
               "name" : "PRODUCT"
+            } ],
+            "getPSNavigateParams" : [ {
+              "rawValue" : false,
+              "value" : "producteq",
+              "key" : "product",
+              "name" : "product"
             } ],
             "editorType" : "DROPDOWNLIST",
             "editorParams" : {
@@ -520,17 +519,18 @@
             },
             "name" : "projecteq"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "dataType" : 25,
-          "allowEmpty" : true,
+          "hidden" : false,
           "needCodeListConfig" : true,
+          "allowEmpty" : true,
           "caption" : "项目",
-          "labelWidth" : 50,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 50,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 12,
             "colLG" : 12,
@@ -653,26 +653,24 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
-      "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsEditView.json"
+        }
       },
+      "enableBatchAdd" : false,
+      "batchAddOnly" : false,
+      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsEditView.json"
+        }
       } ],
       "logicType" : "PREDEFINED",
       "name" : "新建数据"
@@ -687,8 +685,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsEditView.json"
+        }
       },
       "viewLogicType" : "APP_OPENDATA",
       "getPSAppUILogicRefViews" : [ {
@@ -696,8 +693,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsEditView.json"
+        }
       } ],
       "logicType" : "PREDEFINED",
       "name" : "打开数据"

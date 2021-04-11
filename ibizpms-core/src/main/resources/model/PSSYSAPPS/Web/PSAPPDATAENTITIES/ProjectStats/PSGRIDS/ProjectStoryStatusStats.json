@@ -108,16 +108,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "项目名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -130,11 +130,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "空",
+    "dataItemName" : "emptystory",
     "getPSAppDEField" : {
       "name" : "EMPTYSTORY",
       "codeName" : "Emptystory"
     },
-    "dataItemName" : "emptystory",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -148,11 +148,11 @@
     "name" : "emptystory"
   }, {
     "excelCaption" : "草稿",
+    "dataItemName" : "draftstory",
     "getPSAppDEField" : {
       "name" : "DRAFTSTORY",
       "codeName" : "Draftstory"
     },
-    "dataItemName" : "draftstory",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -166,11 +166,11 @@
     "name" : "draftstory"
   }, {
     "excelCaption" : "激活",
+    "dataItemName" : "activestory",
     "getPSAppDEField" : {
       "name" : "ACTIVESTORY",
       "codeName" : "Activestory"
     },
-    "dataItemName" : "activestory",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -184,11 +184,11 @@
     "name" : "activestory"
   }, {
     "excelCaption" : "已关闭",
+    "dataItemName" : "closedstory",
     "getPSAppDEField" : {
       "name" : "CLOSEDSTORY",
       "codeName" : "Closedstory"
     },
-    "dataItemName" : "closedstory",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -202,11 +202,11 @@
     "name" : "closedstory"
   }, {
     "excelCaption" : "已变更",
+    "dataItemName" : "changedstory",
     "getPSAppDEField" : {
       "name" : "CHANGEDSTORY",
       "codeName" : "Changedstory"
     },
-    "dataItemName" : "changedstory",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -220,11 +220,11 @@
     "name" : "changedstory"
   }, {
     "excelCaption" : "总计",
+    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "dataItemName" : "storycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

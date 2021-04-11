@@ -37,11 +37,11 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "CTRL",
-      "name" : "SEARCHFORM"
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -70,11 +70,11 @@
     "uIActionTarget" : "NONE",
     "name" : "toolbar_deuiaction2"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -90,10 +90,10 @@
         },
         "frontProcessType" : "OTHER",
         "getNoPrivDisplayMode" : 2,
-        "timeout" : 60000,
         "getPSSysImage" : {
           "cssClass" : "download"
         },
+        "timeout" : 60000,
         "codeName" : "BatchDownload",
         "caption" : "批量下载",
         "actionTarget" : "MULTIKEY",
@@ -127,10 +127,10 @@
         },
         "frontProcessType" : "OTHER",
         "getNoPrivDisplayMode" : 2,
-        "timeout" : 60000,
         "getPSSysImage" : {
           "cssClass" : "download"
         },
+        "timeout" : 60000,
         "codeName" : "AllDownload",
         "caption" : "全部下载",
         "actionTarget" : "NONE",
@@ -187,11 +187,11 @@
       "dataType" : 25,
       "name" : "title"
     }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
       "getPSAppDEField" : {
         "name" : "ADDEDDATE",
         "codeName" : "AddedDate"
       },
-      "format" : "YYYY-MM-DD HH:mm:ss",
       "dataType" : 5,
       "name" : "addeddate"
     }, {
@@ -282,20 +282,20 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "enablePagingBar" : true,
-    "enableRowEdit" : false,
     "controlType" : "GRID",
+    "enableRowEdit" : false,
     "getMinorSortPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "enablePagingBar" : true,
     "getPSDEGridColumns" : [ {
       "excelCaption" : "文档编号",
+      "dataItemName" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataItemName" : "id",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -308,11 +308,11 @@
       "name" : "id"
     }, {
       "excelCaption" : "附件名",
+      "dataItemName" : "title",
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "dataItemName" : "title",
       "getPSDEUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -343,11 +343,11 @@
       "name" : "title"
     }, {
       "excelCaption" : "地址",
+      "dataItemName" : "pathname",
       "getPSAppDEField" : {
         "name" : "PATHNAME",
         "codeName" : "Pathname"
       },
-      "dataItemName" : "pathname",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -364,11 +364,11 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/File__object_type.json"
       },
+      "dataItemName" : "objecttype",
       "getPSAppDEField" : {
         "name" : "OBJECTTYPE",
         "codeName" : "ObjectType"
       },
-      "dataItemName" : "objecttype",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -381,11 +381,11 @@
       "name" : "objecttype"
     }, {
       "excelCaption" : "大小",
+      "dataItemName" : "strsize",
       "getPSAppDEField" : {
         "name" : "STRSIZE",
         "codeName" : "Strsize"
       },
-      "dataItemName" : "strsize",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -402,11 +402,11 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
+      "dataItemName" : "addedby",
       "getPSAppDEField" : {
         "name" : "ADDEDBY",
         "codeName" : "AddedBy"
       },
-      "dataItemName" : "addedby",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -419,11 +419,11 @@
       "name" : "addedby"
     }, {
       "excelCaption" : "添加时间",
+      "dataItemName" : "addeddate",
       "getPSAppDEField" : {
         "name" : "ADDEDDATE",
         "codeName" : "AddedDate"
       },
-      "dataItemName" : "addeddate",
       "valueFormat" : "YYYY-MM-DD HH:mm:ss",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -438,7 +438,7 @@
     }, {
       "getPSDEUIActionGroup" : {
         "getPSUIActionGroupDetails" : [ {
-          "addSeparator" : false,
+          "showIcon" : true,
           "getPSUIAction" : {
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -446,11 +446,11 @@
             },
             "frontProcessType" : "OTHER",
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf019@FontAwesome",
               "cssClass" : "fa fa-download"
             },
+            "timeout" : 60000,
             "codeName" : "ibzdownload",
             "caption" : "下载",
             "actionTarget" : "SINGLEKEY",
@@ -462,12 +462,12 @@
             "name" : "下载",
             "id" : "ibzdownload@File"
           },
-          "showIcon" : true,
+          "addSeparator" : false,
           "detailType" : "DEUIACTION",
           "showCaption" : false,
           "name" : "ue934bc9"
         }, {
-          "addSeparator" : false,
+          "showIcon" : true,
           "getPSUIAction" : {
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -480,11 +480,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-remove"
             },
+            "timeout" : 60000,
             "codeName" : "delete",
             "caption" : "删除",
             "actionTarget" : "SINGLEKEY",
@@ -498,7 +498,7 @@
             "name" : "删除",
             "id" : "delete@File"
           },
-          "showIcon" : true,
+          "addSeparator" : false,
           "detailType" : "DEUIACTION",
           "showCaption" : false,
           "name" : "u8a00ae7"

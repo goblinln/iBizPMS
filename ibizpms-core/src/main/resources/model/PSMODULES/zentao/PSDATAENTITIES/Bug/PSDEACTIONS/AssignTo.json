@@ -27,19 +27,19 @@
   } ],
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "orderValue" : 99999,
   "codeName" : "AssignTo",
   "logicName" : "指派",
+  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/AssignTo.json",
-  "userCat" : "CAT1",
-  "name" : "assignTo"
+  "name" : "assignTo",
+  "userCat" : "CAT1"
 }

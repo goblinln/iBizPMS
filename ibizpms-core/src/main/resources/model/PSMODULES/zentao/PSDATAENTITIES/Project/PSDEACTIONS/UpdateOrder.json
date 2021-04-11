@@ -10,8 +10,6 @@
   } ],
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
@@ -20,13 +18,15 @@
     "modelref" : true,
     "id" : "UPDATE"
   },
+  "orderValue" : 99999,
   "codeName" : "UpdateOrder",
   "logicName" : "排序",
+  "extendMode" : 0,
   "actionMode" : "UPDATE",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UpdateOrder.json",
-  "userCat" : "CAT1",
-  "name" : "UpdateOrder"
+  "name" : "UpdateOrder",
+  "userCat" : "CAT1"
 }

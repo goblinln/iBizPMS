@@ -3,11 +3,11 @@
     "name" : "ROOT",
     "codeName" : "Root"
   },
+  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "DOCLIBNAME",
     "codeName" : "Doclibname"
   },
-  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "ROOT",
   "masterRS" : 0,
@@ -17,13 +17,13 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
   },
   "orderValue" : 100,
-  "codeName" : "DocLib",
-  "logicName" : "文档分类",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
   },
+  "codeName" : "DocLib",
+  "logicName" : "文档分类",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json",
   "name" : "DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT"
 }

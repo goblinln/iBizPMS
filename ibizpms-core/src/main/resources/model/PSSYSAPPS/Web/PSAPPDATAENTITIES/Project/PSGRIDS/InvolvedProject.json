@@ -97,11 +97,10 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "项目名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -109,11 +108,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "项目名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -126,11 +126,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "需求总数",
+    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "dataItemName" : "storycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -143,11 +143,11 @@
     "name" : "storycnt"
   }, {
     "excelCaption" : "已完成任务数",
+    "dataItemName" : "ycompletetaskcnt",
     "getPSAppDEField" : {
       "name" : "YCOMPLETETASKCNT",
       "codeName" : "Ycompletetaskcnt"
     },
-    "dataItemName" : "ycompletetaskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -160,11 +160,11 @@
     "name" : "ycompletetaskcnt"
   }, {
     "excelCaption" : "Bug总数",
+    "dataItemName" : "bugcnt",
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
-    "dataItemName" : "bugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

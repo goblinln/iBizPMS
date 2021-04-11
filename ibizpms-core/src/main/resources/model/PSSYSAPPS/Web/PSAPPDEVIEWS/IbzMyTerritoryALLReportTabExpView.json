@@ -29,13 +29,12 @@
     "engineCat" : "VIEW",
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
-    "tabLayout" : "TOP",
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
     }, {
@@ -43,6 +42,7 @@
     }, {
       "name" : "tabviewpanel3"
     } ],
+    "tabLayout" : "TOP",
     "controlType" : "TABEXPPANEL",
     "getPSControls" : [ {
       "controlType" : "TABVIEWPANEL",
@@ -88,13 +88,12 @@
           "engineCat" : "VIEW",
           "name" : "engine"
         } ],
+        "viewStyle" : "STYLE2",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
         },
-        "viewStyle" : "STYLE2",
         "getPSControls" : [ {
-          "tabLayout" : "TOP",
           "getPSTabExpPages" : [ {
             "name" : "tabviewpanel"
           }, {
@@ -104,6 +103,7 @@
           }, {
             "name" : "tabviewpanel4"
           } ],
+          "tabLayout" : "TOP",
           "controlType" : "TABEXPPANEL",
           "getPSControls" : [ {
             "controlType" : "TABVIEWPANEL",
@@ -157,17 +157,17 @@
                 "engineType" : "GridView",
                 "engineCat" : "VIEW",
                 "getPSUIEngineParams" : [ {
-                  "paramType" : "LOGIC",
-                  "name" : "OPENDATA"
+                  "name" : "OPENDATA",
+                  "paramType" : "LOGIC"
                 }, {
-                  "paramType" : "LOGIC",
-                  "name" : "NEWDATA"
+                  "name" : "NEWDATA",
+                  "paramType" : "LOGIC"
                 }, {
-                  "paramType" : "CTRL",
-                  "name" : "GRID"
+                  "name" : "GRID",
+                  "paramType" : "CTRL"
                 }, {
-                  "paramType" : "CTRL",
-                  "name" : "SEARCHFORM"
+                  "name" : "SEARCHFORM",
+                  "paramType" : "CTRL"
                 } ],
                 "name" : "engine"
               } ],
@@ -203,11 +203,11 @@
                 },
                 "name" : "toolbar_deuiaction7"
               } ],
+              "viewStyle" : "STYLE2",
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
               },
-              "viewStyle" : "STYLE2",
               "getPSControls" : [ {
                 "controlType" : "TOOLBAR",
                 "getPSDEToolbarItems" : [ {
@@ -217,6 +217,12 @@
                   },
                   "noPrivDisplayMode" : 2,
                   "getPSUIAction" : {
+                    "getPSNavigateContexts" : [ {
+                      "rawValue" : true,
+                      "value" : "0",
+                      "key" : "IBZDAILY",
+                      "name" : "IBZDAILY"
+                    } ],
                     "getPSAppDataEntity" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
@@ -233,12 +239,6 @@
                     } ],
                     "refreshMode" : 1,
                     "enableConfirm" : true,
-                    "getPSNavigateContexts" : [ {
-                      "rawValue" : true,
-                      "value" : "0",
-                      "key" : "IBZDAILY",
-                      "name" : "IBZDAILY"
-                    } ],
                     "getNoPrivDisplayMode" : 2,
                     "timeout" : 60000,
                     "codeName" : "CreateUserDaily",
@@ -267,6 +267,12 @@
                   },
                   "noPrivDisplayMode" : 2,
                   "getPSUIAction" : {
+                    "getPSNavigateContexts" : [ {
+                      "rawValue" : true,
+                      "value" : "%date% ",
+                      "key" : "DATE",
+                      "name" : "DATE"
+                    } ],
                     "getPSAppDataEntity" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
@@ -283,18 +289,12 @@
                       "name" : "date"
                     } ],
                     "frontProcessType" : "WIZARD",
-                    "getPSNavigateContexts" : [ {
-                      "rawValue" : true,
-                      "value" : "%date% ",
-                      "key" : "DATE",
-                      "name" : "DATE"
-                    } ],
                     "getNoPrivDisplayMode" : 2,
-                    "timeout" : 60000,
                     "getPSSysImage" : {
                       "glyph" : "xf067@FontAwesome",
                       "cssClass" : "fa fa-plus"
                     },
+                    "timeout" : 60000,
                     "codeName" : "create",
                     "caption" : "新建",
                     "actionTarget" : "NONE",
@@ -340,11 +340,11 @@
                       "id" : "工具栏按钮提示[*.EXPORT]"
                     },
                     "getNoPrivDisplayMode" : 2,
-                    "timeout" : 60000,
                     "getPSSysImage" : {
                       "glyph" : "xf1c3@FontAwesome",
                       "cssClass" : "fa fa-file-excel-o"
                     },
+                    "timeout" : 60000,
                     "codeName" : "ExportExcel",
                     "caption" : "导出",
                     "uIActionTag" : "ExportExcel",
@@ -400,11 +400,11 @@
                   "dataType" : 1,
                   "name" : "ibz_dailyid"
                 }, {
+                  "format" : "YYYY-MM-DD",
                   "getPSAppDEField" : {
                     "name" : "DATE",
                     "codeName" : "Date"
                   },
-                  "format" : "YYYY-MM-DD",
                   "dataType" : 5,
                   "name" : "date"
                 }, {
@@ -484,15 +484,14 @@
                 } ],
                 "hasWFDataItems" : false,
                 "columnEnableLink" : 2,
-                "enablePagingBar" : true,
-                "enableRowEdit" : false,
                 "controlType" : "GRID",
+                "enableRowEdit" : false,
                 "getMinorSortPSAppDEField" : {
                   "name" : "DATE",
                   "codeName" : "Date"
                 },
+                "enablePagingBar" : true,
                 "getPSDEGridColumns" : [ {
-                  "excelCaption" : "日报名称",
                   "linkValueItem" : "srfkey",
                   "enableLinkView" : true,
                   "getLinkPSAppView" : {
@@ -500,11 +499,12 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoEditView.json",
                     "viewType" : "DEEDITVIEW"
                   },
+                  "excelCaption" : "日报名称",
+                  "dataItemName" : "ibz_dailyname",
                   "getPSAppDEField" : {
                     "name" : "IBZ_DAILYNAME",
                     "codeName" : "IbzDailyName"
                   },
-                  "dataItemName" : "ibz_dailyname",
                   "cLConvertMode" : "NONE",
                   "noPrivDisplayMode" : 1,
                   "enableSort" : true,
@@ -521,11 +521,11 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
                   },
+                  "dataItemName" : "account",
                   "getPSAppDEField" : {
                     "name" : "ACCOUNT",
                     "codeName" : "Account"
                   },
-                  "dataItemName" : "account",
                   "cLConvertMode" : "FRONT",
                   "noPrivDisplayMode" : 1,
                   "enableSort" : true,
@@ -538,11 +538,11 @@
                   "name" : "account"
                 }, {
                   "excelCaption" : "日期",
+                  "dataItemName" : "date",
                   "getPSAppDEField" : {
                     "name" : "DATE",
                     "codeName" : "Date"
                   },
-                  "dataItemName" : "date",
                   "valueFormat" : "YYYY-MM-DD",
                   "cLConvertMode" : "NONE",
                   "noPrivDisplayMode" : 1,
@@ -560,11 +560,11 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
                   },
+                  "dataItemName" : "reportto",
                   "getPSAppDEField" : {
                     "name" : "REPORTTO",
                     "codeName" : "Reportto"
                   },
-                  "dataItemName" : "reportto",
                   "cLConvertMode" : "FRONT",
                   "noPrivDisplayMode" : 1,
                   "enableSort" : true,
@@ -578,8 +578,14 @@
                 }, {
                   "getPSDEUIActionGroup" : {
                     "getPSUIActionGroupDetails" : [ {
-                      "addSeparator" : false,
+                      "showIcon" : true,
                       "getPSUIAction" : {
+                        "getPSNavigateContexts" : [ {
+                          "rawValue" : false,
+                          "value" : "date",
+                          "key" : "DATE",
+                          "name" : "DATE"
+                        } ],
                         "getPSAppDataEntity" : {
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
@@ -596,18 +602,12 @@
                           "name" : "date"
                         } ],
                         "frontProcessType" : "WIZARD",
-                        "getPSNavigateContexts" : [ {
-                          "rawValue" : false,
-                          "value" : "date",
-                          "key" : "DATE",
-                          "name" : "DATE"
-                        } ],
                         "getNoPrivDisplayMode" : 1,
-                        "timeout" : 60000,
                         "getPSSysImage" : {
                           "glyph" : "xf044@FontAwesome",
                           "cssClass" : "fa fa-edit"
                         },
+                        "timeout" : 60000,
                         "codeName" : "Edit",
                         "caption" : "修改",
                         "actionTarget" : "SINGLEKEY",
@@ -619,12 +619,12 @@
                         "name" : "修改",
                         "id" : "Edit@IbzDaily"
                       },
-                      "showIcon" : true,
+                      "addSeparator" : false,
                       "detailType" : "DEUIACTION",
                       "showCaption" : false,
                       "name" : "u2f95d53"
                     }, {
-                      "addSeparator" : false,
+                      "showIcon" : true,
                       "getPSUIAction" : {
                         "getPSAppDataEntity" : {
                           "modelref" : true,
@@ -637,11 +637,11 @@
                         "refreshMode" : 1,
                         "enableConfirm" : true,
                         "getNoPrivDisplayMode" : 1,
-                        "timeout" : 60000,
                         "getPSSysImage" : {
                           "glyph" : "xf00c@FontAwesome",
                           "cssClass" : "fa fa-check"
                         },
+                        "timeout" : 60000,
                         "codeName" : "submitCz",
                         "caption" : "提交",
                         "actionTarget" : "SINGLEKEY",
@@ -655,7 +655,7 @@
                         "name" : "submit（操作列）",
                         "id" : "submitCz@IbzDaily"
                       },
-                      "showIcon" : true,
+                      "addSeparator" : false,
                       "detailType" : "DEUIACTION",
                       "showCaption" : false,
                       "name" : "u6ece727"
@@ -956,26 +956,24 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "getPSAppUILogic" : {
-                  "enableBatchAdd" : false,
-                  "batchAddOnly" : false,
-                  "enableWizardAdd" : false,
                   "actionAfterWizard" : "DEFAULT",
                   "getNewDataPSAppView" : {
                     "getRefPSAppView" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyEditView.json",
                       "viewType" : "DEEDITVIEW"
-                    },
-                    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyEditView.json"
+                    }
                   },
+                  "enableBatchAdd" : false,
+                  "batchAddOnly" : false,
+                  "enableWizardAdd" : false,
                   "viewLogicType" : "APP_NEWDATA",
                   "getPSAppUILogicRefViews" : [ {
                     "getRefPSAppView" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyEditView.json",
                       "viewType" : "DEEDITVIEW"
-                    },
-                    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyEditView.json"
+                    }
                   } ],
                   "logicType" : "PREDEFINED",
                   "name" : "新建数据"
@@ -990,8 +988,7 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoEditView.json",
                       "viewType" : "DEEDITVIEW"
-                    },
-                    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoEditView.json"
+                    }
                   },
                   "viewLogicType" : "APP_OPENDATA",
                   "getPSAppUILogicRefViews" : [ {
@@ -999,8 +996,7 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoEditView.json",
                       "viewType" : "DEEDITVIEW"
-                    },
-                    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoEditView.json"
+                    }
                   } ],
                   "logicType" : "PREDEFINED",
                   "name" : "打开数据"

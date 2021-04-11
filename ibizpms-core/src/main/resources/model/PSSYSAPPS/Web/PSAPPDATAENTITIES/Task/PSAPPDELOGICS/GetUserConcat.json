@@ -8,6 +8,7 @@
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
@@ -16,7 +17,6 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "MAILTO",
       "srcFieldName" : "MAILTOPK",
@@ -50,9 +50,9 @@
     "name" : "连接5583"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

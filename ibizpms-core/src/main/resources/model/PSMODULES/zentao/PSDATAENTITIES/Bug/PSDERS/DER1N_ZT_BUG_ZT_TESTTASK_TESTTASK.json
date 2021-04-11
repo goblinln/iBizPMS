@@ -13,12 +13,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
   },
   "orderValue" : 100,
-  "codeName" : "ZTTestTask",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
   },
+  "codeName" : "ZTTestTask",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_TESTTASK_TESTTASK.json",
   "name" : "DER1N_ZT_BUG_ZT_TESTTASK_TESTTASK"
 }

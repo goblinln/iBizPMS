@@ -94,16 +94,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "用户标识",
+    "dataItemName" : "userid",
     "getPSAppDEField" : {
       "name" : "USERID",
       "codeName" : "UserId"
     },
-    "dataItemName" : "userid",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -116,11 +116,11 @@
     "name" : "userid"
   }, {
     "excelCaption" : "姓名",
+    "dataItemName" : "personname",
     "getPSAppDEField" : {
       "name" : "PERSONNAME",
       "codeName" : "PersonName"
     },
-    "dataItemName" : "personname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -133,11 +133,11 @@
     "name" : "personname"
   }, {
     "excelCaption" : "昵称别名",
+    "dataItemName" : "nickname",
     "getPSAppDEField" : {
       "name" : "NICKNAME",
       "codeName" : "NickName"
     },
-    "dataItemName" : "nickname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

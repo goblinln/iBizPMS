@@ -80,16 +80,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "ID",
+    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -102,11 +102,11 @@
     "name" : "id"
   }, {
     "excelCaption" : "分组名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -119,11 +119,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "分组描述",
+    "dataItemName" : "desc",
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
-    "dataItemName" : "desc",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -137,7 +137,7 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.EDIT",
@@ -148,11 +148,11 @@
             "id" : "工具栏按钮提示[*.EDIT]"
           },
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "Edit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -162,12 +162,12 @@
           "fullCodeName" : "Edit",
           "name" : "表格界面_编辑操作"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : true,
         "name" : "ud6e0c52"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.REMOVE",
@@ -178,11 +178,11 @@
             "id" : "工具栏按钮提示[*.REMOVE]"
           },
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "timeout" : 60000,
           "codeName" : "Remove",
           "caption" : "删除",
           "actionTarget" : "MULTIKEY",
@@ -193,7 +193,7 @@
           "fullCodeName" : "Remove",
           "name" : "表格界面_删除操作"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : true,
         "name" : "uf4eeb77"

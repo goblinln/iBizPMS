@@ -22,20 +22,20 @@
       "id" : "Default"
     },
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "IDVALUE",
       "name" : "Default[IDVALUE]"
     }, {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "TYPE",
       "name" : "Default[TYPE]"
@@ -46,14 +46,13 @@
     "name" : "获取待办的标题"
   } ],
   "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "NOTEQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "NOTEQ",
         "paramValue" : "custom",
         "dstFieldName" : "TYPE",
         "logicType" : "SINGLE",
@@ -64,6 +63,7 @@
       "logicType" : "GROUP",
       "id" : "ebd2fbaf04bcd5b36e9e71e557351d9b"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall1"
@@ -75,9 +75,9 @@
     "name" : "连接2248"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

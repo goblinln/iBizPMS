@@ -8,20 +8,20 @@
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "NULLVALUE",
       "dstFieldName" : "BEGIN",
       "name" : "空值（NULL） ==> Default[BEGIN]"
     }, {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "NULLVALUE",
       "dstFieldName" : "END",
       "name" : "空值（NULL） ==> Default[END]"
@@ -42,14 +42,13 @@
     "name" : "开始"
   } ],
   "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "待定",
         "dstFieldName" : "BEGINSTR",
         "logicType" : "SINGLE",
@@ -60,6 +59,7 @@
       "logicType" : "GROUP",
       "id" : "b025edd6f6275e220258792e0a97727b"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Prepareparam1"
@@ -71,9 +71,9 @@
     "name" : "连接6861"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

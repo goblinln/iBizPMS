@@ -28,11 +28,11 @@
     "dataType" : 25,
     "name" : "sys_update_logid"
   }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "UPDATEDATE",
       "codeName" : "UpdateDate"
     },
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "dataType" : 5,
     "name" : "updatedate"
   }, {
@@ -109,11 +109,10 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "所属更新",
     "linkValueItem" : "sys_update_logid",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -121,11 +120,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateLogTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "所属更新",
+    "dataItemName" : "sys_update_logname",
     "getPSAppDEField" : {
       "name" : "SYS_UPDATE_LOGNAME",
       "codeName" : "SysUpdateLogName"
     },
-    "dataItemName" : "sys_update_logname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -138,11 +138,11 @@
     "name" : "sys_update_logname"
   }, {
     "excelCaption" : "更新功能",
+    "dataItemName" : "upfeatures",
     "getPSAppDEField" : {
       "name" : "UPFEATURES",
       "codeName" : "Upfeatures"
     },
-    "dataItemName" : "upfeatures",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -159,11 +159,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SYS_UPDATE_LOG_TYPE.json"
     },
+    "dataItemName" : "type",
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataItemName" : "type",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -176,11 +176,11 @@
     "name" : "type"
   }, {
     "excelCaption" : "展示顺序",
+    "dataItemName" : "displayorder",
     "getPSAppDEField" : {
       "name" : "DISPLAYORDER",
       "codeName" : "Displayorder"
     },
-    "dataItemName" : "displayorder",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -197,11 +197,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
     },
+    "dataItemName" : "updateman",
     "getPSAppDEField" : {
       "name" : "UPDATEMAN",
       "codeName" : "UpdateMan"
     },
-    "dataItemName" : "updateman",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -214,11 +214,11 @@
     "name" : "updateman"
   }, {
     "excelCaption" : "更新时间",
+    "dataItemName" : "updatedate",
     "getPSAppDEField" : {
       "name" : "UPDATEDATE",
       "codeName" : "UpdateDate"
     },
-    "dataItemName" : "updatedate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,

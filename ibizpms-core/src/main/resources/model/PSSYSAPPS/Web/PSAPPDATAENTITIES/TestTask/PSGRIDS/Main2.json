@@ -67,19 +67,19 @@
     "dataType" : 1,
     "name" : "srfkey"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "end"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "begin"
   }, {
@@ -127,20 +127,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "ID",
+    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -152,7 +152,6 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "产品",
     "linkValueItem" : "product",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -160,11 +159,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "产品",
+    "dataItemName" : "productname",
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
-    "dataItemName" : "productname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -176,7 +176,6 @@
     "widthUnit" : "STAR",
     "name" : "productname"
   }, {
-    "excelCaption" : "名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -184,11 +183,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -200,7 +200,6 @@
     "widthUnit" : "PX",
     "name" : "name"
   }, {
-    "excelCaption" : "项目",
     "linkValueItem" : "project",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -208,11 +207,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "项目",
+    "dataItemName" : "projecttname",
     "getPSAppDEField" : {
       "name" : "PROJECTTNAME",
       "codeName" : "ProjecttName"
     },
-    "dataItemName" : "projecttname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -225,11 +225,11 @@
     "name" : "projecttname"
   }, {
     "excelCaption" : "版本",
+    "dataItemName" : "build",
     "getPSAppDEField" : {
       "name" : "BUILD",
       "codeName" : "Build"
     },
-    "dataItemName" : "build",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -242,11 +242,11 @@
     "name" : "build"
   }, {
     "excelCaption" : "开始日期",
+    "dataItemName" : "begin",
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
-    "dataItemName" : "begin",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -260,11 +260,11 @@
     "name" : "begin"
   }, {
     "excelCaption" : "结束日期",
+    "dataItemName" : "end",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
-    "dataItemName" : "end",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,

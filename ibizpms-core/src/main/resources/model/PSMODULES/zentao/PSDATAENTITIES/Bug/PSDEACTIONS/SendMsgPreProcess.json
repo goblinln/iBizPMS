@@ -6,14 +6,14 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "SFPlugin"
   },
+  "orderValue" : 99999,
   "codeName" : "SendMsgPreProcess",
   "logicName" : "发送消息前置处理",
+  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

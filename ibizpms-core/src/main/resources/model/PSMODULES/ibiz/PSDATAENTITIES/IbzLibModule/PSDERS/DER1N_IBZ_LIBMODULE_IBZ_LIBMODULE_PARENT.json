@@ -3,11 +3,11 @@
     "name" : "PARENT",
     "codeName" : "Parent"
   },
+  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PARENTNAME",
     "codeName" : "ParentName"
   },
-  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "PARENT",
   "masterRS" : 0,
@@ -17,13 +17,13 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
   },
   "orderValue" : 100,
-  "codeName" : "ParentModule",
-  "logicName" : "父节点",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
   },
+  "codeName" : "ParentModule",
+  "logicName" : "父节点",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDERS/DER1N_IBZ_LIBMODULE_IBZ_LIBMODULE_PARENT.json",
   "name" : "DER1N_IBZ_LIBMODULE_IBZ_LIBMODULE_PARENT"
 }

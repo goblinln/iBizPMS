@@ -144,11 +144,11 @@
     "dataType" : 25,
     "name" : "allmodules"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "ESTSTARTED",
       "codeName" : "EstStarted"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "eststarted"
   }, {
@@ -159,11 +159,11 @@
     "dataType" : 7,
     "name" : "left"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DEADLINE",
       "codeName" : "Deadline"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "deadline"
   } ],
@@ -312,9 +312,9 @@
     "name" : "parent"
   }, {
     "getPSEditor" : {
+      "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "singleSelect" : true,
       "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
@@ -333,17 +333,6 @@
         "id" : "Default"
       },
       "valueItemName" : "story",
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "project",
-        "key" : "project",
-        "name" : "project"
-      }, {
-        "rawValue" : false,
-        "value" : "module",
-        "key" : "n_module_eq",
-        "name" : "n_module_eq"
-      } ],
       "getPSNavigateContexts" : [ {
         "rawValue" : false,
         "value" : "module",
@@ -354,6 +343,17 @@
         "value" : "project",
         "key" : "PROJECT",
         "name" : "PROJECT"
+      } ],
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "project",
+        "key" : "project",
+        "name" : "project"
+      }, {
+        "rawValue" : false,
+        "value" : "module",
+        "key" : "n_module_eq",
+        "name" : "n_module_eq"
       } ],
       "editorType" : "PICKEREX_TRIGGER",
       "editorParams" : {
@@ -392,8 +392,8 @@
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "allowEmpty" : false,
     "needCodeListConfig" : true,
+    "allowEmpty" : false,
     "enableCond" : 3,
     "ignoreInput" : 0,
     "codeName" : "type",
@@ -416,9 +416,9 @@
     "name" : "srfkey"
   }, {
     "getPSEditor" : {
+      "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "singleSelect" : true,
       "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
@@ -437,17 +437,6 @@
         "id" : "Default"
       },
       "valueItemName" : "module",
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "project",
-        "key" : "project",
-        "name" : "project"
-      }, {
-        "rawValue" : false,
-        "value" : "allmodules",
-        "key" : "allmodules",
-        "name" : "allmodules"
-      } ],
       "getPSNavigateContexts" : [ {
         "rawValue" : false,
         "value" : "project",
@@ -458,6 +447,17 @@
         "value" : "allmodules",
         "key" : "ALLMODULES",
         "name" : "ALLMODULES"
+      } ],
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "project",
+        "key" : "project",
+        "name" : "project"
+      }, {
+        "rawValue" : false,
+        "value" : "allmodules",
+        "key" : "allmodules",
+        "name" : "allmodules"
       } ],
       "editorType" : "PICKEREX_TRIGGER",
       "editorParams" : {
@@ -490,17 +490,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
       },
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "project",
-        "key" : "project",
-        "name" : "project"
-      } ],
       "getPSNavigateContexts" : [ {
         "rawValue" : false,
         "value" : "project",
         "key" : "PROJECT",
         "name" : "PROJECT"
+      } ],
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "project",
+        "key" : "project",
+        "name" : "project"
       } ],
       "editorType" : "DROPDOWNLIST",
       "editorParams" : {
@@ -513,8 +513,8 @@
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "enableCond" : 3,
     "ignoreInput" : 0,
     "valueItemName" : "assignedto",
@@ -567,8 +567,8 @@
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "enableCond" : 3,
     "ignoreInput" : 0,
     "codeName" : "pri",
@@ -600,8 +600,8 @@
       "name" : "ALLMODULES",
       "codeName" : "AllModules"
     },
-    "allowEmpty" : true,
     "convertToCodeItemText" : true,
+    "allowEmpty" : true,
     "createDV" : "1",
     "enableCond" : 3,
     "ignoreInput" : 3,
@@ -665,197 +665,13 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : true,
   "controlType" : "GRID",
+  "enableRowEdit" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "getPSDEGridColumns" : [ {
-    "excelCaption" : "所属模块",
-    "getPSAppDEField" : {
-      "name" : "MODULENAME",
-      "codeName" : "Modulename"
-    },
-    "dataItemName" : "modulename",
-    "enableRowEdit" : true,
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
-    "width" : 200,
-    "codeName" : "modulename",
-    "caption" : "所属模块",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "modulename"
-  }, {
-    "excelCaption" : "相关需求",
-    "linkValueItem" : "story",
-    "enableLinkView" : true,
-    "getLinkPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-      "viewType" : "DEPORTALVIEW"
-    },
-    "getPSAppDEField" : {
-      "name" : "STORYNAME",
-      "codeName" : "Storyname"
-    },
-    "dataItemName" : "storyname",
-    "enableRowEdit" : true,
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
-    "width" : 300,
-    "codeName" : "storyname",
-    "caption" : "相关需求",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "storyname"
-  }, {
-    "excelCaption" : "任务名称",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "dataItemName" : "name",
-    "enableRowEdit" : true,
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
-    "width" : 500,
-    "codeName" : "name",
-    "caption" : "任务名称",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "STAR",
-    "name" : "name"
-  }, {
-    "excelCaption" : "任务类型",
-    "getPSAppCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__type.json"
-    },
-    "getPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    },
-    "dataItemName" : "type",
-    "enableRowEdit" : true,
-    "cLConvertMode" : "FRONT",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
-    "width" : 100,
-    "codeName" : "type",
-    "caption" : "任务类型",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "type"
-  }, {
-    "excelCaption" : "指派给",
-    "getPSAppCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
-    },
-    "getPSAppDEField" : {
-      "name" : "ASSIGNEDTO",
-      "codeName" : "AssignedTo"
-    },
-    "dataItemName" : "assignedto_text",
-    "enableRowEdit" : true,
-    "cLConvertMode" : "FRONT",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
-    "width" : 100,
-    "codeName" : "assignedto",
-    "caption" : "指派给",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "assignedto"
-  }, {
-    "excelCaption" : "预计开始",
-    "getPSAppDEField" : {
-      "name" : "ESTSTARTED",
-      "codeName" : "EstStarted"
-    },
-    "dataItemName" : "eststarted",
-    "enableRowEdit" : true,
-    "valueFormat" : "YYYY-MM-DD",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
-    "width" : 150,
-    "codeName" : "eststarted",
-    "caption" : "预计开始",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "eststarted"
-  }, {
-    "excelCaption" : "截止日期",
-    "getPSAppDEField" : {
-      "name" : "DEADLINE",
-      "codeName" : "Deadline"
-    },
-    "dataItemName" : "deadline",
-    "enableRowEdit" : true,
-    "valueFormat" : "YYYY-MM-DD",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
-    "width" : 150,
-    "codeName" : "deadline",
-    "caption" : "截止日期",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "deadline"
-  }, {
-    "excelCaption" : "任务描述",
-    "getPSAppDEField" : {
-      "name" : "DESC",
-      "codeName" : "Desc"
-    },
-    "dataItemName" : "desc",
-    "enableRowEdit" : true,
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
-    "width" : 500,
-    "codeName" : "desc",
-    "caption" : "任务描述",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "desc"
-  }, {
-    "excelCaption" : "优先级",
-    "getPSAppCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
-    },
-    "getPSAppDEField" : {
-      "name" : "PRI",
-      "codeName" : "Pri"
-    },
-    "dataItemName" : "pri",
-    "enableRowEdit" : true,
-    "cLConvertMode" : "FRONT",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
-    "width" : 100,
-    "codeName" : "pri",
-    "caption" : "优先级",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "pri"
-  } ],
+  "enablePagingBar" : false,
   "getPSDEGridEditItemVRs" : [ {
     "getPSDEGridEditItemName" : "name",
     "valueRuleType" : "DEFVALUERULE",
@@ -892,6 +708,190 @@
     },
     "checkMode" : 3,
     "name" : "编辑项值规则"
+  } ],
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "所属模块",
+    "dataItemName" : "modulename",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 200,
+    "codeName" : "modulename",
+    "caption" : "所属模块",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "modulename"
+  }, {
+    "linkValueItem" : "story",
+    "enableLinkView" : true,
+    "getLinkPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+      "viewType" : "DEPORTALVIEW"
+    },
+    "excelCaption" : "相关需求",
+    "dataItemName" : "storyname",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "STORYNAME",
+      "codeName" : "Storyname"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 300,
+    "codeName" : "storyname",
+    "caption" : "相关需求",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "storyname"
+  }, {
+    "excelCaption" : "任务名称",
+    "dataItemName" : "name",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 500,
+    "codeName" : "name",
+    "caption" : "任务名称",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "STAR",
+    "name" : "name"
+  }, {
+    "excelCaption" : "任务类型",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__type.json"
+    },
+    "dataItemName" : "type",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "type",
+    "caption" : "任务类型",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "type"
+  }, {
+    "excelCaption" : "指派给",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
+    },
+    "dataItemName" : "assignedto_text",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "ASSIGNEDTO",
+      "codeName" : "AssignedTo"
+    },
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "assignedto",
+    "caption" : "指派给",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "assignedto"
+  }, {
+    "excelCaption" : "预计开始",
+    "dataItemName" : "eststarted",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "ESTSTARTED",
+      "codeName" : "EstStarted"
+    },
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 150,
+    "codeName" : "eststarted",
+    "caption" : "预计开始",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "eststarted"
+  }, {
+    "excelCaption" : "截止日期",
+    "dataItemName" : "deadline",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "DEADLINE",
+      "codeName" : "Deadline"
+    },
+    "valueFormat" : "YYYY-MM-DD",
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 150,
+    "codeName" : "deadline",
+    "caption" : "截止日期",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "deadline"
+  }, {
+    "excelCaption" : "任务描述",
+    "dataItemName" : "desc",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "DESC",
+      "codeName" : "Desc"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 500,
+    "codeName" : "desc",
+    "caption" : "任务描述",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "desc"
+  }, {
+    "excelCaption" : "优先级",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
+    },
+    "dataItemName" : "pri",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "PRI",
+      "codeName" : "Pri"
+    },
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : false,
+    "width" : 100,
+    "codeName" : "pri",
+    "caption" : "优先级",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "pri"
   } ],
   "codeName" : "SubTaskNew",
   "minorSortDir" : "DESC",

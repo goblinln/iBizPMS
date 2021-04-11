@@ -118,20 +118,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "编号",
+    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -144,11 +144,11 @@
     "name" : "id"
   }, {
     "excelCaption" : "日期",
+    "dataItemName" : "date1",
     "getPSAppDEField" : {
       "name" : "DATE1",
       "codeName" : "Date1"
     },
-    "dataItemName" : "date1",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -165,11 +165,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TypeAll.json"
     },
+    "dataItemName" : "type",
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataItemName" : "type",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -186,11 +186,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Pri.json"
     },
+    "dataItemName" : "pri",
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "dataItemName" : "pri",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -202,7 +202,6 @@
     "widthUnit" : "PX",
     "name" : "pri"
   }, {
-    "excelCaption" : "待办名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -210,11 +209,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
+    "excelCaption" : "待办名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -231,11 +231,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
     },
+    "dataItemName" : "begin",
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
-    "dataItemName" : "begin",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -252,11 +252,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
     },
+    "dataItemName" : "end",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
-    "dataItemName" : "end",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -273,11 +273,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Todo__status.json"
     },
+    "dataItemName" : "status",
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataItemName" : "status",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -291,7 +291,7 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -305,11 +305,11 @@
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf0a4@FontAwesome",
             "cssClass" : "fa fa-hand-o-right"
           },
+          "timeout" : 60000,
           "codeName" : "assignTo",
           "caption" : "指派",
           "actionTarget" : "SINGLEKEY",
@@ -322,12 +322,12 @@
           "name" : "todo指派",
           "id" : "assignTo@Todo"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ucbe5848"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -340,11 +340,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf046@FontAwesome",
             "cssClass" : "fa fa-check-square-o"
           },
+          "timeout" : 60000,
           "codeName" : "finish",
           "caption" : "完成",
           "actionTarget" : "SINGLEKEY",
@@ -358,12 +358,12 @@
           "name" : "todo完成",
           "id" : "finish@Todo"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u73f3925"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -376,11 +376,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf0d0@FontAwesome",
             "cssClass" : "fa fa-magic"
           },
+          "timeout" : 60000,
           "codeName" : "activate",
           "caption" : "激活",
           "actionTarget" : "SINGLEKEY",
@@ -394,12 +394,12 @@
           "name" : "todo激活",
           "id" : "activate@Todo"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u028b830"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -412,11 +412,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-close"
           },
+          "timeout" : 60000,
           "codeName" : "close",
           "caption" : "关闭",
           "actionTarget" : "SINGLEKEY",
@@ -430,12 +430,12 @@
           "name" : "todo关闭",
           "id" : "close@Todo"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u24b965b"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -452,11 +452,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "edit1",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -468,12 +468,12 @@
           "name" : "todo编辑",
           "id" : "edit1@Todo"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "uc8e81f7"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -486,11 +486,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf1f8@FontAwesome",
             "cssClass" : "fa fa-trash"
           },
+          "timeout" : 60000,
           "codeName" : "delete",
           "caption" : "删除",
           "actionTarget" : "SINGLEKEY",
@@ -504,7 +504,7 @@
           "name" : "todo删除",
           "id" : "delete@Todo"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u51ddac6"

@@ -23,16 +23,16 @@
     "engineType" : "PickupView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "PICKUPVIEWPANEL"
+      "name" : "PICKUPVIEWPANEL",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "getEmbeddedPSAppDEView" : {
       "pickupMode" : true,
@@ -68,19 +68,19 @@
         "engineType" : "PickupGridView",
         "engineCat" : "VIEW",
         "getPSUIEngineParams" : [ {
-          "paramType" : "CTRL",
-          "name" : "GRID"
+          "name" : "GRID",
+          "paramType" : "CTRL"
         }, {
-          "paramType" : "CTRL",
-          "name" : "SEARCHFORM"
+          "name" : "SEARCHFORM",
+          "paramType" : "CTRL"
         } ],
         "name" : "engine"
       } ],
+      "viewStyle" : "STYLE2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
       },
-      "viewStyle" : "STYLE2",
       "getPSControls" : [ {
         "getPSDEGridDataItems" : [ {
           "getPSAppDEField" : {
@@ -198,16 +198,16 @@
         } ],
         "hasWFDataItems" : false,
         "columnEnableLink" : 2,
-        "enablePagingBar" : true,
-        "enableRowEdit" : false,
         "controlType" : "GRID",
+        "enableRowEdit" : false,
+        "enablePagingBar" : true,
         "getPSDEGridColumns" : [ {
           "excelCaption" : "用户标识",
+          "dataItemName" : "userid",
           "getPSAppDEField" : {
             "name" : "USERID",
             "codeName" : "UserId"
           },
-          "dataItemName" : "userid",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -220,11 +220,11 @@
           "name" : "userid"
         }, {
           "excelCaption" : "性别",
+          "dataItemName" : "sex",
           "getPSAppDEField" : {
             "name" : "SEX",
             "codeName" : "Sex"
           },
-          "dataItemName" : "sex",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -237,11 +237,11 @@
           "name" : "sex"
         }, {
           "excelCaption" : "主部门名称",
+          "dataItemName" : "mdeptname",
           "getPSAppDEField" : {
             "name" : "MDEPTNAME",
             "codeName" : "MDeptName"
           },
-          "dataItemName" : "mdeptname",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -254,11 +254,11 @@
           "name" : "mdeptname"
         }, {
           "excelCaption" : "姓名",
+          "dataItemName" : "personname",
           "getPSAppDEField" : {
             "name" : "PERSONNAME",
             "codeName" : "PersonName"
           },
-          "dataItemName" : "personname",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -271,11 +271,11 @@
           "name" : "personname"
         }, {
           "excelCaption" : "昵称别名",
+          "dataItemName" : "nickname",
           "getPSAppDEField" : {
             "name" : "NICKNAME",
             "codeName" : "NickName"
           },
-          "dataItemName" : "nickname",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -288,11 +288,11 @@
           "name" : "nickname"
         }, {
           "excelCaption" : "联系方式",
+          "dataItemName" : "phone",
           "getPSAppDEField" : {
             "name" : "PHONE",
             "codeName" : "Phone"
           },
-          "dataItemName" : "phone",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,

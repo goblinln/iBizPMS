@@ -80,16 +80,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "岗位标识",
+    "dataItemName" : "postid",
     "getPSAppDEField" : {
       "name" : "POSTID",
       "codeName" : "PostId"
     },
-    "dataItemName" : "postid",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -102,11 +102,11 @@
     "name" : "postid"
   }, {
     "excelCaption" : "岗位名称",
+    "dataItemName" : "postname",
     "getPSAppDEField" : {
       "name" : "POSTNAME",
       "codeName" : "PostName"
     },
-    "dataItemName" : "postname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -119,11 +119,11 @@
     "name" : "postname"
   }, {
     "excelCaption" : "备注",
+    "dataItemName" : "memo",
     "getPSAppDEField" : {
       "name" : "MEMO",
       "codeName" : "Memo"
     },
-    "dataItemName" : "memo",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

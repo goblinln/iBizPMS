@@ -1,4 +1,9 @@
 {
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
@@ -10,15 +15,15 @@
     "dataType" : 25,
     "name" : "parent"
   }, {
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
+    "format" : "YYYY-MM-DD",
     "name" : "end"
   }, {
     "dataType" : 25,
     "name" : "productlifename"
   }, {
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
+    "format" : "YYYY-MM-DD",
     "name" : "begin"
   }, {
     "dataType" : 25,
@@ -37,13 +42,8 @@
     "dataType" : 9,
     "name" : "marker"
   } ],
-  "showHeader" : true,
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "enableRowEdit" : false,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "YEAR",
     "codeName" : "Year"

@@ -94,16 +94,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "ID",
+    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -116,11 +116,11 @@
     "name" : "id"
   }, {
     "excelCaption" : "部门",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -133,11 +133,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "上级部门",
+    "dataItemName" : "parentname",
     "getPSAppDEField" : {
       "name" : "PARENTNAME",
       "codeName" : "ParentName"
     },
-    "dataItemName" : "parentname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -154,11 +154,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
+    "dataItemName" : "manager",
     "getPSAppDEField" : {
       "name" : "MANAGER",
       "codeName" : "Manager"
     },
-    "dataItemName" : "manager",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -172,7 +172,7 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -185,11 +185,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "timeout" : 60000,
           "codeName" : "Delete",
           "caption" : "删除",
           "actionTarget" : "SINGLEKEY",
@@ -202,12 +202,12 @@
           "name" : "删除",
           "id" : "Delete@Dept"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ud401683"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -221,11 +221,11 @@
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "Edit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -238,7 +238,7 @@
           "name" : "编辑",
           "id" : "Edit@Dept"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u9c4d5a2"

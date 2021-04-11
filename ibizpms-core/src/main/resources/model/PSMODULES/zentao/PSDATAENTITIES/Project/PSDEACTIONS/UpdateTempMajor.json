@@ -11,15 +11,15 @@
   } ],
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 13,
-  "extendMode" : 0,
-  "enableTempData" : true,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
   },
+  "orderValue" : 13,
   "codeName" : "UpdateTempMajor",
   "logicName" : "UpdateTempMajor",
+  "extendMode" : 0,
+  "enableTempData" : true,
   "actionMode" : "UPDATE",
   "actionType" : "BUILTIN",
   "requestParamType" : "ENTITY",

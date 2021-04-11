@@ -53,11 +53,11 @@
     "dataType" : 1,
     "name" : "srfdataaccaction"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "begin"
   }, {
@@ -103,11 +103,11 @@
     "dataType" : 1,
     "name" : "branch"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "end"
   } ],
@@ -148,20 +148,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "编号",
+    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -173,7 +173,6 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -181,11 +180,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanMainDataEditView.json",
       "viewType" : "DEEDITVIEW"
     },
+    "excelCaption" : "名称",
+    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataItemName" : "title",
     "cLConvertMode" : "NONE",
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_COLRENDER",
@@ -202,11 +202,11 @@
     "name" : "title"
   }, {
     "excelCaption" : "开始日期",
+    "dataItemName" : "beginstr",
     "getPSAppDEField" : {
       "name" : "BEGINSTR",
       "codeName" : "Beginstr"
     },
-    "dataItemName" : "beginstr",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -219,11 +219,11 @@
     "name" : "beginstr"
   }, {
     "excelCaption" : "结束日期",
+    "dataItemName" : "endstr",
     "getPSAppDEField" : {
       "name" : "ENDSTR",
       "codeName" : "Endstr"
     },
-    "dataItemName" : "endstr",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -236,11 +236,11 @@
     "name" : "endstr"
   }, {
     "excelCaption" : "需求数",
+    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "dataItemName" : "storycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -253,11 +253,11 @@
     "name" : "storycnt"
   }, {
     "excelCaption" : "bug数",
+    "dataItemName" : "bugcnt",
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
-    "dataItemName" : "bugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -271,8 +271,34 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "id",
+            "key" : "PLANID",
+            "name" : "PLANID"
+          }, {
+            "rawValue" : false,
+            "value" : "end",
+            "key" : "END",
+            "name" : "END"
+          }, {
+            "rawValue" : false,
+            "value" : "product",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT"
+          }, {
+            "rawValue" : false,
+            "value" : "begin",
+            "key" : "BEGIN",
+            "name" : "BEGIN"
+          }, {
+            "rawValue" : false,
+            "value" : "branch",
+            "key" : "BRANCH",
+            "name" : "BRANCH"
+          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
@@ -310,38 +336,12 @@
           } ],
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "id",
-            "key" : "PLANID",
-            "name" : "PLANID"
-          }, {
-            "rawValue" : false,
-            "value" : "end",
-            "key" : "END",
-            "name" : "END"
-          }, {
-            "rawValue" : false,
-            "value" : "product",
-            "key" : "PRODUCT",
-            "name" : "PRODUCT"
-          }, {
-            "rawValue" : false,
-            "value" : "begin",
-            "key" : "BEGIN",
-            "name" : "BEGIN"
-          }, {
-            "rawValue" : false,
-            "value" : "branch",
-            "key" : "BRANCH",
-            "name" : "BRANCH"
-          } ],
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf067@FontAwesome",
             "cssClass" : "fa fa-plus"
           },
+          "timeout" : 60000,
           "codeName" : "AddProject",
           "caption" : "添加项目",
           "actionTarget" : "SINGLEKEY",
@@ -354,12 +354,12 @@
           "name" : "添加项目",
           "id" : "AddProject@ProductPlan"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ua470664"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -376,11 +376,11 @@
           },
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf0c1@FontAwesome",
             "cssClass" : "fa fa-link"
           },
+          "timeout" : 60000,
           "codeName" : "RelationStory",
           "caption" : "关联需求",
           "actionTarget" : "SINGLEKEY",
@@ -392,12 +392,12 @@
           "name" : "关联需求",
           "id" : "RelationStory@ProductPlan"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u54b2dce"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -415,11 +415,11 @@
           "frontProcessType" : "WIZARD",
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf188@FontAwesome",
             "cssClass" : "fa fa-bug"
           },
+          "timeout" : 60000,
           "codeName" : "RelationBug",
           "caption" : "关联Bug",
           "actionTarget" : "SINGLEKEY",
@@ -431,12 +431,12 @@
           "name" : "关联Bug",
           "id" : "RelationBug@ProductPlan"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u02b47f0"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -449,11 +449,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "MainEdit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -465,12 +465,12 @@
           "name" : "编辑",
           "id" : "MainEdit@ProductPlan"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u7d4e6c8"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -483,11 +483,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf0e8@FontAwesome",
             "cssClass" : "fa fa-sitemap"
           },
+          "timeout" : 60000,
           "codeName" : "NewSubPlan",
           "caption" : "子计划",
           "actionTarget" : "SINGLEKEY",
@@ -499,12 +499,12 @@
           "name" : "新建子计划",
           "id" : "NewSubPlan@ProductPlan"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ud7f4fc7"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.COPY",
@@ -515,11 +515,11 @@
             "id" : "工具栏按钮提示[*.COPY]"
           },
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf0c5@FontAwesome",
             "cssClass" : "fa fa-copy"
           },
+          "timeout" : 60000,
           "codeName" : "Copy",
           "caption" : "拷贝",
           "actionTarget" : "SINGLEKEY",
@@ -530,12 +530,12 @@
           "fullCodeName" : "Copy",
           "name" : "表格界面_拷贝操作"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u38dee22"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -548,11 +548,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "timeout" : 60000,
           "codeName" : "Delete",
           "caption" : "删除",
           "actionTarget" : "SINGLEKEY",
@@ -567,7 +567,7 @@
           "name" : "删除",
           "id" : "Delete@ProductPlan"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ub056033"

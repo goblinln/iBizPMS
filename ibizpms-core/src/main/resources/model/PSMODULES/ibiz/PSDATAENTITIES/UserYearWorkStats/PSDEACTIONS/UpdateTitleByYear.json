@@ -17,14 +17,14 @@
   } ],
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
   },
+  "orderValue" : 99999,
   "codeName" : "UpdateTitleByYear",
   "logicName" : "更新标题",
+  "extendMode" : 0,
   "actionMode" : "UPDATE",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

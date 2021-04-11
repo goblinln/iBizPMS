@@ -32,12 +32,12 @@
     "engineType" : "EditView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
@@ -55,11 +55,11 @@
     "key" : "SRFLOGINNAME",
     "name" : "SRFLOGINNAME"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -86,10 +86,10 @@
           "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
         },
         "getNoPrivDisplayMode" : 2,
-        "timeout" : 60000,
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
+        "timeout" : 60000,
         "codeName" : "SaveAndExit",
         "caption" : "保存并关闭",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
@@ -124,8 +124,6 @@
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
     "enableAutoSave" : false,
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -150,6 +148,8 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -165,38 +165,38 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "dateTimeFormat" : "YYYY-MM-DD",
-            "editorWidth" : 100.0,
             "editorType" : "DATEPICKEREX_NOTIME",
+            "editorWidth" : 100.0,
             "editorParams" : {
               "TIMEFMT" : "YYYY-MM-DD"
             },
             "name" : "date"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "DATE",
             "codeName" : "Date"
           },
           "dataType" : 5,
+          "hidden" : false,
           "allowEmpty" : true,
           "caption" : "日期",
-          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 130,
           "itemWidth" : 230.0,
           "showCaption" : true,
-          "hidden" : false,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "date_disable" ],
             "logicCat" : "ITEMENABLE",
             "getPSDEFDLogics" : [ {
-              "condOP" : "NOTEQ",
               "dEFDName" : "date_disable",
+              "condOP" : "NOTEQ",
               "value" : "1",
               "logicType" : "SINGLE",
               "name" : "date_disable 不等于(<>) (1)"
@@ -216,26 +216,26 @@
           "detailStyle" : "DEFAULT",
           "name" : "date"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "cycle"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "CYCLE",
             "codeName" : "Cycle"
           },
           "dataType" : 9,
+          "hidden" : true,
           "allowEmpty" : true,
           "caption" : "周期",
-          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -252,7 +252,6 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "getPSAppCodeList" : {
@@ -262,21 +261,22 @@
               "editorType" : "RADIOBUTTONLIST",
               "name" : "config_type"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "CONFIG_TYPE",
               "codeName" : "Config_type"
             },
             "dataType" : 25,
-            "allowEmpty" : true,
+            "hidden" : false,
             "needCodeListConfig" : true,
+            "allowEmpty" : true,
             "caption" : "周期类型",
-            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -293,33 +293,33 @@
               "columnCount" : 24
             },
             "getPSDEFormDetails" : [ {
-              "inputTipClosable" : false,
               "emptyCaption" : true,
               "getPSEditor" : {
                 "editorType" : "TEXTBOX",
                 "name" : "config_day"
               },
+              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
+              "enableUnitName" : true,
               "getPSAppDEField" : {
                 "name" : "CONFIG_DAY",
                 "codeName" : "Config_day"
               },
-              "enableUnitName" : true,
               "dataType" : 9,
+              "hidden" : false,
               "allowEmpty" : true,
-              "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
+              "labelWidth" : 130,
               "unitName" : "天",
               "showCaption" : true,
-              "hidden" : false,
               "getPSDEFDGroupLogics" : [ {
                 "relatedDetailNames" : [ "config_type" ],
                 "logicCat" : "PANELVISIBLE",
                 "getPSDEFDLogics" : [ {
-                  "condOP" : "EQ",
                   "dEFDName" : "config_type",
+                  "condOP" : "EQ",
                   "value" : "day",
                   "logicType" : "SINGLE",
                   "name" : "config_type 等于(=) (day)"
@@ -339,7 +339,6 @@
               "detailStyle" : "DEFAULT",
               "name" : "config_day"
             }, {
-              "inputTipClosable" : false,
               "emptyCaption" : true,
               "getPSEditor" : {
                 "getPSAppCodeList" : {
@@ -349,26 +348,27 @@
                 "editorType" : "CHECKBOXLIST",
                 "name" : "config_week"
               },
+              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "CONFIG_WEEK",
                 "codeName" : "Config_week"
               },
               "dataType" : 25,
-              "allowEmpty" : true,
+              "hidden" : false,
               "needCodeListConfig" : true,
-              "labelWidth" : 130,
+              "allowEmpty" : true,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
+              "labelWidth" : 130,
               "showCaption" : true,
-              "hidden" : false,
               "getPSDEFDGroupLogics" : [ {
                 "relatedDetailNames" : [ "config_type" ],
                 "logicCat" : "PANELVISIBLE",
                 "getPSDEFDLogics" : [ {
-                  "condOP" : "EQ",
                   "dEFDName" : "config_type",
+                  "condOP" : "EQ",
                   "value" : "week",
                   "logicType" : "SINGLE",
                   "name" : "config_type 等于(=) (week)"
@@ -387,7 +387,6 @@
               "detailStyle" : "DEFAULT",
               "name" : "config_week"
             }, {
-              "inputTipClosable" : false,
               "emptyCaption" : true,
               "getPSEditor" : {
                 "getPSAppCodeList" : {
@@ -397,26 +396,27 @@
                 "editorType" : "CHECKBOXLIST",
                 "name" : "config_month"
               },
+              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "CONFIG_MONTH",
                 "codeName" : "Config_month"
               },
               "dataType" : 25,
-              "allowEmpty" : true,
+              "hidden" : false,
               "needCodeListConfig" : true,
-              "labelWidth" : 130,
+              "allowEmpty" : true,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
+              "labelWidth" : 130,
               "showCaption" : true,
-              "hidden" : false,
               "getPSDEFDGroupLogics" : [ {
                 "relatedDetailNames" : [ "config_type" ],
                 "logicCat" : "PANELVISIBLE",
                 "getPSDEFDLogics" : [ {
-                  "condOP" : "EQ",
                   "dEFDName" : "config_type",
+                  "condOP" : "EQ",
                   "value" : "month",
                   "logicType" : "SINGLE",
                   "name" : "config_type 等于(=) (month)"
@@ -435,26 +435,26 @@
               "detailStyle" : "DEFAULT",
               "name" : "config_month"
             }, {
-              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "idvalue"
               },
+              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "IDVALUE",
                 "codeName" : "Idvalue"
               },
               "dataType" : 1,
+              "hidden" : true,
               "allowEmpty" : true,
               "caption" : "关联编号",
-              "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
+              "labelWidth" : 130,
               "showCaption" : true,
-              "hidden" : true,
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
@@ -475,26 +475,26 @@
             "showCaption" : false,
             "name" : "grouppanel3"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "TEXTBOX",
               "name" : "config_beforedays"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "CONFIG_BEFOREDAYS",
               "codeName" : "Config_beforedays"
             },
             "dataType" : 9,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "提前",
-            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -505,23 +505,23 @@
             "detailStyle" : "DEFAULT",
             "name" : "config_beforedays"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "RAW",
               "editable" : false,
               "name" : "formitem"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "dataType" : 25,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "天生成待办",
-            "labelWidth" : 90,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 90,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -532,32 +532,32 @@
             "detailStyle" : "DEFAULT",
             "name" : "formitem"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "dateTimeFormat" : "YYYY-MM-DD",
-              "editorWidth" : 100.0,
               "editorType" : "DATEPICKEREX_NOTIME",
+              "editorWidth" : 100.0,
               "editorParams" : {
                 "TIMEFMT" : "YYYY-MM-DD"
               },
               "name" : "config_end"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "CONFIG_END",
               "codeName" : "Config_end"
             },
             "dataType" : 5,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "过期时间",
-            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 130,
             "itemWidth" : 230.0,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 16,
@@ -572,8 +572,8 @@
             "relatedDetailNames" : [ "type" ],
             "logicCat" : "PANELVISIBLE",
             "getPSDEFDLogics" : [ {
-              "condOP" : "EQ",
               "dEFDName" : "type",
+              "condOP" : "EQ",
               "value" : "cycle",
               "logicType" : "SINGLE",
               "name" : "type 等于(=) (cycle)"
@@ -594,7 +594,6 @@
           "showCaption" : true,
           "name" : "grouppanel2"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
@@ -605,27 +604,28 @@
             "editorType" : "DROPDOWNLIST",
             "name" : "type"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "TYPE",
             "codeName" : "Type"
           },
           "dataType" : 25,
-          "allowEmpty" : true,
+          "hidden" : false,
           "needCodeListConfig" : true,
+          "allowEmpty" : true,
           "caption" : "类型",
-          "labelWidth" : 130,
           "enableCond" : 0,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : false,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "cycle_enable" ],
             "logicCat" : "PANELVISIBLE",
             "getPSDEFDLogics" : [ {
-              "condOP" : "NOTEQ",
               "dEFDName" : "cycle_enable",
+              "condOP" : "NOTEQ",
               "value" : "1",
               "logicType" : "SINGLE",
               "name" : "cycle_enable 不等于(<>) (1)"
@@ -645,27 +645,27 @@
           "detailStyle" : "DEFAULT",
           "name" : "type"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "story"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "STORY",
             "codeName" : "Story"
           },
           "dataType" : 25,
+          "hidden" : true,
           "allowEmpty" : true,
           "caption" : "待办名称",
-          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "idvalue",
+          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -675,27 +675,27 @@
           "detailStyle" : "DEFAULT",
           "name" : "story"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "bug"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "BUG",
             "codeName" : "Bug"
           },
           "dataType" : 25,
+          "hidden" : true,
           "allowEmpty" : true,
           "caption" : "待办名称",
-          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "idvalue",
+          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -705,27 +705,27 @@
           "detailStyle" : "DEFAULT",
           "name" : "bug"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "task"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "TASK",
             "codeName" : "Task"
           },
           "dataType" : 25,
+          "hidden" : true,
           "allowEmpty" : true,
           "caption" : "待办名称",
-          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "idvalue",
+          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -735,7 +735,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "task"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
@@ -746,21 +745,22 @@
             "editorType" : "DROPDOWNLIST",
             "name" : "pri"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PRI",
             "codeName" : "Pri"
           },
           "dataType" : 9,
-          "allowEmpty" : true,
+          "hidden" : false,
           "needCodeListConfig" : true,
+          "allowEmpty" : true,
           "caption" : "优先级",
-          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 16,
@@ -771,40 +771,40 @@
           "detailStyle" : "DEFAULT",
           "name" : "pri"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "maxLength" : 150,
             "editorType" : "TEXTBOX",
             "name" : "name"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "NAME",
             "codeName" : "Name"
           },
           "dataType" : 25,
+          "hidden" : false,
           "allowEmpty" : true,
           "caption" : "待办名称",
-          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : false,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "type" ],
             "logicCat" : "ITEMENABLE",
             "getPSDEFDLogics" : [ {
               "getPSDEFDLogics" : [ {
-                "condOP" : "EQ",
                 "dEFDName" : "type",
+                "condOP" : "EQ",
                 "value" : "custom",
                 "logicType" : "SINGLE",
                 "name" : "type 等于(=) (custom)"
               }, {
-                "condOP" : "EQ",
                 "dEFDName" : "type",
+                "condOP" : "EQ",
                 "value" : "cycle",
                 "logicType" : "SINGLE",
                 "name" : "type 等于(=) (cycle)"
@@ -828,7 +828,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "name"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HTMLEDITOR",
@@ -838,20 +837,21 @@
             },
             "name" : "desc"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "DESC",
             "codeName" : "Desc"
           },
           "dataType" : 21,
+          "hidden" : false,
           "allowEmpty" : true,
           "caption" : "描述",
-          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -861,7 +861,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "desc"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
@@ -872,21 +871,22 @@
             "editorType" : "DROPDOWNLIST",
             "name" : "status"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "STATUS",
             "codeName" : "Status"
           },
           "dataType" : 25,
-          "allowEmpty" : true,
+          "hidden" : false,
           "needCodeListConfig" : true,
+          "allowEmpty" : true,
           "caption" : "状态",
-          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 16,
@@ -904,7 +904,6 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "singleSelect" : true,
@@ -915,27 +914,28 @@
               "editorType" : "DROPDOWNLIST",
               "name" : "begin"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "BEGIN",
               "codeName" : "Begin"
             },
             "dataType" : 9,
-            "allowEmpty" : true,
+            "hidden" : false,
             "needCodeListConfig" : true,
+            "allowEmpty" : true,
             "caption" : "起止时间",
-            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSDEFDGroupLogics" : [ {
               "relatedDetailNames" : [ "formitem10" ],
               "logicCat" : "ITEMENABLE",
               "getPSDEFDLogics" : [ {
-                "condOP" : "NOTEQ",
                 "dEFDName" : "formitem10",
+                "condOP" : "NOTEQ",
                 "value" : "on",
                 "logicType" : "SINGLE",
                 "name" : "formitem10 不等于(<>) (on)"
@@ -955,7 +955,6 @@
             "detailStyle" : "DEFAULT",
             "name" : "begin"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "singleSelect" : true,
@@ -966,27 +965,28 @@
               "editorType" : "DROPDOWNLIST",
               "name" : "end"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "END",
               "codeName" : "End"
             },
             "dataType" : 9,
-            "allowEmpty" : true,
+            "hidden" : false,
             "needCodeListConfig" : true,
+            "allowEmpty" : true,
             "caption" : "~",
-            "labelWidth" : 0,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "NONE",
+            "labelWidth" : 0,
             "showCaption" : false,
-            "hidden" : false,
             "getPSDEFDGroupLogics" : [ {
               "relatedDetailNames" : [ "formitem10" ],
               "logicCat" : "ITEMENABLE",
               "getPSDEFDLogics" : [ {
-                "condOP" : "NOTEQ",
                 "dEFDName" : "formitem10",
+                "condOP" : "NOTEQ",
                 "value" : "on",
                 "logicType" : "SINGLE",
                 "name" : "formitem10 不等于(<>) (on)"
@@ -1006,7 +1006,6 @@
             "detailStyle" : "DEFAULT",
             "name" : "end"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : true,
             "getPSEditor" : {
               "getPSAppCodeList" : {
@@ -1016,16 +1015,17 @@
               "editorType" : "CHECKBOXLIST",
               "name" : "formitem10"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "dataType" : 25,
-            "allowEmpty" : true,
+            "hidden" : false,
             "needCodeListConfig" : true,
-            "labelWidth" : 0,
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "NONE",
+            "labelWidth" : 0,
             "showCaption" : false,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -1047,7 +1047,6 @@
           "showCaption" : false,
           "name" : "grouppanel1"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "getPSAppCodeList" : {
@@ -1057,21 +1056,22 @@
             "editorType" : "RADIOBUTTONLIST",
             "name" : "private"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PRIVATE",
             "codeName" : "IBizPrivate"
           },
           "dataType" : 25,
-          "allowEmpty" : true,
+          "hidden" : false,
           "needCodeListConfig" : true,
+          "allowEmpty" : true,
           "caption" : "私人事务",
-          "labelWidth" : 130,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 130,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"

@@ -108,16 +108,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "项目名称",
+    "dataItemName" : "projectname",
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataItemName" : "projectname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -130,11 +130,11 @@
     "name" : "projectname"
   }, {
     "excelCaption" : "激活",
+    "dataItemName" : "bugactive",
     "getPSAppDEField" : {
       "name" : "BUGACTIVE",
       "codeName" : "Bugactive"
     },
-    "dataItemName" : "bugactive",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -148,11 +148,11 @@
     "name" : "bugactive"
   }, {
     "excelCaption" : "已解决",
+    "dataItemName" : "bugresolved",
     "getPSAppDEField" : {
       "name" : "BUGRESOLVED",
       "codeName" : "Bugresolved"
     },
-    "dataItemName" : "bugresolved",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -166,11 +166,11 @@
     "name" : "bugresolved"
   }, {
     "excelCaption" : "已关闭",
+    "dataItemName" : "bugclosed",
     "getPSAppDEField" : {
       "name" : "BUGCLOSED",
       "codeName" : "Bugclosed"
     },
-    "dataItemName" : "bugclosed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -184,11 +184,11 @@
     "name" : "bugclosed"
   }, {
     "excelCaption" : "总计",
+    "dataItemName" : "bugcnt",
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
-    "dataItemName" : "bugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

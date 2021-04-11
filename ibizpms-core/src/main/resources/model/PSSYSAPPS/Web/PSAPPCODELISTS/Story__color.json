@@ -3,39 +3,39 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
-  "codeListType" : "STATIC",
-  "dynaInstMode" : 1,
   "getPSCodeItems" : [ {
+    "value" : "#3da7f5",
     "codeName" : "Item_1",
     "text" : "#3da7f5",
-    "color" : "rgba(61, 167, 245, 1)",
-    "value" : "#3da7f5"
+    "color" : "rgba(61, 167, 245, 1)"
   }, {
+    "value" : "#75c941",
     "codeName" : "Item_2",
     "text" : "#75c941",
-    "color" : "rgba(117, 201, 65, 1)",
-    "value" : "#75c941"
+    "color" : "rgba(117, 201, 65, 1)"
   }, {
+    "value" : "#2dbdb2",
     "codeName" : "Item_3",
     "text" : "#2dbdb2",
-    "color" : "rgba(45, 189, 178, 1)",
-    "value" : "#2dbdb2"
+    "color" : "rgba(45, 189, 178, 1)"
   }, {
+    "value" : "#797ec9",
     "codeName" : "Item_4",
     "text" : "#797ec9",
-    "color" : "rgba(121, 126, 201, 1)",
-    "value" : "#797ec9"
+    "color" : "rgba(121, 126, 201, 1)"
   }, {
+    "value" : "#ffaf38",
     "codeName" : "Item_5",
     "text" : "#ffaf38",
-    "color" : "rgba(255, 175, 56, 1)",
-    "value" : "#ffaf38"
+    "color" : "rgba(255, 175, 56, 1)"
   }, {
+    "value" : "#ff4e3e",
     "codeName" : "Item_6",
     "text" : "#ff4e3e",
-    "color" : "rgba(255, 78, 62, 1)",
-    "value" : "#ff4e3e"
+    "color" : "rgba(255, 78, 62, 1)"
   } ],
+  "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
   "codeName" : "Story__color",
   "emptyText" : "未定义",
   "enableCache" : true,

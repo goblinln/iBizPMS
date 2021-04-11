@@ -139,23 +139,23 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
       },
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "project",
-        "key" : "project",
-        "name" : "project"
-      } ],
       "getPSNavigateContexts" : [ {
         "rawValue" : false,
         "value" : "project",
         "key" : "PROJECT",
         "name" : "PROJECT"
       } ],
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "project",
+        "key" : "project",
+        "name" : "project"
+      } ],
+      "editorType" : "DROPDOWNLIST",
       "getPSSysPFPlugin" : {
         "pluginType" : "EDITOR_CUSTOMSTYLE",
         "pluginCode" : "GridRowEditExtend"
       },
-      "editorType" : "DROPDOWNLIST",
       "editorParams" : {
         "SRFNAVCTX.project" : "%project%",
         "SRFNAVPARAM.project" : "%project%"
@@ -167,8 +167,8 @@
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "enableCond" : 3,
     "ignoreInput" : 0,
     "valueItemName" : "account",
@@ -192,8 +192,8 @@
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "enableCond" : 3,
     "ignoreInput" : 0,
     "codeName" : "type",
@@ -233,54 +233,13 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : true,
   "controlType" : "GRID",
+  "enableRowEdit" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "getPSDEGridColumns" : [ {
-    "excelCaption" : "用户",
-    "getPSAppCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
-    },
-    "getPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "dataItemName" : "account_text",
-    "enableRowEdit" : true,
-    "cLConvertMode" : "FRONT",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
-    "width" : 0,
-    "codeName" : "account",
-    "caption" : "用户",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "account"
-  }, {
-    "excelCaption" : "预计",
-    "getPSAppDEField" : {
-      "name" : "ESTIMATE",
-      "codeName" : "Estimate"
-    },
-    "dataItemName" : "estimate",
-    "enableRowEdit" : true,
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
-    "width" : 300,
-    "codeName" : "estimate",
-    "caption" : "预计",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "estimate"
-  } ],
+  "enablePagingBar" : false,
   "getPSDEGridEditItemVRs" : [ {
     "getPSDEGridEditItemName" : "estimate",
     "valueRuleType" : "DEFVALUERULE",
@@ -314,6 +273,47 @@
     },
     "checkMode" : 3,
     "name" : "编辑项值规则"
+  } ],
+  "getPSDEGridColumns" : [ {
+    "excelCaption" : "用户",
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
+    },
+    "dataItemName" : "account_text",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "cLConvertMode" : "FRONT",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 0,
+    "codeName" : "account",
+    "caption" : "用户",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "account"
+  }, {
+    "excelCaption" : "预计",
+    "dataItemName" : "estimate",
+    "enableRowEdit" : true,
+    "getPSAppDEField" : {
+      "name" : "ESTIMATE",
+      "codeName" : "Estimate"
+    },
+    "cLConvertMode" : "NONE",
+    "noPrivDisplayMode" : 1,
+    "enableSort" : true,
+    "width" : 300,
+    "codeName" : "estimate",
+    "caption" : "预计",
+    "columnType" : "DEFGRIDCOLUMN",
+    "align" : "LEFT",
+    "widthUnit" : "PX",
+    "name" : "estimate"
   } ],
   "codeName" : "MainEditRow",
   "minorSortDir" : "DESC",

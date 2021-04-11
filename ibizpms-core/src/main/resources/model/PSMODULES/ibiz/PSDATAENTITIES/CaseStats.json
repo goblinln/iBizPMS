@@ -4,8 +4,8 @@
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "deployId" : "79c5bd826ed313321aaf4133994b92fd",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -34,18 +34,18 @@
       "autoIncrement" : false,
       "name" : "PASSCASE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "79c5bd826ed313321aaf4133994b92fd",
     "codeName" : "Passcase",
     "logicName" : "通过用例数",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "PASSCASE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "deployId" : "b8f3a20b5332a85e39c5f02a93006e6b",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -74,18 +74,18 @@
       "autoIncrement" : false,
       "name" : "BLOCKEDCASE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "b8f3a20b5332a85e39c5f02a93006e6b",
     "codeName" : "Blockedcase",
     "logicName" : "阻塞用例数",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "BLOCKEDCASE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "deployId" : "cd8ab7d39f2454c58f3e7b11ece251d3",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -114,18 +114,18 @@
       "autoIncrement" : false,
       "name" : "TOTALRUNCASE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "cd8ab7d39f2454c58f3e7b11ece251d3",
     "codeName" : "Totalruncase",
     "logicName" : "总执行数",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "TOTALRUNCASE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "deployId" : "08bbb03465daf9c6562722fdfa57e968",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -154,18 +154,17 @@
       "autoIncrement" : false,
       "name" : "FAILCASE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "08bbb03465daf9c6562722fdfa57e968",
     "codeName" : "Failcase",
     "logicName" : "失败用例数",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "FAILCASE"
   }, {
     "dataType" : "TEXT",
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "8ada09e9ae73236bf5dcd0e3631be3f8",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -176,8 +175,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "TITLE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -206,20 +205,21 @@
       "autoIncrement" : false,
       "name" : "TITLE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "8ada09e9ae73236bf5dcd0e3631be3f8",
     "codeName" : "Title",
     "logicName" : "用例标题",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TITLE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "deployId" : "8a804b914a8e0fbfc83272754e3696dd",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -248,16 +248,17 @@
       "autoIncrement" : false,
       "name" : "TOTALCASE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "8a804b914a8e0fbfc83272754e3696dd",
     "codeName" : "Totalcase",
     "logicName" : "总用例数",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "TOTALCASE"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "bf2bc57b72a14399425e7efeb04f5593",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -268,8 +269,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PASSRATE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -290,22 +291,20 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "bf2bc57b72a14399425e7efeb04f5593",
     "codeName" : "Passrate",
     "logicName" : "用例通过率",
     "stringLength" : 100,
     "stdDataType" : 25,
     "phisicalDEField" : false,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "PASSRATE"
   }, {
     "dataType" : "ACID",
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "enableDBAutoValue" : true,
-    "dEFType" : 1,
+    "length" : 20,
+    "valueFormat" : "%1$s",
+    "deployId" : "f614ff1a8342e513345662da502b0e85",
     "pasteReset" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -335,12 +334,13 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "f614ff1a8342e513345662da502b0e85",
     "codeName" : "Id",
     "logicName" : "用例编号",
     "stdDataType" : 1,
-    "length" : 20,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
     "name" : "ID"
   }, {
     "phisicalDEField" : false,
@@ -349,15 +349,15 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats/PSDERS/DER1N_IBZ_CASESTATS_ZT_MODULE_MODULE.json"
     },
     "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "uIAssistDEField" : true,
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "length" : 60,
+    "deployId" : "febcc1395bd6c6358e160f120b72d273",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -368,8 +368,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "MODULENAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -390,12 +390,12 @@
       },
       "name" : "默认规则"
     } ],
-    "deployId" : "febcc1395bd6c6358e160f120b72d273",
     "codeName" : "Modulename",
     "logicName" : "模块名称",
     "stringLength" : 60,
     "stdDataType" : 25,
-    "length" : 60,
+    "importOrder" : 1000,
+    "dEFType" : 5,
     "name" : "MODULENAME"
   }, {
     "getPSDER" : {
@@ -409,8 +409,8 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "deployId" : "a0396c31697d1b6668e36ac8b2eafc45",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -439,11 +439,11 @@
       "autoIncrement" : false,
       "name" : "PRODUCT"
     } ],
-    "deployId" : "a0396c31697d1b6668e36ac8b2eafc45",
     "codeName" : "Product",
     "logicName" : "产品",
     "stdDataType" : 1,
-    "length" : 8,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PRODUCT"
   }, {
     "getPSDER" : {
@@ -457,8 +457,7 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "95e154ec84963efadb212a3225baa898",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -487,49 +486,50 @@
       "autoIncrement" : false,
       "name" : "MODULE"
     } ],
-    "deployId" : "95e154ec84963efadb212a3225baa898",
     "codeName" : "Module",
     "logicName" : "模块",
     "stdDataType" : 1,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "MODULE"
   } ],
   "getAllPSDEDataSets" : [ {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据集",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
+    "pageSize" : -1,
     "name" : "DEFAULT"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "TestCaseStats",
     "logicName" : "测试用例统计",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "TestCaseStats"
   } ],
   "getAllPSDEActions" : [ {
@@ -560,9 +560,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "数据查询",
+    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -571,9 +571,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "TestCaseStats",
     "logicName" : "测试用例统计",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "TestCaseStats"
   }, {
@@ -582,27 +582,21 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
+  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "enableUIActions" : 15,
   "orderValue" : 99999,
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "serviceCodeName" : "CaseStats",
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -617,16 +611,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "3294041fa814dcb0867719ff5f4f815f",
+  "enableSQLStorage" : true,
   "dynaInstMode" : 1,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,
-  "dSLink" : "DEFAULT",
-  "deployId" : "3294041fa814dcb0867719ff5f4f815f",
+  "virtualMode" : 0,
   "codeName" : "CaseStats",
   "logicName" : "测试用例统计",
   "tableName" : "zt_case",
-  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -635,8 +629,14 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
+  "enableRemove" : true,
+  "serviceCodeName" : "CaseStats",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

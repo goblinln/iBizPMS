@@ -17,14 +17,14 @@
   } ],
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
+  "orderValue" : 99999,
   "codeName" : "GetUserYearAction",
   "logicName" : "获取用户所选年度的动作",
+  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

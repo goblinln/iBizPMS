@@ -7,15 +7,15 @@
   "tempDataMode" : 2,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 2,
-  "extendMode" : 0,
-  "enableTempData" : true,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
   },
+  "orderValue" : 2,
   "codeName" : "CreateTemp",
   "logicName" : "CreateTemp",
+  "extendMode" : 0,
+  "enableTempData" : true,
   "actionMode" : "CREATE",
   "actionType" : "BUILTIN",
   "requestParamType" : "ENTITY",

@@ -1,4 +1,13 @@
 {
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "getGroupPSAppDEField" : {
+    "name" : "BRANCH",
+    "codeName" : "Branch"
+  },
+  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
@@ -17,8 +26,8 @@
     "dataType" : 9,
     "name" : "marker"
   }, {
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
+    "format" : "YYYY-MM-DD",
     "name" : "begin"
   }, {
     "dataType" : 25,
@@ -30,24 +39,15 @@
     "dataType" : 9,
     "name" : "product"
   }, {
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
+    "format" : "YYYY-MM-DD",
     "name" : "end"
   }, {
     "dataType" : 25,
     "name" : "productlifename"
   } ],
-  "showHeader" : true,
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "getGroupPSAppDEField" : {
-    "name" : "BRANCH",
-    "codeName" : "Branch"
-  },
-  "enableRowEdit" : false,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "END",
     "codeName" : "End"
@@ -55,11 +55,11 @@
   "codeName" : "GetRoadmap",
   "minorSortDir" : "ASC",
   "enableGroup" : true,
-  "pagingSize" : 1000,
   "getGroupPSCodeList" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch.json"
   },
+  "pagingSize" : 1000,
   "groupMode" : "CODELIST",
   "getCreatePSControlAction" : {
     "modelref" : true,

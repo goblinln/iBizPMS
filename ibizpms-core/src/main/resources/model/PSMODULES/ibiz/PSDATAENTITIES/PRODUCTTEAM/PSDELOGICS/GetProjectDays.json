@@ -7,13 +7,13 @@
   },
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "product"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -34,6 +34,7 @@
       "id" : "连接4776"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "product"
@@ -42,7 +43,6 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
       "srcFieldName" : "ROOT",
@@ -55,6 +55,7 @@
   }, {
     "parallelOutput" : true,
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
@@ -63,7 +64,6 @@
         "modelref" : true,
         "id" : "product"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "DAYS",
       "srcFieldName" : "ID",
@@ -119,16 +119,16 @@
     "name" : "连接4176"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "product",
     "default" : false,
     "name" : "产品"
   }, {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

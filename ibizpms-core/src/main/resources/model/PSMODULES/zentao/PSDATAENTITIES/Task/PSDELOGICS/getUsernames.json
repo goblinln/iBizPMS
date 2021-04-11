@@ -12,11 +12,11 @@
       "id" : "Default"
     },
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT]"
@@ -45,11 +45,11 @@
       "id" : "Default"
     },
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "ID",
       "name" : "Default[ID]"
@@ -60,14 +60,13 @@
     "name" : "任务团队"
   } ],
   "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "MULTIPLE",
         "logicType" : "SINGLE",
@@ -78,6 +77,7 @@
       "logicType" : "GROUP",
       "id" : "0aa8a79016044ceb90ec1fc7b10c60aa"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall1"
@@ -88,14 +88,13 @@
     },
     "name" : "连接9577"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "NOTEQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "NOTEQ",
         "paramValue" : "1",
         "dstFieldName" : "MULTIPLE",
         "logicType" : "SINGLE",
@@ -106,6 +105,7 @@
       "logicType" : "GROUP",
       "id" : "676b2d3b2979982e113415e78823df1f"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall2"
@@ -117,9 +117,9 @@
     "name" : "连接6464"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

@@ -6,14 +6,14 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
+  "orderValue" : 99999,
   "codeName" : "GetDevInfomation",
   "logicName" : "获取研发人员相关数据",
+  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "DELOGIC",
   "requestField" : "ID",

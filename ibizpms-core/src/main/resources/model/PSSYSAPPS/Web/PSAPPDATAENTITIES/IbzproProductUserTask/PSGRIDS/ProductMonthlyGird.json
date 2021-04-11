@@ -21,11 +21,11 @@
     "dataType" : 1,
     "name" : "task"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "date"
   }, {
@@ -72,11 +72,11 @@
     "dataType" : 25,
     "name" : "account"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "ESTSTARTED",
       "codeName" : "EstStarted"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "eststarted"
   }, {
@@ -94,11 +94,11 @@
     "dataType" : 25,
     "name" : "progressrate"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DEADLINE",
       "codeName" : "Deadline"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "deadline"
   } ],
@@ -139,16 +139,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "用户",
+    "dataItemName" : "account",
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataItemName" : "account",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -161,11 +161,11 @@
     "name" : "account"
   }, {
     "excelCaption" : "任务名称",
+    "dataItemName" : "taskname",
     "getPSAppDEField" : {
       "name" : "TASKNAME",
       "codeName" : "TaskName"
     },
-    "dataItemName" : "taskname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -182,11 +182,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__type.json"
     },
+    "dataItemName" : "tasktype",
     "getPSAppDEField" : {
       "name" : "TASKTYPE",
       "codeName" : "TaskType"
     },
-    "dataItemName" : "tasktype",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -199,11 +199,11 @@
     "name" : "tasktype"
   }, {
     "excelCaption" : "当天消耗",
+    "dataItemName" : "consumed",
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
-    "dataItemName" : "consumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -216,11 +216,11 @@
     "name" : "consumed"
   }, {
     "excelCaption" : "预计开始",
+    "dataItemName" : "eststarted",
     "getPSAppDEField" : {
       "name" : "ESTSTARTED",
       "codeName" : "EstStarted"
     },
-    "dataItemName" : "eststarted",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -234,11 +234,11 @@
     "name" : "eststarted"
   }, {
     "excelCaption" : "截止日期",
+    "dataItemName" : "deadline",
     "getPSAppDEField" : {
       "name" : "DEADLINE",
       "codeName" : "Deadline"
     },
-    "dataItemName" : "deadline",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -252,11 +252,11 @@
     "name" : "deadline"
   }, {
     "excelCaption" : "日期",
+    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataItemName" : "date",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -270,11 +270,11 @@
     "name" : "date"
   }, {
     "excelCaption" : "进度",
+    "dataItemName" : "progressrate",
     "getPSAppDEField" : {
       "name" : "PROGRESSRATE",
       "codeName" : "Progressrate"
     },
-    "dataItemName" : "progressrate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -287,11 +287,11 @@
     "name" : "progressrate"
   }, {
     "excelCaption" : "延期天数",
+    "dataItemName" : "delaydays",
     "getPSAppDEField" : {
       "name" : "DELAYDAYS",
       "codeName" : "Delaydays"
     },
-    "dataItemName" : "delaydays",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

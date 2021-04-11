@@ -36,18 +36,21 @@
     "engineType" : "TreeView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "TREE"
+      "name" : "TREE",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "treeGridMode" : 0,
+    "enableRootSelect" : false,
+    "outputIconDefault" : true,
+    "enableSearchDefault" : false,
     "getPSDETreeNodeRSs" : [ {
       "getParentPSDETreeNode" : {
         "modelref" : true,
@@ -61,31 +64,28 @@
       "searchMode" : 3,
       "name" : "默认根节点 - 文档"
     } ],
-    "enableRootSelect" : false,
-    "outputIconDefault" : true,
-    "enableSearchDefault" : false,
     "controlType" : "TREEVIEW",
     "getPSDETreeNodes" : [ {
       "nodeValue" : "root",
       "text" : "默认根节点",
       "enableQuickCreate" : false,
       "rootNode" : true,
-      "appendPNodeId" : false,
-      "enableCheck" : false,
       "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : false,
+      "enableCheck" : false,
       "enableNewData" : false,
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "nodeType" : "ROOT",
       "disableSelect" : false,
+      "nodeType" : "ROOT",
       "enableQuickSearch" : false,
-      "expanded" : false,
       "counterMode" : 0,
       "treeNodeType" : "STATIC",
+      "expanded" : false,
       "name" : "默认根节点",
       "id" : "ROOT"
     }, {
@@ -115,12 +115,12 @@
         "viewType" : "DEPORTALVIEW"
       },
       "rootNode" : false,
-      "appendPNodeId" : false,
-      "enableCheck" : false,
       "hasPSDETreeNodeRSs" : false,
+      "appendPNodeId" : false,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : false,
+      "enableCheck" : false,
       "getPSDEContextMenu" : {
         "controlType" : "CONTEXTMENU",
         "getPSDEToolbarItems" : [ {
@@ -141,11 +141,11 @@
             },
             "frontProcessType" : "WIZARD",
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
+            "timeout" : 60000,
             "codeName" : "Edit",
             "caption" : "编辑",
             "actionTarget" : "SINGLEKEY",
@@ -186,11 +186,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-remove"
             },
+            "timeout" : 60000,
             "codeName" : "Delete",
             "caption" : "删除",
             "actionTarget" : "SINGLEKEY",
@@ -233,11 +233,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
               "cssClass" : "fa fa-star-o"
             },
+            "timeout" : 60000,
             "codeName" : "OnlyCollectDoc",
             "caption" : "收藏",
             "actionTarget" : "SINGLEKEY",
@@ -279,11 +279,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf005@FontAwesome",
               "cssClass" : "fa fa-star"
             },
+            "timeout" : 60000,
             "codeName" : "OnlyUnCollectDoc",
             "caption" : "取消收藏",
             "actionTarget" : "SINGLEKEY",
@@ -326,11 +326,11 @@
             "frontProcessType" : "WIZARD",
             "refreshMode" : 1,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf06e@FontAwesome",
               "cssClass" : "fa fa-eye"
             },
+            "timeout" : 60000,
             "codeName" : "DocInfo",
             "caption" : "查看文档详情",
             "actionTarget" : "SINGLEKEY",
@@ -371,12 +371,12 @@
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "nodeType" : "Doc",
       "disableSelect" : false,
+      "nodeType" : "Doc",
       "enableQuickSearch" : false,
-      "expanded" : false,
       "counterMode" : 0,
       "treeNodeType" : "DE",
+      "expanded" : false,
       "name" : "文档",
       "id" : "Doc"
     } ],
@@ -483,11 +483,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "Edit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -528,11 +528,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "timeout" : 60000,
           "codeName" : "Delete",
           "caption" : "删除",
           "actionTarget" : "SINGLEKEY",
@@ -575,11 +575,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
           },
+          "timeout" : 60000,
           "codeName" : "OnlyCollectDoc",
           "caption" : "收藏",
           "actionTarget" : "SINGLEKEY",
@@ -621,11 +621,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
           },
+          "timeout" : 60000,
           "codeName" : "OnlyUnCollectDoc",
           "caption" : "取消收藏",
           "actionTarget" : "SINGLEKEY",
@@ -668,11 +668,11 @@
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf06e@FontAwesome",
             "cssClass" : "fa fa-eye"
           },
+          "timeout" : 60000,
           "codeName" : "DocInfo",
           "caption" : "查看文档详情",
           "actionTarget" : "SINGLEKEY",

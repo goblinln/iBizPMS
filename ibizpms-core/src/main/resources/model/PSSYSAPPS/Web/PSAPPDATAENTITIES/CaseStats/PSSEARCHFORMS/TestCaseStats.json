@@ -10,7 +10,6 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -21,21 +20,22 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "product"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
       "dataType" : 1,
-      "allowEmpty" : true,
+      "hidden" : false,
       "needCodeListConfig" : true,
+      "allowEmpty" : true,
       "caption" : "产品",
-      "labelWidth" : 100,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 100,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,

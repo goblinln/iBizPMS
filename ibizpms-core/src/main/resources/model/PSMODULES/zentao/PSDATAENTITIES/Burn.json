@@ -4,8 +4,9 @@
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "f61caf1f7b611608f83307cfb35b68f5",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -16,8 +17,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "ISWEEKEND",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -46,20 +47,17 @@
       "autoIncrement" : false,
       "name" : "ISWEEKEND"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "f61caf1f7b611608f83307cfb35b68f5",
     "codeName" : "Isweekend",
     "logicName" : "周末",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "ISWEEKEND"
   }, {
     "dataType" : "DATE",
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "7f067a3f7867901169771b0c2364dfac",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -88,19 +86,21 @@
       "autoIncrement" : false,
       "name" : "DATE"
     } ],
-    "valueFormat" : "%1$tY-%1$tm-%1$td",
-    "deployId" : "7f067a3f7867901169771b0c2364dfac",
     "codeName" : "Date",
     "logicName" : "日期",
     "stdDataType" : 5,
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "DATE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "TEXT",
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "fd6122a21197d74a59d37ef9fce7e3a0",
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -113,8 +113,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "ID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -143,13 +143,13 @@
       "autoIncrement" : false,
       "name" : "ID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "fd6122a21197d74a59d37ef9fce7e3a0",
     "codeName" : "Id",
     "logicName" : "虚拟主键",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "ID"
   }, {
     "getPSDER" : {
@@ -162,10 +162,9 @@
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
-    "precision" : 2,
     "dataType" : "PICKUPDATA",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "precision" : 2,
+    "deployId" : "3736c5111076da6e2e9bf530f7088c1c",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -194,10 +193,11 @@
       "autoIncrement" : false,
       "name" : "CONSUMED"
     } ],
-    "deployId" : "3736c5111076da6e2e9bf530f7088c1c",
     "codeName" : "Consumed",
     "logicName" : "总计消耗",
     "stdDataType" : 7,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CONSUMED"
   }, {
     "getPSDER" : {
@@ -210,10 +210,9 @@
       "name" : "LEFT",
       "codeName" : "Left"
     },
-    "precision" : 2,
     "dataType" : "PICKUPDATA",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "precision" : 2,
+    "deployId" : "31fba8ddced5f84e1cf17c5e405c74cc",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -242,10 +241,11 @@
       "autoIncrement" : false,
       "name" : "LEFT"
     } ],
-    "deployId" : "31fba8ddced5f84e1cf17c5e405c74cc",
     "codeName" : "Left",
     "logicName" : "预计剩余",
     "stdDataType" : 7,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "LEFT"
   }, {
     "getPSDER" : {
@@ -259,8 +259,7 @@
       "codeName" : "Estimate"
     },
     "dataType" : "PICKUPDATA",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "552688819bbfd74818bca6f27d16e81c",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -289,10 +288,11 @@
       "autoIncrement" : false,
       "name" : "ESTIMATE"
     } ],
-    "deployId" : "552688819bbfd74818bca6f27d16e81c",
     "codeName" : "Estimate",
     "logicName" : "最初预计",
     "stdDataType" : 7,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ESTIMATE"
   }, {
     "getPSDER" : {
@@ -306,8 +306,8 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "deployId" : "824326e0305cef3b10ed00d786d80733",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -336,11 +336,11 @@
       "autoIncrement" : false,
       "name" : "PROJECT"
     } ],
-    "deployId" : "824326e0305cef3b10ed00d786d80733",
     "codeName" : "Project",
     "logicName" : "所属项目",
     "stdDataType" : 1,
-    "length" : 8,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PROJECT"
   }, {
     "getPSDER" : {
@@ -354,8 +354,8 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "deployId" : "9a08649265db03edc8bec7c7b7dcd1cc",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -384,50 +384,50 @@
       "autoIncrement" : false,
       "name" : "TASK"
     } ],
-    "deployId" : "9a08649265db03edc8bec7c7b7dcd1cc",
     "codeName" : "Task",
     "logicName" : "任务",
     "stdDataType" : 1,
-    "length" : 8,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TASK"
   } ],
   "getAllPSDEDataSets" : [ {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
+    "pageSize" : -1,
     "name" : "DEFAULT"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "ESTIMATEANDLEFT",
     "logicName" : "燃尽图预计（含周末）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "ESTIMATEANDLEFT"
   } ],
   "getAllPSDEActions" : [ {
@@ -461,9 +461,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -472,9 +472,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "ESTIMATEANDLEFT",
     "logicName" : "燃尽图预计（含周末）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "ESTIMATEANDLEFT"
   }, {
@@ -483,27 +483,21 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
+  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "enableUIActions" : 15,
   "orderValue" : 99999,
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "serviceCodeName" : "Burn",
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -518,16 +512,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "e5a47ed011760d2702ca93fc30e86183",
+  "enableSQLStorage" : true,
   "dynaInstMode" : 1,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,
-  "dSLink" : "DEFAULT",
-  "deployId" : "e5a47ed011760d2702ca93fc30e86183",
+  "virtualMode" : 0,
   "codeName" : "Burn",
   "logicName" : "burn",
   "tableName" : "zt_burn",
-  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -536,8 +530,14 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
+  "enableRemove" : true,
+  "serviceCodeName" : "Burn",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

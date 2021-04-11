@@ -28,11 +28,11 @@
       "id" : "Default"
     },
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "STORY",
       "name" : "Default[STORY]"
@@ -48,11 +48,11 @@
       "id" : "Default"
     },
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PLAN",
       "name" : "Default[PLAN]"
@@ -69,23 +69,22 @@
     "name" : "设置常规参数"
   } ],
   "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNULL",
         "dstFieldName" : "PLAN",
         "logicType" : "SINGLE",
         "name" : "Default[PLAN] 值为空(Nil)"
       }, {
-        "condOP" : "ISNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNULL",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
         "name" : "Default[STORY] 值为空(Nil)"
@@ -95,6 +94,7 @@
       "logicType" : "GROUP",
       "id" : "cf3b1337760fa0fbd2b2fd77a5d6191d"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Prepareparam1"
@@ -105,14 +105,13 @@
     },
     "name" : "连接3730"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNOTNULL",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
         "name" : "Default[STORY] 值不为空(NotNil)"
@@ -122,6 +121,7 @@
       "logicType" : "GROUP",
       "id" : "ff0b80616c7f7786dce992f0813c422a"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall1"
@@ -132,14 +132,13 @@
     },
     "name" : "连接1706"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNOTNULL",
         "dstFieldName" : "PLAN",
         "logicType" : "SINGLE",
         "name" : "Default[PLAN] 值不为空(NotNil)"
@@ -149,6 +148,7 @@
       "logicType" : "GROUP",
       "id" : "7f243d709621de498a2e72ff9fb15ca2"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall2"
@@ -160,9 +160,9 @@
     "name" : "连接5784"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

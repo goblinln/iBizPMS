@@ -202,20 +202,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "ID",
+    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -232,11 +232,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json"
     },
+    "dataItemName" : "pri",
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "dataItemName" : "pri",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -248,7 +248,6 @@
     "widthUnit" : "PX",
     "name" : "pri"
   }, {
-    "excelCaption" : "需求名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -256,11 +255,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
       "viewType" : "DEPORTALVIEW"
     },
+    "excelCaption" : "需求名称",
+    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataItemName" : "title",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -277,11 +277,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductPlan.json"
     },
+    "dataItemName" : "plan",
     "getPSAppDEField" : {
       "name" : "PLAN",
       "codeName" : "Plan"
     },
-    "dataItemName" : "plan",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -298,11 +298,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "openedby",
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
-    "dataItemName" : "openedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -319,11 +319,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameUnAssignTo_Gird.json"
     },
+    "dataItemName" : "assignedto",
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "dataItemName" : "assignedto",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -336,11 +336,11 @@
     "name" : "assignedto"
   }, {
     "excelCaption" : "预计",
+    "dataItemName" : "estimate",
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
-    "dataItemName" : "estimate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -357,11 +357,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__status.json"
     },
+    "dataItemName" : "status",
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataItemName" : "status",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -378,11 +378,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__stage.json"
     },
+    "dataItemName" : "stage",
     "getPSAppDEField" : {
       "name" : "STAGE",
       "codeName" : "Stage"
     },
-    "dataItemName" : "stage",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -396,8 +396,34 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "CURPROJECT",
+            "name" : "CURPROJECT"
+          }, {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "PROJECT",
+            "name" : "PROJECT"
+          }, {
+            "rawValue" : false,
+            "value" : "module",
+            "key" : "MODULE",
+            "name" : "MODULE"
+          }, {
+            "rawValue" : false,
+            "value" : "modulename",
+            "key" : "MODULENAME",
+            "name" : "MODULENAME"
+          }, {
+            "rawValue" : false,
+            "value" : "title",
+            "key" : "TITLE",
+            "name" : "TITLE"
+          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -440,6 +466,31 @@
           } ],
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
+          "getNoPrivDisplayMode" : 1,
+          "getPSSysImage" : {
+            "glyph" : "xf067@FontAwesome",
+            "cssClass" : "fa fa-plus"
+          },
+          "timeout" : 60000,
+          "codeName" : "Breakdowntasks",
+          "caption" : "分解任务",
+          "actionTarget" : "SINGLEKEY",
+          "reloadData" : true,
+          "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
+          "uIActionTag" : "Breakdowntasks",
+          "uIActionType" : "DEUIACTION",
+          "uIActionMode" : "FRONT",
+          "fullCodeName" : "Story_Breakdowntasks",
+          "name" : "分解任务",
+          "id" : "Breakdowntasks@Story"
+        },
+        "addSeparator" : false,
+        "detailType" : "DEUIACTION",
+        "showCaption" : false,
+        "name" : "ucdd2824"
+      }, {
+        "showIcon" : true,
+        "getPSUIAction" : {
           "getPSNavigateContexts" : [ {
             "rawValue" : false,
             "value" : "project",
@@ -466,31 +517,6 @@
             "key" : "TITLE",
             "name" : "TITLE"
           } ],
-          "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
-          "getPSSysImage" : {
-            "glyph" : "xf067@FontAwesome",
-            "cssClass" : "fa fa-plus"
-          },
-          "codeName" : "Breakdowntasks",
-          "caption" : "分解任务",
-          "actionTarget" : "SINGLEKEY",
-          "reloadData" : true,
-          "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
-          "uIActionTag" : "Breakdowntasks",
-          "uIActionType" : "DEUIACTION",
-          "uIActionMode" : "FRONT",
-          "fullCodeName" : "Story_Breakdowntasks",
-          "name" : "分解任务",
-          "id" : "Breakdowntasks@Story"
-        },
-        "showIcon" : true,
-        "detailType" : "DEUIACTION",
-        "showCaption" : false,
-        "name" : "ucdd2824"
-      }, {
-        "addSeparator" : false,
-        "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -533,38 +559,12 @@
           } ],
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "CURPROJECT",
-            "name" : "CURPROJECT"
-          }, {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "PROJECT",
-            "name" : "PROJECT"
-          }, {
-            "rawValue" : false,
-            "value" : "module",
-            "key" : "MODULE",
-            "name" : "MODULE"
-          }, {
-            "rawValue" : false,
-            "value" : "modulename",
-            "key" : "MODULENAME",
-            "name" : "MODULENAME"
-          }, {
-            "rawValue" : false,
-            "value" : "title",
-            "key" : "TITLE",
-            "name" : "TITLE"
-          } ],
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf196@FontAwesome",
             "cssClass" : "fa fa-plus-square-o"
           },
+          "timeout" : 60000,
           "codeName" : "BatchBreakdowntasks",
           "caption" : "批量分解",
           "actionTarget" : "SINGLEKEY",
@@ -577,13 +577,19 @@
           "name" : "分解任务（批量分解）",
           "id" : "BatchBreakdowntasks@Story"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u2fdcaeb"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "PROJECT",
+            "name" : "PROJECT"
+          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -600,18 +606,12 @@
           } ],
           "refreshMode" : 1,
           "enableConfirm" : true,
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "PROJECT",
-            "name" : "PROJECT"
-          } ],
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf127@FontAwesome",
             "cssClass" : "fa fa-unlink"
           },
+          "timeout" : 60000,
           "codeName" : "ProjectUnlinkStory",
           "caption" : "移除",
           "actionTarget" : "SINGLEKEY",
@@ -626,7 +626,7 @@
           "name" : "移除项目关联",
           "id" : "ProjectUnlinkStory@Story"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u247f69c"

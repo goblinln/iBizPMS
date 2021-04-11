@@ -7,15 +7,15 @@
   "tempDataMode" : 2,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 43,
-  "extendMode" : 0,
-  "enableTempData" : true,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
   },
+  "orderValue" : 43,
   "codeName" : "GetDraftTemp",
   "logicName" : "GetDraftTemp",
+  "extendMode" : 0,
+  "enableTempData" : true,
   "actionMode" : "GETDRAFT",
   "actionType" : "BUILTIN",
   "requestParamType" : "NONE",

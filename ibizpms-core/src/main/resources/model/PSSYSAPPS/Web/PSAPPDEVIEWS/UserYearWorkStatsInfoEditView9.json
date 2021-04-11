@@ -45,12 +45,12 @@
     "engineType" : "EditView9",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
@@ -75,15 +75,13 @@
     "key" : "USERYEARWORKSTATS",
     "name" : "USERYEARWORKSTATS"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "enableAutoSave" : false,
-    "infoFormMode" : true,
-    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -108,6 +106,8 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
+    "infoFormMode" : true,
+    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -116,26 +116,26 @@
     },
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
-        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "role"
         },
+        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "ROLE",
           "codeName" : "Role"
         },
         "dataType" : 25,
+        "hidden" : true,
         "allowEmpty" : true,
         "caption" : "角色",
-        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
+        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -159,26 +159,26 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "yearvisits"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "YEARVISITS",
               "codeName" : "Yearvisits"
             },
             "dataType" : 9,
+            "hidden" : true,
             "allowEmpty" : true,
             "caption" : "累计登录次数",
-            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -188,32 +188,32 @@
             "detailStyle" : "DEFAULT",
             "name" : "yearvisits"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "yearactioncnt"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "YEARACTIONCNT",
               "codeName" : "Yearactioncnt"
             },
             "dataType" : 9,
+            "hidden" : true,
             "allowEmpty" : true,
             "caption" : "累计动态数",
-            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : true,
             "getPSDEFDGroupLogics" : [ {
               "relatedDetailNames" : [ "judgerole" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
-                "condOP" : "NOTEQ",
                 "dEFDName" : "judgerole",
+                "condOP" : "NOTEQ",
                 "value" : "po",
                 "logicType" : "SINGLE",
                 "name" : "judgerole 不等于(<>) (po)"
@@ -239,26 +239,26 @@
               "columnCount" : 24
             },
             "getPSDEFormDetails" : [ {
-              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "yearlogcnt"
               },
+              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "YEARLOGCNT",
                 "codeName" : "Yearlogcnt"
               },
               "dataType" : 9,
+              "hidden" : true,
               "allowEmpty" : true,
               "caption" : "累计日志数",
-              "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
+              "labelWidth" : 130,
               "showCaption" : true,
-              "hidden" : true,
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
@@ -268,26 +268,26 @@
               "detailStyle" : "DEFAULT",
               "name" : "yearlogcnt"
             }, {
-              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "yearestimatecnt"
               },
+              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "YEARESTIMATECNT",
                 "codeName" : "Yearestimatecnt"
               },
               "dataType" : 9,
+              "hidden" : true,
               "allowEmpty" : true,
               "caption" : "累计工时数",
-              "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
+              "labelWidth" : 130,
               "showCaption" : true,
-              "hidden" : true,
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
@@ -301,8 +301,8 @@
               "relatedDetailNames" : [ "judgerole" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
-                "condOP" : "EQ",
                 "dEFDName" : "judgerole",
+                "condOP" : "EQ",
                 "value" : "dev",
                 "logicType" : "SINGLE",
                 "name" : "judgerole 等于(=) (dev)"
@@ -330,26 +330,26 @@
               "columnCount" : 24
             },
             "getPSDEFormDetails" : [ {
-              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "yearcasecnt"
               },
+              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "YEARCASECNT",
                 "codeName" : "Yearcasecnt"
               },
               "dataType" : 9,
+              "hidden" : true,
               "allowEmpty" : true,
               "caption" : "累计创建用例数",
-              "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
+              "labelWidth" : 130,
               "showCaption" : true,
-              "hidden" : true,
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
@@ -359,26 +359,26 @@
               "detailStyle" : "DEFAULT",
               "name" : "yearcasecnt"
             }, {
-              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "yearbugcnt"
               },
+              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "YEARBUGCNT",
                 "codeName" : "Yearbugcnt"
               },
               "dataType" : 9,
+              "hidden" : true,
               "allowEmpty" : true,
               "caption" : "累计创建Bug数",
-              "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
+              "labelWidth" : 130,
               "showCaption" : true,
-              "hidden" : true,
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
@@ -392,8 +392,8 @@
               "relatedDetailNames" : [ "judgerole" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
-                "condOP" : "EQ",
                 "dEFDName" : "judgerole",
+                "condOP" : "EQ",
                 "value" : "qa",
                 "logicType" : "SINGLE",
                 "name" : "judgerole 等于(=) (qa)"
@@ -421,26 +421,26 @@
               "columnCount" : 24
             },
             "getPSDEFormDetails" : [ {
-              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "yearproductcnt"
               },
+              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "YEARPRODUCTCNT",
                 "codeName" : "Yearproductcnt"
               },
               "dataType" : 9,
+              "hidden" : true,
               "allowEmpty" : true,
               "caption" : "累计参与产品数",
-              "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
+              "labelWidth" : 130,
               "showCaption" : true,
-              "hidden" : true,
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
@@ -450,26 +450,26 @@
               "detailStyle" : "DEFAULT",
               "name" : "yearproductcnt"
             }, {
-              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "yearplancnt"
               },
+              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "YEARPLANCNT",
                 "codeName" : "Yearplancnt"
               },
               "dataType" : 9,
+              "hidden" : true,
               "allowEmpty" : true,
               "caption" : "累计创建计划数",
-              "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
+              "labelWidth" : 130,
               "showCaption" : true,
-              "hidden" : true,
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
@@ -479,26 +479,26 @@
               "detailStyle" : "DEFAULT",
               "name" : "yearplancnt"
             }, {
-              "inputTipClosable" : false,
               "emptyCaption" : false,
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "yearstorycnt"
               },
+              "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "YEARSTORYCNT",
                 "codeName" : "Yearstorycnt"
               },
               "dataType" : 9,
+              "hidden" : true,
               "allowEmpty" : true,
               "caption" : "累计创建需求数",
-              "labelWidth" : 130,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
+              "labelWidth" : 130,
               "showCaption" : true,
-              "hidden" : true,
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
@@ -512,8 +512,8 @@
               "relatedDetailNames" : [ "judgerole" ],
               "logicCat" : "PANELVISIBLE",
               "getPSDEFDLogics" : [ {
-                "condOP" : "EQ",
                 "dEFDName" : "judgerole",
+                "condOP" : "EQ",
                 "value" : "po",
                 "logicType" : "SINGLE",
                 "name" : "judgerole 等于(=) (po)"
@@ -556,26 +556,26 @@
         "showCaption" : false,
         "name" : "grouppanel9"
       }, {
-        "inputTipClosable" : false,
         "emptyCaption" : false,
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "judgerole"
         },
+        "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "JUDGEROLE",
           "codeName" : "Judgerole"
         },
         "dataType" : 25,
+        "hidden" : true,
         "allowEmpty" : true,
         "caption" : "判断角色",
-        "labelWidth" : 130,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
+        "labelWidth" : 130,
         "showCaption" : true,
-        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -585,16 +585,16 @@
         "detailStyle" : "DEFAULT",
         "name" : "judgerole"
       }, {
-        "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
+        "rawItemHeight" : -1.0,
         "contentType" : "RAW",
         "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计日志数 <strong>{{data.yearlogcnt ? data.yearlogcnt: 0}}</strong></li><li >累计工时数 <strong>{{data.yearestimatecnt ? data.yearestimatecnt: 0}}</strong></li></ul></div>",
         "getPSDEFDGroupLogics" : [ {
           "relatedDetailNames" : [ "judgerole" ],
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "EQ",
             "dEFDName" : "judgerole",
+            "condOP" : "EQ",
             "value" : "dev",
             "logicType" : "SINGLE",
             "name" : "judgerole 等于(=) (dev)"
@@ -617,16 +617,16 @@
         "showCaption" : true,
         "name" : "rawitem1"
       }, {
-        "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
+        "rawItemHeight" : -1.0,
         "contentType" : "RAW",
         "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li>累计参与产品数 <strong>{{data.yearproductcnt ? data.yearproductcnt: 0}}</strong></li><li >累计创建计划数 <strong>{{data.yearplancnt ? data.yearplancnt: 0}}</strong></li><li >累计创建需求数 <strong>{{data.yearstorycnt ? data.yearstorycnt: 0}}</strong></li></ul></div>",
         "getPSDEFDGroupLogics" : [ {
           "relatedDetailNames" : [ "judgerole" ],
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "EQ",
             "dEFDName" : "judgerole",
+            "condOP" : "EQ",
             "value" : "po",
             "logicType" : "SINGLE",
             "name" : "judgerole 等于(=) (po)"
@@ -649,16 +649,16 @@
         "showCaption" : true,
         "name" : "rawitem2"
       }, {
-        "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
+        "rawItemHeight" : -1.0,
         "contentType" : "RAW",
         "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计创建用例数 <strong>{{data.yearcasecnt ? data.yearcasecnt: 0}}</strong></li><li >累计创建Bug数 <strong>{{data.yearbugcnt ? data.yearbugcnt: 0}}</strong></li></ul></div>",
         "getPSDEFDGroupLogics" : [ {
           "relatedDetailNames" : [ "judgerole" ],
           "logicCat" : "PANELVISIBLE",
           "getPSDEFDLogics" : [ {
-            "condOP" : "EQ",
             "dEFDName" : "judgerole",
+            "condOP" : "EQ",
             "value" : "qa",
             "logicType" : "SINGLE",
             "name" : "judgerole 等于(=) (qa)"

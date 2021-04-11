@@ -21,11 +21,11 @@
     "dataType" : 25,
     "name" : "account"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "date"
   }, {
@@ -105,15 +105,14 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "IBZ_REPORTLYID",
     "codeName" : "IbzReportlyId"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "汇报名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -121,11 +120,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyReportlyDetailEditView.json",
       "viewType" : "DEEDITVIEW"
     },
+    "excelCaption" : "汇报名称",
+    "dataItemName" : "ibz_reportlyname",
     "getPSAppDEField" : {
       "name" : "IBZ_REPORTLYNAME",
       "codeName" : "IbzReportlyName"
     },
-    "dataItemName" : "ibz_reportlyname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -142,11 +142,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "account",
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataItemName" : "account",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -159,11 +159,11 @@
     "name" : "account"
   }, {
     "excelCaption" : "日期",
+    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataItemName" : "date",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -181,11 +181,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "reportto",
     "getPSAppDEField" : {
       "name" : "REPORTTO",
       "codeName" : "Reportto"
     },
-    "dataItemName" : "reportto",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -199,7 +199,7 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -213,11 +213,11 @@
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "Edit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -230,12 +230,12 @@
           "name" : "编辑",
           "id" : "Edit@IbzReportly"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ud27b04a"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -248,11 +248,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00c@FontAwesome",
             "cssClass" : "fa fa-check"
           },
+          "timeout" : 60000,
           "codeName" : "Submit",
           "caption" : "提交",
           "actionTarget" : "SINGLEKEY",
@@ -265,7 +265,7 @@
           "name" : "提交",
           "id" : "Submit@IbzReportly"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u32d11cb"

@@ -209,20 +209,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "ID",
+    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -239,11 +239,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json"
     },
+    "dataItemName" : "pri",
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "dataItemName" : "pri",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -255,7 +255,6 @@
     "widthUnit" : "PX",
     "name" : "pri"
   }, {
-    "excelCaption" : "产品名称",
     "linkValueItem" : "product",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -263,11 +262,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "产品名称",
+    "dataItemName" : "prodoctname",
     "getPSAppDEField" : {
       "name" : "PRODOCTNAME",
       "codeName" : "ProductName"
     },
-    "dataItemName" : "prodoctname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -279,7 +279,6 @@
     "widthUnit" : "STAR",
     "name" : "prodoctname"
   }, {
-    "excelCaption" : "需求名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -287,11 +286,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
       "viewType" : "DEPORTALVIEW"
     },
+    "excelCaption" : "需求名称",
+    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataItemName" : "title",
     "cLConvertMode" : "NONE",
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_COLRENDER",
@@ -312,11 +312,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductPlan.json"
     },
+    "dataItemName" : "plan",
     "getPSAppDEField" : {
       "name" : "PLAN",
       "codeName" : "Plan"
     },
-    "dataItemName" : "plan",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -333,11 +333,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "openedby",
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
-    "dataItemName" : "openedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -354,11 +354,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameUnAssignTo_Gird.json"
     },
+    "dataItemName" : "assignedto",
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "dataItemName" : "assignedto",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -371,11 +371,11 @@
     "name" : "assignedto"
   }, {
     "excelCaption" : "预计",
+    "dataItemName" : "estimate",
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
-    "dataItemName" : "estimate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -392,11 +392,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__status.json"
     },
+    "dataItemName" : "status",
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataItemName" : "status",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -413,11 +413,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__stage.json"
     },
+    "dataItemName" : "stage",
     "getPSAppDEField" : {
       "name" : "STAGE",
       "codeName" : "Stage"
     },
-    "dataItemName" : "stage",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -430,11 +430,11 @@
     "name" : "stage"
   }, {
     "excelCaption" : "所属模块名称",
+    "dataItemName" : "modulename",
     "getPSAppDEField" : {
       "name" : "MODULENAME",
       "codeName" : "Modulename"
     },
-    "dataItemName" : "modulename",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -448,8 +448,49 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "assignedto",
+            "key" : "ASSIGNEDTO",
+            "name" : "ASSIGNEDTO"
+          }, {
+            "rawValue" : false,
+            "value" : "story",
+            "key" : "STORY",
+            "name" : "STORY"
+          }, {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "PROJECT",
+            "name" : "PROJECT"
+          }, {
+            "rawValue" : false,
+            "value" : "module",
+            "key" : "MODULE",
+            "name" : "MODULE"
+          }, {
+            "rawValue" : false,
+            "value" : "modulename",
+            "key" : "MODULENAME",
+            "name" : "MODULENAME"
+          }, {
+            "rawValue" : false,
+            "value" : "product",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT"
+          }, {
+            "rawValue" : false,
+            "value" : "branch",
+            "key" : "BRANCH",
+            "name" : "BRANCH"
+          }, {
+            "rawValue" : false,
+            "value" : "title",
+            "key" : "TITLE",
+            "name" : "TITLE"
+          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -501,53 +542,12 @@
             "name" : "branch"
           } ],
           "frontProcessType" : "WIZARD",
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "assignedto",
-            "key" : "ASSIGNEDTO",
-            "name" : "ASSIGNEDTO"
-          }, {
-            "rawValue" : false,
-            "value" : "story",
-            "key" : "STORY",
-            "name" : "STORY"
-          }, {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "PROJECT",
-            "name" : "PROJECT"
-          }, {
-            "rawValue" : false,
-            "value" : "module",
-            "key" : "MODULE",
-            "name" : "MODULE"
-          }, {
-            "rawValue" : false,
-            "value" : "modulename",
-            "key" : "MODULENAME",
-            "name" : "MODULENAME"
-          }, {
-            "rawValue" : false,
-            "value" : "product",
-            "key" : "PRODUCT",
-            "name" : "PRODUCT"
-          }, {
-            "rawValue" : false,
-            "value" : "branch",
-            "key" : "BRANCH",
-            "name" : "BRANCH"
-          }, {
-            "rawValue" : false,
-            "value" : "title",
-            "key" : "TITLE",
-            "name" : "TITLE"
-          } ],
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf188@FontAwesome",
             "cssClass" : "fa fa-bug"
           },
+          "timeout" : 60000,
           "codeName" : "StoryToBug",
           "caption" : "提缺陷",
           "actionTarget" : "SINGLEKEY",
@@ -559,12 +559,12 @@
           "name" : "提缺陷",
           "id" : "StoryToBug@Story"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u601e72e"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -577,11 +577,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf0ec@FontAwesome",
             "cssClass" : "fa fa-exchange"
           },
+          "timeout" : 60000,
           "codeName" : "ChangeStoryDetail",
           "caption" : "变更",
           "actionTarget" : "SINGLEKEY",
@@ -593,12 +593,12 @@
           "name" : "变更需求",
           "id" : "ChangeStoryDetail@Story"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u18f3a7b"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -611,11 +611,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf002@FontAwesome",
             "cssClass" : "fa fa-search"
           },
+          "timeout" : 60000,
           "codeName" : "ReviewStory",
           "caption" : "评审",
           "actionTarget" : "SINGLEKEY",
@@ -627,12 +627,12 @@
           "name" : "需求评审",
           "id" : "ReviewStory@Story"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ud1a868b"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -647,11 +647,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf011@FontAwesome",
             "cssClass" : "fa fa-power-off"
           },
+          "timeout" : 60000,
           "codeName" : "CloseStory",
           "caption" : "关闭",
           "actionTarget" : "SINGLEKEY",
@@ -664,13 +664,24 @@
           "name" : "关闭需求",
           "id" : "CloseStory@Story"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ud9ce680"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "module",
+            "key" : "PRODUCTMODULE",
+            "name" : "PRODUCTMODULE"
+          }, {
+            "rawValue" : false,
+            "value" : "product",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT"
+          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -692,23 +703,12 @@
             "name" : "productmodule"
           } ],
           "frontProcessType" : "WIZARD",
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "module",
-            "key" : "PRODUCTMODULE",
-            "name" : "PRODUCTMODULE"
-          }, {
-            "rawValue" : false,
-            "value" : "product",
-            "key" : "PRODUCT",
-            "name" : "PRODUCT"
-          } ],
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf0eb@FontAwesome",
             "cssClass" : "fa fa-lightbulb-o"
           },
+          "timeout" : 60000,
           "codeName" : "OpenCaseCreateView",
           "caption" : "建用例",
           "actionTarget" : "SINGLEKEY",
@@ -720,13 +720,24 @@
           "name" : "建用例",
           "id" : "OpenCaseCreateView@Story"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "ued8f63a"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "module",
+            "key" : "MODULE",
+            "name" : "MODULE"
+          }, {
+            "rawValue" : false,
+            "value" : "product",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT"
+          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -749,22 +760,11 @@
           } ],
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "module",
-            "key" : "MODULE",
-            "name" : "MODULE"
-          }, {
-            "rawValue" : false,
-            "value" : "product",
-            "key" : "PRODUCT",
-            "name" : "PRODUCT"
-          } ],
           "getNoPrivDisplayMode" : 1,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "cssClass" : "iconfont studio-icon-subnets"
           },
+          "timeout" : 60000,
           "codeName" : "SubStory",
           "caption" : "需求细分",
           "actionTarget" : "SINGLEKEY",
@@ -777,12 +777,12 @@
           "name" : "需求细分",
           "id" : "SubStory@Story"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u60233af"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.COPY",
@@ -793,11 +793,11 @@
             "id" : "工具栏按钮提示[*.COPY]"
           },
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf0c5@FontAwesome",
             "cssClass" : "fa fa-copy"
           },
+          "timeout" : 60000,
           "codeName" : "Copy",
           "caption" : "拷贝",
           "actionTarget" : "SINGLEKEY",
@@ -808,12 +808,12 @@
           "fullCodeName" : "Copy",
           "name" : "表格界面_拷贝操作"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u0f557af"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -826,11 +826,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
           },
+          "timeout" : 60000,
           "codeName" : "StoryFavorites",
           "caption" : "收藏",
           "actionTarget" : "SINGLEKEY",
@@ -843,12 +843,12 @@
           "name" : "收藏",
           "id" : "StoryFavorites@Story"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u27be842"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -861,11 +861,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
           },
+          "timeout" : 60000,
           "codeName" : "StoryNFavorites",
           "caption" : "取消收藏",
           "actionTarget" : "SINGLEKEY",
@@ -878,7 +878,7 @@
           "name" : "取消收藏",
           "id" : "StoryNFavorites@Story"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u7be23af"

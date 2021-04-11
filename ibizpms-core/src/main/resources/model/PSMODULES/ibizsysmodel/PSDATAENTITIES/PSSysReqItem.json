@@ -2,8 +2,9 @@
   "serviceAPIMode" : 0,
   "getAllPSDEFields" : [ {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "c3e11e5b8315083f2540d3f92d3bc735",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -14,8 +15,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "ITEMSN",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -44,18 +45,18 @@
       "autoIncrement" : false,
       "name" : "ITEMSN"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "c3e11e5b8315083f2540d3f92d3bc735",
     "codeName" : "ItemSN",
     "logicName" : "项编号",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ITEMSN"
   }, {
     "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 50,
+    "valueFormat" : "%1$s",
+    "deployId" : "da4c662c27e5df7795b9d9b6c6ef0c9b",
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -67,8 +68,8 @@
           "includeMaxValue" : true,
           "maxValue" : 50,
           "dEFName" : "ITEMTYPE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[50]",
           "name" : "默认字符串长度"
@@ -97,18 +98,18 @@
       "autoIncrement" : false,
       "name" : "ITEMTYPE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "da4c662c27e5df7795b9d9b6c6ef0c9b",
     "codeName" : "ItemType",
     "logicName" : "项类型",
     "stringLength" : 50,
     "stdDataType" : 25,
-    "length" : 50,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ITEMTYPE"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "bdd6782d0734e9689224ffed3df59455",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -119,8 +120,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PSSYSUSERCASEID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -149,18 +150,18 @@
       "autoIncrement" : false,
       "name" : "PSSYSUSERCASEID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "bdd6782d0734e9689224ffed3df59455",
     "codeName" : "PSSysUserCaseId",
     "logicName" : "系统用例",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PSSYSUSERCASEID"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "c9af1055eaf7945d225caca3d32f8c40",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -171,8 +172,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "USERTAG2",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -201,18 +202,18 @@
       "autoIncrement" : false,
       "name" : "USERTAG2"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "c9af1055eaf7945d225caca3d32f8c40",
     "codeName" : "UserTag2",
     "logicName" : "用户标记2",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "USERTAG2"
   }, {
     "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "20f9567fd8f3f5ab852ef5e3d2935a9c",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -243,18 +244,17 @@
       "autoIncrement" : false,
       "name" : "CREATEDATE"
     } ],
-    "predefinedType" : "CREATEDATE",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "20f9567fd8f3f5ab852ef5e3d2935a9c",
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
-    "length" : 8,
+    "predefinedType" : "CREATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CREATEDATE"
   }, {
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$s",
+    "deployId" : "2e06b19b9c9c1e5c292a9e651ceb0436",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -283,17 +283,18 @@
       "autoIncrement" : false,
       "name" : "ORDERVALUE"
     } ],
-    "predefinedType" : "ORDERVALUE",
-    "valueFormat" : "%1$s",
-    "deployId" : "2e06b19b9c9c1e5c292a9e651ceb0436",
     "codeName" : "OrderValue",
     "logicName" : "次序",
     "stdDataType" : 9,
+    "predefinedType" : "ORDERVALUE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ORDERVALUE"
   }, {
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "defaultValue" : "1",
+    "valueFormat" : "%1$s",
+    "deployId" : "954c067adab6cf1bf0bfae47a3605c81",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -322,17 +323,17 @@
       "autoIncrement" : false,
       "name" : "VER"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "954c067adab6cf1bf0bfae47a3605c81",
     "codeName" : "Ver",
     "logicName" : "版本",
     "stdDataType" : 9,
-    "defaultValue" : "1",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "VER"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 50,
+    "valueFormat" : "%1$s",
+    "deployId" : "1fc553be675dfe1baf4bc4de08b576c7",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -343,8 +344,8 @@
           "includeMaxValue" : true,
           "maxValue" : 50,
           "dEFName" : "USERTAG3",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[50]",
           "name" : "默认字符串长度"
@@ -373,18 +374,18 @@
       "autoIncrement" : false,
       "name" : "USERTAG3"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "1fc553be675dfe1baf4bc4de08b576c7",
     "codeName" : "UserTag3",
     "logicName" : "用户标记3",
     "stringLength" : 50,
     "stdDataType" : 25,
-    "length" : 50,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "USERTAG3"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "6a43c7ede516e1c2eb77f14d26500a6d",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -395,8 +396,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PSSYSTEMNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -425,18 +426,18 @@
       "autoIncrement" : false,
       "name" : "PSSYSTEMNAME"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "6a43c7ede516e1c2eb77f14d26500a6d",
     "codeName" : "PSSystemName",
     "logicName" : "系统",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PSSYSTEMNAME"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "4b33d27d43c8350ec2ddb6daae264c1b",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -447,8 +448,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "ITEMTAG",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -477,19 +478,18 @@
       "autoIncrement" : false,
       "name" : "ITEMTAG"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "4b33d27d43c8350ec2ddb6daae264c1b",
     "codeName" : "ItemTag",
     "logicName" : "项标记",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ITEMTAG"
   }, {
     "dataType" : "GUID",
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "9598b1567ff65d1e1fcfe0ad7e0436a2",
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -502,8 +502,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PSSYSREQITEMID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -532,18 +532,19 @@
       "autoIncrement" : false,
       "name" : "PSSYSREQITEMID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "9598b1567ff65d1e1fcfe0ad7e0436a2",
     "codeName" : "PSSysReqItemId",
     "logicName" : "系统需求项标识",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PSSYSREQITEMID"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "3d5df94afd056fd783d5d33752828d9f",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -554,8 +555,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "ITEMTAG2",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -584,18 +585,18 @@
       "autoIncrement" : false,
       "name" : "ITEMTAG2"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "3d5df94afd056fd783d5d33752828d9f",
     "codeName" : "ItemTag2",
     "logicName" : "项标记2",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ITEMTAG2"
   }, {
     "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "1d68967bf7a3ac268575a16b83a0f58c",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -626,18 +627,19 @@
       "autoIncrement" : false,
       "name" : "UPDATEDATE"
     } ],
-    "predefinedType" : "UPDATEDATE",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "1d68967bf7a3ac268575a16b83a0f58c",
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
-    "length" : 8,
+    "predefinedType" : "UPDATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "UPDATEDATE"
   }, {
     "dataType" : "HTMLTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1048576,
+    "valueFormat" : "%1$s",
+    "deployId" : "87a5cbad41c39c6b6bad98fc4fed98a5",
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -648,8 +650,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "REQCONTENT",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -678,23 +680,22 @@
       "autoIncrement" : false,
       "name" : "REQCONTENT"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "87a5cbad41c39c6b6bad98fc4fed98a5",
     "codeName" : "ReqContent",
     "logicName" : "内容",
     "stringLength" : 1048576,
     "stdDataType" : 21,
-    "queryColumn" : false,
-    "length" : 1048576,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "REQCONTENT"
   }, {
+    "dataType" : "TEXT",
+    "length" : 60,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "2706ef2abc70a9fc58f74a48903b3b23",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -707,8 +708,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "CREATEMAN",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -737,19 +738,19 @@
       "autoIncrement" : false,
       "name" : "CREATEMAN"
     } ],
-    "predefinedType" : "CREATEMAN",
-    "valueFormat" : "%1$s",
-    "deployId" : "2706ef2abc70a9fc58f74a48903b3b23",
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "stringLength" : 60,
     "stdDataType" : 25,
-    "length" : 60,
+    "predefinedType" : "CREATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CREATEMAN"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "0f6a646ef4fc1e420bb6d3cd5da93d96",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -760,8 +761,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "USERTAG",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -790,22 +791,22 @@
       "autoIncrement" : false,
       "name" : "USERTAG"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "0f6a646ef4fc1e420bb6d3cd5da93d96",
     "codeName" : "UserTag",
     "logicName" : "用户标记",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "USERTAG"
   }, {
+    "dataType" : "YESNO",
+    "defaultValue" : "1",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
-    "dataType" : "YESNO",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "018f573db17db27c150a8d9b42089e26",
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -835,17 +836,17 @@
       "autoIncrement" : false,
       "name" : "VALIDFLAG"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "018f573db17db27c150a8d9b42089e26",
     "codeName" : "ValidFlag",
     "logicName" : "是否有效",
     "stdDataType" : 9,
-    "defaultValue" : "1",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "VALIDFLAG"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "f29810a86d5eb64584bb06a81316931c",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -856,8 +857,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PSSYSUSERCASENAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -886,18 +887,18 @@
       "autoIncrement" : false,
       "name" : "PSSYSUSERCASENAME"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "f29810a86d5eb64584bb06a81316931c",
     "codeName" : "PSSysUserCaseName",
     "logicName" : "系统用例",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PSSYSUSERCASENAME"
   }, {
     "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 10,
+    "valueFormat" : "%1$s",
+    "deployId" : "f17c0f678add875e9fd91c5d1ccef4dc",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -908,8 +909,8 @@
           "includeMaxValue" : true,
           "maxValue" : 10,
           "dEFName" : "USERCAT",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[10]",
           "name" : "默认字符串长度"
@@ -938,18 +939,18 @@
       "autoIncrement" : false,
       "name" : "USERCAT"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "f17c0f678add875e9fd91c5d1ccef4dc",
     "codeName" : "UserCat",
     "logicName" : "用户分类",
     "stringLength" : 10,
     "stdDataType" : 25,
-    "length" : 10,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "USERCAT"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 50,
+    "valueFormat" : "%1$s",
+    "deployId" : "956a1243299caf1d33cb5fb28becd037",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -960,8 +961,8 @@
           "includeMaxValue" : true,
           "maxValue" : 50,
           "dEFName" : "CODENAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[50]",
           "name" : "默认字符串长度"
@@ -990,22 +991,22 @@
       "autoIncrement" : false,
       "name" : "CODENAME"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "956a1243299caf1d33cb5fb28becd037",
     "codeName" : "CodeName",
     "logicName" : "代码标识",
     "stringLength" : 50,
     "stdDataType" : 25,
-    "length" : 50,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CODENAME"
   }, {
+    "dataType" : "TEXT",
+    "length" : 60,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "4acdb76f2844c0b03e4b87bc49bf087e",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -1018,8 +1019,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "UPDATEMAN",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -1048,19 +1049,19 @@
       "autoIncrement" : false,
       "name" : "UPDATEMAN"
     } ],
-    "predefinedType" : "UPDATEMAN",
-    "valueFormat" : "%1$s",
-    "deployId" : "4acdb76f2844c0b03e4b87bc49bf087e",
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "stringLength" : 60,
     "stdDataType" : 25,
-    "length" : 60,
+    "predefinedType" : "UPDATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "UPDATEMAN"
   }, {
     "dataType" : "LONGTEXT_1000",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 4000,
+    "valueFormat" : "%1$s",
+    "deployId" : "739ddc9f0998d937e7b7450a41cb5adf",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1071,8 +1072,8 @@
           "includeMaxValue" : true,
           "maxValue" : 4000,
           "dEFName" : "MEMO",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[4000]",
           "name" : "默认字符串长度"
@@ -1101,20 +1102,18 @@
       "autoIncrement" : false,
       "name" : "MEMO"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "739ddc9f0998d937e7b7450a41cb5adf",
     "codeName" : "Memo",
     "logicName" : "备注",
     "stringLength" : 4000,
     "stdDataType" : 25,
-    "length" : 4000,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "MEMO"
   }, {
     "dataType" : "TEXT",
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "6f9bac87aa5586d897ebfb9f64f4b878",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1125,8 +1124,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "PSSYSREQITEMNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -1155,18 +1154,20 @@
       "autoIncrement" : false,
       "name" : "PSSYSREQITEMNAME"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "6f9bac87aa5586d897ebfb9f64f4b878",
     "codeName" : "PSSysReqItemName",
     "logicName" : "系统需求项名称",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PSSYSREQITEMNAME"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 50,
+    "valueFormat" : "%1$s",
+    "deployId" : "d3f5c5cafab19b74e2c286df9b52d228",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1177,8 +1178,8 @@
           "includeMaxValue" : true,
           "maxValue" : 50,
           "dEFName" : "USERTAG4",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[50]",
           "name" : "默认字符串长度"
@@ -1207,18 +1208,18 @@
       "autoIncrement" : false,
       "name" : "USERTAG4"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "d3f5c5cafab19b74e2c286df9b52d228",
     "codeName" : "UserTag4",
     "logicName" : "用户标记4",
     "stringLength" : 50,
     "stdDataType" : 25,
-    "length" : 50,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "USERTAG4"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "6218b4c2d45508c04f3db0e9eda46c80",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1229,8 +1230,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PSSYSTEMID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1259,13 +1260,12 @@
       "autoIncrement" : false,
       "name" : "PSSYSTEMID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "6218b4c2d45508c04f3db0e9eda46c80",
     "codeName" : "PSSystemId",
     "logicName" : "系统",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PSSYSTEMID"
   }, {
     "phisicalDEField" : false,
@@ -1280,8 +1280,8 @@
       "codeName" : "PSSysReqModuleName"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 200,
+    "deployId" : "8f00ade53806db3713161fd58c0aa322",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1292,8 +1292,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "PSSYSREQMODULENAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -1322,12 +1322,12 @@
       "autoIncrement" : false,
       "name" : "PSSYSREQMODULENAME"
     } ],
-    "deployId" : "8f00ade53806db3713161fd58c0aa322",
     "codeName" : "PSSysReqModuleName",
     "logicName" : "需求模块",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "PSSYSREQMODULENAME"
   }, {
     "phisicalDEField" : false,
@@ -1342,8 +1342,8 @@
       "codeName" : "PSSysReqItemName"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 200,
+    "deployId" : "2fcc730fe30e9a42dc5a65414ba2bcf9",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1354,8 +1354,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "PPSSYSREQITEMNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -1384,12 +1384,12 @@
       "autoIncrement" : false,
       "name" : "PPSSYSREQITEMNAME"
     } ],
-    "deployId" : "2fcc730fe30e9a42dc5a65414ba2bcf9",
     "codeName" : "PPSSysReqItemName",
     "logicName" : "父需求项",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "PPSSYSREQITEMNAME"
   }, {
     "getPSDER" : {
@@ -1403,8 +1403,8 @@
       "codeName" : "PSSysReqModuleId"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "deployId" : "8aaa1019c9583adb8eb1cb83a43725b6",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1415,8 +1415,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PSSYSREQMODULEID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1445,12 +1445,12 @@
       "autoIncrement" : false,
       "name" : "PSSYSREQMODULEID"
     } ],
-    "deployId" : "8aaa1019c9583adb8eb1cb83a43725b6",
     "codeName" : "PSSysReqModuleId",
     "logicName" : "需求模块",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PSSYSREQMODULEID"
   }, {
     "getPSDER" : {
@@ -1464,8 +1464,8 @@
       "codeName" : "PSSysReqItemId"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "deployId" : "aad56f22d6497da39fc9d030291ff204",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1476,8 +1476,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PPSSYSREQITEMID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1506,32 +1506,32 @@
       "autoIncrement" : false,
       "name" : "PPSSYSREQITEMID"
     } ],
-    "deployId" : "aad56f22d6497da39fc9d030291ff204",
     "codeName" : "PPSSysReqItemId",
     "logicName" : "父需求项",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PPSSYSREQITEMID"
   } ],
   "getAllPSDEDataSets" : [ {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据集",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
+    "pageSize" : -1,
     "name" : "DEFAULT"
   } ],
   "getAllPSDEActions" : [ {
@@ -1562,9 +1562,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "数据查询",
+    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -1573,25 +1573,21 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
+  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
-  "enableUIActions" : 15,
   "orderValue" : 99999,
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "serviceCodeName" : "PSSysReqItem",
+  "dSLink" : "DEFAULT",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1606,16 +1602,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 0,
+  "deployId" : "6a438d2d5a21460d73d47f672a844bba",
+  "enableSQLStorage" : false,
   "dynaInstMode" : 1,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,
-  "dSLink" : "DEFAULT",
-  "deployId" : "6a438d2d5a21460d73d47f672a844bba",
+  "virtualMode" : 0,
   "codeName" : "PSSysReqItem",
   "logicName" : "系统需求项",
   "tableName" : "T_PSSYSREQITEM",
-  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1624,9 +1620,13 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "virtualMode" : 0,
-  "enableSQLStorage" : false,
+  "enableRemove" : true,
   "serviceAPIClientId" : "45ab5098498d2294128bca01585b9993",
+  "serviceCodeName" : "PSSysReqItem",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

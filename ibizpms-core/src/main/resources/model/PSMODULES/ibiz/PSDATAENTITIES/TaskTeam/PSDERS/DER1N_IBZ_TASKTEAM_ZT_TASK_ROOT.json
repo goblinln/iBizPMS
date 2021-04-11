@@ -3,8 +3,8 @@
     "name" : "ROOT",
     "codeName" : "Root"
   },
-  "nestedRS" : true,
   "masterOrder" : -1,
+  "nestedRS" : true,
   "removeActionType" : -1,
   "pickupDEFName" : "ROOT",
   "masterRS" : 8,
@@ -14,12 +14,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
   },
   "orderValue" : 100,
-  "codeName" : "TaskTeam",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam.json"
   },
+  "codeName" : "TaskTeam",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDERS/DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT.json",
   "name" : "DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT"
 }

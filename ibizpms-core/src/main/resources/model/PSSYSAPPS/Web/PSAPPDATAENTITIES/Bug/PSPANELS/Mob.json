@@ -1,7 +1,6 @@
 {
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
-      "viewFieldName" : "pri",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -12,9 +11,10 @@
         "editorType" : "SPAN",
         "name" : "pri"
       },
+      "viewFieldName" : "pri",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 2,
         "colLG" : 2,
@@ -24,15 +24,15 @@
       "itemStyle" : "DEFAULT",
       "name" : "pri"
     }, {
-      "viewFieldName" : "title",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "title"
       },
-      "showCaption" : false,
+      "viewFieldName" : "title",
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 10,
         "colLG" : 10,
@@ -42,7 +42,6 @@
       "itemStyle" : "DEFAULT",
       "name" : "title"
     }, {
-      "viewFieldName" : "status",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -53,9 +52,10 @@
         "editorType" : "SPAN",
         "name" : "status"
       },
+      "viewFieldName" : "status",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 4,
         "colLG" : 4,
@@ -65,7 +65,6 @@
       "itemStyle" : "DEFAULT",
       "name" : "status"
     }, {
-      "viewFieldName" : "resolution",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -76,9 +75,10 @@
         "editorType" : "SPAN",
         "name" : "resolution"
       },
+      "viewFieldName" : "resolution",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -88,6 +88,13 @@
       "itemStyle" : "DEFAULT",
       "name" : "resolution"
     }, {
+      "getPSLayoutPos" : {
+        "colMD" : 1,
+        "colLG" : 1,
+        "colMDOffset" : 1,
+        "colLGOffset" : 1,
+        "layout" : "TABLE_12COL"
+      },
       "getPSPanelItemGroupLogics" : [ {
         "logicCat" : "PANELVISIBLE",
         "getPSPanelItemLogics" : [ {
@@ -101,6 +108,11 @@
         "logicType" : "GROUP",
         "name" : "面板成员[rawitem2][面板显示]逻辑"
       } ],
+      "itemType" : "RAWITEM",
+      "itemStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "rawitem2"
+    }, {
       "getPSLayoutPos" : {
         "colMD" : 1,
         "colLG" : 1,
@@ -108,17 +120,12 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_12COL"
       },
-      "itemType" : "RAWITEM",
-      "itemStyle" : "DEFAULT",
-      "showCaption" : true,
-      "name" : "rawitem2"
-    }, {
       "getPSPanelItemGroupLogics" : [ {
         "logicCat" : "PANELVISIBLE",
         "getPSPanelItemLogics" : [ {
           "dstModelField" : "assignedto",
-          "condOp" : "EQ",
           "value" : "closed",
+          "condOp" : "EQ",
           "logicType" : "SINGLE",
           "name" : "assignedto 等于(=) (closed)"
         } ],
@@ -127,6 +134,12 @@
         "logicType" : "GROUP",
         "name" : "面板成员[rawitem3][面板显示]逻辑"
       } ],
+      "itemType" : "RAWITEM",
+      "itemStyle" : "DEFAULT",
+      "showCaption" : true,
+      "name" : "rawitem3"
+    }, {
+      "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
       "getPSLayoutPos" : {
         "colMD" : 1,
         "colLG" : 1,
@@ -134,18 +147,12 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_12COL"
       },
-      "itemType" : "RAWITEM",
-      "itemStyle" : "DEFAULT",
-      "showCaption" : true,
-      "name" : "rawitem3"
-    }, {
-      "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
       "getPSPanelItemGroupLogics" : [ {
         "logicCat" : "PANELVISIBLE",
         "getPSPanelItemLogics" : [ {
           "dstModelField" : "assignedto",
-          "condOp" : "NOTEQ",
           "value" : "closed",
+          "condOp" : "NOTEQ",
           "logicType" : "SINGLE",
           "name" : "assignedto 不等于(<>) (closed)"
         }, {
@@ -159,19 +166,11 @@
         "logicType" : "GROUP",
         "name" : "面板成员[rawitem1][面板显示]逻辑"
       } ],
-      "getPSLayoutPos" : {
-        "colMD" : 1,
-        "colLG" : 1,
-        "colMDOffset" : 1,
-        "colLGOffset" : 1,
-        "layout" : "TABLE_12COL"
-      },
       "itemType" : "RAWITEM",
       "itemStyle" : "DEFAULT",
       "showCaption" : true,
       "name" : "rawitem1"
     }, {
-      "viewFieldName" : "assignedto",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -182,9 +181,10 @@
         "editorType" : "SPAN",
         "name" : "assignedto"
       },
+      "viewFieldName" : "assignedto",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,

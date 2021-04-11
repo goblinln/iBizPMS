@@ -12,6 +12,7 @@
       "id" : "连接1737"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "module"
@@ -20,7 +21,6 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
       "srcFieldName" : "ID",
@@ -32,13 +32,13 @@
     "name" : "设置模块参数"
   }, {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "module"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
     },
     "logicHolder" : 3,
     "codeName" : "Deaction1",
@@ -83,16 +83,16 @@
     "name" : "连接1737"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "module",
     "default" : false,
     "name" : "模块"
   }, {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

@@ -31,28 +31,32 @@
     "engineType" : "ListView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "LIST"
+      "name" : "LIST",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
+    "enableRowNew" : false,
+    "enableRowEditOrder" : false,
+    "noSort" : false,
+    "hasWFDataItems" : false,
+    "showHeader" : true,
     "getItemPSLayoutPanel" : {
       "getRootPSPanelItems" : [ {
         "getPSPanelItems" : [ {
           "getPSPanelItems" : [ {
-            "viewFieldName" : "account",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -63,9 +67,10 @@
               "editorType" : "SPAN",
               "name" : "account"
             },
+            "viewFieldName" : "account",
+            "hidden" : false,
             "convertToCodeItemText" : true,
             "showCaption" : false,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -87,10 +92,10 @@
             "width" : 230,
             "layout" : "FLEX"
           },
-          "width" : 230.0,
           "getPSSysCss" : {
             "cssName" : "container-lefttop-margin"
           },
+          "width" : 230.0,
           "itemType" : "CONTAINER",
           "itemStyle" : "DEFAULT",
           "showCaption" : true,
@@ -147,15 +152,15 @@
                 "showCaption" : true,
                 "name" : "rawitem2"
               }, {
-                "viewFieldName" : "MYTASKS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mytasks"
                 },
-                "showCaption" : false,
+                "viewFieldName" : "MYTASKS",
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -167,15 +172,15 @@
                 "itemStyle" : "DEFAULT",
                 "name" : "mytasks"
               }, {
-                "viewFieldName" : "myetasks",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "myetasks"
                 },
-                "showCaption" : false,
+                "viewFieldName" : "myetasks",
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -218,15 +223,15 @@
                 "showCaption" : true,
                 "name" : "rawitem3"
               }, {
-                "viewFieldName" : "MYBUGS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mybugs"
                 },
-                "showCaption" : false,
+                "viewFieldName" : "MYBUGS",
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -238,15 +243,15 @@
                 "itemStyle" : "DEFAULT",
                 "name" : "mybugs"
               }, {
-                "viewFieldName" : "MYEBUGS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "myebugs"
                 },
-                "showCaption" : false,
+                "viewFieldName" : "MYEBUGS",
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -289,15 +294,15 @@
                 "showCaption" : true,
                 "name" : "rawitem4"
               }, {
-                "viewFieldName" : "MYSTORYS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mystorys"
                 },
-                "showCaption" : false,
+                "viewFieldName" : "MYSTORYS",
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -354,15 +359,15 @@
                 "showCaption" : true,
                 "name" : "rawitem5"
               }, {
-                "viewFieldName" : "PROJECTS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "projects"
                 },
-                "showCaption" : false,
+                "viewFieldName" : "PROJECTS",
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -374,15 +379,15 @@
                 "itemStyle" : "DEFAULT",
                 "name" : "projects"
               }, {
-                "viewFieldName" : "EPROJECTS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "eprojects"
                 },
-                "showCaption" : false,
+                "viewFieldName" : "EPROJECTS",
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -425,15 +430,15 @@
                 "showCaption" : true,
                 "name" : "rawitem6"
               }, {
-                "viewFieldName" : "PRODUCTS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "products"
                 },
-                "showCaption" : false,
+                "viewFieldName" : "PRODUCTS",
                 "hidden" : false,
+                "showCaption" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -610,13 +615,8 @@
       "dataType" : 25,
       "name" : "srfmajortext"
     } ],
-    "showHeader" : true,
-    "enableRowNew" : false,
-    "enableRowEditOrder" : false,
-    "noSort" : false,
-    "hasWFDataItems" : false,
-    "enableRowEdit" : false,
     "controlType" : "LIST",
+    "enableRowEdit" : false,
     "codeName" : "MyWork",
     "enableGroup" : false,
     "pagingSize" : 1000,
@@ -745,26 +745,24 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
-      "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryEditView.json"
+        }
       },
+      "enableBatchAdd" : false,
+      "batchAddOnly" : false,
+      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryEditView.json"
+        }
       } ],
       "logicType" : "PREDEFINED",
       "name" : "新建数据"
@@ -779,8 +777,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryEditView.json"
+        }
       },
       "viewLogicType" : "APP_OPENDATA",
       "getPSAppUILogicRefViews" : [ {
@@ -788,8 +785,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryEditView.json"
+        }
       } ],
       "logicType" : "PREDEFINED",
       "name" : "打开数据"

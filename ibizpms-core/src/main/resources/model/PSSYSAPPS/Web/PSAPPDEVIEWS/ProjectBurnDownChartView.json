@@ -27,16 +27,16 @@
     "engineType" : "ChartView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "CHART"
+      "name" : "CHART",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "getPSDEChartTitle" : {
       "showTitle" : true,
@@ -90,11 +90,11 @@
         "id" : "0"
       },
       "getPSChartSeriesEncode" : {
-        "getPSChartYAxis" : {
+        "getPSChartXAxis" : {
           "modelref" : true,
           "id" : "0"
         },
-        "getPSChartXAxis" : {
+        "getPSChartYAxis" : {
           "modelref" : true,
           "id" : "0"
         },
@@ -116,10 +116,20 @@
       "eChartsType" : "category",
       "eChartsPos" : "xAxis",
       "position" : "bottom",
-      "caption" : "日期",
       "type" : "category",
+      "caption" : "日期",
       "index" : 0,
       "name" : "X",
+      "id" : "0"
+    } ],
+    "getPSChartYAxises" : [ {
+      "eChartsType" : "value",
+      "eChartsPos" : "yAxis",
+      "position" : "left",
+      "type" : "numeric",
+      "caption" : "工时",
+      "index" : 0,
+      "name" : "Y",
       "id" : "0"
     } ],
     "getPSChartGrids" : [ {
@@ -145,16 +155,6 @@
       "type" : "grid",
       "index" : 0,
       "name" : "[BurnDown]直角坐标系[0]",
-      "id" : "0"
-    } ],
-    "getPSChartYAxises" : [ {
-      "eChartsType" : "value",
-      "eChartsPos" : "yAxis",
-      "position" : "left",
-      "caption" : "工时",
-      "type" : "numeric",
-      "index" : 0,
-      "name" : "Y",
       "id" : "0"
     } ],
     "getPSChartDataSets" : [ {

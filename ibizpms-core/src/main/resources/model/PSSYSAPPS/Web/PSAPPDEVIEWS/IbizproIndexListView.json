@@ -27,26 +27,31 @@
     "engineType" : "ListView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "LIST"
+      "name" : "LIST",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "SEARCHFORM"
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
+    "enableRowNew" : false,
+    "enableRowEditOrder" : false,
+    "noSort" : false,
+    "hasWFDataItems" : false,
+    "showHeader" : true,
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
       "getPSAppDEField" : {
@@ -114,13 +119,8 @@
       "dataType" : 25,
       "name" : "index_type"
     } ],
-    "showHeader" : true,
-    "enableRowNew" : false,
-    "enableRowEditOrder" : false,
-    "noSort" : false,
-    "hasWFDataItems" : false,
-    "enableRowEdit" : false,
     "controlType" : "LIST",
+    "enableRowEdit" : false,
     "codeName" : "IndexMob",
     "enableGroup" : false,
     "pagingSize" : 20,
@@ -154,7 +154,6 @@
       "showBusyIndicator" : true,
       "id" : "LIST"
     },
-    "controlStyle" : "FullTextSearch",
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
@@ -225,6 +224,7 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
+    "controlStyle" : "FullTextSearch",
     "getPSSysPFPlugin" : {
       "pluginType" : "LIST_RENDER",
       "pluginCode" : "FullTextSearch"
@@ -419,17 +419,13 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
-      "batchAddOnly" : false,
-      "enableWizardAdd" : true,
       "actionAfterWizard" : "DEFAULT",
       "getWizardPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
           "viewType" : "DEPICKUPVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json"
+        }
       },
       "getNewDataPSAppViews" : [ {
         "getRefPSAppView" : {
@@ -437,7 +433,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
         "refMode" : "story"
       }, {
         "getRefPSAppView" : {
@@ -445,7 +440,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
         "refMode" : "product"
       }, {
         "getRefPSAppView" : {
@@ -453,7 +447,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
         "refMode" : "project"
       }, {
         "getRefPSAppView" : {
@@ -461,7 +454,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
         "refMode" : "bug"
       }, {
         "getRefPSAppView" : {
@@ -469,24 +461,24 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
         "refMode" : "case"
       } ],
+      "enableBatchAdd" : false,
+      "batchAddOnly" : false,
+      "enableWizardAdd" : true,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
           "viewType" : "DEPICKUPVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json"
+        }
       }, {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
         "refMode" : "story"
       }, {
         "getRefPSAppView" : {
@@ -494,7 +486,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
         "refMode" : "product"
       }, {
         "getRefPSAppView" : {
@@ -502,7 +493,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
         "refMode" : "project"
       }, {
         "getRefPSAppView" : {
@@ -510,7 +500,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
         "refMode" : "bug"
       }, {
         "getRefPSAppView" : {
@@ -518,7 +507,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
         "refMode" : "case"
       } ],
       "logicType" : "PREDEFINED",
@@ -535,7 +523,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
         "refMode" : "product"
       }, {
         "getRefPSAppView" : {
@@ -543,7 +530,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
         "refMode" : "case"
       }, {
         "getRefPSAppView" : {
@@ -551,7 +537,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
         "refMode" : "project"
       }, {
         "getRefPSAppView" : {
@@ -559,7 +544,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
         "refMode" : "story"
       }, {
         "getRefPSAppView" : {
@@ -567,7 +551,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
         "refMode" : "bug"
       } ],
       "getOpenDataPSAppView" : {
@@ -575,8 +558,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
           "viewType" : "DEREDIRECTVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json"
+        }
       },
       "viewLogicType" : "APP_OPENDATA",
       "getPSAppUILogicRefViews" : [ {
@@ -584,15 +566,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
           "viewType" : "DEREDIRECTVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json"
+        }
       }, {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
         "refMode" : "product"
       }, {
         "getRefPSAppView" : {
@@ -600,7 +580,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
         "refMode" : "case"
       }, {
         "getRefPSAppView" : {
@@ -608,7 +587,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
         "refMode" : "project"
       }, {
         "getRefPSAppView" : {
@@ -616,7 +594,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
         "refMode" : "story"
       }, {
         "getRefPSAppView" : {
@@ -624,7 +601,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
           "viewType" : "DEEDITVIEW"
         },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
         "refMode" : "bug"
       } ],
       "logicType" : "PREDEFINED",

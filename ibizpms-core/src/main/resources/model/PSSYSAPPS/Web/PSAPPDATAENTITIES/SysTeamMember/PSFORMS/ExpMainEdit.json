@@ -1,7 +1,5 @@
 {
   "enableAutoSave" : false,
-  "infoFormMode" : true,
-  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -26,6 +24,8 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
+  "infoFormMode" : true,
+  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -34,26 +34,26 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "postid"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "POSTID",
         "codeName" : "PostId"
       },
       "dataType" : 25,
+      "hidden" : true,
       "allowEmpty" : true,
       "caption" : "岗位标识",
-      "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 70,
       "showCaption" : true,
-      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -63,26 +63,26 @@
       "detailStyle" : "DEFAULT",
       "name" : "postid"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "teamid"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "TEAMID",
         "codeName" : "TeamId"
       },
       "dataType" : 25,
+      "hidden" : true,
       "allowEmpty" : true,
       "caption" : "组标识",
-      "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 70,
       "showCaption" : true,
-      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -92,26 +92,26 @@
       "detailStyle" : "DEFAULT",
       "name" : "teamid"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "userid"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "USERID",
         "codeName" : "UserId"
       },
       "dataType" : 25,
+      "hidden" : true,
       "allowEmpty" : true,
       "caption" : "用户标识",
-      "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 70,
       "showCaption" : true,
-      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -121,7 +121,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "userid"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
@@ -129,20 +128,21 @@
         "editorType" : "SPAN",
         "name" : "personname"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PERSONNAME",
         "codeName" : "PersonName"
       },
       "dataType" : 25,
+      "hidden" : false,
       "allowEmpty" : true,
       "caption" : "姓名",
-      "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 70,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -152,7 +152,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "personname"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "enableLinkView" : false,
@@ -160,20 +159,21 @@
         "editorType" : "SPAN",
         "name" : "username"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "USERNAME",
         "codeName" : "UserName"
       },
       "dataType" : 25,
+      "hidden" : false,
       "allowEmpty" : true,
       "caption" : "账号",
-      "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 70,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -183,12 +183,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "username"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
+        "singleSelect" : true,
         "dropDownView" : false,
         "enablePickupView" : false,
-        "singleSelect" : true,
         "enableLinkView" : true,
         "getLinkPSAppView" : {
           "modelref" : true,
@@ -222,21 +221,22 @@
         },
         "name" : "postname"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "POSTNAME",
         "codeName" : "PostName"
       },
       "dataType" : 25,
+      "hidden" : false,
       "allowEmpty" : true,
       "caption" : "岗位",
-      "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "valueItemName" : "postid",
+      "labelWidth" : 70,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -246,26 +246,26 @@
       "detailStyle" : "DEFAULT",
       "name" : "postname"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "teammemberid"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "TEAMMEMBERID",
         "codeName" : "TeamMemberId"
       },
       "dataType" : 25,
+      "hidden" : true,
       "allowEmpty" : true,
       "caption" : "组成员标识",
-      "labelWidth" : 70,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 70,
       "showCaption" : true,
-      "hidden" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"

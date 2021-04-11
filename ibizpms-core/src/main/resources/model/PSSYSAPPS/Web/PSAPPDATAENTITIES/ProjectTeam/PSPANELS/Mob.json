@@ -12,7 +12,6 @@
       "showCaption" : true,
       "name" : "rawitem1"
     }, {
-      "viewFieldName" : "account",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -23,9 +22,10 @@
         "editorType" : "SPAN",
         "name" : "account"
       },
+      "viewFieldName" : "account",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,
@@ -35,15 +35,15 @@
       "itemStyle" : "DEFAULT",
       "name" : "account"
     }, {
-      "viewFieldName" : "role",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "role"
       },
-      "showCaption" : false,
+      "viewFieldName" : "role",
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 4,
         "colLG" : 4,

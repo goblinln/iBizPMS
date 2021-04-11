@@ -31,25 +31,25 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "CTRL",
-      "name" : "SEARCHFORM"
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSAppDataEntity" : {
@@ -165,16 +165,16 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "enablePagingBar" : true,
-    "enableRowEdit" : false,
     "controlType" : "GRID",
+    "enableRowEdit" : false,
+    "enablePagingBar" : true,
     "getPSDEGridColumns" : [ {
       "excelCaption" : "单位标识",
+      "dataItemName" : "orgid",
       "getPSAppDEField" : {
         "name" : "ORGID",
         "codeName" : "OrgId"
       },
-      "dataItemName" : "orgid",
       "cLConvertMode" : "NONE",
       "getCapPSLanguageRes" : {
         "lanResTag" : "CTRL.WFSERVICE.ERR000012",
@@ -191,11 +191,11 @@
       "name" : "orgid"
     }, {
       "excelCaption" : "单位简称",
+      "dataItemName" : "shortname",
       "getPSAppDEField" : {
         "name" : "SHORTNAME",
         "codeName" : "ShortName"
       },
-      "dataItemName" : "shortname",
       "cLConvertMode" : "NONE",
       "getCapPSLanguageRes" : {
         "lanResTag" : "TBB.TEXT.*.CANCELWF",
@@ -212,11 +212,11 @@
       "name" : "shortname"
     }, {
       "excelCaption" : "区属",
+      "dataItemName" : "domains",
       "getPSAppDEField" : {
         "name" : "DOMAINS",
         "codeName" : "Domains"
       },
-      "dataItemName" : "domains",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -228,7 +228,6 @@
       "widthUnit" : "PX",
       "name" : "domains"
     }, {
-      "excelCaption" : "名称",
       "linkValueItem" : "srfkey",
       "enableLinkView" : true,
       "getLinkPSAppView" : {
@@ -236,11 +235,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr2GridView.json",
         "viewType" : "DEGRIDVIEW"
       },
+      "excelCaption" : "名称",
+      "dataItemName" : "orgname",
       "getPSAppDEField" : {
         "name" : "ORGNAME",
         "codeName" : "OrgName"
       },
-      "dataItemName" : "orgname",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -253,11 +253,11 @@
       "name" : "orgname"
     }, {
       "excelCaption" : "单位级别",
+      "dataItemName" : "orglevel",
       "getPSAppDEField" : {
         "name" : "ORGLEVEL",
         "codeName" : "OrgLevel"
       },
-      "dataItemName" : "orglevel",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -475,26 +475,24 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
-      "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationEditView.json"
+        }
       },
+      "enableBatchAdd" : false,
+      "batchAddOnly" : false,
+      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationEditView.json"
+        }
       } ],
       "logicType" : "PREDEFINED",
       "name" : "新建数据"
@@ -509,8 +507,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationEditView.json"
+        }
       },
       "viewLogicType" : "APP_OPENDATA",
       "getPSAppUILogicRefViews" : [ {
@@ -518,8 +515,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationEditView.json"
+        }
       } ],
       "logicType" : "PREDEFINED",
       "name" : "打开数据"

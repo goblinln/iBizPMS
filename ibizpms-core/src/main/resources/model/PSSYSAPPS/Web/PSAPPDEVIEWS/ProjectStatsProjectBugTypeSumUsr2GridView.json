@@ -29,14 +29,14 @@
     "engineType" : "GridView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "LOGIC",
-      "name" : "OPENDATA"
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "LOGIC",
-      "name" : "NEWDATA"
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
     }, {
-      "paramType" : "CTRL",
-      "name" : "GRID"
+      "name" : "GRID",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -48,11 +48,11 @@
     },
     "name" : "toolbar_deuiaction1"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -79,11 +79,11 @@
           "id" : "工具栏按钮提示[*.EXPORT]"
         },
         "getNoPrivDisplayMode" : 2,
-        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf1c3@FontAwesome",
           "cssClass" : "fa fa-file-excel-o"
         },
+        "timeout" : 60000,
         "codeName" : "ExportExcel",
         "caption" : "导出",
         "uIActionTag" : "ExportExcel",
@@ -261,11 +261,10 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "enablePagingBar" : false,
-    "enableRowEdit" : false,
     "controlType" : "GRID",
+    "enableRowEdit" : false,
+    "enablePagingBar" : false,
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "项目名称",
       "linkValueItem" : "srfkey",
       "enableLinkView" : true,
       "getLinkPSAppView" : {
@@ -273,11 +272,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
         "viewType" : "DETABEXPVIEW"
       },
+      "excelCaption" : "项目名称",
+      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataItemName" : "name",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -290,11 +290,11 @@
       "name" : "name"
     }, {
       "excelCaption" : "代码错误",
+      "dataItemName" : "codeerror",
       "getPSAppDEField" : {
         "name" : "CODEERROR",
         "codeName" : "Codeerror"
       },
-      "dataItemName" : "codeerror",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -308,11 +308,11 @@
       "name" : "codeerror"
     }, {
       "excelCaption" : "配置相关",
+      "dataItemName" : "config",
       "getPSAppDEField" : {
         "name" : "CONFIG",
         "codeName" : "Config"
       },
-      "dataItemName" : "config",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -326,11 +326,11 @@
       "name" : "config"
     }, {
       "excelCaption" : "设计缺陷",
+      "dataItemName" : "designdefect",
       "getPSAppDEField" : {
         "name" : "DESIGNDEFECT",
         "codeName" : "Designdefect"
       },
-      "dataItemName" : "designdefect",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -344,11 +344,11 @@
       "name" : "designdefect"
     }, {
       "excelCaption" : "安装部署",
+      "dataItemName" : "install",
       "getPSAppDEField" : {
         "name" : "INSTALL",
         "codeName" : "Install"
       },
-      "dataItemName" : "install",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -362,11 +362,11 @@
       "name" : "install"
     }, {
       "excelCaption" : "性能问题",
+      "dataItemName" : "performance",
       "getPSAppDEField" : {
         "name" : "PERFORMANCE",
         "codeName" : "Performance"
       },
-      "dataItemName" : "performance",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -380,11 +380,11 @@
       "name" : "performance"
     }, {
       "excelCaption" : "安全相关",
+      "dataItemName" : "security",
       "getPSAppDEField" : {
         "name" : "SECURITY",
         "codeName" : "Security"
       },
-      "dataItemName" : "security",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -398,11 +398,11 @@
       "name" : "security"
     }, {
       "excelCaption" : "标准规范",
+      "dataItemName" : "standard",
       "getPSAppDEField" : {
         "name" : "STANDARD",
         "codeName" : "Standard"
       },
-      "dataItemName" : "standard",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -416,11 +416,11 @@
       "name" : "standard"
     }, {
       "excelCaption" : "测试脚本",
+      "dataItemName" : "automation",
       "getPSAppDEField" : {
         "name" : "AUTOMATION",
         "codeName" : "Automation"
       },
-      "dataItemName" : "automation",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -434,11 +434,11 @@
       "name" : "automation"
     }, {
       "excelCaption" : "其他",
+      "dataItemName" : "others",
       "getPSAppDEField" : {
         "name" : "OTHERS",
         "codeName" : "Others"
       },
-      "dataItemName" : "others",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -452,11 +452,11 @@
       "name" : "others"
     }, {
       "excelCaption" : "Bug总数",
+      "dataItemName" : "bugcnt",
       "getPSAppDEField" : {
         "name" : "BUGCNT",
         "codeName" : "BugCnt"
       },
-      "dataItemName" : "bugcnt",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -609,26 +609,24 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "enableBatchAdd" : false,
-      "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json"
+        }
       },
+      "enableBatchAdd" : false,
+      "batchAddOnly" : false,
+      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json"
+        }
       } ],
       "logicType" : "PREDEFINED",
       "name" : "新建数据"
@@ -643,8 +641,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json"
+        }
       },
       "viewLogicType" : "APP_OPENDATA",
       "getPSAppUILogicRefViews" : [ {
@@ -652,8 +649,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json"
+        }
       } ],
       "logicType" : "PREDEFINED",
       "name" : "打开数据"

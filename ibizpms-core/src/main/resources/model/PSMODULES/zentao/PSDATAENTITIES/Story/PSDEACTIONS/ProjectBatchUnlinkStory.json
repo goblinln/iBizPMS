@@ -6,19 +6,19 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "orderValue" : 99999,
   "codeName" : "ProjectBatchUnlinkStory",
   "logicName" : "项目批量解除关联需求",
+  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectBatchUnlinkStory.json",
-  "userCat" : "CAT1",
-  "name" : "ProjectBatchUnlinkStory"
+  "name" : "ProjectBatchUnlinkStory",
+  "userCat" : "CAT1"
 }

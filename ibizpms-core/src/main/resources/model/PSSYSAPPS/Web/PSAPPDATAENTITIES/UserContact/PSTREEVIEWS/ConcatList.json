@@ -1,5 +1,8 @@
 {
   "treeGridMode" : 0,
+  "enableRootSelect" : false,
+  "outputIconDefault" : true,
+  "enableSearchDefault" : false,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -13,9 +16,6 @@
     "searchMode" : 3,
     "name" : "默认根节点 - 联系列表"
   } ],
-  "enableRootSelect" : false,
-  "outputIconDefault" : true,
-  "enableSearchDefault" : false,
   "controlType" : "TREEVIEW",
   "getPSDETreeNodes" : [ {
     "getIdPSAppDEField" : {
@@ -44,22 +44,22 @@
       "viewType" : "DEEDITVIEW"
     },
     "rootNode" : false,
-    "appendPNodeId" : false,
-    "enableCheck" : false,
     "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "enableCheck" : false,
     "enableNewData" : false,
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "nodeType" : "ConcatList",
     "disableSelect" : false,
+    "nodeType" : "ConcatList",
     "enableQuickSearch" : false,
-    "expanded" : true,
     "counterMode" : 0,
     "treeNodeType" : "DE",
+    "expanded" : true,
     "name" : "联系列表",
     "id" : "ConcatList"
   }, {
@@ -67,22 +67,22 @@
     "text" : "默认根节点",
     "enableQuickCreate" : false,
     "rootNode" : true,
-    "appendPNodeId" : false,
-    "enableCheck" : false,
     "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "enableCheck" : false,
     "enableNewData" : false,
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "nodeType" : "ROOT",
     "disableSelect" : false,
+    "nodeType" : "ROOT",
     "enableQuickSearch" : false,
-    "expanded" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
+    "expanded" : false,
     "name" : "默认根节点",
     "id" : "ROOT"
   } ],

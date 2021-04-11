@@ -17,19 +17,19 @@
   } ],
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "orderValue" : 99999,
   "codeName" : "Confirm",
   "logicName" : "确认",
+  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Confirm.json",
-  "userCat" : "CAT1",
-  "name" : "Confirm"
+  "name" : "Confirm",
+  "userCat" : "CAT1"
 }

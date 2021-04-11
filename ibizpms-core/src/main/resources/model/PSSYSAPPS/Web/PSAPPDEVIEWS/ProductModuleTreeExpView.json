@@ -25,8 +25,8 @@
     "engineType" : "TreeExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "TREEEXPBAR"
+      "name" : "TREEEXPBAR",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -36,92 +36,16 @@
     "key" : "MODULETYPE",
     "name" : "MODULETYPE"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TREEEXPBAR",
-    "getXDataPSControl" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule/PSTREEVIEWS/ModuleExp.json",
-      "name" : "treeexpbar_tree",
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "treeexpbar_tree"
-      },
-      "getPSControlHandler" : {
-        "userDRAction" : "READ",
-        "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
-          "dataAccessAction" : "UPDATE",
-          "actionName" : "Update",
-          "actionType" : "DEACTION",
-          "name" : "update"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          },
-          "actionType" : "DEDATASET",
-          "name" : "fetch"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "dataAccessAction" : "DELETE",
-          "actionName" : "Remove",
-          "actionType" : "DEACTION",
-          "name" : "remove"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Get"
-          },
-          "dataAccessAction" : "READ",
-          "actionName" : "Get",
-          "actionType" : "DEACTION",
-          "name" : "load"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Create"
-          },
-          "dataAccessAction" : "CREATE",
-          "actionName" : "Create",
-          "actionType" : "DEACTION",
-          "name" : "create"
-        } ],
-        "enableDEFieldPrivilege" : false,
-        "id" : "树视图处理器"
-      },
-      "controlType" : "TREEVIEW"
-    },
+    "xDataControlName" : "treeexpbar_tree",
     "enableSearch" : false,
     "enableCounter" : true,
-    "showTitleBar" : false,
     "getPSControls" : [ {
       "controlType" : "TOOLBAR",
       "getPSDEToolbarItems" : [ {
@@ -142,11 +66,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf0ad@FontAwesome",
             "cssClass" : "fa fa-wrench"
           },
+          "timeout" : 60000,
           "codeName" : "Fix",
           "caption" : "修复",
           "actionTarget" : "NONE",
@@ -179,11 +103,11 @@
         "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf021@FontAwesome",
             "cssClass" : "fa fa-refresh"
           },
+          "timeout" : 60000,
           "codeName" : "RefreshAll",
           "caption" : "刷新",
           "uIActionTag" : "RefreshAll",
@@ -218,6 +142,9 @@
       "modelid" : "d041783a5e9c0379dd2a10a2552407ab"
     }, {
       "treeGridMode" : 0,
+      "enableRootSelect" : false,
+      "outputIconDefault" : false,
+      "enableSearchDefault" : true,
       "getPSDETreeNodeRSs" : [ {
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -277,8 +204,32 @@
           "id" : "MODULE"
         },
         "getParentPSDER1N" : {
-          "modelref" : true,
-          "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json"
+          "getPSPickupDEField" : {
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          },
+          "masterOrder" : -1,
+          "getPSPickupTextDEField" : {
+            "name" : "PARENTNAME",
+            "codeName" : "ParentName"
+          },
+          "removeActionType" : -1,
+          "pickupDEFName" : "PARENT",
+          "masterRS" : 0,
+          "removeOrder" : 0,
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "orderValue" : 100,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "codeName" : "ParentModule",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
+          "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT"
         },
         "parentValueLevel" : 1,
         "getParentPSAppDEField" : {
@@ -297,8 +248,32 @@
           "id" : "MODULE"
         },
         "getParentPSDER1N" : {
-          "modelref" : true,
-          "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json"
+          "getPSPickupDEField" : {
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          },
+          "masterOrder" : -1,
+          "getPSPickupTextDEField" : {
+            "name" : "PARENTNAME",
+            "codeName" : "ParentName"
+          },
+          "removeActionType" : -1,
+          "pickupDEFName" : "PARENT",
+          "masterRS" : 0,
+          "removeOrder" : 0,
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "orderValue" : 100,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "codeName" : "ParentModule",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
+          "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT"
         },
         "parentValueLevel" : 1,
         "getParentPSAppDEField" : {
@@ -317,8 +292,32 @@
           "id" : "MODULE"
         },
         "getParentPSDER1N" : {
-          "modelref" : true,
-          "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json"
+          "getPSPickupDEField" : {
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          },
+          "masterOrder" : -1,
+          "getPSPickupTextDEField" : {
+            "name" : "PARENTNAME",
+            "codeName" : "ParentName"
+          },
+          "removeActionType" : -1,
+          "pickupDEFName" : "PARENT",
+          "masterRS" : 0,
+          "removeOrder" : 0,
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "orderValue" : 100,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "codeName" : "ParentModule",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
+          "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT"
         },
         "parentValueLevel" : 1,
         "getParentPSAppDEField" : {
@@ -340,9 +339,6 @@
         "searchMode" : 3,
         "name" : "所有模块 - 平台"
       } ],
-      "enableRootSelect" : false,
-      "outputIconDefault" : false,
-      "enableSearchDefault" : true,
       "controlType" : "TREEVIEW",
       "getPSDETreeNodes" : [ {
         "text" : "平台",
@@ -353,12 +349,18 @@
           "viewType" : "DEGRIDVIEW"
         },
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : true,
+        "getPSNavigateContexts" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY"
+        } ],
+        "enableCheck" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
@@ -368,12 +370,6 @@
           "value" : "0",
           "key" : "n_branch_noteq",
           "name" : "n_branch_noteq"
-        } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "SRFPARENTKEY",
-          "name" : "SRFPARENTKEY"
         } ],
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
@@ -385,11 +381,11 @@
             "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
-              "timeout" : 60000,
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "timeout" : 60000,
               "codeName" : "RefreshParent",
               "caption" : "刷新",
               "uIActionTag" : "RefreshParent",
@@ -427,12 +423,12 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "BRANCH",
         "disableSelect" : false,
+        "nodeType" : "BRANCH",
         "enableQuickSearch" : true,
-        "expanded" : true,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
+        "expanded" : true,
         "name" : "平台",
         "id" : "BRANCH"
       }, {
@@ -440,22 +436,22 @@
         "text" : "默认根节点",
         "enableQuickCreate" : false,
         "rootNode" : true,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "enableCheck" : false,
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "ROOT",
         "disableSelect" : false,
+        "nodeType" : "ROOT",
         "enableQuickSearch" : true,
-        "expanded" : false,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
+        "expanded" : false,
         "name" : "默认根节点",
         "id" : "ROOT"
       }, {
@@ -467,12 +463,23 @@
           "viewType" : "DEGRIDVIEW"
         },
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "getPSNavigateContexts" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY"
+        }, {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "BRANCH",
+          "name" : "BRANCH"
+        } ],
+        "enableCheck" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
@@ -488,17 +495,6 @@
           "key" : "branch",
           "name" : "branch"
         } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "SRFPARENTKEY",
-          "name" : "SRFPARENTKEY"
-        }, {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "BRANCH",
-          "name" : "BRANCH"
-        } ],
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
           "getPSDEToolbarItems" : [ {
@@ -509,11 +505,11 @@
             "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
-              "timeout" : 60000,
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "timeout" : 60000,
               "codeName" : "RefreshAll",
               "caption" : "刷新",
               "uIActionTag" : "RefreshAll",
@@ -551,12 +547,12 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "ALL",
         "disableSelect" : false,
+        "nodeType" : "ALL",
         "enableQuickSearch" : true,
-        "expanded" : true,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
+        "expanded" : true,
         "name" : "所有模块",
         "id" : "ALL"
       }, {
@@ -564,11 +560,11 @@
           "name" : "ID",
           "codeName" : "Id"
         },
+        "appendCaption" : false,
         "getLeafFlagPSAppDEField" : {
           "name" : "ISLEAF",
           "codeName" : "IsLeaf"
         },
-        "appendCaption" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
@@ -590,23 +586,23 @@
           "viewType" : "DEGRIDVIEW"
         },
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : true,
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "branch",
-          "key" : "branch",
-          "name" : "branch"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "branch",
           "key" : "BRANCH",
           "name" : "BRANCH"
+        } ],
+        "enableCheck" : false,
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "branch",
+          "key" : "branch",
+          "name" : "branch"
         } ],
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
@@ -629,11 +625,11 @@
               "frontProcessType" : "WIZARD",
               "refreshMode" : 1,
               "getNoPrivDisplayMode" : 2,
-              "timeout" : 60000,
               "getPSSysImage" : {
                 "glyph" : "xf044@FontAwesome",
                 "cssClass" : "fa fa-edit"
               },
+              "timeout" : 60000,
               "codeName" : "OpenQuickCfgView",
               "caption" : "编辑",
               "actionTarget" : "SINGLEKEY",
@@ -665,11 +661,11 @@
             "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
-              "timeout" : 60000,
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "timeout" : 60000,
               "codeName" : "RefreshAll",
               "caption" : "刷新",
               "uIActionTag" : "RefreshAll",
@@ -707,12 +703,12 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "ROOTMODULE",
         "disableSelect" : false,
+        "nodeType" : "ROOTMODULE",
         "enableQuickSearch" : true,
-        "expanded" : true,
         "counterMode" : 0,
         "treeNodeType" : "DE",
+        "expanded" : true,
         "name" : "根模块（动态）",
         "id" : "ROOTMODULE"
       }, {
@@ -720,11 +716,11 @@
           "name" : "ID",
           "codeName" : "Id"
         },
+        "appendCaption" : false,
         "getLeafFlagPSAppDEField" : {
           "name" : "ISLEAF",
           "codeName" : "IsLeaf"
         },
-        "appendCaption" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
@@ -746,23 +742,23 @@
           "viewType" : "DEGRIDVIEW"
         },
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "branch",
-          "key" : "branch",
-          "name" : "branch"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "branch",
           "key" : "BRANCH",
           "name" : "BRANCH"
+        } ],
+        "enableCheck" : false,
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "branch",
+          "key" : "branch",
+          "name" : "branch"
         } ],
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
@@ -785,11 +781,11 @@
               "frontProcessType" : "WIZARD",
               "refreshMode" : 1,
               "getNoPrivDisplayMode" : 2,
-              "timeout" : 60000,
               "getPSSysImage" : {
                 "glyph" : "xf044@FontAwesome",
                 "cssClass" : "fa fa-edit"
               },
+              "timeout" : 60000,
               "codeName" : "OpenQuickCfgView",
               "caption" : "编辑",
               "actionTarget" : "SINGLEKEY",
@@ -821,11 +817,11 @@
             "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
-              "timeout" : 60000,
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "timeout" : 60000,
               "codeName" : "RefreshAll",
               "caption" : "刷新",
               "uIActionTag" : "RefreshAll",
@@ -863,12 +859,12 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "MODULE",
         "disableSelect" : false,
+        "nodeType" : "MODULE",
         "enableQuickSearch" : true,
-        "expanded" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
+        "expanded" : false,
         "name" : "非根模块（动态）",
         "id" : "MODULE"
       }, {
@@ -898,18 +894,11 @@
           "viewType" : "DEGRIDVIEW"
         },
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "branch",
-          "key" : "branch",
-          "name" : "branch"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : true,
           "value" : "0",
@@ -921,6 +910,13 @@
           "key" : "BRANCH",
           "name" : "BRANCH"
         } ],
+        "enableCheck" : false,
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "branch",
+          "key" : "branch",
+          "name" : "branch"
+        } ],
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
           "getPSDEToolbarItems" : [ {
@@ -931,11 +927,11 @@
             "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
-              "timeout" : 60000,
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "timeout" : 60000,
               "codeName" : "RefreshParent",
               "caption" : "刷新",
               "uIActionTag" : "RefreshParent",
@@ -973,12 +969,12 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "BRANCHS",
         "disableSelect" : false,
+        "nodeType" : "BRANCHS",
         "enableQuickSearch" : true,
-        "expanded" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
+        "expanded" : false,
         "name" : "平台（动态）",
         "id" : "BRANCHS"
       }, {
@@ -986,11 +982,11 @@
           "name" : "ID",
           "codeName" : "Id"
         },
+        "appendCaption" : false,
         "getLeafFlagPSAppDEField" : {
           "name" : "ISLEAF",
           "codeName" : "IsLeaf"
         },
-        "appendCaption" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
@@ -1012,23 +1008,23 @@
           "viewType" : "DEGRIDVIEW"
         },
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : true,
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "branch",
-          "key" : "branch",
-          "name" : "branch"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "branch",
           "key" : "BRANCH",
           "name" : "BRANCH"
+        } ],
+        "enableCheck" : false,
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "branch",
+          "key" : "branch",
+          "name" : "branch"
         } ],
         "getPSDEContextMenu" : {
           "controlType" : "CONTEXTMENU",
@@ -1051,11 +1047,11 @@
               "frontProcessType" : "WIZARD",
               "refreshMode" : 1,
               "getNoPrivDisplayMode" : 2,
-              "timeout" : 60000,
               "getPSSysImage" : {
                 "glyph" : "xf044@FontAwesome",
                 "cssClass" : "fa fa-edit"
               },
+              "timeout" : 60000,
               "codeName" : "OpenQuickCfgView",
               "caption" : "编辑",
               "actionTarget" : "SINGLEKEY",
@@ -1087,11 +1083,11 @@
             "noPrivDisplayMode" : 2,
             "getPSUIAction" : {
               "getNoPrivDisplayMode" : 2,
-              "timeout" : 60000,
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "timeout" : 60000,
               "codeName" : "RefreshAll",
               "caption" : "刷新",
               "uIActionTag" : "RefreshAll",
@@ -1129,12 +1125,12 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "Root_NoBranch",
         "disableSelect" : false,
+        "nodeType" : "Root_NoBranch",
         "enableQuickSearch" : true,
-        "expanded" : true,
         "counterMode" : 0,
         "treeNodeType" : "DE",
+        "expanded" : true,
         "name" : "根模块无分支（动态）",
         "id" : "Root_NoBranch"
       } ],
@@ -1249,11 +1245,11 @@
           "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "timeout" : 60000,
             "codeName" : "RefreshParent",
             "caption" : "刷新",
             "uIActionTag" : "RefreshParent",
@@ -1296,11 +1292,11 @@
           "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "timeout" : 60000,
             "codeName" : "RefreshAll",
             "caption" : "刷新",
             "uIActionTag" : "RefreshAll",
@@ -1354,11 +1350,11 @@
             "frontProcessType" : "WIZARD",
             "refreshMode" : 1,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
+            "timeout" : 60000,
             "codeName" : "OpenQuickCfgView",
             "caption" : "编辑",
             "actionTarget" : "SINGLEKEY",
@@ -1390,11 +1386,11 @@
           "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "timeout" : 60000,
             "codeName" : "RefreshAll",
             "caption" : "刷新",
             "uIActionTag" : "RefreshAll",
@@ -1448,11 +1444,11 @@
             "frontProcessType" : "WIZARD",
             "refreshMode" : 1,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
+            "timeout" : 60000,
             "codeName" : "OpenQuickCfgView",
             "caption" : "编辑",
             "actionTarget" : "SINGLEKEY",
@@ -1484,11 +1480,11 @@
           "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "timeout" : 60000,
             "codeName" : "RefreshAll",
             "caption" : "刷新",
             "uIActionTag" : "RefreshAll",
@@ -1542,11 +1538,11 @@
             "frontProcessType" : "WIZARD",
             "refreshMode" : 1,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
+            "timeout" : 60000,
             "codeName" : "OpenQuickCfgView",
             "caption" : "编辑",
             "actionTarget" : "SINGLEKEY",
@@ -1578,11 +1574,11 @@
           "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "timeout" : 60000,
             "codeName" : "RefreshAll",
             "caption" : "刷新",
             "uIActionTag" : "RefreshAll",
@@ -1625,11 +1621,11 @@
           "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf021@FontAwesome",
               "cssClass" : "fa fa-refresh"
             },
+            "timeout" : 60000,
             "codeName" : "RefreshParent",
             "caption" : "刷新",
             "uIActionTag" : "RefreshParent",
@@ -1843,6 +1839,7 @@
       "name" : "treeexpbar_tree",
       "modelid" : "4edd6263fd8d1443b94d9da4b9d51ca0"
     } ],
+    "showTitleBar" : false,
     "getPSAppViewUIActions" : [ {
       "xDataControlName" : "treeexpbar_tree",
       "getPSUIAction" : {
@@ -1968,10 +1965,10 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
       "enableWizardAdd" : false,
-      "actionAfterWizard" : "DEFAULT",
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"
@@ -1993,25 +1990,25 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleTreeExpView.json",
   "name" : "ProductModuleTreeExpView",
   "getPSAppDERSPaths" : [ [ {
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-    },
     "getParentPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
     },
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
-    "enableSelectDataRS" : false,
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
     "codeName" : "ProductModules",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

@@ -194,8 +194,8 @@
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "enableCond" : 3,
     "ignoreInput" : 0,
     "codeName" : "type",
@@ -219,21 +219,21 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : true,
   "controlType" : "GRID",
+  "enableRowEdit" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "步骤",
+    "dataItemName" : "desc",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
-    "dataItemName" : "desc",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -250,12 +250,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Casestep__type.json"
     },
+    "dataItemName" : "type",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataItemName" : "type",
-    "enableRowEdit" : true,
     "cLConvertMode" : "FRONT",
     "hideDefault" : true,
     "noPrivDisplayMode" : 1,
@@ -269,12 +269,12 @@
     "name" : "type"
   }, {
     "excelCaption" : "预期",
+    "dataItemName" : "expect",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
-    "dataItemName" : "expect",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

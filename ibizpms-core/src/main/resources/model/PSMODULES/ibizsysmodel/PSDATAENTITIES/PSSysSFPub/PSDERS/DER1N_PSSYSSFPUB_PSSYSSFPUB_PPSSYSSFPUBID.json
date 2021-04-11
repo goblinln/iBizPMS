@@ -3,11 +3,11 @@
     "name" : "PPSSYSSFPUBID",
     "codeName" : "PPSSysSFPubId"
   },
+  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PPSSYSSFPUBNAME",
     "codeName" : "PPSSysSFPubName"
   },
-  "masterOrder" : -1,
   "removeActionType" : 3,
   "pickupDEFName" : "PPSSYSSFPUBID",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysSFPub.json"
   },
   "orderValue" : 100,
-  "codeName" : "PPSSysSFPub",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysSFPub.json"
   },
+  "codeName" : "PPSSysSFPub",
+  "dERType" : "DER1N",
   "minorCodeName" : "PSSysSFPubs",
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysSFPub/PSDERS/DER1N_PSSYSSFPUB_PSSYSSFPUB_PPSSYSSFPUBID.json",
   "name" : "DER1N_PSSYSSFPUB_PSSYSSFPUB_PPSSYSSFPUBID"

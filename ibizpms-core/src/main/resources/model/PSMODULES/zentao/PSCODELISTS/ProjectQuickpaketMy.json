@@ -1,21 +1,21 @@
 {
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
   "codeListType" : "STATIC",
-  "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/ProjectQuickpaketMy.json",
+  "dynaInstMode" : 1,
   "codeName" : "ProjectQuickpaketMy",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "All",
     "data" : "{\"n_account_eq\":\"%srfloginname%\"}",
     "codeName" : "All",
     "text" : "我的项目",
-    "default" : true,
-    "value" : "All"
+    "default" : true
   } ]
 }

@@ -3,23 +3,23 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
-  "codeListType" : "STATIC",
-  "dynaInstMode" : 1,
   "getPSCodeItems" : [ {
+    "value" : "pass",
     "codeName" : "Pass",
-    "text" : "确认通过",
-    "value" : "pass"
+    "text" : "确认通过"
   }, {
+    "value" : "clarify",
     "codeName" : "Clarify",
     "text" : "有待明确",
     "color" : "rgba(49, 27, 146, 1)",
-    "default" : true,
-    "value" : "clarify"
+    "default" : true
   }, {
+    "value" : "reject",
     "codeName" : "Reject",
-    "text" : "拒绝",
-    "value" : "reject"
+    "text" : "拒绝"
   } ],
+  "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
   "codeName" : "Story__review_result_draft",
   "emptyText" : "未定义",
   "enableCache" : true,

@@ -3,11 +3,11 @@
     "name" : "USERID",
     "codeName" : "UserId"
   },
+  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PERSONNAME",
     "codeName" : "PersonName"
   },
-  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "USERID",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
   },
   "orderValue" : 100,
-  "codeName" : "Emp",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
   },
+  "codeName" : "Emp",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_IBZEMP_USERID.json",
   "name" : "DER1N_SYS_TEAMMEMBER_IBZEMP_USERID"
 }

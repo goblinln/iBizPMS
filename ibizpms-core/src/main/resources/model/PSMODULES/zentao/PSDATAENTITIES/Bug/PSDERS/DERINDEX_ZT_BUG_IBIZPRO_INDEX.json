@@ -1,6 +1,6 @@
 {
-  "virtual" : true,
   "typeValue" : "bug",
+  "virtual" : true,
   "inherit" : false,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
@@ -48,13 +48,13 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
   },
   "orderValue" : 100,
-  "codeName" : "Bug",
-  "logicName" : "Bug",
-  "dERType" : "DERINDEX",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
   },
+  "codeName" : "Bug",
+  "logicName" : "Bug",
+  "dERType" : "DERINDEX",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DERINDEX_ZT_BUG_IBIZPRO_INDEX.json",
   "name" : "DERINDEX_ZT_BUG_IBIZPRO_INDEX"
 }

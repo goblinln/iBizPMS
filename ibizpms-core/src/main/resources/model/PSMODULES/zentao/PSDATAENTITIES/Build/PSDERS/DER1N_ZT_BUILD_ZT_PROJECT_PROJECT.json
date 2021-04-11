@@ -13,12 +13,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
   },
   "orderValue" : 100,
-  "codeName" : "ZTProject",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
   },
+  "codeName" : "ZTProject",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDERS/DER1N_ZT_BUILD_ZT_PROJECT_PROJECT.json",
   "name" : "DER1N_ZT_BUILD_ZT_PROJECT_PROJECT"
 }

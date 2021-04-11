@@ -101,16 +101,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "名称",
+    "dataItemName" : "ibzpro_configname",
     "getPSAppDEField" : {
       "name" : "IBZPRO_CONFIGNAME",
       "codeName" : "IbzproConfigName"
     },
-    "dataItemName" : "ibzpro_configname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -127,11 +127,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ConfigScope.json"
     },
+    "dataItemName" : "scope",
     "getPSAppDEField" : {
       "name" : "SCOPE",
       "codeName" : "Scope"
     },
-    "dataItemName" : "scope",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -148,11 +148,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ConfigGroup.json"
     },
+    "dataItemName" : "type",
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataItemName" : "type",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -169,11 +169,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo.json"
     },
+    "dataItemName" : "vaild",
     "getPSAppDEField" : {
       "name" : "VAILD",
       "codeName" : "Vaild"
     },
-    "dataItemName" : "vaild",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -190,11 +190,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ConfigManagementstatus.json"
     },
+    "dataItemName" : "managementstatus",
     "getPSAppDEField" : {
       "name" : "MANAGEMENTSTATUS",
       "codeName" : "Managementstatus"
     },
-    "dataItemName" : "managementstatus",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -207,11 +207,11 @@
     "name" : "managementstatus"
   }, {
     "excelCaption" : "描述",
+    "dataItemName" : "memo",
     "getPSAppDEField" : {
       "name" : "MEMO",
       "codeName" : "Memo"
     },
-    "dataItemName" : "memo",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

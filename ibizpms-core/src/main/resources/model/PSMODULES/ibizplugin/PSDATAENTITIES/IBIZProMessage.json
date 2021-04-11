@@ -2,8 +2,9 @@
   "serviceAPIMode" : 0,
   "getAllPSDEFields" : [ {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "7dd7c22ccbf2741651fd9899b824d0c8",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -14,8 +15,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "SENDPROXYID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -36,22 +37,20 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "7dd7c22ccbf2741651fd9899b824d0c8",
     "codeName" : "Sendproxyid",
     "logicName" : "发送代理标识",
     "stringLength" : 100,
     "stdDataType" : 25,
     "phisicalDEField" : false,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "SENDPROXYID"
   }, {
     "dataType" : "TEXT",
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "f51e0c090fb9f306976b99e6a60fe48e",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -62,8 +61,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "IBIZPRO_MESSAGENAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -92,22 +91,23 @@
       "autoIncrement" : false,
       "name" : "IBIZPRO_MESSAGENAME"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "f51e0c090fb9f306976b99e6a60fe48e",
     "codeName" : "IBIZProMessageName",
     "logicName" : "消息名称",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "IBIZPRO_MESSAGENAME"
   }, {
+    "dataType" : "NSCODELIST",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "dataType" : "NSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "fe2ec703e611431744d8cdf602234043",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -136,16 +136,17 @@
       "autoIncrement" : false,
       "name" : "ISLINK"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "fe2ec703e611431744d8cdf602234043",
     "codeName" : "Islink",
     "logicName" : "是否是链接消息",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ISLINK"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "ad8405b79282a5879f2db389b78e856c",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -156,8 +157,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "SUBJECT",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -186,18 +187,17 @@
       "autoIncrement" : false,
       "name" : "SUBJECT"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "ad8405b79282a5879f2db389b78e856c",
     "codeName" : "Subject",
     "logicName" : "标题",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "SUBJECT"
   }, {
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$s",
+    "deployId" : "deed2094de513475e494e74145054ab3",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -226,16 +226,18 @@
       "autoIncrement" : false,
       "name" : "RETRYINTERVALTIME"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "deed2094de513475e494e74145054ab3",
     "codeName" : "Retryintervaltime",
     "logicName" : "重发间隔时间",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "RETRYINTERVALTIME"
   }, {
     "dataType" : "LONGTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1048576,
+    "valueFormat" : "%1$s",
+    "deployId" : "a60afc89ec1a86fcb3e549d0fed747d4",
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -246,8 +248,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "BCC",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -276,23 +278,21 @@
       "autoIncrement" : false,
       "name" : "BCC"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "a60afc89ec1a86fcb3e549d0fed747d4",
     "codeName" : "Bcc",
     "logicName" : "密件抄送方",
     "stringLength" : 1048576,
     "stdDataType" : 21,
-    "queryColumn" : false,
-    "length" : 1048576,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "BCC"
   }, {
+    "dataType" : "YESNO",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "dataType" : "YESNO",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "deployId" : "8a0aacf599a0c13700d2d08e84ecf94e",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -313,18 +313,20 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "8a0aacf599a0c13700d2d08e84ecf94e",
     "codeName" : "Isdone",
     "logicName" : "是否完成",
     "stdDataType" : 9,
     "phisicalDEField" : false,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "ISDONE"
   }, {
     "dataType" : "LONGTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1048576,
+    "valueFormat" : "%1$s",
+    "deployId" : "57fe3c1604180790d645227baec615b2",
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -335,8 +337,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "PARAM",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -365,20 +367,18 @@
       "autoIncrement" : false,
       "name" : "PARAM"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "57fe3c1604180790d645227baec615b2",
     "codeName" : "Param",
     "logicName" : "消息参数",
     "stringLength" : 1048576,
     "stdDataType" : 21,
-    "queryColumn" : false,
-    "length" : 1048576,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PARAM"
   }, {
     "dataType" : "TEXT",
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "3036788ea6de98de71d735c89eab6091",
     "pasteReset" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -390,8 +390,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "IBIZPRO_MESSAGEID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -420,18 +420,18 @@
       "autoIncrement" : false,
       "name" : "IBIZPRO_MESSAGEID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "3036788ea6de98de71d735c89eab6091",
     "codeName" : "IBIZProMessageId",
     "logicName" : "消息标识",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "IBIZPRO_MESSAGEID"
   }, {
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$s",
+    "deployId" : "831caef69d69a7592bef72a718734e66",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -460,20 +460,20 @@
       "autoIncrement" : false,
       "name" : "RETRYTIMES"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "831caef69d69a7592bef72a718734e66",
     "codeName" : "Retrytimes",
     "logicName" : "重发次数",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "RETRYTIMES"
   }, {
+    "dataType" : "NSCODELIST",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "dataType" : "NSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "3d36a77f76d15bba163e87e00bfc7755",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -502,16 +502,18 @@
       "autoIncrement" : false,
       "name" : "ISSYNC"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "3d36a77f76d15bba163e87e00bfc7755",
     "codeName" : "Issync",
     "logicName" : "是否同步",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ISSYNC"
   }, {
     "dataType" : "LONGTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1048576,
+    "valueFormat" : "%1$s",
+    "deployId" : "47c5848a445654da4c6503eaa85283da",
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -522,8 +524,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "FROM",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -552,19 +554,19 @@
       "autoIncrement" : false,
       "name" : "FROM"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "47c5848a445654da4c6503eaa85283da",
     "codeName" : "From",
     "logicName" : "发送方",
     "stringLength" : 1048576,
     "stdDataType" : 21,
-    "queryColumn" : false,
-    "length" : 1048576,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "FROM"
   }, {
     "dataType" : "LONGTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1048576,
+    "valueFormat" : "%1$s",
+    "deployId" : "1956b7bcf61824e07135dac13a5f051d",
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -575,8 +577,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "CC",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -605,19 +607,17 @@
       "autoIncrement" : false,
       "name" : "CC"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "1956b7bcf61824e07135dac13a5f051d",
     "codeName" : "Cc",
     "logicName" : "抄送方",
     "stringLength" : 1048576,
     "stdDataType" : 21,
-    "queryColumn" : false,
-    "length" : 1048576,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CC"
   }, {
     "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "b32c2c91cdb1357b4644825e867af0bd",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -638,18 +638,20 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "uIAssistDEField" : true,
-    "deployId" : "b32c2c91cdb1357b4644825e867af0bd",
     "codeName" : "SendTime",
     "logicName" : "发送时间",
     "stdDataType" : 5,
     "phisicalDEField" : false,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "SENDTIME"
   }, {
     "dataType" : "LONGTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1048576,
+    "valueFormat" : "%1$s",
+    "deployId" : "ca3670870f07ff272ca13b0701a49aa7",
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -660,8 +662,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "CONTENT",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -690,19 +692,18 @@
       "autoIncrement" : false,
       "name" : "CONTENT"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "ca3670870f07ff272ca13b0701a49aa7",
     "codeName" : "Content",
     "logicName" : "内容",
     "stringLength" : 1048576,
     "stdDataType" : 21,
-    "queryColumn" : false,
-    "length" : 1048576,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CONTENT"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "40dde7ea568af0e936735224eef8447d",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -713,8 +714,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "LINKURL",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -743,22 +744,21 @@
       "autoIncrement" : false,
       "name" : "LINKURL"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "40dde7ea568af0e936735224eef8447d",
     "codeName" : "Linkurl",
     "logicName" : "链接地址",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "LINKURL"
   }, {
+    "dataType" : "YESNO",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "dataType" : "YESNO",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "deployId" : "3032d861b7a3f34d32f211ecc0901a37",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -779,22 +779,22 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "3032d861b7a3f34d32f211ecc0901a37",
     "codeName" : "Isread",
     "logicName" : "是否已读",
     "stdDataType" : 9,
     "phisicalDEField" : false,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "ISREAD"
   }, {
+    "dataType" : "NSCODELIST",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "dataType" : "NSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "297ba4eb7baf9d4400832bb16103155d",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -823,20 +823,21 @@
       "autoIncrement" : false,
       "name" : "ISRETRY"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "297ba4eb7baf9d4400832bb16103155d",
     "codeName" : "Isretry",
     "logicName" : "是否重发",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ISRETRY"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 60,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizplugin/PSCODELISTS/Message__type.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "1e0296a5f43e0212d88d2db36b9f0339",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -847,8 +848,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "TYPE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -877,18 +878,19 @@
       "autoIncrement" : false,
       "name" : "TYPE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "1e0296a5f43e0212d88d2db36b9f0339",
     "codeName" : "Type",
     "logicName" : "消息类型",
     "stringLength" : 60,
     "stdDataType" : 25,
-    "length" : 60,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TYPE"
   }, {
     "dataType" : "LONGTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1048576,
+    "valueFormat" : "%1$s",
+    "deployId" : "92e488820eb595fc2083154f896c7113",
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -899,8 +901,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "TO",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -929,72 +931,70 @@
       "autoIncrement" : false,
       "name" : "TO"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "92e488820eb595fc2083154f896c7113",
     "codeName" : "To",
     "logicName" : "接收方",
     "stringLength" : 1048576,
     "stdDataType" : 21,
-    "queryColumn" : false,
-    "length" : 1048576,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TO"
   } ],
   "getAllPSDEDataSets" : [ {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据集",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
+    "pageSize" : -1,
     "name" : "DEFAULT"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "UserAllMessages",
     "logicName" : "用户全部消息",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "UserAllMessages"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "UserUnreadMessages",
     "logicName" : "用户未读信息",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "UserUnreadMessages"
   } ],
   "getAllPSDEActions" : [ {
@@ -1034,9 +1034,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "数据查询",
+    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -1045,9 +1045,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "UserAllMessages",
     "logicName" : "用户全部消息",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "UserAllMessages"
   }, {
@@ -1056,9 +1056,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "UserUnreadMessages",
     "logicName" : "用户未读信息",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "UserUnreadMessages"
   }, {
@@ -1067,25 +1067,21 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
+  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
-  "enableUIActions" : 15,
   "orderValue" : 99999,
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "serviceCodeName" : "IBIZProMessage",
+  "dSLink" : "DEFAULT",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1100,16 +1096,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 0,
+  "deployId" : "40c5292aaa2a442c156a4096ac73d4a8",
+  "enableSQLStorage" : false,
   "dynaInstMode" : 1,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,
-  "dSLink" : "DEFAULT",
-  "deployId" : "40c5292aaa2a442c156a4096ac73d4a8",
+  "virtualMode" : 0,
   "codeName" : "IBIZProMessage",
   "logicName" : "消息",
   "tableName" : "T_IBIZPRO_MESSAGE",
-  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1118,9 +1114,13 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "virtualMode" : 0,
-  "enableSQLStorage" : false,
+  "enableRemove" : true,
   "serviceAPIClientId" : "3c9f3dc2e8583c9e7c71311502bbc307",
+  "serviceCodeName" : "IBIZProMessage",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

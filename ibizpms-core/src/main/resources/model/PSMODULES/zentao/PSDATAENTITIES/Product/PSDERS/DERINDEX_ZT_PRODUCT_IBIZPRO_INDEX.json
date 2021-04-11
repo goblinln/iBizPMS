@@ -1,6 +1,6 @@
 {
-  "virtual" : true,
   "typeValue" : "product",
+  "virtual" : true,
   "inherit" : false,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
@@ -38,13 +38,13 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
   },
   "orderValue" : 100,
-  "codeName" : "Product",
-  "logicName" : "产品",
-  "dERType" : "DERINDEX",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
   },
+  "codeName" : "Product",
+  "logicName" : "产品",
+  "dERType" : "DERINDEX",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DERINDEX_ZT_PRODUCT_IBIZPRO_INDEX.json",
   "name" : "DERINDEX_ZT_PRODUCT_IBIZPRO_INDEX"
 }

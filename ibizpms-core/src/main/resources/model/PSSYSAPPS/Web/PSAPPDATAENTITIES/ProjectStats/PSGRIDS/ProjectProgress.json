@@ -129,11 +129,10 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "项目名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -141,11 +140,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "项目名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -158,11 +158,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "需求数",
+    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "dataItemName" : "storycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -176,11 +176,11 @@
     "name" : "storycnt"
   }, {
     "excelCaption" : "剩余需求数",
+    "dataItemName" : "leftstorycnt",
     "getPSAppDEField" : {
       "name" : "LEFTSTORYCNT",
       "codeName" : "Leftstorycnt"
     },
-    "dataItemName" : "leftstorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -194,11 +194,11 @@
     "name" : "leftstorycnt"
   }, {
     "excelCaption" : "任务数",
+    "dataItemName" : "taskcnt",
     "getPSAppDEField" : {
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
-    "dataItemName" : "taskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -212,11 +212,11 @@
     "name" : "taskcnt"
   }, {
     "excelCaption" : "剩余任务数",
+    "dataItemName" : "undonetaskcnt",
     "getPSAppDEField" : {
       "name" : "UNDONETASKCNT",
       "codeName" : "UnDoneTaskCnt"
     },
-    "dataItemName" : "undonetaskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -230,11 +230,11 @@
     "name" : "undonetaskcnt"
   }, {
     "excelCaption" : "剩余工时",
+    "dataItemName" : "totalleft",
     "getPSAppDEField" : {
       "name" : "TOTALLEFT",
       "codeName" : "TotalLeft"
     },
-    "dataItemName" : "totalleft",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -248,11 +248,11 @@
     "name" : "totalleft"
   }, {
     "excelCaption" : "已消耗工时",
+    "dataItemName" : "totalconsumed",
     "getPSAppDEField" : {
       "name" : "TOTALCONSUMED",
       "codeName" : "TotalConsumed"
     },
-    "dataItemName" : "totalconsumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -266,11 +266,11 @@
     "name" : "totalconsumed"
   }, {
     "excelCaption" : "进度",
+    "dataItemName" : "progress",
     "getPSAppDEField" : {
       "name" : "PROGRESS",
       "codeName" : "Progress"
     },
-    "dataItemName" : "progress",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

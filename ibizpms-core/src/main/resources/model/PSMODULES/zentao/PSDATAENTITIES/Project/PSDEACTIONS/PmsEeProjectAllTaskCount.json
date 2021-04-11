@@ -6,19 +6,19 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "orderValue" : 99999,
   "codeName" : "PmsEeProjectAllTaskCount",
   "logicName" : "项目立项任务快速分组计数器",
+  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/PmsEeProjectAllTaskCount.json",
-  "userCat" : "CAT1",
-  "name" : "PmsEeProjectAllTaskCount"
+  "name" : "PmsEeProjectAllTaskCount",
+  "userCat" : "CAT1"
 }

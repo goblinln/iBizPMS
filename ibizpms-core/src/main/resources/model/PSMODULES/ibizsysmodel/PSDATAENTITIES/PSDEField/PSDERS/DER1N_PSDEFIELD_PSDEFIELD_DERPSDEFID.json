@@ -3,11 +3,11 @@
     "name" : "DERPSDEFID",
     "codeName" : "DERPSDEFId"
   },
+  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "DERPSDEFNAME",
     "codeName" : "DERPSDEFName"
   },
-  "masterOrder" : -1,
   "removeActionType" : 3,
   "pickupDEFName" : "DERPSDEFID",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
   },
   "orderValue" : 100,
-  "codeName" : "DERPSDEF",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
   },
+  "codeName" : "DERPSDEF",
+  "dERType" : "DER1N",
   "minorCodeName" : "PSDEFields",
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField/PSDERS/DER1N_PSDEFIELD_PSDEFIELD_DERPSDEFID.json",
   "name" : "DER1N_PSDEFIELD_PSDEFIELD_DERPSDEFID"

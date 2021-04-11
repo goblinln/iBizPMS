@@ -6,19 +6,19 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "orderValue" : 99999,
   "codeName" : "Finish",
   "logicName" : "Finish",
+  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Finish.json",
-  "userCat" : "CAT1",
-  "name" : "Finish"
+  "name" : "Finish",
+  "userCat" : "CAT1"
 }

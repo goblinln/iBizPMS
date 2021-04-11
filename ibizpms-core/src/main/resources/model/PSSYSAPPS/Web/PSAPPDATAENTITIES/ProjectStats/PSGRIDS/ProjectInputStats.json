@@ -101,16 +101,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "项目名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -123,11 +123,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "工期",
+    "dataItemName" : "timescale",
     "getPSAppDEField" : {
       "name" : "TIMESCALE",
       "codeName" : "Timescale"
     },
-    "dataItemName" : "timescale",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -140,11 +140,11 @@
     "name" : "timescale"
   }, {
     "excelCaption" : "任务数",
+    "dataItemName" : "taskcnt",
     "getPSAppDEField" : {
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
-    "dataItemName" : "taskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -158,11 +158,11 @@
     "name" : "taskcnt"
   }, {
     "excelCaption" : "需求数",
+    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "dataItemName" : "storycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -176,11 +176,11 @@
     "name" : "storycnt"
   }, {
     "excelCaption" : "人数",
+    "dataItemName" : "membercnt",
     "getPSAppDEField" : {
       "name" : "MEMBERCNT",
       "codeName" : "Membercnt"
     },
-    "dataItemName" : "membercnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -194,11 +194,11 @@
     "name" : "membercnt"
   }, {
     "excelCaption" : "总消耗",
+    "dataItemName" : "projecttotalconsumed",
     "getPSAppDEField" : {
       "name" : "PROJECTTOTALCONSUMED",
       "codeName" : "Projecttotalconsumed"
     },
-    "dataItemName" : "projecttotalconsumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

@@ -1,6 +1,6 @@
 {
-  "virtual" : true,
   "typeValue" : "task",
+  "virtual" : true,
   "inherit" : false,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
@@ -38,13 +38,13 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
   },
   "orderValue" : 100,
-  "codeName" : "Task",
-  "logicName" : "任务",
-  "dERType" : "DERINDEX",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
   },
+  "codeName" : "Task",
+  "logicName" : "任务",
+  "dERType" : "DERINDEX",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DERINDEX_ZT_TASK_IBIZPRO_INDEX.json",
   "name" : "DERINDEX_ZT_TASK_IBIZPRO_INDEX"
 }

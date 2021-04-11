@@ -4,9 +4,9 @@
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "TEXT",
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "1d2a5fbb28eedc10512cc0fa7c848bad",
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -19,8 +19,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "ID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -49,13 +49,13 @@
       "autoIncrement" : false,
       "name" : "ID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "1d2a5fbb28eedc10512cc0fa7c848bad",
     "codeName" : "Id",
     "logicName" : "虚拟主键",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "ID"
   }, {
     "phisicalDEField" : false,
@@ -70,10 +70,8 @@
       "codeName" : "Name"
     },
     "dataType" : "PICKUPTEXT",
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 90,
+    "deployId" : "a5c195577867d3cb0a2ba1a14757a36e",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -84,8 +82,8 @@
           "includeMaxValue" : true,
           "maxValue" : 90,
           "dEFName" : "PRODUCTNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[90]",
           "name" : "默认字符串长度"
@@ -114,12 +112,14 @@
       "autoIncrement" : false,
       "name" : "PRODUCTNAME"
     } ],
-    "deployId" : "a5c195577867d3cb0a2ba1a14757a36e",
     "codeName" : "ProductName",
     "logicName" : "产品",
     "stringLength" : 90,
     "stdDataType" : 25,
-    "length" : 90,
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "PRODUCTNAME"
   }, {
     "phisicalDEField" : false,
@@ -134,8 +134,8 @@
       "codeName" : "Name"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 90,
+    "deployId" : "d2160069e5289bf638f5d2184f913802",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -146,8 +146,8 @@
           "includeMaxValue" : true,
           "maxValue" : 90,
           "dEFName" : "PROJECTNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[90]",
           "name" : "默认字符串长度"
@@ -176,12 +176,12 @@
       "autoIncrement" : false,
       "name" : "PROJECTNAME"
     } ],
-    "deployId" : "d2160069e5289bf638f5d2184f913802",
     "codeName" : "ProjectName",
     "logicName" : "项目",
     "stringLength" : 90,
     "stdDataType" : 25,
-    "length" : 90,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "PROJECTNAME"
   }, {
     "phisicalDEField" : false,
@@ -196,8 +196,8 @@
       "codeName" : "Title"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 90,
+    "deployId" : "d76b3fa59f31893afe344dc4f46703d1",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -208,8 +208,8 @@
           "includeMaxValue" : true,
           "maxValue" : 90,
           "dEFName" : "PLANNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[90]",
           "name" : "默认字符串长度"
@@ -238,12 +238,12 @@
       "autoIncrement" : false,
       "name" : "PLANNAME"
     } ],
-    "deployId" : "d76b3fa59f31893afe344dc4f46703d1",
     "codeName" : "Planname",
     "logicName" : "计划名称",
     "stringLength" : 90,
     "stdDataType" : 25,
-    "length" : 90,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "PLANNAME"
   }, {
     "getPSDER" : {
@@ -257,9 +257,8 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "enableUIModify" : false,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "deployId" : "42c14285d40369b5621ee0b16784df03",
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -289,11 +288,12 @@
       "autoIncrement" : false,
       "name" : "PRODUCT"
     } ],
-    "deployId" : "42c14285d40369b5621ee0b16784df03",
     "codeName" : "Product",
     "logicName" : "产品",
     "stdDataType" : 1,
-    "length" : 8,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PRODUCT"
   }, {
     "getPSDER" : {
@@ -307,8 +307,8 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "deployId" : "854f2fee21418c2787aada12a9d95baf",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -337,11 +337,11 @@
       "autoIncrement" : false,
       "name" : "PLAN"
     } ],
-    "deployId" : "854f2fee21418c2787aada12a9d95baf",
     "codeName" : "Plan",
     "logicName" : "产品计划",
     "stdDataType" : 1,
-    "length" : 8,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PLAN"
   }, {
     "getPSDER" : {
@@ -355,8 +355,8 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "deployId" : "c351cbeb705591b609df1507069ee036",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -385,11 +385,11 @@
       "autoIncrement" : false,
       "name" : "BRANCH"
     } ],
-    "deployId" : "c351cbeb705591b609df1507069ee036",
     "codeName" : "Branch",
     "logicName" : "平台/分支",
     "stdDataType" : 1,
-    "length" : 8,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "BRANCH"
   }, {
     "getPSDER" : {
@@ -403,9 +403,8 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "enableUIModify" : false,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "deployId" : "1673c120d5995653e3ac653aca32e6b2",
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -435,50 +434,51 @@
       "autoIncrement" : false,
       "name" : "PROJECT"
     } ],
-    "deployId" : "1673c120d5995653e3ac653aca32e6b2",
     "codeName" : "Project",
     "logicName" : "项目",
     "stdDataType" : 1,
-    "length" : 8,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PROJECT"
   } ],
   "getAllPSDEDataSets" : [ {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
+    "pageSize" : -1,
     "name" : "DEFAULT"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "RelationPlan",
     "logicName" : "关联计划",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "RelationPlan"
   } ],
   "getAllPSDEActions" : [ {
@@ -509,9 +509,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -520,9 +520,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "RelationPlan",
     "logicName" : "关联计划",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "RelationPlan"
   }, {
@@ -531,27 +531,21 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
+  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "enableUIActions" : 15,
   "orderValue" : 99999,
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "serviceCodeName" : "ProjectProduct",
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -566,16 +560,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "ef73221faa187797fb025d8433902187",
+  "enableSQLStorage" : true,
   "dynaInstMode" : 1,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,
-  "dSLink" : "DEFAULT",
-  "deployId" : "ef73221faa187797fb025d8433902187",
+  "virtualMode" : 0,
   "codeName" : "ProjectProduct",
   "logicName" : "项目产品",
   "tableName" : "zt_projectproduct",
-  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -584,8 +578,14 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
+  "enableRemove" : true,
+  "serviceCodeName" : "ProjectProduct",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

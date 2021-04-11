@@ -23,16 +23,16 @@
     "engineType" : "PickupView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "PICKUPVIEWPANEL"
+      "name" : "PICKUPVIEWPANEL",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "getEmbeddedPSAppDEView" : {
       "pickupMode" : true,
@@ -68,19 +68,19 @@
         "engineType" : "PickupGridView",
         "engineCat" : "VIEW",
         "getPSUIEngineParams" : [ {
-          "paramType" : "CTRL",
-          "name" : "GRID"
+          "name" : "GRID",
+          "paramType" : "CTRL"
         }, {
-          "paramType" : "CTRL",
-          "name" : "SEARCHFORM"
+          "name" : "SEARCHFORM",
+          "paramType" : "CTRL"
         } ],
         "name" : "engine"
       } ],
+      "viewStyle" : "STYLE2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
       },
-      "viewStyle" : "STYLE2",
       "getPSControls" : [ {
         "getPSDEGridDataItems" : [ {
           "getPSAppDEField" : {
@@ -187,15 +187,14 @@
         } ],
         "hasWFDataItems" : false,
         "columnEnableLink" : 2,
-        "enablePagingBar" : true,
-        "enableRowEdit" : false,
         "controlType" : "GRID",
+        "enableRowEdit" : false,
         "getMinorSortPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
+        "enablePagingBar" : true,
         "getPSDEGridColumns" : [ {
-          "excelCaption" : "产品名称",
           "linkValueItem" : "srfkey",
           "enableLinkView" : true,
           "getLinkPSAppView" : {
@@ -203,11 +202,12 @@
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
             "viewType" : "DETABEXPVIEW"
           },
+          "excelCaption" : "产品名称",
+          "dataItemName" : "name",
           "getPSAppDEField" : {
             "name" : "NAME",
             "codeName" : "Name"
           },
-          "dataItemName" : "name",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -220,11 +220,11 @@
           "name" : "name"
         }, {
           "excelCaption" : "产品代号",
+          "dataItemName" : "code",
           "getPSAppDEField" : {
             "name" : "CODE",
             "codeName" : "Code"
           },
-          "dataItemName" : "code",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -241,11 +241,11 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
           },
+          "dataItemName" : "status",
           "getPSAppDEField" : {
             "name" : "STATUS",
             "codeName" : "Status"
           },
-          "dataItemName" : "status",
           "cLConvertMode" : "FRONT",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -262,11 +262,11 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__type.json"
           },
+          "dataItemName" : "type",
           "getPSAppDEField" : {
             "name" : "TYPE",
             "codeName" : "Type"
           },
-          "dataItemName" : "type",
           "cLConvertMode" : "FRONT",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -279,11 +279,11 @@
           "name" : "type"
         }, {
           "excelCaption" : "产品线",
+          "dataItemName" : "linename",
           "getPSAppDEField" : {
             "name" : "LINENAME",
             "codeName" : "LineName"
           },
-          "dataItemName" : "linename",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -416,27 +416,27 @@
         },
         "getPSDEFormPages" : [ {
           "getPSDEFormDetails" : [ {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "TEXTBOX",
               "name" : "n_acl_eq"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ACL",
               "codeName" : "Acl"
             },
             "dataType" : 25,
-            "allowEmpty" : true,
+            "hidden" : false,
             "convertToCodeItemText" : true,
+            "allowEmpty" : true,
             "caption" : "访问控制(等于(=))",
-            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 3,
             "labelPos" : "LEFT",
+            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -447,26 +447,26 @@
             "detailStyle" : "DEFAULT",
             "name" : "n_acl_eq"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "TEXTBOX",
               "name" : "n_line_eq"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "LINE",
               "codeName" : "Line"
             },
             "dataType" : 1,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "产品线(等于(=))",
-            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -477,27 +477,27 @@
             "detailStyle" : "DEFAULT",
             "name" : "n_line_eq"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
-              "editorWidth" : 100.0,
               "editorType" : "TEXTBOX",
+              "editorWidth" : 100.0,
               "name" : "n_linename_like"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "LINENAME",
               "codeName" : "LineName"
             },
             "dataType" : 25,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "产品线(文本包含(%))",
-            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -508,26 +508,26 @@
             "detailStyle" : "DEFAULT",
             "name" : "n_linename_like"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "TEXTBOX",
               "name" : "n_linename_eq"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "LINENAME",
               "codeName" : "LineName"
             },
             "dataType" : 25,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "产品线(等于(=))",
-            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -538,27 +538,27 @@
             "detailStyle" : "DEFAULT",
             "name" : "n_linename_eq"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
-              "editorWidth" : 100.0,
               "editorType" : "TEXTBOX",
+              "editorWidth" : 100.0,
               "name" : "n_name_like"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "NAME",
               "codeName" : "Name"
             },
             "dataType" : 25,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "产品名称(文本包含(%))",
-            "labelWidth" : 130,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 130,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,

@@ -1,4 +1,8 @@
 {
+  "singleSelect" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "appendDEItems" : false,
   "getPSDEDataViewDataItems" : [ {
     "getPSAppDEField" : {
       "name" : "INDEXNAME",
@@ -18,12 +22,8 @@
   "enableCardEditOrder" : false,
   "enableCardEditGroup" : false,
   "enableCardNew" : false,
-  "appendDEItems" : false,
-  "singleSelect" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "enablePagingBar" : false,
   "controlType" : "DATAVIEW",
+  "enablePagingBar" : false,
   "codeName" : "IndexType",
   "enableGroup" : false,
   "pagingSize" : 1000,

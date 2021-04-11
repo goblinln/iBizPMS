@@ -81,12 +81,12 @@
     "engineType" : "EditView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "FORM"
+      "name" : "FORM",
+      "paramType" : "CTRL"
     }, {
-      "paramType" : "VALUE",
       "name" : "P2K",
-      "value" : 0
+      "value" : 0,
+      "paramType" : "VALUE"
     } ],
     "name" : "engine"
   } ],
@@ -144,11 +144,11 @@
     "key" : "TITLE",
     "name" : "TITLE"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TOOLBAR",
     "getPSDEToolbarItems" : [ {
@@ -175,10 +175,10 @@
           "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
         },
         "getNoPrivDisplayMode" : 2,
-        "timeout" : 60000,
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
+        "timeout" : 60000,
         "codeName" : "SaveAndExit",
         "caption" : "保存并关闭",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
@@ -213,8 +213,6 @@
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
     "enableAutoSave" : false,
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -239,6 +237,8 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -261,12 +261,11 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
+              "singleSelect" : true,
               "dropDownView" : false,
               "enablePickupView" : false,
-              "singleSelect" : true,
               "enableLinkView" : false,
               "enableAC" : true,
               "forceSelection" : true,
@@ -285,17 +284,17 @@
                 "id" : "Default"
               },
               "valueItemName" : "product",
-              "getPSNavigateParams" : [ {
-                "rawValue" : true,
-                "value" : "1000",
-                "key" : "size",
-                "name" : "size"
-              } ],
               "getPSNavigateContexts" : [ {
                 "rawValue" : true,
                 "value" : "0",
                 "key" : "PAGE",
                 "name" : "PAGE"
+              } ],
+              "getPSNavigateParams" : [ {
+                "rawValue" : true,
+                "value" : "1000",
+                "key" : "size",
+                "name" : "size"
               } ],
               "editorType" : "PICKEREX_TRIGGER",
               "editorParams" : {
@@ -307,21 +306,22 @@
               },
               "name" : "productname"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "PRODUCTNAME",
               "codeName" : "ProductName"
             },
             "dataType" : 25,
+            "hidden" : false,
             "allowEmpty" : false,
             "caption" : "产品",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "valueItemName" : "product",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 9,
@@ -332,7 +332,6 @@
             "detailStyle" : "DEFAULT",
             "name" : "productname"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : true,
             "getPSEditor" : {
               "singleSelect" : true,
@@ -340,17 +339,17 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch.json"
               },
-              "getPSNavigateParams" : [ {
-                "rawValue" : false,
-                "value" : "product",
-                "key" : "product",
-                "name" : "product"
-              } ],
               "getPSNavigateContexts" : [ {
                 "rawValue" : false,
                 "value" : "product",
                 "key" : "PRODUCT",
                 "name" : "PRODUCT"
+              } ],
+              "getPSNavigateParams" : [ {
+                "rawValue" : false,
+                "value" : "product",
+                "key" : "product",
+                "name" : "product"
               } ],
               "editorType" : "DROPDOWNLIST",
               "editorParams" : {
@@ -359,23 +358,24 @@
               },
               "name" : "branch"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "BRANCH",
               "codeName" : "Branch"
             },
             "dataType" : 1,
-            "allowEmpty" : true,
+            "hidden" : false,
             "needCodeListConfig" : true,
+            "allowEmpty" : true,
             "createDV" : "branch",
             "createDVT" : "CONTEXT",
-            "labelWidth" : 1,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "valueItemName" : "product",
+            "labelWidth" : 1,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 3,
@@ -386,26 +386,26 @@
             "detailStyle" : "DEFAULT",
             "name" : "branch"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "product"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "PRODUCT",
               "codeName" : "Product"
             },
             "dataType" : 1,
+            "hidden" : true,
             "allowEmpty" : true,
             "caption" : "所属产品",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -416,12 +416,12 @@
             "detailStyle" : "DEFAULT",
             "name" : "product"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
+            "resetItemNames" : [ "branch" ],
             "getPSEditor" : {
+              "singleSelect" : true,
               "dropDownView" : false,
               "enablePickupView" : false,
-              "singleSelect" : true,
               "enableLinkView" : false,
               "enableAC" : true,
               "forceSelection" : true,
@@ -440,27 +440,6 @@
                 "id" : "Default"
               },
               "valueItemName" : "module",
-              "getPSNavigateParams" : [ {
-                "rawValue" : false,
-                "value" : "product",
-                "key" : "product",
-                "name" : "product"
-              }, {
-                "rawValue" : false,
-                "value" : "branch",
-                "key" : "branch",
-                "name" : "branch"
-              }, {
-                "rawValue" : false,
-                "value" : "product",
-                "key" : "n_root_eq",
-                "name" : "n_root_eq"
-              }, {
-                "rawValue" : false,
-                "value" : "branch",
-                "key" : "n_branch_eq",
-                "name" : "n_branch_eq"
-              } ],
               "getPSNavigateContexts" : [ {
                 "rawValue" : false,
                 "value" : "branch",
@@ -481,6 +460,27 @@
                 "value" : "branch",
                 "key" : "BRANCH",
                 "name" : "BRANCH"
+              } ],
+              "getPSNavigateParams" : [ {
+                "rawValue" : false,
+                "value" : "product",
+                "key" : "product",
+                "name" : "product"
+              }, {
+                "rawValue" : false,
+                "value" : "branch",
+                "key" : "branch",
+                "name" : "branch"
+              }, {
+                "rawValue" : false,
+                "value" : "product",
+                "key" : "n_root_eq",
+                "name" : "n_root_eq"
+              }, {
+                "rawValue" : false,
+                "value" : "branch",
+                "key" : "n_branch_eq",
+                "name" : "n_branch_eq"
               } ],
               "editorType" : "PICKEREX_TRIGGER",
               "editorParams" : {
@@ -499,25 +499,25 @@
               },
               "name" : "modulename"
             },
-            "resetItemNames" : [ "branch" ],
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "MODULENAME",
               "codeName" : "Modulename"
             },
             "dataType" : 25,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "所属模块",
             "createDV" : "modulename",
             "createDVT" : "CONTEXT",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "resetItemName" : "branch",
             "valueItemName" : "module",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -528,30 +528,9 @@
             "detailStyle" : "DEFAULT",
             "name" : "modulename"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
+            "resetItemNames" : [ "productname" ],
             "getPSEditor" : {
-              "getPSNavigateParams" : [ {
-                "rawValue" : false,
-                "value" : "product",
-                "key" : "product",
-                "name" : "product"
-              }, {
-                "rawValue" : false,
-                "value" : "product",
-                "key" : "n_root_eq",
-                "name" : "n_root_eq"
-              }, {
-                "rawValue" : false,
-                "value" : "branch",
-                "key" : "branch",
-                "name" : "branch"
-              }, {
-                "rawValue" : false,
-                "value" : "branch",
-                "key" : "n_branch_eq",
-                "name" : "n_branch_eq"
-              } ],
               "getPSNavigateContexts" : [ {
                 "rawValue" : false,
                 "value" : "branch",
@@ -573,6 +552,27 @@
                 "key" : "BRANCH",
                 "name" : "BRANCH"
               } ],
+              "getPSNavigateParams" : [ {
+                "rawValue" : false,
+                "value" : "product",
+                "key" : "product",
+                "name" : "product"
+              }, {
+                "rawValue" : false,
+                "value" : "product",
+                "key" : "n_root_eq",
+                "name" : "n_root_eq"
+              }, {
+                "rawValue" : false,
+                "value" : "branch",
+                "key" : "branch",
+                "name" : "branch"
+              }, {
+                "rawValue" : false,
+                "value" : "branch",
+                "key" : "n_branch_eq",
+                "name" : "n_branch_eq"
+              } ],
               "editorType" : "HIDDEN",
               "editorParams" : {
                 "SRFNAVPARAM.n_branch_eq" : "%branch%",
@@ -586,24 +586,24 @@
               },
               "name" : "module"
             },
-            "resetItemNames" : [ "productname" ],
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "MODULE",
               "codeName" : "Module"
             },
             "dataType" : 1,
+            "hidden" : true,
             "allowEmpty" : true,
             "caption" : "所属模块",
             "createDV" : "module",
             "createDVT" : "CONTEXT",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "resetItemName" : "productname",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -614,12 +614,11 @@
             "detailStyle" : "DEFAULT",
             "name" : "module"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
+              "singleSelect" : true,
               "dropDownView" : false,
               "enablePickupView" : false,
-              "singleSelect" : true,
               "enableLinkView" : false,
               "enableAC" : true,
               "forceSelection" : true,
@@ -638,6 +637,12 @@
                 "id" : "Default"
               },
               "valueItemName" : "project",
+              "getPSNavigateContexts" : [ {
+                "rawValue" : false,
+                "value" : "product",
+                "key" : "PRODUCT",
+                "name" : "PRODUCT"
+              } ],
               "getPSNavigateParams" : [ {
                 "rawValue" : false,
                 "value" : "product",
@@ -648,12 +653,6 @@
                 "value" : "1000",
                 "key" : "size",
                 "name" : "size"
-              } ],
-              "getPSNavigateContexts" : [ {
-                "rawValue" : false,
-                "value" : "product",
-                "key" : "PRODUCT",
-                "name" : "PRODUCT"
               } ],
               "editorType" : "PICKEREX_TRIGGER",
               "editorParams" : {
@@ -666,21 +665,22 @@
               },
               "name" : "projectname"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "PROJECTNAME",
               "codeName" : "ProjectName"
             },
             "dataType" : 25,
+            "hidden" : false,
             "allowEmpty" : false,
             "caption" : "项目",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "valueItemName" : "project",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -691,28 +691,28 @@
             "detailStyle" : "DEFAULT",
             "name" : "projectname"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "editorType" : "HIDDEN",
               "name" : "project"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "PROJECT",
               "codeName" : "Project"
             },
             "dataType" : 1,
+            "hidden" : true,
             "allowEmpty" : true,
             "caption" : "所属项目",
             "createDV" : "project",
             "createDVT" : "CONTEXT",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -723,7 +723,6 @@
             "detailStyle" : "DEFAULT",
             "name" : "project"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "singleSelect" : false,
@@ -731,17 +730,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductBuild.json"
               },
-              "getPSNavigateParams" : [ {
-                "rawValue" : false,
-                "value" : "project",
-                "key" : "bugproject",
-                "name" : "bugproject"
-              }, {
-                "rawValue" : false,
-                "value" : "product",
-                "key" : "bugproduct",
-                "name" : "bugproduct"
-              } ],
               "getPSNavigateContexts" : [ {
                 "rawValue" : false,
                 "value" : "product",
@@ -753,6 +741,17 @@
                 "key" : "BUGPROJECT",
                 "name" : "BUGPROJECT"
               } ],
+              "getPSNavigateParams" : [ {
+                "rawValue" : false,
+                "value" : "project",
+                "key" : "bugproject",
+                "name" : "bugproject"
+              }, {
+                "rawValue" : false,
+                "value" : "product",
+                "key" : "bugproduct",
+                "name" : "bugproduct"
+              } ],
               "editorType" : "MDROPDOWNLIST",
               "editorParams" : {
                 "SRFNAVCTX.bugproject" : "%project%",
@@ -762,21 +761,22 @@
               },
               "name" : "openedbuild"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "OPENEDBUILD",
               "codeName" : "OpenedBuild"
             },
             "dataType" : 25,
-            "allowEmpty" : false,
+            "hidden" : false,
             "needCodeListConfig" : true,
+            "allowEmpty" : false,
             "caption" : "影响版本",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 12,
@@ -787,7 +787,6 @@
             "detailStyle" : "DEFAULT",
             "name" : "openedbuild"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "singleSelect" : true,
@@ -795,17 +794,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BugUserRealName.json"
               },
-              "getPSNavigateParams" : [ {
-                "rawValue" : false,
-                "value" : "product",
-                "key" : "product",
-                "name" : "product"
-              }, {
-                "rawValue" : false,
-                "value" : "project",
-                "key" : "project",
-                "name" : "project"
-              } ],
               "getPSNavigateContexts" : [ {
                 "rawValue" : false,
                 "value" : "project",
@@ -817,6 +805,17 @@
                 "key" : "PRODUCT",
                 "name" : "PRODUCT"
               } ],
+              "getPSNavigateParams" : [ {
+                "rawValue" : false,
+                "value" : "product",
+                "key" : "product",
+                "name" : "product"
+              }, {
+                "rawValue" : false,
+                "value" : "project",
+                "key" : "project",
+                "name" : "project"
+              } ],
               "editorType" : "DROPDOWNLIST",
               "editorParams" : {
                 "SRFNAVCTX.project" : "%project%",
@@ -826,23 +825,24 @@
               },
               "name" : "assignedto"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "ASSIGNEDTO",
               "codeName" : "AssignedTo"
             },
             "dataType" : 25,
-            "allowEmpty" : true,
+            "hidden" : false,
             "needCodeListConfig" : true,
+            "allowEmpty" : true,
             "caption" : "指派给",
             "createDV" : "assignedto",
             "createDVT" : "CONTEXT",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -853,32 +853,32 @@
             "detailStyle" : "DEFAULT",
             "name" : "assignedto"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "dateTimeFormat" : "YYYY-MM-DD",
-              "editorWidth" : 100.0,
               "editorType" : "DATEPICKEREX_NOTIME",
+              "editorWidth" : 100.0,
               "editorParams" : {
                 "TIMEFMT" : "YYYY-MM-DD"
               },
               "name" : "deadline"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "DEADLINE",
               "codeName" : "Deadline"
             },
             "dataType" : 5,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "截止日期",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 100,
             "itemWidth" : 200.0,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -889,7 +889,6 @@
             "detailStyle" : "DEFAULT",
             "name" : "deadline"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "singleSelect" : true,
@@ -900,22 +899,23 @@
               "editorType" : "DROPDOWNLIST",
               "name" : "type"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "TYPE",
               "codeName" : "Type"
             },
             "dataType" : 25,
-            "allowEmpty" : true,
+            "hidden" : false,
             "needCodeListConfig" : true,
+            "allowEmpty" : true,
             "caption" : "Bug类型",
             "createDV" : "codeerror",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 6,
@@ -926,7 +926,6 @@
             "detailStyle" : "DEFAULT",
             "name" : "type"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "singleSelect" : true,
@@ -937,21 +936,22 @@
               "editorType" : "DROPDOWNLIST",
               "name" : "os"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "OS",
               "codeName" : "Os"
             },
             "dataType" : 25,
-            "allowEmpty" : true,
+            "hidden" : false,
             "needCodeListConfig" : true,
+            "allowEmpty" : true,
             "caption" : "操作系统",
-            "labelWidth" : 80,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 80,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 6,
               "colLG" : 6,
@@ -962,7 +962,6 @@
             "detailStyle" : "DEFAULT",
             "name" : "os"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "singleSelect" : true,
@@ -973,21 +972,22 @@
               "editorType" : "DROPDOWNLIST",
               "name" : "browser"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "BROWSER",
               "codeName" : "Browser"
             },
             "dataType" : 25,
-            "allowEmpty" : true,
+            "hidden" : false,
             "needCodeListConfig" : true,
+            "allowEmpty" : true,
             "caption" : "浏览器",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 6,
               "colLG" : 6,
@@ -1009,37 +1009,37 @@
           "showCaption" : false,
           "name" : "grouppanel1"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "maxLength" : 255,
+            "editorType" : "TEXTBOX",
             "getPSSysPFPlugin" : {
               "pluginType" : "EDITOR_CUSTOMSTYLE",
               "pluginCode" : "COLORPICKER"
             },
-            "editorType" : "TEXTBOX",
             "editorParams" : {
               "color" : "color"
             },
             "editorStyle" : "COLORPICKER",
             "name" : "title"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "TITLE",
             "codeName" : "Title"
           },
           "dataType" : 25,
+          "hidden" : false,
           "allowEmpty" : false,
           "caption" : "Bug标题",
           "createDV" : "title",
           "createDVT" : "CONTEXT",
-          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 12,
@@ -1050,7 +1050,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "title"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
@@ -1061,22 +1060,23 @@
             "editorType" : "DROPDOWNLIST",
             "name" : "severity"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "SEVERITY",
             "codeName" : "Severity"
           },
           "dataType" : 9,
-          "allowEmpty" : true,
+          "hidden" : false,
           "needCodeListConfig" : true,
+          "allowEmpty" : true,
           "caption" : "严重程度",
           "createDV" : "3",
-          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 6,
@@ -1087,7 +1087,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "severity"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "singleSelect" : true,
@@ -1098,22 +1097,23 @@
             "editorType" : "DROPDOWNLIST",
             "name" : "pri"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PRI",
             "codeName" : "Pri"
           },
           "dataType" : 9,
-          "allowEmpty" : true,
+          "hidden" : false,
           "needCodeListConfig" : true,
+          "allowEmpty" : true,
           "caption" : "优先级",
           "createDV" : "3",
-          "labelWidth" : 80,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 80,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 6,
@@ -1124,28 +1124,28 @@
           "detailStyle" : "DEFAULT",
           "name" : "pri"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "color"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "COLOR",
             "codeName" : "Color"
           },
           "dataType" : 25,
+          "hidden" : true,
           "allowEmpty" : true,
           "caption" : "标题颜色",
           "createDV" : "color",
           "createDVT" : "CONTEXT",
-          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -1155,7 +1155,6 @@
           "detailStyle" : "DEFAULT",
           "name" : "color"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HTMLEDITOR",
@@ -1165,20 +1164,21 @@
             },
             "name" : "steps"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "STEPS",
             "codeName" : "Steps"
           },
           "dataType" : 21,
+          "hidden" : false,
           "allowEmpty" : true,
           "caption" : "重现步骤",
-          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -1188,26 +1188,26 @@
           "detailStyle" : "DEFAULT",
           "name" : "steps"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "mailtopk"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "MAILTOPK",
             "codeName" : "Mailtopk"
           },
           "dataType" : 25,
+          "hidden" : true,
           "allowEmpty" : true,
           "caption" : "抄送给",
-          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -1224,17 +1224,16 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
+            "resetItemNames" : [ "modulename" ],
             "getPSEditor" : {
+              "singleSelect" : true,
               "dropDownView" : false,
               "enablePickupView" : false,
-              "singleSelect" : true,
               "enableLinkView" : false,
               "enableAC" : true,
               "forceSelection" : true,
               "showTrigger" : true,
-              "handlerType" : "PickupText",
               "itemParamJO" : {
                 "fetchcond" : {
                   "n_product_eq" : "product"
@@ -1246,6 +1245,7 @@
                   "srfparentmode" : "DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT"
                 }
               },
+              "handlerType" : "PickupText",
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -1261,17 +1261,6 @@
                 "id" : "Default"
               },
               "valueItemName" : "story",
-              "getPSNavigateParams" : [ {
-                "rawValue" : false,
-                "value" : "product",
-                "key" : "n_product_eq",
-                "name" : "n_product_eq"
-              }, {
-                "rawValue" : false,
-                "value" : "module",
-                "key" : "n_module_eq",
-                "name" : "n_module_eq"
-              } ],
               "getPSNavigateContexts" : [ {
                 "rawValue" : false,
                 "value" : "product",
@@ -1282,6 +1271,17 @@
                 "value" : "module",
                 "key" : "N_MODULE_EQ",
                 "name" : "N_MODULE_EQ"
+              } ],
+              "getPSNavigateParams" : [ {
+                "rawValue" : false,
+                "value" : "product",
+                "key" : "n_product_eq",
+                "name" : "n_product_eq"
+              }, {
+                "rawValue" : false,
+                "value" : "module",
+                "key" : "n_module_eq",
+                "name" : "n_module_eq"
               } ],
               "editorType" : "PICKEREX_TRIGGER",
               "editorParams" : {
@@ -1294,25 +1294,25 @@
               },
               "name" : "storyname"
             },
-            "resetItemNames" : [ "modulename" ],
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "STORYNAME",
               "codeName" : "Storyname"
             },
             "dataType" : 25,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "相关需求",
             "createDV" : "storyname",
             "createDVT" : "CONTEXT",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "resetItemName" : "modulename",
             "valueItemName" : "story",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 12,
@@ -1323,17 +1323,16 @@
             "detailStyle" : "DEFAULT",
             "name" : "storyname"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
+            "resetItemNames" : [ "projectname" ],
             "getPSEditor" : {
+              "singleSelect" : true,
               "dropDownView" : false,
               "enablePickupView" : false,
-              "singleSelect" : true,
               "enableLinkView" : false,
               "enableAC" : true,
               "forceSelection" : true,
               "showTrigger" : true,
-              "handlerType" : "PickupText",
               "itemParamJO" : {
                 "fetchcond" : {
                   "n_project_eq" : "project"
@@ -1345,6 +1344,7 @@
                   "srfparentmode" : "DER1N_ZT_TASK_ZT_PROJECT_PROJECT"
                 }
               },
+              "handlerType" : "PickupText",
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -1360,22 +1360,6 @@
                 "id" : "Default"
               },
               "valueItemName" : "task",
-              "getPSNavigateParams" : [ {
-                "rawValue" : false,
-                "value" : "project",
-                "key" : "project",
-                "name" : "project"
-              }, {
-                "rawValue" : false,
-                "value" : "project",
-                "key" : "n_project_eq",
-                "name" : "n_project_eq"
-              }, {
-                "rawValue" : true,
-                "value" : "1000",
-                "key" : "size",
-                "name" : "size"
-              } ],
               "getPSNavigateContexts" : [ {
                 "rawValue" : false,
                 "value" : "project",
@@ -1392,6 +1376,22 @@
                 "key" : "SIZE",
                 "name" : "SIZE"
               } ],
+              "getPSNavigateParams" : [ {
+                "rawValue" : false,
+                "value" : "project",
+                "key" : "project",
+                "name" : "project"
+              }, {
+                "rawValue" : false,
+                "value" : "project",
+                "key" : "n_project_eq",
+                "name" : "n_project_eq"
+              }, {
+                "rawValue" : true,
+                "value" : "1000",
+                "key" : "size",
+                "name" : "size"
+              } ],
               "editorType" : "PICKEREX_TRIGGER",
               "editorParams" : {
                 "SRFNAVCTX.project" : "%project%",
@@ -1404,25 +1404,25 @@
               },
               "name" : "taskname"
             },
-            "resetItemNames" : [ "projectname" ],
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "TASKNAME",
               "codeName" : "TaskName"
             },
             "dataType" : 25,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "相关任务",
             "createDV" : "title",
             "createDVT" : "CONTEXT",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "resetItemName" : "projectname",
             "valueItemName" : "task",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 12,
@@ -1433,7 +1433,6 @@
             "detailStyle" : "DEFAULT",
             "name" : "taskname"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "singleSelect" : false,
@@ -1444,23 +1443,24 @@
               "editorType" : "MDROPDOWNLIST",
               "name" : "mailto"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "MAILTO",
               "codeName" : "Mailto"
             },
             "dataType" : 25,
-            "allowEmpty" : true,
+            "hidden" : false,
             "needCodeListConfig" : true,
+            "allowEmpty" : true,
             "caption" : "抄送给",
             "createDV" : "mailto",
             "createDVT" : "CONTEXT",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 18,
               "colLG" : 18,
@@ -1471,16 +1471,15 @@
             "detailStyle" : "DEFAULT",
             "name" : "mailto"
           }, {
-            "inputTipClosable" : false,
             "getPSDEFormItemUpdate" : {
               "modelref" : true,
               "id" : "GetUserConcat"
             },
             "emptyCaption" : true,
             "getPSEditor" : {
+              "singleSelect" : true,
               "dropDownView" : false,
               "enablePickupView" : false,
-              "singleSelect" : true,
               "enableLinkView" : false,
               "enableAC" : true,
               "forceSelection" : true,
@@ -1507,20 +1506,21 @@
               },
               "name" : "mailtoconact"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "MAILTOCONACT",
               "codeName" : "Mailtoconact"
             },
             "dataType" : 25,
+            "hidden" : false,
             "allowEmpty" : true,
-            "labelWidth" : 10,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "valueItemName" : "mailtopk",
+            "labelWidth" : 10,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 6,
               "colLG" : 6,
@@ -1531,27 +1531,27 @@
             "detailStyle" : "DEFAULT",
             "name" : "mailtoconact"
           }, {
-            "inputTipClosable" : false,
             "emptyCaption" : false,
             "getPSEditor" : {
               "maxLength" : 255,
               "editorType" : "TEXTBOX",
               "name" : "keywords"
             },
+            "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
               "name" : "KEYWORDS",
               "codeName" : "Keywords"
             },
             "dataType" : 25,
+            "hidden" : false,
             "allowEmpty" : true,
             "caption" : "关键词",
-            "labelWidth" : 100,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
+            "labelWidth" : 100,
             "showCaption" : true,
-            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 24,
@@ -1573,30 +1573,30 @@
           "showCaption" : false,
           "name" : "grouppanel2"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
+          "resetItemNames" : [ "modulename" ],
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "story"
           },
-          "resetItemNames" : [ "modulename" ],
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "STORY",
             "codeName" : "Story"
           },
           "dataType" : 1,
+          "hidden" : true,
           "allowEmpty" : true,
           "caption" : "相关需求",
           "createDV" : "story",
           "createDVT" : "CONTEXT",
-          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "resetItemName" : "modulename",
+          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -1606,26 +1606,26 @@
           "detailStyle" : "DEFAULT",
           "name" : "story"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "caseversion"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "CASEVERSION",
             "codeName" : "CaseVersion"
           },
           "dataType" : 9,
+          "hidden" : true,
           "allowEmpty" : true,
           "caption" : "用例版本",
-          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -1635,28 +1635,28 @@
           "detailStyle" : "DEFAULT",
           "name" : "caseversion"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "case"
           },
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "CASE",
             "codeName" : "IBizCase"
           },
           "dataType" : 1,
+          "hidden" : true,
           "allowEmpty" : true,
           "caption" : "相关用例",
           "createDV" : "case",
           "createDVT" : "CONTEXT",
-          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
+          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -1666,30 +1666,30 @@
           "detailStyle" : "DEFAULT",
           "name" : "case"
         }, {
-          "inputTipClosable" : false,
           "emptyCaption" : false,
+          "resetItemNames" : [ "projectname" ],
           "getPSEditor" : {
             "editorType" : "HIDDEN",
             "name" : "task"
           },
-          "resetItemNames" : [ "projectname" ],
+          "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "TASK",
             "codeName" : "Task"
           },
           "dataType" : 1,
+          "hidden" : true,
           "allowEmpty" : true,
           "caption" : "相关任务",
           "createDV" : "task",
           "createDVT" : "CONTEXT",
-          "labelWidth" : 100,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "resetItemName" : "projectname",
+          "labelWidth" : 100,
           "showCaption" : true,
-          "hidden" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -2137,125 +2137,125 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTaskToBugEditView.json",
   "name" : "BugTaskToBugEditView",
   "getPSAppDERSPaths" : [ [ {
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
-    "enableSelectDataRS" : false,
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
     "codeName" : "Stories",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "产品需求"
   }, {
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
     "getParentPSAppDEField" : {
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
-    "enableSelectDataRS" : false,
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
     "codeName" : "Bugs",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "需求Bug"
   } ], [ {
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
     "getParentPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
-    "enableSelectDataRS" : false,
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
     "codeName" : "Bugs",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "项目Bug"
   } ], [ {
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
     "getParentPSAppDEField" : {
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
-    "enableSelectDataRS" : false,
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
     "codeName" : "Bugs",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "需求Bug"
   } ], [ {
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
-    "enableSelectDataRS" : false,
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
     "codeName" : "Bugs",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

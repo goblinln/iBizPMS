@@ -129,16 +129,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "产品名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -155,11 +155,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "po",
     "getPSAppDEField" : {
       "name" : "PO",
       "codeName" : "PO"
     },
-    "dataItemName" : "po",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -176,11 +176,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanCodeList.json"
     },
+    "dataItemName" : "plan",
     "getPSAppDEField" : {
       "name" : "PLAN",
       "codeName" : "Plan"
     },
-    "dataItemName" : "plan",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -193,11 +193,11 @@
     "name" : "plan"
   }, {
     "excelCaption" : "开始日期",
+    "dataItemName" : "begin",
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
-    "dataItemName" : "begin",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -210,11 +210,11 @@
     "name" : "begin"
   }, {
     "excelCaption" : "结束日期",
+    "dataItemName" : "end",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
-    "dataItemName" : "end",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -227,11 +227,11 @@
     "name" : "end"
   }, {
     "excelCaption" : "草稿",
+    "dataItemName" : "waitstorycnt",
     "getPSAppDEField" : {
       "name" : "WAITSTORYCNT",
       "codeName" : "WaitStoryCnt"
     },
-    "dataItemName" : "waitstorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -244,11 +244,11 @@
     "name" : "waitstorycnt"
   }, {
     "excelCaption" : "激活",
+    "dataItemName" : "activestorycnt",
     "getPSAppDEField" : {
       "name" : "ACTIVESTORYCNT",
       "codeName" : "ActiveStoryCnt"
     },
-    "dataItemName" : "activestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -261,11 +261,11 @@
     "name" : "activestorycnt"
   }, {
     "excelCaption" : "已变更",
+    "dataItemName" : "changedstorycnt",
     "getPSAppDEField" : {
       "name" : "CHANGEDSTORYCNT",
       "codeName" : "Changedstorycnt"
     },
-    "dataItemName" : "changedstorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -278,11 +278,11 @@
     "name" : "changedstorycnt"
   }, {
     "excelCaption" : "已关闭",
+    "dataItemName" : "closedstorycnt",
     "getPSAppDEField" : {
       "name" : "CLOSEDSTORYCNT",
       "codeName" : "ClosedStoryCnt"
     },
-    "dataItemName" : "closedstorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -295,11 +295,11 @@
     "name" : "closedstorycnt"
   }, {
     "excelCaption" : "总计",
+    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "dataItemName" : "storycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

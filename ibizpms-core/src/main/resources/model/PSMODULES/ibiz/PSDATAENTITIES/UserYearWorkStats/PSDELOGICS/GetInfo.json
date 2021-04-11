@@ -17,13 +17,13 @@
     "name" : "开始"
   }, {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
     "logicHolder" : 3,
     "codeName" : "Deaction4",
@@ -35,13 +35,13 @@
     "name" : "获取产品经理信息"
   }, {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
     "logicHolder" : 3,
     "codeName" : "Deaction2",
@@ -53,13 +53,13 @@
     "name" : "获取研发用户信息"
   }, {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -81,13 +81,13 @@
     "name" : "获取用户信息"
   }, {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
     "logicHolder" : 3,
     "codeName" : "Deaction3",
@@ -110,14 +110,13 @@
     },
     "name" : "连接592"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "qa",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -128,6 +127,7 @@
       "logicType" : "GROUP",
       "id" : "924647000960597bb08bbb4f1ce22be5"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Deaction3"
@@ -138,14 +138,13 @@
     },
     "name" : "连接665"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "dev",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -156,6 +155,7 @@
       "logicType" : "GROUP",
       "id" : "93bb593cf57dfd9f293d9411f82e89ea"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Deaction2"
@@ -166,14 +166,13 @@
     },
     "name" : "连接9228"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "EQ",
         "paramValue" : "po",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -184,6 +183,7 @@
       "logicType" : "GROUP",
       "id" : "a18f2c732e273ed1e09eed7041783f3b"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Deaction4"
@@ -195,9 +195,9 @@
     "name" : "连接3532"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

@@ -31,8 +31,8 @@
     "engineType" : "TreeView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "TREE"
+      "name" : "TREE",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
@@ -42,13 +42,16 @@
     "key" : "PROJECT",
     "name" : "PROJECT"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "treeGridMode" : 0,
+    "enableRootSelect" : false,
+    "outputIconDefault" : true,
+    "enableSearchDefault" : false,
     "getPSDETreeNodeRSs" : [ {
       "getParentPSDETreeNode" : {
         "modelref" : true,
@@ -59,8 +62,33 @@
         "id" : "ChildDocLibModule"
       },
       "getParentPSDER1N" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json"
+        "getPSPickupDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "masterOrder" : -1,
+        "getPSPickupTextDEField" : {
+          "name" : "MODULENAME",
+          "codeName" : "Modulename"
+        },
+        "removeActionType" : -1,
+        "pickupDEFName" : "PARENT",
+        "masterRS" : 0,
+        "removeOrder" : 0,
+        "getMajorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+        },
+        "orderValue" : 100,
+        "getMinorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+        },
+        "codeName" : "PDocLibModule",
+        "logicName" : "父模块",
+        "dERType" : "DER1N",
+        "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
+        "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT"
       },
       "parentValueLevel" : 1,
       "getParentPSAppDEField" : {
@@ -105,8 +133,33 @@
         "id" : "DocLibModule"
       },
       "getParentPSDER1N" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
+        "getPSPickupDEField" : {
+          "name" : "ROOT",
+          "codeName" : "Root"
+        },
+        "masterOrder" : -1,
+        "getPSPickupTextDEField" : {
+          "name" : "DOCLIBNAME",
+          "codeName" : "Doclibname"
+        },
+        "removeActionType" : -1,
+        "pickupDEFName" : "ROOT",
+        "masterRS" : 0,
+        "removeOrder" : 0,
+        "getMajorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+        },
+        "orderValue" : 100,
+        "getMinorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+        },
+        "codeName" : "DocLib",
+        "logicName" : "文档分类",
+        "dERType" : "DER1N",
+        "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json",
+        "name" : "DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT"
       },
       "parentValueLevel" : 1,
       "getParentPSAppDEField" : {
@@ -126,8 +179,33 @@
         "id" : "ChildDocLibModule"
       },
       "getParentPSDER1N" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json"
+        "getPSPickupDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "masterOrder" : -1,
+        "getPSPickupTextDEField" : {
+          "name" : "MODULENAME",
+          "codeName" : "Modulename"
+        },
+        "removeActionType" : -1,
+        "pickupDEFName" : "PARENT",
+        "masterRS" : 0,
+        "removeOrder" : 0,
+        "getMajorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+        },
+        "orderValue" : 100,
+        "getMinorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+        },
+        "codeName" : "PDocLibModule",
+        "logicName" : "父模块",
+        "dERType" : "DER1N",
+        "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
+        "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT"
       },
       "parentValueLevel" : 1,
       "getParentPSAppDEField" : {
@@ -172,8 +250,32 @@
         "id" : "DocLibDoc"
       },
       "getParentPSDER1N" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
+        "getPSPickupDEField" : {
+          "name" : "LIB",
+          "codeName" : "Lib"
+        },
+        "masterOrder" : -1,
+        "getPSPickupTextDEField" : {
+          "name" : "LIBNAME",
+          "codeName" : "Libname"
+        },
+        "removeActionType" : -1,
+        "pickupDEFName" : "LIB",
+        "masterRS" : 0,
+        "removeOrder" : 0,
+        "getMajorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+        },
+        "orderValue" : 100,
+        "getMinorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+        },
+        "codeName" : "Zt_doclib",
+        "dERType" : "DER1N",
+        "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json",
+        "name" : "DER1N_ZT_DOC_ZT_DOCLIB_LIB"
       },
       "parentValueLevel" : 1,
       "getParentPSAppDEField" : {
@@ -197,20 +299,17 @@
       "searchMode" : 3,
       "name" : "文档库子模块 - 分类下文档"
     } ],
-    "enableRootSelect" : false,
-    "outputIconDefault" : true,
-    "enableSearchDefault" : false,
     "controlType" : "TREEVIEW",
     "getPSDETreeNodes" : [ {
       "text" : "附件库",
       "enableQuickCreate" : false,
       "rootNode" : false,
-      "appendPNodeId" : false,
-      "enableCheck" : false,
       "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : false,
+      "enableCheck" : false,
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -219,12 +318,12 @@
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "nodeType" : "Files",
       "disableSelect" : false,
+      "nodeType" : "Files",
       "enableQuickSearch" : false,
-      "expanded" : false,
       "counterMode" : 0,
       "treeNodeType" : "STATIC",
+      "expanded" : false,
       "name" : "附件库",
       "id" : "Files"
     }, {
@@ -249,12 +348,12 @@
       "maxSize" : -1,
       "enableQuickCreate" : false,
       "rootNode" : false,
-      "appendPNodeId" : false,
-      "enableCheck" : false,
       "hasPSDETreeNodeRSs" : false,
+      "appendPNodeId" : false,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : false,
+      "enableCheck" : false,
       "getPSDEContextMenu" : {
         "controlType" : "CONTEXTMENU",
         "getPSDEToolbarItems" : [ {
@@ -270,11 +369,11 @@
             },
             "frontProcessType" : "OTHER",
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf019@FontAwesome",
               "cssClass" : "fa fa-download"
             },
+            "timeout" : 60000,
             "codeName" : "ibzdownload",
             "caption" : "下载",
             "actionTarget" : "SINGLEKEY",
@@ -315,11 +414,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-remove"
             },
+            "timeout" : 60000,
             "codeName" : "delete",
             "caption" : "删除",
             "actionTarget" : "SINGLEKEY",
@@ -362,12 +461,12 @@
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "nodeType" : "File",
       "disableSelect" : false,
+      "nodeType" : "File",
       "enableQuickSearch" : false,
-      "expanded" : false,
       "counterMode" : 0,
       "treeNodeType" : "DE",
+      "expanded" : false,
       "name" : "附件",
       "id" : "File"
     }, {
@@ -392,12 +491,12 @@
       "maxSize" : -1,
       "enableQuickCreate" : false,
       "rootNode" : false,
-      "appendPNodeId" : false,
-      "enableCheck" : false,
       "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : false,
+      "enableCheck" : false,
       "getPSDEContextMenu" : {
         "controlType" : "CONTEXTMENU",
         "getPSDEToolbarItems" : [ {
@@ -418,11 +517,11 @@
             },
             "frontProcessType" : "WIZARD",
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
+            "timeout" : 60000,
             "codeName" : "edit",
             "caption" : "编辑",
             "actionTarget" : "SINGLEKEY",
@@ -452,6 +551,27 @@
           },
           "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "project",
+              "key" : "PROJECT",
+              "name" : "PROJECT"
+            }, {
+              "rawValue" : false,
+              "value" : "doclib",
+              "key" : "SRFROOT",
+              "name" : "SRFROOT"
+            }, {
+              "rawValue" : false,
+              "value" : "doclibmodule",
+              "key" : "SRFPARENT",
+              "name" : "SRFPARENT"
+            }, {
+              "rawValue" : false,
+              "value" : "product",
+              "key" : "PRODUCT",
+              "name" : "PRODUCT"
+            } ],
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
@@ -483,33 +603,12 @@
               "name" : "srfroot"
             } ],
             "frontProcessType" : "WIZARD",
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "project",
-              "key" : "PROJECT",
-              "name" : "PROJECT"
-            }, {
-              "rawValue" : false,
-              "value" : "doclib",
-              "key" : "SRFROOT",
-              "name" : "SRFROOT"
-            }, {
-              "rawValue" : false,
-              "value" : "doclibmodule",
-              "key" : "SRFPARENT",
-              "name" : "SRFPARENT"
-            }, {
-              "rawValue" : false,
-              "value" : "product",
-              "key" : "PRODUCT",
-              "name" : "PRODUCT"
-            } ],
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf023@FontAwesome",
               "cssClass" : "fa fa-lock"
             },
+            "timeout" : 60000,
             "codeName" : "WeiHuFenLei",
             "caption" : "维护分类",
             "actionTarget" : "SINGLEKEY",
@@ -550,11 +649,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
               "cssClass" : "fa fa-star-o"
             },
+            "timeout" : 60000,
             "codeName" : "Favorite",
             "caption" : "收藏",
             "actionTarget" : "SINGLEKEY",
@@ -596,11 +695,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf005@FontAwesome",
               "cssClass" : "fa fa-star"
             },
+            "timeout" : 60000,
             "codeName" : "NFavorite",
             "caption" : "取消收藏",
             "actionTarget" : "SINGLEKEY",
@@ -642,12 +741,12 @@
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "nodeType" : "DocLibModule",
       "disableSelect" : false,
+      "nodeType" : "DocLibModule",
       "enableQuickSearch" : false,
-      "expanded" : false,
       "counterMode" : 0,
       "treeNodeType" : "DE",
+      "expanded" : false,
       "name" : "文档库根模块",
       "id" : "DocLibModule"
     }, {
@@ -672,12 +771,12 @@
       "maxSize" : -1,
       "enableQuickCreate" : false,
       "rootNode" : false,
-      "appendPNodeId" : false,
-      "enableCheck" : false,
       "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : false,
+      "enableCheck" : false,
       "getPSDEContextMenu" : {
         "controlType" : "CONTEXTMENU",
         "getPSDEToolbarItems" : [ {
@@ -698,11 +797,11 @@
             },
             "frontProcessType" : "WIZARD",
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
+            "timeout" : 60000,
             "codeName" : "edit",
             "caption" : "编辑",
             "actionTarget" : "SINGLEKEY",
@@ -732,6 +831,27 @@
           },
           "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "project",
+              "key" : "PROJECT",
+              "name" : "PROJECT"
+            }, {
+              "rawValue" : false,
+              "value" : "doclib",
+              "key" : "SRFROOT",
+              "name" : "SRFROOT"
+            }, {
+              "rawValue" : false,
+              "value" : "doclibmodule",
+              "key" : "SRFPARENT",
+              "name" : "SRFPARENT"
+            }, {
+              "rawValue" : false,
+              "value" : "product",
+              "key" : "PRODUCT",
+              "name" : "PRODUCT"
+            } ],
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
@@ -763,33 +883,12 @@
               "name" : "srfroot"
             } ],
             "frontProcessType" : "WIZARD",
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "project",
-              "key" : "PROJECT",
-              "name" : "PROJECT"
-            }, {
-              "rawValue" : false,
-              "value" : "doclib",
-              "key" : "SRFROOT",
-              "name" : "SRFROOT"
-            }, {
-              "rawValue" : false,
-              "value" : "doclibmodule",
-              "key" : "SRFPARENT",
-              "name" : "SRFPARENT"
-            }, {
-              "rawValue" : false,
-              "value" : "product",
-              "key" : "PRODUCT",
-              "name" : "PRODUCT"
-            } ],
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf023@FontAwesome",
               "cssClass" : "fa fa-lock"
             },
+            "timeout" : 60000,
             "codeName" : "WeiHuFenLei",
             "caption" : "维护分类",
             "actionTarget" : "SINGLEKEY",
@@ -830,11 +929,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
               "cssClass" : "fa fa-star-o"
             },
+            "timeout" : 60000,
             "codeName" : "Favorite",
             "caption" : "收藏",
             "actionTarget" : "SINGLEKEY",
@@ -876,11 +975,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf005@FontAwesome",
               "cssClass" : "fa fa-star"
             },
+            "timeout" : 60000,
             "codeName" : "NFavorite",
             "caption" : "取消收藏",
             "actionTarget" : "SINGLEKEY",
@@ -922,12 +1021,12 @@
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "nodeType" : "ChildDocLibModule",
       "disableSelect" : false,
+      "nodeType" : "ChildDocLibModule",
       "enableQuickSearch" : false,
-      "expanded" : false,
       "counterMode" : 0,
       "treeNodeType" : "DE",
+      "expanded" : false,
       "name" : "文档库子模块",
       "id" : "ChildDocLibModule"
     }, {
@@ -952,12 +1051,12 @@
       "maxSize" : -1,
       "enableQuickCreate" : false,
       "rootNode" : false,
-      "appendPNodeId" : false,
-      "enableCheck" : false,
       "hasPSDETreeNodeRSs" : false,
+      "appendPNodeId" : false,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : false,
+      "enableCheck" : false,
       "getPSDEContextMenu" : {
         "controlType" : "CONTEXTMENU",
         "getPSDEToolbarItems" : [ {
@@ -978,11 +1077,11 @@
             },
             "frontProcessType" : "WIZARD",
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
+            "timeout" : 60000,
             "codeName" : "Edit",
             "caption" : "编辑",
             "actionTarget" : "SINGLEKEY",
@@ -1023,11 +1122,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-remove"
             },
+            "timeout" : 60000,
             "codeName" : "Delete",
             "caption" : "删除",
             "actionTarget" : "SINGLEKEY",
@@ -1070,11 +1169,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
               "cssClass" : "fa fa-star-o"
             },
+            "timeout" : 60000,
             "codeName" : "OnlyCollectDoc",
             "caption" : "收藏",
             "actionTarget" : "SINGLEKEY",
@@ -1116,11 +1215,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf005@FontAwesome",
               "cssClass" : "fa fa-star"
             },
+            "timeout" : 60000,
             "codeName" : "OnlyUnCollectDoc",
             "caption" : "取消收藏",
             "actionTarget" : "SINGLEKEY",
@@ -1163,11 +1262,11 @@
             "frontProcessType" : "WIZARD",
             "refreshMode" : 1,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf06e@FontAwesome",
               "cssClass" : "fa fa-eye"
             },
+            "timeout" : 60000,
             "codeName" : "DocInfo",
             "caption" : "查看文档详情",
             "actionTarget" : "SINGLEKEY",
@@ -1208,12 +1307,12 @@
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "nodeType" : "DocLibDoc",
       "disableSelect" : false,
+      "nodeType" : "DocLibDoc",
       "enableQuickSearch" : false,
-      "expanded" : false,
       "counterMode" : 0,
       "treeNodeType" : "DE",
+      "expanded" : false,
       "name" : "文档库下文档",
       "id" : "DocLibDoc"
     }, {
@@ -1238,12 +1337,12 @@
       "maxSize" : -1,
       "enableQuickCreate" : false,
       "rootNode" : false,
-      "appendPNodeId" : false,
-      "enableCheck" : false,
       "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : true,
+      "enableCheck" : false,
       "getPSDEContextMenu" : {
         "controlType" : "CONTEXTMENU",
         "getPSDEToolbarItems" : [ {
@@ -1275,11 +1374,11 @@
             } ],
             "frontProcessType" : "WIZARD",
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
+            "timeout" : 60000,
             "codeName" : "EditDocLib",
             "caption" : "编辑",
             "actionTarget" : "SINGLEKEY",
@@ -1309,6 +1408,22 @@
           },
           "noPrivDisplayMode" : 2,
           "getPSUIAction" : {
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "project",
+              "key" : "PROJECT",
+              "name" : "PROJECT"
+            }, {
+              "rawValue" : false,
+              "value" : "doclib",
+              "key" : "SRFROOT",
+              "name" : "SRFROOT"
+            }, {
+              "rawValue" : false,
+              "value" : "product",
+              "key" : "PRODUCT",
+              "name" : "PRODUCT"
+            } ],
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -1335,28 +1450,12 @@
               "name" : "srfroot"
             } ],
             "frontProcessType" : "WIZARD",
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "project",
-              "key" : "PROJECT",
-              "name" : "PROJECT"
-            }, {
-              "rawValue" : false,
-              "value" : "doclib",
-              "key" : "SRFROOT",
-              "name" : "SRFROOT"
-            }, {
-              "rawValue" : false,
-              "value" : "product",
-              "key" : "PRODUCT",
-              "name" : "PRODUCT"
-            } ],
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf023@FontAwesome",
               "cssClass" : "fa fa-lock"
             },
+            "timeout" : 60000,
             "codeName" : "WeiHuFenLei",
             "caption" : "维护分类",
             "actionTarget" : "SINGLEKEY",
@@ -1397,11 +1496,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf005@FontAwesome",
               "cssClass" : "fa fa-star"
             },
+            "timeout" : 60000,
             "codeName" : "UnCollect",
             "caption" : "取消收藏",
             "actionTarget" : "SINGLEKEY",
@@ -1443,11 +1542,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
               "cssClass" : "fa fa-star-o"
             },
+            "timeout" : 60000,
             "codeName" : "Collect",
             "caption" : "收藏",
             "actionTarget" : "SINGLEKEY",
@@ -1489,12 +1588,12 @@
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "nodeType" : "DocLib",
       "disableSelect" : false,
+      "nodeType" : "DocLib",
       "enableQuickSearch" : false,
-      "expanded" : true,
       "counterMode" : 0,
       "treeNodeType" : "DE",
+      "expanded" : true,
       "name" : "文档库",
       "id" : "DocLib"
     }, {
@@ -1519,12 +1618,12 @@
       "maxSize" : -1,
       "enableQuickCreate" : false,
       "rootNode" : false,
-      "appendPNodeId" : false,
-      "enableCheck" : false,
       "hasPSDETreeNodeRSs" : false,
+      "appendPNodeId" : false,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : false,
+      "enableCheck" : false,
       "getPSDEContextMenu" : {
         "controlType" : "CONTEXTMENU",
         "getPSDEToolbarItems" : [ {
@@ -1545,11 +1644,11 @@
             },
             "frontProcessType" : "WIZARD",
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
+            "timeout" : 60000,
             "codeName" : "Edit",
             "caption" : "编辑",
             "actionTarget" : "SINGLEKEY",
@@ -1590,11 +1689,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-remove"
             },
+            "timeout" : 60000,
             "codeName" : "Delete",
             "caption" : "删除",
             "actionTarget" : "SINGLEKEY",
@@ -1637,11 +1736,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
               "cssClass" : "fa fa-star-o"
             },
+            "timeout" : 60000,
             "codeName" : "OnlyCollectDoc",
             "caption" : "收藏",
             "actionTarget" : "SINGLEKEY",
@@ -1683,11 +1782,11 @@
             "refreshMode" : 1,
             "enableConfirm" : true,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf005@FontAwesome",
               "cssClass" : "fa fa-star"
             },
+            "timeout" : 60000,
             "codeName" : "OnlyUnCollectDoc",
             "caption" : "取消收藏",
             "actionTarget" : "SINGLEKEY",
@@ -1730,11 +1829,11 @@
             "frontProcessType" : "WIZARD",
             "refreshMode" : 1,
             "getNoPrivDisplayMode" : 2,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf06e@FontAwesome",
               "cssClass" : "fa fa-eye"
             },
+            "timeout" : 60000,
             "codeName" : "DocInfo",
             "caption" : "查看文档详情",
             "actionTarget" : "SINGLEKEY",
@@ -1775,12 +1874,12 @@
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "nodeType" : "ModuleDoc",
       "disableSelect" : false,
+      "nodeType" : "ModuleDoc",
       "enableQuickSearch" : false,
-      "expanded" : false,
       "counterMode" : 0,
       "treeNodeType" : "DE",
+      "expanded" : false,
       "name" : "分类下文档",
       "id" : "ModuleDoc"
     }, {
@@ -1788,22 +1887,22 @@
       "text" : "默认根节点",
       "enableQuickCreate" : false,
       "rootNode" : true,
-      "appendPNodeId" : false,
-      "enableCheck" : false,
       "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : false,
+      "enableCheck" : false,
       "enableNewData" : false,
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "nodeType" : "ROOT",
       "disableSelect" : false,
+      "nodeType" : "ROOT",
       "enableQuickSearch" : false,
-      "expanded" : false,
       "counterMode" : 0,
       "treeNodeType" : "STATIC",
+      "expanded" : false,
       "name" : "默认根节点",
       "id" : "ROOT"
     } ],
@@ -2138,11 +2237,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "edit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -2172,6 +2271,27 @@
         },
         "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "PROJECT",
+            "name" : "PROJECT"
+          }, {
+            "rawValue" : false,
+            "value" : "doclib",
+            "key" : "SRFROOT",
+            "name" : "SRFROOT"
+          }, {
+            "rawValue" : false,
+            "value" : "doclibmodule",
+            "key" : "SRFPARENT",
+            "name" : "SRFPARENT"
+          }, {
+            "rawValue" : false,
+            "value" : "product",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT"
+          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
@@ -2203,33 +2323,12 @@
             "name" : "srfroot"
           } ],
           "frontProcessType" : "WIZARD",
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "PROJECT",
-            "name" : "PROJECT"
-          }, {
-            "rawValue" : false,
-            "value" : "doclib",
-            "key" : "SRFROOT",
-            "name" : "SRFROOT"
-          }, {
-            "rawValue" : false,
-            "value" : "doclibmodule",
-            "key" : "SRFPARENT",
-            "name" : "SRFPARENT"
-          }, {
-            "rawValue" : false,
-            "value" : "product",
-            "key" : "PRODUCT",
-            "name" : "PRODUCT"
-          } ],
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf023@FontAwesome",
             "cssClass" : "fa fa-lock"
           },
+          "timeout" : 60000,
           "codeName" : "WeiHuFenLei",
           "caption" : "维护分类",
           "actionTarget" : "SINGLEKEY",
@@ -2270,11 +2369,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
           },
+          "timeout" : 60000,
           "codeName" : "Favorite",
           "caption" : "收藏",
           "actionTarget" : "SINGLEKEY",
@@ -2316,11 +2415,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
           },
+          "timeout" : 60000,
           "codeName" : "NFavorite",
           "caption" : "取消收藏",
           "actionTarget" : "SINGLEKEY",
@@ -2388,11 +2487,11 @@
           } ],
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "EditDocLib",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -2422,6 +2521,22 @@
         },
         "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "PROJECT",
+            "name" : "PROJECT"
+          }, {
+            "rawValue" : false,
+            "value" : "doclib",
+            "key" : "SRFROOT",
+            "name" : "SRFROOT"
+          }, {
+            "rawValue" : false,
+            "value" : "product",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT"
+          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -2448,28 +2563,12 @@
             "name" : "srfroot"
           } ],
           "frontProcessType" : "WIZARD",
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "PROJECT",
-            "name" : "PROJECT"
-          }, {
-            "rawValue" : false,
-            "value" : "doclib",
-            "key" : "SRFROOT",
-            "name" : "SRFROOT"
-          }, {
-            "rawValue" : false,
-            "value" : "product",
-            "key" : "PRODUCT",
-            "name" : "PRODUCT"
-          } ],
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf023@FontAwesome",
             "cssClass" : "fa fa-lock"
           },
+          "timeout" : 60000,
           "codeName" : "WeiHuFenLei",
           "caption" : "维护分类",
           "actionTarget" : "SINGLEKEY",
@@ -2510,11 +2609,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
           },
+          "timeout" : 60000,
           "codeName" : "UnCollect",
           "caption" : "取消收藏",
           "actionTarget" : "SINGLEKEY",
@@ -2556,11 +2655,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
           },
+          "timeout" : 60000,
           "codeName" : "Collect",
           "caption" : "收藏",
           "actionTarget" : "SINGLEKEY",
@@ -2617,11 +2716,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "Edit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -2662,11 +2761,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "timeout" : 60000,
           "codeName" : "Delete",
           "caption" : "删除",
           "actionTarget" : "SINGLEKEY",
@@ -2709,11 +2808,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
           },
+          "timeout" : 60000,
           "codeName" : "OnlyCollectDoc",
           "caption" : "收藏",
           "actionTarget" : "SINGLEKEY",
@@ -2755,11 +2854,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
           },
+          "timeout" : 60000,
           "codeName" : "OnlyUnCollectDoc",
           "caption" : "取消收藏",
           "actionTarget" : "SINGLEKEY",
@@ -2802,11 +2901,11 @@
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf06e@FontAwesome",
             "cssClass" : "fa fa-eye"
           },
+          "timeout" : 60000,
           "codeName" : "DocInfo",
           "caption" : "查看文档详情",
           "actionTarget" : "SINGLEKEY",
@@ -2862,11 +2961,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "edit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -2896,6 +2995,27 @@
         },
         "noPrivDisplayMode" : 2,
         "getPSUIAction" : {
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "PROJECT",
+            "name" : "PROJECT"
+          }, {
+            "rawValue" : false,
+            "value" : "doclib",
+            "key" : "SRFROOT",
+            "name" : "SRFROOT"
+          }, {
+            "rawValue" : false,
+            "value" : "doclibmodule",
+            "key" : "SRFPARENT",
+            "name" : "SRFPARENT"
+          }, {
+            "rawValue" : false,
+            "value" : "product",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT"
+          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
@@ -2927,33 +3047,12 @@
             "name" : "srfroot"
           } ],
           "frontProcessType" : "WIZARD",
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "PROJECT",
-            "name" : "PROJECT"
-          }, {
-            "rawValue" : false,
-            "value" : "doclib",
-            "key" : "SRFROOT",
-            "name" : "SRFROOT"
-          }, {
-            "rawValue" : false,
-            "value" : "doclibmodule",
-            "key" : "SRFPARENT",
-            "name" : "SRFPARENT"
-          }, {
-            "rawValue" : false,
-            "value" : "product",
-            "key" : "PRODUCT",
-            "name" : "PRODUCT"
-          } ],
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf023@FontAwesome",
             "cssClass" : "fa fa-lock"
           },
+          "timeout" : 60000,
           "codeName" : "WeiHuFenLei",
           "caption" : "维护分类",
           "actionTarget" : "SINGLEKEY",
@@ -2994,11 +3093,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
           },
+          "timeout" : 60000,
           "codeName" : "Favorite",
           "caption" : "收藏",
           "actionTarget" : "SINGLEKEY",
@@ -3040,11 +3139,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
           },
+          "timeout" : 60000,
           "codeName" : "NFavorite",
           "caption" : "取消收藏",
           "actionTarget" : "SINGLEKEY",
@@ -3101,11 +3200,11 @@
           },
           "frontProcessType" : "WIZARD",
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "Edit",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -3146,11 +3245,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "timeout" : 60000,
           "codeName" : "Delete",
           "caption" : "删除",
           "actionTarget" : "SINGLEKEY",
@@ -3193,11 +3292,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
           },
+          "timeout" : 60000,
           "codeName" : "OnlyCollectDoc",
           "caption" : "收藏",
           "actionTarget" : "SINGLEKEY",
@@ -3239,11 +3338,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf005@FontAwesome",
             "cssClass" : "fa fa-star"
           },
+          "timeout" : 60000,
           "codeName" : "OnlyUnCollectDoc",
           "caption" : "取消收藏",
           "actionTarget" : "SINGLEKEY",
@@ -3286,11 +3385,11 @@
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf06e@FontAwesome",
             "cssClass" : "fa fa-eye"
           },
+          "timeout" : 60000,
           "codeName" : "DocInfo",
           "caption" : "查看文档详情",
           "actionTarget" : "SINGLEKEY",
@@ -3341,11 +3440,11 @@
           },
           "frontProcessType" : "OTHER",
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf019@FontAwesome",
             "cssClass" : "fa fa-download"
           },
+          "timeout" : 60000,
           "codeName" : "ibzdownload",
           "caption" : "下载",
           "actionTarget" : "SINGLEKEY",
@@ -3386,11 +3485,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "timeout" : 60000,
           "codeName" : "delete",
           "caption" : "删除",
           "actionTarget" : "SINGLEKEY",

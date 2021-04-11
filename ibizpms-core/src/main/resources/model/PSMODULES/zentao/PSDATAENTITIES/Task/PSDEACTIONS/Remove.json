@@ -10,8 +10,6 @@
   } ],
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 21,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTRemove"
@@ -20,15 +18,17 @@
     "modelref" : true,
     "id" : "DELETE"
   },
+  "orderValue" : 21,
   "codeName" : "Remove",
   "logicName" : "Remove",
+  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "ID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json",
+  "name" : "Remove",
   "userTag4" : "remove",
-  "userCat" : "CAT1",
-  "name" : "Remove"
+  "userCat" : "CAT1"
 }

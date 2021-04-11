@@ -6,19 +6,19 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "orderValue" : 99999,
   "codeName" : "UnlinkPorjectMember",
   "logicName" : "移除项目成员",
+  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Team/PSDEACTIONS/UnlinkPorjectMember.json",
-  "userCat" : "CAT1",
-  "name" : "unlinkPorjectMember"
+  "name" : "unlinkPorjectMember",
+  "userCat" : "CAT1"
 }

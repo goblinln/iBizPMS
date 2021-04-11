@@ -6,19 +6,19 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "orderValue" : 99999,
   "codeName" : "ManagePorjectMembers",
   "logicName" : "项目团队管理",
+  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Team/PSDEACTIONS/ManagePorjectMembers.json",
-  "userCat" : "CAT1",
-  "name" : "managePorjectMembers"
+  "name" : "managePorjectMembers",
+  "userCat" : "CAT1"
 }

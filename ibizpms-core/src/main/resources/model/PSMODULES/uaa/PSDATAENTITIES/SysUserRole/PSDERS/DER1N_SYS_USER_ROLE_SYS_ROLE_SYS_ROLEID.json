@@ -3,11 +3,11 @@
     "name" : "SYS_ROLEID",
     "codeName" : "RoleId"
   },
+  "masterOrder" : 100,
   "getPSPickupTextDEField" : {
     "name" : "SYS_ROLENAME",
     "codeName" : "RoleName"
   },
-  "masterOrder" : 100,
   "removeActionType" : 1,
   "pickupDEFName" : "SYS_ROLEID",
   "masterRS" : 3,
@@ -17,13 +17,13 @@
     "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
   },
   "orderValue" : 100,
-  "codeName" : "Role",
-  "logicName" : "角色",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole.json"
   },
+  "codeName" : "Role",
+  "logicName" : "角色",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDERS/DER1N_SYS_USER_ROLE_SYS_ROLE_SYS_ROLEID.json",
   "name" : "DER1N_SYS_USER_ROLE_SYS_ROLE_SYS_ROLEID"
 }

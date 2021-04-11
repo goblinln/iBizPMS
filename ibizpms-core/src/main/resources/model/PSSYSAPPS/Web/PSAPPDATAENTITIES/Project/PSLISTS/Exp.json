@@ -1,4 +1,9 @@
 {
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "getPSAppDEField" : {
@@ -25,13 +30,8 @@
     "dataType" : 25,
     "name" : "srfmstag"
   } ],
-  "showHeader" : true,
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "enableRowEdit" : false,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
@@ -71,8 +71,8 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
-  "controlStyle" : "LISTVIEW",
   "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "controlStyle" : "LISTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSLISTS/Exp.json",
   "logicName" : "Exp",
   "modelid" : "2117568b84525320ec8ad1b8481bc912"

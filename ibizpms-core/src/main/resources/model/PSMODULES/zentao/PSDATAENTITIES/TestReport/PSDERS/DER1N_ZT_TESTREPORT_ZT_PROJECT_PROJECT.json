@@ -3,11 +3,11 @@
     "name" : "PROJECT",
     "codeName" : "Project"
   },
+  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PROJECTNAME",
     "codeName" : "ProjectName"
   },
-  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "PROJECT",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
   },
   "orderValue" : 100,
-  "codeName" : "ZTProject",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
   },
+  "codeName" : "ZTProject",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDERS/DER1N_ZT_TESTREPORT_ZT_PROJECT_PROJECT.json",
   "name" : "DER1N_ZT_TESTREPORT_ZT_PROJECT_PROJECT"
 }

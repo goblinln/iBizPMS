@@ -29,18 +29,18 @@
     "engineCat" : "VIEW",
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
-    "tabLayout" : "TOP",
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
     }, {
       "name" : "tabviewpanel2"
     } ],
+    "tabLayout" : "TOP",
     "controlType" : "TABEXPPANEL",
     "getPSControls" : [ {
       "controlType" : "TABVIEWPANEL",
@@ -81,24 +81,22 @@
           "engineType" : "EditView",
           "engineCat" : "VIEW",
           "getPSUIEngineParams" : [ {
-            "paramType" : "CTRL",
-            "name" : "FORM"
+            "name" : "FORM",
+            "paramType" : "CTRL"
           }, {
-            "paramType" : "VALUE",
             "name" : "P2K",
-            "value" : 0
+            "value" : 0,
+            "paramType" : "VALUE"
           } ],
           "name" : "engine"
         } ],
+        "viewStyle" : "STYLE2",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
         },
-        "viewStyle" : "STYLE2",
         "getPSControls" : [ {
           "enableAutoSave" : false,
-          "infoFormMode" : true,
-          "showFormNavBar" : false,
           "getCreatePSControlAction" : {
             "modelref" : true,
             "id" : "create"
@@ -123,6 +121,8 @@
             "modelref" : true,
             "id" : "loaddraftfrom"
           },
+          "infoFormMode" : true,
+          "showFormNavBar" : false,
           "controlType" : "FORM",
           "readOnly" : false,
           "getPSLayout" : {
@@ -138,7 +138,6 @@
                 "columnCount" : 24
               },
               "getPSDEFormDetails" : [ {
-                "inputTipClosable" : false,
                 "emptyCaption" : false,
                 "getPSEditor" : {
                   "enableLinkView" : false,
@@ -146,20 +145,21 @@
                   "editorType" : "SPAN",
                   "name" : "sys_update_logname"
                 },
+                "inputTipClosable" : false,
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
                   "name" : "SYS_UPDATE_LOGNAME",
                   "codeName" : "SysUpdateLogName"
                 },
                 "dataType" : 25,
+                "hidden" : false,
                 "allowEmpty" : true,
                 "caption" : "更新名称",
-                "labelWidth" : 100,
                 "enableCond" : 3,
                 "ignoreInput" : 0,
                 "labelPos" : "LEFT",
+                "labelWidth" : 100,
                 "showCaption" : true,
-                "hidden" : false,
                 "getPSLayoutPos" : {
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
@@ -169,7 +169,6 @@
                 "detailStyle" : "DEFAULT",
                 "name" : "sys_update_logname"
               }, {
-                "inputTipClosable" : false,
                 "emptyCaption" : false,
                 "getPSEditor" : {
                   "enableLinkView" : false,
@@ -177,20 +176,21 @@
                   "editorType" : "SPAN",
                   "name" : "update"
                 },
+                "inputTipClosable" : false,
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
                   "name" : "UPDATE",
                   "codeName" : "Update"
                 },
                 "dataType" : 5,
+                "hidden" : false,
                 "allowEmpty" : true,
                 "caption" : "更新日期",
-                "labelWidth" : 100,
                 "enableCond" : 3,
                 "ignoreInput" : 0,
                 "labelPos" : "LEFT",
+                "labelWidth" : 100,
                 "showCaption" : true,
-                "hidden" : false,
                 "getPSLayoutPos" : {
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
@@ -200,7 +200,6 @@
                 "detailStyle" : "DEFAULT",
                 "name" : "update"
               }, {
-                "inputTipClosable" : false,
                 "emptyCaption" : false,
                 "getPSEditor" : {
                   "enableLinkView" : false,
@@ -212,21 +211,22 @@
                   "editorType" : "SPAN",
                   "name" : "updatebranch"
                 },
+                "inputTipClosable" : false,
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
                   "name" : "UPDATEBRANCH",
                   "codeName" : "Updatebranch"
                 },
                 "dataType" : 25,
-                "allowEmpty" : true,
+                "hidden" : false,
                 "convertToCodeItemText" : true,
+                "allowEmpty" : true,
                 "caption" : "更新平台",
-                "labelWidth" : 100,
                 "enableCond" : 3,
                 "ignoreInput" : 3,
                 "labelPos" : "LEFT",
+                "labelWidth" : 100,
                 "showCaption" : true,
-                "hidden" : false,
                 "getPSLayoutPos" : {
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
@@ -236,7 +236,6 @@
                 "detailStyle" : "DEFAULT",
                 "name" : "updatebranch"
               }, {
-                "inputTipClosable" : false,
                 "emptyCaption" : false,
                 "getPSEditor" : {
                   "enableLinkView" : false,
@@ -248,21 +247,22 @@
                   "editorType" : "SPAN",
                   "name" : "latestupdate"
                 },
+                "inputTipClosable" : false,
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
                   "name" : "LATESTUPDATE",
                   "codeName" : "Latestupdate"
                 },
                 "dataType" : 25,
-                "allowEmpty" : true,
+                "hidden" : false,
                 "convertToCodeItemText" : true,
+                "allowEmpty" : true,
                 "caption" : "最新更新",
-                "labelWidth" : 100,
                 "enableCond" : 3,
                 "ignoreInput" : 3,
                 "labelPos" : "LEFT",
+                "labelWidth" : 100,
                 "showCaption" : true,
-                "hidden" : false,
                 "getPSLayoutPos" : {
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
@@ -272,14 +272,13 @@
                 "detailStyle" : "DEFAULT",
                 "name" : "latestupdate"
               }, {
-                "inputTipClosable" : false,
                 "emptyCaption" : false,
                 "getPSEditor" : {
+                  "editorType" : "HTMLEDITOR",
                   "getPSSysPFPlugin" : {
                     "pluginType" : "EDITOR_CUSTOMSTYLE",
                     "pluginCode" : "INFO"
                   },
-                  "editorType" : "HTMLEDITOR",
                   "editorParams" : {
                     "uploadparams" : "{objecttype:\"updatelog\",objectid: 0,version:\"editor\"}",
                     "exportparams" : "{objecttype:\"updatelog\",objectid: 0,version:\"editor\"}"
@@ -287,20 +286,21 @@
                   "editorStyle" : "INFO",
                   "name" : "updesc"
                 },
+                "inputTipClosable" : false,
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
                   "name" : "UPDESC",
                   "codeName" : "Updesc"
                 },
                 "dataType" : 21,
+                "hidden" : false,
                 "allowEmpty" : true,
                 "caption" : "更新说明",
-                "labelWidth" : 100,
                 "enableCond" : 3,
                 "ignoreInput" : 0,
                 "labelPos" : "LEFT",
+                "labelWidth" : 100,
                 "showCaption" : true,
-                "hidden" : false,
                 "getPSLayoutPos" : {
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
@@ -340,7 +340,6 @@
                 "columnCount" : 24
               },
               "getPSDEFormDetails" : [ {
-                "inputTipClosable" : false,
                 "emptyCaption" : false,
                 "getPSEditor" : {
                   "enableLinkView" : false,
@@ -352,21 +351,22 @@
                   "editorType" : "SPAN",
                   "name" : "createman"
                 },
+                "inputTipClosable" : false,
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
                   "name" : "CREATEMAN",
                   "codeName" : "CreateMan"
                 },
                 "dataType" : 25,
-                "allowEmpty" : true,
+                "hidden" : false,
                 "convertToCodeItemText" : true,
+                "allowEmpty" : true,
                 "caption" : "建立人",
-                "labelWidth" : 100,
                 "enableCond" : 3,
                 "ignoreInput" : 3,
                 "labelPos" : "LEFT",
+                "labelWidth" : 100,
                 "showCaption" : true,
-                "hidden" : false,
                 "getPSLayoutPos" : {
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
@@ -376,7 +376,6 @@
                 "detailStyle" : "DEFAULT",
                 "name" : "createman"
               }, {
-                "inputTipClosable" : false,
                 "emptyCaption" : false,
                 "getPSEditor" : {
                   "enableLinkView" : false,
@@ -384,20 +383,21 @@
                   "editorType" : "SPAN",
                   "name" : "createdate"
                 },
+                "inputTipClosable" : false,
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
                   "name" : "CREATEDATE",
                   "codeName" : "CreateDate"
                 },
                 "dataType" : 5,
+                "hidden" : false,
                 "allowEmpty" : true,
                 "caption" : "建立时间",
-                "labelWidth" : 100,
                 "enableCond" : 3,
                 "ignoreInput" : 3,
                 "labelPos" : "LEFT",
+                "labelWidth" : 100,
                 "showCaption" : true,
-                "hidden" : false,
                 "getPSLayoutPos" : {
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
@@ -407,7 +407,6 @@
                 "detailStyle" : "DEFAULT",
                 "name" : "createdate"
               }, {
-                "inputTipClosable" : false,
                 "emptyCaption" : false,
                 "getPSEditor" : {
                   "enableLinkView" : false,
@@ -419,21 +418,22 @@
                   "editorType" : "SPAN",
                   "name" : "updateman"
                 },
+                "inputTipClosable" : false,
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
                   "name" : "UPDATEMAN",
                   "codeName" : "UpdateMan"
                 },
                 "dataType" : 25,
-                "allowEmpty" : true,
+                "hidden" : false,
                 "convertToCodeItemText" : true,
+                "allowEmpty" : true,
                 "caption" : "更新人",
-                "labelWidth" : 100,
                 "enableCond" : 3,
                 "ignoreInput" : 3,
                 "labelPos" : "LEFT",
+                "labelWidth" : 100,
                 "showCaption" : true,
-                "hidden" : false,
                 "getPSLayoutPos" : {
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
@@ -443,7 +443,6 @@
                 "detailStyle" : "DEFAULT",
                 "name" : "updateman"
               }, {
-                "inputTipClosable" : false,
                 "emptyCaption" : false,
                 "getPSEditor" : {
                   "enableLinkView" : false,
@@ -451,20 +450,21 @@
                   "editorType" : "SPAN",
                   "name" : "updatedate"
                 },
+                "inputTipClosable" : false,
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
                   "name" : "UPDATEDATE",
                   "codeName" : "UpdateDate"
                 },
                 "dataType" : 5,
+                "hidden" : false,
                 "allowEmpty" : true,
                 "caption" : "更新时间",
-                "labelWidth" : 100,
                 "enableCond" : 3,
                 "ignoreInput" : 3,
                 "labelPos" : "LEFT",
+                "labelWidth" : 100,
                 "showCaption" : true,
-                "hidden" : false,
                 "getPSLayoutPos" : {
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"

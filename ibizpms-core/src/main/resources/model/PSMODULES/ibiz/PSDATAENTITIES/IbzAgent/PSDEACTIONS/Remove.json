@@ -6,14 +6,14 @@
   "builtinAction" : true,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 21,
-  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
+  "orderValue" : 21,
   "codeName" : "Remove",
   "logicName" : "Remove",
+  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "IBZ_AGENTID",

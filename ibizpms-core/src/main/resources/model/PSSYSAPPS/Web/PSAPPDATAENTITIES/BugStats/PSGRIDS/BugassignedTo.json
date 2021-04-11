@@ -109,20 +109,20 @@
     "name" : "ASSIGNEDTO",
     "codeName" : "AssignedTo"
   },
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "姓名",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "assignedto",
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "dataItemName" : "assignedto",
     "cLConvertMode" : "FRONT",
     "groupItem" : "GROUP1",
     "noPrivDisplayMode" : 1,
@@ -135,7 +135,6 @@
     "widthUnit" : "PX",
     "name" : "assignedto"
   }, {
-    "excelCaption" : "产品",
     "linkValueItem" : "product",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -143,11 +142,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "产品",
+    "dataItemName" : "productname",
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
-    "dataItemName" : "productname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -160,11 +160,11 @@
     "name" : "productname"
   }, {
     "excelCaption" : "Bug",
+    "dataItemName" : "bugcnt",
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
-    "dataItemName" : "bugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -177,11 +177,11 @@
     "name" : "bugcnt"
   }, {
     "excelCaption" : "总计",
+    "dataItemName" : "bugtotal",
     "getPSAppDEField" : {
       "name" : "BUGTOTAL",
       "codeName" : "Bugtotal"
     },
-    "dataItemName" : "bugtotal",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -197,11 +197,11 @@
   "enableGroup" : true,
   "hideHeader" : false,
   "forceFit" : false,
-  "pagingSize" : 100,
   "getGroupPSCodeList" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
   },
+  "pagingSize" : 100,
   "aggMode" : "NONE",
   "groupMode" : "AUTO",
   "sortMode" : "REMOTE",

@@ -3,20 +3,20 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
   },
-  "codeListType" : "STATIC",
-  "dynaInstMode" : 1,
   "getPSCodeItems" : [ {
+    "value" : "ALL",
     "data" : "{}",
     "codeName" : "All",
     "text" : "所有",
-    "default" : true,
-    "value" : "ALL"
+    "default" : true
   }, {
+    "value" : "TOME",
     "data" : "{\"n_status1_eq\":\"storychange\"}",
     "codeName" : "Tome",
-    "text" : "需求变动",
-    "value" : "TOME"
+    "text" : "需求变动"
   } ],
+  "codeListType" : "STATIC",
+  "dynaInstMode" : 1,
   "codeName" : "CaseQuickpachet",
   "emptyText" : "未定义",
   "enableCache" : true,

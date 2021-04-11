@@ -13,13 +13,13 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
   },
   "orderValue" : 100,
-  "codeName" : "ZTPRODUCT",
-  "logicName" : "产品",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats.json"
   },
+  "codeName" : "ZTPRODUCT",
+  "logicName" : "产品",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats/PSDERS/DER1N_IBZ_CASESTATS_ZT_PRODUCT_PRODUCT.json",
   "name" : "DER1N_IBZ_CASESTATS_ZT_PRODUCT_PRODUCT"
 }

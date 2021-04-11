@@ -7,15 +7,15 @@
   "tempDataMode" : 2,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 32,
-  "extendMode" : 0,
-  "enableTempData" : true,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
+  "orderValue" : 32,
   "codeName" : "GetTemp",
   "logicName" : "GetTemp",
+  "extendMode" : 0,
+  "enableTempData" : true,
   "actionMode" : "READ",
   "actionType" : "BUILTIN",
   "requestField" : "IBZ_PLANTEMPLETDETAILID",

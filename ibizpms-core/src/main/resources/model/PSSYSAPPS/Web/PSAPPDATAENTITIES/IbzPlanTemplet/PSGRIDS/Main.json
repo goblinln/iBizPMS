@@ -7,11 +7,11 @@
     "dataType" : 25,
     "name" : "ibz_plantempletname"
   }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "UPDATEDATE",
       "codeName" : "UpdateDate"
     },
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "dataType" : 5,
     "name" : "updatedate"
   }, {
@@ -74,16 +74,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "模板名称",
+    "dataItemName" : "ibz_plantempletname",
     "getPSAppDEField" : {
       "name" : "IBZ_PLANTEMPLETNAME",
       "codeName" : "IbzPlanTempletName"
     },
-    "dataItemName" : "ibz_plantempletname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -96,11 +96,11 @@
     "name" : "ibz_plantempletname"
   }, {
     "excelCaption" : "更新时间",
+    "dataItemName" : "updatedate",
     "getPSAppDEField" : {
       "name" : "UPDATEDATE",
       "codeName" : "UpdateDate"
     },
-    "dataItemName" : "updatedate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,

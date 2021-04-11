@@ -96,6 +96,7 @@ public interface ITaskService extends IService<Task> {
     Page<Task> searchAssignedToMyTaskPc(TaskSearchContext context);
     Page<Task> searchBugTask(TaskSearchContext context);
     Page<Task> searchByModule(TaskSearchContext context);
+    Page<Task> searchChildDefault(TaskSearchContext context);
     Page<Task> searchChildTask(TaskSearchContext context);
     Page<Task> searchChildTaskTree(TaskSearchContext context);
     Page<Task> searchCurFinishTask(TaskSearchContext context);

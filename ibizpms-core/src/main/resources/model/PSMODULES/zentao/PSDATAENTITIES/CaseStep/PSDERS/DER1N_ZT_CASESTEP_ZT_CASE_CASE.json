@@ -3,8 +3,8 @@
     "name" : "CASE",
     "codeName" : "IBizCase"
   },
-  "nestedRS" : true,
   "masterOrder" : -1,
+  "nestedRS" : true,
   "removeActionType" : -1,
   "pickupDEFName" : "CASE",
   "masterRS" : 8,
@@ -14,12 +14,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
   },
   "orderValue" : 100,
-  "codeName" : "ZTCase",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
   },
+  "codeName" : "ZTCase",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json",
   "name" : "DER1N_ZT_CASESTEP_ZT_CASE_CASE"
 }

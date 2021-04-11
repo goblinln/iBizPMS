@@ -1,4 +1,9 @@
 {
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "getFrontPSCodeList" : {
@@ -17,8 +22,8 @@
     "dataType" : 25,
     "name" : "type"
   }, {
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
+    "format" : "YYYY-MM-DD",
     "name" : "end"
   }, {
     "dataType" : 25,
@@ -33,17 +38,12 @@
     "dataType" : 25,
     "name" : "productlifename"
   }, {
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
+    "format" : "YYYY-MM-DD",
     "name" : "begin"
   } ],
-  "showHeader" : true,
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "enableRowEdit" : false,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "BEGIN",
     "codeName" : "Begin"

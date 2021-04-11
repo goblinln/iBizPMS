@@ -1,11 +1,16 @@
 {
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
     "name" : "objecttype"
   }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "dataType" : 5,
+    "format" : "YYYY-MM-DD HH:mm:ss",
     "name" : "date"
   }, {
     "dataType" : 1,
@@ -47,13 +52,8 @@
     "dataType" : 25,
     "name" : "read"
   } ],
-  "showHeader" : true,
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "enableRowEdit" : false,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"

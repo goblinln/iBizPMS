@@ -2,10 +2,9 @@
   "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
     "dataType" : "TEXT",
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "85c749ab97640da3577b2f04abbad14d",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -16,8 +15,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "IBIZPRO_PROJECTDAILYNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -46,18 +45,20 @@
       "autoIncrement" : false,
       "name" : "IBIZPRO_PROJECTDAILYNAME"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "85c749ab97640da3577b2f04abbad14d",
     "codeName" : "IbizproProjectDailyName",
     "logicName" : "项目日报名称",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "IBIZPRO_PROJECTDAILYNAME"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 2000,
+    "valueFormat" : "%1$s",
+    "deployId" : "dfef8a65beb34c9d2ff01c2ee602e396",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -68,8 +69,8 @@
           "includeMaxValue" : true,
           "maxValue" : 2000,
           "dEFName" : "TASKS",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[2000]",
           "name" : "默认字符串长度"
@@ -98,18 +99,17 @@
       "autoIncrement" : false,
       "name" : "TASKS"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "dfef8a65beb34c9d2ff01c2ee602e396",
     "codeName" : "Tasks",
     "logicName" : "任务",
     "stringLength" : 2000,
     "stdDataType" : 25,
-    "length" : 2000,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TASKS"
   }, {
     "dataType" : "DATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "b20fef947f646eb2ab84f1678bcb1a5e",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -138,16 +138,17 @@
       "autoIncrement" : false,
       "name" : "BEGIN"
     } ],
-    "valueFormat" : "%1$tY-%1$tm-%1$td",
-    "deployId" : "b20fef947f646eb2ab84f1678bcb1a5e",
     "codeName" : "Begin",
     "logicName" : "开始日期",
     "stdDataType" : 5,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "BEGIN"
   }, {
     "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "e5cdcf1c0720718187ef8212bd5d9f3f",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -178,18 +179,17 @@
       "autoIncrement" : false,
       "name" : "CREATEDATE"
     } ],
-    "predefinedType" : "CREATEDATE",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "e5cdcf1c0720718187ef8212bd5d9f3f",
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
-    "length" : 8,
+    "predefinedType" : "CREATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CREATEDATE"
   }, {
     "dataType" : "DATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "48e1ced140b0d6906625d731d92051ae",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -218,20 +218,21 @@
       "autoIncrement" : false,
       "name" : "END"
     } ],
-    "valueFormat" : "%1$tY-%1$tm-%1$td",
-    "deployId" : "48e1ced140b0d6906625d731d92051ae",
     "codeName" : "End",
     "logicName" : "结束日期",
     "stdDataType" : 5,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "END"
   }, {
+    "dataType" : "TEXT",
+    "length" : 60,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "3e7c3c73c79d6fa3daa5ffff542113a1",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -244,8 +245,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "CREATEMAN",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -274,19 +275,18 @@
       "autoIncrement" : false,
       "name" : "CREATEMAN"
     } ],
-    "predefinedType" : "CREATEMAN",
-    "valueFormat" : "%1$s",
-    "deployId" : "3e7c3c73c79d6fa3daa5ffff542113a1",
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "stringLength" : 60,
     "stdDataType" : 25,
-    "length" : 60,
+    "predefinedType" : "CREATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CREATEMAN"
   }, {
     "dataType" : "DATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "37fcea2a219eef3c8cf583d6f834df7b",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -315,17 +315,17 @@
       "autoIncrement" : false,
       "name" : "DATE"
     } ],
-    "valueFormat" : "%1$tY-%1$tm-%1$td",
-    "deployId" : "37fcea2a219eef3c8cf583d6f834df7b",
     "codeName" : "Date",
     "logicName" : "日期",
     "stdDataType" : 5,
-    "name" : "DATE"
-  }, {
-    "precision" : 2,
-    "dataType" : "FLOAT",
     "importOrder" : 1000,
     "dEFType" : 1,
+    "name" : "DATE"
+  }, {
+    "dataType" : "FLOAT",
+    "precision" : 2,
+    "valueFormat" : "%1$s",
+    "deployId" : "9df0bafaf79244a04a9a9f9ea3b8be68",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -354,20 +354,21 @@
       "autoIncrement" : false,
       "name" : "TOTALESTIMATES"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "9df0bafaf79244a04a9a9f9ea3b8be68",
     "codeName" : "Totalestimates",
     "logicName" : "总工时",
     "stdDataType" : 7,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TOTALESTIMATES"
   }, {
+    "dataType" : "TEXT",
+    "length" : 60,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "dfe8603da6e3ecf2a36acb3d0873018b",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -380,8 +381,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "UPDATEMAN",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -410,23 +411,23 @@
       "autoIncrement" : false,
       "name" : "UPDATEMAN"
     } ],
-    "predefinedType" : "UPDATEMAN",
-    "valueFormat" : "%1$s",
-    "deployId" : "dfe8603da6e3ecf2a36acb3d0873018b",
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "stringLength" : 60,
     "stdDataType" : 25,
-    "length" : 60,
+    "predefinedType" : "UPDATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "UPDATEMAN"
   }, {
+    "dataType" : "TEXT",
+    "length" : 100,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "bc3f7c09bdbed8fd91810c6d635c2eae",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -437,8 +438,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PM",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -467,18 +468,18 @@
       "autoIncrement" : false,
       "name" : "PM"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "bc3f7c09bdbed8fd91810c6d635c2eae",
     "codeName" : "PM",
     "logicName" : "项目负责人",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PM"
   }, {
     "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "d5b74b920f2459d9a97b1c7948b0d0ef",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -509,19 +510,18 @@
       "autoIncrement" : false,
       "name" : "UPDATEDATE"
     } ],
-    "predefinedType" : "UPDATEDATE",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "d5b74b920f2459d9a97b1c7948b0d0ef",
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
-    "length" : 8,
+    "predefinedType" : "UPDATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "UPDATEDATE"
   }, {
     "dataType" : "GUID",
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "716abe5c10a7189c3cdf8e494bde6ef1",
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -534,8 +534,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "IBIZPRO_PROJECTDAILYID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -565,13 +565,13 @@
       "autoIncrement" : false,
       "name" : "IBIZPRO_PROJECTDAILYID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "716abe5c10a7189c3cdf8e494bde6ef1",
     "codeName" : "IbizproProjectDailyId",
     "logicName" : "项目日报标识",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "IBIZPRO_PROJECTDAILYID"
   }, {
     "phisicalDEField" : false,
@@ -586,8 +586,8 @@
       "codeName" : "Name"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 90,
+    "deployId" : "ff3462abfe3595f1f2abd31f591ba345",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -598,8 +598,8 @@
           "includeMaxValue" : true,
           "maxValue" : 90,
           "dEFName" : "PROJECTNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[90]",
           "name" : "默认字符串长度"
@@ -628,12 +628,12 @@
       "autoIncrement" : false,
       "name" : "PROJECTNAME"
     } ],
-    "deployId" : "ff3462abfe3595f1f2abd31f591ba345",
     "codeName" : "ProjectName",
     "logicName" : "项目名称",
     "stringLength" : 90,
     "stdDataType" : 25,
-    "length" : 90,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "PROJECTNAME"
   }, {
     "getPSDER" : {
@@ -647,8 +647,8 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "deployId" : "84d4c45e4729df7bd7a9682935f4c425",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -677,31 +677,35 @@
       "autoIncrement" : false,
       "name" : "PROJECT"
     } ],
-    "deployId" : "84d4c45e4729df7bd7a9682935f4c425",
     "codeName" : "Project",
     "logicName" : "项目编号",
     "stdDataType" : 1,
-    "length" : 8,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PROJECT"
+  } ],
+  "getMainStatePSDEFields" : [ {
+    "name" : "IBIZPRO_PROJECTDAILYID",
+    "codeName" : "IbizproProjectDailyId"
   } ],
   "getAllPSDEDataSets" : [ {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据集",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
+    "pageSize" : -1,
     "name" : "DEFAULT"
   } ],
   "getAllPSDEActions" : [ {
@@ -735,9 +739,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "数据查询",
+    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -746,31 +750,21 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
+  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "getMainStatePSDEFields" : [ {
-    "name" : "IBIZPRO_PROJECTDAILYID",
-    "codeName" : "IbizproProjectDailyId"
-  } ],
-  "enableUIActions" : 15,
   "orderValue" : 99999,
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "serviceCodeName" : "IbizproProjectDaily",
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -785,16 +779,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "9dc12c24ebb4d9c730902e49b4d21ec2",
+  "enableSQLStorage" : true,
   "dynaInstMode" : 1,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,
-  "dSLink" : "DEFAULT",
-  "deployId" : "9dc12c24ebb4d9c730902e49b4d21ec2",
+  "virtualMode" : 0,
   "codeName" : "IbizproProjectDaily",
   "logicName" : "项目日报",
   "tableName" : "T_IBIZPRO_PROJECTDAILY",
-  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -803,8 +797,14 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
+  "enableRemove" : true,
+  "serviceCodeName" : "IbizproProjectDaily",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

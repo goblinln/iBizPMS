@@ -10,8 +10,8 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "rawItemHeight" : -1.0,
       "rawItemWidth" : -1.0,
+      "rawItemHeight" : -1.0,
       "contentType" : "RAW",
       "rawContent" : "<div style=\" padding-top: 6px;  padding-left: 20px;\"> 筛选条件： </div>",
       "getPSLayoutPos" : {
@@ -26,22 +26,22 @@
       "showCaption" : true,
       "name" : "rawitem1"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "CHECKBOX",
         "name" : "closed"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "dataType" : 25,
+      "hidden" : false,
       "allowEmpty" : true,
       "caption" : "关闭产品",
-      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "RIGHT",
+      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 2,
         "colLG" : 3,
@@ -52,22 +52,22 @@
       "detailStyle" : "DEFAULT",
       "name" : "closed"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "CHECKBOX",
         "name" : "expired"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "dataType" : 25,
+      "hidden" : false,
       "allowEmpty" : true,
       "caption" : "过期计划",
-      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "RIGHT",
+      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 2,
         "colLG" : 3,
@@ -78,7 +78,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "expired"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -89,21 +88,22 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "n_id_eq"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
       "dataType" : 1,
-      "allowEmpty" : true,
+      "hidden" : false,
       "needCodeListConfig" : true,
+      "allowEmpty" : true,
       "caption" : "产品",
-      "labelWidth" : 50,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 50,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,
@@ -114,7 +114,6 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_id_eq"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -122,17 +121,17 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanCodeList.json"
         },
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "n_id_eq",
-          "key" : "n_product_eq",
-          "name" : "n_product_eq"
-        } ],
         "getPSNavigateContexts" : [ {
           "rawValue" : false,
           "value" : "n_id_eq",
           "key" : "N_PRODUCT_EQ",
           "name" : "N_PRODUCT_EQ"
+        } ],
+        "getPSNavigateParams" : [ {
+          "rawValue" : false,
+          "value" : "n_id_eq",
+          "key" : "n_product_eq",
+          "name" : "n_product_eq"
         } ],
         "editorType" : "DROPDOWNLIST",
         "editorParams" : {
@@ -141,21 +140,22 @@
         },
         "name" : "n_plan_eq"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "PLAN",
         "codeName" : "Plan"
       },
       "dataType" : 1,
-      "allowEmpty" : true,
+      "hidden" : false,
       "needCodeListConfig" : true,
+      "allowEmpty" : true,
       "caption" : "计划",
-      "labelWidth" : 50,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 50,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 6,

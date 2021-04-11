@@ -35,11 +35,11 @@
     "dataType" : 9,
     "name" : "taskestimate"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "TASKDEADLINE",
       "codeName" : "Taskdeadline"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "taskdeadline"
   }, {
@@ -64,11 +64,11 @@
     "dataType" : 25,
     "name" : "projectname"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "TASKESTSTARTED",
       "codeName" : "Taskeststarted"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "taskeststarted"
   }, {
@@ -94,11 +94,11 @@
     "dataType" : 1,
     "name" : "srfkey"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "TASKFINISHEDDATE",
       "codeName" : "Taskfinisheddate"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "taskfinisheddate"
   }, {
@@ -109,11 +109,11 @@
     "dataType" : 9,
     "name" : "totalconsumed"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "TASKREALSTART",
       "codeName" : "Taskrealstart"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "taskrealstart"
   }, {
@@ -168,20 +168,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "完成者",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
+    "dataItemName" : "finishedby",
     "getPSAppDEField" : {
       "name" : "FINISHEDBY",
       "codeName" : "FinishedBy"
     },
-    "dataItemName" : "finishedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -194,11 +194,11 @@
     "name" : "finishedby"
   }, {
     "excelCaption" : "所属项目",
+    "dataItemName" : "projectname",
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataItemName" : "projectname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -211,11 +211,11 @@
     "name" : "projectname"
   }, {
     "excelCaption" : "编号",
+    "dataItemName" : "taskid",
     "getPSAppDEField" : {
       "name" : "TASKID",
       "codeName" : "Taskid"
     },
-    "dataItemName" : "taskid",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -228,11 +228,11 @@
     "name" : "taskid"
   }, {
     "excelCaption" : "任务名称",
+    "dataItemName" : "taskname",
     "getPSAppDEField" : {
       "name" : "TASKNAME",
       "codeName" : "TaskName"
     },
-    "dataItemName" : "taskname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -249,11 +249,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
     },
+    "dataItemName" : "taskpri",
     "getPSAppDEField" : {
       "name" : "TASKPRI",
       "codeName" : "Taskpri"
     },
-    "dataItemName" : "taskpri",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -266,11 +266,11 @@
     "name" : "taskpri"
   }, {
     "excelCaption" : "预计开始",
+    "dataItemName" : "taskeststarted",
     "getPSAppDEField" : {
       "name" : "TASKESTSTARTED",
       "codeName" : "Taskeststarted"
     },
-    "dataItemName" : "taskeststarted",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -284,11 +284,11 @@
     "name" : "taskeststarted"
   }, {
     "excelCaption" : "实际开始",
+    "dataItemName" : "taskrealstart",
     "getPSAppDEField" : {
       "name" : "TASKREALSTART",
       "codeName" : "Taskrealstart"
     },
-    "dataItemName" : "taskrealstart",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -302,11 +302,11 @@
     "name" : "taskrealstart"
   }, {
     "excelCaption" : "截至日期",
+    "dataItemName" : "taskdeadline",
     "getPSAppDEField" : {
       "name" : "TASKDEADLINE",
       "codeName" : "Taskdeadline"
     },
-    "dataItemName" : "taskdeadline",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -320,11 +320,11 @@
     "name" : "taskdeadline"
   }, {
     "excelCaption" : "实际完成",
+    "dataItemName" : "taskfinisheddate",
     "getPSAppDEField" : {
       "name" : "TASKFINISHEDDATE",
       "codeName" : "Taskfinisheddate"
     },
-    "dataItemName" : "taskfinisheddate",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -338,11 +338,11 @@
     "name" : "taskfinisheddate"
   }, {
     "excelCaption" : "延期",
+    "dataItemName" : "taskdelay",
     "getPSAppDEField" : {
       "name" : "TASKDELAY",
       "codeName" : "Taskdelay"
     },
-    "dataItemName" : "taskdelay",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -355,11 +355,11 @@
     "name" : "taskdelay"
   }, {
     "excelCaption" : "最初预计",
+    "dataItemName" : "taskestimate",
     "getPSAppDEField" : {
       "name" : "TASKESTIMATE",
       "codeName" : "Taskestimate"
     },
-    "dataItemName" : "taskestimate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -372,11 +372,11 @@
     "name" : "taskestimate"
   }, {
     "excelCaption" : "任务总消耗",
+    "dataItemName" : "totalconsumed",
     "getPSAppDEField" : {
       "name" : "TOTALCONSUMED",
       "codeName" : "TotalConsumed"
     },
-    "dataItemName" : "totalconsumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -389,11 +389,11 @@
     "name" : "totalconsumed"
   }, {
     "excelCaption" : "总任务数",
+    "dataItemName" : "taskcnt",
     "getPSAppDEField" : {
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
-    "dataItemName" : "taskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -406,11 +406,11 @@
     "name" : "taskcnt"
   }, {
     "excelCaption" : "项目总消耗",
+    "dataItemName" : "projectconsumed",
     "getPSAppDEField" : {
       "name" : "PROJECTCONSUMED",
       "codeName" : "Projectconsumed"
     },
-    "dataItemName" : "projectconsumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -423,11 +423,11 @@
     "name" : "projectconsumed"
   }, {
     "excelCaption" : "用户总消耗",
+    "dataItemName" : "userconsumed",
     "getPSAppDEField" : {
       "name" : "USERCONSUMED",
       "codeName" : "Userconsumed"
     },
-    "dataItemName" : "userconsumed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

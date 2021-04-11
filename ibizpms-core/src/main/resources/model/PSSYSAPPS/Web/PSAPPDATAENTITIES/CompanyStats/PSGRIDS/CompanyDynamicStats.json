@@ -1,10 +1,10 @@
 {
   "getPSDEGridDataItems" : [ {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "ZTDATE",
       "codeName" : "Ztdate"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "ztdate"
   }, {
@@ -130,20 +130,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ZTDATE",
     "codeName" : "Ztdate"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "日期",
+    "dataItemName" : "ztdate",
     "getPSAppDEField" : {
       "name" : "ZTDATE",
       "codeName" : "Ztdate"
     },
-    "dataItemName" : "ztdate",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -157,11 +157,11 @@
     "name" : "ztdate"
   }, {
     "excelCaption" : "登录次数",
+    "dataItemName" : "logincnt",
     "getPSAppDEField" : {
       "name" : "LOGINCNT",
       "codeName" : "Logincnt"
     },
-    "dataItemName" : "logincnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -175,11 +175,11 @@
     "name" : "logincnt"
   }, {
     "excelCaption" : "日志工时",
+    "dataItemName" : "loghours",
     "getPSAppDEField" : {
       "name" : "LOGHOURS",
       "codeName" : "Loghours"
     },
-    "dataItemName" : "loghours",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -193,11 +193,11 @@
     "name" : "loghours"
   }, {
     "excelCaption" : "新增需求数",
+    "dataItemName" : "openedstorycnt",
     "getPSAppDEField" : {
       "name" : "OPENEDSTORYCNT",
       "codeName" : "Openedstorycnt"
     },
-    "dataItemName" : "openedstorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -211,11 +211,11 @@
     "name" : "openedstorycnt"
   }, {
     "excelCaption" : "关闭需求数",
+    "dataItemName" : "closedstorycnt",
     "getPSAppDEField" : {
       "name" : "CLOSEDSTORYCNT",
       "codeName" : "ClosedStoryCnt"
     },
-    "dataItemName" : "closedstorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -229,11 +229,11 @@
     "name" : "closedstorycnt"
   }, {
     "excelCaption" : "新增任务数",
+    "dataItemName" : "openedtaskcnt",
     "getPSAppDEField" : {
       "name" : "OPENEDTASKCNT",
       "codeName" : "Openedtaskcnt"
     },
-    "dataItemName" : "openedtaskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -247,11 +247,11 @@
     "name" : "openedtaskcnt"
   }, {
     "excelCaption" : "完成任务数",
+    "dataItemName" : "finishedtaskcnt",
     "getPSAppDEField" : {
       "name" : "FINISHEDTASKCNT",
       "codeName" : "Finishedtaskcnt"
     },
-    "dataItemName" : "finishedtaskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -265,11 +265,11 @@
     "name" : "finishedtaskcnt"
   }, {
     "excelCaption" : "新增Bug数",
+    "dataItemName" : "openedbugcnt",
     "getPSAppDEField" : {
       "name" : "OPENEDBUGCNT",
       "codeName" : "Openedbugcnt"
     },
-    "dataItemName" : "openedbugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -283,11 +283,11 @@
     "name" : "openedbugcnt"
   }, {
     "excelCaption" : "解决Bug数",
+    "dataItemName" : "resolvedbugcnt",
     "getPSAppDEField" : {
       "name" : "RESOLVEDBUGCNT",
       "codeName" : "RESOLVEDBUGCNT"
     },
-    "dataItemName" : "resolvedbugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -301,11 +301,11 @@
     "name" : "resolvedbugcnt"
   }, {
     "excelCaption" : "动态数",
+    "dataItemName" : "dynamiccnt",
     "getPSAppDEField" : {
       "name" : "DYNAMICCNT",
       "codeName" : "Dynamiccnt"
     },
-    "dataItemName" : "dynamiccnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

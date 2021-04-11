@@ -178,8 +178,8 @@
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "createDV" : "line",
     "enableCond" : 3,
     "ignoreInput" : 0,
@@ -204,17 +204,17 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : true,
   "controlType" : "GRID",
+  "enableRowEdit" : true,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "名称",
+    "dataItemName" : "name",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -227,12 +227,12 @@
     "name" : "name"
   }, {
     "excelCaption" : "简称",
+    "dataItemName" : "short",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "SHORT",
       "codeName" : "IBizShort"
     },
-    "dataItemName" : "short",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

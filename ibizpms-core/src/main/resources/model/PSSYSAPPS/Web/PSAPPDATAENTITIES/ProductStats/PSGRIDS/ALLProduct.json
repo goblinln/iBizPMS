@@ -101,15 +101,14 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "产品名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -117,11 +116,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "产品名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -134,11 +134,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "当前项目",
+    "dataItemName" : "currproject",
     "getPSAppDEField" : {
       "name" : "CURRPROJECT",
       "codeName" : "Currproject"
     },
-    "dataItemName" : "currproject",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -151,11 +151,11 @@
     "name" : "currproject"
   }, {
     "excelCaption" : "计划数",
+    "dataItemName" : "productplancnt",
     "getPSAppDEField" : {
       "name" : "PRODUCTPLANCNT",
       "codeName" : "ProductPlanCnt"
     },
-    "dataItemName" : "productplancnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -168,11 +168,11 @@
     "name" : "productplancnt"
   }, {
     "excelCaption" : "发布数",
+    "dataItemName" : "releasecnt",
     "getPSAppDEField" : {
       "name" : "RELEASECNT",
       "codeName" : "ReleaseCnt"
     },
-    "dataItemName" : "releasecnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -185,11 +185,11 @@
     "name" : "releasecnt"
   }, {
     "excelCaption" : "激活需求",
+    "dataItemName" : "activestorycnt",
     "getPSAppDEField" : {
       "name" : "ACTIVESTORYCNT",
       "codeName" : "ActiveStoryCnt"
     },
-    "dataItemName" : "activestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -202,11 +202,11 @@
     "name" : "activestorycnt"
   }, {
     "excelCaption" : "未解决Bug",
+    "dataItemName" : "activebugcnt",
     "getPSAppDEField" : {
       "name" : "ACTIVEBUGCNT",
       "codeName" : "ActiveBugCnt"
     },
-    "dataItemName" : "activebugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

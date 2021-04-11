@@ -25,99 +25,26 @@
     "engineType" : "TreeExpView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "TREEEXPBAR"
+      "name" : "TREEEXPBAR",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "controlType" : "TREEEXPBAR",
-    "getXDataPSControl" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib/PSTREEVIEWS/ProjectDocLibTree.json",
-      "name" : "treeexpbar_tree",
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "treeexpbar_tree"
-      },
-      "getPSControlHandler" : {
-        "userDRAction" : "READ",
-        "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
-          "dataAccessAction" : "UPDATE",
-          "actionName" : "Update",
-          "actionType" : "DEACTION",
-          "name" : "update"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "actionType" : "DEDATASET",
-          "name" : "fetch"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "dataAccessAction" : "DELETE",
-          "actionName" : "Remove",
-          "actionType" : "DEACTION",
-          "name" : "remove"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Get"
-          },
-          "dataAccessAction" : "READ",
-          "actionName" : "Get",
-          "actionType" : "DEACTION",
-          "name" : "load"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Create"
-          },
-          "dataAccessAction" : "CREATE",
-          "actionName" : "Create",
-          "actionType" : "DEACTION",
-          "name" : "create"
-        } ],
-        "enableDEFieldPrivilege" : false,
-        "id" : "树视图处理器"
-      },
-      "controlType" : "TREEVIEW"
-    },
+    "xDataControlName" : "treeexpbar_tree",
     "enableSearch" : false,
     "enableCounter" : true,
-    "showTitleBar" : false,
     "getPSControls" : [ {
       "treeGridMode" : 0,
+      "enableRootSelect" : false,
+      "outputIconDefault" : true,
+      "enableSearchDefault" : false,
       "getPSDETreeNodeRSs" : [ {
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -166,8 +93,32 @@
           "id" : "DocLib"
         },
         "getParentPSDER1N" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDERS/DER1N_ZT_DOCLIB_ZT_PROJECT_PROJECT.json"
+          "getPSPickupDEField" : {
+            "name" : "PROJECT",
+            "codeName" : "Project"
+          },
+          "masterOrder" : -1,
+          "getPSPickupTextDEField" : {
+            "name" : "PROJECTNAME",
+            "codeName" : "ProjectName"
+          },
+          "removeActionType" : -1,
+          "pickupDEFName" : "PROJECT",
+          "masterRS" : 0,
+          "removeOrder" : 0,
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+          },
+          "orderValue" : 100,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+          },
+          "codeName" : "Zt_project",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDERS/DER1N_ZT_DOCLIB_ZT_PROJECT_PROJECT.json",
+          "name" : "DER1N_ZT_DOCLIB_ZT_PROJECT_PROJECT"
         },
         "parentValueLevel" : 1,
         "getParentPSAppDEField" : {
@@ -215,31 +166,28 @@
         "searchMode" : 3,
         "name" : "项目 - 附件库"
       } ],
-      "enableRootSelect" : false,
-      "outputIconDefault" : true,
-      "enableSearchDefault" : false,
       "controlType" : "TREEVIEW",
       "getPSDETreeNodes" : [ {
         "nodeValue" : "root",
         "text" : "默认根节点",
         "enableQuickCreate" : false,
         "rootNode" : true,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "enableCheck" : false,
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "ROOT",
         "disableSelect" : false,
+        "nodeType" : "ROOT",
         "enableQuickSearch" : false,
-        "expanded" : false,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
+        "expanded" : false,
         "name" : "默认根节点",
         "id" : "ROOT"
       }, {
@@ -268,26 +216,26 @@
           "viewType" : "DETREEVIEW"
         },
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "enableCheck" : false,
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "ChildDoclibModule",
-        "disableSelect" : false,
-        "enableQuickSearch" : false,
         "getPSSysImage" : {
           "glyph" : "xf114@FontAwesome",
           "cssClass" : "fa fa-folder-o"
         },
-        "expanded" : false,
+        "disableSelect" : false,
+        "nodeType" : "ChildDoclibModule",
+        "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
+        "expanded" : false,
         "name" : "子文档库模块",
         "id" : "ChildDoclibModule"
       }, {
@@ -317,38 +265,38 @@
           "viewType" : "DETREEVIEW"
         },
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "enableCheck" : false,
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "DocLib",
-        "disableSelect" : false,
-        "enableQuickSearch" : false,
         "getPSSysImage" : {
           "glyph" : "xf114@FontAwesome",
           "cssClass" : "fa fa-folder-o"
         },
-        "expanded" : false,
+        "disableSelect" : false,
+        "nodeType" : "DocLib",
+        "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
+        "expanded" : false,
         "name" : "文档库",
         "id" : "DocLib"
       }, {
         "text" : "所有项目",
         "enableQuickCreate" : false,
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : true,
+        "enableCheck" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -357,12 +305,12 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "ALLProject",
         "disableSelect" : false,
+        "nodeType" : "ALLProject",
         "enableQuickSearch" : false,
-        "expanded" : true,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
+        "expanded" : true,
         "name" : "所有项目",
         "id" : "ALLProject"
       }, {
@@ -391,26 +339,26 @@
           "viewType" : "DETREEVIEW"
         },
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "enableCheck" : false,
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "RootDoclibModule",
-        "disableSelect" : false,
-        "enableQuickSearch" : false,
         "getPSSysImage" : {
           "glyph" : "xf114@FontAwesome",
           "cssClass" : "fa fa-folder-o"
         },
-        "expanded" : false,
+        "disableSelect" : false,
+        "nodeType" : "RootDoclibModule",
+        "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
+        "expanded" : false,
         "name" : "根文档库模块",
         "id" : "RootDoclibModule"
       }, {
@@ -422,12 +370,12 @@
           "viewType" : "DEGRIDVIEW"
         },
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : false,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "enableCheck" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -442,16 +390,16 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "Files",
-        "disableSelect" : false,
-        "enableQuickSearch" : false,
         "getPSSysImage" : {
           "glyph" : "xf0c6@FontAwesome",
           "cssClass" : "fa fa-paperclip"
         },
-        "expanded" : false,
+        "disableSelect" : false,
+        "nodeType" : "Files",
+        "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
+        "expanded" : false,
         "name" : "附件库",
         "id" : "Files"
       }, {
@@ -482,26 +430,26 @@
           "viewType" : "DETREEVIEW"
         },
         "rootNode" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
         "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
+        "enableCheck" : false,
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "nodeType" : "Project",
-        "disableSelect" : false,
-        "enableQuickSearch" : false,
         "getPSSysImage" : {
           "glyph" : "xf115@FontAwesome",
           "cssClass" : "fa fa-folder-open-o"
         },
-        "expanded" : false,
+        "disableSelect" : false,
+        "nodeType" : "Project",
+        "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
+        "expanded" : false,
         "name" : "项目",
         "id" : "Project"
       } ],
@@ -607,6 +555,7 @@
       "name" : "treeexpbar_tree",
       "modelid" : "66dd1d98dca46e05aace4817a69f3640"
     } ],
+    "showTitleBar" : false,
     "getPSAppViewRefs" : [ {
       "getRefPSAppView" : {
         "modelref" : true,
@@ -672,10 +621,10 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
       "enableWizardAdd" : false,
-      "actionAfterWizard" : "DEFAULT",
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"

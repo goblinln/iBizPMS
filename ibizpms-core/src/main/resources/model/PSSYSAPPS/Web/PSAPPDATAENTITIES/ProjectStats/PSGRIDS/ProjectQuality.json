@@ -143,11 +143,10 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "项目名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -155,11 +154,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "excelCaption" : "项目名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -172,11 +172,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "需求总数",
+    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "dataItemName" : "storycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -190,11 +190,11 @@
     "name" : "storycnt"
   }, {
     "excelCaption" : "完成需求数",
+    "dataItemName" : "completestorycnt",
     "getPSAppDEField" : {
       "name" : "COMPLETESTORYCNT",
       "codeName" : "Completestorycnt"
     },
-    "dataItemName" : "completestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -208,11 +208,11 @@
     "name" : "completestorycnt"
   }, {
     "excelCaption" : "任务总数",
+    "dataItemName" : "taskcnt",
     "getPSAppDEField" : {
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
-    "dataItemName" : "taskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -226,11 +226,11 @@
     "name" : "taskcnt"
   }, {
     "excelCaption" : "完成任务数",
+    "dataItemName" : "completetaskcnt",
     "getPSAppDEField" : {
       "name" : "COMPLETETASKCNT",
       "codeName" : "Completetaskcnt"
     },
-    "dataItemName" : "completetaskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -244,11 +244,11 @@
     "name" : "completetaskcnt"
   }, {
     "excelCaption" : "Bug数",
+    "dataItemName" : "bugcnt",
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
-    "dataItemName" : "bugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -262,11 +262,11 @@
     "name" : "bugcnt"
   }, {
     "excelCaption" : "解决Bug数",
+    "dataItemName" : "finishbugcnt",
     "getPSAppDEField" : {
       "name" : "FINISHBUGCNT",
       "codeName" : "FinishBugCnt"
     },
-    "dataItemName" : "finishbugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -280,11 +280,11 @@
     "name" : "finishbugcnt"
   }, {
     "excelCaption" : "Bug/完成需求",
+    "dataItemName" : "bugstory",
     "getPSAppDEField" : {
       "name" : "BUGSTORY",
       "codeName" : "Bugstory"
     },
-    "dataItemName" : "bugstory",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -298,11 +298,11 @@
     "name" : "bugstory"
   }, {
     "excelCaption" : "Bug/完成任务",
+    "dataItemName" : "bugtask",
     "getPSAppDEField" : {
       "name" : "BUGTASK",
       "codeName" : "Bugtask"
     },
-    "dataItemName" : "bugtask",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -316,11 +316,11 @@
     "name" : "bugtask"
   }, {
     "excelCaption" : "重要Bug数",
+    "dataItemName" : "importantbugcnt",
     "getPSAppDEField" : {
       "name" : "IMPORTANTBUGCNT",
       "codeName" : "Importantbugcnt"
     },
-    "dataItemName" : "importantbugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -334,11 +334,11 @@
     "name" : "importantbugcnt"
   }, {
     "excelCaption" : "严重Bug比率",
+    "dataItemName" : "seriousbugproportion",
     "getPSAppDEField" : {
       "name" : "SERIOUSBUGPROPORTION",
       "codeName" : "Seriousbugproportion"
     },
-    "dataItemName" : "seriousbugproportion",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

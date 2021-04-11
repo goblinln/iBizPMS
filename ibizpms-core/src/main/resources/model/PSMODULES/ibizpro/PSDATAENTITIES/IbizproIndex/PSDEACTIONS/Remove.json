@@ -6,23 +6,23 @@
   "builtinAction" : true,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 21,
-  "extendMode" : 0,
   "getPSDEActionParams" : [ {
+    "name" : "INDEXID",
     "getPSDEField" : {
       "name" : "INDEXID",
       "codeName" : "Indexid"
     },
     "stdDataType" : 1,
-    "valueType" : "INPUTVALUE",
-    "name" : "INDEXID"
+    "valueType" : "INPUTVALUE"
   } ],
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
+  "orderValue" : 21,
   "codeName" : "Remove",
   "logicName" : "Remove",
+  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "INDEXID",

@@ -1,10 +1,10 @@
 {
   "getPSDEGridDataItems" : [ {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "UPDATE",
       "codeName" : "Update"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "update"
   }, {
@@ -74,20 +74,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "UPDATE",
     "codeName" : "Update"
   },
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "更新名称",
+    "dataItemName" : "sys_update_logname",
     "getPSAppDEField" : {
       "name" : "SYS_UPDATE_LOGNAME",
       "codeName" : "SysUpdateLogName"
     },
-    "dataItemName" : "sys_update_logname",
     "getPSDEUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -123,11 +123,11 @@
     "name" : "sys_update_logname"
   }, {
     "excelCaption" : "更新日期",
+    "dataItemName" : "update",
     "getPSAppDEField" : {
       "name" : "UPDATE",
       "codeName" : "Update"
     },
-    "dataItemName" : "update",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,

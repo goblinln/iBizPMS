@@ -3,11 +3,11 @@
     "name" : "TEAMID",
     "codeName" : "TeamId"
   },
+  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "TEAMNAME",
     "codeName" : "TeamName"
   },
-  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "TEAMID",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeam.json"
   },
   "orderValue" : 100,
-  "codeName" : "Team",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
   },
+  "codeName" : "Team",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID.json",
   "name" : "DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID"
 }

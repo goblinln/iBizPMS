@@ -30,6 +30,7 @@
       "id" : "默认连接"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Temp"
@@ -38,7 +39,6 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
       "srcFieldName" : "ID",
@@ -50,13 +50,13 @@
     "name" : "准备临时参数"
   }, {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Temp"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -105,24 +105,23 @@
     },
     "name" : "默认连接"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
+        "condOP" : "EQ",
         "paramValue" : "closed",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[closed]"
       }, {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
+        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",
@@ -133,6 +132,7 @@
       "logicType" : "GROUP",
       "id" : "d81308555e9641b4987e6181d7553903__MSDENY__closed_1"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "DenyByclosed_1"
@@ -143,24 +143,23 @@
     },
     "name" : "状态[关闭_已置顶]拒绝[Update]操作"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
+        "condOP" : "EQ",
         "paramValue" : "normal",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
         "name" : "属性[STATUS]等于[normal]"
       }, {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
+        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISTOP",
         "logicType" : "SINGLE",
@@ -171,6 +170,7 @@
       "logicType" : "GROUP",
       "id" : "d81308555e9641b4987e6181d7553903__MSDENY__normal_1"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "DenyBynormal_1"
@@ -182,16 +182,16 @@
     "name" : "状态[正常_已置顶]拒绝[Update]操作"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Temp",
     "default" : false,
     "name" : "临时变量"
   }, {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "默认变量"

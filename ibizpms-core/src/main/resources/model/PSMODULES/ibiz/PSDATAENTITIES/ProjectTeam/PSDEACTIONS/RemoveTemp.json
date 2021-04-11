@@ -7,15 +7,15 @@
   "tempDataMode" : 2,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 22,
-  "extendMode" : 0,
-  "enableTempData" : true,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
+  "orderValue" : 22,
   "codeName" : "RemoveTemp",
   "logicName" : "RemoveTemp",
+  "extendMode" : 0,
+  "enableTempData" : true,
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
   "requestField" : "ID",

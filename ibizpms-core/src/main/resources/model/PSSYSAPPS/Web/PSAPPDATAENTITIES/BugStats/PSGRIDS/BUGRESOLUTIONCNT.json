@@ -143,16 +143,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "项目名称",
+    "dataItemName" : "projectname",
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataItemName" : "projectname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -165,11 +165,11 @@
     "name" : "projectname"
   }, {
     "excelCaption" : "重复Bug",
+    "dataItemName" : "bugduplicate",
     "getPSAppDEField" : {
       "name" : "BUGDUPLICATE",
       "codeName" : "Bugduplicate"
     },
-    "dataItemName" : "bugduplicate",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -183,11 +183,11 @@
     "name" : "bugduplicate"
   }, {
     "excelCaption" : "设计如此",
+    "dataItemName" : "bugbydesign",
     "getPSAppDEField" : {
       "name" : "BUGBYDESIGN",
       "codeName" : "Bugbydesign"
     },
-    "dataItemName" : "bugbydesign",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -201,11 +201,11 @@
     "name" : "bugbydesign"
   }, {
     "excelCaption" : "已解决",
+    "dataItemName" : "bugfixed",
     "getPSAppDEField" : {
       "name" : "BUGFIXED",
       "codeName" : "Bugfixed"
     },
-    "dataItemName" : "bugfixed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -219,11 +219,11 @@
     "name" : "bugfixed"
   }, {
     "excelCaption" : "延期处理",
+    "dataItemName" : "bugpostponed",
     "getPSAppDEField" : {
       "name" : "BUGPOSTPONED",
       "codeName" : "Bugpostponed"
     },
-    "dataItemName" : "bugpostponed",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -237,11 +237,11 @@
     "name" : "bugpostponed"
   }, {
     "excelCaption" : "无法重现",
+    "dataItemName" : "bugnotrepro",
     "getPSAppDEField" : {
       "name" : "BUGNOTREPRO",
       "codeName" : "Bugnotrepro"
     },
-    "dataItemName" : "bugnotrepro",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -255,11 +255,11 @@
     "name" : "bugnotrepro"
   }, {
     "excelCaption" : "转为需求",
+    "dataItemName" : "bugtostory",
     "getPSAppDEField" : {
       "name" : "BUGTOSTORY",
       "codeName" : "Bugtostory"
     },
-    "dataItemName" : "bugtostory",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -273,11 +273,11 @@
     "name" : "bugtostory"
   }, {
     "excelCaption" : "不予解决",
+    "dataItemName" : "bugwillnotfix",
     "getPSAppDEField" : {
       "name" : "BUGWILLNOTFIX",
       "codeName" : "Bugwillnotfix"
     },
-    "dataItemName" : "bugwillnotfix",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -291,11 +291,11 @@
     "name" : "bugwillnotfix"
   }, {
     "excelCaption" : "外部原因",
+    "dataItemName" : "bugexternal",
     "getPSAppDEField" : {
       "name" : "BUGEXTERNAL",
       "codeName" : "Bugexternal"
     },
-    "dataItemName" : "bugexternal",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -309,11 +309,11 @@
     "name" : "bugexternal"
   }, {
     "excelCaption" : "总计",
+    "dataItemName" : "bugcnt",
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
-    "dataItemName" : "bugcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

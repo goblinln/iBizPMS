@@ -87,16 +87,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "部门标识",
+    "dataItemName" : "deptid",
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
-    "dataItemName" : "deptid",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
       "lanResTag" : "COMMON.DATATYPE.DECIMAL",
@@ -113,11 +113,11 @@
     "name" : "deptid"
   }, {
     "excelCaption" : "部门名称",
+    "dataItemName" : "deptname",
     "getPSAppDEField" : {
       "name" : "DEPTNAME",
       "codeName" : "DeptName"
     },
-    "dataItemName" : "deptname",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
       "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT",

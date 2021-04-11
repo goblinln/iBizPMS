@@ -1,15 +1,15 @@
 {
+  "getPSCodeItems" : [ {
+    "value" : "yes",
+    "codeName" : "Yes",
+    "text" : "是"
+  }, {
+    "value" : "no",
+    "codeName" : "No",
+    "text" : "否"
+  } ],
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "getPSCodeItems" : [ {
-    "codeName" : "Yes",
-    "text" : "是",
-    "value" : "yes"
-  }, {
-    "codeName" : "No",
-    "text" : "否",
-    "value" : "no"
-  } ],
   "codeName" : "YesNo3",
   "emptyText" : "未定义",
   "enableCache" : true,

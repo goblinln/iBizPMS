@@ -6,14 +6,14 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
   },
+  "orderValue" : 99999,
   "codeName" : "CreateGetLastWeekPlanAndWork",
   "logicName" : "获取上周周报的下周计划",
+  "extendMode" : 0,
   "actionMode" : "CREATE",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

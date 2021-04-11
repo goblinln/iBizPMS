@@ -13,12 +13,12 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule.json"
   },
   "orderValue" : 100,
-  "codeName" : "ParentModule",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule.json"
   },
+  "codeName" : "ParentModule",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDERS/DER1N_IBZPRO_STORYMODULE_IBZPRO_STORYMODULE_PARENT.json",
   "name" : "DER1N_IBZPRO_STORYMODULE_IBZPRO_STORYMODULE_PARENT"
 }

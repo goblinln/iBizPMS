@@ -211,9 +211,9 @@
     "name" : "story"
   }, {
     "getPSEditor" : {
+      "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "singleSelect" : true,
       "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
@@ -232,17 +232,17 @@
         "id" : "Default"
       },
       "valueItemName" : "module",
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "product",
-        "key" : "n_root_eq",
-        "name" : "n_root_eq"
-      } ],
       "getPSNavigateContexts" : [ {
         "rawValue" : false,
         "value" : "product",
         "key" : "N_ROOT_EQ",
         "name" : "N_ROOT_EQ"
+      } ],
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "product",
+        "key" : "n_root_eq",
+        "name" : "n_root_eq"
       } ],
       "editorType" : "PICKEREX_TRIGGER",
       "editorParams" : {
@@ -298,9 +298,9 @@
     "name" : "title"
   }, {
     "getPSEditor" : {
+      "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "singleSelect" : true,
       "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
@@ -319,17 +319,6 @@
         "id" : "Default"
       },
       "valueItemName" : "story",
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "product",
-        "key" : "n_product_eq",
-        "name" : "n_product_eq"
-      }, {
-        "rawValue" : false,
-        "value" : "module",
-        "key" : "n_module_eq",
-        "name" : "n_module_eq"
-      } ],
       "getPSNavigateContexts" : [ {
         "rawValue" : false,
         "value" : "product",
@@ -340,6 +329,17 @@
         "value" : "module",
         "key" : "N_MODULE_EQ",
         "name" : "N_MODULE_EQ"
+      } ],
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "product",
+        "key" : "n_product_eq",
+        "name" : "n_product_eq"
+      }, {
+        "rawValue" : false,
+        "value" : "module",
+        "key" : "n_module_eq",
+        "name" : "n_module_eq"
       } ],
       "editorType" : "PICKEREX_TRIGGER",
       "editorParams" : {
@@ -378,8 +378,8 @@
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "enableCond" : 3,
     "ignoreInput" : 0,
     "codeName" : "type",
@@ -403,21 +403,21 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : true,
   "controlType" : "GRID",
+  "enableRowEdit" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "所属模块",
+    "dataItemName" : "modulename",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "MODULENAME",
       "codeName" : "Modulename"
     },
-    "dataItemName" : "modulename",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -429,7 +429,6 @@
     "widthUnit" : "PX",
     "name" : "modulename"
   }, {
-    "excelCaption" : "相关需求",
     "linkValueItem" : "story",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -437,12 +436,13 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
       "viewType" : "DEPORTALVIEW"
     },
+    "excelCaption" : "相关需求",
+    "dataItemName" : "storyname",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "STORYNAME",
       "codeName" : "Storyname"
     },
-    "dataItemName" : "storyname",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -454,7 +454,6 @@
     "widthUnit" : "PX",
     "name" : "storyname"
   }, {
-    "excelCaption" : "用例标题",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -462,12 +461,13 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
+    "excelCaption" : "用例标题",
+    "dataItemName" : "title",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataItemName" : "title",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -484,12 +484,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__type.json"
     },
+    "dataItemName" : "type",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataItemName" : "type",
-    "enableRowEdit" : true,
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

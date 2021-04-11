@@ -13,12 +13,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
   },
   "orderValue" : 100,
-  "codeName" : "ZTBranch",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
   },
+  "codeName" : "ZTBranch",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDERS/DER1N_ZT_BUILD_ZT_BRANCH_BRANCH.json",
   "name" : "DER1N_ZT_BUILD_ZT_BRANCH_BRANCH"
 }

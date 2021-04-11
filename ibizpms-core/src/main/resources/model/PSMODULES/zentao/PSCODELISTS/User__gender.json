@@ -1,23 +1,23 @@
 {
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
   "codeListType" : "STATIC",
-  "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/User__gender.json",
+  "dynaInstMode" : 1,
   "codeName" : "User__gender",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "f",
     "codeName" : "F",
-    "text" : "女",
-    "value" : "f"
+    "text" : "女"
   }, {
+    "value" : "m",
     "codeName" : "M",
-    "text" : "男",
-    "value" : "m"
+    "text" : "男"
   } ]
 }

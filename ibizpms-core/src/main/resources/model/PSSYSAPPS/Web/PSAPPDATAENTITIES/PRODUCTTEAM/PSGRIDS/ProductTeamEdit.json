@@ -28,11 +28,11 @@
     "dataType" : 7,
     "name" : "hours"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "JOIN",
       "codeName" : "Join"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "join"
   }, {
@@ -198,8 +198,8 @@
       "name" : "LIMITED",
       "codeName" : "Limited"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "createDV" : "no",
     "enableCond" : 3,
     "ignoreInput" : 0,
@@ -245,17 +245,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CodeList25.json"
       },
-      "getPSNavigateParams" : [ {
-        "rawValue" : false,
-        "value" : "account",
-        "key" : "account",
-        "name" : "account"
-      } ],
       "getPSNavigateContexts" : [ {
         "rawValue" : false,
         "value" : "account",
         "key" : "ACCOUNT",
         "name" : "ACCOUNT"
+      } ],
+      "getPSNavigateParams" : [ {
+        "rawValue" : false,
+        "value" : "account",
+        "key" : "account",
+        "name" : "account"
       } ],
       "editorType" : "DROPDOWNLIST",
       "editorParams" : {
@@ -268,8 +268,8 @@
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "allowEmpty" : false,
     "needCodeListConfig" : true,
+    "allowEmpty" : false,
     "enableCond" : 1,
     "ignoreInput" : 0,
     "valueItemName" : "account",
@@ -311,8 +311,8 @@
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "createDV" : "product",
     "enableCond" : 3,
     "ignoreInput" : 0,
@@ -337,21 +337,21 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : true,
   "controlType" : "GRID",
+  "enableRowEdit" : true,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "用户",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CodeList25.json"
     },
+    "dataItemName" : "account_text",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataItemName" : "account_text",
-    "enableRowEdit" : true,
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -364,12 +364,12 @@
     "name" : "account"
   }, {
     "excelCaption" : "角色",
+    "dataItemName" : "role",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "ROLE",
       "codeName" : "Role"
     },
-    "dataItemName" : "role",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -382,12 +382,12 @@
     "name" : "role"
   }, {
     "excelCaption" : "可用工时/天",
+    "dataItemName" : "hours",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "HOURS",
       "codeName" : "Hours"
     },
-    "dataItemName" : "hours",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -404,12 +404,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
     },
+    "dataItemName" : "limited",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "LIMITED",
       "codeName" : "Limited"
     },
-    "dataItemName" : "limited",
-    "enableRowEdit" : true,
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -423,14 +423,14 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf067@FontAwesome",
             "cssClass" : "fa fa-plus"
           },
+          "timeout" : 60000,
           "codeName" : "NewRow",
           "caption" : "新建行",
           "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -440,12 +440,12 @@
           "fullCodeName" : "NewRow",
           "name" : "表格界面_新建行"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u123c5fb"
       }, {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.REMOVE",
@@ -456,11 +456,11 @@
             "id" : "工具栏按钮提示[*.REMOVE]"
           },
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "timeout" : 60000,
           "codeName" : "Remove",
           "caption" : "删除",
           "actionTarget" : "MULTIKEY",
@@ -471,7 +471,7 @@
           "fullCodeName" : "Remove",
           "name" : "表格界面_删除操作"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u88d3220"

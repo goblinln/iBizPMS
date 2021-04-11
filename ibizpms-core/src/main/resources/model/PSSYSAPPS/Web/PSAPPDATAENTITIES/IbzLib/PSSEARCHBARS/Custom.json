@@ -1,14 +1,14 @@
 {
   "quickSearchMode" : 1,
-  "mobileSearchBar" : false,
   "getPSSearchBarFilters" : [ {
     "emptyCaption" : false,
     "getPSEditor" : {
-      "editorWidth" : 100.0,
       "editorType" : "TEXTBOX",
+      "editorWidth" : 100.0,
       "name" : "namelike"
     },
     "dataType" : 25,
+    "hidden" : false,
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_NAME_LIKE",
@@ -21,11 +21,10 @@
     },
     "allowEmpty" : true,
     "caption" : "名称(%)",
-    "labelWidth" : 0,
     "labelPos" : "NONE",
+    "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -40,11 +39,13 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testsuite__type.json"
       },
-      "editorWidth" : 100.0,
       "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
       "name" : "typeeq"
     },
     "dataType" : 25,
+    "hidden" : false,
+    "needCodeListConfig" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_TYPE_EQ",
@@ -56,13 +57,11 @@
       "name" : "N_TYPE_EQ"
     },
     "allowEmpty" : true,
-    "needCodeListConfig" : true,
     "caption" : "类型(=)",
-    "labelWidth" : 0,
     "labelPos" : "NONE",
+    "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
@@ -77,11 +76,13 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
       },
-      "editorWidth" : 100.0,
       "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
       "name" : "addedbyeq"
     },
     "dataType" : 25,
+    "hidden" : false,
+    "needCodeListConfig" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_ADDEDBY_EQ",
@@ -93,13 +94,11 @@
       "name" : "N_ADDEDBY_EQ"
     },
     "allowEmpty" : true,
-    "needCodeListConfig" : true,
     "caption" : "由谁创建(=)",
-    "labelWidth" : 0,
     "labelPos" : "NONE",
+    "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "ADDEDBY",
       "codeName" : "AddedBy"
@@ -114,11 +113,13 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
       },
-      "editorWidth" : 100.0,
       "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
       "name" : "lasteditedbyeq"
     },
     "dataType" : 25,
+    "hidden" : false,
+    "needCodeListConfig" : true,
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_LASTEDITEDBY_EQ",
@@ -130,13 +131,11 @@
       "name" : "N_LASTEDITEDBY_EQ"
     },
     "allowEmpty" : true,
-    "needCodeListConfig" : true,
     "caption" : "最后编辑人(=)",
-    "labelWidth" : 0,
     "labelPos" : "NONE",
+    "labelWidth" : 0,
     "itemWidth" : 100.0,
     "showCaption" : false,
-    "hidden" : false,
     "getPSAppDEField" : {
       "name" : "LASTEDITEDBY",
       "codeName" : "LastEditedBy"
@@ -144,10 +143,11 @@
     "itemType" : "FILTER",
     "name" : "lasteditedbyeq"
   } ],
-  "enableFilter" : true,
+  "mobileSearchBar" : false,
   "controlType" : "SEARCHBAR",
-  "enableQuickSearch" : true,
+  "enableFilter" : true,
   "codeName" : "Custom",
+  "enableQuickSearch" : true,
   "enableGroup" : false,
   "quickSearchWidth" : 0,
   "getPSAppDataEntity" : {

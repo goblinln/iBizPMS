@@ -2,9 +2,9 @@
   "serviceAPIMode" : 0,
   "getAllPSDEFields" : [ {
     "dataType" : "TEXT",
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "bcf775e498e9564ac1b6119b311f87e9",
     "getLNPSLanguageRes" : {
       "lanResTag" : "COMMON.DATATYPE.DECIMAL",
       "id" : "通用[DATATYPE.DECIMAL]"
@@ -20,8 +20,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "DEPTID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -50,19 +50,19 @@
       "autoIncrement" : false,
       "name" : "DEPTID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "bcf775e498e9564ac1b6119b311f87e9",
     "codeName" : "DeptId",
     "logicName" : "部门标识",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "DEPTID"
   }, {
     "dataType" : "TEXT",
-    "enableUIModify" : false,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "2a76c3f0b5a5126801e2f3d188ea0c7c",
     "getLNPSLanguageRes" : {
       "lanResTag" : "CONTROL.UPLOADER.CANCEL.TIPS",
       "id" : "控件文本[UPLOADER.CANCEL.TIPS]"
@@ -78,8 +78,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "DEPTCODE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -108,20 +108,19 @@
       "autoIncrement" : false,
       "name" : "DEPTCODE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "2a76c3f0b5a5126801e2f3d188ea0c7c",
     "codeName" : "DeptCode",
     "logicName" : "部门代码",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "DEPTCODE"
   }, {
     "dataType" : "TEXT",
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "d24f34eefac7d0d0c1d3a1be3fece9e7",
     "getLNPSLanguageRes" : {
       "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT",
       "id" : "控件文本[DATAGRIDROWCOUNTLIST.PAGEFMT]"
@@ -137,8 +136,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "DEPTNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -167,13 +166,14 @@
       "autoIncrement" : false,
       "name" : "DEPTNAME"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "d24f34eefac7d0d0c1d3a1be3fece9e7",
     "codeName" : "DeptName",
     "logicName" : "部门名称",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "DEPTNAME"
   }, {
     "getPSDER" : {
@@ -187,8 +187,8 @@
       "codeName" : "OrgId"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "deployId" : "58ce55c38c5c3560aec05c02d0f0052d",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -199,8 +199,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "ORGID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -229,13 +229,13 @@
       "autoIncrement" : false,
       "name" : "ORGID"
     } ],
-    "predefinedType" : "ORGID",
-    "deployId" : "58ce55c38c5c3560aec05c02d0f0052d",
     "codeName" : "OrgId",
     "logicName" : "单位",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "predefinedType" : "ORGID",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ORGID"
   }, {
     "getPSDER" : {
@@ -249,8 +249,8 @@
       "codeName" : "DeptId"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "deployId" : "dcac4f286e1892155b2f7e2974987e62",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -261,8 +261,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PDEPTID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -291,17 +291,18 @@
       "autoIncrement" : false,
       "name" : "PDEPTID"
     } ],
-    "deployId" : "dcac4f286e1892155b2f7e2974987e62",
     "codeName" : "ParentDeptid",
     "logicName" : "上级部门",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PDEPTID"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "ce20c4974433e85e0b1588055b12486f",
     "getLNPSLanguageRes" : {
       "lanResTag" : "PAGE.COMMON.EDITVIEW.DERGROUP.OTHER",
       "id" : "界面常规[EDITVIEW.DERGROUP.OTHER]"
@@ -316,8 +317,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "SHORTNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -346,18 +347,17 @@
       "autoIncrement" : false,
       "name" : "SHORTNAME"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "ce20c4974433e85e0b1588055b12486f",
     "codeName" : "ShortName",
     "logicName" : "部门简称",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "SHORTNAME"
   }, {
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$s",
+    "deployId" : "06efad70d3b3ecc61ce3bc83361e9a3d",
     "getLNPSLanguageRes" : {
       "lanResTag" : "TBB.TEXT.*.ROLLBACKWF",
       "id" : "工具栏按钮文本[*.ROLLBACKWF]"
@@ -390,16 +390,17 @@
       "autoIncrement" : false,
       "name" : "DEPTLEVEL"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "06efad70d3b3ecc61ce3bc83361e9a3d",
     "codeName" : "DeptLevel",
     "logicName" : "部门级别",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "DEPTLEVEL"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "7fa64c39d673d161d5cfa2430afc4718",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -410,8 +411,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "DOMAINS",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -440,18 +441,17 @@
       "autoIncrement" : false,
       "name" : "DOMAINS"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "7fa64c39d673d161d5cfa2430afc4718",
     "codeName" : "Domains",
     "logicName" : "区属",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "DOMAINS"
   }, {
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$s",
+    "deployId" : "27e6a1e9e7b3f107ea9e8631745f04ad",
     "getLNPSLanguageRes" : {
       "lanResTag" : "PAGE.COMMON.EDITVIEW.DER.AUDIT",
       "id" : "界面常规[EDITVIEW.DER.AUDIT]"
@@ -484,16 +484,17 @@
       "autoIncrement" : false,
       "name" : "SHOWORDER"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "27e6a1e9e7b3f107ea9e8631745f04ad",
     "codeName" : "ShowOrder",
     "logicName" : "排序",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "SHOWORDER"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "5d7665ef431f6375e87d1d22fc5b4b79",
     "getLNPSLanguageRes" : {
       "lanResTag" : "PAGE.COMMON.CUSTOMSPDESIGNER.LOGIC",
       "id" : "界面常规[CUSTOMSPDESIGNER.LOGIC]"
@@ -508,8 +509,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "BCODE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -538,18 +539,18 @@
       "autoIncrement" : false,
       "name" : "BCODE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "5d7665ef431f6375e87d1d22fc5b4b79",
     "codeName" : "BCode",
     "logicName" : "业务编码",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "BCODE"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "45afdf643296841401b4e1d12c690f50",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -560,8 +561,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "LEADERID",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -590,18 +591,18 @@
       "autoIncrement" : false,
       "name" : "LEADERID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "45afdf643296841401b4e1d12c690f50",
     "codeName" : "LeaderId",
     "logicName" : "分管领导标识",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "LEADERID"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "36190e69bf082f84c30db9de9573c04c",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -612,8 +613,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "LEADERNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -642,13 +643,12 @@
       "autoIncrement" : false,
       "name" : "LEADERNAME"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "36190e69bf082f84c30db9de9573c04c",
     "codeName" : "LeaderName",
     "logicName" : "分管领导",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "LEADERNAME"
   }, {
     "phisicalDEField" : false,
@@ -663,8 +663,8 @@
       "codeName" : "OrgName"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 100,
+    "deployId" : "389a787454bb5a108f3db87b5425e569",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -675,8 +675,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "ORGNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -705,13 +705,13 @@
       "autoIncrement" : false,
       "name" : "ORGNAME"
     } ],
-    "predefinedType" : "ORGNAME",
-    "deployId" : "389a787454bb5a108f3db87b5425e569",
     "codeName" : "OrgName",
     "logicName" : "单位",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "predefinedType" : "ORGNAME",
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "ORGNAME"
   }, {
     "phisicalDEField" : false,
@@ -726,8 +726,8 @@
       "codeName" : "DeptName"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 100,
+    "deployId" : "da20c87a84d2b1bc1db52173cc9d0b17",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -738,8 +738,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "PDEPTNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -768,17 +768,18 @@
       "autoIncrement" : false,
       "name" : "PDEPTNAME"
     } ],
-    "deployId" : "da20c87a84d2b1bc1db52173cc9d0b17",
     "codeName" : "ParentDeptName",
     "logicName" : "上级部门",
     "stringLength" : 100,
     "stdDataType" : 25,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "PDEPTNAME"
   }, {
     "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "abce7e6b9147f0282bef7f565222c9f0",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -809,18 +810,18 @@
       "autoIncrement" : false,
       "name" : "CREATEDATE"
     } ],
-    "predefinedType" : "CREATEDATE",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "abce7e6b9147f0282bef7f565222c9f0",
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "stdDataType" : 5,
-    "length" : 8,
+    "predefinedType" : "CREATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CREATEDATE"
   }, {
     "dataType" : "YESNO",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "valueFormat" : "%1$s",
+    "deployId" : "c0a6419476aac20b4024421b85d11e63",
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -850,22 +851,22 @@
       "autoIncrement" : false,
       "name" : "ENABLE"
     } ],
-    "predefinedType" : "LOGICVALID",
-    "valueFormat" : "%1$s",
-    "deployId" : "c0a6419476aac20b4024421b85d11e63",
     "codeName" : "Enable",
     "logicName" : "逻辑有效标志",
     "stdDataType" : 9,
-    "length" : 8,
+    "predefinedType" : "LOGICVALID",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ENABLE"
   }, {
+    "dataType" : "TEXT",
+    "length" : 60,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "e3f5d78bd6fbc688fae42994af9669e0",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -878,8 +879,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "UPDATEMAN",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -908,19 +909,19 @@
       "autoIncrement" : false,
       "name" : "UPDATEMAN"
     } ],
-    "predefinedType" : "UPDATEMAN",
-    "valueFormat" : "%1$s",
-    "deployId" : "e3f5d78bd6fbc688fae42994af9669e0",
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "stringLength" : 60,
     "stdDataType" : 25,
-    "length" : 60,
+    "predefinedType" : "UPDATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "UPDATEMAN"
   }, {
     "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "6c875e28385d7c7ca11df30f3e84da1d",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -951,22 +952,22 @@
       "autoIncrement" : false,
       "name" : "UPDATEDATE"
     } ],
-    "predefinedType" : "UPDATEDATE",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "6c875e28385d7c7ca11df30f3e84da1d",
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "stdDataType" : 5,
-    "length" : 8,
+    "predefinedType" : "UPDATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "UPDATEDATE"
   }, {
+    "dataType" : "TEXT",
+    "length" : 60,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "af39ec6ffbc51c608a5ad2e5fcc16c6b",
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -979,8 +980,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "CREATEMAN",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -1009,34 +1010,35 @@
       "autoIncrement" : false,
       "name" : "CREATEMAN"
     } ],
-    "predefinedType" : "CREATEMAN",
-    "valueFormat" : "%1$s",
-    "deployId" : "af39ec6ffbc51c608a5ad2e5fcc16c6b",
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "stringLength" : 60,
     "stdDataType" : 25,
-    "length" : 60,
+    "predefinedType" : "CREATEMAN",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CREATEMAN"
   } ],
+  "validLogicValue" : "1",
+  "invalidLogicValue" : "0",
   "getAllPSDEDataSets" : [ {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据集",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
+    "pageSize" : -1,
     "name" : "DEFAULT"
   } ],
   "getAllPSDEActions" : [ {
@@ -1067,9 +1069,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "数据查询",
+    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -1078,27 +1080,21 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
   "subSysAsCloud" : false,
+  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
-  "validLogicValue" : "1",
-  "invalidLogicValue" : "0",
-  "enableUIActions" : 15,
   "orderValue" : 99999,
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "serviceCodeName" : "SysDepartment",
+  "dSLink" : "DEFAULT",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1113,16 +1109,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 0,
+  "deployId" : "eb35e1720f0a3b555fed8c9971f8a513",
+  "enableSQLStorage" : false,
   "dynaInstMode" : 1,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,
-  "dSLink" : "DEFAULT",
-  "deployId" : "eb35e1720f0a3b555fed8c9971f8a513",
+  "virtualMode" : 0,
   "codeName" : "SysDepartment",
   "logicName" : "部门",
   "tableName" : "T_SYS_DEPT",
-  "enableRemove" : true,
   "logicValid" : true,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1131,9 +1127,13 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "virtualMode" : 0,
-  "enableSQLStorage" : false,
+  "enableRemove" : true,
   "serviceAPIClientId" : "9dab79080bf86d9ac588a8ab99d5d28c",
+  "serviceCodeName" : "SysDepartment",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

@@ -10,7 +10,6 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "singleSelect" : true,
@@ -18,28 +17,29 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Burninterval.json"
         },
-        "editorHeight" : 29.0,
         "editorType" : "DROPDOWNLIST",
+        "editorHeight" : 29.0,
         "name" : "isweekend"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "dataType" : 25,
-      "allowEmpty" : true,
+      "hidden" : false,
       "needCodeListConfig" : true,
+      "allowEmpty" : true,
       "caption" : "间隔",
       "createDV" : "5",
-      "labelWidth" : 50,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 50,
       "itemHeight" : 29.0,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
-        "colSM" : 24,
-        "colXS" : 24,
         "colMD" : 24,
         "colLG" : 24,
+        "colSM" : 24,
+        "colXS" : 24,
         "layout" : "TABLE_24COL"
       },
       "getPSSysCss" : {

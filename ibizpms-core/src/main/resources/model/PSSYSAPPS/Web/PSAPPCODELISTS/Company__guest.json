@@ -1,15 +1,15 @@
 {
+  "getPSCodeItems" : [ {
+    "value" : "1",
+    "codeName" : "Item_1",
+    "text" : "允许"
+  }, {
+    "value" : "0",
+    "codeName" : "Item_0",
+    "text" : "不允许"
+  } ],
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "getPSCodeItems" : [ {
-    "codeName" : "Item_1",
-    "text" : "允许",
-    "value" : "1"
-  }, {
-    "codeName" : "Item_0",
-    "text" : "不允许",
-    "value" : "0"
-  } ],
   "codeName" : "Company__guest",
   "emptyText" : "未定义",
   "enableCache" : true,

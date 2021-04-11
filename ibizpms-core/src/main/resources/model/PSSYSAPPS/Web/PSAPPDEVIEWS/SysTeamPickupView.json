@@ -23,16 +23,16 @@
     "engineType" : "PickupView",
     "engineCat" : "VIEW",
     "getPSUIEngineParams" : [ {
-      "paramType" : "CTRL",
-      "name" : "PICKUPVIEWPANEL"
+      "name" : "PICKUPVIEWPANEL",
+      "paramType" : "CTRL"
     } ],
     "name" : "engine"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "getEmbeddedPSAppDEView" : {
       "pickupMode" : true,
@@ -68,19 +68,19 @@
         "engineType" : "PickupGridView",
         "engineCat" : "VIEW",
         "getPSUIEngineParams" : [ {
-          "paramType" : "CTRL",
-          "name" : "GRID"
+          "name" : "GRID",
+          "paramType" : "CTRL"
         }, {
-          "paramType" : "CTRL",
-          "name" : "SEARCHFORM"
+          "name" : "SEARCHFORM",
+          "paramType" : "CTRL"
         } ],
         "name" : "engine"
       } ],
+      "viewStyle" : "STYLE2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
       },
-      "viewStyle" : "STYLE2",
       "getPSControls" : [ {
         "getPSDEGridDataItems" : [ {
           "getPSAppDEField" : {
@@ -170,16 +170,16 @@
         } ],
         "hasWFDataItems" : false,
         "columnEnableLink" : 2,
-        "enablePagingBar" : true,
-        "enableRowEdit" : false,
         "controlType" : "GRID",
+        "enableRowEdit" : false,
+        "enablePagingBar" : true,
         "getPSDEGridColumns" : [ {
           "excelCaption" : "组标识",
+          "dataItemName" : "teamid",
           "getPSAppDEField" : {
             "name" : "TEAMID",
             "codeName" : "TeamId"
           },
-          "dataItemName" : "teamid",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -191,7 +191,6 @@
           "widthUnit" : "PX",
           "name" : "teamid"
         }, {
-          "excelCaption" : "组名称",
           "linkValueItem" : "srfkey",
           "enableLinkView" : true,
           "getLinkPSAppView" : {
@@ -199,11 +198,12 @@
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridView.json",
             "viewType" : "DEGRIDVIEW"
           },
+          "excelCaption" : "组名称",
+          "dataItemName" : "teamname",
           "getPSAppDEField" : {
             "name" : "TEAMNAME",
             "codeName" : "TeamName"
           },
-          "dataItemName" : "teamname",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -216,11 +216,11 @@
           "name" : "teamname"
         }, {
           "excelCaption" : "区属",
+          "dataItemName" : "domains",
           "getPSAppDEField" : {
             "name" : "DOMAINS",
             "codeName" : "Domains"
           },
-          "dataItemName" : "domains",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -233,11 +233,11 @@
           "name" : "domains"
         }, {
           "excelCaption" : "备注",
+          "dataItemName" : "memo",
           "getPSAppDEField" : {
             "name" : "MEMO",
             "codeName" : "Memo"
           },
-          "dataItemName" : "memo",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,

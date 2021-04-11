@@ -1,4 +1,9 @@
 {
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
@@ -10,12 +15,12 @@
     "dataType" : 25,
     "name" : "type"
   }, {
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
+    "format" : "YYYY-MM-DD",
     "name" : "end"
   }, {
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
+    "format" : "YYYY-MM-DD",
     "name" : "begin"
   }, {
     "dataType" : 25,
@@ -37,13 +42,8 @@
     "dataType" : 25,
     "name" : "year"
   } ],
-  "showHeader" : true,
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "enableRowEdit" : false,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "YEAR",
     "codeName" : "Year"

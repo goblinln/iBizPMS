@@ -51,11 +51,11 @@
       "id" : "0"
     },
     "getPSChartSeriesEncode" : {
-      "getPSChartYAxis" : {
+      "getPSChartXAxis" : {
         "modelref" : true,
         "id" : "0"
       },
-      "getPSChartXAxis" : {
+      "getPSChartYAxis" : {
         "modelref" : true,
         "id" : "0"
       },
@@ -87,11 +87,11 @@
       "id" : "1"
     },
     "getPSChartSeriesEncode" : {
-      "getPSChartYAxis" : {
+      "getPSChartXAxis" : {
         "modelref" : true,
         "id" : "0"
       },
-      "getPSChartXAxis" : {
+      "getPSChartYAxis" : {
         "modelref" : true,
         "id" : "0"
       },
@@ -114,10 +114,22 @@
     "eChartsType" : "category",
     "eChartsPos" : "xAxis",
     "position" : "bottom",
-    "caption" : "月",
     "type" : "category",
+    "caption" : "月",
     "index" : 0,
     "name" : "月",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "eChartsType" : "value",
+    "eChartsPos" : "yAxis",
+    "position" : "left",
+    "type" : "numeric",
+    "maxValue" : 200.0,
+    "minValue" : 0.0,
+    "caption" : "数量",
+    "index" : 0,
+    "name" : "数量",
     "id" : "0"
   } ],
   "getPSChartGrids" : [ {
@@ -143,18 +155,6 @@
     "type" : "grid",
     "index" : 0,
     "name" : "[MONTRESOLVEDBUG]直角坐标系[0]",
-    "id" : "0"
-  } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "maxValue" : 200.0,
-    "minValue" : 0.0,
-    "position" : "left",
-    "caption" : "数量",
-    "type" : "numeric",
-    "index" : 0,
-    "name" : "数量",
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {
@@ -204,11 +204,11 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
-  "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
+  "height" : 300.0,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedBugAndCase.json",
   "logicName" : "MonthOpenedBugAndCase",
   "modelid" : "419cfd8e4688bd7a4d507d481bb24879",

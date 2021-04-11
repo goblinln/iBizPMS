@@ -4,6 +4,14 @@
     "id" : "updategroup"
   },
   "controlType" : "KANBAN",
+  "singleSelect" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "getGroupPSAppDEField" : {
+    "name" : "STAGE",
+    "codeName" : "Stage"
+  },
+  "appendDEItems" : true,
   "getPSDEDataViewDataItems" : [ {
     "getPSAppDEField" : {
       "name" : "MODULE",
@@ -133,15 +141,15 @@
   "getItemPSLayoutPanel" : {
     "getRootPSPanelItems" : [ {
       "getPSPanelItems" : [ {
-        "viewFieldName" : "TITLE",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
           "editorType" : "SPAN",
           "name" : "title"
         },
-        "showCaption" : false,
+        "viewFieldName" : "TITLE",
         "hidden" : false,
+        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -161,7 +169,6 @@
         "name" : "rawitem1"
       }, {
         "getPSPanelItems" : [ {
-          "viewFieldName" : "pri",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -172,9 +179,10 @@
             "editorType" : "SPAN",
             "name" : "pri"
           },
+          "viewFieldName" : "pri",
+          "hidden" : false,
           "convertToCodeItemText" : true,
           "showCaption" : false,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 3,
@@ -184,7 +192,6 @@
           "itemStyle" : "DEFAULT",
           "name" : "pri"
         }, {
-          "viewFieldName" : "status",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -195,9 +202,10 @@
             "editorType" : "SPAN",
             "name" : "status"
           },
+          "viewFieldName" : "status",
+          "hidden" : false,
           "convertToCodeItemText" : true,
           "showCaption" : false,
-          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 12,
@@ -208,15 +216,15 @@
           "itemStyle" : "DEFAULT",
           "name" : "status"
         }, {
-          "viewFieldName" : "estimate",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
             "editorType" : "SPAN",
             "name" : "estimate"
           },
-          "showCaption" : false,
+          "viewFieldName" : "estimate",
           "hidden" : false,
+          "showCaption" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 4,
@@ -244,6 +252,12 @@
             "id" : "itemlayoutpanel_button1"
           },
           "getPSUIAction" : {
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "project",
+              "key" : "PROJECT",
+              "name" : "PROJECT"
+            } ],
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -260,18 +274,12 @@
             } ],
             "refreshMode" : 1,
             "enableConfirm" : true,
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "project",
-              "key" : "PROJECT",
-              "name" : "PROJECT"
-            } ],
             "getNoPrivDisplayMode" : 1,
-            "timeout" : 60000,
             "getPSSysImage" : {
               "glyph" : "xf127@FontAwesome",
               "cssClass" : "fa fa-unlink"
             },
+            "timeout" : 60000,
             "codeName" : "ProjectUnlinkStory",
             "caption" : "移除",
             "actionTarget" : "SINGLEKEY",
@@ -295,11 +303,11 @@
             "height" : 24,
             "layout" : "TABLE_24COL"
           },
-          "height" : 24.0,
           "getPSSysImage" : {
             "glyph" : "xf127@FontAwesome",
             "cssClass" : "fa fa-unlink"
           },
+          "height" : 24.0,
           "itemType" : "BUTTON",
           "caption" : "移除",
           "itemStyle" : "DEFAULT",
@@ -333,13 +341,13 @@
       "name" : "container1"
     }, {
       "getPSPanelItems" : [ {
-        "viewFieldName" : "id",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "srfkey"
         },
-        "showCaption" : false,
+        "viewFieldName" : "id",
         "hidden" : true,
+        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -348,13 +356,13 @@
         "itemStyle" : "DEFAULT",
         "name" : "srfkey"
       }, {
-        "viewFieldName" : "stage",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "stage"
         },
-        "showCaption" : false,
+        "viewFieldName" : "stage",
         "hidden" : true,
+        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -363,13 +371,13 @@
         "itemStyle" : "DEFAULT",
         "name" : "stage"
       }, {
-        "viewFieldName" : "story",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "story"
         },
-        "showCaption" : false,
+        "viewFieldName" : "story",
         "hidden" : true,
+        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -378,13 +386,13 @@
         "itemStyle" : "DEFAULT",
         "name" : "story"
       }, {
-        "viewFieldName" : "ISFAVORITES",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "isfavorites"
         },
-        "showCaption" : false,
+        "viewFieldName" : "ISFAVORITES",
         "hidden" : true,
+        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -393,13 +401,13 @@
         "itemStyle" : "DEFAULT",
         "name" : "isfavorites"
       }, {
-        "viewFieldName" : "ISCHILD",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "ischild"
         },
-        "showCaption" : false,
+        "viewFieldName" : "ISCHILD",
         "hidden" : true,
+        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -489,56 +497,48 @@
     "name" : "itemlayoutpanel",
     "modelid" : "01eb7f8c78faa3f61224f186420f29c2"
   },
-  "appendDEItems" : true,
-  "singleSelect" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "getGroupPSAppDEField" : {
-    "name" : "STAGE",
-    "codeName" : "Stage"
-  },
-  "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : true,
   "getPSDEDataViewItems" : [ {
+    "dataItemName" : "id",
+    "enableSort" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
-    "enableSort" : true,
     "itemType" : "DATAITEM",
     "caption" : "编号",
     "name" : "ID"
   }, {
+    "dataItemName" : "project",
+    "enableSort" : true,
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataItemName" : "project",
-    "enableSort" : true,
     "itemType" : "DATAITEM",
     "caption" : "项目",
     "name" : "PROJECT"
   }, {
+    "dataItemName" : "ischild",
+    "enableSort" : true,
     "getPSAppDEField" : {
       "name" : "ISCHILD",
       "codeName" : "Ischild"
     },
-    "dataItemName" : "ischild",
-    "enableSort" : true,
     "itemType" : "DATAITEM",
     "caption" : "是否可以细分",
     "name" : "ISCHILD"
   }, {
+    "dataItemName" : "pri",
+    "enableSort" : true,
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "dataItemName" : "pri",
-    "enableSort" : true,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json"
@@ -548,42 +548,42 @@
     "cLConvertMode" : "FRONT",
     "name" : "PRI"
   }, {
+    "dataItemName" : "title",
+    "enableSort" : true,
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataItemName" : "title",
-    "enableSort" : true,
     "itemType" : "DATAITEM",
     "caption" : "需求名称",
     "name" : "TITLE"
   }, {
+    "dataItemName" : "isfavorites",
+    "enableSort" : true,
     "getPSAppDEField" : {
       "name" : "ISFAVORITES",
       "codeName" : "Isfavorites"
     },
-    "dataItemName" : "isfavorites",
-    "enableSort" : true,
     "itemType" : "DATAITEM",
     "caption" : "是否收藏",
     "name" : "ISFAVORITES"
   }, {
+    "dataItemName" : "estimate",
+    "enableSort" : true,
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
-    "dataItemName" : "estimate",
-    "enableSort" : true,
     "itemType" : "DATAITEM",
     "caption" : "预计工时",
     "name" : "ESTIMATE"
   }, {
+    "dataItemName" : "stage",
+    "enableSort" : true,
     "getPSAppDEField" : {
       "name" : "STAGE",
       "codeName" : "Stage"
     },
-    "dataItemName" : "stage",
-    "enableSort" : true,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__stage.json"
@@ -593,12 +593,12 @@
     "cLConvertMode" : "FRONT",
     "name" : "STAGE"
   }, {
+    "dataItemName" : "status",
+    "enableSort" : true,
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataItemName" : "status",
-    "enableSort" : true,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__status.json"
@@ -611,11 +611,11 @@
   "codeName" : "StoryKanBan",
   "minorSortDir" : "DESC",
   "enableGroup" : true,
-  "pagingSize" : 100,
   "getGroupPSCodeList" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/StoryStageKane.json"
   },
+  "pagingSize" : 100,
   "groupMode" : "CODELIST",
   "getGroupPSSysPFPlugin" : {
     "pluginType" : "CUSTOM",

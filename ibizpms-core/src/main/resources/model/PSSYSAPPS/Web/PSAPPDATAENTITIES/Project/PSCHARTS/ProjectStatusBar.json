@@ -55,11 +55,11 @@
       "id" : "0"
     },
     "getPSChartSeriesEncode" : {
-      "getPSChartYAxis" : {
+      "getPSChartXAxis" : {
         "modelref" : true,
         "id" : "0"
       },
-      "getPSChartXAxis" : {
+      "getPSChartYAxis" : {
         "modelref" : true,
         "id" : "0"
       },
@@ -87,6 +87,15 @@
     "name" : "状态分类",
     "id" : "0"
   } ],
+  "getPSChartYAxises" : [ {
+    "eChartsType" : "value",
+    "eChartsPos" : "yAxis",
+    "position" : "left",
+    "type" : "numeric",
+    "index" : 0,
+    "name" : "数量",
+    "id" : "0"
+  } ],
   "getPSChartGrids" : [ {
     "getPSChartGridXAxis0" : {
       "modelref" : true,
@@ -110,15 +119,6 @@
     "type" : "grid",
     "index" : 0,
     "name" : "[StatusBar]直角坐标系[0]",
-    "id" : "0"
-  } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "position" : "left",
-    "type" : "numeric",
-    "index" : 0,
-    "name" : "数量",
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {
@@ -156,11 +156,11 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
-  "height" : 300.0,
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
+  "height" : 300.0,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSCHARTS/ProjectStatusBar.json",
   "logicName" : "ProjectStatusBar",
   "modelid" : "54f592d8a07988e64fb60c5c3312e187",

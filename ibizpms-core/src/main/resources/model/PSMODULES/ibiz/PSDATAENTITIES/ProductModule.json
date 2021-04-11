@@ -2,8 +2,10 @@
   "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 255,
+    "defaultValue" : ",",
+    "valueFormat" : "%1$s",
+    "deployId" : "8bd7ba8dbf25d54cd508d16d3b2e9e84",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -14,8 +16,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "PATH",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -44,19 +46,18 @@
       "autoIncrement" : false,
       "name" : "PATH"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "8bd7ba8dbf25d54cd508d16d3b2e9e84",
     "codeName" : "Path",
     "logicName" : "path",
     "stringLength" : 255,
     "stdDataType" : 25,
-    "length" : 255,
-    "defaultValue" : ",",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PATH"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "046fd5672f4cba92dbe583810dd3dd56",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -67,8 +68,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "ORDERPK",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -89,22 +90,21 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "046fd5672f4cba92dbe583810dd3dd56",
     "codeName" : "Orderpk",
     "logicName" : "数据选择排序",
     "stringLength" : 100,
     "stdDataType" : 25,
     "phisicalDEField" : false,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "ORDERPK"
   }, {
     "dataType" : "TEXT",
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1,
+    "defaultValue" : "0",
+    "valueFormat" : "%1$s",
+    "deployId" : "7147f41a46b18ba8a7c85c2547d7d451",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -115,8 +115,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1,
           "dEFName" : "DELETED",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1]",
           "name" : "默认字符串长度"
@@ -145,22 +145,21 @@
       "autoIncrement" : false,
       "name" : "DELETED"
     } ],
-    "predefinedType" : "LOGICVALID",
-    "valueFormat" : "%1$s",
-    "deployId" : "7147f41a46b18ba8a7c85c2547d7d451",
     "codeName" : "Deleted",
     "logicName" : "逻辑删除标志",
     "stringLength" : 1,
     "stdDataType" : 25,
-    "length" : 1,
-    "defaultValue" : "0",
+    "predefinedType" : "LOGICVALID",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "DELETED"
   }, {
     "dataType" : "TEXT",
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 60,
+    "valueFormat" : "%1$s",
+    "deployId" : "3a92bba1e8b816014e735120e9412e61",
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -172,8 +171,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "NAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -202,22 +201,24 @@
       "autoIncrement" : false,
       "name" : "NAME"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "3a92bba1e8b816014e735120e9412e61",
     "codeName" : "Name",
     "logicName" : "名称",
     "stringLength" : 60,
     "stdDataType" : 25,
-    "length" : 60,
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "NAME"
   }, {
+    "dataType" : "INT",
+    "defaultValue" : "0",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch_Cache.json"
     },
-    "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "4c0d88748e674580f3f81da1b0d59284",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -246,17 +247,18 @@
       "autoIncrement" : false,
       "name" : "BRANCH"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "4c0d88748e674580f3f81da1b0d59284",
     "codeName" : "Branch",
     "logicName" : "branch",
     "stdDataType" : 9,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "BRANCH"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "/",
+    "valueFormat" : "%1$s",
+    "deployId" : "6104f3fd1c969379a8f6ddedbec1c1ac",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -267,8 +269,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "SHORT",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -297,19 +299,18 @@
       "autoIncrement" : false,
       "name" : "SHORT"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "6104f3fd1c969379a8f6ddedbec1c1ac",
     "codeName" : "IBizShort",
     "logicName" : "简称",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
-    "defaultValue" : "/",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "SHORT"
   }, {
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "defaultValue" : "0",
+    "valueFormat" : "%1$s",
+    "deployId" : "7328c2a86a80971b6d9d8bac9e151b0d",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -338,17 +339,17 @@
       "autoIncrement" : false,
       "name" : "ORDER"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "7328c2a86a80971b6d9d8bac9e151b0d",
     "codeName" : "Order",
     "logicName" : "排序值",
     "stdDataType" : 9,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ORDER"
   }, {
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "defaultValue" : "0",
+    "valueFormat" : "%1$s",
+    "deployId" : "5bf0df1a258dbf4806162ecb102df67f",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -377,17 +378,18 @@
       "autoIncrement" : false,
       "name" : "GRADE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "5bf0df1a258dbf4806162ecb102df67f",
     "codeName" : "Grade",
     "logicName" : "grade",
     "stdDataType" : 9,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "GRADE"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "story",
+    "valueFormat" : "%1$s",
+    "deployId" : "f2becb9ba0f4b52048af452d7717968d",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -398,8 +400,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "TYPE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -428,19 +430,19 @@
       "autoIncrement" : false,
       "name" : "TYPE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "f2becb9ba0f4b52048af452d7717968d",
     "codeName" : "Type",
     "logicName" : "类型（story）",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
-    "defaultValue" : "story",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TYPE"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "/",
+    "valueFormat" : "%1$s",
+    "deployId" : "99fbdb0bc9e8fc16385cf91108b085d4",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -451,8 +453,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "OWNER",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -481,21 +483,20 @@
       "autoIncrement" : false,
       "name" : "OWNER"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "99fbdb0bc9e8fc16385cf91108b085d4",
     "codeName" : "Owner",
     "logicName" : "owner",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
-    "defaultValue" : "/",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "OWNER"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "2057374f99fad497374bdf074968dc01",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -506,8 +507,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "ISLEAF",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -536,22 +537,18 @@
       "autoIncrement" : false,
       "name" : "ISLEAF"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "2057374f99fad497374bdf074968dc01",
     "codeName" : "IsLeaf",
     "logicName" : "叶子模块",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "ISLEAF"
   }, {
     "dataType" : "ACID",
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "enableDBAutoValue" : true,
-    "dEFType" : 1,
+    "length" : 20,
+    "valueFormat" : "%1$s",
+    "deployId" : "04721954f70f6f24be7dd411a15d98bb",
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -582,17 +579,23 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "04721954f70f6f24be7dd411a15d98bb",
     "codeName" : "Id",
     "logicName" : "id",
     "stdDataType" : 1,
-    "length" : 20,
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
     "name" : "ID"
   }, {
     "dataType" : "LONGTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 65535,
+    "defaultValue" : "/",
+    "valueFormat" : "%1$s",
+    "deployId" : "e4c322c4248ba43cc681a0d4dff98fc9",
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -603,8 +606,8 @@
           "includeMaxValue" : true,
           "maxValue" : 65535,
           "dEFName" : "COLLECTOR",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[65535]",
           "name" : "默认字符串长度"
@@ -633,15 +636,12 @@
       "autoIncrement" : false,
       "name" : "COLLECTOR"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "e4c322c4248ba43cc681a0d4dff98fc9",
     "codeName" : "Collector",
     "logicName" : "collector",
     "stringLength" : 65535,
     "stdDataType" : 21,
-    "queryColumn" : false,
-    "length" : 65535,
-    "defaultValue" : "/",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "COLLECTOR"
   }, {
     "phisicalDEField" : false,
@@ -656,8 +656,8 @@
       "codeName" : "Name"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 90,
+    "deployId" : "b8bb8671935ea8afafd1a23d6568d5d1",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -668,8 +668,8 @@
           "includeMaxValue" : true,
           "maxValue" : 90,
           "dEFName" : "ROOTNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[90]",
           "name" : "默认字符串长度"
@@ -698,12 +698,12 @@
       "autoIncrement" : false,
       "name" : "ROOTNAME"
     } ],
-    "deployId" : "b8bb8671935ea8afafd1a23d6568d5d1",
     "codeName" : "RootName",
     "logicName" : "所属产品",
     "stringLength" : 90,
     "stdDataType" : 25,
-    "length" : 90,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "ROOTNAME"
   }, {
     "phisicalDEField" : false,
@@ -718,8 +718,8 @@
       "codeName" : "Name"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 60,
+    "deployId" : "02256dd41e1c80041fdc286cbfad04e7",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -730,8 +730,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "PARENTNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -760,12 +760,12 @@
       "autoIncrement" : false,
       "name" : "PARENTNAME"
     } ],
-    "deployId" : "02256dd41e1c80041fdc286cbfad04e7",
     "codeName" : "ParentName",
     "logicName" : "上级模块",
     "stringLength" : 60,
     "stdDataType" : 25,
-    "length" : 60,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "PARENTNAME"
   }, {
     "getPSDER" : {
@@ -779,8 +779,8 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "deployId" : "3b1b2cf81c04128ccb50db3b52d6ddc1",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -809,11 +809,11 @@
       "autoIncrement" : false,
       "name" : "ROOT"
     } ],
-    "deployId" : "3b1b2cf81c04128ccb50db3b52d6ddc1",
     "codeName" : "Root",
     "logicName" : "产品",
     "stdDataType" : 1,
-    "length" : 8,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ROOT"
   }, {
     "getPSDER" : {
@@ -827,8 +827,8 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 20,
+    "deployId" : "a0e8de7654fd653c5dc0e33842210099",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -857,138 +857,140 @@
       "autoIncrement" : false,
       "name" : "PARENT"
     } ],
-    "deployId" : "a0e8de7654fd653c5dc0e33842210099",
     "codeName" : "Parent",
     "logicName" : "id",
     "stdDataType" : 1,
-    "length" : 20,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PARENT"
   } ],
+  "validLogicValue" : "0",
+  "invalidLogicValue" : "1",
   "getAllPSDEDataSets" : [ {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "ByPath",
     "logicName" : "BYPATH",
+    "extendMode" : 0,
     "minorSortDir" : "DESC",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "majorSortDir" : "ASC",
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
-    "majorSortDir" : "ASC",
+    "pageSize" : -1,
     "name" : "BYPATH"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "extendMode" : 0,
     "minorSortDir" : "DESC",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "majorSortDir" : "ASC",
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
-    "majorSortDir" : "ASC",
+    "pageSize" : -1,
     "name" : "DEFAULT"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "ParentModule",
     "logicName" : "父模块",
+    "extendMode" : 0,
     "minorSortDir" : "DESC",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "majorSortDir" : "ASC",
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
-    "majorSortDir" : "ASC",
+    "pageSize" : -1,
     "name" : "ParentModule"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "Root",
     "logicName" : "根模块",
+    "extendMode" : 0,
     "minorSortDir" : "DESC",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "majorSortDir" : "ASC",
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
-    "majorSortDir" : "ASC",
+    "pageSize" : -1,
     "name" : "ROOT"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "Root_NoBranch",
     "logicName" : "根模块_无分支",
+    "extendMode" : 0,
     "minorSortDir" : "DESC",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "majorSortDir" : "ASC",
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
-    "majorSortDir" : "ASC",
+    "pageSize" : -1,
     "name" : "Root_NoBranch"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "StoryModule",
     "logicName" : "StoryModule",
+    "extendMode" : 0,
     "minorSortDir" : "DESC",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "majorSortDir" : "ASC",
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
-    "majorSortDir" : "ASC",
+    "pageSize" : -1,
     "name" : "StoryModule"
   } ],
   "getAllPSDEActions" : [ {
@@ -1028,9 +1030,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "ByPath",
     "logicName" : "BYPATH",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BYPATH"
   }, {
@@ -1039,9 +1041,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -1050,9 +1052,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "ParentModule",
     "logicName" : "父模块",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "ParentModule"
   }, {
@@ -1061,9 +1063,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "Root",
     "logicName" : "根模块",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "ROOT"
   }, {
@@ -1072,9 +1074,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "Root_NoBranch",
     "logicName" : "根模块_无分支",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "Root_NoBranch"
   }, {
@@ -1083,9 +1085,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "StoryModule",
     "logicName" : "StoryModule",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "StoryModule"
   }, {
@@ -1094,9 +1096,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -1121,22 +1123,14 @@
     "name" : "方法映射"
   } ],
   "subSysAsCloud" : false,
+  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "validLogicValue" : "0",
-  "invalidLogicValue" : "1",
-  "enableUIActions" : 15,
   "orderValue" : 99999,
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "serviceCodeName" : "ProductModule",
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1151,16 +1145,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "711b140ef3f3c70e074af9ae92e0f092",
+  "enableSQLStorage" : true,
   "dynaInstMode" : 1,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,
-  "dSLink" : "DEFAULT",
-  "deployId" : "711b140ef3f3c70e074af9ae92e0f092",
+  "virtualMode" : 0,
   "codeName" : "ProductModule",
   "logicName" : "需求模块",
   "tableName" : "zt_module",
-  "enableRemove" : true,
   "viewName" : "v_zt_module",
   "view2Name" : "V2_IBZ_PRODUCTMODULE",
   "view3Name" : "V3_IBZ_PRODUCTMODULE",
@@ -1173,8 +1167,14 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
+  "enableRemove" : true,
+  "serviceCodeName" : "ProductModule",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

@@ -6,14 +6,14 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
+  "orderValue" : 99999,
   "codeName" : "GetUserConcat",
   "logicName" : "获取联系人",
+  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "DELOGIC",
   "requestParamType" : "ENTITY",

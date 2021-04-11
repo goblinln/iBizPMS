@@ -3,11 +3,11 @@
     "name" : "BUILD",
     "codeName" : "Build"
   },
+  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "BUILDNAME",
     "codeName" : "Buildname"
   },
-  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "BUILD",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
   },
   "orderValue" : 100,
-  "codeName" : "ZTBuild",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
   },
+  "codeName" : "ZTBuild",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDERS/DER1N_ZT_RELEASE_ZT_BUILD_BUILD.json",
   "name" : "DER1N_ZT_RELEASE_ZT_BUILD_BUILD"
 }

@@ -115,16 +115,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "项目名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -137,11 +137,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "进行中",
+    "dataItemName" : "doingtaskcnt",
     "getPSAppDEField" : {
       "name" : "DOINGTASKCNT",
       "codeName" : "Doingtaskcnt"
     },
-    "dataItemName" : "doingtaskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -155,11 +155,11 @@
     "name" : "doingtaskcnt"
   }, {
     "excelCaption" : "未开始",
+    "dataItemName" : "waittaskcnt",
     "getPSAppDEField" : {
       "name" : "WAITTASKCNT",
       "codeName" : "Waittaskcnt"
     },
-    "dataItemName" : "waittaskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -173,11 +173,11 @@
     "name" : "waittaskcnt"
   }, {
     "excelCaption" : "已暂停",
+    "dataItemName" : "pausetaskcnt",
     "getPSAppDEField" : {
       "name" : "PAUSETASKCNT",
       "codeName" : "Pausetaskcnt"
     },
-    "dataItemName" : "pausetaskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -191,11 +191,11 @@
     "name" : "pausetaskcnt"
   }, {
     "excelCaption" : "已关闭",
+    "dataItemName" : "closedtaskcnt",
     "getPSAppDEField" : {
       "name" : "CLOSEDTASKCNT",
       "codeName" : "Closedtaskcnt"
     },
-    "dataItemName" : "closedtaskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -209,11 +209,11 @@
     "name" : "closedtaskcnt"
   }, {
     "excelCaption" : "已取消",
+    "dataItemName" : "canceltaskcnt",
     "getPSAppDEField" : {
       "name" : "CANCELTASKCNT",
       "codeName" : "Canceltaskcnt"
     },
-    "dataItemName" : "canceltaskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -227,11 +227,11 @@
     "name" : "canceltaskcnt"
   }, {
     "excelCaption" : "已完成",
+    "dataItemName" : "donetaskcnt",
     "getPSAppDEField" : {
       "name" : "DONETASKCNT",
       "codeName" : "Donetaskcnt"
     },
-    "dataItemName" : "donetaskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -245,11 +245,11 @@
     "name" : "donetaskcnt"
   }, {
     "excelCaption" : "总计",
+    "dataItemName" : "taskcnt",
     "getPSAppDEField" : {
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
-    "dataItemName" : "taskcnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

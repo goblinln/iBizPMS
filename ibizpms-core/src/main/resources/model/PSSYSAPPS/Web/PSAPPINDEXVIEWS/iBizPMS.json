@@ -234,13 +234,13 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "hidden" : true,
         "getPSAppFunc" : {
           "modelref" : true,
           "id" : "AppFunc9"
         },
         "itemType" : "MENUITEM",
         "accUserMode" : 2,
-        "hidden" : true,
         "caption" : "全文检索",
         "tooltip" : "全文检索",
         "name" : "menuitem27"
@@ -496,13 +496,13 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "hidden" : true,
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto26"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
-      "hidden" : true,
       "caption" : "bug菜单项",
       "tooltip" : "bug菜单项",
       "name" : "menuitem13"
@@ -515,13 +515,13 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "hidden" : true,
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto26"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
-      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem14"
@@ -534,13 +534,13 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "hidden" : true,
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto27"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
-      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem15"
@@ -553,13 +553,13 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "hidden" : true,
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto29"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
-      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem18"
@@ -572,13 +572,13 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "hidden" : true,
       "getPSAppFunc" : {
         "modelref" : true,
         "id" : "Auto32"
       },
       "itemType" : "MENUITEM",
       "accUserMode" : 2,
-      "hidden" : true,
       "caption" : "菜单项",
       "tooltip" : "菜单项",
       "name" : "menuitem20"

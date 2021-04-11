@@ -241,8 +241,8 @@
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "enableCond" : 3,
     "ignoreInput" : 0,
     "valueItemName" : "branch",
@@ -285,17 +285,17 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : true,
   "controlType" : "GRID",
+  "enableRowEdit" : true,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "名称",
+    "dataItemName" : "name",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -312,12 +312,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch_Cache.json"
     },
+    "dataItemName" : "branch_text",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
-    "dataItemName" : "branch_text",
-    "enableRowEdit" : true,
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -330,12 +330,12 @@
     "name" : "branch"
   }, {
     "excelCaption" : "简称",
+    "dataItemName" : "short",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "SHORT",
       "codeName" : "IBizShort"
     },
-    "dataItemName" : "short",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -348,12 +348,12 @@
     "name" : "short"
   }, {
     "excelCaption" : "排序值",
+    "dataItemName" : "order",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "ORDER",
       "codeName" : "Order"
     },
-    "dataItemName" : "order",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -367,7 +367,7 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : false,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.REMOVE",
@@ -378,11 +378,11 @@
             "id" : "工具栏按钮提示[*.REMOVE]"
           },
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "timeout" : 60000,
           "codeName" : "Remove",
           "caption" : "删除",
           "actionTarget" : "MULTIKEY",
@@ -393,7 +393,7 @@
           "fullCodeName" : "Remove",
           "name" : "表格界面_删除操作"
         },
-        "showIcon" : true,
+        "addSeparator" : false,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u8447967"

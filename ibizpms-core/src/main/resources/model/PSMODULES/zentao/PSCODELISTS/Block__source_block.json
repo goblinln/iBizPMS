@@ -1,43 +1,43 @@
 {
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
   "codeListType" : "STATIC",
-  "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Block__source_block.json",
+  "dynaInstMode" : 1,
   "codeName" : "Block__source_block",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "statistic",
     "codeName" : "Statistic",
-    "text" : "统计",
-    "value" : "statistic"
+    "text" : "统计"
   }, {
+    "value" : "overview",
     "codeName" : "Overview",
-    "text" : "总览",
-    "value" : "overview"
+    "text" : "总览"
   }, {
+    "value" : "list",
     "codeName" : "List",
-    "text" : "列表",
-    "value" : "list"
+    "text" : "列表"
   }, {
+    "value" : "task",
     "codeName" : "Task",
-    "text" : "任务",
-    "value" : "task"
+    "text" : "任务"
   }, {
+    "value" : "bug",
     "codeName" : "Bug",
-    "text" : "bug",
-    "value" : "bug"
+    "text" : "bug"
   }, {
+    "value" : "case",
     "codeName" : "Case",
-    "text" : "用例",
-    "value" : "case"
+    "text" : "用例"
   }, {
+    "value" : "testtask",
     "codeName" : "Testtask",
-    "text" : "测试版本",
-    "value" : "testtask"
+    "text" : "测试版本"
   } ]
 }

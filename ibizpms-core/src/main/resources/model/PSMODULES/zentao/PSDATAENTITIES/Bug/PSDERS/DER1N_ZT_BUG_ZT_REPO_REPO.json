@@ -13,12 +13,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Repo.json"
   },
   "orderValue" : 100,
-  "codeName" : "ZTRepo",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
   },
+  "codeName" : "ZTRepo",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_REPO_REPO.json",
   "name" : "DER1N_ZT_BUG_ZT_REPO_REPO"
 }

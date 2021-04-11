@@ -13,12 +13,12 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
   },
   "orderValue" : 100,
-  "codeName" : "IbzlibCaseStepcS",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
   },
+  "codeName" : "IbzlibCaseStepcS",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDERS/DER1N_IBZ_LIBCASESTEPS_IBZ_LIBCASESTEPS_PARENT.json",
   "name" : "DER1N_IBZ_LIBCASESTEPS_IBZ_LIBCASESTEPS_PARENT"
 }

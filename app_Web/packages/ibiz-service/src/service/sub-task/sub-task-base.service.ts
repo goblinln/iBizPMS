@@ -102,6 +102,10 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
         return this.condCache.get('byModule');
     }
 
+    protected getChildDefaultCond() {
+        return this.condCache.get('childDefault');
+    }
+
     protected getChildTaskCond() {
         return this.condCache.get('childTask');
     }
@@ -1777,6 +1781,41 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
             return this.http.post(`/tasks/${_context.task}/subtasks/fetchbymodule`, _data);
         }
         return this.http.post(`/subtasks/fetchbymodule`, _data);
+    }
+    /**
+     * FetchChildDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubTaskService
+     */
+    async FetchChildDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectmodule && _context.task && true) {
+            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+        }
+        if (_context.product && _context.story && _context.task && true) {
+            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+        }
+        if (_context.product && _context.productplan && _context.task && true) {
+            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+        }
+        if (_context.story && _context.task && true) {
+            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+        }
+        if (_context.productplan && _context.task && true) {
+            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+        }
+        if (_context.projectmodule && _context.task && true) {
+            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+        }
+        if (_context.task && true) {
+            return this.http.get(`/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+        }
+        return this.http.get(`/subtasks/fetchchilddefault`, _data);
     }
     /**
      * FetchChildTask

@@ -13,12 +13,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
   },
   "orderValue" : 100,
-  "codeName" : "ZT_FILE",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl.json"
   },
+  "codeName" : "ZT_FILE",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDERS/DER1N_IBZPRO_SYSTPL_ZT_FILE_FILE.json",
   "name" : "DER1N_IBZPRO_SYSTPL_ZT_FILE_FILE"
 }

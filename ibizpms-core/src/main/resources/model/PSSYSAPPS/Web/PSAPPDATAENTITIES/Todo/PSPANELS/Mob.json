@@ -1,7 +1,6 @@
 {
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
-      "viewFieldName" : "pri",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -12,9 +11,10 @@
         "editorType" : "SPAN",
         "name" : "pri"
       },
+      "viewFieldName" : "pri",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 2,
         "colLG" : 2,
@@ -24,15 +24,15 @@
       "itemStyle" : "DEFAULT",
       "name" : "pri"
     }, {
-      "viewFieldName" : "name",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "name"
       },
-      "showCaption" : false,
+      "viewFieldName" : "name",
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 10,
         "colLG" : 10,
@@ -42,15 +42,15 @@
       "itemStyle" : "DEFAULT",
       "name" : "name"
     }, {
-      "viewFieldName" : "date1",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "date1"
       },
-      "showCaption" : false,
+      "viewFieldName" : "date1",
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -60,7 +60,6 @@
       "itemStyle" : "DEFAULT",
       "name" : "date1"
     }, {
-      "viewFieldName" : "begin",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -71,9 +70,10 @@
         "editorType" : "SPAN",
         "name" : "begin"
       },
+      "viewFieldName" : "begin",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -83,7 +83,6 @@
       "itemStyle" : "DEFAULT",
       "name" : "begin"
     }, {
-      "viewFieldName" : "status",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -94,9 +93,10 @@
         "editorType" : "SPAN",
         "name" : "status"
       },
+      "viewFieldName" : "status",
+      "hidden" : false,
       "convertToCodeItemText" : true,
       "showCaption" : false,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,

@@ -94,16 +94,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "组成员标识",
+    "dataItemName" : "teammemberid",
     "getPSAppDEField" : {
       "name" : "TEAMMEMBERID",
       "codeName" : "TeamMemberId"
     },
-    "dataItemName" : "teammemberid",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -116,11 +116,11 @@
     "name" : "teammemberid"
   }, {
     "excelCaption" : "姓名",
+    "dataItemName" : "personname",
     "getPSAppDEField" : {
       "name" : "PERSONNAME",
       "codeName" : "PersonName"
     },
-    "dataItemName" : "personname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -133,11 +133,11 @@
     "name" : "personname"
   }, {
     "excelCaption" : "用户标识",
+    "dataItemName" : "userid",
     "getPSAppDEField" : {
       "name" : "USERID",
       "codeName" : "UserId"
     },
-    "dataItemName" : "userid",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -149,7 +149,6 @@
     "widthUnit" : "PX",
     "name" : "userid"
   }, {
-    "excelCaption" : "组名称",
     "linkValueItem" : "teamid",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -157,11 +156,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridView.json",
       "viewType" : "DEGRIDVIEW"
     },
+    "excelCaption" : "组名称",
+    "dataItemName" : "teamname",
     "getPSAppDEField" : {
       "name" : "TEAMNAME",
       "codeName" : "TeamName"
     },
-    "dataItemName" : "teamname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -174,11 +174,11 @@
     "name" : "teamname"
   }, {
     "excelCaption" : "组标识",
+    "dataItemName" : "teamid",
     "getPSAppDEField" : {
       "name" : "TEAMID",
       "codeName" : "TeamId"
     },
-    "dataItemName" : "teamid",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -191,11 +191,11 @@
     "name" : "teamid"
   }, {
     "excelCaption" : "岗位标识",
+    "dataItemName" : "postid",
     "getPSAppDEField" : {
       "name" : "POSTID",
       "codeName" : "PostId"
     },
-    "dataItemName" : "postid",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

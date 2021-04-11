@@ -108,20 +108,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "模块名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -134,11 +134,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "上级模块",
+    "dataItemName" : "parentname",
     "getPSAppDEField" : {
       "name" : "PARENTNAME",
       "codeName" : "ParentName"
     },
-    "dataItemName" : "parentname",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -151,11 +151,11 @@
     "name" : "parentname"
   }, {
     "excelCaption" : "级别",
+    "dataItemName" : "grade",
     "getPSAppDEField" : {
       "name" : "GRADE",
       "codeName" : "Grade"
     },
-    "dataItemName" : "grade",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -168,11 +168,11 @@
     "name" : "grade"
   }, {
     "excelCaption" : "排序",
+    "dataItemName" : "order",
     "getPSAppDEField" : {
       "name" : "ORDER",
       "codeName" : "Order"
     },
-    "dataItemName" : "order",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -185,11 +185,11 @@
     "name" : "order"
   }, {
     "excelCaption" : "负责人",
+    "dataItemName" : "owner",
     "getPSAppDEField" : {
       "name" : "OWNER",
       "codeName" : "Owner"
     },
-    "dataItemName" : "owner",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

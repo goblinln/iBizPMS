@@ -17,13 +17,13 @@
     "name" : "开始"
   }, {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "IbzFavorites"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
     },
     "logicHolder" : 3,
     "codeName" : "Deaction1",
@@ -40,6 +40,7 @@
       "id" : "连接1062"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzFavorites"
@@ -48,27 +49,26 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "OBJECTID",
       "srcFieldName" : "ID",
       "name" : "Default[ID] ==> IbzFavorites[OBJECTID]"
     }, {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzFavorites"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SESSION",
       "dstFieldName" : "ACCOUNT",
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname] ==> IbzFavorites[ACCOUNT]"
     }, {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzFavorites"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCVALUE",
       "srcValue" : "story",
       "dstFieldName" : "TYPE",
@@ -103,16 +103,16 @@
     "name" : "连接7343"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
-    "sessionParam" : true,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : true,
     "codeName" : "IbzFavorites",
     "default" : false,
     "name" : "收藏"

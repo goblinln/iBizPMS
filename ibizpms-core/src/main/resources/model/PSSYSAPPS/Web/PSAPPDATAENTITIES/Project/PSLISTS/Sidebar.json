@@ -1,4 +1,9 @@
 {
+  "enableRowNew" : false,
+  "enableRowEditOrder" : false,
+  "noSort" : false,
+  "hasWFDataItems" : false,
+  "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
@@ -60,13 +65,8 @@
     "dataType" : 25,
     "name" : "srfmstag"
   } ],
-  "showHeader" : true,
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "enableRowEdit" : false,
   "controlType" : "LIST",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
@@ -142,11 +142,11 @@
         "refreshMode" : 1,
         "enableConfirm" : true,
         "getNoPrivDisplayMode" : 2,
-        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf0a6@FontAwesome",
           "cssClass" : "fa fa-hand-o-up"
         },
+        "timeout" : 60000,
         "codeName" : "ProjectTop",
         "caption" : "置顶",
         "actionTarget" : "SINGLEKEY",
@@ -189,11 +189,11 @@
         "refreshMode" : 1,
         "enableConfirm" : true,
         "getNoPrivDisplayMode" : 2,
-        "timeout" : 60000,
         "getPSSysImage" : {
           "glyph" : "xf0a7@FontAwesome",
           "cssClass" : "fa fa-hand-o-down"
         },
+        "timeout" : 60000,
         "codeName" : "CancelProjectTop",
         "caption" : "取消置顶",
         "actionTarget" : "SINGLEKEY",
@@ -259,8 +259,8 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
-  "controlStyle" : "LISTVIEW",
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "controlStyle" : "LISTVIEW",
   "getPSSysPFPlugin" : {
     "pluginType" : "AC_ITEM",
     "pluginCode" : "PROJECTLEFTNavLIST"

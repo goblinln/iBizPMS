@@ -3,11 +3,11 @@
     "name" : "PDEPTID",
     "codeName" : "ParentDeptid"
   },
+  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PDEPTNAME",
     "codeName" : "ParentDeptName"
   },
-  "masterOrder" : -1,
   "removeActionType" : 3,
   "pickupDEFName" : "PDEPTID",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
   },
   "orderValue" : 100,
-  "codeName" : "ParentDept",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
   },
+  "codeName" : "ParentDept",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDERS/DER1N_SYS_DEPT_SYS_DEPT_PDEPTID.json",
   "name" : "DER1N_SYS_DEPT_SYS_DEPT_PDEPTID"
 }

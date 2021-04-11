@@ -7,13 +7,13 @@
   },
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Module"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -34,6 +34,7 @@
       "id" : "连接6882"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Module"
@@ -42,7 +43,6 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
       "srcFieldName" : "MODULE",
@@ -65,6 +65,7 @@
   }, {
     "parallelOutput" : true,
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
@@ -73,7 +74,6 @@
         "modelref" : true,
         "id" : "Module"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "BRANCH",
       "srcFieldName" : "BRANCH",
@@ -96,14 +96,13 @@
     },
     "name" : "连接6882"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
+        "condOP" : "ISNOTNULL",
         "dstFieldName" : "MODULE",
         "logicType" : "SINGLE",
         "name" : "Default[MODULE] 值不为空(NotNil)"
@@ -113,6 +112,7 @@
       "logicType" : "GROUP",
       "id" : "661944c18fe1176b86910c3779c3328e"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Prepareparam1"
@@ -135,16 +135,16 @@
     "name" : "连接9306"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Module",
     "default" : false,
     "name" : "模块"
   }, {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

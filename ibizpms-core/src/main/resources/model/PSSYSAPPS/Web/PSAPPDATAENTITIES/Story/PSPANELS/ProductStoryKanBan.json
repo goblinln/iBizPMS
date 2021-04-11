@@ -1,15 +1,15 @@
 {
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
-      "viewFieldName" : "TITLE",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "title"
       },
-      "showCaption" : false,
+      "viewFieldName" : "TITLE",
       "hidden" : false,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -29,7 +29,6 @@
       "name" : "rawitem1"
     }, {
       "getPSPanelItems" : [ {
-        "viewFieldName" : "pri",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -40,9 +39,10 @@
           "editorType" : "SPAN",
           "name" : "pri"
         },
+        "viewFieldName" : "pri",
+        "hidden" : false,
         "convertToCodeItemText" : true,
         "showCaption" : false,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 4,
@@ -52,7 +52,6 @@
         "itemStyle" : "DEFAULT",
         "name" : "pri"
       }, {
-        "viewFieldName" : "status",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -63,9 +62,10 @@
           "editorType" : "SPAN",
           "name" : "status"
         },
+        "viewFieldName" : "status",
+        "hidden" : false,
         "convertToCodeItemText" : true,
         "showCaption" : false,
-        "hidden" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 14,
@@ -76,15 +76,15 @@
         "itemStyle" : "DEFAULT",
         "name" : "status"
       }, {
-        "viewFieldName" : "estimate",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
           "editorType" : "SPAN",
           "name" : "estimate"
         },
-        "showCaption" : false,
+        "viewFieldName" : "estimate",
         "hidden" : false,
+        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 4,
@@ -134,13 +134,13 @@
     "name" : "container1"
   }, {
     "getPSPanelItems" : [ {
-      "viewFieldName" : "id",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "srfkey"
       },
-      "showCaption" : false,
+      "viewFieldName" : "id",
       "hidden" : true,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -149,13 +149,13 @@
       "itemStyle" : "DEFAULT",
       "name" : "srfkey"
     }, {
-      "viewFieldName" : "stage",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "stage"
       },
-      "showCaption" : false,
+      "viewFieldName" : "stage",
       "hidden" : true,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -164,13 +164,13 @@
       "itemStyle" : "DEFAULT",
       "name" : "stage"
     }, {
-      "viewFieldName" : "story",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "story"
       },
-      "showCaption" : false,
+      "viewFieldName" : "story",
       "hidden" : true,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -179,13 +179,13 @@
       "itemStyle" : "DEFAULT",
       "name" : "story"
     }, {
-      "viewFieldName" : "ISFAVORITES",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "isfavorites"
       },
-      "showCaption" : false,
+      "viewFieldName" : "ISFAVORITES",
       "hidden" : true,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -194,13 +194,13 @@
       "itemStyle" : "DEFAULT",
       "name" : "isfavorites"
     }, {
-      "viewFieldName" : "ISCHILD",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
         "name" : "ischild"
       },
-      "showCaption" : false,
+      "viewFieldName" : "ISCHILD",
       "hidden" : true,
+      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"

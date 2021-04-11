@@ -97,16 +97,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "文档库名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -132,17 +132,6 @@
     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocGridViewLookDoc.json",
     "viewType" : "DEGRIDVIEW"
   },
-  "getPSNavigateParams" : [ {
-    "rawValue" : false,
-    "value" : "product",
-    "key" : "product",
-    "name" : "product"
-  }, {
-    "rawValue" : true,
-    "value" : "0",
-    "key" : "parent",
-    "name" : "parent"
-  } ],
   "getPSNavigateContexts" : [ {
     "rawValue" : false,
     "value" : "doclibtype",
@@ -159,6 +148,45 @@
     "key" : "PRODUCT",
     "name" : "PRODUCT"
   } ],
+  "getPSNavigateParams" : [ {
+    "rawValue" : false,
+    "value" : "product",
+    "key" : "product",
+    "name" : "product"
+  }, {
+    "rawValue" : true,
+    "value" : "0",
+    "key" : "parent",
+    "name" : "parent"
+  } ],
+  "getNavPSDER" : {
+    "getPSPickupDEField" : {
+      "name" : "LIB",
+      "codeName" : "Lib"
+    },
+    "masterOrder" : -1,
+    "getPSPickupTextDEField" : {
+      "name" : "LIBNAME",
+      "codeName" : "Libname"
+    },
+    "removeActionType" : -1,
+    "pickupDEFName" : "LIB",
+    "masterRS" : 0,
+    "removeOrder" : 0,
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+    },
+    "orderValue" : 100,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+    },
+    "codeName" : "Zt_doclib",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json",
+    "name" : "DER1N_ZT_DOC_ZT_DOCLIB_LIB"
+  },
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"

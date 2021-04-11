@@ -1,13 +1,15 @@
 {
   "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
+    "dataType" : "NSCODELIST",
+    "length" : 4,
+    "defaultValue" : "3",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Bug__severity.json"
     },
-    "dataType" : "NSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "cb09cfec98a85b95631be132519e4fc6",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -36,18 +38,18 @@
       "autoIncrement" : false,
       "name" : "SEVERITY"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "cb09cfec98a85b95631be132519e4fc6",
     "codeName" : "Severity",
     "logicName" : "严重程度",
     "stdDataType" : 9,
-    "length" : 4,
-    "defaultValue" : "3",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "SEVERITY"
   }, {
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 6,
+    "defaultValue" : "1",
+    "valueFormat" : "%1$s",
+    "deployId" : "e511ebd25fb8a24b4d1bdfdc86113e5f",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -76,18 +78,17 @@
       "autoIncrement" : false,
       "name" : "STORYVERSION"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "e511ebd25fb8a24b4d1bdfdc86113e5f",
     "codeName" : "StoryVersion",
     "logicName" : "需求版本",
     "stdDataType" : 9,
-    "length" : 6,
-    "defaultValue" : "1",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "STORYVERSION"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "f57e3e48006f4be4079448351402f2d0",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -98,8 +99,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "BUILDNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -120,20 +121,21 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "f57e3e48006f4be4079448351402f2d0",
     "codeName" : "BuildName",
     "logicName" : "版本名称",
     "stringLength" : 100,
     "stdDataType" : 25,
     "phisicalDEField" : false,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "BUILDNAME"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 255,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
+    "deployId" : "9622f3201d04753a558db17abcece2e5",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -144,8 +146,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "LINKBUG",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -174,19 +176,17 @@
       "autoIncrement" : false,
       "name" : "LINKBUG"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "9622f3201d04753a558db17abcece2e5",
     "codeName" : "LinkBug",
     "logicName" : "相关Bug",
     "stringLength" : 255,
     "stdDataType" : 25,
-    "length" : 255,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "LINKBUG"
   }, {
     "dataType" : "DATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "e6c0174016f55c82140eaefd1297af85",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -215,18 +215,18 @@
       "autoIncrement" : false,
       "name" : "ACTIVATEDDATE"
     } ],
-    "valueFormat" : "%1$tY-%1$tm-%1$td",
-    "deployId" : "e6c0174016f55c82140eaefd1297af85",
     "codeName" : "ActivatedDate",
     "logicName" : "激活日期",
     "stdDataType" : 5,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ACTIVATEDDATE"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "valueFormat" : "%1$s",
+    "deployId" : "4e9b4a60f9c08ba6b0da2b3426281b74",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -255,20 +255,20 @@
       "autoIncrement" : false,
       "name" : "OVERDUEBUGS"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "4e9b4a60f9c08ba6b0da2b3426281b74",
     "codeName" : "Overduebugs",
     "logicName" : "过期天数",
     "stdDataType" : 9,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "OVERDUEBUGS"
   }, {
+    "dataType" : "INT",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/BugCreateResolve.json"
     },
-    "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "deployId" : "fd904a0cbea2572e2e26809a0f395dc3",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -289,22 +289,24 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "fd904a0cbea2572e2e26809a0f395dc3",
     "codeName" : "Createbuild",
     "logicName" : "创建版本",
     "stdDataType" : 9,
     "phisicalDEField" : false,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "CREATEBUILD"
   }, {
+    "dataType" : "TEXT",
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameUnAssignTo_Gird.json"
     },
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "cd6e8ca6b0b8eeae48bc424c9b22d88d",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -315,8 +317,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "ASSIGNEDTO",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -345,23 +347,23 @@
       "autoIncrement" : false,
       "name" : "ASSIGNEDTO"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "cd6e8ca6b0b8eeae48bc424c9b22d88d",
     "codeName" : "AssignedTo",
     "logicName" : "指派给",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ASSIGNEDTO"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Bug__resolution.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "cd28d45461559786b7fd046ad81a2c0a",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -372,8 +374,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "RESOLUTION",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -402,21 +404,17 @@
       "autoIncrement" : false,
       "name" : "RESOLUTION"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "cd28d45461559786b7fd046ad81a2c0a",
     "codeName" : "Resolution",
     "logicName" : "解决方案",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "RESOLUTION"
   }, {
     "dataType" : "DATETIME",
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "29c8e4a6c2a536fb1035f7db5edd2833",
     "systemReserver" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -446,17 +444,20 @@
       "autoIncrement" : false,
       "name" : "LASTEDITEDDATE"
     } ],
-    "predefinedType" : "UPDATEDATE",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "29c8e4a6c2a536fb1035f7db5edd2833",
     "codeName" : "LastEditedDate",
     "logicName" : "修改日期",
     "stdDataType" : 5,
+    "predefinedType" : "UPDATEDATE",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "LASTEDITEDDATE"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "length" : 4000,
+    "valueFormat" : "%1$s",
+    "deployId" : "b3c8f7d2f3aec7b83d23239d5461d86a",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -467,8 +468,8 @@
           "includeMaxValue" : true,
           "maxValue" : 4000,
           "dEFName" : "MOBIMAGE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[4000]",
           "name" : "默认字符串长度"
@@ -489,20 +490,20 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "b3c8f7d2f3aec7b83d23239d5461d86a",
     "codeName" : "Mobimage",
     "logicName" : "移动端图片",
     "stringLength" : 4000,
     "stdDataType" : 25,
     "phisicalDEField" : false,
-    "length" : 4000,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "MOBIMAGE"
   }, {
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "defaultValue" : "0",
+    "valueFormat" : "%1$s",
+    "deployId" : "31b04993c0e9a20e517c2ee80793f700",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -531,17 +532,18 @@
       "autoIncrement" : false,
       "name" : "RESULT"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "31b04993c0e9a20e517c2ee80793f700",
     "codeName" : "Result",
     "logicName" : "result",
     "stdDataType" : 9,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "RESULT"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 255,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
+    "deployId" : "fe39a2ec616aed97b24ac84d14c7dfcf",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -552,8 +554,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "KEYWORDS",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -582,21 +584,20 @@
       "autoIncrement" : false,
       "name" : "KEYWORDS"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "fe39a2ec616aed97b24ac84d14c7dfcf",
     "codeName" : "Keywords",
     "logicName" : "关键词",
     "stringLength" : 255,
     "stdDataType" : 25,
-    "length" : 255,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "KEYWORDS"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "8ad71998e505e176751b12afa76b959d",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -607,8 +608,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "ISFAVORITES",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -638,20 +639,20 @@
       "autoIncrement" : false,
       "name" : "ISFAVORITES"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "8ad71998e505e176751b12afa76b959d",
     "codeName" : "Isfavorites",
     "logicName" : "是否收藏",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "ISFAVORITES"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "3e88f44806c18e2a284e76beae54167f",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -662,8 +663,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "MODULENAME1",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -692,25 +693,26 @@
       "autoIncrement" : false,
       "name" : "MODULENAME1"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "3e88f44806c18e2a284e76beae54167f",
     "codeName" : "Modulename1",
     "logicName" : "模块名称",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "MODULENAME1",
     "getUserParam" : {
       "(case" : "when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' )  FROM zt_module tt WHERE FIND_IN_SET( tt.id, t71.path ) AND tt.type = 'story'  GROUP BY tt.root limit 0,1) end)"
     }
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 200,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "0a3eb06639f4e4e03caa224cf57610ae",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -721,8 +723,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "CLOSEDBY",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -751,23 +753,23 @@
       "autoIncrement" : false,
       "name" : "CLOSEDBY"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "0a3eb06639f4e4e03caa224cf57610ae",
     "codeName" : "ClosedBy",
     "logicName" : "由谁关闭",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CLOSEDBY"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Bug__browser.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "95fa3272f2f10e89432094e25b35c6c8",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -778,8 +780,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "BROWSER",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -808,19 +810,18 @@
       "autoIncrement" : false,
       "name" : "BROWSER"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "95fa3272f2f10e89432094e25b35c6c8",
     "codeName" : "Browser",
     "logicName" : "浏览器",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "BROWSER"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "693a52b5e61f808a44c9fb7a87fbcf42",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -831,8 +832,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "NOTICEUSERS",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -853,20 +854,22 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "693a52b5e61f808a44c9fb7a87fbcf42",
     "codeName" : "Noticeusers",
     "logicName" : "消息通知用户",
     "stringLength" : 100,
     "stdDataType" : 25,
     "phisicalDEField" : false,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "NOTICEUSERS"
   }, {
     "dataType" : "LONGTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 65535,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
+    "deployId" : "2e913bc8ed64d58a759f65df2983d5e2",
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -877,8 +880,8 @@
           "includeMaxValue" : true,
           "maxValue" : 65535,
           "dEFName" : "STEPS",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[65535]",
           "name" : "默认字符串长度"
@@ -907,20 +910,19 @@
       "autoIncrement" : false,
       "name" : "STEPS"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "2e913bc8ed64d58a759f65df2983d5e2",
     "codeName" : "Steps",
     "logicName" : "重现步骤",
     "stringLength" : 65535,
     "stdDataType" : 21,
-    "queryColumn" : false,
-    "length" : 65535,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "STEPS"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 40,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
+    "deployId" : "f7532fbc6bf5dfb76d6b0f0936153055",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -931,8 +933,8 @@
           "includeMaxValue" : true,
           "maxValue" : 40,
           "dEFName" : "V2",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[40]",
           "name" : "默认字符串长度"
@@ -961,23 +963,22 @@
       "autoIncrement" : false,
       "name" : "V2"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "f7532fbc6bf5dfb76d6b0f0936153055",
     "codeName" : "V2",
     "logicName" : "v2",
     "stringLength" : 40,
     "stdDataType" : 25,
-    "length" : 40,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "V2"
   }, {
+    "dataType" : "NSCODELIST",
+    "defaultValue" : "0",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo2.json"
     },
-    "dataType" : "NSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "b397a354cbb3ef6c3b8aed5564d03bfd",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1007,17 +1008,17 @@
       "autoIncrement" : false,
       "name" : "CONFIRMED"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "b397a354cbb3ef6c3b8aed5564d03bfd",
     "codeName" : "Confirmed",
     "logicName" : "是否确认",
     "stdDataType" : 9,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CONFIRMED"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "length" : 100,
+    "valueFormat" : "%1$s",
+    "deployId" : "7eac24e1be185f1158570d451d411227",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1028,8 +1029,8 @@
           "includeMaxValue" : true,
           "maxValue" : 100,
           "dEFName" : "MAILTOCONACT",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[100]",
           "name" : "默认字符串长度"
@@ -1050,24 +1051,24 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "7eac24e1be185f1158570d451d411227",
     "codeName" : "Mailtoconact",
     "logicName" : "联系人",
     "stringLength" : 100,
     "stdDataType" : 25,
     "phisicalDEField" : false,
-    "length" : 100,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "MAILTOCONACT"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 200,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "153ce54495a48e2d947036f68248a113",
     "systemReserver" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -1079,8 +1080,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "OPENEDBY",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -1109,19 +1110,20 @@
       "autoIncrement" : false,
       "name" : "OPENEDBY"
     } ],
-    "predefinedType" : "CREATEMANNAME",
-    "valueFormat" : "%1$s",
-    "deployId" : "153ce54495a48e2d947036f68248a113",
     "codeName" : "OpenedBy",
     "logicName" : "由谁创建",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "predefinedType" : "CREATEMANNAME",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "OPENEDBY"
   }, {
     "dataType" : "INT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 6,
+    "defaultValue" : "0",
+    "valueFormat" : "%1$s",
+    "deployId" : "616e2d33612055195f042f65d8661c5c",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1150,18 +1152,16 @@
       "autoIncrement" : false,
       "name" : "ACTIVATEDCOUNT"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "616e2d33612055195f042f65d8661c5c",
     "codeName" : "ActivatedCount",
     "logicName" : "激活次数",
     "stdDataType" : 9,
-    "length" : 6,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ACTIVATEDCOUNT"
   }, {
     "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "8956c6ad24bf8a567d1d37e75471bfb4",
     "systemReserver" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -1191,17 +1191,17 @@
       "autoIncrement" : false,
       "name" : "OPENEDDATE"
     } ],
-    "predefinedType" : "CREATEDATE",
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "8956c6ad24bf8a567d1d37e75471bfb4",
     "codeName" : "OpenedDate",
     "logicName" : "创建日期",
     "stdDataType" : 5,
+    "predefinedType" : "CREATEDATE",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "OPENEDDATE"
   }, {
     "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "c3d155cb073ac7e2ab5bc8e45ed4fbf6",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1230,16 +1230,18 @@
       "autoIncrement" : false,
       "name" : "CLOSEDDATE"
     } ],
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "c3d155cb073ac7e2ab5bc8e45ed4fbf6",
     "codeName" : "ClosedDate",
     "logicName" : "关闭日期",
     "stdDataType" : 5,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CLOSEDDATE"
   }, {
     "dataType" : "SMCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 65535,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
+    "deployId" : "16bf0d1134eb2544c64c6f935c60fb7b",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1250,8 +1252,8 @@
           "includeMaxValue" : true,
           "maxValue" : 65535,
           "dEFName" : "MAILTO",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[65535]",
           "name" : "默认字符串长度"
@@ -1280,19 +1282,17 @@
       "autoIncrement" : false,
       "name" : "MAILTO"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "16bf0d1134eb2544c64c6f935c60fb7b",
     "codeName" : "Mailto",
     "logicName" : "抄送给",
     "stringLength" : 65535,
     "stdDataType" : 25,
-    "length" : 65535,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "MAILTO"
   }, {
     "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "5c4f69fcbbfb89280cd60e5e5f469ce0",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1321,16 +1321,16 @@
       "autoIncrement" : false,
       "name" : "ASSIGNEDDATE"
     } ],
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "5c4f69fcbbfb89280cd60e5e5f469ce0",
     "codeName" : "AssignedDate",
     "logicName" : "指派日期",
     "stdDataType" : 5,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ASSIGNEDDATE"
   }, {
     "dataType" : "DATE",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "deployId" : "9e25fbc45d7aeacdcc3349e1779fba11",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1359,20 +1359,22 @@
       "autoIncrement" : false,
       "name" : "DEADLINE"
     } ],
-    "valueFormat" : "%1$tY-%1$tm-%1$td",
-    "deployId" : "9e25fbc45d7aeacdcc3349e1779fba11",
     "codeName" : "Deadline",
     "logicName" : "截止日期",
     "stdDataType" : 5,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "DEADLINE"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 7,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Bug__color.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "06d0d2b06f373ea3543f31f71ac2ce24",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1383,8 +1385,8 @@
           "includeMaxValue" : true,
           "maxValue" : 7,
           "dEFName" : "COLOR",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[7]",
           "name" : "默认字符串长度"
@@ -1413,19 +1415,19 @@
       "autoIncrement" : false,
       "name" : "COLOR"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "06d0d2b06f373ea3543f31f71ac2ce24",
     "codeName" : "Color",
     "logicName" : "标题颜色",
     "stringLength" : 7,
     "stdDataType" : 25,
-    "length" : 7,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "COLOR"
   }, {
     "dataType" : "HTMLTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "length" : 1048576,
+    "valueFormat" : "%1$s",
+    "deployId" : "67e47dfb61eab2a3f958debee700dc62",
+    "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1436,8 +1438,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1048576,
           "dEFName" : "COMMENT",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "name" : "默认字符串长度"
@@ -1458,21 +1460,19 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "67e47dfb61eab2a3f958debee700dc62",
     "codeName" : "Comment",
     "logicName" : "备注",
     "stringLength" : 1048576,
     "stdDataType" : 21,
-    "queryColumn" : false,
     "phisicalDEField" : false,
-    "length" : 1048576,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "COMMENT"
   }, {
     "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "deployId" : "5c9fd9e62920d8ecc8452101dbb6dceb",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1501,20 +1501,22 @@
       "autoIncrement" : false,
       "name" : "RESOLVEDDATE"
     } ],
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "deployId" : "5c9fd9e62920d8ecc8452101dbb6dceb",
     "codeName" : "ResolvedDate",
     "logicName" : "解决日期",
     "stdDataType" : 5,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "RESOLVEDDATE"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Bug__type.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "5eca7eea66e4dd4aba429b756984945d",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1525,8 +1527,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "TYPE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -1555,23 +1557,23 @@
       "autoIncrement" : false,
       "name" : "TYPE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "5eca7eea66e4dd4aba429b756984945d",
     "codeName" : "Type",
     "logicName" : "Bug类型",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TYPE"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 8,
+    "defaultValue" : "active",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Bug__status.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "45f5a684babdeb3191e0697ba58d1f72",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1582,8 +1584,8 @@
           "includeMaxValue" : true,
           "maxValue" : 8,
           "dEFName" : "STATUS",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[8]",
           "name" : "默认字符串长度"
@@ -1613,23 +1615,23 @@
       "autoIncrement" : false,
       "name" : "STATUS"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "45f5a684babdeb3191e0697ba58d1f72",
     "codeName" : "Status",
     "logicName" : "Bug状态",
     "stringLength" : 8,
     "stdDataType" : 25,
-    "length" : 8,
-    "defaultValue" : "active",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "STATUS"
   }, {
+    "dataType" : "SMCODELIST",
+    "length" : 255,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/CurProductBuild.json"
     },
-    "dataType" : "SMCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "4e1d816518a18065c5dae65891b9076b",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1640,8 +1642,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "OPENEDBUILD",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -1670,21 +1672,20 @@
       "autoIncrement" : false,
       "name" : "OPENEDBUILD"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "4e1d816518a18065c5dae65891b9076b",
     "codeName" : "OpenedBuild",
     "logicName" : "影响版本",
     "stringLength" : 255,
     "stdDataType" : 25,
-    "length" : 255,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "OPENEDBUILD"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "b208854cddd1b29f09f8ff1b83418a24",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1695,8 +1696,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "DELAYRESOLVE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -1725,18 +1726,18 @@
       "autoIncrement" : false,
       "name" : "DELAYRESOLVE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "b208854cddd1b29f09f8ff1b83418a24",
     "codeName" : "Delayresolve",
     "logicName" : "延期解决",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "DELAYRESOLVE"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "length" : 1000,
+    "valueFormat" : "%1$s",
+    "deployId" : "af206a567909eec83e81fa606b2cec7f",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1747,8 +1748,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1000,
           "dEFName" : "FILES",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1000]",
           "name" : "默认字符串长度"
@@ -1769,22 +1770,22 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "af206a567909eec83e81fa606b2cec7f",
     "codeName" : "Files",
     "logicName" : "附件",
     "stringLength" : 1000,
     "stdDataType" : 25,
     "phisicalDEField" : false,
-    "length" : 1000,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "FILES"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "SMCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 65535,
+    "valueFormat" : "%1$s",
+    "deployId" : "bfba56291489cdef2f2d469e69d0821e",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1795,8 +1796,8 @@
           "includeMaxValue" : true,
           "maxValue" : 65535,
           "dEFName" : "MAILTOPK",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[65535]",
           "name" : "默认字符串长度"
@@ -1825,18 +1826,19 @@
       "autoIncrement" : false,
       "name" : "MAILTOPK"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "bfba56291489cdef2f2d469e69d0821e",
     "codeName" : "Mailtopk",
     "logicName" : "抄送给",
     "stringLength" : 65535,
     "stdDataType" : 25,
-    "length" : 65535,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "MAILTOPK"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 40,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
+    "deployId" : "112c3afcd404a1eb4d0e445e9befd880",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1847,8 +1849,8 @@
           "includeMaxValue" : true,
           "maxValue" : 40,
           "dEFName" : "V1",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[40]",
           "name" : "默认字符串长度"
@@ -1877,21 +1879,19 @@
       "autoIncrement" : false,
       "name" : "V1"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "112c3afcd404a1eb4d0e445e9befd880",
     "codeName" : "V1",
     "logicName" : "v1",
     "stringLength" : 40,
     "stdDataType" : 25,
-    "length" : 40,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "V1"
   }, {
     "dataType" : "TEXT",
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 1,
+    "defaultValue" : "0",
+    "valueFormat" : "%1$s",
+    "deployId" : "e540ff46db40190f9a986854da386550",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1902,8 +1902,8 @@
           "includeMaxValue" : true,
           "maxValue" : 1,
           "dEFName" : "DELETED",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[1]",
           "name" : "默认字符串长度"
@@ -1932,20 +1932,22 @@
       "autoIncrement" : false,
       "name" : "DELETED"
     } ],
-    "predefinedType" : "LOGICVALID",
-    "valueFormat" : "%1$s",
-    "deployId" : "e540ff46db40190f9a986854da386550",
     "codeName" : "Deleted",
     "logicName" : "已删除",
     "stringLength" : 1,
     "stdDataType" : 25,
-    "length" : 1,
-    "defaultValue" : "0",
+    "predefinedType" : "LOGICVALID",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "DELETED"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 10,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
+    "deployId" : "8aa74ea1dac46e244ae98550fd378bec",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -1956,8 +1958,8 @@
           "includeMaxValue" : true,
           "maxValue" : 10,
           "dEFName" : "LINES",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[10]",
           "name" : "默认字符串长度"
@@ -1986,19 +1988,19 @@
       "autoIncrement" : false,
       "name" : "LINES"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "8aa74ea1dac46e244ae98550fd378bec",
     "codeName" : "Lines",
     "logicName" : "lines",
     "stringLength" : 10,
     "stdDataType" : 25,
-    "length" : 10,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "LINES"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
+    "deployId" : "8d233dc8d35548c84d789c51b101f056",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2009,8 +2011,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "SUBSTATUS",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -2039,23 +2041,22 @@
       "autoIncrement" : false,
       "name" : "SUBSTATUS"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "8d233dc8d35548c84d789c51b101f056",
     "codeName" : "SubStatus",
     "logicName" : "子状态",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "SUBSTATUS"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 200,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/CurProductProject.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 5,
+    "deployId" : "b5f586295c4c942ea58dcc3c77894da4",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2066,8 +2067,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "BUILDPROJECT",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -2088,25 +2089,20 @@
       },
       "name" : "默认规则"
     } ],
-    "valueFormat" : "%1$s",
-    "uIAssistDEField" : true,
-    "deployId" : "b5f586295c4c942ea58dcc3c77894da4",
     "codeName" : "Buildproject",
     "logicName" : "版本项目",
     "stringLength" : 200,
     "stdDataType" : 25,
     "phisicalDEField" : false,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 5,
+    "uIAssistDEField" : true,
     "name" : "BUILDPROJECT"
   }, {
     "dataType" : "ACID",
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "keyDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "enableDBAutoValue" : true,
-    "dEFType" : 1,
+    "length" : 8,
+    "valueFormat" : "%1$s",
+    "deployId" : "4f65c862db8e88208c3789098b7fa1d5",
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
@@ -2137,19 +2133,24 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "4f65c862db8e88208c3789098b7fa1d5",
     "codeName" : "Id",
     "logicName" : "Bug编号",
     "stdDataType" : 1,
-    "length" : 8,
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "keyDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "enableDBAutoValue" : true,
+    "dEFType" : 1,
     "name" : "ID"
   }, {
     "formulaDEField" : true,
     "phisicalDEField" : false,
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 2,
+    "length" : 200,
+    "valueFormat" : "%1$s",
+    "deployId" : "14d04399ad85171be20349375d5cffeb",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2160,8 +2161,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "DELAY",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -2190,18 +2191,19 @@
       "autoIncrement" : false,
       "name" : "DELAY"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "14d04399ad85171be20349375d5cffeb",
     "codeName" : "Delay",
     "logicName" : "延期",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "importOrder" : 1000,
+    "dEFType" : 2,
     "name" : "DELAY"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
+    "deployId" : "a560bbb90922e29af0eede727845a7fb",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2212,8 +2214,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "FOUND",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -2242,23 +2244,23 @@
       "autoIncrement" : false,
       "name" : "FOUND"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "a560bbb90922e29af0eede727845a7fb",
     "codeName" : "Found",
     "logicName" : "found",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "FOUND"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 200,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_Gird.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "cb47df4333dc4beb9bb9e602f0330469",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2269,8 +2271,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "RESOLVEDBY",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -2299,23 +2301,23 @@
       "autoIncrement" : false,
       "name" : "RESOLVEDBY"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "cb47df4333dc4beb9bb9e602f0330469",
     "codeName" : "ResolvedBy",
     "logicName" : "解决者",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "RESOLVEDBY"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 255,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/CurProductBuild.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "f0a8324cbe6151e92dbbe1bc0d98f70c",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2326,8 +2328,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "RESOLVEDBUILD",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -2356,23 +2358,23 @@
       "autoIncrement" : false,
       "name" : "RESOLVEDBUILD"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "f0a8324cbe6151e92dbbe1bc0d98f70c",
     "codeName" : "ResolvedBuild",
     "logicName" : "解决版本",
     "stringLength" : 255,
     "stdDataType" : 25,
-    "length" : 255,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "RESOLVEDBUILD"
   }, {
+    "dataType" : "NSCODELIST",
+    "length" : 3,
+    "defaultValue" : "3",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Bug__pri.json"
     },
-    "dataType" : "NSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "77d8242a1d7e6aa8d9e08542039e2257",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2401,22 +2403,22 @@
       "autoIncrement" : false,
       "name" : "PRI"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "77d8242a1d7e6aa8d9e08542039e2257",
     "codeName" : "Pri",
     "logicName" : "优先级",
     "stdDataType" : 9,
-    "length" : 3,
-    "defaultValue" : "3",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PRI"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Bug__os.json"
     },
-    "dataType" : "SSCODELIST",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "88c23fba8b2440b26f182934e1872997",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2427,8 +2429,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "OS",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -2457,19 +2459,19 @@
       "autoIncrement" : false,
       "name" : "OS"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "88c23fba8b2440b26f182934e1872997",
     "codeName" : "Os",
     "logicName" : "操作系统",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "OS"
   }, {
     "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
+    "defaultValue" : "#EMPTY",
+    "valueFormat" : "%1$s",
+    "deployId" : "2e19976faff6cf93e5bde0e770ca24bc",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2480,8 +2482,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "HARDWARE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -2510,25 +2512,22 @@
       "autoIncrement" : false,
       "name" : "HARDWARE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "2e19976faff6cf93e5bde0e770ca24bc",
     "codeName" : "Hardware",
     "logicName" : "hardware",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
-    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "HARDWARE"
   }, {
+    "dataType" : "SSCODELIST",
+    "length" : 200,
+    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
-    "dataType" : "SSCODELIST",
-    "enableUICreate" : false,
-    "enableUIModify" : false,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "d59bf810c9e4d7d46b183fdc1c2de208",
     "systemReserver" : true,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -2540,8 +2539,8 @@
           "includeMaxValue" : true,
           "maxValue" : 200,
           "dEFName" : "LASTEDITEDBY",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[200]",
           "name" : "默认字符串长度"
@@ -2570,21 +2569,21 @@
       "autoIncrement" : false,
       "name" : "LASTEDITEDBY"
     } ],
-    "predefinedType" : "UPDATEMANNAME",
-    "valueFormat" : "%1$s",
-    "deployId" : "d59bf810c9e4d7d46b183fdc1c2de208",
     "codeName" : "LastEditedBy",
     "logicName" : "最后修改者",
     "stringLength" : 200,
     "stdDataType" : 25,
-    "length" : 200,
+    "predefinedType" : "UPDATEMANNAME",
+    "enableUICreate" : false,
+    "enableUIModify" : false,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "LASTEDITEDBY"
   }, {
     "dataType" : "TEXT",
-    "majorDEField" : true,
-    "enableQuickSearch" : true,
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 255,
+    "valueFormat" : "%1$s",
+    "deployId" : "ed20ea0482ba8401e045a125fb65f164",
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
@@ -2596,8 +2595,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "TITLE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -2626,13 +2625,14 @@
       "autoIncrement" : false,
       "name" : "TITLE"
     } ],
-    "valueFormat" : "%1$s",
-    "deployId" : "ed20ea0482ba8401e045a125fb65f164",
     "codeName" : "Title",
     "logicName" : "Bug标题",
     "stringLength" : 255,
     "stdDataType" : 25,
-    "length" : 255,
+    "majorDEField" : true,
+    "enableQuickSearch" : true,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TITLE"
   }, {
     "phisicalDEField" : false,
@@ -2647,8 +2647,8 @@
       "codeName" : "Name"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 90,
+    "deployId" : "c7ecc577fb5a90fa03a83c2e4ce43309",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2659,8 +2659,8 @@
           "includeMaxValue" : true,
           "maxValue" : 90,
           "dEFName" : "PRODUCTNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[90]",
           "name" : "默认字符串长度"
@@ -2689,12 +2689,12 @@
       "autoIncrement" : false,
       "name" : "PRODUCTNAME"
     } ],
-    "deployId" : "c7ecc577fb5a90fa03a83c2e4ce43309",
     "codeName" : "ProductName",
     "logicName" : "产品",
     "stringLength" : 90,
     "stdDataType" : 25,
-    "length" : 90,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "PRODUCTNAME"
   }, {
     "phisicalDEField" : false,
@@ -2709,8 +2709,8 @@
       "codeName" : "Name"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 255,
+    "deployId" : "55ef3ab3816a085f59609a24366017b5",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2721,8 +2721,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "BRANCHNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -2751,12 +2751,12 @@
       "autoIncrement" : false,
       "name" : "BRANCHNAME"
     } ],
-    "deployId" : "55ef3ab3816a085f59609a24366017b5",
     "codeName" : "Branchname",
     "logicName" : "平台/分支",
     "stringLength" : 255,
     "stdDataType" : 25,
-    "length" : 255,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "BRANCHNAME"
   }, {
     "phisicalDEField" : false,
@@ -2771,8 +2771,8 @@
       "codeName" : "Name"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 255,
+    "deployId" : "044b8e5e84b9d931d1ecf67edd19f39f",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2783,8 +2783,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "TASKNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -2813,12 +2813,12 @@
       "autoIncrement" : false,
       "name" : "TASKNAME"
     } ],
-    "deployId" : "044b8e5e84b9d931d1ecf67edd19f39f",
     "codeName" : "TaskName",
     "logicName" : "相关任务",
     "stringLength" : 255,
     "stdDataType" : 25,
-    "length" : 255,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "TASKNAME"
   }, {
     "phisicalDEField" : false,
@@ -2833,8 +2833,8 @@
       "codeName" : "Title"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 255,
+    "deployId" : "94608fec66c8d32e601a6ef4e050e373",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2845,8 +2845,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "CASENAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -2875,12 +2875,12 @@
       "autoIncrement" : false,
       "name" : "CASENAME"
     } ],
-    "deployId" : "94608fec66c8d32e601a6ef4e050e373",
     "codeName" : "Casename",
     "logicName" : "相关用例",
     "stringLength" : 255,
     "stdDataType" : 25,
-    "length" : 255,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "CASENAME"
   }, {
     "phisicalDEField" : false,
@@ -2895,8 +2895,8 @@
       "codeName" : "Name"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 90,
+    "deployId" : "840aff95e87b050af89ad9b7c08a4c19",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2907,8 +2907,8 @@
           "includeMaxValue" : true,
           "maxValue" : 90,
           "dEFName" : "PROJECTNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[90]",
           "name" : "默认字符串长度"
@@ -2937,12 +2937,12 @@
       "autoIncrement" : false,
       "name" : "PROJECTNAME"
     } ],
-    "deployId" : "840aff95e87b050af89ad9b7c08a4c19",
     "codeName" : "ProjectName",
     "logicName" : "项目",
     "stringLength" : 90,
     "stdDataType" : 25,
-    "length" : 90,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "PROJECTNAME"
   }, {
     "phisicalDEField" : false,
@@ -2957,8 +2957,8 @@
       "codeName" : "Title"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 255,
+    "deployId" : "c0cfccc18caabe19129ce934bec02625",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -2969,8 +2969,8 @@
           "includeMaxValue" : true,
           "maxValue" : 255,
           "dEFName" : "STORYNAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[255]",
           "name" : "默认字符串长度"
@@ -2999,12 +2999,12 @@
       "autoIncrement" : false,
       "name" : "STORYNAME"
     } ],
-    "deployId" : "c0cfccc18caabe19129ce934bec02625",
     "codeName" : "Storyname",
     "logicName" : "相关需求",
     "stringLength" : 255,
     "stdDataType" : 25,
-    "length" : 255,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "STORYNAME"
   }, {
     "getPSDER" : {
@@ -3017,13 +3017,14 @@
       "name" : "VERSION",
       "codeName" : "Version"
     },
+    "dataType" : "PICKUPDATA",
+    "length" : 6,
+    "defaultValue" : "1",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/CurCaseVersion.json"
     },
-    "dataType" : "PICKUPDATA",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "b2de8aa4f352addf1037d9307df062d8",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3052,12 +3053,11 @@
       "autoIncrement" : false,
       "name" : "CASEVERSION"
     } ],
-    "deployId" : "b2de8aa4f352addf1037d9307df062d8",
     "codeName" : "CaseVersion",
     "logicName" : "用例版本",
     "stdDataType" : 9,
-    "length" : 6,
-    "defaultValue" : "1",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CASEVERSION"
   }, {
     "getPSDER" : {
@@ -3071,8 +3071,8 @@
       "codeName" : "SCM"
     },
     "dataType" : "PICKUPDATA",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 30,
+    "deployId" : "cedab2be10e3210b9e919ae724f73c6f",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3083,8 +3083,8 @@
           "includeMaxValue" : true,
           "maxValue" : 30,
           "dEFName" : "REPOTYPE",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[30]",
           "name" : "默认字符串长度"
@@ -3113,12 +3113,12 @@
       "autoIncrement" : false,
       "name" : "REPOTYPE"
     } ],
-    "deployId" : "cedab2be10e3210b9e919ae724f73c6f",
     "codeName" : "RepoType",
     "logicName" : "代码类型",
     "stringLength" : 30,
     "stdDataType" : 25,
-    "length" : 30,
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "REPOTYPE"
   }, {
     "phisicalDEField" : false,
@@ -3133,8 +3133,8 @@
       "codeName" : "Name"
     },
     "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "dEFType" : 3,
+    "length" : 60,
+    "deployId" : "3e32e23dec87af543e415933562ca366",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3145,8 +3145,8 @@
           "includeMaxValue" : true,
           "maxValue" : 60,
           "dEFName" : "MODULENAME",
-          "keyCond" : true,
           "tryMode" : false,
+          "keyCond" : true,
           "condType" : "STRINGLENGTH",
           "ruleInfo" : "内容长度必须小于等于[60]",
           "name" : "默认字符串长度"
@@ -3175,12 +3175,12 @@
       "autoIncrement" : false,
       "name" : "MODULENAME"
     } ],
-    "deployId" : "3e32e23dec87af543e415933562ca366",
     "codeName" : "Modulename",
     "logicName" : "模块名称",
     "stringLength" : 60,
     "stdDataType" : 25,
-    "length" : 60,
+    "importOrder" : 1000,
+    "dEFType" : 3,
     "name" : "MODULENAME"
   }, {
     "getPSDER" : {
@@ -3194,8 +3194,9 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "deployId" : "d787e355bceb039408761c76710cd2fb",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3224,12 +3225,11 @@
       "autoIncrement" : false,
       "name" : "TOSTORY"
     } ],
-    "deployId" : "d787e355bceb039408761c76710cd2fb",
     "codeName" : "ToStory",
     "logicName" : "转需求",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TOSTORY"
   }, {
     "getPSDER" : {
@@ -3243,8 +3243,9 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 255,
+    "defaultValue" : "0",
+    "deployId" : "2f5da69a641dc619d8ccfb497cdd18b6",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3273,12 +3274,11 @@
       "autoIncrement" : false,
       "name" : "ENTRY"
     } ],
-    "deployId" : "2f5da69a641dc619d8ccfb497cdd18b6",
     "codeName" : "Entry",
     "logicName" : "应用",
     "stdDataType" : 1,
-    "length" : 255,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "ENTRY"
   }, {
     "getPSDER" : {
@@ -3292,8 +3292,9 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "deployId" : "9b190e4c73bffc0ee65f8ff7f48ce6a2",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3322,12 +3323,11 @@
       "autoIncrement" : false,
       "name" : "PRODUCT"
     } ],
-    "deployId" : "9b190e4c73bffc0ee65f8ff7f48ce6a2",
     "codeName" : "Product",
     "logicName" : "所属产品",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PRODUCT"
   }, {
     "getPSDER" : {
@@ -3341,8 +3341,9 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "deployId" : "130f28eef64cd35fb50feafaab27e183",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3371,12 +3372,11 @@
       "autoIncrement" : false,
       "name" : "TOTASK"
     } ],
-    "deployId" : "130f28eef64cd35fb50feafaab27e183",
     "codeName" : "ToTask",
     "logicName" : "转任务",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TOTASK"
   }, {
     "getPSDER" : {
@@ -3390,8 +3390,9 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "deployId" : "115007f65034d24a2112cbbe67a7c277",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3420,12 +3421,11 @@
       "autoIncrement" : false,
       "name" : "PLAN"
     } ],
-    "deployId" : "115007f65034d24a2112cbbe67a7c277",
     "codeName" : "Plan",
     "logicName" : "所属计划",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PLAN"
   }, {
     "getPSDER" : {
@@ -3438,13 +3438,14 @@
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataType" : "PICKUP",
+    "length" : 8,
+    "defaultValue" : "0",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/BugModule.json"
     },
-    "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "dc12667fc633905bc3bf5320cfd1dd0d",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3473,12 +3474,11 @@
       "autoIncrement" : false,
       "name" : "MODULE"
     } ],
-    "deployId" : "dc12667fc633905bc3bf5320cfd1dd0d",
     "codeName" : "Module",
     "logicName" : "所属模块",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "MODULE"
   }, {
     "getPSDER" : {
@@ -3491,13 +3491,14 @@
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataType" : "PICKUP",
+    "length" : 8,
+    "defaultValue" : "0",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch.json"
     },
-    "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "70dbca38ae03e5c4779665e1d3383b5a",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3526,12 +3527,11 @@
       "autoIncrement" : false,
       "name" : "BRANCH"
     } ],
-    "deployId" : "70dbca38ae03e5c4779665e1d3383b5a",
     "codeName" : "Branch",
     "logicName" : "平台/分支",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "BRANCH"
   }, {
     "getPSDER" : {
@@ -3545,8 +3545,9 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "deployId" : "b88221a67046a333c414c1865910007b",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3575,12 +3576,11 @@
       "autoIncrement" : false,
       "name" : "DUPLICATEBUG"
     } ],
-    "deployId" : "b88221a67046a333c414c1865910007b",
     "codeName" : "DuplicateBug",
     "logicName" : "重复ID",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "DUPLICATEBUG"
   }, {
     "getPSDER" : {
@@ -3594,8 +3594,8 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "defaultValue" : "0",
+    "deployId" : "724fdb0956bf7074e79e1f1813be6caa",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3624,11 +3624,11 @@
       "autoIncrement" : false,
       "name" : "REPO"
     } ],
-    "deployId" : "724fdb0956bf7074e79e1f1813be6caa",
     "codeName" : "Repo",
     "logicName" : "代码",
     "stdDataType" : 1,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "REPO"
   }, {
     "getPSDER" : {
@@ -3641,13 +3641,14 @@
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataType" : "PICKUP",
+    "length" : 8,
+    "defaultValue" : "0",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/RelatedStory.json"
     },
-    "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "deployId" : "b4b8412b853cc35b821e59be4835470f",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3676,12 +3677,11 @@
       "autoIncrement" : false,
       "name" : "STORY"
     } ],
-    "deployId" : "b4b8412b853cc35b821e59be4835470f",
     "codeName" : "Story",
     "logicName" : "相关需求",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "STORY"
   }, {
     "getPSDER" : {
@@ -3695,8 +3695,9 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "deployId" : "25081d04c56695833d32d50d11828ad0",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3725,12 +3726,11 @@
       "autoIncrement" : false,
       "name" : "CASE"
     } ],
-    "deployId" : "25081d04c56695833d32d50d11828ad0",
     "codeName" : "IBizCase",
     "logicName" : "相关用例",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "CASE"
   }, {
     "getPSDER" : {
@@ -3744,8 +3744,9 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "deployId" : "d8124fdcccc458773ca970c82a00e1c0",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3774,12 +3775,11 @@
       "autoIncrement" : false,
       "name" : "PROJECT"
     } ],
-    "deployId" : "d8124fdcccc458773ca970c82a00e1c0",
     "codeName" : "Project",
     "logicName" : "所属项目",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "PROJECT"
   }, {
     "getPSDER" : {
@@ -3793,8 +3793,9 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "deployId" : "9d65fbef513984c58f7a53158d35c56c",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3823,12 +3824,11 @@
       "autoIncrement" : false,
       "name" : "TASK"
     } ],
-    "deployId" : "9d65fbef513984c58f7a53158d35c56c",
     "codeName" : "Task",
     "logicName" : "相关任务",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TASK"
   }, {
     "getPSDER" : {
@@ -3842,8 +3842,9 @@
       "codeName" : "Id"
     },
     "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "dEFType" : 1,
+    "length" : 8,
+    "defaultValue" : "0",
+    "deployId" : "64d1de3b9d64b57b200bf081731cbdc0",
     "getAllPSDEFValueRules" : [ {
       "enableBackend" : true,
       "enableFront" : true,
@@ -3872,623 +3873,634 @@
       "autoIncrement" : false,
       "name" : "TESTTASK"
     } ],
-    "deployId" : "64d1de3b9d64b57b200bf081731cbdc0",
     "codeName" : "Testtask",
     "logicName" : "测试单",
     "stdDataType" : 1,
-    "length" : 8,
-    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "dEFType" : 1,
     "name" : "TESTTASK"
   } ],
+  "getMainStatePSDEFields" : [ {
+    "name" : "STATUS",
+    "codeName" : "Status"
+  }, {
+    "name" : "ISFAVORITES",
+    "codeName" : "Isfavorites"
+  }, {
+    "name" : "CONFIRMED",
+    "codeName" : "Confirmed"
+  } ],
+  "validLogicValue" : "0",
+  "invalidLogicValue" : "1",
   "getAllPSDEDataSets" : [ {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "AssignedToMyBug",
     "logicName" : "指派给我Bug",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "AssignedToMyBug"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "AssignedToMyBugPc",
     "logicName" : "指派给我Bug（PC）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "AssignedToMyBugPc"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BugsByBuild",
     "logicName" : "版本关联bug(遗留的)",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BugsByBuild"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildBugs",
     "logicName" : "版本关联Bug（已解决）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildBugs"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildLinkResolvedBugs",
     "logicName" : "版本可关联的已解决的Bugs集合",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
+    "majorSortDir" : "ASC",
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
-    "majorSortDir" : "ASC",
+    "pageSize" : -1,
     "name" : "buildLinkResolvedBugs"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildOpenBugs",
     "logicName" : "版本关联Bug（已解决）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildOpenBugs"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBug",
     "logicName" : "Build产生的Bug",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBug"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBugModule",
     "logicName" : "Build产生的Bug",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBugModule"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBugModule_Project",
     "logicName" : "Build产生的Bug-创建者分布(项目)",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBugModule_Project"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBugOpenedBy",
     "logicName" : "Build产生的Bug-创建分类",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBugOpenedBy"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBugOpenedBy_Project",
     "logicName" : "Build产生的Bug-创建者分布(项目)",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBugOpenedBy_Project"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBugRES",
     "logicName" : "Build产生的Bug（已解决）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBugRES"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBugRESOLVEDBY",
     "logicName" : "Build产生的Bug-解决者分布",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBugRESOLVEDBY"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBugRESOLVEDBY_Project",
     "logicName" : "Build产生的Bug-解决者分布(项目)",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBugRESOLVEDBY_Project"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBugResolution_Project",
     "logicName" : "Build产生的Bug-解决方案分布(项目)",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBugResolution_Project"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBugSeverity_Project",
     "logicName" : "Build产生的Bug-严重程度分布(项目)",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBugSeverity_Project"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBugStatus_Project",
     "logicName" : "Build产生的Bug-状态分布(项目)",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBugStatus_Project"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "BuildProduceBugType_Project",
     "logicName" : "Build产生的Bug-类型分布(项目)",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "BuildProduceBugType_Project"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "CurUserResolve",
     "logicName" : "当前用户解决的Bug",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "CurUserResolve"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
+    "pageSize" : -1,
     "name" : "DEFAULT"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "ESBulk"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "MyAgentBug",
     "logicName" : "我代理的Bug",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "MyAgentBug"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "MyCurOpenedBug",
     "logicName" : "累计创建的Bug数",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "MyCurOpenedBug"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "MyFavorites",
     "logicName" : "我的收藏",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "MyFavorites"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "NotCurPlanLinkBug",
     "logicName" : "计划关联bug（去除已关联）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
+    "majorSortDir" : "DESC",
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
-    "majorSortDir" : "DESC",
+    "pageSize" : -1,
     "name" : "NotCurPlanLinkBug"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "ProjectBugs",
     "logicName" : "遗留得Bug(项目)",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "ProjectBugs"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "ReleaseBugs",
     "logicName" : "发布关联Bug（已解决）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "ReleaseBugs"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "ReleaseLeftBugs",
     "logicName" : "发布关联Bug（已解决）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "ReleaseLeftBugs"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "ReleaseLinkableLeftBug",
     "logicName" : "发布可关联的bug（遗留）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "ReleaseLinkableLeftBug"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "ReleaseLinkableResolvedBug",
     "logicName" : "发布可关联的bug（已解决）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "ReleaseLinkableResolvedBug"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "ReportBugs",
     "logicName" : "发布关联Bug（未解决）",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "ReportBugs"
   }, {
     "enableBackend" : true,
     "enableFront" : true,
     "pubServiceDefault" : true,
-    "orderValue" : 99999,
-    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
+    "orderValue" : 99999,
     "codeName" : "TaskRelatedBug",
     "logicName" : "任务相关bug",
-    "pageSize" : -1,
-    "userDRAction" : "READ",
+    "extendMode" : 0,
     "enableGroup" : false,
+    "userDRAction" : "READ",
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
+    "pageSize" : -1,
     "name" : "TaskBug"
   } ],
   "getAllPSDEActions" : [ {
@@ -4588,9 +4600,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "AssignedToMyBug",
     "logicName" : "指派给我Bug",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "AssignedToMyBug"
   }, {
@@ -4599,9 +4611,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "AssignedToMyBugPc",
     "logicName" : "指派给我Bug（PC）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "AssignedToMyBugPc"
   }, {
@@ -4610,9 +4622,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildBugs",
     "logicName" : "版本关联Bug（已解决）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildBugs"
   }, {
@@ -4621,9 +4633,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildLinkResolvedBugs",
     "logicName" : "版本可关联的已解决的Bugs集合",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "buildLinkResolvedBugs"
   }, {
@@ -4632,9 +4644,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildOpenBugs",
     "logicName" : "版本关联Bug（已解决）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildOpenBugs"
   }, {
@@ -4643,9 +4655,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBug",
     "logicName" : "Build产生的Bug",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBug"
   }, {
@@ -4654,9 +4666,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBugModule",
     "logicName" : "Build产生的Bug-模块分布",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBugModule"
   }, {
@@ -4665,9 +4677,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBugModule_Project",
     "logicName" : "Build产生的Bug-模块分布(项目)",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBugModule_Project"
   }, {
@@ -4676,9 +4688,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBugOpenedBy",
     "logicName" : "Build产生的Bug-创建者分布",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBugOpenedBy"
   }, {
@@ -4687,9 +4699,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBugOpenedBy_Project",
     "logicName" : "Build产生的Bug-创建者分布(项目)",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBugOpenedBy_Project"
   }, {
@@ -4698,9 +4710,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBugRES",
     "logicName" : "Build产生的Bug（已解决）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBugRES"
   }, {
@@ -4709,9 +4721,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBugRESOLVEDBY",
     "logicName" : "Build产生的Bug-解决者分布",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBugRESOLVEDBY"
   }, {
@@ -4720,9 +4732,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBugRESOLVEDBY_Project",
     "logicName" : "Build产生的Bug-解决者分布(项目)",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBugRESOLVEDBY_Project"
   }, {
@@ -4731,9 +4743,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBugResolution_Project",
     "logicName" : "Build产生的Bug-解决方案分布(项目)",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBugResolution_Project"
   }, {
@@ -4742,9 +4754,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBugSeverity_Project",
     "logicName" : "Build产生的Bug-严重程度分布(项目)",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBugSeverity_Project"
   }, {
@@ -4753,9 +4765,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBugStatus_Project",
     "logicName" : "Build产生的Bug-状态分布(项目)",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBugStatus_Project"
   }, {
@@ -4764,9 +4776,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "BuildProduceBugType_Project",
     "logicName" : "Build产生的Bug-类型分布(项目)",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BuildProduceBugType_Project"
   }, {
@@ -4775,9 +4787,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "CurUserResolve",
     "logicName" : "当前用户解决的Bug",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "CurUserResolve"
   }, {
@@ -4786,9 +4798,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -4797,9 +4809,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "ESBulk"
   }, {
@@ -4808,9 +4820,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "MyAgentBug",
     "logicName" : "我代理的Bug",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "MyAgentBug"
   }, {
@@ -4819,9 +4831,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "MyCurOpenedBug",
     "logicName" : "累计创建的Bug数",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "MyCurOpenedBug"
   }, {
@@ -4830,9 +4842,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "MyFavorites",
     "logicName" : "我的收藏",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "MyFavorites"
   }, {
@@ -4841,9 +4853,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "NotCurPlanLinkBug",
     "logicName" : "计划关联bug(去除已关联)",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "NotCurPlanLinkBug"
   }, {
@@ -4852,9 +4864,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "ReleaseBugs",
     "logicName" : "发布关联Bug（已解决）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "ReleaseBugs"
   }, {
@@ -4863,9 +4875,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "ReleaseLeftBugs",
     "logicName" : "发布关联Bug（未解决）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "ReleaseLeftBugs"
   }, {
@@ -4874,9 +4886,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "ReleaseLinkableLeftBug",
     "logicName" : "发布可关联的bug（遗留）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "ReleaseLinkableLeftBug"
   }, {
@@ -4885,9 +4897,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "ReleaseLinkableResolvedBug",
     "logicName" : "发布可关联的bug（已解决）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "ReleaseLinkableResolvedBug"
   }, {
@@ -4896,9 +4908,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "ReportBugs",
     "logicName" : "发布关联Bug（未解决）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "ReportBugs"
   }, {
@@ -4907,9 +4919,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "SelectBugByBuild",
     "logicName" : "版本关联bug(遗留得bug)",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "SelectBugByBuild"
   }, {
@@ -4918,9 +4930,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "SelectBugsByProject",
     "logicName" : "查询遗留得bug(项目)",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "SelectBugsByProject"
   }, {
@@ -4929,9 +4941,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "TaskBug",
     "logicName" : "任务相关bug",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "TaskBug"
   }, {
@@ -4940,9 +4952,9 @@
     "pubServiceDefault" : false,
     "queryFromView" : false,
     "orderValue" : 99999,
-    "extendMode" : 0,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
+    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -4972,14 +4984,13 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendTodoTask.json"
   } ],
   "getAllPSDEMainStates" : [ {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -5149,6 +5160,7 @@
       },
       "name" : "SRFUR__BUG_ACTIVATE_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "active_0_0",
     "logicName" : "激活_未收藏_未确认",
     "default" : false,
@@ -5159,14 +5171,13 @@
     "stateValue" : "active",
     "name" : "激活_未收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5228,6 +5239,7 @@
       },
       "name" : "SRFUR__BUG_CONFIRM_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "active_0_1",
     "logicName" : "激活_未收藏_已确认",
     "default" : false,
@@ -5238,14 +5250,13 @@
     "stateValue" : "active",
     "name" : "激活_未收藏_已确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5295,6 +5306,7 @@
       },
       "name" : "SRFUR__PROP_LBUG_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "active_1_0",
     "logicName" : "激活_已收藏_未确认",
     "default" : false,
@@ -5305,14 +5317,13 @@
     "stateValue" : "active",
     "name" : "激活_已收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5374,6 +5385,7 @@
       },
       "name" : "SRFUR__BUG_ACTIVATE_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "active_1_1",
     "logicName" : "激活_已收藏_已确认",
     "default" : false,
@@ -5384,14 +5396,13 @@
     "stateValue" : "active",
     "name" : "激活_已收藏_已确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -5597,6 +5608,7 @@
       },
       "name" : "SRFUR__BUG_CONFIRM_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "closed_0_0",
     "logicName" : "已关闭_未收藏_未确认",
     "default" : false,
@@ -5607,14 +5619,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_未收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5700,6 +5711,7 @@
       },
       "name" : "SRFUR__BUG_TOSTORY_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "closed_0_1",
     "logicName" : "已关闭_未收藏_已确认",
     "default" : false,
@@ -5710,14 +5722,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_未收藏_已确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5803,6 +5814,7 @@
       },
       "name" : "SRFUR__BUG_ASSIGNTO_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "closed_1_0",
     "logicName" : "已关闭_已收藏_未确认",
     "default" : false,
@@ -5813,14 +5825,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_已收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5906,6 +5917,7 @@
       },
       "name" : "SRFUR__PROP_LBUG_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "closed_1_1",
     "logicName" : "已关闭_已收藏_已确认",
     "default" : false,
@@ -5916,14 +5928,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_已收藏_已确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -6100,6 +6111,7 @@
       },
       "name" : "SRFUR__BUG_RESOLVE_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "resolved_0_0",
     "logicName" : "已解决_未收藏_未确认",
     "default" : false,
@@ -6110,14 +6122,13 @@
     "stateValue" : "resolved",
     "name" : "已解决_未收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6167,6 +6178,7 @@
       },
       "name" : "SRFUR__BUG_CONFIRM_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "resolved_0_1",
     "logicName" : "已解决_未收藏_已确认",
     "default" : false,
@@ -6177,14 +6189,13 @@
     "stateValue" : "resolved",
     "name" : "已解决_未收藏_已确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "0",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6234,6 +6245,7 @@
       },
       "name" : "SRFUR__BUG_RESOLVE_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "resolved_1_0",
     "logicName" : "已解决_已收藏_未确认",
     "default" : false,
@@ -6244,14 +6256,13 @@
     "stateValue" : "resolved",
     "name" : "已解决_已收藏_未确认"
   }, {
+    "actionAllowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "1",
     "fieldAllowMode" : false,
     "allowMode" : true,
-    "actionAllowMode" : true,
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6301,6 +6312,7 @@
       },
       "name" : "SRFUR__PROP_LBUG_BUT"
     } ],
+    "orderValue" : 99999,
     "codeName" : "resolved_1_1",
     "logicName" : "已解决_已收藏_已确认",
     "default" : false,
@@ -6312,32 +6324,18 @@
     "name" : "已解决_已收藏_已确认"
   } ],
   "subSysAsCloud" : false,
+  "enableUIActions" : 15,
   "systemTag" : "iBizPMS",
   "enableDataVer" : false,
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "getMainStatePSDEFields" : [ {
-    "name" : "STATUS",
-    "codeName" : "Status"
-  }, {
-    "name" : "ISFAVORITES",
-    "codeName" : "Isfavorites"
-  }, {
-    "name" : "CONFIRMED",
-    "codeName" : "Confirmed"
-  } ],
-  "validLogicValue" : "0",
-  "invalidLogicValue" : "1",
-  "enableUIActions" : 15,
+  "getPSSysImage" : {
+    "glyph" : "xf188@FontAwesome",
+    "cssClass" : "fa fa-bug"
+  },
   "orderValue" : 99999,
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "extendMode" : 0,
-  "serviceCodeName" : "Bug",
-  "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "dSLink" : "DEFAULT",
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -6352,20 +6350,16 @@
     "name" : "UPDATE"
   } ],
   "saaSMode" : 4,
+  "deployId" : "96dee1a4d7739dfd3d957fedd0d2e192",
+  "enableSQLStorage" : true,
   "dynaInstMode" : 1,
   "subSysDE" : false,
   "virtual" : false,
   "enableViewLevel" : 0,
-  "dSLink" : "DEFAULT",
-  "getPSSysImage" : {
-    "glyph" : "xf188@FontAwesome",
-    "cssClass" : "fa fa-bug"
-  },
-  "deployId" : "96dee1a4d7739dfd3d957fedd0d2e192",
+  "virtualMode" : 0,
   "codeName" : "Bug",
   "logicName" : "Bug",
   "tableName" : "zt_bug",
-  "enableRemove" : true,
   "logicValid" : true,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -6374,8 +6368,14 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
+  "enableRemove" : true,
+  "serviceCodeName" : "Bug",
+  "enableActions" : 7,
+  "enableCreate" : true,
+  "enableModify" : true,
+  "extendMode" : 0,
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSDCIdColumnName" : "SRFDCID",
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,
@@ -6446,8 +6446,8 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_BUG_FROMBUG.json"
   } ],
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json",
+  "name" : "ZT_BUG",
   "userTag3" : "maindashboardview_link",
   "userTag4" : "mobeditview",
-  "userCat" : "CAT1",
-  "name" : "ZT_BUG"
+  "userCat" : "CAT1"
 }

@@ -27,11 +27,11 @@
       "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname]"
     }, {
+      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SQLPARAM",
       "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "COLLECTOR",
       "name" : "Default[COLLECTOR]"
@@ -54,9 +54,9 @@
     "name" : "连接6543"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

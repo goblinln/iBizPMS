@@ -3,11 +3,11 @@
     "name" : "PROLEID",
     "codeName" : "PRoleId"
   },
+  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PROLENAME",
     "codeName" : "PRoleName"
   },
-  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "PROLEID",
   "masterRS" : 0,
@@ -17,13 +17,13 @@
     "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
   },
   "orderValue" : 100,
-  "codeName" : "Parent",
-  "logicName" : "父角色",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
   },
+  "codeName" : "Parent",
+  "logicName" : "父角色",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDERS/DER1N_SYS_ROLE_SYS_ROLE_PROLEID.json",
   "name" : "DER1N_SYS_ROLE_SYS_ROLE_PROLEID"
 }

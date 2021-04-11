@@ -1,6 +1,6 @@
 {
-  "virtual" : true,
   "typeValue" : "project",
+  "virtual" : true,
   "inherit" : false,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
@@ -38,13 +38,13 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
   },
   "orderValue" : 100,
-  "codeName" : "Project",
-  "logicName" : "项目",
-  "dERType" : "DERINDEX",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
   },
+  "codeName" : "Project",
+  "logicName" : "项目",
+  "dERType" : "DERINDEX",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDERS/DERINDEX_ZT_PROJECT_IBIZPRO_INDEX.json",
   "name" : "DERINDEX_ZT_PROJECT_IBIZPRO_INDEX"
 }

@@ -3,11 +3,11 @@
     "name" : "DUPCHKPSDEFID",
     "codeName" : "DupCheckPSDEFId"
   },
+  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "DUPCHKPSDEFNAME",
     "codeName" : "DupCheckPSDEFName"
   },
-  "masterOrder" : -1,
   "removeActionType" : 3,
   "pickupDEFName" : "DUPCHKPSDEFID",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
   },
   "orderValue" : 100,
-  "codeName" : "DupChkPSDEF",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
   },
+  "codeName" : "DupChkPSDEF",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField/PSDERS/DER1N_PSDEFIELD_PSDEFIELD_DUPCHKPSDEFID.json",
   "name" : "DER1N_PSDEFIELD_PSDEFIELD_DUPCHKPSDEFID"
 }

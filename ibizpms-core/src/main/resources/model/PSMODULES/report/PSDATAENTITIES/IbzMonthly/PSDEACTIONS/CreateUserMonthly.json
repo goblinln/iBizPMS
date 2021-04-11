@@ -6,8 +6,6 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
@@ -16,13 +14,15 @@
     "modelref" : true,
     "id" : "CREATE"
   },
+  "orderValue" : 99999,
   "codeName" : "CreateUserMonthly",
   "logicName" : "定时生成用户月报",
+  "extendMode" : 0,
   "actionMode" : "CREATE",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/CreateUserMonthly.json",
-  "userCat" : "CAT1",
-  "name" : "CreateUserMonthly"
+  "name" : "CreateUserMonthly",
+  "userCat" : "CAT1"
 }

@@ -3,13 +3,13 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
   },
+  "getPSCodeItems" : [ {
+    "value" : "on",
+    "codeName" : "On",
+    "text" : "待定"
+  } ],
   "codeListType" : "STATIC",
   "dynaInstMode" : 1,
-  "getPSCodeItems" : [ {
-    "codeName" : "On",
-    "text" : "待定",
-    "value" : "on"
-  } ],
   "codeName" : "Date_disable",
   "emptyText" : "未定义",
   "enableCache" : true,

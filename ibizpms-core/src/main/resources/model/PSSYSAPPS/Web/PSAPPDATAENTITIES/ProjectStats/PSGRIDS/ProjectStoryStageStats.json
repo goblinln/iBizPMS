@@ -150,16 +150,16 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "项目名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -172,11 +172,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "空",
+    "dataItemName" : "emptystagestorycnt",
     "getPSAppDEField" : {
       "name" : "EMPTYSTAGESTORYCNT",
       "codeName" : "Emptystagestorycnt"
     },
-    "dataItemName" : "emptystagestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -190,11 +190,11 @@
     "name" : "emptystagestorycnt"
   }, {
     "excelCaption" : "未开始",
+    "dataItemName" : "waitstagestorycnt",
     "getPSAppDEField" : {
       "name" : "WAITSTAGESTORYCNT",
       "codeName" : "Waitstagestorycnt"
     },
-    "dataItemName" : "waitstagestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -208,11 +208,11 @@
     "name" : "waitstagestorycnt"
   }, {
     "excelCaption" : "已计划",
+    "dataItemName" : "plannedstagestorycnt",
     "getPSAppDEField" : {
       "name" : "PLANNEDSTAGESTORYCNT",
       "codeName" : "Plannedstagestorycnt"
     },
-    "dataItemName" : "plannedstagestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -226,11 +226,11 @@
     "name" : "plannedstagestorycnt"
   }, {
     "excelCaption" : "已立项",
+    "dataItemName" : "projectedstagestorycnt",
     "getPSAppDEField" : {
       "name" : "PROJECTEDSTAGESTORYCNT",
       "codeName" : "Projectedstagestorycnt"
     },
-    "dataItemName" : "projectedstagestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -244,11 +244,11 @@
     "name" : "projectedstagestorycnt"
   }, {
     "excelCaption" : "研发中",
+    "dataItemName" : "developingstagestorycnt",
     "getPSAppDEField" : {
       "name" : "DEVELOPINGSTAGESTORYCNT",
       "codeName" : "Developingstagestorycnt"
     },
-    "dataItemName" : "developingstagestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -262,11 +262,11 @@
     "name" : "developingstagestorycnt"
   }, {
     "excelCaption" : "研发完毕",
+    "dataItemName" : "developedstagestorycnt",
     "getPSAppDEField" : {
       "name" : "DEVELOPEDSTAGESTORYCNT",
       "codeName" : "Developedstagestorycnt"
     },
-    "dataItemName" : "developedstagestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -280,11 +280,11 @@
     "name" : "developedstagestorycnt"
   }, {
     "excelCaption" : "测试中",
+    "dataItemName" : "testingstagestorycnt",
     "getPSAppDEField" : {
       "name" : "TESTINGSTAGESTORYCNT",
       "codeName" : "Testingstagestorycnt"
     },
-    "dataItemName" : "testingstagestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -298,11 +298,11 @@
     "name" : "testingstagestorycnt"
   }, {
     "excelCaption" : "测试完毕",
+    "dataItemName" : "testedstagestorycnt",
     "getPSAppDEField" : {
       "name" : "TESTEDSTAGESTORYCNT",
       "codeName" : "Testedstagestorycnt"
     },
-    "dataItemName" : "testedstagestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -316,11 +316,11 @@
     "name" : "testedstagestorycnt"
   }, {
     "excelCaption" : "已验收",
+    "dataItemName" : "verifiedstagestorycnt",
     "getPSAppDEField" : {
       "name" : "VERIFIEDSTAGESTORYCNT",
       "codeName" : "Verifiedstagestorycnt"
     },
-    "dataItemName" : "verifiedstagestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -334,11 +334,11 @@
     "name" : "verifiedstagestorycnt"
   }, {
     "excelCaption" : "已发布",
+    "dataItemName" : "releasedstagestorycnt",
     "getPSAppDEField" : {
       "name" : "RELEASEDSTAGESTORYCNT",
       "codeName" : "Releasedstagestorycnt"
     },
-    "dataItemName" : "releasedstagestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -352,11 +352,11 @@
     "name" : "releasedstagestorycnt"
   }, {
     "excelCaption" : "已关闭",
+    "dataItemName" : "closedstagestorycnt",
     "getPSAppDEField" : {
       "name" : "CLOSEDSTAGESTORYCNT",
       "codeName" : "Closedstagestorycnt"
     },
-    "dataItemName" : "closedstagestorycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -370,11 +370,11 @@
     "name" : "closedstagestorycnt"
   }, {
     "excelCaption" : "总计",
+    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "dataItemName" : "storycnt",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

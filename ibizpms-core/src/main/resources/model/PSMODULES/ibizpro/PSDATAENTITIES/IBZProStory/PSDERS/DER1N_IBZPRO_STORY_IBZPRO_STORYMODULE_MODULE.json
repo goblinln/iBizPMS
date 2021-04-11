@@ -13,13 +13,13 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule.json"
   },
   "orderValue" : 100,
-  "codeName" : "IbzProStoryModule",
-  "logicName" : "需求模块",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory.json"
   },
+  "codeName" : "IbzProStoryModule",
+  "logicName" : "需求模块",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDERS/DER1N_IBZPRO_STORY_IBZPRO_STORYMODULE_MODULE.json",
   "name" : "DER1N_IBZPRO_STORY_IBZPRO_STORYMODULE_MODULE"
 }

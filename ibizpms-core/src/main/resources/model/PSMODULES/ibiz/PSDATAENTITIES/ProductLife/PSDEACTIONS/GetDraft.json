@@ -6,14 +6,14 @@
   "builtinAction" : true,
   "pubServiceDefault" : false,
   "timeOut" : -1,
-  "orderValue" : 41,
-  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
   },
+  "orderValue" : 41,
   "codeName" : "GetDraft",
   "logicName" : "GetDraft",
+  "extendMode" : 0,
   "actionMode" : "GETDRAFT",
   "actionType" : "BUILTIN",
   "requestParamType" : "NONE",

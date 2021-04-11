@@ -6,8 +6,6 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
-  "orderValue" : 99999,
-  "extendMode" : 0,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
@@ -16,13 +14,15 @@
     "modelref" : true,
     "id" : "READ"
   },
+  "orderValue" : 99999,
   "codeName" : "GetNextTeamUser",
   "logicName" : "获取下一个团队成员(完成)",
+  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetNextTeamUser.json",
-  "userCat" : "CAT1",
-  "name" : "GetNextTeamUserFinish"
+  "name" : "GetNextTeamUserFinish",
+  "userCat" : "CAT1"
 }

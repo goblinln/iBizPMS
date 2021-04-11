@@ -29,11 +29,11 @@
     "dataType" : 1,
     "name" : "srfdataaccaction"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "BUGOPENEDDATE",
       "codeName" : "Bugopeneddate"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "bugopeneddate"
   }, {
@@ -58,11 +58,11 @@
     "dataType" : 1,
     "name" : "project"
   }, {
+    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "BUGRESOLVEDDATE",
       "codeName" : "Bugresolveddate"
     },
-    "format" : "YYYY-MM-DD",
     "dataType" : 5,
     "name" : "bugresolveddate"
   }, {
@@ -145,20 +145,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "由谁解决",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "resolvedby",
     "getPSAppDEField" : {
       "name" : "RESOLVEDBY",
       "codeName" : "ResolvedBy"
     },
-    "dataItemName" : "resolvedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -171,11 +171,11 @@
     "name" : "resolvedby"
   }, {
     "excelCaption" : "Bug编号",
+    "dataItemName" : "bugid",
     "getPSAppDEField" : {
       "name" : "BUGID",
       "codeName" : "Bugid"
     },
-    "dataItemName" : "bugid",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -188,11 +188,11 @@
     "name" : "bugid"
   }, {
     "excelCaption" : "Bug标题",
+    "dataItemName" : "bugtitle",
     "getPSAppDEField" : {
       "name" : "BUGTITLE",
       "codeName" : "Bugtitle"
     },
-    "dataItemName" : "bugtitle",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -209,11 +209,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
     },
+    "dataItemName" : "bugpri",
     "getPSAppDEField" : {
       "name" : "BUGPRI",
       "codeName" : "Bugpri"
     },
-    "dataItemName" : "bugpri",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -230,11 +230,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
     },
+    "dataItemName" : "bugseverity",
     "getPSAppDEField" : {
       "name" : "BUGSEVERITY",
       "codeName" : "Bugseverity"
     },
-    "dataItemName" : "bugseverity",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -251,11 +251,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "bugopenedby",
     "getPSAppDEField" : {
       "name" : "BUGOPENEDBY",
       "codeName" : "Bugopenedby"
     },
-    "dataItemName" : "bugopenedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -268,11 +268,11 @@
     "name" : "bugopenedby"
   }, {
     "excelCaption" : "创建",
+    "dataItemName" : "bugopeneddate",
     "getPSAppDEField" : {
       "name" : "BUGOPENEDDATE",
       "codeName" : "Bugopeneddate"
     },
-    "dataItemName" : "bugopeneddate",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -290,11 +290,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
     },
+    "dataItemName" : "bugresolution",
     "getPSAppDEField" : {
       "name" : "BUGRESOLUTION",
       "codeName" : "BugRESOLUTION"
     },
-    "dataItemName" : "bugresolution",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -307,11 +307,11 @@
     "name" : "bugresolution"
   }, {
     "excelCaption" : "解决日期",
+    "dataItemName" : "bugresolveddate",
     "getPSAppDEField" : {
       "name" : "BUGRESOLVEDDATE",
       "codeName" : "Bugresolveddate"
     },
-    "dataItemName" : "bugresolveddate",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -329,11 +329,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
     },
+    "dataItemName" : "bugstatus",
     "getPSAppDEField" : {
       "name" : "BUGSTATUS",
       "codeName" : "Bugstatus"
     },
-    "dataItemName" : "bugstatus",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

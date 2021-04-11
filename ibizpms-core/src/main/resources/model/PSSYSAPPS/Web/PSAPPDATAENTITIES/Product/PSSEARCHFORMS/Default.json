@@ -10,27 +10,27 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
         "name" : "n_acl_eq"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ACL",
         "codeName" : "Acl"
       },
       "dataType" : 25,
-      "allowEmpty" : true,
+      "hidden" : false,
       "convertToCodeItemText" : true,
+      "allowEmpty" : true,
       "caption" : "访问控制(等于(=))",
-      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 3,
       "labelPos" : "LEFT",
+      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,
@@ -41,26 +41,26 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_acl_eq"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
         "name" : "n_line_eq"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "LINE",
         "codeName" : "Line"
       },
       "dataType" : 1,
+      "hidden" : false,
       "allowEmpty" : true,
       "caption" : "产品线(等于(=))",
-      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,
@@ -71,27 +71,27 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_line_eq"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
-        "editorWidth" : 100.0,
         "editorType" : "TEXTBOX",
+        "editorWidth" : 100.0,
         "name" : "n_linename_like"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "LINENAME",
         "codeName" : "LineName"
       },
       "dataType" : 25,
+      "hidden" : false,
       "allowEmpty" : true,
       "caption" : "产品线(文本包含(%))",
-      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,
@@ -102,26 +102,26 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_linename_like"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
         "name" : "n_linename_eq"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "LINENAME",
         "codeName" : "LineName"
       },
       "dataType" : 25,
+      "hidden" : false,
       "allowEmpty" : true,
       "caption" : "产品线(等于(=))",
-      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,
@@ -132,27 +132,27 @@
       "detailStyle" : "DEFAULT",
       "name" : "n_linename_eq"
     }, {
-      "inputTipClosable" : false,
       "emptyCaption" : false,
       "getPSEditor" : {
-        "editorWidth" : 100.0,
         "editorType" : "TEXTBOX",
+        "editorWidth" : 100.0,
         "name" : "n_name_like"
       },
+      "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
       "dataType" : 25,
+      "hidden" : false,
       "allowEmpty" : true,
       "caption" : "产品名称(文本包含(%))",
-      "labelWidth" : 130,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
+      "labelWidth" : 130,
       "showCaption" : true,
-      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,

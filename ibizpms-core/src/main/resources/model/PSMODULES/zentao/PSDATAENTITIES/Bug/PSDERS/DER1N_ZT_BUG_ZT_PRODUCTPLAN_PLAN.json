@@ -13,12 +13,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
   },
   "orderValue" : 100,
-  "codeName" : "ZTProductPlan",
-  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
   },
+  "codeName" : "ZTProductPlan",
+  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCTPLAN_PLAN.json",
   "name" : "DER1N_ZT_BUG_ZT_PRODUCTPLAN_PLAN"
 }

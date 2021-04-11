@@ -1,27 +1,27 @@
 {
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
   "codeListType" : "STATIC",
-  "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/PlantempletType.json",
+  "dynaInstMode" : 1,
   "codeName" : "PlantempletType",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "step",
     "codeName" : "Step",
-    "text" : "计划",
-    "value" : "step"
+    "text" : "计划"
   }, {
+    "value" : "group",
     "codeName" : "Group",
-    "text" : "父计划",
-    "value" : "group"
+    "text" : "父计划"
   }, {
+    "value" : "item",
     "codeName" : "Item",
-    "text" : "子计划",
-    "value" : "item"
+    "text" : "子计划"
   } ]
 }

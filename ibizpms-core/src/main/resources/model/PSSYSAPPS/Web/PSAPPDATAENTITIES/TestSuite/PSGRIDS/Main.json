@@ -21,11 +21,11 @@
     "dataType" : 21,
     "name" : "desc"
   }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "ADDEDDATE",
       "codeName" : "AddedDate"
     },
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "dataType" : 5,
     "name" : "addeddate"
   }, {
@@ -102,20 +102,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : true,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "编号",
+    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataItemName" : "id",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -127,7 +127,6 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "名称",
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
     "getLinkPSAppView" : {
@@ -135,11 +134,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestSuiteMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
+    "excelCaption" : "名称",
+    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -152,11 +152,11 @@
     "name" : "name"
   }, {
     "excelCaption" : "描述",
+    "dataItemName" : "desc",
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
-    "dataItemName" : "desc",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -173,11 +173,11 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
+    "dataItemName" : "addedby",
     "getPSAppDEField" : {
       "name" : "ADDEDBY",
       "codeName" : "AddedBy"
     },
-    "dataItemName" : "addedby",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -190,11 +190,11 @@
     "name" : "addedby"
   }, {
     "excelCaption" : "创建时间",
+    "dataItemName" : "addeddate",
     "getPSAppDEField" : {
       "name" : "ADDEDDATE",
       "codeName" : "AddedDate"
     },
-    "dataItemName" : "addeddate",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -209,8 +209,14 @@
   }, {
     "getPSDEUIActionGroup" : {
       "getPSUIActionGroupDetails" : [ {
-        "addSeparator" : true,
+        "showIcon" : true,
         "getPSUIAction" : {
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "testsuite",
+            "key" : "SUITE",
+            "name" : "SUITE"
+          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
@@ -228,18 +234,12 @@
           } ],
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "testsuite",
-            "key" : "SUITE",
-            "name" : "SUITE"
-          } ],
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf0c1@FontAwesome",
             "cssClass" : "fa fa-link"
           },
+          "timeout" : 60000,
           "codeName" : "linkCaseDash",
           "caption" : "关联用例",
           "actionTarget" : "SINGLEKEY",
@@ -252,12 +252,12 @@
           "name" : "关联用例（操作栏）",
           "id" : "linkCaseDash@TestSuite"
         },
-        "showIcon" : true,
+        "addSeparator" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u74e6149"
       }, {
-        "addSeparator" : true,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -271,11 +271,11 @@
           "frontProcessType" : "WIZARD",
           "refreshMode" : 1,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
             "cssClass" : "fa fa-edit"
           },
+          "timeout" : 60000,
           "codeName" : "EditsuiteDash",
           "caption" : "编辑",
           "actionTarget" : "SINGLEKEY",
@@ -290,12 +290,12 @@
           "name" : "编辑（操作栏）",
           "id" : "EditsuiteDash@TestSuite"
         },
-        "showIcon" : true,
+        "addSeparator" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "u0feedf0"
       }, {
-        "addSeparator" : true,
+        "showIcon" : true,
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -308,11 +308,11 @@
           "refreshMode" : 1,
           "enableConfirm" : true,
           "getNoPrivDisplayMode" : 2,
-          "timeout" : 60000,
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "timeout" : 60000,
           "codeName" : "DeleteDash",
           "caption" : "删除",
           "actionTarget" : "SINGLEKEY",
@@ -329,7 +329,7 @@
           "name" : "删除（操作栏）",
           "id" : "DeleteDash@TestSuite"
         },
-        "showIcon" : true,
+        "addSeparator" : true,
         "detailType" : "DEUIACTION",
         "showCaption" : false,
         "name" : "udbe88f7"

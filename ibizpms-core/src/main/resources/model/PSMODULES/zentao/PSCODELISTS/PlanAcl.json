@@ -1,23 +1,23 @@
 {
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
   "codeListType" : "STATIC",
-  "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/PlanAcl.json",
+  "dynaInstMode" : 1,
   "codeName" : "PlanAcl",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "open",
     "codeName" : "Open",
-    "text" : "公开",
-    "value" : "open"
+    "text" : "公开"
   }, {
+    "value" : "private",
     "codeName" : "Private",
-    "text" : "私有",
-    "value" : "private"
+    "text" : "私有"
   } ]
 }

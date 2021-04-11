@@ -1,49 +1,49 @@
 {
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "subSysCodeList" : false,
+  "subSysAsCloud" : false,
+  "systemTag" : "iBizPMS",
   "codeListType" : "STATIC",
-  "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TestCaseStatusGrid.json",
+  "dynaInstMode" : 1,
   "codeName" : "TestCaseStatusGrid",
   "userScope" : false,
   "emptyText" : "未定义",
   "enableCache" : true,
   "refFlag" : true,
   "getPSCodeItems" : [ {
+    "value" : "wait",
     "codeName" : "Wait",
     "text" : "未开始",
-    "default" : true,
-    "value" : "wait"
+    "default" : true
   }, {
+    "value" : "normal",
     "codeName" : "Normal",
     "text" : "正常",
-    "color" : "rgba(84, 238, 19, 1)",
-    "value" : "normal"
+    "color" : "rgba(84, 238, 19, 1)"
   }, {
+    "value" : "blocked",
     "codeName" : "Blocked",
     "text" : "被阻塞",
-    "color" : "rgba(230, 242, 3, 0.97)",
-    "value" : "blocked"
+    "color" : "rgba(230, 242, 3, 0.97)"
   }, {
+    "value" : "investigate",
     "codeName" : "Investigate",
     "text" : "研究中",
-    "color" : "rgba(245, 12, 12, 1)",
-    "value" : "investigate"
+    "color" : "rgba(245, 12, 12, 1)"
   }, {
+    "value" : "done",
     "codeName" : "Done",
-    "text" : "已完成",
-    "value" : "done"
+    "text" : "已完成"
   }, {
+    "value" : "storychange",
     "codeName" : "Storychange",
     "text" : "需求变更",
-    "color" : "rgba(254, 8, 8, 1)",
-    "value" : "storychange"
+    "color" : "rgba(254, 8, 8, 1)"
   }, {
+    "value" : "casechange",
     "codeName" : "Casechange",
     "text" : "原用例更新",
-    "color" : "rgba(247, 31, 7, 1)",
-    "value" : "casechange"
+    "color" : "rgba(247, 31, 7, 1)"
   } ]
 }

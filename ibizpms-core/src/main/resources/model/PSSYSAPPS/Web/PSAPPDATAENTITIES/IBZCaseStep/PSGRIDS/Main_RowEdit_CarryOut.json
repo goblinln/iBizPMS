@@ -239,8 +239,8 @@
       "name" : "STEPS",
       "codeName" : "Steps"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "enableCond" : 3,
     "ignoreInput" : 0,
     "codeName" : "steps",
@@ -260,8 +260,8 @@
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "allowEmpty" : true,
     "needCodeListConfig" : true,
+    "allowEmpty" : true,
     "enableCond" : 3,
     "ignoreInput" : 0,
     "codeName" : "type",
@@ -316,8 +316,8 @@
       "name" : "VERSION",
       "codeName" : "Version"
     },
-    "allowEmpty" : true,
     "convertToCodeItemText" : true,
+    "allowEmpty" : true,
     "enableCond" : 3,
     "ignoreInput" : 3,
     "codeName" : "version",
@@ -326,20 +326,20 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enablePagingBar" : false,
-  "enableRowEdit" : true,
   "controlType" : "GRID",
+  "enableRowEdit" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enablePagingBar" : false,
   "getPSDEGridColumns" : [ {
     "excelCaption" : "步骤",
+    "dataItemName" : "desc",
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
-    "dataItemName" : "desc",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -352,11 +352,11 @@
     "name" : "desc"
   }, {
     "excelCaption" : "预期",
+    "dataItemName" : "expect",
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
-    "dataItemName" : "expect",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -373,12 +373,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testresult__result.json"
     },
+    "dataItemName" : "steps",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "STEPS",
       "codeName" : "Steps"
     },
-    "dataItemName" : "steps",
-    "enableRowEdit" : true,
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -391,12 +391,12 @@
     "name" : "steps"
   }, {
     "excelCaption" : "实际情况",
+    "dataItemName" : "reals",
+    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "REALS",
       "codeName" : "Reals"
     },
-    "dataItemName" : "reals",
-    "enableRowEdit" : true,
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

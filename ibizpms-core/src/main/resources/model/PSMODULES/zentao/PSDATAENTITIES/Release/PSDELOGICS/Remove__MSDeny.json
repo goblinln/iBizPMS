@@ -20,6 +20,7 @@
       "id" : "默认连接"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Temp"
@@ -28,7 +29,6 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
       "srcFieldName" : "ID",
@@ -58,13 +58,13 @@
     "name" : "开始"
   }, {
     "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
-    },
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Temp"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -105,14 +105,13 @@
     },
     "name" : "默认连接"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
+        "condOP" : "EQ",
         "paramValue" : "normal",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
@@ -123,6 +122,7 @@
       "logicType" : "GROUP",
       "id" : "fd1e0ca923a22dbb201bdd7a7e4e2483__MSDENY__normal"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "DenyBynormal"
@@ -133,14 +133,13 @@
     },
     "name" : "状态[正常]拒绝[Remove]操作"
   }, {
-    "defaultLink" : false,
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
+        "condOP" : "EQ",
         "paramValue" : "terminate",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
@@ -151,6 +150,7 @@
       "logicType" : "GROUP",
       "id" : "fd1e0ca923a22dbb201bdd7a7e4e2483__MSDENY__terminate"
     },
+    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "DenyByterminate"
@@ -162,16 +162,16 @@
     "name" : "状态[停止维护]拒绝[Remove]操作"
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "默认变量"
   }, {
-    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
+    "sessionParam" : false,
     "codeName" : "Temp",
     "default" : false,
     "name" : "临时变量"
