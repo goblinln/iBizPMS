@@ -49,6 +49,8 @@ export class IBizListExpBarModel extends IBizExpBarModel {
         }
 
         // 导航视图
+        const xData = this.controlModelData?.getPSControls?.find((item:any)=>{return this.controlModelData.xDataControlName === item.name});
+        this.controlModelData.getXDataPSControl = xData;
         if (this.controlModelData.getXDataPSControl) {
             const res = await DynamicService.getInstance(this.context).getAppCtrlModelJsonData(this.controlModelData.getXDataPSControl.path);
             Object.assign(this.controlModelData.getXDataPSControl, res);

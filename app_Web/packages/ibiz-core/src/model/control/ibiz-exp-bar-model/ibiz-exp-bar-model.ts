@@ -47,10 +47,8 @@ export class IBizExpBarModel extends IBizMainControlModel{
                 delete this.xDataControl.modelref;
             }
         }
-
         // 从$controlsMap里拿到数据部件实例
         this.$xDataControl = this.getControl(this.xDataControl.name);
-
         // 加载关联视图
         if(this.controlModelData?.getPSAppViewRefs?.length > 0){
             for(const view of this.controlModelData.getPSAppViewRefs){
@@ -78,7 +76,7 @@ export class IBizExpBarModel extends IBizMainControlModel{
      * @memberof IBizExpBarModel
      */
     get xDataControl(){
-        return this.controlModelData.getXDataPSControl;
+        return this.controlModelData?.getPSControls?.find((item:any)=>{return this.controlModelData.xDataControlName === item.name});
     }
 
     /**

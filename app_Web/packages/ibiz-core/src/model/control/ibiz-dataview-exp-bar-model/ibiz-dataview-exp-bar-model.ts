@@ -29,6 +29,8 @@ export class IBizDataViewExpBarModel extends IBizExpBarModel {
         }
         this.$dataView = new IBizDataViewModel(dataView);
         await this.$dataView.loaded();
+        const xData = this.controlModelData?.getPSControls?.find((item:any)=>{return this.controlModelData.xDataControlName === item.name});
+        this.controlModelData.getXDataPSControl = xData;
         if (this.controlModelData.getXDataPSControl) {
             const res = await DynamicService.getInstance(this.context).getAppCtrlModelJsonData(this.controlModelData.getXDataPSControl.path);
             Object.assign(this.controlModelData.getXDataPSControl, res)
